@@ -1,6 +1,6 @@
 # RQIR Operational Master Table
 
-**Version:** 0.1  
+**Version:** 0.2  
 **Date:** 2026-08-29
 
 This table is intentionally conservative. `OPEN` means the comparison has not yet been demonstrated at the precision needed for RQIR; it does not mean the literature is absent.
@@ -8,82 +8,130 @@ This table is intentionally conservative. `OPEN` means the comparison has not ye
 | Channel | Operational observable | Controlled baseline | Main competing explanations/classes | Current key degeneracy | Candidate discriminant | Status |
 |---|---|---|---|---|---|---|
 | Q1 Quantum clocks | relative/conditional clock phase, visibility, clock-clock correlations | relativistic QM/QFT on prescribed spacetime | semiclassical backreaction, quantum geometry, quantum reference-frame effects | ordinary relativistic phase vs genuinely nonclassical spacetime contribution | multi-clock correlations and state-dependent scaling beyond prescribed-background prediction | OPEN |
-| Q2 Superposed sources | probe phase/force statistics conditional on source preparation | weak-field GR + quantum matter preparation | mean-field semiclassical, stochastic source, branch-conditioned/hybrid, quantum mediator | different source rules can agree at leading Newtonian order | nonlinear response + branch correlations + noise spectrum | OPEN |
-| Q3 Backreaction/source rule | response to changes in quantum state, conditioning, measurement protocol | semiclassical Einstein equation in controlled regime | stochastic gravity, local classical-QFT coupling, collapse/hybrid, quantized metric | expectation-value and more general rules can approximate each other for narrow states | deliberately nonclassical source states + correlated probe observables | OPEN |
-| Q4 Gravity-mediated quantum information | entanglement witness, phase pattern, correlation scaling | chosen low-energy interaction model | perturbative QG, classical gravity + full QFT matter, hybrid models | entanglement itself is not uniquely diagnostic | mass/time/distance/order scaling; multiple observables rather than binary entanglement | HIGH PRIORITY |
-| Q5 Geometry fluctuations | force/phase/clock noise; cross-correlations | detector noise + matter stress-energy fluctuation prediction | stochastic induced metric fluctuations, intrinsic quantum geometry, environmental noise | induced and intrinsic fluctuations may share spectra over limited bandwidth | cross-channel correlations with independently measured matter fluctuations | OPEN |
+| Q2 Superposed sources | probe phase/force statistics conditional on source preparation | weak-field GR + quantum matter preparation | mean-field semiclassical, stochastic source, branch-conditioned/hybrid, quantum mediator | static density-diagonal coupling is exactly blind to branch phase when diagonal mass statistics match | unequal-time/order-sensitive response; joint source–probe observables; finite-overlap controls | HIGH PRIORITY |
+| Q3 Backreaction/source rule | mean, noise, retarded response under changes in quantum state and drive | semiclassical Einstein equation / Einstein–Langevin in controlled regime | stochastic gravity, local classical-QFT coupling, collapse/hybrid, quantized metric | mean and symmetrized noise do not fix the commutator/response sector; simple response-split qubit has an energy confound | simultaneous reconstruction of `<T>`, `N`, `chi^R`, with full stress-energy accounting | HIGH PRIORITY |
+| Q4 Gravity-mediated quantum information | entanglement witness, phase pattern, correlation scaling | chosen low-energy interaction model | perturbative QG, classical gravity + full QFT matter, hybrid models | entanglement itself is not uniquely diagnostic | mass/time/distance/perturbative-order scaling plus force/noise/response cross-check | HIGH PRIORITY |
+| Q5 Geometry fluctuations | force/phase/clock noise; cross-correlations | detector noise + matter stress-energy fluctuation prediction | stochastic induced metric fluctuations, intrinsic quantum geometry, environmental noise | induced and intrinsic fluctuations may share spectra over limited bandwidth | joint `N`–response reconstruction and cross-channel correlation with monitored matter | OPEN |
 | Q6 Causal/process structure | process correlations, causal-order witnesses, relational timing | classical causal spacetime + quantum systems | quantum reference frames, indefinite causal structures, emergent geometry | nonclassical process signatures can originate in control systems rather than gravity | gravity-dependent scaling plus controls eliminating nongravitational mediator | OPEN |
 | Q7 Low-energy QG EFT | scattering/phase/potential corrections in EFT-valid regime | classical GR + Standard Model/QFT | perturbatively quantized gravity EFT, unknown higher-curvature coefficients, classical systematics | universal nonanalytic corrections can be tiny; local terms absorb UV dependence | identify nonanalytic/long-range pieces and cross-check multiple processes | OPEN |
 
-## Priority ranking v0.1
+## Structural upgrade from Iteration 002
 
-### P1 — Q4: Entanglement is not enough
+The provisional second-order source descriptor
 
-**Established boundary:** Aziz & Howl (Nature 2025) show that when matter is treated in full QFT, a local theory with a classical gravitational field can generate quantum communication and entanglement via matter processes. Therefore RQIR must not use “entanglement observed” as a one-bit proof that gravity itself is quantized.
+\[
+C^{(2)}(x,y)
+\]
 
-**RQIR task:** derive a discriminator vector rather than a binary witness:
+is no longer sufficient. RQIR now preserves operator ordering and uses at least
+
+\[
+\boxed{
+\mathcal K_T^{(2)}
+=\left(
+\langle T\rangle,
+N,
+D\;\text{or}\;\chi^R
+\right),
+}
+\]
+
+where
+
+\[
+N_{AB}(x,y)=\frac12\langle\{\delta T_A(x),\delta T_B(y)\}\rangle,
+\]
+
+\[
+D_{AB}(x,y)=\frac{1}{2i}\langle[\delta T_A(x),\delta T_B(y)]\rangle,
+\]
+
+and
+
+\[
+\chi^R_{AB}(x,y)=\frac{i}{\hbar}\theta(x^0-y^0)
+\langle[T_A(x),T_B(y)]\rangle
+\]
+
+up to an explicitly recorded sign convention.
+
+See `docs/ORDERED_KERNEL_HIERARCHY.md`.
+
+## Priority ranking v0.2
+
+### P1 — Q3: Build a clean ordered-response null pair
+
+Toy Model 003 proves algebraically that two states can have identical one-point density history and identical symmetrized noise while their commutator/retarded kernels differ. However, in the minimal qubit realization the same coherence component also changes the mean generator energy:
+
+\[
+\Delta D\neq0
+\quad\text{and}\quad
+\Delta\langle H\rangle\neq0.
+\]
+
+**Next task:** construct a balanced multi-level or driven closed-system realization satisfying equal full mean stress-energy and equal relevant `N`, while retaining different `D/chi^R`.
+
+### P2 — Q2: Respect the static phase-blindness no-go
+
+Toy Model 002 proves that for exactly orthogonal non-overlapping mass configurations and a density-diagonal static coupling, relative phase is invisible to all diagonal gravitational observables and to all probe-only measurements generated by a controlled density-diagonal unitary.
+
+This forbids treating a bare coherent superposition versus incoherent mixture as an automatic gravitational coherence witness.
+
+### P3 — Q4: Entanglement is not enough
+
+Aziz & Howl (Nature 2025) show that when matter is treated in full QFT, a local theory with a classical gravitational field can generate quantum communication and entanglement via matter processes. Q4 therefore requires a discriminator vector, not a binary witness:
 
 \[
 D_{Q4}=\left(
 \phi(m,t,d),
 E(m,t,d),
+N(\omega),
+\chi^R(\omega),
 C^{(n)},
 \Gamma_{\rm decoh},
 \text{range/order scaling}
 \right).
 \]
 
-We seek parameter domains where competing classes predict parametrically different dependence, not merely different fitted coefficients.
+### P4 — Q5: Noise is not enough either
 
-### P2 — Q3/Q5: Mean response versus fluctuations
+A measured gravitational/noise spectrum can reflect detector/environmental noise, classical source fluctuations, matter-induced metric fluctuations, or intrinsic gravity fluctuations.
 
-Semiclassical gravity uses \(\langle T_{\mu\nu}\rangle\), while stochastic gravity explicitly introduces stress-energy fluctuations through the noise kernel. This supplies an existing controlled hierarchy in which RQIR can test how much information survives beyond the mean.
+**RQIR task:** fit noise and response jointly and search for cross-channel consistency relations rather than interpreting a nonzero variance alone.
 
-**RQIR task:** build cross-observable ratios that cancel poorly known source normalization while retaining sensitivity to fluctuation transfer.
-
-### P3 — Q1: Proper time as an operational bridge
-
-Quantum clocks provide observables that are intrinsically quantum but depend on relativistic proper time. They are valuable because they probe the interface without requiring Planckian energy.
-
-**RQIR task:** isolate predictions that differ only when spacetime/source degrees of freedom themselves cannot be treated as a prescribed classical background.
-
-### P4 — Q7: EFT anchor
+### P5 — Q7: EFT anchor
 
 Low-energy quantum GR as EFT supplies controlled statements that any proposed UV theory must reproduce in its domain of validity.
 
-**RQIR task:** catalog which effects are universal/nonanalytic, which are Wilson-coefficient dependent, and which are experimentally inaccessible at present.
+## Cross-channel matrix v0.2
 
-## Cross-channel matrix
-
-| Pair | Why it matters | First proposed null test |
+| Pair | Why it matters | Current null/discriminator strategy |
 |---|---|---|
-| Q1 ↔ Q2 | source superposition changes clock/probe phase | compare source-conditioned clock phase with classical mixture having same mean stress-energy |
-| Q2 ↔ Q3 | directly tests source rule | construct states sharing the same \(\langle T\rangle\) but differing in higher moments |
-| Q3 ↔ Q5 | mean-field versus fluctuation response | compare measured response variance with independently reconstructed stress-energy noise |
-| Q3 ↔ Q4 | source rule constrains mediator/information flow | fit one source-rule model simultaneously to force/phase and entanglement data |
-| Q4 ↔ Q5 | entanglement generation may imply characteristic noise/decoherence | search for class-specific relation between entanglement rate and force/metric noise |
+| Q1 ↔ Q2 | source preparation changes clock/probe phase | compare conditioned clock response under preparations with matched classical source observables |
+| Q2 ↔ Q3 | directly tests source rule | Toy 002 phase-blindness no-go; move to unequal-time/order-sensitive sector |
+| Q3 ↔ Q5 | mean/noise/response transfer | reconstruct `<T>`, `N`, `chi^R` jointly and compare with probe noise and phase lag |
+| Q3 ↔ Q4 | source rule constrains information flow | require one interface model to fit force/phase, response and entanglement simultaneously |
+| Q4 ↔ Q5 | entanglement mechanisms predict accompanying noise/response structure | search for class-specific relation between entanglement rate and noise/response spectra |
 | Q1 ↔ Q6 | clocks operationalize causal/reference-frame structure | conditional timing experiment with gravitationally controlled branch variable |
-| Q7 ↔ all | EFT sets low-energy consistency boundary | reject phenomenological interface laws that contradict controlled EFT limits |
+| Q7 ↔ all | EFT sets low-energy consistency boundary | reject interface laws that contradict controlled EFT limits |
 
-## First null-state construction to investigate
+## Closed RQIR no-go results so far
 
-A particularly useful strategy is to compare two source preparations \(\rho_A\) and \(\rho_B\) engineered so that
+### RQIR-NG-001 — Static density phase blindness
 
-\[
-\langle \hat T_{\mu\nu}(x)\rangle_A
-\approx
-\langle \hat T_{\mu\nu}(x)\rangle_B,
-\]
+For a non-overlap source model whose gravitational coupling/readout is diagonal in a mass-configuration basis, states with identical diagonal density statistics but different off-diagonal phase are indistinguishable by static gravitational observables. See `TOY_MODEL_002_PHASE_BLINDNESS_NO_GO.md`.
 
-while
+### RQIR-NG-002 — Minimal response-split energy obstruction
+
+For the minimal qubit with
 
 \[
-C_A^{(2)}(x,y)\neq C_B^{(2)}(x,y)
+H=(\hbar\Omega/2)\sigma_x,
+\qquad
+n_L=(I+\sigma_z)/2,
 \]
 
-and/or higher cumulants differ.
-
-A pure expectation-value semiclassical response predicts no leading distinction tied solely to the differing higher moments, whereas fluctuation-sensitive or genuinely quantum interface maps may. The practical existence of sufficiently controlled realizations and the exact observable consequences remain `OPEN` and must be derived rather than assumed.
+states `|+x>` and `|-x>` have the same density mean and symmetrized density noise but opposite commutator response. The same state component also gives opposite mean generator energy, so the pair is not a clean equal-`T_{mu nu}` gravitational null test. See `TOY_MODEL_003_SAME_NOISE_DIFFERENT_RESPONSE.md`.
 
 ## Evidence coding
 
@@ -101,10 +149,14 @@ For every table entry added later, record:
 ## Seed references
 
 1. J. F. Donoghue, *Quantum General Relativity and Effective Field Theory*, arXiv:2211.09902.
-2. B. L. Hu & E. Verdaguer, *Stochastic Gravity: Theory and Applications*, Living Rev. Relativity / arXiv:0802.0658.
-3. A. R. H. Smith & M. Ahmadi, *Quantum clocks observe classical and quantum time dilation*, Nature Communications 11, 5360 (2020).
-4. J. Aziz & R. Howl, *Classical theories of gravity produce entanglement*, Nature 646, 813–817 (2025), DOI: 10.1038/s41586-025-09595-7.
+2. B. L. Hu & E. Verdaguer, *Stochastic Gravity: Theory and Applications*, Living Reviews in Relativity 11, 3 (2008), arXiv:0802.0658.
+3. N. G. Phillips & B. L. Hu, *Noise Kernel in Stochastic Gravity and Stress Energy Bi-Tensor of Quantum Fields in Curved Spacetimes*, Phys. Rev. D 63, 104001 (2001), arXiv:gr-qc/0010019.
+4. A. R. H. Smith & M. Ahmadi, *Quantum clocks observe classical and quantum time dilation*, Nature Communications 11, 5360 (2020).
+5. J. Aziz & R. Howl, *Classical theories of gravity produce entanglement*, Nature 646, 813–817 (2025), DOI: 10.1038/s41586-025-09595-7.
 
 ## Next iteration
 
-The next iteration should convert Q2/Q3/Q4 into explicit toy models with a common source state and common measured probe, so differences are attributable to the interface law rather than inconsistent experimental definitions.
+1. Search analytically for a multi-level balanced source with equal full mean energy/stress and equal `N`, but different `D/chi^R`.
+2. If found, derive a common probe transfer law for mean/noise/response.
+3. If impossible under a useful set of assumptions, promote the obstruction to a broader no-go theorem.
+4. Begin the Q4 perturbative-order/scaling comparison between classical-gravity+QFT and perturbative quantum gravity.
