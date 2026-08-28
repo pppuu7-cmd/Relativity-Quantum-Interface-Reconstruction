@@ -3,74 +3,30 @@
 **Last updated:** 2026-08-29  
 **Project:** Relativity–Quantum Interface Reconstruction (RQIR)
 
-This file is the continuity backbone of the project. A new session should be able to resume RQIR by reading this file plus the documents it references.
+This file is the continuity backbone. A new session should be able to resume the project from this document plus the files it references.
 
-## 1. Project objective
+## 1. Objective
 
-RQIR reconstructs the operational interface between relativity/gravity and quantum physics **without assuming in advance** that gravity is classical, stochastic, quantized, emergent, hybrid, or described by a particular UV theory.
+RQIR reconstructs the operational interface between relativity/gravity and quantum physics without assuming in advance that gravity is classical, stochastic, quantized, hybrid, emergent, or described by a preferred UV theory.
 
 Central inverse problem:
 
 \[
-P_{\rm data}(\mathbf o|\mathbf s)
-\Rightarrow
-[\mathfrak I].
+P_{\rm data}(\mathbf o|\mathbf s)\Rightarrow[\mathfrak I].
 \]
 
-`[I]` is the equivalence class of interface maps compatible with observations and consistency requirements.
+The project is observable-first, baseline-explicit, degeneracy-aware, and retains negative/no-go results.
 
-## 2. Core discipline
+## 2. Current mathematical core
 
-- observable first;
-- baseline declared explicitly;
-- residuals only relative to controlled baselines;
-- common observable language for competing interface classes;
-- degeneracies/no-go results retained as primary results;
-- no “quantum gravity detected” claim until classical/stochastic/hybrid/full-QFT-matter explanations are excluded in the same regime;
-- low-energy and experimentally accessible channels before Planck-scale speculation;
-- repository is authoritative project memory.
-
-## 3. Baseline benchmark
-
-Semiclassical gravity:
-
-\[
-G_{\mu\nu}+\Lambda g_{\mu\nu}+H_{\mu\nu}^{\rm EFT}
-=8\pi G\langle\hat T_{\mu\nu}\rangle_{\rm ren}.
-\]
-
-This is a benchmark, not the assumed true theory.
-
-## 4. Residual object
-
-For operational observable `O_A` and baseline `B`,
-
-\[
-\Delta_A^{(B)}=O_A^{\rm obs}-O_A^{(B)}.
-\]
-
-Always record regime, uncertainty/covariance and nuisance assumptions.
-
-## 5. Ordered source hierarchy — current mathematical core
-
-The original single `C^(2)` hierarchy has been superseded because operator ordering matters.
-
-Define
-
-\[
-\delta\hat T_A(x)=\hat T_A(x)-\langle\hat T_A(x)\rangle.
-\]
-
-Current second-order coordinate:
+At second order, operator ordering must be preserved:
 
 \[
 \boxed{
 \mathcal K_T^{(2)}
-=\left(\langle T\rangle,N,D\;\text{or}\;\chi^R\right)
+=(\langle T\rangle,N,D\text{ or }\chi^R).
 }
 \]
-
-with
 
 \[
 N_{AB}(x,y)=\frac12\langle\{\delta T_A(x),\delta T_B(y)\}\rangle,
@@ -80,123 +36,70 @@ N_{AB}(x,y)=\frac12\langle\{\delta T_A(x),\delta T_B(y)\}\rangle,
 D_{AB}(x,y)=\frac1{2i}\langle[\delta T_A(x),\delta T_B(y)]\rangle,
 \]
 
-and one convention for retarded response
-
 \[
-\chi^R_{AB}(x,y)=\frac{i}{\hbar}\theta(x^0-y^0)
-\langle[T_A(x),T_B(y)]\rangle.
+\chi^R_{AB}(x,y)=\frac{i}{\hbar}\theta(x^0-y^0)\langle[T_A(x),T_B(y)]\rangle.
 \]
 
-A Schwinger–Keldysh / closed-time-path generating functional is the formal parent object for all higher operator orderings:
+The parent source object is the Schwinger–Keldysh / closed-time-path generating functional
 
 \[
-Z_T[J_+,J_-]=Tr(U[J_+]\rho_TU[J_-]^\dagger).
+Z_T[J_+,J_-]=\operatorname{Tr}(U[J_+]\rho_TU[J_-]^\dagger).
 \]
 
-See `docs/ORDERED_KERNEL_HIERARCHY.md` and `docs/FOUNDATIONS.md`.
+Important non-implication: nonzero `N`, nonzero `D/chi^R`, entanglement, or other nonclassical-looking matter observables do not by themselves prove quantum geometry.
 
-## 6. Operational sensitivity levels
+## 3. Working channels
 
-- `L1`: mean-sensitive — only `<T>`;
-- `L2`: noise-sensitive — `N` also matters;
-- `L3`: ordered-response-sensitive — `D/chi^R` also matters;
-- `L4`: higher ordered cumulants/nested responses;
-- `L5`: quantum-information/process constraints.
+- `Q1` quantum clocks / proper time;
+- `Q2` superposed sources;
+- `Q3` backreaction/source rule;
+- `Q4` gravity-mediated quantum information;
+- `Q5` geometry fluctuations;
+- `Q6` causal/process structure;
+- `Q7` low-energy quantum-gravity EFT.
 
-These are sensitivity classes, **not** declarations that the metric is quantum.
+## 4. Null-pair strength grades
 
-## 7. Working channels
+To prevent overclaiming:
 
-- `Q1` Quantum clocks / proper time.
-- `Q2` Superposed sources.
-- `Q3` Backreaction / source rule.
-- `Q4` Gravity-mediated quantum information.
-- `Q5` Geometry fluctuations.
-- `Q6` Causal/process structure.
-- `Q7` Low-energy quantum-gravity EFT.
+- **NP0** equal global scalar only;
+- **NP1** equal chosen gravitational readout mean;
+- **NP2** equal chosen readout mean + symmetrized noise;
+- **NP3** equal finite independent multiprobe/multipole mean/noise set;
+- **NP4** equal complete relevant smeared stress-energy mean/noise in a declared domain;
+- **NP5** NP4 plus complete source/apparatus stress-energy, conservation, gauge/relational and relativistic controls.
 
-## 8. Critical external boundary adopted
+Toy 005 reaches NP2 only.
 
-Gravity-mediated entanglement alone is **not** treated as an unambiguous proof of quantized gravity.
+## 5. Result chain
 
-Aziz & Howl, Nature 646, 813–817 (2025), show that when matter is treated in full QFT, local classical-gravity constructions can generate quantum communication and entanglement through matter processes, with different parametric behavior from perturbative quantum gravity.
-
-Therefore RQIR uses multi-observable/scaling fingerprints.
-
-## 9. Toy Model 001 — same mean, different variance
+### Toy 001 — same mean, different variance
 
 File: `docs/TOY_MODEL_001_SAME_MEAN_DIFFERENT_VARIANCE.md`.
 
-States
+Equal mean mass distribution can hide different source covariance. This gives a mean-vs-fluctuation discriminator but is not a coherence witness.
 
-\[
-|A\rangle=(|2,0\rangle+|0,2\rangle)/\sqrt2,
-\qquad
-|B\rangle=|1,1\rangle
-\]
-
-have the same mean mass distribution but different covariance. This establishes a mean-vs-fluctuation discriminator but **not** a coherence witness.
-
-## 10. RQIR-NG-001 — static density phase blindness
+### RQIR-NG-001 / Toy 002 — static density phase blindness
 
 File: `docs/TOY_MODEL_002_PHASE_BLINDNESS_NO_GO.md`.
 
-For
+For nonoverlapping orthogonal mass configurations and density-diagonal static coupling/readout, relative source phase is invisible when diagonal mass statistics match.
 
-\[
-|\psi_\pm\rangle=(|2,0\rangle\pm|0,2\rangle)/\sqrt2
-\]
+Conclusion: “superposition versus mixture” is not automatically a gravitational coherence witness.
 
-and the corresponding incoherent mixture, all observables diagonal in the occupation/mass-configuration basis have identical statistics.
-
-For a density-diagonal controlled source–probe interaction, the reduced probe state depends only on source diagonal probabilities, so source phase is invisible to probe-only measurements in this idealized domain.
-
-**Meaning:** static superposition-vs-mixture is not automatically a gravitational coherence witness.
-
-## 11. Toy Model 003 / RQIR-NG-002 — same noise, different response, but energy confound
+### RQIR-NG-002 / Toy 003 — same noise, different response, but energy confound
 
 File: `docs/TOY_MODEL_003_SAME_NOISE_DIFFERENT_RESPONSE.md`.
 
-For
+A qubit can have equal density mean history and equal symmetrized density noise but opposite commutator/retarded response. However the same state direction changes mean generator energy, so it fails as a clean gravity null pair.
 
-\[
-H=(\hbar\Omega/2)\sigma_x,
-\qquad
-n_L=(I+\sigma_z)/2,
-\]
-
-states `|+x>` and `|-x>` satisfy
-
-\[
-\langle n_L(t)\rangle_+=\langle n_L(t)\rangle_-=1/2,
-\]
-
-\[
-N_+=N_-=\frac14\cos\Omega t,
-\]
-
-but
-
-\[
-D_\pm=\pm\frac14\sin\Omega t.
-\]
-
-However
-
-\[
-\langle H\rangle_\pm=\pm\hbar\Omega/2,
-\]
-
-so the minimal qubit is not a clean equal-full-stress-energy gravitational null pair.
-
-## 12. Toy Model 004 — balanced five-level ordered-kernel witness
+### Toy 004 — balanced five-level algebraic witness
 
 File: `docs/TOY_MODEL_004_BALANCED_FIVE_LEVEL_ORDERED_KERNEL.md`.
 
-A finite-dimensional numerical search found a positive five-level Hamiltonian, positive Hermitian source observable `B`, and positive density matrices `rho±` satisfying
+A five-level finite-dimensional model satisfies
 
 \[
-\boxed{
 \langle H\rangle_+=\langle H\rangle_-,
 \quad
 \langle B(t)\rangle_+=\langle B(t)\rangle_-\;\forall t,
@@ -204,28 +107,7 @@ A finite-dimensional numerical search found a positive five-level Hamiltonian, p
 N_+(t,0)=N_-(t,0)\;\forall t,
 \quad
 D_+(t,0)\neq D_-(t,0).
-}
 \]
-
-Common mean energy in the chosen units: `3.4`.
-
-At one checked time near `t=3.26726`:
-
-\[
-N_+=N_-\approx0.803678,
-\]
-
-\[
-D_+\approx+0.535468,
-\qquad
-D_-\approx-0.535468.
-\]
-
-Reproducibility code: `analysis/search_balanced_ordered_kernel.py`.
-
-### Interpretation
-
-The Toy 003 mean-energy obstruction is **not universal**. Even matching mean energy, the entire one-point history of a source observable, and its reference-time symmetrized noise does not mathematically determine the commutator/retarded sector.
 
 Thus
 
@@ -233,43 +115,182 @@ Thus
 (\langle H\rangle,\langle B\rangle,N)\not\Rightarrow D.
 \]
 
-### Critical limitation
+But `B` was initially only an abstract positive source observable.
 
-`B` is not yet embedded as a covariantly conserved local/smeared stress-energy observable of a full relativistic source + control apparatus.
+### PE-1 / Toy 005 — exact Newtonian density-channel embedding
 
-Equality of global mean energy does not establish
+Files:
+
+- `docs/TOY_MODEL_005_NEWTONIAN_DENSITY_EMBEDDING.md`
+- `analysis/search_real_newtonian_embedding.py`
+
+Analytic embedding lemma:
+
+If
 
 \[
-\langle T_{\mu\nu}(x)\rangle_+=\langle T_{\mu\nu}(x)\rangle_-.
+B=V\operatorname{diag}(b_a)V^\dagger,
+\qquad b_a>0,
 \]
 
-This is now the main physical gate.
+use the eigenvectors as localized one-particle modes and choose their distances from a fixed Newtonian probe as
 
-## 13. Dimension-search observation
+\[
+r_a=L/b_a.
+\]
 
-Recorded numerical search:
+Then
 
-- `d=2`: no witness in 500 random trials;
-- `d=3`: no witness in 1500 random trials;
-- `d=4`: no witness in 5000 random trials;
-- `d=5`: witness found quickly for the recorded seed.
+\[
+\boxed{\Phi_p=-\frac{Gm}{L}B.}
+\]
 
-Do **not** call five the minimal dimension. This is numerical evidence only.
+A cleaner real five-level witness was found with
 
-Working conjecture `CONJ-RQIR-001`: under generic conditions used by the search, an independent ordered-response direction may require dimension at least five. Must be proved or falsified.
+\[
+H=\operatorname{diag}(1,2,3,4,6)
+\]
 
-## 14. Consistency gates
+and positive real-symmetric `B`, such that
 
-Current gates are in `docs/FOUNDATIONS.md`. Especially important now:
+\[
+\langle H\rangle_+=\langle H\rangle_-=3.2,
+\]
 
+\[
+\langle\Phi_p(t)\rangle_+=\langle\Phi_p(t)\rangle_-\;\forall t,
+\]
+
+\[
+N_{\Phi,+}(t,0)=N_{\Phi,-}(t,0)\;\forall t,
+\]
+
+while
+
+\[
+D_{\Phi,+}(t,0)\neq D_{\Phi,-}(t,0).
+\]
+
+Near `t≈3.58393` in dimensionless units,
+
+\[
+N_+=N_-\approx0.288837,
+\]
+
+\[
+D_+\approx+0.114476,
+\qquad
+D_-\approx-0.114476.
+\]
+
+This is the first exact physical **single-channel Newtonian** ordered-response split in RQIR.
+
+Critical limitation: local mode populations differ, so an independent second probe can generally distinguish the states at the mean-field level. Therefore Toy 005 is NP2, not NP4/NP5.
+
+### RQIR-NG-003 / Toy 006 — complete density-history tomography obstruction
+
+Files:
+
+- `docs/TOY_MODEL_006_DENSITY_HISTORY_TOMOGRAPHY_NO_GO.md`
+- `analysis/check_density_history_tomography.py`
+
+For a finite one-particle source with local projectors
+
+\[
+P_a(t)=e^{iHt}|a\rangle\langle a|e^{-iHt},
+\]
+
+assume:
+
+1. all positive Bohr gaps are distinct;
+2. every energy pair appears with nonzero amplitude in at least one local mode;
+3. `W_ai=|V_ia|^2` has rank `d`.
+
+Then
+
+\[
+\boxed{
+\operatorname{span}_{\mathbb R}\{P_a(t):a,t\}=\operatorname{Herm}(d).
+}
+\]
+
+Therefore
+
+\[
+\langle n_a(t)\rangle_+=\langle n_a(t)\rangle_-\;\forall a,t
+\Rightarrow
+\rho_+=\rho_-.
+\]
+
+So a distinct state pair with identical **complete** local-density history and different response is impossible in this generic regime.
+
+This is a conditional no-go, not a universal field-theory statement.
+
+## 6. New observability-rank principle
+
+The correct experimental null problem is finite-resolution, not infinite exact tomography.
+
+For calibrated observables/settings
+
+\[
+\mathcal M=\{M_\alpha\},
+\]
+
+define
+
+\[
+\mathcal S_M=\operatorname{span}_{\mathbb R}\{M_\alpha\},
+\]
+
+\[
+\boxed{r_{obs}=\dim\mathcal S_M.}
+\]
+
+The invisible Hermitian subspace is
+
+\[
+\mathcal N_{obs}=\mathcal S_M^\perp,
+\qquad
+\boxed{\dim\mathcal N_{obs}=d^2-r_{obs}.}
+\]
+
+Add the symmetrized-noise equality operators to the constraint span. A response witness exists exactly when at least one commutator/retarded operator has a nonzero projection into the remaining nullspace.
+
+This is now the central finite-mode experiment-design formulation.
+
+## 7. Why Toy 006 matters
+
+RQIR should match all source information actually calibrated by the declared experiment, but must not demand an idealized complete source history that already reconstructs the entire quantum state.
+
+The practical target lies between:
+
+- under-calibrated NP2, where classical mean-field confounds remain;
+- full informational completeness, where no distinct null-pair state remains at all.
+
+The design problem is to close nuisance directions while retaining a target ordered-response direction.
+
+## 8. Current external boundaries
+
+- Hu & Verdaguer: stochastic gravity contains both noise and dissipation/response through influence-functional/CTP structure, so matter response does not imply quantum geometry.
+- Howl et al. 2021: nonrelativistic quantized matter density takes the standard `m Psi† Psi` / fixed-particle delta-density form used by PE-1.
+- Aziz & Howl 2025: full-QFT matter can generate entanglement with classical gravity in suitable local models, so entanglement alone is not a unique quantum-gravity witness.
+- Yant & Blencowe 2026: current gravitational-entanglement modelling can be formulated directly in QFT with operational field observables, reinforcing RQIR's field/observable-first direction.
+- Czerwinski 2020: known dynamics plus repeated-time measurements can generate informationally complete quantum tomography, providing external context for RQIR-NG-003.
+
+## 9. Consistency gates to keep active
+
+Especially important now:
+
+- `G1` gauge/relational formulation;
 - `G2` full conservation/Bianchi embedding;
-- `G3b` valid quantum spectral/commutator structure;
-- `G4a` causal retarded support;
-- `G10/G10a` smearing and renormalized stress-tensor kernels;
-- `G12/G12a` classical/stochastic response degeneracy audit;
-- `G13` operational measurability.
+- `G3/G3b` positivity/unitarity/spectral identities;
+- `G4a` retarded causal support;
+- `G8` weak-field/Newtonian control;
+- `G10/G10a` smearing/renormalization for field stress tensor;
+- `G12/G12a` classical/stochastic/full-QFT degeneracy audit;
+- `G13` measurable detector transfer and sensitivity.
 
-## 15. Epistemic labels
+## 10. Epistemic labels
 
 - `DEF` definition/convention
 - `EST` established external result
@@ -278,57 +299,55 @@ Current gates are in `docs/FOUNDATIONS.md`. Especially important now:
 - `EMP` empirical constraint
 - `CONJ` conjecture
 - `OPEN` unresolved
-- `NEG` failed/excluded branch or negative result
+- `NEG` failed/excluded branch or conditional no-go
 
-Never promote `CONJ`, `OPEN`, `NUM` toy behavior, or a conditional no-go beyond its stated domain.
+Never promote a toy result or conditional no-go beyond its stated assumptions.
 
-## 16. Current repository structure
+## 11. Current repository core
 
-- `README.md` — project charter.
-- `docs/FOUNDATIONS.md` — current mathematical foundations v0.2.
-- `docs/MASTER_TABLE.md` — current operational channel/degeneracy table v0.2.
-- `docs/ORDERED_KERNEL_HIERARCHY.md` — ordered/CTP hierarchy.
-- `docs/TOY_MODEL_001_SAME_MEAN_DIFFERENT_VARIANCE.md`.
-- `docs/TOY_MODEL_002_PHASE_BLINDNESS_NO_GO.md`.
-- `docs/TOY_MODEL_003_SAME_NOISE_DIFFERENT_RESPONSE.md`.
-- `docs/TOY_MODEL_004_BALANCED_FIVE_LEVEL_ORDERED_KERNEL.md`.
-- `analysis/search_balanced_ordered_kernel.py` — reproducibility search code.
-- `docs/RECOVERY_GUIDE.md` — this document.
-- `research_log/` — dated chronology.
+- `README.md`
+- `docs/FOUNDATIONS.md`
+- `docs/MASTER_TABLE.md`
+- `docs/ORDERED_KERNEL_HIERARCHY.md`
+- `docs/TOY_MODEL_001_SAME_MEAN_DIFFERENT_VARIANCE.md`
+- `docs/TOY_MODEL_002_PHASE_BLINDNESS_NO_GO.md`
+- `docs/TOY_MODEL_003_SAME_NOISE_DIFFERENT_RESPONSE.md`
+- `docs/TOY_MODEL_004_BALANCED_FIVE_LEVEL_ORDERED_KERNEL.md`
+- `docs/TOY_MODEL_005_NEWTONIAN_DENSITY_EMBEDDING.md`
+- `docs/TOY_MODEL_006_DENSITY_HISTORY_TOMOGRAPHY_NO_GO.md`
+- `analysis/search_balanced_ordered_kernel.py`
+- `analysis/search_real_newtonian_embedding.py`
+- `analysis/check_density_history_tomography.py`
+- `research_log/` dated chronology
 
-## 17. Exact next research target
+## 12. Exact next target — Toy 007
 
-The next iteration must move from arbitrary finite-dimensional operator algebra toward **physical stress-energy structure**.
+**Finite multiprobe optimal nullspace design.**
 
-Priority:
-
-1. Search structured oscillator/atomic/molecular realizations for the Toy 004 ordered-kernel split.
-2. Require equality of the full relevant smeared mean stress-energy, not only global energy.
-3. Extend matching from `N(t,0)` to the required two-time domain `N(t,t')`.
-4. Derive a common probe transfer law
+1. Choose a physically realistic finite set of Newtonian probe locations and times.
+2. Build the equality-constraint operator span for calibrated means and symmetrized auto/cross-noise.
+3. Compute its rank and nullspace.
+4. Project candidate commutator/retarded operators onto that nullspace.
+5. Optimize probe geometry/timing to constrain ordinary mean/noise nuisance directions while retaining the largest measurable response direction.
+6. Derive the source-to-detector transfer law
 
 \[
-(\langle T\rangle,N,\chi^R)
-\to
-(\text{probe mean phase},\text{noise},\text{phase lag/response}).
+(\langle T\rangle,N_T,\chi_T^R)
+\rightarrow
+(\langle O_p\rangle,N_p,\chi_p^R).
 \]
 
-5. Fit this structure across semiclassical, stochastic, classical-gravity+full-QFT and perturbative-QG interface classes.
-6. Attempt proof/counterexample for the apparent low-dimensional obstruction.
-7. Begin Q4 perturbative-order/scaling comparison using Aziz–Howl versus perturbative quantum gravity.
+7. Only after this, estimate laboratory signal size and compare competing semiclassical/stochastic/classical-QFT/perturbative-QG fingerprints.
 
-## 18. Continuation protocol
+## 13. Continuation protocol
 
 At each substantive iteration:
 
-1. read this recovery guide;
-2. inspect the latest research log;
-3. state one exact unresolved target;
-4. perform analytic work before numerical complexity where possible;
-5. run all applicable consistency gates;
-6. preserve positive, negative and null results;
-7. update `MASTER_TABLE.md` when discriminants/degeneracies change;
-8. update this guide whenever project state or next target changes;
-9. add dated research log and reproducibility code for numerical claims.
-
-The repository, not chat history, is the authoritative project memory.
+1. read this guide and latest log;
+2. state one exact unresolved target;
+3. derive analytically before adding numerical complexity;
+4. run applicable consistency gates;
+5. preserve positive and negative results;
+6. record reproducibility code for numerical claims;
+7. update `MASTER_TABLE.md` and this guide when the project state changes;
+8. keep the repository, not chat history, as authoritative memory.
