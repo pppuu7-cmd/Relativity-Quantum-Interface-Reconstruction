@@ -1,6 +1,6 @@
 # RQIR Operational Master Table
 
-**Version:** 1.5  
+**Version:** 1.6  
 **Date:** 2026-08-29
 
 `OPEN` means the required comparison has not yet been demonstrated at RQIR precision.
@@ -9,7 +9,7 @@
 |---|---|---|---|---|
 | Q1 Quantum clocks | conditional phase, visibility, correlations | ordinary relativistic/control effects | profiled likelihood with explicit calibration | OPEN |
 | Q2 Superposed sources | potential/force/phase spectra | static density phase blindness; full history becomes tomography | finite NP3 multiprobe calibration + detector transfer | HIGH PRIORITY |
-| Q3 Backreaction/source rule | mean, symmetrized noise, retarded response | response can be projected away; hidden-state amplitude is not self-calibrating; low-rank systematics can destroy identifiability | joint source+calibration+detector Fisher with independent source/control metrology | HIGHEST PRIORITY |
+| Q3 Backreaction/source rule | mean, symmetrized noise, retarded response | response can be projected away; hidden-state amplitude is not self-calibrating; low-rank systematics can destroy identifiability | joint source+calibration+detector Fisher with independent source/control metrology and wall-clock resource accounting | HIGHEST PRIORITY |
 | Q4 Gravity-mediated QI | entanglement/non-Gaussianity/scaling | entanglement alone is not unique to quantized gravity | common detector likelihood across interface classes | HIGH PRIORITY |
 | Q5 Geometry fluctuations | noise/response spectra | matter, intrinsic-gravity and technical-noise degeneracies | joint N/chi/covariance fit | HIGH PRIORITY |
 | Q6 Causal/process | relational timing/process observables | control-system nonclassicality | gravity-dependent scaling with nuisance closure | OPEN |
@@ -75,6 +75,7 @@ Corrected 22D hard-constrained results:
 
 - old Iteration-013 D1 allocation retains only about `0.572`, not 90%; old D2 allocation about `0.481`;
 - corrected heterogeneous-allocation cost improvement at 90% is modest: about `x1.07` D1 and `x1.14` D2, not `x6.3/x4.6`;
+- corrected q=1 allocation: D1 `gamma_mean~1.722e6`, `gamma_cov~0.938e6`; D2 `gamma_mean~2.414e6`, `gamma_cov~0.929e6`;
 - the previous Iteration-014 statement that `rho=0.10` common-mode covariance made D2 about `2.13x` more expensive is withdrawn; corrected ratios are about `0.90` D1 and `0.91` D2 for that stress test;
 - corrected conservative first-order timing scales are about `9.5 us` D1 and `8.0 us` D2 at `f_gap=100 Hz`.
 
@@ -104,36 +105,60 @@ RQIR-DRIFT-001: purely multiplicative common gain is first-order suppressed at e
 
 ## Second-order nonlinear audit — Iteration 017
 
-Main file: `docs/SECOND_ORDER_NONLINEAR_BIAS_AUDIT.md`.
+Timing curvature is subdominant once first-order timing control is satisfied: current-prior quadratic timing bias is only `~3.49e-5 sigma_beta` D1 and `~8.75e-6 sigma_beta` D2.
 
-Timing curvature:
+RQIR-NL-001: current timing curvature is not the bottleneck.
 
-- `||A_tautau theta0||~0.1253` in current row-normalized coordinates;
-- at the Iteration-016 timing priors, quadratic timing bias is only `~3.49e-5 sigma_beta` for D1 and `~8.75e-6 sigma_beta` for D2;
-- the `0.1 sigma_beta` curvature threshold occurs only near `delta tau~0.319` D1 and `~0.538` D2, respectively about `53.5x` and `107x` the current first-order timing priors.
+Bilinear common-gain × source-state coupling has local posterior-scale RMS beta-bias coefficient about `0.325 |delta g|`. No global gain-only tolerance exists because contamination scales as `delta g * delta theta`.
 
-RQIR-NL-001: in the present local Toy009 likelihood, satisfying the first-order timing-control gate automatically suppresses finite timing curvature far below the statistical budget. Timing curvature is not the current bottleneck.
+RQIR-NL-002: first-order nulling converts standalone control requirements into product-resource requirements when nonlinear coupling is leading.
 
-Bilinear common-gain × source-state coupling:
+## Reference-channel and wall-clock layer — Iteration 018
 
-- local posterior-scale RMS beta-bias coefficient is about `0.325 |delta g|` for both detector branches;
-- a 1% common gain error is about `3.1e-3 sigma_beta` RMS under that local source-nuisance assumption;
-- there is no global gain-only tolerance because bias scales as `delta g * delta theta` for arbitrary residual source error.
+Main file: `docs/REFERENCE_CHANNEL_WALLCLOCK_RESOURCE_BUDGET.md`.
 
-RQIR-NL-002: a first-order null converts a standalone control requirement into a product-resource requirement with the nuisance amplitude to which it couples.
+At `f_gap=100 Hz`, the corrected timing priors map to:
 
-The gain×timing cross term at 1% gain and current timing priors is only about `2.3e-5 sigma_beta` D1 and `4.5e-5 sigma_beta` D2.
+- D1 `sigma_t~9.47 us`;
+- D2 `sigma_t~8.01 us`.
+
+For white time-jitter ASD integrated over bandwidth `B`, `J_t<=sigma_t/sqrt(B)`. At `1 kHz`, the bookkeeping limits are approximately `0.299 us/sqrtHz` D1 and `0.253 us/sqrtHz` D2. With four independent timing edges, per-edge RMS is approximately `4.73 us` D1 and `4.00 us` D2; correlated timing errors must remain explicit common-mode nuisances.
+
+The current `tau_max=4.99085067` imposes `T_coh,min~7.94 ms` at 100 Hz.
+
+**RQIR-RESOURCE-002:** required coherent evolution is a hard lower bound on physical shot duration for Fisher-per-second accounting.
+
+At detector SNR 5 with standardized `xi_mean=xi_cov=10`, corrected 90%-retention calibration resources correspond to about:
+
+- D1 `7.90e6` accepted-shot equivalents, lower wall-time bound `~17.4 h` at 100 Hz;
+- D2 `1.031e7`, lower bound `~22.7 h`.
+
+With `1 ms` extra dead time and `p_success=0.5`, these become approximately `39.3 h` and `51.2 h`. These remain scaling examples, not hardware forecasts.
+
+Preparation-amplitude benchmarks at SNR 5: 80% -> `C_a=100`, `sigma_a=0.10`; 90% -> `225`, `0.0667`; 95% -> `475`, `0.0459`.
+
+For the two-resource limit with detector Fisher rate `R_D` and independent preparation-metrology rate `R_P`, maximizing profiled `F/T` gives
+
+`x_D=sqrt(R_P)/(sqrt(R_D)+sqrt(R_P))`,
+
+`x_P=sqrt(R_D)/(sqrt(R_D)+sqrt(R_P))`,
+
+and optimal preparation-retention fraction
+
+`r*=sqrt(R_P)/(sqrt(R_D)+sqrt(R_P))`.
+
+**RQIR-RESOURCE-003:** wall-clock resource allocation follows a square-root Fisher-rate law in this two-resource limit. A fixed 90% preparation-retention constraint is wall-clock optimal only for `R_P/R_D=81`; fixed 80/90/95% tables are benchmark constraints, not universal optimal schedules.
+
+Iteration-017 gain mapping gives local reference SNR about `3.25`, `32.5`, `325` for gain×state bias budgets `0.1`, `0.01`, `0.001 sigma_beta`, respectively, under the local posterior-scale source-error assumption.
 
 ## Mandatory open consistency gates
 
 G1 gauge/relational; G2 conservation/Bianchi with apparatus; G3/G3b positivity/unitarity/spectral response; G4a causal retarded support; G8 controlled Newtonian limit; G9 EFT power counting; G10/G10a stress-energy smearing/renormalization; G12/G12a classical/stochastic/full-QFT degeneracy audit; G13 detector covariance/nuisance/measurability.
 
-## Priority ranking v1.5
+## Priority ranking v1.6
 
-1. **Physical clock/reference-channel budget:** translate Iteration-016 timing and additive-prior requirements plus Iteration-017 gain×state product requirement into D1 pulse-clock and D2 sampling/reference monitoring, including jitter PSD, shot-to-shot reset/repreparation error and dead time.
-2. **Wall-clock objective:** replace dimensionless calibration exposure by detector-level `F_beta|theta` per second using preparation/reset probability and measurement cycle times.
-3. **D1 physical shot model:** phase-shot variance, control contrast/bandwidth/dead time, preparation success and independent source metrology.
-4. **D2 physical PSD model:** thermal force, backaction, displacement imprecision; compare one-mode, dual-mode and tuned strategies.
-5. **Common D1/D2 resource budget:** one source mass, gap, coherence, separation and integration budget.
-6. **Interface-class fingerprints:** semiclassical, stochastic, classical-gravity+full-QFT and perturbative-QG alternatives through one likelihood.
-7. **Relativistic/full-stress embedding:** after detector/inference geometry stabilizes, close conservation, gauge and renormalization gates.
+1. **Branch-specific Fisher rates:** replace standardized `xi` by D1 phase-shot/contrast/four-switch/dead-time and D2 force-PSD/integration/duty-cycle models; assign explicit source-metrology rate.
+2. **Full wall-clock objective:** optimize detector + preparation + gravitational calibration + reference-control `F_beta|theta/T_wall`; use RQIR-RESOURCE-003 as the two-resource regression limit.
+3. **Common D1/D2 resource budget:** one source mass, gap, coherence, separation and integration budget.
+4. **Interface-class fingerprints:** semiclassical, stochastic, classical-gravity+full-QFT and perturbative-QG alternatives through one likelihood.
+5. **Relativistic/full-stress embedding:** after detector/inference geometry stabilizes, close conservation, gauge and renormalization gates.
