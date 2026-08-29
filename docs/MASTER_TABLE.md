@@ -1,6 +1,6 @@
 # RQIR Operational Master Table
 
-**Version:** 1.1  
+**Version:** 1.2  
 **Date:** 2026-08-29
 
 `OPEN` means the required comparison has not yet been demonstrated at RQIR precision.
@@ -91,14 +91,45 @@ At fixed likelihood and calibration operator set, resource-optimal calibration a
 
 There is no detector-independent optimal calibration schedule for the same source and NP3 observable set. Calibration cannot be finalized before detector branch and covariance are declared.
 
+## Correlated calibration covariance and drift — Iteration 014
+
+Main file: `docs/CORRELATED_CALIBRATION_COVARIANCE_AND_DRIFT.md`.
+
+Class-wise compound-symmetry covariance stress tests show detector-specific sensitivity to correlated calibration noise while holding marginal row variance fixed.
+
+At 90% retained detector information:
+
+- D1 cost ratios relative to uncorrelated are about `0.998`, `0.991`, `0.986` for `rho=0.01,0.05,0.10`.
+- D2 ratios are about `1.019`, `1.191`, `2.129` for the same correlations.
+
+### RQIR-CAL-006
+
+Correlation cannot be summarized by one scalar degradation factor. Its effect depends on alignment of calibration-covariance eigendirections with detector-relevant nuisance tangents. Moderate common correlation is nearly harmless for the current D1 design but materially costly for D2.
+
+Slow-drift derivative norms for the exact-null state in row-normalized coordinates:
+
+- second-probe position: `~2.91e-4`;
+- common source phase/time: `~2.56e-2`.
+
+With Iteration-013 q=1 allocations and a conservative 10%-of-statistical-sigma drift budget:
+
+- D1 `|delta tau| <~1.63e-2`;
+- D2 `|delta tau| <~9.63e-3`.
+
+At `f_gap=100 Hz`, these correspond to about `26 us` and `15 us` respectively.
+
+### RQIR-DRIFT-001
+
+Purely multiplicative common calibration gain is first-order suppressed at the exact null because `A theta0=0`. Geometry/time drift is not protected; additive offsets and second-order gain-state coupling remain open.
+
 ## Mandatory open consistency gates
 
 G1 gauge/relational; G2 conservation/Bianchi with apparatus; G3/G3b positivity/unitarity/spectral response; G4a causal retarded support; G8 controlled Newtonian limit; G9 EFT power counting; G10/G10a stress-energy smearing/renormalization; G12/G12a classical/stochastic/full-QFT degeneracy audit; G13 detector covariance/nuisance/measurability.
 
-## Priority ranking v1.1
+## Priority ranking v1.2
 
-1. **Correlated calibration covariance/drift:** add common-mode source/detector gain, position and slow drift nuisances; test whether Iteration-013 allocation gains survive non-diagonal covariance.
-2. **D1 physical time model:** phase-shot variance, contrast/dead time/timing jitter, preparation/reset success and independent source metrology.
+1. **Explicit low-rank drift nuisance:** replace fixed covariance stress test by finite-prior drift Fisher; add additive offsets and second-order gain-state coupling; determine prior/control information needed for 90% D1/D2 retention.
+2. **D1 timing/control budget:** pulse-clock jitter, finite bandwidth, contrast/dead time, preparation/reset success and independent source metrology.
 3. **D2 physical PSD model:** thermal force, backaction, displacement imprecision; compare one-mode, dual-mode and tuned strategies.
 4. **Common D1/D2 resource budget:** one source mass, gap, coherence, separation and integration budget.
 5. **Interface-class fingerprints:** semiclassical, stochastic, classical-gravity+full-QFT and perturbative-QG alternatives through one likelihood.
