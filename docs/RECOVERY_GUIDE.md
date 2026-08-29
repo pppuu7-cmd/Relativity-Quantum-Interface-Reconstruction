@@ -2,7 +2,7 @@
 
 **Last updated:** 2026-08-29  
 **Project:** Relativity–Quantum Interface Reconstruction (RQIR)  
-**Current operational framework:** v1.1
+**Current operational framework:** v1.2
 
 This file is the continuity backbone. The repository, not chat history, is authoritative project memory.
 
@@ -123,24 +123,45 @@ The optimum changes strongly with `q_c/q_m` and differs between D1 and D2. There
 
 RQIR-CAL-005: resource-optimal calibration allocates information according to downstream nuisance-projection leverage and per-shot information cost; equal precision on all calibration observables is generally not resource-optimal. Scope: finite-dimensional numerical design result.
 
-## 11. Mandatory open consistency gates
+## 11. Iteration 014 — correlated calibration covariance and drift
+
+Main file: `docs/CORRELATED_CALIBRATION_COVARIANCE_AND_DRIFT.md`. Code: `analysis/correlated_calibration_drift_iteration014.py`. Log: `research_log/2026-08-29_iteration_014_correlated_covariance_drift.md`.
+
+A class-wise compound-symmetry covariance stress test replaces diagonal mean/covariance noise by non-diagonal blocks while holding marginal row variance fixed.
+
+At 90% retained detector information and equal standardized per-shot class efficiency:
+
+- D1 optimized cost ratios relative to uncorrelated are about `0.998`, `0.991`, `0.986` for `rho=0.01,0.05,0.10` respectively. Moderate common correlation is nearly harmless because useful D1 information is substantially contrast-like.
+- D2 ratios are about `1.019`, `1.191`, `2.129` for the same correlations. D2 is materially more sensitive to common-mode correlation.
+
+RQIR-CAL-006: covariance correlation cannot be represented by a scalar degradation factor; its impact depends on the alignment of covariance eigendirections with detector-relevant nuisance tangents.
+
+For the exact-null source difference, row-normalized slow-drift derivative norms are approximately `||v_y||=2.91e-4` for second-probe position and `||v_tau||=2.56e-2` for common source phase/time. Timing drift is therefore the more important first-order control nuisance in the current normalized geometry.
+
+Using Iteration-013 q=1 allocations and requiring drift residuals below 10% of statistical calibration sigma gives approximately `|delta tau|<1.63e-2` for D1 and `<9.63e-3` for D2. Physical timing scales as `delta t=delta tau/(2 pi f_gap)`, e.g. about `26 us` (D1) and `15 us` (D2) at `f_gap=100 Hz`.
+
+RQIR-DRIFT-001: purely multiplicative common calibration gain is first-order suppressed in the exact-null difference channel because `d[g A theta]/dg=A theta0=0`. This does not protect geometry/time drift, additive offsets, or second-order gain-state products.
+
+## 12. Mandatory open consistency gates
 
 G1 gauge/relational observables; G2 source+apparatus conservation/Bianchi; G3/G3b positivity/unitarity/spectral response; G4a causal retarded support; G8 controlled Newtonian limit; G9 EFT power counting; G10/G10a stress-energy smearing/renormalization; G12/G12a classical/stochastic/full-QFT degeneracy audit; G13 detector covariance/nuisance/measurability.
 
-## 12. Current priority order
+## 13. Current priority order
 
-P1: add correlated/common-mode calibration drift and slow source/detector gain/position nuisance. Test whether Iteration-013 allocation gains survive non-diagonal `Sigma_C`.
+P1: promote drift to an explicit low-rank nuisance/Fisher model with finite priors; add additive offsets and second-order gain-state coupling. Determine the prior/control information required for 90% D1/D2 retention.
 
-P2: convert standardized `q_m,q_c` to D1 seconds using phase-shot variance, control contrast/dead time/timing jitter and source-preparation/reset probability.
+P2: convert the dimensionless phase/timing stability bounds to D1 pulse-clock and D2 sampling-clock budgets including jitter, dead time and reset/preparation failure.
 
-P3: convert D2 calibration/detection to force/displacement PSD with thermal force, backaction and imprecision, including multi-band strategy.
+P3: convert standardized `q_m,q_c` to D1 seconds using phase-shot variance, control contrast/dead time/timing jitter and source-preparation/reset probability.
 
-P4: common D1/D2 resource budget at one source mass, gap, coherence, separation and integration time.
+P4: convert D2 calibration/detection to force/displacement PSD with thermal force, backaction and imprecision, including multi-band strategy.
 
-P5: propagate semiclassical, stochastic, classical-gravity+full-QFT and perturbative-QG alternatives through the same likelihood.
+P5: common D1/D2 resource budget at one source mass, gap, coherence, separation and integration time.
 
-P6: after detector/inference geometry stabilizes, embed a more physical oscillator/atomic/full stress-energy source and close conservation/gauge/renormalization gates.
+P6: propagate semiclassical, stochastic, classical-gravity+full-QFT and perturbative-QG alternatives through the same likelihood.
 
-## 13. Continuation protocol
+P7: after detector/inference geometry stabilizes, embed a more physical oscillator/atomic/full stress-energy source and close conservation/gauge/renormalization gates.
+
+## 14. Continuation protocol
 
 At each substantive iteration: inspect repository state and latest log; avoid duplication; state one unresolved target; derive before numerical complexity; preserve negative results; save reproducibility code; update this guide and `MASTER_TABLE.md`; never promote toy-model or detector benchmarks to empirical new physics.
