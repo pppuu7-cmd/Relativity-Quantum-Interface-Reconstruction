@@ -1,228 +1,138 @@
 # RQIR Toy Model 011 — Local Nearest-Neighbor Source Embedding
 
 **Date:** 2026-08-29  
-**Iteration:** 052  
+**Iteration:** 053  
 **Status:** finite-dimensional locality-constrained source construction; not a hardware implementation and not a new-physics claim.
 
-## 1. Why this gate is necessary
+> Numbering note: Iteration 052 is the earlier QND Ramsey-ancilla Fisher-rate budget. Toy011 was developed concurrently and is canonically assigned to Iteration 053.
 
-Toy009 was optimized in an abstract five-level source space and then given a Newtonian radius operator. That was sufficient for the operational/nullspace programme, but it did not prove that the accepted source can be realized by a spatially local Hamiltonian.
+## 1. Motivation
 
-A source intended to represent a physical multiwell/multimode massive system should not silently require arbitrary long-range tunnelling between distant radius sites.
-
-Toy011 therefore imposes spatial locality directly on the source Hamiltonian.
+Toy009 is a valid operational finite-dimensional counterexample, but detector-aware optimization did not impose locality of the Hamiltonian in the physical radius/site basis. Toy011 asks whether the finite NP3 mean/noise null and ordered-response split survive when the source is required to have an exactly nearest-neighbour spatial Hamiltonian.
 
 ## 2. Locality audit of Toy009
 
 Use the Toy009 radii
 
-`(1.00000, 1.60090, 1.77911, 2.60901, 5.90724)`
+`(1.00000,1.60090,1.77911,2.60901,5.90724)`
 
-as eigenvalues of a radius/site operator `R`.
+as eigenvalues of the radius/site operator and transform the fixed spectrum Hamiltonian `H=diag(1,2,3,4,6)` to that basis.
 
-Transform the fixed energy Hamiltonian
+The site-basis Hamiltonian is dense:
 
-`H=diag(1,2,3,4,6)`
-
-into the sorted radius basis of Toy009.
-
-The resulting site-basis Hamiltonian is dense. Quantitatively,
-
-`boxed: 64.46%`
-
-of its off-diagonal Frobenius power lies outside nearest-neighbor couplings.
-
-Simply zeroing the non-nearest-neighbor matrix elements changes the Hamiltonian by
-
-`||Delta H||_F / ||H||_F ~= 0.36893`
-
-and shifts the spectrum from
-
-`(1,2,3,4,6)`
-
-to approximately
-
-`(1.335, 2.817, 3.430, 3.984, 4.434)`.
+- `64.46%` of off-diagonal Frobenius power is beyond nearest neighbours;
+- deleting all non-nearest-neighbour terms changes the full Hamiltonian by relative Frobenius `~0.36893`;
+- the truncated spectrum becomes approximately `(1.335,2.817,3.430,3.984,4.434)` instead of `(1,2,3,4,6)`.
 
 ### RQIR-NG-025 — post-hoc source-locality obstruction
 
-> A detector-aware finite-dimensional source that is valid algebraically need not correspond to a local spatial Hamiltonian when its probe/radius operator is interpreted physically. Locality must be imposed during source optimization rather than obtained by truncating long-range couplings afterward.
+A detector-aware abstract source need not represent a local spatial Hamiltonian. Locality must be imposed during source optimization rather than obtained by truncating long-range couplings after the fact.
 
-This does not invalidate Toy009 as an operational counterexample. It limits its interpretation as a literal local massive-source design.
+This does not invalidate Toy009 as an operational/statistical baseline; it limits a literal local-source interpretation.
 
-## 3. Exact-spectrum local chain construction
+## 3. Exact-spectrum local-chain construction
 
-Toy011 keeps the same five radii and exact spectrum `E=(1,2,3,4,6)` but replaces the dense radius-basis Hamiltonian by a Jacobi chain.
-
-Start from a positive cyclic spectral-weight vector `q0` and Lanczos-tridiagonalize `diag(E)`.
-
-This produces an orthogonal basis `Q(q0)` such that
+Toy011 keeps the same five radii and exact energy spectrum. Starting from a positive cyclic spectral-weight vector `q0`, Lanczos tridiagonalization of `diag(E)` produces an orthogonal basis `Q` for which
 
 `H_site = Q^T diag(E) Q`
 
-is exactly nearest-neighbor/tridiagonal while retaining the exact eigenvalues `E`.
+is exactly tridiagonal/nearest-neighbour, while the radius operator is diagonal in the site basis.
 
-The physical site/radius operator is diagonal by construction:
+The Newtonian probes remain
 
-`R_site=diag(r_1,...,r_5)`.
+`B(y)=Q diag(1/|r_i-y|) Q^T`.
 
-The Newtonian calibration probe is then
+Every scanned candidate therefore has simultaneously:
 
-`B(y)=Q diag(1/|r_i-y|) Q^T`
-
-in the energy basis.
-
-Thus every scanned source satisfies simultaneously:
-
-- exact five-level spectrum;
-- diagonal spatial/radius operator;
-- exact nearest-neighbor Hamiltonian in the radius basis;
-- the same finite NP3 calibration observable family.
+- exact spectrum `(1,2,3,4,6)`;
+- diagonal five-site radius operator;
+- exactly nearest-neighbour site Hamiltonian;
+- the same finite NP3 observable family.
 
 ## 4. Joint local-source/calibration scan
 
-A deterministic `12000`-trial scan with seed
+A deterministic `12000`-trial scan with seed `20260902` varies:
 
-`20260902`
-
-varies jointly:
-
-- the positive Lanczos spectral-weight vector `q0`;
-- second probe position `y1`;
+- local-chain spectral weights `q0`;
+- second probe location `y1`;
 - six nonzero calibration phases.
 
-The source and calibration geometry are therefore co-designed **inside the local-source manifold**, in the spirit of RQIR-DESIGN-001.
+Two Pareto-relevant candidates are retained.
 
-Two Pareto-relevant points are retained rather than declaring a single global optimum.
+### Response-oriented point — trial 6304
 
-## 5. Local response-oriented point
+`q0≈(0.331914,0.631771,0.260908,0.317702,0.567178)`
 
-Trial `6304`:
-
-`q0 ~= (0.331914, 0.631771, 0.260908, 0.317702, 0.567178)`.
-
-Calibration geometry:
-
-`y1 ~= -5.8641521`,
+`y1≈-5.8641521`
 
 phases
 
-`(0, 3.27041685, 3.75296867, 0.63489295, 2.05420608, 5.27344622, 4.02285984)`.
+`(0,3.27041685,3.75296867,0.63489295,2.05420608,5.27344622,4.02285984)`.
 
-Exact calibration properties:
+Results:
 
-- rank `24/25`;
-- `s_min ~= 9.92249e-4`;
-- condition number `~4701.83`;
-- positive hidden-pair states;
-- selected equality residual `<2e-16`.
+- exact rank `24/25`;
+- `s_min≈9.92249e-4`;
+- condition `≈4701.83`;
+- positive hidden states;
+- selected equality residual `<2e-16`;
+- selected mean and centered noise equal while ordered response changes sign.
 
-At the target phase the selected mean and centered noise agree exactly while the ordered response changes sign:
+Representative harmonics:
 
-`<B>_+ = <B>_- ~= 0.54785973`,
+- `H2≈-0.00551652-0.00091806i`;
+- `H4≈+0.00226998-0.00269397i`;
+- `G2≈-0.00788744-0.00161094i`;
+- `G4≈+0.00378474-0.00449166i`.
 
-`N_+ = N_- ~= -0.00156204`,
+Relative to practical Toy009/Iteration011 two-band source information, this point retains approximately:
 
-`D_+ ~= +0.00404741`,
+- D1 `S_eff`: `12.20%`;
+- D2 `S_eff`: `15.58%`.
 
-`D_- ~= -0.00404741`.
+### Conditioning-oriented point — trial 3811
 
-The local-chain two-band harmonics are nonzero:
+`q0≈(0.151268,0.598236,0.201050,0.409645,0.641095)`
 
-D1/potential-like:
-
-`H2 ~= -0.00551652 - 0.00091806 i`,
-
-`H4 ~= +0.00226998 - 0.00269397 i`.
-
-D2/gradient-like:
-
-`G2 ~= -0.00788744 - 0.00161094 i`,
-
-`G4 ~= +0.00378474 - 0.00449166 i`.
-
-Relative to the current practical Toy009/Iteration-011 two-band source proxy, this point retains approximately
-
-- `12.2%` of D1 `S_eff`;
-- `15.6%` of D2 `S_eff`.
-
-Thus locality is obtained without destroying the discriminator, but with a substantial detector-information penalty.
-
-## 6. Local conditioning-oriented point
-
-The composite conditioning/information score selects trial `3811`:
-
-`q0 ~= (0.151268, 0.598236, 0.201050, 0.409645, 0.641095)`.
-
-Calibration geometry:
-
-`y1 ~= -2.77703786`,
+`y1≈-2.77703786`
 
 phases
 
-`(0, 3.58229696, 2.69261425, 3.36881763, 1.53334798, 4.76982170, 1.05761912)`.
+`(0,3.58229696,2.69261425,3.36881763,1.53334798,4.76982170,1.05761912)`.
 
-It gives
+Results:
 
-- `s_min ~= 1.84219e-3`;
-- condition number `~2540.42`.
+- `s_min≈1.84219e-3`;
+- condition `≈2540.42`, close to practical Toy009 (`~2313`);
+- D1 `S_eff≈5.42%` of Toy009;
+- D2 `S_eff≈8.16%` of Toy009;
+- exact null, state positivity and ordered-response split remain intact.
 
-This is close to the practical Toy009 conditioning (`s_min~1.99954e-3`, condition `~2313`) while remaining exactly nearest-neighbor in the radius basis.
+## 5. Scientific result
 
-The price is a weaker two-band response:
+Toy011 establishes the finite-dimensional existence result
 
-- D1 `S_eff ~5.42%` of current Toy009;
-- D2 `S_eff ~8.16%` of current Toy009.
+`finite NP3 mean/noise equality + nonzero ordered-response split + exact nearest-neighbour spatial Hamiltonian`.
 
-Again, exact mean/noise equality, positive states and opposite ordered response survive.
+Thus the ordered-response discriminator is not intrinsically an artifact of Toy009's dense radius-basis Hamiltonian.
 
-## 7. Scientific result
+### RQIR-DESIGN-002 — locality belongs inside source/inference co-design
 
-Toy011 establishes a new positive existence statement:
+Locality is an active design constraint that competes with calibration conditioning and detector information. Physically meaningful optimization must therefore score locality, calibration geometry and detector Fisher together.
 
-`boxed: finite NP3 mean/noise equality + nonzero ordered-response split is compatible with an exactly local nearest-neighbor five-site source Hamiltonian.`
+## 6. What remains open
 
-Therefore the ordered-response discriminator found by RQIR is **not intrinsically dependent on the dense/nonlocal Toy009 Hamiltonian**.
+Toy011 is **not** yet promoted over Toy009. The current local Pareto points retain substantially less raw D1/D2 information. The next gate must recompute:
 
-However, the present local-source scan also finds a clear cost: the best sampled locality-constrained sources retain only a fraction of Toy009's detector information at comparable calibration conditioning.
+1. centered hard-constrained `F_beta|theta`;
+2. source-amplitude QFI and physically accessible energy/Ramsey metrology for the new hidden directions;
+3. absolute D1/D2 detector-rate penalty and resulting wall time.
 
-### RQIR-DESIGN-002 — locality belongs inside the source/inference co-design
+Normalized Fisher geometry and absolute detector sensitivity must be reported separately, because detector normalization can hide the locality-induced signal-rate penalty.
 
-> Source locality is an active design constraint that competes with detector information and calibration conditioning. A physically meaningful optimization must therefore include `(locality, calibration geometry, detector Fisher)` simultaneously rather than localizing an already optimized abstract source afterward.
+## 7. Reproducibility
 
-## 8. What is and is not closed
-
-Closed at finite-dimensional toy level:
-
-- exact nearest-neighbor spatial source exists;
-- exact spectrum retained;
-- exact finite NP3 null retained;
-- hidden states positive;
-- ordered-response discriminator nonzero;
-- practical conditioning can remain within order unity of Toy009.
-
-Still open:
-
-- recover more of the lost D1/D2 detector information inside the local manifold;
-- include centered finite-noise/profile Fisher rather than only exact null and two-band source proxy;
-- attach physical masses, trap/multiwell couplings and preparation times;
-- embed apparatus stress-energy and conservation;
-- extend beyond one-particle five-site mechanics.
-
-## 9. Reproducibility
-
-Code:
-
-`analysis/toy011_local_nearest_neighbor_source.py`
-
-The script reconstructs the Toy009 locality audit, builds exact-spectrum Jacobi chains, performs the deterministic joint source/calibration scan and verifies both retained Pareto points.
-
-## 10. Next gate
-
-The next useful calculation is to pass Toy011 through the same hard-constrained statistical-identifiability machinery used after Toy010:
-
-1. build centered calibration rows for the local response-oriented and conditioning-oriented points;
-2. recompute D1/D2 `F_beta|theta` and the hidden-amplitude/source-metrology requirement;
-3. determine whether the apparent ~6–16% two-band information retention translates into a tolerable wall-clock penalty or whether a broader local-source search is required.
-
-Only after that should Toy011 be promoted as the new physical-source baseline.
+- implementation: `analysis/toy011_local_nearest_neighbor_source.py`;
+- canonical numbered entry point: `analysis/toy011_local_nearest_neighbor_source_iteration053.py`;
+- research log: `research_log/2026-08-29_iteration_053_toy011_local_nearest_neighbor_source.md`;
+- recovery delta: `recovery/RECOVERY_DELTA_ITERATION_053.md`.
