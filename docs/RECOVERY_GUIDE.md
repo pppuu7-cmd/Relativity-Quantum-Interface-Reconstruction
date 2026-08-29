@@ -2,11 +2,11 @@
 
 **Last updated:** 2026-08-29  
 **Project:** Relativity–Quantum Interface Reconstruction (RQIR)  
-**Current operational framework:** v0.8
+**Current operational framework:** v0.9
 
-This file is the continuity backbone. A new session should be able to resume the project from this document plus the referenced files. The repository, not chat history, is authoritative project memory.
+This file is the continuity backbone. A new session should be able to resume from this document plus the referenced files. The repository, not chat history, is authoritative project memory.
 
-## 1. Objective and discipline
+## 1. Objective
 
 RQIR reconstructs the operational interface between relativity/gravity and quantum physics without assuming in advance that gravity is classical, stochastic, quantized, hybrid, emergent, or described by a preferred UV theory.
 
@@ -16,17 +16,17 @@ Central inverse problem:
 P_{data}(\mathbf o|\mathbf s)\Rightarrow[\mathfrak I].
 \]
 
-Rules:
+Core discipline:
 
 - observable first;
-- explicit baseline and domain;
+- baseline/domain explicit;
 - preserve operator ordering;
-- compare competing interface classes in one observable language;
 - retain negative/no-go results;
-- no “quantum gravity detected” claim until classical/stochastic/hybrid/full-QFT-matter alternatives are tested in the same regime;
+- compare competing interface classes in one likelihood language;
+- source response is not detector observability;
+- exact nulls are not statistical identifiability;
 - every numerical claim gets reproducibility code;
-- exact algebraic nulls are not confused with statistical identifiability;
-- source-side response is not confused with detector-level observability.
+- no fundamental/new-physics claim until classical/stochastic/full-QFT/hybrid alternatives and relativistic consistency gates are closed.
 
 ## 2. Ordered source hierarchy
 
@@ -52,6 +52,8 @@ Parent source object:
 Z_T[J_+,J_-]=Tr(U[J_+]\rho_TU[J_-]^\dagger).
 \]
 
+Do not merge different operator orderings without an explicit identity/limit.
+
 ## 3. Working channels
 
 - `Q1` quantum clocks / proper time;
@@ -62,6 +64,8 @@ Z_T[J_+,J_-]=Tr(U[J_+]\rho_TU[J_-]^\dagger).
 - `Q6` causal/process structure;
 - `Q7` low-energy quantum-gravity EFT.
 
+Current highest priority remains Q3 with Q2/Q5/Q4 cross-checks.
+
 ## 4. Null-pair grades
 
 - **NP0:** equal global scalar only;
@@ -71,11 +75,11 @@ Z_T[J_+,J_-]=Tr(U[J_+]\rho_TU[J_-]^\dagger).
 - **NP4:** equal complete relevant smeared stress-energy mean/noise over a declared domain;
 - **NP5:** NP4 plus source/apparatus stress-energy, conservation, gauge/relational and relativistic controls.
 
-Current strongest exact positive construction: **Toy 007 = finite NP3**.
+Current strongest exact positive construction: **Toy 009 = finite NP3**, improving Toy 007.
 
 NP grade is not experimental significance.
 
-## 5. Result chain
+## 5. Result chain to preserve
 
 ### Toy 001 — same mean, different variance
 
@@ -89,35 +93,27 @@ For orthogonal nonoverlapping mass branches with density-diagonal static couplin
 
 A qubit can have equal density mean/noise and opposite ordered response, but the same state direction changes mean generator energy.
 
-### Toy 004 — balanced five-level algebraic witness
+### Toy 004 — balanced five-level witness
 
 \[
 (\langle H\rangle,\langle B\rangle,N_B)\not\Rightarrow D_B.
 \]
 
-File: `docs/TOY_MODEL_004_BALANCED_FIVE_LEVEL_ORDERED_KERNEL.md`.
-
 ### PE-1 / Toy 005 — exact Newtonian one-channel embedding
 
-For positive finite-dimensional
+For positive finite-dimensional `B=V diag(b_a)V^dagger`, choose localized one-particle modes at
 
 \[
-B=V\,diag(b_a)V^\dagger,
+r_a=L/b_a,
 \]
 
-choose localized one-particle modes at
+so
 
 \[
-r_a=L/b_a.
+\Phi_p=-\frac{Gm}{L}B.
 \]
 
-Then
-
-\[
-\boxed{\Phi_p=-\frac{Gm}{L}B.}
-\]
-
-Toy 005 therefore embeds the ordered-kernel split into a physical weak-field potential channel. It remains NP2 because other spatial density combinations differ.
+Toy 005 is NP2 because other density combinations differ.
 
 ### RQIR-NG-003 / Toy 006 — complete density-history tomography
 
@@ -127,45 +123,21 @@ Under sufficient generic finite-mode conditions,
 span_R\{P_a(t)\}=Herm(d),
 \]
 
-so complete local-density history equality implies
+so complete local-density history equality implies identical states. Exact full tomography is too strong for a distinct-state response-only null pair.
+
+### Toy 007 — first finite NP3
+
+Two-probe finite calibration gave
 
 \[
-\rho_+=\rho_-.
-\]
-
-Exact full tomography is too strong for a distinct-state response-only null pair.
-
-### Toy 007 — finite multiprobe NP3
-
-Source positions:
-
-\[
-x_a\approx(5.53112,2.21089,1.44295,1.27948,1.00000).
-\]
-
-Two-probe finite calibration gives
-
-\[
-\boxed{r_{obs}=24/25},
+r_{obs}=24/25,
 \qquad
-\boxed{\eta_R\approx0.457682}.
+\eta_R\approx0.457682,
 \]
 
-At target time
+with equal selected potential mean/noise and opposite target response.
 
-\[
-t_R\approx3.583928899,
-\]
-
-selected potential mean and symmetrized noise are equal while
-
-\[
-D_{00,+}\approx-0.01056563,
-\qquad
-D_{00,-}\approx+0.01056563.
-\]
-
-Critical weakness:
+Weakness:
 
 \[
 s_{min}\approx1.463\times10^{-3},
@@ -175,15 +147,11 @@ s_{min}\approx1.463\times10^{-3},
 
 ### RQIR-NG-004 — exact-null saturation
 
-If exact calibration has rank `p-1` and one-dimensional nullspace, one additional exact independent row removes the nonzero exact state-difference null direction.
+If exact calibration has a one-dimensional nullspace, one additional independent exact row removes the nonzero exact state-difference null direction. Scope: exact null-pair geometry only.
 
-Scope: exact null-pair construction only.
+### Toy 008 — soft-nullspace / Fisher transition
 
-### Toy 008 — soft-nullspace transition
-
-Reproducible 300-design scan showed, within the tested design family, that nullity `3–5` can give larger response survival and better conditioning than forcing nullity `1`.
-
-This motivated moving from exact null geometry to likelihood/Fisher geometry.
+A reproducible design scan showed that forcing nullity one is not automatically optimal for response survival plus conditioning. This motivated statistical identifiability as the main experiment-design language.
 
 ## 6. Statistical identifiability core
 
@@ -205,23 +173,23 @@ After whitening,
 \boxed{F_{\beta|\theta}=\|(I-P_J)\tilde s\|^2.}
 \]
 
-Only the whitened detector signal component outside the nuisance tangent span is locally identifiable.
+Only detector signal outside the nuisance tangent span is locally identifiable.
 
 ### RQIR-CAL-001 — calibration monotonicity
 
-Independent `beta`-blind calibration adds positive semidefinite nuisance information and, under the declared regularity assumptions,
+Independent `beta`-blind calibration adds nuisance information and, under the declared regularity assumptions,
 
 \[
 \boxed{F'_{\beta|\theta}\ge F_{\beta|\theta}.}
 \]
 
-Thus additional exact constraints can kill a constructed null pair while additional noisy independent calibration can improve real inference.
+Thus more exact constraints can kill a constructed null pair while more noisy independent calibration can improve real inference.
 
-## 7. Transfer Layer 001 — source → gravity → detector
+## 7. Transfer layer
 
 File: `docs/LINEAR_RESPONSE_TRANSFER.md`.
 
-Bare Newtonian density-to-potential kernel:
+Bare Newtonian kernel:
 
 \[
 R_G(k)=-4\pi G/k^2.
@@ -230,372 +198,339 @@ R_G(k)=-4\pi G/k^2.
 Dressed source-to-potential response:
 
 \[
-\boxed{
-\mathcal R_{\Phi\rho}^R
-=[I-R_G\sigma_\chi\chi_\rho^R]^{-1}R_G.
-}
+\mathcal R_{\Phi\rho}^R=[I-R_G\sigma_\chi\chi_\rho^R]^{-1}R_G.
 \]
 
-Detector response/noise:
+Detector:
 
 \[
-\mathcal R_{D\rho}^R=R_D^R*\mathcal R_{\Phi\rho}^R,
+\mathcal R_{D\rho}^R=R_D^R*\mathcal R_{\Phi\rho}^R.
 \]
+
+Detector covariance/noise must be propagated before interpreting a source-side `D/chi^R` split.
+
+## 8. Protocol 002 — two-band profiled likelihood
+
+Current discriminator uses two response harmonics. After full detector transfer and whitening,
 
 \[
-N_D^{obs}=R_D^R*N_\Phi*R_D^A+N_D.
+P_n=|s_n|^2/\sigma_n^2.
 \]
 
-Source-side `D/chi^R != 0` is not yet an observable gravitational discriminator.
-
-## 8. Protocol 002 — two-harmonic profiled detector likelihood
-
-Dominant potential-response harmonics:
-
-\[
-H_2\approx-2.71833\times10^{-4}-i7.66139\times10^{-3},
-\]
-
-\[
-H_4\approx1.20943\times10^{-3}-i9.06108\times10^{-3}.
-\]
-
-\[
-H_{24}\approx1.19305\times10^{-2},
-\qquad
-\kappa_B\approx0.174201,
-\]
-
-\[
-1-\kappa_B^2\approx0.969654.
-\]
-
-With response information `S`, static common-amplitude calibration `C`, and free relative spectral-tilt nuisance,
-
-\[
-\boxed{
-F_{\beta|\theta}
-=\frac{S(1-\kappa_B^2)C}{S(1-\kappa_B^2)+C}.
-}
-\]
-
-One harmonic alone is degenerate with the free tilt nuisance; two harmonics break that degeneracy.
-
-Colored detector law:
+For a free antisymmetric spectral-tilt nuisance,
 
 \[
 \boxed{S_{eff}=\frac{4P_2P_4}{P_2+P_4}.}
 \]
 
-If one whitened band is lost, the two-band shape discriminator vanishes.
+If one band is lost, the shape discriminator vanishes.
 
-## 9. Protocol 002B — original physical phase scale
-
-Original ideal-window scaling:
+With independent static amplitude calibration information `C`,
 
 \[
-\Gamma_G=\frac{Gm_sm_pT_D}{\hbar L_0},
+\boxed{F_{\beta|\theta}=\frac{S_{eff}C}{S_{eff}+C}.}
 \]
 
-\[
-\Delta\varphi_n=2\alpha\Gamma_GH_n.
-\]
+## 9. Detector branches
 
-Under `alpha=0.1`, `sigma_phi=1 mrad`, `L0=10 um`, `T=1 s`, the ideal matched-readout five-sigma illustration was
+### D1 — matter-wave phase
 
-\[
-m_sm_p\gtrsim3.36\times10^{-29}\,kg^2
-\]
-
-or equal mass
+General phase response:
 
 \[
-m\gtrsim5.8\times10^{-15}\,kg.
-\]
-
-**Important correction from Iteration 008:** this is an ideal harmonic-transfer benchmark, not the result of passive uniform phase integration.
-
-## 10. Detector Branch Comparison 001 — D1 vs D2
-
-Main file: `docs/DETECTOR_BRANCH_D1_D2_COMPARISON.md`.  
-Code: `analysis/detector_branch_d1_d2.py`.  
-Log: `research_log/2026-08-29_iteration_008_detector_branches.md`.
-
-### 10.1 D1 — matter-wave phase
-
-General sensitivity-window response:
-
-\[
-\boxed{
 \Delta\varphi_n
-=2\alpha\frac{Gm_sm_pT_D}{\hbar L_0}
-H_n\mathcal W_n.
-}
+=2\alpha\frac{Gm_sm_pT_D}{\hbar L_0}H_nW_n.
 \]
 
-#### RQIR-D1-001 — full-period window cancellation
+`RQIR-D1-001`: uniform integration over an integer number of complete source periods cancels the nonzero harmonics (`W_2=W_4=0`). Deliberate lock-in/echo sensitivity engineering is required.
 
-For uniform phase accumulation over exactly one complete source period,
+Toy 007 eight-switch bounded sequence gave the revised five-sigma illustration
 
 \[
-\mathcal W_2=\mathcal W_4=0.
+m_sm_p\sim8.1\times10^{-29}\,kg^2
 \]
 
-So a passive full-period interferometer cancels both chosen AC harmonics.
+or equal mass around `9e-15 kg` under the stated idealized noise/geometry assumptions.
 
-A simple bounded proof-of-principle lock-in
+`RQIR-D1-002`: finite switching bandwidth is less severe than repeated contrast loss; if each switch multiplies signal amplitude by `c`, Fisher scales as `c^(2N_sw)`.
 
-\[
-g(\tau)=sign[\cos2\tau+\lambda\cos4\tau]
-\]
-
-with
+### D2 — mechanical force
 
 \[
-\lambda\approx1.046
-\]
-
-gives
-
-\[
-|\mathcal W_2|\approx0.4402,
-\qquad
-|\mathcal W_4|\approx0.3851.
-\]
-
-It retains about
-
-\[
-17.2\%
-\]
-
-of ideal two-band Fisher information, or
-
-\[
-41.5\%
-\]
-
-of ideal SNR amplitude.
-
-Revised five-sigma illustration under the same assumptions:
-
-\[
-\boxed{m_sm_p\gtrsim8.1\times10^{-29}\,kg^2,}
-\]
-
-with equal-mass illustration
-
-\[
-\boxed{m\gtrsim9.0\times10^{-15}\,kg.}
-\]
-
-This is still far above the current free-particle matter-wave mass record.
-
-### 10.2 D2 — mechanical force/acceleration
-
-Gradient readout operator:
-
-\[
-G_0=\left.\partial_yB(y)\right|_{0}
-=\sum_a x_a^{-2}n_a.
-\]
-
-Same-source cross-response harmonics:
-
-\[
-\boxed{
-G_2\approx-6.78211\times10^{-4}-i1.14277\times10^{-2},
-}
-\]
-
-\[
-\boxed{
-G_4\approx1.41626\times10^{-3}-i1.06107\times10^{-2}.
-}
-\]
-
-Two-band norm:
-
-\[
-\boxed{G_{24}\approx1.56731\times10^{-2},}
-\]
-
-which is about `1.314` times the D1 source norm.
-
-Spectral balance:
-
-\[
-\boxed{\kappa_G\approx-0.06701,}
-\]
-
-\[
-\boxed{1-\kappa_G^2\approx0.99551.}
-\]
-
-Thus the D2 gradient response is intrinsically very robust against the same relative spectral-tilt nuisance.
-
-Physical force harmonics:
-
-\[
-\boxed{
 \Delta F_n=2\alpha\frac{Gm_sm_p}{L_0^2}G_n.
-}
 \]
 
-For mechanical susceptibility `chi_m`, define equivalent-force noise
+Equivalent force noise:
+
+\[
+S_F^{eq}=S_F^{th}+S_x^{imp}/|\chi_m|^2.
+\]
+
+`RQIR-D2-001`: at a true force-noise floor, resonance amplifies both signal and displacement noise, so susceptibility does not provide free force-domain Fisher gain.
+
+Toy 007 optimistic `1e-21 N/sqrt(Hz)` benchmark required approximately
+
+\[
+2.40\times10^{-18}\,kg^2.
+\]
+
+D1 remains the stronger absolute-sensitivity branch for the current micrometre geometry; D2 remains much more technologically mature but far from the required force scale.
+
+## 10. Toy 009 — detector-aware source redesign
+
+Main file: `docs/TOY_MODEL_009_DETECTOR_AWARE_SOURCE_OPTIMIZATION.md`.
+
+### 10.1 Negative detector-only candidate
+
+A deterministic NP2 scan (seed `20260829`, 5000 trials) found trial `2641` with apparent ideal two-band gains
+
+\[
+S_{eff}^{D1}:\times5.3625,
+\qquad
+S_{eff}^{D2}:\times4.1741.
+\]
+
+But applying the inherited Toy 007 NP3 calibration gives
+
+\[
+\eta_R\approx0.02990,
+\]
+
+\[
+s_{min}\approx2.61\times10^{-4},
+\qquad
+\kappa_A\approx1.75\times10^4.
+\]
+
+This is retained as a `NEG/NUM` result: detector-only source optimization is unsafe because calibration can project away the gain.
+
+### 10.2 Accepted NP3 candidate
+
+Second deterministic scan: seed `314159`, 5000 trials, fixed Toy 007 calibration pattern. Acceptance required
+
+\[
+\eta_R\ge\eta_R^{007},
+\qquad
+s_{min}\ge s_{min}^{007}.
+\]
+
+Only one scanned candidate passes both guards: trial `811`.
+
+Toy 009 radii:
+
+\[
+\boxed{(1.00000,1.60090,1.77911,2.60901,5.90724).}
+\]
+
+The fixed calibration remains rank `24/25`.
+
+Positive state eigenvalues:
+
+- rho+ approximately `(0.12000,0.17296,0.19541,0.24624,0.26539)`;
+- rho- approximately `(0.13461,0.15376,0.20459,0.22704,0.28000)`.
+
+Selected equality residuals are below `6e-16`.
+
+At the inherited target time:
+
+\[
+\langle B_0\rangle_+=\langle B_0\rangle_-
+\approx0.547860,
+\]
+
+\[
+N_{00,+}=N_{00,-}\approx0.0132606,
+\]
+
+but
+
+\[
+\boxed{D_{00,+}\approx-0.0120850,}
+\]
+
+\[
+\boxed{D_{00,-}\approx+0.0120850.}
+\]
+
+Calibration geometry:
+
+\[
+\boxed{\eta_R\approx0.568823,}
+\]
+
+\[
+\boxed{s_{min}\approx1.5122\times10^{-3},}
+\]
+
+\[
+\boxed{\kappa_A\approx3.03\times10^3.}
+\]
+
+Relative detector-source information:
+
+\[
+\boxed{S_{eff}^{D1}:\times1.22184,}
+\]
+
+\[
+\boxed{S_{eff}^{D2}:\times1.40358.}
+\]
+
+This is the first simultaneous Pareto improvement over Toy 007 in D1, D2, response survival and conditioning.
+
+## 11. Toy 009 D1 low-switch control
+
+Toy 009 potential harmonics:
+
+\[
+H_2\approx-0.00167587+i0.00792491,
+\]
+
+\[
+H_4\approx0.00434188+i0.00995421.
+\]
+
+### Four switches
+
+A pi-periodic four-switch sequence with positive interval
+
+\[
+a\approx0.912594
+\]
+
+per half-period gives
+
+\[
+|W_2|\approx0.50363,
+\qquad
+|W_4|\approx0.30807,
+\]
+
+and
+
+\[
+\boxed{F_{009,4sw}\approx1.12746F_{007,8sw}.}
+\]
+
+### Six switches
+
+Accepted interval vector:
+
+`(0.26890,0.92358,1.02555,2.11605,1.02554,0.92358)`.
+
+\[
+|W_2|\approx0.45974,
+\qquad
+|W_4|\approx0.36382,
+\]
+
+\[
+\boxed{F_{009,6sw}\approx1.23731F_{007,8sw}.}
+\]
+
+Thus the new source produces more two-band Fisher information with fewer hard switches.
+
+Illustrative D1 mass-product scales under the previous assumptions:
+
+- four switches: `~7.63e-29 kg^2`, equal mass `~8.73e-15 kg`;
+- six switches: `~7.28e-29 kg^2`, equal mass `~8.53e-15 kg`.
+
+Toy 009 D2 rescales the same optimistic force benchmark to `~2.03e-18 kg^2`.
+
+These are scaling illustrations, not implementation forecasts.
+
+## 12. New design principle
+
+### RQIR-DESIGN-001 — optimize source and inference geometry jointly
+
+Correct design ordering:
 
 \[
 \boxed{
-S_F^{eq}=S_F^{th}+S_x^{imp}/|\chi_m|^2.
+\text{source}
+\to
+\text{calibration/null or Fisher geometry}
+\to
+\text{gravity transfer}
+\to
+\text{detector window/noise}
+\to
+F_{\beta|\theta}.
 }
 \]
 
-Then
+Large upstream response gain is not accepted until it survives every downstream projection.
 
-\[
-P_n^{D2}\propto|\Delta F_n|^2T/S_{F,n}^{eq}.
-\]
+## 13. External-method boundary
 
-#### RQIR-D2-001 — resonance-gain cancellation at force-noise floor
+Time-dependent lock-in/dynamical-decoupling sensitivity engineering is established quantum-sensing methodology. Recent continuous phased dynamical-decoupling work (PRL 134, 120802, 2025) shows that AC quantum sensing can use continuous control with discrete phase changes rather than only ideal instantaneous pulses.
 
-If physical force noise dominates, mechanical susceptibility multiplies both displacement signal and displacement noise and cancels from force-domain Fisher information. Resonance helps mainly against displacement imprecision, not against a true force-noise floor.
+RQIR does not claim this control method as new physics. The RQIR-specific contribution is applying joint source/calibration/gravity/detector optimization to the ordered gravity-interface discriminator.
 
-At an optimistic detector-agnostic
+## 14. Current consistency gates
 
-\[
-S_F^{1/2}=10^{-21}\,N/\sqrt{Hz}
-\]
-
-benchmark with `alpha=0.1`, `L0=10 um`, `T=1 s`, five sigma requires
-
-\[
-\boxed{m_sm_p\gtrsim2.40\times10^{-18}\,kg^2.}
-\]
-
-This is about
-
-\[
-\boxed{3\times10^{10}}
-\]
-
-times the revised D1 mass-product benchmark.
-
-Not a universal no-go: D2 can use a much larger detector mass and different geometry, and better force PSD/integration can change the balance.
-
-## 11. Current empirical boundary
-
-Latest external anchors checked in Iteration 008:
-
-- Pedalino et al., *Nature* 649, 866–870 (2026), DOI `10.1038/s41586-025-09917-9`: matter-wave interference of sodium nanoparticles above 170 kDa.
-- Skrabulis et al., *PRL* 136, 233604 (2026), DOI `10.1103/9wzm-3qyb`: optically levitated impulse sensing below the zero-point momentum scale.
-- Kamba et al., *PRL* 137, 050801 (2026), DOI `10.1103/js43-kq48`: levitated nano-accelerometer with approximately two orders sensitivity enhancement from trap quench.
-- Wang et al., *PRL* 135, 120803 (2025), DOI `10.1103/z8b4-sm79`: proposed levitated mesoscopic gravity sensing.
-- Ranjit et al., *PRA* 93, 053801 (2016), DOI `10.1103/PhysRevA.93.053801`: zeptonewton-scale levitated force sensing over long integration.
-
-None implements RQIR.
-
-## 12. Current detector ranking v0.8
-
-### D1 matter-wave phase
-
-**Pros**
-
-- much stronger absolute gravitational-information scaling for the present micrometre source;
-- directly senses potential;
-- two-band nuisance breaking survives with designed modulation.
-
-**Cons**
-
-- passive full-period integration cancels the desired AC signal;
-- needs finite-pulse lock-in/echo style sensitivity engineering;
-- coherent source/probe mass requirement remains enormously beyond current free-particle interference masses.
-
-### D2 mechanical force/acceleration
-
-**Pros**
-
-- current Toy 007 gradient response norm is 31% larger than the potential norm;
-- two main bands are nearly ideally balanced;
-- detector need not itself be a massive matter-wave superposition;
-- mature mechanical sensing tools exist.
-
-**Cons**
-
-- absolute gravitational force/acceleration is extremely small;
-- even an optimistic zN/sqrtHz force floor leaves a huge mass-product gap;
-- a single narrow resonance can lose one of the two crucial bands.
-
-### Conditional conclusion
-
-For the **present** Toy 007 source and micrometre geometry, D1 is the stronger theoretical sensitivity route. D2 is more technologically mature but much farther away in absolute force sensitivity.
-
-This ranking is conditional, not universal.
-
-## 13. Current consistency gates
-
-Still especially important:
+Still open and mandatory before any fundamental claim:
 
 - `G1` gauge/relational observables;
-- `G2` conservation/Bianchi embedding;
-- `G3/G3b` positivity/unitarity/spectral response;
+- `G2` full source+apparatus conservation/Bianchi embedding;
+- `G3/G3b` positivity/unitarity/spectral response consistency;
 - `G4a` causal retarded support;
 - `G8` controlled Newtonian limit;
-- `G9` EFT validity;
+- `G9` EFT power counting;
 - `G10/G10a` stress-energy smearing/renormalization;
 - `G12/G12a` classical/stochastic/full-QFT degeneracy audit;
-- `G13` detector-level measurability, covariance and nuisance profiling.
+- `G13` detector-level covariance, nuisance profiling and measurability.
 
-## 14. Continuation-critical files
+## 15. Current core files
 
 - `docs/MASTER_TABLE.md`
 - `docs/STATISTICAL_IDENTIFIABILITY.md`
 - `docs/LINEAR_RESPONSE_TRANSFER.md`
-- `docs/PROBE_PROTOCOL_002_TWO_HARMONIC_PROFILED_FISHER.md`
-- `docs/PROBE_PROTOCOL_002B_PHYSICAL_SCALING.md`
-- `docs/PROBE_PROTOCOL_002C_COLORED_TWO_HARMONIC_DESIGN.md`
 - `docs/DETECTOR_BRANCH_D1_D2_COMPARISON.md`
-- `analysis/toy007_finite_multiprobe_design.py`
-- `analysis/rank_conditioning_scan.py`
-- `analysis/protocol002_response_spectrum.py`
-- `analysis/protocol002_profiled_fisher.py`
-- `analysis/protocol002b_physical_scaling.py`
-- `analysis/detector_branch_d1_d2.py`
-- `research_log/2026-08-29_iteration_008_detector_branches.md`
+- `docs/D1_FINITE_BANDWIDTH_CONTROL.md`
+- `docs/TOY_MODEL_009_DETECTOR_AWARE_SOURCE_OPTIMIZATION.md`
+- `analysis/toy009_detector_aware_source_search.py`
+- `analysis/d1_low_switch_toy009.py`
+- `research_log/2026-08-29_iteration_010_toy009_detector_aware_source.md`
 
-## 15. Exact next research target
+Earlier toy-model and protocol files remain part of the chain and should not be deleted.
 
-### P1 — realizable D1 finite-pulse sequence
+## 16. Exact next research target
 
-Replace instantaneous bang-bang switching with finite pulses/path switching; include contrast loss, dead time, phase cycling and timing jitter. Optimize two-band `P2,P4` rather than ideal source amplitudes.
+### P1 — joint Toy 009 calibration-geometry optimization
 
-### P2 — realistic D2 noise model
+Vary second-probe location and calibration times together with the source. Replace the inherited Toy 007 settings by an objective based on detector-level profiled Fisher while preserving state positivity and declared geometry guards.
 
-Build thermal force, backaction and displacement-imprecision PSD. Compare one-mode, dual-mode and sequentially tuned two-band sensing.
+### P2 — continuous D1 sensitivity
 
-### P3 — source geometry co-optimization
+Compare four/six hard switches against continuous/phase-modulated sensitivity functions under the same bandwidth, contrast, dead-time and timing-jitter budget.
 
-Toy 007 geometry was inherited from potential calibration and was not optimized jointly for D1/D2 detector Fisher information. Re-optimize site/probe geometry for actual detector-level `F_beta|theta`.
+### P3 — realistic D2 covariance
 
-### P4 — common coherence/resource budget
+Add thermal force, backaction and displacement-imprecision PSD; evaluate actual two-band whitened `P2,P4` rather than detector-agnostic force floors.
 
-Compare D1 and D2 using one declared source mass, energy-gap scale, coherence time, separation and integration budget.
+### P4 — common resource budget
+
+Compare D1/D2 at one declared source mass, gap scale, coherence time, separation and integration time.
 
 ### P5 — interface-class fingerprints
 
-After detector models stabilize, propagate semiclassical, stochastic, classical-gravity+full-QFT and perturbative-QG alternatives through the same likelihood.
+Propagate semiclassical, stochastic, classical-gravity+full-QFT and perturbative-QG alternatives through the same detector likelihood.
 
-### P6 — full relativistic stress-energy embedding
+### P6 — relativistic/full-stress embedding
 
-Before any fundamental claim, close source+apparatus conservation, gauge/relational and stress-tensor renormalization gates.
+Only after detector/inference geometry stabilizes, embed a more physical oscillator/atomic source and close source+apparatus stress-energy, conservation, gauge and renormalization gates.
 
-## 16. Continuation protocol
+## 17. Continuation protocol
 
 At each substantive iteration:
 
 1. read this guide and the latest research log;
-2. state the exact open target;
-3. derive analytically before adding numerical complexity;
-4. preserve negative/correction results rather than hiding them;
-5. save reproducibility code for every numerical claim;
-6. update `MASTER_TABLE.md` and this file when the project state changes;
-7. never promote a toy-model or detector benchmark to empirical new physics.
+2. inspect repository state before starting work, especially because hourly automation may also advance the project;
+3. avoid duplicating active or already-completed work;
+4. state one exact unresolved target;
+5. derive analytically before adding numerical complexity;
+6. preserve negative/correction results;
+7. save reproducibility code for every numerical result;
+8. update `MASTER_TABLE.md` and this guide when the project state changes;
+9. never promote a toy model, detector benchmark or internal consistency result to empirical new physics.
