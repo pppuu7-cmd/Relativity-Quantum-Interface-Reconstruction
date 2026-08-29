@@ -1,164 +1,153 @@
 # RQIR Operational Master Table
 
-**Version:** 1.6  
+**Version:** 1.7  
 **Date:** 2026-08-29
 
 `OPEN` means the required comparison has not yet been demonstrated at RQIR precision.
 
 | Channel | Operational observable | Main obstacle | Current discriminator strategy | Status |
 |---|---|---|---|---|
-| Q1 Quantum clocks | conditional phase, visibility, correlations | ordinary relativistic/control effects | profiled likelihood with explicit calibration | OPEN |
-| Q2 Superposed sources | potential/force/phase spectra | static density phase blindness; full history becomes tomography | finite NP3 multiprobe calibration + detector transfer | HIGH PRIORITY |
-| Q3 Backreaction/source rule | mean, symmetrized noise, retarded response | response can be projected away; hidden-state amplitude is not self-calibrating; low-rank systematics can destroy identifiability | joint source+calibration+detector Fisher with independent source/control metrology and wall-clock resource accounting | HIGHEST PRIORITY |
+| Q1 Quantum clocks | conditional phase, visibility, correlations | ordinary relativistic/control effects; long-run clock drift | profiled likelihood + Allan/PSD control model | OPEN |
+| Q2 Superposed sources | potential/force/phase spectra | static-density blindness; full history becomes tomography | finite NP3 calibration + detector transfer | HIGH PRIORITY |
+| Q3 Backreaction/source rule | mean, symmetrized noise, retarded/ordered response | hidden-amplitude non-identifiability; calibration nuisance; low-frequency drift | joint source+calibration+detector Fisher with independent source/control metrology and wall-clock budget | HIGHEST PRIORITY |
 | Q4 Gravity-mediated QI | entanglement/non-Gaussianity/scaling | entanglement alone is not unique to quantized gravity | common detector likelihood across interface classes | HIGH PRIORITY |
 | Q5 Geometry fluctuations | noise/response spectra | matter, intrinsic-gravity and technical-noise degeneracies | joint N/chi/covariance fit | HIGH PRIORITY |
 | Q6 Causal/process | relational timing/process observables | control-system nonclassicality | gravity-dependent scaling with nuisance closure | OPEN |
 | Q7 Low-energy QG EFT | scattering/phase/potential corrections | tiny universal pieces and local-UV degeneracy | cross-process long-range/nonanalytic fingerprints | OPEN |
 
-## Mathematical coordinate
+## Current mathematical coordinate
 
 `K_T^(2)=(<T>,N,D or chi^R)` with Schwinger-Keldysh/CTP parent functional. Operator ordering remains explicit.
 
 ## Retained closed/negative results
 
-- RQIR-NG-001 / Toy002: static density phase blindness.
-- RQIR-NG-002 / Toy003: minimal response split has an energy confound.
+- RQIR-NG-001: static density phase blindness.
+- RQIR-NG-002: minimal response split has an energy confound.
 - Toy004: `(<H>,<B>,N_B)` does not determine ordered response.
-- PE-1 / Toy005: exact Newtonian one-channel embedding; still NP2.
-- RQIR-NG-003 / Toy006: generic complete density history becomes state tomography.
-- Toy007: first finite NP3.
-- RQIR-NG-004: one extra independent exact row kills a one-dimensional exact nullspace.
-- Toy008: soft-nullspace scan motivates likelihood/Fisher over maximal exact rank.
-- RQIR-CAL-001: independent beta-blind calibration cannot reduce profiled Fisher under stated assumptions.
-- RQIR-NG-005: if detector signal is `beta*a*s` and hidden state direction obeys `A n=0`, null calibration cannot self-calibrate amplitude `a`; without independent source metrology `F_beta|a=0`.
-- RQIR-NG-006: uncontrolled low-rank timing/geometry/additive calibration systematics can remain structurally degenerate with detector-relevant source nuisance, so more gravitational calibration exposure alone does not restore identifiability.
+- PE-1 / Toy005: exact Newtonian one-channel embedding; NP2 only.
+- RQIR-NG-003: generic complete density history becomes tomography.
+- RQIR-NG-004: one additional independent exact row kills a one-dimensional exact nullspace.
+- RQIR-NG-005: gravitational exact-null calibration cannot self-calibrate the amplitude of the hidden source direction; without independent source metrology `F_beta|a=0`.
+- RQIR-NG-006: uncontrolled low-rank timing/geometry/additive systematics can remain structurally degenerate with detector-relevant nuisance; more gravitational exposure alone does not cure this.
+- RQIR-NG-007: if the Allan/flicker floor plus immediate reference variance exhausts the detector-required nuisance prior, repeated fast sampling and finite recalibration cadence cannot satisfy the requirement.
 
 ## Current source/calibration baseline
 
 Toy009 source radii approximately `(1.00000,1.60090,1.77911,2.60901,5.90724)`.
 
-Iteration-011 balanced calibration:
+Iteration-011 balanced calibration remains the practical geometry baseline:
 
 - `y1=-3.7766873837`;
 - phases `(0,3.09855988,3.45849306,2.93830159,4.13016958,4.84480925,4.99085067)`;
 - rank `24/25`;
 - positive states;
-- exact selected equality residual `<1e-15`;
+- selected equality residual `<1e-15`;
 - `eta_R~0.573426`;
 - `s_min~1.99954e-3`;
-- condition `~2313`;
-- cumulative ideal detector-source gains vs Toy007 roughly D1 `x2.11`, D2 `x2.36`.
+- condition `~2313`.
 
 RQIR-DESIGN-001: optimize `source -> calibration/Fisher geometry -> gravity transfer -> detector/noise -> profiled likelihood`.
 
-RQIR-CAL-002: calibration geometry is an active information resource.
+RQIR-CAL-002: calibration geometry is an active information/design resource.
 
-## Physical resource layer — Iteration 012
+## Mandatory numerical correction
 
-The 24 NP3 calibration rows are trace 1, energy 1, potential means 14, symmetrized covariance/noise 8.
+RQIR-NUM-001: exact constraints must be eliminated analytically through a nullspace/reduced basis rather than approximated by huge Fisher penalties before pseudoinversion.
 
-Scalar gamma is retained only as a diagnostic proxy. Physical calibration must use `F_C=A^T Sigma_C^-1 A` or repeated-setting Fisher sums.
+Corrected 90%-retention row weights:
 
-At detector SNR 5, 90% retention of the hidden preparation-amplitude degree requires `C_a=225`, hence `N_prep=225/xi_prep^2` in standardized single-shot units.
+- D1 `gamma_mean~1.722e6`, `gamma_cov~0.938e6`;
+- D2 `gamma_mean~2.414e6`, `gamma_cov~0.929e6`.
 
-RQIR-CAL-004: conditioning alone is not a sufficient physical-resource proxy.
+Old Iteration-013/014 headline gains based on the penalty+pseudoinverse implementation are withdrawn.
 
-RQIR-RESOURCE-001: per-shot coherence time and total integration time are distinct resources; for current max phase `4.99085`, `T_coh>=0.7943/f_gap`.
+## Detector-level/systematics requirements
 
-## Critical numerical correction — Iteration 015
+Current first-order timing priors from the corrected low-rank Fisher:
 
-Earlier Iterations 013-014 implemented exact trace+energy constraints with a huge Fisher penalty followed by a thresholded pseudoinverse. This created scale separation that truncated genuine weak nuisance directions and artificially inflated profiled `F_beta`.
-
-RQIR-NUM-001: exact constraints must be eliminated analytically through a nullspace/reduced basis rather than approximated by an enormous penalty before pseudoinversion.
-
-Corrected 22D hard-constrained results:
-
-- old Iteration-013 D1 allocation retains only about `0.572`, not 90%; old D2 allocation about `0.481`;
-- corrected heterogeneous-allocation cost improvement at 90% is modest: about `x1.07` D1 and `x1.14` D2, not `x6.3/x4.6`;
-- corrected q=1 allocation: D1 `gamma_mean~1.722e6`, `gamma_cov~0.938e6`; D2 `gamma_mean~2.414e6`, `gamma_cov~0.929e6`;
-- the previous Iteration-014 statement that `rho=0.10` common-mode covariance made D2 about `2.13x` more expensive is withdrawn; corrected ratios are about `0.90` D1 and `0.91` D2 for that stress test;
-- corrected conservative first-order timing scales are about `9.5 us` D1 and `8.0 us` D2 at `f_gap=100 Hz`.
-
-The conceptual rules RQIR-CAL-005/006 survive, but the old headline numerical gains do not.
-
-## Explicit low-rank systematics — Iteration 016
-
-Four first-order calibration systematics are included explicitly: second-probe drift `delta y`, common timing/phase drift `delta tau`, common mean offset and common covariance offset.
-
-With no independent priors on these amplitudes, `F_beta` collapses to numerical zero for both D1 and D2 even when gravitational calibration exposure is increased by up to `100x`.
-
-A control bundle that restores approximately 90% information is:
-
-D1:
-- `sigma(delta tau)~5.95e-3` (`~9.5 us` at 100 Hz);
-- `sigma(b_mean)~7.62e-5`;
-- `sigma(b_cov)~1.03e-4`.
-
-D2:
-- `sigma(delta tau)~5.03e-3` (`~8.0 us` at 100 Hz);
-- `sigma(b_mean)~6.44e-5`;
-- `sigma(b_cov)~1.04e-4`.
-
-RQIR-CAL-007: calibration exposure and independent control-prior information are distinct, non-interchangeable resources.
-
-RQIR-DRIFT-001: purely multiplicative common gain is first-order suppressed at exact null because `A theta0=0`; this does not protect timing/geometry/additive systematics or nonlinear gain-state products.
-
-## Second-order nonlinear audit — Iteration 017
-
-Timing curvature is subdominant once first-order timing control is satisfied: current-prior quadratic timing bias is only `~3.49e-5 sigma_beta` D1 and `~8.75e-6 sigma_beta` D2.
-
-RQIR-NL-001: current timing curvature is not the bottleneck.
-
-Bilinear common-gain × source-state coupling has local posterior-scale RMS beta-bias coefficient about `0.325 |delta g|`. No global gain-only tolerance exists because contamination scales as `delta g * delta theta`.
-
-RQIR-NL-002: first-order nulling converts standalone control requirements into product-resource requirements when nonlinear coupling is leading.
-
-## Reference-channel and wall-clock layer — Iteration 018
-
-Main file: `docs/REFERENCE_CHANNEL_WALLCLOCK_RESOURCE_BUDGET.md`.
-
-At `f_gap=100 Hz`, the corrected timing priors map to:
-
-- D1 `sigma_t~9.47 us`;
+- D1 `sigma_t~9.47 us` at 100 Hz;
 - D2 `sigma_t~8.01 us`.
 
-For white time-jitter ASD integrated over bandwidth `B`, `J_t<=sigma_t/sqrt(B)`. At `1 kHz`, the bookkeeping limits are approximately `0.299 us/sqrtHz` D1 and `0.253 us/sqrtHz` D2. With four independent timing edges, per-edge RMS is approximately `4.73 us` D1 and `4.00 us` D2; correlated timing errors must remain explicit common-mode nuisances.
+Additive row-normalized controls:
 
-The current `tau_max=4.99085067` imposes `T_coh,min~7.94 ms` at 100 Hz.
+- D1 `sigma(b_mean)~7.62e-5`, `sigma(b_cov)~1.03e-4`;
+- D2 `sigma(b_mean)~6.44e-5`, `sigma(b_cov)~1.04e-4`.
 
-**RQIR-RESOURCE-002:** required coherent evolution is a hard lower bound on physical shot duration for Fisher-per-second accounting.
+RQIR-CAL-007: exposure and independent control-prior information are non-interchangeable resources.
 
-At detector SNR 5 with standardized `xi_mean=xi_cov=10`, corrected 90%-retention calibration resources correspond to about:
+RQIR-DRIFT-001: pure common multiplicative gain is first-order suppressed at exact null; leading gain contamination is product-like.
 
-- D1 `7.90e6` accepted-shot equivalents, lower wall-time bound `~17.4 h` at 100 Hz;
-- D2 `1.031e7`, lower bound `~22.7 h`.
+RQIR-NL-001: timing curvature is negligible after current first-order timing control.
 
-With `1 ms` extra dead time and `p_success=0.5`, these become approximately `39.3 h` and `51.2 h`. These remain scaling examples, not hardware forecasts.
+RQIR-NL-002: leading gain contamination scales with `delta_g * delta_theta`; no global gain-only tolerance exists.
 
-Preparation-amplitude benchmarks at SNR 5: 80% -> `C_a=100`, `sigma_a=0.10`; 90% -> `225`, `0.0667`; 95% -> `475`, `0.0459`.
+## Physical resource stack
 
-For the two-resource limit with detector Fisher rate `R_D` and independent preparation-metrology rate `R_P`, maximizing profiled `F/T` gives
+RQIR-RESOURCE-001: coherence time and total integration time are distinct.
 
-`x_D=sqrt(R_P)/(sqrt(R_D)+sqrt(R_P))`,
+RQIR-RESOURCE-002: required coherent evolution is a hard lower bound on shot duration.
 
-`x_P=sqrt(R_D)/(sqrt(R_D)+sqrt(R_P))`,
+RQIR-RESOURCE-003: in the two-resource detector/preparation limit, wall-clock allocation follows the square-root Fisher-rate law; fixed 90% retention is not universal.
 
-and optimal preparation-retention fraction
+RQIR-RESOURCE-004: D1 vs D2 cannot be globally ranked without native Fisher rates and explicit noise models.
 
-`r*=sqrt(R_P)/(sqrt(R_D)+sqrt(R_P))`.
+RQIR-RESOURCE-005: dimensionless calibration Fisher weights cannot be converted to hours without measurement-level Fisher rates.
 
-**RQIR-RESOURCE-003:** wall-clock resource allocation follows a square-root Fisher-rate law in this two-resource limit. A fixed 90% preparation-retention constraint is wall-clock optimal only for `R_P/R_D=81`; fixed 80/90/95% tables are benchmark constraints, not universal optimal schedules.
+RQIR-RESOURCE-006: nuisance normalization cannot create physical wall-time cost; use event precision, transduction, acceptance/cycle, PSD/bandwidth and physical priors.
 
-Iteration-017 gain mapping gives local reference SNR about `3.25`, `32.5`, `325` for gain×state bias budgets `0.1`, `0.01`, `0.001 sigma_beta`, respectively, under the local posterior-scale source-error assumption.
+## Branch-specific detector/preparation rates
+
+D1: binary phase/interference readout with contrast/control-window/coherence/dead-time model. Detector acquisition can require millions of accepted events for mrad-scale final phase precision; do not confuse final phase error with single-event noise.
+
+D2: equivalent-force PSD/live-integration model with `R_D2=eta_duty*4 r2 r4/(r2+r4)`, `r_n=|Delta F_n|^2/S_F,n`.
+
+Source preparation: for `rho(a)=I/5+a Delta0` with `[rho,Delta0]=0`, `F_Q(a~0.08)~13.2707` per ideal accepted copy. At detector SNR 5, 90%-retention `C_a=225` is only about 17 ideal accepted copies at the QFI bound.
+
+RQIR-PREP-001: RQIR-NG-005 is channel-specific, not absence of source-state information in principle.
+
+## Native calibration/reference rates
+
+D1 mean row: `R_M,i=p_acc C_i^2 k_i^2/t_cycle`.
+
+Gaussian covariance/log-PSD row: `R_C~duty*B*k_C^2`.
+
+D2 mean row: one-sided force-template Fisher `I_i=4 int |dh_i/du_i|^2/S_F df`.
+
+Timing reference: `T_tau=t_cycle/p_acc*(sigma_event/sigma_target)^2` after consistent unit conversion.
+
+RQIR-DRIFT-002: high-rate white timing statistics do not certify long-campaign stability.
+
+## Iteration 023 — colored drift / Allan cadence
+
+For immediate reference variance `sigma_ref^2`, random-walk diffusion `D` and Allan/flicker floor `sigma_floor`, the interval-averaged residual is
+
+`<sigma^2>=sigma_floor^2+sigma_ref^2+D Delta/2`.
+
+Hence
+
+`Delta_max=2(sigma_target^2-sigma_floor^2-sigma_ref^2)/D`,
+
+if the numerator is positive.
+
+RQIR-DRIFT-003: long-campaign control is governed by low-frequency stability `(D,sigma_floor)` or the measured Allan-deviation curve plus recalibration duty, not per-event precision alone.
+
+Transparent timing benchmark with `sigma_event=10 us`, `sigma_ref=sigma_target/3`:
+
+- reference blocks: `~0.1795 s` D1, `~0.2509 s` D2;
+- `D=100 us^2/h`: cadence `~1.594 h` D1, `~1.141 h` D2;
+- `D=1000 us^2/h`: `~9.57 min` D1, `~6.84 min` D2;
+- equal-diffusion cadence ratio D2/D1 `~0.715`.
+
+These are parametric benchmarks, not hardware predictions.
 
 ## Mandatory open consistency gates
 
 G1 gauge/relational; G2 conservation/Bianchi with apparatus; G3/G3b positivity/unitarity/spectral response; G4a causal retarded support; G8 controlled Newtonian limit; G9 EFT power counting; G10/G10a stress-energy smearing/renormalization; G12/G12a classical/stochastic/full-QFT degeneracy audit; G13 detector covariance/nuisance/measurability.
 
-## Priority ranking v1.6
+## Priority ranking v1.7
 
-1. **Branch-specific Fisher rates:** replace standardized `xi` by D1 phase-shot/contrast/four-switch/dead-time and D2 force-PSD/integration/duty-cycle models; assign explicit source-metrology rate.
-2. **Full wall-clock objective:** optimize detector + preparation + gravitational calibration + reference-control `F_beta|theta/T_wall`; use RQIR-RESOURCE-003 as the two-resource regression limit.
-3. **Common D1/D2 resource budget:** one source mass, gap, coherence, separation and integration budget.
-4. **Interface-class fingerprints:** semiclassical, stochastic, classical-gravity+full-QFT and perturbative-QG alternatives through one likelihood.
-5. **Relativistic/full-stress embedding:** after detector/inference geometry stabilizes, close conservation, gauge and renormalization gates.
+1. **Measured/justified stability models:** obtain D1 clock/control and D2 sampling/reference Allan/PSD parameters; convert additive-offset nuisance coordinates to physical detector units.
+2. **Full wall-clock objective:** insert drift cadence and reference-control duty into the corrected Iteration-021 `F_beta|theta/T_wall` optimizer.
+3. **Common D1/D2 resource budget:** one source mass, gap, coherence, separation and campaign duration.
+4. **Interface-class fingerprints:** propagate semiclassical, stochastic, classical-gravity+full-QFT and perturbative-QG alternatives through one likelihood.
+5. **Relativistic/full-stress embedding:** close conservation, gauge and renormalization gates after detector/inference geometry stabilizes.
