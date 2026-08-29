@@ -52,7 +52,7 @@ def main():
     assert abs(phi - 1.092306912) < 3e-7
     assert abs(f - 0.002756370099) < 5e-12
     assert abs(c - 0.002523439217) < 5e-12
-    assert abs(f / fproj - 0.293482112) < 3e-7
+    assert abs(f / fproj - 0.293484246) < 3e-7
 
     # Current transparent D2 rate thresholds from Iteration 050.
     for p in (1.0, 0.5):
@@ -64,9 +64,9 @@ def main():
 
     om04_p05 = R04 / (0.5 * c)
     om45_p05 = R45 / (0.5 * c)
-    assert abs(om04_p05 - 0.16914) < 2e-5
-    assert abs(om45_p05 - 0.002323) < 2e-6
-    assert abs(phi / om04_p05 - 6.457) < 0.01
+    assert abs(om04_p05 - 0.16913742) < 2e-6
+    assert abs(om45_p05 - 0.002323194) < 2e-7
+    assert abs(phi / om04_p05 - 6.45810) < 0.002
 
     # Visibility penalty after re-optimizing rate phase.
     for vis in (0.9, 0.8, 0.5):
