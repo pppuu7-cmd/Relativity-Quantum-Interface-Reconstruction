@@ -1,6 +1,6 @@
 # RQIR Operational Master Table
 
-**Version:** 1.8  
+**Version:** 1.9  
 **Date:** 2026-08-29
 
 The repository is authoritative. `OPEN` means the required comparison is not yet demonstrated at RQIR precision.
@@ -54,6 +54,7 @@ Large Iteration-013/014 allocation gains are withdrawn; corrected gains are only
 - **RQIR-NG-010:** replacing a calibration observable may rotate rather than remove an exact detector-relevant null.
 - **RQIR-NG-011:** detector-native force determines potential only relationally without an independent reference.
 - **RQIR-NG-012:** information on one old hidden amplitude is not sufficient for profiled beta identifiability if another detector-aligned null survives.
+- **RQIR-NG-013:** a force-noise PSD and bandwidth do not determine source-covariance Fisher rate; the spectral derivative `dS/du_cov` (or cross-spectral derivative) is also required.
 
 ## Physical resource stack
 
@@ -63,8 +64,9 @@ Large Iteration-013/014 allocation gains are withdrawn; corrected gains are only
 - Differential timing priors are about `9.47 us` D1 and `8.01 us` D2 at 100 Hz.
 - Long-run timing is controlled by measured differential TDEV/PSD and recertification duty, not single-event jitter alone.
 - Finite-reference potential transduction obeys `q_pot=2||Delta B||^2/(L^2 S_F)` and has a reference-distance cost/geometry tradeoff.
+- Stationary scalar covariance/log-PSD rate uses `q_cov=eta_duty B_eff kappa_eff^2`; multi-channel covariance uses the corresponding integrated spectral-matrix Fisher.
 
-## D2 branch table after Iteration 032
+## D2 branch table after Iteration 033
 
 | Branch | Observable family | Hard rank | Current result | Status |
 |---|---|---:|---|---|
@@ -72,7 +74,7 @@ Large Iteration-013/014 allocation gains are withdrawn; corrected gains are only
 | Hybrid replacement | force means + old potential covariance | `22/23` | old Iteration-026/028 branch; null remains | retained, relabeled hybrid |
 | Fully force-native | force means + force covariance | `22/23` | `F_beta(C_a=0,lambda=1)~0.019445`; `C_a*~8.29464` | current native-force baseline |
 | Finite-reference relational | potential differences + relational covariance | `22/23` | old amplitude becomes partly visible but a new detector-aligned null remains | retained |
-| Complementary relational+force | relational potential + force, with complementary covariance | `23/23` | nearly 90% at current scale; physical covariance cost still open | highest D2 design priority |
+| Complementary relational+force | relational potential + force, with complementary covariance | `23/23` | strong nuisance closure, but covariance wall-clock rate is now the gate | highest D2 design priority |
 
 ### Iteration 032
 
@@ -97,7 +99,21 @@ The best four added force-covariance rows are `(0,1,3,7)`, yielding `F_beta~0.89
 
 **RQIR-CAL-012 — covariance complementarity:** a targeted covariance subset can remove most of the remaining detector-relevant nuisance penalty. Covariance-row choice is an active design/resource variable.
 
-The old Iteration-028 phase diagram is therefore valid for its declared mixed protocols but is not yet the final fully physical D2 resource map.
+### Iteration 033
+
+**RQIR-RESOURCE-011 — covariance/preparation substitution criterion:** a covariance subset is wall-clock beneficial only if
+
+`sum_i gamma_i/q_i < Delta C_a/R_P`.
+
+At `y_ref=-4`, `lambda=1`, corrected D2 `gamma_cov=0.929e6`:
+
+- best four rows `(0,1,3,7)` save `Delta C_a=5.2322621`; equal-row break-even `q_cov/R_P > 7.10209e5`;
+- the remaining four save only `Delta C_a=0.5218745`; break-even `q_cov/R_P > 7.12049e6`;
+- all eight vs none require `q_cov/R_P > 1.29159e6`.
+
+Therefore covariance complementarity is not automatically a physical resource win even when it nearly closes the nuisance Fisher geometrically. Row-specific stochastic transduction rates are now mandatory.
+
+The old Iteration-028 phase diagram remains valid for its declared mixed protocols but is not the final fully physical D2 resource map.
 
 ## Mandatory open consistency gates
 
@@ -105,11 +121,12 @@ G1 gauge/relational; G2 conservation/Bianchi with apparatus; G3/G3b positivity/u
 
 No current toy/resource result is an empirical new-physics claim.
 
-## Priority ranking v1.8
+## Priority ranking v1.9
 
-1. Derive physical Fisher rates for **force covariance** and **finite-reference relational covariance** from one common D2 PSD/bandwidth/duty model.
-2. Optimize D2 wall-clock cost over `(y_ref,lambda,C_a,covariance subset)` and compare fully force-native vs complementary branches.
-3. Add measured differential timing/reference recertification duty to the same `F_beta|theta/T_wall` objective.
-4. Build a common D1/D2 resource budget at one source mass, gap, coherence, separation and campaign duration.
-5. Propagate semiclassical, stochastic, classical-gravity+full-QFT and perturbative-QG alternatives through one likelihood.
-6. Close conservation, gauge, renormalization and full-stress-energy gates after detector/inference geometry stabilizes.
+1. Derive row-specific physical `dS/du_cov` and cross-spectral derivatives for the four high-value force-covariance rows and finite-reference relational covariance from one common D2 detector model.
+2. Convert those derivatives into `q_i` using one measured/justified PSD, bandwidth and duty model; test the Iteration-033 break-even inequalities against `R_P`.
+3. Optimize D2 wall-clock cost over `(y_ref,lambda,C_a,covariance subset)` and compare fully force-native vs complementary branches.
+4. Add differential timing/reference recertification duty to the same `F_beta|theta/T_wall` objective.
+5. Build a common D1/D2 resource budget at one source mass, gap, coherence, separation and campaign duration.
+6. Propagate semiclassical, stochastic, classical-gravity+full-QFT and perturbative-QG alternatives through one likelihood.
+7. Close conservation, gauge, renormalization and full-stress-energy gates after detector/inference geometry stabilizes.
