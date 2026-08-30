@@ -1,7 +1,7 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-30  
-**Authoritative front:** through **Iteration 080**.
+**Authoritative front:** through **Iteration 081**.
 
 > `docs/RECOVERY_GUIDE.md` and `docs/MASTER_TABLE.md` contain the mature framework but may lag the fast resource front. For current work, read this pointer and the listed recovery deltas before starting a new gate. Repository state, not chat history, is authoritative.
 
@@ -9,7 +9,7 @@
 
 - **Paper I scientific scope: CLOSED at Iteration 078.** RQIR-THM-001 abstracts Toy009/Toy010 into a finite nullspace response-discriminant existence theorem. Remaining work is manuscript/literature/novelty/reproduction work, not a missing Paper-I scientific gate.
 - **Paper II scientific scope: CLOSED at Iteration 079.** RQIR-STAT-001 freezes the reference-likelihood regression certificate: Schur/projection identity, nuisance-coordinate invariance, calibration monotonicity, NG-005, NG-006 exposure obstruction, spectral-tilt identity and NUM-001 threshold counterexample.
-- **Paper III: ACTIVE.** Iteration 080 adds an inverse apparatus specification envelope but a repository-backed physical apparatus model is still required.
+- **Paper III: ACTIVE.** Iterations 080–081 add an inverse apparatus specification envelope and prove that absolute wall-clock normalization is still underdetermined until one declared apparatus supplies the missing physical rates.
 
 ## Active architecture status
 
@@ -149,11 +149,35 @@ Files:
 - `research_log/2026-08-30_iteration_080_apparatus_specification_envelope.md`
 - `recovery/RECOVERY_DELTA_ITERATION_080.md`
 
+## Iteration 081 — apparatus-closure identifiability audit
+
+Existing repository physical benchmarks provide the correct transfer/rate formulas but do not supply one common measured/declared apparatus normalization.
+
+**RQIR-NG-032:** normalized Fisher/resource geometry does not determine absolute seconds. Under a common detector PSD rescaling `S -> lambda S`, detector and calibration Fisher rates scale as `1/lambda`; `x` is invariant while absolute detector/calibration wall time scales as `lambda`. More generally, a common scale on all Fisher rates leaves `(x,y,d)` unchanged while rescaling total seconds.
+
+Independent source metrology retains its own absolute-rate freedom until acceptance, visibility, coupling and reset/readout are fixed or `R_src` is measured directly.
+
+**RQIR-APP-001:** minimum apparatus closure vector requires:
+
+- science transfer functions, acquisition windows and full PSD/cross-PSD;
+- seven physical two-probe calibration Jacobians plus full matrix PSD/rates;
+- source-metrology acceptance/coupling/visibility/reset/coherence;
+- low-frequency timing/geometry/additive/gain stability, recertification duty and uncertainties.
+
+Old `sigma_phi`, force-ASD and unit-transduction examples remain illustrative scaling benchmarks and must not be promoted to measured apparatus performance.
+
+Files:
+
+- `analysis/apparatus_closure_identifiability_iteration081.py`
+- `docs/PAPER_III_APPARATUS_CLOSURE_IDENTIFIABILITY_ITERATION081.md`
+- `research_log/2026-08-30_iteration_081_apparatus_closure_identifiability.md`
+- `recovery/RECOVERY_DELTA_ITERATION_081.md`
+
 ## Immediate next gate — Paper III only
 
-Instantiate the Iteration-077/080 certificate from a repository-backed detector/source-metrology model for at least Toy009 and Toy014: physical profiled `R_beta`, seven full matrix `R_cal,j`, `R_src`, control duty and uncertainty intervals. Use real/declared transfer functions and PSD/cross-PSD or experimentally sourced sensitivity curves; do not invent an absolute ASD merely to force a wall-clock number.
+Construct one **declared reference apparatus model** for at least Toy009 and Toy014. Prefer externally sourced/measured platform parameters with uncertainty ranges; otherwise retain a parameterized design envelope explicitly rather than calling it a forecast. The model must supply `R_beta`, seven `R_cal,j`, `R_src`, duty and uncertainty intervals. Then apply NG-030 robust dominance.
 
-Only begin Toy015 if this measured/declared rate map shows that a source-dependent bottleneck dominates total wall clock; if detector/control characterization dominates similarly across branches, improve the apparatus model instead.
+Only begin Toy015 if this rate map shows that a source-dependent bottleneck dominates total wall clock; if detector/control characterization dominates similarly across branches, improve the apparatus model instead.
 
 ## Discipline
 
