@@ -1,7 +1,7 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-30  
-**Authoritative front:** through **Iteration 087**.
+**Authoritative front:** through **Iteration 089**.
 
 > `docs/RECOVERY_GUIDE.md` and `docs/MASTER_TABLE.md` contain the mature framework but may lag the fast resource front. Read this pointer plus the listed recovery deltas before starting a new gate. Repository state, not chat history, is authoritative.
 
@@ -9,7 +9,7 @@
 
 - **Paper I scientific scope:** CLOSED at Iteration 078.
 - **Paper II scientific scope:** CLOSED at Iteration 079.
-- **Paper III:** ACTIVE. Iterations 080–087 develop the apparatus-rate closure, physical two-band likelihood, correlation correction and uncertainty-safe rate bound.
+- **Paper III:** ACTIVE. Iterations 080–089 develop apparatus-rate closure, physical two-band likelihood, correlation/uncertainty corrections, seven-layer robust calibration and the joint robust wall-clock certificate.
 
 RQIR remains separate from RTK/DSIR. No toy, Fisher, resource or detector result is an empirical new-physics claim.
 
@@ -186,13 +186,6 @@ Then
 
 Nominal anti-correlation is not robust resource credit unless the **upper** allowed correlation remains sufficiently negative. If the correlation interval crosses zero, much of the nominal gain can disappear in the conservative rate.
 
-Example for `r2 in [0.8,1.2]`, `r4 in [3,5]`:
-
-- `rho in [-0.6,-0.4]` -> `R_beta^lower=3.7490549317691566`;
-- `rho in [-0.6,0.1]` -> `R_beta^lower=2.3358581142019457`.
-
-The deterministic regression tests 200 random uncertainty boxes with 2000 random interior samples each and verifies no interior sample lies below the analytic corner bound.
-
 Files:
 
 - `analysis/correlated_box_uncertainty_iteration087.py`
@@ -200,11 +193,92 @@ Files:
 - `research_log/2026-08-30_iteration_087_correlated_box_uncertainty.md`
 - `recovery/RECOVERY_DELTA_ITERATION_087.md`
 
+## Iteration 088 — uncertainty-safe seven-layer matrix calibration
+
+For each integrated same-time dual-probe calibration Fisher-rate block
+
+`F_j=[[a_j,c_j],[c_j,b_j]]`,
+
+use `R_cal,j=lambda_min(F_j)` as the isotropic layer throughput.
+
+### RQIR-RESOURCE-041
+
+For a PSD-safe independent entry uncertainty box, `lambda_min` is concave, so its exact lower envelope is attained at one of the eight box vertices.
+
+With layer lower rates `R_cal,j^-`,
+
+`H_cal^- = 7/sum_j(1/R_cal,j^-)`,
+
+`T_cal^upper = gamma sum_j(1/R_cal,j^-) = 7 gamma/H_cal^-`.
+
+For per-accepted-cycle lower information `i_j^-`, acceptance floor `p_j^-` and cycle upper bound `t_cyc,j^+`:
+
+`N_acc,j >= gamma/i_j^-`,
+
+`N_try,j,required = gamma/(p_j^- i_j^-)` at the expectation/Asimov level,
+
+`R_cal,j^- = p_j^- i_j^- / t_cyc,j^+`.
+
+This explicitly connects `gamma` to repetitions, acceptance/shot loss, read/reset overhead and coherence-constrained cycle time.
+
+### RQIR-NG-038
+
+A central positive Fisher matrix with independent entry error bars that cross the PSD boundary does not certify a positive robust calibration rate. Use a PSD-preserving uncertainty model/parameterization or report the robust layer rate unresolved.
+
+Files:
+
+- `analysis/seven_layer_robust_calibration_iteration088.py`
+- `docs/PAPER_III_SEVEN_LAYER_ROBUST_CALIBRATION_ITERATION088.md`
+- `research_log/2026-08-30_iteration_088_seven_layer_robust_calibration.md`
+- `recovery/RECOVERY_DELTA_ITERATION_088.md`
+
+## Iteration 089 — joint robust total-time certificate
+
+For independent intervals in science, seven calibration rates, source-metrology rate and control/reference duty:
+
+### RQIR-RESOURCE-042
+
+`T_total^upper = [Z^2/R_beta^- + gamma sum_j 1/R_cal,j^- + C_src/R_src^-]/(1-d^+)`,
+
+`T_total^lower = [Z^2/R_beta^+ + gamma sum_j 1/R_cal,j^+ + C_src/R_src^+]/(1-d^-)`.
+
+These are exact extrema for the Cartesian uncertainty model by monotonicity.
+
+Define the robust dominance margin
+
+`M_{i<k}=T_k^lower-T_i^upper`.
+
+Only `M_{i<k}>0` certifies architecture `i` as faster; otherwise NG-030 keeps the comparison unresolved.
+
+### RQIR-NG-039
+
+If a source-metrology design setting is fixed before uncertain apparatus parameters are known, its guaranteed rate is
+
+`max_design min_uncertainty R`,
+
+not the generally larger `min_uncertainty max_design R` unless adaptive retuning is physically available and its calibration/duty cost is included.
+
+This closes a possible optimism loophole in converting `C_a/C_prep` to `T_src` under uncertain acceptance/visibility/coupling/reset.
+
+Files:
+
+- `analysis/joint_robust_total_time_iteration089.py`
+- `docs/PAPER_III_JOINT_ROBUST_TOTAL_TIME_ITERATION089.md`
+- `research_log/2026-08-30_iteration_089_joint_robust_total_time.md`
+- `recovery/RECOVERY_DELTA_ITERATION_089.md`
+
 ## Immediate next gate — Paper III only
 
-Propagate the same uncertainty-safe construction through the **seven same-time dual-probe calibration layers**, deriving conservative `R_cal,j^lower`, the resulting `H_cal^lower`, and an upper calibration wall-clock bound. Then combine with a conservative independent `R_src^lower` and upper control/reference duty to evaluate NG-030 robust Toy009 versus Toy014 dominance.
+The interval-rate algebra is now ready for physical apparatus insertion. Construct one **declared reference apparatus envelope** for at least Toy009 and Toy014 using externally sourced/measured or explicitly design-level quantities:
 
-Only after this rate algebra is ready should an external/apparatus two-band spectral matrix be inserted. Do not start Toy015 unless the full physical rate map shows a genuinely source-dependent bottleneck.
+- two-band science transfer functions and full PSD/cross-PSD with uncertainty;
+- seven same-time dual-probe integrated calibration Fisher blocks with PSD-safe uncertainty regions;
+- robust independent source-metrology rate including acceptance, visibility, coupling, reset/readout and coherence, with correct max-min optimization order;
+- timing/geometry/additive/gain reference stability and control duty intervals.
+
+Feed these into RESOURCE-042 and apply NG-030. If published data do not close all coordinates, retain a parameterized feasibility envelope and list the missing measurements explicitly rather than inventing an ASD.
+
+Do not start Toy015 unless this physical rate map reveals a genuinely source-dependent bottleneck that a new source design could improve.
 
 ## Discipline
 
