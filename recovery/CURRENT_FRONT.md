@@ -1,7 +1,7 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-30  
-**Authoritative front:** through **Iteration 092**.
+**Authoritative front:** through **Iteration 093**.
 
 > `docs/RECOVERY_GUIDE.md` and `docs/MASTER_TABLE.md` contain the mature framework but may lag the fast resource front. Read this pointer plus the listed recovery deltas before starting a new gate. Repository state, not chat history, is authoritative.
 
@@ -9,7 +9,7 @@
 
 - **Paper I scientific scope:** CLOSED at Iteration 078.
 - **Paper II scientific scope:** CLOSED at Iteration 079.
-- **Paper III:** ACTIVE. Iterations 080–092 develop apparatus-rate closure, physical two-band likelihood, correlation/uncertainty corrections, seven-layer robust calibration, joint robust wall-clock certification, external multimode apparatus audit, a tunable simultaneous `f,2f` envelope, and now the direct physical Toy009/Toy014 rate-space crossover.
+- **Paper III:** ACTIVE. Iterations 080–093 develop apparatus-rate closure, physical two-band likelihood, correlation/uncertainty corrections, seven-layer robust calibration, joint robust wall-clock certification, external multimode apparatus audit, a tunable simultaneous `f,2f` envelope, direct physical Toy009/Toy014 crossover, and now the exact interval-robust architecture crossover.
 
 RQIR remains separate from RTK/DSIR. No toy, Fisher, resource or detector result is an empirical new-physics claim.
 
@@ -162,52 +162,68 @@ Then
 
 `T_14-T_09 = Delta_D/R0 + Delta_S`.
 
-### RQIR-RESOURCE-044
-
-Whenever a positive finite crossing exists,
+**RESOURCE-044:** whenever a positive finite crossing exists,
 
 `R0_cross = -Delta_D/Delta_S`.
 
-If `Delta_D>0` and `Delta_S<0`, Toy014 wins only for `R0>R0_cross`: detector/calibration throughput must become sufficiently fast for Toy014's source-metrology advantage to dominate.
+**NG-042:** if `Delta_D>0` and `Delta_S>=0`, Toy014 cannot beat Toy009 at any finite positive `R0` in the declared model.
 
-### RQIR-NG-042
+**PREP-005:** on the common Ramsey apparatus and declared reset/visibility box, Toy014/Toy009 optimized source-rate ratio remains above `1.39`; this is a finite numerical design-box result.
 
-If `Delta_D>0` and `Delta_S>=0`, Toy014 cannot beat Toy009 at any finite positive `R0` in the declared model. A zero-reset source advantage cannot be credited unless it survives reset/visibility/duty in the physical rate.
+The historical shared-kernel condition `y > 7.6895 + 7.5421 x` remains a regression slice of RESOURCE-044.
 
-### RQIR-PREP-005
+## Iteration 093 — exact robust physical crossover
 
-Using the repository Ramsey likelihood on a common source-metrology apparatus,
+Let each architecture have declared independent intervals
 
-`R_src = p_E Omega_E max_phi F_alpha(phi,V)/(Omega_E t_reset+phi)`.
+`A_i in [A_i^-,A_i^+]`,
 
-Zero-reset regression:
+`R_src,i in [R_src,i^-,R_src,i^+]`,
 
-- Toy009 coefficient `0.0025234392`;
-- Toy014 coefficient `0.00376329150`;
-- Toy014/Toy009 rate ratio `1.49133432`.
+`d_i in [d_i^-,d_i^+]`.
 
-A deterministic declared-box audit over `0.5<=V<=1` and `0<=Omega_E t_reset<=1000` keeps the optimized Toy014/Toy009 Ramsey source-rate ratio above `1.39` on the audited grid. Representative ratios include `1.57663` at `V=1,tau=1`, `1.90814` at `V=1,tau=10`, and `2.09017` at `V=.7,tau=10`.
+Then
 
-This is a finite numerical design-box result, not a theorem beyond the stated Ramsey model/domain.
+`T_i^upper=m_i^+[A_i^+/R0+C_src/R_src,i^-]`,
 
-The historical shared-kernel condition
+`T_i^lower=m_i^-[A_i^-/R0+C_src/R_src,i^+]`.
 
-`y > 7.6895 + 7.5421 x`
+For robust Toy014 faster than Toy009 define
 
-remains a regression slice of RESOURCE-044.
+`D_14|09=m_14^+ A_14^+-m_09^- A_09^-`,
+
+`S_14|09=C_src(m_14^+/R_src,14^- - m_09^-/R_src,09^+)`.
+
+### RQIR-RESOURCE-045
+
+`T_14^upper-T_09^lower=D_14|09/R0+S_14|09`.
+
+Thus the NG-030 robust crossover is analytic. In the common rescue case `D>0,S<0`, Toy014 is robustly faster only for
+
+`R0>-D/S`.
+
+The reverse Toy009 certificate must be evaluated independently from `T_09^upper-T_14^lower`.
+
+### RQIR-NG-043
+
+The two robust crossover boundaries need not coincide. An intermediate throughput interval can exist in which neither architecture is robustly faster. A nominal RESOURCE-044 winner inside this interval is not an NG-030 winner. The width of this unresolved band is an apparatus-characterization target.
+
+### RQIR-NG-044
+
+The retained shared-kernel Pareto ratios `(q_s,q_c,q_p)` are not sufficient statistics for robust physical dominance because they do not encode source-specific transfer/cross-PSD uncertainty, all seven matrix calibration-rate intervals, robust source-metrology intervals and duty uncertainty.
 
 Files:
 
-- `analysis/toy009_toy014_physical_crossover_iteration092.py`
-- `docs/PAPER_III_TOY009_TOY014_PHYSICAL_CROSSOVER_ITERATION092.md`
-- `research_log/2026-08-30_iteration_092_toy009_toy014_physical_crossover.md`
-- `recovery/RECOVERY_DELTA_ITERATION_092.md`
+- `analysis/robust_physical_crossover_iteration093.py`
+- `docs/PAPER_III_ROBUST_PHYSICAL_CROSSOVER_ITERATION093.md`
+- `research_log/2026-08-30_iteration_093_robust_physical_crossover.md`
+- `recovery/RECOVERY_DELTA_ITERATION_093.md`
 
 ## Immediate next gate — Paper III only
 
-Construct conservative source-specific intervals for `A_009` and `A_014` from the actual two-band science coefficients and all seven calibration-layer rate coefficients. Combine those intervals with robust `R_src` and duty intervals, then apply RESOURCE-044 and NG-030 directly.
+Derive the sensitivity/value-of-information of the two robust crossover boundaries and the NG-043 unresolved-band width to uncertainty in `A_i`, `R_src,i` and `d_i`. Use it to prioritize which apparatus characterization measurement should be improved first.
 
-Do not start Toy015 unless the resulting physical rate-space analysis identifies a genuinely source-dependent bottleneck that a new local source could plausibly improve.
+Do not start Toy015 unless the physical rate-space analysis identifies a genuinely source-dependent bottleneck that a new local source could plausibly improve.
 
 ## Discipline
 
