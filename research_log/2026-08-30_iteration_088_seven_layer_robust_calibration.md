@@ -28,11 +28,11 @@ The same certificate maps per-accepted-cycle information to physical resources:
 
 `N_acc,j >= gamma/i_j^-`,
 
-with worst-acceptance expected trial budget
+with sufficient worst-acceptance expected trial budget
 
-`N_try,j,required <= gamma/(p_j^- i_j^-)`
+`N_try,j,required = gamma/(p_j^- i_j^-)`
 
-as an upper bound on the required expectation when the true acceptance obeys `p_j>=p_j^-`, and
+when the true acceptance obeys `p_j>=p_j^-`, and
 
 `R_cal,j^- = p_j^- i_j^- / t_cyc,j^+`.
 
