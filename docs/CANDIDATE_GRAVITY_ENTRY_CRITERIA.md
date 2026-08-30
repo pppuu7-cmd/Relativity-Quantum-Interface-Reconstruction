@@ -1,109 +1,121 @@
 # RQIR Candidate Gravity Entry Criteria
 
-**Recovered from prior RQIR planning discussions:** 2026-08-30  
-**Status:** future-work entry checklist only. This document does **not** open a Candidate Gravity branch, does not modify Papers I–III, and contains no new-physics claim.
+**Updated:** 2026-08-31  
+**Status:** canonical entry checklist for the post-Paper-III Candidate Gravity branch. Papers I–III are scientifically closed; this file does not itself instantiate a model or make a new-physics claim.
 
-## Purpose
+## Infrastructure authority
 
-RQIR is an operational reconstruction / identifiability / resource framework, not itself a theory of quantum gravity. A future candidate-gravity model should be admitted only as a separate branch once a concrete dynamical model exists and can be propagated through the mature RQIR pipeline.
+Before creating a concrete model, use:
 
-The article architecture already reserves a later Paper IV for this purpose. This checklist makes the previously discussed entry gates explicit so they are not lost in chat history.
+- `candidate_gravity/README.md`;
+- `candidate_gravity/MODEL_SPEC_TEMPLATE.md`;
+- `candidate_gravity/MODEL_TO_RQIR_CONTRACT.md`;
+- `candidate_gravity/GATE_STATUS_TEMPLATE.yaml`;
+- `candidate_gravity/BASELINE_COMPARATORS.md`;
+- `candidate_gravity/ASSUMPTIONS_LEDGER_TEMPLATE.md`;
+- `candidate_gravity/DERIVATION_MAP_TEMPLATE.md`;
+- `candidate_gravity/recovery/RECOVERY_GUIDE.md`.
+
+A future model must derive the RQIR hierarchy from one coherent dynamics rather than assigning `J`, `N`, `chi^R` or higher correlators independently.
 
 ## Minimal candidate object
 
-A candidate model should specify, at minimum, a coherent set
+A model must specify at minimum
 
-`M_QG={H_phys, gravity variables, H_matter, H_grav, H_int, constraints/gauge structure, observables}`
+`M_QG={physical state space, gravity variables, matter variables, dynamics, interaction, constraints/gauge structure, observables, parameter domain}`
 
-or an equivalent covariant/influence-functional/channel formulation.
-
-The source hierarchy `J=<T>`, `N`, `chi^R`, higher correlators and detector transfer must be **derived consistently from the same model** rather than assigned independently to fit an RQIR discriminator.
+or a fully equivalent covariant/channel/influence-functional definition.
 
 ## QG-001 — physical state space
 
-Specify the physical state/Hilbert space or algebraic state space, including which variables are gauge/constraint variables and which are physical observables.
+Specify the physical Hilbert/algebraic/state space, gauge/constraint variables and physical observables.
 
-Pass condition: no undefined kinematic degrees of freedom are later treated as measurable detector variables.
+**Pass:** no undefined kinematic degree of freedom is later treated as a detector observable.
 
-## QG-002 — matter–gravity interaction
+## QG-002 — matter–gravity dynamics
 
-Specify the interaction/dynamical law coupling quantum matter to the gravitational sector.
+Specify the action/Hamiltonian/channel/influence-functional law, including the matter, gravity and interaction sectors where that decomposition is meaningful.
 
-A weak-field reference may be written schematically as
-
-`H_int = -(1/2) integral d^3x h_mn T^mn`,
-
-but using this form does not by itself define a new model. The gravity-sector dynamics and constraints must also be specified.
+**Pass:** the claimed source/interface observables are derived from this dynamics.
 
 ## QG-003 — controlled Newtonian / GR limit
 
-Demonstrate a controlled regime reproducing the accepted classical gravitational limit. In the appropriate weak/static regime this must reduce to Newtonian gravity; in the broader classical regime it must be compatible with the relevant GR equations/observables.
+Derive the accepted classical gravitational limit in the appropriate controlled regime.
 
-This is not merely dimensional matching of a potential.
+**Pass:** Newtonian/static behavior and the relevant GR limit follow with a stated approximation/error domain, not merely dimensional matching.
 
-## QG-004 — Hermiticity / unitarity / positivity
+## QG-004 — unitarity / positivity / CP
 
-For closed quantum dynamics, establish Hermiticity/unitarity as appropriate. For open/channel/hybrid descriptions, establish the corresponding positivity / complete-positivity / probabilistic consistency condition required by the declared framework.
+Establish the probability-consistency property appropriate to the framework: unitarity for closed quantum dynamics or positivity/complete positivity for open/channel/hybrid descriptions.
 
 ## QG-005 — constraint and gauge consistency
 
-Demonstrate closure/consistency of the relevant gravitational constraints or the relational/gauge-invariant observable construction. Coordinate gauge artifacts must not become RQIR signal channels.
+Demonstrate closure/consistency of constraints or a valid relational/gauge-invariant observable construction.
 
-## QG-006 — semiclassical and ordinary-QM limits
+**Pass:** a coordinate/gauge artifact cannot become an RQIR signal channel.
 
-Show how ordinary quantum mechanics is recovered when gravitational backreaction is negligible and how the appropriate semiclassical/stochastic limit emerges when quantum gravitational information channels are coarse-grained or suppressed.
+## QG-006 — ordinary-QM / semiclassical limits
+
+Recover ordinary QM when gravitational backreaction is negligible and the relevant semiclassical/stochastic/coarse-grained limit when quantum-gravitational information channels are suppressed.
 
 ## QG-007 — first model-specific discriminator
 
-Derive, rather than postulate, the first source/interface observable that differs from the declared semiclassical/stochastic/full-QFT baselines. Identify whether the distinction appears in `J`, `N`, `chi^R`, a higher correlator, causal structure, or another explicitly defined observable.
+Derive the earliest observable difference relative to the mandatory comparator registry. State whether it lies in `J`, `N`, `chi^R`, a higher correlator, causal structure or another declared observable.
 
-No claim proceeds if the candidate difference is exactly reproducible by an already-admitted baseline nuisance/model class.
+**Pass:** the difference is not exactly reproducible by the admitted comparator+nuisance/calibration class.
 
-## QG-008 — RQIR finite-discriminant propagation
+## QG-008 — Paper-I finite-discriminant propagation
 
-Propagate the candidate through the mature Paper-I finite-discriminant machinery. Toy009/Toy010 may be used as regression/diagnostic constructions, but the candidate must supply its own derived response map.
+Propagate the model through the closed Paper-I machinery using the model's own response map.
 
-Pass condition: the candidate creates a declared detector/source direction not removed by the exact calibration constraints.
+**Pass:** a physical candidate direction survives the exact calibration quotient.
 
-## QG-009 — statistical identifiability
+## QG-009 — Paper-II statistical identifiability
 
-Build the detector likelihood and require positive nuisance-profiled information
+Build the detector likelihood and require
 
 `F_beta|theta > 0`
 
-after exact hard constraints, source-amplitude calibration, detector/systematic nuisance profiling and the relevant model-degeneracy alternatives.
+after exact hard constraints, source calibration, detector/systematic nuisances and comparator-model directions are profiled.
 
-Passing a mathematical nullspace test without this gate is insufficient.
+## QG-010 — Paper-III physical resource / measurability closure
 
-## QG-010 — physical resource / measurability gate
-
-Propagate the candidate through Paper III:
+Propagate the candidate through the closed Paper-III resource framework:
 
 - detector PSD/cross-PSD and transfer;
-- calibration Fisher matrices;
-- source preparation/metrology;
-- coherence, reset, acceptance and shot counts;
-- controls/recertification/duty;
-- final-significance wall clock and robust uncertainty.
+- calibration Fisher rates;
+- source metrology;
+- acceptance/reset/coherence/dead time;
+- controls/recertification;
+- backaction/shared-record rules;
+- robust final-significance wall clock.
 
-A candidate that is identifiable only with undefined or divergent physical resources has not passed the experimental RQIR gate.
+**Pass:** the claimed discriminator has finite/defined physical resource requirements or a clearly stated conditional apparatus threshold surface.
 
-## Mandatory cross-cutting consistency gates
+## Mandatory cross-cutting gates
 
-The QG-001…010 checklist does not supersede the broader mature RQIR consistency requirements. A serious candidate must also address, as applicable:
+As applicable, the candidate must also address:
 
-- diffeomorphism / relational consistency;
-- conservation, Bianchi and Ward identities;
-- causal support / microcausal or channel-causality structure;
-- positivity/unitarity/CP;
-- controlled GR/Newtonian and flat-space QFT limits;
+- gauge/relational consistency;
+- conservation/Bianchi/Ward identities;
+- causal support / microcausality / channel causality;
+- positivity/spectral structure;
+- flat-space QFT limit;
 - EFT power counting;
-- stress-energy renormalization;
-- classical/stochastic/hybrid/full-QFT degeneracy;
+- stress-energy smearing/renormalization;
+- semiclassical/stochastic/classical-channel/hybrid/full-QFT/perturbative-QG degeneracy;
 - detector measurability.
 
-## Entry rule
+These states are recorded in `GATE_STATUS.yaml` for each model.
 
-Do **not** call a branch a quantum-gravity model merely because it contains a quantized mediator, a CTP kernel or a modified response function. Candidate Gravity begins only when one dynamical construction supplies the required state space, dynamics, constraints, limits and derived RQIR observables together.
+## Promotion rule
 
-Until then, Papers I–III remain reconstruction/identifiability/resource papers, and Paper III apparatus closure remains the active research front.
+A speculative construction begins as `ANSATZ-*`.
+
+Promotion to a numbered `QGxxx` model requires at least QG-001 and QG-002 PASS with repository authorities and no unresolved foundational contradiction in gauge/conservation/causality.
+
+A model is not called RQIR-discriminating until QG-007, QG-008 and QG-009 pass. It is not experimentally closed until QG-010 passes.
+
+## Epistemic discipline
+
+Do not call a construction a quantum-gravity theory merely because it contains a quantized mediator, CTP kernel, stochastic metric or modified response function. The repository records the weakest claim supported by the gate/comparator state.
