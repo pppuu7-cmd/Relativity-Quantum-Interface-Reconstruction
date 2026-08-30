@@ -1,15 +1,15 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-30  
-**Authoritative front:** through **Iteration 101**.
+**Authoritative front:** through **Iteration 102**.
 
-> The repository, not chat history, is authoritative. `docs/RECOVERY_GUIDE.md` and `docs/MASTER_TABLE.md` contain the mature framework; for the fast Paper-III front read this pointer plus `recovery/RECOVERY_DELTA_ITERATION_096.md` through `RECOVERY_DELTA_ITERATION_101.md`. Do not mix RQIR with RTK/DSIR.
+> The repository, not chat history, is authoritative. `docs/RECOVERY_GUIDE.md` and `docs/MASTER_TABLE.md` contain the mature framework; for the fast Paper-III front read this pointer plus `recovery/RECOVERY_DELTA_ITERATION_096.md` through `RECOVERY_DELTA_ITERATION_102.md`. Do not mix RQIR with RTK/DSIR.
 
 ## Publication-track status
 
 - **Paper I scientific scope:** CLOSED at Iteration 078.
 - **Paper II scientific scope:** CLOSED at Iteration 079.
-- **Paper III:** ACTIVE. Iterations 080–101 translate abstract preparation/calibration Fisher requirements into physical detector, calibration, source, control and characterization rates, audit what one real platform can supply, and now specify the minimum same-state temporal `f,2f` calibration needed to close the remaining detector cut.
+- **Paper III:** ACTIVE. Iterations 080–102 translate abstract preparation/calibration Fisher requirements into physical detector, calibration, source, control and characterization rates, audit what one real platform can supply, specify same-state temporal `f,2f` calibration, and now place transfer calibration inside the joint science Fisher with an exact wall-clock optimum.
 
 No toy, Fisher, resource, detector or apparatus-certificate result is an empirical new-physics claim.
 
@@ -152,22 +152,11 @@ Finite multi-channel characterization uses the water-filling allocation of Itera
 
 External anchor: Gosling et al., *Phys. Rev. Research* 6, 013129 (2024), one levitated nanoparticle platform measuring ordinary PSDs and an x-y cross-correlation spectrum, with susceptibility-based force calibration.
 
-**APP-004:** same-platform measured cross-spectral covariance plus calibrated transfer is a legitimate apparatus primitive. This strengthens the experimental grounding of NG-036: off-diagonal spectral information is measurable rather than merely formal.
+**APP-004:** same-platform measured cross-spectral covariance plus calibrated transfer is a legitimate apparatus primitive.
 
-**NG-053:** spectral covariance is coordinate-specific. The published spatial `x-y` cross-spectrum cannot be substituted for the RQIR temporal `f,2f` cross-PSD without an explicit transfer, normalization and acquisition map between those channel bases.
-
-APP-003 status after Iteration 100:
-
-- same-platform PSD + cross-spectrum capability: **CLOSED**;
-- generic force-domain susceptibility/calibration relation: **PARTIAL**;
-- exact temporal `f,2f` input-referred force matrix: **OPEN**;
-- seven RQIR calibration Fisher blocks/rates: **OPEN**;
-- Toy009/Toy014 preparation/reset/visibility/coherence throughput: **OPEN**;
-- campaign duty/control/characterization-rate envelope: **OPEN**.
+**NG-053:** spectral covariance is coordinate-specific. The published spatial `x-y` cross-spectrum cannot be substituted for the RQIR temporal `f,2f` cross-PSD without an explicit transfer, normalization and acquisition map.
 
 ## Iteration 101 — same-state temporal `f,2f` calibration protocol
-
-The same-family follow-up did not expose a public same-state two-tone `f,2f` force-transfer plus temporal covariance dataset, so the missing cut is now expressed as an explicit measurement protocol rather than a literature substitution.
 
 For same-record demodulation filters,
 
@@ -183,37 +172,63 @@ For white noise and a rectangular block,
 
 **NG-054:** orthogonal DFT bins do not certify `rho=0` for colored/nonstationary/window-leaked/shared-nuisance noise. A finite AR(1) regression gives `|corr|~=0.03655` for lag coefficient `0.8` despite orthogonal bins.
 
-For robust retained fraction `q`, fixed raw rates give an analytic allowed `rho_hi`. For balanced bands, nominal `rho0=0`, `q=.90`:
+For balanced bands, nominal `rho0=0`, and 90% robust retained science fraction:
 
 `rho_hi <= 1/9 ~= 0.111111`.
 
-**RESOURCE-054:** with ideal independent real bivariate Gaussian blocks and marginal variances profiled, `I_rho=1/(1-rho^2)^2`; at `z=1.96` the transparent lower bound is `N_rho>=312` independent blocks. Gosling's published `3.3 ms` block corresponds to `1.0296 s` only as an illustrative block-time scale, not an RQIR forecast.
+**RESOURCE-054:** ideal independent real bivariate Gaussian blocks give `I_rho=1/(1-rho^2)^2`; at `z=1.96` the transparent lower bound is `N_rho>=312` independent blocks.
 
 **CAL-021:** inject known forces simultaneously at `f` and `2f` in the science operating state and use the same filters. The joint transfer Fisher is `F_cal=J_chi^T Sigma_z^-1 J_chi`.
 
-For a conservative common transfer-amplitude error, 90% rate retention requires
+For a conservative common transfer-amplitude error, 90% rate retention requires `epsilon_g<=0.0513167`; at `z=1.96`, matched fractional-transfer Fisher must satisfy `N*SNR_inj^2>=1458.80` (SNR 10 -> 15 blocks; SNR 5 -> 59).
 
-`epsilon_g<=1-sqrt(.90)=0.0513167`.
+**NG-055:** dual-tone calibration must pass linearity/intermodulation checks.
 
-At `z=1.96`, matched fractional-transfer Fisher must satisfy
+## Iteration 102 — joint science + transfer profile
 
-`N*SNR_inj^2>=1458.80`;
+Let `s` be the science mean derivative, `W` the science Fisher metric, `D` the transfer nuisance map and `C` the same-state injected-transfer Fisher.
 
-examples: SNR 10 -> 15 independent blocks, SNR 5 -> 59.
+**RESOURCE-055:**
 
-**NG-055:** dual-tone calibration must pass linearity/intermodulation checks; high-SNR injection outside the weak-response regime cannot be credited as science-state transfer Fisher.
+`F_beta|g = s^T W s - s^T W D (D^T W D + C)^-1 D^T W s`.
+
+**NG-056:** if independent per-band multiplicative gains span the science amplitude direction and `C=0`, then `F_beta|g=0`; extra science exposure cannot cure the exact transfer degeneracy.
+
+**STAT-003:** in an ordinary Gaussian model with separate mean and covariance parameters, pure covariance parameter `rho` is Fisher-orthogonal to pure mean parameter `beta`. Its uncertainty enters the robust covariance envelope and characterization cost rather than the same mean-nuisance Schur subtraction.
+
+**NG-057:** that orthogonality is conditional and can fail for beta-dependent covariance, non-Gaussian/cyclostationary likelihoods, shared transfer/whitening parameters or robust active-set changes.
+
+Balanced symmetric slice with raw per-band science rate `r`, correlation `rho`, per-gain calibration rate `c`, science time `T_sci` and calibration time `T_cal`:
+
+`F = 2 c r T_cal T_sci/[c T_cal(1+rho)+r T_sci]`.
+
+Define
+
+`R_s=2r/(1+rho)`, `R_c=2c`.
+
+Then
+
+`1/F = 1/(R_s T_sci)+1/(R_c T_cal)`.
+
+**RESOURCE-056:** for target `F_*=Z^2`, the exact separate-time optimum is
+
+`T_sci/T_cal=sqrt(R_c/R_s)`,
+
+`T_total^min=F_*[1/sqrt(R_s)+1/sqrt(R_c)]^2`.
+
+Relative to perfect transfer calibration, `P=[1+sqrt(R_s/R_c)]^2`; therefore `P<=1.10` requires `R_c/R_s>=419.76`, `P<=1.25` requires `>=71.78`, and `P<=2` requires `>=5.828`.
 
 Files:
 
-- `analysis/same_state_f2f_calibration_protocol_iteration101.py`
-- `docs/PAPER_III_SAME_STATE_F2F_CALIBRATION_PROTOCOL_ITERATION101.md`
-- `research_log/2026-08-30_iteration_101_same_state_f2f_calibration_protocol.md`
-- `recovery/RECOVERY_DELTA_ITERATION_101.md`
+- `analysis/joint_science_transfer_profile_iteration102.py`
+- `docs/PAPER_III_JOINT_SCIENCE_TRANSFER_PROFILE_ITERATION102.md`
+- `research_log/2026-08-30_iteration_102_joint_science_transfer_profile.md`
+- `recovery/RECOVERY_DELTA_ITERATION_102.md`
 
 ## Immediate next gate — Paper III only
 
 Do **not** start Toy015 yet.
 
-Build one **joint science + injected-transfer likelihood** with transfer amplitude/phase and temporal `rho` inside the nuisance vector. Compute the Schur-complement `F_beta|transfer,rho`, convert it to a physical Fisher rate, and optimize the split between calibration blocks and science blocks. This should identify whether cross-covariance estimation, transfer calibration or raw science exposure is the active detector bottleneck.
+Extend RESOURCE-055 to the full complex four-real-component temporal `f,2f` likelihood with gain amplitude/phase, measured covariance uncertainty, spectral tilt, and one shared calibration-time budget across transfer calibration and all seven calibration layers. Optimize `T_sci+T_transfer+T_7cal`, then add source metrology and control duty.
 
-Only if the residual dominant cost after this common-normalization closure is demonstrably source-dependent should Toy015 be opened. Classical/stochastic/hybrid/full-QFT degeneracy and relativistic/gauge/conservation/causality/EFT/renormalization/measurability gates remain open unless explicitly closed elsewhere in the repository.
+Only if the residual dominant marginal cost after this common-normalization closure is demonstrably source-dependent should Toy015 be opened. Classical/stochastic/hybrid/full-QFT degeneracy and relativistic/gauge/conservation/causality/EFT/renormalization/measurability gates remain open unless explicitly closed elsewhere in the repository.
