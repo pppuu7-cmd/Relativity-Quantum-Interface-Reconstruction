@@ -1,7 +1,7 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-30  
-**Authoritative front:** through **Iteration 097**.
+**Authoritative front:** through **Iteration 099**.
 
 > `docs/RECOVERY_GUIDE.md` and `docs/MASTER_TABLE.md` contain the mature framework but may lag the fast Paper-III resource front. Read this pointer plus the listed recovery deltas before starting a new gate. Repository state, not chat history, is authoritative.
 
@@ -9,9 +9,9 @@
 
 - **Paper I scientific scope:** CLOSED at Iteration 078.
 - **Paper II scientific scope:** CLOSED at Iteration 079.
-- **Paper III:** ACTIVE. Iterations 080–097 translate abstract Fisher requirements into physical science/calibration/source/control rates, robust correlated two-band likelihoods, seven-layer matrix calibration rates, interval-safe wall-clock architecture comparison, physical Toy009/Toy014 crossover, primitive value-of-information, and now characterization-time optimization.
+- **Paper III:** ACTIVE. Iterations 080–099 translate abstract Fisher requirements into physical science/calibration/source/control rates, robust correlated two-band likelihoods, seven-layer matrix calibration rates, interval-safe wall-clock architecture comparison, physical Toy009/Toy014 crossover, primitive value-of-information, characterization-time optimization, finite source-copy budgets, and a formal primitive apparatus certificate.
 
-RQIR remains separate from RTK/DSIR. No toy, Fisher, resource, detector, or characterization result is an empirical new-physics claim.
+RQIR remains separate from RTK/DSIR. No toy, Fisher, resource, detector, characterization, or apparatus-certificate result is an empirical new-physics claim.
 
 ## Mature inference backbone
 
@@ -199,60 +199,39 @@ with primitive derivatives in acceptance, coupling, reset and visibility.
 
 ## Iteration 096 — characterization value per physical second
 
-A sensitivity derivative is not yet a measurement schedule.  Let `h_x` be the current uncertainty scale of primitive `x` and `R_char,x` its independent characterization Fisher rate.
+Let `h_x` be the current uncertainty scale and `R_char,x` its independent characterization Fisher rate.
 
-**RESOURCE-048:** in the Fisher-limited smooth model,
+**RESOURCE-048:**
 
 `Xi_x = -(1/W)dW/dt = 0.5 Lambda_x R_char,x h_x^2`.
 
-This is the local fractional unresolved-band shrink rate per characterization second.
+**NG-049:** the largest `Lambda_x` need not be the best measurement per second; physical priority depends on `R_char,x h_x^2` and shared duty/cost.
 
-**NG-049:** the largest `Lambda_x` need not be the best measurement per second.  Physical priority depends on `R_char,x h_x^2` and any shared duty/cost.
+For irreducible floor `h_f`,
 
-For an irreducible floor `h_f`,
+**RESOURCE-049:**
 
-**RESOURCE-049:** contracting `h0 -> h1` costs
+`T_char=[1/(h1^2-h_f^2)-1/(h0^2-h_f^2)]/R_char`.
 
-`T_char=[1/(h1^2-h_f^2)-1/(h0^2-h_f^2)]/R_char`,
-
-provided `h1>h_f`; targets at/below the floor are impossible.  With zero floor, halving an uncertainty costs `3/(R_char h0^2)`.
-
-The old Iteration-094 leverage ranking is recovered only when normalized characterization speeds `R_char h^2` are equal.  In its synthetic regression box, Toy014 aggregate `A` overtakes Toy014 `R_src` as the better measurement per second when its normalized characterization speed is more than `2.866505...x` larger.  This number is regression-only.
-
-Files:
-
-- `analysis/characterization_time_voi_iteration096.py`
-- `docs/PAPER_III_CHARACTERIZATION_TIME_VOI_ITERATION096.md`
-- `research_log/2026-08-30_iteration_096_characterization_time_voi.md`
-- `recovery/RECOVERY_DELTA_ITERATION_096.md`
+Targets at/below the floor are impossible. With zero floor, halving uncertainty costs `3/(R_char h0^2)`.
 
 ## Iteration 097 — finite characterization-time allocation
 
-On a fixed smooth branch, approximate the uncertainty-dependent decision width by
+On a fixed smooth branch,
 
 `W ~= W_const + sum_i c_i/sqrt(I_i0+R_i t_i)`
 
 with `sum_i t_i=T_char`.
 
-Each term is convex, so the KKT solution is globally optimal in the declared local model.
-
 **RESOURCE-050 — characterization water-filling:**
 
-`boxed{t_i(lambda)=max(0,[(c_i R_i/(2 lambda))^(2/3)-I_i0]/R_i}`,
+`t_i(lambda)=max(0,[(c_i R_i/(2 lambda))^(2/3)-I_i0]/R_i`,
 
-with `lambda` chosen so `sum_i t_i=T_char`.
+with `lambda` chosen by `sum_i t_i=T_char`.
 
-Every active channel finishes with equal marginal decision-band shrink rate
+Every active channel finishes with equal marginal decision-band shrink rate.
 
-`c_i R_i/[2(I_i0+R_i t_i)^(3/2)] = lambda`.
-
-The initial marginal reduces exactly to Iteration 096:
-
-`(1/W)M_i0 = 0.5 Lambda_i R_i h_i^2`.
-
-**NG-050:** equal characterization time or equal fractional contraction is generally suboptimal.  Channels enter the active set as higher-value measurements accumulate Fisher and their marginal value falls.
-
-For systematic floors use RESOURCE-049 piecewise/numerically.  For correlated posterior updates use a joint Fisher/covariance model.  NG-048 remains active at nonsmooth branch/eigenvalue/corner changes.
+**NG-050:** equal characterization time or equal fractional contraction is generally suboptimal.
 
 Files:
 
@@ -261,15 +240,79 @@ Files:
 - `research_log/2026-08-30_iteration_097_characterization_waterfill.md`
 - `recovery/RECOVERY_DELTA_ITERATION_097.md`
 
+## Iteration 098 — finite source-metrology shot certificate
+
+For an accepted-copy Ramsey Fisher `F_copy`, preparation acceptance `p_E`, and independent source target `C_src`,
+
+**RESOURCE-051:**
+
+`N_acc=C_src/F_copy`, `N_try=C_src/(p_E F_copy)`.
+
+The exact wall-clock identity is
+
+`T_src=N_try(t_reset+phi/Omega_E)=C_src/[p_E Omega_E q(V,tau_reset)]`.
+
+Zero-reset `V=1` repository values at the rate-optimal phases give:
+
+- Toy009 `F_copy~=0.00275637787`, `N_acc~=81628.866`;
+- Toy014 `F_copy~=0.00348642430`, `N_acc~=64536.035`.
+
+At the transparent `100 Hz`, `p_E=0.5`, zero-reset benchmark:
+
+- Toy009 `T_src~=283.818 s`;
+- Toy014 `T_src~=190.311 s`.
+
+**RESOURCE-052:** the source-only wall-clock floor becomes
+
+`p_E Omega_E > [m C_src/T_cap]/q`.
+
+For `T_cap=7 days`, `d=.05`, zero reset and `V=1`, the best-case minimum products are `0.155186624 s^-1` (Toy009) and `0.104058909 s^-1` (Toy014).
+
+**NG-051:** extra detector exposure cannot replace missing independent source-copy Fisher; this is the finite-shot form of NG-005/NG-041.
+
+Files:
+
+- `analysis/source_metrology_shot_certificate_iteration098.py`
+- `docs/PAPER_III_SOURCE_METROLOGY_SHOT_CERTIFICATE_ITERATION098.md`
+- `research_log/2026-08-30_iteration_098_source_metrology_shot_certificate.md`
+- `recovery/RECOVERY_DELTA_ITERATION_098.md`
+
+## Iteration 099 — primitive apparatus certificate
+
+The first explicit Toy009/Toy014 primitive certificate now separates repository-backed source-model constants from quantities that must be measured or declared in one physical apparatus.
+
+**APP-003:** an absolute RESOURCE-045/NG-030 decision requires closure of these common-normalization cuts for both architectures:
+
+1. science `(a2,a4,rho)`;
+2. seven physical calibration rates `k1...k7` or equivalent full `2x2` Fisher blocks;
+3. common detector/calibration scale `R0`;
+4. source apparatus `(p_E,Omega_E,t_reset,V)` or directly certified robust `R_src`;
+5. control/duty interval `d`;
+6. for RESOURCE-050 scheduling, uncertainty/covariance, `R_char`, irreducible floor and characterization duty/cost.
+
+**NG-052:** complete toy-source coefficients do not constitute a complete experimental certificate. Source re-optimization cannot substitute for the missing common detector/calibration normalization or physical source/control throughput.
+
+Current absolute Toy009/Toy014 dominance remains **data-underdetermined, not algebra-underdetermined**.
+
+Files:
+
+- `analysis/primitive_certificate_iteration099.py`
+- `docs/PAPER_III_PRIMITIVE_APPARATUS_CERTIFICATE_ITERATION099.md`
+- `research_log/2026-08-30_iteration_099_primitive_apparatus_certificate.md`
+- `recovery/RECOVERY_DELTA_ITERATION_099.md`
+
 ## Immediate next gate — Paper III only
 
-Construct the first declared primitive Toy009/Toy014 characterization table.  For every active science/calibration/source/control primitive supply:
+Do not start Toy015 yet.
 
-`central value, uncertainty interval/covariance, physical characterization Fisher rate, irreducible floor, correlations, and characterization duty/cost`.
+The next admissible step is to populate the primitive certificate with the strongest **single-platform** external apparatus information that can be put into one normalization without violating NG-040. Priority is:
 
-Use repository-backed source coefficients and externally measured/sourced apparatus quantities where one common normalization exists; otherwise keep the apparatus layer explicitly parameterized rather than inventing a hardware forecast.
+1. a simultaneous or tunable `f,2f` transfer/PSD/cross-PSD measurement that can define `R0,a2,a4,rho` together;
+2. physical same-apparatus calibration Fisher blocks/rates or enough transfer/noise data to derive them;
+3. measured source preparation success/reset/visibility/coherence and campaign duty;
+4. characterization Fisher rates/floors for the dominant primitive uncertainties.
 
-Then apply RESOURCE-050 together with RESOURCE-045/NG-030 to determine a robust architecture or the remaining unresolved band.  Do not start Toy015 unless this physical schedule identifies a genuinely source-dependent bottleneck that a new local source could plausibly improve.
+If no publication/platform closes a cut, keep that field parameterized and derive an engineering threshold rather than fabricating a forecast. Apply RESOURCE-050/RESOURCE-045 only after a declared joint certificate exists. Toy015 is justified only if the resulting residual bottleneck is demonstrably source-dependent.
 
 ## Discipline
 
