@@ -1,7 +1,7 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-30  
-**Authoritative front:** through **Iteration 093**.
+**Authoritative front:** through **Iteration 094**.
 
 > `docs/RECOVERY_GUIDE.md` and `docs/MASTER_TABLE.md` contain the mature framework but may lag the fast resource front. Read this pointer plus the listed recovery deltas before starting a new gate. Repository state, not chat history, is authoritative.
 
@@ -9,7 +9,7 @@
 
 - **Paper I scientific scope:** CLOSED at Iteration 078.
 - **Paper II scientific scope:** CLOSED at Iteration 079.
-- **Paper III:** ACTIVE. Iterations 080–093 develop apparatus-rate closure, physical two-band likelihood, correlation/uncertainty corrections, seven-layer robust calibration, joint robust wall-clock certification, external multimode apparatus audit, a tunable simultaneous `f,2f` envelope, direct physical Toy009/Toy014 crossover, and now the exact interval-robust architecture crossover.
+- **Paper III:** ACTIVE. Iterations 080–094 develop apparatus-rate closure, physical two-band likelihood, correlation/uncertainty corrections, seven-layer robust calibration, joint robust wall-clock certification, external multimode apparatus audit, tunable simultaneous `f,2f` envelopes, direct and interval-robust Toy009/Toy014 crossover, and decision/value-of-information for apparatus characterization.
 
 RQIR remains separate from RTK/DSIR. No toy, Fisher, resource or detector result is an empirical new-physics claim.
 
@@ -110,17 +110,13 @@ Published multimode levitated platforms demonstrate simultaneous multimode reado
 
 Introduce one declared physical detector/calibration Fisher-throughput scale `R0`.
 
-Conservative science rates:
-
-`r2^-=a2 R0`, `r4^-=a4 R0`.
-
-With worst allowed correlation `rho_+`,
+`r2^-=a2 R0`, `r4^-=a4 R0`,
 
 `R_beta^-=s R0`,
 
 `s = 4 a2 a4/(a2+a4+2 rho_+ sqrt(a2 a4))`.
 
-For the seven robust calibration layers write
+For seven robust calibration layers write
 
 `R_cal,j^-=k_j R0`.
 
@@ -130,27 +126,25 @@ Define
 
 Then
 
-`T_total^upper = m[A/R0 + C_src/R_src^-]`, `m=1/(1-d^+)`.
+`T_total^upper = m[A/R0 + C_src/R_src^-]`.
 
-**RESOURCE-043:** for target campaign cap `T_cap`, source throughput must first satisfy
+**RESOURCE-043:** for target cap `T_cap`, source throughput must first satisfy
 
-`R_src^- > m C_src/T_cap`.
+`R_src^- > m C_src/T_cap`,
 
-Above that source floor,
+and above that floor
 
 `R0_min = m A/[T_cap-m C_src/R_src^-]`.
 
-**NG-041:** if `R_src^- <= m C_src/T_cap`, no finite detector/calibration improvement can rescue the requested wall-clock cap.
+**NG-041:** below the source-only rate floor no finite detector/calibration improvement can rescue the requested wall clock.
 
 ## Iteration 092 — direct physical Toy009/Toy014 crossover
 
-For architecture `i`, retain its own source-specific science/calibration coefficient
+For architecture `i`,
 
 `A_i = Z^2/s_i + gamma_i sum_j 1/k_ij`,
 
-its own robust source-metrology rate `R_src,i`, and duty `d_i`:
-
-`T_i = m_i[A_i/R0 + C_src/R_src,i]`, `m_i=1/(1-d_i)`.
+`T_i = m_i[A_i/R0 + C_src/R_src,i]`.
 
 Define
 
@@ -162,25 +156,19 @@ Then
 
 `T_14-T_09 = Delta_D/R0 + Delta_S`.
 
-**RESOURCE-044:** whenever a positive finite crossing exists,
+**RESOURCE-044:** a positive finite crossing is
 
 `R0_cross = -Delta_D/Delta_S`.
 
-**NG-042:** if `Delta_D>0` and `Delta_S>=0`, Toy014 cannot beat Toy009 at any finite positive `R0` in the declared model.
+**NG-042:** if `Delta_D>0` and `Delta_S>=0`, Toy014 cannot beat Toy009 at finite positive `R0` in the declared model.
 
-**PREP-005:** on the common Ramsey apparatus and declared reset/visibility box, Toy014/Toy009 optimized source-rate ratio remains above `1.39`; this is a finite numerical design-box result.
-
-The historical shared-kernel condition `y > 7.6895 + 7.5421 x` remains a regression slice of RESOURCE-044.
+**PREP-005:** on the common Ramsey apparatus and declared reset/visibility box, the optimized Toy014/Toy009 source-rate ratio remains above `1.39`; this is a finite numerical design-box result, not a theorem.
 
 ## Iteration 093 — exact robust physical crossover
 
-Let each architecture have declared independent intervals
+Let each architecture have independent intervals
 
-`A_i in [A_i^-,A_i^+]`,
-
-`R_src,i in [R_src,i^-,R_src,i^+]`,
-
-`d_i in [d_i^-,d_i^+]`.
+`A_i in [A_i^-,A_i^+]`, `R_src,i in [R_src,i^-,R_src,i^+]`, `d_i in [d_i^-,d_i^+]`.
 
 Then
 
@@ -194,23 +182,11 @@ For robust Toy014 faster than Toy009 define
 
 `S_14|09=C_src(m_14^+/R_src,14^- - m_09^-/R_src,09^+)`.
 
-### RQIR-RESOURCE-045
+**RESOURCE-045:** `T_14^upper-T_09^lower=D_14|09/R0+S_14|09`; in the common `D>0,S<0` case Toy014 is robustly faster only for `R0>-D/S`.
 
-`T_14^upper-T_09^lower=D_14|09/R0+S_14|09`.
+**NG-043:** the reverse and forward robust boundaries need not coincide; an intermediate unresolved throughput band can exist in which neither architecture is an NG-030 winner.
 
-Thus the NG-030 robust crossover is analytic. In the common rescue case `D>0,S<0`, Toy014 is robustly faster only for
-
-`R0>-D/S`.
-
-The reverse Toy009 certificate must be evaluated independently from `T_09^upper-T_14^lower`.
-
-### RQIR-NG-043
-
-The two robust crossover boundaries need not coincide. An intermediate throughput interval can exist in which neither architecture is robustly faster. A nominal RESOURCE-044 winner inside this interval is not an NG-030 winner. The width of this unresolved band is an apparatus-characterization target.
-
-### RQIR-NG-044
-
-The retained shared-kernel Pareto ratios `(q_s,q_c,q_p)` are not sufficient statistics for robust physical dominance because they do not encode source-specific transfer/cross-PSD uncertainty, all seven matrix calibration-rate intervals, robust source-metrology intervals and duty uncertainty.
+**NG-044:** shared-kernel Pareto ratios `(q_s,q_c,q_p)` are not sufficient statistics for robust physical dominance.
 
 Files:
 
@@ -219,9 +195,44 @@ Files:
 - `research_log/2026-08-30_iteration_093_robust_physical_crossover.md`
 - `recovery/RECOVERY_DELTA_ITERATION_093.md`
 
+## Iteration 094 — crossover value-of-information
+
+For any active robust boundary
+
+`B=-D/S`,
+
+**RESOURCE-046** gives the exact differential
+
+`dB=-(1/S)dD+(D/S^2)dS`.
+
+All active interval-endpoint sensitivities in `A_i`, `R_src,i`, and `d_i` are therefore analytic.
+
+To compare unlike coordinates, parameterize each current interval by a half-width contraction coordinate `eta`:
+
+`x_-(eta)=c-eta h`, `x_+(eta)=c+eta h`.
+
+For unresolved width `W=U-L`, define local decision leverage
+
+`Lambda_x=(1/W) dW/deta_x` at `eta=1`.
+
+**DESIGN-006:** prioritize characterization by reduction of the robust NG-043 decision band, not by raw percentage uncertainty.
+
+**NG-045:** the largest raw fractional uncertainty need not be the highest-value measurement; source rates enter through `1/R_src`, duty through `m=(1-d)^-1`, and detector/calibration through `A/R0`.
+
+**NG-046:** the leverage ranking is local to the declared uncertainty geometry and must be recomputed after substantial contraction; correlated primitive uncertainties require their joint uncertainty set rather than independent Cartesian boxes.
+
+The Iteration-093 synthetic box is reproduced exactly. Its local leverage ordering is: Toy014 `R_src`, Toy009 `R_src`, Toy014 `A`, Toy014 duty, Toy009 duty, Toy009 `A`. This ranking is a regression example only, not an apparatus prediction.
+
+Files:
+
+- `analysis/crossover_value_of_information_iteration094.py`
+- `docs/PAPER_III_CROSSOVER_VALUE_OF_INFORMATION_ITERATION094.md`
+- `research_log/2026-08-30_iteration_094_crossover_value_of_information.md`
+- `recovery/RECOVERY_DELTA_ITERATION_094.md`
+
 ## Immediate next gate — Paper III only
 
-Derive the sensitivity/value-of-information of the two robust crossover boundaries and the NG-043 unresolved-band width to uncertainty in `A_i`, `R_src,i` and `d_i`. Use it to prioritize which apparatus characterization measurement should be improved first.
+Propagate primitive source-specific uncertainty (`r2,r4,rho`, all seven calibration matrix blocks, source reset/visibility/coupling, timing/control duty) into `A_i`, `R_src,i`, and `d_i`, then compute primitive-level decision leverage. Use this to identify the single highest-value characterization measurement in a declared apparatus envelope.
 
 Do not start Toy015 unless the physical rate-space analysis identifies a genuinely source-dependent bottleneck that a new local source could plausibly improve.
 
