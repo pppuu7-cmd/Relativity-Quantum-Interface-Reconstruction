@@ -1,7 +1,7 @@
 # RQIR Article Series Architecture
 
 **Date fixed:** 2026-08-29  
-**Status:** publication-planning note; scientific status updated through Iteration 080.
+**Status:** publication-planning note; scientific status updated through Iteration 081.
 
 ## Purpose
 
@@ -80,11 +80,12 @@ Core material:
 - branch-specific Pareto/resource phase diagrams;
 - Iteration-077 minimal apparatus-rate certificate `(R_beta,x,y,d)`;
 - Iteration-080 inverse apparatus specification envelope using `H_cal` and a declared wall-clock cap;
-- final `F_beta|theta/T_wall` comparison under one apparatus model.
+- Iteration-081 apparatus-closure identifiability audit, RQIR-NG-032 and RQIR-APP-001;
+- final `F_beta|theta/T_wall` comparison under one declared apparatus model.
 
 The conclusion should define a minimum experimental specification, not claim a ready experiment unless the apparatus-level gates have actually been closed.
 
-**Scientific status:** ACTIVE after Iteration 080. The abstract Fisher parameters are now translated into rates, shot/source throughput, reset/coherence/control and inverse duration targets, but a repository-backed physical apparatus model with source-specific transfer functions, PSD/cross-PSD, `R_beta`, seven `R_cal,j`, `R_src`, duty and uncertainty intervals is still required.
+**Scientific status:** ACTIVE after Iteration 081. The abstract Fisher parameters are translated into rates, shot/source throughput, reset/coherence/control and inverse duration targets. The remaining scientific closure is now sharply localized: instantiate one source-specific apparatus model with absolute transfer/noise normalization, seven calibration matrix rates, independent source-metrology rate, control duty and uncertainty intervals. Existing old phase/force/noise numbers are explicitly illustrative and cannot be silently promoted to measured apparatus performance.
 
 ## Paper IV — only after the reconstruction papers mature
 
