@@ -1,7 +1,7 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-30  
-**Authoritative front:** through **Iteration 110**.
+**Authoritative front:** through **Iteration 111**.
 
 > Repository state, not chat history, is authoritative. Read `docs/RECOVERY_GUIDE.md`, `docs/MASTER_TABLE.md`, this pointer, and the latest recovery deltas before continuing. RQIR remains separate from RTK/DSIR. No current result is an empirical new-physics claim.
 
@@ -9,249 +9,201 @@
 
 - **Paper I scientific scope:** CLOSED at Iteration 078.
 - **Paper II scientific scope:** CLOSED at Iteration 079.
-- **Paper III:** ACTIVE. Iterations 080–109 translate abstract preparation/calibration Fisher requirements into physical detector, transfer, source, control, characterization and wall-clock resources, including robust final-significance scheduling, common-normalization matrix certificates and recertification Fisher-rate envelopes.
-- **Iteration 110:** recovery/provenance consolidation only; no new scientific claim. Prior RQIR chats were reconciled against repository source-of-truth and the missing future Candidate Gravity entry checklist was migrated.
+- **Paper III:** ACTIVE. Iterations 080–111 translate abstract preparation/calibration Fisher requirements into physical detector, source, control, characterization and wall-clock resources.
+- **Candidate Gravity:** inactive future branch. `docs/CANDIDATE_GRAVITY_ENTRY_CRITERIA.md` is entry planning only.
 
-## Mandatory inference backbone
+## Mandatory inference/resource backbone
 
 Use detector-level
 
 `F_beta|theta = F_bb - F_btheta F_thetatheta^-1 F_thetab`.
 
-Retain exact hard constraints, centered covariance derivatives, spectral-tilt profiling, full PSD/cross-PSD Fisher, source-preparation calibration, coherence/reset/dead-time and all consistency/degeneracy gates. NG-005, NG-006/007, NG-023, NG-025/026 and NG-030 remain active.
+Retain exact hard constraints, centered covariance derivatives, spectral-tilt profiling, full PSD/cross-PSD Fisher, source-preparation calibration, coherence/reset/dead-time, transfer gain/phase and all consistency/degeneracy gates. NG-005, NG-006/007, NG-023, NG-025/026 and NG-030 remain active.
 
-## Mature resource backbone
+Mature resource objects:
 
-- simultaneous two-band science:
-  `R_beta = 4 r2 r4/(r2+r4+2 rho sqrt(r2 r4))`;
-- seven physical calibration blocks:
-  `R_cal,j=lambda_min(F_j)`;
-- source Ramsey shots:
-  `N_acc=C/F_copy`, `N_try=C/(p_E F_copy)`;
-- same-state temporal `f,2f` covariance/injection protocol: Iteration 101;
-- joint transfer-gain profiling: Iteration 102;
-- full complex campaign optimization: Iteration 103.
+- simultaneous two-band science: `R_beta = 4 r2 r4/(r2+r4+2 rho sqrt(r2 r4))`;
+- physical calibration blocks: `R_cal,j=lambda_min(F_j)`;
+- source shots: `N_acc=C/F_copy`, `N_try=C/(p_E F_copy)`;
+- same-state temporal `f,2f` protocol: Iteration 101;
+- joint science/transfer profiling: Iteration 102;
+- complex campaign allocation: Iteration 103;
+- robust source+detector final significance: Iteration 104;
+- architecture crossover `(u,v,z,delta)`: Iteration 105;
+- detector matrix-ratio certificate: Iteration 106;
+- recertification-constrained schedule: Iteration 107;
+- exact pure-dead timing convention: Iteration 108;
+- scalar control Fisher envelope: Iteration 109;
+- cross-chat recovery consolidation: Iteration 110;
+- multi-control architecture threshold surface: Iteration 111.
 
-## Iteration 103 — full complex campaign simplex
+## Iterations 103–107 — campaign/final-significance architecture
 
 For campaign Fisher-rate matrices `J_k` and times `t_k`,
 
 `J=sum_k t_k J_k=[[a,b^T],[b,N]]`,
 
-`F_beta=a-b^T N^-1 b`.
+`Phi(J)=F_beta=a-b^T N^-1 b`.
 
-**RESOURCE-057:** with campaign fractions `x_k`,
+**RESOURCE-057:** `R_*=max_x Phi(sum_k x_k J_k)`, `T_min=Z^2/R_*`.
 
-`R_*=max_{x>=0,sum x=1} F_beta(sum_k x_k J_k)`,
+**RESOURCE-058:** with `q=N^-1b`, `w=(1,-q)`, marginal campaign value is `w^T J_k w`.
 
-`T_min=Z^2/R_*`.
+**RESOURCE-059:** robust scheduling uses `max_x min_u Phi(sum_k x_k J_k(u))`.
 
-**RESOURCE-058:** with `q=N^-1b`, `w=(1,-q)`,
-
-`dF_beta/dt_k=w^T J_k w`.
-
-At an unconstrained interior optimum, active campaigns equalize marginal profiled Fisher/sec.
-
-**NG-058:** transfer phase can be omitted only after Fisher-metric, not merely Euclidean, orthogonality is demonstrated.
-
-## Iteration 104 — robust final-significance source closure
-
-For local source-amplitude profiling,
-
-`F_final=A C/(A+C)`.
-
-**NUM-006:** historical `A=25`, `C=225` gives `F_final=22.5` or `4.74341649 sigma`; `C=225` is 90% retention of a raw detector 5-sigma benchmark, not a final 5-sigma certificate.
-
-For final `Z=5` at fixed 90% retention use `A=27.77777778`, `C=250`.
-
-**RESOURCE-060:** with detector rate `R_s` and independent source-amplitude rate `R_a`,
-
-`1/F=1/(R_s T_s)+1/(R_a T_a)`,
-
-`T_s/T_a=sqrt(R_a/R_s)`,
+**RESOURCE-060:** independent detector/source rates combine as
 
 `T_min=F_*[1/sqrt(R_s)+1/sqrt(R_a)]^2`.
 
-**NG-059:** fixed 90% retention is minimum-time optimal only for `R_a/R_s=81`.
+For architectures Toy014/Toy009 define
 
-**RESOURCE-059:** robust scheduling uses
-
-`R_rob^*=max_x min_u F_beta(sum_k x_k J_k(u))`.
-
-## Iteration 105 — final-significance architecture crossover
-
-Where detector/source separation is valid, define
-
-`R_final,i = 1/[1/sqrt(R_D,i)+1/sqrt(R_A,i)]^2`.
-
-With information-free duty `d_i`, `Q_i=(1-d_i)R_final,i`.
-
-Define
-
-`u=R_D,14/R_D,09`, `v=R_A,14/R_A,09`, `z=R_A,09/R_D,09`, `delta=(1-d_14)/(1-d_09)`.
+`u=R_D,14/R_D,09`, `v=R_A,14/R_A,09`, `z=R_A,09/R_D,09`, `delta=(1-d14)/(1-d09)`.
 
 **RESOURCE-061:**
 
-`Q_14/Q_09 = delta[(1+z^-1/2)/(u^-1/2+(v z)^-1/2)]^2`.
+`Q14/Q09 = delta[(1+z^-1/2)/(u^-1/2+(v z)^-1/2)]^2`.
 
-**DESIGN-012:** source domination favors Toy014 iff `v>u`, favors Toy009 iff `v<u`.
-
-**NG-060:** Ramsey/source-rate advantage alone is not an architecture certificate.
-
-## Iteration 106 — robust detector-side ratio certificate
-
-For
-
-`Phi(J)=a-b^T N^-1 b=min_q (1,-q)^T J (1,-q)`,
-
-Loewner monotonicity and positive homogeneity give:
-
-**RESOURCE-062:** if uniformly over common campaigns and apparatus uncertainty
-
-`alpha J_09,k <= J_14,k <= beta J_09,k`
-
-and both architectures share the same feasible campaign set, then
-
-`alpha <= u <= beta`.
-
-Use generalized eigenvalues for positive-definite reference matrices and audit singular supports explicitly.
-
-**NG-061:** science-only SNR, gamma, calibration-cost or marginal transfer-error ratios do not by themselves certify `u`; nuisance orientation/support and schedule set matter.
-
-**NG-062:** detector no-rescue condition
-
-`delta v (1+sqrt(z))^2 <= 1`.
-
-When rescue is possible,
+**NG-062:** detector no-rescue condition is `delta v (1+sqrt(z))^2 <= 1`; otherwise
 
 `u_req=[sqrt(delta)(1+z^-1/2)-(v z)^-1/2]^-2`.
 
-**RESOURCE-063:** interval-safe architecture-rate bounds follow from the certified joint/interval set for `(u,v,z,delta)`; apply NG-030.
+**RESOURCE-062/063:** common-coordinate Fisher matrices can bound `u` through Loewner/generalized-eigenvalue certificates and then propagate interval/joint uncertainty under NG-030.
 
-## Iteration 107 — recertification-constrained scheduling
+**RESOURCE-064:** mandatory physical quotas use
 
-**RESOURCE-064:** represent mandatory physical quotas with
-
-`X={x>=0, 1^T x=1, A x>=b}`,
-
-and use
+`X={x>=0,1^T x=1,A x>=b}`,
 
 `R_D^rob=max_{x in X} min_u Phi(sum_k x_k J_k(u))`.
 
-**DESIGN-013:** active schedule constraints enter KKT conditions as shadow prices.
+**NG-063/064:** pure scalar duty is invalid for Fisher-carrying references; differing feasible schedule sets can invalidate a two-sided architecture ratio certificate.
 
-**NG-063:** scalar duty is valid only for genuinely information-free reference/dead time; reference campaigns carrying nuisance Fisher belong inside the joint schedule.
+## Iteration 108 — timing overhead correction
 
-**NG-064:** architecture-specific feasible schedule sets can invalidate a two-sided matrix-ratio certificate; optimize both constrained schedules when set inclusion is absent.
-
-**RESOURCE-065:** pure-dead periodic references obey
-
-`L=F_*/R_live`, `n_ref=ceil(L/tau_live)`, `T_wall=L+n_ref t_ref`.
-
-## Iteration 108 — exact timing-reference overhead convention
-
-**NUM-007:** for overhead/live ratio `r=T_ref/T_cad`,
+For pure-dead timing overhead/live ratio `r=T_ref/T_cad`,
 
 `m_wall=1+r`, `d_wall=r/(1+r)`, `eta_live=1/(1+r)`.
 
-Retained centered timing targets:
+Retained timing targets:
 
 - Toy009 D2 `sigma_t~=9.19001 us`;
 - Toy014 `sigma_t~=3.97715 us`.
 
-Under the transparent common jitter/Brownian benchmark, Toy014 has about `24.91x` larger timing-reference overhead than Toy009, but the timing-only detector-rate correction remains sub-percent over the stored `D_tau=100–1000 us^2/h` slice.
+Stored `D_tau=100–1000 us^2/h` timing-only corrections remain sub-percent despite Toy014's tighter tolerance.
 
-**RESOURCE-066:** for pure-dead timing references,
+**RESOURCE-066:** `u_wall=u_live(1+r09)/(1+r14)`.
 
-`u_wall=u_live (1+r09)/(1+r14)`.
+## Iteration 109 — scalar recertification Fisher envelope
 
-## Iteration 109 — control recertification Fisher envelope
-
-For a scalar physical control coordinate with allowed standard deviation `sigma_*`, irreducible floor `sigma_f`, Brownian drift convention `Var=D t/2`, and reference Fisher rate `R_ref`, define
+For allowed `sigma_*`, floor `sigma_f`, Brownian convention `Var=D t/2`, reference Fisher rate `R_ref`, define
 
 `S=sigma_*^2-sigma_f^2>0`.
 
-**RESOURCE-067 — optimal reference/drift split:**
+**RESOURCE-067:**
 
 `sigma_ref^2=S/2`,
 
-`t_ref^*=2/(R_ref S)`,
+`t_ref*=2/(R_ref S)`,
 
-`tau_live^*=S/D`,
+`tau_live*=S/D`,
 
 `r_min=2D/(R_ref S^2)`.
 
-**RESOURCE-068 — reference-rate threshold:**
+**RESOURCE-068:** for maximum overhead/live `r_max`,
 
 `R_ref >= 2D/[r_max (sigma_*^2-sigma_f^2)^2]`.
 
-**NG-065:** a tolerance alone is not a control-time budget; physical drift/floor and reference Fisher rate are required.
+**NG-065:** tolerance alone is not a control-time budget.
 
-For the physical timing coordinate, equal drift/equal target overhead/equal Fisher normalization gives
+For physical timing with equal drift/overhead/Fisher normalization,
 
-`R_ref,14/R_ref,09=(sigma_t,09/sigma_t,14)^4 ~= 28.5086209`.
+`R_ref,14/R_ref,09 ~= 28.5086209`.
 
-This is a required reference-Fisher-rate ratio under the same model, not a claim of `28.5x` wall-clock cost.
+This is a required Fisher-rate ratio under that model, not a wall-clock forecast.
 
-**NG-066:** normalized additive mean/covariance tolerances are not cross-source SI controls; common output/force transduction, offset drift spectrum and same-apparatus reference likelihood are still required.
+**NG-066:** normalized additive tolerances are not cross-source SI controls without common transduction/drift/reference likelihood.
 
-Control-cut status after Iteration 109:
+Open control status after Iteration 109:
 
-- timing: parameterized/partial in a common physical coordinate;
-- geometry: physical transduction/drift/reference Fisher open;
-- additive mean/covariance: physical transduction/drift/reference Fisher open;
-- complex gain/phase: injected-transfer Fisher exists, but same-state stability/recertification process remains open.
+- timing: physical/parameterized;
+- geometry: SI transduction + drift + reference Fisher open;
+- additive mean/covariance: SI transduction + drift + reference Fisher open;
+- complex gain/phase: injected-transfer Fisher exists; temporal stability/recertification process open.
 
-**DESIGN-014:** rank controls by architecture-decision shadow price once physical schedules exist, not by raw tolerance alone.
+## Iteration 110 — recovery/provenance consolidation
 
-## Iteration 110 — cross-chat recovery audit
+Cross-chat recovery verified that major earlier RQIR numerical/scientific results are already present in the repository. Candidate Gravity entry gates QG-001…QG-010 were migrated as future planning only.
 
-Prior RQIR discussion history was reconciled against repository source-of-truth.
+**RQIR-RECOVERY-001:** project provenance is a hard recovery constraint; RTK/DSIR results do not enter RQIR unless independently rederived in RQIR.
 
-Verified already present and therefore not duplicated:
+## Iteration 111 — parameterized multi-control threshold surface
 
-- RQIR-NUM-001 and revocation of false early `6.3x/4.6x` heterogeneous-calibration gains;
-- Iteration-032 fully force-native D2 rank/null/covariance-complementarity results;
-- source QFI in both physical amplitude `a` and fractional amplitude `alpha` coordinates;
-- the Paper I/II/III and later Candidate Gravity publication architecture.
+For each genuinely pure-dead scalar control `j` in architecture `i`,
 
-Coordinate reconciliation:
+`S_ij=sigma_*ij^2-sigma_f,ij^2`,
 
-`a=0.08 alpha`,
+`h_ij=2D_ij/[R_ref,ij S_ij^2]`.
 
-`F_Q^(alpha)=0.08^2 F_Q^(a)`.
+### RESOURCE-069 — aggregate control load
 
-Repository values `F_Q^(a)~=13.270686` and `F_Q^(alpha)~=0.0849324` are consistent. An ideal full-QFI `C_alpha=9` target is about `105.97` accepted-copy QFI units; do not substitute this ceiling for realistic energy-population/Ramsey copy budgets.
+For non-overlapping pure-dead references,
 
-**RQIR-RECOVERY-001:** project provenance is a hard recovery constraint. RTK/DSIR results do not enter RQIR unless independently rederived in RQIR.
+`H_i=sum_j h_ij`,
 
-Newly migrated planning document:
+`eta_i=1/(1+H_i)`,
 
-`docs/CANDIDATE_GRAVITY_ENTRY_CRITERIA.md`
+`boxed{u_wall=u_live(1+H09)/(1+H14)}`.
 
-with future QG-001…QG-010 gates. Candidate Gravity remains inactive; this document only preserves previously discussed entry criteria.
+This is the exact multi-control extension of RESOURCE-066 within the declared scalar scope.
 
-Files:
+### RESOURCE-070 — decision-relevant Fisher threshold
 
-- `analysis/control_recertification_fisher_envelope_iteration109.py`
-- `docs/PAPER_III_CONTROL_RECERTIFICATION_FISHER_ENVELOPE_ITERATION109.md`
-- `research_log/2026-08-30_iteration_109_control_recertification_fisher_envelope.md`
-- `recovery/RECOVERY_DELTA_ITERATION_109.md`
-- `docs/RQIR_CROSS_CHAT_RECOVERY_AUDIT_ITERATION110.md`
-- `docs/CANDIDATE_GRAVITY_ENTRY_CRITERIA.md`
-- `research_log/2026-08-30_iteration_110_cross_chat_recovery_audit.md`
-- `recovery/RECOVERY_DELTA_ITERATION_110.md`
+For one unresolved Toy014 control `j`, define
+
+`K_14,j=(u_live/u_req)(1+H09)-1-H14,-j`.
+
+If `K<=0`, increasing that one reference Fisher rate cannot rescue Toy014. If `K>0`, require
+
+`boxed{R_ref,14,j > 2D_14,j/[K_14,j (sigma_*14,j^2-sigma_f,14,j^2)^2]}`.
+
+At fixed `R_ref,D,K`, the stability floor must satisfy
+
+`boxed{sigma_f^2 <= sigma_*^2-sqrt[2D/(R_ref K)]}`.
+
+**NG-067:** reference-rate improvement cannot repair an irreducible floor that leaves insufficient usable variance budget.
+
+### RESOURCE-071 — robust independent-box certificate
+
+For
+
+`u_live in [uL,uU]`, `H09 in [H09L,H09U]`, `H14 in [H14L,H14U]`,
+
+`u_wall,L=uL(1+H09L)/(1+H14U)`,
+
+`u_wall,U=uU(1+H09U)/(1+H14L)`.
+
+- robust Toy014 detector-side sufficiency if `u_wall,L>u_req`;
+- full-box impossibility if `u_wall,U<=u_req`;
+- otherwise characterization remains decision-relevant.
+
+Correlated uncertainty still requires the physical joint set under NG-030.
+
+**DESIGN-015:** characterize control channels whose physical uncertainty spans the architecture boundary first, then rank surviving channels by RESOURCE-064 shadow price.
+
+Scope guard: `H=sum h_j` is exact only for genuinely pure-dead, non-overlapping references. Joint/Fisher-carrying references remain full RESOURCE-064 matrix-schedule problems.
+
+Files added:
+
+- `analysis/control_threshold_surface_iteration111.py`
+- `docs/PAPER_III_CONTROL_THRESHOLD_SURFACE_ITERATION111.md`
+- `research_log/2026-08-30_iteration_111_control_threshold_surface.md`
+- `recovery/RECOVERY_DELTA_ITERATION_111.md`
 
 ## Immediate next gate — Paper III only
 
-Do **not** start Toy015 yet and do not open Candidate Gravity as active science yet.
+Do **not** start Toy015 and do not activate Candidate Gravity yet.
 
-Construct a **parameterized control-threshold surface** for the constrained detector ratio
+Close at least one same-apparatus physical control channel and insert its certified `(R_ref,D,sigma_f)` interval into RESOURCE-071. The leading candidate is **complex gain/phase stability**, because injected-transfer Fisher already exists from Iterations 101–103 and only the time-domain drift/stability process remains missing.
 
-`u=R_D,14/R_D,09`
+If no defensible common-apparatus drift object can be derived without external hardware assumptions, keep that channel symbolic and instead derive the strongest apparatus-independent joint-control bound possible. Do not fabricate SI rates.
 
-using measurable `(R_ref,D,sigma_floor)` for timing, geometry, additive mean/covariance and complex gain/phase. Convert each control into RESOURCE-064 schedule quotas with RESOURCE-067/068, then combine certified `u` bounds with robust `(v,z,delta)` through RESOURCE-063/NG-030.
-
-Where common-apparatus SI Fisher matrices are unavailable, keep rates/shadow prices symbolic or interval-bounded rather than fabricating an apparatus winner.
-
-Toy015 becomes admissible only if the residual dominant marginal wall-clock cost or architecture-decision uncertainty is demonstrably source-dependent. Classical/stochastic/hybrid/full-QFT degeneracy and relativistic/gauge/conservation/causality/EFT/renormalization/measurability gates remain open unless explicitly closed elsewhere in the repository.
+After one control closure, recompute the robust detector-ratio box and combine it with `(v,z,delta)` through RESOURCE-061/063/NG-030. Toy015 becomes admissible only if the residual dominant architecture uncertainty or marginal wall-clock cost is demonstrably source-dependent.
