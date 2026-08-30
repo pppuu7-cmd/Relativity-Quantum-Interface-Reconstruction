@@ -20,27 +20,29 @@ Percentages are project-management estimates, not statistical confidence measure
 | 118 | 91% | 72% | 84% | ~10% | Actual Toy009/Toy014 calibration span reconstructed: mean rank 14 plus covariance complement rank 8 gives exact full rank 22. |
 | 119 | 92% | 73% | 84% | ~10% | Full eight-row covariance endpoint graph solved; exact four-matching detector-output partition optimum obtained with backaction guard retained. |
 | 120 | 93% | 74% | 84% | ~10% | Strong-vs-shared calibration ambiguity converted into explicit lower/intermediate/conservative resource branches. |
-| 121 | 94% | 75% | 84% | ~10% | Physical Fisher-rate bracket now propagates science/transfer/mean/covariance uncertainty directly into the detector architecture variable `u`. |
+| 121 | 94% | 75% | 84% | ~10% | Physical Fisher-rate bracket now propagates science/transfer/mean/covariance uncertainty directly into detector architecture variable `u`. |
 | 122 | 95% | 78% | 84% | ~10% | External apparatus audit establishes exact `f:2f` platform-class feasibility but confirms no complete compatible public RQIR rate dataset. |
 | 123 | 95% | 81% | 85% | ~10% | Claim/novelty audit separates standard Fisher/OED and prior gravity-test ingredients from the candidate RQIR integration-level contribution. |
+| 124 | 96% | 86% | 85% | ~10% | Manuscript-ready claim/equation/evidence/limitation skeleton connects the full Paper-III chain and isolates the remaining same-apparatus closure vector. |
 
 ## Current blockers
 
 ### Paper III
 
-- physical same-apparatus Fisher-rate matrices/uncertainty envelopes for Toy009/Toy014 if a numerical apparatus forecast is desired;
-- physical joint transfer/source-calibration Jacobian if any same-state reference block is to receive overlap credit;
+- final notation/dependency/reproducibility audit and manuscript figures/tables;
+- physical same-apparatus Fisher-rate matrices/uncertainty envelopes if a numerical Toy009/Toy014 apparatus verdict is desired;
+- physical joint transfer/source-calibration Jacobian if same-state overlap credit is used;
 - covariance matching-block backaction feasibility;
-- geometry and additive SI transduction, drift and reference Fisher;
-- final robust numerical detector ratio `u`, then full `(u,v,z,delta)` NG-030 architecture comparison if a RESOURCE-094-compatible dataset becomes available;
-- manuscript synthesis, figures/tables, final priority search, notation cleanup and reproducibility packaging.
+- geometry/additive SI transduction, drift and reference Fisher;
+- final robust numerical `u`, then full `(u,v,z,delta)` NG-030 architecture comparison only when a compatible closure dataset exists;
+- final priority search and prose/reproducibility packaging.
 
 ### Candidate Gravity
 
 - no concrete dynamical model yet;
 - QG-001…QG-010 remain unpassed by a candidate;
 - gauge/relational, conservation/Bianchi/Ward, causality, positivity/unitarity/CP, GR/Newtonian and flat-QFT limits, EFT power counting, renormalization and model-degeneracy gates remain to be solved by the candidate itself;
-- future novelty must be demonstrated against semiclassical, stochastic, classical-channel/postquantum and perturbative-QG comparators rather than inferred from use of standard weak-field couplings or decoherence alone.
+- future novelty must be demonstrated against semiclassical, stochastic, classical-channel/postquantum and perturbative-QG comparators.
 
 ## Update rule
 
