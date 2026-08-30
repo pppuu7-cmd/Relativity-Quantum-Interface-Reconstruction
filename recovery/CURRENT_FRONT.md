@@ -1,7 +1,7 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-30  
-**Authoritative front:** through **Iteration 081**.
+**Authoritative front:** through **Iteration 082**.
 
 > `docs/RECOVERY_GUIDE.md` and `docs/MASTER_TABLE.md` contain the mature framework but may lag the fast resource front. For current work, read this pointer and the listed recovery deltas before starting a new gate. Repository state, not chat history, is authoritative.
 
@@ -9,7 +9,7 @@
 
 - **Paper I scientific scope: CLOSED at Iteration 078.** RQIR-THM-001 abstracts Toy009/Toy010 into a finite nullspace response-discriminant existence theorem. Remaining work is manuscript/literature/novelty/reproduction work, not a missing Paper-I scientific gate.
 - **Paper II scientific scope: CLOSED at Iteration 079.** RQIR-STAT-001 freezes the reference-likelihood regression certificate: Schur/projection identity, nuisance-coordinate invariance, calibration monotonicity, NG-005, NG-006 exposure obstruction, spectral-tilt identity and NUM-001 threshold counterexample.
-- **Paper III: ACTIVE.** Iterations 080–081 add an inverse apparatus specification envelope and prove that absolute wall-clock normalization is still underdetermined until one declared apparatus supplies the missing physical rates.
+- **Paper III: ACTIVE.** Iterations 080–082 provide the inverse apparatus specification envelope, prove absolute wall-clock normalization is not identifiable from normalized Fisher geometry alone, and show with a real levitated-force apparatus that a record single-resonance ASD cannot directly normalize the two-band RQIR likelihood.
 
 ## Active architecture status
 
@@ -86,27 +86,15 @@ Then
 This formalizes Toy009/Toy010. It does not assert that gravity transmits `D/chi^R` or that spacetime is quantum.
 
 Files:
-
 - `docs/PAPER_I_SCIENTIFIC_CLOSURE_ITERATION078.md`
 - `research_log/2026-08-30_iteration_078_paper_i_scientific_closure.md`
 - `recovery/RECOVERY_DELTA_ITERATION_078.md`
 
 ## Iteration 079 — Paper-II reference-likelihood closure
 
-**RQIR-STAT-001** requires all mature likelihoods to pass:
-
-- Schur/projection identity;
-- nuisance-coordinate invariance;
-- calibration monotonicity;
-- NG-005 finite-preparation law;
-- NG-006 exact-alignment exposure obstruction;
-- two-band spectral-tilt identity;
-- NUM-001 weak-nuisance threshold counterexample.
-
-The explicit threshold counterexample gives true `F_beta~0` but false `F_beta=1` if a real weak aligned nuisance is deleted by an arbitrary pseudoinverse threshold.
+**RQIR-STAT-001** requires mature likelihoods to pass Schur/projection identity, nuisance-coordinate invariance, calibration monotonicity, NG-005 finite-preparation law, NG-006 exact-alignment exposure obstruction, the two-band spectral-tilt identity, and the NUM-001 weak-nuisance threshold counterexample.
 
 Files:
-
 - `analysis/paper12_reference_regression_iteration079.py`
 - `docs/PAPER_II_REFERENCE_LIKELIHOOD_CERTIFICATE_ITERATION079.md`
 - `research_log/2026-08-30_iteration_079_paper_ii_reference_likelihood_certificate.md`
@@ -114,7 +102,7 @@ Files:
 
 ## Iteration 080 — apparatus specification envelope
 
-Define the harmonic mean of seven independently acquired calibration Fisher rates,
+Define
 
 `H_cal = 7 / sum_j (1/R_cal,j)`.
 
@@ -124,26 +112,9 @@ Then
 
 **RQIR-RESOURCE-037:** `H_cal` is the exact one-number calibration throughput for the current independent-layer scheduling model.
 
-For target cap `T_cap`, componentwise necessary floors are
-
-`R_beta >= m Z^2/T_cap`,
-
-`H_cal >= m 7 gamma_mean/T_cap`,
-
-`R_src >= m C_prep/T_cap`.
-
-**RQIR-NG-031:** these three individual floors are not jointly sufficient; setting all three exactly at their individual floors gives `T_total=3*T_cap`.
-
-With positive allocated fractions `f_sci+f_cal+f_src=1`, a sufficient specification is
-
-`R_beta >= m Z^2/(f_sci T_cap)`,
-
-`H_cal >= m 7 gamma_mean/(f_cal T_cap)`,
-
-`R_src >= m C_prep/(f_src T_cap)`.
+**RQIR-NG-031:** the three individual minimum-rate floors are not jointly sufficient; setting science, calibration and source rates exactly at their separate floors gives `T_total=3*T_cap`. Use an explicit time allocation `f_sci+f_cal+f_src=1` for sufficient target specifications.
 
 Files:
-
 - `analysis/apparatus_specification_envelope_iteration080.py`
 - `docs/PAPER_III_APPARATUS_SPECIFICATION_ENVELOPE_ITERATION080.md`
 - `research_log/2026-08-30_iteration_080_apparatus_specification_envelope.md`
@@ -151,33 +122,45 @@ Files:
 
 ## Iteration 081 — apparatus-closure identifiability audit
 
-Existing repository physical benchmarks provide the correct transfer/rate formulas but do not supply one common measured/declared apparatus normalization.
+**RQIR-NG-032:** normalized Fisher/resource geometry does not determine absolute seconds. A common detector PSD rescaling changes absolute detector/calibration wall time while leaving the compressed dimensionless geometry unchanged. Independent source metrology retains its own absolute-rate freedom until acceptance, visibility, coupling and reset/readout are fixed.
 
-**RQIR-NG-032:** normalized Fisher/resource geometry does not determine absolute seconds. Under a common detector PSD rescaling `S -> lambda S`, detector and calibration Fisher rates scale as `1/lambda`; `x` is invariant while absolute detector/calibration wall time scales as `lambda`. More generally, a common scale on all Fisher rates leaves `(x,y,d)` unchanged while rescaling total seconds.
-
-Independent source metrology retains its own absolute-rate freedom until acceptance, visibility, coupling and reset/readout are fixed or `R_src` is measured directly.
-
-**RQIR-APP-001:** minimum apparatus closure vector requires:
-
-- science transfer functions, acquisition windows and full PSD/cross-PSD;
-- seven physical two-probe calibration Jacobians plus full matrix PSD/rates;
-- source-metrology acceptance/coupling/visibility/reset/coherence;
-- low-frequency timing/geometry/additive/gain stability, recertification duty and uncertainties.
-
-Old `sigma_phi`, force-ASD and unit-transduction examples remain illustrative scaling benchmarks and must not be promoted to measured apparatus performance.
+**RQIR-APP-001:** minimum apparatus closure requires science transfer and full PSD/cross-PSD; seven physical two-probe calibration Jacobians and matrix rates; source-metrology acceptance/coupling/visibility/reset/coherence; low-frequency control/reference stability, duty and uncertainties.
 
 Files:
-
 - `analysis/apparatus_closure_identifiability_iteration081.py`
 - `docs/PAPER_III_APPARATUS_CLOSURE_IDENTIFIABILITY_ITERATION081.md`
 - `research_log/2026-08-30_iteration_081_apparatus_closure_identifiability.md`
 - `recovery/RECOVERY_DELTA_ITERATION_081.md`
 
+## Iteration 082 — externally anchored D2 frequency-compatibility gate
+
+A real levitated silica-nanosphere force sensor (Liang et al., *Fundamental Research* 3, 57–62 (2023), DOI `10.1016/j.fmre.2022.09.021`) supplies an experimental anchor near a `193.8 kHz` mechanical resonance, with reported `6.33 +/- 1.62 zN/sqrt(Hz)` force sensitivity, best run `4.34 zN/sqrt(Hz)`, Allan-optimal time `~2751 s`, and stable force resolution `166.40 +/- 55.48 yN`.
+
+The current RQIR D2 discriminator requires both `n=2` and `n=4` bands because
+
+`S_eff = 4 P2 P4/(P2+P4)`.
+
+If the `193.8 kHz` resonance is aligned to `n=2`, the other band lies at `387.6 kHz`, about `9888` reported-linewidth scales away. If aligned to `n=4`, the other band lies at `96.9 kHz`, about `4944` linewidth scales away.
+
+**RQIR-NG-033:** a single narrowband detector sensitivity measured at one mechanical resonance cannot by itself normalize a two-band RQIR Fisher discriminator whose identifiability requires finite whitened information in both bands. Do not apply a record on-resonance ASD to both RQIR harmonics without measured transfer/PSD at both frequencies.
+
+The external Allan data also reinforce the separation between short-time matched-filter PSD and long-time stability/recertification duty; do not extrapolate the best ASD indefinitely as `1/sqrt(T)`.
+
+Files:
+- `analysis/external_d2_frequency_compatibility_iteration082.py`
+- `docs/PAPER_III_EXTERNAL_D2_FREQUENCY_COMPATIBILITY_ITERATION082.md`
+- `research_log/2026-08-30_iteration_082_external_d2_frequency_compatibility.md`
+- `recovery/RECOVERY_DELTA_ITERATION_082.md`
+
 ## Immediate next gate — Paper III only
 
-Construct one **declared reference apparatus model** for at least Toy009 and Toy014. Prefer externally sourced/measured platform parameters with uncertainty ranges; otherwise retain a parameterized design envelope explicitly rather than calling it a forecast. The model must supply `R_beta`, seven `R_cal,j`, `R_src`, duty and uncertainty intervals. Then apply NG-030 robust dominance.
+Find or construct an admissible **two-band detector closure** for Toy009 and Toy014. Priority order:
 
-Only begin Toy015 if this rate map shows that a source-dependent bottleneck dominates total wall clock; if detector/control characterization dominates similarly across branches, improve the apparatus model instead.
+1. published dual-mode or broadband levitated detector with calibrated transfer plus PSD/cross-PSD at two frequencies separated by a factor of two;
+2. otherwise a parameterized two-mode apparatus envelope anchored to measured force/noise and Allan-stability data;
+3. alternatively derive a sequential-retuning joint likelihood with explicit relock duty, inter-setting gain/timing drift, calibration uncertainty and source reproducibility.
+
+Only after both science bands have physical rate normalization should the seven `R_cal,j`, `R_src`, duty and uncertainty intervals be combined and NG-030 robust Toy009/Toy014 dominance tested. Do not start Toy015 unless the resulting rate map shows a source-dependent bottleneck.
 
 ## Discipline
 
