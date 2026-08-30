@@ -19,17 +19,19 @@ Percentages are project-management estimates, not statistical confidence measure
 | 117 | 90% | 71% | 84% | ~10% | Rank/span no-go separates missing calibration directions from mere SNR shortage; gives distinct-setting lower bound. |
 | 118 | 91% | 72% | 84% | ~10% | Actual Toy009/Toy014 calibration span reconstructed: mean rank 14 plus covariance complement rank 8 gives exact full rank 22. |
 | 119 | 92% | 73% | 84% | ~10% | Full eight-row covariance endpoint graph solved; exact four-matching detector-output partition optimum obtained with backaction guard retained. |
+| 120 | 93% | 74% | 84% | ~10% | Strong-vs-shared calibration ambiguity converted into explicit lower/intermediate/conservative resource branches. |
+| 121 | 94% | 75% | 84% | ~10% | Physical Fisher-rate bracket now propagates science/transfer/mean/covariance uncertainty directly into the detector architecture variable `u`. |
 
 ## Current blockers
 
 ### Paper III
 
-- construct the conservative strong-measurement versus optimistic weak/shared-output calibration-cover bracket;
 - physical same-apparatus Fisher-rate matrices/uncertainty envelopes for Toy009/Toy014;
 - physical joint transfer/source-calibration Jacobian if any same-state reference block is to receive overlap credit;
+- covariance matching-block backaction feasibility;
 - geometry and additive SI transduction, drift and reference Fisher;
-- final non-double-counted robust detector ratio `u` and NG-030 architecture comparison;
-- manuscript synthesis/figures/literature packaging.
+- final robust numerical detector ratio `u`, then full `(u,v,z,delta)` NG-030 architecture comparison;
+- manuscript synthesis, figures/tables, literature/novelty audit and final reproducibility packaging.
 
 ### Candidate Gravity
 
