@@ -1,7 +1,7 @@
 # RQIR Article Series Architecture
 
 **Date fixed:** 2026-08-29  
-**Status:** publication-planning note only; does not change scientific claims or research priorities.
+**Status:** publication-planning note; scientific status updated through Iteration 080.
 
 ## Purpose
 
@@ -24,9 +24,12 @@ Core material:
 - RQIR-NG-001 through NG-004;
 - Toy009 detector-aware source design;
 - Toy010 calibration/null-direction steering;
-- RQIR-DESIGN-001 and RQIR-CAL-002.
+- RQIR-DESIGN-001 and RQIR-CAL-002;
+- RQIR-THM-001 finite nullspace response-discriminant existence theorem (Iteration 078).
 
 The paper should end by emphasizing that exact response separation is not yet experimental identifiability and use RQIR-NG-005 as the bridge to Paper II.
+
+**Scientific status:** CLOSED at Iteration 078 for this defined scope. See `docs/PAPER_I_SCIENTIFIC_CLOSURE_ITERATION078.md`. Remaining work is manuscript construction, literature/novelty audit, figures, references and independent reproduction; do not reopen the scientific toy search unless that audit exposes an actual logical gap.
 
 ## Paper II — Statistical identifiability and nuisance geometry
 
@@ -49,9 +52,12 @@ Core material:
 - RQIR-NUM-001 hard-constraint correction and withdrawal of penalty/pseudoinverse overclaims;
 - low-rank systematics, RQIR-NG-006 and RQIR-CAL-007;
 - timing/gain nonlinear audit;
-- D1/D2 detector-level nuisance profiling.
+- D1/D2 detector-level nuisance profiling;
+- RQIR-STAT-001 reference-likelihood regression certificate (Iteration 079).
 
 The paper should end with the question of converting Fisher requirements into physical shots, time, SNR, PSD, coherence, and source-preparation resources.
+
+**Scientific status:** CLOSED at Iteration 079 for this defined scope. See `docs/PAPER_II_REFERENCE_LIKELIHOOD_CERTIFICATE_ITERATION079.md`. Physical rate/wall-clock conversion is Paper III, not an unresolved Paper-II theorem. Remaining work is manuscript integration, literature/novelty audit, figures/tables and independent reruns.
 
 ## Paper III — Physical resource budgets and experiment architecture
 
@@ -72,9 +78,13 @@ Core material:
 - nullspace rotation, finite-reference obstruction and observable-family consistency;
 - covariance complementarity and row selection;
 - branch-specific Pareto/resource phase diagrams;
+- Iteration-077 minimal apparatus-rate certificate `(R_beta,x,y,d)`;
+- Iteration-080 inverse apparatus specification envelope using `H_cal` and a declared wall-clock cap;
 - final `F_beta|theta/T_wall` comparison under one apparatus model.
 
 The conclusion should define a minimum experimental specification, not claim a ready experiment unless the apparatus-level gates have actually been closed.
+
+**Scientific status:** ACTIVE after Iteration 080. The abstract Fisher parameters are now translated into rates, shot/source throughput, reset/coherence/control and inverse duration targets, but a repository-backed physical apparatus model with source-specific transfer functions, PSD/cross-PSD, `R_beta`, seven `R_cal,j`, `R_src`, duty and uncertainty intervals is still required.
 
 ## Paper IV — only after the reconstruction papers mature
 
