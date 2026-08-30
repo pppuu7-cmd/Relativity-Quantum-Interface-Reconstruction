@@ -1,9 +1,15 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-30  
-**Authoritative front:** through **Iteration 077**.
+**Authoritative front:** through **Iteration 080**.
 
 > `docs/RECOVERY_GUIDE.md` and `docs/MASTER_TABLE.md` contain the mature framework but may lag the fast resource front. For current work, read this pointer and the listed recovery deltas before starting a new gate. Repository state, not chat history, is authoritative.
+
+## Publication-track status
+
+- **Paper I scientific scope: CLOSED at Iteration 078.** RQIR-THM-001 abstracts Toy009/Toy010 into a finite nullspace response-discriminant existence theorem. Remaining work is manuscript/literature/novelty/reproduction work, not a missing Paper-I scientific gate.
+- **Paper II scientific scope: CLOSED at Iteration 079.** RQIR-STAT-001 freezes the reference-likelihood regression certificate: Schur/projection identity, nuisance-coordinate invariance, calibration monotonicity, NG-005, NG-006 exposure obstruction, spectral-tilt identity and NUM-001 threshold counterexample.
+- **Paper III: ACTIVE.** Iteration 080 adds an inverse apparatus specification envelope but a repository-backed physical apparatus model is still required.
 
 ## Active architecture status
 
@@ -71,31 +77,81 @@ Then
 
 **RQIR-RESOURCE-036:** after the physical likelihood/profile are fixed, the sufficient architecture-selection certificate is `(R_beta,x,y,d)` per branch. Keep all seven `R_cal,j` as audit inputs even though they compress to `x` in total wall clock.
 
-General pairwise dominance:
-
-`q_s(i/k) (m_i/m_k) (1+x_i+y_i) < 1+x_k+y_k`,
-
-where `q_s(i/k)=R_beta,k/R_beta,i`.
-
-This no longer assumes common ASD/transduction/bandwidth/acceptance/reset.
-
-Regression to the old shared-kernel projections is exact:
-
-- Toy014 vs Toy009: `y > 7.6895205385 + 7.5421347000 x` before duty correction;
-- Toy013 vs Toy014: `x > 5.9842386660 + 98.2399220663 y`.
-
 **RQIR-NG-030:** a nominal branch crossing is not retained when rate/duty uncertainty intervals overlap. Require conservative `T_i^upper < T_k^lower` for robust architecture dominance.
+
+## Iteration 078 — Paper-I scientific closure
+
+**RQIR-THM-001:** in a finite reduced physical tangent space, if a finite linear calibration map has one-dimensional null `n`, an interior nominal density state exists, and a linear response functional obeys `c(n)!=0`, then sufficiently small positive/negative perturbations along `n` are both physical, calibration-indistinguishable, and response-distinguishable.
+
+This formalizes Toy009/Toy010. It does not assert that gravity transmits `D/chi^R` or that spacetime is quantum.
 
 Files:
 
-- `analysis/apparatus_certificate_iteration077.py`
-- `docs/APPARATUS_RATE_CERTIFICATE_ITERATION077.md`
-- `research_log/2026-08-30_iteration_077_apparatus_rate_certificate.md`
-- `recovery/RECOVERY_DELTA_ITERATION_077.md`
+- `docs/PAPER_I_SCIENTIFIC_CLOSURE_ITERATION078.md`
+- `research_log/2026-08-30_iteration_078_paper_i_scientific_closure.md`
+- `recovery/RECOVERY_DELTA_ITERATION_078.md`
 
-## Immediate next gate
+## Iteration 079 — Paper-II reference-likelihood closure
 
-Instantiate the certificate from a repository-backed detector/source-metrology model for at least Toy009 and Toy014: physical profiled `R_beta`, seven full matrix `R_cal,j`, `R_src`, and control duty. Do not invent an absolute ASD merely to force a wall-clock number.
+**RQIR-STAT-001** requires all mature likelihoods to pass:
+
+- Schur/projection identity;
+- nuisance-coordinate invariance;
+- calibration monotonicity;
+- NG-005 finite-preparation law;
+- NG-006 exact-alignment exposure obstruction;
+- two-band spectral-tilt identity;
+- NUM-001 weak-nuisance threshold counterexample.
+
+The explicit threshold counterexample gives true `F_beta~0` but false `F_beta=1` if a real weak aligned nuisance is deleted by an arbitrary pseudoinverse threshold.
+
+Files:
+
+- `analysis/paper12_reference_regression_iteration079.py`
+- `docs/PAPER_II_REFERENCE_LIKELIHOOD_CERTIFICATE_ITERATION079.md`
+- `research_log/2026-08-30_iteration_079_paper_ii_reference_likelihood_certificate.md`
+- `recovery/RECOVERY_DELTA_ITERATION_079.md`
+
+## Iteration 080 — apparatus specification envelope
+
+Define the harmonic mean of seven independently acquired calibration Fisher rates,
+
+`H_cal = 7 / sum_j (1/R_cal,j)`.
+
+Then
+
+`T_total = m [Z^2/R_beta + 7 gamma_mean/H_cal + C_prep/R_src]`.
+
+**RQIR-RESOURCE-037:** `H_cal` is the exact one-number calibration throughput for the current independent-layer scheduling model.
+
+For target cap `T_cap`, componentwise necessary floors are
+
+`R_beta >= m Z^2/T_cap`,
+
+`H_cal >= m 7 gamma_mean/T_cap`,
+
+`R_src >= m C_prep/T_cap`.
+
+**RQIR-NG-031:** these three individual floors are not jointly sufficient; setting all three exactly at their individual floors gives `T_total=3*T_cap`.
+
+With positive allocated fractions `f_sci+f_cal+f_src=1`, a sufficient specification is
+
+`R_beta >= m Z^2/(f_sci T_cap)`,
+
+`H_cal >= m 7 gamma_mean/(f_cal T_cap)`,
+
+`R_src >= m C_prep/(f_src T_cap)`.
+
+Files:
+
+- `analysis/apparatus_specification_envelope_iteration080.py`
+- `docs/PAPER_III_APPARATUS_SPECIFICATION_ENVELOPE_ITERATION080.md`
+- `research_log/2026-08-30_iteration_080_apparatus_specification_envelope.md`
+- `recovery/RECOVERY_DELTA_ITERATION_080.md`
+
+## Immediate next gate — Paper III only
+
+Instantiate the Iteration-077/080 certificate from a repository-backed detector/source-metrology model for at least Toy009 and Toy014: physical profiled `R_beta`, seven full matrix `R_cal,j`, `R_src`, control duty and uncertainty intervals. Use real/declared transfer functions and PSD/cross-PSD or experimentally sourced sensitivity curves; do not invent an absolute ASD merely to force a wall-clock number.
 
 Only begin Toy015 if this measured/declared rate map shows that a source-dependent bottleneck dominates total wall clock; if detector/control characterization dominates similarly across branches, improve the apparatus model instead.
 
