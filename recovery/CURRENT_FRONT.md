@@ -1,15 +1,15 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-30  
-**Authoritative front:** through **Iteration 100**.
+**Authoritative front:** through **Iteration 101**.
 
-> The repository, not chat history, is authoritative. `docs/RECOVERY_GUIDE.md` and `docs/MASTER_TABLE.md` contain the mature framework; for the fast Paper-III front read this pointer plus `recovery/RECOVERY_DELTA_ITERATION_096.md` through `RECOVERY_DELTA_ITERATION_100.md`. Do not mix RQIR with RTK/DSIR.
+> The repository, not chat history, is authoritative. `docs/RECOVERY_GUIDE.md` and `docs/MASTER_TABLE.md` contain the mature framework; for the fast Paper-III front read this pointer plus `recovery/RECOVERY_DELTA_ITERATION_096.md` through `RECOVERY_DELTA_ITERATION_101.md`. Do not mix RQIR with RTK/DSIR.
 
 ## Publication-track status
 
 - **Paper I scientific scope:** CLOSED at Iteration 078.
 - **Paper II scientific scope:** CLOSED at Iteration 079.
-- **Paper III:** ACTIVE. Iterations 080–100 translate abstract preparation/calibration Fisher requirements into physical detector, calibration, source, control and characterization rates and then audit whether one real apparatus can supply the required common-normalization certificate.
+- **Paper III:** ACTIVE. Iterations 080–101 translate abstract preparation/calibration Fisher requirements into physical detector, calibration, source, control and characterization rates, audit what one real platform can supply, and now specify the minimum same-state temporal `f,2f` calibration needed to close the remaining detector cut.
 
 No toy, Fisher, resource, detector or apparatus-certificate result is an empirical new-physics claim.
 
@@ -17,7 +17,7 @@ No toy, Fisher, resource, detector or apparatus-certificate result is an empiric
 
 Primary detector quantity:
 
-`F_beta|theta = F_bb - F_btheta F_thetatheta^-1 F_thetab`.
+`F_beta|theta = F_bb - F_btheta F_thetatheta^-1 F_btheta^T`.
 
 Retain exact hard constraints, centered covariance derivatives, detector nuisance profiling, full matrix PSD/cross-PSD Fisher, source-preparation calibration, coherence/reset/dead-time accounting and consistency gates.
 
@@ -165,19 +165,55 @@ APP-003 status after Iteration 100:
 - Toy009/Toy014 preparation/reset/visibility/coherence throughput: **OPEN**;
 - campaign duty/control/characterization-rate envelope: **OPEN**.
 
+## Iteration 101 — same-state temporal `f,2f` calibration protocol
+
+The same-family follow-up did not expose a public same-state two-tone `f,2f` force-transfer plus temporal covariance dataset, so the missing cut is now expressed as an explicit measurement protocol rather than a literature substitution.
+
+For same-record demodulation filters,
+
+**RESOURCE-053:**
+
+`C_24 = integral dnu/(2 pi) S_y(nu) W_2^*(nu) W_4(nu)`.
+
+For white noise and a rectangular block,
+
+`c_24=exp[-i pi fT] sinc(fT)`.
+
+**DESIGN-011:** choosing `T=M/f` with integer `M!=0` gives exact white-noise orthogonality between `f` and `2f`.
+
+**NG-054:** orthogonal DFT bins do not certify `rho=0` for colored/nonstationary/window-leaked/shared-nuisance noise. A finite AR(1) regression gives `|corr|~=0.03655` for lag coefficient `0.8` despite orthogonal bins.
+
+For robust retained fraction `q`, fixed raw rates give an analytic allowed `rho_hi`. For balanced bands, nominal `rho0=0`, `q=.90`:
+
+`rho_hi <= 1/9 ~= 0.111111`.
+
+**RESOURCE-054:** with ideal independent real bivariate Gaussian blocks and marginal variances profiled, `I_rho=1/(1-rho^2)^2`; at `z=1.96` the transparent lower bound is `N_rho>=312` independent blocks. Gosling's published `3.3 ms` block corresponds to `1.0296 s` only as an illustrative block-time scale, not an RQIR forecast.
+
+**CAL-021:** inject known forces simultaneously at `f` and `2f` in the science operating state and use the same filters. The joint transfer Fisher is `F_cal=J_chi^T Sigma_z^-1 J_chi`.
+
+For a conservative common transfer-amplitude error, 90% rate retention requires
+
+`epsilon_g<=1-sqrt(.90)=0.0513167`.
+
+At `z=1.96`, matched fractional-transfer Fisher must satisfy
+
+`N*SNR_inj^2>=1458.80`;
+
+examples: SNR 10 -> 15 independent blocks, SNR 5 -> 59.
+
+**NG-055:** dual-tone calibration must pass linearity/intermodulation checks; high-SNR injection outside the weak-response regime cannot be credited as science-state transfer Fisher.
+
 Files:
 
-- `analysis/single_platform_cross_spectral_audit_iteration100.py`
-- `docs/PAPER_III_SINGLE_PLATFORM_CROSS_SPECTRAL_AUDIT_ITERATION100.md`
-- `research_log/2026-08-30_iteration_100_single_platform_cross_spectral_audit.md`
-- `recovery/RECOVERY_DELTA_ITERATION_100.md`
+- `analysis/same_state_f2f_calibration_protocol_iteration101.py`
+- `docs/PAPER_III_SAME_STATE_F2F_CALIBRATION_PROTOCOL_ITERATION101.md`
+- `research_log/2026-08-30_iteration_101_same_state_f2f_calibration_protocol.md`
+- `recovery/RECOVERY_DELTA_ITERATION_101.md`
 
 ## Immediate next gate — Paper III only
 
 Do **not** start Toy015 yet.
 
-First search the same experimental family/data for a tunable two-frequency transfer calibration or public spectra that permit construction of the temporal `f,2f` matrix in one input-referred force coordinate. If that dataset does not exist, derive the minimum injected `f,2f` calibration protocol, block-count/shot requirement and uncertainty targets required to close `R0,a2,a4,rho` experimentally.
+Build one **joint science + injected-transfer likelihood** with transfer amplitude/phase and temporal `rho` inside the nuisance vector. Compute the Schur-complement `F_beta|transfer,rho`, convert it to a physical Fisher rate, and optimize the split between calibration blocks and science blocks. This should identify whether cross-covariance estimation, transfer calibration or raw science exposure is the active detector bottleneck.
 
-Only after that common-normalization cut is closed should RESOURCE-050/RESOURCE-045 be used for an absolute Toy009/Toy014 decision.
-
-Classical/stochastic/hybrid/full-QFT degeneracy and relativistic/gauge/conservation/causality/EFT/renormalization/measurability gates remain open unless explicitly closed elsewhere in the repository.
+Only if the residual dominant cost after this common-normalization closure is demonstrably source-dependent should Toy015 be opened. Classical/stochastic/hybrid/full-QFT degeneracy and relativistic/gauge/conservation/causality/EFT/renormalization/measurability gates remain open unless explicitly closed elsewhere in the repository.
