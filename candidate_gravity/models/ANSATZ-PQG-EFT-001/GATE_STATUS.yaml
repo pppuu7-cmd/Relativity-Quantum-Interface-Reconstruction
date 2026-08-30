@@ -1,0 +1,61 @@
+schema_version: 1
+model_id: ANSATZ-PQG-EFT-001
+version: 0.1
+updated: 2026-08-31
+status: REFERENCE_TESTING
+promotion_allowed: false
+
+qg_gates:
+  QG-001:
+    status: PASS
+    claim: perturbative physical state space around Minkowski is specified with gauge/BRST separation
+    authority: candidate_gravity/models/ANSATZ-PQG-EFT-001/MODEL.md
+  QG-002:
+    status: PASS
+    claim: one covariant Einstein-Hilbert plus scalar-matter EFT action defines gravity, matter and interaction dynamics
+    authority: candidate_gravity/models/ANSATZ-PQG-EFT-001/MODEL.md
+  QG-003:
+    status: NOT_TESTED
+    claim: Newtonian and controlled classical-GR limits require repository derivation
+  QG-004:
+    status: NOT_TESTED
+    claim: perturbative unitarity/positivity consistency requires explicit repository audit
+  QG-005:
+    status: BLOCKED
+    claim: gauge structure is specified but RQIR-facing relational/gauge-invariant observable audit is incomplete
+  QG-006:
+    status: NOT_TESTED
+    claim: ordinary-QM, flat-QFT and semiclassical/coarse-grained limits require explicit repository derivation
+  QG-007:
+    status: FAIL
+    reason_code: REFERENCE_DEGENERACY_C5
+    claim: no model-specific discriminator exists against comparator C5 because this ansatz is deliberately the C5 perturbative-QG EFT reference class
+    authority: docs/CANDIDATE_GRAVITY_REFERENCE_ANSATZ_ITERATION133.md
+  QG-008:
+    status: BLOCKED
+    claim: no independent beta direction exists versus C5, so a candidate-specific Paper-I discriminator cannot yet be defined
+  QG-009:
+    status: BLOCKED
+    claim: no independent beta direction versus C5 exists to profile in detector Fisher geometry
+  QG-010:
+    status: BLOCKED
+    claim: no physical resource certificate is meaningful for an absent C5-distinguishing direction
+
+cross_gates:
+  conservation_bianchi_ward: NOT_TESTED
+  causality_microcausality: NOT_TESTED
+  positivity_spectral: NOT_TESTED
+  flat_qft_limit: NOT_TESTED
+  eft_power_counting: PARTIAL
+  stress_energy_renormalization: BLOCKED
+  comparator_degeneracy: FAIL_C5_EXACT_CLASS_DEGENERACY
+  detector_measurability: BLOCKED
+
+negative_results:
+  - id: CG-NG-003
+    statement: A standard perturbative quantum-GR EFT reference cannot satisfy QG-007 as a novel Candidate Gravity against comparator C5; theory-class identity is an exact comparator degeneracy.
+
+next_action:
+  - retain this model as a reference/control branch
+  - do not promote to QGxxx
+  - instantiate a genuinely distinct ANSATZ only if its dynamics differ before detector optimization
