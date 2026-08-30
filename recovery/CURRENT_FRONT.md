@@ -1,7 +1,7 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-30  
-**Authoritative front:** through **Iteration 094**.
+**Authoritative front:** through **Iteration 095**.
 
 > `docs/RECOVERY_GUIDE.md` and `docs/MASTER_TABLE.md` contain the mature framework but may lag the fast resource front. Read this pointer plus the listed recovery deltas before starting a new gate. Repository state, not chat history, is authoritative.
 
@@ -9,7 +9,7 @@
 
 - **Paper I scientific scope:** CLOSED at Iteration 078.
 - **Paper II scientific scope:** CLOSED at Iteration 079.
-- **Paper III:** ACTIVE. Iterations 080–094 develop apparatus-rate closure, physical two-band likelihood, correlation/uncertainty corrections, seven-layer robust calibration, joint robust wall-clock certification, external multimode apparatus audit, tunable simultaneous `f,2f` envelopes, direct and interval-robust Toy009/Toy014 crossover, and decision/value-of-information for apparatus characterization.
+- **Paper III:** ACTIVE. Iterations 080–095 develop apparatus-rate closure, physical two-band likelihood, correlation/uncertainty corrections, seven-layer robust calibration, joint robust wall-clock certification, external multimode apparatus audit, tunable simultaneous `f,2f` envelopes, direct and interval-robust Toy009/Toy014 crossover, apparatus-characterization value-of-information, and primitive physical decision Jacobians.
 
 RQIR remains separate from RTK/DSIR. No toy, Fisher, resource or detector result is an empirical new-physics claim.
 
@@ -230,9 +230,42 @@ Files:
 - `research_log/2026-08-30_iteration_094_crossover_value_of_information.md`
 - `recovery/RECOVERY_DELTA_ITERATION_094.md`
 
+## Iteration 095 — primitive physical decision Jacobian
+
+The aggregate apparatus coefficient can now be differentiated directly with respect to measurable primitive inputs.
+
+For two-band science,
+
+`A_sci=Z^2[1/(4a2)+1/(4a4)+rho/(2 sqrt(a2 a4))]`.
+
+**RESOURCE-047:** compose its exact `(a2,a4,rho)` gradient with RESOURCE-046's outer `dB/dA_i` to obtain local primitive crossover sensitivity.
+
+For each calibration block `F_j=[[u,w],[w,v]]`, use `k_j=lambda_min(F_j)` and its exact matrix-entry gradient away from repeated eigenvalues. Since `A_cal=gamma sum_j 1/k_j`, equal fractional rate improvement gives
+
+`dA=-(gamma/k_j)d ln k_j`.
+
+**DESIGN-007:** characterize the slowest/largest-wall-clock calibration layer first under equal fractional improvement, not the block with the largest raw entry uncertainty.
+
+Source metrology on a smooth fixed/unique-optimum branch is written
+
+`R_src=p_E Omega_E q(V,Omega_E t_reset)`,
+
+with exact primitive derivatives in preparation success, coupling, reset and visibility.
+
+**NG-047:** under `rho<0`, increasing one raw band rate is not globally monotone useful; `dA/da2` changes sign at `a2/a4=1/rho^2`, reproducing CORR-001 locally.
+
+**NG-048:** local primitive VOI derivatives do not apply at repeated calibration eigenvalues, PSD-boundary contact, worst-case uncertainty-corner changes or robust-boundary active-set changes; use exact finite contractions/subgradients/robust optimization there.
+
+Files:
+
+- `analysis/primitive_decision_jacobian_iteration095.py`
+- `docs/PAPER_III_PRIMITIVE_DECISION_JACOBIAN_ITERATION095.md`
+- `research_log/2026-08-30_iteration_095_primitive_decision_jacobian.md`
+- `recovery/RECOVERY_DELTA_ITERATION_095.md`
+
 ## Immediate next gate — Paper III only
 
-Propagate primitive source-specific uncertainty (`r2,r4,rho`, all seven calibration matrix blocks, source reset/visibility/coupling, timing/control duty) into `A_i`, `R_src,i`, and `d_i`, then compute primitive-level decision leverage. Use this to identify the single highest-value characterization measurement in a declared apparatus envelope.
+Construct one declared primitive uncertainty envelope for Toy009 and Toy014: source-specific `a2,a4,rho`, all seven `2x2` calibration Fisher blocks, source preparation/coupling/reset/visibility, and control duty. Evaluate the Iteration-095 Jacobian on the active robust branches and use finite contraction wherever NG-048 triggers. Identify the actual highest-value characterization measurement by reduction of the NG-043 unresolved band.
 
 Do not start Toy015 unless the physical rate-space analysis identifies a genuinely source-dependent bottleneck that a new local source could plausibly improve.
 
