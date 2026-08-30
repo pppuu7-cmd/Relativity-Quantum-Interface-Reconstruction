@@ -1,7 +1,7 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-30  
-**Authoritative front:** through **Iteration 107**.
+**Authoritative front:** through **Iteration 108**.
 
 > Repository state, not chat history, is authoritative. Read `docs/RECOVERY_GUIDE.md`, `docs/MASTER_TABLE.md`, this pointer, and the latest recovery deltas before continuing. RQIR remains separate from RTK/DSIR. No current result is an empirical new-physics claim.
 
@@ -9,7 +9,7 @@
 
 - **Paper I scientific scope:** CLOSED at Iteration 078.
 - **Paper II scientific scope:** CLOSED at Iteration 079.
-- **Paper III:** ACTIVE. Iterations 080–107 translate abstract preparation/calibration Fisher requirements into physical detector, transfer, source, control, characterization and wall-clock rates, with robust final-significance scheduling, common-normalization matrix certificates and explicit recertification constraints.
+- **Paper III:** ACTIVE. Iterations 080–108 translate abstract preparation/calibration Fisher requirements into physical detector, transfer, source, control, characterization and wall-clock resources, including robust final-significance scheduling, common-normalization matrix certificates and exact periodic recertification accounting.
 
 ## Mandatory inference backbone
 
@@ -19,23 +19,17 @@ Use detector-level
 
 Retain exact hard constraints, centered covariance derivatives, spectral-tilt profiling, full PSD/cross-PSD Fisher, source-preparation calibration, coherence/reset/dead-time and all consistency/degeneracy gates. NG-005, NG-006/007, NG-023, NG-025/026 and NG-030 remain active.
 
-## Mature physical pieces retained
+## Mature resource backbone
 
 - simultaneous two-band science:
-
   `R_beta = 4 r2 r4/(r2+r4+2 rho sqrt(r2 r4))`;
-
 - seven physical calibration blocks:
-
   `R_cal,j=lambda_min(F_j)`;
-
-- source Ramsey shot mapping:
-
+- source Ramsey shots:
   `N_acc=C/F_copy`, `N_try=C/(p_E F_copy)`;
-
-- same-state temporal `f,2f` covariance/injection protocol (Iteration 101);
-- joint transfer-gain profiling (Iteration 102);
-- full four-real complex campaign optimization (Iteration 103).
+- same-state temporal `f,2f` covariance/injection protocol: Iteration 101;
+- joint transfer-gain profiling: Iteration 102;
+- full complex campaign optimization: Iteration 103.
 
 ## Iteration 103 — full complex campaign simplex
 
@@ -45,7 +39,7 @@ For campaign Fisher-rate matrices `J_k` and times `t_k`,
 
 `F_beta=a-b^T N^-1 b`.
 
-**RESOURCE-057:** profiled Fisher is concave and positively homogeneous on a fixed identifiable branch. With campaign fractions `x_k`,
+**RESOURCE-057:** with campaign fractions `x_k`,
 
 `R_*=max_{x>=0,sum x=1} F_beta(sum_k x_k J_k)`,
 
@@ -55,7 +49,7 @@ For campaign Fisher-rate matrices `J_k` and times `t_k`,
 
 `dF_beta/dt_k=w^T J_k w`.
 
-At an interior optimum active campaigns equalize marginal profiled Fisher per second.
+At an unconstrained interior optimum, active campaigns equalize marginal profiled Fisher/sec.
 
 **NG-058:** transfer phase can be omitted only after Fisher-metric, not merely Euclidean, orthogonality is demonstrated.
 
@@ -65,65 +59,51 @@ For local source-amplitude profiling,
 
 `F_final=A C/(A+C)`.
 
-**NUM-006:** the historical `A=25`, `C=225` benchmark gives `F_final=22.5` (`4.74341649 sigma`). It is correctly retained as 90% of a **raw detector** 5-sigma benchmark, not a final post-profile 5-sigma certificate.
+**NUM-006:** historical `A=25`, `C=225` gives `F_final=22.5` or `4.74341649 sigma`; `C=225` is therefore 90% retention of a raw detector 5-sigma benchmark, not a final 5-sigma certificate.
 
-For final `Z=5` at fixed 90% retention use
+For final `Z=5` at fixed 90% retention use `A=27.77777778`, `C=250`.
 
-`A=27.77777778`, `C=250`.
-
-**RESOURCE-060:** with raw detector rate `R_s` and source-amplitude rate `R_a`,
+**RESOURCE-060:** with detector rate `R_s` and independent source-amplitude rate `R_a`,
 
 `1/F=1/(R_s T_s)+1/(R_a T_a)`,
 
 `T_s/T_a=sqrt(R_a/R_s)`,
 
-`T_min=F_*[1/sqrt(R_s)+1/sqrt(R_a)]^2`,
-
-`r_*=sqrt(R_a)/(sqrt(R_s)+sqrt(R_a))`.
+`T_min=F_*[1/sqrt(R_s)+1/sqrt(R_a)]^2`.
 
 **NG-059:** fixed 90% retention is minimum-time optimal only for `R_a/R_s=81`.
 
-**RESOURCE-059:** for apparatus uncertainty `u`,
+**RESOURCE-059:** robust scheduling uses
 
 `R_rob^*=max_x min_u F_beta(sum_k x_k J_k(u))`.
 
-On a fixed identifiable affine-polytope branch the robust scheduling problem is convex and the uncertainty minimum is attained at a vertex. Active worst-case vertices combine to an equal-marginal KKT certificate.
-
 ## Iteration 105 — final-significance architecture crossover
 
-Compress, where valid, the already optimized detector/transfer/seven-calibration side of architecture `i` to `R_D,i` and independent source-amplitude metrology to `R_A,i`:
+Where detector/source separation is valid, define
 
 `R_final,i = 1/[1/sqrt(R_D,i)+1/sqrt(R_A,i)]^2`.
 
-With multiplicative duty `d_i`, `Q_i=(1-d_i)R_final,i`.
+With information-free duty `d_i`, `Q_i=(1-d_i)R_final,i`.
 
 Define
 
-`u=R_D,14/R_D,09`,
-
-`v=R_A,14/R_A,09`,
-
-`z=R_A,09/R_D,09`,
-
-`delta=(1-d_14)/(1-d_09)`.
+`u=R_D,14/R_D,09`, `v=R_A,14/R_A,09`, `z=R_A,09/R_D,09`, `delta=(1-d_14)/(1-d_09)`.
 
 **RESOURCE-061:**
 
 `Q_14/Q_09 = delta[(1+z^-1/2)/(u^-1/2+(v z)^-1/2)]^2`.
 
-Toy014 is faster iff this ratio exceeds one. Final target `Z` cancels from the ranking in the local-linear regime.
+**DESIGN-012:** source domination favors Toy014 iff `v>u`, favors Toy009 iff `v<u`.
 
-**DESIGN-012:** source domination favors Toy014 exactly when `v>u`; favors Toy009 when `v<u`; apart from duty it is neutral when `v=u`.
-
-**NG-060:** the Toy014 Ramsey/source rate advantage alone is not an architecture certificate. A source-rescue claim requires common-normalization `u,v,z,delta` or the underlying robust Fisher matrices.
+**NG-060:** Ramsey/source-rate advantage alone is not an architecture certificate.
 
 ## Iteration 106 — robust detector-side ratio certificate
 
-For the profiled Fisher functional
+For
 
 `Phi(J)=a-b^T N^-1 b=min_q (1,-q)^T J (1,-q)`,
 
-Loewner monotonicity and positive homogeneity imply the following.
+Loewner monotonicity and positive homogeneity give:
 
 ### RESOURCE-062
 
@@ -131,88 +111,117 @@ If uniformly over common campaigns and apparatus uncertainty
 
 `alpha J_09,k <= J_14,k <= beta J_09,k`
 
-and both architectures share the same feasible campaign-fraction set, then
+and both architectures share the same feasible campaign set, then
 
-`alpha <= u=R_D,14/R_D,09 <= beta`.
+`alpha <= u <= beta`.
 
-For positive-definite reference matrices, obtain the tight per-campaign envelope from generalized eigenvalues of
-
-`J_09,k^-1/2 J_14,k J_09,k^-1/2`.
-
-Singular Fisher supports must be audited explicitly.
+For positive-definite reference matrices, use generalized eigenvalues of `J_09^-1/2 J_14 J_09^-1/2`. Audit singular supports explicitly.
 
 ### NG-061
 
-Science-only SNR ratios, gamma ratios, calibration-cost ratios and marginal transfer-error ratios do not by themselves certify `u`; nuisance orientation/support and the physical schedule set matter.
+Science-only SNR, gamma, calibration-cost or marginal transfer-error ratios do not by themselves certify `u`; nuisance orientation/support and the schedule set matter.
 
-### NG-062 — detector no-rescue condition
+### NG-062
 
-From RESOURCE-061, the `u -> infinity` limit is
+The detector no-rescue condition is
 
-`G_inf=delta v (1+sqrt(z))^2`.
+`delta v (1+sqrt(z))^2 <= 1`.
 
-If
+If true, Toy014 cannot beat Toy009 for any finite positive detector ratio `u` in the separable final-significance model.
 
-`delta v (1+sqrt(z))^2 <= 1`,
-
-Toy014 cannot beat Toy009 for any finite positive `u` in the separable final-significance model.
-
-When rescue is possible, the direct detector threshold is
+When rescue is possible,
 
 `u_req=[sqrt(delta)(1+z^-1/2)-(v z)^-1/2]^-2`.
 
 ### RESOURCE-063
 
-For independent positive interval boxes in `(u,v,z,delta)`, exact lower/upper architecture-rate ratios follow from monotonicity in `u,v,delta` and the sign-controlled `z` dependence from Iteration 105. Apply NG-030 to the resulting nonoverlap certificate. Correlated physical uncertainties require the actual joint set.
+For independent positive interval boxes in `(u,v,z,delta)`, exact lower/upper architecture-rate ratios follow from monotonicity in `u,v,delta` and sign-controlled `z` dependence. Apply NG-030. Correlated physical uncertainty requires the actual joint set.
 
-Regression: synthetic common-coordinate campaign matrices give `alpha=.55`, `beta=1.40`, while direct schedule optimization gives `u~=0.617284516` inside the certified envelope.
+Regression: synthetic common-coordinate matrices give `alpha=.55`, `beta=1.40`; direct optimized `u~=0.617284516` lies inside the certificate.
 
 ## Iteration 107 — recertification-constrained scheduling
 
 ### RESOURCE-064
 
-Represent physical minimum reference/calibration quotas with the constrained campaign polytope
+Represent mandatory physical quotas with
 
-`X={x>=0, 1^T x=1, A x>=b}`.
+`X={x>=0, 1^T x=1, A x>=b}`,
 
-Then
+and use
 
 `R_D^rob=max_{x in X} min_u Phi(sum_k x_k J_k(u))`.
 
-On a fixed identifiable affine-polytope branch the optimization remains convex.
+The fixed-branch problem remains convex.
 
 ### DESIGN-013
 
-Mandatory schedule constraints modify the Iteration-103 equal-marginal rule through KKT shadow prices. A required recertification campaign can remain active even when its unconstrained marginal Fisher/sec is lower.
+Active schedule constraints enter KKT conditions as shadow prices; mandatory reference campaigns need not satisfy the unconstrained equal-marginal rule.
 
 ### NG-063
 
-A scalar duty factor is valid only for genuinely information-free dead/reference time. If a timing/gain/geometry/additive reference also supplies nuisance Fisher, include it inside the joint Fisher schedule; otherwise information can be discarded or double-counted.
+A scalar duty factor is valid only for genuinely information-free reference/dead time. If a reference also constrains timing/gain/geometry/additive nuisance parameters, put it inside the Fisher schedule or risk discarding/double-counting information.
 
 ### NG-064
 
 If Toy009 and Toy014 have different feasible schedule sets, the two-sided RESOURCE-062 ratio bound does not follow automatically. Set inclusion preserves only the corresponding one-sided bound; otherwise optimize both constrained schedules directly.
 
-### RESOURCE-065 — finite periodic-reference staircase
+### RESOURCE-065
 
-For a pure-dead reference block,
+For a pure-dead periodic reference block,
 
-`L=F_*/R_live`,
+`L=F_*/R_live`, `n_ref=ceil(L/tau_live)`, `T_wall=L+n_ref t_ref`.
 
-`n_ref=ceil(L/tau_live)`,
+Smooth duty is only the long-campaign limit; finite campaigns have staircase overhead.
 
-`T_wall=L+n_ref t_ref`.
+## Iteration 108 — exact timing-reference overhead convention
 
-The asymptotic live fraction `tau_live/(tau_live+t_ref)` is only the long-campaign limit.
+Re-audit of Iteration 076 against RESOURCE-065 found a resource-convention correction.
 
-Retained Toy014 timing-reference illustration from Iteration 075, if treated as pure dead time only:
+### NUM-007
 
-- `0.889 s` block at `0.2812 h` cadence -> duty loss `~8.774e-4`;
-- at `0.02812 h` cadence -> `~8.705e-3`.
+When `T_cad` is the allowed informative/live interval and `T_ref` is a pure-dead reference block, define
 
-These are transparent drift benchmarks, not apparatus forecasts.
+`r=T_ref/T_cad`.
 
-Files added:
+Then `r` is overhead/live ratio, not total-wall duty:
+
+`m_wall=1+r`,
+
+`d_wall=r/(1+r)`,
+
+`eta_live=1/(1+r)`.
+
+The older `1/(1-r)` multiplier is only first-order accurate for small `r`.
+
+Retained centered timing targets:
+
+- Toy009 D2 `sigma_t~=9.19001 us`;
+- Toy014 `sigma_t~=3.97715 us`.
+
+Under the common transparent jitter/Brownian-drift benchmark, Toy014 retains about `24.91x` larger timing-reference overhead than Toy009.
+
+Exact total-wall reference fractions:
+
+- `D_tau=100 us^2/h`: Toy014 `8.7751553e-4`, Toy009 `3.5261872e-5`;
+- `D_tau=1000 us^2/h`: Toy014 `8.7063953e-3`, Toy009 `3.5250685e-4`.
+
+The qualitative small/moderate-drift conclusion of Iteration 076 is unchanged.
+
+The old formal `r=1` point is exactly 50% total-wall reference time, not 100%. Exact Toy014 10% total-wall timing-reference duty occurs at `D_tau~=1.26509e4 us^2/h` in the declared zero-floor benchmark.
+
+### RESOURCE-066
+
+For pure-dead timing references,
+
+`u_wall=u_live (1+r09)/(1+r14)`.
+
+Thus a final detector threshold requires
+
+`u_live > u_req (1+r14)/(1+r09)`.
+
+Do not use this scalar correction if reference blocks carry nuisance Fisher; use RESOURCE-064.
+
+Files added in Iterations 106–108:
 
 - `analysis/detector_ratio_certificate_iteration106.py`
 - `docs/PAPER_III_DETECTOR_RATIO_CERTIFICATE_ITERATION106.md`
@@ -222,13 +231,17 @@ Files added:
 - `docs/PAPER_III_RECERTIFICATION_CONSTRAINED_SCHEDULE_ITERATION107.md`
 - `research_log/2026-08-30_iteration_107_recertification_constrained_schedule.md`
 - `recovery/RECOVERY_DELTA_ITERATION_107.md`
+- `analysis/timing_overhead_convention_iteration108.py`
+- `docs/PAPER_III_TIMING_OVERHEAD_CONVENTION_ITERATION108.md`
+- `research_log/2026-08-30_iteration_108_timing_overhead_convention.md`
+- `recovery/RECOVERY_DELTA_ITERATION_108.md`
 
 ## Immediate next gate — Paper III only
 
 Do **not** start Toy015 yet.
 
-Use source-specific timing/geometry/additive/gain recertification intervals and cadence bounds to construct a **threshold/interval certificate for the constrained detector ratio `u`**. Combine the resulting `u` bounds with robust `(v,z,delta)` through RESOURCE-063/NG-030 and compute which control/reference requirement carries the largest architecture-decision shadow price.
+Build a Toy009/Toy014 **control-cut status matrix**. Timing is now parameterized source-specifically. Geometry, additive and gain tolerances exist in toy coordinates but still lack a common-apparatus transduction, drift spectrum and reference Fisher-rate model. For each open control cut, derive the minimum same-apparatus measurement/Fisher object required to promote it into RESOURCE-064.
 
-If the common apparatus still lacks absolute control Fisher matrices, keep those rates/cadences parameterized and derive break-even surfaces rather than fabricating a winner.
+Then construct constrained robust bounds on `u`, combine them with `(v,z,delta)` through RESOURCE-063/NG-030, and rank remaining control/reference measurements by architecture-decision shadow price.
 
-Toy015 becomes admissible only if the residual dominant marginal wall-clock cost or architecture-decision uncertainty is demonstrably source-dependent. Classical/stochastic/hybrid/full-QFT degeneracy and relativistic/gauge/conservation/causality/EFT/renormalization/measurability gates remain open unless explicitly closed elsewhere in the repository.
+Do not invent SI control rates. Toy015 becomes admissible only if the residual dominant marginal wall-clock cost or architecture-decision uncertainty is demonstrably source-dependent. Classical/stochastic/hybrid/full-QFT degeneracy and relativistic/gauge/conservation/causality/EFT/renormalization/measurability gates remain open unless explicitly closed elsewhere in the repository.
