@@ -1,7 +1,7 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-30  
-**Authoritative front:** through **Iteration 089**.
+**Authoritative front:** through **Iteration 090**.
 
 > `docs/RECOVERY_GUIDE.md` and `docs/MASTER_TABLE.md` contain the mature framework but may lag the fast resource front. Read this pointer plus the listed recovery deltas before starting a new gate. Repository state, not chat history, is authoritative.
 
@@ -9,7 +9,7 @@
 
 - **Paper I scientific scope:** CLOSED at Iteration 078.
 - **Paper II scientific scope:** CLOSED at Iteration 079.
-- **Paper III:** ACTIVE. Iterations 080–089 develop apparatus-rate closure, physical two-band likelihood, correlation/uncertainty corrections, seven-layer robust calibration and the joint robust wall-clock certificate.
+- **Paper III:** ACTIVE. Iterations 080–090 develop apparatus-rate closure, physical two-band likelihood, correlation/uncertainty corrections, seven-layer robust calibration, the joint robust wall-clock certificate, and an external multimode apparatus-data audit.
 
 RQIR remains separate from RTK/DSIR. No toy, Fisher, resource or detector result is an empirical new-physics claim.
 
@@ -267,18 +267,44 @@ Files:
 - `research_log/2026-08-30_iteration_089_joint_robust_total_time.md`
 - `recovery/RECOVERY_DELTA_ITERATION_089.md`
 
+## Iteration 090 — external multimode apparatus-data audit
+
+Current literature already demonstrates several separate capabilities needed by RQIR:
+
+- simultaneous multimode levitated detection/control (Piotrowski et al., Nature Physics 2023, DOI `10.1038/s41567-023-01956-1`);
+- full spectral covariance reconstruction in a multimode levitated optical readout (Pontin et al., arXiv:2604.26790, 2026);
+- active multimode/mechanical-comb force-sensing design work (Iacoponi et al., PR Research accepted 16 June 2026, DOI `10.1103/wrd3-t5cf`).
+
+For the published Piotrowski bare frequencies `224+/-2`, `268+/-2`, `80+/-1 kHz`, no pair-ratio uncertainty interval contains the present RQIR requirement `omega4/omega2=2`.
+
+The reported Pontin `70–95 kHz` sub-shot-noise band has span ratio `95/70<2`, so that band alone cannot contain both `f` and `2f`.
+
+### RQIR-APP-002
+
+Published multimode capability is not yet a complete RQIR apparatus envelope. This audit did not identify one published data set supplying in one common physical normalization the calibrated two-band input-referred force transfer/cross-PSD, seven calibration matrix rates, hidden-source metrology, and campaign control duty required by RESOURCE-042.
+
+### RQIR-NG-040
+
+Do not concatenate best-in-class subsystem numbers from separate papers as though they form one apparatus likelihood. Cross-paper values may define an explicitly parameterized design envelope only after a physical normalization/mapping; they do not by themselves support an experimental wall-clock forecast.
+
+Files:
+
+- `analysis/external_multimode_compatibility_iteration090.py`
+- `docs/PAPER_III_EXTERNAL_MULTIMODE_APPARATUS_AUDIT_ITERATION090.md`
+- `research_log/2026-08-30_iteration_090_external_multimode_apparatus_audit.md`
+- `recovery/RECOVERY_DELTA_ITERATION_090.md`
+
 ## Immediate next gate — Paper III only
 
-The interval-rate algebra is now ready for physical apparatus insertion. Construct one **declared reference apparatus envelope** for at least Toy009 and Toy014 using externally sourced/measured or explicitly design-level quantities:
+Build a **parameterized tunable dual-mode `f,2f` apparatus envelope** in one common physical coordinate instead of fabricating a fixed apparatus from incompatible literature numbers:
 
-- two-band science transfer functions and full PSD/cross-PSD with uncertainty;
-- seven same-time dual-probe integrated calibration Fisher blocks with PSD-safe uncertainty regions;
-- robust independent source-metrology rate including acceptance, visibility, coupling, reset/readout and coherence, with correct max-min optimization order;
-- timing/geometry/additive/gain reference stability and control duty intervals.
+1. parameterize the two input-referred force PSDs and cross-correlation with uncertainty;
+2. propagate them through Iteration 087 to `R_beta^-`;
+3. parameterize the seven same-time matrix calibration rates using the same transfer/noise family and propagate through Iteration 088;
+4. insert robust Ramsey/pointer source-metrology rate and control/reference duty through Iteration 089;
+5. solve minimum detector/source performance surfaces for feasibility and NG-030 Toy009/Toy014 dominance.
 
-Feed these into RESOURCE-042 and apply NG-030. If published data do not close all coordinates, retain a parameterized feasibility envelope and list the missing measurements explicitly rather than inventing an ASD.
-
-Do not start Toy015 unless this physical rate map reveals a genuinely source-dependent bottleneck that a new source design could improve.
+Keep the result explicitly as an engineering/design envelope until one measured apparatus closes APP-002. Do not start Toy015 unless this physical rate map reveals a genuinely source-dependent bottleneck that a new source design could improve.
 
 ## Discipline
 
