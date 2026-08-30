@@ -1,7 +1,7 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-30  
-**Authoritative front:** through **Iteration 084**.
+**Authoritative front:** through **Iteration 085**.
 
 > `docs/RECOVERY_GUIDE.md` and `docs/MASTER_TABLE.md` contain the mature framework but may lag the fast resource front. Read this pointer plus the listed recovery deltas before starting a new gate. Repository state, not chat history, is authoritative.
 
@@ -9,7 +9,7 @@
 
 - **Paper I scientific scope: CLOSED at Iteration 078.** RQIR-THM-001 abstracts Toy009/Toy010 into a finite nullspace response-discriminant existence theorem.
 - **Paper II scientific scope: CLOSED at Iteration 079.** RQIR-STAT-001 freezes the reference-likelihood regression certificate.
-- **Paper III: ACTIVE.** Iterations 080–084 now provide the inverse apparatus specification envelope, absolute-rate identifiability audit, single-resonance frequency incompatibility, sequential-retuning gain-profile law, and simultaneous two-band physical Fisher-rate closure.
+- **Paper III: ACTIVE.** Iterations 080–085 now provide the inverse apparatus specification envelope, absolute-rate identifiability audit, single-resonance frequency incompatibility, sequential-retuning gain-profile law, simultaneous two-band physical Fisher-rate closure, and full two-band cross-PSD/correlation closure.
 
 ## Active architecture status
 
@@ -107,7 +107,7 @@ so
 
 with
 
-`boxed{R_2band = 4 r2 r4/(r2+r4)}`.
+`R_2band = 4 r2 r4/(r2+r4)`.
 
 **RQIR-RESOURCE-038:** the simultaneous two-band science throughput is twice the ordinary harmonic mean of `r2,r4`.
 
@@ -127,19 +127,45 @@ At `Z=5`, science-only profiled-rate targets are:
 
 Balanced bands each require half the corresponding profiled rate. These are specifications, not apparatus forecasts.
 
-External literature confirms simultaneous multimode levitated readout/control is experimentally real, but no searched platform supplied a complete RQIR-ready force PSD/cross-PSD data set at two simultaneous bands in exact 2:1 ratio plus all calibration/source/control channels. Keep the apparatus model parameterized until those data exist.
-
 Files:
 - `analysis/simultaneous_dual_band_rate_iteration084.py`
 - `docs/PAPER_III_SIMULTANEOUS_DUAL_BAND_RATE_ITERATION084.md`
 - `research_log/2026-08-30_iteration_084_simultaneous_dual_band_rate.md`
 - `recovery/RECOVERY_DELTA_ITERATION_084.md`
 
+## Iteration 085 — correlated dual-band matrix Fisher
+
+For matched-filter band rates `r2,r4` and effective cross-channel correlation `rho_eff` in the full positive-definite `2x2` detector covariance,
+
+`R_beta = 4 r2 r4/(r2+r4+2 rho_eff sqrt(r2 r4))`.
+
+**RQIR-RESOURCE-039:** Iteration 084 is exactly the `rho_eff=0` slice of the full matrix likelihood.
+
+For balanced raw rates `r2=r4=r`,
+
+`R_beta = 2r/(1+rho_eff)`.
+
+**RQIR-NG-036:** marginal ASD/PSD values alone do not determine simultaneous two-band `R_beta` when channels can have correlated technical/reference/feedback/environmental noise. Require the full spectral matrix/cross-PSD or a demonstrated negligible cross term.
+
+NG-035 survives finite correlation: for any fixed `|rho_eff|<1`, an infinitely strong partner band still gives only `R_beta -> 4 r_weak`.
+
+The deterministic 1000-case covariance regression gives maximum Schur-vs-closed-form absolute discrepancy `~1.0644e-12`.
+
+Files:
+- `analysis/correlated_dual_band_fisher_iteration085.py`
+- `docs/PAPER_III_CORRELATED_DUAL_BAND_FISHER_ITERATION085.md`
+- `research_log/2026-08-30_iteration_085_correlated_dual_band_fisher.md`
+- `recovery/RECOVERY_DELTA_ITERATION_085.md`
+
 ## Immediate next gate — Paper III only
 
-Construct a physical two-band detector specification with measured/declared `S_F,2`, `S_F,4`, complex transfer functions/windows and cross-PSD. Convert these to nuisance-profiled `r2,r4`, then set `R_beta=4 r2 r4/(r2+r4)`.
+Construct or source one declared simultaneous detector spectral matrix and transfer vector at the two retained science bands:
 
-After that, propagate the **same apparatus model** through all seven `R_cal,j`, independent `R_src`, control duty and uncertainties, and apply NG-030 to Toy009 versus Toy014. Do not start Toy015 unless that full rate map shows a genuinely source-dependent bottleneck.
+`{g2,g4,S_F,2,S_F,4,S_F,24}`
+
+including finite acquisition windows and uncertainty intervals. Convert it to `R_beta` with Iteration 085. Then propagate the **same apparatus model** through all seven same-time calibration layers to derive `R_cal,j`, add independent `R_src`, control duty and uncertainties, and apply NG-030 to Toy009 versus Toy014.
+
+Do not start Toy015 unless that full rate map shows a genuinely source-dependent bottleneck.
 
 ## Discipline
 
