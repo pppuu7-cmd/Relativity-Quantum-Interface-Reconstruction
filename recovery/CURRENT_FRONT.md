@@ -1,7 +1,7 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-30  
-**Authoritative front:** through **Iteration 086**.
+**Authoritative front:** through **Iteration 087**.
 
 > `docs/RECOVERY_GUIDE.md` and `docs/MASTER_TABLE.md` contain the mature framework but may lag the fast resource front. Read this pointer plus the listed recovery deltas before starting a new gate. Repository state, not chat history, is authoritative.
 
@@ -9,7 +9,7 @@
 
 - **Paper I scientific scope:** CLOSED at Iteration 078.
 - **Paper II scientific scope:** CLOSED at Iteration 079.
-- **Paper III:** ACTIVE. Iterations 080–086 develop the apparatus-rate closure, physical two-band likelihood and its correlation/robustness corrections.
+- **Paper III:** ACTIVE. Iterations 080–087 develop the apparatus-rate closure, physical two-band likelihood, correlation correction and uncertainty-safe rate bound.
 
 RQIR remains separate from RTK/DSIR. No toy, Fisher, resource or detector result is an empirical new-physics claim.
 
@@ -136,9 +136,7 @@ with
 
 Explicit counterexample to the old global ceiling:
 
-`rho=-0.5`, `b=1`, `r_partner=4` gives
-
-`R_beta=16/3=5.3333333333 > 4b`.
+`rho=-0.5`, `b=1`, `r_partner=4` gives `R_beta=16/3=5.3333333333 > 4b`.
 
 Therefore the optimized weak-band feasibility floor is
 
@@ -149,8 +147,6 @@ At fixed total raw Fisher `r2+r4`, balanced rates remain optimal for every ordin
 
 Near `rho=-1` the formal enhancement is singular/fragile; cross-PSD uncertainty, covariance eigenvalue floor and campaign stability must be propagated before any apparatus claim.
 
-Numerical regression: 1000 random negative-correlation cases agree with the analytic finite optimum to maximum relative discrepancy `~3.33e-15`.
-
 Files:
 
 - `analysis/correlated_partner_optimum_iteration086.py`
@@ -158,13 +154,57 @@ Files:
 - `research_log/2026-08-30_iteration_086_correlated_partner_optimum.md`
 - `recovery/RECOVERY_DELTA_ITERATION_086.md`
 
+## Iteration 087 — uncertainty-safe correlated science rate
+
+For independent interval uncertainty
+
+`r2 in [r2_lo,r2_hi]`,
+
+`r4 in [r4_lo,r4_hi]`,
+
+`rho in [rho_lo,rho_hi]`,
+
+`R_beta` is strictly decreasing in `rho`, so the worst correlation is always `rho_hi`.
+
+At fixed `rho`, each one-dimensional rate slice has no interior minimum: it is monotone for `rho>=0`, while for `rho<0` its only interior stationary point is the finite maximum from Iteration 086.
+
+### RQIR-RESOURCE-040
+
+The exact box-uncertainty lower envelope is
+
+`R_beta^lower = min R_beta(r2,r4,rho_hi)`
+
+over the four rate corners
+
+`r2 in {r2_lo,r2_hi}`, `r4 in {r4_lo,r4_hi}`.
+
+Then
+
+`T_sci^upper = Z^2/R_beta^lower`.
+
+### RQIR-NG-037
+
+Nominal anti-correlation is not robust resource credit unless the **upper** allowed correlation remains sufficiently negative. If the correlation interval crosses zero, much of the nominal gain can disappear in the conservative rate.
+
+Example for `r2 in [0.8,1.2]`, `r4 in [3,5]`:
+
+- `rho in [-0.6,-0.4]` -> `R_beta^lower=3.7490549317691566`;
+- `rho in [-0.6,0.1]` -> `R_beta^lower=2.3358581142019457`.
+
+The deterministic regression tests 200 random uncertainty boxes with 2000 random interior samples each and verifies no interior sample lies below the analytic corner bound.
+
+Files:
+
+- `analysis/correlated_box_uncertainty_iteration087.py`
+- `docs/PAPER_III_CORRELATED_BOX_UNCERTAINTY_ITERATION087.md`
+- `research_log/2026-08-30_iteration_087_correlated_box_uncertainty.md`
+- `recovery/RECOVERY_DELTA_ITERATION_087.md`
+
 ## Immediate next gate — Paper III only
 
-Before importing an external/apparatus spectral matrix into the wall-clock certificate, derive an **uncertainty-safe lower bound** on `R_beta` over declared intervals/uncertainty sets for `(r2,r4,rho_eff)` or directly for the full spectral matrix. This is required especially when using negative correlation, where the nominal optimum can be nonmonotone and near-singular enhancement is fragile.
+Propagate the same uncertainty-safe construction through the **seven same-time dual-probe calibration layers**, deriving conservative `R_cal,j^lower`, the resulting `H_cal^lower`, and an upper calibration wall-clock bound. Then combine with a conservative independent `R_src^lower` and upper control/reference duty to evaluate NG-030 robust Toy009 versus Toy014 dominance.
 
-Then obtain/source one simultaneous two-band transfer plus spectral matrix, propagate the same apparatus model through all seven same-time calibration layers to derive `R_cal,j`, add independent `R_src`, control duty and uncertainty intervals, and apply NG-030 to Toy009 versus Toy014.
-
-Do not start Toy015 unless that full rate map shows a genuinely source-dependent bottleneck.
+Only after this rate algebra is ready should an external/apparatus two-band spectral matrix be inserted. Do not start Toy015 unless the full physical rate map shows a genuinely source-dependent bottleneck.
 
 ## Discipline
 
