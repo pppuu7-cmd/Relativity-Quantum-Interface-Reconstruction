@@ -1,172 +1,128 @@
 # RQIR Current Front Pointer
 
 **Updated:** 2026-08-31  
-**Authoritative front:** through **Iteration 128**.
+**Authoritative front:** through **Iteration 132**.
 
-> Repository state, not chat history, is authoritative. Read `docs/RECOVERY_GUIDE.md`, `docs/MASTER_TABLE.md`, this pointer, `docs/READINESS_TRACKER.md`, and `recovery/RECOVERY_DELTA_ITERATION_128.md` before continuing. RQIR remains separate from RTK/DSIR. No current result is an empirical new-physics claim.
+> Repository state, not chat history, is authoritative. RQIR remains separate from RTK/DSIR. No current result is an empirical new-physics claim.
 
-## Publication track
+## Publication / branch status
 
-- **Paper I scientific scope:** CLOSED at Iteration 078.
-- **Paper II scientific scope:** CLOSED at Iteration 079.
-- **Paper III scientific scope:** **CLOSED at Iteration 128 — 100% scientific-content readiness for the frozen resource/design/certificate claim.**
-- **Paper III submission readiness:** **97%**; remaining work is manuscript production/reviewer-style reproduction, not expansion of scientific scope.
-- **Candidate Gravity:** may begin as a separate future branch from `docs/CANDIDATE_GRAVITY_ENTRY_CRITERIA.md`; repository readiness to start is **90%**, but the concrete model itself remains **~10%** and has not passed QG-001…QG-010.
+- **Paper I scientific scope:** CLOSED at Iteration 078 — 100% scientific.
+- **Paper II scientific scope:** CLOSED at Iteration 079 — 100% scientific.
+- **Paper III scientific scope:** CLOSED at Iteration 128 — 100% scientific; submission readiness 97%.
+- **Candidate Gravity repository infrastructure:** **CLOSED/READY at Iteration 132 — 100% ready to instantiate the first real ansatz.**
+- **Concrete Candidate Gravity model:** not yet instantiated; approximately 10% project bookkeeping only because the testing architecture exists but the dynamics do not.
 
-## Paper III closure statement
+## Mandatory recovery order
 
-Frozen scientific chain:
+Read:
 
-`interface discriminant -> exact source/calibration constraints -> detector nuisance profile -> source metrology -> transfer/cross-PSD calibration -> calibration span/backaction/no-double-counting -> physical Fisher rates -> robust wall clock -> final architecture certificate`.
+1. `docs/RECOVERY_GUIDE.md`;
+2. `docs/MASTER_TABLE.md`;
+3. this file;
+4. `docs/READINESS_TRACKER.md`;
+5. latest relevant recovery delta.
 
-Every link required by this claim has a canonical repository authority and reproducibility/evidence classification.
+For Candidate Gravity additionally read:
 
-### NG-084 — scientific closure is not apparatus closure
+- `candidate_gravity/recovery/CURRENT_QG_FRONT.md`;
+- `candidate_gravity/recovery/RECOVERY_GUIDE.md`;
+- `candidate_gravity/INFRASTRUCTURE_STATUS.yaml`;
+- `candidate_gravity/NEW_MODEL_CHECKLIST.md`;
+- `candidate_gravity/MODEL_TO_RQIR_CONTRACT.md`.
 
-Do not paraphrase Paper-III 100% scientific readiness as a measured apparatus runtime, an experimental detection, or an experimentally established Toy009/Toy014 winner.
+## Closed RQIR test pipeline
 
-A numerical apparatus application remains conditional on a compatible same-apparatus closure vector.
+Future models are propagated through the frozen chain
 
-### P3-CLOSE-001 — scope freeze
+`model dynamics -> J,N,chi^R,higher correlators -> Paper-I finite discriminator -> Paper-II F_beta|theta -> Paper-III physical resources`.
 
-Absent an internal contradiction, failed regression or materially relevant new literature result, do not expand Paper III merely to continue iterations. Toy015/new source searches belong to later research unless a manuscript audit exposes a source-dependent gap required by the frozen claim.
+Detector inference uses exact hard-constraint reduction and
 
-## Canonical final-significance convention
+`F_beta|theta = F_bb - F_btheta F_thetatheta^-1 F_thetab`.
 
-Use
+Final-significance bookkeeping uses
 
 `F_*=Z_final^2`,
 
 `F_final=A_raw C_src/(A_raw+C_src)`.
 
-At a deliberately fixed retention `r`:
+Historical `A_raw=25, C_src=225` is only a raw-5-sigma/90%-retention regression; it gives final `Z=4.74341649`. For final `Z=5` at fixed 90% retention use `A_raw=27.77777778, C_src=250`, while joint science/source-metrology optimization is preferred.
 
-`A_raw=F_*/r`,
+Paper-III closure remains a framework/resource certificate, not a measured apparatus winner (NG-084).
 
-`C_src=F_*/(1-r)`.
+## Candidate Gravity infrastructure — Iterations 129–132
 
-For final `Z_final=5`, `r=.90`:
+### Iteration 129 — workspace and Model→RQIR contract
 
-`A_raw=27.7777777778`, `C_src=250`, `F_final=25`.
+Created the canonical workspace and model specification/contract.
 
-**NUM-008:** historical `A_raw=25`, `C_src=225` is only a raw-5-sigma / 90%-retention regression and gives `Z_final=4.74341649`. Do not call `225` a final-5-sigma certificate.
+**CG-INFRA-001:** one model version must derive its RQIR-facing hierarchy from one declared dynamics/convention.
 
-The preferred final design is joint science/source-metrology optimization rather than imposing 90% retention a priori.
+**CG-NG-001:** a phenomenological kernel/channel alone is not yet a gravity model.
 
-## Mandatory inference/resource backbone
+Readiness: Candidate Gravity start 94%.
 
-Detector profiling:
+### Iteration 130 — gate governance and provenance
 
-`F_beta|theta = F_bb - F_btheta F_thetatheta^-1 F_thetab`.
+Added:
 
-Always eliminate exact hard constraints before profiling; retain centered covariance derivatives, spectral-tilt profiling, full PSD/cross-PSD Fisher, source-amplitude metrology, coherence/reset/dead time, transfer gain/phase, control recertification and backaction guards.
+- machine-readable QG-001…QG-010 and cross-gate state;
+- comparator registry;
+- assumptions ledger;
+- derivation provenance;
+- structural workspace validator.
 
-Campaign profile:
+**CG-INFRA-002…005:** PASS requires evidence; comparator completeness bounds claim strength; assumptions and derivation provenance are first-class.
 
-`Phi([[a,b^T],[b,N]])=a-b^T N^-1 b`.
+Readiness: 97%.
 
-Optimized/robust campaign rate:
+### Iteration 131 — recovery/versioning
 
-`R_*=max_x Phi(sum_k x_k J_k)`
+Added:
 
-with the declared max-min uncertainty extension.
+- Candidate Gravity branch-local recovery/front;
+- model registry;
+- new-model boot checklist;
+- synchronized entry criteria.
 
-Final independent detector/source significance:
+**CG-INFRA-006…008:** preserve negative results; recover from repo, not chat; start as `ANSATZ-*` before promotion to `QGxxx`.
 
-`T_min=F_*[1/sqrt(R_D)+1/sqrt(R_A)]^2`.
+Readiness: 99%.
 
-Architecture variables:
+### Iteration 132 — infrastructure closure
 
-`u=R_D14/R_D09`,
+Canonical authorities:
 
-`v=R_A14/R_A09`,
+- `analysis/candidate_gravity_readiness_closure_iteration132.py`;
+- `candidate_gravity/INFRASTRUCTURE_STATUS.yaml`;
+- `docs/CANDIDATE_GRAVITY_INFRASTRUCTURE_CLOSURE_ITERATION132.md`;
+- `research_log/2026-08-31_iteration_132_candidate_gravity_infrastructure_closure.md`;
+- `recovery/RECOVERY_DELTA_ITERATION_132.md`.
 
-`z=R_A09/R_D09`,
+**CG-INFRA-009:** freeze the evaluation process before the first real model; changes require methodological provenance.
 
-`delta=(1-d14)/(1-d09)`.
+**CG-NG-002:** 100% repository readiness is not 100% theory readiness.
 
-Final ratio:
+## Candidate Gravity promotion discipline
 
-`Q14/Q09=delta[(1+z^-1/2)/(u^-1/2+(v z)^-1/2)]^2`.
+A new construction begins as `ANSATZ-*`.
 
-NG-030 remains mandatory: overlapping certified intervals mean unresolved, not a nominal winner.
+Promotion to `QGxxx` requires at least QG-001 and QG-002 PASS with repository authorities and no unresolved foundational contradiction under the promotion rules.
 
-## Late-front authority chain
+A model is not called RQIR-discriminating until the model-specific discriminator, Paper-I survival and positive Paper-II profiled Fisher gates pass. It is not experimentally closed until QG-010 passes.
 
-### Iterations 101–105 — physical likelihood and final significance
+Comparator classes include classical GR/Newtonian, semiclassical, stochastic, classical-channel/hybrid/postquantum, conventional quantum/technical mediator, perturbative-QG and full-QFT-source/classical-interface alternatives as applicable.
 
-- same-state temporal `f,2f` covariance/transfer protocol;
-- full complex science/calibration campaign Fisher;
-- robust source/science optimization and NUM-006 final-significance correction;
-- compressed Toy009/Toy014 `(u,v,z,delta)` architecture crossover.
+## Immediate next scientific action
 
-### Iterations 112–115 — transfer/control closure
+**The repository preparation task is complete.**
 
-- matrix gain/phase recertification;
-- likelihood-derived transfer-retention budget;
-- common-gain / spectral-tilt quotient;
-- full-complex common-gain reference Fisher rate.
+The next scientific step is to instantiate the first real construction as `ANSATZ-*` using `candidate_gravity/NEW_MODEL_CHECKLIST.md`.
 
-### Iterations 116–121 — non-double-counted calibration and detector interval
+Start with:
 
-- joint-reference generalized-eigenvalue quota and no-double-counting rule;
-- rank/span feasibility gate;
-- exact Toy009/Toy014 source-nuisance span `22 = 14 mean + 8 covariance complement`;
-- full covariance endpoint graph and four-matching output optimum in the declared class, with quantum backaction guard retained;
-- strong/shared calibration-cover bracket;
-- physical rate-level detector bracket yielding a robust interval for `u=R_D14/R_D09`.
+1. **QG-001 — physical state space**;
+2. **QG-002 — matter–gravity dynamics**.
 
-### Iterations 122–127 — publication/evidence closure
-
-- external apparatus audit: component feasibility exists, but no complete compatible public RQIR closure vector was found;
-- claim/novelty audit: constituent Fisher/OED, QGEM/resource, classical/stochastic gravity and transfer/cross-spectrum methods are prior art;
-- manuscript skeleton with explicit claim/evidence/limitation classes;
-- canonical notation/dependency audit and NUM-008 supersession rule;
-- minimum reviewer-scale reproducibility manifest and figure provenance rule REP-001;
-- final finite-search priority audit: candidate contribution is the RQIR-specific end-to-end integration/closure discipline, not any constituent method.
-
-### Iteration 128 — Paper III scientific closure
-
-Canonical files:
-
-- `analysis/paper3_scientific_closure_iteration128.py`
-- `docs/PAPER_III_SCIENTIFIC_CLOSURE_ITERATION128.md`
-- `research_log/2026-08-31_iteration_128_paper3_scientific_closure.md`
-- `recovery/RECOVERY_DELTA_ITERATION_128.md`
-
-Readiness:
-
-- **Paper III scientific-content: 100%**;
-- **Paper III submission: 97%**;
-- **repository ready to start Candidate Gravity: 90%**;
-- **concrete Candidate Gravity: ~10%**.
-
-## Conditional apparatus extension — not a Paper-III scientific blocker
-
-A numerical Toy009/Toy014 apparatus verdict still requires, in one compatible apparatus/accounting:
-
-- same-state two-band science transduction and PSD/cross-PSD;
-- full complex transfer-reference Fisher-rate matrix;
-- seven physical calibration Fisher-rate matrices and correlated uncertainty;
-- geometry/additive reference Fisher and drift/floor models;
-- a physical measurement/backaction likelihood if covariance sharing is credited;
-- measured independent source-metrology rate and duty;
-- a robust `u` interval narrow enough for NG-030.
-
-Do not splice numbers from different apparatuses into one forecast (NG-080).
-
-## Immediate next work
-
-### Paper III
-
-Do **not** reopen scientific scope by default. Move to manuscript production:
-
-1. generate/canonicalize figures and tables from `docs/PAPER_III_REPRODUCIBILITY_MANIFEST_ITERATION126.md`;
-2. draft/polish prose from `docs/PAPER_III_MANUSCRIPT_SKELETON_ITERATION124.md`;
-3. refresh literature immediately before submission;
-4. perform one independent clean/reviewer-style rerun;
-5. apply journal-specific formatting/references.
-
-### Candidate Gravity
-
-A separate branch may now start from `docs/CANDIDATE_GRAVITY_ENTRY_CRITERIA.md`. A concrete candidate must independently pass QG-001…QG-010 plus gauge/relational, conservation/Bianchi/Ward, causality, positivity/unitarity/CP, GR/Newtonian and flat-QFT limits, EFT/renormalization, model-degeneracy and measurability gates.
+Do not optimize a detector discriminator before the model foundations, constraints and parameter domain are frozen.
