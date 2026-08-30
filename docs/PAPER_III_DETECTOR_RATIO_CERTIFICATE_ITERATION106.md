@@ -48,7 +48,7 @@ Let the common detector-side campaign set contain science, same-state transfer c
 
 be the corresponding Fisher-rate matrices at apparatus state / uncertainty coordinate `xi`.
 
-Suppose there exist constants `alpha,beta>0` such that, **uniformly for every campaign and every admissible apparatus state**, 
+Suppose there exist constants `alpha,beta>0` such that, **uniformly for every campaign and every admissible apparatus state**,
 
 `alpha J_09,k(xi) <= J_14,k(xi) <= beta J_09,k(xi)`
 
@@ -138,7 +138,7 @@ Iteration 092 found that, in the common Ramsey model over the declared reset/vis
 
 Use this value only as a retained design-box regression, not as a universal hardware lower bound.
 
-For equal duty, RESOURCE-062 gives the following detector-ratio thresholds:
+For equal duty, the direct detector threshold gives:
 
 | `z=R_A,09/R_D,09` | required `u` for Toy014 |
 |---:|---:|
@@ -186,8 +186,8 @@ Therefore the exact lower bound is obtained at
 
 and
 
-- `z=z+` if `v->u-`;
-- `z=z-` if `v-<u-`.
+- `z=z+` if `v- > u-`;
+- `z=z-` if `v- < u-`.
 
 The exact upper bound is obtained at
 
@@ -195,8 +195,10 @@ The exact upper bound is obtained at
 
 and
 
-- `z=z-` if `v+>u+`;
-- `z=z+` if `v+<u+`.
+- `z=z-` if `v+ > u+`;
+- `z=z+` if `v+ < u+`.
+
+If the corresponding values are equal, `G` is locally independent of `z` in this compressed model.
 
 Consequently:
 
