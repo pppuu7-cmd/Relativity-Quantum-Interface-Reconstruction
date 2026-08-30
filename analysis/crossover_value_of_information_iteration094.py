@@ -3,6 +3,12 @@
 
 Deterministic algebra/regression certificate. Synthetic interval boxes are used
 only to test the formulas; they are not apparatus forecasts.
+
+Reproducibility correction (Iteration 096): active endpoint selection for
+R_src interval contractions must use R_lo on the architecture entering as the
+upper branch and R_hi on the architecture entering as the lower branch. The
+published Iteration-094 formulas/numbers already correspond to this mapping;
+this file now implements it explicitly.
 """
 from dataclasses import dataclass, replace
 from math import isclose
@@ -62,20 +68,33 @@ def width(a09, a14):
 
 
 def contraction_derivative(a09,a14,arch,field):
-    """dW/deta at eta=1, eta scales only one interval half-width."""
+    """dW/deta at eta=1, eta scales only one interval half-width.
+
+    The active endpoint depends on both branch role and monotonicity:
+      A,d: upper branch uses *_hi, lower branch uses *_lo;
+      R:   upper branch uses R_lo, lower branch uses R_hi.
+    """
     gU=endpoint_gradient(a14,a09)
     gL=endpoint_gradient(a09,a14)
     a = a09 if arch=='09' else a14
     h=0.5*(getattr(a,field+'_hi')-getattr(a,field+'_lo'))
-    # endpoint derivatives under x_lo=c-eta h, x_hi=c+eta h
+
     if arch=='14':
-        # U: i upper, L: k lower
-        dU = gU[f'i.{field}_hi']*h
-        dL = gL[f'k.{field}_lo']*(-h)
+        # U: i=14 (upper envelope); L: k=14 (lower envelope).
+        if field=='R':
+            dU = gU['i.R_lo']*(-h)
+            dL = gL['k.R_hi']*(+h)
+        else:
+            dU = gU[f'i.{field}_hi']*(+h)
+            dL = gL[f'k.{field}_lo']*(-h)
     else:
-        # U: k lower, L: i upper
-        dU = gU[f'k.{field}_lo']*(-h)
-        dL = gL[f'i.{field}_hi']*h
+        # U: k=09 (lower envelope); L: i=09 (upper envelope).
+        if field=='R':
+            dU = gU['k.R_hi']*(+h)
+            dL = gL['i.R_lo']*(-h)
+        else:
+            dU = gU[f'k.{field}_lo']*(-h)
+            dL = gL[f'i.{field}_hi']*(+h)
     return dU-dL
 
 
