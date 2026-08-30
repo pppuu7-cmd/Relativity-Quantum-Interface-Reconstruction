@@ -17,14 +17,16 @@ Percentages are project-management estimates, not statistical confidence measure
 |---|---:|---:|---:|---:|---|
 | 116 | 89% | 70% | 84% | ~10% | Joint reference quota/no-double-counting theorem closes shared-block wall-clock ambiguity. |
 | 117 | 90% | 71% | 84% | ~10% | Rank/span no-go separates missing calibration directions from mere SNR shortage; gives distinct-setting lower bound. |
+| 118 | 91% | 72% | 84% | ~10% | Actual Toy009/Toy014 calibration span reconstructed: mean rank 14 plus covariance complement rank 8 gives exact full rank 22. |
+| 119 | 92% | 73% | 84% | ~10% | Full eight-row covariance endpoint graph solved; exact four-matching detector-output partition optimum obtained with backaction guard retained. |
 
 ## Current blockers
 
 ### Paper III
 
-- reconstruct actual required nuisance subspace after hard constraints and spectral-tilt quotient;
-- map the seven calibration settings plus same-state transfer setting into one common physical nuisance basis;
+- construct the conservative strong-measurement versus optimistic weak/shared-output calibration-cover bracket;
 - physical same-apparatus Fisher-rate matrices/uncertainty envelopes for Toy009/Toy014;
+- physical joint transfer/source-calibration Jacobian if any same-state reference block is to receive overlap credit;
 - geometry and additive SI transduction, drift and reference Fisher;
 - final non-double-counted robust detector ratio `u` and NG-030 architecture comparison;
 - manuscript synthesis/figures/literature packaging.
