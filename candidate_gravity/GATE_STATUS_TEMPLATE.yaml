@@ -1,0 +1,110 @@
+schema_version: 1
+model_id: ANSATZ-UNASSIGNED
+model_version: 0.0
+status: DRAFT
+allowed_gate_states: [PASS, FAIL, BLOCKED, NOT_TESTED, NOT_APPLICABLE]
+
+qg_gates:
+  QG-001:
+    title: Physical state space
+    state: NOT_TESTED
+    authority: null
+    evidence: []
+    blocker: Specify physical/gauge state space and observables.
+  QG-002:
+    title: Matter-gravity dynamics
+    state: NOT_TESTED
+    authority: null
+    evidence: []
+    blocker: Supply action/Hamiltonian/channel/influence dynamics.
+  QG-003:
+    title: Controlled Newtonian and GR limits
+    state: NOT_TESTED
+    authority: null
+    evidence: []
+    blocker: Derive required classical limits in a controlled regime.
+  QG-004:
+    title: Unitarity positivity or complete positivity
+    state: NOT_TESTED
+    authority: null
+    evidence: []
+    blocker: Prove the consistency property appropriate to the framework.
+  QG-005:
+    title: Constraint and gauge consistency
+    state: NOT_TESTED
+    authority: null
+    evidence: []
+    blocker: Demonstrate closure and physical relational observables.
+  QG-006:
+    title: Ordinary-QM and semiclassical limits
+    state: NOT_TESTED
+    authority: null
+    evidence: []
+    blocker: Derive the relevant decoupling/coarse-grained limits.
+  QG-007:
+    title: First model-specific discriminator
+    state: NOT_TESTED
+    authority: null
+    evidence: []
+    blocker: Derive a comparator-relative observable difference from the model.
+  QG-008:
+    title: RQIR finite-discriminant propagation
+    state: NOT_TESTED
+    authority: null
+    evidence: []
+    blocker: Show the model difference survives exact calibration constraints.
+  QG-009:
+    title: Statistical identifiability
+    state: NOT_TESTED
+    authority: null
+    evidence: []
+    blocker: Demonstrate positive nuisance-profiled F_beta|theta.
+  QG-010:
+    title: Physical resource and measurability closure
+    state: NOT_TESTED
+    authority: null
+    evidence: []
+    blocker: Propagate through Paper-III resource architecture.
+
+cross_gates:
+  GAUGE_RELATIONAL:
+    state: NOT_TESTED
+    authority: null
+  CONSERVATION_BIANCHI_WARD:
+    state: NOT_TESTED
+    authority: null
+  CAUSALITY:
+    state: NOT_TESTED
+    authority: null
+  POSITIVITY_SPECTRAL:
+    state: NOT_TESTED
+    authority: null
+  FLAT_QFT_LIMIT:
+    state: NOT_TESTED
+    authority: null
+  EFT_POWER_COUNTING:
+    state: NOT_TESTED
+    authority: null
+  STRESS_ENERGY_RENORMALIZATION:
+    state: NOT_TESTED
+    authority: null
+  MODEL_DEGENERACY:
+    state: NOT_TESTED
+    authority: null
+  DETECTOR_MEASURABILITY:
+    state: NOT_TESTED
+    authority: null
+
+promotion_rules:
+  ansatz_to_candidate:
+    required_pass: [QG-001, QG-002]
+    required_nonfail_cross: [GAUGE_RELATIONAL, CONSERVATION_BIANCHI_WARD, CAUSALITY]
+  candidate_to_rqir_discriminating:
+    required_pass: [QG-001, QG-002, QG-003, QG-004, QG-005, QG-006, QG-007, QG-008, QG-009]
+  candidate_to_experimentally_closed:
+    required_pass: [QG-001, QG-002, QG-003, QG-004, QG-005, QG-006, QG-007, QG-008, QG-009, QG-010]
+
+notes:
+  - PASS requires a repository authority; prose assertion alone is insufficient.
+  - FAIL is preserved as a result and may not be silently reset by editing a model in place; use a new model version.
+  - BLOCKED means a required derivation/input is missing, not that the model passed provisionally.
