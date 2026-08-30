@@ -63,11 +63,7 @@ When `rho<0`, apparatus characterization or tuning must be scored through the pr
 
 ## 4. Seven calibration blocks: exact matrix-entry derivatives
 
-For one normalized same-time dual-probe calibration block
-
-`F_j=[[a,b],[c,b?]]`
-
-use the symmetric notation
+For one normalized same-time dual-probe calibration block use the symmetric notation
 
 `F_j=[[u,w],[w,v]]`.
 
