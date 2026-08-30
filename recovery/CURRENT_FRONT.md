@@ -17,7 +17,7 @@ No toy, Fisher, resource, detector or apparatus-certificate result is an empiric
 
 Primary detector quantity:
 
-`F_beta|theta = F_bb - F_btheta F_thetatheta^-1 F_btheta^T`.
+`F_beta|theta = F_bb - F_btheta F_thetatheta^-1 F_thetab`.
 
 Retain exact hard constraints, centered covariance derivatives, detector nuisance profiling, full matrix PSD/cross-PSD Fisher, source-preparation calibration, coherence/reset/dead-time accounting and consistency gates.
 
