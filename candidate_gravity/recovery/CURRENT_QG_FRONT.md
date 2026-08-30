@@ -1,51 +1,51 @@
 # Candidate Gravity Current Front
 
 **Updated:** 2026-08-31  
-**Infrastructure status:** PRE-MODEL READYING  
+**Infrastructure status:** **READY — 100% repository readiness to instantiate first ansatz**  
 **Active concrete model:** NONE
 
 ## Authority rule
 
-This file is authoritative only for the Candidate Gravity branch. Repository-wide RQIR authority remains `recovery/CURRENT_FRONT.md`.
-
-Chat history is never authority over repository files.
+This file is authoritative for Candidate Gravity branch state; repository-wide authority remains `recovery/CURRENT_FRONT.md`. Chat history is never authority over repository state.
 
 ## Current branch state
 
-- Papers I–III are scientifically closed and serve as the fixed reconstruction/identifiability/resource test pipeline.
-- No concrete Candidate Gravity model has been admitted yet.
-- The next concrete model must begin as `ANSATZ-*` until QG-001 and QG-002 are passed with repository evidence.
+- Papers I–III are scientifically closed and form the fixed RQIR test pipeline.
+- Candidate Gravity process/infrastructure is closed at Iteration 132.
+- No concrete Candidate Gravity model has yet been created or passed any QG gate.
+- The next construction must begin as `ANSATZ-*` using `candidate_gravity/NEW_MODEL_CHECKLIST.md`.
 - Promotion to `QGxxx` follows `candidate_gravity/GATE_STATUS_TEMPLATE.yaml`.
 
-## Recovery order for Candidate Gravity work
+## Canonical infrastructure
 
-1. `recovery/CURRENT_FRONT.md`;
-2. `docs/MASTER_TABLE.md`;
-3. `docs/READINESS_TRACKER.md`;
-4. this file;
-5. `candidate_gravity/README.md`;
-6. `candidate_gravity/MODEL_TO_RQIR_CONTRACT.md`;
-7. active model `MODEL.md`;
-8. active model `GATE_STATUS.yaml`;
-9. active model `ASSUMPTIONS_LEDGER.md`;
-10. active model `DERIVATION_MAP.md`;
-11. latest Candidate Gravity research log/recovery delta.
+Read:
 
-## Model versioning rule
+1. `candidate_gravity/README.md`;
+2. `candidate_gravity/MODEL_SPEC_TEMPLATE.md`;
+3. `candidate_gravity/MODEL_TO_RQIR_CONTRACT.md`;
+4. `candidate_gravity/GATE_STATUS_TEMPLATE.yaml`;
+5. `candidate_gravity/BASELINE_COMPARATORS.md`;
+6. `candidate_gravity/ASSUMPTIONS_LEDGER_TEMPLATE.md`;
+7. `candidate_gravity/DERIVATION_MAP_TEMPLATE.md`;
+8. `candidate_gravity/MODEL_REGISTRY.md`;
+9. `candidate_gravity/NEW_MODEL_CHECKLIST.md`;
+10. `candidate_gravity/recovery/RECOVERY_GUIDE.md`;
+11. `candidate_gravity/INFRASTRUCTURE_STATUS.yaml`.
 
-A model version is immutable as a scientific provenance point once a gate is marked `FAIL` or a published/retained numerical result depends on it.
+## Recovery order once a model exists
 
-A material change to dynamics, constraints, state space, coupling structure, causal prescription or renormalization convention creates a new model version.
+After the repository-wide front and the files above, read the active model in this order:
 
-Parameter scans inside an unchanged declared model may remain the same version if the governing equations and approximation order are unchanged.
+`MODEL.md -> GATE_STATUS.yaml -> ASSUMPTIONS_LEDGER.md -> DERIVATION_MAP.md -> COMPARATOR_STATUS.md -> latest model log/delta -> referenced tests`.
 
-## Negative-result rule
+## Immutable provenance rules
 
-- `FAIL` is preserved.
-- `BLOCKED` is not treated as provisional PASS.
-- a rejected ansatz remains in the model registry with rejection authority;
-- a replacement receives a new version/model ID rather than rewriting history.
+- `FAIL` is retained.
+- `BLOCKED` is not provisional PASS.
+- material changes to dynamics/constraints/causal/renormalization structure create a new model version;
+- rejected/superseded models remain in `MODEL_REGISTRY.md`;
+- RTK/DSIR material does not transfer without independent RQIR rederivation.
 
 ## Next admissible action
 
-Complete repository infrastructure closure. Only after readiness reaches 100% may the first actual ansatz be instantiated from the templates.
+Instantiate the first real construction as `ANSATZ-*`. The first scientific target is QG-001/QG-002: freeze a coherent physical state space and dynamics before optimizing any RQIR discriminator.
