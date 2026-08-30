@@ -70,11 +70,11 @@ If the layer must supply isotropic nuisance information `gamma`, then the accept
 
 `boxed{N_acc,j >= gamma/i_j^-}`.
 
-If acceptance is bounded below by `p_j^-`, the expected trial count obeys the conservative Asimov relation
+If acceptance is bounded below by `p_j^-`, a sufficient worst-acceptance expected trial budget is
 
-`boxed{N_try,j <=? gamma/(p_j^- i_j^-)}`
+`boxed{N_try,j,required = gamma/(p_j^- i_j^-)}`.
 
-where the right-hand side is the expected-attempt budget required at the worst allowed acceptance. This is an expectation-level resource conversion; a high-probability binomial completion guarantee would require a declared confidence level and is a separate scheduling layer.
+For any true acceptance `p_j>=p_j^-`, the expected number of trials required to accumulate the target accepted information is no larger than this value. This is an expectation-level/Asimov resource conversion; a high-probability binomial completion guarantee would require a declared confidence level and is a separate scheduling layer.
 
 If the cycle duration is bounded above by `t_cyc,j^+`, with the physical requirement
 
