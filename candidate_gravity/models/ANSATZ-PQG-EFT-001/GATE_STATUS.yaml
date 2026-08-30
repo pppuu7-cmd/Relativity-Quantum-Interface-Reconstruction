@@ -15,8 +15,9 @@ qg_gates:
     claim: one covariant Einstein-Hilbert plus scalar-matter EFT action defines gravity, matter and interaction dynamics
     authority: candidate_gravity/models/ANSATZ-PQG-EFT-001/MODEL.md
   QG-003:
-    status: NOT_TESTED
-    claim: Newtonian and controlled classical-GR limits require repository derivation
+    status: PASS
+    claim: the core Einstein-Hilbert dynamics is classical GR at leading classical order and its static weak-field 00 equation gives nabla^2 Phi = 4 pi G rho with Phi = -GM/r for a point source
+    authority: docs/CANDIDATE_GRAVITY_NEWTONIAN_LIMIT_ITERATION134.md
   QG-004:
     status: NOT_TESTED
     claim: perturbative unitarity/positivity consistency requires explicit repository audit
@@ -42,7 +43,7 @@ qg_gates:
     claim: no physical resource certificate is meaningful for an absent C5-distinguishing direction
 
 cross_gates:
-  conservation_bianchi_ward: NOT_TESTED
+  conservation_bianchi_ward: PARTIAL
   causality_microcausality: NOT_TESTED
   positivity_spectral: NOT_TESTED
   flat_qft_limit: NOT_TESTED
@@ -57,5 +58,6 @@ negative_results:
 
 next_action:
   - retain this model as a reference/control branch
-  - do not promote to QGxxx
+  - audit QG-004/QG-005/QG-006 only as reference validation work
+  - do not promote to QGxxx because QG-007 is permanently failed for this model version
   - instantiate a genuinely distinct ANSATZ only if its dynamics differ before detector optimization
