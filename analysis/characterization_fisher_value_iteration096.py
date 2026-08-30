@@ -9,6 +9,7 @@ forecasts.
 """
 from math import sqrt, isclose
 
+import numpy as np
 import crossover_value_of_information_iteration094 as i94
 
 
@@ -28,6 +29,19 @@ def fractional_decision_shrink_rate(leverage, nu):
     """Initial -(1/W)dW/dt for one independently characterized interval."""
     assert leverage >= 0 and nu >= 0
     return 0.5 * leverage * nu
+
+
+def gaussian_directional_shrink_rate(C, J, g):
+    """Local -d ln sigma_B/dt for B with gradient g and Cdot=-C J C.
+
+    C is the current covariance of primitive apparatus coordinates and J is a
+    positive-semidefinite characterization Fisher-rate matrix.
+    """
+    C=np.asarray(C,float); J=np.asarray(J,float); g=np.asarray(g,float)
+    den=float(g @ C @ g)
+    num=float(g @ C @ J @ C @ g)
+    assert den > 0 and num >= -1e-12
+    return 0.5 * max(0.0,num) / den
 
 
 def synthetic_rows():
@@ -84,6 +98,16 @@ def main():
     theory=fractional_decision_shrink_rate(lev['14.R'],nu)
     assert isclose(finite,theory,rel_tol=3e-7,abs_tol=2e-10)
 
+    # RESOURCE-049: correlated primitive characterization is directional.
+    # Two designs with the same trace(J) can have very different decision value.
+    C=np.diag([4.0,1.0]); g=np.array([1.0,2.0])
+    Jx=np.diag([1.0,0.0]); Jy=np.diag([0.0,1.0])
+    rx=gaussian_directional_shrink_rate(C,Jx,g)
+    ry=gaussian_directional_shrink_rate(C,Jy,g)
+    assert isclose(np.trace(Jx),np.trace(Jy),rel_tol=0,abs_tol=0)
+    assert isclose(rx,1.0,rel_tol=1e-14)
+    assert isclose(ry,0.25,rel_tol=1e-14)
+
     print('PASS Iteration 096 characterization Fisher value')
     print('W synthetic =',W)
     print('raw VOI ranking =',ranking)
@@ -91,6 +115,7 @@ def main():
     print('break-even nu_09R/nu_14R =',break_even_R09_over_R14)
     print('break-even nu_14d/nu_14R =',break_even_d14_over_R14)
     print('finite/theory 14.R fractional shrink rate =',finite,theory)
+    print('equal-trace directional Gaussian rates =',rx,ry)
 
 
 if __name__=='__main__':
