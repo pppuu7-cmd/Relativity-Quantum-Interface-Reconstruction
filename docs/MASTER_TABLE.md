@@ -1,10 +1,13 @@
 # RQIR Operational Master Table
 
-**Version:** 2.8  
-**Date:** 2026-08-30  
-**Authority:** repository source of truth. RQIR remains separate from RTK/DSIR. No toy, Fisher, resource or detector-model result is an empirical new-physics claim.
+**Version:** 3.0  
+**Date:** 2026-08-31  
+**Authoritative scientific front:** **Iteration 128**.  
+**Authority rule:** repository source of truth. RQIR remains separate from RTK/DSIR. No toy, Fisher, resource or detector-model result is an empirical new-physics claim.
 
-## Programme objective
+> This v3.0 table is a **current operational compression**. Detailed historical numbers remain in their iteration documents, analysis scripts, research logs and recovery deltas. When an old convention conflicts with a later correction, the later named correction/closure document supersedes interpretation without deleting historical provenance.
+
+## 1. Programme objective
 
 RQIR reconstructs the operational gravity–quantum interface from distinguishable observables rather than assuming a preferred quantum-gravity theory.
 
@@ -12,9 +15,21 @@ Primary inference object:
 
 `F_beta|theta = F_bb - F_btheta F_thetatheta^-1 F_thetab`.
 
-Exact rank/nullspace is not statistical identifiability. Every physical comparison must include source preparation, calibration, detector, controls, backaction and wall-clock rates in one consistent parameter coordinate.
+Exact rank/nullspace is not statistical identifiability. Physical comparisons must include source preparation, calibration, detector transfer/noise, controls, backaction and wall-clock rates in one consistent parameter coordinate.
 
-## Mature Toy009/Toy010 baseline
+## 2. Publication / readiness table
+
+| Branch | Scientific status | Current readiness | Authority |
+|---|---|---:|---|
+| Paper I — operational hierarchy / finite discriminants | **CLOSED** at Iteration 078 | **100% scientific** | `docs/PAPER_I_SCIENTIFIC_CLOSURE_ITERATION078.md` |
+| Paper II — statistical identifiability / nuisance geometry | **CLOSED** at Iteration 079 | **100% scientific** | `docs/PAPER_II_REFERENCE_LIKELIHOOD_CERTIFICATE_ITERATION079.md` |
+| Paper III — physical resources / experiment architecture | **CLOSED** at Iteration 128 | **100% scientific; 97% submission** | `docs/PAPER_III_SCIENTIFIC_CLOSURE_ITERATION128.md` |
+| Repository ready to start Candidate Gravity | entry pipeline available | **90%** | `docs/CANDIDATE_GRAVITY_ENTRY_CRITERIA.md` |
+| Concrete Candidate-Gravity model | **not yet constructed** | **~10%** | future separate branch |
+
+Readiness history: `docs/READINESS_TRACKER.md`.
+
+## 3. Mature Toy009 / Toy010 baseline
 
 Toy009 radii:
 
@@ -28,265 +43,338 @@ Balanced Iteration-011 geometry:
 - positive hidden states;
 - selected equality residual `<1e-15`.
 
-Toy009/Toy010 exact mean/noise equality and ordered-response split remain retained.
+Toy009/Toy010 exact mean/noise equality and ordered-response split remain the mature constructive reference behind Papers I–III.
 
-## Mandatory corrections
+## 4. Mandatory numerical / notation corrections
 
-- **RQIR-NUM-001:** trace+energy constraints must be eliminated analytically; huge penalty + threshold pseudoinverse can truncate real weak nuisance directions.
-- **RQIR-NUM-002:** downstream hidden amplitude is fractional `alpha`, with `a=0.08 alpha`; transform Fisher by `F_alpha=0.08^2 F_a`.
-- **RQIR-CAL-013:** finite-noise covariance uses centered noise derivatives, not raw second moments unless raw moments are explicitly measured.
+### NUM-001 — exact hard constraints
+
+Trace+energy constraints must be eliminated analytically through the exact reduced/nullspace basis. Huge penalties plus thresholded pseudoinverses can delete real weak nuisance directions and generate false Fisher gains.
+
+### NUM-002 — source-amplitude coordinate
+
+Use the fractional hidden-source coordinate `alpha_h` with
+
+`a = 0.08 alpha_h`,
+
+so
+
+`F_Q^(alpha_h)=0.08^2 F_Q^(a)`.
+
+Toy009 full source QFI:
+
+`F_Q^(alpha_h)=0.0849323916`
+
+per ideal accepted single-branch source copy.
+
+### NUM-004 — source amplitude is not drive amplitude
+
+Keep source amplitude `alpha_h` separate from pump/drive impulse `epsilon_drv`.
+
+### CAL-013 — centered covariance
+
+Use centered noise/covariance derivatives rather than raw second moments unless raw moments are explicitly the measured observable.
 
 Toy009 centered D2 baseline:
 
 - `gamma_mean=1.830264703e6`;
 - `gamma_cov=5.901272925e5`.
 
-Toy009 full source QFI:
+### NUM-006 / NUM-008 — final significance
 
-`F_Q^alpha=0.0849323916` per ideal accepted single-branch copy.
+Canonical manuscript convention:
 
-## Retained no-go / structural gates
+`F_*=Z_final^2`,
 
-- **NG-005:** an exact gravitational null cannot self-calibrate hidden source amplitude.
-- **NG-006:** low-rank timing/geometry/additive nuisances can remain detector-degenerate at arbitrarily high science exposure.
-- **NG-007:** a stability floor above the target cannot be repaired by faster white averaging.
-- **NG-008:** SI additive tolerances require a physical transduction Jacobian.
-- **NG-010:** replacing a calibration observable can rotate rather than remove a detector-relevant null.
-- **NG-011:** force determines potential only relationally without an independent reference/integration constant.
-- **NG-012:** information on one old hidden amplitude does not guarantee profiled beta identifiability if another detector-aligned null survives.
-- **NG-013:** PSD+bandwidth do not determine source-covariance Fisher without covariance/spectral transfer derivatives.
-- **NG-014:** current covariance observables are phase-referenced nonstationary two-time objects, not stationary scalar PSD coordinates.
-- **NG-015:** detector-output covariance is not automatically the source symmetrized correlator for noncommuting observables.
-- **NG-016/017/018:** finite Gaussian covariance readout has positivity/shared-matrix/shared-endpoint Fisher ceilings.
-- **NG-019:** current 14 force means are not one disturbance-free multitime observable bundle; only same-time dual-probe pairs commute.
-- **NG-020:** direct non-QND diffusive monitoring trades information for source dephasing.
-- **NG-021:** reciprocal linear probe mediation obeys `S_u S_BA,src >= hbar^2/(4 eta)`; gain/susceptibility cannot remove the quantum-limited input-referred product.
-- **NG-022:** full nuisance profiling tightens the same-copy backaction limit beyond raw signal attenuation.
-- **NG-023:** QND with respect to isolated source `H` is not equivalent to ordered-response nondemolition.
-- **NG-024:** under exact trace+mean-energy matching, weak energy metrology is quartically suppressed in measurement strength.
-- **NG-025:** an algebraically optimized source need not be spatially local; locality cannot be imposed reliably by post-hoc truncation.
-- **NG-026:** full hard rank can coexist with poor finite-noise `F_beta|theta`; rank completion is not resource closure.
+`F_final=A_raw C_src/(A_raw+C_src)`.
 
-## Control benchmark retained
+At fixed retained fraction `r`:
 
-At `100 Hz` after centered-noise correction:
+`A_raw=F_*/r`,
 
-- D1 timing target `~11.0511 us`;
-- D2 timing target `~9.19001 us`;
-- D2 normalized additive targets `sigma(b_mean)~7.39168e-5`, `sigma(b_cov)~1.30175e-4`.
+`C_src=F_*/(1-r)`.
 
-Toy009 coherence floor from largest stored phase:
+For final `Z_final=5`, `r=.90`:
 
-`T_coh,min~7.94319 ms` at 100 Hz.
+`A_raw=27.7777777778`, `C_src=250`, `F_final=25`.
 
-## Toy009 complementary D2 branch — historical mature resource reference
+Historical `A_raw=25`, `C_src=225` remains only a **raw-5-sigma / 90%-retention regression** and gives
 
-At `y_ref=-4`, centered likelihood, `lambda=1`:
+`F_final=22.5`, `Z_final=4.74341649`.
 
-| added force-cov rows | `F_beta|theta` | `C_alpha*` |
-|---|---:|---:|
-| 0 | `~0.833432` | `4.55511` |
-| best4 `(0,1,3,7)` | `~0.899477` | `0.05006144` |
-| best5 `(0,1,3,6,7)` | `~0.903527` | `0` |
-| all8 | `~0.905293` | `0` |
+Do not describe `225` as a final-5-sigma certificate.
 
-Natural Gaussian cross-covariance graph floors:
+## 5. Retained structural no-go backbone
 
-- best4 `N>1.180254e6`;
-- best5 `N>2.135100e6`;
-- all8 `N>3.540762e6`.
+The following remain active as logical guards even after Paper-III closure:
 
-**RESOURCE-015:** covariance graph congestion can make extra jointly acquired rows increase total cost.
+- **NG-005:** an exact gravitational null cannot self-calibrate a multiplicative hidden source amplitude; independent source metrology or complementary calibration is required.
+- **NG-006:** timing/geometry/additive nuisance directions can remain detector-degenerate at arbitrarily high science exposure.
+- **NG-007:** a low-frequency stability floor above target cannot be repaired by white-noise averaging.
+- **NG-019:** the retained 14 force means are not one disturbance-free multitime bundle; only seven same-time dual-probe pairs commute.
+- **NG-021/022:** reciprocal probe information/backaction and full nuisance profiling limit same-copy shared-information gains.
+- **NG-023:** QND with respect to isolated source `H` is not ordered-response nondemolition.
+- **NG-025:** locality belongs inside source co-design; post-hoc truncation is not a valid locality proof.
+- **NG-026:** full hard rank does not imply finite-noise/resource closure.
+- **NG-030:** overlapping certified architecture intervals mean unresolved; a nominal central-value crossing is not a robust winner.
+- **NG-054/055:** separate Fourier bins and high-SNR two-tone injection do not by themselves certify zero covariance or linear calibration.
+- **NG-056/071:** free multiplicative transfer gain can absorb the science amplitude; in the two-band quotient common gain is beta-aligned and differential gain is spectral-tilt aligned.
+- **NG-069/070:** transfer uncertainty is a likelihood-derived Fisher/covariance set; deterministic hard bounds and Gaussian prior budgets are different objects.
+- **NG-072:** same hardware does not imply identical common-gain Fisher rates for Toy009/Toy014.
+- **NG-073/074:** do not double-count shared records; more SNR in an unchanged setting cannot create missing Fisher directions.
+- **NG-080:** do not splice incompatible experimental platforms into one apparatus forecast.
+- **NG-082/083/084:** manuscript/reproducible/scientific closure is not apparatus-specific numerical closure.
 
-## Measurement/backaction resource front — Iterations 041–046
+Detailed historical no-go numbering remains in `docs/RECOVERY_GUIDE.md` and iteration documents.
 
-- 14 force means form seven commuting same-time dual-probe layers; 84/91 cross-time pairs do not commute.
-- **CAL-015:** same-time dual probes are the maximal disturbance-free grouping in Toy009.
-- **RESOURCE-016:** one trajectory may receive shared mean/covariance/control Fisher credit only if one physical likelihood supplies all scores/cross-Fisher/backaction.
-- **RESOURCE-017:** independent phase layers pay `sum_j t_j`, not `7*t_max` and not one reused noncommuting copy.
-- Reciprocal quantum-limited same-copy monitoring cannot carry the old optimistic full mean target while retaining 90% profiled beta information.
-- At Toy009 `lambda=1`, even perfect source-amplitude metrology requires `xi_shared<=~0.7001`; only ~31.6% of mean Fisher can be safely shared in the optimistic proxy.
-- **RESOURCE-020:** shared mean Fisher, source metrology and calibration exposure form a three-way backaction frontier.
+## 6. Source metrology — mature physical bridge
 
-## Explicit Toy009 source metrology — Iterations 047–052
+Independent source metrology is a first-class resource.
 
-Projective energy-population metrology:
+Toy009 anchors:
 
-`F_E^alpha(+)=0.0093918844`.
-
-It carries ~11.1% of full Toy009 QFI but is assigned to independent/sacrificial copies because projective energy dephasing destroys most ordered response on the same science copy.
-
-Finite Gaussian pointer:
-
-- weak Fisher starts at `O(r^4)` because trace and mean energy are exactly matched;
-- zero-reset Toy009 rate coefficient `R/(p eta kappa_E)=0.0082700957` at `r~0.86775`.
-
-QND Ramsey ancilla:
-
-- per-copy optimum `phi~2.41867`;
-- Fisher/sec zero-reset optimum `phi~1.09231`;
+- projective energy-population Fisher `F_E^(alpha_h)=0.0093918844`;
+- full QFI ceiling `0.0849323916`;
+- Ramsey zero-reset rate optimum `phi~1.09231`;
 - `R/(p Omega_E)=0.0025234392`.
 
-**RESOURCE-024:** Fisher-per-copy and Fisher-per-time optima differ.
+Strong source metrology remains on independent/sacrificial copies unless a same-copy nondemolition likelihood is explicitly proved.
 
-## Canonical Iteration 056 — reset/visibility surface
+For a copy Fisher `I_alpha,copy`, acceptance `p` and full copy cycle `tau_copy`:
 
-Canonical numbering note: Iteration 055 is Toy012; Ramsey reset/visibility was reindexed to **Iteration 056**.
+`N_acc=C_src/I_alpha,copy`,
 
-Independent Ramsey rate:
+`R_A=p I_alpha,copy/tau_copy`.
 
-`R_alpha(phi)=p_E F_alpha(phi,V)/(t_reset+phi/Omega_E)`.
+For final design, source metrology belongs in the joint final-significance optimization rather than being fixed a priori at 90% retention.
 
-**RESOURCE-026:** source reset/preparation overhead is a first-class Fisher resource; per-copy Fisher alone cannot select a branch.
+## 7. Locality branch — retained conclusions
 
-For the historical Toy009 complementary branch, source-metrology rate thresholds remain
+### Toy011
 
-- branch0↔best4 `2.1340355e-4 s^-1`;
-- best4↔best5 `2.9312162e-6 s^-1`.
+Exact nearest-neighbour dynamics can coexist with rank `24/25`, positive hidden states and nonzero ordered response, but the first Toy011 points were resource-poor.
 
-Do not reuse these numbers for Toy012 without re-profiling its branch geometry.
+### Toy012
 
-## Locality branch — Toy011 / Iterations 053–054
+Toy012 demonstrated that exact nearest-neighbour dynamics can recover near-Toy009 calibration efficiency while retaining a substantial detector-signal penalty. It remains an important locality-constrained historical design result.
 
-Toy009 locality audit in its literal radius basis:
+### Toy014
 
-- `64.46%` of off-diagonal coupling power lies beyond nearest neighbours;
-- naive truncation changes `H` by relative Frobenius `~0.369` and shifts the spectrum.
+Later source co-design produced the leading balanced exact-local comparator used in the mature Paper-III Toy009/Toy014 architecture certificates.
 
-**DESIGN-002:** locality belongs inside source/calibration/detector co-design.
+**Scope rule:** Paper III is now frozen; do not launch Toy015 merely to continue optimization. New source design belongs to a later branch unless a real contradiction or manuscript-required source gap appears.
 
-Toy011 proved existence of an exactly nearest-neighbour five-site source with rank `24/25`, positive hidden states and nonzero ordered response.
+## 8. Paper III — complete physical-resource backbone
 
-Iteration 054 showed the first Toy011 points were not resource competitive:
+### 8.1 Same-state science
 
-- response point: D2 raw signal `0.1707` Toy009, D2 normalized calibration cost `34.6x`;
-- conditioning point: D2 raw `0.0842`, calibration cost `10.1x`.
+For the retained two-band reduction,
 
-However full source QFI remained close to Toy009 and `C_alpha(lambda)` nuisance shape stayed similar: locality did **not** create a new catastrophic beta/source degeneracy.
+`R_beta = 4 r2 r4/(r2+r4+2 rho sqrt(r2 r4))`.
 
-**RESOURCE-025:** locality is a multi-resource tradeoff among absolute detector signal, calibration burden and source-metrology rate.
+Temporal `f,2f` covariance depends on the finite acquisition filters and full spectral density, not only on two scalar ASD values.
 
-## Toy012 — leading locality-constrained candidate, Iteration 055
+At the transparent balanced 90%-retention correlation benchmark:
 
-Resource-aware nearest-neighbour co-design found a much better balanced local source.
+`rho_hi=1/9`.
 
-Geometry:
+The ideal independent-Gaussian block certificate at `z=1.96` requires
 
-- `q0=(0.18244654,0.68436894,0.16559135,0.67932486,0.09720934)`;
-- `y1=-2.94878657`;
-- phases `(0,1.03886746,2.98596300,4.87581918,4.15089956,1.62391517,5.27522069)`.
+`N_rho>=312`.
 
-Exact properties:
+These are design/regression targets, not apparatus measurements.
 
-- strictly nearest-neighbour site Hamiltonian with exact spectrum `(1,2,3,4,6)`;
-- rank `24/25`;
-- `s_min=1.43255e-3`, condition `~3264`;
-- positive hidden pair and residual `<6e-17`.
+### 8.2 Physical calibration rates
 
-Relative to Toy009:
+For scalar/template calibration:
 
-- D1 raw detector Fisher proxy `0.17042`;
-- D2 raw detector Fisher proxy `0.21617`;
-- D1 centered calibration cost `1.515x`;
-- D2 centered calibration cost `1.058x`;
-- `F_Q^alpha=0.0992807` (`1.169x`);
-- energy-population Fisher `0.00629727` (`0.671x`);
-- Ramsey Fisher/sec coefficient `0.00213429` (`0.846x`).
+`I_j = 4 int |d htilde_j/du_j|^2 / S_out,j(f) df`,
 
-**DESIGN-003:** the large first Toy011 locality penalty was objective-dependent; near-Toy009 calibration efficiency is compatible with exact nearest-neighbour dynamics. The leading remaining Toy012 penalty is absolute detector signal.
+`R_cal,j = p_j I_j/tau_j`.
 
-Toy012 is the **leading locality-constrained source**, but Toy009 remains the mature global resource baseline until all detector/systematics machinery is rebuilt.
+For a correlated simultaneous two-row layer use the full matrix Fisher block; a conservative scalar throughput is its weakest relevant eigenvalue after the declared coordinate mapping.
 
-## Toy012 complementary D2 — Iteration 057
+Seven-layer independent scheduling uses the appropriate harmonic-rate/time sum; shared records must instead enter the joint Fisher scheduler once.
 
-At common `y_ref=-4`, Toy012 uses
+### 8.3 Complex transfer calibration
 
-- `gamma_mean=1.2086865e6`;
-- `gamma_cov=1.8994980e6`.
+Full complex transfer coordinates may be represented by
 
-Relational means + force means + centered relational covariance already have hard rank `23/23`, but
+`x=(g2,g4,phi2,phi4)`.
 
-`F_beta|theta(C_alpha=0,lambda=1)=0.194405`.
+After transforming to common/differential gain and profiling differential gain and phases, the common-gain reference rate is
 
-Source-prior requirements at lambda=1:
+`R_c = k_cc - k_cnu K_nunu^-1 k_nuc`.
 
-| force-cov rows | best subset by `C_alpha` | `C_alpha*` |
-|---:|---|---:|
-| 0 | `()` | `13.669415` |
-| 1 | `(1)` | `13.135585` |
-| 2 | `(1,3)` | `12.309076` |
-| 3 | `(1,3,5)` | `12.152511` |
-| 4 | `(1,3,4,5)` | `12.097052` |
-| 5 | `(0,1,3,4,5)` | `12.009588` |
-| all8 | all | `11.891638` |
+Science plus a separate common-gain reference has the harmonic optimized rate
 
-Toy009's strong covariance completion does **not** transfer.
+`R_DT = 1/[1/sqrt(R_s)+1/sqrt(R_c)]^2`.
 
-**DESIGN-004:** complementary covariance geometry is source-specific and must be co-designed with the source.
+### 8.4 Control recertification
 
-Best4 Toy012 saves only `Delta C_alpha~1.57236` but has natural graph floor `N>3.798996e6`; at 100 Hz, p=.5, 1 ms overhead this is `~19.83 h`. Independent source-metrology break-even is only
+Scalar control with usable variance budget `S=sigma_*^2-sigma_f^2`, Brownian convention `Var=D t/2`, and reference Fisher rate `R_ref` has
 
-`R_alpha~2.20253e-5 s^-1`.
+`sigma_ref^2=S/2`,
 
-## Toy012 pointer/Ramsey reset surface — Iteration 058
+`t_ref*=2/(R_ref S)`,
 
-For the Iteration-057 rate target:
+`tau_live*=S/D`,
 
-### Gaussian pointer
+`r_min=2D/(R_ref S^2)`.
 
-- projective `F_E^alpha=0.00629727`;
-- zero-reset rate optimum `r~1.44273`;
-- `R/(p Gamma_E)=0.00425193`;
-- at p=.5, zero-reset threshold `Gamma_E~0.01036 s^-1`.
+Complex gain/phase recertification is the matrix generalization
 
-### Ramsey ancilla
+`(t_ref F_ref)^-1 + tau Q/2 <= S_matrix`.
 
-- zero-reset rate optimum `phi~1.57508`;
-- `R/(p Omega_E)=0.00213429`;
-- per-copy maximum `F_R,max~0.00349867`;
-- at p=.5, zero-reset threshold `Omega_E~0.02064 s^-1`.
+### 8.5 Joint campaign / no-double-counting
 
-**RESOURCE-027:** finite Fisher per accepted source copy creates a coupling-independent reset ceiling:
+For campaign Fisher matrices `J_k` and times `t_k`:
 
-`R_alpha <= p_E F_max/t_reset`.
+`J=sum_k t_k J_k=[[a,b^T],[b,N]]`,
 
-At p=.5 and the current Toy012 branch0/best4 target:
+`Phi(J)=a-b^T N^-1 b`.
 
-- pointer reset ceiling `~142.96 s`;
-- Ramsey reset ceiling `~79.42 s`.
+The optimized rate is
 
-**PREP-004:** fresh-source throughput is an architecture variable. Do not rank source-metrology protocols from per-copy Fisher alone.
+`R_*=max_x Phi(sum_k x_k J_k)`
 
-## Current architecture decision
+with a max-min robust extension under declared uncertainty.
 
-For Toy012, do **not** inherit Toy009 best4 covariance by default. Current leading local architecture is
+For one mandatory nuisance quota `H_*` and one joint reference rate matrix `K_ref`:
 
-`local Toy012 + relational/direct-force mean calibration + independent source metrology`
+`T_ref,*=lambda_max(K_ref^-1/2 H_* K_ref^-1/2)`.
 
-provided fresh-source metrology exceeds the Iteration-057 rate target after reset/visibility.
+One physical record receives one wall-clock charge.
 
-Added force covariance remains an active fallback only for slow source preparation or if future complementary co-design substantially improves its nuisance overlap.
+### 8.6 Rank/span feasibility
 
-## Publication architecture
+Finite quota feasibility requires
 
-See `docs/RQIR_ARTICLE_SERIES_ARCHITECTURE.md`:
+`range(H_*) subseteq range(K_tot)`.
 
-1. RQIR I — operational hierarchy / ordered source information / finite discriminants;
-2. RQIR II — statistical identifiability / nuisance geometry / source calibration;
-3. RQIR III — physical resources / experiment architecture;
-4. later Candidate Gravity paper only after a concrete model passes RQIR I–III gates.
+Repeating an unchanged four-real dual-tone setting cannot create missing score directions.
 
-## Mandatory open consistency gates
+For the retained Toy009/Toy014 source nuisance basis:
 
-G1 gauge/relational; G2 conservation/Bianchi with apparatus; G3/G3b positivity/unitarity/spectral response; G4a causal support; G8 controlled Newtonian limit; G9 EFT power counting; G10/G10a stress-energy smearing/renormalization; G12/G12a semiclassical/stochastic/classical-gravity+full-QFT/quantum degeneracy; G13 detector covariance/nuisance/measurability.
+- exact nuisance dimension: `22`;
+- seven mean dual-probe layers: rank `14`;
+- centered covariance complement: rank `8`;
+- combined: full rank `22`.
 
-## Priority ranking v2.8
+### 8.7 Covariance endpoint / backaction structure
 
-1. Build a **total Toy012 D2 wall-clock budget**: absolute science signal, independent seven-layer/direct-force mean calibration, source metrology, timing/additive references, acceptance/coherence/dead/reset time.
-2. Attach physical force transduction / detector PSD to Toy012 mean calibration so `gamma_mean` becomes actual shot count/time.
-3. Compare total Toy012 local branch against mature Toy009 on one common mass/gap/separation/detector-noise budget; do not compare normalized Fisher alone.
-4. Rebuild centered timing/additive systematics explicitly on Toy012 if they become comparable to mean/science cost.
-5. Only re-open force-covariance source co-design if total wall-clock shows independent source metrology is not viable.
-6. Build one common D1/D2 physical apparatus budget.
-7. Propagate semiclassical, stochastic, classical-gravity+full-QFT and perturbative-QG alternatives through one likelihood.
-8. After detector/inference geometry stabilizes, close gauge, conservation, renormalization and full stress-energy gates.
+The full eight-row covariance endpoint graph has a four-matching optimum within the declared cross-covariance-only detector-output class. This output-level sharing result does **not** waive NG-019: quantum-source sharing across noncommuting times requires an explicit measurement/backaction likelihood.
+
+### 8.8 Detector-side architecture interval
+
+Science, common-gain transfer, mean calibration and covariance calibration rates propagate into a certified interval for
+
+`u=R_D14/R_D09`.
+
+This is the correct Paper-III detector-side result when same-apparatus absolute rates are unavailable.
+
+### 8.9 Final detector+source architecture certificate
+
+Define
+
+`u=R_D14/R_D09`,
+
+`v=R_A14/R_A09`,
+
+`z=R_A09/R_D09`,
+
+`delta=(1-d14)/(1-d09)`.
+
+Then
+
+`Q14/Q09 = delta[(1+z^-1/2)/(u^-1/2+(v z)^-1/2)]^2`.
+
+A robust architecture winner requires NG-030 interval separation.
+
+## 9. Paper III external-evidence / novelty boundary
+
+External literature audits establish prior/component feasibility for:
+
+- nuisance-aware Fisher/OED;
+- system identification and transfer calibration;
+- gravity-test resource/feasibility studies including QGEM;
+- classical/stochastic/postquantum gravity observables;
+- measurement-disturbance/interferometric tests;
+- calibrated force sensing, cross-spectral/multimode sensing and exact fundamental/second-harmonic operation.
+
+No inspected source supplied the complete compatible same-apparatus RQIR closure vector.
+
+**PRIORITY-001:** the defendable candidate Paper-III contribution is the **RQIR-specific end-to-end integration/closure discipline**, not invention of any constituent Fisher/OED, force sensing, cross-spectrum, QGEM or gravity-test method. This is a finite-search statement, not proof of global priority; refresh literature before submission.
+
+## 10. Paper III scientific closure — Iteration 128
+
+**Decision:** **CLOSED — 100% scientific-content readiness for the frozen resource/design/certificate scope.**
+
+Authority:
+
+`docs/PAPER_III_SCIENTIFIC_CLOSURE_ITERATION128.md`.
+
+The closed chain is
+
+`interface discriminant -> exact constraints/source calibration -> detector nuisance profile -> source metrology -> transfer/cross-PSD calibration -> calibration span/backaction/no-double-counting -> physical Fisher rates -> robust wall clock -> final architecture certificate`.
+
+### NG-084
+
+Scientific closure is **not** apparatus closure. Paper III does not claim:
+
+- a measured RQIR signal;
+- a same-apparatus numerical runtime;
+- an experimentally established Toy009/Toy014 winner.
+
+### Conditional apparatus extension
+
+If a numerical apparatus verdict is desired, obtain within one compatible likelihood/accounting:
+
+1. same-state two-band science transduction and PSD/cross-PSD;
+2. full complex transfer-reference Fisher-rate matrix;
+3. seven physical calibration Fisher-rate matrices and uncertainty correlations;
+4. geometry/additive reference Fisher and drift/floor models;
+5. a physical measurement/backaction likelihood if covariance-sharing credit is used;
+6. measured source-metrology rate and duty;
+7. a robust `u` interval narrow enough for NG-030.
+
+These instantiate the completed theory; they are not hidden Paper-III prerequisites.
+
+## 11. Reproducibility / manuscript authorities
+
+- manuscript skeleton: `docs/PAPER_III_MANUSCRIPT_SKELETON_ITERATION124.md`;
+- canonical notation/dependencies: `docs/PAPER_III_NOTATION_DEPENDENCY_AUDIT_ITERATION125.md`;
+- reviewer-scale reproducibility manifest: `docs/PAPER_III_REPRODUCIBILITY_MANIFEST_ITERATION126.md`;
+- final priority audit: `docs/PAPER_III_FINAL_PRIORITY_AUDIT_ITERATION127.md`;
+- scientific closure: `docs/PAPER_III_SCIENTIFIC_CLOSURE_ITERATION128.md`;
+- readiness history: `docs/READINESS_TRACKER.md`.
+
+Figure/table provenance classes are:
+
+`DERIVATION`, `DETERMINISTIC_REGRESSION`, `PARAMETRIC_SPECIFICATION`, `EXTERNAL_EVIDENCE`, `MEASURED_APPARATUS`.
+
+Current Paper III has no complete `MEASURED_APPARATUS` RQIR closure dataset.
+
+## 12. Current priority after v3.0
+
+### Paper III
+
+Scientific research scope is frozen. Remaining work is submission production:
+
+1. generate/canonicalize figures and tables from the Iteration-126 manifest;
+2. draft/polish prose from the Iteration-124 skeleton;
+3. refresh the literature/priority audit immediately before submission;
+4. run one independent clean/reviewer-style reproduction pass;
+5. apply journal-specific references/style/formatting.
+
+### Candidate Gravity — separate next research branch
+
+The repository is approximately **90% ready to start** a concrete Candidate-Gravity model because Papers I–III now supply the discriminant -> identifiability -> resource/measurability test pipeline.
+
+The **concrete model itself remains ~10%**. Begin from `docs/CANDIDATE_GRAVITY_ENTRY_CRITERIA.md`; QG-001…QG-010 have not yet been passed.
+
+A future candidate must supply its own state space, dynamics, constraints/gauge structure, controlled GR/Newtonian and flat-QFT limits, conservation/Bianchi/Ward consistency, causal structure, positivity/unitarity/CP as appropriate, EFT/renormalization consistency, model-degeneracy comparison and detector/resource propagation through RQIR I–III.
+
+## 13. Scope-freeze rule
+
+**P3-CLOSE-001:** absent a documented contradiction, failed regression or materially relevant new requirement, do not reopen Paper III merely to continue the iteration count. Toy015/new source searches belong to later work unless a manuscript review shows they are required by the frozen claim.
