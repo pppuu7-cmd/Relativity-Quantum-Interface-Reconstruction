@@ -1,0 +1,34 @@
+schema_version: 1
+updated: 2026-08-31
+repository_readiness_to_start_candidate_gravity_percent: 100
+status: READY_TO_INSTANTIATE_FIRST_ANSATZ
+active_concrete_model: null
+concrete_candidate_gravity_progress_percent_approx: 10
+
+paper_pipeline:
+  paper_I_scientific: CLOSED_ITERATION_078
+  paper_II_scientific: CLOSED_ITERATION_079
+  paper_III_scientific: CLOSED_ITERATION_128
+
+infrastructure:
+  model_spec_template: READY
+  model_to_rqir_contract: READY
+  qg_001_to_qg_010_gate_state: READY
+  cross_gate_state: READY
+  comparator_registry: READY
+  assumptions_ledger: READY
+  derivation_provenance: READY
+  model_registry: READY
+  new_model_boot_protocol: READY
+  branch_recovery_protocol: READY
+  negative_result_versioning: READY
+  structural_closure_audit: READY
+
+meaning:
+  - 100 percent certifies repository process/infrastructure readiness to begin a real model.
+  - It does not mean that a quantum-gravity model is 100 percent complete.
+  - No QG-001...QG-010 gate is passed for a concrete model because no concrete model has yet been instantiated.
+
+next_action:
+  - Instantiate the first construction as ANSATZ-* using NEW_MODEL_CHECKLIST.md.
+  - Do not promote it to QGxxx until the gate promotion rules are satisfied.
