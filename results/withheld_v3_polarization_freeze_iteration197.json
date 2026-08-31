@@ -17,12 +17,12 @@
     {"row_id":"W3-03","q":[0.128,0.384,0.248,0.096],"q2":0.201792,"hard_seed":200000,"partner_seed":200500,"hard_raw_norm":1.62104216841134,"partner_min_abs_norm_dense_grid":2.9938464007248817,"partner_sign":-1},
     {"row_id":"W3-04","q":[0.16,0.464,-0.128,-0.224],"q2":0.256256,"hard_seed":201000,"partner_seed":201500,"hard_raw_norm":-0.863503040685761,"partner_min_abs_norm_dense_grid":4.740295679016596,"partner_sign":1},
     {"row_id":"W3-05","q":[0.096,0.352,0.216,-0.152],"q2":0.184448,"hard_seed":202000,"partner_seed":202500,"hard_raw_norm":2.1528931863916227,"partner_min_abs_norm_dense_grid":2.578145490412176,"partner_sign":1},
-    {"row_id":"W3-06","q":[0.252,0.98,0.28,0.14],"q2":0.994896,"hard_seed":203000,"partner_seed":203501,"hard_raw_norm":-1.8173482106967197,"partner_min_abs_norm_dense_grid":0.8106158577141747,"partner_sign":-1},
-    {"row_id":"W3-07","q":[0.196,0.77,-0.35,0.28],"q2":0.755384,"hard_seed":204000,"partner_seed":204500,"hard_raw_norm":-1.4538169510666944,"partner_min_abs_norm_dense_grid":2.1936602691986884,"partner_sign":-1},
-    {"row_id":"W3-08","q":[0.308,0.868,0.252,-0.336],"q2":0.83496,"hard_seed":205000,"partner_seed":205500,"hard_raw_norm":2.475580872446549,"partner_min_abs_norm_dense_grid":2.344092498261595,"partner_sign":1},
-    {"row_id":"W3-09","q":[0.224,0.672,0.434,0.168],"q2":0.617988,"hard_seed":206000,"partner_seed":206500,"hard_raw_norm":-0.3755437254986711,"partner_min_abs_norm_dense_grid":5.508999255255031,"partner_sign":1},
-    {"row_id":"W3-10","q":[0.28,0.812,-0.224,-0.392],"q2":0.784784,"hard_seed":207000,"partner_seed":207500,"hard_raw_norm":-0.9832316996349178,"partner_min_abs_norm_dense_grid":2.2669927528165833,"partner_sign":1},
-    {"row_id":"W3-11","q":[0.168,0.616,0.378,-0.266],"q2":0.564872,"hard_seed":208000,"partner_seed":208500,"hard_raw_norm":-0.7371081604273921,"partner_min_abs_norm_dense_grid":1.3825237972412892,"partner_sign":1}
+    {"row_id":"W3-06","q":[0.252,0.98,0.28,0.14],"q2":0.994896,"hard_seed":203000,"partner_seed":203501,"hard_raw_norm":-1.814770588021347,"partner_min_abs_norm_dense_grid":1.166419141255259,"partner_sign":1},
+    {"row_id":"W3-07","q":[0.196,0.77,-0.35,0.28],"q2":0.755384,"hard_seed":204000,"partner_seed":204500,"hard_raw_norm":0.68212350486315,"partner_min_abs_norm_dense_grid":0.8106158577141747,"partner_sign":1},
+    {"row_id":"W3-08","q":[0.308,0.868,0.252,-0.336],"q2":0.83496,"hard_seed":205000,"partner_seed":205500,"hard_raw_norm":1.346259002461454,"partner_min_abs_norm_dense_grid":5.257280475501876,"partner_sign":1},
+    {"row_id":"W3-09","q":[0.224,0.672,0.434,0.168],"q2":0.617988,"hard_seed":206000,"partner_seed":206500,"hard_raw_norm":0.25780481531584293,"partner_min_abs_norm_dense_grid":2.3539201606017106,"partner_sign":1},
+    {"row_id":"W3-10","q":[0.28,0.812,-0.224,-0.392],"q2":0.784784,"hard_seed":207000,"partner_seed":207501,"hard_raw_norm":2.8374087848451954,"partner_min_abs_norm_dense_grid":2.3261897807084564,"partner_sign":1},
+    {"row_id":"W3-11","q":[0.168,0.616,0.378,-0.266],"q2":0.564872,"hard_seed":208000,"partner_seed":208500,"hard_raw_norm":6.584598433040272,"partner_min_abs_norm_dense_grid":1.4694944988290082,"partner_sign":1}
   ],
   "minimum_partner_margin": 0.8106158577141747,
   "status": "PREREGISTERED_V3_ALL_12_ROWS_PASS_GEOMETRIC_CONDITIONING_BEFORE_CUBIC_COMPARATOR_EVALUATION",
