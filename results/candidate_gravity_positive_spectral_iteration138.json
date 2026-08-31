@@ -1,0 +1,37 @@
+{
+  "checks": {
+    "W_zero_equals_one": true,
+    "continuum_has_no_delta_pole_by_definition": true,
+    "massless_GR_delta_retained_by_definition": true,
+    "rho_nonnegative_samples": true,
+    "rho_normalized": true,
+    "static_yukawa_bound_samples": true
+  },
+  "iteration": 138,
+  "model_id": "ANSATZ-RQIR-KL-002",
+  "nonclaims": [
+    "No full tensor/helicity completion proved",
+    "No nonlinear diffeomorphism closure proved",
+    "No novelty against C4/C5/nonlocal/KK continua proved",
+    "No Paper-I finite discriminator proved"
+  ],
+  "overall": "PASS_SCOPED",
+  "rho_norm": 0.9999999999999999,
+  "rho_quad_error": 1.1102230246251564e-14,
+  "scope": "Gaussian positive-spectral and static-Yukawa audit",
+  "spectral_samples": [
+    {"minus_Im_D_cont_over_pi_beta_times_Mstar2": 1.0, "rho_hat": 1.0, "y_p2_over_Mstar2": 1.0},
+    {"minus_Im_D_cont_over_pi_beta_times_Mstar2": 0.9048374180359595, "rho_hat": 0.9048374180359595, "y_p2_over_Mstar2": 1.1},
+    {"minus_Im_D_cont_over_pi_beta_times_Mstar2": 0.36787944117144233, "rho_hat": 0.36787944117144233, "y_p2_over_Mstar2": 2.0},
+    {"minus_Im_D_cont_over_pi_beta_times_Mstar2": 0.01831563888873418, "rho_hat": 0.01831563888873418, "y_p2_over_Mstar2": 5.0},
+    {"minus_Im_D_cont_over_pi_beta_times_Mstar2": 0.00012340980408667956, "rho_hat": 0.00012340980408667956, "y_p2_over_Mstar2": 10.0}
+  ],
+  "static_samples": [
+    {"W": 0.9999999999999999, "bound_holds": true, "exp_minus_u_bound": 1.0, "u_Mstar_r": 0.0},
+    {"W": 0.8716151238718581, "bound_holds": true, "exp_minus_u_bound": 0.9048374180359595, "u_Mstar_r": 0.1},
+    {"W": 0.2630346631535884, "bound_holds": true, "exp_minus_u_bound": 0.36787944117144233, "u_Mstar_r": 1.0},
+    {"W": 0.0021013831059380527, "bound_holds": true, "exp_minus_u_bound": 0.006737946999085467, "u_Mstar_r": 5.0},
+    {"W": 8.071611546624682e-06, "bound_holds": true, "exp_minus_u_bound": 4.5399929762484854e-05, "u_Mstar_r": 10.0}
+  ],
+  "version": "0.1"
+}
