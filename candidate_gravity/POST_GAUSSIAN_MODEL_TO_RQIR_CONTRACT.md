@@ -1,0 +1,188 @@
+# Post-Gaussian Candidate Gravity → RQIR Contract
+
+**Introduced:** Iteration 143  
+**Status:** mandatory extension for any future candidate whose novelty lies beyond a Gaussian two-point influence functional.
+
+## 1. Why this extension is required
+
+Iteration 141 established `CG-NG-006`: a positive Gaussian spin-2 two-point sector with linear conserved-stress coupling is exactly reproducible by an ordinary quantum mediator continuum. Consequently a new Candidate Gravity cannot be promoted from `J`, two-point noise `N`, and linear retarded response `chi^(1)R` alone when an allowed comparator shares the complete Gaussian influence functional.
+
+A post-Gaussian candidate must therefore expose higher connected and higher ordered response structures derived from the **same parent dynamics**.
+
+## 2. Required parent object
+
+The preferred parent representation is a closed-time-path / Schwinger–Keldysh generating functional
+
+`Z[J_+,J_-] = exp(i W[J_+,J_-])`
+
+or an exactly equivalent operator/channel construction.
+
+In Keldysh variables
+
+`J_r=(J_+ + J_-)/2`,
+
+`J_a=J_+ - J_-`,
+
+and analogously for the resolved gravitational field.
+
+For a unitary closed parent theory the normalization condition requires
+
+`Z[J,J]=1`,
+
+or equivalently
+
+`W[J_r,J_a=0]=0`.
+
+Open/hybrid theories must state the corresponding trace-preserving condition.
+
+## 3. Gaussian layer retained
+
+Every candidate must still provide:
+
+### First moment
+
+`J_A(x)=<A(x)>`.
+
+### Symmetrized connected two-point noise
+
+`N_AB(x,y)=1/2 <{delta A(x),delta B(y)}>_c`.
+
+### Linear retarded response
+
+`chi^(1)R_AB(x,y)=-(i/hbar) theta(x0-y0) <[A(x),B(y)]>`.
+
+These objects remain necessary but are no longer sufficient for post-Gaussian novelty.
+
+## 4. New symmetrized third cumulant
+
+For three resolved relational/smeared observables `A,B,C`, define the fully symmetrized connected third cumulant
+
+`C3_sym(A,B,C) = (1/6) sum_{pi in S3} <delta A_pi1 delta A_pi2 delta A_pi3>_c`.
+
+The model must state:
+
+- operator ordering;
+- spacetime smearing;
+- renormalization/subtraction;
+- state dependence;
+- tensor/gauge/relational status.
+
+A nonzero `C3_sym` alone is **not** a quantum-gravity witness because a classical non-Gaussian stochastic field can possess the same symmetric cumulant.
+
+## 5. New second-order causal susceptibility
+
+For an observable `A` responding to two source couplings `B` and `C`, the causal second-order Kubo response is
+
+`chi^(2)R_{A;BC}(t;t1,t2)`
+
+` = (-i/hbar)^2 [`
+
+` theta(t-t1) theta(t1-t2) <[[A(t),B(t1)],C(t2)]>`
+
+` + theta(t-t2) theta(t2-t1) <[[A(t),C(t2)],B(t1)]> ]`.
+
+The exact covariant/spacetime generalization and contact terms must be derived for the chosen model.
+
+This object is logically distinct from `C3_sym`: it probes ordered nonlinear response rather than only a probability bispectrum.
+
+## 6. Mixed Keldysh three-point data
+
+Where the CTP representation is available, the model must expose the independent three-point `r/a` structures required at the claimed order. Schematically these include:
+
+- one-`a` / two-`r` components controlling causal nonlinear response;
+- two-`a` / one-`r` components controlling response–fluctuation mixing;
+- three-`a` structures where allowed by the open-system/non-Gaussian noise representation.
+
+The model may use another equivalent basis, but it must provide an invertible map to operational response/noise observables.
+
+No three-point component may be tuned independently if the declared dynamics fixes relations among them.
+
+## 7. Ward / soft / constraint lock
+
+A gravity-specific candidate must state the identity that links its higher-point structures to the same symmetry responsible for universal stress-energy coupling.
+
+Depending on formulation this may be:
+
+- a diffeomorphism Ward/Slavnov–Taylor identity;
+- Hamiltonian/momentum constraint algebra;
+- a relational observable identity;
+- a controlled soft-graviton theorem/consistency relation.
+
+A generic phenomenological cubic coupling is insufficient.
+
+The repository must record which lower-point quantities appear on the right-hand side of the identity and whether contact/gauge-fixing/ghost terms are required.
+
+## 8. Comparator contract at post-Gaussian order
+
+Before a nonlinear candidate direction is called distinctive, the same operational object must be constructed or bounded for:
+
+### C3 classical stochastic/postquantum gravity
+
+Test whether the candidate distinction resides only in `C3_sym` or also in ordered/noncommutative response. Classical higher cumulants are admissible comparator freedom.
+
+### C4 quantum mediator / KK / massive-spin-2 alternatives
+
+Allow nonlinear mediator self-interactions consistent with the comparator's declared EFT. A cubic response is not distinctive merely because the Gaussian comparator was free.
+
+### C5 perturbative quantum GR
+
+Include tree and loop higher-point amplitudes/vertices at the same declared order and all relevant local EFT operators.
+
+### Nonlocal/form-factor gravity
+
+Allow momentum-dependent nonlinear vertices generated by a fixed covariant nonlocal action.
+
+### Asymptotic-safety realization
+
+Where a concrete truncation supplies momentum-dependent `Gamma^(2),Gamma^(3),Gamma^(4)`, treat them as a quantum-gravity comparator rather than a generic uncertainty.
+
+## 9. Post-Gaussian Paper-I finite discriminator
+
+The finite candidate vector must contain enough components to distinguish symmetric and ordered sectors. A minimal schematic measurement vector is
+
+`y = (y_mean, y_2sym, y_1R, y_3sym, y_2R, ...)`.
+
+The candidate tangent `v_beta=partial_beta y` is admissible only after exact hard constraints are imposed.
+
+Promotion requires
+
+`v_beta notin span{calibration directions, nuisance directions, comparator directions}`.
+
+A nonzero raw bispectrum or nonlinear response is insufficient.
+
+## 10. Post-Gaussian Paper-II likelihood
+
+The likelihood may no longer be Gaussian in the detector record. The model must supply either:
+
+- the full controlled likelihood to the required perturbative order; or
+- a justified Edgeworth/cumulant/score expansion with explicit remainder control; or
+- an equivalent quantum/channel likelihood.
+
+The profiled information on `beta` must include nuisance parameters controlling detector skewness/nonlinearity and source higher cumulants.
+
+## 11. Post-Gaussian Paper-III resources
+
+Resource accounting must include any extra requirements needed to estimate higher cumulants/nonlinear response, such as:
+
+- repeated state preparation sufficient for third-cumulant convergence;
+- phase-cycling / nonlinear-response protocols;
+- additional calibration of detector nonlinearity;
+- longer coherence windows for ordered multi-time measurements;
+- extra control channels needed to separate source non-Gaussianity from gravitational non-Gaussianity.
+
+No resource number may be fabricated when apparatus inputs are unavailable.
+
+## 12. Immediate rejection rules
+
+A future post-Gaussian ansatz is rejected or retained only as a control if:
+
+1. its higher-point object is independently fitted rather than derived from the parent dynamics;
+2. its claimed quantum signature exists only in a fully symmetric classical cumulant;
+3. the ordered nonlinear response violates causality or the declared Ward/constraint identity;
+4. the entire post-Gaussian likelihood is reproduced by an allowed classical/hybrid or quantum-mediator comparator;
+5. the candidate tangent vanishes after exact calibration/comparator quotient;
+6. higher-order corrections required for the claimed effect are uncontrolled in the stated domain.
+
+## 13. Scientific role
+
+This contract converts the Iteration-141 Gaussian degeneracy into a constructive requirement. The next Candidate Gravity search is no longer a search for a novel propagator. It is a search for a **joint lower-point + higher-point + ordered + symmetry-locked observable structure** that survives the strongest known comparator families.
