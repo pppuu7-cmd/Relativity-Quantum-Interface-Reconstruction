@@ -7,11 +7,11 @@
 **Rejected consistency control:** `ANSATZ-RQIR-CTP-001` v0.1  
 **Positive-spectral Gaussian comparator:** `ANSATZ-RQIR-KL-002` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 171**
+**Authoritative Candidate Gravity front:** **Iteration 172**
 
 ## Scientific state in one sentence
 
-Standalone propagator, finite spacelike TT shape and positive timelike spectral-shape novelty routes are now closed as promotion mechanisms: local C5 saturates the frozen spacelike protocol, positive linear TT spectra are exactly C4-mediator reproducible, and Iteration 171 therefore moves the search to **source-completed, two-point-amputated CTP three-point relations**, where external-leg spectral dressing is calibrated away before any novelty test.
+Standalone propagator, finite TT amplitude and positive spectral-shape novelty routes are closed; the search now lives in **source-completed, two-point-amputated CTP relation space**, where generic closed-unitary C4/C5 cubic amplitude is quotiented exactly and the currently supported fixed C3 tree contributes only one EH-shaped classical relation direction.
 
 ## Stable readiness rubric
 
@@ -24,15 +24,14 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 - identifiability/Fisher `0/10`;
 - resource/experiment closure `0/10`.
 
-`MODEL_READINESS = 24%` remains unchanged through Iterations 168–171. These iterations eliminate false-positive routes and sharpen comparator conditioning but do not yet produce a robust Candidate Gravity residual or parent dynamics.
+`MODEL_READINESS = 24%` remains unchanged. Iteration 172 closes a relation-level rank certificate but does not produce a residual surviving all fixed comparator families.
 
 ## Mandatory provenance / nomenclature
 
-1. Iteration 163 dRGT target mapping: first `d/d log(m^2)`, second `d/d alpha3`; `alpha4` remains cubic-TT blind.
+1. Iteration 163 dRGT mapping: first target `d/d log(m^2)`, second `d/d alpha3`; `alpha4` remains cubic-TT blind.
 2. Iteration-166 onward `A_odd` is the frequency-odd imaginary part of **linear** `chi1R`, not post-Gaussian `chi2R_odd`.
-3. Iteration-171 CTP vertices use `h_±=r±a/2` and factorial-normalized `Gamma_arr/2!`, `Gamma_aaa/3!` conventions.
-
-Retain `PROVENANCE-CORR-001`.
+3. Iteration-171 onward CTP vertices use `h_±=r±a/2` and factorial-normalized `Gamma_arr/2!`, `Gamma_aaa/3!` conventions.
+4. Retain `PROVENANCE-CORR-001`.
 
 ## Frozen conceptual observable hierarchy
 
@@ -40,110 +39,93 @@ Retain `PROVENANCE-CORR-001`.
 
 Hard constraints precede profiling/Fisher. Unsupported comparator coordinates are BLOCKED, never zero-filled.
 
-## Spacelike ordered-TT authority through Iteration 165
+## Spacelike TT authority — through Iteration 165
 
-The target-independent local C5 completion through the frozen dimension-12 cutoff gives a `12x12` matrix of rank `12/12` on the 12 frozen spacelike TT rows and absorbs the corrected dRGT tangents to machine precision.
+The target-independent local C5 completion through the frozen dimension-12 cutoff gives a `12x12` matrix of rank `12/12` on the 12 frozen spacelike TT rows and absorbs corrected dRGT tangents to machine precision.
 
-Retain:
+Retain `C5-NG-003`, `C4-NG-007`, `NG-FUNNEL-022`, `NG-FUNNEL-023`.
 
-- `C5-NG-003 — DIMENSION12_LOCAL_C5_CUBIC_SUBSET_SATURATES_ENRICHED_12ROW_TT_PROTOCOL`;
-- `C4-NG-007 — ITERATION164_DRGT_RESIDUAL_ABSORBED_BY_TARGET_INDEPENDENT_DIMENSION12_C5_COMPLETION`;
-- `NG-FUNNEL-022` and `NG-FUNNEL-023`.
+Do not search for novelty by adding target-optimized rows in that saturated sector.
 
-Do not search for novelty by adding target-optimized rows in this saturated sector.
+## Timelike linear absorptive authority — Iterations 166–170
 
-## Timelike conserved-TT linear absorptive authority — Iterations 166–169
+Eight timelike conserved-TT rows use `A_odd=[Im chi1R(+omega)-Im chi1R(-omega)]/(2*pi)`.
 
-Eight timelike rows `s_i=0.004*i`, `i=1..8`, use `k=(omega,0,0,0)` and conserved traceless `T_ij=diag(1,-1,0)/sqrt(2)`.
+Local Hermitian tree EFT is absorptively zero off pole. Leading massless one-loop C5 is a constant shape; the conservative next `O(p^6)` massless envelope is `span{x,x log x}`. Profiling `[1,x,x log x]` leaves five finite shape dimensions, but Iteration 170 closes standalone positive linear spectral shape as gravity-specific novelty: any positive Källén–Lehmann TT kernel is exactly reproducible by an ordinary positive-norm C4 mediator continuum, with matched Gaussian covariance reproducing the Gaussian CTP layer.
 
-Define
+Retain `C5-NG-004` through `C5-NG-006`, `C4-NG-008`, `ABS-SHAPE-001` through `ABS-SHAPE-005`, and `NG-FUNNEL-024/026/028/029/030`.
 
-`A_odd=[Im chi1R(+omega)-Im chi1R(-omega)]/(2*pi)`.
+## Linked/amputated CTP authority — Iterations 171–172
 
-A local Hermitian tree EFT is absorptively zero off pole. The full leading massless one-loop curvature-squared C5 TT family is a single constant shape. At the next conservative `O(p^6)` massless order, the allowed odd-absorptive shape envelope is contained in `span{x,x log x}` with `x=s/s_max`.
+Condition the nonlinear comparison on the same measured two-point CTP matrix and compare amputated/source-completed three-point kernels using
 
-Profiling `[1,x,x log x]` leaves five finite frequency-shape dimensions.
+`G3_abc = - G_aa' G_bb' G_cc' Gamma3_a'b'c'`.
 
-Retain:
-
-- `C5-NG-004 — LOCAL_HERMITIAN_TREE_EFT_CANNOT_SATURATE_OFF_POLE_ABSORPTIVE_BLOCK`;
-- `C5-NG-005 — LEADING_MASSLESS_ONE_LOOP_TT_ABSORPTIVE_SPAN_IS_ONE_DIMENSIONAL_CONSTANT_SHAPE`;
-- `C5-NG-006 — NEXT_ORDER_P6_MASSLESS_TT_ABSORPTIVE_ENVELOPE_IS_SPAN_X_XLOGX`;
-- `ABS-SHAPE-001` through `ABS-SHAPE-004`;
-- `NG-FUNNEL-024`, `026`, `028`, `029`.
-
-## General positive linear-spectral C4 identity — Iteration 170
-
-For any physical conserved-traceless TT response with positive Källén–Lehmann measure,
-
-`chi_R^TT = Z0 D_R(0) + int dmu2 rho_TT(mu2) D_R(mu2)`, `rho_TT>=0`,
-
-an exact direct integral of independent positive-norm massive spin-2 mediators with coupling density `sqrt(rho_TT)` reproduces the same retarded two-point kernel. With matching Gaussian covariance/state it also reproduces the Gaussian Hadamard kernel and full Gaussian CTP influence functional.
-
-This generalizes the Iteration-141 exact `KL-002` C4 identity to arbitrary positive TT spectral measures.
-
-Consequences:
-
-- poles, positive continua, thresholds, branch cuts and arbitrary positive finite-frequency spectral shapes are C4-reproducible at linear-Gaussian level;
-- the five-dimensional Iteration-169 C5-null remainder is not gravity-specific by itself;
-- spectral negativity is not a novelty certificate and instead triggers physical-observability/gauge/positivity/ghost/unitarity gates.
-
-Retain:
-
-- `C4-NG-008 — POSITIVE_LINEAR_TT_SPECTRAL_RESPONSE_IS_EXACTLY_REPRESENTABLE_BY_ORDINARY_MEDIATOR_CONTINUUM`;
-- `ABS-SHAPE-005 — FINITE_FREQUENCY_LINEAR_SPECTRAL_SHAPE_CANNOT_CERTIFY_GRAVITY_SPECIFIC_NOVELTY_AGAINST_C4`;
-- `NG-FUNNEL-030 — LINEAR_SPECTRAL_RESIDUAL_REQUIRES_A_LINKED_NONLINEAR_OR_POST_GAUSSIAN_GRAVITY_RELATION_FOR_PROMOTION`.
-
-Finite-frequency Lorentzian-AS spectral reproduction remains useful for comparator characterization/article work but is no longer a prerequisite for deciding whether a standalone linear spectrum can seed `ANSATZ-003`.
-
-## Linked/amputated CTP three-point protocol — Iteration 171
-
-The two-point CTP kernel is now treated as measured/shared data. In the fixed source-completed metric convention, use the exact relation
-
-`G3_abc = - G_aa' G_bb' G_cc' Gamma3_a'b'c'`
-
-to compare amputated/source-completed three-point kernels rather than raw responses.
-
-A six-row control with nontrivial momentum-dependent external-leg dressing changes the raw nonlinear response by `25.56%`, while the amputated cubic kernel is recovered with maximum error `1.11e-16`.
-
-Retain:
-
-`CTP-NG-002 — TWO_POINT_EXTERNAL_LEG_DRESSING_DISAPPEARS_AFTER_FIXED_CONVENTION_THREE_POINT_AMPUTATION`.
-
-For any symmetric cubic closed-unitary action `S3=B(h,h,h)/3!`, the `r/a` transform gives
-
-`S3[h+] - S3[h-] = 1/2 B(a,r,r) + 1/24 B(a,a,a)`.
-
-Hence, in the frozen vertex normalization,
+Iteration 171 showed that nontrivial external-leg dressing changes raw response but reconstructs the same cubic kernel to `1.11e-16`. For a symmetric closed-unitary cubic action,
 
 `Gamma_aar=0`,
 
 `Gamma_aaa=Gamma_arr/4`.
 
-This is generic closed quantum dynamics, not gravity-specific. It is shared by C5 quantum-gravity tree actions and ordinary quantum C4 cubic mediators.
+This is generic quantum C4/C5 structure, not a gravity witness.
+
+Retain `CTP-NG-001`, `CTP-NG-002`, `NG-FUNNEL-031`.
+
+### Iteration 172 finite relation-level matrix
+
+Use six frozen amputated kinematic rows with raw coordinates per row
+
+`(Gamma_arr,Gamma_aar,Gamma_aaa,WardLock)`.
+
+The conservative generic closed-unitary C4/C5 comparator is allowed one independent cubic amplitude at each row while preserving only
+
+`Gamma_aar=0`, `Gamma_aaa=Gamma_arr/4`, `WardLock=0`.
+
+Add the fixed supported C3 PQCG tree direction from Iteration 155, with `Gamma_arr=B_EH` and no quantum `aaa` term at this supported tree order. Full diffusion/MSR ordered vertices remain BLOCKED.
+
+The raw comparator matrix is `24x7`, rank `7/7`, with
+
+`s_min/s_max = 0.0126780602`.
+
+Map each row to relation coordinates
+
+`R_aar=Gamma_aar`,
+
+`R_unit=Gamma_aaa-Gamma_arr/4`,
+
+`R_W=WardLock`.
+
+All generic closed-unitary C4/C5 amplitude columns vanish exactly. The supported fixed C3 tree leaves one relation direction
+
+`R_unit=-B_EH/4`,
+
+with norm `4.917063349196141`. Supported relation rank is therefore `1`.
 
 Retain:
 
-- `CTP-NG-001 — CLOSED_UNITARY_CUBIC_AAA_OVER_ARR_RATIO_IS_NOT_GRAVITY_SPECIFIC`;
-- `NG-FUNNEL-031 — CANDIDATE_RESIDUAL_MUST_BE_A_LINKED_CTP_VERTEX_RELATION_AFTER_TWO_POINT_AMPUTATION`.
+- `CTP-NG-003 — GENERIC_CLOSED_UNITARY_C4_C5_REMOVES_ROW_LOCAL_CUBIC_AMPLITUDE_BUT_NOT_RELATION_VIOLATIONS`;
+- `CTP-NG-004 — FIXED_PQCG_TREE_ADDS_ONE_EH_SHAPED_CLASSICAL_RELATION_DIRECTION`;
+- `NG-FUNNEL-032 — WARD_LOCK_VIOLATION_IS_CONSISTENCY_FAIL_NOT_NOVELTY`.
+
+The remaining algebraic complement is **not** a novelty certificate while fixed C3 diffusion/MSR ordered vertices, C4/C5 loop/noise three-point pieces, and nonlinear real-time nonlocal/AS CTP relations remain BLOCKED.
 
 ## Current comparator implications
 
 ### C3 postquantum-classical
 
-Supported: `N2`, a nonlinear `C3sym` direction from the same OM action, and common-EH tree causal response. Full source-completed `r/a` vertex including diffusion/MSR ordered pieces remains BLOCKED.
+Supported: `N2`, nonlinear `C3sym`, common-EH tree causal response, and now one relation-level classical direction from that same tree response. Full diffusion/MSR ordered `r/a` cubic completion remains BLOCKED.
 
 ### C4
 
-Fixed dRGT tree nonlinear response remains a scoped comparator. Generic positive linear spectra are already closed by the direct-integral identity. A closed quantum C4 cubic self-interaction shares the generic `Gamma_aaa/Gamma_arr=1/4` CTP relation, so that relation is not a gravity witness. Loop/helicity/noise completion remains BLOCKED.
+Fixed dRGT tree remains a scoped comparator. Generic positive linear spectra are exactly C4-reproducible. Generic closed quantum cubic self-interaction occupies the exact closed-unitary relation subspace. Loop/helicity/noise completion remains BLOCKED.
 
 ### C5
 
-EH/local tree CTP structure shares the same closed-unitary relation. C5 loop/noise three-point components remain to be instantiated in the same finite source-completed protocol.
+EH/local tree shares the same closed-unitary CTP relation. Local TT comparator saturation and leading absorptive loop envelopes remain authoritative. C5 loop/noise three-point CTP completion remains BLOCKED.
 
 ### Nonlocal / asymptotic safety
 
-Their propagator/form-factor/spectral information becomes calibrated external-leg data after amputation. Their nonlinear real-time source-completed CTP vertex relations remain relevant and BLOCKED where not derived.
+Two-point form-factor/spectral information is calibrated external-leg data after amputation. Nonlinear real-time source-completed CTP vertex relations remain relevant and BLOCKED where not derived.
 
 ## Candidate state
 
@@ -153,22 +135,9 @@ There is still **no robust Candidate Gravity residual**.
 
 Fisher/resources remain FORBIDDEN.
 
-The next novelty carrier must be a linked multi-point/CTP/tensor/Ward relation, not a raw two-point or raw three-point amplitude.
+A future residual must be a linked multi-point/CTP/tensor/Ward relation that survives the fixed C3/C4/C5/nonlocal/AS comparator quotient. A WardLock violation is a consistency FAIL, not novelty.
 
 ## Current authorities
-
-### Iteration 169
-- `analysis/c5_nlo_absorptive_shape_envelope_iteration169.py`;
-- `results/c5_nlo_absorptive_shape_envelope_iteration169.json`;
-- `candidate_gravity/C5_NLO_ABSORPTIVE_SHAPE_ENVELOPE_ITERATION169.md`;
-- `recovery/RECOVERY_DELTA_ITERATION_169.md`.
-
-### Iteration 170
-- `analysis/linear_spectral_c4_no_go_iteration170.py`;
-- `results/linear_spectral_c4_no_go_iteration170.json`;
-- `candidate_gravity/LINEAR_SPECTRAL_C4_NO_GO_ITERATION170.md`;
-- `recovery/RECOVERY_DELTA_ITERATION_170.md`;
-- historical authority: `docs/CANDIDATE_GRAVITY_C4_GAUSSIAN_DEGENERACY_ITERATION141.md`.
 
 ### Iteration 171
 - `analysis/linked_ctp_vertex_protocol_iteration171.py`;
@@ -177,15 +146,24 @@ The next novelty carrier must be a linked multi-point/CTP/tensor/Ward relation, 
 - `research_log/2026-08-31_iteration_171_linked_ctp_vertex_protocol.md`;
 - `recovery/RECOVERY_DELTA_ITERATION_171.md`.
 
-## Immediate next scientific priority — Iteration 172
+### Iteration 172
+- `analysis/ctp_relation_comparator_iteration172.py`;
+- `results/ctp_relation_comparator_iteration172.json`;
+- `candidate_gravity/CTP_RELATION_COMPARATOR_ITERATION172.md`;
+- `research_log/2026-08-31_iteration_172_ctp_relation_comparator.md`;
+- `recovery/RECOVERY_DELTA_ITERATION_172.md`;
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION172.md`.
 
-Construct the first finite **relation-level CTP comparator matrix**.
+## Immediate next scientific priority — Iteration 173
+
+Derive the fixed **PQCG diffusion/MSR ordered cubic CTP relation** from the same declared parent dynamics and parameter convention.
 
 Required order:
 
-1. use finite amputated coordinates `Gamma_arr`, `Gamma_aar`, `Gamma_aaa` in the frozen source convention;
-2. treat the closed-unitary C4/C5 relation as comparator structure, not novelty;
-3. add a Ward/source tensor-lock coordinate tying `Gamma_arr` to the same stress coupling/inverse propagator;
-4. instantiate only the C3 relation pieces actually supported by the fixed PQCG realization and preserve the rest as BLOCKED;
-5. compute rank/quotient in relation space before proposing any Candidate Gravity dynamics;
-6. only a residual outside fixed C3/C4/C5/nonlocal/AS relation spans may earn robust-residual readiness points or motivate `ANSATZ-003`.
+1. recover the exact fixed PQCG action/convention used for Iterations 153–155;
+2. derive the response-field cubic vertices rather than infer them from broad class capability;
+3. determine which of `Gamma_aar`, `Gamma_aaa` acquire diffusion-dependent support at the declared order;
+4. keep discretization/Jacobian/noise conventions identical to the fixed comparator authority;
+5. if an additional convention is genuinely required, record `BLOCKED_C3_CTP_ORDERED_COMPLETION` rather than zero-filling;
+6. only after this update the relation-level rank/quotient;
+7. do not create `ANSATZ-003` and do not run Fisher/resources until a nonzero algebraic residual survives the full fixed comparator quotient.
