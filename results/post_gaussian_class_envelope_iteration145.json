@@ -1,0 +1,57 @@
+{
+  "block_ranks": {
+    "C3_postquantum_classical_envelope": 7,
+    "C4_quantum_mediator_envelope": 7,
+    "C5_quantum_gravity_EFT_envelope": 8
+  },
+  "combined_rank": 8,
+  "decision": "REQUIRE_FIXED_FINITE_COMPARATOR_REALIZATIONS",
+  "full_coordinates": [
+    "norm",
+    "N2",
+    "chi1R",
+    "C3sym",
+    "chi2R_even",
+    "chi2R_odd",
+    "soft0",
+    "soft1",
+    "soft2",
+    "tensor_geo",
+    "threshold"
+  ],
+  "full_rank_saturated": true,
+  "hard_locks": [
+    "norm",
+    "soft0",
+    "soft1"
+  ],
+  "iteration": 145,
+  "nonclaim": "Full rank here is not a no-go theorem; it is caused by deliberately independent per-coordinate class capabilities.",
+  "reduced_coordinates": [
+    "N2",
+    "chi1R",
+    "C3sym",
+    "chi2R_even",
+    "chi2R_odd",
+    "soft2",
+    "tensor_geo",
+    "threshold"
+  ],
+  "reduced_dimension": 8,
+  "scope": "structural capability-envelope diagnostic; not physical comparator tangents",
+  "single_axis_candidate_residual_norms": {
+    "C3sym": 0.0,
+    "N2": 0.0,
+    "chi1R": 0.0,
+    "chi2R_even": 0.0,
+    "chi2R_odd": 0.0,
+    "soft2": 0.0,
+    "tensor_geo": 0.0,
+    "threshold": 0.0
+  },
+  "soft_interpretation": {
+    "soft0": "hard consistency lock; not a novelty coordinate",
+    "soft1": "hard consistency lock in the frozen standard-GR boundary",
+    "soft2": "measured coordinate but included in the C5 EFT capability envelope"
+  }
+}
