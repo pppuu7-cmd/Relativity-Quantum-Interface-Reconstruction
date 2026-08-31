@@ -1,0 +1,11 @@
+{
+  "conclusion": "Off-shell coordinate response changes under a local field redefinition, while the physical observable response is restored only after the induced observable/source contact term is included.",
+  "iteration": 148,
+  "max_reconstruction_error": 1.1102230246251565e-16,
+  "min_nonzero_coordinate_shift": 0.11688546786387487,
+  "n_points": 12,
+  "parameters": {"a": 0.23, "g": 0.37},
+  "pass_offshell_coordinate_noninvariance": true,
+  "pass_reconstruction": true,
+  "seed": 148
+}
