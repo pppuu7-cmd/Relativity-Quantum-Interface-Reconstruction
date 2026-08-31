@@ -1,0 +1,50 @@
+{
+  "iteration": 214,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "protocol": "Pure-Einstein five-graviton total-s cut from Iteration 213; analytic beam-endpoint IR subtraction fixed from external Born M5 tree amplitude.",
+  "epsilon_diagnostic": 0.01,
+  "born_m5": {"real": 645.5150777243653, "imag": -124.71057541525806},
+  "subtraction_coefficient_A_equals_minus_2i_M5": {"real": -249.42115083051613, "imag": -1291.0301554487305},
+  "endpoint_identity_checks": [
+    {"epsilon":0.04,"side":"N","relative_error":1.4617958865037012e-11},
+    {"epsilon":0.04,"side":"S","relative_error":1.4835887314519564e-11},
+    {"epsilon":0.01,"side":"N","relative_error":1.4591898638838746e-11},
+    {"epsilon":0.01,"side":"S","relative_error":1.481046005758459e-11},
+    {"epsilon":0.001,"side":"N","relative_error":1.466821398479282e-11},
+    {"epsilon":0.001,"side":"S","relative_error":1.488625252582166e-11}
+  ],
+  "raw_halving_shell_prediction": {"real": -4345.0882294083885, "imag": -22490.63446934122},
+  "raw_halving_shells": [
+    {"delta_lo":0.05,"delta_hi":0.1,"integral":{"real":-4076.03438494308,"imag":-22393.92838452998},"relative_error_to_8piAlog2":0.01248141173283273},
+    {"delta_lo":0.025,"delta_hi":0.05,"integral":{"real":-4278.159389511006,"imag":-22467.158903670606},"relative_error_to_8piAlog2":0.0030963472109243467},
+    {"delta_lo":0.0125,"delta_hi":0.025,"integral":{"real":-4328.37733679947,"imag":-22484.808751719112},"relative_error_to_8piAlog2":0.00077258619777391},
+    {"delta_lo":0.00625,"delta_hi":0.0125,"integral":{"real":-4340.911844684291,"imag":-22489.180728372892},"relative_error_to_8piAlog2":0.00019305276246929726},
+    {"delta_lo":0.003125,"delta_hi":0.00625,"integral":{"real":-4344.044216973654,"imag":-22490.27120197216},"relative_error_to_8piAlog2":4.825732894593388e-05}
+  ],
+  "subtracted_halving_shells": [
+    {"delta_lo":0.05,"delta_hi":0.1,"abs":296.9919393308259},
+    {"delta_lo":0.025,"delta_hi":0.05,"abs":73.66449437880019},
+    {"delta_lo":0.0125,"delta_hi":0.025,"abs":18.3796705598476},
+    {"delta_lo":0.00625,"delta_hi":0.0125,"abs":4.592639666880386},
+    {"delta_lo":0.003125,"delta_hi":0.00625,"abs":1.148017539345928}
+  ],
+  "subtracted_shell_abs_scaling_exponent": 2.003384448290894,
+  "classification": {
+    "beam_endpoint_coefficient": "PASS_BORN_EIKONAL_RELATION",
+    "raw_endpoint_log": "PASS_UNIVERSAL_LOG_SHELL_LIMIT",
+    "canonical_leading_pole_subtraction": "PASS_REGULATOR_INDEPENDENCE_SCOPED",
+    "bulk_finite_integral": "NUMERICAL_CONVERGENCE_OPEN",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "C5-CUT-013 — FIVE_GRAVITON_BEAM_ENDPOINT_COEFFICIENT_EQUALS_MINUS_2I_TIMES_EXTERNAL_BORN_M5_IN_THE_FROZEN_KLT_CONVENTION",
+    "IR-NG-003 — RAW_HALVING_CAP_SHELL_TENDS_TO_8PI_A_LOG2_WITH_A_MINUS_2I_M5",
+    "IR-NG-004 — AFTER_CANONICAL_LEADING_POLE_SUBTRACTION_THE_CAP_DEPENDENCE_VANISHES_AS_DELTA_SQUARED_AFTER_AZIMUTHAL_INTEGRATION",
+    "NG-FUNNEL-071 — REGULATOR_INDEPENDENCE_MUST_BE_PROVED_FROM_ENDPOINT_SHELLS_NOT_FROM_A_GLOBAL_FIT_DOMINATED_BY_BULK_PEAKS"
+  ],
+  "readiness_change": "unchanged at 23%; physical C5 five-point cut now has a Born-fixed leading IR subtraction and regulator-independent endpoint limit, but the finite bulk hard remainder is not yet extracted robustly",
+  "next_gate": "Resolve the finite outgoing-hard-leg peaks with a deterministic bulk quadrature, evaluate the IR-subtracted cut on the frozen Iteration-210 epsilon grid, and extract regular+log coefficients."
+}
