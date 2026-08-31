@@ -1,0 +1,54 @@
+{
+  "iteration": 215,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "scope": "pure-Einstein five-graviton total-s unitarity cut after Iteration-214 Born-fixed beam IR subtraction; deterministic panelized bulk quadrature; Iteration-210 frozen soft grid and regular+log extractor",
+  "epsilon_grid": [0.04,0.02573329796018864,0.016555065597696216,0.010650410894399626,0.006851754923600618,0.004407956274980105,0.002835781305488656,0.0018243501321018071,0.0011736636383271324,0.0007550559027527791,0.000485751963053412,0.0003125],
+  "finite_ir_subtracted_cut_real": [5336.308101316172,7865.371476295601,11809.616671218351,17947.73668444849,27493.082871444305,42333.18747927817,65402.8139580895,101264.17443689494,157008.9987556092,243660.80935349563,378354.6767192556,587725.4725201115],
+  "finite_ir_subtracted_cut_imag": [5967.551846060126,9581.911225301761,15266.284360896308,24171.327553251722,38085.165762163975,59786.79166154279,93595.4431512394,146224.58675662903,228109.3630644075,355469.97365432914,553519.0146477087,861446.9670846699],
+  "conservative_abs_error": [2.5366736004599263e-06,1.3133371344842008e-05,8.737012431908765e-06,3.129370023421874e-05,0.00015935617636900532,0.0004420395044865776,0.0011215424808520733,0.0028513996083978687,0.007038381905064315,0.016969301478540713,0.03991738204458,0.09042534511306631],
+  "quadrature": {
+    "beam_cap_delta": 0.003125,
+    "panel_margin_radians": 0.03,
+    "theta_panels": 19,
+    "phi_panels": 19,
+    "bulk_orders_compared": [40,48],
+    "panel_rule": "outgoing hard/soft directions and antipodes, plus +/-0.03 rad boundaries, are deterministic panel boundaries; no candidate or residual information enters panel placement",
+    "cap_rule": "leading O(delta^2) cap restored by Richardson combination of outer [delta,2delta] and inner [delta/2,delta] subtracted shells",
+    "error_rule": "absolute bulk order-40/order-48 difference plus absolute cap Richardson correction relative to inner estimate"
+  },
+  "leading_soft_pole_treatment": "fit F(epsilon)=epsilon*I_finite(epsilon) on the frozen Iteration-210 grid",
+  "regular_log_basis": ["1","L","z","zL","z^2","z^2L"],
+  "regular_log_coefficients": {
+    "a0": {"real":183.45278240837044,"imag":269.91847797114457},
+    "b0": {"real":0.0017468346431979143,"imag":-0.0009794343415201467},
+    "a1": {"real":28.68015897832026,"imag":-60.30499891986504},
+    "b1": {"real":0.4337183655919059,"imag":13.03834133209765},
+    "a2": {"real":-1.9666047100146171,"imag":-4.458840090004837},
+    "b2": {"real":0.9190102400947406,"imag":0.7908448625521167}
+  },
+  "relative_l2_numerical_error_envelope": 3.4037051620849225e-08,
+  "regular_log_relative_l2_residual": 2.791237182608158e-07,
+  "equal_parameter_pure_taylor_degree5_relative_l2_residual": 9.496951084345664e-05,
+  "pure_taylor_residual_over_numerical_envelope": 2790.180298263071,
+  "regular_log_residual_over_numerical_envelope": 8.200584509201143,
+  "classification": {
+    "finite_bulk_cut": "PASS_SCOPED_NUMERICAL_CONVERGENCE",
+    "physical_C5_regular_log_control": "PASS_SCOPED",
+    "log_structure_resolved_above_numerical_error": "YES",
+    "six_column_basis_exactness": "NO_TRUNCATION_REMAINDER_REMAINS",
+    "off_shell_source_completed_T_cut": "STILL_BLOCKED",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "C5-CUT-014 — PANELIZED_HARD_DIRECTION_QUADRATURE_RESOLVES_THE_IR_SUBTRACTED_PURE_EINSTEIN_FIVE_GRAVITON_CUT_ON_THE_FROZEN_TWELVE_POINT_SOFT_GRID",
+    "C5-CUT-015 — AFTER_LEADING_SOFT_POLE_REMOVAL_THE_PHYSICAL_C5_CONTROL_REQUIRES_REGULAR_PLUS_LOG_SOFT_COORDINATES_ABOVE_THE_NUMERICAL_ERROR_ENVELOPE",
+    "NUM-NG-017 — REAL_COLLINEAR_TREE_REPRESENTATION_CANCELLATIONS_REQUIRE_A_STABLE_MHV_REPRESENTATION_AND_PANELIZED_QUADRATURE",
+    "SOFT-NG-008 — REGULAR_PLUS_LOG_FIT_RESIDUAL_ABOVE_NUMERICAL_ERROR_IS_A_TRUNCATION_REMAINDER_NOT_AN_EXACT_C5_IDENTITY",
+    "NG-FUNNEL-072 — A_PHYSICAL_LOOP_COMPARATOR_MUST_CARRY_ITS_IR_SUBTRACTION_QUADRATURE_AND_SOFT_BASIS_ERROR_ENVELOPE_INTO_THE_QUOTIENT"
+  ],
+  "readiness_change": "unchanged at 23%; the first physical pure-Einstein five-point regular+log cut control is now executable and numerically resolved, but the source-completed off-shell C5 linked cut plus AS/C3 cuts remain open",
+  "next_gate": "Stress-test the extracted C5 regular+log control against soft-window/order changes fixed without candidate information; then map which part can anchor the off-shell/source-completed T_cut comparator and continue AS/C3 cut authority work."
+}
