@@ -1,0 +1,36 @@
+{
+  "classification": {
+    "ANSATZ_003": "NOT_CREATED",
+    "C3_linearized_MSR_JD": "SUPPORTED_SCOPED",
+    "C3_ordered_full_soft2": "BLOCKED_C3_CTP_ORDERED_COMPLETION",
+    "C3_symmetric_postGaussian": "SUPPORTED_SCOPED",
+    "Fisher_resources": "FORBIDDEN",
+    "consistency_fail": false,
+    "reason": "PUBLISHED_2026_MSR_JD_CONSTRUCTION_IS_EXPLICITLY_LINEARIZED_AND_DOES_NOT_FIX_THE_NONLINEAR_CONSERVED_DIFFUSION_RESPONSE_VERTEX_REQUIRED_BY_ITERATION173",
+    "zero_column": "FORBIDDEN"
+  },
+  "complete": false,
+  "iteration": 189,
+  "model_readiness_percent": 24,
+  "published_coverage": {
+    "classical_symmetric_C3_from_same_OM": true,
+    "linearized_gravity_MSR_JD": true,
+    "linearized_pole_prescription_discussion": true,
+    "nonlinear_covariant_OM_Einstein_squared": true,
+    "nonlinear_metric_dependent_conserved_diffusion_fixed": false,
+    "nonlinear_soft2_ordered_metric_relation_on_RQIR_rows": false,
+    "nonlinear_source_completed_MSR_metric_vertex": false
+  },
+  "readiness_change": "unchanged: the latest fixed PQCG literature confirms linear MSR/JD equivalence but does not close the nonlinear ordered soft2 comparator column",
+  "required_for_current_column": [
+    "nonlinear_metric_dependent_conserved_diffusion_fixed",
+    "nonlinear_source_completed_MSR_metric_vertex",
+    "nonlinear_soft2_ordered_metric_relation_on_RQIR_rows"
+  ],
+  "retained_results": [
+    "C3-NG-006 — 2026_LINEARIZED_MSR_JD_AUTHORITY_DOES_NOT_RESOLVE_THE_NONLINEAR_ORDERED_SOFT2_COMPLETION",
+    "REL-NG-007 — C3_SYMMETRIC_OM_INFORMATION_AND_LINEARIZED_RESPONSE_CANNOT_BE_COMBINED_INTO_AN_UNPUBLISHED_NONLINEAR_METRIC_CTP_COLUMN",
+    "NG-FUNNEL-044 — KEEP_PQCG_ORDERED_SOFT2_BLOCKED_UNTIL_NONLINEAR_CONSERVED_DIFFUSION_AND_RESPONSE_FIELD_MAP_ARE_FIXED"
+  ],
+  "scope": "fixed C3-PQCG-NL-001 comparator versus source-completed ordered soft2 relation"
+}
