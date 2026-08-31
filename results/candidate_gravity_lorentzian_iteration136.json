@@ -1,0 +1,45 @@
+{
+  "analytic_statement": "For y=p^2/M_*^2 in (0,1), F(y)=-y exp(1-y) E1(1-y) is continuous, strictly decreasing from 0 to -infinity. Hence for every beta>0, 1+beta F(y) has exactly one zero y0 in (0,1). Since dF/dy<0, the scalarized dressed-pole residue factor 1/[y0 beta F'(y0)] is negative.",
+  "decision": "REJECT_V0.1",
+  "iteration": 136,
+  "model_id": "ANSATZ-RQIR-CTP-001",
+  "nonclaims": [
+    "This rejects the frozen v0.1 sign/domain, not all spectral/nonlocal gravity models.",
+    "No claim is made that every additional pole in every convention is a ghost; the sign statement is relative to the frozen GR pole convention used by this ansatz."
+  ],
+  "overall": "FAIL_QG004_EXTRA_NEGATIVE_RESIDUE_POLE",
+  "samples": [
+    {
+      "beta": 0.1,
+      "dF_dy_at_root": -39228.73106886302,
+      "distance_to_threshold_1_minus_y0": 2.549087080772061e-05,
+      "relative_residue_factor": -0.0002549217026074947,
+      "y0_p2_over_Mstar2": 0.9999745091291923
+    },
+    {
+      "beta": 1.0,
+      "dF_dy_at_root": -3.3092774045121094,
+      "distance_to_threshold_1_minus_y0": 0.25170490968021997,
+      "relative_residue_factor": -0.4038256773964756,
+      "y0_p2_over_Mstar2": 0.74829509031978
+    },
+    {
+      "beta": 10.0,
+      "dF_dy_at_root": -0.7418049155933754,
+      "distance_to_threshold_1_minus_y0": 0.8495626985299665,
+      "relative_residue_factor": -0.8960964537765879,
+      "y0_p2_over_Mstar2": 0.1504373014700336
+    }
+  ],
+  "scope": "positive-frequency timelike sub-threshold Lorentzian pole audit",
+  "small_beta_threshold_asymptotic": "1-y0 ~ exp(-EulerGamma-1/beta)",
+  "theorem_checks": {
+    "F_at_zero": 0.0,
+    "F_negative_for_0_lt_y_lt_1": true,
+    "F_tends_to_minus_infinity_as_y_to_1_minus": true,
+    "dF_dy_strictly_negative_for_0_lt_y_lt_1": true,
+    "extra_pole_residue_opposite_sign": true,
+    "unique_root_of_1_plus_beta_F_for_every_beta_gt_0": true
+  },
+  "version": "0.1"
+}
