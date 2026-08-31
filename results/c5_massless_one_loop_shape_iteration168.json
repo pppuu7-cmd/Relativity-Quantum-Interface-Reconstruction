@@ -1,0 +1,72 @@
+{
+  "ANSATZ_003": "NOT_CREATED",
+  "Fisher_resources": "FORBIDDEN",
+  "TT_curvature_certificate": {
+    "max_abs_Ricci2_over_s2_minus_quarter": 1.6653345369377348e-16,
+    "max_abs_Riemann2_over_s2_minus_one": 6.661338147750939e-16,
+    "max_abs_Weyl2_over_s2_minus_half": 3.3306690738754696e-16,
+    "max_abs_linear_R": 0,
+    "shape_coefficients": {
+      "R_log_R": 0.0,
+      "Ricci_log_Ricci": 0.24999999999999994,
+      "Riemann_log_Riemann": 0.9999999999999998,
+      "Weyl_log_Weyl": 0.4999999999999999
+    }
+  },
+  "date": "2026-08-31",
+  "frozen_order": {
+    "excluded_not_zero": [
+      "two-loop massless self-energy",
+      "one-loop graphs with higher-derivative EFT insertions",
+      "massive thresholds",
+      "nonlinear/post-Gaussian source-response completion"
+    ],
+    "loop": "one massless loop, leading curvature-squared nonlocal form factors only",
+    "renormalization": "MS-like local/nonlocal split at arbitrary positive mu; absorptive discontinuity is mu- and local-counterterm independent",
+    "retarded_branch": "Im log_R(-s) is odd in omega and constant in magnitude for s>0",
+    "tree": "Einstein-Hilbert plus renormalized local curvature-squared counterterms"
+  },
+  "iteration": 168,
+  "leading_massless_one_loop_shape": {
+    "classification": "ALL_NONZERO_CURVATURE_SQUARED_LOG_TT_TWO_POINT_COLUMNS_ARE_COLLINEAR_WITH_THE_CONSTANT_ABSORPTIVE_DIRECTION",
+    "column_rank_before_constant_profile": 1,
+    "conclusion": "complete leading massless one-loop curvature-squared C5 TT absorptive span is annihilated by Q_shape to machine precision",
+    "max_projected_norm": 3.761488707539095e-16,
+    "projected_norms_after_iteration167_constant_profile": {
+      "R_log_R": 0.0,
+      "Ricci_log_Ricci": 9.403721768847738e-17,
+      "Riemann_log_Riemann": 3.761488707539095e-16,
+      "Weyl_log_Weyl": 1.8807443537695475e-16
+    },
+    "singular_values": [
+      3.2403703492039293,
+      1.551367490252835e-16,
+      4.274262228504148e-32,
+      0.0
+    ]
+  },
+  "model_readiness_percent": 24,
+  "power_counting_boundary": {
+    "claim_boundary": "no statement that the full quantum C5 absorptive response is constant",
+    "higher_derivative_loop_insertions": "BLOCKED_NEXT_ORDER_SHAPE; requires separately frozen EFT-order/Wilson convention",
+    "massive_thresholds": "BLOCKED_THRESHOLD_COMPARATOR; not represented by the massless log",
+    "two_loop": "BLOCKED_NEXT_ORDER_SHAPE; dimensional analysis permits extra powers of s multiplying nonanalytic logs"
+  },
+  "readiness_change": "unchanged; a major C5 comparator blocker is narrowed, but no residual survives the still-blocked AS finite-frequency and next-order loop shape quotient",
+  "retained_results": [
+    "C5-NG-005 — LEADING_MASSLESS_ONE_LOOP_TT_ABSORPTIVE_SPAN_IS_ONE_DIMENSIONAL_CONSTANT_SHAPE",
+    "ABS-SHAPE-003 — ITERATION167_CONSTANT_QUOTIENT_REMOVES_COMPLETE_LEADING_MASSLESS_ONE_LOOP_CURVATURE_SQUARED_C5_TT_SECTOR",
+    "NG-FUNNEL-028 — HIGHER_LOOP_AND_HIGHER_DERIVATIVE_LOOP_SHAPES_ARE_TRUNCATION_UNCERTAINTY_NOT_ZERO_COLUMNS"
+  ],
+  "rows": [
+    {"R_linear":0.0,"Ricci2_over_s2":0.24999999999999983,"Riemann2_over_s2":0.9999999999999993,"Weyl2_over_s2":0.49999999999999967,"omega":0.06324555320336758,"probe":0,"s":0.004},
+    {"R_linear":0.0,"Ricci2_over_s2":0.25,"Riemann2_over_s2":1.0,"Weyl2_over_s2":0.5,"omega":0.08944271909999159,"probe":1,"s":0.008},
+    {"R_linear":0.0,"Ricci2_over_s2":0.24999999999999994,"Riemann2_over_s2":0.9999999999999998,"Weyl2_over_s2":0.4999999999999999,"omega":0.10954451150103323,"probe":2,"s":0.012},
+    {"R_linear":0.0,"Ricci2_over_s2":0.24999999999999983,"Riemann2_over_s2":0.9999999999999993,"Weyl2_over_s2":0.49999999999999967,"omega":0.12649110640673517,"probe":3,"s":0.016},
+    {"R_linear":0.0,"Ricci2_over_s2":0.24999999999999994,"Riemann2_over_s2":0.9999999999999998,"Weyl2_over_s2":0.4999999999999999,"omega":0.1414213562373095,"probe":4,"s":0.02},
+    {"R_linear":0.0,"Ricci2_over_s2":0.24999999999999994,"Riemann2_over_s2":0.9999999999999998,"Weyl2_over_s2":0.4999999999999999,"omega":0.15491933384829668,"probe":5,"s":0.024},
+    {"R_linear":0.0,"Ricci2_over_s2":0.24999999999999997,"Riemann2_over_s2":0.9999999999999999,"Weyl2_over_s2":0.49999999999999994,"omega":0.1673320053068151,"probe":6,"s":0.028},
+    {"R_linear":0.0,"Ricci2_over_s2":0.25,"Riemann2_over_s2":1.0,"Weyl2_over_s2":0.5,"omega":0.17888543819998318,"probe":7,"s":0.032}
+  ],
+  "scope": "leading one-loop massless curvature-squared nonlocal C5 correction to eight-row timelike conserved-TT chi1R absorptive block"
+}
