@@ -1,14 +1,15 @@
-# AS-FRG-TT-001 — asymptotic-safety FRG TT vertex comparator
+# AS-FRG-TT-001 — asymptotic-safety FRG TT/effective-action comparator
 
 **Frozen in:** Iteration 159  
-**Status:** concrete literature comparator; RQIR retarded mapping BLOCKED  
+**Refined in:** Iteration 160  
+**Status:** concrete literature comparator; Euclidean action supported, RQIR retarded mapping BLOCKED  
 **Not a Candidate Gravity ansatz.**
 
 ## Literature authority
 
 Primary fixed source:
 
-- J. M. Pawlowski and J. Tränkle, *Effective action and black hole solutions in asymptotically safe quantum gravity*, arXiv:2309.17043.
+- J. M. Pawlowski and J. Tränkle, *Effective action and black hole solutions in asymptotically safe quantum gravity*, arXiv:2309.17043 / Phys. Rev. D 110, 086011 (2024).
 
 Supporting convergence/vertex-expansion source:
 
@@ -20,60 +21,92 @@ Recent continuation/scattering cross-check:
 
 ## Fixed published truncation content
 
-The 2023 construction reconstructs a diffeomorphism-invariant background effective action from momentum-dependent graviton correlation functions. In a curvature expansion around flat Euclidean space it retains momentum-dependent curvature-squared form factors, schematically
+The primary construction reconstructs a diffeomorphism-invariant Euclidean background effective action from momentum-dependent graviton correlation functions. In a curvature expansion about flat Euclidean space it retains full covariant momentum dependence through curvature-squared form factors, schematically
 
 `Gamma[g] = ... + R f_R2(Delta) R + R_mn f_Ricci2(Delta) R^mn + ...`.
 
-The TT two-point function is parametrised by a momentum-dependent wave function, and the completely TT n-point vertices are projected at the momentum-symmetric point as
+The TT fluctuation vertices are used to reconstruct these background form factors through an approximate Nielsen-identity mapping. In the declared projection:
 
-`Gamma_tt^(n)(p_vec)=gamma_g^(n)(p) T_R,tt^(n)(p_vec)`.
+- the TT propagator/three-point sector is insensitive to `R^2` at the relevant order;
+- the TT three-point `p^4` structure determines `R_mn^2` information;
+- the TT four-point structure supplies the additional information needed for `R^2`.
 
-The paper uses the fluctuation/background relation through an approximate Nielsen-identity mapping and reconstructs the covariant effective action.
+The paper provides analytic fits to both curvature-squared form factors.
 
 ## Why this is a concrete comparator
 
-This is not the broad label `asymptotic safety`. The frozen comparator is specifically the published TT vertex/effective-action truncation and its stated projection convention.
+This is not the broad label `asymptotic safety`. The frozen comparator is specifically the published TT/effective-action truncation and its stated reconstruction assumptions.
 
 Supported objects:
 
 - Euclidean TT two-point momentum dependence;
-- Euclidean TT three-/four-point symmetric-point information;
-- reconstructed curvature-squared form factors within the published truncation.
+- Euclidean TT three-/four-point information in the published projection;
+- reconstructed covariant curvature-squared form factors;
+- action-level off-symmetric Euclidean background vertices in principle, obtained by differentiating the reconstructed action within that truncation.
 
-## RQIR mapping boundary
+Iteration 160 evaluates the published analytic form-factor fits on every individual leg of the six frozen spacelike RQIR triplets. All 18 legs lie at finite positive Euclidean momenta for the flat-space spacelike coverage map and return finite fit values.
 
-The frozen RQIR post-Gaussian protocol uses six unequal off-shell triplets `(p,q,r)` inherited from Iteration 149 and requires an ordered Lorentzian retarded `chi2R` with a fixed source map and energy routing.
+Authority:
 
-A one-variable symmetric-point coefficient `gamma_g^(3)(p)` does not determine the full off-symmetric three-variable tensor vertex
+- `candidate_gravity/ASYMPTOTIC_SAFETY_ACTION_AUDIT_ITERATION160.md`;
+- `analysis/as_action_formfactor_audit_iteration160.py`;
+- `results/as_action_formfactor_audit_iteration160.json`.
 
-`Gamma_3(p,q,r)`
+## Refined RQIR mapping boundary
 
-on those six triplets. In addition, Euclidean effective-action data do not by themselves select the RQIR retarded `i0` prescription for the required ordered response.
+Iteration 159 correctly forbade replacing the full off-symmetric three-variable tensor vertex by the one-variable symmetric-point dressing `gamma_g^(3)(p)`.
 
-The 2026 scalar-scattering work demonstrates that analytic continuation can be carried out for a fully momentum-dependent scalar-graviton vertex, but it does not provide the missing source-completed pure three-graviton retarded vertex on the RQIR six-triplet protocol.
+Iteration 160 refines the reason for the remaining block:
 
-Therefore the following are forbidden without a new published or explicitly derived continuation/interpolation prescription:
+**The reconstructed covariant Euclidean action contains enough information to define off-symmetric Euclidean background vertices in principle. The unresolved step is the physical Lorentzian causal completion.**
 
-- evaluating `chi2R_even/odd` on the six frozen triplets;
-- treating symmetric-point `gamma_g^(3)(p)` as if it were `Gamma_3(p,q,r)`;
-- zero-filling unsupported tensor components;
-- adding a Fisher column from the published symmetric-point curve.
+The source Wick-rotates the Euclidean Laplace-Beltrami operator into a Lorentzian d'Alembertian. Because the reconstructed form factors contain nonlocal inverse-operator structure, a Green function must be chosen to define those Lorentzian operators. The source discusses possible constructions, including expansion around a flat-space Feynman propagator, but does not freeze the RQIR-specific in-in/retarded Green-function prescription needed for ordered response.
 
-## Retained result
+RQIR requires:
 
-`AS-NG-001 — SYMMETRIC_POINT_EUCLIDEAN_VERTEX_NOT_RETARDED_OFFSHELL_TANGENT`.
+- the same physical metric/source convention as the six-probe protocol;
+- a Schwinger-Keldysh/in-in contour or equivalent real-time definition;
+- the corresponding retarded nonlocal Green functions;
+- source-completed `Gamma_3` and `chi2R_even/odd`;
+- a Ward/constraint test in that same real-time convention.
 
-Classification: **OPERATIONAL BLOCKED / PROTOCOL MISMATCH**, not a consistency failure of asymptotic safety and not evidence of theory identity.
+Therefore the following remain forbidden without an explicitly derived/frozen causal prescription:
 
-Retain funnel guardrail:
+- evaluating AS `chi2R_even/odd` on the six frozen triplets;
+- treating Euclidean form-factor values as retarded response values;
+- selecting Feynman, retarded or another Green function merely for convenience;
+- zero-filling unsupported ordered or stochastic coordinates;
+- adding an AS Fisher column.
 
-`NG-FUNNEL-016 — EUCLIDEAN_SYMMETRIC_VERTEX_REQUIRES_EXPLICIT_RETARDED_OFFSHELL_COMPLETION`.
+## Retained results
+
+### AS-NG-001 — SYMMETRIC_POINT_EUCLIDEAN_VERTEX_NOT_RETARDED_OFFSHELL_TANGENT
+
+The published symmetric-point TT dressing alone is not the full off-symmetric RQIR retarded tangent.
+
+### AS-NG-002 — EUCLIDEAN_ACTION_SUFFICIENT_CAUSAL_COMPLETION_NOT_FIXED
+
+Within the frozen curvature-squared truncation, action-level information supports off-symmetric Euclidean reconstruction in principle, but the real-time retarded/in-in Green-function prescription required by RQIR is not fixed by the source.
+
+Classification:
+
+`BLOCKED_AS_RETARDED_GREEN_FUNCTION_PRESCRIPTION`.
+
+This is **not** a consistency failure of asymptotic safety and **not** evidence that the AS response is zero.
+
+## Funnel guardrails
+
+- `NG-FUNNEL-016 — EUCLIDEAN_SYMMETRIC_VERTEX_REQUIRES_EXPLICIT_RETARDED_OFFSHELL_COMPLETION`;
+- `NG-FUNNEL-017 — NONLOCAL_EFFECTIVE_ACTION_REQUIRES_CAUSAL_RESPONSE_PRESCRIPTION`.
 
 ## Current status
 
-- AS Euclidean TT comparator: `FIXED_SCOPED`;
-- AS two-point form-factor content: `SUPPORTED_EUCLIDEAN`;
-- AS six-probe `chi2R`: `BLOCKED_OFFSYMMETRIC_RETARDED_MAP`;
+- AS comparator/truncation: `FIXED_SCOPED`;
+- AS Euclidean curvature-squared action: `SUPPORTED_SCOPED`;
+- Appendix-H form-factor coverage on frozen spacelike legs: `PASS`;
+- AS off-symmetric Euclidean background vertex: `DERIVABLE_IN_PRINCIPLE_WITHIN_TRUNCATION`;
+- AS six-probe `chi2R`: `BLOCKED_AS_RETARDED_GREEN_FUNCTION_PRESCRIPTION`;
+- AS source-completed nonlinear Ward test: `NOT_COMPUTED`;
 - AS `N2/C3sym`: `BLOCKED`;
 - full AS quotient: `BLOCKED`;
 - `ANSATZ-003`: `NOT_CREATED`;
