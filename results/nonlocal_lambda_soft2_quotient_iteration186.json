@@ -1,0 +1,73 @@
+{
+  "iteration": 186,
+  "model_readiness_percent": 24,
+  "scope": "six frozen null-soft TT rows; QG-NL-EXP-001 lambda tangent at lambda=1 conditioned by exact K2 calibration",
+  "parent_action": "sqrt(-g)[R + G_mn F(Box) R^mn], F=(exp(-lambda Box)-1)/Box",
+  "lambda_derivative": "d_lambda F|_1=-exp(-Box)",
+  "scalar_piece_status": "EXACT_PROTOCOL_ZERO_AT_CUBIC_SOFT2_BECAUSE_R_LINEAR_IS_ZERO_ON_ALL_TT_EXTERNAL_LEGS",
+  "series_nmax": 14,
+  "series_tail_maxabs": {
+    "N14_vs_N13": 1.509903313490213e-14,
+    "N13_vs_N12": 3.7569947153315297e-13,
+    "N12_vs_N11": 8.824052599720744e-12,
+    "N11_vs_N10": 2.042259694690074e-10,
+    "N10_vs_N9": 4.3900305612964985e-09
+  },
+  "max_local_column_reproduction_error_n2_to_n4": 0.0,
+  "nonlocal_lambda_soft2": [
+    4.015161989831051,
+    0.18851421768711765,
+    6.8958645469473,
+    -2.160604075389611,
+    -0.6546536226759653,
+    -0.7636291997013364
+  ],
+  "local_K2_compensation_soft2": [
+    0.6749106618554018,
+    0.09041841732117784,
+    1.6058813167372494,
+    -0.8456710923733669,
+    -0.0817908524675452,
+    0.04041297883593838
+  ],
+  "conditioned_nonlocal_soft2": [
+    4.690072651686453,
+    0.27893263500829546,
+    8.50174586368455,
+    -3.006275167762978,
+    -0.7364444751435104,
+    -0.7232162208653979
+  ],
+  "zero_K2_local_curvature_cubic_rank": 4,
+  "projection_coefficients_on_V4": [
+    615.8462154919744,
+    4846.886339511452,
+    12669.203819287779,
+    10878.190559010123
+  ],
+  "conditioned_residual": [
+    0.026883997879370014,
+    -0.16390037148459458,
+    0.5945393887797525,
+    -1.9589856765124543,
+    1.8687871851331619,
+    1.0763391630052563
+  ],
+  "conditioned_residual_l2": 2.9781805828127865,
+  "conditioned_residual_maxabs": 1.9589856765124543,
+  "frozen_envelope": 5.262558e-06,
+  "l2_margin_over_envelope": 565918.8141608675,
+  "classification": {
+    "QG_NL_EXP_001_lambda_soft2": "RESOLVED_INDEPENDENT_COMPARATOR_DIRECTION",
+    "relation_to_local_C5": "NOT_IN_ZERO_K2_LOCAL_RANK4_SPAN_ON_FROZEN_ROWS",
+    "novelty_certificate": "NONE_THIS_IS_A_COMPARATOR_DIRECTION_NOT_A_CANDIDATE_RESIDUAL",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "NL-NG-005 — FULL_QG_NL_EXP_001_LAMBDA_SOFT2_TANGENT_IS_RESOLVABLE_AFTER_EXACT_K2_COMPENSATION",
+    "REL-NG-004 — K2_PRESERVING_NONLOCAL_DIRECTION_SURVIVES_THE_FROZEN_ZERO_K2_LOCAL_C5_RANK4_QUOTIENT",
+    "NG-FUNNEL-040 — A_RESOLVED_NONLOCAL_COMPARATOR_DIRECTION_IS_NUISANCE_AUTHORITY_NOT_CANDIDATE_NOVELTY"
+  ],
+  "readiness_change": "unchanged at 24%: the fixed nonlocal comparator is now resolved in the scoped relation space, but C3 ordered completion and real-time/source-completed asymptotic-safety remain BLOCKED and no candidate residual exists."
+}
