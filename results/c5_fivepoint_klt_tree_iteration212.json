@@ -1,0 +1,55 @@
+{
+  "iteration": 212,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "scope": "pure-Einstein coupling-stripped five-graviton MHV tree engine; pre-loop unitarity-cut validation",
+  "authority_convention": {
+    "YM_MHV": "Parke-Taylor",
+    "gravity_4pt": "-i*s12*A(1234)A(1243)",
+    "gravity_5pt": "field-theory KLT: i*s12*s34*A(12345)A(21435) + i*s13*s24*A(13245)A(31425)",
+    "overall_phase_note": "overall KLT phase/sign is conventional; the frozen implementation gives M5/(S0 M4)->-1 for the chosen soft-factor convention",
+    "sij": "<ij>[ji]"
+  },
+  "rng_seed": 12345,
+  "negative_helicity_legs": [1,2],
+  "soft_positive_helicity_leg": 5,
+  "soft_scaling": "lambda5 -> sqrt(epsilon) lambda5 and tilde5 -> sqrt(epsilon) tilde5; two hard tilde spinors solved exactly for momentum conservation",
+  "epsilons": [0.1,0.05,0.02,0.01,0.005,0.002,0.001,0.0005,0.0002,0.0001],
+  "solve_pair_spinor_determinant_abs": 2.415895083955956,
+  "max_momentum_conservation_residual": 1.529056996801299e-15,
+  "max_permutation_relative_error": 5.731123917937238e-12,
+  "asymptotic_soft_power_fit_last6": -0.9997978277932783,
+  "expected_uniform_energy_soft_power": -1.0,
+  "soft_power_abs_error": 0.00020217220672169578,
+  "smallest_epsilon_soft_ratio_distance_to_minus_one": 1.9877787378143987e-05,
+  "records": [
+    {"epsilon":0.1,"abs_M5":298.5922995928467,"momentum_conservation_max_abs":4.613190423717512e-16,"soft_ratio_distance_to_minus_one":0.019877789386942905},
+    {"epsilon":0.05,"abs_M5":591.9100337622393,"momentum_conservation_max_abs":1.3637751223559206e-15,"soft_ratio_distance_to_minus_one":0.009938894693453505},
+    {"epsilon":0.02,"abs_M5":1471.8758223141833,"momentum_conservation_max_abs":8.024197784580389e-16,"soft_ratio_distance_to_minus_one":0.003975557877402085},
+    {"epsilon":0.01,"abs_M5":2938.489732943377,"momentum_conservation_max_abs":8.806011519585223e-16,"soft_ratio_distance_to_minus_one":0.001987778938717861},
+    {"epsilon":0.005,"abs_M5":5871.719165739609,"momentum_conservation_max_abs":7.105637048100885e-16,"soft_ratio_distance_to_minus_one":0.0009938894693598667},
+    {"epsilon":0.002,"abs_M5":14671.408757518904,"momentum_conservation_max_abs":4.2147516837095695e-16,"soft_ratio_distance_to_minus_one":0.00039755578774641303},
+    {"epsilon":0.001,"abs_M5":29337.558508983842,"momentum_conservation_max_abs":1.529056996801299e-15,"soft_ratio_distance_to_minus_one":0.0001987778937506501},
+    {"epsilon":0.0005,"abs_M5":58669.858173960514,"momentum_conservation_max_abs":8.07303601022064e-16,"soft_ratio_distance_to_minus_one":9.93889466399781e-05},
+    {"epsilon":0.0002,"abs_M5":146666.75729839577,"momentum_conservation_max_abs":3.5019965615492137e-16,"soft_ratio_distance_to_minus_one":3.9755576735559675e-05},
+    {"epsilon":0.0001,"abs_M5":293328.25588303065,"momentum_conservation_max_abs":4.172378173879491e-16,"soft_ratio_distance_to_minus_one":1.9877787378143987e-05}
+  ],
+  "classification": {
+    "momentum_conservation": "PASS_MACHINE_PRECISION",
+    "gravity_permutation_relabeling": "PASS_NUMERICAL",
+    "weinberg_leading_soft_power": "PASS_SCOPED",
+    "leading_soft_factor_normalization": "PASS_UP_TO_FROZEN_OVERALL_KLT_SIGN",
+    "loop_cut_integral": "NOT_YET_IMPLEMENTED",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "C5-CUT-010 — DETERMINISTIC_FIVE_GRAVITON_KLT_TREE_ENGINE_PASSES_MOMENTUM_PERMUTATION_AND_LEADING_SOFT_CHECKS",
+    "SOFT-NG-008 — MOMENTUM_CONSERVING_UNIFORM_SOFT_FAMILY_RECOVERS_WEINBERG_EPSILON_MINUS_ONE_SCALING",
+    "NUM-NG-017 — TREE_ENGINE_IS_VALIDATED_BEFORE_ANY_TWO_PARTICLE_CUT_INTEGRATION",
+    "NG-FUNNEL-069 — PHYSICAL_LOOP_CUT_CONSTRUCTION_MUST_BE_BUILT_FROM_A_VALIDATED_TREE_ENGINE_AND_FIXED_CROSSING_HELICITY_CONVENTION"
+  ],
+  "readiness_change": "unchanged at 23%; a computational building block is closed but the physical one-loop five-point cut is not yet evaluated",
+  "next_gate": "Freeze a physical two-particle five-point cut channel, helicity sum, phase-space parameterization and IR endpoint prescription; then evaluate the cut at finite soft epsilon before regular+log extraction."
+}
