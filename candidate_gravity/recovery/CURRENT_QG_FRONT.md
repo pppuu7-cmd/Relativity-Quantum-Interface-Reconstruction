@@ -6,11 +6,11 @@
 **Rejected consistency control:** `ANSATZ-RQIR-CTP-001` v0.1  
 **Positive-spectral Gaussian comparator:** `ANSATZ-RQIR-KL-002` v0.1  
 **Active promotable ansatz:** none — intentionally withheld pending fixed post-Gaussian comparator tangents  
-**Authoritative Candidate Gravity front:** **Iteration 150**
+**Authoritative Candidate Gravity front:** **Iteration 151**
 
 ## Scientific state in one sentence
 
-Iteration 150 closes `BLOCKED_VERTEX_IMPLEMENTATION` for the first explicit local tree TT sub-block: the unreduced Einstein-Hilbert cubic response and two covariant curvature-cubic directions are now computed on the six frozen Iteration-149 probes, giving a scoped `6x2` local C5 tangent of rank `2/2`; the next blocker is the complete off-shell gravitational Ward-Takahashi/source-contact identity, not the existence of a cubic vertex.
+Iteration 151 closes the immediate Einstein-Hilbert `BLOCKED_WARD_TAKAHASHI_COMPLETION`: the correct cubic-order off-shell diffeomorphism identity is implemented directly from the same unreduced EH action and passes on all six frozen probes, with the nonzero isolated longitudinal cubic variation cancelled by the nonlinear Lie/source-contact variation of the quadratic action and residuals converging quadratically to zero.
 
 ## Frozen model outcomes
 
@@ -36,11 +36,11 @@ Reduced coordinates:
 Novelty pre-gate after exact hard-constraint reduction:
 `rank([M,b]) > rank(M)` or nonzero `r_beta=(I-MM^+)b`.
 
-Retained funnel rules include `NG-FUNNEL-001` through `NG-FUNNEL-010`. New in Iteration 150:
+Retained funnel rules include `NG-FUNNEL-001` through `NG-FUNNEL-010`.
 
-- `NG-FUNNEL-010`: `k·Gamma3=0` is not the standalone off-shell gravitational Ward identity. A complete Ward-Takahashi/Slavnov-Taylor check must include inverse-propagator and source/contact terms in the same field/source convention.
+- `NG-FUNNEL-010` remains retained: `k·Gamma3=0` is not the standalone off-shell gravitational Ward identity. The complete identity includes lower-order inverse-propagator/source-contact terms.
 
-## C5 progress through Iteration 150
+## C5 progress through Iteration 151
 
 ### Iteration 146 — local on-shell tangent
 
@@ -60,28 +60,25 @@ Frozen physical metric `g=eta+kappa h`, covariant conserved stress-tensor source
 
 ### Iteration 150 — first explicit local tree retarded-response block
 
-Implemented the EH cubic trilinear coefficient directly from the unreduced `sqrt(-g) g Gamma Gamma` density for three off-shell plane-wave modes. No on-shell/EOM-reduced amplitude chart is used.
+Implemented the EH cubic trilinear coefficient directly from the unreduced `sqrt(-g) g Gamma Gamma` density and two covariant curvature-cubic directions. On the six frozen probes the local tangent has shape `6x2`, rank `2/2`, singular values `[4.83562189, 1.10930485]`, `s_min/s_max=0.22940272681473822`.
 
-Added two explicit covariant curvature-cubic directions in the same metric convention:
+### Iteration 151 — source-completed EH off-shell Ward identity
 
-1. `Tr(Ricci^3)`;
-2. cyclic `Riemann^3`.
+Implemented the exact action-level cubic-order identity
 
-On the six frozen probes:
+`B3[L_xi,e2,e3] + B2[Lie_xi e2,e3] + B2[e2,Lie_xi e3] = 0`.
 
-- local tangent shape: `6x2`;
-- rank: **2/2**;
-- singular values: `[4.83562189, 1.10930485]`;
-- `s_min/s_max = 0.22940272681473822`;
-- max EH permutation asymmetry: `8.13e-14`;
-- max final finite-difference halving-step change before Richardson extrapolation: `9.22e-6`.
+Across the three finite-difference step pairs the worst absolute residual decreases
+
+`2.5767566e-5 -> 6.4418544e-6 -> 1.6104613e-6`,
+
+with approximately 4x reduction per halving, and finest-step worst relative residual `2.7240026e-6`.
 
 Scoped status:
-
 - EH cubic TT block: **PASS_SCOPED**;
-- first two curvature-cubic columns: **PASS_SCOPED**;
+- EH source-completed off-shell Ward identity: **PASS_SCOPED**;
+- first two curvature-cubic response columns: **PASS_SCOPED_TT_ONLY** pending their own completed Ward validation;
 - local `V_C5^(chi2R)` rank certificate: **PASS_SCOPED (2/2)**;
-- complete off-shell Ward/source-contact validation: **BLOCKED_WARD_TAKAHASHI_COMPLETION**;
 - higher-dimension local columns: BLOCKED;
 - loop/nonanalytic columns: BLOCKED;
 - `N2`, `C3sym`: BLOCKED;
@@ -89,13 +86,11 @@ Scoped status:
 - `ANSATZ-003`: not created.
 
 Authorities:
-
-- `analysis/c5_cubic_response_iteration150.py`;
-- `results/c5_cubic_response_iteration150.json`;
-- `candidate_gravity/C5_CUBIC_RESPONSE_ITERATION150.md`;
-- `research_log/2026-08-31_iteration_150_c5_cubic_response.md`;
-- `recovery/RECOVERY_DELTA_ITERATION_150.md`;
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION150.md`.
+- `analysis/c5_ward_identity_iteration151.py`;
+- `results/c5_ward_identity_iteration151.json`;
+- `candidate_gravity/C5_WARD_IDENTITY_ITERATION151.md`;
+- `research_log/2026-08-31_iteration_151_c5_ward_identity.md`;
+- `recovery/RECOVERY_DELTA_ITERATION_151.md`.
 
 ## Comparator program
 
@@ -106,7 +101,7 @@ Instantiate one fixed covariant classical-quantum stochastic action/parameteriza
 `ANSATZ-RQIR-KL-002` remains the Gaussian control. Nonlinear C4 requires a separately frozen finite interacting massive-spin-2 realization.
 
 ### C5
-The first explicit local TT retarded-response sub-block now exists. Before extending or quotienting it, the exact off-shell Ward-Takahashi/source-contact identity must be implemented and passed.
+The EH off-shell Ward/source-contact blocker is now closed. Before expanding or quotienting the local tangent, validate the two existing curvature-cubic directions under the same source-completed diffeomorphism identity.
 
 ### Nonlocal / asymptotic safety
 Still require one fixed action/truncation each; program labels are not finite comparators.
@@ -115,12 +110,10 @@ Still require one fixed action/truncation each; program labels are not finite co
 
 Still intentionally **not frozen**. A concrete target must survive fixed C3/C4/C5/nonlocal/AS subtraction and leave a nonzero algebraic residual before Fisher/resources.
 
-## Immediate next scientific priority — Iteration 151
+## Immediate next scientific priority — Iteration 152
 
-1. derive the correct off-shell gravitational Ward-Takahashi identity for the exact EH sub-block in the frozen `g=eta+kappa h` convention;
-2. implement the inverse-propagator and source/contact terms required by that identity;
-3. validate the completed identity numerically on the same six probes;
-4. if PASS, extend the local C5 tangent beyond the first two curvature-cubic directions or proceed to the first fixed C3 comparator tangent;
-5. keep unsupported higher-dimension and loop/nonanalytic columns explicitly BLOCKED.
-
-No Fisher/resource work and no `ANSATZ-003` before a nonzero algebraic residual survives the concrete comparator quotient.
+1. validate `Tr(Ricci^3)` and cyclic `Riemann^3` under the same action-level source-completed diffeomorphism identity;
+2. distinguish implementation/convention failures from genuine consistency failures;
+3. if both pass, extend the finite local C5 tangent or proceed to the first fixed C3 comparator tangent;
+4. keep unsupported higher-dimension and loop/nonanalytic columns explicitly BLOCKED;
+5. no Fisher/resource work and no `ANSATZ-003` before a nonzero residual survives the concrete comparator quotient.
