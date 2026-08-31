@@ -1,0 +1,37 @@
+{
+  "iteration": 211,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "question": "Can the physical one-loop four-graviton C5 anchor be imported directly into the finite-soft regular+log extractor, or is a higher-point object required?",
+  "scientific_result": {
+    "four_point_as_independent_soft_leg_control": "NO",
+    "reason": "for real massless four-point on-shell kinematics, taking one external graviton independently soft degenerates the remaining three-point hard configuration; the 4-point amplitude is a hard nonanalytic anchor, not the required finite-soft multipoint control",
+    "minimum_multiplicity_for_independent_soft_probe": "N>=5",
+    "directly_reusable_integrated_pure_Einstein_one_loop_five_graviton_cut_containing_MHV_hard_function": "NOT_FOUND_IN_AUDITED_AUTHORITY",
+    "known_nonsupersymmetric_multi_leg_all_plus_sequence": "EXISTS_BUT_RATIONAL_AND_NOT_A_BRANCH_CUT_LOG_POSITIVE_CONTROL",
+    "known_cut_containing_multi_leg_MHV_sequence_in_classic_authority": "N=8_SUPERGRAVITY_NOT_PURE_EINSTEIN",
+    "viable_pure_Einstein_route": "construct the five-point one-loop channel discontinuity directly from two-particle unitarity using physical tree Einstein amplitudes; no full integrated one-loop amplitude is required for the discontinuity"
+  },
+  "authority": [
+    "Dunbar-Norridge / Donoghue-Torma four-graviton pure-Einstein one-loop anchor",
+    "Bern-Dixon-Perelstein-Rozowsky arXiv:hep-th/9811140 for multi-leg all-plus nonsupersymmetric gravity and N=8 MHV distinction",
+    "Bern-Dixon-Perelstein-Rozowsky arXiv:hep-th/9809160 for rational pure-Einstein all-plus amplitudes",
+    "standard KLT/tree unitarity framework for physical multi-particle cuts"
+  ],
+  "classification": {
+    "iteration210_physical_import_from_4pt": "BLOCKED_BY_ONSHELL_SOFT_KINEMATICS",
+    "five_point_integrated_pure_Einstein_hard_function": "OPERATIONAL_BLOCKED_NOT_REQUIRED_FOR_CUT",
+    "direct_five_point_unitarity_cut_construction": "AUTHORIZED_NEXT_ROUTE",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "KIN-NG-001 — MASSLESS_ONSHELL_FOUR_POINT_ANCHOR_HAS_NO_GENERIC_INDEPENDENT_SINGLE_SOFT_HARD_CONFIGURATION",
+    "C5-CUT-008 — FIRST_PHYSICAL_REGULAR_LOG_SOFT_CUT_CONTROL_REQUIRES_AT_LEAST_FIVE_EXTERNAL_LEGS_OR_A_SOURCE_COMPLETED_EQUIVALENT",
+    "C5-CUT-009 — PURE_EINSTEIN_FIVE_POINT_DISCONTINUITY_CAN_BE_BUILT_DIRECTLY_FROM_TREE_UNITARITY_WITHOUT_A_CLOSED_INTEGRATED_ONE_LOOP_AMPLITUDE",
+    "NG-FUNNEL-068 — DO_NOT_FORCE_A_HARD_FOUR_POINT_POSITIVE_CONTROL_INTO_A_DEGENERATE_SOFT_KINEMATIC_ROLE"
+  ],
+  "readiness_change": "unchanged at 23%; the physical import route is corrected from 4-point soft extrapolation to a genuine five-point cut",
+  "next_gate": "Implement and validate a pure-Einstein five-graviton tree/KLT engine with momentum-conserving finite-soft kinematics, permutation checks and Weinberg leading-soft scaling before constructing the one-loop two-particle cut."
+}
