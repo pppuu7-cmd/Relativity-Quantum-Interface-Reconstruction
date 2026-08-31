@@ -1,0 +1,148 @@
+{
+  "ANSATZ_003": "NOT_CREATED",
+  "Fisher_resources": "FORBIDDEN_NO_FULL_COMPARATOR_QUOTIENT_RESIDUAL",
+  "audits": {
+    "EH_abs_floor": {
+      "base_rank": 6,
+      "combined_rank": 8,
+      "least_squares_coefficients": [
+        [-0.705854999682491, -0.12074228771347117],
+        [0.07144859689822505, -0.43760038321845446],
+        [-0.002356425874532303, -0.017442251758394912],
+        [-0.005550296289164635, 0.03948927457244518],
+        [-0.004697191136575239, -0.019891041146381124],
+        [0.6722603188716579, 0.18633401245474457]
+      ],
+      "max_abs_residual_by_target": [0.0020047487673266196, 0.008943609084889156],
+      "relative_residual_norms": [0.0007456744575484546, 0.006742776307341731],
+      "residual_norms": [0.0029675087122315, 0.013436063545236223],
+      "singular_values": [11.994539931729433, 2.1025221687156753, 1.3881065150077507, 0.509142684478505, 0.07495181808117228, 0.005862978904014392],
+      "smin_over_smax": 0.0004888255183014827
+    },
+    "Rref_abs_floor": {
+      "base_rank": 6,
+      "combined_rank": 8,
+      "least_squares_coefficients": [
+        [-0.7201852975550737, -0.12827957726611933],
+        [0.07554295248781872, -0.45015809555410827],
+        [-0.0034014575866045833, -0.019679416053129103],
+        [-0.0038965222878046303, 0.037150204572202484],
+        [-0.004089299318513117, -0.020815473999966637],
+        [0.6866502979484039, 0.19491376785145557]
+      ],
+      "max_abs_residual_by_target": [0.0023241323837985828, 0.010178020731892182],
+      "relative_residual_norms": [0.0038677318044869763, 0.04194806825453831],
+      "residual_norms": [0.008067173990575824, 0.03478039882343929],
+      "singular_values": [16.316713469874302, 4.0387313026937935, 1.5819669127566243, 0.7772512200769588, 0.12603399311779056, 0.04260433878746916],
+      "smin_over_smax": 0.002611294606285528
+    },
+    "base_row_l2": {
+      "base_rank": 6,
+      "combined_rank": 8,
+      "least_squares_coefficients": [
+        [-0.7110044122698078, -0.12523033944788323],
+        [0.07532935566866245, -0.44973963261596956],
+        [-0.0031097349205773173, -0.018897968454054416],
+        [-0.004113429412619874, 0.037655703386009744],
+        [-0.004053604514215703, -0.020724206901321818],
+        [0.6771779891234267, 0.19140508692069817]
+      ],
+      "max_abs_residual_by_target": [0.001017971192350614, 0.005025577663325242],
+      "relative_residual_norms": [0.004741204454363828, 0.09142722671908553],
+      "residual_norms": [0.0019361902135183922, 0.014039330170205933],
+      "singular_values": [3.1648467416411843, 1.2934646596640597, 0.6672420643575812, 0.2522331112077872, 0.046888924299986064, 0.015354842965669348],
+      "smin_over_smax": 0.0048517051130323756
+    },
+    "raw": {
+      "base_rank": 6,
+      "combined_rank": 8,
+      "least_squares_coefficients": [
+        [-0.7149969070918369, -0.1263194207694507],
+        [0.07472297315213122, -0.4470594450262562],
+        [-0.002983473733450426, -0.018584301593725517],
+        [-0.004265668951854718, 0.03792412498946733],
+        [-0.004186495676465299, -0.020433229889827457],
+        [0.6812499036120709, 0.19273615230156023]
+      ],
+      "max_abs_residual_by_target": [0.002974312924571343, 0.025265748000874985],
+      "relative_residual_norms": [0.0014785384501891793, 0.03903479967604055],
+      "residual_norms": [0.004731831840093538, 0.029024953311956848],
+      "singular_values": [25.406977288736333, 8.077305826364606, 5.005836975459432, 1.4053510013117155, 0.3823038536982129, 0.037646666196240175],
+      "smin_over_smax": 0.0014818645993817387
+    }
+  },
+  "blocked": [
+    "C3 enriched-row completion",
+    "nonlocal enriched-row causal completion",
+    "asymptotic-safety enriched-row retarded completion",
+    "non-TT/helicity dRGT completion",
+    "full C5 non-TT and loop/nonanalytic completion"
+  ],
+  "classification": {
+    "dalpha3": "NONZERO_SCOPED_RESIDUAL_SURVIVES_LOCAL_ENRICHED_TT_QUOTIENT_BUT_NOT_FULL_COMPARATOR_QUOTIENT",
+    "dlogm2": "NONZERO_ALGEBRAIC_RESIDUAL_BUT_NEAR_DEGENERATE_AND_NOT_PROMOTABLE",
+    "full_novelty_certificate": false,
+    "six_row_saturation": "RETAINED_SCOPED_HISTORICAL_RESULT",
+    "twelve_row_local_C5_plus_shared_boundary": "NOT_SATURATED"
+  },
+  "comparator_columns": ["EH", "Ricci3", "Riemann3", "Ricci2_full", "RicciBoxRicci_full", "dRGT_shared_reference"],
+  "date": "2026-08-31",
+  "iteration": 164,
+  "iteration163_label_correction": {
+    "alpha4_status": "CUBIC_TT_BLIND; L4 starts quartic",
+    "correct_labels": ["dRGT_dlogm2", "dRGT_dalpha3"],
+    "historical_arrays_preserved": true,
+    "incorrect_labels": ["dRGT_alpha3", "dRGT_alpha4"],
+    "numerical_saturation_certificate_changed": false
+  },
+  "matrix_shape": [12, 6],
+  "model_readiness_percent": 23,
+  "progressive_freeze_robustness": [
+    {"base_rank": 6, "combined_rank": 7, "new_rows_added": 1, "relative_residual_dalpha3": 0.025607974505244824, "relative_residual_dlogm2": 0.001211223306525627, "scaling": "raw"},
+    {"base_rank": 6, "combined_rank": 7, "new_rows_added": 1, "relative_residual_dalpha3": 0.07173074554284321, "relative_residual_dlogm2": 0.0031543470988962814, "scaling": "row_l2"},
+    {"base_rank": 6, "combined_rank": 8, "new_rows_added": 2, "relative_residual_dalpha3": 0.03007221681633316, "relative_residual_dlogm2": 0.0012348825247630274, "scaling": "raw"},
+    {"base_rank": 6, "combined_rank": 8, "new_rows_added": 2, "relative_residual_dalpha3": 0.08565723680392603, "relative_residual_dlogm2": 0.00268414526986719, "scaling": "row_l2"},
+    {"base_rank": 6, "combined_rank": 8, "new_rows_added": 3, "relative_residual_dalpha3": 0.03138080802544482, "relative_residual_dlogm2": 0.0012508573254008852, "scaling": "raw"},
+    {"base_rank": 6, "combined_rank": 8, "new_rows_added": 3, "relative_residual_dalpha3": 0.0808512902577812, "relative_residual_dlogm2": 0.0029519471206736632, "scaling": "row_l2"},
+    {"base_rank": 6, "combined_rank": 8, "new_rows_added": 4, "relative_residual_dalpha3": 0.034587843976605526, "relative_residual_dlogm2": 0.001208251207271138, "scaling": "raw"},
+    {"base_rank": 6, "combined_rank": 8, "new_rows_added": 4, "relative_residual_dalpha3": 0.09081786623660866, "relative_residual_dlogm2": 0.0031964266436786265, "scaling": "row_l2"},
+    {"base_rank": 6, "combined_rank": 8, "new_rows_added": 5, "relative_residual_dalpha3": 0.03711214017262787, "relative_residual_dlogm2": 0.0012057339705662605, "scaling": "raw"},
+    {"base_rank": 6, "combined_rank": 8, "new_rows_added": 5, "relative_residual_dalpha3": 0.07934400383813521, "relative_residual_dlogm2": 0.0031295002782729202, "scaling": "row_l2"},
+    {"base_rank": 6, "combined_rank": 8, "new_rows_added": 6, "relative_residual_dalpha3": 0.03903479967604055, "relative_residual_dlogm2": 0.0014785384501891793, "scaling": "raw"},
+    {"base_rank": 6, "combined_rank": 8, "new_rows_added": 6, "relative_residual_dalpha3": 0.09142722671908553, "relative_residual_dlogm2": 0.004741204454363828, "scaling": "row_l2"}
+  ],
+  "raw_combined_rank_with_both_targets": 8,
+  "raw_rank_with_dalpha3": 7,
+  "raw_rank_with_dlogm2": 7,
+  "readiness_change": "+1 comparator-foundation point (22/25 -> 23/25); unique residual remains 0/20 because enriched C3/nonlocal/AS comparator columns are still blocked",
+  "retained_results": [
+    "C4-NG-005 — SIX_ROW_SATURATION_DOES_NOT_PERSIST_UNDER_TARGET_INDEPENDENT_TT_ROW_ENRICHMENT",
+    "C4-NG-006 — DRGT_DLOGM2_DIRECTION_IS_NEAR_DEGENERATE_AFTER_ENRICHED_LOCAL_C5_QUOTIENT",
+    "NG-FUNNEL-021 — PROTOCOL_SATURATION_MUST_BE TESTED FOR STABILITY UNDER PRE-FROZEN ROW ENRICHMENT",
+    "PROVENANCE-CORR-001 — ITERATION163 TARGET LABELS CORRECTED TO DLOGM2 AND DALPHA3; ALPHA4 REMAINS CUBIC-TT BLIND"
+  ],
+  "row_freeze": {
+    "acceptance_rule": {
+      "all_p2_q2_r2": "0.18 <= k^2 <= 1.05",
+      "max_invariant_over_min_invariant": "<=4",
+      "spatial_abs_cos_qr": "<=0.82"
+    },
+    "accepted_after_attempts": 16,
+    "generator_seed": 164031,
+    "legacy_rows": 6,
+    "new_polarization_seed_rule": "2000 + 3*i + leg for new-row i=0..5, leg=0..2",
+    "new_rows": [
+      {"EH": -1.0589207963133225, "Ricci2": -1.1741101519905417, "Ricci3": -0.12200283432278508, "RicciBox": 0.6799292408801403, "Riemann3": -0.411544535378705, "Rref": -0.9136870438726526, "dalpha3": -0.036004525322639834, "dlogm2": 0.12874273398870842, "p2": 0.9306304810447811, "q": [0.08372272835750605, -0.11859715218279099, -0.3056167676403202, 0.5575936904130953], "q2": 0.41136812151365554, "r": [0.17986988323178774, -0.5331659574154191, -0.01090957720322916, 0.13170121593403528], "r2": 0.2693769924061401},
+      {"EH": 1.0284050045188178, "Ricci2": 0.19908136091742867, "Ricci3": 0.015462589523632985, "RicciBox": 0.2074275303696847, "Riemann3": 0.08333650149456541, "Rref": 0.7569881166626234, "dalpha3": 0.013859302680106857, "dlogm2": -0.21688657290718344, "p2": 0.27078704700790396, "q": [0.09232684672646388, 0.5040581160807954, 0.062205943645457396, -0.2131592074128466], "q2": 0.2948567648901635, "r": [0.15514091512273948, -0.4861490774897974, 0.3989545592121245, -0.13185904877578802], "r2": 0.3888237710592562},
+      {"EH": -0.5668264643620644, "Ricci2": -1.2099123660125048, "Ricci3": -0.13518261128665762, "RicciBox": 0.8838991244563112, "Riemann3": 0.19900470762882788, "Rref": -0.5685982190784202, "dalpha3": -0.04335403270611639, "dlogm2": 0.009494631634623631, "p2": 0.33756361278868624, "q": [0.10414468446724748, 0.46582564129007487, -0.3038004909390767, 0.5251477472585674], "q2": 0.5742223075260992, "r": [0.09104382047292711, -0.5050120041288295, 0.49805855660979004, 0.05484397521582196], "r2": 0.4978183344976115},
+      {"EH": 4.4819485034998925, "Ricci2": -0.23641983895336693, "Ricci3": -0.027268160301489052, "RicciBox": 2.275046260418164, "Riemann3": 4.726613597247513, "Rref": 3.4711932691397456, "dalpha3": -0.0077907900569906905, "dlogm2": -0.850411309216492, "p2": 0.6993902307154565, "q": [0.13054641801151734, -0.025993474773808423, -0.3388248236439263, 0.5216571720051096], "q2": 0.3705617596968851, "r": [0.19984140137387119, 0.6783277026002602, 0.028473256908131628, 0.013775645577444817], "r2": 0.4211923811819062},
+      {"EH": 0.10713704100821175, "Ricci2": 3.9939561747156658, "Ricci3": 0.3666410625206339, "RicciBox": -2.0824355886301094, "Riemann3": -2.9978221341129943, "Rref": 0.7092303468765421, "dalpha3": 0.21021382339828082, "dlogm2": 0.42203908026568265, "p2": 0.30899194221374127, "q": [0.2114622879904886, 0.020284054480829816, 0.1733961213208568, -0.6774011428688332], "q2": 0.44463366687312766, "r": [0.1046400240629271, -0.1638204759304367, -0.5651734290640731, 0.1928183834208992], "r2": 0.37248754760327657},
+      {"EH": -0.35954568795875497, "Ricci2": -0.8136361541038188, "Ricci3": -0.11459657434741587, "RicciBox": 0.5883518744995856, "Riemann3": 0.19021551766819866, "Rref": -0.35286775524657343, "dalpha3": -0.020046516493687605, "dlogm2": 0.00991906234746724, "p2": 0.4600846582076094, "q": [0.1298395180060647, -0.043312673726819906, -0.6369331048730316, 0.5390016073635598], "q2": 0.6812242000930201, "r": [0.14846981358335082, -0.4110724638107253, 0.6676694541524845, 0.03556794097268312], "r2": 0.593984863391258}
+    ],
+    "new_rows_count": 6,
+    "proposal": {"q0_r0": "Uniform[0.08,0.24]", "q_spatial_r_spatial": "iid Uniform[-0.68,0.68]"},
+    "target_values_used_in_freeze": false
+  },
+  "scope": "enriched 12-row TT ordered-response protocol: six legacy frozen rows + six target-independent deterministic spacelike rows",
+  "targets": ["dRGT_dlogm2", "dRGT_dalpha3"]
+}
