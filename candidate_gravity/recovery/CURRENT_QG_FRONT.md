@@ -4,13 +4,13 @@
 **Infrastructure status:** READY — 100%  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Rejected consistency control:** `ANSATZ-RQIR-CTP-001` v0.1  
-**Positive-spectral comparator control:** `ANSATZ-RQIR-KL-002` v0.1  
-**Active promotable ansatz:** none after Iteration 141  
-**Authoritative Candidate Gravity front:** **Iteration 141**
+**Positive-spectral Gaussian comparator:** `ANSATZ-RQIR-KL-002` v0.1  
+**Active promotable ansatz:** none — intentionally withheld pending post-Gaussian design closure  
+**Authoritative Candidate Gravity front:** **Iteration 143**
 
 ## Scientific state in one sentence
 
-RQIR has now eliminated two naive routes to a new gravity model: an inverse-kernel spectral deformation failed Lorentzian consistency, while a positive KL continuum survived consistency but proved exactly equivalent at Gaussian level to an ordinary mediator continuum. The next model must therefore contain a derived nonlinear/non-Gaussian gravity-specific relation.
+RQIR has eliminated propagator-only novelty and nonlinearity-only novelty as sufficient design principles. The next Candidate Gravity must expose a **symmetry-locked ordered nonlinear/non-Gaussian response**, derived with the lower-point sector from one dynamics and surviving C3/C4/C5/nonlocal/asymptotic-safety comparator subtraction.
 
 ## Frozen model outcomes
 
@@ -21,89 +21,141 @@ REFERENCE / NOT PROMOTABLE.
 - QG-001/QG-002/QG-003 PASS in the declared low-energy regime.
 - QG-007 FAIL due exact C5 identity.
 
-Retained result `CG-NG-003`.
+Retained `CG-NG-003`.
 
 ### `ANSATZ-RQIR-CTP-001` v0.1
 
 REJECTED.
 
-- Euclidean/spacelike no-zero result passed.
-- Lorentzian sub-threshold analysis forces exactly one extra timelike zero for every frozen `beta>0`.
-- Relative residue sign is opposite to the massless GR pole convention.
+- Euclidean/spacelike no-zero result PASS_SCOPED.
+- Lorentzian continuation forces exactly one extra below-threshold timelike zero for every frozen `beta>0`.
+- The additional pole has opposite residue sign in the declared spin-2 convention.
 
 QG-004 FAIL: `EXTRA_NEGATIVE_RESIDUE_TIMELIKE_POLE`.
 
-Retained result `CG-NG-004`.
+Retained `CG-NG-004`.
 
 ### `ANSATZ-RQIR-KL-002` v0.1
 
 REFERENCE / NOT PROMOTABLE.
 
-Scoped physics that passed:
+Scoped results that passed:
 
 - nonnegative Källén–Lehmann spectral measure;
-- retarded causal spectral superposition;
+- retarded causal superposition;
 - no isolated added continuum pole;
-- linear conserved-source massive-spin-2 tensor structure;
-- NR continuum/GR tensor factor `4/3`;
+- linear massive-spin-2 conserved-source tensor structure;
+- NR `4/3` vDVZ-type factor;
 - linked traceless-vs-NR factor `3/4`.
 
 Comparator failures:
 
-1. **C5 deep-IR degeneracy** — below threshold, the continuum has a convergent local derivative expansion and lies in the finite-order EFT Wilson-coefficient span (`CG-NG-005`).
-2. **Exact Gaussian C4/KK degeneracy** — the KL continuum is exactly representable as a direct integral/tower of positive massive spin-2 quantum mediators. With linear stress coupling, identical `D_R` and `D_H` imply identical Gaussian CTP influence functionals (`CG-NG-006`).
+1. `CG-NG-005`: strictly below threshold, the added continuum is analytic and finite-order-degenerate with local C5 EFT Wilson coefficients.
+2. `CG-NG-006`: at the complete linear-Gaussian level, the positive KL continuum is exactly a direct integral/tower of ordinary positive-norm massive spin-2 quantum mediators. Matching `D_R` and `D_H` gives an identical Gaussian CTP influence functional.
 
-Therefore QG-007 FAIL: `EXACT_GAUSSIAN_C4_KK_DEGENERACY`.
+QG-007 FAIL: `EXACT_GAUSSIAN_C4_KK_DEGENERACY`.
 
-No Fisher/resource optimization may be used to rescue this exact identity.
+No detector/Fisher/resource optimization can repair this exact identity.
 
-## Existing-model funnel audit
+## Iteration 142 — nonlinear comparator sweep
 
-First-wave audited classes:
+The strongest existing nonlinear classes were checked against the design requirement exported by `CG-NG-006`.
 
-- semiclassical mean gravity — early C1 comparator;
-- stochastic gravity — strong C2 comparator;
-- classical-channel/measurement-feedback gravity — C3 control;
-- postquantum classical gravity — high-priority modern C3 comparator;
-- perturbative quantum GR — C5 reference;
-- ghost-free nonlocal/form-factor gravity — serious quantum comparator;
-- asymptotic safety — requires a concrete effective realization before finite RQIR testing.
+### Weakly nonlocal / form-factor gravity
 
-Authorities:
+A fixed covariant nonlocal action can simultaneously define the propagator and momentum-dependent nonlinear graviton vertices. Therefore `Gamma^(3) != 0` or a momentum-dependent cubic vertex is not a unique candidate signature.
 
-- `candidate_gravity/landscape/RQIR_FUNNEL_AUDIT_ITERATION137.md`;
-- `docs/CANDIDATE_GRAVITY_ARTICLE_FUNNEL_SECTION_ITERATION137.md`.
+### Asymptotic safety
 
-## Why the next ansatz must be nonlinear/non-Gaussian
+Concrete functional-RG vertex expansions already compute momentum-dependent graviton `Gamma^(2)`, `Gamma^(3)` and `Gamma^(4)` objects, and effective actions can be reconstructed from multi-graviton correlation functions. A future candidate must compare against a frozen concrete truncation, not only tree GR.
 
-A model specified only by a Gaussian two-point propagator/noise kernel can be represented by an ordinary Gaussian mediator environment whenever its spectral measure is positive. RQIR therefore cannot certify gravity-specific novelty from `J/N/chi` at the Gaussian linear level alone if an allowed C4 mediator reproduces the complete influence functional.
+### dRGT / nonlinear massive spin-2
 
-The next candidate must derive at least one additional gravity-specific object from the same dynamics, for example:
+Nonlinear spin-2 self-interactions can be highly constrained and ghost-free rather than arbitrary. Nonlinearity alone therefore does not distinguish gravity-specific physics from strong massive-spin-2 comparators.
 
-- connected gravitational three-point response/cumulant;
-- nonlinear stress-energy self-coupling fixed by diffeomorphism/Ward bootstrap;
-- a constraint/relational identity tying higher response to the two-point sector;
-- a universal self-coupling relation not independently tunable like a hidden mediator interaction.
+### Postquantum classical gravity
 
-## Canonical authorities for the latest negative results
+Classical–quantum path-integral theories generate stochastic nonlinear dynamics, decoherence/diffusion, constraints and potentially non-Gaussian classical metric statistics. A nonzero symmetric bispectrum is not by itself evidence for a quantum metric.
 
-- `docs/CANDIDATE_GRAVITY_LORENTZIAN_ITERATION136.md`;
-- `docs/CANDIDATE_GRAVITY_C5_IR_DEGENERACY_ITERATION140.md`;
-- `docs/CANDIDATE_GRAVITY_C4_GAUSSIAN_DEGENERACY_ITERATION141.md`;
-- `analysis/candidate_gravity_lorentzian_iteration136.py`;
-- `analysis/candidate_gravity_c5_ir_degeneracy_iteration140.py`;
-- `analysis/candidate_gravity_gaussian_c4_equivalence_iteration141.py`;
-- corresponding JSON results.
+Authority:
 
-## Immediate next scientific priority — Iteration 142
+`candidate_gravity/landscape/RQIR_NONLINEAR_COMPARATOR_AUDIT_ITERATION142.md`.
 
-Before inventing `ANSATZ-003`, audit existing **nonlinear/nonlocal gravity models** against the exact requirement exported by `CG-NG-006`.
+Retained design results:
 
-Priority comparator tests:
+- `NG-FUNNEL-001`: nonlinearity alone is not sufficient;
+- `NG-FUNNEL-002`: symmetric higher cumulants must be separated from ordered nonlinear response;
+- `NG-FUNNEL-003`: Ward/soft locking is necessary to reduce generic mediator freedom but is not by itself sufficient for novelty versus C5/covariant QG comparators.
 
-1. a fixed ghost-free entire-form-factor/nonlocal gravity model — determine whether its nonlinear vertices are fixed by the same covariant action and whether RQIR higher connected response adds information beyond a mediator continuum;
-2. a concrete asymptotic-safety effective form-factor realization — test whether a Lorentzian higher-point object can be frozen operationally;
-3. nonlinear massive-gravity/KK examples — identify which self-coupling/constraint relations remain distinguishable from generic hidden spin-2 mediators;
-4. modern postquantum classical gravity — determine which higher stochastic cumulants/constraint relations can mimic nonlinear quantum-gravity signatures.
+## Iteration 143 — post-Gaussian Model→RQIR contract
 
-Only after this comparator sweep should the next RQIR-driven nonlinear ansatz be frozen.
+The interface has been extended beyond `J`, two-point `N` and linear `chi^R`.
+
+Future candidates whose novelty is post-Gaussian must additionally derive from the same parent dynamics:
+
+### Fully symmetrized connected third cumulant
+
+`C3_sym(A,B,C)=(1/6) sum_{pi in S3}<delta A_pi1 delta A_pi2 delta A_pi3>_c`.
+
+This can be reproduced by a classical non-Gaussian random field and is therefore not sufficient alone.
+
+### Second-order causal/ordered susceptibility
+
+`chi^(2)R_{A;BC}(t;t1,t2)`
+
+is defined by the appropriately time-ordered sum of nested commutators such as
+
+`(-i/hbar)^2 theta(t-t1)theta(t1-t2)<[[A(t),B(t1)],C(t2)]>`
+
+plus the exchanged source ordering.
+
+The candidate must also expose the corresponding independent CTP/Keldysh three-point components and their causal/normalization structure.
+
+### Ward / soft / constraint lock
+
+The higher-point objects must satisfy a diffeomorphism Ward/Slavnov–Taylor identity, constraint-algebra relation, relational identity, or controlled soft-graviton consistency relation that ties them to the same universal gravitational coupling.
+
+Authority:
+
+`candidate_gravity/POST_GAUSSIAN_MODEL_TO_RQIR_CONTRACT.md`.
+
+## Existing-model/article material
+
+Article scaffolds now exist:
+
+- `docs/CANDIDATE_GRAVITY_ARTICLE_FUNNEL_SECTION_ITERATION137.md`;
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION143.md`.
+
+The article matrix distinguishes:
+
+- genuine consistency rejection;
+- exact comparator/novelty failure;
+- regime-specific non-identifiability;
+- operational/model-instantiation blocking.
+
+Do not call the latter categories global falsification of an existing theory.
+
+## Current model-design specification for `ANSATZ-003`
+
+Do **not** freeze the third ansatz until all of the following can be stated in one model definition:
+
+1. **One parent dynamics** generating `Gamma^(2)`, `Gamma^(3)` and matter coupling.
+2. **Exact C5 boundary:** `beta=0` returns a frozen perturbative-QG baseline at the same order.
+3. **No two-point novelty claim:** Gaussian sector is treated as comparator-degenerate unless separately proved distinct.
+4. **Derived higher connected object:** at least one `C3`/higher structure not independently tunable from lower-point dynamics.
+5. **Ordered nonlinear response:** a nested-commutator/causal second-order susceptibility or equivalent CTP vertex.
+6. **Ward/soft lock:** higher response tied to universal stress-energy coupling by the same gravity symmetry/constraints.
+7. **Strong comparator subtraction:** C5 higher EFT/loops, fixed nonlocal gravity, concrete asymptotic-safety vertices, nonlinear massive/KK spin-2, and postquantum classical higher statistics/response.
+8. **Finite RQIR quotient:** only the residual direction outside calibration/nuisance/comparator span proceeds to Fisher/resources.
+
+## Immediate next scientific priority — Iteration 144
+
+Construct and test the **minimal post-Gaussian RQIR discriminator architecture before choosing a new action**:
+
+1. define a finite measurement vector containing Gaussian and post-Gaussian sectors;
+2. prove algebraically which directions are automatically classical-symmetric-cumulant degeneracies;
+3. include second-order ordered response and a Ward/soft locking constraint;
+4. instantiate explicit comparator tangent spaces for C3, C4 and C5 at this level;
+5. determine the minimum residual structure an `ANSATZ-003` action must generate to lie outside the combined comparator span.
+
+Only then freeze the next dynamics. This prevents another candidate from being rejected merely because its claimed novelty was already available to an existing comparator class.
