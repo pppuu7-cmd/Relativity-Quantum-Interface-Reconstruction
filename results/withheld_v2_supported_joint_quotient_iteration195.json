@@ -1,0 +1,46 @@
+{
+  "iteration": 195,
+  "protocol": "RQIR-WITHHELD-NULLSOFT-12-v2",
+  "scope": "prospective supported C5/C4-boundary/nonlocal quotient only; AS/C3 remain blocked and are not zero-filled",
+  "parameter_order": ["c1_x","c2_x2","c3_x3","c4_x4","c5_x5","c6_x6","lambda_NL","g0_Riemann3","g1_BoxRiemann3","g2_Box2Riemann3","g3_Box3Riemann3"],
+  "hard_K2": {
+    "rows": 12,
+    "A7_rank": 7,
+    "A7_columns": 7,
+    "A7_singular_values": [2.849379885666181,0.5309790378829404,0.10206493185132876,0.010381532802227133,0.0007702647058068288,3.808053964619142e-05,1.3903845821443078e-07],
+    "A7_condition_number": 20493465.781041324,
+    "A_full_rank": 7,
+    "parameter_count": 11,
+    "exact_parameter_nullity_after_K2": 4,
+    "exact_null_support": "ONLY_ZERO_K2_CURVATURE_CUBIC_PARAMETERS_g0_TO_g3",
+    "nonlocal_lambda_survives_exact_K2": false,
+    "conditioning_note": "FULL_RANK_BUT_NEAR_DEGENERATE; exact algebraic hard calibration removes lambda_NL, but finite-precision/noisy calibration would require separate conditioning treatment"
+  },
+  "conditional_soft2": {
+    "authorized_map": "V4 = Riemann3_soft2*{1,-x,x^2,-x^3}",
+    "rank": 4,
+    "singular_values": [1.1350290413638136,0.12590902617582966,0.017358635136666172,0.0011354930317863333],
+    "quotient_projector_rank": 8,
+    "supported_complement_dimension_before_AS_C3": 8,
+    "projector_annihilation_norm": 2.0658846074882767e-16
+  },
+  "blocked_comparators": {
+    "AS": "BLOCKED_AS_REALTIME_RELATION_COMPLETION_NOT_ZERO",
+    "C3": "BLOCKED_C3_CTP_ORDERED_COMPLETION_NOT_ZERO"
+  },
+  "classification": {
+    "supported_joint_quotient": "RESOLVED_SCOPED",
+    "old_six_row_conditioned_nonlocal_soft2": "NOT_TRANSFERRED_TO_WITHHELD_V2",
+    "candidate_residual": "NOT_TESTED",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "REL-NG-010 — FULL_COLUMN_RANK_WITHHELD_K2_MATRIX_ELIMINATES_ALL_SUPPORTED_QUADRATIC_AND_NONLOCAL_PARAMETER_VARIATIONS_UNDER_EXACT_HARD_CALIBRATION",
+    "C5-NG-015 — AFTER_EXACT_WITHHELD_K2_CALIBRATION_THE_SUPPORTED_CONDITIONAL_SOFT2_NUISANCE_IS_THE_RANK4_ZERO_K2_CURVATURE_CUBIC_SECTOR",
+    "NUM-NG-009 — WITHHELD_K2_INDEPENDENCE_IS_EXACT_ALGEBRAIC_BUT_STRONGLY_ILL_CONDITIONED_AND_MUST_NOT_BE_CONFUSED_WITH_FINITE_NOISE_IDENTIFIABILITY",
+    "NG-FUNNEL-049 — BLOCKED_AS_C3_COLUMNS_MUST_REMAIN_OUTSIDE_THE_SUPPORTED_QUOTIENT_RATHER_THAN_BE_ZERO_FILLED"
+  ],
+  "model_readiness_percent": 24,
+  "readiness_change": "unchanged: the supported prospective quotient is now explicit, but the last comparator-foundation point remains blocked by unresolved AS/C3 ordered relation authority and no candidate residual exists."
+}
