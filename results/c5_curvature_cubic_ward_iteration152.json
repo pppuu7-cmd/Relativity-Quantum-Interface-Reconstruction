@@ -1,0 +1,23 @@
+{
+  "identity": "operator-specific B2=0 about flat space at this order; therefore B3[L_xi,e2,e3]=0",
+  "iteration": 152,
+  "max_abs_Ricci3_B3_on_gauge": 2.4454568146171362e-17,
+  "max_abs_Riemann3_B3_on_gauge": 7.549184413398274e-17,
+  "max_abs_linearized_Ricci_on_gauge": 2.220446049250313e-16,
+  "max_abs_linearized_Riemann_on_gauge": 5.551115123125783e-17,
+  "operators": [
+    "Tr(Ricci^3)",
+    "Riemann_mn^rs Riemann_rs^ab Riemann_ab^mn"
+  ],
+  "scope": "same six frozen spacelike probes and curvature conventions as Iteration 150",
+  "status": {
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN_NO_COMPARATOR_QUOTIENT_RESIDUAL",
+    "N2_C3sym": "BLOCKED",
+    "Ricci3_completed_Ward": "PASS_SCOPED",
+    "Riemann3_completed_Ward": "PASS_SCOPED",
+    "existing_local_C5_6x2_tangent": "PASS_SCOPED_WARD_VALIDATED",
+    "higher_dimension_local": "BLOCKED",
+    "loops_nonanalytic": "BLOCKED"
+  }
+}
