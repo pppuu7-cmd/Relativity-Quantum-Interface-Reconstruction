@@ -1,0 +1,41 @@
+{
+  "iteration": 214,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "epsilon": 0.01,
+  "theta_limit_probe": 0.0001,
+  "north_residue": {
+    "real": -498.84224577810585,
+    "imag": -2582.0602954695196,
+    "abs": 2629.795735258475,
+    "phi_relative_spread": 0.00029176744104008554
+  },
+  "south_residue": {
+    "real": -498.84224577809296,
+    "imag": -2582.060295469456,
+    "abs": 2629.7957352584104,
+    "phi_relative_spread": 0.0002917674410401124
+  },
+  "endpoint_relative_difference": 2.463e-14,
+  "predicted_raw_complex_log_coefficient": {
+    "real": -6268.636609269,
+    "imag": -32447.12681864,
+    "abs": 33047.11530582116
+  },
+  "iteration213_cap_magnitude_log_slope": 32231.37809459,
+  "classification": {
+    "endpoint_factorization": "PASS_SCOPED_TREE_CUT_DIAGNOSTIC",
+    "single_cut_local_subtraction": "NOT_AUTHORIZED_AS_PHYSICAL_IR_COMPLETION",
+    "raw_cut_to_iteration210_extractor": "FORBIDDEN",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "IR-NG-003 — THE_TWO_COLLINEAR_ENDPOINTS_OF_THE_FROZEN_S_CUT_SHARE_THE_SAME_TREE_LEVEL_RESIDUE",
+    "C5-CUT-013 — THE_OBSERVED_CAP_LOG_IS_QUANTITATIVELY_EXPLAINED_BY_THE_DIRECT_TREE_ENDPOINT_RESIDUES",
+    "IR-NG-004 — UNIVERSAL_GRAVITATIONAL_IR_CANCELLATION_DOES_NOT_AUTHORIZE_AN_ISOLATED_CHANNEL_CUT_LOCAL_COUNTERTERM",
+    "NG-FUNNEL-071 — PHYSICAL_LOOP_CUT_IMPORT_REQUIRES_FULL_IR_SAFE_OR_EXPLICITLY_SUBTRACTED_AMPLITUDE_AUTHORITY_NOT_ENDPOINT_FITTING"
+  ],
+  "readiness_change": "unchanged at 23%; the raw-cut IR origin is now factorization-certified, but the physical IR-safe five-point control remains blocked"
+}
