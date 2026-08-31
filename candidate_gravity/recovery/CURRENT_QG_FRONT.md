@@ -7,11 +7,11 @@
 **Rejected consistency control:** `ANSATZ-RQIR-CTP-001` v0.1  
 **Positive-spectral Gaussian comparator:** `ANSATZ-RQIR-KL-002` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 176**
+**Authoritative Candidate Gravity front:** **Iteration 177**
 
 ## Scientific state in one sentence
 
-Propagator, finite-amplitude and standalone positive-spectral novelty routes are closed; the search now lives in source-completed, two-point-amputated, **Ward-subtracted transverse soft three-point relation space**, and Iteration 176 proves that previous finite off-shell C5 cubic response columns cannot be relabeled as the required sub-subleading `B_T` columns without a new soft-deformed action-level calculation.
+The search is now in source-completed, two-point-amputated, Ward-subtracted transverse soft three-point space. Iteration 177 constructs the first genuine action-level local-C5 `B_T` columns and finds that the physical null-TT soft protocol annihilates `Tr(Ricci^3)` exactly while cyclic `Riemann^3` survives, giving rank `1/2`; this is regime-specific non-identifiability, not operator absence or consistency failure.
 
 ## Stable readiness rubric
 
@@ -24,268 +24,128 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 - identifiability/Fisher `0/10`;
 - resource/experiment closure `0/10`.
 
-`MODEL_READINESS = 24%` remains unchanged through Iteration 176. The comparator funnel is becoming stricter, but no full comparator-subtracted residual or parent dynamics exists.
+`MODEL_READINESS = 24%` remains unchanged through Iteration 177. Comparator geometry improved, but no full comparator-subtracted residual or parent dynamics exists.
 
-## Mandatory provenance / nomenclature
+## Frozen rules
 
-1. Iteration 163 dRGT mapping: first target `d/d log(m^2)`, second `d/d alpha3`; `alpha4` remains cubic-TT blind.
-2. Iteration-166 onward `A_odd` is the frequency-odd imaginary part of **linear** `chi1R`, not post-Gaussian `chi2R_odd`.
-3. Iteration-171 onward metric CTP vertices use `h_±=r±a/2` and factorial-normalized `Gamma_arr/2!`, `Gamma_aaa/3!` conventions.
-4. Retain `PROVENANCE-CORR-001`.
+- Repository files and recovery deltas are source of truth.
+- Unsupported comparator coordinates are BLOCKED, never zero-filled.
+- Hard consistency constraints precede profiling/Fisher.
+- `ANSATZ-003` must not be created before a nonzero residual survives the fixed C3/C4/C5/nonlocal/asymptotic-safety quotient.
+- Fisher/resources remain forbidden until then.
+- Preserve nomenclature: Iteration-166 `A_odd` is linear `chi1R`; Iteration-171 CTP uses `h_±=r±a/2` and factorial-normalized vertices; retain `PROVENANCE-CORR-001`.
 
-## Frozen conceptual observable hierarchy
+## Historical authority retained
 
-`z=(N2,chi1R,C3sym,chi2R_even,chi2R_odd,soft2,tensor_geo,threshold)`.
+### Spacelike TT through Iteration 165
 
-Hard constraints precede profiling/Fisher. Unsupported comparator coordinates are BLOCKED, never zero-filled.
+The dimension-12 local C5 basis spans the frozen 12-row spacelike protocol (`rank=12/12`) and absorbs corrected dRGT tangents. This is finite-protocol saturation, not an exact theory identity.
 
-## Historical linear-sector authority
+### Timelike absorptive Iterations 166–170
 
-### Spacelike TT — through Iteration 165
+Local Hermitian tree EFT is absorptively zero off pole; leading massless one-loop C5 is constant shape; the conservative next massless envelope is `span{x,x log x}`. Standalone positive linear spectral novelty is closed by exact C4 mediator-continuum equivalence.
 
-The target-independent local C5 completion through the frozen dimension-12 cutoff gives a `12x12` matrix of rank `12/12` on the 12 frozen spacelike TT rows and absorbs corrected dRGT tangents to machine precision.
+### Linked CTP Iterations 171–174
 
-Retain `C5-NG-003`, `C4-NG-007`, `NG-FUNNEL-022`, `NG-FUNNEL-023`.
+After two-point amputation external-leg dressing is removed. Generic closed-unitary cubic structure obeys `Gamma_aar=0`, `Gamma_aaa=Gamma_arr/4`; this is shared quantum structure. PQCG ordered cubic completion remains `BLOCKED_C3_CTP_ORDERED_COMPLETION`. The fixed exponential nonlocal parent `QG-NL-EXP-001` contains a genuine Frechet operator-insertion cubic term, but the old coarse unitary+Ward relation map annihilates arbitrary closed-unitary diffeomorphic tree amplitudes, so scalar WardLock is insufficient.
 
-### Timelike absorptive — Iterations 166–170
+### Iteration 175 — soft transverse relation space
 
-Eight timelike conserved-TT rows use `A_odd=[Im chi1R(+omega)-Im chi1R(-omega)]/(2*pi)`.
-
-Local Hermitian tree EFT is absorptively zero off pole. Leading massless one-loop C5 is a constant shape; the conservative next `O(p^6)` massless envelope is `span{x,x log x}`. Profiling `[1,x,x log x]` leaves five finite shape dimensions, but Iteration 170 closes standalone positive linear spectral shape as gravity-specific novelty: any positive Källén–Lehmann TT kernel is exactly reproducible by an ordinary positive-norm C4 mediator continuum, with matched Gaussian covariance reproducing the Gaussian CTP layer.
-
-Retain `C5-NG-004` through `C5-NG-006`, `C4-NG-008`, `ABS-SHAPE-001` through `ABS-SHAPE-005`, `NG-FUNNEL-024/026/028/029/030`.
-
-## Linked/amputated CTP authority — Iterations 171–176
-
-Condition nonlinear comparison on the same measured two-point CTP matrix and compare amputated/source-completed three-point kernels using
-
-`G3_abc = - G_aa' G_bb' G_cc' Gamma3_a'b'c'`.
-
-### Iteration 171 — generic closed-unitary control
-
-External-leg spectral dressing disappears after fixed-convention amputation to `1.11e-16`. For a symmetric closed-unitary cubic action,
-
-`Gamma_aar=0`,
-
-`Gamma_aaa=Gamma_arr/4`.
-
-This is generic quantum structure, not a gravity witness.
-
-Retain `CTP-NG-001`, `CTP-NG-002`, `NG-FUNNEL-031`.
-
-### Iteration 172 — first finite relation matrix
-
-Six frozen amputated rows use raw coordinates
-
-`(Gamma_arr,Gamma_aar,Gamma_aaa,WardLock)`.
-
-A conservative generic closed-unitary C4/C5 comparator is allowed one independent cubic amplitude per row subject only to
-
-`Gamma_aar=0`, `Gamma_aaa=Gamma_arr/4`, `WardLock=0`.
-
-Add the supported fixed C3 PQCG tree direction from Iteration 155.
-
-Raw matrix: `24x7`, rank `7/7`, `s_min/s_max=0.0126780602`.
-
-Relation coordinates
-
-`R_aar=Gamma_aar`,
-
-`R_unit=Gamma_aaa-Gamma_arr/4`,
-
-`R_W=WardLock`
-
-annihilate all generic closed-unitary C4/C5 amplitude columns exactly. The supported fixed C3 tree leaves one relation direction `R_unit=-B_EH/4`, norm `4.917063349196141`; supported relation rank `1`.
-
-Retain `CTP-NG-003`, `CTP-NG-004`, `NG-FUNNEL-032`.
-
-### Iteration 173 — fixed PQCG ordered-completion boundary
-
-The available conserved-diffusion PQCG authority is linearized. Linear covariance plus nonlinear drift do not uniquely determine the two-response-field cubic MSR vertex, and the classical MSR response field is not automatically the RQIR metric CTP `a` field.
-
-Status:
-
-`BLOCKED_C3_CTP_ORDERED_COMPLETION`.
-
-Retain:
-
-- `C3-NG-005 — LINEAR_NOISE_PLUS_NONLINEAR_DRIFT_DO_NOT_FIX_ORDERED_MSR_CUBIC_VERTEX`;
-- `NG-FUNNEL-033 — OM_TO_MSR_CUBIC_COMPLETION_REQUIRES_NONLINEAR_CONSERVED_DIFFUSION_AND_EXPLICIT_CTP_MAP`.
-
-This is operational underdetermination, not a consistency FAIL, zero column, exact comparator identity, or novelty certificate.
-
-### Iteration 174 — fixed covariant nonlocal tree audit
-
-Use `QG-NL-EXP-001`:
-
-`S = Mpl^2/2 int sqrt(-g) [R + G_mn F(Box) R^mn] + S_m`,
-
-`F(Box)=(exp(-lambda Box)-1)/Box`.
-
-Its cubic nonlocal action contains
-
-`G2 F0 R1 + G1 F0 R2 + sqrtg1 G1 F0 R1 + G1 (delta F)_1 R1`.
-
-The operator variation is exactly
-
-`delta F(A)=int_0^lambda dalpha int_0^alpha du exp(-(alpha-u)A)(delta A)exp(-uA)`.
-
-Between eigenmodes it is the divided difference `[F(a)-F(b)]/(a-b)`; six checks including the diagonal limit give zero numerical discrepancy.
-
-Thus propagator-only information misses a genuine cubic operator insertion. For the exact frozen parent action the tree cubic is fixed in principle; for the broad weakly-nonlocal class, independent higher-curvature potentials/form-factor structures can change cubic response without changing the quadratic kernel.
-
-Nevertheless the Iteration-172 coarse relation map annihilates the full arbitrary closed-unitary/diffeomorphism nonlocal tree amplitude:
-
-- raw six-row amplitude rank `6`;
-- relation rank `0`;
-- max relation entry `0.0`.
-
-Retain:
-
-- `NL-NG-003 — COVARIANT_NONLOCAL_CUBIC_VERTEX_CONTAINS_OPERATOR_FRECHET_VARIATION_NOT_VISIBLE_IN_PROPAGATOR_ONLY_REASONING`;
-- `CTP-NG-005 — CLOSED_UNITARY_DIFFEO_INVARIANT_NONLOCAL_TREE_ACTION_IS_ANNIHILATED_BY_CURRENT_COARSE_CTP_RELATION_MAP`;
-- `NG-FUNNEL-034 — ZERO_WARD_LOCK_PLUS_GENERIC_UNITARY_RA_RELATION_CANNOT_DISTINGUISH_QUANTUM_GRAVITY_FAMILIES`.
-
-### Iteration 175 — tensor/soft Ward decomposition
-
-The scalar `WardLock` coordinate is demoted to a consistency check. Freeze instead
+Freeze
 
 `Gamma3_soft = W[K2] + Rlin_soft : B3 + higher-soft-order`.
 
-`W[K2]` is the Ward/covariantization-determined part fixed by the same quadratic inverse kernel and source convention. It is exact shared structure.
-
-`Rlin_soft:B3` is the first separately gauge-invariant transverse/nonminimal three-point structure not fixed by the two-point kernel alone.
-
-Tensor certificate with null `k=(1,0,0,1)`:
-
-- pure-gauge polarization: `max |Rlin|=5.55e-17`, norm `1.36e-16`;
-- normalized TT plus polarization: `max |Rlin|=0.35355339059327373`, norm `2` to floating-point precision.
-
-Under `k -> a k`, TT Riemann norm scales as `a^2`: ratios `0.25`, `4`, `9.000000000000002` for `a=0.5,2,3`; maximum scaling error `1.78e-15`.
-
-Therefore the independent gauge-invariant three-point structure enters at sub-subleading `O(k^2)` order.
-
-Define for each of the six frozen rows
+`W[K2]` is shared Ward/covariantization structure fixed by the same quadratic kernel. The independent physical carrier is the transverse/nonminimal `O(k_soft^2)` structure. Define six frozen relation rows
 
 `B_T(i)=P_T[Gamma_arr(i)-W_i[K2]]`.
 
-This is a six-dimensional transverse relation space before comparator subtraction, not a novelty certificate.
+### Iteration 176 — protocol compatibility
+
+Finite off-shell Iteration-150 curvature-cubic numbers do not determine the soft2 coefficient. The exact counterfamily `f_c(eps)=f0(eps)+c eps^2(1-eps)^2` preserves soft0, soft1 and one finite point while shifting soft2. Therefore old finite numbers cannot be relabeled as `B_T`.
+
+## Iteration 177 — first action-level local-C5 B_T columns
+
+Reuse the same covariant parent operators from Iteration 150, but with the new frozen physical soft family
+
+`k1=eps*(1,0,0,1)`, `k2=q_i`, `k3=-q_i-k1`,
+
+for six target-independent hard rows and the Iteration-175 null plus-TT soft polarization.
+
+For both curvature-cubic directions the operator expansion starts at cubic order around Minkowski, hence `K2_operator=0` and their operator-specific Ward subtraction is exactly `W[K2]=0`. Pure-gauge replacement of the soft leg leaves max absolute residue `2.82e-22`.
+
+For the physical null-TT soft leg,
+
+`R_mn^(1)=0`,
+
+while `||R_mnrs^(1)||=2` at unit soft momentum. Therefore
+
+`B_T[Tr(Ricci^3)] = 0`
+
+**exactly in this protocol**, while cyclic `Riemann^3` gives
+
+`[-1.6411697072, 0.0638588272, 0.8548821188, -0.1705521567, -0.3261917311, -0.1655609265]`.
+
+Maximum independent extrapolation discrepancy is `5.27e-6`.
+
+The first local-C5 soft-transverse matrix therefore has
+
+`rank = 1/2`, singular values `[1.8950564368, 0]`.
+
+Classification: **regime-specific non-identifiability**. The Ricci-cubed operator is not absent: its finite off-shell Iteration-150 column remains nonzero and authoritative in that separate protocol.
 
 Retain:
 
-- `SOFT-NG-001 — WARD_DETERMINED_SOFT_CUBIC_PART_IS_SHARED_STRUCTURE_FIXED_BY_THE_TWO_POINT_KERNEL`;
-- `SOFT-NG-002 — LINEARIZED_RIEMANN_THREE_POINT_FORM_FACTOR_IS_GAUGE_INVARIANT_AND_ENTERS_AT_SUBSUBLEADING_K2_ORDER`;
-- `NG-FUNNEL-035 — REPLACE_SCALAR_WARDLOCK_WITH_WARD_SUBTRACTED_TRANSVERSE_CUBIC_COORDINATES`.
+- `C5-NG-008 — NULL_TT_SOFT_PROTOCOL_ANNIHILATES_RICCI_CUBED_B_T_BUT_NOT_CYCLIC_RIEMANN_CUBED`;
+- `SOFT-NG-004 — FIRST_ACTION_LEVEL_LOCAL_C5_B_T_BASIS_HAS_RANK_ONE_ON_SIX_NULL_SOFT_TT_ROWS`;
+- `NG-FUNNEL-037 — PROTOCOL_ZERO_FROM_ONSHELL_SOFT_RICCI_IS_REGIME_SPECIFIC_NOT_OPERATOR_ABSENCE`.
 
-### Iteration 176 — finite/off-shell to soft-transverse compatibility gate
+## Comparator status
 
-Iteration 150 remains authoritative for two explicit finite off-shell local C5 curvature-cubic columns:
+### C3
 
-- `Tr(Ricci^3)`;
-- cyclic `Riemann^3`;
-- finite six-probe rank `2/2`;
-- singular values `[4.83562189,1.10930485]`;
-- `s_min/s_max=0.2294027268`.
-
-Iteration 151 EH source-completed off-shell Ward identity remains `PASS_SCOPED`.
-
-However, those finite response numbers do not determine the new `B_T` soft2 coefficient. The exact analytic counterfamily
-
-`f_c(epsilon)=f0(epsilon)+c epsilon^2(1-epsilon)^2`
-
-has identical `f(0)`, `f'(0)` and `f(1)` for every `c`, while its `epsilon^2` coefficient changes by `c`.
-
-Therefore even preserving soft0, soft1 and one finite response point leaves soft2 free.
-
-Classification:
-
-`C5_B_T = BLOCKED_NEW_SOFT_DEFORMED_ACTION_LEVEL_COMPUTATION_REQUIRED`.
-
-Never relabel Iteration-150 finite columns as Iteration-175 soft-transverse columns.
-
-Retain:
-
-- `C5-NG-007 — FINITE_OFFSHELL_CUBIC_RESPONSE_DOES_NOT_DETERMINE_WARD_SUBTRACTED_SOFT2_COEFFICIENT`;
-- `SOFT-NG-003 — PRESERVING_SOFT0_SOFT1_AND_ONE_FINITE_POINT_STILL_LEAVES_SOFT2_FREE`;
-- `NG-FUNNEL-036 — TRANSVERSE_SOFT_COMPARATOR_COLUMNS_MUST_BE_RECOMPUTED_FROM_SOFT_DEFORMED_PARENT_ACTION`.
-
-## Current comparator implications
-
-### C3 postquantum-classical
-
-Supported lower-order pieces remain authoritative. Ordered metric-CTP cubic completion is `BLOCKED_C3_CTP_ORDERED_COMPLETION`; no `B_T` column is authorized.
+Lower-order supported pieces remain authoritative. Ordered metric-CTP cubic and transverse `B_T` completion remain BLOCKED.
 
 ### C4
 
-Fixed dRGT tree remains a scoped comparator. Generic positive linear spectra are exactly C4-reproducible. A fixed parent projection into `B_T` is still required.
+Fixed dRGT remains a scoped comparator. A fixed parent action-level projection into the new `B_T` rows is still required.
 
 ### C5
 
-Finite off-shell local cubic authority is real but protocol-distinct. The immediate priority is a new soft-deformed action-level calculation of `B_T` for the already authoritative curvature-cubic parent operators.
+First action-level `B_T` direction is now real. The local basis is incomplete beyond the two curvature-cubic operators and must be extended target-independently through the already frozen EFT truncation before any residual claim.
 
 ### Nonlocal
 
-`QG-NL-EXP-001` fixes its tree cubic structure in principle, including the Fréchet operator insertion. Its `B_T` projection remains pending after C5.
+`QG-NL-EXP-001` fixes its tree cubic in principle, including the Frechet insertion. Its `B_T` projection is pending after the finite local C5 basis.
 
 ### Asymptotic safety
 
-Two-point spectral information is calibrated external-leg data. Real-time/source-completed three-point `B_T` completion remains BLOCKED.
+Two-point spectral information is calibrated external-leg data. Real-time/source-completed three-point transverse completion remains BLOCKED.
 
 ## Candidate state
 
 There is still **no robust Candidate Gravity residual**.
 
-`ANSATZ-003`: NOT CREATED.
+`ANSATZ-003`: NOT CREATED.  
+Fisher/resources: FORBIDDEN.
 
-Fisher/resources remain FORBIDDEN.
+## Current Iteration-177 authority files
 
-A future residual must survive in the Ward-subtracted transverse multi-point tensor space after all fixed comparator directions are removed.
+- `analysis/c5_soft_transverse_columns_iteration177.py`;
+- `results/c5_soft_transverse_columns_iteration177.json`;
+- `candidate_gravity/C5_SOFT_TRANSVERSE_COLUMNS_ITERATION177.md`;
+- `research_log/2026-08-31_iteration_177_c5_soft_transverse_columns.md`;
+- `recovery/RECOVERY_DELTA_ITERATION_177.md`;
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION177.md`.
 
-## Current authorities
+## Immediate next scientific priority — Iteration 178
 
-### Iteration 172
-- `analysis/ctp_relation_comparator_iteration172.py`;
-- `results/ctp_relation_comparator_iteration172.json`;
-- `candidate_gravity/CTP_RELATION_COMPARATOR_ITERATION172.md`;
-- `recovery/RECOVERY_DELTA_ITERATION_172.md`.
-
-### Iteration 173
-- `analysis/c3_pqcg_msr_completion_audit_iteration173.py`;
-- `results/c3_pqcg_msr_completion_audit_iteration173.json`;
-- `candidate_gravity/C3_PQCG_MSR_COMPLETION_AUDIT_ITERATION173.md`;
-- `recovery/RECOVERY_DELTA_ITERATION_173.md`.
-
-### Iteration 174
-- `analysis/nonlocal_ctp_cubic_structure_iteration174.py`;
-- `results/nonlocal_ctp_cubic_structure_iteration174.json`;
-- `candidate_gravity/NONLOCAL_CTP_CUBIC_STRUCTURE_ITERATION174.md`;
-- `recovery/RECOVERY_DELTA_ITERATION_174.md`.
-
-### Iteration 175
-- `analysis/soft_ward_transverse_decomposition_iteration175.py`;
-- `results/soft_ward_transverse_decomposition_iteration175.json`;
-- `candidate_gravity/SOFT_WARD_TRANSVERSE_DECOMPOSITION_ITERATION175.md`;
-- `recovery/RECOVERY_DELTA_ITERATION_175.md`.
-
-### Iteration 176
-- `analysis/c5_soft_transverse_compatibility_iteration176.py`;
-- `results/c5_soft_transverse_compatibility_iteration176.json`;
-- `candidate_gravity/C5_SOFT_TRANSVERSE_COMPATIBILITY_ITERATION176.md`;
-- `research_log/2026-08-31_iteration_176_c5_soft_transverse_compatibility.md`;
-- `recovery/RECOVERY_DELTA_ITERATION_176.md`.
-
-## Immediate next scientific priority — Iteration 177
-
-Construct the first actual **action-level C5 soft-transverse `B_T` columns**.
+Complete the target-independent local-C5 `B_T` basis through the already frozen EFT truncation as far as action-level soft projections are supported.
 
 Required order:
 
-1. reuse the covariant parent operators from Iteration 150, never their finite response numbers;
-2. freeze six target-independent soft-deformed kinematic families with `k_soft=epsilon k0` and exact momentum conservation;
-3. compute source-completed cubic response versus `epsilon` from the same actions;
-4. subtract `W[K2]`, project `P_T`, and extract a converged `epsilon^2` coefficient;
-5. form the six-row `Tr(Ricci^3)` and cyclic `Riemann^3` `B_T` columns;
-6. compute rank/SVD with no target optimization;
-7. only then add further C5/C4/nonlocal transverse directions;
-8. preserve C3 ordered and AS real-time entries as BLOCKED unless explicitly derived;
-9. no `ANSATZ-003`, Fisher or resources before a nonzero full comparator-subtracted transverse residual.
+1. derive derivative/curvature-cubic soft columns from their parent actions, prioritizing directions that can survive a null TT soft leg;
+2. keep the six Iteration-177 rows fixed and do not optimize against a target;
+3. compute rank/SVD and classify exact protocol zeros versus genuine independent directions;
+4. only after local C5 is finite, add fixed C4 and `QG-NL-EXP-001` transverse columns;
+5. leave C3 ordered and AS real-time columns BLOCKED unless explicitly derived;
+6. no `ANSATZ-003`, Fisher or resources until a nonzero residual survives the full fixed comparator quotient.
