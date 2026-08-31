@@ -1,0 +1,22 @@
+{
+  "iteration": 173,
+  "status": "BLOCKED_C3_CTP_ORDERED_COMPLETION",
+  "structural_model": "S=t*(L*h+g*h^2/2-J)-1/2*t*(D0+lam*h)*t",
+  "linear_hessian": [
+    ["0", "L"],
+    ["L", "-D0"]
+  ],
+  "linear_hessian_depends_on_lambda": false,
+  "cubic_vertices": {
+    "Gamma_t_h_h": "g",
+    "Gamma_t_t_h": "-lam",
+    "Gamma_t_t_t": "0"
+  },
+  "interpretation": {
+    "fixed_nonlinear_drift_fixes_one_response_vertex": true,
+    "linear_noise_fails_to_fix_two_response_cubic_vertex": true,
+    "additional_nonlinear_conserved_diffusion_completion_required": true,
+    "ctp_ra_mapping_fixed_by_existing_authority": false
+  },
+  "classification": "operational BLOCKED / underdetermined comparator completion; not a consistency FAIL and not a zero column"
+}
