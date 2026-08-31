@@ -2,70 +2,78 @@ schema_version: 1
 model_id: ANSATZ-RQIR-CTP-001
 version: 0.1
 updated: 2026-08-31
-status: DRAFT_TESTING
+status: REJECTED
 promotion_allowed: false
+rejection_authority: docs/CANDIDATE_GRAVITY_LORENTZIAN_ITERATION136.md
 
 qg_gates:
   QG-001:
     status: PARTIAL
-    claim: linearized resolved state variables and the Gaussian spin-2 effective sector are specified, but a microscopic physical-state/unitary-dilation construction is not yet complete
-    authority: candidate_gravity/models/ANSATZ-RQIR-CTP-001/MODEL.md
+    claim: linearized resolved state variables and the Gaussian spin-2 effective sector were specified, but a microscopic physical-state/unitary-dilation construction was never completed
   QG-002:
     status: PASS
-    claim: one scoped weak-field CTP effective dynamics fixes both the retarded deformation and the linked noise kernel from a single spectral density
-    scope: linearized Gaussian effective theory around asymptotically Minkowski background
-    authority: candidate_gravity/models/ANSATZ-RQIR-CTP-001/MODEL.md
+    claim: one scoped weak-field CTP effective dynamics fixed both the retarded deformation and linked noise kernel from a single spectral density
   QG-003:
     status: NOT_TESTED
-    claim: beta->0 and p2/M_*2->0 limits are structurally correct, but source-to-Newtonian-potential normalization has not yet been audited
+    claim: full Newtonian source normalization was not pursued after the disqualifying QG-004 failure
   QG-004:
-    status: BLOCKED
-    claim: Euclidean no-extra-zero result is available for beta>=0, but Lorentzian unitarity/positivity and microscopic dilation remain unproven
+    status: FAIL
+    reason_code: EXTRA_NEGATIVE_RESIDUE_TIMELIKE_POLE
+    claim: for every frozen beta>0, 1+beta F_R has exactly one real zero at 0<p^2<M_*^2; in the scalarized frozen spin-2 convention the corresponding residue has opposite sign to the GR pole
+    authority: docs/CANDIDATE_GRAVITY_LORENTZIAN_ITERATION136.md
   QG-005:
     status: PARTIAL
-    claim: the deformation is transverse on the conserved-source spin-2 sector; nonlinear diffeomorphism and relational-observable audits remain open
+    claim: projected transverse linear structure was specified; no reason to spend nonlinear gauge-closure work on the rejected version
   QG-006:
     status: NOT_TESTED
-    claim: flat-QFT and beta->0 limits are stated, but semiclassical/coarse-grained and ordinary-QM reductions need explicit repository derivations
+    claim: not pursued after QG-004 failure
   QG-007:
     status: BLOCKED
-    claim: novelty/comparator distinction is not established; known nonlocal/form-factor gravity and ordinary EFT may reproduce the same structure in relevant regimes
+    claim: prior-art novelty audit was not required to reject v0.1 because consistency failed first
   QG-008:
-    status: NOT_TESTED
-    claim: beta defines a formal candidate direction, but no finite RQIR Paper-I hard-constraint discriminant has yet been instantiated
+    status: BLOCKED
+    claim: no Paper-I discriminator is promoted from a consistency-rejected model
   QG-009:
     status: BLOCKED
-    claim: detector Fisher geometry is premature until QG-007/QG-008 establish a nondegenerate observable direction
+    claim: no detector Fisher optimization for a rejected model
   QG-010:
     status: BLOCKED
-    claim: physical resource certification is premature until a nondegenerate profiled beta direction exists
+    claim: no physical resource certificate for a rejected model
 
 cross_gates:
   conservation_bianchi_ward: PARTIAL_LINEAR_TRANSVERSE
   causality_microcausality: PARTIAL_RETARDED_PRESCRIPTION
-  positivity_spectral: PARTIAL_POSITIVE_INPUT_SPECTRAL_DENSITY
-  lorentzian_pole_structure: BLOCKED
+  positivity_spectral: FAIL_DRESSED_POLE_RESIDUE_SIGN
+  lorentzian_pole_structure: FAIL_EXTRA_SUBTHRESHOLD_POLE
   flat_qft_limit: PARTIAL_STRUCTURAL
   eft_power_counting: PARTIAL
-  stress_energy_renormalization: BLOCKED
-  comparator_degeneracy: BLOCKED_PRIOR_ART_AND_C5_MATCHING
-  detector_measurability: NOT_TESTED
+  stress_energy_renormalization: NOT_PURSUED_AFTER_REJECTION
+  comparator_degeneracy: NOT_DECISIVE
+  detector_measurability: NOT_PURSUED_AFTER_REJECTION
 
 scoped_results:
   - id: CG-R135-001
     state: PASS_SCOPED
-    statement: for spacelike x=-p2/M_*2>=0 and rho_hat(s)=exp(1-s)Theta(s-1), F_E(x)=x int rho_hat/(s+x) obeys 0<=F_E(x)<=x/(1+x)<1
+    statement: Euclidean spacelike form factor obeys 0<=F_E<=x/(1+x)<1
   - id: CG-R135-002
     state: PASS_SCOPED
-    statement: for beta>=0 the Euclidean multiplicative kernel factor 1+beta F_E(x) has no zero on the spacelike axis
+    statement: no extra spacelike zero occurs for frozen beta>=0
   - id: CG-R135-003
     state: PASS_SCOPED
-    statement: F_E(x)=e E1(1) x+O(x2), with coefficient approximately 0.5963473623, so the deformation vanishes in the infrared
+    statement: deformation vanishes in the infrared with slope e E1(1)
+  - id: CG-R136-001
+    state: FAIL_DISQUALIFYING
+    statement: for every beta>0, the frozen Lorentzian form factor is continuous and strictly decreasing from F(0)=0 to minus infinity as p^2 approaches M_*^2 from below, forcing exactly one extra timelike zero
+  - id: CG-R136-002
+    state: FAIL_DISQUALIFYING
+    statement: dF/dy<0 at the forced zero, so the dressed-pole residue factor 1/[y0 beta F'(y0)] is negative relative to the frozen GR pole convention
 
-negative_results: []
+negative_results:
+  - id: CG-NG-004
+    statement: Euclidean no-extra-zero stability does not guarantee Lorentzian viability; the frozen positive-beta Stieltjes-type spectral deformation generates an unavoidable sub-threshold opposite-residue pole.
 
 next_action:
-  - derive and audit the full Lorentzian analytic structure across the timelike threshold
-  - restore the complete conserved-source tensor propagator and verify the Ward/Bianchi structure
-  - perform explicit comparator mapping against C5 and known nonlocal/form-factor gravity before any novelty claim
-  - only then instantiate the Paper-I finite hard-constraint discriminator for beta
+  - retain v0.1 permanently as a rejected negative-control branch
+  - do not change beta sign or spectral shape inside v0.1 after seeing the failure
+  - use the failure theorem as a design constraint for a materially new ansatz/version
+  - in parallel audit existing gravity classes through the RQIR funnel and use surviving structures as comparators/design priors
