@@ -1,0 +1,51 @@
+{
+  "iteration": 156,
+  "comparator_id": "C4-DRGT-001",
+  "scope": "tree TT nonlinear response on six frozen spacelike probes",
+  "action_convention": "Mpl^2/2 int sqrt(-g)[R + m^2/2(L2[K]+alpha3 L3[K]+alpha4 L4[K])] + S_m[g]",
+  "reference_metric": "eta_mn",
+  "reference_parameters": {"m2": 0.04, "alpha3": 0.0, "alpha4": 0.0},
+  "tangent_parameters": ["log_m2", "alpha3"],
+  "alpha4_cubic_TT_status": "BLIND_AT_CUBIC_ORDER_L4_STARTS_QUARTIC",
+  "cubic_TT_potential": "m^2(3+alpha3)/8 * Tr(H^3)",
+  "tree_response": [0.41598902695785883, -1.0421653262124124, -9.30686701147015, -12.449001654539147, 4.0683399477607995, -2.3313492002174723],
+  "V_C4_chi2R": [
+    [0.08410827495950812, 0.06014797241478866],
+    [0.3388004414024848, 0.017411147214802865],
+    [2.2537493574606224, -0.1670416960113702],
+    [1.7936161583555166, -0.6470043472565035],
+    [-0.690425234550442, 0.17218037853655313],
+    [0.39855343699621354, -0.14310845340580042]
+  ],
+  "rank_C4": 2,
+  "singular_values_C4": [3.062684454379795, 0.4175708275716087],
+  "smin_over_smax_C4": 0.13634144772501477,
+  "comparison_to_existing_C5_local_6x2": {
+    "C5_rank": 2,
+    "C4_residual_norms_after_C5_projection": [0.57999745, 0.09656019],
+    "C4_column_norms": [3.00895943, 0.7075059],
+    "residual_fractions": [0.19275682, 0.13647969],
+    "combined_rank_C5_plus_C4": 4,
+    "combined_singular_values": [5.62719921, 1.53092825, 0.39407597, 0.06156025]
+  },
+  "rows": [
+    {"probe":0,"p2":0.7473,"q2":0.5075999999999999,"r2":0.3313,"window_product":0.7048177642569133,"mixed_TrH3":2.7321389714583515,"EH_weighted_vertex":0.03770532878817939,"dRGT_tree_response":0.41598902695785883,"d_dlogm2":0.08410827495950812,"d_dalpha3":0.06014797241478866},
+    {"probe":1,"p2":0.6157,"q2":0.3854,"r2":0.2935,"window_product":0.7608431901308195,"mixed_TrH3":0.42575595674163785,"EH_weighted_vertex":-0.10180617082806188,"dRGT_tree_response":-1.0421653262124124,"d_dlogm2":0.3388004414024848,"d_dalpha3":0.017411147214802865},
+    {"probe":2,"p2":0.44179999999999997,"q2":0.426,"r2":0.27459999999999996,"window_product":0.7512385759278182,"mixed_TrH3":-3.1411482680000553,"EH_weighted_vertex":-0.6219813802303545,"dRGT_tree_response":-9.30686701147015,"d_dlogm2":2.2537493574606224,"d_dalpha3":-0.1670416960113702},
+    {"probe":3,"p2":0.6119999999999999,"q2":0.3153,"r2":0.2773,"window_product":0.7556870073279353,"mixed_TrH3":-12.58659083385918,"EH_weighted_vertex":-0.772382577304394,"dRGT_tree_response":-12.449001654539147,"d_dlogm2":1.7936161583555166,"d_dalpha3":-0.6470043472565035},
+    {"probe":4,"p2":0.6682,"q2":0.4004,"r2":0.2278,"window_product":0.7439719101771706,"mixed_TrH3":3.8660807512893633,"EH_weighted_vertex":0.29666216584134714,"dRGT_tree_response":4.0683399477607995,"d_dlogm2":-0.690425234550442,"d_dalpha3":0.17218037853655313},
+    {"probe":5,"p2":0.4239,"q2":0.2882,"r2":0.23210000000000003,"window_product":0.798631213374292,"mixed_TrH3":-1.4847061071953573,"EH_weighted_vertex":-0.07879659430560693,"dRGT_tree_response":-2.3313492002174723,"d_dlogm2":0.39855343699621354,"d_dalpha3":-0.14310845340580042}
+  ],
+  "status": {
+    "fixed_dRGT_action": "PASS_SCOPED",
+    "ghost_free_family_authority": "LITERATURE_ESTABLISHED_FOR_DRGT_CONSTRAINT_STRUCTURE",
+    "TT_cubic_tangent": "PASS_SCOPED",
+    "beyond_existing_C5_R3_span": "PASS_SCOPED_RANK_2_TO_4",
+    "helicity0_helicity1_completion": "BLOCKED",
+    "Vainshtein_nonperturbative_completion": "BLOCKED",
+    "C4_N2_C3sym": "BLOCKED",
+    "full_C4_quotient": "BLOCKED",
+    "Fisher_resources": "FORBIDDEN",
+    "ANSATZ_003": "NOT_CREATED"
+  }
+}
