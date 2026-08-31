@@ -1,0 +1,45 @@
+{
+  "iteration": 196,
+  "protocol": "RQIR-WITHHELD-NULLSOFT-12-v2",
+  "hard_K2_structural_theorem": {
+    "factored_functions": ["1","x","x^2","x^3","x^4","x^5","x*exp(x)"],
+    "leading_wronskians": ["1","1","2","12","288","34560","34560*(x + 6)*exp(x)"],
+    "full_wronskian": "34560*(x + 6)*exp(x)",
+    "sign_on_x_positive": "STRICTLY_POSITIVE",
+    "classification": "EXTENDED_COMPLETE_CHEBYSHEV_SYSTEM_ON_X_POSITIVE",
+    "consequence": "ANY_SEVEN_DISTINCT_POSITIVE_X_NODES_GIVE_RANK7",
+    "current_protocol_all_7row_subsets": 792,
+    "current_protocol_min_rank": 7,
+    "current_protocol_max_condition_number": 154931073445.5399,
+    "current_protocol_min_smallest_singular_value": 5.287161780575988e-12,
+    "conditioning_note": "exact structural independence does not remove severe near-degeneracy on narrow finite x intervals"
+  },
+  "conditional_soft2_structural_theorem": {
+    "form": "diag(r0)*[1,-x,x^2,-x^3]",
+    "all_x_distinct": true,
+    "all_r0_nonzero": true,
+    "consequence": "ANY_FOUR_CURRENT_ROWS_GIVE_RANK4_BY_VANDERMONDE",
+    "current_protocol_all_4row_subsets": 495,
+    "current_protocol_min_rank": 4,
+    "current_protocol_max_condition_number": 1483626.1786552789,
+    "current_protocol_min_smallest_singular_value": 1.3600728750911055e-07
+  },
+  "classification": {
+    "hard_rank7": "STRUCTURALLY_ROW_ROBUST_FOR_DISTINCT_POSITIVE_X",
+    "soft2_rank4": "STRUCTURALLY_ROW_ROBUST_FOR_CURRENT_NONZERO_R0_DISTINCT_X_ROWS",
+    "finite_noise_identifiability": "NOT_CLAIMED",
+    "AS": "BLOCKED_NOT_ZERO",
+    "C3": "BLOCKED_NOT_ZERO",
+    "candidate_residual": "NOT_TESTED",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "REL-NG-011 — LOCAL_POLYNOMIAL_PLUS_FIXED_EXPONENTIAL_K2_FAMILY_FORMS_AN_ECT_SYSTEM_AFTER_ROW_FACTORING_ON_X_POSITIVE",
+    "NUM-NG-010 — EXACT_RANK7_IS_ROW_STRUCTURAL_BUT_CAN_REMAIN_SEVERELY_ILL_CONDITIONED",
+    "C5-NG-016 — CONDITIONAL_CURVATURE_CUBIC_SOFT2_BASIS_IS_A_ROW_SCALED_VANDERMONDE_AND_ANY_FOUR_CURRENT_ROWS_HAVE_RANK4",
+    "NG-FUNNEL-050 — STRUCTURAL_RANK_ROBUSTNESS_AND_OPERATIONAL_CONDITIONING_ARE_SEPARATE_GATES"
+  ],
+  "model_readiness_percent": 24,
+  "readiness_change": "unchanged: supported comparator ranks are now structurally row-robust, but AS/C3 authority blockers still prevent full comparator closure and no candidate residual exists."
+}
