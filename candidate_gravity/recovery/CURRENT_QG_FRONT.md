@@ -2,178 +2,108 @@
 
 **Updated:** 2026-08-31  
 **Infrastructure status:** READY — 100%  
-**Reference model:** `ANSATZ-PQG-EFT-001` v0.1, REFERENCE / NOT PROMOTABLE  
-**Rejected discovery model:** `ANSATZ-RQIR-CTP-001` v0.1  
-**Active discovery model:** `ANSATZ-RQIR-KL-002` v0.1, DRAFT / TESTING  
-**Authoritative Candidate Gravity front:** **Iteration 140**
+**Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
+**Rejected consistency control:** `ANSATZ-RQIR-CTP-001` v0.1  
+**Positive-spectral comparator control:** `ANSATZ-RQIR-KL-002` v0.1  
+**Active promotable ansatz:** none after Iteration 141  
+**Authoritative Candidate Gravity front:** **Iteration 141**
 
-## Branch chronology
+## Scientific state in one sentence
 
-- Iterations 1–132: RQIR Papers I–III and Candidate Gravity testing infrastructure closed.
-- Iteration 133: instantiated standard perturbative quantum-GR EFT as C5 reference.
-- Iteration 134: passed its Newtonian/classical-GR normalization gate.
-- Iteration 135: created first RQIR-driven causal spectral inverse-kernel ansatz.
-- Iteration 136: rejected that ansatz analytically on the Lorentzian pole/residue gate.
-- Iteration 137: audited major existing gravity model classes through the RQIR funnel and prepared an article-ready comparison section.
-- Iteration 138: created the second RQIR-driven ansatz using a nonnegative Källén–Lehmann massless-plus-continuum spectral measure.
-- Iteration 139: restored the linear conserved-source tensor structure and exposed the linked vDVZ `4/3` and traceless/NR `3/4` relations.
-- Iteration 140: proved strictly below-threshold finite-order EFT degeneracy with C5 Wilson-coefficient freedom.
+RQIR has now eliminated two naive routes to a new gravity model: an inverse-kernel spectral deformation failed Lorentzian consistency, while a positive KL continuum survived consistency but proved exactly equivalent at Gaussian level to an ordinary mediator continuum. The next model must therefore contain a derived nonlinear/non-Gaussian gravity-specific relation.
 
-## Retained reference result — C5
+## Frozen model outcomes
 
-`ANSATZ-PQG-EFT-001` remains the permanent perturbative-QG control.
+### `ANSATZ-PQG-EFT-001`
 
-- QG-001/QG-002/QG-003 PASS in the declared low-energy domain.
-- QG-007 FAIL for novelty because the model is exactly comparator C5.
+REFERENCE / NOT PROMOTABLE.
 
-**CG-NG-003:** quantizing the weak-field metric within standard perturbative quantum-GR EFT does not itself create a new Candidate Gravity direction relative to C5.
+- QG-001/QG-002/QG-003 PASS in the declared low-energy regime.
+- QG-007 FAIL due exact C5 identity.
 
-## Rejected model result — Iteration 136
+Retained result `CG-NG-003`.
 
-`ANSATZ-RQIR-CTP-001` v0.1 used a multiplicative inverse-kernel factor `1+beta F_R` with positive spectral input.
+### `ANSATZ-RQIR-CTP-001` v0.1
 
-Although the Euclidean/spacelike kernel had no extra zero, for positive-frequency timelike
+REJECTED.
 
-`y=p^2/M_*^2 in (0,1)`
+- Euclidean/spacelike no-zero result passed.
+- Lorentzian sub-threshold analysis forces exactly one extra timelike zero for every frozen `beta>0`.
+- Relative residue sign is opposite to the massless GR pole convention.
 
-the frozen form factor is
+QG-004 FAIL: `EXTRA_NEGATIVE_RESIDUE_TIMELIKE_POLE`.
 
-`F(y)=-y exp(1-y)E1(1-y)`.
+Retained result `CG-NG-004`.
 
-It decreases continuously from `0` to `-infinity`. Therefore for every `beta>0`,
+### `ANSATZ-RQIR-KL-002` v0.1
 
-`1+beta F(y)=0`
+REFERENCE / NOT PROMOTABLE.
 
-has exactly one sub-threshold root. The dressed-pole residue factor is negative relative to the frozen GR pole convention because `F'(y)<0`.
+Scoped physics that passed:
 
-**QG-004 FAIL — `EXTRA_NEGATIVE_RESIDUE_TIMELIKE_POLE`.**
+- nonnegative Källén–Lehmann spectral measure;
+- retarded causal spectral superposition;
+- no isolated added continuum pole;
+- linear conserved-source massive-spin-2 tensor structure;
+- NR continuum/GR tensor factor `4/3`;
+- linked traceless-vs-NR factor `3/4`.
 
-**CG-NG-004:** Euclidean no-extra-zero stability does not guarantee Lorentzian viability for a positive-beta Stieltjes-type inverse-kernel deformation.
+Comparator failures:
 
-The model is permanently REJECTED; its sign/shape is not retuned post hoc.
+1. **C5 deep-IR degeneracy** — below threshold, the continuum has a convergent local derivative expansion and lies in the finite-order EFT Wilson-coefficient span (`CG-NG-005`).
+2. **Exact Gaussian C4/KK degeneracy** — the KL continuum is exactly representable as a direct integral/tower of positive massive spin-2 quantum mediators. With linear stress coupling, identical `D_R` and `D_H` imply identical Gaussian CTP influence functionals (`CG-NG-006`).
 
-## Existing-model funnel audit — Iteration 137
+Therefore QG-007 FAIL: `EXACT_GAUSSIAN_C4_KK_DEGENERACY`.
 
-Current landscape interpretation:
+No Fisher/resource optimization may be used to rescue this exact identity.
 
-- semiclassical mean gravity: early C1 comparator; mean-only closure is insufficient for a full quantum-interface claim;
-- stochastic gravity: strong C2 late comparator because CTP/influence-functional mean/noise/dissipation structure is already sophisticated;
-- classical-channel/measurement-feedback gravity: C3 comparator capable of Newtonian interaction plus compulsory decoherence/noise;
-- postquantum classical gravity: high-priority modern C3 comparator; stochastic metric and consistency properties are realization-dependent;
-- perturbative quantum GR: C5 viable reference but novelty-degenerate;
-- ghost-free nonlocal/form-factor gravity: serious quantum comparator that can pass early pole/positivity gates for specific fixed form factors;
-- asymptotic safety: program-level prior; a concrete Lorentzian effective realization is required before finite RQIR testing.
+## Existing-model funnel audit
 
-Authority:
+First-wave audited classes:
 
-`candidate_gravity/landscape/RQIR_FUNNEL_AUDIT_ITERATION137.md`
+- semiclassical mean gravity — early C1 comparator;
+- stochastic gravity — strong C2 comparator;
+- classical-channel/measurement-feedback gravity — C3 control;
+- postquantum classical gravity — high-priority modern C3 comparator;
+- perturbative quantum GR — C5 reference;
+- ghost-free nonlocal/form-factor gravity — serious quantum comparator;
+- asymptotic safety — requires a concrete effective realization before finite RQIR testing.
 
-and
+Authorities:
 
-`docs/CANDIDATE_GRAVITY_ARTICLE_FUNNEL_SECTION_ITERATION137.md`.
+- `candidate_gravity/landscape/RQIR_FUNNEL_AUDIT_ITERATION137.md`;
+- `docs/CANDIDATE_GRAVITY_ARTICLE_FUNNEL_SECTION_ITERATION137.md`.
 
-## Active model — `ANSATZ-RQIR-KL-002` v0.1
+## Why the next ansatz must be nonlinear/non-Gaussian
 
-### Spectral definition
+A model specified only by a Gaussian two-point propagator/noise kernel can be represented by an ordinary Gaussian mediator environment whenever its spectral measure is positive. RQIR therefore cannot certify gravity-specific novelty from `J/N/chi` at the Gaussian linear level alone if an allowed C4 mediator reproduces the complete influence functional.
 
-The active model uses a massless GR pole plus a smooth nonnegative continuum:
+The next candidate must derive at least one additional gravity-specific object from the same dynamics, for example:
 
-`rho_g(mu^2)=delta(mu^2)+(beta/M_*^2) exp(1-mu^2/M_*^2) Theta(mu^2-M_*^2)`.
+- connected gravitational three-point response/cumulant;
+- nonlinear stress-energy self-coupling fixed by diffeomorphism/Ward bootstrap;
+- a constraint/relational identity tying higher response to the two-point sector;
+- a universal self-coupling relation not independently tunable like a hidden mediator interaction.
 
-At the Gaussian two-point level this yields:
+## Canonical authorities for the latest negative results
 
-- nonnegative spectral weight;
-- retarded causal superposition;
-- no isolated additional continuum pole;
-- a branch cut beginning at `p^2=M_*^2`.
+- `docs/CANDIDATE_GRAVITY_LORENTZIAN_ITERATION136.md`;
+- `docs/CANDIDATE_GRAVITY_C5_IR_DEGENERACY_ITERATION140.md`;
+- `docs/CANDIDATE_GRAVITY_C4_GAUSSIAN_DEGENERACY_ITERATION141.md`;
+- `analysis/candidate_gravity_lorentzian_iteration136.py`;
+- `analysis/candidate_gravity_c5_ir_degeneracy_iteration140.py`;
+- `analysis/candidate_gravity_gaussian_c4_equivalence_iteration141.py`;
+- corresponding JSON results.
 
-### Linear tensor completion
+## Immediate next scientific priority — Iteration 142
 
-For conserved sources:
+Before inventing `ANSATZ-003`, audit existing **nonlinear/nonlocal gravity models** against the exact requirement exported by `CG-NG-006`.
 
-massless GR:
+Priority comparator tests:
 
-`T.T'-(1/2)TT'`,
-
-massive continuum:
-
-`T.T'-(1/3)TT'`.
-
-Hence for two nonrelativistic sources the continuum/GR tensor ratio is
-
-`4/3`.
-
-The static potential is
-
-`Phi(r)=-GM/r [1+(4/3)beta W(M_*r)]`,
-
-with
-
-`0<W(u)<=exp(-u)`.
-
-For a traceless probe the continuum/massless tensor ratio is `1`, so after NR calibration the relative continuum response is fixed at `3/4`.
-
-These linked tensor relations are candidate fingerprint components, not novelty claims.
-
-### C5 infrared degeneracy
-
-For Euclidean `x=q^2/M_*^2`, the continuum function
-
-`C(x)=int_1^infty ds rho_hat(s)/(s+x)`
-
-has the convergent expansion
-
-`C(x)=sum_{n>=0}(-x)^n A_(n+1)`
-
-for `|x|<1`.
-
-Therefore at any fixed finite derivative order strictly below threshold, the beta contribution lies in the local gravitational EFT Wilson-coefficient span.
-
-**CG-NG-005:** a gapped positive spectral continuum is not distinguishable from C5 plus local Wilson-coefficient freedom in a strictly below-threshold finite-order EFT measurement.
-
-Consequently deep-IR detector/Fisher optimization is forbidden as scientifically non-identifying.
-
-## Active gate state
-
-For `ANSATZ-RQIR-KL-002`:
-
-- QG-001 PARTIAL;
-- QG-002 PASS;
-- QG-003 PARTIAL;
-- QG-004 PASS_SCOPED;
-- QG-005 PARTIAL with linear tensor structure closed, nonlinear constraints open;
-- QG-006 PARTIAL;
-- QG-007 PARTIAL_NEGATIVE: C5 deep-IR distinctness failed, threshold/cross-channel distinction open;
-- QG-008 BLOCKED_REGIME until a threshold-resolved/cross-channel finite map is built;
-- QG-009/QG-010 BLOCKED.
-
-## Canonical authorities — active branch
-
-Read:
-
-1. `candidate_gravity/models/ANSATZ-RQIR-KL-002/MODEL.md`;
-2. `candidate_gravity/models/ANSATZ-RQIR-KL-002/GATE_STATUS.yaml`;
-3. `candidate_gravity/models/ANSATZ-RQIR-KL-002/ASSUMPTIONS_LEDGER.md`;
-4. `candidate_gravity/models/ANSATZ-RQIR-KL-002/DERIVATION_MAP.md`;
-5. `candidate_gravity/models/ANSATZ-RQIR-KL-002/COMPARATOR_STATUS.md`;
-6. `docs/CANDIDATE_GRAVITY_POSITIVE_SPECTRAL_ITERATION138.md`;
-7. `docs/CANDIDATE_GRAVITY_TENSOR_ITERATION139.md`;
-8. `docs/CANDIDATE_GRAVITY_C5_IR_DEGENERACY_ITERATION140.md`;
-9. `analysis/candidate_gravity_positive_spectral_iteration138.py`;
-10. `analysis/candidate_gravity_tensor_projector_iteration139.py`;
-11. `analysis/candidate_gravity_c5_ir_degeneracy_iteration140.py`;
-12. corresponding JSON result files.
-
-## Immediate next scientific priority
-
-**Iteration 141: C5-excess and strongest-continuum comparator gate.**
-
-Before Paper-I/Fisher work:
-
-1. freeze a declared perturbative order for the C5 retarded/spectral baseline;
-2. redefine the scientifically tested direction as **excess spectral weight over C5**, so `beta=0` is exactly the chosen C5 reference, not only tree GR;
-3. compare threshold support/tensor structure against hidden/KK/DGP-like massive-spin-2 continua and nonlocal/form-factor gravity;
-4. determine whether the linked `4/3` NR, `3/4` traceless, threshold absorption and noise relations contain any residual direction outside those comparator families;
-5. only if such a direction exists, construct the finite RQIR Paper-I quotient.
-
-Do not spend detector optimization resources on a direction still contained in the comparator span.
+1. a fixed ghost-free entire-form-factor/nonlocal gravity model — determine whether its nonlinear vertices are fixed by the same covariant action and whether RQIR higher connected response adds information beyond a mediator continuum;
+2. a concrete asymptotic-safety effective form-factor realization — test whether a Lorentzian higher-point object can be frozen operationally;
+3. nonlinear massive-gravity/KK examples — identify which self-coupling/constraint relations remain distinguishable from generic hidden spin-2 mediators;
+4. modern postquantum classical gravity — determine which higher stochastic cumulants/constraint relations can mimic nonlinear quantum-gravity signatures.
+
+Only after this comparator sweep should the next RQIR-driven nonlinear ansatz be frozen.
