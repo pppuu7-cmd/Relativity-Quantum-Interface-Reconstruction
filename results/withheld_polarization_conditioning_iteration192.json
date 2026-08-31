@@ -1,0 +1,43 @@
+{
+  "iteration": 192,
+  "model_readiness_percent": 24,
+  "protocol": "RQIR-WITHHELD-NULLSOFT-12-v1",
+  "scope": "pre-comparator cubic polarization-conditioning audit; K2-only rows unaffected",
+  "blocked_rows": ["W05"],
+  "n_blocked": 1,
+  "row_status": {
+    "W00": "PASS_GEOMETRIC_CONDITIONING",
+    "W01": "PASS_GEOMETRIC_CONDITIONING",
+    "W02": "PASS_GEOMETRIC_CONDITIONING",
+    "W03": "PASS_GEOMETRIC_CONDITIONING",
+    "W04": "PASS_GEOMETRIC_CONDITIONING",
+    "W05": "BLOCKED_POLARIZATION_ZERO_CROSSING",
+    "W06": "PASS_GEOMETRIC_CONDITIONING",
+    "W07": "PASS_GEOMETRIC_CONDITIONING",
+    "W08": "PASS_GEOMETRIC_CONDITIONING",
+    "W09": "PASS_GEOMETRIC_CONDITIONING",
+    "W10": "PASS_GEOMETRIC_CONDITIONING",
+    "W11": "PASS_GEOMETRIC_CONDITIONING"
+  },
+  "W05_certificate": {
+    "seed_pair": [19010,19011],
+    "hard2_raw_norm": -0.3165294147585022,
+    "partner_raw_norm_at_soft_zero": -0.0006149186132773099,
+    "partner_raw_norm_positive_steps": [0.05632841700797155,0.027799823394030976,0.013578275640353368,0.0064781409099177595,0.0029307275551080786],
+    "min_abs_partner_norm": 0.0006149186132773099,
+    "sign_flip_before_soft_limit": true
+  },
+  "classification": {
+    "K2_iteration191": "UNAFFECTED_SEED_INDEPENDENT",
+    "cubic_v1_protocol": "PARTIALLY_BLOCKED_DO_NOT_DROP_OR_RESEED_POSTHOC",
+    "candidate_evaluated": false,
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "NUM-NG-006 — PREREGISTERED_W05_POLARIZATION_CROSSES_A_TT_PROJECTOR_ZERO_BEFORE_THE_SOFT_LIMIT",
+    "PROTO-NG-002 — FAILED_PREREGISTERED_CUBIC_ROW_MUST_NOT_BE_SILENTLY_RESEEDED_OR_DROPPED",
+    "NG-FUNNEL-047 — POLARIZATION_CONDITIONING_CRITERION_MUST_BE_FROZEN_BEFORE_THE_NEXT_WITHHELD_CUBIC_PROTOCOL"
+  ],
+  "readiness_change": "unchanged: a preregistered numerical validity failure is identified before comparator/candidate evaluation"
+}
