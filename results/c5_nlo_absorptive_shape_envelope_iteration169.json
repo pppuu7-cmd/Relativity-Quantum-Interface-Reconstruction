@@ -1,0 +1,78 @@
+{
+  "basis_condition_number": 18.295546896897267,
+  "basis_rank": 3,
+  "basis_singular_values": [
+    3.33529714636138,
+    0.7871654344503896,
+    0.1823010356103108
+  ],
+  "basis_smin_over_smax": 0.05465810919101793,
+  "classification": {
+    "ANSATZ_003": "NOT_CREATED",
+    "C3_C4_loop_absorptive": "BLOCKED_NOT_ZERO",
+    "Fisher_resources": "FORBIDDEN",
+    "finite_frequency_AS": "BLOCKED_NUMERICAL_SPECTRAL_DATA_OR_CONTROLLED_REPRODUCTION",
+    "five_dimensional_shape_remainder": "OPEN_COMPARATOR_SPACE_NOT_CANDIDATE_RESIDUAL",
+    "leading_p4_massless_one_loop": "PROFILED",
+    "massive_thresholds": "BLOCKED_SEPARATE_THRESHOLD_COMPARATOR",
+    "nlo_p6_massless_shape_envelope": "PROFILED_CONSERVATIVELY"
+  },
+  "conservative_absorptive_shape_basis": [
+    "1",
+    "x",
+    "x*log(x)"
+  ],
+  "iteration": 169,
+  "max_profile_orthogonality_error": 1.6653345369377348e-16,
+  "model_readiness_percent": 24,
+  "nnlo_capacity_projected_rank": 3,
+  "nnlo_capacity_projected_singular_values": [
+    0.07676941822904791,
+    0.010371179031178509,
+    9.261983676317638e-05
+  ],
+  "nnlo_capacity_test_basis": [
+    "x^2",
+    "x^2*log(x)",
+    "x^2*log(x)^2"
+  ],
+  "power_counting_order": "O(p^6) relative EFT numerator/self-energy order",
+  "profiled_component_norms": {
+    "constant_p4": 2.618455766672135e-16,
+    "x_p6": 2.0026854743534788e-16,
+    "xlogx_p6": 8.910620809425219e-17
+  },
+  "readiness_change": "unchanged: NLO C5 shape uncertainty is structured, but finite-frequency AS and threshold/loop comparator completion remain open",
+  "residual_shape_dimension": 5,
+  "retained_results": [
+    "C5-NG-006 — NEXT_ORDER_P6_MASSLESS_TT_ABSORPTIVE_ENVELOPE_IS_SPAN_X_XLOGX",
+    "ABS-SHAPE-004 — PROFILING_CONSTANT_X_XLOGX_LEAVES_FIVE_TIMELIKE_SHAPE_DIMENSIONS",
+    "NG-FUNNEL-029 — ORDER_BY_ORDER_LOOP_SHAPE_ENVELOPES_MUST_BE_PROFILED_BEFORE_CANDIDATE_RESIDUAL"
+  ],
+  "s_rows": [
+    0.004,
+    0.008,
+    0.012,
+    0.016,
+    0.02,
+    0.024,
+    0.028,
+    0.032
+  ],
+  "scope": "eight frozen timelike conserved-TT linear absorptive rows",
+  "x_rows": [
+    0.125,
+    0.25,
+    0.375,
+    0.5,
+    0.625,
+    0.75,
+    0.875,
+    1.0
+  ],
+  "authorized_sources": [
+    "tree local six-derivative operators: absorptively zero off isolated poles",
+    "one loop with one four-derivative insertion",
+    "two-loop Einstein-Hilbert massless sector"
+  ]
+}
