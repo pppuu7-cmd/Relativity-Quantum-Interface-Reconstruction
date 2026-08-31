@@ -1,0 +1,38 @@
+{
+  "classification": {
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN_NO_GRAVITY_SPECIFIC_RESIDUAL",
+    "five_dimensional_iteration169_remainder": "NOT_A_GRAVITY_SPECIFIC_RESIDUAL_AT_LINEAR_GAUSSIAN_LEVEL",
+    "negative_or_indefinite_spectral_weight": "NOT_PROMOTABLE_WITHOUT_SEPARATE_PHYSICAL_POSITIVITY_GAUGE_OBSERVABILITY_AUDIT",
+    "positive_linear_spectral_shape": "EXACT_C4_GAUSSIAN_DEGENERACY",
+    "threshold_branch_cut_shape": "INCLUDED_WHEN_ENCODED_BY_POSITIVE_SPECTRAL_MEASURE"
+  },
+  "iteration": 170,
+  "max_abs_discrete_tower_difference": 2.842170943040401e-14,
+  "model_readiness_percent": 24,
+  "positive_weights": [
+    0.12,
+    0.07,
+    0.2,
+    0.14,
+    0.19,
+    0.11
+  ],
+  "readiness_change": "unchanged: a whole false-positive search branch is closed, but no robust Candidate Gravity residual or parent dynamics exists",
+  "retained_results": [
+    "C4-NG-008 — POSITIVE_LINEAR_TT_SPECTRAL_RESPONSE_IS_EXACTLY_REPRESENTABLE_BY_ORDINARY_MEDIATOR_CONTINUUM",
+    "ABS-SHAPE-005 — FINITE_FREQUENCY_LINEAR_SPECTRAL_SHAPE_CANNOT_CERTIFY_GRAVITY_SPECIFIC_NOVELTY_AGAINST_C4",
+    "NG-FUNNEL-030 — LINEAR_SPECTRAL_RESIDUAL_REQUIRES_A_LINKED_NONLINEAR_OR_POST_GAUSSIAN_GRAVITY_RELATION_FOR_PROMOTION"
+  ],
+  "retarded_regulator": 1e-06,
+  "scope": "frozen eight-row timelike conserved-traceless TT linear source-response sector",
+  "spectral_nodes_mu2": [
+    0.0025,
+    0.0065,
+    0.011,
+    0.018,
+    0.027,
+    0.041
+  ],
+  "theorem": "ANY_POSITIVE_TT_KALLEN_LEHMANN_TWO_POINT_RESPONSE_HAS_AN_EXACT_POSITIVE_NORM_C4_MEDIATOR_DIRECT_INTEGRAL_REPRESENTATION"
+}
