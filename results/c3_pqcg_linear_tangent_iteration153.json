@@ -1,0 +1,45 @@
+{
+  "A": 258.83104475297773,
+  "blocked_rows": [
+    "C3sym",
+    "chi2R_even",
+    "chi2R_odd",
+    "soft2",
+    "tensor_geo",
+    "threshold"
+  ],
+  "comparator_id": "C3-PQCG-LIN-001",
+  "interpretation": {
+    "D2_D0_identifiability": "REGIME_SPECIFIC_NON_IDENTIFIABILITY: one scalar N2 coordinate spans only one combination 5 D2 + D0",
+    "fisher_resources": "FORBIDDEN",
+    "full_C3_tangent": "BLOCKED_NONLINEAR_COMPLETION"
+  },
+  "iteration": 153,
+  "parameter_order": [
+    "D2",
+    "D0"
+  ],
+  "probe_count": 18,
+  "probe_k2_max": 0.7473,
+  "probe_k2_min": 0.2278,
+  "rank_supported": 1,
+  "scope": "linearized covariant postquantum-classical stochastic pure-gravity block",
+  "singular_values": [
+    1319.7845479190407,
+    0.0
+  ],
+  "supported_rows": [
+    "N2",
+    "chi1R"
+  ],
+  "V_supported": [
+    [
+      1294.1552237648887,
+      258.83104475297773
+    ],
+    [
+      0.0,
+      0.0
+    ]
+  ]
+}
