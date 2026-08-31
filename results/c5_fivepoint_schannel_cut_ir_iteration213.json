@@ -1,0 +1,60 @@
+{
+  "iteration": 213,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "protocol": "real massless 2->3 at sqrt(s)=1; all-outgoing --+++; total-s two-particle cut",
+  "kinematic_checks": [
+    {"epsilon":0.04,"momentum_conservation_max_abs":9.020562075079397e-17,"max_abs_mass_shell":2.168404344971009e-19},
+    {"epsilon":0.01,"momentum_conservation_max_abs":1.0234868508263162e-16,"max_abs_mass_shell":5.551115123125783e-17},
+    {"epsilon":0.001,"momentum_conservation_max_abs":5.637851296924623e-17,"max_abs_mass_shell":0.0}
+  ],
+  "cut_partition": {
+    "left": "M4(k1-,k2-,ell1+,ell2+)",
+    "right": "M5(k3+,k4+,k5+,-ell1-,-ell2-)",
+    "phase_space": "ell1=(1/2)(1,n), ell2=(1/2)(1,-n), n on S^2",
+    "helicity_sum_rule": "tree selection leaves only h1=h2=+ on the left in the frozen external MHV sector"
+  },
+  "helicity_terms_at_theta_0p8_phi_0p7": [
+    {"h1":-1,"h2":-1,"abs_integrand":0.0},
+    {"h1":-1,"h2":1,"abs_integrand":0.0},
+    {"h1":1,"h2":-1,"abs_integrand":0.0},
+    {"h1":1,"h2":1,"abs_integrand":18339.010285895754}
+  ],
+  "epsilon_diagnostic": 0.01,
+  "endpoint_thetas": [0.1,0.05,0.02,0.01,0.005,0.002],
+  "theta2_times_abs_integrand": [3142.8945643666525,2881.134315462405,2728.8526509608155,2679.0604985150817,2654.3639848834846,2639.612266113485],
+  "theta2_abs_integrand_smallest_theta": 2639.612266113485,
+  "angular_caps": [0.3,0.2,0.14,0.1,0.07,0.05,0.035,0.025],
+  "raw_angular_integrals": [
+    {"delta":0.3,"real":3937.564479869015,"imag":-37493.13568218128,"abs":37699.332922519345},
+    {"delta":0.2,"real":3127.519176895097,"imag":-49364.933217293394,"abs":49463.93111468784},
+    {"delta":0.14,"real":1710.7956337694013,"imag":-61002.81051228569,"abs":61026.796190633315},
+    {"delta":0.1,"real":98.57100297718512,"imag":-71838.28480492902,"abs":71838.35243191814},
+    {"delta":0.07,"real":-1913.5560248805898,"imag":-83352.39867480796,"abs":83374.36796249062},
+    {"delta":0.05,"real":-3934.3373735519745,"imag":-94238.9861882483,"abs":94321.0849547205},
+    {"delta":0.035,"real":-6114.563790036093,"imag":-105720.62411462548,"abs":105897.32111191061},
+    {"delta":0.025,"real":-8106.739691082096,"imag":-116116.29794079094,"abs":116398.91727153741}
+  ],
+  "abs_integral_log_fit_last6": {
+    "slope": 32231.37809459,
+    "intercept": -2324.62623042,
+    "relative_fit_residual": 0.0011906863945505021
+  },
+  "classification": {
+    "real_2to3_kinematics": "PASS_MACHINE_PRECISION",
+    "helicity_sum_reduction": "PASS_TREE_SELECTION",
+    "raw_cut_endpoint": "IR_COLLINEAR_LOG_DIVERGENT",
+    "raw_cut_to_iteration210_extractor": "FORBIDDEN_BEFORE_IR_SUBTRACTION_OR_INCLUSIVE_COMPLETION",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "C5-CUT-011 — REAL_FIVE_GRAVITON_TOTAL_S_CUT_REDUCES_TO_M4_MHV_TIMES_M5_MHV_IN_THE_FROZEN_HELICITY_SECTOR",
+    "IR-NG-002 — RAW_FIVE_GRAVITON_S_CHANNEL_CUT_HAS_THETA_MINUS_TWO_ENDPOINT_BEHAVIOR_AND_LOGARITHMIC_ANGULAR_CAP_DEPENDENCE",
+    "C5-CUT-012 — RAW_UNITARITY_CUT_MUST_BE_IR_SUBTRACTED_OR_INCLUSIVELY_COMPLETED_BEFORE_REGULAR_LOG_SOFT_EXTRACTION",
+    "NG-FUNNEL-070 — UNIVERSAL_LOOP_IR_LOGS_MUST_NOT_BE_MISIDENTIFIED_AS_LINKED_GRAVITY_RESIDUALS"
+  ],
+  "readiness_change": "unchanged at 23%; the physical cut geometry and its IR blocker are now explicit, but no IR-safe five-point cut has been extracted",
+  "next_gate": "Derive/freeze the universal gravitational IR subtraction for this exact cut convention from the on-shell Born amplitude/eikonal soft factor, validate cap independence after subtraction, then run the finite-epsilon regular+log extractor."
+}
