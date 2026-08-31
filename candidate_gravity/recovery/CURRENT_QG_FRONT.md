@@ -6,22 +6,22 @@
 **Rejected consistency control:** `ANSATZ-RQIR-CTP-001` v0.1  
 **Positive-spectral Gaussian comparator:** `ANSATZ-RQIR-KL-002` v0.1  
 **Active promotable ansatz:** none — intentionally withheld pending fixed post-Gaussian comparator quotient  
-**Authoritative Candidate Gravity front:** **Iteration 155**
+**Authoritative Candidate Gravity front:** **Iteration 157**
 
 ## Scientific state in one sentence
 
-The first fixed C3 comparator is now nonlinear enough to demonstrate from one published classical-spacetime dynamics all of: Gaussian metric noise, a nonzero symmetric gravitational bispectrum, and a nonzero tree causal nonlinear Einstein response. The symmetric cumulant lifts the `(D2,D0)` comparator tangent to rank `2/2`, whereas the tree causal response is a common hard-calibrated GR-boundary contribution and adds zero diffusion rank. Diffusion-dependent/order-sensitive C3 response remains BLOCKED, so the next active comparator target is a fixed nonlinear C4 realization.
+The fixed comparator funnel now contains a nonlinear classical-stochastic C3 block and a concrete nonlinear dRGT C4 block in addition to the scoped C5 quantum-GR EFT block. dRGT adds algebraic nonlinear-response directions beyond the currently implemented C5 `R^3` span, but a stricter common-EH/gain quotient exposes the mass direction as near-degenerate (`~0.13%–0.32%` residual) while `alpha3` retains a larger scoped residual (`~4.7%–6.9%`). This demonstrates that formal rank increase must be followed by conditioning/nuisance audits before any Candidate Gravity direction is promoted.
 
 ## Frozen model outcomes
 
 ### `ANSATZ-PQG-EFT-001`
-REFERENCE / NOT PROMOTABLE. QG-007 FAIL due exact C5 identity. Retain `CG-NG-003`.
+REFERENCE / NOT PROMOTABLE. Exact C5 identity; retain `CG-NG-003`.
 
 ### `ANSATZ-RQIR-CTP-001` v0.1
-REJECTED. QG-004 FAIL: `EXTRA_NEGATIVE_RESIDUE_TIMELIKE_POLE`. Retain `CG-NG-004`.
+REJECTED. QG-004 FAIL `EXTRA_NEGATIVE_RESIDUE_TIMELIKE_POLE`; retain `CG-NG-004`.
 
 ### `ANSATZ-RQIR-KL-002` v0.1
-REFERENCE / NOT PROMOTABLE. Positive KL Gaussian spin-2 continuum but exact C4 direct-integral/tower degeneracy. Retain `CG-NG-005/006`.
+REFERENCE / NOT PROMOTABLE. Exact Gaussian C4/KK mediator degeneracy; retain `CG-NG-005/006`.
 
 ## Frozen post-Gaussian protocol
 
@@ -33,169 +33,175 @@ Novelty pre-gate:
 
 `rank([M,b]) > rank(M)`
 
-or equivalently nonzero
+or nonzero
 
 `r_beta=(I-MM^+)b`,
 
-only after included comparator rows are actually derived from fixed finite realizations.
+only after fixed comparator and nuisance directions are derived and exact hard constraints removed.
 
-Retained funnel rules now include `NG-FUNNEL-001` through `NG-FUNNEL-013`.
+Retained funnel rules now include `NG-FUNNEL-001` through `NG-FUNNEL-014`.
 
-## C3 — fixed postquantum-classical gravity comparator
+## C3 status — fixed postquantum-classical gravity comparator
 
-### Iteration 153 — linear stochastic block
+### Linear noise
 
-`C3-PQCG-LIN-001`:
+`N2=A(5D2+D0)`, `A=258.83104475297773`.
 
-`box h_s=J_s+xi_s`, `<xi_s xi_s'>=2D_s delta_ss' delta4`, `s=2,0`.
+One scalar noise coordinate gives rank `1/2` in `(D2,D0)`.
 
-On the frozen finite probe/smearing layer:
+Retain `C3-NG-001 — ONE_NOISE_COORDINATE_COLLAPSES_TWO_DIFFUSION_DIRECTIONS`.
 
-`A=258.83104475297773`,
+### Nonlinear symmetric cumulant
 
-`N2=A(5D2+D0)`.
+From the same published covariant PQCG Onsager–Machlup action
 
-One scalar `N2` coordinate gives rank `1/2` for `(D2,D0)`.
+`S[g]=1/2 int sqrt(-g)[alpha R_mn R^mn-beta R^2]`,
 
-Retained:
+with
 
-`C3-NG-001 — ONE_NOISE_COORDINATE_COLLAPSES_TWO_DIFFUSION_DIRECTIONS` = regime-specific non-identifiability.
+`D2=1/(2alpha)`, `D0=1/[8(alpha-3beta)]`,
 
-### Iteration 154 — nonlinear symmetric cumulant
+the six TT probes give
 
-`C3-PQCG-NL-001` uses the same published covariant PQCG pure-gravity Onsager–Machlup action
+`C3sym_TT=B D2^2`, `B=-617.4340282011477`.
 
-`S[g]=1/2 int sqrt(-g)[alpha R_mn R^mn-beta R^2]`.
-
-Quadratic covariance map:
-
-`D2=1/(2alpha)`,
-
-`D0=1/[8(alpha-3beta)]`.
-
-On the six frozen TT probes, `R^(1)=0`, so the `R^2` cubic TT coefficient vanishes, while `R_mn R^mn` generates a nonzero classical connected third cumulant.
-
-Aggregate:
-
-`C3sym_TT=B D2^2`,
-
-`B=-617.4340282011477`.
-
-Together with the noise row,
+Hence
 
 `V_C3=[[5A,A],[2BD2,0]]`,
 
-`det(V_C3)=-2ABD2`.
+which is rank `2/2` for every physical `D2>0`.
 
-For every physical `D2>0`, the supported `(N2,C3sym_TT)` tangent is rank **2/2**.
-
-Normalized `D2=1` SVD diagnostic:
-
-`[1798.6530445678386,177.70085794811004]`,
-
-`smin/smax=0.0987966292247353`.
-
-Retained:
+Retain:
 
 - `C3-NG-002 — NONLINEAR_CUMULANT_LIFTS_LINEAR_DIFFUSION_DEGENERACY`;
 - `NG-FUNNEL-012 — CLASSICAL_OM_ACTION_GENERATES_POST_GAUSSIAN_RANK`.
 
-### Iteration 155 — tree causal nonlinear response
+### Tree causal response
 
-The same nonlinear Einstein drift gives
+The same nonlinear Einstein drift gives the nonzero classical response
 
-`chi2R_A;BC = -G_R_AA' Gamma3_EH^A'_{B'C'} G_R^B'_B G_R^C'_C`.
+`chi2R=-G_R Gamma3_EH G_R G_R`.
 
-Frozen six-probe response:
+After hard calibration of the common Newton/GR coupling,
 
-`[0.30003001285313774,-1.461790494216445,-12.034873790942026,-14.434681522564402,4.867521776975717,-2.7789127642722273]`.
+`partial chi2R_tree/partial D2 = partial chi2R_tree/partial D0 = 0`.
 
-Thus the classical stochastic spacetime comparator has a **nonzero causal nonlinear response**.
-
-After the common Newton/GR coupling is hard-calibrated, however,
-
-`partial chi2R_tree / partial D2 = partial chi2R_tree / partial D0 = 0`.
-
-Therefore this tree response adds rank **0** to the `(D2,D0)` stochastic tangent: it is a common GR-boundary contribution, not a new diffusion direction.
-
-Retained:
+Retain:
 
 - `C3-NG-003 — TREE_ORDERED_RESPONSE_IS_COMMON_GR_BOUNDARY`;
 - `NG-FUNNEL-013 — NONZERO_CAUSAL_NONLINEAR_RESPONSE_NOT_QUANTUM_CERTIFICATE`.
 
-### C3 blockers after Iteration 155
+Still BLOCKED: diffusion-dependent stochastic/MSR-loop ordered corrections, exact `chi2R_odd` selector, non-TT tensor completion, threshold, full C3 quotient.
 
-Supported:
+## C4 status — `C4-DRGT-001`
 
-- `N2`;
-- `C3sym_TT`;
-- nonzero tree causal Einstein response as common GR boundary.
+### Iteration 156 — fixed nonlinear dRGT tangent
 
-Still BLOCKED, never zero-filled:
+Frozen action:
 
-- diffusion-dependent stochastic/MSR-loop ordered corrections;
-- exact protocol-specific `chi2R_odd` selector/completion;
-- `soft2`;
-- non-TT `tensor_geo` completion;
-- threshold coordinate;
-- full C3 quotient.
+`S=M_Pl^2/2 int sqrt(-g)[R + m^2/2(L2[K]+alpha3 L3[K]+alpha4 L4[K])] + S_m[g]`,
+
+`K=I-sqrt(g^{-1}eta)`, with `alpha0=alpha1=0`, `alpha2=1`.
+
+Frozen point:
+
+`m^2=0.04`, `alpha3=0`, `alpha4=0`.
+
+On TT fields:
+
+`V3_dRGT=m^2(3+alpha3)/8 Tr(H^3)`.
+
+`alpha4` is blind at cubic TT order because `L4` starts quartically.
+
+Tangent parameters `(log m^2,alpha3)` give
+
+- rank `2/2`;
+- singular values `[3.062684454379795,0.4175708275716087]`;
+- `smin/smax=0.13634144772501477`.
+
+Against only the existing two C5 local `R^3` columns, residual fractions are approximately `[0.1928,0.1365]` and combined rank rises from 2 to 4.
+
+Retain:
+
+- `C4-NG-001 — ALPHA4_CUBIC_TT_BLIND`;
+- `C4-NG-002 — DRGT_EXPANDS_SCOPED_NONLINEAR_COMPARATOR_SPAN`.
+
+### Iteration 157 — shared-boundary/gain quotient
+
+Base span:
+
+`M=[EH_common,C5_Ricci3,C5_Riemann3,response_gain_at_dRGT_reference]`.
+
+Across raw coordinates plus three invertible row normalizations:
+
+- base rank remains `4`;
+- combined base+dRGT rank remains `6`;
+- `log m^2` residual fraction range: `0.001256944940945903 ... 0.003203089011461978`;
+- `alpha3` residual fraction range: `0.047221203241976296 ... 0.06942706305159267`.
+
+Interpretation:
+
+- `log m^2`: **NEAR_DEGENERATE_NOT_PROMOTABLE**;
+- `alpha3`: **SCOPED_RESIDUAL_SURVIVES**;
+- neither is a Candidate Gravity novelty certificate because C4/C5 remain incomplete.
+
+Retain:
+
+- `C4-NG-003 — COMMON_BOUNDARY_GAIN_NEARLY_ABSORBS_MASS_DIRECTION`;
+- `NG-FUNNEL-014 — ALGEBRAIC_RANK_REQUIRES_CONDITIONING_AUDIT`.
+
+C4 still BLOCKED: helicity-0/1 completion, Vainshtein/nonperturbative response, `N2/C3sym`, alpha4 higher-point direction, full C4 quotient.
 
 Authorities:
 
-- `candidate_gravity/comparators/C3-PQCG-NL-001.md`;
-- `analysis/c3_pqcg_nonlinear_bispectrum_iteration154.py`;
-- `results/c3_pqcg_nonlinear_bispectrum_iteration154.json`;
-- `analysis/c3_pqcg_tree_ordered_response_iteration155.py`;
-- `results/c3_pqcg_tree_ordered_response_iteration155.json`;
-- `candidate_gravity/C3_PQCG_TREE_ORDERED_RESPONSE_ITERATION155.md`;
-- `recovery/RECOVERY_DELTA_ITERATION_155.md`.
+- `candidate_gravity/comparators/C4-DRGT-001.md`;
+- `analysis/c4_drgt_nonlinear_tangent_iteration156.py`;
+- `results/c4_drgt_nonlinear_tangent_iteration156.json`;
+- `analysis/c4_drgt_shared_boundary_quotient_iteration157.py`;
+- `results/c4_drgt_shared_boundary_quotient_iteration157.json`;
+- `candidate_gravity/C4_DRGT_SHARED_BOUNDARY_QUOTIENT_ITERATION157.md`;
+- `recovery/RECOVERY_DELTA_ITERATION_157.md`.
 
 Literature anchors:
 
-- Oppenheim & Weller-Davies, Phys. Rev. X 16, 031007 (2026), DOI `10.1103/2rcd-dzcf`;
-- Oppenheim & Sajjad, arXiv:`2605.05375`;
-- Grudka et al., arXiv:`2402.17844`.
+- de Rham, *Massive Gravity*, Living Rev. Relativity 17, 7 (2014);
+- Hassan & Rosen, arXiv:1106.3344;
+- de Rham, Gabadadze & Tolley, arXiv:1107.3820, arXiv:1108.4521.
 
 ## C5 status retained
 
-- local on-shell `V_amp`: `12x10`, rank `10/10`, on-shell amplitude space only;
+- on-shell local `V_amp`: `12x10`, rank `10/10`, on-shell only;
 - tree retarded factorization fixed;
 - source-completed six-probe protocol PASS_SCOPED;
-- EH + two curvature-cubic local response tangent: `6x2`, rank `2/2`, `PASS_SCOPED_WARD_VALIDATED`;
-- higher-dimension local columns: BLOCKED;
-- loop/nonanalytic columns: BLOCKED;
-- C5 `N2`/`C3sym` sectors: BLOCKED.
-
-## Other comparator program
-
-### C4
-`ANSATZ-RQIR-KL-002` remains the exact Gaussian control. The next active target is a **fixed finite nonlinear interacting massive-spin-2 / dRGT-style realization**.
-
-### Nonlocal / asymptotic safety
-Still require one fixed action/truncation each. Program labels are not finite comparator matrices.
+- EH + `Ricci^3/Riemann^3` local response: `6x2`, rank `2/2`, Ward validated;
+- higher local directions: BLOCKED;
+- loop/nonanalytic directions: BLOCKED;
+- C5 `N2/C3sym`: BLOCKED.
 
 ## Article material
 
-Latest working matrix:
+Latest matrix:
 
-`docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION155.md`.
+`docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION157.md`.
 
-The article funnel can now state using a concrete classical-spacetime model, not merely an abstract argument, that neither gravitational symmetric non-Gaussianity nor nonzero nonlinear causal response alone certifies a quantum metric.
+The future model paper can now distinguish consistency FAIL, exact comparator identity, order/protocol blindness, and near-degeneracy after nuisance quotient using explicit calculations rather than generic discussion.
 
 ## `ANSATZ-003` design state
 
-Still intentionally **not frozen**. No algebraic novelty residual has survived the full fixed comparator quotient.
+Still intentionally **not frozen**. No robust residual has yet survived the full fixed C3/C4/C5/nonlocal/asymptotic-safety quotient.
 
 Fisher/resources remain forbidden.
 
-## Immediate next scientific priority — Iteration 156
+## Immediate next scientific priority — Iteration 158
 
-Instantiate the first fixed nonlinear C4 comparator.
+Instantiate one fixed strong QG comparator outside the existing C3/C4/C5 blocks.
 
-1. freeze one concrete ghost-free interacting massive-spin-2 / dRGT-style action and finite parameter vector rather than using the C4 class label;
-2. retain the same physical source convention and six-probe finite response layer where compatible;
-3. derive its tree `Gamma3` and retarded `chi2R` from the same action;
-4. identify supported tensor/threshold coordinates and keep unavailable rows BLOCKED;
-5. compare the finite nonlinear C4 tangent against the existing C5 `6x2` local response span and supported C3 rows;
-6. do not treat Vainshtein/nonlinear completion as free nuisance freedom unless actually present in the frozen realization;
-7. no Fisher/resources and no `ANSATZ-003` until a nonzero residual survives fixed C3/C4/C5/nonlocal/AS quotienting.
+Preferred route:
+
+1. freeze one explicit covariant nonlocal/form-factor gravity action with finite parameters;
+2. derive its finite two-/three-point response on the same six-probe protocol;
+3. apply the common EH/gain quotient and compare with the current C4+C5 span;
+4. if a clean finite nonlocal map is unavailable without arbitrary choices, use one concrete asymptotic-safety vertex truncation instead;
+5. never use a broad program/class label as a tangent block;
+6. keep unavailable sectors BLOCKED;
+7. no `ANSATZ-003`, Fisher or resources until a quantitatively robust residual survives the full fixed comparator funnel.
