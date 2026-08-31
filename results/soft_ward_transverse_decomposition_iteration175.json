@@ -1,0 +1,62 @@
+{
+  "classification": {
+    "ANSATZ_003": "NOT_CREATED",
+    "AS_B": "BLOCKED_REAL_TIME_THREE_POINT_COMPLETION",
+    "C3_ordered_B": "BLOCKED",
+    "C4_B": "REQUIRES_FIXED_PARENT_PROJECTION",
+    "C5_B": "REQUIRES_FIXED_EFT_OPERATOR_PROJECTION",
+    "Fisher_resources": "FORBIDDEN",
+    "nonlocal_B": "FIXED_IN_PRINCIPLE_FOR_QG_NL_EXP_001_BUT_NOT_PROJECTED",
+    "scalar_WardLock_only": "INSUFFICIENT_FOR_MODEL_DISCRIMINATION",
+    "transverse_B_form_factor": "NEXT_COMPARATOR_RESIDUAL_SPACE",
+    "ward_determined_longitudinal_vertex": "PROJECT_AS_HARD_CONSISTENCY_SHARED_STRUCTURE"
+  },
+  "decomposition": "Gamma3_soft = W[K2] + Rlin_soft : B3 + higher-soft-order",
+  "finite_protocol_next_coordinates": {
+    "number_of_frozen_rows": 6,
+    "per_row": "B_T = projector_transverse[Gamma_arr - W[K2]]",
+    "status": "PROTOCOL_FROZEN_COMPARATOR_COLUMNS_NOT_YET_ALL_INSTANTIATED",
+    "transverse_row_dimension_before_comparator_subtraction": 6
+  },
+  "interpretation": {
+    "Rlin:B3": "GAUGE_INVARIANT_TRANSVERSE_OR_NONMINIMAL_THREE_POINT_STRUCTURE",
+    "W[K2]": "WARD_DETERMINED_LONGITUDINAL_SHARED_STRUCTURE",
+    "leading_soft": "LOCK_NOT_NOVELTY",
+    "subleading_soft": "LOCK_NOT_NOVELTY_IN_FROZEN_LOCAL_EFT_SETTING",
+    "subsubleading_soft": "MODEL_DEPENDENT_COMPARATOR_SPACE_NOT_AUTOMATIC_NOVELTY"
+  },
+  "iteration": 175,
+  "max_soft_scaling_error": 1.7763568394002505e-15,
+  "model_readiness_percent": 24,
+  "pure_gauge_riemann_max_abs": 5.551115123125783e-17,
+  "pure_gauge_riemann_norm": 1.3597399555105182e-16,
+  "readiness_change": "unchanged: a physically sharper residual space is frozen, but fixed comparator transverse columns are not yet complete",
+  "retained_results": [
+    "SOFT-NG-001 — WARD_DETERMINED_SOFT_CUBIC_PART_IS_SHARED_STRUCTURE_FIXED_BY_THE_TWO_POINT_KERNEL",
+    "SOFT-NG-002 — LINEARIZED_RIEMANN_THREE_POINT_FORM_FACTOR_IS_GAUGE_INVARIANT_AND_ENTERS_AT_SUBSUBLEADING_K2_ORDER",
+    "NG-FUNNEL-035 — REPLACE_SCALAR_WARDLOCK_WITH_WARD_SUBTRACTED_TRANSVERSE_CUBIC_COORDINATES"
+  ],
+  "scope": "soft tensor decomposition for source-completed amputated cubic RQIR protocol",
+  "soft_scaling_checks": [
+    {
+      "abs_error": 0.0,
+      "expected_k2_ratio": 0.25,
+      "norm_ratio": 0.25,
+      "scale": 0.5
+    },
+    {
+      "abs_error": 0.0,
+      "expected_k2_ratio": 4.0,
+      "norm_ratio": 4.0,
+      "scale": 2.0
+    },
+    {
+      "abs_error": 1.7763568394002505e-15,
+      "expected_k2_ratio": 9.0,
+      "norm_ratio": 9.000000000000002,
+      "scale": 3.0
+    }
+  ],
+  "tt_riemann_max_abs": 0.35355339059327373,
+  "tt_riemann_norm": 1.9999999999999998
+}
