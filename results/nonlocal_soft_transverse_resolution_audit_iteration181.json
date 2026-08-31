@@ -1,0 +1,34 @@
+{
+  "iteration": 181,
+  "MODEL_READINESS": "24%",
+  "comparator": "QG-NL-EXP-001",
+  "scope": "conditioning/resolution audit only; full tensor action-level B_T projection remains required",
+  "q2": [0.5076, 0.3854, 0.426, 0.3153, 0.4004, 0.2882],
+  "local_C5_rank": 4,
+  "local_C5_basis": "Riemann3_B_T * {1,-q2,q2^2,-q2^3}",
+  "iteration178_extrapolation_error_envelope": 5.262558013335861e-06,
+  "analytic_nonlocal_shape_metrics": {
+    "r0*F(-q2)": {"residual_norm": 6.333212140422849e-08, "relative_residual": 2.5960288782864293e-08, "augmented_rank_tol_1e-10": 5, "fifth_singular_value": 4.194269022596654e-08},
+    "r0*q2*dFminus_dx": {"residual_norm": 2.7400302551295077e-07, "relative_residual": 4.254347212356615e-07, "augmented_rank_tol_1e-10": 5, "fifth_singular_value": 2.3301280727295966e-07},
+    "r0*q2^2*d2Fminus_dx2": {"residual_norm": 9.323562608218339e-07, "relative_residual": 4.224760942578617e-06, "augmented_rank_tol_1e-10": 5, "fifth_singular_value": 8.327302552948823e-07},
+    "r0*exp(q2)": {"residual_norm": 3.3733514570984833e-07, "relative_residual": 1.0946795257769116e-07, "augmented_rank_tol_1e-10": 5, "fifth_singular_value": 1.8604077414448036e-07}
+  },
+  "max_candidate_fifth_singular_value": 8.327302552948823e-07,
+  "max_candidate_fifth_singular_over_error_envelope": 0.158232989,
+  "classification": {
+    "six_row_formfactor_resolution": "NEAR_DEGENERATE_BELOW_EXISTING_B_T_NUMERICAL_ENVELOPE_FOR_TESTED_ANALYTIC_SHAPES",
+    "full_QG_NL_EXP_001_B_T": "BLOCKED_NONLOCAL_B_T_TENSOR_FRECHET_IMPLEMENTATION_NOT_ZERO",
+    "consistency_fail": false,
+    "exact_comparator_identity": false,
+    "novelty_certificate": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "NL-NG-004 — CURRENT_SIX_ROW_Q2_LEVER_ARM_NEARLY_POLYNOMIALIZES_TESTED_EXPONENTIAL_FORMFACTOR_SHAPES_BELOW_B_T_ERROR_ENVELOPE",
+    "NUM-NG-002 — NONLOCAL_FIFTH_SINGULAR_VALUE_BELOW_FROZEN_EXTRAPOLATION_ENVELOPE_IS_NOT_A_PHYSICAL_RANK_CERTIFICATE",
+    "NG-FUNNEL-039 — FULL_TENSOR_FRECHET_PROJECTION_AND_RESOLUTION_MARGIN_ARE_BOTH_REQUIRED_BEFORE_NONLOCAL_B_T_RANK_PROMOTION"
+  ],
+  "model_readiness_percent": 24,
+  "readiness_change": "unchanged: a resolution blocker/near-degeneracy was identified, but the fixed nonlocal comparator is not yet fully projected and no residual exists"
+}
