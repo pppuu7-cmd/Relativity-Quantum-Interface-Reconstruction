@@ -1,0 +1,45 @@
+{
+  "classification": {
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN",
+    "broad_weakly_nonlocal_class_cubic_from_two_point": "NOT_UNIQUE_BECAUSE_INDEPENDENT_POTENTIALS_ALLOWED",
+    "full_covariant_action_tree_cubic": "FIXED_IN_PRINCIPLE_BY_ACTION_AND_FRECHET_VARIATION",
+    "independent_curvature_cubic_potential_in_QG_NL_EXP_001": "ABSENT_BY_FROZEN_DEFINITION",
+    "propagator_only_to_cubic": "NOT_UNIQUE_WITHOUT_COVARIANT_PARENT_ACTION",
+    "raw_six_probe_tensor_cubic_amplitude": "NOT_NEEDED_FOR_CURRENT_COARSE_RELATION_RANK; STILL_NOT_NUMERICALLY_PROJECTED",
+    "tree_CTP_relation_contribution": "EXACTLY_ANNIHILATED_BY_ITERATION172_RELATION_MAP"
+  },
+  "closed_unitary_raw_rank": 6,
+  "closed_unitary_relation_rank": 0,
+  "comparator": "QG-NL-EXP-001",
+  "cubic_expansion_structure": [
+    "G2 F0 R1",
+    "G1 F0 R2",
+    "sqrtg1 G1 F0 R1",
+    "G1 (delta F)_1 R1"
+  ],
+  "current_relation_map": [
+    "R_aar=Gamma_aar",
+    "R_unit=Gamma_aaa-Gamma_arr/4",
+    "R_W=WardLock"
+  ],
+  "frechet_variation_certificate": [
+    {"a":0.3,"b":0.7,"integral":0.36193853166929,"divided_difference":0.36193853166929,"abs_error":0.0},
+    {"a":0.5,"b":1.2,"integral":0.292286462621288,"divided_difference":0.292286462621288,"abs_error":0.0},
+    {"a":1.0,"b":1.0,"integral":0.26424111765711533,"divided_difference":0.26424111765711533,"abs_error":0.0},
+    {"a":0.2,"b":2.0,"integral":0.2633410423491096,"divided_difference":0.2633410423491096,"abs_error":0.0},
+    {"a":0.4,"b":0.9,"integral":0.32966568035646815,"divided_difference":0.32966568035646815,"abs_error":0.0},
+    {"a":1.4,"b":0.6,"integral":0.26729447594245076,"divided_difference":0.26729447594245076,"abs_error":0.0}
+  ],
+  "iteration": 174,
+  "lambda": 1.0,
+  "max_abs_relation_entry": 0.0,
+  "max_frechet_divided_difference_error": 0.0,
+  "model_readiness_percent": 24,
+  "readiness_change": "unchanged: nonlocal tree relation occupancy is structurally closed, but the current relation protocol is proven too coarse and no unique residual exists",
+  "retained_results": [
+    "NL-NG-003 — COVARIANT_NONLOCAL_CUBIC_VERTEX_CONTAINS_OPERATOR_FRECHET_VARIATION_NOT_VISIBLE_IN_PROPAGATOR_ONLY_REASONING",
+    "CTP-NG-005 — CLOSED_UNITARY_DIFFEO_INVARIANT_NONLOCAL_TREE_ACTION_IS_ANNIHILATED_BY_CURRENT_COARSE_CTP_RELATION_MAP",
+    "NG-FUNNEL-034 — ZERO_WARD_LOCK_PLUS_GENERIC_UNITARY_RA_RELATION_CANNOT_DISTINGUISH_QUANTUM_GRAVITY_FAMILIES"
+  ]
+}
