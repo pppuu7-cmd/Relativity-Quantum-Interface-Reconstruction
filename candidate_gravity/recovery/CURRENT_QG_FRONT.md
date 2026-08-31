@@ -5,12 +5,12 @@
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Rejected consistency control:** `ANSATZ-RQIR-CTP-001` v0.1  
 **Positive-spectral Gaussian comparator:** `ANSATZ-RQIR-KL-002` v0.1  
-**Active promotable ansatz:** none — intentionally withheld pending post-Gaussian design closure  
-**Authoritative Candidate Gravity front:** **Iteration 144**
+**Active promotable ansatz:** none — intentionally withheld pending fixed post-Gaussian comparator tangents  
+**Authoritative Candidate Gravity front:** **Iteration 145**
 
 ## Scientific state in one sentence
 
-RQIR has eliminated propagator-only novelty and nonlinearity-only novelty as sufficient design principles. The next Candidate Gravity must expose a **symmetry-locked ordered nonlinear/non-Gaussian response**, derived with the lower-point sector from one dynamics and surviving C3/C4/C5/nonlocal/asymptotic-safety comparator subtraction.
+RQIR has eliminated propagator-only novelty, nonlinearity-only novelty and soft-theorem modification alone as sufficient design principles; it has also shown that broad theory-class capability masks are too unconstrained for a meaningful novelty quotient. The next Candidate Gravity must survive **fixed finite C3/C4/C5/nonlocal/asymptotic-safety tangent matrices** in a symmetry-locked ordered post-Gaussian protocol.
 
 ## Frozen model outcomes
 
@@ -57,87 +57,41 @@ QG-007 FAIL: `EXACT_GAUSSIAN_C4_KK_DEGENERACY`.
 
 No detector/Fisher/resource optimization can repair this exact identity.
 
-## Iteration 142 — nonlinear comparator sweep
+## Iterations 142–144 retained design constraints
 
-The strongest existing nonlinear classes were checked against the design requirement exported by `CG-NG-006`.
+### Iteration 142 — nonlinear comparator sweep
 
-### Weakly nonlocal / form-factor gravity
+Known nonlocal gravity, asymptotic-safety vertex expansions, nonlinear massive spin-2 gravity and postquantum classical gravity already contain nonlinear/higher-point structures.
 
-A fixed covariant nonlocal action can simultaneously define the propagator and momentum-dependent nonlinear graviton vertices. Therefore `Gamma^(3) != 0` or a momentum-dependent cubic vertex is not a unique candidate signature.
+Retained:
 
-### Asymptotic safety
-
-Concrete functional-RG vertex expansions already compute momentum-dependent graviton `Gamma^(2)`, `Gamma^(3)` and `Gamma^(4)` objects, and effective actions can be reconstructed from multi-graviton correlation functions. A future candidate must compare against a frozen concrete truncation, not only tree GR.
-
-### dRGT / nonlinear massive spin-2
-
-Nonlinear spin-2 self-interactions can be highly constrained and ghost-free rather than arbitrary. Nonlinearity alone therefore does not distinguish gravity-specific physics from strong massive-spin-2 comparators.
-
-### Postquantum classical gravity
-
-Classical–quantum path-integral theories generate stochastic nonlinear dynamics, decoherence/diffusion, constraints and potentially non-Gaussian classical metric statistics. A nonzero symmetric bispectrum is not by itself evidence for a quantum metric.
+- `NG-FUNNEL-001`: nonlinearity alone is not sufficient;
+- `NG-FUNNEL-002`: symmetric higher cumulants must be separated from ordered nonlinear response;
+- `NG-FUNNEL-003`: Ward/soft locking is necessary but not sufficient for novelty versus C5/covariant QG comparators.
 
 Authority:
 
 `candidate_gravity/landscape/RQIR_NONLINEAR_COMPARATOR_AUDIT_ITERATION142.md`.
 
-Retained design results:
+### Iteration 143 — post-Gaussian Model→RQIR contract
 
-- `NG-FUNNEL-001`: nonlinearity alone is not sufficient;
-- `NG-FUNNEL-002`: symmetric higher cumulants must be separated from ordered nonlinear response;
-- `NG-FUNNEL-003`: Ward/soft locking is necessary to reduce generic mediator freedom but is not by itself sufficient for novelty versus C5/covariant QG comparators.
+Future post-Gaussian candidates must derive from one parent dynamics:
 
-## Iteration 143 — post-Gaussian Model→RQIR contract
-
-The interface has been extended beyond `J`, two-point `N` and linear `chi^R`.
-
-Future candidates whose novelty is post-Gaussian must additionally derive from the same parent dynamics:
-
-### Fully symmetrized connected third cumulant
-
-`C3_sym(A,B,C)=(1/6) sum_{pi in S3}<delta A_pi1 delta A_pi2 delta A_pi3>_c`.
-
-This can be reproduced by a classical non-Gaussian random field and is therefore not sufficient alone.
-
-### Second-order causal/ordered susceptibility
-
-`chi^(2)R_{A;BC}(t;t1,t2)`
-
-is defined by the appropriately time-ordered sum of nested commutators such as
-
-`(-i/hbar)^2 theta(t-t1)theta(t1-t2)<[[A(t),B(t1)],C(t2)]>`
-
-plus the exchanged source ordering.
-
-The candidate must also expose the corresponding independent CTP/Keldysh three-point components and their causal/normalization structure.
-
-### Ward / soft / constraint lock
-
-The higher-point objects must satisfy a diffeomorphism Ward/Slavnov–Taylor identity, constraint-algebra relation, relational identity, or controlled soft-graviton consistency relation that ties them to the same universal gravitational coupling.
+- fully symmetrized connected third cumulant `C3_sym`;
+- second-order ordered/causal susceptibility `chi^(2)R` built from nested commutators or equivalent CTP components;
+- Ward/soft/constraint relations tying higher-point response to the same universal gravitational coupling.
 
 Authority:
 
 `candidate_gravity/POST_GAUSSIAN_MODEL_TO_RQIR_CONTRACT.md`.
 
-## Iteration 144 — finite post-Gaussian quotient infrastructure
+### Iteration 144 — finite post-Gaussian quotient
 
-A model-independent finite quotient has now been specified before choosing `ANSATZ-003`.
+For finite observables `y`, exact hard constraints `H y=h` are eliminated first. Candidate and comparator tangents are projected into `null(H)`.
 
-For a finite observable vector
+With
 
-`y=(mean, two-point symmetric, linear response, third symmetric cumulant, second-order ordered response, Ward/soft tests, ...)`,
-
-exact hard constraints are represented by
-
-`H y=h`.
-
-Candidate and comparator tangents are projected into `null(H)` before any profiling.
-
-With reduced candidate direction
-
-`b=Q_H^T v_beta`
-
-and combined nuisance/comparator matrix
+`b=Q_H^T v_beta`,
 
 `M=Q_H^T[V_nuis,V_C3,V_C4,V_C5,V_NL,V_AS,...]`,
 
@@ -145,56 +99,150 @@ the algebraic novelty pre-gate is
 
 `rank([M,b]) > rank(M)`.
 
-The residual
+Equivalent residual:
 
-`r_beta=(I-MM^+)b`
-
-must exceed the numerical/modeling error bound. Symmetric and ordered residual components are recorded separately so that a purely classical-cumulant residual is not mistaken for an ordered quantum signature.
+`r_beta=(I-MM^+)b`.
 
 Authorities:
 
 - `candidate_gravity/POST_GAUSSIAN_FINITE_QUOTIENT_TEMPLATE.md`;
 - `analysis/post_gaussian_quotient_validator_iteration144.py`.
 
-This is an algebraic pre-Fisher gate only; it does not prove physical consistency or resource feasibility.
+## Iteration 145 — soft locks and class-envelope saturation
 
-## Existing-model/article material
+### Frozen finite protocol
 
-Article scaffolds now exist:
+Full coordinate vector:
+
+`y=(norm,N2,chi1R,C3sym,chi2R_even,chi2R_odd,soft0,soft1,soft2,tensor_geo,threshold)`.
+
+Hard locks:
+
+`norm`, `soft0`, `soft1`.
+
+Reduced coordinates:
+
+`z=(N2,chi1R,C3sym,chi2R_even,chi2R_odd,soft2,tensor_geo,threshold)`.
+
+Reduced dimension: `8`.
+
+Authority:
+
+`candidate_gravity/POST_GAUSSIAN_PROTOCOL_ITERATION145.md`.
+
+### NG-FUNNEL-004 — SOFT_LOCK_NOT_NOVELTY
+
+For a future candidate retaining the standard massless-GR/diffeomorphism boundary:
+
+- leading soft behavior is a consistency lock;
+- tree-level subleading soft behavior is likewise a protected lock in the declared local-EFT setting;
+- local EFT operators can contribute new subsubleading soft-graviton terms.
+
+Therefore `soft0/soft1` are not novelty coordinates and `soft2` must be included explicitly in the finite C5 EFT comparator tangent.
+
+Literature anchors frozen in the Iteration-145 protocol:
+
+- Cachazo & Strominger, arXiv:1404.4091;
+- Elvang, Jones & Naculich, arXiv:1611.07534.
+
+### NG-FUNNEL-005 — CLASS_ENVELOPE_SATURATION
+
+A deliberately over-complete diagnostic represented broad C3/C4/C5 theory classes by independent per-coordinate capability axes.
+
+Reproducible authority:
+
+- `analysis/post_gaussian_class_envelope_iteration145.py`;
+- `results/post_gaussian_class_envelope_iteration145.json`.
+
+Result:
+
+- C3 capability rank: `7`;
+- C4 capability rank: `7`;
+- C5 capability rank: `8`;
+- combined reduced rank: `8/8`.
+
+Every one-coordinate candidate tangent has zero residual against this intentionally unconstrained envelope.
+
+**Interpretation:** this is not a no-go theorem. It proves that broad theory-class labels cannot be used as comparator tangent matrices because doing so discards each theory's internal parameter relations and Ward identities. From now on comparator blocks must be derivatives of fixed finite realizations/truncations.
+
+## Representative comparator program now frozen
+
+### C3 — postquantum classical gravity
+
+Use a fixed covariant classical–quantum stochastic action/parameterization. Current anchors include arXiv:2402.17844 and arXiv:2605.05375. Unsupported post-Gaussian coordinates remain `BLOCKED`, never zero by assumption.
+
+### C4 — quantum mediator / nonlinear massive spin-2
+
+`ANSATZ-RQIR-KL-002` remains the exact Gaussian continuum control. A nonlinear C4 tangent requires a separately frozen finite massive-spin-2/dRGT-style realization.
+
+### C5 — perturbative quantum GR EFT
+
+Use the C5 reference boundary augmented to the declared post-Gaussian order:
+
+- Einstein-Hilbert tree nonlinearities;
+- required loop/nonanalytic contributions at the same order;
+- finite local diffeomorphism-invariant EFT operator basis through the first order capable of changing selected `soft2`/finite-momentum coordinates.
+
+### Nonlocal gravity
+
+Use one fixed covariant nonlocal action, not the class label.
+
+### Asymptotic safety
+
+Use one fixed vertex truncation with finite parameterization. A suitable authority class is Pawlowski & Tränkle, arXiv:2309.17043, with momentum-dependent three-/four-graviton vertices and reconstructed effective action.
+
+## Article material
+
+Current article scaffolds:
 
 - `docs/CANDIDATE_GRAVITY_ARTICLE_FUNNEL_SECTION_ITERATION137.md`;
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION143.md`.
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION145.md`.
 
-The article matrix distinguishes:
+The article-safe distinction remains mandatory:
 
 - genuine consistency rejection;
 - exact comparator/novelty failure;
 - regime-specific non-identifiability;
-- operational/model-instantiation blocking.
+- comparator-instantiation blocking;
+- absence of a novelty certificate.
 
 Do not call the latter categories global falsification of an existing theory.
 
-## Current model-design specification for `ANSATZ-003`
+## `ANSATZ-003` design state
 
-Do **not** freeze the third ansatz until all of the following can be stated in one model definition:
+Still intentionally **not frozen**.
 
-1. **One parent dynamics** generating `Gamma^(2)`, `Gamma^(3)` and matter coupling.
-2. **Exact C5 boundary:** `beta=0` returns a frozen perturbative-QG baseline at the same order.
-3. **No two-point novelty claim:** Gaussian sector is treated as comparator-degenerate unless separately proved distinct.
-4. **Derived higher connected object:** at least one `C3`/higher structure not independently tunable from lower-point dynamics.
-5. **Ordered nonlinear response:** a nested-commutator/causal second-order susceptibility or equivalent CTP vertex.
-6. **Ward/soft lock:** higher response tied to universal stress-energy coupling by the same gravity symmetry/constraints.
-7. **Strong comparator subtraction:** C5 higher EFT/loops, fixed nonlocal gravity, concrete asymptotic-safety vertices, nonlinear massive/KK spin-2, and postquantum classical higher statistics/response.
-8. **Finite RQIR quotient:** only the residual direction outside calibration/nuisance/comparator span proceeds to Fisher/resources.
+It may not be created merely by adding:
 
-## Immediate next scientific priority — Iteration 145
+- a new propagator;
+- a nonzero third cumulant;
+- a generic nonlinear vertex;
+- a leading/subleading soft modification;
+- an order-sensitive response coordinate without fixed comparator subtraction.
 
-Begin constructing `ANSATZ-003` only in the **residual post-Gaussian space** defined by Iteration 144:
+Minimum eventual package remains:
 
-1. freeze a concrete C5 higher-point baseline order and finite observable protocol;
-2. instantiate first comparator tangent matrices for C3/C4/C5;
-3. identify which Ward/soft-locked ordered component is not automatically inside those spans;
-4. choose the minimal covariant parent dynamics capable of generating exactly that residual rather than adding arbitrary new kernels;
-5. reject the proposed dynamics before promotion if its formal tangent is already contained in a known nonlocal/asymptotic-safety/massive-spin-2 comparator family.
+1. one parent dynamics generating lower- and higher-point sectors;
+2. exact C5 boundary at `beta=0`;
+3. no unsupported two-point novelty claim;
+4. derived symmetric post-Gaussian object;
+5. derived ordered nonlinear response;
+6. Ward/soft lock;
+7. fixed C3/C4/C5/nonlocal/AS comparator subtraction;
+8. nonzero finite RQIR residual before Fisher/resources.
 
-This reverses the usual workflow: **first identify the residual observable direction, then construct the minimal dynamics that can generate it**.
+## Immediate next scientific priority — Iteration 146
+
+Instantiate the first **physical finite C5 post-Gaussian tangent**.
+
+Required order:
+
+1. freeze perturbative/EFT order and renormalization convention;
+2. freeze finite kinematics for the Iteration-145 observable protocol;
+3. derive Einstein-Hilbert tree contribution to nonlinear response/soft locks;
+4. add the finite local EFT directions capable of modifying `soft2` and finite-momentum response;
+5. include loop/nonanalytic columns or explicitly label them `BLOCKED` where not yet derived;
+6. produce the first actual `V_C5`, its rank, SVD tolerance and authority map;
+7. only then instantiate C3 and nonlinear C4 representative tangents.
+
+No Fisher/resource work and no `ANSATZ-003` promotion before this comparator foundation is finite.
