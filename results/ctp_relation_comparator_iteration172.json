@@ -1,0 +1,30 @@
+{
+  "iteration": 172,
+  "scope": "six frozen amputated CTP kinematic rows; fixed source convention from Iterations 148-149 and r/a normalization from Iteration 171",
+  "raw_coordinate_order_per_row": ["Gamma_arr", "Gamma_aar", "Gamma_aaa", "WardLock"],
+  "raw_matrix_shape": [24, 7],
+  "raw_rank": 7,
+  "raw_singular_values": [19.69366276, 1.03077641, 1.03077641, 1.03077641, 1.03077641, 1.03077641, 0.24967744],
+  "raw_smin_over_smax": 0.012678060219886305,
+  "relation_coordinates_per_row": ["Gamma_aar", "Gamma_aaa-Gamma_arr/4", "WardLock"],
+  "relation_matrix_shape": [18, 7],
+  "relation_rank": 1,
+  "relation_singular_values": [4.917063349196141, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+  "C3_supported_relation_norm": 4.917063349196141,
+  "classification": {
+    "generic_closed_unitary_C4_C5": "EXACT_RELATION_SUBSPACE; six arbitrary row amplitudes removed without assuming EH shape",
+    "fixed_C3_tree": "ONE_SUPPORTED_EH_SHAPED_NONUNITARY_RELATION_DIRECTION",
+    "C3_diffusion_MSR_ordered_vertices": "BLOCKED_NOT_ZERO",
+    "WardLock_nonzero": "CONSISTENCY_FAIL_NOT_NOVELTY",
+    "remaining_relation_space": "NOT_NOVELTY_CERTIFICATE_WHILE_C3_NONLINEAR_ORDERED_AND_NONLOCAL_AS_CTP_COMPLETIONS_ARE_BLOCKED",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "CTP-NG-003 — GENERIC_CLOSED_UNITARY_C4_C5_REMOVES_ROW_LOCAL_CUBIC_AMPLITUDE_BUT_NOT_RELATION_VIOLATIONS",
+    "CTP-NG-004 — FIXED_PQCG_TREE_ADDS_ONE_EH_SHAPED_CLASSICAL_RELATION_DIRECTION",
+    "NG-FUNNEL-032 — WARD_LOCK_VIOLATION_IS_CONSISTENCY_FAIL_NOT_NOVELTY"
+  ],
+  "model_readiness_percent": 24,
+  "readiness_change": "unchanged: first finite relation-level rank certificate obtained, but unsupported C3/nonlocal/AS ordered CTP pieces prevent a robust residual certificate"
+}
