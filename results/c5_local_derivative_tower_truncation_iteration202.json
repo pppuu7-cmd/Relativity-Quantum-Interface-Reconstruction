@@ -1,0 +1,58 @@
+{
+  "iteration": 202,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "readiness_change": "24 -> 23: local-C5 comparator foundation re-opened because dimension-12 truncation lacks a model-independent remainder bound over the current x range",
+  "protocols": ["v3-A", "v3-B"],
+  "x": [0.324864, 0.246656, 0.27264, 0.201792, 0.256256, 0.184448, 0.994896, 0.755384, 0.83496, 0.617988, 0.784784, 0.564872],
+  "x_min": 0.184448,
+  "x_max": 0.994896,
+  "max_node_power_examples": {"1": 0.994896, "2": 0.989818050816, "3": 0.9847660194846352, "4": 0.9797397737211856, "6": 0.9697641131316128, "8": 0.9598900242112399, "11": 0.9452670782855128},
+  "all_x_distinct": true,
+  "all_rA_nonzero": true,
+  "all_rB_nonzero": true,
+  "arbitrary_n_soft_identity": "v0=r; vn=(2/3) r (-x)^n for n>=1 within the declared Riemann-chain Box^n cubic family",
+  "determinant_formula": "det(V_N)=prod_i r_i * (2/3)^(N-1) * prod_{i<j}[(-x_j)-(-x_i)]",
+  "exact_det_12_A_100digit_decimal": "3.621999994877696570029959880968314703517076666357026774831449342826437980145274396001602707354146412e-56",
+  "exact_det_12_B_100digit_decimal": "-3.210153494451002420221818836661493533345850752132683786882391869859089224210895620447229466482406878e-54",
+  "ladder_A": [
+    {"ncols": 4, "max_box_power": 3, "operator_dimension_max": 12, "rank_tol_1e-12": 4, "smax": 4.900289591446396, "smin": 0.003969470831247271, "condition_number": 1234.4944199795636},
+    {"ncols": 5, "max_box_power": 4, "operator_dimension_max": 14, "rank_tol_1e-12": 5, "smax": 5.1669978762288675, "smin": 0.00014464241131609986, "condition_number": 35722.56455913867},
+    {"ncols": 6, "max_box_power": 5, "operator_dimension_max": 16, "rank_tol_1e-12": 6, "smax": 5.398977046904005, "smin": 2.3677643553071558e-05, "condition_number": 228020.03226387905},
+    {"ncols": 7, "max_box_power": 6, "operator_dimension_max": 18, "rank_tol_1e-12": 7, "smax": 5.607390029675552, "smin": 2.813262870625891e-06, "condition_number": 1993198.0364238156},
+    {"ncols": 8, "max_box_power": 7, "operator_dimension_max": 20, "rank_tol_1e-12": 8, "smax": 5.799234541449276, "smin": 1.9823516167498494e-07, "condition_number": 29254318.418835152},
+    {"ncols": 9, "max_box_power": 8, "operator_dimension_max": 22, "rank_tol_1e-12": 9, "smax": 5.979043624774165, "smin": 3.388362917193493e-08, "condition_number": 176458182.6354798},
+    {"ncols": 10, "max_box_power": 9, "operator_dimension_max": 24, "rank_tol_1e-12": 10, "smax": 6.149819189057035, "smin": 6.064875820061027e-10, "condition_number": 10140057886.618282},
+    {"ncols": 11, "max_box_power": 10, "operator_dimension_max": 26, "rank_tol_1e-12": 11, "smax": 6.31357859021539, "smin": 2.4859865107131866e-11, "condition_number": 253966727615.27307},
+    {"ncols": 12, "max_box_power": 11, "operator_dimension_max": 28, "rank_tol_1e-12": 11, "smax": 6.471690920557836, "smin": 4.1477514664521555e-14, "condition_number": 156028898377884.22}
+  ],
+  "ladder_B": [
+    {"ncols": 4, "max_box_power": 3, "operator_dimension_max": 12, "rank_tol_1e-12": 4, "smax": 12.096939490552673, "smin": 0.002101060251147926, "condition_number": 5757.540500774999},
+    {"ncols": 5, "max_box_power": 4, "operator_dimension_max": 14, "rank_tol_1e-12": 5, "smax": 12.705744888336131, "smin": 0.0002900539785550744, "condition_number": 43804.75989893588},
+    {"ncols": 6, "max_box_power": 5, "operator_dimension_max": 16, "rank_tol_1e-12": 6, "smax": 13.206047222302656, "smin": 3.4047850887952634e-05, "condition_number": 387867.2773139827},
+    {"ncols": 7, "max_box_power": 6, "operator_dimension_max": 18, "rank_tol_1e-12": 7, "smax": 13.629964053750983, "smin": 3.449931351536635e-06, "condition_number": 3950792.831770423},
+    {"ncols": 8, "max_box_power": 7, "operator_dimension_max": 20, "rank_tol_1e-12": 8, "smax": 13.99873039557302, "smin": 2.434712925570881e-07, "condition_number": 57496431.09275669},
+    {"ncols": 9, "max_box_power": 8, "operator_dimension_max": 22, "rank_tol_1e-12": 9, "smax": 14.326888049386662, "smin": 1.705458472723117e-08, "condition_number": 840060797.6405795},
+    {"ncols": 10, "max_box_power": 9, "operator_dimension_max": 24, "rank_tol_1e-12": 10, "smax": 14.624666197928752, "smin": 1.9548160718763237e-09, "condition_number": 7481351523.722288},
+    {"ncols": 11, "max_box_power": 10, "operator_dimension_max": 26, "rank_tol_1e-12": 11, "smax": 14.8994137090902, "smin": 3.928624636425062e-11, "condition_number": 379252666975.2865},
+    {"ncols": 12, "max_box_power": 11, "operator_dimension_max": 28, "rank_tol_1e-12": 11, "smax": 15.156498828405896, "smin": 2.1073803786505814e-13, "condition_number": 71921039893666.73}
+  ],
+  "exact_rank_theorem": "For N distinct x_i and nonzero r_i, first N columns of this local analytic derivative family have exact rank N.",
+  "classification": {
+    "dimension12_rank4_complement": "SCOPED_TRUNCATION_RESULT_NOT_MODEL_INDEPENDENT_C5_COMPLEMENT",
+    "untruncated_local_analytic_tower": "FINITE_N_ROW_SPACE_SATURABLE",
+    "high_order_numeric_conditioning": "SEVERE_NEAR_DEGENERACY_DOES_NOT_NEGATE_EXACT_VANDERMONDE_RANK",
+    "EFT_truncation_control": "BLOCKED_REQUIRES_POWER_COUNTING_AND_REMAINDER_BOUND",
+    "AS": "BLOCKED_NOT_ZERO",
+    "C3": "BLOCKED_NOT_ZERO",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "C5-NG-019 — LOCAL_RIEMANN_CUBIC_DERIVATIVE_TOWER_CAN_SATURATE_ANY_FINITE_NULLSOFT_ROW_SET_WITH_DISTINCT_HARD_NODES",
+    "REL-NG-015 — DIMENSION12_RANK4_COMPLEMENT_IS_NOT_A_MODEL_INDEPENDENT_C5_RESIDUAL_SPACE_WITHOUT_EFT_REMAINDER_CONTROL",
+    "NG-FUNNEL-057 — FINITE_ANALYTIC_SOFT2_NOVELTY_REQUIRES_CONTROLLED_EFT_TRUNCATION_OR_A_NONINTERPOLABLE_LINKED_OBSERVABLE",
+    "READINESS-CORR-001 — C5_TRUNCATION_BLOCKER_REOPENS_ONE_COMPARATOR_FOUNDATION_POINT"
+  ]
+}
