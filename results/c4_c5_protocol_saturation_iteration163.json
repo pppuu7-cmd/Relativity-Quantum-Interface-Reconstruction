@@ -1,0 +1,15 @@
+{
+  "iteration": 163,
+  "scope": "six frozen TT chi2R probes",
+  "comparator_columns": ["EH", "Ricci3", "Riemann3", "Ricci2_full", "RicciBoxRicci_full", "dRGT_shared_reference"],
+  "targets": ["dRGT_alpha3", "dRGT_alpha4"],
+  "audits": {
+    "raw": {"rank": 6, "singular_values": [24.1048587, 4.70111456, 1.52500764, 0.252707745, 0.184809884, 0.0103548959], "smin_over_smax": 0.00042957925700833976, "residual_norms": [1.40567432e-14, 1.83276321e-15], "relative_residual_norms": [4.24945472e-15, 2.50302169e-15], "max_abs_residual": 8.43769498715119e-15},
+    "base_row_l2": {"rank": 6, "singular_values": [2.21141475, 0.889290047, 0.237231335, 0.0807399767, 0.0618913401, 0.0121638094], "smin_over_smax": 0.005500461215995698, "residual_norms": [1.89067972e-15, 6.89286967e-16], "relative_residual_norms": [5.73142437e-15, 9.40583351e-15], "max_abs_residual": 1.609823385706477e-15},
+    "EH_abs_floor": {"rank": 6, "singular_values": [5.03606114, 2.86549456, 0.617797568, 0.111642826, 0.0447641229, 0.00458970371], "smin_over_smax": 0.0009113685360697726, "residual_norms": [2.73594717e-14, 2.34047999e-14], "relative_residual_norms": [2.43684093e-14, 1.16199328e-13], "max_abs_residual": 2.2676305277968822e-14},
+    "dRGT_reference_abs_floor": {"rank": 6, "singular_values": [3.92046826, 2.18518290, 0.637334452, 0.124120052, 0.0367762330, 0.00389121414], "smin_over_smax": 0.000992543178885093, "residual_norms": [2.72856731e-14, 4.02002719e-14], "relative_residual_norms": [2.35983019e-14, 1.41212362e-13], "max_abs_residual": 3.708144902248023e-14}
+  },
+  "classification": "FINITE_PROTOCOL_SATURATION_REGIME_SPECIFIC_NON_IDENTIFIABILITY",
+  "theory_identity_claimed": false,
+  "novelty_certificate": false
+}
