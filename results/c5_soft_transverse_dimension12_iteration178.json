@@ -1,0 +1,46 @@
+{
+  "iteration": 178,
+  "MODEL_READINESS": "24%",
+  "scope": "six frozen Iteration-177 null-soft TT rows; target-independent local C5 cubic subset through dimension 12",
+  "q2": [0.5075999999999999, 0.3854, 0.426, 0.3153, 0.4004, 0.2882],
+  "operator_columns": ["Ricci3", "Riemann3", "mixed_RicciRicciRiemann", "RicciChain_Box1", "RiemannChain_Box1", "RicciChain_Box2", "RiemannChain_Box2", "RicciChain_Box3", "RiemannChain_Box3"],
+  "Riemann3_B_T": [-1.6411697071822275, 0.06385882717014456, 0.8548821188463769, -0.17055215671317986, -0.3261917310634991, -0.1655609264695088],
+  "mixed_RicciRicciRiemann_B_T": [-0.13676414212093643, 0.00532157044219726, 0.07124017860875614, -0.014212701593488962, -0.027182645489076177, -0.01379674844859692],
+  "RiemannChain_Box1_B_T": [0.5553718288742857, -0.016407461493133723, -0.24278650886450792, 0.03585006071321986, 0.08707144531235764, 0.0318097727404714],
+  "RiemannChain_Box2_B_T": [-0.2819067403611997, 0.006323435716332769, 0.1034270461522117, -0.011303523289659428, -0.03486340571051345, -0.009167575712205082],
+  "RiemannChain_Box3_B_T": [0.14309586143786454, -0.0024370521444665393, -0.04405991748614951, 0.003564000616192962, 0.013959307106121413, 0.002642094866950699],
+  "RicciChain_Box1_max_abs": 3.9009170535159503e-19,
+  "RicciChain_Box2_max_abs": 1.9801054964186367e-19,
+  "RicciChain_Box3_max_abs": 1.0051015500930695e-19,
+  "soft_identities": {
+    "Ricci3_and_RicciChain": "exact protocol zero because the null TT soft leg has Rmn^(1)=0",
+    "mixed_RicciRicciRiemann": "B_T = Riemann3_B_T / 12",
+    "RiemannChain_Boxn": "B_T = (2/3)(-q^2)^n Riemann3_B_T for n=1,2,3"
+  },
+  "identity_numerical_checks": {
+    "mixed_relative_error": 1.3324271430070807e-08,
+    "RiemannChain_Box1_relative_error": 2.3205827900152647e-08,
+    "RiemannChain_Box2_relative_error": 4.29727162283237e-08,
+    "RiemannChain_Box3_relative_error": 6.523867063633324e-08
+  },
+  "naive_numeric_singular_values": [2.025412808516681, 0.07531125124416908, 0.0037578440575183588, 4.703246624376743e-05, 1.2254429409262674e-08, 1.980828691231011e-18],
+  "naive_numeric_rank_tol_1e-10": 5,
+  "max_extrapolation_discrepancy": 5.262558013335861e-06,
+  "physics_aware_exact_rank": 4,
+  "physics_aware_exact_singular_values": [2.0192478811627366, 0.07528396398090788, 0.003757665711792753, 4.703226164441425e-05],
+  "physics_aware_smin_over_smax": 2.329214875285954e-05,
+  "max_soft_gauge_replacement_abs": 9.508136295971191e-23,
+  "classification": {
+    "local_C5_dimension12_B_T": "COMPLETE_FOR_FROZEN_AUTHORIZED_CUBIC_SUBSET_EFFECTIVE_RANK_4",
+    "fifth_naive_singular_value": "SUB_ERROR_NUMERICAL_ARTIFACT_REMOVED_BY_EXACT_SOFT_IDENTITIES",
+    "novelty_certificate": "NONE_FULL_COMPARATOR_QUOTIENT_INCOMPLETE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "C5-NG-009 — DIMENSION12_LOCAL_C5_NULL_SOFT_TT_BASIS_COMPRESSES_TO_RIEMANN_CHAIN_POLYNOMIAL_RANK_FOUR",
+    "SOFT-NG-005 — NULL_SOFT_TT_KINEMATICS_KILLS_RICCI_CHAIN_AND_REDUCES_DERIVATIVE_RIEMANN_DESCENDANTS_TO_HARD_Q2_MOMENTS",
+    "NUM-NG-001 — SUB_ERROR_SINGULAR_VALUE_MUST_NOT_BE_PROMOTED_WHEN_EXACT_KINEMATIC_IDENTITIES_REMOVE_IT"
+  ],
+  "readiness_change": "unchanged at 24%; local C5 B_T comparator is substantially sharpened, but C4/nonlocal/AS/C3 transverse completion and any robust residual remain open"
+}
