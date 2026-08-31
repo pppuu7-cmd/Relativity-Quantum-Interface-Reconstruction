@@ -1,0 +1,50 @@
+{
+  "iteration": 185,
+  "model_readiness_percent": 24,
+  "scope": "six frozen null-soft TT rows; exact multilinear plane-wave covariant subset expansion for local quadratic C5 Ricci Box^n Ricci soft2 ladder n=2..4",
+  "method": {
+    "metric_expansion": "multilinear subset masks through cubic order",
+    "box": "recursive covariant d'Alembertian on rank-2 Ricci including connection and inverse-metric variations",
+    "soft2": "symmetric second difference with two Richardson levels",
+    "ward": "source-completed cubic plus nonlinear Lie contact terms"
+  },
+  "columns": {
+    "RicciBox2Ricci": [-1.116518384913729,-0.013875145770453961,-1.6820857577385013,0.2756448325165249,0.26633541804099714,0.27289104445501416],
+    "RicciBox3Ricci": [0.7133600699918851,0.0017605281520687176,1.0529592750292909,-0.11112973689055448,-0.2235239287182969,-0.14597119757804206],
+    "RicciBox4Ricci": [-0.4308356612729251,0.0013520156067859145,-0.627497661780086,0.043104686244338386,0.1618211491758664,0.06744072950231582]
+  },
+  "max_soft2_extrapolation_error": {
+    "n2": 1.992974674180914e-10,
+    "n3": 3.0432445452532875e-10,
+    "n4": 1.5767637195907014e-10
+  },
+  "ward": {
+    "max_abs_residual": {"n2":3.469446951953614e-18,"n3":6.938893903907228e-18,"n4":1.2536087619363645e-19},
+    "max_relative_residual": {"n2":1.7087236871324296e-14,"n3":5.2169672429145276e-14,"n4":3.0177786277227e-14},
+    "status": "PASS_MACHINE_PRECISION_SCOPED"
+  },
+  "formal_crosscheck": {
+    "Ricci2_max_abs_difference_vs_iteration184": 2.3042989436006245e-07,
+    "RicciBoxRicci_max_abs_difference_vs_iteration184": 6.535691843279068e-07,
+    "interpretation": "Iteration184 soft extrapolation estimate did not include nested x-space derivative discretization; formal plane-wave operator calculus removes that hidden discretization."
+  },
+  "k2_conditioning": {
+    "null_vector_normalized_nonlocal_coefficient_1": [3.7228200179970815e-05,-1.0005916758017337,-0.9961254264296668,-0.5133412288524085,-0.1413728259742054,-0.06615094900201549],
+    "ordered_local_columns": ["EH_normalization","Ricci2","RicciBoxRicci","RicciBox2Ricci","RicciBox3Ricci","RicciBox4Ricci"],
+    "local_compensation_soft2_piece": [0.6749106618554018,0.09041841732117784,1.6058813167372494,-0.8456710923733669,-0.0817908524675452,0.04041297883593838],
+    "status": "LOCAL_COMPENSATION_SOFT2_COMPLETE"
+  },
+  "classification": {
+    "local_quadratic_dimension12_soft2_ladder": "COMPLETE_SCOPED",
+    "nonlocal_full_soft2_lambda_tangent": "BLOCKED_NEXT_GATE",
+    "novelty_certificate": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "C5-NG-013 — COVARIANT_RICCI_BOX2_TO_BOX4_SOFT2_LADDER_IS_NONTRIVIAL_AND_NOT_GENERATED_BY_ROW_WISE_Q2_MULTIPLICATION",
+    "NUM-NG-003 — NESTED_POSITION_SPACE_DIFFERENCING_CAN_UNDERSTATE_TOTAL_OPERATOR_CALCULUS_ERROR_EVEN_WHEN_SOFT_RICHARDSON_ERROR_IS_SMALL",
+    "REL-NG-003 — DIMENSION12_LOCAL_K2_COMPENSATION_NOW_HAS_A_COMPLETE_SOURCE_COMPLETED_SOFT2_VECTOR"
+  ],
+  "readiness_change": "unchanged at 24%: local comparator bridge closes, but the calibrated nonlocal direction and full C3/AS quotient remain unresolved"
+}
