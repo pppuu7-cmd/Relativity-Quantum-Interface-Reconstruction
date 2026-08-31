@@ -1,8 +1,8 @@
 # AS-FRG-TT-001 — asymptotic-safety FRG TT/effective-action comparator
 
 **Frozen in:** Iteration 159  
-**Refined in:** Iteration 160  
-**Status:** concrete literature comparator; Euclidean action supported, RQIR retarded mapping BLOCKED  
+**Refined in:** Iterations 160–161  
+**Status:** concrete literature comparator; Euclidean action supported, strict local IR C5-degenerate, full RQIR retarded nonlocal mapping BLOCKED  
 **Not a Candidate Gravity ansatz.**
 
 ## Literature authority
@@ -33,18 +33,15 @@ The TT fluctuation vertices are used to reconstruct these background form factor
 
 The paper provides analytic fits to both curvature-squared form factors.
 
-## Why this is a concrete comparator
+## Euclidean action coverage — Iteration 160
 
-This is not the broad label `asymptotic safety`. The frozen comparator is specifically the published TT/effective-action truncation and its stated reconstruction assumptions.
+Iteration 159 correctly forbade replacing the full off-symmetric three-variable tensor vertex by the one-variable symmetric-point dressing `gamma_g^(3)(p)`.
 
-Supported objects:
+Iteration 160 established a stronger action-level statement:
 
-- Euclidean TT two-point momentum dependence;
-- Euclidean TT three-/four-point information in the published projection;
-- reconstructed covariant curvature-squared form factors;
-- action-level off-symmetric Euclidean background vertices in principle, obtained by differentiating the reconstructed action within that truncation.
+**The reconstructed covariant Euclidean action contains enough information to define off-symmetric Euclidean background vertices in principle within the frozen curvature-squared truncation and reconstruction assumptions.**
 
-Iteration 160 evaluates the published analytic form-factor fits on every individual leg of the six frozen spacelike RQIR triplets. All 18 legs lie at finite positive Euclidean momenta for the flat-space spacelike coverage map and return finite fit values.
+The published analytic form-factor fits were evaluated on every individual leg of the six frozen spacelike RQIR triplets. All 18 legs return finite Euclidean fit values.
 
 Authority:
 
@@ -52,13 +49,7 @@ Authority:
 - `analysis/as_action_formfactor_audit_iteration160.py`;
 - `results/as_action_formfactor_audit_iteration160.json`.
 
-## Refined RQIR mapping boundary
-
-Iteration 159 correctly forbade replacing the full off-symmetric three-variable tensor vertex by the one-variable symmetric-point dressing `gamma_g^(3)(p)`.
-
-Iteration 160 refines the reason for the remaining block:
-
-**The reconstructed covariant Euclidean action contains enough information to define off-symmetric Euclidean background vertices in principle. The unresolved step is the physical Lorentzian causal completion.**
+## Full nonlocal RQIR mapping boundary
 
 The source Wick-rotates the Euclidean Laplace-Beltrami operator into a Lorentzian d'Alembertian. Because the reconstructed form factors contain nonlocal inverse-operator structure, a Green function must be chosen to define those Lorentzian operators. The source discusses possible constructions, including expansion around a flat-space Feynman propagator, but does not freeze the RQIR-specific in-in/retarded Green-function prescription needed for ordered response.
 
@@ -72,11 +63,49 @@ RQIR requires:
 
 Therefore the following remain forbidden without an explicitly derived/frozen causal prescription:
 
-- evaluating AS `chi2R_even/odd` on the six frozen triplets;
+- evaluating full nonlocal AS `chi2R_even/odd` on the six frozen triplets;
 - treating Euclidean form-factor values as retarded response values;
 - selecting Feynman, retarded or another Green function merely for convenience;
 - zero-filling unsupported ordered or stochastic coordinates;
 - adding an AS Fisher column.
+
+## Local IR sector — Iteration 161
+
+The same primary source explicitly Taylor-expands its form factors in the strict IR and obtains the local action built from
+
+- `R`;
+- `R_mn R^mn`;
+- `R^2`;
+- `R_mn Box R^mn`;
+- `R Box R`.
+
+Published rounded coefficients are
+
+- `g_Ricci2 ~= -0.40`;
+- `g_R2 ~= 1.9`;
+- `c1=344.09`;
+- `c2=-136.75`.
+
+The Iteration-149 C5 off-shell convention is a complete unreduced local diffeomorphism-invariant covariant EFT basis through dimension 12, including Ricci/EOM-redundant directions. Therefore every operator in this AS local IR action is already an allowed C5 local Wilson direction.
+
+Result:
+
+`AS strict local IR action subset C5 local EFT family`.
+
+This is an exact **structural** comparator degeneracy in the controlled local IR regime, not an asymptotic-safety consistency failure.
+
+However, the local IR expansion cannot be used as a surrogate on the current six RQIR probes. Direct comparison of the first-order Taylor approximation with the full Appendix-H fits on all 18 legs gives relative-error ranges
+
+- Ricci2: `1666.969 ... 69310.077`;
+- R2: `45.023 ... 384.894`.
+
+Thus the present `k^2 ~= 0.23 ... 0.75 M_Pl^2` probes are outside the controlled first-order IR Taylor regime for these fits.
+
+Authority:
+
+- `candidate_gravity/ASYMPTOTIC_SAFETY_IR_C5_AUDIT_ITERATION161.md`;
+- `analysis/as_ir_c5_embedding_iteration161.py`;
+- `results/as_ir_c5_embedding_iteration161.json`.
 
 ## Retained results
 
@@ -88,16 +117,15 @@ The published symmetric-point TT dressing alone is not the full off-symmetric RQ
 
 Within the frozen curvature-squared truncation, action-level information supports off-symmetric Euclidean reconstruction in principle, but the real-time retarded/in-in Green-function prescription required by RQIR is not fixed by the source.
 
-Classification:
+### AS-NG-003 — LOCAL_IR_AS_SUBSET_OF_C5_EFT
 
-`BLOCKED_AS_RETARDED_GREEN_FUNCTION_PRESCRIPTION`.
-
-This is **not** a consistency failure of asymptotic safety and **not** evidence that the AS response is zero.
+In the strict local IR derivative-expansion regime, the selected AS action contains only operators already allowed by the complete local C5 gravitational EFT family.
 
 ## Funnel guardrails
 
 - `NG-FUNNEL-016 — EUCLIDEAN_SYMMETRIC_VERTEX_REQUIRES_EXPLICIT_RETARDED_OFFSHELL_COMPLETION`;
-- `NG-FUNNEL-017 — NONLOCAL_EFFECTIVE_ACTION_REQUIRES_CAUSAL_RESPONSE_PRESCRIPTION`.
+- `NG-FUNNEL-017 — NONLOCAL_EFFECTIVE_ACTION_REQUIRES_CAUSAL_RESPONSE_PRESCRIPTION`;
+- `NG-FUNNEL-018 — LOCAL_LIMIT_DEGENERACY_DOES_NOT_COMPLETE_NONLOCAL_COMPARATOR`.
 
 ## Current status
 
@@ -105,7 +133,9 @@ This is **not** a consistency failure of asymptotic safety and **not** evidence 
 - AS Euclidean curvature-squared action: `SUPPORTED_SCOPED`;
 - Appendix-H form-factor coverage on frozen spacelike legs: `PASS`;
 - AS off-symmetric Euclidean background vertex: `DERIVABLE_IN_PRINCIPLE_WITHIN_TRUNCATION`;
-- AS six-probe `chi2R`: `BLOCKED_AS_RETARDED_GREEN_FUNCTION_PRESCRIPTION`;
+- AS strict local IR vs C5: `EXACT_STRUCTURAL_DEGENERACY_WITH_LOCAL_C5_EFT_FAMILY`;
+- AS local IR surrogate on current six probes: `FAIL_DOMAIN_OF_VALIDITY`;
+- AS full nonlocal six-probe `chi2R`: `BLOCKED_AS_RETARDED_GREEN_FUNCTION_PRESCRIPTION`;
 - AS source-completed nonlinear Ward test: `NOT_COMPUTED`;
 - AS `N2/C3sym`: `BLOCKED`;
 - full AS quotient: `BLOCKED`;
