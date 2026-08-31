@@ -1,0 +1,40 @@
+{
+  "iteration": 199,
+  "model_readiness_percent": 24,
+  "protocol": "RQIR-WITHHELD-NULLSOFT-12-v3",
+  "soft2_extraction": "EXACT_LEADING_COEFFICIENT_FROM_TRILINEAR_LINEARIZED_RIEMANN_AT_K0_Q_MINUSQ_NO_EXTRAPOLATION",
+  "q2": [0.324864,0.24665600000000007,0.27264,0.201792,0.256256,0.18444800000000006,0.9948959999999997,0.7553839999999999,0.83496,0.617988,0.7847839999999999,0.5648719999999999],
+  "Riemann3_soft2": [-0.2342367480907922,0.03885720334039703,0.19747961324750216,-0.013040718030417045,-0.024551995092504563,0.05672164019392357,-4.956740678936905,-0.40340860658856637,-7.333276233374885,0.1996690006442663,0.5256632248543467,-0.08172191198556611],
+  "local_C5_basis": "Riemann3_soft2*{1,-q2,q2^2,-q2^3}",
+  "rank": 4,
+  "singular_values": [15.211546097630897,1.4667078304212702,0.08703713963347849,0.003144208928746332],
+  "condition_number": 4837.956523358672,
+  "column_normalized_singular_values": [1.9904872670427403,0.19450788162169455,0.011266563391949685,0.00043390909115824996],
+  "column_normalized_condition_number": 4587.337088811523,
+  "soft2_row_dimension": 12,
+  "algebraic_complement_dimension_before_AS_C3": 8,
+  "comparison_to_v2": {
+    "v2_raw_condition_number": 999.5913753677644,
+    "v3_over_v2_raw_condition_factor": 4.839934239707417,
+    "v2_column_normalized_condition_number": 560.8197853283967,
+    "v3_over_v2_column_normalized_condition_factor": 8.179699091973612
+  },
+  "classification": {
+    "local_zeroK2_C5": "RANK4_ON_WITHHELD_V3",
+    "hard_K2_conditioning": "BETTER_THAN_V2",
+    "conditional_soft2_conditioning": "WORSE_THAN_V2",
+    "global_protocol_preference": "NONE_TRADEOFF_REQUIRES_MULTI_OBJECTIVE_DESIGN",
+    "candidate_residual": "NOT_TESTED",
+    "AS": "BLOCKED_NOT_ZERO",
+    "C3": "BLOCKED_NOT_ZERO",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "C5-NG-017 — WITHHELD_V3_ZERO_K2_LOCAL_C5_SOFT2_SPAN_REMAINS_RANK4",
+    "NUM-NG-013 — HARD_K2_CONDITIONING_IMPROVEMENT_CAN_WORSEN_CONDITIONAL_SOFT2_CONDITIONING",
+    "PROTO-NG-006 — V2_AND_V3_FORM_A_CONDITIONING_TRADEOFF_NOT_A_TOTAL_ORDER",
+    "NG-FUNNEL-053 — PROSPECTIVE_PROTOCOL_DESIGN_MUST_CONTROL_THE_FULL_JOINT_QUOTIENT_NOT_ONE_BLOCK_IN_ISOLATION"
+  ],
+  "readiness_change": "unchanged: v3 reveals a hard-vs-soft conditioning tradeoff; AS/C3 remain blocked and no candidate residual exists."
+}
