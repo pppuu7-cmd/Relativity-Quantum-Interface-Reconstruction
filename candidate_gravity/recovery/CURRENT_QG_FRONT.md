@@ -6,7 +6,7 @@
 **Rejected consistency control:** `ANSATZ-RQIR-CTP-001` v0.1  
 **Positive-spectral Gaussian comparator:** `ANSATZ-RQIR-KL-002` v0.1  
 **Active promotable ansatz:** none — intentionally withheld pending post-Gaussian design closure  
-**Authoritative Candidate Gravity front:** **Iteration 143**
+**Authoritative Candidate Gravity front:** **Iteration 144**
 
 ## Scientific state in one sentence
 
@@ -119,6 +119,45 @@ Authority:
 
 `candidate_gravity/POST_GAUSSIAN_MODEL_TO_RQIR_CONTRACT.md`.
 
+## Iteration 144 — finite post-Gaussian quotient infrastructure
+
+A model-independent finite quotient has now been specified before choosing `ANSATZ-003`.
+
+For a finite observable vector
+
+`y=(mean, two-point symmetric, linear response, third symmetric cumulant, second-order ordered response, Ward/soft tests, ...)`,
+
+exact hard constraints are represented by
+
+`H y=h`.
+
+Candidate and comparator tangents are projected into `null(H)` before any profiling.
+
+With reduced candidate direction
+
+`b=Q_H^T v_beta`
+
+and combined nuisance/comparator matrix
+
+`M=Q_H^T[V_nuis,V_C3,V_C4,V_C5,V_NL,V_AS,...]`,
+
+the algebraic novelty pre-gate is
+
+`rank([M,b]) > rank(M)`.
+
+The residual
+
+`r_beta=(I-MM^+)b`
+
+must exceed the numerical/modeling error bound. Symmetric and ordered residual components are recorded separately so that a purely classical-cumulant residual is not mistaken for an ordered quantum signature.
+
+Authorities:
+
+- `candidate_gravity/POST_GAUSSIAN_FINITE_QUOTIENT_TEMPLATE.md`;
+- `analysis/post_gaussian_quotient_validator_iteration144.py`.
+
+This is an algebraic pre-Fisher gate only; it does not prove physical consistency or resource feasibility.
+
 ## Existing-model/article material
 
 Article scaffolds now exist:
@@ -148,14 +187,14 @@ Do **not** freeze the third ansatz until all of the following can be stated in o
 7. **Strong comparator subtraction:** C5 higher EFT/loops, fixed nonlocal gravity, concrete asymptotic-safety vertices, nonlinear massive/KK spin-2, and postquantum classical higher statistics/response.
 8. **Finite RQIR quotient:** only the residual direction outside calibration/nuisance/comparator span proceeds to Fisher/resources.
 
-## Immediate next scientific priority — Iteration 144
+## Immediate next scientific priority — Iteration 145
 
-Construct and test the **minimal post-Gaussian RQIR discriminator architecture before choosing a new action**:
+Begin constructing `ANSATZ-003` only in the **residual post-Gaussian space** defined by Iteration 144:
 
-1. define a finite measurement vector containing Gaussian and post-Gaussian sectors;
-2. prove algebraically which directions are automatically classical-symmetric-cumulant degeneracies;
-3. include second-order ordered response and a Ward/soft locking constraint;
-4. instantiate explicit comparator tangent spaces for C3, C4 and C5 at this level;
-5. determine the minimum residual structure an `ANSATZ-003` action must generate to lie outside the combined comparator span.
+1. freeze a concrete C5 higher-point baseline order and finite observable protocol;
+2. instantiate first comparator tangent matrices for C3/C4/C5;
+3. identify which Ward/soft-locked ordered component is not automatically inside those spans;
+4. choose the minimal covariant parent dynamics capable of generating exactly that residual rather than adding arbitrary new kernels;
+5. reject the proposed dynamics before promotion if its formal tangent is already contained in a known nonlocal/asymptotic-safety/massive-spin-2 comparator family.
 
-Only then freeze the next dynamics. This prevents another candidate from being rejected merely because its claimed novelty was already available to an existing comparator class.
+This reverses the usual workflow: **first identify the residual observable direction, then construct the minimal dynamics that can generate it**.
