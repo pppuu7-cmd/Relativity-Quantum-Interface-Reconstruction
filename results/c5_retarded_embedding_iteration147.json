@@ -1,0 +1,35 @@
+{
+  "iteration": 147,
+  "status": "PARTIAL_CLOSURE_WITH_EXACT_BLOCKER",
+  "ct_prescription_frozen": true,
+  "tree_retarded_factorization_derived": true,
+  "ward_status": "SCOPED_FORMAL: conserved-source projection required; numerical Ward test awaits explicit projector/vertex evaluation",
+  "iteration146_on_shell_data_sufficient_for_chi2R": false,
+  "chi2R_even_odd_numeric_embedding": "BLOCKED_PROTOCOL_UNDERSPECIFIED",
+  "local_eft_chi2R_rank": "NOT_COMPUTABLE_WITHOUT_CUBIC_VERTEX_AND_PROJECTOR_MAP",
+  "loop_nonanalytic_columns": "BLOCKED_NOT_DERIVED_IN_SAME_CTP_CONVENTION",
+  "N2": "BLOCKED_REQUIRES_CTP_LOOP_OR_INFLUENCE_FUNCTIONAL",
+  "C3sym": "BLOCKED_REQUIRES_CTP_LOOP_OR_STATE_NON_GAUSSIAN_DERIVATION",
+  "new_negative_result": "NG-FUNNEL-007: ON_SHELL_4PT_KINEMATICS_DO_NOT_FIX_OFF_SHELL_RETARDED_3PT",
+  "fisher_resources_allowed": false,
+  "ansatz003_allowed": false,
+  "ct_preset": {
+    "background": "D=4 Minkowski",
+    "state": "interacting in-vacuum adiabatically connected to free graviton vacuum",
+    "gauge": "de Donder gauge for perturbative evaluation; final source projections must be conserved",
+    "source_coupling": "S_J = integral d4x J_A h^A, with J conserved in physical projections",
+    "retarded_prescription": "all response legs use G_R; no Feynman-to-retarded identification by fiat",
+    "eft_baseline": "Einstein-Hilbert + same parity-even local EFT operator set frozen in Iteration 146"
+  },
+  "tree_kernel": "chi2R_A;BC(p;q,r)=-(2pi)^4 delta4(p-q-r) GR_AA'(p) Gamma3^A'_{B'C'}(p,-q,-r) GR^B'_B(q) GR^C'_C(r)",
+  "missing_protocol_data": [
+    "off-shell p2,q2,r2 and energy signs",
+    "output/input tensor projectors",
+    "time and spatial smearing",
+    "normalization",
+    "explicit chi2R_even/odd coordinate map",
+    "numerical Ward/gauge-artifact null test"
+  ],
+  "iteration146_data_type": "on-shell four-graviton 2to2 amplitude samples in s,t,u,phi",
+  "next_gate": "Freeze a finite off-shell conserved-source/projector/smearing protocol and evaluate de-Donder EH plus cubic-EFT Gamma3 contractions before any chi2R rank claim."
+}
