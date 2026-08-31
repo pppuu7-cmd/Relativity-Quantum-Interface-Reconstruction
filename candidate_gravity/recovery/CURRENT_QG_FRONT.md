@@ -6,161 +6,228 @@
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Rejected consistency control:** `ANSATZ-RQIR-CTP-001` v0.1  
 **Positive-spectral Gaussian comparator:** `ANSATZ-RQIR-KL-002` v0.1  
-**Active promotable ansatz:** none — intentionally withheld pending a robust residual after the complete fixed comparator quotient  
-**Authoritative Candidate Gravity front:** **Iteration 165**
+**Active promotable ansatz:** none — intentionally withheld  
+**Authoritative Candidate Gravity front:** **Iteration 166**
 
 ## Scientific state in one sentence
 
-The 12-row TT residual exposed in Iteration 164 does **not** survive target-independent completion of the already-authorized local C5 cubic sector through the frozen dimension-12 cutoff: a 12-column local-C5 subset itself has rank `12/12` and absorbs both corrected dRGT tangents to machine precision, so the current 12-row ordered-TT protocol is saturated and cannot support a novelty certificate.
-
-## Mandatory provenance correction
-
-Iteration 163 used the correct numerical dRGT tangent arrays but mislabeled them. Correct mapping from Iteration 156:
-
-- first target: `d/d log(m^2)`;
-- second target: `d/d alpha3`;
-- `alpha4`: cubic-TT blind because `L4[K]` starts quartic.
-
-Preserve historical Iteration-163 files and cite:
-
-`PROVENANCE-CORR-001 — ITERATION163 TARGET LABELS ARE DLOGM2 AND DALPHA3; ALPHA4 REMAINS CUBIC_TT BLIND`.
+The local-C5 finite-interpolation saturation found through Iteration 165 can be escaped by changing observable type: an off-pole timelike **odd absorptive** retarded response is exactly blind to any real local Hermitian tree derivative tower, but its first nonzero massless-log direction is already occupied by standard perturbative C5 and by the leading IR Lorentzian asymptotic-safety continuum, so the next viable target is sub-leading source-completed frequency dependence after that universal log direction is removed.
 
 ## Stable readiness rubric
 
 Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 
-Weights: comparator foundation 25%; robust unique residual 20%; frozen parent dynamics/ANSATZ 20%; candidate consistency 15%; identifiability/Fisher 10%; resource/experiment closure 10%.
-
-Current accounting:
-
 - comparator foundation `24/25`;
 - robust unique residual `0/20`;
 - parent dynamics/ANSATZ `0/20`;
-- consistency/positivity/Ward/causality `0/15`;
+- candidate consistency `0/15`;
 - identifiability/Fisher `0/10`;
 - resource/experiment closure `0/10`.
 
-`MODEL_READINESS: 24%` — up from `23%` in Iteration 164 by one comparator-foundation point only. The Iteration-164 temporary residual earns no residual-readiness points because it is absorbed by the authorized Iteration-165 C5 completion.
+`MODEL_READINESS = 24%` remains unchanged in Iteration 166. The new causal sector materially narrows comparator structure but the final comparator-foundation point is not awarded while the common source-completed absorptive quotient is incomplete.
 
-## Frozen protocol and gate discipline
+## Mandatory provenance correction retained
 
-Reduced conceptual coordinates after hard locks remain
+Iteration 163 used correct dRGT tangent arrays but mislabeled them. Correct Iteration-156 mapping:
 
-`z=(N2,chi1R,C3sym,chi2R_even,chi2R_odd,soft2,tensor_geo,threshold)`.
-
-For the current ordered-response subproblem, the authoritative finite protocol contains exactly **12 frozen TT rows**: the original six plus the six deterministic target-independent rows from Iteration 164.
-
-The novelty pre-gate remains
-
-`r_beta=(I-MM^+)b`.
-
-Hard constraints precede profiling/Fisher. Unsupported comparator entries are BLOCKED, never zero-filled. No frozen gate may be weakened post hoc.
-
-Retained funnel rules now include `NG-FUNNEL-001` through `NG-FUNNEL-023`.
-
-## C3 status
-
-Fixed postquantum-classical comparator retained.
-
-- linear `N2=A(5D2+D0)`, rank `1/2` in `(D2,D0)`;
-- nonlinear symmetric cumulant from the same covariant OM action gives supported `(N2,C3sym)` rank `2/2` for physical `D2>0`;
-- tree causal response `chi2R=-G_R Gamma3_EH G_R G_R` is the common GR boundary after hard Newton calibration and is already represented by the EH column.
-
-BLOCKED: diffusion-dependent ordered/MSR-loop corrections, exact `chi2R_odd`, non-TT completion, threshold, full enriched C3 quotient.
-
-## C4 status — `C4-DRGT-001`
-
-Frozen point remains `m^2=0.04`, `alpha3=0`, `alpha4=0`.
-
-Historical results:
-
-- Iteration 163: six-row finite-protocol saturation;
-- Iteration 164: target-independent extension to 12 rows exposed nonzero corrected `dlogm2` and `dalpha3` residuals against the then-smaller local-C5 basis;
-- Iteration 165: both residuals are absorbed to machine precision by target-independent local-C5 cubic completion through dimension 12.
+- first target: `d/d log(m^2)`;
+- second target: `d/d alpha3`;
+- `alpha4`: cubic-TT blind because `L4[K]` starts quartic.
 
 Retain:
 
-- `C4-NG-004 — EXPANDED_LOCAL_C5_SPAN_ABSORBS_DRGT_NONLINEAR_TANGENT_ON_SIX_TT_PROBES`;
-- `C4-NG-005 — SIX_ROW_SATURATION_DOES_NOT_PERSIST_UNDER_TARGET_INDEPENDENT_TT_ROW_ENRICHMENT`;
-- `C4-NG-006 — DRGT_DLOGM2_DIRECTION_IS_NEAR_DEGENERATE_AFTER_ENRICHED_LOCAL_C5_QUOTIENT` as historical Iteration-164 classification;
-- `C4-NG-007 — ITERATION164_DRGT_RESIDUAL_ABSORBED_BY_TARGET_INDEPENDENT_DIMENSION12_C5_COMPLETION`.
+`PROVENANCE-CORR-001 — ITERATION163 TARGET LABELS ARE DLOGM2 AND DALPHA3; ALPHA4 REMAINS CUBIC_TT BLIND`.
 
-Current classification in the 12-row TT protocol: **REGIME_SPECIFIC_NON_IDENTIFIABILITY / FINITE_PROTOCOL SATURATION**. This is not exact dRGT=C5 identity and not a dRGT consistency FAIL.
+## Frozen RQIR observable hierarchy
 
-BLOCKED: helicity-0/1, Vainshtein/nonperturbative response, C4 `N2/C3sym`, full non-TT quotient.
+Reduced conceptual coordinates remain
 
-## C5 status
+`z=(N2,chi1R,C3sym,chi2R_even,chi2R_odd,soft2,tensor_geo,threshold)`.
 
-Retained:
+Hard constraints precede profiling/Fisher. Unsupported comparator coordinates are BLOCKED, never zero-filled.
 
-- on-shell local amplitude tangent `12x10`, rank `10/10`, on-shell only;
-- source-completed off-shell TT protocol;
-- EH + curvature-cubic retarded response Ward validation;
-- `Ricci^2` and `Ricci Box Ricci` full response tangents with propagator insertions and completed Ward checks;
-- `R^2` and `R Box R` remain exact TT-cubic blind at this order because `R^(1)[h_TT]=0`;
-- Iteration 165 adds target-independent mixed `Ricci Ricci Riemann` plus `Box^n`, `n=1,2,3`, descendants of the existing Ricci and Riemann cubic chains through dimension 12;
-- resulting local-C5 matrix shape `12x12`, rank `12/12`;
-- raw `s_min/s_max=2.8317567788e-6`;
-- new cubic gauge-leg regressions pass to machine precision.
+## Historical spacelike ordered-TT result through Iteration 165
+
+The authoritative real ordered-response protocol contains 12 frozen spacelike TT rows.
+
+Iteration 165 completed a target-independent local C5 cubic subset through the already frozen dimension-12 cutoff:
+
+- EH;
+- Ricci^3;
+- cyclic Riemann^3;
+- full `Ricci^2` response tangent including propagator insertion;
+- full `Ricci Box Ricci` tangent;
+- mixed `Ricci Ricci Riemann` cubic invariant;
+- `Box^n`, `n=1,2,3`, descendants of Ricci and Riemann cubic chains.
+
+Result:
+
+`C5 matrix = 12x12`, `rank=12/12`.
+
+Both corrected dRGT tangents are absorbed to machine precision on that finite protocol.
 
 Retain:
 
 `C5-NG-003 — DIMENSION12_LOCAL_C5_CUBIC_SUBSET_SATURATES_ENRICHED_12ROW_TT_PROTOCOL`.
 
-This is a sufficient finite-space saturation certificate, not a claim that the implemented subset is a complete covariant dimension-12 EFT operator basis.
-
-BLOCKED: remaining non-TT/full off-shell local directions, loop/nonanalytic C5, C5 `N2/C3sym` in one finite CTP map.
-
-## Nonlocal status — `NL-WNL-001`
-
-The weakly-nonlocal comparator remains fixed/scoped. Its local cubic potential directions are already contained in the local C5 nonlinear span. Full form-factor-induced Lorentzian cubic response, causal completion, and nonlocal `N2/C3sym` remain BLOCKED.
-
-Within the already saturated 12-row TT space these blocked columns cannot restore a nonzero orthogonal residual, but they remain required outside that space and for theory-level claims.
-
-## Asymptotic-safety status — `AS-FRG-TT-001`
-
-The Pawlowski–Tränkle FRG/effective-action comparator remains fixed/scoped.
-
-- symmetric-point Euclidean three-graviton data are not the required off-symmetric Lorentzian retarded tangent;
-- reconstructed Euclidean curvature-squared action defines off-symmetric Euclidean background vertices in principle within its truncation;
-- strict local IR expansion is structurally contained in local C5;
-- strict IR Taylor surrogate is invalid on the finite Planck-scale probes;
-- full nonlocal retarded `chi2R_even/odd` remains `BLOCKED_AS_RETARDED_GREEN_FUNCTION_PRESCRIPTION`.
-
-These blockers cannot alter zero residual inside the already full-rank 12-row C5 span, but remain relevant in an expanded observable protocol.
-
-## New Iteration-165 funnel consequences
+`C4-NG-007 — ITERATION164_DRGT_RESIDUAL_ABSORBED_BY_TARGET_INDEPENDENT_DIMENSION12_C5_COMPLETION`.
 
 `NG-FUNNEL-022 — FINITE_PROTOCOL_RESIDUAL_MUST_SURVIVE_THEORY_AUTHORIZED_COMPARATOR_BASIS_COMPLETION`.
 
-`NG-FUNNEL-023 — ONCE_ONE_AUTHORIZED_COMPARATOR_SPANS_THE_FINITE_ROW_SPACE, ADDITIONAL_BLOCKED_COMPARATORS_CANNOT_RESTORE_A_RESIDUAL_IN_THAT SAME SPACE`.
+`NG-FUNNEL-023 — ONCE_ONE_AUTHORIZED_COMPARATOR_SPANS_THE_FINITE_ROW_SPACE, ADDITIONAL_BLOCKED_COMPARATORS_CANNOT_RESTORE_A_RESIDUAL IN THAT SAME SPACE`.
 
-The Iteration-164 `dalpha3` residual is therefore historical/scoped only and may not motivate candidate promotion.
+Do not search for novelty by adding more target-optimized rows inside this saturated sector.
 
-## `ANSATZ-003` state
+## New Iteration-166 timelike absorptive pre-protocol
 
-Still intentionally **not frozen**. No residual has survived the complete currently authorized comparator treatment in the 12-row TT space.
+Freeze eight positive timelike invariants
 
-Fisher/resources remain forbidden.
+`s_i = 0.004*i`, `i=1..8`,
 
-## Iteration 165 authorities
+with zero spatial momentum, paired positive/negative frequencies and all `s_i<0.04`, below the frozen dRGT TT pole.
 
-- `analysis/c5_dimension12_cubic_completion_iteration165.py`;
-- `results/c5_dimension12_cubic_completion_iteration165.json`;
-- `candidate_gravity/C5_DIMENSION12_CUBIC_COMPLETION_ITERATION165.md`;
-- `research_log/2026-08-31_iteration_165_c5_dimension12_completion.md`;
-- `recovery/RECOVERY_DELTA_ITERATION_165.md`;
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION165.md`.
+Define
 
-## Immediate next scientific priority — Iteration 166
+`A_odd(s)=[Im chi_R(+omega)-Im chi_R(-omega)]/(2*pi)`.
 
-Do **not** search for novelty inside the saturated 12-row TT space and do not optimize any new row around dRGT target residuals.
+Use the retarded logarithmic branches
+
+`log(-s-i0)=log(s)-i*pi`,
+
+`log(-s+i0)=log(s)+i*pi`.
+
+### Exact/scoped local-tree result
+
+For a real local Hermitian tree EFT evaluated away from isolated poles,
+
+`A_odd^local-tree=0`.
+
+This is analytic/causal and does not depend on the number of local Wilson coefficients. Therefore the local finite-polynomial interpolation mechanism responsible for Iteration-165 saturation cannot saturate this absorptive block.
+
+Retain:
+
+`C5-NG-004 — LOCAL_HERMITIAN_TREE_EFT_CANNOT_SATURATE_OFF_POLE_ABSORPTIVE_BLOCK`.
+
+### C5 massless-loop positive control
+
+A leading nonanalytic inverse-kernel term
+
+`K_R=s[1+ell*s log(-s-i0)]`
+
+gives at first order
+
+`d chi_R/d ell = -log(-s-i0)`
+
+and normalized
+
+`A_odd=1`.
+
+Eight-row rank: `1`.
+
+A generic shape-capacity stress family `x^n A_odd`, `n=0..3`, has rank `4/4`; it is not interpreted as four independently fixed C5 loop parameters.
+
+## New Lorentzian asymptotic-safety comparator
+
+Separate comparator record:
+
+`candidate_gravity/comparators/AS-LOR-SPEC-002.md`.
+
+Primary authority: Pawlowski, Reichert & Wessely, arXiv:2507.22169 (2025), supported by Fehre et al. arXiv:2111.13232.
+
+Published TT spectral structure uses a Källén–Lehmann representation with a massless pole plus positive scattering continuum. In the controlled IR,
+
+`G_hh^ph = z_spec^-1 [1/p^2 - A_h log(p^2) + ...]`,
+
+`A_h = 61/(60*pi) = 0.32361505095352056`,
+
+`z_spec ~= 1.486`.
+
+The unnormalised IR continuum onset is `61/30 ~= 2.0333333333`.
+
+After gain profiling, the leading AS IR absorptive vector is exactly collinear with the leading C5 massless-log shape on the Iteration-166 benchmark:
+
+`rank([C5_log,AS_IR])=1`,
+
+relative AS residual after C5-log projection `=1.715e-16`.
+
+Retain:
+
+`AS-NG-004 — LORENTZIAN_AS_LEADING_IR_LOG_IS_COLLINEAR_WITH_C5_MASSLESS_LOOP_SHAPE`.
+
+This is a leading-IR shape statement, not a finite-frequency AS=C5 identity.
+
+## New funnel guardrails
+
+`NG-FUNNEL-024 — ABSORPTIVE_NONANALYTICITY_ESCAPES_LOCAL_TREE_INTERPOLATION_BUT_NOT_QUANTUM_COMPARATOR_SUBTRACTION`.
+
+`NG-FUNNEL-025 — BARE_TT_SPECTRAL_COEFFICIENT_IS_NOT_YET_A_SOURCE_COMPLETED_RQIR_OBSERVABLE`.
+
+The second guardrail is mandatory because the AS coefficient above is tied to a TT fluctuation-field/gauge/normalisation convention. RQIR must eventually construct a conserved-source/detector transfer including all source and vertex pieces required for a physical operational observable.
+
+## Comparator status in the new absorptive block
+
+### C3 postquantum-classical
+
+Supported tree causal response is the common EH boundary and is absorptively zero away from its isolated massless pole.
+
+BLOCKED: diffusion/MSR-loop ordered corrections, full threshold/absorptive response, non-TT completion.
+
+### C4 dRGT
+
+Frozen `m^2=0.04`, `alpha3=alpha4=0` reference retained. On the chosen `s<0.04` rows the supported tree TT propagator does not hit its isolated massive pole and has no continuum absorptive piece.
+
+BLOCKED: loops/matter thresholds, helicity-0/1 completion, Vainshtein/nonperturbative sector, C4 `N2/C3sym`.
+
+Do not infer those blocked sectors are zero.
+
+### C5
+
+- local tree: exact off-pole absorptive zero;
+- leading massless-loop log shape: supported;
+- exact source-completed finite-frequency coefficient in the RQIR convention: BLOCKED;
+- full `N2/C3sym` from the same CTP map: BLOCKED.
+
+### Entire-form-factor nonlocal comparators
+
+The frozen entire tree form factors do not themselves generate a branch cut away from the GR pole.
+
+BLOCKED: full Lorentzian CTP/loop absorptive completion and nonlinear source-completed response.
+
+### Asymptotic safety
+
+`AS-FRG-TT-001` remains the Euclidean action/vertex comparator with nonlinear real-time mapping blocked.
+
+`AS-LOR-SPEC-002` supplies a genuinely Lorentzian two-point spectral positive control: continuum and leading IR log supported; source-completed finite-frequency RQIR amplitude and nonlinear ordered response remain blocked.
+
+## Candidate state
+
+There is still **no robust Candidate Gravity residual**.
+
+`ANSATZ-003`: NOT CREATED.
+
+Fisher/resources remain FORBIDDEN.
+
+A nonzero absorptive signal alone may not motivate the candidate because it is already standard C5/AS physics.
+
+## Iteration-166 authorities
+
+- `analysis/timelike_absorptive_protocol_iteration166.py`;
+- `results/timelike_absorptive_protocol_iteration166.json`;
+- `candidate_gravity/TIMELIKE_ABSORPTIVE_PROTOCOL_ITERATION166.md`;
+- `candidate_gravity/comparators/AS-LOR-SPEC-002.md`;
+- `recovery/RECOVERY_DELTA_ITERATION_166.md`;
+- `research_log/2026-08-31_iteration_166_timelike_absorptive.md`.
+
+## Immediate next scientific priority — Iteration 167
+
+Do not build a candidate around the universal constant-log absorptive onset.
 
 Required order:
 
-1. freeze a target-independent observable extension with dimension greater than 12, preferably additional source-completed off-shell rows generated before target evaluation and/or an independently defined non-TT/helicity-sensitive block;
-2. keep the Iteration-165 local C5 dynamics and parameter convention fixed;
-3. evaluate the fixed C5 basis first and obtain rank/SVD on the enlarged row space;
-4. only then evaluate corrected dRGT `dlogm2/dalpha3` and any other fixed comparator targets;
-5. instantiate C3/nonlocal/AS columns only where the same enlarged protocol and causal convention make them physically supported; otherwise preserve BLOCKED;
-6. only a nonzero residual surviving the expanded fixed C3/C4/C5/nonlocal/AS quotient can earn residual-readiness points or reopen `ANSATZ-003`, Fisher, or resources.
+1. construct a conserved-source/source-completed timelike response rather than using a bare TT propagator coefficient;
+2. derive the leading perturbative-C5 massless-loop nonanalytic direction in that exact physical source convention, with source/vertex completion sufficient for gauge invariance;
+3. map `AS-LOR-SPEC-002` into the same normalized source-response language in the controlled IR;
+4. remove/profile the universal constant-log direction;
+5. identify the first target-independent **sub-leading frequency-shape coordinate** and test it against C5 + Lorentzian AS before any candidate evaluation;
+6. keep C3/C4/nonlocal unsupported loop sectors BLOCKED unless a theorem-level threshold argument makes them irrelevant in the frozen window;
+7. only a residual surviving that stronger causal/nonanalytic quotient may earn robust-residual readiness points or reopen `ANSATZ-003`.
