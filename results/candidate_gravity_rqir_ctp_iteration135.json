@@ -1,0 +1,42 @@
+{
+  "A1_e_E1_1": 0.5963473623231946,
+  "F_E_max_on_grid": 0.9804846192300624,
+  "IR_ratio_at_x_1e-8": 0.5963473582866677,
+  "checks": {
+    "analytic_upper_bound_holds_on_grid": true,
+    "form_factor_nonnegative_on_grid": true,
+    "infrared_slope_matches_eE1": true,
+    "kernel_factor_no_spacelike_zero_for_test_betas": true,
+    "spectral_density_normalized": true
+  },
+  "grid_points": 162,
+  "grid_x_max": 100.0,
+  "grid_x_min": 0.0,
+  "iteration": 135,
+  "kernel_min_all_x": {
+    "0": 1.0,
+    "0.001": 1.0,
+    "0.1": 1.0,
+    "1": 1.0,
+    "10": 1.0
+  },
+  "kernel_min_nonzero_x": {
+    "0": 1.0,
+    "0.001": 1.0000000000059635,
+    "0.1": 1.0000000005963474,
+    "1": 1.0000000059634735,
+    "10": 1.0000000596347358
+  },
+  "max_upper_bound_violation": 0.0,
+  "model_id": "ANSATZ-RQIR-CTP-001",
+  "nonclaims": [
+    "No Lorentzian pole/branch-sheet audit performed",
+    "No microscopic unitary dilation proved",
+    "No nonlinear diffeomorphism closure proved",
+    "No comparator novelty proved"
+  ],
+  "overall": "PASS_SCOPED",
+  "rho_norm": 0.9999999999999999,
+  "rho_quad_error": 1.1102230246251564e-14,
+  "scope": "Euclidean/spacelike positive-spectral-kernel audit"
+}
