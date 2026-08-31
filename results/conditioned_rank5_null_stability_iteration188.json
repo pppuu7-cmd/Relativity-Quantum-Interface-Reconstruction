@@ -1,0 +1,57 @@
+{
+  "classification": {
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN",
+    "candidate_residual": "NOT_ESTABLISHED",
+    "null_geometry": "ROW_DOMINATED_AND_NOT_YET_ROBUST_WITNESS",
+    "protocol_extension": "REQUIRED_TARGET_INDEPENDENTLY_BEFORE_ANY_RESIDUAL_PROMOTION",
+    "unique_algebraic_complement": "EXISTS_DIMENSION_1_BEFORE_AS_C3_COMPLETION"
+  },
+  "dominant_row": 1,
+  "dominant_row_weight_fraction": 0.9466570712688778,
+  "iteration": 188,
+  "left_null_squared_row_weights": [
+    2.118938793668057e-08,
+    0.9466570712688778,
+    0.0002491720549598093,
+    0.009024812657175966,
+    0.04213028031472444,
+    0.001938642449874852
+  ],
+  "left_null_unit_vector": [
+    -0.00014556575131759016,
+    0.9729630368185092,
+    0.015785184676892737,
+    0.09499901398424418,
+    0.20525662107118735,
+    -0.04403001759995395
+  ],
+  "leave_one_row_out": [
+    {"condition_number": 21718579.781318203, "removed_row": 0, "smallest_singular_value": 4.205809524574178e-07},
+    {"condition_number": 159089.9916001125, "removed_row": 1, "smallest_singular_value": 6.422200211119969e-05},
+    {"condition_number": 1224715.425410019, "removed_row": 2, "smallest_singular_value": 4.780085519869969e-06},
+    {"condition_number": 1081382.9284453408, "removed_row": 3, "smallest_singular_value": 9.033663158759404e-06},
+    {"condition_number": 312732.8447880084, "removed_row": 4, "smallest_singular_value": 3.259755118137828e-05},
+    {"condition_number": 2066491.281669, "removed_row": 5, "smallest_singular_value": 4.933603417571585e-06}
+  ],
+  "max_null_orthogonality_error": 5.2475385148298415e-17,
+  "model_readiness_percent": 24,
+  "perturbation_test": {
+    "entry_sigma": 5.262558e-06,
+    "max_angle_deg": 16.82806113114141,
+    "median_angle_deg": 3.127060089121991,
+    "p95_angle_deg": 9.300911543373669,
+    "samples": 5000,
+    "seed": 187188
+  },
+  "readiness_change": "unchanged: a unique algebraic complement exists, but its one-row domination makes it a design diagnostic rather than a promotable residual",
+  "retained_results": [
+    "NUM-NG-004 — CURRENT_RANK5_LEFT_NULL_IS_94P7_PERCENT_DOMINATED_BY_ONE_FROZEN_ROW",
+    "REL-NG-006 — ONE_DIMENSIONAL_ALGEBRAIC_COMPLEMENT_IS_NOT_A_ROBUST_RESIDUAL_CERTIFICATE_BEFORE_ROW_EXTENSION_AND_BLOCKED_COMPARATOR_COMPLETION",
+    "NG-FUNNEL-043 — PREREGISTER_ROW_EXTENSION_BEFORE_TESTING_ANY_MODEL_AGAINST_THE_CURRENT_LEFT_NULL"
+  ],
+  "scope": "six frozen conditioned soft2 rows; supported comparator span V4 plus QG-NL-EXP-001 lambda direction",
+  "singular_values": [10.2208867, 2.16482489, 0.046278608, 0.00404433441, 6.52067013e-05],
+  "smallest_nonzero_singular_over_envelope": 12.39068554180147,
+  "supported_rank": 5
+}
