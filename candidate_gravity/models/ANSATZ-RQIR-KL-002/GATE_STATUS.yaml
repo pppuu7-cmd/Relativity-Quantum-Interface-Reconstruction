@@ -15,27 +15,28 @@ qg_gates:
     scope: weak-field conserved-source Gaussian sector
   QG-003:
     status: PARTIAL
-    claim: the massless GR pole/residue is unchanged; full linear tensor completion gives Phi=-GM/r[1+(4/3)beta W] with 0<W<=exp(-M_*r), so long-range GR is recovered while short-range/PPN constraints remain to be audited
+    claim: massless GR pole/residue unchanged; linear tensor completion gives Phi=-GM/r[1+(4/3)beta W] with 0<W<=exp(-M_*r); short-range/PPN constraints remain open
   QG-004:
     status: PASS_SCOPED
     claim: nonnegative Kallen-Lehmann spectral measure gives positive-norm Gaussian spectral sectors, retarded causal support and no isolated opposite-residue continuum pole
     scope: linearized Gaussian spectral sector only
   QG-005:
     status: PARTIAL
-    claim: linear conserved-source tensor structure is now explicit: massless exchange uses -1/2 trace coefficient and continuum massive spin-2 exchange uses -1/3, giving the standard vDVZ 4/3 NR factor; nonlinear Ward/Bianchi/constraint completion remains open
+    claim: linear conserved-source tensor structure is explicit with massless -1/2 and massive-continuum -1/3 trace coefficients; nonlinear Ward/Bianchi/constraint completion remains open
     authority: docs/CANDIDATE_GRAVITY_TENSOR_ITERATION139.md
   QG-006:
     status: PARTIAL
-    claim: beta->0 gives the C5/GR boundary and matter decoupling gives ordinary QFT; nonlinear/classical/coarse-grained reductions remain incomplete
+    claim: beta->0 gives the reference GR/C5 boundary at the declared tree spectral level and matter decoupling gives ordinary QFT; explicit loop-baseline alignment remains to be frozen
   QG-007:
-    status: BLOCKED
-    claim: positive massive spin-2 continua and vDVZ tensor structures have substantial prior art and may be degenerate with C4 hidden/KK/DGP-like sectors, C5 interaction continua or nonlocal gravity
+    status: PARTIAL_NEGATIVE
+    claim: Iteration 140 proves exact finite-order low-energy EFT degeneracy of the added gapped continuum below threshold; full-threshold/cross-channel distinction from C5 and C4 remains open
+    authority: docs/CANDIDATE_GRAVITY_C5_IR_DEGENERACY_ITERATION140.md
   QG-008:
-    status: NOT_TESTED
-    claim: linked NR force, traceless-probe, threshold and noise directions have not yet been propagated through the exact Paper-I hard-constraint quotient
+    status: BLOCKED_REGIME
+    claim: Paper-I analysis must not be run in a strictly below-threshold finite-order EFT regime because the beta direction lies in the C5 Wilson-coefficient span; threshold/cross-channel map must be built first
   QG-009:
     status: BLOCKED
-    claim: Fisher profiling waits for a nondegenerate QG-007/QG-008 direction
+    claim: Fisher profiling waits for a nondegenerate threshold/cross-channel QG-008 direction
   QG-010:
     status: BLOCKED
     claim: resource closure waits for statistical identification
@@ -49,10 +50,11 @@ cross_gates:
   flat_qft_limit: PARTIAL_STRUCTURAL
   newtonian_long_range: PASS_SCOPED_MASSLESS_POLE_UNCHANGED
   vdvz_short_range_signature: PASS_SCOPED_FACTOR_4_OVER_3
+  c5_low_energy_eft_degeneracy: FAIL_DISTINCTNESS_BELOW_THRESHOLD
   stress_energy_renormalization: BLOCKED
   nonlinear_constraint_completion: BLOCKED
-  comparator_degeneracy: BLOCKED_HIGH_PRIORITY
-  detector_measurability: NOT_TESTED
+  comparator_degeneracy: PARTIAL_C5_IR_DEGENERATE
+  detector_measurability: BLOCKED_UNTIL_THRESHOLD_MAP
 
 scoped_results:
   - id: CG-R138-001
@@ -66,18 +68,26 @@ scoped_results:
     statement: scalarized static continuum kernel obeys 0<W<=exp(-M_*r)
   - id: CG-R139-001
     state: PASS_SCOPED
-    statement: conserved-source linear tensor completion gives massless T.T'-(1/2)TT' and massive-continuum T.T'-(1/3)TT'
+    statement: linear tensor completion gives massless T.T'-(1/2)TT' and massive-continuum T.T'-(1/3)TT'
   - id: CG-R139-002
     state: PASS_SCOPED
-    statement: nonrelativistic continuum exchange is enhanced by 4/3 relative to massless GR normalization, updating the static bound to |delta Phi/Phi_GR|<=(4/3)beta exp(-M_*r)
+    statement: NR continuum exchange is enhanced by 4/3 relative to massless GR normalization
   - id: CG-R139-003
     state: PASS_SCOPED
-    statement: after NR calibration a traceless-probe continuum response has fixed relative factor 3/4, providing an additional linked RQIR channel
+    statement: after NR calibration a traceless-probe continuum response has fixed relative factor 3/4
+  - id: CG-R140-001
+    state: NEGATIVE_SCOPED
+    statement: for |q^2|<M_*^2 the candidate continuum admits a convergent analytic derivative expansion C(x)=sum(-x)^n A_(n+1)
+  - id: CG-R140-002
+    state: FAIL_DISTINCTNESS_SCOPED
+    statement: at any fixed finite derivative order below threshold the added continuum lies in the local C5 EFT Wilson-coefficient span and is not a standalone model discriminator
 
-negative_results: []
+negative_results:
+  - id: CG-NG-005
+    statement: A gapped positive spectral continuum is not operationally distinguishable from C5 plus local Wilson-coefficient freedom in a strictly below-threshold finite-order EFT measurement.
 
 next_action:
-  - audit nonlinear completion risk; do not assume Vainshtein screening inside v0.1
-  - freeze the C5 spectral-cut baseline and compare threshold/support/tensor structure
+  - freeze explicit C5 loop baseline and define the candidate as an excess spectral direction over that baseline before any novelty claim
+  - build threshold-resolved and cross-channel finite maps using NR, traceless-probe, absorptive and noise sectors
   - compare explicitly with KK/DGP/hidden massive-spin-2 continua and nonlocal gravity
-  - build Paper-I finite cross-channel quotient only if a residual candidate direction survives comparator subtraction
+  - audit nonlinear completion risk without importing Vainshtein screening into v0.1
