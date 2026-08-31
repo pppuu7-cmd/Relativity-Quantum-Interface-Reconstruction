@@ -5,22 +5,22 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 200**
+**Authoritative Candidate Gravity front:** **Iteration 201**
 
 ## Scientific state in one sentence
 
-The supported hard-K2 family `[x,...,x^6,x^2 exp(x)]` is structurally rank 7 for any seven distinct positive hard nodes, so exact hard calibration removes the supported local-quadratic/nonlocal parameter variations; the surviving supported local C5 soft2 nuisance is rank 4, but Iteration 200 shows that its image depends strongly on the prospectively frozen TT-polarization protocol. Two independently valid v3 polarization protocols (`v3-A`, `v3-B`) have principal angles `[1.31°,70.60°,76.74°,83.66°]`, so future Candidate Gravity residuals must be polarization-robust rather than optimized against one favorable TT basis. AS and C3 remain BLOCKED; no candidate residual exists yet.
+The supported hard-K2 family is structurally rank 7 for any seven distinct positive hard nodes, exact hard calibration removes the supported local-quadratic/nonlocal variations, and the surviving supported local C5 soft2 nuisance is rank 4; however its image is strongly dependent on the frozen TT-polarization protocol. Two independently prospectively frozen v3 protocols (`v3-A`, `v3-B`) have principal angles `[1.31°,70.60°,76.74°,83.66°]`. Iteration 201 therefore freezes a cross-polarization anti-overfitting gate: a future candidate must derive both protocol tangents from the same parent dynamics and same parameter convention and must leave a supported nonzero residual in each protocol separately. AS and C3 remain BLOCKED; no candidate residual exists yet.
 
 ## Stable readiness rubric
 
 - comparator foundation `24/25`;
 - robust unique residual `0/20`;
-- parent dynamics/ANSATZ `0/20`;
-- candidate consistency/positivity/Ward/causality `0/15`;
+- frozen parent dynamics/ANSATZ `0/20`;
+- consistency/positivity/Ward/causality `0/15`;
 - identifiability/Fisher `0/10`;
 - resource/experiment closure `0/10`.
 
-`MODEL_READINESS = 24%` through Iteration 200. Do not raise readiness for workload, exact rank, complement dimension, conditioning improvements, or protocol multiplication alone.
+`MODEL_READINESS = 24%` through Iteration 201. Do not increase readiness for workload, exact rank, complement dimension, conditioning improvements, or protocol multiplication alone.
 
 ## Frozen rules
 
@@ -29,177 +29,174 @@ The supported hard-K2 family `[x,...,x^6,x^2 exp(x)]` is structurally rank 7 for
 - Exact hard constraints precede profiling/Fisher.
 - Structural rank and finite-noise conditioning are separate gates.
 - TT polarization is part of the observable row definition; deterministic seeds only make a chosen polarization reproducible.
-- Alternate prospectively frozen polarization protocols may not be selected post hoc after seeing a candidate residual.
-- Do not create `ANSATZ-003` before a concrete residual survives fixed C3/C4/C5/nonlocal/AS subtraction and prospectively frozen cross-protocol robustness.
+- Alternate prospectively frozen polarization protocols may not be selected, reseeded, reweighted, or dropped after seeing candidate residuals.
+- A future candidate must use one parent dynamics and one parameter convention across all frozen validation protocols.
+- Do not create `ANSATZ-003` before a concrete residual survives fixed C3/C4/C5/nonlocal/AS subtraction and the frozen cross-polarization gate.
 - Fisher/resources remain forbidden until then.
-- For nonzero-K2 models use joint `(K2,S_soft2_full)`; internal Ward/transverse repartition is not an observable.
-- Failed preregistered rows/protocols remain recorded as failures; no silent reseeding or deletion.
 
-## External comparator authority boundaries
+## Supported hard-K2 authority
 
-### Asymptotic safety
+For the local quadratic C5 directions plus the fixed nonlocal `QG-NL-EXP-001` lambda direction, the hard functions are
 
-Modern authority supports Euclidean momentum-dependent multi-graviton/effective-action information, Lorentzian graviton spectral information, and Lorentzian/timelike scalar–graviton vertex information, but not the required Lorentzian/in-in source-completed off-shell three-graviton `O(k_soft^2)` relation in the same parent convention as K2.
+`[x,x^2,x^3,x^4,x^5,x^6,x^2 exp(x)]`.
 
-Status: `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, not zero and not FAIL.
+After factoring the positive row factor x, the collocation family is
 
-### C3 PQCG
+`{1,x,x^2,x^3,x^4,x^5,x exp(x)}`.
 
-Published authority supports nonlinear covariant OM probability dynamics, symmetric post-Gaussian structure, and a linearized gravitational MSR/JD construction, but not the nonlinear metric-dependent conserved-diffusion response vertex/source-completed ordered soft2 metric relation required by RQIR.
-
-Status: `BLOCKED_C3_CTP_ORDERED_COMPLETION`, not zero and not FAIL.
-
-## Prospective hard/soft authority through Iteration 196
-
-The prospectively frozen 12-row program established:
-
-- old six-row nonlocal K2 compensation was finite-sample saturation, not theory identity;
-- on >=7 distinct positive hard nodes the supported hard functions are structurally rank 7;
-- after exact hard calibration the supported parameter nullspace contains only zero-K2 curvature-cubic C5 coefficients;
-- local zero-K2 C5 soft2 map has rank 4 on the frozen prospective rows;
-- exact rank remains separate from conditioning.
-
-Hard structural theorem: after factoring positive x, the functions
-
-`{1,x,x^2,x^3,x^4,x^5,x exp(x)}`
-
-have leading Wronskians
+Its leading Wronskians are
 
 `1,1,2,12,288,34560,34560(x+6)exp(x)`.
 
-Hence any seven distinct positive x nodes give rank 7.
+Hence the family is an extended complete Chebyshev system on `x>0`: any seven distinct positive hard nodes give exact rank 7. The old six-row local/nonlocal K2 compensation is finite-sample saturation, not theory identity.
 
-## v3 hard geometry — Iteration 197
+Under exact hard calibration the supported hard-preserving parameter nullspace contains only the zero-K2 curvature-cubic C5 coefficients. This is an exact algebraic statement, not finite-noise identifiability.
 
-A target-independent two-scale design used only supported hard-K2 conditioning and no candidate information. Selected scales:
+## v3 hard geometry
 
-`0.80` and `1.40`.
+A target-independent comparator-only conditioning design selected scale factors `0.80` and `1.40` on the six base hard q-vectors.
 
 Hard x values:
 
 `[0.324864,0.246656,0.27264,0.201792,0.256256,0.184448,0.994896,0.755384,0.83496,0.617988,0.784784,0.564872]`.
 
-Relative to v2:
+Relative to withheld-v2:
 
 - raw hard-K2 condition improves by factor `3.2176`;
 - column-normalized hard condition improves by factor `3.0705`;
 - raw smallest singular value improves by factor `5.6670`.
 
-The hard block remains near-degenerate and this is not finite-noise identifiability.
+The hard block remains near-degenerate. No Fisher/resource inference is authorized.
 
-## Concurrent prospectively frozen v3 polarization protocols
+## External comparator authority boundaries
 
-A repository concurrency event produced two different deterministic seed streams on the same v3 hard q geometry. Both streams were frozen before their own cubic C5 evaluations and neither used a Candidate Gravity target. Therefore both are retained as legitimate but distinct observable protocols.
+### Asymptotic safety
 
-### v3-A — hourly automation branch
+Current authority still does not supply the required Lorentzian/in-in source-completed off-shell three-graviton `O(k_soft^2)` relation in the same parent convention as K2.
 
-Seed convention based at `197000/197500`.
+Status: `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, not zero and not FAIL.
 
-All 12 rows pass the geometry-only TT normalization rule. Minimum partner margin `0.8106158577`.
+### C3 PQCG
 
-Local zero-K2 C5 soft2:
+Current authority still does not fix the nonlinear metric-dependent conserved-diffusion response vertex/source-completed ordered soft2 metric relation required by RQIR.
 
-- rank `4/12`;
+Status: `BLOCKED_C3_CTP_ORDERED_COMPLETION`, not zero and not FAIL.
+
+## v3-A / v3-B polarization authority — Iteration 200
+
+A repository concurrency event produced two different deterministic seed streams on the same v3 hard-q geometry. Both were frozen before their own cubic C5 evaluation and neither used Candidate Gravity information. Preserve both as valid but distinct observable protocols.
+
+### v3-A
+
+Hourly automation branch, seed convention based at `197000/197500`.
+
+- all 12 rows pass geometry-only TT conditioning;
+- minimum partner margin `0.8106158577`;
+- local zero-K2 C5 soft2 rank `4/12`;
 - raw condition `1038.3957`;
 - column-normalized condition `981.3573`.
 
-### v3-B — concurrent manual branch
+### v3-B
 
-Seed convention based at `198000/198500`.
+Concurrent manual branch, seed convention based at `198000/198500`.
 
-All 12 rows pass the same acceptance class. Minimum partner margin `0.9053777009`.
-
-Local zero-K2 C5 soft2:
-
-- rank `4/12`;
+- all 12 rows pass the same acceptance class;
+- minimum partner margin `0.9053777009`;
+- local zero-K2 C5 soft2 rank `4/12`;
 - raw condition `4837.9565`;
 - column-normalized condition `4587.3371`.
 
-Neither branch supersedes the other.
+Neither supersedes the other.
 
-## Iteration 200 — polarization branch reconciliation
-
-Let `Q_A,Q_B` span the two rank-4 local-C5 nuisance images in their common twelve-row index representation. Principal angles are
+Principal angles between their rank-4 local-C5 nuisance images:
 
 `[1.307416°,70.597675°,76.740447°,83.658828°]`.
 
-Principal cosines:
-
-`[0.99973966,0.33219941,0.22936268,0.11044853]`.
-
 Projector distances:
 
-- `||P_A-P_B||_F = 2.37712349`;
-- `||P_A-P_B||_2 = 0.993881845`.
+- Frobenius `2.37712349`;
+- operator norm `0.993881845`.
 
-Thus only one C5 direction is nearly common; the other three are strongly rotated by the change in TT polarization settings.
+Only one nuisance direction is nearly common; the other three are strongly rotated. The alternate-subspace union has rank 8 in the common 12-index representation, but this is a protocol-sensitivity diagnostic, **not** eight C5 theory parameters.
 
-The horizontal union of the two alternate 4D subspaces has rank 8 in the common twelve-index representation. This is **not** eight independent C5 theory parameters; it quantifies protocol sensitivity of the four-parameter image.
+A diagnostic 24-row vertical stack using the same four C5 coefficients remains rank 4 with raw condition `1845.83` and column-normalized condition `1749.72`; it is not frozen as a replacement protocol.
 
-If A and B were both measured as separate 24 rows with the same four coefficients, the vertical-stack diagnostic remains rank 4 with raw condition `1845.83` and column-normalized condition `1749.72`. This 24-row construction is diagnostic only and is not yet frozen as a new protocol.
+Retain `PROTO-NG-007`, `C5-NG-018`, `REL-NG-013`, `NG-FUNNEL-054`.
+
+## Iteration 201 — frozen cross-polarization robustness gate
+
+Before any promotable candidate is instantiated, preserve `v3-A` and `v3-B` as separate validation protocols.
+
+A future candidate must declare one parent dynamics and one candidate parameter convention and derive
+
+`b_A = dY_A/dbeta | beta=0`,
+
+`b_B = dY_B/dbeta | beta=0`
+
+from that same dynamics and same `beta` convention. Independent `beta_A` and `beta_B` fits merely to force both protocols to pass are forbidden.
+
+For each protocol separately:
+
+1. construct only the physically authorized comparator/nuisance map in that protocol's row coordinates;
+2. impose exact hard constraints before profiling/Fisher;
+3. compute the supported quotient residual;
+4. require a nonzero residual above the declared numerical/model error envelope.
+
+Frozen classification rule:
+
+- pass only A or only B -> `POLARIZATION_SPECIFIC_IDENTIFICATION_INSUFFICIENT_FOR_PROMOTION`;
+- pass A and B while AS/C3 remain unresolved -> `CROSS_POLARIZATION_SUPPORTED_BUT_COMPARATOR_INCOMPLETE`;
+- pass A and B after full fixed comparator closure -> eligible for later candidate consistency gates, not automatically new physics.
+
+A future combined multi-setting protocol may be an additional validation layer but may not hide failure of the separately frozen A/B gate unless a new protocol version is preregistered before candidate construction.
 
 Retain:
 
-- `PROTO-NG-007 — ADMISSIBLE_TT_POLARIZATION_SETTINGS_DEFINE_DISTINCT_OBSERVABLE_PROTOCOLS_AND_MAY_NOT_BE_TREATED_AS_INTERCHANGEABLE_NUMERICAL_SEEDS`;
-- `C5-NG-018 — TWO_PROSPECTIVELY_FROZEN_V3_POLARIZATION_PROTOCOLS_BOTH_HAVE_RANK4_BUT_THEIR_LOCAL_C5_NUISANCE_SUBSPACES_ARE_STRONGLY_ROTATED`;
-- `REL-NG-013 — PRINCIPAL_ANGLES_SHOW_ONLY_ONE_NEAR_COMMON_C5_DIRECTION_BETWEEN_V3_A_AND_V3_B`;
-- `NG-FUNNEL-054 — COMPARATOR_QUOTIENT_AUTHORITY_MUST_INCLUDE_POLARIZATION_SETTINGS_AS_PART_OF_THE_ROW_DEFINITION_BEFORE_RESIDUAL_TESTING`.
+- `PROTO-NG-008 — CANDIDATE_PROMOTION_REQUIRES_SEPARATE_PASS_ON_TWO_PROSPECTIVELY_FROZEN_TT_POLARIZATION_PROTOCOLS`;
+- `REL-NG-014 — SAME_PARENT_DYNAMICS_AND_SINGLE_PARAMETER_CONVENTION_MUST_GENERATE_BOTH_PROTOCOL_SPECIFIC_TANGENTS`;
+- `NG-FUNNEL-055 — POLARIZATION_SPECIFIC_RESIDUAL_IS_NOT_A_ROBUST_CANDIDATE_GRAVITY_DISCRIMINATOR`;
+- `NG-FUNNEL-056 — COMBINED_MULTI_SETTING_LIKELIHOOD_MAY_NOT_HIDE_FAILURE_OF_A_PREREGISTERED_CROSS_PROTOCOL_GATE`.
 
 ## Comparator state
 
-- **C5 local:** rank 4 in both v3-A and v3-B, but nuisance images are strongly protocol-dependent.
+- **C5 local:** rank 4 in both v3-A and v3-B, with strongly rotated nuisance images.
 - **C4:** compatible massless-spin-2 boundary remains inside local C5 at frozen scope; nonzero-mass dRGT remains null-soft protocol-incompatible.
-- **Nonlocal:** fixed lambda K2 direction is structurally independent of the local polynomial hard family for >=7 distinct positive nodes and is removed by exact hard calibration.
+- **Nonlocal:** fixed lambda hard direction is structurally independent of the local polynomial family for >=7 distinct positive nodes and is removed by exact hard calibration.
 - **AS:** `BLOCKED_AS_REALTIME_RELATION_COMPLETION`.
 - **C3:** `BLOCKED_C3_CTP_ORDERED_COMPLETION`.
 
 ## Candidate state
 
-There is still **no robust Candidate Gravity residual**.
+No robust Candidate Gravity residual exists yet.
 
 `ANSATZ-003`: NOT CREATED.  
 Fisher/resources: FORBIDDEN.
 
-## Current authority files
+## Latest authority files
 
-Iteration 195:
 - `analysis/withheld_v2_supported_joint_quotient_iteration195.py`
 - `results/withheld_v2_supported_joint_quotient_iteration195.json`
-- `recovery/RECOVERY_DELTA_ITERATION_195.md`
-
-Iteration 196:
 - `analysis/withheld_v2_structural_rank_theorem_iteration196.py`
 - `results/withheld_v2_structural_rank_theorem_iteration196.json`
-- `recovery/RECOVERY_DELTA_ITERATION_196.md`
-
-Iteration 197 hard geometry:
 - `analysis/withheld_v3_k2_conditioning_design_iteration197.py`
 - `results/withheld_v3_k2_conditioning_design_iteration197.json`
-
-v3-A authority:
-- `results/withheld_v3_polarization_freeze_iteration197.json`
-- `results/withheld_v3_local_c5_soft2_iteration197.json`
-
-v3-B authority:
-- `results/preregistered_withheld_v3_polarization_iteration198.json`
-- `results/withheld_v3_local_c5_soft2_iteration199.json`
-- `recovery/RECOVERY_DELTA_ITERATION_198.md`
-- `recovery/RECOVERY_DELTA_ITERATION_199.md`
-
-Iteration 200 reconciliation:
+- `results/withheld_v3_polarization_freeze_iteration197.json`  # v3-A
+- `results/withheld_v3_local_c5_soft2_iteration197.json`       # v3-A
+- `results/preregistered_withheld_v3_polarization_iteration198.json` # v3-B
+- `results/withheld_v3_local_c5_soft2_iteration199.json`             # v3-B
 - `analysis/v3_polarization_branch_reconciliation_iteration200.py`
 - `results/v3_polarization_branch_reconciliation_iteration200.json`
-- `candidate_gravity/V3_POLARIZATION_BRANCH_RECONCILIATION_ITERATION200.md`
-- `research_log/2026-08-31_iteration_200_v3_polarization_reconciliation.md`
 - `recovery/RECOVERY_DELTA_ITERATION_200.md`
+- `candidate_gravity/CROSS_POLARIZATION_ROBUSTNESS_GATE_ITERATION201.md`
+- `research_log/2026-08-31_iteration_201_cross_polarization_gate.md`
+- `recovery/RECOVERY_DELTA_ITERATION_201.md`
 
-## Immediate next scientific priority — Iteration 201
+## Immediate next scientific priority — Iteration 202
 
-Freeze a **cross-polarization robustness gate** before any Candidate Gravity target is instantiated:
+Return to the remaining comparator-foundation gap while preserving the frozen cross-polarization gate:
 
-1. preserve v3-A and v3-B unchanged as two independent validation protocols;
-2. define the rule that a future supported candidate tangent must be generated from the same parent dynamics on both protocols and must leave a nonzero quotient residual in each separately after the applicable fixed comparator subtraction;
-3. forbid choosing the polarization protocol after seeing candidate residual size;
-4. decide prospectively whether a 24-row dual-setting protocol should be an additional validation layer or only a diagnostic; do not infer extra C5 parameters from alternate-protocol union rank;
-5. keep AS/C3 explicitly BLOCKED and continue authority searches independently;
-6. do not create `ANSATZ-003` or start Fisher/resources until a concrete residual survives the supported cross-polarization gate and unresolved AS/C3 are scientifically bounded.
+1. continue fixed AS real-time/source-completed authority audit;
+2. continue fixed C3 nonlinear ordered-response authority/derivation audit;
+3. if exact missing rows remain unavailable, investigate only scientifically derived bounded comparator relations from the parent dynamics — never broad class masks and never zero-filling;
+4. independently derive protocol-level numerical/model error envelopes needed eventually to decide `r_A!=0` and `r_B!=0`, but do not run Fisher/resources;
+5. do not create `ANSATZ-003` until a concrete target survives both polarization protocols and the unresolved AS/C3 issue is scientifically bounded.
