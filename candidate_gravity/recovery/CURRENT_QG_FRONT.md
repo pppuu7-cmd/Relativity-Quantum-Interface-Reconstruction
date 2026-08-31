@@ -5,11 +5,11 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 186**
+**Authoritative Candidate Gravity front:** **Iteration 194**
 
 ## Scientific state in one sentence
 
-The joint source-completed relation `Y=(K2_rows,S_soft2_full_rows)` remains the authority. The local zero-K2 curvature-cubic C5 sector has rank 4 on the six frozen null-soft TT rows; Iterations 183–185 fixed the exact K2 compensation bridge; Iteration 186 now computes the full action-level `QG-NL-EXP-001` lambda soft2 tangent and shows that its K2-preserving conditioned direction survives the local rank-4 quotient by a very large numerical margin. This is a resolved nonlocal **comparator** direction, not Candidate Gravity novelty.
+The authoritative observable is the joint source-completed relation `Y=(K2_rows,S_soft2_full_rows)`. The old six-row block was useful for comparator discovery but was partially finite-sample saturated. A prospectively frozen 12-row withheld protocol now breaks the exact local-polynomial compensation of the fixed nonlocal `K2` tangent, while the zero-`K2` local C5 curvature-cubic soft2 sector remains rank 4/12; AS and C3 ordered soft2 remain honest authority blockers, so there is still no Candidate Gravity residual.
 
 ## Stable readiness rubric
 
@@ -20,142 +20,164 @@ The joint source-completed relation `Y=(K2_rows,S_soft2_full_rows)` remains the 
 - identifiability/Fisher `0/10`;
 - resource/experiment closure `0/10`.
 
-`MODEL_READINESS = 24%` remains unchanged through Iteration 186. Do not raise readiness for workload alone.
+`MODEL_READINESS = 24%` through Iteration 194. Do not raise readiness for workload or for algebraic complement dimension alone.
 
 ## Frozen rules
 
 - Repository/recovery is source of truth.
-- Unsupported comparator coordinates are BLOCKED, never zero-filled.
-- Exact hard constraints precede nuisance profiling/Fisher.
-- `ANSATZ-003` must not be created before a nonzero residual survives fixed C3/C4/C5/nonlocal/asymptotic-safety subtraction.
+- Unsupported comparator coordinates are `BLOCKED`, never zero-filled.
+- Exact hard constraints precede profiling/Fisher.
+- Do not create `ANSATZ-003` before a concrete residual survives fixed C3/C4/C5/nonlocal/AS subtraction and prospectively frozen robustness rows.
 - Fisher/resources remain forbidden until then.
-- Metric CTP convention: `h_±=r±a/2` with factorial-normalized cubic vertices.
-- For nonzero-K2 comparators the physical relation observable is joint source-completed `(K2,S_soft2)`; an internal off-shell Ward/transverse split is not a physical coordinate.
-- Higher-derivative covariant cubic columns may not be inferred by row-wise multiplication of lower-order columns by powers of `q^2`.
-- A resolved comparator direction is nuisance/comparator authority, never Candidate Gravity novelty by itself.
+- For nonzero-K2 models use joint `(K2,S_soft2_full)`; internal Ward/transverse repartition is not an observable.
+- A failed preregistered row/protocol is preserved as a failure; no silent reseeding or row deletion.
 
-## Retained authority before Iteration 186
+## Six-row discovery authority through Iteration 186
 
-### Local C5 zero-K2 curvature-cubic sector — Iteration 178
+### Local C5
 
-On the six frozen physical null-soft rows the authorized curvature-cubic subset through dimension 12 reduces exactly to
+On the original six null-soft TT rows the zero-K2 local dimension-12 curvature-cubic basis is
 
-`V4 = Riemann3_soft2 * {1,-q^2,q^4,-q^6}`
+`V4=Riemann3_soft2*{1,-q^2,q^4,-q^6}`
 
-with rank `4/6`. Ricci-chain null-soft columns are exact protocol zeros. Frozen extrapolation/error envelope: `5.2625580e-6`.
+with rank `4/6`.
 
-### C4 — Iterations 179–180
+### Nonlocal `QG-NL-EXP-001`
 
-Fixed nonzero-mass dRGT is null-soft protocol-incompatible, not a FAIL. The compatible local/unitary single-massless-spin-2 C4 control merges with the local C5 massless-spin-2 EFT boundary at the frozen order.
+The fixed parent is
 
-### Nonlocal hard conditioning — Iterations 181–183
+`S ~ int sqrt(-g)[R+G_mn F(Box)R^mn]`, `F=(exp(-lambda Box)-1)/Box`.
 
-`QG-NL-EXP-001` is fixed by
+Iteration 186 computed the full action-level lambda soft2 tangent. On six rows, local quadratic `[x,...,x^6]` exactly compensates the nonlocal `K2` tangent, leaving a K2-preserving conditioned nonlocal soft2 direction outside local V4. Its residual norm is `2.97818`, about `5.66e5` times the old soft2 error envelope. This is a resolved **comparator** direction, not candidate novelty.
 
-`S ~ int sqrt(-g)[R + G_mn F(Box) R^mn]`,
-`F(Box)=(exp(-lambda Box)-1)/Box`.
+Authority: `results/nonlocal_lambda_soft2_quotient_iteration186.json`.
 
-Iteration 181 found only scalar-surrogate near-degeneracy on the narrow hard-q2 lever arm; this was never a tensor/action-level identity. Iteration 182 rejected arbitrary off-shell `W[K2]+R:B` splitting. Iteration 183 froze the split-invariant joint relation and exact hard calibration `A delta_theta=0`.
+## Independent authority audits — Iterations 187 and 189
 
-The six-row local inverse-kernel basis `[x,x^2,x^3,x^4,x^5,x^6]` has rank 6. With the nonlocal lambda tangent appended, one exact parameter null direction exists. Nonlocal coefficient normalized to +1 gives local coefficients
+### Asymptotic safety — Iteration 187
 
-`[3.7228200179970815e-05,-1.0005916758017337,-0.9961254264296668,-0.5133412288524085,-0.1413728259742054,-0.06615094900201549]`.
+Modern AS literature supports separately:
 
-### Local quadratic soft2 bridge — Iterations 184–185
+- Euclidean momentum-dependent multi-graviton/effective-action information;
+- Lorentzian graviton two-point spectral information;
+- Lorentzian/timelike scalar–graviton scattering-vertex information.
 
-Iteration 185 supplies exact multilinear covariant action-level `R_mn Box^n R^mn`, n=0..4, soft2 columns, including connection, inverse-metric and operator variations. The new n=2..4 columns pass source-completed Ward regression at machine precision.
+It does **not** provide the required Lorentzian/in-in source-completed off-shell **three-graviton** `O(k_soft^2)` relation in the same parent convention as `K2`.
 
-Frozen complete local K2-compensation soft2 piece:
+Status: `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, not zero and not FAIL.
 
-`S_local=[0.6749106618554018,0.09041841732117784,1.6058813167372494,-0.8456710923733669,-0.0817908524675452,0.04041297883593838]`.
+Retain `AS-NG-004`, `REL-NG-005`, `NG-FUNNEL-042`.
 
-Retain `C5-NG-013`, `NUM-NG-003`, and `REL-NG-003` from Iteration 185.
+### C3 PQCG — Iteration 189
 
-## Iteration 186 — full conditioned QG-NL-EXP-001 lambda soft2 direction
+The 2026 PQCG authority supports nonlinear covariant OM probability dynamics, symmetric post-Gaussian structure, and a linearized gravitational MSR/JD construction. It does not fix the nonlinear metric-dependent conserved diffusion response vertex, nonlinear source-completed MSR/metric-CTP map, or the ordered six-row soft2 metric relation required by RQIR.
 
-At `lambda=1`,
+Status: `BLOCKED_C3_CTP_ORDERED_COMPLETION`, not zero and not FAIL.
 
-`d_lambda F = -exp(-Box)`.
+Retain `C3-NG-006`, `REL-NG-007`, `NG-FUNNEL-044`.
 
-On all frozen TT external legs `R^(1)=0`. Therefore the cubic soft2 contribution of `-(1/2)R dF R` is an exact protocol zero, including the operator/Frechet insertion terms. The full scoped lambda tangent is generated by
+## Rank-5 six-row geometry — Iteration 188
 
-`R_mn[-exp(-Box)]R^mn = sum_n (-1)^(n+1)/n! R_mn Box^n R^mn`.
+Before AS/C3 completion the supported six-row C5+nonlocal span has rank 5/6. Its unique left-null is not a robust witness: `94.6657%` of squared norm lies on one row. Fixed-seed error-scale perturbations rotate it by median `3.13 deg`, p95 `9.30 deg`.
 
-The same covariant multilinear Box recursion as Iteration 185 is summed through `n=14`. Convergence:
+Therefore a candidate may not be optimized/tested against that six-row null before prospective row extension.
 
-`max|N14-N13| = 1.5099e-14`.
+Retain `NUM-NG-004`, `REL-NG-006`, `NG-FUNNEL-043`.
 
-Raw nonlocal lambda soft2 vector:
+## Prospective withheld protocols — Iterations 190–193
 
-`S_NL=[4.015161989831051,0.18851421768711765,6.8958645469473,-2.160604075389611,-0.6546536226759653,-0.7636291997013364]`.
+### v1 — Iteration 190
 
-After exact K2-preserving local compensation:
+`RQIR-WITHHELD-NULLSOFT-12-v1` was frozen before any candidate test by scaling every original hard q-vector by fixed factors `0.75` and `1.25`.
 
-`S_cond=[4.690072651686453,0.27893263500829546,8.50174586368455,-3.006275167762978,-0.7364444751435104,-0.7232162208653979]`.
+- hard `q^2` range: `[0.1621125,0.793125]`;
+- all hard/partner legs spacelike over the frozen soft steps;
+- no left-null/model information used in row selection.
 
-Projection on `V4` leaves
+### K2-only result — Iteration 191
 
-`r_NL=[0.026883997879370014,-0.16390037148459458,0.5945393887797525,-1.9589856765124543,1.8687871851331619,1.0763391630052563]`,
+On those 12 q-points:
+
+`rank([x,x^2,...,x^6])=6`,
+
+`rank([x,x^2,...,x^6,x^2 exp(x)])=7`.
+
+A 70-digit first-seven-row minor is nonzero:
+
+`1.08954106917884588546e-28`.
+
+Therefore the exact six-row local compensation of the nonlocal K2 tangent was finite-sample saturation, not theory identity. For this seven-parameter block the exact `delta K2=0` parameter null is absent on the withheld rows.
+
+Retain `NL-NG-006`, `REL-NG-008`, `NG-FUNNEL-046`.
+
+### v1 cubic numerical failure — Iteration 192
+
+Preregistered row `W05` crosses a TT-projector normalization zero before the soft limit. v1 remains valid for seed-independent K2 but is partially blocked for cubic soft extrapolation. The row was not dropped or silently reseeded.
+
+Retain `NUM-NG-006`, `PROTO-NG-002`, `NG-FUNNEL-047`.
+
+### v2 — Iteration 193
+
+`RQIR-WITHHELD-NULLSOFT-12-v2` retains the same 12 q-vectors and freezes a uniform geometry-only seed rule before cubic comparator evaluation:
+
+- hard `abs(raw TT norm)>=0.25`;
+- partner `min abs(raw TT norm)>=0.25` with constant sign on an 81-point `epsilon in [-0.01,0.01]` grid;
+- deterministic seed streams; choose first passing seed.
+
+All 12 rows pass; minimum partner margin `0.6602965579`.
+
+Retain `PROTO-NG-003`, `NUM-NG-007`, `NG-FUNNEL-048`.
+
+## Withheld-v2 local C5 result — Iteration 194
+
+For the cyclic `Riemann^3` base the leading soft2 coefficient is extracted exactly from the trilinear linearized-Riemann contraction at `(k0,q,-q)`, so no soft extrapolation is needed.
+
+The zero-K2 local C5 basis on v2 is again
+
+`Riemann3_soft2*{1,-q^2,q^4,-q^6}`
 
 with
 
-`||r_NL||_2=2.9781805828127865`,
-`max|r_i|=1.9589856765124543`,
-`||r_NL||/||S_cond||=0.2913946`,
-`||r_NL||/frozen_envelope=5.659188e5`.
+- rank `4/12`;
+- singular values `[1.1350290414,0.1259090262,0.0173586351,0.0011354930]`;
+- condition number `999.5914`.
 
-Thus the scalar-surrogate near-degeneracy of Iteration 181 does not survive the full action-level conditioned tensor relation.
+Thus eight algebraic soft2 dimensions remain after the currently supported zero-K2 local C5 subtraction on the prospective rows. This is **not** a candidate residual: AS/C3 remain blocked and no candidate has been evaluated.
 
-Retain:
+Retain `C5-NG-014`, `NUM-NG-008`, `REL-NG-009`.
 
-- `NL-NG-005 — FULL_QG_NL_EXP_001_LAMBDA_SOFT2_TANGENT_IS_RESOLVABLE_AFTER_EXACT_K2_COMPENSATION`;
-- `REL-NG-004 — K2_PRESERVING_NONLOCAL_DIRECTION_SURVIVES_THE_FROZEN_ZERO_K2_LOCAL_C5_RANK4_QUOTIENT`;
-- `NG-FUNNEL-040 — A_RESOLVED_NONLOCAL_COMPARATOR_DIRECTION_IS_NUISANCE_AUTHORITY_NOT_CANDIDATE_NOVELTY`.
+## Comparator state
 
-Classification: **RESOLVED INDEPENDENT COMPARATOR DIRECTION**. Not Candidate Gravity novelty; not consistency FAIL; not exact identity; not near-degeneracy.
-
-The current supported conditioned comparator span in this six-row soft2 block is therefore at least `span(V4,S_cond)`, rank 5.
-
-## Comparator status
-
-### C3
-
-Ordered metric-CTP/full soft2 completion remains `BLOCKED_C3_CTP_ORDERED_COMPLETION`. Do not zero-fill.
-
-### C4
-
-Compatible massless-spin-2 boundary adds no independent direction in the present protocol; massive dRGT remains outside the null-soft protocol.
-
-### C5
-
-Declared local zero-K2 curvature-cubic subset is rank 4. Local quadratic dimension-12 compensation bridge is complete for the fixed joint relation.
-
-### Nonlocal
-
-`QG-NL-EXP-001` lambda tangent is now **RESOLVED** in the current hard-conditioned relation protocol and adds one independent comparator direction beyond local V4.
-
-### Asymptotic safety
-
-Real-time/source-completed off-shell relation data remain BLOCKED. Euclidean symmetric-point information must not be converted into a Lorentzian source-completed tangent without a uniquely controlled continuation/action derivation.
+- **C5 local:** supported on withheld v2; zero-K2 curvature-cubic rank `4/12`.
+- **C4:** compatible massless-spin-2 boundary remains inside local C5 at frozen scope; nonzero-mass dRGT is null-soft protocol-incompatible.
+- **Nonlocal:** full six-row comparator resolved; on withheld q-points its lambda K2 tangent is independent of frozen local quadratic basis, so the old K2-preserving six-row nuisance null does not survive.
+- **AS:** `BLOCKED_AS_REALTIME_RELATION_COMPLETION`.
+- **C3:** `BLOCKED_C3_CTP_ORDERED_COMPLETION`.
 
 ## Candidate state
 
-No robust Candidate Gravity residual exists yet.
+There is still **no robust Candidate Gravity residual**.
 
 `ANSATZ-003`: NOT CREATED.  
 Fisher/resources: FORBIDDEN.
 
-## Current Iteration-186 authority files
+## Current authority files
 
-- `analysis/nonlocal_lambda_soft2_quotient_iteration186.py`
-- `results/nonlocal_lambda_soft2_quotient_iteration186.json`
-- `candidate_gravity/NONLOCAL_LAMBDA_SOFT2_QUOTIENT_ITERATION186.md`
-- `research_log/2026-08-31_iteration_186_nonlocal_lambda_soft2_quotient.md`
-- `recovery/RECOVERY_DELTA_ITERATION_186.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION186.md`
+Iterations 187–194 are recorded under:
 
-## Immediate next scientific priority — Iteration 187
+- `analysis/*iteration187.py` through `analysis/*iteration194.py`;
+- matching `results/*iteration187.json` through `results/*iteration194.json`;
+- `candidate_gravity/*ITERATION187.md` through `*ITERATION194.md` where applicable;
+- `research_log/2026-08-31_iteration_187_*` through `_194_*`;
+- `recovery/RECOVERY_DELTA_ITERATION_187.md` through `_194.md`.
 
-Freeze the augmented conditioned comparator span `span(V4,S_cond)` and audit the asymptotic-safety comparator in the same joint source-completed `(K2,S_soft2)` protocol. Promote an AS column only if published or reconstructed parent dynamics uniquely determine the required Lorentzian off-shell/source-completed relation. If not, record `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, preserve it as unsupported rather than zero, and proceed to the remaining C3 ordered-completion audit.
+## Immediate next scientific priority — Iteration 195
 
-No `ANSATZ-003`, Fisher or resource calculation before a concrete target survives the full fixed C3/C4/C5/nonlocal/AS quotient.
+Build the **prospective supported comparator quotient on withheld v2** as far as physically authorized:
+
+1. freeze the 12-row local C5 zero-K2 span from Iteration 194;
+2. carry the exact K2 hard-constraint matrix including the fixed nonlocal tangent from Iteration 191;
+3. determine the conditional nuisance space in the full joint `(K2,S_soft2)` rows rather than reusing the old six-row conditioned vector;
+4. keep AS and C3 explicitly BLOCKED unless new parent authority appears;
+5. independently stress-test row/polarization extensions and tensor sectors without using a candidate target;
+6. do not instantiate `ANSATZ-003` until a concrete target survives the prospective full supported quotient and the unresolved AS/C3 issue is scientifically bounded rather than ignored.
