@@ -1,0 +1,34 @@
+{
+  "iteration": 158,
+  "comparator_id": "QG-NL-EXP-001",
+  "scope": "linear TT six-probe response only",
+  "lambda0": 1.0,
+  "p2": [0.7473, 0.6157, 0.44179999999999997, 0.6119999999999999, 0.6682, 0.4239],
+  "nonlocal_response": [0.6338065894019918, 0.8774769828705772, 1.4551339933990236, 0.886054335425958, 0.7671812127165005, 1.5439710545620078],
+  "nonlocal_lambda_tangent": [-0.4736436651355025, -0.5402625762413604, -0.6428781995032846, -0.5422652532576948, -0.5126304756639484, -0.6544893328149811],
+  "base_columns": [
+    "GR_response_gain_1_over_p2",
+    "C5_dim4_spin2",
+    "C5_dim6_spin2",
+    "C5_dim8_spin2",
+    "C5_dim10_spin2",
+    "C5_dim12_spin2"
+  ],
+  "base_rank": 6,
+  "singular_values": [5.361740309851116, 0.9122735096188504, 0.09152031666598426, 0.003016262356184155, 0.00016461267514139312, 2.0503891667857544e-07],
+  "smin_over_smax": 3.8241112956843014e-08,
+  "condition_number": 26149866.535750397,
+  "response_interpolation_coefficients": [0.9999702528484094, -0.9996767137266117, 0.4985409188375457, -0.1631495277720918, 0.03683946697159163, -0.004647913057449176],
+  "tangent_interpolation_coefficients": [-0.00016378307000561944, -0.998215254410733, 0.9919139828844876, -0.4803938819307374, 0.1394941651310618, -0.020530417624470184],
+  "max_abs_response_reconstruction_error": 4.440892098500626e-16,
+  "max_abs_tangent_reconstruction_error": 1.1102230246251565e-16,
+  "status": {
+    "linear_TT_base_span": "FULL_ROW_RANK_6_OF_6",
+    "nonlocal_linear_residual": "ZERO_BY_PROTOCOL_SATURATION",
+    "interpretation": "REGIME_SPECIFIC_NON_IDENTIFIABILITY_NOT_THEORY_IDENTITY",
+    "nonlocal_cubic_chi2R": "BLOCKED_NONLOCAL_VERTEX_IMPLEMENTATION",
+    "full_nonlocal_comparator": "BLOCKED",
+    "Fisher_resources": "FORBIDDEN",
+    "ANSATZ_003": "NOT_CREATED"
+  }
+}
