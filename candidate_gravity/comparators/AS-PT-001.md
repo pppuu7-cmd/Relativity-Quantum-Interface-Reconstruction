@@ -1,100 +1,43 @@
-# AS-PT-001 — Fixed Asymptotic-Safety Vertex Comparator
+# AS-PT-001 — Supplemental Numerical Audit Alias
 
-**Frozen:** Iteration 159, 2026-08-31  
-**Authority:** Pawlowski & Tränkle, Phys. Rev. D 110, 086011 (2024), arXiv:2309.17043  
-**Status:** FIXED_TRUNCATION / RQIR_RETARDED_MAP_BLOCKED
+**Frozen:** 2026-08-31  
+**Authoritative comparator:** `AS-FRG-TT-001`  
+**Primary authority:** Pawlowski & Tränkle, Phys. Rev. D 110, 086011 (2024), arXiv:2309.17043  
+**Status:** SUPPLEMENTAL_AUDIT_ONLY / NOT_A_SEPARATE_COMPARATOR
 
-## 1. Role
+## Reconciliation
 
-This is the first concrete asymptotic-safety comparator in the Candidate Gravity funnel. It replaces the program label `asymptotic safety` by one published vertex-expansion realization.
+This file was created manually in parallel with the hourly automation. The automation completed the authoritative Iteration 159 first and froze `AS-FRG-TT-001`. Therefore this document is retained only as a quantitative kinematic audit of the same Pawlowski–Tränkle truncation.
 
-It is not a Candidate Gravity ansatz and carries no novelty claim.
+It must not be counted as an additional comparator or as additional model-readiness credit.
 
-## 2. Frozen truncation content
+## Supplemental result
 
-The comparator uses the fluctuation-vertex reconstruction of the diffeomorphism-invariant background effective action.
-
-The published background action is expanded through second order in curvature while retaining full covariant momentum dependence in the form factors,
-
-`Gamma[g] ~ int sqrt(g){ Rcal(Delta,R) + R f_R2(Delta) R + R_mn f_Ricci2(Delta) R^mn }`.
-
-The underlying fluctuation calculation uses fully dressed graviton correlation functions in a vertex expansion. The 2024 reconstruction computes momentum-dependent three- and four-graviton couplings and reconstructs the effective action from them.
-
-The specific TT projection used for the reconstruction parameterises the completely TT n-point functions at the momentum-symmetric point as
+The published completely TT reconstruction uses momentum-symmetric n-point configurations,
 
 `Gamma_tt^(n)(p_vec)=gamma_g^(n)(p) T_R,tt^(n)(p_vec)`.
 
-For the 3-point tensor/operator selection:
-
-- `R^2` does not contribute to the TT graviton 3-point function;
-- `R_mn R^mn` has nonzero TT 3-point overlap;
-- therefore the `p^4` contribution to the symmetric-point TT 3-point can be assigned to the Ricci-squared form factor within the declared truncation.
-
-## 3. Why this is a finite comparator
-
-The model/truncation is fixed by:
-
-- the explicit fluctuation-field vertex expansion;
-- a specified TT projection;
-- momentum-dependent wave function and Newton coupling avatars;
-- curvature expansion through `R^2` and `Ricci^2` form factors;
-- an explicit approximate Nielsen-identity map between fluctuation vertices and the diffeomorphism-invariant background action.
-
-This is materially stronger than treating all asymptotic-safety theories as one unconstrained capability mask.
-
-## 4. RQIR protocol-compatibility audit
-
-RQIR uses six frozen off-shell triplets `(p,-q,-r)` with `p=q+r`.
-
-The published scalar dressing `gamma_g^(3)(p)` used in the reconstruction is a momentum-symmetric-point object. Direct use on a general triplet would require at minimum equal leg virtualities at that symmetric point.
-
-For the six frozen RQIR probes the relative spread
-
-`(max(p^2,q^2,r^2)-min(p^2,q^2,r^2))/mean(p^2,q^2,r^2)`
-
-is
+The six frozen RQIR off-shell triplets `(p,-q,-r)` are strongly non-symmetric. The relative spreads of `(p^2,q^2,r^2)` are
 
 `[0.7868,0.7466,0.4391,0.8336,1.0191,0.6094]`.
 
-Thus:
+Hence:
 
-- minimum mismatch: `0.4390756302521009`;
-- maximum mismatch: `1.0191298981795742`;
+- minimum spread: `0.4390756302521009`;
+- maximum spread: `1.0191298981795742`;
 - symmetric-compatible probes: `0/6`.
 
-Consequently the published one-variable symmetric-point TT dressing cannot be inserted directly into the six-probe RQIR retarded tangent.
+This quantitatively supports the authoritative `AS-FRG-TT-001` blocker: the symmetric-point TT dressing is not itself the general six-probe off-shell retarded tangent.
 
-## 5. Lorentzian/causal boundary
+## Causal boundary
 
-The 2024 work reconstructs the Euclidean effective action and then Wick-rotates the effective action for its black-hole analysis. This is valuable but does not by itself provide the source-completed in-in/CTP retarded 3-point kernel on the six RQIR off-shell triplets.
+The 2024 work reconstructs a Euclidean covariant effective action and performs a Wick rotation for its black-hole application. That operation does not by itself specify the source-completed in-in/CTP retarded three-point prescription required by RQIR.
 
-Separate 2026 progress exists:
+Recent Lorentzian spectral/scattering developments remain contextual only and are not spliced into this comparator across different truncations.
 
-- Lorentzian graviton spectral functions and quadratic effective action have been computed directly in Lorentzian FRG (Assant, Litim & Reichert, arXiv:2606.19321);
-- scalar-graviton three-point data have been analytically continued and used in scalar scattering (Chiesa, Pawlowski & Reichert, arXiv:2603.10168).
+## Authorities
 
-These are important feasibility evidence, but they are **not spliced into `AS-PT-001`**, because they are separate calculations/truncations and do not supply the missing pure-graviton source-completed 3-point kernel of this comparator.
+- authoritative comparator: `candidate_gravity/comparators/AS-FRG-TT-001.md`;
+- reproducible supplemental audit: `analysis/asymptotic_safety_protocol_audit_iteration159.py` and `results/asymptotic_safety_protocol_audit_iteration159.json`.
 
-## 6. Decision
-
-`BLOCKED_OFF_SYMMETRIC_RETARDED_VERTEX_MAP`.
-
-This is an operational comparator-instantiation boundary, not a consistency failure of asymptotic safety.
-
-No missing entry is zero-filled.
-
-## 7. Retained results
-
-### `AS-NG-001 — SYMMETRIC_POINT_VERTEX_NOT_GENERAL_OFFSHELL_TANGENT`
-
-A momentum-dependent graviton vertex computed at the symmetric point is not a finite general off-shell RQIR `chi2R` tangent when the measurement protocol uses non-symmetric triplets.
-
-### `NG-FUNNEL-016 — FIXED_TRUNCATION_STILL_REQUIRES_KINEMATIC_AND_CAUSAL_MAP`
-
-Replacing a broad theory class by a finite truncation is necessary but still not sufficient: the truncation must also supply the actual kinematic domain and retarded/CTP continuation required by the operational protocol before it can enter the quotient matrix.
-
-## 8. Authorities
-
-- Pawlowski & Tränkle, Phys. Rev. D 110, 086011 (2024), arXiv:2309.17043;
-- Denz, Pawlowski & Reichert, Phys. Rev. D 98, 126002 (2018), arXiv:1612.07315;
-- contextual Lorentzian progress only: Assant, Litim & Reichert, arXiv:2606.19321; Chiesa, Pawlowski & Reichert, arXiv:2603.10168.
+**MODEL_READINESS: 22% (authoritative Iteration 159; unchanged by this supplemental audit).**
