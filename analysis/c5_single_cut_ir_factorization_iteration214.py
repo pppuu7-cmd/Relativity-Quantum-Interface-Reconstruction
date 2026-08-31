@@ -2,18 +2,20 @@
 """RQIR Candidate Gravity Iteration 214.
 
 Authority guard for the Iteration-213 physical five-graviton total-s cut.
-This script imports the validated tree/cut engine and evaluates the two collinear
-endpoint residues directly from the unintegrated tree product.  It does NOT fit
-the subtraction coefficient from cap-regulated integrals and does NOT claim that
-subtracting an isolated channel cut is a physical IR completion.
+The validated tree/cut definitions are loaded without executing the expensive
+Iteration-213 cap-integration body. Endpoint residues are evaluated directly
+from the unintegrated tree product. No cap-fit coefficient is used.
 """
 from pathlib import Path
-import importlib.util, json, math
+import json, math
 import numpy as np
 
 HERE=Path(__file__).resolve().parent
-spec=importlib.util.spec_from_file_location("it213",HERE/"c5_fivepoint_schannel_cut_ir_iteration213.py")
-m=importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+src=(HERE/"c5_fivepoint_schannel_cut_ir_iteration213.py").read_text(encoding="utf-8")
+prefix=src.split("# External kinematic certificate",1)[0]
+ns={"__file__":str(HERE/"c5_fivepoint_schannel_cut_ir_iteration213.py")}
+exec(compile(prefix,"iteration213_tree_engine","exec"),ns)
+cut_integrand=ns["cut_integrand"]
 
 EPS=0.01
 TH=1.0e-4
@@ -23,7 +25,7 @@ def residue(endpoint):
     vals=[]
     for phi in PHIS:
         theta=TH if endpoint=="north" else math.pi-TH
-        vals.append((TH**2)*m.cut_integrand(EPS,float(theta),float(phi)))
+        vals.append((TH**2)*cut_integrand(EPS,float(theta),float(phi)))
     vals=np.asarray(vals,complex)
     mean=vals.mean()
     return mean, float(np.max(np.abs(vals-mean))/abs(mean))
@@ -31,8 +33,6 @@ def residue(endpoint):
 rn,spread_n=residue("north")
 rs,spread_s=residue("south")
 reldiff=float(abs(rn-rs)/abs((rn+rs)/2))
-# If I(theta)~r_N/theta^2 and r_S/(pi-theta)^2, then dOmega=2pi sin(theta)dtheta
-# gives 2pi(r_N+r_S) log(1/delta) at leading order.
 pred=2*math.pi*(rn+rs)
 
 out={
