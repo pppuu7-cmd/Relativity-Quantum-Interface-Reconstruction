@@ -1,0 +1,121 @@
+{
+  "A_noise": 258.83104475297773,
+  "B_bispectrum": -617.4340282011477,
+  "blocked_rows": [
+    "chi2R_even",
+    "chi2R_odd",
+    "soft2",
+    "tensor_geo",
+    "threshold"
+  ],
+  "comparator_id": "C3-PQCG-NL-001",
+  "generic_determinant": "-2*A_noise*B_bispectrum*D2",
+  "generic_rank_for_D2_positive": 2,
+  "generic_tangent": [
+    [
+      "5*A_noise",
+      "A_noise"
+    ],
+    [
+      "2*B_bispectrum*D2",
+      "0"
+    ]
+  ],
+  "interpretation": {
+    "ANSATZ_003": "NOT_CREATED",
+    "classical_non_gaussianity": "PRESENT_FROM_THE_SAME_COVARIANT_STOCHASTIC_ACTION",
+    "fisher_resources": "FORBIDDEN",
+    "full_C3_comparator": "BLOCKED_ORDERED_RESPONSE_AND_NON_TT_COMPLETION",
+    "linear_D2_D0_degeneracy": "RESOLVED_SCOPED_BY_C3SYM_TT",
+    "quantum_metric_claim": "NOT_SUPPORTED_BY_C3SYM_ALONE"
+  },
+  "iteration": 154,
+  "literature_action": "S=1/2 int sqrt(-g) [alpha Ricci_mn Ricci^mn - beta R^2]",
+  "max_abs_R2_cubic_extrapolated": 7.19528079232966e-11,
+  "max_alpha_convergence_ratio_error_from_quarter": 1.8602227867842158e-05,
+  "max_beta_raw_quarter_ratio_error_from_quarter": 1.6229932035907163e-05,
+  "normalized_D2_equals_1_tangent": [
+    [
+      1294.1552237648887,
+      258.83104475297773
+    ],
+    [
+      -1234.8680564022955,
+      0.0
+    ]
+  ],
+  "normalized_singular_values": [
+    1798.6530445678386,
+    177.70085794811004
+  ],
+  "normalized_smin_over_smax": 0.0987966292247353,
+  "observable_map": {
+    "C3sym_TT": "B_bispectrum*D2^2",
+    "N2": "A_noise*(5 D2 + D0)"
+  },
+  "parameter_map": {
+    "D0": "1/[8(alpha-3 beta)]",
+    "D2": "1/(2 alpha)"
+  },
+  "rows": [
+    {
+      "B_i_in_C3sym_equals_B_i_D2_squared": -24.74027899181388,
+      "R2_cubic_beta1_numeric_regression": -1.4141310179598653e-11,
+      "Ricci2_cubic_alpha1": 0.13859380655232462,
+      "p2": 0.6917,
+      "probe": 0,
+      "q2": 0.4476,
+      "r2": 0.30049999999999993
+    },
+    {
+      "B_i_in_C3sym_equals_B_i_D2_squared": -66.16871938830654,
+      "R2_cubic_beta1_numeric_regression": -7.963074748238401e-14,
+      "Ricci2_cubic_alpha1": 0.10545702593041664,
+      "p2": 0.6501,
+      "probe": 1,
+      "q2": 0.3854,
+      "r2": 0.27769999999999995
+    },
+    {
+      "B_i_in_C3sym_equals_B_i_D2_squared": -406.4495834227072,
+      "R2_cubic_beta1_numeric_regression": 1.063115032906673e-11,
+      "Ricci2_cubic_alpha1": 0.3612771529305377,
+      "p2": 0.4371,
+      "probe": 2,
+      "q2": 0.42679999999999996,
+      "r2": 0.2278
+    },
+    {
+      "B_i_in_C3sym_equals_B_i_D2_squared": -151.49741759003714,
+      "R2_cubic_beta1_numeric_regression": 4.380787245006172e-11,
+      "Ricci2_cubic_alpha1": 0.1435006301577732,
+      "p2": 0.7473,
+      "probe": 3,
+      "q2": 0.31529999999999997,
+      "r2": 0.32869999999999994
+    },
+    {
+      "B_i_in_C3sym_equals_B_i_D2_squared": 75.18718975800739,
+      "R2_cubic_beta1_numeric_regression": -7.19528079232966e-11,
+      "Ricci2_cubic_alpha1": -0.0938503383460591,
+      "p2": 0.3123,
+      "probe": 4,
+      "q2": 0.3479999999999999,
+      "r2": 0.22779999999999997
+    },
+    {
+      "B_i_in_C3sym_equals_B_i_D2_squared": -43.76521856629037,
+      "R2_cubic_beta1_numeric_regression": 1.0370491399135763e-12,
+      "Ricci2_cubic_alpha1": 0.011015086130857252,
+      "p2": 0.3357999999999999,
+      "probe": 5,
+      "q2": 0.28819999999999996,
+      "r2": 0.25859999999999994
+    }
+  ],
+  "scope": "pure-gravity nonlinear Onsager-Machlup extension on six frozen TT probes",
+  "supported_rows": [
+    "N2",
+    "C3sym_TT"
+  ]
+}
