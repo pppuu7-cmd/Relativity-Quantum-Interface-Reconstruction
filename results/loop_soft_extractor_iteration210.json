@@ -1,0 +1,138 @@
+{
+  "basis": [
+    "1",
+    "L",
+    "z",
+    "zL",
+    "z^2",
+    "z^2L"
+  ],
+  "classification": {
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN",
+    "candidate_residual": "NONE",
+    "finite_noise_conditioning": "MODERATE_AMPLIFICATION_REQUIRES_ERROR_ENVELOPE",
+    "physical_C5_cut": "NOT_YET_IMPORTED",
+    "polyhomogeneous_basis_rank": "PASS_6_OF_6",
+    "pure_taylor_same_parameter_count": "FAIL_TO_REPRESENT_LOG_CONTROL",
+    "synthetic_regular_log_recovery": "PASS_MACHINE_PRECISION"
+  },
+  "condition_number": 4264.620104188085,
+  "date": "2026-09-01",
+  "deterministic_noise_tests": [
+    {
+      "relative_coefficient_error_l2": 1.0175707460908175e-09,
+      "relative_fit_residual_l2": 3.791064888438606e-13,
+      "relative_input_noise_l2": 1e-12
+    },
+    {
+      "relative_coefficient_error_l2": 1.0176536337180524e-07,
+      "relative_fit_residual_l2": 3.790912042065496e-11,
+      "relative_input_noise_l2": 1e-10
+    },
+    {
+      "relative_coefficient_error_l2": 1.017654262727845e-05,
+      "relative_fit_residual_l2": 3.790910396311677e-09,
+      "relative_input_noise_l2": 1e-08
+    },
+    {
+      "relative_coefficient_error_l2": 0.001017654266001428,
+      "relative_fit_residual_l2": 3.7909103853671183e-07,
+      "relative_input_noise_l2": 1e-06
+    }
+  ],
+  "dimensionless_z": [
+    1.0,
+    0.643332449004716,
+    0.4138766399424054,
+    0.26626027235999067,
+    0.17129387309001542,
+    0.11019890687450262,
+    0.0708945326372164,
+    0.04560875330254518,
+    0.029341590958178308,
+    0.018876397568819477,
+    0.0121437990763353,
+    0.0078125
+  ],
+  "dynamic_range": 128.0,
+  "epsilon_grid": [
+    0.04,
+    0.02573329796018864,
+    0.016555065597696216,
+    0.010650410894399626,
+    0.006851754923600618,
+    0.004407956274980105,
+    0.002835781305488656,
+    0.0018243501321018071,
+    0.0011736636383271324,
+    0.0007550559027527791,
+    0.000485751963053412,
+    0.0003125
+  ],
+  "epsilon_max": 0.04,
+  "epsilon_min": 0.0003125,
+  "epsilon_reference": 0.0035355339059327377,
+  "exact_coefficient_relative_error": 1.2765674576891616e-14,
+  "exact_fit_relative_residual": 4.1872537552012893e-16,
+  "iteration": 210,
+  "matrix_shape": [
+    12,
+    6
+  ],
+  "model_readiness_percent": 23,
+  "next_gate": "Import one fixed physical C5 on-shell nonanalytic soft/cut expression or IR-subtracted hard control into the regular+log extractor, preserving the finite-epsilon-first rule.",
+  "pure_taylor_degree5": {
+    "fit_coefficients": [
+      0.975819706771435,
+      -5.205656406458019,
+      31.375265995136566,
+      -84.70373436537216,
+      101.31248765325824,
+      -43.011264332885446
+    ],
+    "rank": 6,
+    "relative_residual_on_log_control": 0.019059232342172258,
+    "singular_values": [
+      3.7181259483338485,
+      1.996657272061428,
+      0.46317151611091845,
+      0.07687760814908734,
+      0.008328419322179667,
+      0.0005049137019014822
+    ]
+  },
+  "rank": 6,
+  "readiness_change": "unchanged at 23%; numerical protocol validated, no physical comparator or candidate residual closed",
+  "retained_results": [
+    "NUM-NG-015 — TWELVE_POINT_DYNAMIC_RANGE_128_GRID_RESOLVES_THE_SIX_COLUMN_ONE_LOOP_REGULAR_PLUS_LOG_SOFT_BASIS",
+    "SOFT-NG-007 — PURE_TAYLOR_BASIS_WITH_EQUAL_PARAMETER_COUNT_LEAVES_PERCENT_LEVEL_RESIDUAL_ON_A_LOG_SOFT_CONTROL",
+    "NUM-NG-016 — LOG_SOFT_COEFFICIENT_EXTRACTION_HAS_NONTRIVIAL_CONDITIONING_AND_REQUIRES_A_DECLARED_NUMERICAL_ERROR_ENVELOPE",
+    "NG-FUNNEL-067 — LOOP_SOFT_PROTOCOL_MUST_VALIDATE_REGULAR_LOG_SEPARATION_BEFORE_PHYSICAL_COMPARATOR_IMPORT"
+  ],
+  "scope": "one-loop 4D polyhomogeneous soft extractor through n=2; synthetic protocol controls only",
+  "singular_values": [
+    6.178206724657355,
+    3.9043880048298294,
+    1.9743852421107897,
+    0.2953352071944043,
+    0.020637107173096702,
+    0.001448712094798321
+  ],
+  "synthetic_coefficients_fit": [
+    0.6999999999999996,
+    -0.10999999999999997,
+    0.23000000000000267,
+    0.04999999999999821,
+    -0.09000000000000802,
+    0.02000000000000418
+  ],
+  "synthetic_coefficients_true": [
+    0.7,
+    -0.11,
+    0.23,
+    0.05,
+    -0.09,
+    0.02
+  ]
+}
