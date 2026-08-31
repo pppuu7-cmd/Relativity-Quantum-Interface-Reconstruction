@@ -6,11 +6,11 @@
 **Rejected consistency control:** `ANSATZ-RQIR-CTP-001` v0.1  
 **Positive-spectral Gaussian comparator:** `ANSATZ-RQIR-KL-002` v0.1  
 **Active promotable ansatz:** none — intentionally withheld pending fixed post-Gaussian comparator tangents  
-**Authoritative Candidate Gravity front:** **Iteration 147**
+**Authoritative Candidate Gravity front:** **Iteration 148**
 
 ## Scientific state in one sentence
 
-Iteration 147 froze one CTP/retarded prescription and derived the exact tree-level C5 nonlinear-response factorization `chi2R ~ G_R Gamma3 G_R G_R`, but proved that the Iteration-146 on-shell `(s,t,u,phi)` four-point protocol does not uniquely determine the off-shell three-point retarded projector/smearing coordinates; the first numerical `V_C5^(chi2R)` rank certificate is therefore operationally BLOCKED pending a new finite off-shell protocol.
+Iteration 148 proved that the Iteration-146 on-shell/EOM-reduced C5 Wilson basis cannot by itself define a basis-independent off-shell `chi^(2)R` tangent: local field redefinitions change coordinate response functions, and physical equivalence is restored only after the induced observable/source contact map is included. The first numerical C5 retarded rank is therefore `BLOCKED_SOURCE_COMPLETION`, not zero and not a C5 consistency FAIL.
 
 ## Frozen model outcomes
 
@@ -48,9 +48,7 @@ Full coordinates:
 
 `y=(norm,N2,chi1R,C3sym,chi2R_even,chi2R_odd,soft0,soft1,soft2,tensor_geo,threshold)`.
 
-Hard locks:
-
-`norm`, `soft0`, `soft1`.
+Hard locks: `norm`, `soft0`, `soft1`.
 
 Reduced coordinates:
 
@@ -74,7 +72,8 @@ Retained funnel results:
 - `NG-FUNNEL-004`: `soft0/soft1` are consistency locks, not novelty coordinates;
 - `NG-FUNNEL-005`: broad C3/C4/C5 capability masks saturate the 8D space and are unusable as physical comparator tangents;
 - `NG-FUNNEL-006`: an on-shell amplitude tangent is not automatically the ordered CTP/retarded RQIR tangent;
-- `NG-FUNNEL-007`: on-shell four-point kinematics do not uniquely fix the off-shell retarded three-point protocol.
+- `NG-FUNNEL-007`: on-shell four-point kinematics do not uniquely fix the off-shell retarded three-point protocol;
+- `NG-FUNNEL-008`: an on-shell/EOM-reduced EFT basis is not automatically a basis-independent off-shell response basis; operational source/observable completion is mandatory.
 
 ## Iteration 146 — finite local C5 on-shell tangent
 
@@ -92,53 +91,59 @@ Certificate:
 - rank **10/10**;
 - `s_min/s_max = 2.4548457953351053e-6`.
 
-This remains valid only in the on-shell amplitude fingerprint space.
+This remains valid only in on-shell amplitude fingerprint space.
 
-## Iteration 147 — first retarded C5 embedding step
+## Iteration 147 — retarded C5 embedding
 
-### Frozen real-time convention
+Frozen D=4 Minkowski interacting-vacuum, de Donder, conserved-source, in-in/retarded convention.
 
-- D=4 Minkowski;
-- interacting in-vacuum;
-- de Donder perturbative gauge;
-- conserved physical source projections;
-- linear source coupling `J_A h^A`;
-- same EH + local EFT dynamics/order as Iteration 146;
-- all response legs use the Schwinger–Keldysh/in-in retarded prescription.
+Derived tree response:
 
-### Derived tree-level kernel
+`chi2R_A;BC(p;q,r)=-(2pi)^4 delta4(p-q-r) G_R,AA'(p) Gamma3^A'_{B'C'} G_R^B'_B(q) G_R^C'_C(r)`.
 
-For `K h + 1/2 V[h,h] + J=0`,
+`NG-FUNNEL-007` established that the old on-shell four-point samples do not fix the required off-shell response protocol.
 
-`h^(1)=-G_R J`,
+## Iteration 148 — off-shell source/observable completion gate
 
-and
+A reproducible field-redefinition regression uses
 
-`chi2R_A;BC(p;q,r)=-(2pi)^4 delta4(p-q-r) G_R,AA'(p) Gamma3^A'_{B'C'}(p,-q,-r) G_R^B'_B(q) G_R^C'_C(r)`.
+`K phi + g/2 phi^2 + J=0`,
 
-This fixes the correct tree-level C5 ordered nonlinear-response object.
+with `chi_phi=-g Gp Gq Gr` and local `phi=psi+a psi^2`.
 
-### NG-FUNNEL-007 — ON_SHELL_4PT_KINEMATICS_DO_NOT_FIX_OFF_SHELL_RETARDED_3PT
+The coordinate response changes by
 
-The Iteration-146 `(s,t,u,phi)` samples do not supply the off-shell virtualities/energy routing, three conserved tensor projectors, finite smearing/window normalization, or explicit `chi2R_even/odd` scalar contractions required for a numerical RQIR retarded tangent.
+`chi_psi-chi_phi=-2 a Gq Gr`,
 
-Therefore:
+while reconstructing the same physical observable adds the induced contact term `+2 a Gq Gr` and restores the original response.
 
-- `chi2R_even/odd`: **BLOCKED_PROTOCOL_UNDERSPECIFIED**;
-- local-EFT retarded rank: **NOT_COMPUTABLE** yet;
-- `N2`, `C3sym`: BLOCKED pending same-convention CTP derivations;
-- loop/nonanalytic C5 columns: BLOCKED pending same-convention derivation;
+Twelve deterministic off-shell points give:
+
+- maximum reconstruction error `1.1102230246251565e-16`;
+- minimum nonzero coordinate-response shift `0.11688546786387487`.
+
+Therefore an off-shell C5 comparator must freeze the complete tuple
+
+`(gravity action, field/metric convention, matter/source map, field-redefinition/contact completion, CTP state, renormalization/order, finite conserved probes/smearing)`.
+
+Current C5 statuses:
+
+- local on-shell amplitude tangent: PASS_SCOPED;
+- tree retarded factorization: PASS_SCOPED;
+- local off-shell `chi2R` rank: **BLOCKED_SOURCE_COMPLETION**;
+- `N2`, `C3sym`: BLOCKED;
+- loop/nonanalytic columns: BLOCKED;
 - no Fisher/resource work is admissible;
 - no `ANSATZ-003` is frozen.
 
 Authorities:
 
-- `analysis/c5_retarded_embedding_iteration147.py`;
-- `results/c5_retarded_embedding_iteration147.json`;
-- `candidate_gravity/C5_RETARDED_EMBEDDING_ITERATION147.md`;
-- `research_log/2026-08-31_iteration_147_c5_retarded_embedding.md`;
-- `recovery/RECOVERY_DELTA_ITERATION_147.md`;
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION147.md`.
+- `analysis/c5_offshell_field_redefinition_iteration148.py`;
+- `results/c5_offshell_field_redefinition_iteration148.json`;
+- `candidate_gravity/C5_OFFSHELL_SOURCE_COMPLETION_ITERATION148.md`;
+- `research_log/2026-08-31_iteration_148_c5_offshell_source_completion.md`;
+- `recovery/RECOVERY_DELTA_ITERATION_148.md`;
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION148.md`.
 
 ## Representative comparator program
 
@@ -152,7 +157,7 @@ Use one fixed covariant classical–quantum stochastic action/parameterization. 
 
 ### C5 — perturbative quantum GR EFT
 
-Local four-point tangent is finite/rank-certified. Tree-level retarded factorization is now fixed. The next missing item is the explicit finite off-shell projector/smearing protocol and cubic-vertex contraction.
+The local on-shell tangent is finite/rank-certified and the tree retarded factorization is fixed. A physical off-shell tangent now additionally requires source/observable completion under EFT field redefinitions.
 
 ### Nonlocal gravity / asymptotic safety
 
@@ -164,19 +169,21 @@ Still intentionally **not frozen**.
 
 A concrete target must survive fixed C3/C4/C5/nonlocal/AS comparator subtraction and leave a nonzero algebraic residual before Fisher/resources.
 
-## Immediate next scientific priority — Iteration 148
+## Immediate next scientific priority — Iteration 149
 
-Build the first **finite off-shell C5 retarded-response certificate**.
+Build the first **source-completed finite off-shell C5 operational protocol**.
 
 Required order:
 
-1. freeze sub-cutoff off-shell `(p,q,r)` points with `p=q+r`, away from propagator poles;
-2. freeze explicit conserved tensor/source projectors and finite time/spatial smearing normalization;
-3. define concrete `chi2R_even/odd` contractions;
-4. evaluate the de-Donder Einstein–Hilbert cubic vertex and every local-EFT cubic vertex contributing at the frozen order;
-5. perform the conserved-source Ward/gauge-artifact null test;
-6. compute the first actual `V_C5^(chi2R)` rank/SVD certificate;
-7. keep loop/nonanalytic rows BLOCKED unless derived in the same CTP convention;
-8. only then proceed to fixed C3 and nonlinear C4 tangents.
+1. freeze the physical metric variable and a conserved matter/source sector;
+2. specify the EOM/field-redefinition convention and include all induced source/contact operators, or undo the reduction off shell;
+3. freeze sub-cutoff off-shell `(p,q,r)` points with `p=q+r`, away from propagator poles;
+4. freeze conserved tensor/source projectors and finite time/spatial smearing normalization;
+5. define concrete `chi2R_even/odd` scalar contractions;
+6. evaluate the EH plus source-completed local-EFT cubic response;
+7. test field-redefinition covariance and Ward/gauge-artifact null directions;
+8. compute the first basis-stable `V_C5^(chi2R)` rank/SVD certificate;
+9. keep loop/nonanalytic rows BLOCKED unless derived in the same CTP convention;
+10. only then proceed to fixed C3 and nonlinear C4 tangents.
 
 No Fisher/resource work and no `ANSATZ-003` promotion before a nonzero algebraic residual survives the concrete comparator quotient.
