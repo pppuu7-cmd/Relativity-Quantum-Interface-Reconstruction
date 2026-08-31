@@ -2,16 +2,16 @@
 
 **Updated:** 2026-08-31  
 **Infrastructure status:** READY — 100%  
-**MODEL_READINESS:** **22%** under the frozen model-only rubric  
+**MODEL_READINESS:** **23%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Rejected consistency control:** `ANSATZ-RQIR-CTP-001` v0.1  
 **Positive-spectral Gaussian comparator:** `ANSATZ-RQIR-KL-002` v0.1  
 **Active promotable ansatz:** none — intentionally withheld pending full fixed comparator quotient  
-**Authoritative Candidate Gravity front:** **Iteration 160**
+**Authoritative Candidate Gravity front:** **Iteration 161**
 
 ## Scientific state in one sentence
 
-The comparator funnel contains fixed scoped C3, nonlinear dRGT C4, local quantum-GR EFT C5, weakly-nonlocal form-factor, and a concrete asymptotic-safety FRG/effective-action comparator. Iteration 160 refines the asymptotic-safety boundary: the reconstructed curvature-squared Euclidean action is rich enough for off-symmetric Euclidean background vertices in principle, but the nonlocal Lorentzian theory does not freeze the retarded/in-in Green-function prescription required for RQIR ordered response, so the AS `chi2R` tangent remains physically BLOCKED rather than zero or failed.
+The fixed comparator funnel now contains scoped C3, nonlinear dRGT C4, local quantum-GR EFT C5, weakly-nonlocal form-factor, and a concrete asymptotic-safety FRG/effective-action comparator. Iteration 161 proves that the selected AS action's **strict local IR derivative expansion is structurally contained in the local C5 EFT family**, while direct comparison to the full AS fits shows that this IR expansion is unusable on the current finite Planck-scale RQIR probes; the genuinely nonlocal AS ordered response remains BLOCKED by its unfrozen retarded/in-in Green-function prescription.
 
 ## Stable readiness rubric
 
@@ -19,16 +19,16 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 
 Weights: comparator foundation 25%; robust unique residual 20%; frozen parent dynamics/ANSATZ 20%; candidate consistency 15%; identifiability/Fisher 10%; resource/experiment closure 10%.
 
-Current accounting remains:
+Current accounting:
 
-- comparator foundation `19/25`;
+- comparator foundation `20/25`;
 - unique residual discovery `3/20`;
 - parent dynamics `0/20`;
 - candidate consistency `0/15`;
 - Fisher `0/10`;
 - resources `0/10`.
 
-`MODEL_READINESS: 22%` — unchanged from Iteration 159 because the AS action-level provenance improved but no new usable retarded comparator tangent entered the complete quotient.
+`MODEL_READINESS: 23%` — increased by one point from Iteration 160 because a genuine comparator sector is now classified: strict local-IR AS is inside C5 EFT, and the boundary preventing its misuse on the current probes is quantitatively certified.
 
 ## Frozen protocol
 
@@ -42,7 +42,7 @@ Novelty pre-gate requires nonzero residual after the complete fixed comparator/n
 
 Hard constraints precede profiling/Fisher. Unsupported comparator entries are BLOCKED, never zero-filled.
 
-Retained funnel rules now include `NG-FUNNEL-001` through `NG-FUNNEL-017`.
+Retained funnel rules now include `NG-FUNNEL-001` through `NG-FUNNEL-018`.
 
 ## C3 status
 
@@ -77,7 +77,9 @@ Retained:
 - source-completed six-probe protocol PASS_SCOPED;
 - EH + `Ricci^3/Riemann^3` local retarded response `6x2`, rank `2/2`, Ward validated.
 
-BLOCKED: higher local retarded directions, loop/nonanalytic directions, C5 `N2/C3sym` in the same finite CTP map.
+The complete off-shell C5 family is frozen as an unreduced local diffeomorphism-invariant covariant operator/source basis through dimension 12, so Ricci/EOM-redundant curvature-squared and derivative operators are allowed comparator directions even where their explicit six-probe retarded columns have not yet been implemented.
+
+BLOCKED: explicit retarded columns for the remaining local off-shell basis, loop/nonanalytic directions, C5 `N2/C3sym` in the same finite CTP map.
 
 ## Nonlocal status — `NL-WNL-001` (Iteration 158)
 
@@ -95,13 +97,13 @@ Retain:
 
 BLOCKED: form-factor-induced cubic `chi2R`, Lorentzian causal completion, nonlocal `N2/C3sym`, full nonlocal quotient.
 
-Supplemental diagnostic `QG-NL-EXP-001` shows that on exactly six linear TT coordinates, admitting the full dimension-12 local C5 quadratic TT basis plus common gain can saturate the six-row space (`rank 6/6`). This is protocol saturation, not theory identity, and reinforces that gain-only nonlocal residuals are not novelty certificates.
+Supplemental diagnostic `QG-NL-EXP-001` shows that on exactly six linear TT coordinates, admitting the full dimension-12 local C5 quadratic TT basis plus common gain can saturate the six-row space (`rank 6/6`). This is protocol saturation, not theory identity.
 
-## Asymptotic-safety status — `AS-FRG-TT-001` (Iterations 159–160)
+## Asymptotic-safety status — `AS-FRG-TT-001` (Iterations 159–161)
 
 Primary authority: Pawlowski & Tränkle, arXiv:2309.17043 / Phys. Rev. D 110, 086011 (2024).
 
-### Iteration 159 retained warning
+### Iteration 159
 
 The published one-variable momentum-symmetric TT dressing `gamma_g^(3)(p)` is not the full off-symmetric source-completed Lorentzian `Gamma_3(p,q,r)` required by the six frozen RQIR triplets.
 
@@ -110,53 +112,81 @@ Retain:
 - `AS-NG-001 — SYMMETRIC_POINT_EUCLIDEAN_VERTEX_NOT_RETARDED_OFFSHELL_TANGENT`;
 - `NG-FUNNEL-016 — EUCLIDEAN_SYMMETRIC_VERTEX_REQUIRES_EXPLICIT_RETARDED_OFFSHELL_COMPLETION`.
 
-### Iteration 160 refinement
+### Iteration 160
 
-The same source reconstructs a diffeomorphism-invariant **Euclidean background effective action** through curvature-squared order with covariant momentum-dependent form factors
+The same source reconstructs a diffeomorphism-invariant Euclidean background effective action through curvature-squared order with covariant momentum-dependent form factors
 
 `R f_R2(Delta) R + R_mn f_Ricci2(Delta) R^mn`.
 
-Thus action-level information is sufficient to define off-symmetric Euclidean background vertices in principle within the frozen truncation and reconstruction assumptions; the data obstruction is not simply `missing off-symmetric vertex`.
+Action-level information is sufficient to define off-symmetric Euclidean background vertices in principle within the frozen truncation/reconstruction assumptions. All 18 individual legs of the frozen spacelike RQIR triplets return finite values under the published analytic form-factor fits.
 
-The published analytic form-factor fits were evaluated on every individual leg of the six frozen spacelike RQIR triplets. All 18 legs give finite values:
-
-- `f_Ricci2`: `-0.04680592285494515 ... -0.0037039902546036896`;
-- `f_R2`: `0.261312950235091 ... 0.6649777144616807`.
-
-These are Euclidean coverage values only, not `chi2R`.
-
-The remaining physical blocker is the Lorentzian causal completion. The reconstructed nonlocal operators require a Green-function prescription; the primary source discusses possible Green-function constructions, including expansion about a flat-space Feynman propagator, but does not freeze the RQIR retarded/in-in prescription.
-
-Therefore:
-
-`AS six-probe chi2R = BLOCKED_AS_RETARDED_GREEN_FUNCTION_PRESCRIPTION`.
+The remaining full nonlocal blocker is the Lorentzian causal completion: inverse operators require a Green-function prescription, and the primary source does not freeze the RQIR retarded/in-in prescription.
 
 Retain:
 
 - `AS-NG-002 — EUCLIDEAN_ACTION_SUFFICIENT_CAUSAL_COMPLETION_NOT_FIXED`;
 - `NG-FUNNEL-017 — NONLOCAL_EFFECTIVE_ACTION_REQUIRES_CAUSAL_RESPONSE_PRESCRIPTION`.
 
+### Iteration 161 — local IR / C5 result
+
+The source's strict local IR expansion contains
+
+- `R`;
+- `R_mn R^mn`;
+- `R^2`;
+- `R_mn Box R^mn`;
+- `R Box R`,
+
+with rounded coefficients
+
+- `g_Ricci2 ~= -0.40`;
+- `g_R2 ~= 1.9`;
+- `c1=344.09`;
+- `c2=-136.75`.
+
+All of these operators belong to the complete local C5 off-shell EFT family. Therefore:
+
+`AS strict local IR action = point/subset inside C5 local EFT family`.
+
+Retain:
+
+`AS-NG-003 — LOCAL_IR_AS_SUBSET_OF_C5_EFT`.
+
+This is a regime-specific exact structural comparator degeneracy, not an AS theory failure.
+
+Directly comparing the first-order IR Taylor expansion with the full Appendix-H fits on all 18 legs of the current six probes gives relative-error ranges
+
+- Ricci2: `1666.9691403682948 ... 69310.07731333924`;
+- R2: `45.02312154387796 ... 384.89448594867974`.
+
+Therefore the local IR action is **not** an admissible surrogate for the full AS response at current probe scales `k^2 ~= 0.23 ... 0.75 M_Pl^2`.
+
+Retain:
+
+`NG-FUNNEL-018 — LOCAL_LIMIT_DEGENERACY_DOES_NOT_COMPLETE_NONLOCAL_COMPARATOR`.
+
 Current AS status:
 
 - comparator/truncation: `FIXED_SCOPED`;
 - Euclidean curvature-squared action: `SUPPORTED_SCOPED`;
-- Appendix-H fit coverage on frozen spacelike legs: `PASS`;
 - off-symmetric Euclidean background vertex: `DERIVABLE_IN_PRINCIPLE_WITHIN_TRUNCATION`;
-- six-probe `chi2R_even/odd`: `BLOCKED_AS_RETARDED_GREEN_FUNCTION_PRESCRIPTION`;
-- source-completed nonlinear Ward test: `NOT_COMPUTED`;
+- strict local IR vs C5: `EXACT_STRUCTURAL_DEGENERACY_WITH_LOCAL_C5_EFT_FAMILY`;
+- local IR surrogate on current six probes: `FAIL_DOMAIN_OF_VALIDITY`;
+- full nonlocal six-probe `chi2R_even/odd`: `BLOCKED_AS_RETARDED_GREEN_FUNCTION_PRESCRIPTION`;
+- source-completed nonlinear Ward test for full nonlocal AS: `NOT_COMPUTED`;
 - `N2/C3sym`: `BLOCKED`;
 - full AS quotient: `BLOCKED`.
 
 Authorities:
 
 - `candidate_gravity/comparators/AS-FRG-TT-001.md`;
-- `candidate_gravity/ASYMPTOTIC_SAFETY_MAPPING_ITERATION159.md`;
 - `candidate_gravity/ASYMPTOTIC_SAFETY_ACTION_AUDIT_ITERATION160.md`;
-- `analysis/as_action_formfactor_audit_iteration160.py`;
-- `results/as_action_formfactor_audit_iteration160.json`;
-- `research_log/2026-08-31_iteration_160_as_action_causal_completion.md`;
-- `recovery/RECOVERY_DELTA_ITERATION_160.md`;
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION160.md`.
+- `candidate_gravity/ASYMPTOTIC_SAFETY_IR_C5_AUDIT_ITERATION161.md`;
+- `analysis/as_ir_c5_embedding_iteration161.py`;
+- `results/as_ir_c5_embedding_iteration161.json`;
+- `research_log/2026-08-31_iteration_161_as_ir_c5_embedding.md`;
+- `recovery/RECOVERY_DELTA_ITERATION_161.md`;
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION161.md`.
 
 ## `ANSATZ-003` state
 
@@ -164,13 +194,23 @@ Still intentionally **not frozen**. No robust Candidate Gravity residual has sur
 
 Fisher/resources remain forbidden.
 
-## Immediate next scientific priority — Iteration 161
+## Immediate next scientific priority — Iteration 162
 
-Use the **local IR derivative expansion** of the same reconstructed AS action and test it against the existing local C5 EFT span.
+Turn the structural local C5 coverage into explicit finite ordered-response columns.
 
-1. Freeze the local IR operator directions and their coefficients from the AS source.
-2. Map them into the same source-completed local EFT convention used by C5.
-3. Test whether the local AS directions are contained in the allowed C5 local tangent space.
-4. If contained, record a scoped AS/C5 degeneracy; keep the genuinely nonlocal AS sector BLOCKED.
-5. If a residual survives, run source-completion/field-redefinition/Ward checks before promotion.
-6. No `ANSATZ-003`, Fisher or resources until a robust residual survives the complete fixed comparator funnel.
+Implement source-completed six-probe retarded response for the four local operators appearing in the AS IR correction sector:
+
+1. `R_mn R^mn`;
+2. `R^2`;
+3. `R_mn Box R^mn`;
+4. `R Box R`.
+
+Required checks:
+
+- same physical metric/source convention as Iterations 147–149;
+- same six triplets/projectors/windows;
+- source-completed Ward identity;
+- rank/SVD after EH/gain and existing `Ricci^3/Riemann^3` columns;
+- detect and record finite-protocol saturation if present.
+
+Do not use AS IR coefficients as a surrogate for the full nonlocal AS response. No `ANSATZ-003`, Fisher or resource calculations yet.
