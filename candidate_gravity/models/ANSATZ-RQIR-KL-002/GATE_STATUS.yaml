@@ -2,44 +2,44 @@ schema_version: 1
 model_id: ANSATZ-RQIR-KL-002
 version: 0.1
 updated: 2026-08-31
-status: DRAFT_TESTING
+status: REFERENCE_NOT_PROMOTABLE
 promotion_allowed: false
+rejection_authority: docs/CANDIDATE_GRAVITY_C4_GAUSSIAN_DEGENERACY_ITERATION141.md
 
 qg_gates:
   QG-001:
     status: PARTIAL
-    claim: positive generalized-free massless-plus-massive spin-2 spectral state space is specified at the linear Gaussian level; nonlinear physical-state completion remains open
+    claim: positive generalized-free massless-plus-massive spin-2 spectral state space is specified at the linear Gaussian level; nonlinear physical-state completion was not required to establish the disqualifying QG-007 degeneracy
   QG-002:
     status: PASS
     claim: one positive spectral dynamics plus universal conserved-stress coupling fixes retarded transfer and linked Gaussian fluctuation sector
     scope: weak-field conserved-source Gaussian sector
   QG-003:
     status: PARTIAL
-    claim: massless GR pole/residue unchanged; linear tensor completion gives Phi=-GM/r[1+(4/3)beta W] with 0<W<=exp(-M_*r); short-range/PPN constraints remain open
+    claim: massless GR pole/residue unchanged; linear tensor completion gives Phi=-GM/r[1+(4/3)beta W] with 0<W<=exp(-M_*r)
   QG-004:
     status: PASS_SCOPED
     claim: nonnegative Kallen-Lehmann spectral measure gives positive-norm Gaussian spectral sectors, retarded causal support and no isolated opposite-residue continuum pole
-    scope: linearized Gaussian spectral sector only
   QG-005:
     status: PARTIAL
-    claim: linear conserved-source tensor structure is explicit with massless -1/2 and massive-continuum -1/3 trace coefficients; nonlinear Ward/Bianchi/constraint completion remains open
-    authority: docs/CANDIDATE_GRAVITY_TENSOR_ITERATION139.md
+    claim: linear conserved-source tensor structure explicit with massless -1/2 and massive-continuum -1/3 trace coefficients; nonlinear closure remains untested
   QG-006:
     status: PARTIAL
-    claim: beta->0 gives the reference GR/C5 boundary at the declared tree spectral level and matter decoupling gives ordinary QFT; explicit loop-baseline alignment remains to be frozen
+    claim: beta->0 returns the reference linear spectral boundary and matter decoupling gives ordinary QFT
   QG-007:
-    status: PARTIAL_NEGATIVE
-    claim: Iteration 140 proves exact finite-order low-energy EFT degeneracy of the added gapped continuum below threshold; full-threshold/cross-channel distinction from C5 and C4 remains open
-    authority: docs/CANDIDATE_GRAVITY_C5_IR_DEGENERACY_ITERATION140.md
+    status: FAIL
+    reason_code: EXACT_GAUSSIAN_C4_KK_DEGENERACY
+    claim: the positive KL continuum with linear stress coupling is exactly representable as a direct integral/tower of ordinary positive-norm massive spin-2 quantum mediators, yielding identical D_R, D_H and Gaussian CTP influence functional
+    authority: docs/CANDIDATE_GRAVITY_C4_GAUSSIAN_DEGENERACY_ITERATION141.md
   QG-008:
-    status: BLOCKED_REGIME
-    claim: Paper-I analysis must not be run in a strictly below-threshold finite-order EFT regime because the beta direction lies in the C5 Wilson-coefficient span; threshold/cross-channel map must be built first
+    status: BLOCKED
+    claim: no Paper-I detector map can restore gravity-specific novelty when the complete frozen Gaussian influence functional is exactly shared by an allowed C4/KK comparator
   QG-009:
     status: BLOCKED
-    claim: Fisher profiling waits for a nondegenerate threshold/cross-channel QG-008 direction
+    claim: Fisher profiling cannot distinguish exactly identical Gaussian likelihood families
   QG-010:
     status: BLOCKED
-    claim: resource closure waits for statistical identification
+    claim: physical resources cannot repair exact model identity at the frozen level
 
 cross_gates:
   conservation_bianchi_ward: PARTIAL_LINEAR_CONSERVED_SOURCE
@@ -47,47 +47,44 @@ cross_gates:
   causality_microcausality: PASS_SCOPED_RETARDED_SPECTRAL_SUPERPOSITION
   positivity_spectral: PASS_SCOPED_NONNEGATIVE_KL_MEASURE
   lorentzian_pole_structure: PASS_SCOPED_NO_ISOLATED_CONTINUUM_POLE
-  flat_qft_limit: PARTIAL_STRUCTURAL
   newtonian_long_range: PASS_SCOPED_MASSLESS_POLE_UNCHANGED
   vdvz_short_range_signature: PASS_SCOPED_FACTOR_4_OVER_3
   c5_low_energy_eft_degeneracy: FAIL_DISTINCTNESS_BELOW_THRESHOLD
-  stress_energy_renormalization: BLOCKED
-  nonlinear_constraint_completion: BLOCKED
-  comparator_degeneracy: PARTIAL_C5_IR_DEGENERATE
-  detector_measurability: BLOCKED_UNTIL_THRESHOLD_MAP
+  c4_gaussian_mediator_degeneracy: FAIL_EXACT
+  nonlinear_constraint_completion: NOT_PURSUED_AFTER_NOVELTY_FAILURE
+  detector_measurability: NOT_PURSUED_AFTER_NOVELTY_FAILURE
 
 scoped_results:
   - id: CG-R138-001
     state: PASS_SCOPED
-    statement: rho_g is nonnegative for beta>=0 and consists of the GR massless delta plus a smooth positive continuum above M_*^2
+    statement: nonnegative massless-plus-continuum KL measure
   - id: CG-R138-002
     state: PASS_SCOPED
-    statement: retarded propagator is a positive spectral superposition with no additional isolated continuum pole
-  - id: CG-R138-003
-    state: PASS_SCOPED
-    statement: scalarized static continuum kernel obeys 0<W<=exp(-M_*r)
+    statement: retarded positive spectral superposition with no isolated added continuum pole
   - id: CG-R139-001
     state: PASS_SCOPED
-    statement: linear tensor completion gives massless T.T'-(1/2)TT' and massive-continuum T.T'-(1/3)TT'
+    statement: massless T.T'-(1/2)TT' and massive-continuum T.T'-(1/3)TT' linear tensor structures
   - id: CG-R139-002
     state: PASS_SCOPED
-    statement: NR continuum exchange is enhanced by 4/3 relative to massless GR normalization
-  - id: CG-R139-003
-    state: PASS_SCOPED
-    statement: after NR calibration a traceless-probe continuum response has fixed relative factor 3/4
+    statement: NR continuum tensor enhancement 4/3 and linked traceless/NR factor 3/4
   - id: CG-R140-001
     state: NEGATIVE_SCOPED
-    statement: for |q^2|<M_*^2 the candidate continuum admits a convergent analytic derivative expansion C(x)=sum(-x)^n A_(n+1)
-  - id: CG-R140-002
-    state: FAIL_DISTINCTNESS_SCOPED
-    statement: at any fixed finite derivative order below threshold the added continuum lies in the local C5 EFT Wilson-coefficient span and is not a standalone model discriminator
+    statement: strictly below threshold the continuum is analytic and finite-order-degenerate with local C5 EFT Wilson coefficients
+  - id: CG-R141-001
+    state: FAIL_DISQUALIFYING_NOVELTY
+    statement: exact direct-integral equivalence to a Gaussian positive massive-spin-2 mediator continuum reproduces all frozen two-point response/noise kernels
+  - id: CG-R141-002
+    state: FAIL_DISQUALIFYING_NOVELTY
+    statement: identical D_R and D_H with linear stress coupling imply identical Gaussian CTP influence functionals, so Fisher/resources cannot restore gravity-specific distinction
 
 negative_results:
   - id: CG-NG-005
-    statement: A gapped positive spectral continuum is not operationally distinguishable from C5 plus local Wilson-coefficient freedom in a strictly below-threshold finite-order EFT measurement.
+    statement: gapped positive spectral continuum is finite-order C5-EFT-degenerate strictly below threshold
+  - id: CG-NG-006
+    statement: positive KL spin-2 continuum with only linear conserved-stress coupling is exactly equivalent at Gaussian RQIR level to an ordinary quantum mediator continuum/tower and is not promotable as gravity-specific new physics
 
 next_action:
-  - freeze explicit C5 loop baseline and define the candidate as an excess spectral direction over that baseline before any novelty claim
-  - build threshold-resolved and cross-channel finite maps using NR, traceless-probe, absorptive and noise sectors
-  - compare explicitly with KK/DGP/hidden massive-spin-2 continua and nonlocal gravity
-  - audit nonlinear completion risk without importing Vainshtein screening into v0.1
+  - retain KL-002 as a spectral/C4/KK control branch
+  - do not spend detector optimization resources on its frozen Gaussian direction
+  - construct the next ansatz around a derived nonlinear/non-Gaussian gravitational relation rather than a propagator-only modification
+  - audit specific nonlocal/form-factor and nonlinear gravity models as design comparators before freezing that next ansatz
