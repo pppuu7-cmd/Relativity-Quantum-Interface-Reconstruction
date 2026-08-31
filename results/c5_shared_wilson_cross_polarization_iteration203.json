@@ -13,14 +13,14 @@
   "cross_relation_matrix_rank": 12,
   "max_abs_cross_relation_on_12column_family": 9.027097493431803e-16,
   "ladder": [
-    {"ncols": 4, "max_box_power": 3, "stack_rank_tol_1e-12": 4, "smax": 13.0522807817832, "smin": 0.005942742875657466, "condition_number": 2196.24840928837},
-    {"ncols": 5, "max_box_power": 4, "stack_rank_tol_1e-12": 5, "smax": 13.716130940872, "smin": 0.0005241235658957334, "condition_number": 26169.40616270007},
-    {"ncols": 6, "max_box_power": 5, "stack_rank_tol_1e-12": 6, "smax": 14.267491788758, "smin": 0.0000747754984770061, "condition_number": 190791.2302842827},
-    {"ncols": 7, "max_box_power": 6, "stack_rank_tol_1e-12": 7, "smax": 14.738105556158, "smin": 0.0000054644357048233955, "condition_number": 2696932.2020787355},
-    {"ncols": 8, "max_box_power": 7, "stack_rank_tol_1e-12": 8, "smax": 15.150401609462, "smin": 0.0000007241699740547169, "condition_number": 20921115.295365352},
-    {"ncols": 9, "max_box_power": 8, "stack_rank_tol_1e-12": 9, "smax": 15.518282307406, "smin": 0.0000000485295379810714, "condition_number": 319834618.0017251},
-    {"ncols": 10, "max_box_power": 9, "stack_rank_tol_1e-12": 10, "smax": 15.861350826542, "smin": 0.000000005260538499880324, "condition_number": 3015056969.642321},
-    {"ncols": 11, "max_box_power": 10, "stack_rank_tol_1e-12": 11, "smax": 16.176263028686, "smin": 0.00000000009086352762379611, "condition_number": 178028143690.07495},
+    {"ncols": 4, "max_box_power": 3, "stack_rank_tol_1e-12": 4, "smax": 13.051739587472504, "smin": 0.005942742875657466, "condition_number": 2196.24840928837},
+    {"ncols": 5, "max_box_power": 4, "stack_rank_tol_1e-12": 5, "smax": 13.716002475368143, "smin": 0.0005241235658957334, "condition_number": 26169.40616270007},
+    {"ncols": 6, "max_box_power": 5, "stack_rank_tol_1e-12": 6, "smax": 14.266509349548503, "smin": 0.0000747754984770061, "condition_number": 190791.2302842827},
+    {"ncols": 7, "max_box_power": 6, "stack_rank_tol_1e-12": 7, "smax": 14.737212618527026, "smin": 0.0000054644357048233955, "condition_number": 2696932.2020787355},
+    {"ncols": 8, "max_box_power": 7, "stack_rank_tol_1e-12": 8, "smax": 15.15044352064045, "smin": 0.0000007241699740547161, "condition_number": 20921115.295365352},
+    {"ncols": 9, "max_box_power": 8, "stack_rank_tol_1e-12": 9, "smax": 15.521425698897, "smin": 0.000000048529537981071406, "condition_number": 319834618.0017251},
+    {"ncols": 10, "max_box_power": 9, "stack_rank_tol_1e-12": 10, "smax": 15.86082326813593, "smin": 0.000000005260538499880324, "condition_number": 3015056969.642321},
+    {"ncols": 11, "max_box_power": 10, "stack_rank_tol_1e-12": 11, "smax": 16.17626515199628, "smin": 0.00000000009086352762379617, "condition_number": 178028143690.07495},
     {"ncols": 12, "max_box_power": 11, "stack_rank_tol_1e-12": 12, "smax": 16.473298299276113, "smin": 0.000000000001800340692728579, "condition_number": 9150100514758.316}
   ],
   "classification": {
