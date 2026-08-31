@@ -1,0 +1,44 @@
+{
+  "iteration": 209,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "question": "Can the loop/nonanalytic RQIR soft sector be represented by the same pure Taylor soft2 coefficient used for local tree comparators?",
+  "authority": [
+    {
+      "reference": "Bern-Davies-Nohle, arXiv:1405.1015",
+      "supports": "leading soft-graviton behavior is not loop-corrected; subleading behavior is anomalous/loop-modified in dimensional regularization; higher soft orders receive loop corrections"
+    },
+    {
+      "reference": "Laddha-Sen, arXiv:1706.00759",
+      "supports": "generic sub-subleading soft graviton theorem contains universal and non-universal pieces; the non-universal part depends on two- and three-point functions; loop statement avoids 4D because of IR divergences"
+    },
+    {
+      "reference": "Laddha-Sen, arXiv:1804.09193",
+      "supports": "in four dimensions the usual soft factor is ambiguous beyond leading order due to IR divergence and logarithms of the soft energy appear at subleading order"
+    }
+  ],
+  "scientific_result": {
+    "pure_Taylor_loop_soft2": "INVALID_AS_GENERAL_4D_LOOP_PARAMETERIZATION",
+    "tree_local_soft2_previous_results": "RETAINED_IN_THEIR_ANALYTIC_TREE_SCOPE",
+    "required_one_loop_soft_basis": "polyhomogeneous: sum_n epsilon^n [a_n + b_n log(epsilon/mu_soft)] at the declared order, with the leading soft pole factored/subtracted according to the observable convention",
+    "hard_cut_soft_limit_ordering": "take the hard-channel discontinuity at finite nonzero soft epsilon first, then extract the preregistered polyhomogeneous soft coefficients; do not assume Disc_s commutes with a naive epsilon->0 Taylor extraction",
+    "classification": "PROTOCOL_EXTENSION_REQUIRED_BEFORE_LOOP_C5_T_cut_IMPLEMENTATION"
+  },
+  "frozen_protocol_rule": {
+    "loop_soft_fit": "F(epsilon)=sum_{n=0}^N epsilon^n [a_n+b_n log(epsilon/mu_soft)] plus a declared remainder at one loop; extend log powers only if the perturbative order requires them",
+    "new_coordinates": ["soft_n_regular", "soft_n_log"],
+    "candidate_test": "a future candidate and every loop comparator must be mapped into the same regular+log soft basis from one parent dynamics and one IR convention"
+  },
+  "retained_results": [
+    "SOFT-NG-006 — FOUR_DIMENSIONAL_LOOP_SOFT_EXPANSION_IS_POLYHOMOGENEOUS_NOT_PURE_TAYLOR",
+    "C5-CUT-007 — LOOP_C5_T_cut_REQUIRES_EXPLICIT_LOG_SOFT_COORDINATES_AND_IR_CONVENTION",
+    "REL-NG-018 — GENERIC_SUBSUBLEADING_SOFT_STRUCTURE_CONTAINS_NONUNIVERSAL_TWO_AND_THREE_POINT_INFORMATION",
+    "NG-FUNNEL-065 — DO_NOT_IDENTIFY_TREE_SOFT2_WITH_THE_LOOP_NONANALYTIC_SOFT_COEFFICIENT_WITHOUT_LOG_BASIS_EXTENSION",
+    "NG-FUNNEL-066 — TAKE_HARD_CHANNEL_DISCONTINUITY_AT_FINITE_SOFT_MOMENTUM_BEFORE_POLYHOMOGENEOUS_SOFT_EXTRACTION"
+  ],
+  "candidate_residual": "NONE",
+  "ANSATZ_003": "NOT_CREATED",
+  "Fisher_resources": "FORBIDDEN",
+  "readiness_change": "unchanged at 23%; a protocol loophole is closed before implementation but no comparator block or candidate residual is closed",
+  "next_gate": "Freeze an executable finite-epsilon hard-cut sampling/extraction protocol that separately identifies regular and log-soft coefficients and test it on analytic zero controls plus synthetic logarithmic positive controls before importing physical C5 amplitudes."
+}
