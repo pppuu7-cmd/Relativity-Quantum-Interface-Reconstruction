@@ -1,0 +1,32 @@
+{
+  "iteration": 179,
+  "MODEL_READINESS": "24%",
+  "comparator": "C4-DRGT-001",
+  "frozen_m2": 0.04,
+  "frozen_alpha3": 0.0,
+  "null_soft_k2": 0.0,
+  "TT_inverse_kernel_at_null_soft": 0.04,
+  "physical_null_soft_pole_at_frozen_point": false,
+  "cubic_TT_potential_coefficient": 0.015,
+  "formal_massless_boundary": {
+    "m2_sequence": [0.04, 0.02, 0.01, 0.005, 0.0025],
+    "V3_coefficients": [0.015, 0.0075, 0.00375, 0.001875, 0.0009375],
+    "halving_ratios": [0.5, 0.5, 0.5, 0.5],
+    "limit": "V3_dRGT -> 0 linearly as m2 -> 0; TT propagator approaches the massless EH boundary"
+  },
+  "classification": {
+    "fixed_dRGT_B_T": "BLOCKED_C4_NULL_SOFT_PROTOCOL_MISMATCH",
+    "zero_column_authorized": false,
+    "consistency_fail": false,
+    "theory_excluded": false,
+    "massless_boundary_same_fixed_comparator": false,
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "C4-NG-009 — FIXED_NONZERO_MASS_DRGT_COMPARATOR_DOES_NOT_SHARE_THE_PHYSICAL_NULL_SOFT_POLE_OF_THE_B_T_PROTOCOL",
+    "SOFT-NG-006 — COMPARATOR_PROTOCOL_MISMATCH_MUST_BE_BLOCKED_NOT_ZERO_FILLED",
+    "C4-NG-010 — FORMAL_DRGT_MASSLESS_TT_BOUNDARY_REMOVES_THE_NONDERIVATIVE_CUBIC_POTENTIAL_AND_COLLAPSES_TOWARD_THE_SHARED_EH_TT_BOUNDARY"
+  ],
+  "readiness_change": "unchanged at 24%; C4 protocol applicability is clarified, but a compatible fixed C4 transverse control and nonlocal/AS/C3 completion remain open"
+}
