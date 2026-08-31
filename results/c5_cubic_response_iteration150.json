@@ -1,0 +1,32 @@
+{
+  "iteration": 150,
+  "scope": "tree, local, TT-projected, six frozen spacelike probes",
+  "metric_convention": "g=eta+kappa h; kappa stripped from dimensionless fingerprint",
+  "local_directions": ["Tr(Ricci^3)", "Riemann_mn^rs Riemann_rs^ab Riemann_ab^mn"],
+  "rank": 2,
+  "n_columns": 2,
+  "singular_values": [4.83562189, 1.10930485],
+  "smin_over_smax": 0.22940272681473822,
+  "max_EH_permutation_error": 8.126832540256146e-14,
+  "max_last_step_EH_convergence_delta": 9.223162964033804e-06,
+  "longitudinal_replacement_values": [0.2775683964008124, -0.06305067814357916, -0.08261996498801465, -0.11599077451748548, -0.34322381202094027, -0.11913454791986963],
+  "ward_interpretation": "NONZERO_EXPECTED_OFFSHELL_1PI_VERTEX; requires inverse-propagator/contact/source-completed Ward-Takahashi check",
+  "rows": [
+    {"probe":0,"EH_response":0.30003001285313774,"Ricci3_response":0.24070751018780706,"Riemann3_response":0.0162688093782525},
+    {"probe":1,"EH_response":-1.461790494216445,"Ricci3_response":0.04049169004306333,"Riemann3_response":-1.0814570326812767},
+    {"probe":2,"EH_response":-12.034873790942026,"Ricci3_response":-0.2949689689538115,"Riemann3_response":-4.162730203760564},
+    {"probe":3,"EH_response":-14.434681522564402,"Ricci3_response":-1.188940394962533,"Riemann3_response":-1.1546645331333212},
+    {"probe":4,"EH_response":4.867521776975717,"Ricci3_response":0.3595319351794924,"Riemann3_response":1.7220685314070152},
+    {"probe":5,"EH_response":-2.7789127642722273,"Ricci3_response":-0.14821657998670623,"Riemann3_response":-0.32479593455554057}
+  ],
+  "status": {
+    "EH_cubic_TT_block": "PASS_SCOPED",
+    "two_curvature_cubic_columns": "PASS_SCOPED",
+    "local_rank_certificate": "PASS_SCOPED",
+    "full_offshell_Ward_source_completion": "BLOCKED_WARD_TAKAHASHI_COMPLETION",
+    "higher_dimension_local": "BLOCKED",
+    "loops_nonanalytic": "BLOCKED",
+    "Fisher_resources": "FORBIDDEN_NO_COMPARATOR_QUOTIENT_RESIDUAL",
+    "ANSATZ_003": "NOT_CREATED"
+  }
+}
