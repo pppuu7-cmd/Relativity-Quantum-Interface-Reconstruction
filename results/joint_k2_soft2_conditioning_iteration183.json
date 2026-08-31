@@ -23,60 +23,17 @@
   },
   "quadratic_conditioning_audit": {
     "augmented_rank": 6,
-    "augmented_singular_values": [
-      1.2294306018069692,
-      0.14030202114309942,
-      0.007496144344005514,
-      0.0002339116798742215,
-      7.757108549138826e-06,
-      4.427152082498382e-08
-    ],
-    "local_C5_K2_basis": [
-      "x",
-      "x^2",
-      "x^3",
-      "x^4",
-      "x^5",
-      "x^6"
-    ],
-    "local_compensation_coefficients": [
-      3.722820164391642e-05,
-      -1.0005916758213143,
-      -0.9961254263259217,
-      -0.5133412291245445,
-      -0.14137282562078676,
-      -0.06615094918381151
-    ],
+    "augmented_singular_values": [1.2294306018069692, 0.14030202114309942, 0.007496144344005514, 0.0002339116798742215, 7.757108549138826e-06, 4.427152082498382e-08],
+    "local_C5_K2_basis": ["x", "x^2", "x^3", "x^4", "x^5", "x^6"],
+    "local_compensation_coefficients": [3.722820164391642e-05, -1.0005916758213143, -0.9961254263259217, -0.5133412291245445, -0.14137282562078676, -0.06615094918381151],
     "local_condition_number": 23981987.42027984,
     "local_rank": 6,
-    "local_singular_values": [
-      1.061497670893173,
-      0.09053104229637064,
-      0.007488559845429679,
-      0.0002322437498821653,
-      7.751117183527231e-06,
-      4.426228953800305e-08
-    ],
+    "local_singular_values": [1.061497670893173, 0.09053104229637064, 0.007488559845429679, 0.0002322437498821653, 7.751117183527231e-06, 4.426228953800305e-08],
     "nonlocal_lambda_K2_tangent": "x^2*exp(x) at lambda=1",
     "null_residual_norm": 1.6478959984131287e-16,
-    "null_vector_normalized_nonlocal_coefficient_1": [
-      3.7228200179970815e-05,
-      -1.0005916758017337,
-      -0.9961254264296668,
-      -0.5133412288524085,
-      -0.1413728259742054,
-      -0.06615094900201549,
-      1.0
-    ],
+    "null_vector_normalized_nonlocal_coefficient_1": [3.7228200179970815e-05, -1.0005916758017337, -0.9961254264296668, -0.5133412288524085, -0.1413728259742054, -0.06615094900201549, 1.0],
     "parameter_null_dimension": 1,
-    "x_q2_rows": [
-      0.5076,
-      0.3854,
-      0.426,
-      0.3153,
-      0.4004,
-      0.2882
-    ]
+    "x_q2_rows": [0.5076, 0.3854, 0.426, 0.3153, 0.4004, 0.2882]
   },
   "readiness_change": "unchanged: the relation observable is repaired and made split-invariant, but the conditional comparator cubic columns are not yet complete",
   "retained_results": [
@@ -87,7 +44,7 @@
   ],
   "scope": "six frozen null-soft rows; joint source-completed quadratic-kernel and full soft2 cubic conditioning",
   "split_invariance": {
-    "max_abs_full_soft2_change_under_W_B_repartition": 2.220446049250313e-16,
+    "max_abs_full_soft2_change_under_W_B_repartition": 4.440892098500626e-16,
     "status": "PASS_MACHINE_PRECISION"
   }
 }
