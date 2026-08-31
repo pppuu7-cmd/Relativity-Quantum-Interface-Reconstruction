@@ -1,0 +1,32 @@
+{
+  "augmented_rank": 7,
+  "augmented_singular_values": [2.849379885666181,0.5309790378829404,0.10206493185132877,0.01038153280222711,0.0007702647058068092,3.808053964619245e-05,1.3903845825119593e-07],
+  "classification": {
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN",
+    "candidate_residual": "NOT_TESTED",
+    "exact_K2_preserving_nonlocal_plus_local_parameter_null": "ABSENT_ON_WITHHELD_ROWS_FOR_THIS_SEVEN_PARAMETER_BLOCK",
+    "original_six_row_compensation": "FINITE_SAMPLE_SATURATION_NOT_THEORY_IDENTITY",
+    "withheld_twelve_row_nonlocal_K2": "INDEPENDENT_OF_FROZEN_LOCAL_DIM12_QUADRATIC_BASIS"
+  },
+  "first7_augmented_minor_det_70digit": "1.089541069178845885463513970732580670351719399094379069564110814997436e-28",
+  "iteration": 191,
+  "least_squares_local_coefficients": [-7.857294566281244e-05,1.001285360863695,0.9918827314880765,0.5253571407481284,0.12533628689947637,0.07433180166827054],
+  "local_basis": ["x","x^2","x^3","x^4","x^5","x^6"],
+  "local_condition_number": 54321.12943741529,
+  "local_rank": 6,
+  "local_singular_values": [2.0677165216592357,0.4367434646127812,0.09505236009858341,0.010342189319995112,0.0007679203733434157,3.8064682068908426e-05],
+  "model_readiness_percent": 24,
+  "nonlocal_lambda_tangent": "x^2*exp(x)",
+  "nonlocal_minus_local_residual_l2": 2.519489770310101e-07,
+  "nonlocal_minus_local_residual_maxabs": 1.4983504587062768e-07,
+  "protocol": "RQIR-WITHHELD-NULLSOFT-12-v1",
+  "readiness_change": "unchanged: a major finite-sample degeneracy is broken prospectively, but AS/C3 remain blocked and no candidate residual has been tested",
+  "relative_residual_l2": 1.2699307152134745e-07,
+  "retained_results": [
+    "NL-NG-006 — WITHHELD_ROWS_BREAK_THE_SIX_POINT_LOCAL_POLYNOMIAL_COMPENSATION_OF_THE_NONLOCAL_K2_TANGENT",
+    "REL-NG-008 — EXACT_K2_CALIBRATION_REMOVES_THE_NONLOCAL_LAMBDA_NUISANCE_DIRECTION_ON_THE_WITHHELD_12ROW_BLOCK",
+    "NG-FUNNEL-046 — FINITE_ROW_HARD_CONSTRAINT_SATURATION_MUST_BE_RETESTED_ON_PROSPECTIVELY_FROZEN_ROWS"
+  ],
+  "scope": "Iteration-190 withheld comparator K2 rows only; no candidate evaluated"
+}
