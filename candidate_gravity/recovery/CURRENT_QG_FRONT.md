@@ -3,109 +3,177 @@
 **Updated:** 2026-08-31  
 **Infrastructure status:** READY — 100%  
 **Reference model:** `ANSATZ-PQG-EFT-001` v0.1, REFERENCE / NOT PROMOTABLE  
-**Active discovery model:** `ANSATZ-RQIR-CTP-001` v0.1, DRAFT / TESTING  
-**Authoritative Candidate Gravity front:** **Iteration 135**
+**Rejected discovery model:** `ANSATZ-RQIR-CTP-001` v0.1  
+**Active discovery model:** `ANSATZ-RQIR-KL-002` v0.1, DRAFT / TESTING  
+**Authoritative Candidate Gravity front:** **Iteration 140**
 
-## Current branch state
+## Branch chronology
 
-- Papers I–III remain scientifically closed and form the fixed RQIR test pipeline.
-- Candidate Gravity process/infrastructure closed at Iteration 132.
-- Iteration 133 instantiated the conservative perturbative quantum-GR EFT reference/control.
-- Iteration 134 passed that reference model's Newtonian/classical-GR normalization gate.
-- Iteration 135 instantiated the first RQIR-driven non-reference ansatz with a linked causal response/noise spectral kernel and recorded the first scoped Euclidean stability result.
+- Iterations 1–132: RQIR Papers I–III and Candidate Gravity testing infrastructure closed.
+- Iteration 133: instantiated standard perturbative quantum-GR EFT as C5 reference.
+- Iteration 134: passed its Newtonian/classical-GR normalization gate.
+- Iteration 135: created first RQIR-driven causal spectral inverse-kernel ansatz.
+- Iteration 136: rejected that ansatz analytically on the Lorentzian pole/residue gate.
+- Iteration 137: audited major existing gravity model classes through the RQIR funnel and prepared an article-ready comparison section.
+- Iteration 138: created the second RQIR-driven ansatz using a nonnegative Källén–Lehmann massless-plus-continuum spectral measure.
+- Iteration 139: restored the linear conserved-source tensor structure and exposed the linked vDVZ `4/3` and traceless/NR `3/4` relations.
+- Iteration 140: proved strictly below-threshold finite-order EFT degeneracy with C5 Wilson-coefficient freedom.
 
-## Reference branch retained result
+## Retained reference result — C5
 
-For `ANSATZ-PQG-EFT-001`:
+`ANSATZ-PQG-EFT-001` remains the permanent perturbative-QG control.
 
-- QG-001/QG-002/QG-003 PASS;
-- QG-007 FAIL due exact comparator C5 theory-class identity;
-- it remains a permanent reference/control and cannot be promoted without changing the model class.
+- QG-001/QG-002/QG-003 PASS in the declared low-energy domain.
+- QG-007 FAIL for novelty because the model is exactly comparator C5.
 
-Retained negative result **CG-NG-003**: quantizing the weak-field metric within standard perturbative quantum-GR EFT does not itself create a new Candidate Gravity discriminator against C5.
+**CG-NG-003:** quantizing the weak-field metric within standard perturbative quantum-GR EFT does not itself create a new Candidate Gravity direction relative to C5.
 
-## Active discovery ansatz
+## Rejected model result — Iteration 136
 
-`ANSATZ-RQIR-CTP-001` v0.1 uses
+`ANSATZ-RQIR-CTP-001` v0.1 used a multiplicative inverse-kernel factor `1+beta F_R` with positive spectral input.
 
-`rho_hat(s)=exp(1-s)Theta(s-1)`,
+Although the Euclidean/spacelike kernel had no extra zero, for positive-frequency timelike
 
-`zeta=-(p^2+i0 p^0)/M_*^2`,
+`y=p^2/M_*^2 in (0,1)`
 
-`F_R=zeta int_1^infty ds rho_hat(s)/(s+zeta)`,
+the frozen form factor is
 
-`K_R^(2)=K_GR,R^(2)[1+beta F_R]`, `beta>=0`.
+`F(y)=-y exp(1-y)E1(1-y)`.
 
-The same spectral object fixes the dispersive/absorptive response and the v0.1 Gaussian quantum-noise relation. Response and noise may not be tuned independently.
+It decreases continuously from `0` to `-infinity`. Therefore for every `beta>0`,
 
-## Iteration 135 scoped result
+`1+beta F(y)=0`
 
-For spacelike `x=-p^2/M_*^2>=0`,
+has exactly one sub-threshold root. The dressed-pole residue factor is negative relative to the frozen GR pole convention because `F'(y)<0`.
 
-`F_E=x exp(1+x)E1(1+x)`
+**QG-004 FAIL — `EXTRA_NEGATIVE_RESIDUE_TIMELIKE_POLE`.**
 
-and positivity/normalization of the spectral density gives
+**CG-NG-004:** Euclidean no-extra-zero stability does not guarantee Lorentzian viability for a positive-beta Stieltjes-type inverse-kernel deformation.
 
-`0<=F_E<=x/(1+x)<1`.
+The model is permanently REJECTED; its sign/shape is not retuned post hoc.
 
-Therefore
+## Existing-model funnel audit — Iteration 137
 
-`1+beta F_E>=1`
+Current landscape interpretation:
 
-for `beta>=0`: no additional Euclidean/spacelike zero of the multiplicative spin-2 kernel.
+- semiclassical mean gravity: early C1 comparator; mean-only closure is insufficient for a full quantum-interface claim;
+- stochastic gravity: strong C2 late comparator because CTP/influence-functional mean/noise/dissipation structure is already sophisticated;
+- classical-channel/measurement-feedback gravity: C3 comparator capable of Newtonian interaction plus compulsory decoherence/noise;
+- postquantum classical gravity: high-priority modern C3 comparator; stochastic metric and consistency properties are realization-dependent;
+- perturbative quantum GR: C5 viable reference but novelty-degenerate;
+- ghost-free nonlocal/form-factor gravity: serious quantum comparator that can pass early pole/positivity gates for specific fixed form factors;
+- asymptotic safety: program-level prior; a concrete Lorentzian effective realization is required before finite RQIR testing.
 
-IR coefficient:
+Authority:
 
-`F_E=0.596347362323... x+O(x^2)`.
+`candidate_gravity/landscape/RQIR_FUNNEL_AUDIT_ITERATION137.md`
 
-This is a **PASS_SCOPED**, not a Lorentzian ghost-freedom theorem.
+and
 
-## Active model gate state
+`docs/CANDIDATE_GRAVITY_ARTICLE_FUNNEL_SECTION_ITERATION137.md`.
 
-For `ANSATZ-RQIR-CTP-001`:
+## Active model — `ANSATZ-RQIR-KL-002` v0.1
 
-- QG-001 PARTIAL — effective linearized state structure specified; microscopic physical-state/dilation closure open;
-- QG-002 PASS scoped — one CTP effective dynamics fixes response and linked noise;
-- QG-003 NOT_TESTED — full Newtonian source normalization open;
-- QG-004 BLOCKED — Lorentzian unitarity/positivity and microscopic dilation open;
-- QG-005 PARTIAL — transverse linear spin-2 Ward structure only;
-- QG-006 NOT_TESTED;
-- QG-007 BLOCKED — prior-art/comparator distinction unresolved;
-- QG-008 NOT_TESTED;
-- QG-009/QG-010 BLOCKED until a nondegenerate beta direction survives earlier gates.
+### Spectral definition
 
-## Comparator status that must not be forgotten
+The active model uses a massless GR pole plus a smooth nonnegative continuum:
 
-The deep-infrared expansion is expected to be degenerate with ordinary higher-dimension gravitational EFT coefficients to finite order. Existing nonlocal/form-factor quantum-gravity constructions also occupy nearby structural territory. Therefore Iteration 135 is a model-construction advance, **not a novelty claim**.
+`rho_g(mu^2)=delta(mu^2)+(beta/M_*^2) exp(1-mu^2/M_*^2) Theta(mu^2-M_*^2)`.
 
-## Canonical authorities
+At the Gaussian two-point level this yields:
 
-Read in this order:
+- nonnegative spectral weight;
+- retarded causal superposition;
+- no isolated additional continuum pole;
+- a branch cut beginning at `p^2=M_*^2`.
 
-1. `candidate_gravity/models/ANSATZ-RQIR-CTP-001/MODEL.md`;
-2. `candidate_gravity/models/ANSATZ-RQIR-CTP-001/GATE_STATUS.yaml`;
-3. `candidate_gravity/models/ANSATZ-RQIR-CTP-001/ASSUMPTIONS_LEDGER.md`;
-4. `candidate_gravity/models/ANSATZ-RQIR-CTP-001/DERIVATION_MAP.md`;
-5. `candidate_gravity/models/ANSATZ-RQIR-CTP-001/COMPARATOR_STATUS.md`;
-6. `analysis/candidate_gravity_rqir_ctp_iteration135.py`;
-7. `results/candidate_gravity_rqir_ctp_iteration135.json`;
-8. `docs/CANDIDATE_GRAVITY_RQIR_CTP_ITERATION135.md`;
-9. `research_log/2026-08-31_iteration_135_rqir_ctp_candidate_start.md`;
-10. `recovery/RECOVERY_DELTA_ITERATION_135.md`.
+### Linear tensor completion
 
-The C5 reference branch remains authoritative for comparator boundary checks.
+For conserved sources:
+
+massless GR:
+
+`T.T'-(1/2)TT'`,
+
+massive continuum:
+
+`T.T'-(1/3)TT'`.
+
+Hence for two nonrelativistic sources the continuum/GR tensor ratio is
+
+`4/3`.
+
+The static potential is
+
+`Phi(r)=-GM/r [1+(4/3)beta W(M_*r)]`,
+
+with
+
+`0<W(u)<=exp(-u)`.
+
+For a traceless probe the continuum/massless tensor ratio is `1`, so after NR calibration the relative continuum response is fixed at `3/4`.
+
+These linked tensor relations are candidate fingerprint components, not novelty claims.
+
+### C5 infrared degeneracy
+
+For Euclidean `x=q^2/M_*^2`, the continuum function
+
+`C(x)=int_1^infty ds rho_hat(s)/(s+x)`
+
+has the convergent expansion
+
+`C(x)=sum_{n>=0}(-x)^n A_(n+1)`
+
+for `|x|<1`.
+
+Therefore at any fixed finite derivative order strictly below threshold, the beta contribution lies in the local gravitational EFT Wilson-coefficient span.
+
+**CG-NG-005:** a gapped positive spectral continuum is not distinguishable from C5 plus local Wilson-coefficient freedom in a strictly below-threshold finite-order EFT measurement.
+
+Consequently deep-IR detector/Fisher optimization is forbidden as scientifically non-identifying.
+
+## Active gate state
+
+For `ANSATZ-RQIR-KL-002`:
+
+- QG-001 PARTIAL;
+- QG-002 PASS;
+- QG-003 PARTIAL;
+- QG-004 PASS_SCOPED;
+- QG-005 PARTIAL with linear tensor structure closed, nonlinear constraints open;
+- QG-006 PARTIAL;
+- QG-007 PARTIAL_NEGATIVE: C5 deep-IR distinctness failed, threshold/cross-channel distinction open;
+- QG-008 BLOCKED_REGIME until a threshold-resolved/cross-channel finite map is built;
+- QG-009/QG-010 BLOCKED.
+
+## Canonical authorities — active branch
+
+Read:
+
+1. `candidate_gravity/models/ANSATZ-RQIR-KL-002/MODEL.md`;
+2. `candidate_gravity/models/ANSATZ-RQIR-KL-002/GATE_STATUS.yaml`;
+3. `candidate_gravity/models/ANSATZ-RQIR-KL-002/ASSUMPTIONS_LEDGER.md`;
+4. `candidate_gravity/models/ANSATZ-RQIR-KL-002/DERIVATION_MAP.md`;
+5. `candidate_gravity/models/ANSATZ-RQIR-KL-002/COMPARATOR_STATUS.md`;
+6. `docs/CANDIDATE_GRAVITY_POSITIVE_SPECTRAL_ITERATION138.md`;
+7. `docs/CANDIDATE_GRAVITY_TENSOR_ITERATION139.md`;
+8. `docs/CANDIDATE_GRAVITY_C5_IR_DEGENERACY_ITERATION140.md`;
+9. `analysis/candidate_gravity_positive_spectral_iteration138.py`;
+10. `analysis/candidate_gravity_tensor_projector_iteration139.py`;
+11. `analysis/candidate_gravity_c5_ir_degeneracy_iteration140.py`;
+12. corresponding JSON result files.
 
 ## Immediate next scientific priority
 
-**Iteration 136: Lorentzian analytic-structure gate.**
+**Iteration 141: C5-excess and strongest-continuum comparator gate.**
 
-Before any detector optimization:
+Before Paper-I/Fisher work:
 
-1. analytically continue the frozen `F_R` across the timelike threshold `p^2>=M_*^2`;
-2. compute its discontinuity and absorptive sign;
-3. search the physical sheet for zeros of `1+beta F_R` over a frozen parameter box;
-4. determine whether the dressed propagator admits a positive spectral/causal interpretation;
-5. restore the complete conserved-source tensor structure;
-6. explicitly compare the result to C5 and known nonlocal/form-factor gravity.
+1. freeze a declared perturbative order for the C5 retarded/spectral baseline;
+2. redefine the scientifically tested direction as **excess spectral weight over C5**, so `beta=0` is exactly the chosen C5 reference, not only tree GR;
+3. compare threshold support/tensor structure against hidden/KK/DGP-like massive-spin-2 continua and nonlocal/form-factor gravity;
+4. determine whether the linked `4/3` NR, `3/4` traceless, threshold absorption and noise relations contain any residual direction outside those comparator families;
+5. only if such a direction exists, construct the finite RQIR Paper-I quotient.
 
-Do not change the spectral shape after inspecting this gate. Failure is recorded and used to design a new version rather than post-hoc tuning.
+Do not spend detector optimization resources on a direction still contained in the comparator span.
