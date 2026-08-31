@@ -5,11 +5,11 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 182**
+**Authoritative Candidate Gravity front:** **Iteration 183**
 
 ## Scientific state in one sentence
 
-RQIR is in source-completed, two-point-amputated, Ward-subtracted transverse null-soft three-point space. Local C5 through dimension 12 occupies physics-aware rank 4/6; compatible massless-spin-2 C4 adds no independent direction and massive dRGT is protocol-incompatible; the fixed exponential nonlocal comparator remains unresolved because the present six-row lever arm is near-degenerate and, more fundamentally, the repository had not yet implemented an executable source-completed `W[K2]` / `P_T` subtraction for comparators with nonzero quadratic kernel.
+RQIR now uses a split-invariant joint relation protocol rather than treating an off-shell Ward/transverse decomposition as observable: the finite comparison object is `Y=(K2_rows,S_soft2_full_rows)`, exact quadratic calibration is eliminated first, and only the full source-completed cubic response of parameter combinations in `ker(dK/dtheta)` enters the comparator quotient. On the current six rows the nonlocal quadratic tangent is exactly compensable by the local dimension-12 polynomial kernel basis, so the next required data are the corresponding local-quadratic and nonlocal full soft2 cubic completions.
 
 ## Stable readiness rubric
 
@@ -20,129 +20,138 @@ RQIR is in source-completed, two-point-amputated, Ward-subtracted transverse nul
 - identifiability/Fisher `0/10`;
 - resource/experiment closure `0/10`.
 
-`MODEL_READINESS = 24%` remains unchanged through Iteration 182. Do not raise readiness for workload alone.
+`MODEL_READINESS = 24%` remains unchanged through Iteration 183. Do not raise readiness for workload alone.
 
 ## Frozen rules
 
 - Repository/recovery is source of truth.
 - Unsupported comparator coordinates are BLOCKED, never zero-filled.
-- Hard consistency constraints precede profiling/Fisher.
+- Exact hard constraints precede nuisance profiling/Fisher.
 - `ANSATZ-003` must not be created before a nonzero residual survives fixed C3/C4/C5/nonlocal/asymptotic-safety subtraction.
 - Fisher/resources remain forbidden until then.
-- Metric CTP convention: `h_±=r±a/2` with factorial-normalized cubic vertices.
-- Conceptual soft coordinate: `B_T(i)=P_T[Gamma_arr(i)-W_i[K2]]` on the frozen physical null-soft plus-TT carrier.
-- For any comparator with nonzero `K2`, `W[K2]` and `P_T` must be executable in the same source-completed convention before rank promotion.
+- Metric CTP convention remains `h_±=r±a/2` with factorial-normalized cubic vertices.
+- For general nonzero-`K2` comparators, the authoritative relation object is the joint source-completed `(K2,S_soft2)` protocol; the older conceptual `W[K2]+R:B` split is internal bookkeeping only.
 
-## Retained authority
+## Retained local/C4 authority
 
-### Local C5 — Iteration 178
+### Local C5 zero-K2 cubic sector — Iteration 178
 
-On the six frozen null-soft TT rows, the authorized cubic subset through dimension 12 reduces exactly to
+On the six frozen null-soft rows, the target-independent curvature-cubic subset through dimension 12 reduces to
 
-`Riemann3_B_T * {1, (-q^2), (q^2)^2, (-q^2)^3}`
+`Riemann3_soft2 * {1,(-q^2),(q^2)^2,(-q^2)^3}`
 
-with physics-aware rank `4/6` and singular values
-
-`[2.0192478812, 0.0752839640, 0.0037576657, 4.7032262e-5]`.
-
-The frozen extrapolation/error envelope is `5.2625580e-6`. Ricci-chain soft columns are exact protocol zeros.
-
-Retain `C5-NG-009`, `SOFT-NG-005`, `NUM-NG-001`.
+with physics-aware rank `4/6`. The frozen numerical/extrapolation envelope is `5.2625580e-6`. Ricci-chain null-soft columns are exact protocol zeros.
 
 ### C4 — Iterations 179–180
 
-Fixed dRGT at `m^2=0.04` is `BLOCKED_C4_NULL_SOFT_PROTOCOL_MISMATCH`; this is not a consistency FAIL. The strongest compatible local/unitary single-massless-spin-2 control merges with the C5 local-EFT soft boundary at the frozen order:
+Fixed dRGT at `m^2=0.04` is `BLOCKED_C4_NULL_SOFT_PROTOCOL_MISMATCH`, not FAIL. The strongest compatible local/unitary single-massless-spin-2 control merges with the same local C5 massless-spin-2 EFT boundary at the frozen order and adds no independent rank.
 
-`rank(V_C5)=rank(V_C4_massless)=rank([V_C5,V_C4_massless])=4`.
+## Nonlocal/comparator relation development
 
-Retain `C4-NG-011`, `SOFT-NG-007`, `NG-FUNNEL-038`.
+### Iteration 181 — six-row nonlocal resolution audit
 
-### Fixed nonlocal comparator — Iterations 174, 181, 182
+Representative exponential soft-limit scalar shapes appended to the local rank-4 soft span yield fifth singular values only `4.19e-8` to `8.33e-7`, all below the frozen `5.2626e-6` error envelope. Current six-row `q^2` leverage is therefore a resolution risk; this is near-degeneracy, not exact identity.
 
-`QG-NL-EXP-001` is the frozen parent
+### Iteration 182 — off-shell split ambiguity
 
-`S ~ ∫ sqrt(-g) [R + G_mn F(Box) R^mn]`,
+For nonzero `K2`, the schematic split
 
-`F(Box)=(exp(-lambda Box)-1)/Box`, `lambda=1`.
+`Gamma_soft=W[K2]+Rlin:B`
 
-Its tree cubic is fixed in principle and contains the required Frechet insertion `G1 deltaF R1`; propagator-only reasoning is insufficient.
+has a transverse repartition freedom. A nonzero Riemann-symmetry shift can be moved between `W` and `B` while leaving the full vertex and pure-gauge Ward tests unchanged. Finite certificate: decomposition shift norm `0.24556`, compensated raw-vertex change `5.55e-17`.
 
-Iteration 181 resolution audit:
+Therefore a raw cubic tensor plus an arbitrary off-shell `W/P_T` convention must not be promoted as a physical comparator direction.
 
-- representative analytic exponential soft-limit shapes appended to the local rank-4 basis give fifth singular values only `4.19e-8` to `8.33e-7`;
-- the largest is only `0.158` of the frozen Iteration-178 error envelope `5.2626e-6`;
-- therefore the current six-row `q^2` lever arm nearly polynomializes those tested shapes below present numerical resolution.
+### Iteration 183 — split-invariant joint K2/soft2 conditioning
 
-Retain `NL-NG-004`, `NUM-NG-002`, `NG-FUNNEL-039`.
+Freeze directly source-completed observables
 
-Iteration 182 definition audit:
+`Y=(K2_rows,S_soft2_full_rows)`.
 
-The Iteration-175 implementation validates only the soft-Riemann gauge/scaling geometry. It did **not** implement an executable source-completed `W[K2]` or explicit numerical `P_T`.
+For parameter tangent blocks
 
-This was safe for the local `R^3` operators because their operator-specific `K2=0`, hence `W[K2]=0` exactly. It is not safe for `QG-NL-EXP-001`, whose quadratic kernel is nonzero.
+`A=dK/dtheta`, `B=dS/dtheta`,
 
-There is an exact transverse decomposition freedom
+exact quadratic calibration requires
 
-`W -> W + Rlin:C`,
+`A delta_theta=0`.
 
-`B -> B - C`,
+If `N_A` spans `ker(A)`, the allowed calibrated cubic comparator span is
 
-which leaves the raw cubic vertex unchanged and is invisible to pure-gauge Ward tests because `Rlin[gauge]=0`.
+`B_cond=B N_A`.
 
-Finite certificate:
+This is invariant under internal Ward/transverse repartition; numerical split test discrepancy is `4.44e-16`.
 
-- pure-gauge soft Riemann norm `1.5700924587e-16`;
-- physical TT soft Riemann norm `2.0`;
-- nonzero decomposition shift norm `0.2455605832`;
-- compensated raw-vertex change `5.5511151231e-17`.
+On the six frozen hard invariants `x=q^2`, the local quadratic inverse-kernel basis through the dimension-12 convention
 
-Therefore
+`[x,x^2,x^3,x^4,x^5,x^6]`
 
-`QG-NL-EXP-001 B_T = BLOCKED_EXECUTABLE_SOURCE_COMPLETED_WARD_SUBTRACTION_NOT_YET_FROZEN`.
+has rank `6/6` and condition number `2.3982e7`. Appending the fixed nonlocal lambda tangent
+
+`dK_NL/dlambda=x^2 exp(x)`
+
+keeps row rank 6 and creates one parameter-space null direction. Normalized nonlocal coefficient `+1` is compensated by local coefficients approximately
+
+`[3.72282e-5,-1.00059168,-0.99612543,-0.51334123,-0.14137283,-0.06615095]`,
+
+with quadratic null residual `1.65e-16`.
+
+Thus the physical nonlocal discriminator is the **full soft2 cubic response of this K2-preserving parameter combination**.
 
 Retain:
 
-- `SOFT-NG-008 — TRANSVERSE_RIEMANN_SHIFT_IS_INVISIBLE_TO_WARD_CONSTRAINTS_UNTIL_W_K2_CONVENTION_IS_FIXED`;
-- `NL-NG-005 — FULL_NONLOCAL_RAW_CUBIC_IS_NECESSARY_BUT_NOT_SUFFICIENT_FOR_B_T_WHEN_K2_IS_NONZERO`;
-- `NG-FUNNEL-040 — EXECUTABLE_SOURCE_COMPLETED_WARD_SUBTRACTION_MUST_PRECEDE_NONLOCAL_OR_AS_B_T_RANK_PROMOTION`.
+- `REL-NG-001 — JOINT_K2_SOFT2_HARD_CONDITIONING_IS_INVARIANT_UNDER_INTERNAL_WARD_TRANSVERSE_REPARTITION`;
+- `C5-NG-010 — LOCAL_QUADRATIC_EFT_SOFT2_COMPLETIONS_ARE_REQUIRED_WHEN_THEIR_K2_DIRECTIONS_COMPENSATE_NONLOCAL_CALIBRATION`;
+- `NL-NG-006 — SIX_ROW_NONLOCAL_K2_TANGENT_HAS_AN_EXACT_LOCAL_POLYNOMIAL_COMPENSATION_DIRECTION_AT_FROZEN_DIMENSION12_RESOLUTION`;
+- `NG-FUNNEL-041 — CONDITION_FULL_SOURCE_COMPLETED_SOFT2_ON_CALIBRATED_K2_INSTEAD_OF_PROMOTING_AN_OFFSHELL_W_B_SPLIT`.
 
-This is BLOCKED, not zero, not FAIL, and not exact comparator identity.
+## Comparator status
 
 ### C3
 
-Supported lower-order PQCG pieces remain authoritative. Ordered metric-CTP/transverse completion remains `BLOCKED_C3_CTP_ORDERED_COMPLETION` because nonlinear conserved diffusion and an explicit MSR-to-metric-CTP map are not fixed.
+Supported lower-order PQCG pieces remain authoritative. Ordered metric-CTP / full soft2 completion remains `BLOCKED_C3_CTP_ORDERED_COMPLETION`.
+
+### C4
+
+Current compatible massless-spin-2 boundary adds no independent direction; massive dRGT remains a separate protocol.
+
+### C5
+
+The zero-`K2` curvature-cubic soft sector is rank 4. The **quadratic EFT directions used in K2 calibration now require their source-completed soft2 cubic completions**; they are the immediate local gap.
+
+### Nonlocal
+
+`QG-NL-EXP-001` full cubic is fixed in principle, including the Frechet insertion. Its raw soft2 column is necessary but must be combined with the local quadratic soft2 compensation columns according to the Iteration-183 hard-calibration null vector.
 
 ### Asymptotic safety
 
-Two-point spectral information is calibration/shared data. Real-time/source-completed three-point transverse completion remains BLOCKED. The executable Ward-subtraction map required by Iteration 182 must also be used before any AS `B_T` rank claim.
+Real-time/source-completed three-point data remain BLOCKED. When available they must enter the same joint `(K2,S_soft2)` protocol rather than an arbitrary off-shell `W/B` split.
 
 ## Candidate state
 
-There is still **no robust Candidate Gravity residual**. The two-dimensional algebraic complement after local C5/C4-boundary subtraction remains provisional.
+No robust Candidate Gravity residual exists yet.
 
 `ANSATZ-003`: NOT CREATED.  
 Fisher/resources: FORBIDDEN.
 
-## Current authority files — Iteration 182
+## Current Iteration-183 authority files
 
-- `analysis/nonlocal_bt_ward_subtraction_gap_iteration182.py`
-- `results/nonlocal_bt_ward_subtraction_gap_iteration182.json`
-- `candidate_gravity/NONLOCAL_BT_WARD_SUBTRACTION_GAP_ITERATION182.md`
-- `research_log/2026-08-31_iteration_182_nonlocal_bt_ward_subtraction_gap.md`
-- `recovery/RECOVERY_DELTA_ITERATION_182.md`
+- `analysis/joint_k2_soft2_conditioning_iteration183.py`
+- `results/joint_k2_soft2_conditioning_iteration183.json`
+- `candidate_gravity/JOINT_K2_SOFT2_CONDITIONING_ITERATION183.md`
+- `research_log/2026-08-31_iteration_183_joint_k2_soft2_conditioning.md`
+- `recovery/RECOVERY_DELTA_ITERATION_183.md`
 
-## Immediate next scientific priority — Iteration 183
+## Immediate next scientific priority — Iteration 184
 
-Freeze an **executable source-completed off-shell Ward projector** for one physical null soft graviton and two off-shell conserved-TT hard source legs.
+Compute the source-completed `O(k_soft^2)` cubic response columns of the local **quadratic** C5 EFT directions used in the six-row `K2` compensation:
 
-Required order:
-
-1. derive `W[K2]` from the same quadratic inverse kernel and physical metric/source coupling;
-2. define the `O(k_soft^2)` transverse tensor complement/projector `P_T` on the same six frozen rows;
-3. validate the exact source-completed Ward identity and field/source bookkeeping;
-4. validate on EH/local cases with known limits;
-5. only then compute the full `QG-NL-EXP-001` cubic tensor including the Frechet term and extract its physical `B_T`;
-6. reuse the same projector for asymptotic safety;
-7. preserve unsupported C3 ordered/transverse pieces as BLOCKED until explicitly closed.
+1. `R_mn R^mn` and derivative descendants `R_mn Box^n R^mn` through the frozen dimension-12 order;
+2. include common EH/normalization cubic response consistently if that direction participates in hard calibration;
+3. validate each with the full source-completed Ward identity, not isolated cubic transversality;
+4. compute the full `QG-NL-EXP-001` soft2 lambda tangent from the same parent action including Frechet variation;
+5. combine the columns using the Iteration-183 K2-null vector to obtain the single calibrated nonlocal cubic direction;
+6. compare this direction with the zero-`K2` rank-4 local curvature-cubic span and the frozen numerical envelope;
+7. only after that proceed to AS and C3 closure.
 
 No `ANSATZ-003`, Fisher or resources before a nonzero residual survives the full fixed comparator quotient.
