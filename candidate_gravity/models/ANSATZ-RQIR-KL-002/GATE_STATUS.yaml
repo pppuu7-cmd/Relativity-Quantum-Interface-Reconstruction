@@ -1,0 +1,69 @@
+schema_version: 1
+model_id: ANSATZ-RQIR-KL-002
+version: 0.1
+updated: 2026-08-31
+status: DRAFT_TESTING
+promotion_allowed: false
+
+qg_gates:
+  QG-001:
+    status: PARTIAL
+    claim: positive generalized-free spin-2 spectral state space is defined at the Gaussian two-point level; full tensor/helicity and nonlinear physical-state completion remain open
+  QG-002:
+    status: PASS
+    claim: one positive spectral two-point dynamics plus universal stress-tensor coupling fixes the retarded transfer and linked Gaussian fluctuation sector
+    scope: weak-field conserved-source Gaussian sector
+  QG-003:
+    status: PARTIAL
+    claim: the massless GR pole/residue is unchanged and the continuum static correction is finite-range with |delta Phi/Phi_GR|<=beta exp(-M_* r); full tensor/PPN normalization remains open
+  QG-004:
+    status: PASS_SCOPED
+    claim: nonnegative Kallen-Lehmann spectral measure gives positive-norm Gaussian two-point sectors, retarded causal support and no isolated opposite-residue continuum pole
+    scope: linearized Gaussian spectral sector only
+  QG-005:
+    status: BLOCKED
+    claim: conserved-source spin-2 projection is defined, but complete tensor/helicity content and nonlinear Ward/Bianchi closure are not yet derived
+  QG-006:
+    status: PARTIAL
+    claim: beta->0 gives the C5/GR spectral boundary and the matter-decoupling QFT limit is structural; coarse-grained/semiclassical reductions remain to be derived
+  QG-007:
+    status: BLOCKED
+    claim: positive spectral continua have substantial prior art and may be degenerate with C5 interaction continua, hidden-sector/KK/unparticle-like mediators or nonlocal gravity
+  QG-008:
+    status: NOT_TESTED
+    claim: the linked static/threshold/noise beta direction has not yet been propagated through the exact Paper-I hard-constraint quotient
+  QG-009:
+    status: BLOCKED
+    claim: Fisher profiling waits for a nondegenerate QG-007/QG-008 direction
+  QG-010:
+    status: BLOCKED
+    claim: resource closure waits for a statistically identified direction
+
+cross_gates:
+  conservation_bianchi_ward: BLOCKED_FULL_TENSOR_COMPLETION
+  causality_microcausality: PASS_SCOPED_RETARDED_SPECTRAL_SUPERPOSITION
+  positivity_spectral: PASS_SCOPED_NONNEGATIVE_KL_MEASURE
+  lorentzian_pole_structure: PASS_SCOPED_NO_ISOLATED_CONTINUUM_POLE
+  flat_qft_limit: PARTIAL_STRUCTURAL
+  newtonian_long_range: PASS_SCOPED_MASSLESS_POLE_UNCHANGED
+  stress_energy_renormalization: BLOCKED
+  comparator_degeneracy: BLOCKED
+  detector_measurability: NOT_TESTED
+
+scoped_results:
+  - id: CG-R138-001
+    state: PASS_SCOPED
+    statement: rho_g is nonnegative for beta>=0 and consists of the GR massless delta plus a smooth positive continuum above M_*^2
+  - id: CG-R138-002
+    state: PASS_SCOPED
+    statement: the retarded propagator is a positive superposition of standard retarded spectral components and has no additional isolated continuum pole
+  - id: CG-R138-003
+    state: PASS_SCOPED
+    statement: the static continuum correction obeys 0<W(M_*r)<=exp(-M_*r), so the asymptotic Newtonian 1/r pole is preserved
+
+negative_results: []
+
+next_action:
+  - build the complete conserved-source tensor/helicity realization and audit QG-005 before novelty claims
+  - compare the spectral continuum explicitly to C5 loop continua, nonlocal/form-factor gravity and hidden/KK continuum mediators
+  - instantiate the finite RQIR static-plus-dynamic-plus-noise discriminator only after the comparator map is frozen
