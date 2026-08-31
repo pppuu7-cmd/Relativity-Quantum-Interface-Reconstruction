@@ -1,0 +1,98 @@
+{
+  "blocked": {
+    "N2_C3sym": "BLOCKED_QUANTUM_STATE_CTP_COMPLETION",
+    "causal_Lorentzian_microstructure": "BLOCKED_FULL_RETARDED_NONLOCAL_COMPLETION",
+    "form_factor_induced_chi2R": "BLOCKED_NONLOCAL_CUBIC_VERTEX_IMPLEMENTATION",
+    "full_nonlocal_comparator_quotient": "BLOCKED"
+  },
+  "comparator_id": "NL-WNL-001",
+  "iteration": 158,
+  "linear_six_probe": {
+    "common_gain_rank": 1,
+    "d_dlog_sigma": [
+      -0.7166536012662881,
+      -0.7347604461458537,
+      -0.6378436761068559,
+      -0.7227948712854101,
+      -0.7290683385504304,
+      -0.6328298261267945
+    ],
+    "gain_plus_sigma_rank": 2,
+    "p2": [
+      0.7473,
+      0.6157,
+      0.44179999999999997,
+      0.6119999999999999,
+      0.6682,
+      0.4239
+    ],
+    "reference_response": [
+      0.6416368933659081,
+      0.9691197992123823,
+      1.6339276996458783,
+      0.9648998132200893,
+      0.8164419290179471,
+      1.7608814202063487
+    ],
+    "sigma_residual_after_common_gain": [
+      -0.3765810224957664,
+      -0.2211193624375022,
+      0.22815080159267642,
+      -0.21139041320381502,
+      -0.29634772181498276,
+      0.30045111776864397
+    ],
+    "sigma_residual_fraction_after_common_gain": 0.3996471300114534,
+    "singular_values_gain_plus_sigma": [
+      3.3576236639554855,
+      0.6000359203875203
+    ],
+    "smin_over_smax": 0.17870850948216196
+  },
+  "nonlinear_potential_six_probe": {
+    "interpretation": "EXACT_CURRENT_C5_LOCAL_SPAN_IDENTITY",
+    "lambda_Ricci3_column": [
+      0.24070751018780706,
+      0.04049169004306333,
+      -0.2949689689538115,
+      -1.188940394962533,
+      0.3595319351794924,
+      -0.14821657998670623
+    ],
+    "lambda_Riemann3_column": [
+      0.0162688093782525,
+      -1.0814570326812767,
+      -4.162730203760564,
+      -1.1546645331333212,
+      1.7220685314070152,
+      -0.32479593455554057
+    ],
+    "rank": 2,
+    "residual_norms_against_existing_C5_R3_span": [
+      4.728641100182568e-16,
+      1.9058730344288247e-15
+    ]
+  },
+  "nonclaims": [
+    "The sigma linear-shape residual is a property of this known nonlocal comparator, not Candidate Gravity novelty.",
+    "No claim is made that H(z)=z^2 is a unique or phenomenologically preferred form factor.",
+    "The full nonlocal cubic response is not set to zero; it remains explicitly BLOCKED."
+  ],
+  "retained_results": {
+    "NG_FUNNEL_015": "FIX_PROPAGATOR_AND_INTERACTION_POTENTIAL_SEPARATELY before treating a nonlocal theory as a finite nonlinear comparator",
+    "NL_NG_001": "FORM_FACTOR_DOES_NOT_FIX_NONLINEAR_RESPONSE: the quadratic form factor leaves independent curvature-potential coefficients invisible at two-point level",
+    "NL_NG_002": "LOCAL_CUBIC_POTENTIAL_ALREADY_IN_C5_SPAN: the two frozen potential columns add zero nonlinear residual against the current C5 R^3 block"
+  },
+  "scope": "tree/spacelike TT linear form-factor shape + explicit local cubic potential sub-block; form-factor-induced cubic vertex not yet derived",
+  "action_convention": {
+    "parameter_order": [
+      "log_sigma",
+      "lambda_Ricci3",
+      "lambda_Riemann3"
+    ],
+    "potential": "V=lambda_Ricci3 Tr(Ricci^3)+lambda_Riemann3 cyclic(Riemann^3)",
+    "schematic_action": "S=-2/kappa^2 int sqrt(-g)[R + R gamma0(box) R + Ric gamma2(box) Ric + V]",
+    "sigma_reference": 1.0,
+    "tt_form_factor": "D_TT(k)=exp[-H(sigma k^2)]/(k^2+i0 k0), H(z)=z^2"
+  }
+}
