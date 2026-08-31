@@ -1,0 +1,93 @@
+{
+  "classification": {
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN",
+    "conditional_nonlocal_soft2_direction": "BLOCKED_MISSING_LOCAL_QUADRATIC_AND_NONLOCAL_FULL_SOFT2_CUBIC_COLUMNS",
+    "consistency_fail": false,
+    "joint_K2_soft2_protocol": "FROZEN_SPLIT_INVARIANT",
+    "novelty_certificate": "NONE",
+    "previous_B_T_W_split": "DEMOTED_TO_INTERNAL_BOOKKEEPING_FOR_NONZERO_K2",
+    "six_row_quadratic_nonlocal_vs_local": "EXACT_FINITE_SAMPLE_COMPENSATION_WITH_POOR_CONDITIONING"
+  },
+  "iteration": 183,
+  "model_readiness_percent": 24,
+  "new_required_C5_columns": [
+    "source-completed soft2 cubic completion associated with EH/normalization direction if treated as a nuisance",
+    "source-completed soft2 cubic completions of R_mn Box^n R^mn quadratic-EFT directions through the frozen dimension-12 order"
+  ],
+  "protocol": {
+    "conditional_comparator_formula": "if A=dK/dtheta and B=dS/dtheta, use B_cond=B*N_A with columns of N_A spanning null(A)",
+    "hard_constraint": "exactly condition comparator/nuisance parameter combinations on delta K2_rows=0 before cubic quotient",
+    "internal_W_B_split": "NOT_AN_OBSERVABLE_AND_NOT_REQUIRED",
+    "observable": "Y=(K2_rows,S_soft2_full_rows)"
+  },
+  "quadratic_conditioning_audit": {
+    "augmented_rank": 6,
+    "augmented_singular_values": [
+      1.2294306018069692,
+      0.14030202114309942,
+      0.007496144344005514,
+      0.0002339116798742215,
+      7.757108549138826e-06,
+      4.427152082498382e-08
+    ],
+    "local_C5_K2_basis": [
+      "x",
+      "x^2",
+      "x^3",
+      "x^4",
+      "x^5",
+      "x^6"
+    ],
+    "local_compensation_coefficients": [
+      3.722820164391642e-05,
+      -1.0005916758213143,
+      -0.9961254263259217,
+      -0.5133412291245445,
+      -0.14137282562078676,
+      -0.06615094918381151
+    ],
+    "local_condition_number": 23981987.42027984,
+    "local_rank": 6,
+    "local_singular_values": [
+      1.061497670893173,
+      0.09053104229637064,
+      0.007488559845429679,
+      0.0002322437498821653,
+      7.751117183527231e-06,
+      4.426228953800305e-08
+    ],
+    "nonlocal_lambda_K2_tangent": "x^2*exp(x) at lambda=1",
+    "null_residual_norm": 1.6478959984131287e-16,
+    "null_vector_normalized_nonlocal_coefficient_1": [
+      3.7228200179970815e-05,
+      -1.0005916758017337,
+      -0.9961254264296668,
+      -0.5133412288524085,
+      -0.1413728259742054,
+      -0.06615094900201549,
+      1.0
+    ],
+    "parameter_null_dimension": 1,
+    "x_q2_rows": [
+      0.5076,
+      0.3854,
+      0.426,
+      0.3153,
+      0.4004,
+      0.2882
+    ]
+  },
+  "readiness_change": "unchanged: the relation observable is repaired and made split-invariant, but the conditional comparator cubic columns are not yet complete",
+  "retained_results": [
+    "REL-NG-001 — JOINT_K2_SOFT2_HARD_CONDITIONING_IS_INVARIANT_UNDER_INTERNAL_WARD_TRANSVERSE_REPARTITION",
+    "C5-NG-010 — LOCAL_QUADRATIC_EFT_SOFT2_COMPLETIONS_ARE_REQUIRED_WHEN_THEIR_K2_DIRECTIONS_COMPENSATE_NONLOCAL_CALIBRATION",
+    "NL-NG-006 — SIX_ROW_NONLOCAL_K2_TANGENT_HAS_AN_EXACT_LOCAL_POLYNOMIAL_COMPENSATION_DIRECTION_AT_FROZEN_DIMENSION12_RESOLUTION",
+    "NG-FUNNEL-041 — CONDITION_FULL_SOURCE_COMPLETED_SOFT2_ON_CALIBRATED_K2_INSTEAD_OF_PROMOTING_AN_OFFSHELL_W_B_SPLIT"
+  ],
+  "scope": "six frozen null-soft rows; joint source-completed quadratic-kernel and full soft2 cubic conditioning",
+  "split_invariance": {
+    "max_abs_full_soft2_change_under_W_B_repartition": 2.220446049250313e-16,
+    "status": "PASS_MACHINE_PRECISION"
+  }
+}
