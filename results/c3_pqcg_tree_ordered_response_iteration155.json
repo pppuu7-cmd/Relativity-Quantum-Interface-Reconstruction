@@ -1,0 +1,39 @@
+{
+  "iteration": 155,
+  "comparator_id": "C3-PQCG-NL-001",
+  "scope": "tree causal nonlinear response from the same covariant PQCG Einstein drift",
+  "tree_kernel": "chi2R_A;BC = - G_R_AA' Gamma3_EH^A'_{B'C'} G_R^B'_B G_R^C'_C",
+  "six_probe_tree_response": [
+    0.30003001285313774,
+    -1.461790494216445,
+    -12.034873790942026,
+    -14.434681522564402,
+    4.867521776975717,
+    -2.7789127642722273
+  ],
+  "parameter_order": ["D2", "D0"],
+  "V_diffusion_tree_chi2R": [
+    [0.0, 0.0],
+    [0.0, 0.0],
+    [0.0, 0.0],
+    [0.0, 0.0],
+    [0.0, 0.0],
+    [0.0, 0.0]
+  ],
+  "rank_added_in_diffusion_tangent": 0,
+  "reason_zero_tangent": "tree Einstein response is fixed by calibrated G_N and does not vary with D2,D0",
+  "status": {
+    "nonzero_classical_causal_nonlinear_response": "PASS_SCOPED",
+    "tree_common_GR_boundary": "PASS_SCOPED",
+    "diffusion_dependent_ordered_response": "BLOCKED_STOCHASTIC_LOOP_RESPONSE",
+    "chi2R_order_sensitive_scalar_selector": "BLOCKED_SELECTOR_COMPLETION",
+    "full_C3_ordered_tangent": "BLOCKED",
+    "Fisher_resources": "FORBIDDEN",
+    "ANSATZ_003": "NOT_CREATED"
+  },
+  "interpretation": {
+    "new_C3_diffusion_rank": 0,
+    "quantum_metric_claim_from_nonzero_chi2R": "NOT_SUPPORTED",
+    "next_action": "move to fixed nonlinear C4 unless a same-convention diffusion-dependent PQCG ordered response is explicitly derived"
+  }
+}
