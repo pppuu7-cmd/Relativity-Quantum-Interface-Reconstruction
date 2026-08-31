@@ -1,0 +1,16 @@
+{
+  "decision": "RETAIN_AS_REFERENCE_CONTROL_NOT_PROMOTABLE",
+  "exact_identity": "h = h_massless + sqrt(beta) direct_integral ds sqrt(rho_hat(s)) H_s; for independent Gaussian H_s, <hh> = D_GR + beta int ds rho_hat(s) D_s",
+  "funnel_result": "FAIL_QG007_EXACT_GAUSSIAN_C4_KK_DEGENERACY",
+  "influence_functional_consequence": "With linear conserved-stress coupling, identical D_R and D_H imply an identical Gaussian CTP influence functional and therefore identical linear-Gaussian RQIR likelihoods.",
+  "iteration": 141,
+  "model_id": "ANSATZ-RQIR-KL-002",
+  "overall": "PASS_NEGATIVE_RESULT",
+  "required_escape": "A future candidate must add derived nonlinear/non-Gaussian gravitational self-consistency or another observable relation that cannot be reproduced by an ordinary mediator continuum.",
+  "samples": [
+    {"x":0.1,"exact_continuum":0.5587475561702364,"approximations":[{"N_positive_mediators":4,"value":0.55654311151532,"abs_error":0.0022044446549164265},{"N_positive_mediators":8,"value":0.5586651246371219,"abs_error":8.243153311449092e-05},{"N_positive_mediators":16,"value":0.5587468624698909,"abs_error":6.937003454998703e-07},{"N_positive_mediators":32,"value":0.5587475554371565,"abs_error":7.330799300930835e-10}]},
+    {"x":1.0,"exact_continuum":0.3613286168882226,"approximations":[{"N_positive_mediators":4,"value":0.36111111111111116,"abs_error":0.00021750577711143748},{"N_positive_mediators":8,"value":0.3613259896059544,"abs_error":2.627282268186093e-06},{"N_positive_mediators":16,"value":0.3613286126509326,"abs_error":4.237290018860307e-09},{"N_positive_mediators":32,"value":0.3613286168878116,"abs_error":4.1100456371623295e-13}]},
+    {"x":10.0,"exact_continuum":0.08384177886034594,"approximations":[{"N_positive_mediators":4,"value":0.08384176343239519,"abs_error":1.5427950750268593e-08},{"N_positive_mediators":8,"value":0.08384177885954697,"abs_error":7.989719996714939e-13},{"N_positive_mediators":16,"value":0.08384177886034595,"abs_error":1.3877787807814457e-17},{"N_positive_mediators":32,"value":0.08384177886034616,"abs_error":2.220446049250313e-16}]}
+  ],
+  "scope": "Gaussian linear spectral equivalence to a positive continuum/discrete tower of ordinary massive spin-2 mediators"
+}
