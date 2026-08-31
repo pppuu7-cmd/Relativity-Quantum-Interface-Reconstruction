@@ -1,0 +1,64 @@
+{
+  "iteration": 162,
+  "model_readiness_percent": 24,
+  "existing_base_rank": 3,
+  "extended_local_rank": 5,
+  "extended_singular_values": [24.63377907944624, 7.550268804107893, 1.4449862637712527, 0.354728220748978, 0.030175033336541635],
+  "new_nonzero_columns": ["Ricci2_full", "RicciBoxRicci_full"],
+  "TT_blind_columns": ["R2", "RBoxR"],
+  "V_C5_new_full_chi2R": [
+    [2.0304860047420306, -2.205477099600005],
+    [0.41172109362668774, -0.9302576050305512],
+    [-3.2456600083419325, -1.1238094089110584],
+    [-13.33479437694205, 5.558096521344366],
+    [4.019028239246117, -1.8978074447048878],
+    [-2.003363928391969, 0.5425052369944467]
+  ],
+  "rows": [
+    {"probe":0,"p2":0.7473,"q2":0.5075999999999999,"r2":0.3313,"Ricci2_cubic_response":1.5545783983543835,"Ricci2_propagator_insertion_response":0.47590760638764706,"Ricci2_full_tangent":2.0304860047420306,"RicciBoxRicci_cubic_response":-1.9276868894574093,"RicciBoxRicci_propagator_insertion_response":-0.27779021014259553,"RicciBoxRicci_full_tangent":-2.205477099600005,"R2_Richardson_response_artifact":6.496956270308008e-11,"RBoxR_Richardson_response_artifact":-2.3506031797466057e-11},
+    {"probe":1,"p2":0.6157,"q2":0.3854,"r2":0.2935,"Ricci2_cubic_response":2.3041550674392974,"Ricci2_propagator_insertion_response":-1.8924339738126097,"Ricci2_full_tangent":0.41172109362668774,"RicciBoxRicci_cubic_response":-1.8274489161627756,"RicciBoxRicci_propagator_insertion_response":0.8971913111322244,"RicciBoxRicci_full_tangent":-0.9302576050305512,"R2_Richardson_response_artifact":7.077083531177628e-13,"RBoxR_Richardson_response_artifact":-8.282240824221336e-11},
+    {"probe":2,"p2":0.44179999999999997,"q2":0.426,"r2":0.27459999999999996,"Ricci2_cubic_response":10.502979810430237,"Ricci2_propagator_insertion_response":-13.748639818772169,"Ricci2_full_tangent":-3.2456600083419325,"RicciBoxRicci_cubic_response":-6.564395547784153,"RicciBoxRicci_propagator_insertion_response":5.440586138873095,"RicciBoxRicci_full_tangent":-1.1238094089110584,"R2_Richardson_response_artifact":-1.2658796884174787e-10,"RBoxR_Richardson_response_artifact":-1.1280030511618689e-10},
+    {"probe":3,"p2":0.6119999999999999,"q2":0.3153,"r2":0.2773,"Ricci2_cubic_response":4.053222985139027,"Ricci2_propagator_insertion_response":-17.388017362081076,"Ricci2_full_tangent":-13.33479437694205,"RicciBoxRicci_cubic_response":-2.3932965845837795,"RicciBoxRicci_propagator_insertion_response":7.951393105928146,"RicciBoxRicci_full_tangent":5.558096521344366,"R2_Richardson_response_artifact":-5.067445235829138e-10,"RBoxR_Richardson_response_artifact":-6.084441860945253e-10},
+    {"probe":4,"p2":0.6682,"q2":0.4004,"r2":0.2278,"Ricci2_cubic_response":-2.291226992425203,"Ricci2_propagator_insertion_response":6.31025523167132,"Ricci2_full_tangent":4.019028239246117,"RicciBoxRicci_cubic_response":1.3084497880813513,"RicciBoxRicci_propagator_insertion_response":-3.206257232786239,"RicciBoxRicci_full_tangent":-1.8978074447048878,"R2_Richardson_response_artifact":7.194946807844114e-10,"RBoxR_Richardson_response_artifact":-3.8498012834066226e-10},
+    {"probe":5,"p2":0.4239,"q2":0.2882,"r2":0.23210000000000003,"Ricci2_cubic_response":0.6204855036338682,"Ricci2_propagator_insertion_response":-2.623849432025837,"Ricci2_full_tangent":-2.003363928391969,"RicciBoxRicci_cubic_response":-0.33735651229440317,"RicciBoxRicci_propagator_insertion_response":0.8798617492888499,"RicciBoxRicci_full_tangent":0.5425052369944467,"R2_Richardson_response_artifact":-2.392746274404479e-11,"RBoxR_Richardson_response_artifact":1.075435643160173e-11}
+  ],
+  "conditioned_residual_audits": {
+    "raw": {"Ricci2":0.03862918469908064,"RicciBoxRicci":0.0474505929640056},
+    "base_row_l2": {"Ricci2":0.020781397179341344,"RicciBoxRicci":0.01294499146584844},
+    "EH_abs_floor": {"Ricci2":0.01733181642843669,"RicciBoxRicci":0.01047096491459369}
+  },
+  "max_R2_Richardson_response_artifact": 7.194946807844114e-10,
+  "max_RBoxR_Richardson_response_artifact": 6.084441860945253e-10,
+  "max_permutation_error": {"Ricci2":6.616929226765933e-14,"RicciBoxRicci":3.391731340229853e-14},
+  "ward": {
+    "Ricci2": {
+      "max_abs_residual_by_step": [7.3869482129784725e-06,1.8467185037007727e-06,4.616781106858703e-07],
+      "max_relative_residual_by_step": [7.252083086678941e-05,1.813094435883655e-05,4.5327819115779655e-06],
+      "residual_reduction_factors": [4.000040178389523,4.00001312810192],
+      "status": "PASS_SCOPED"
+    },
+    "RicciBoxRicci": {
+      "max_abs_residual_by_step": [2.6857587545718598e-06,6.71459059940066e-07,1.6786596047230207e-07],
+      "max_relative_residual_by_step": [0.00024086039889774377,6.022772216849603e-05,1.505771828255676e-05],
+      "residual_reduction_factors": [3.9998846017679597,3.9999715132887648],
+      "status": "PASS_SCOPED"
+    }
+  },
+  "status": {
+    "Ricci2_full_tangent": "PASS_SCOPED_WARD_VALIDATED",
+    "RicciBoxRicci_full_tangent": "PASS_SCOPED_WARD_VALIDATED",
+    "R2_RBoxR": "TT_PROTOCOL_BLIND_SCOPED",
+    "local_C5_rank": "5_OF_6_ON_IMPLEMENTED_ORDERED_RESPONSE_PROTOCOL",
+    "higher_local": "BLOCKED",
+    "loops_nonanalytic": "BLOCKED",
+    "N2_C3sym": "BLOCKED",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "C5-NG-001 — CURVATURE_SQUARED_RESPONSE_REQUIRES_PROPAGATOR_INSERTIONS",
+    "C5-NG-002 — SCALAR_CURVATURE_SQUARED_DIRECTIONS_TT_CUBIC_BLIND",
+    "NG-FUNNEL-019 — LOWER_DERIVATIVE_KERNEL_DEFORMATIONS_REQUIRE_FULL_RESPONSE_TANGENT"
+  ],
+  "readiness_change": "+1 point: explicit source-completed local C5 ordered tangent gains two independent directions; scalar-curvature directions are scoped TT blind"
+}
