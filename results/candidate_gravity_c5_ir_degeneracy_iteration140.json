@@ -1,0 +1,22 @@
+{
+  "analytic_identity": "C(x)=sum_{n>=0}(-x)^n A_{n+1} for |x|<1",
+  "funnel_result": "DEGENERATE_WITH_LOCAL_C5_EFT_AT_ANY_FIXED_FINITE_DERIVATIVE_ORDER_BELOW_THRESHOLD",
+  "iteration": 140,
+  "model_id": "ANSATZ-RQIR-KL-002",
+  "moments_A1_to_A5": [
+    0.5963473623231941,
+    0.4036526376768059,
+    0.29817368116159704,
+    0.23394210627946763,
+    0.19151447343013311
+  ],
+  "overall": "PASS_NEGATIVE_RESULT",
+  "required_escape": "resolve the full threshold/nonanalytic shape near p^2~M_*^2 or use linked observables not independently absorbable into EFT/nuisance coefficients",
+  "samples": [
+    {"x":0.01,"exact":0.5923404212715495,"series":{"through_x^0":{"value":0.5963473623231941,"relative_error":0.006764591622910101},"through_x^1":{"value":0.592310835946426,"relative_error":4.9946490330726386e-05},"through_x^2":{"value":0.5923406533145422,"relative_error":3.9173925056690657e-07},"through_x^3":{"value":0.5923404193724359,"relative_error":3.2061186032936993e-09},"through_x^4":{"value":0.5923404212875806,"relative_error":2.7063939566477347e-11}}},
+    {"x":0.1,"exact":0.5587475561702364,"series":{"through_x^0":{"value":0.5963473623231941,"relative_error":0.06729301226957302},"through_x^1":{"value":0.5559820985555135,"relative_error":0.004949386505916716},"through_x^2":{"value":0.5589638353671295,"relative_error":0.00038707855543111935},"through_x^3":{"value":0.55872989326085,"relative_error":3.161160919878359e-05},"through_x^4":{"value":0.558749044708193,"relative_error":2.6640616860409123e-06}}},
+    {"x":0.3,"exact":0.4970097482616443,"series":{"through_x^0":{"value":0.5963473623231941,"relative_error":0.19987055467019693},"through_x^1":{"value":0.4752515710201523,"relative_error":0.04377816998075795},"through_x^2":{"value":0.5020872023246961,"relative_error":0.010216004979400943},"through_x^3":{"value":0.4957707654551504,"relative_error":0.0024928742561436137},"through_x^4":{"value":0.49732203268993447,"relative_error":0.0006283265657915809}}},
+    {"x":0.5,"exact":0.448256669291583,"series":{"through_x^0":{"value":0.5963473623231941,"relative_error":0.33037030606962536},"through_x^1":{"value":0.3945210434847911,"relative_error":0.11987691313486692},"through_x^2":{"value":0.4690644637751904,"relative_error":0.0464193751238363},"through_x^3":{"value":0.43982170049025693,"relative_error":0.018817274519655282},"through_x^4":{"value":0.45179135507964024,"relative_error":0.007885405907386551}}}
+  ],
+  "scope": "below-threshold analytic expansion and finite-order EFT degeneracy"
+}
