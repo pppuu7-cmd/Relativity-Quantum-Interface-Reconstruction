@@ -8,46 +8,50 @@ promotion_allowed: false
 qg_gates:
   QG-001:
     status: PARTIAL
-    claim: positive generalized-free spin-2 spectral state space is defined at the Gaussian two-point level; full tensor/helicity and nonlinear physical-state completion remain open
+    claim: positive generalized-free massless-plus-massive spin-2 spectral state space is specified at the linear Gaussian level; nonlinear physical-state completion remains open
   QG-002:
     status: PASS
-    claim: one positive spectral two-point dynamics plus universal stress-tensor coupling fixes the retarded transfer and linked Gaussian fluctuation sector
+    claim: one positive spectral dynamics plus universal conserved-stress coupling fixes retarded transfer and linked Gaussian fluctuation sector
     scope: weak-field conserved-source Gaussian sector
   QG-003:
     status: PARTIAL
-    claim: the massless GR pole/residue is unchanged and the continuum static correction is finite-range with |delta Phi/Phi_GR|<=beta exp(-M_* r); full tensor/PPN normalization remains open
+    claim: the massless GR pole/residue is unchanged; full linear tensor completion gives Phi=-GM/r[1+(4/3)beta W] with 0<W<=exp(-M_*r), so long-range GR is recovered while short-range/PPN constraints remain to be audited
   QG-004:
     status: PASS_SCOPED
-    claim: nonnegative Kallen-Lehmann spectral measure gives positive-norm Gaussian two-point sectors, retarded causal support and no isolated opposite-residue continuum pole
+    claim: nonnegative Kallen-Lehmann spectral measure gives positive-norm Gaussian spectral sectors, retarded causal support and no isolated opposite-residue continuum pole
     scope: linearized Gaussian spectral sector only
   QG-005:
-    status: BLOCKED
-    claim: conserved-source spin-2 projection is defined, but complete tensor/helicity content and nonlinear Ward/Bianchi closure are not yet derived
+    status: PARTIAL
+    claim: linear conserved-source tensor structure is now explicit: massless exchange uses -1/2 trace coefficient and continuum massive spin-2 exchange uses -1/3, giving the standard vDVZ 4/3 NR factor; nonlinear Ward/Bianchi/constraint completion remains open
+    authority: docs/CANDIDATE_GRAVITY_TENSOR_ITERATION139.md
   QG-006:
     status: PARTIAL
-    claim: beta->0 gives the C5/GR spectral boundary and the matter-decoupling QFT limit is structural; coarse-grained/semiclassical reductions remain to be derived
+    claim: beta->0 gives the C5/GR boundary and matter decoupling gives ordinary QFT; nonlinear/classical/coarse-grained reductions remain incomplete
   QG-007:
     status: BLOCKED
-    claim: positive spectral continua have substantial prior art and may be degenerate with C5 interaction continua, hidden-sector/KK/unparticle-like mediators or nonlocal gravity
+    claim: positive massive spin-2 continua and vDVZ tensor structures have substantial prior art and may be degenerate with C4 hidden/KK/DGP-like sectors, C5 interaction continua or nonlocal gravity
   QG-008:
     status: NOT_TESTED
-    claim: the linked static/threshold/noise beta direction has not yet been propagated through the exact Paper-I hard-constraint quotient
+    claim: linked NR force, traceless-probe, threshold and noise directions have not yet been propagated through the exact Paper-I hard-constraint quotient
   QG-009:
     status: BLOCKED
     claim: Fisher profiling waits for a nondegenerate QG-007/QG-008 direction
   QG-010:
     status: BLOCKED
-    claim: resource closure waits for a statistically identified direction
+    claim: resource closure waits for statistical identification
 
 cross_gates:
-  conservation_bianchi_ward: BLOCKED_FULL_TENSOR_COMPLETION
+  conservation_bianchi_ward: PARTIAL_LINEAR_CONSERVED_SOURCE
+  tensor_helicity_structure: PASS_SCOPED_LINEAR_FP_CONTINUUM
   causality_microcausality: PASS_SCOPED_RETARDED_SPECTRAL_SUPERPOSITION
   positivity_spectral: PASS_SCOPED_NONNEGATIVE_KL_MEASURE
   lorentzian_pole_structure: PASS_SCOPED_NO_ISOLATED_CONTINUUM_POLE
   flat_qft_limit: PARTIAL_STRUCTURAL
   newtonian_long_range: PASS_SCOPED_MASSLESS_POLE_UNCHANGED
+  vdvz_short_range_signature: PASS_SCOPED_FACTOR_4_OVER_3
   stress_energy_renormalization: BLOCKED
-  comparator_degeneracy: BLOCKED
+  nonlinear_constraint_completion: BLOCKED
+  comparator_degeneracy: BLOCKED_HIGH_PRIORITY
   detector_measurability: NOT_TESTED
 
 scoped_results:
@@ -56,14 +60,24 @@ scoped_results:
     statement: rho_g is nonnegative for beta>=0 and consists of the GR massless delta plus a smooth positive continuum above M_*^2
   - id: CG-R138-002
     state: PASS_SCOPED
-    statement: the retarded propagator is a positive superposition of standard retarded spectral components and has no additional isolated continuum pole
+    statement: retarded propagator is a positive spectral superposition with no additional isolated continuum pole
   - id: CG-R138-003
     state: PASS_SCOPED
-    statement: the static continuum correction obeys 0<W(M_*r)<=exp(-M_*r), so the asymptotic Newtonian 1/r pole is preserved
+    statement: scalarized static continuum kernel obeys 0<W<=exp(-M_*r)
+  - id: CG-R139-001
+    state: PASS_SCOPED
+    statement: conserved-source linear tensor completion gives massless T.T'-(1/2)TT' and massive-continuum T.T'-(1/3)TT'
+  - id: CG-R139-002
+    state: PASS_SCOPED
+    statement: nonrelativistic continuum exchange is enhanced by 4/3 relative to massless GR normalization, updating the static bound to |delta Phi/Phi_GR|<=(4/3)beta exp(-M_*r)
+  - id: CG-R139-003
+    state: PASS_SCOPED
+    statement: after NR calibration a traceless-probe continuum response has fixed relative factor 3/4, providing an additional linked RQIR channel
 
 negative_results: []
 
 next_action:
-  - build the complete conserved-source tensor/helicity realization and audit QG-005 before novelty claims
-  - compare the spectral continuum explicitly to C5 loop continua, nonlocal/form-factor gravity and hidden/KK continuum mediators
-  - instantiate the finite RQIR static-plus-dynamic-plus-noise discriminator only after the comparator map is frozen
+  - audit nonlinear completion risk; do not assume Vainshtein screening inside v0.1
+  - freeze the C5 spectral-cut baseline and compare threshold/support/tensor structure
+  - compare explicitly with KK/DGP/hidden massive-spin-2 continua and nonlocal gravity
+  - build Paper-I finite cross-channel quotient only if a residual candidate direction survives comparator subtraction
