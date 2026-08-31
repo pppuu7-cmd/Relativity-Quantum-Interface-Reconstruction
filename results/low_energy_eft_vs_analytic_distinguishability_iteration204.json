@@ -1,0 +1,49 @@
+{
+  "iteration": 204,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "scope": "target-independent low-energy K2/design diagnostic; no candidate and no polarization cubic evaluation",
+  "design_rule": {
+    "x_max_target": 0.1,
+    "s_hi": 0.4438530344094229,
+    "s_lo_ratio": 0.65,
+    "s_lo": 0.2885044723661249
+  },
+  "x_rows": [0.04225, 0.0320787, 0.03545804, 0.02624394, 0.03332723, 0.02398827817178882, 0.1, 0.07592592592592594, 0.0839243498817967, 0.062115839243498826, 0.07888100866824271, 0.05677698975571317],
+  "x_min": 0.02398827817178882,
+  "x_max": 0.1,
+  "conditional_eft_remainder": {
+    "assumption": "dimensionless omitted coefficients obey |c_n|<=C in the declared monomial normalization",
+    "cubic_dimension12_omitted_n_ge_4_bound_per_C": 0.00007407407407407407,
+    "K2_local_through_x6_omitted_n_ge_7_bound_per_C": 0.00000011111111111111115,
+    "warning": "This is conditional on an explicit coefficient envelope; it is not a model-independent Wilson bound."
+  },
+  "analytic_nonlocal_vs_local_K2": {
+    "local_basis": ["x", "x^2", "x^3", "x^4", "x^5", "x^6"],
+    "nonlocal_tangent": "x^2 exp(x)",
+    "augmented_rank_tol_1e-15": 7,
+    "raw_condition_number": 5545531932464.928,
+    "raw_smin": 3.7424482448587787e-14,
+    "column_normalized_condition_number": 894512686720.8379,
+    "column_normalized_smin": 2.8681401538472166e-12,
+    "nonlocal_minus_local_residual_l2": 6.777827400921815e-14,
+    "nonlocal_minus_local_relative_l2": 3.9015859387198885e-12,
+    "nonlocal_minus_local_maxabs": 4.050080583406501e-14,
+    "coefficient_envelope_C_where_K2_omitted_bound_equals_max_nonlocal_residual": 3.64507252506585e-7
+  },
+  "classification": {
+    "low_energy_EFT_control": "POSSIBLE_ONLY_CONDITIONALLY_ON_EXPLICIT_WILSON_REMAINDER_ENVELOPE",
+    "analytic_new_shape_in_deep_IR": "EXTREMELY_NEAR_DEGENERATE_WITH_LOCAL_EFT",
+    "preferred_future_witness": "LINKED_NONANALYTIC_OR_CAUSAL_MULTIPOINT_RELATION",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "EFT-NG-001 — DEEP_IR_IMPROVES_DERIVATIVE_REMAINDER_CONTROL_ONLY_AFTER_AN_EXPLICIT_WILSON_ENVELOPE_IS_DECLARED",
+    "REL-NG-017 — DEEP_IR_ANALYTIC_NONLOCAL_TANGENT_BECOMES_EXTREMELY_NEAR_DEGENERATE_WITH_LOCAL_C5_POLYNOMIALS",
+    "NG-FUNNEL-059 — HIGH_ENERGY_ANALYTIC_DISTINGUISHABILITY_AND_LOW_ENERGY_EFT_TRUNCATION_CONTROL_FORM_A_TRADEOFF",
+    "NG-FUNNEL-060 — PRIORITIZE_LINKED_NONANALYTIC_MULTIPOINT_RELATIONS_OVER_FINITE_ANALYTIC_SHAPE_SEARCH"
+  ],
+  "readiness_change": "unchanged at 23%: the audit identifies a viable conditional low-energy strategy and a stronger future observable class, but no comparator gap is fully closed"
+}
