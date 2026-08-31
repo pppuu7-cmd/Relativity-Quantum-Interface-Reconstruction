@@ -1,0 +1,32 @@
+{
+  "iteration": 205,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "scope": "structural linked-discontinuity protocol; no physical gravity loop coefficient computed",
+  "timelike_rows_s": [0.004, 0.008, 0.012, 0.016, 0.02, 0.024, 0.028, 0.032],
+  "normalized_discontinuity": "D F = Disc_s F/(2 pi i), with D log_R(-s)=1 on the frozen positive-frequency branch convention",
+  "proposed_coordinate": "T_cut = D Gamma3_ret,soft - W[D K2] in one source-completed convention",
+  "local_analytic_tower_max_abs_D": 0.0,
+  "nonanalytic_log_tower_rank": 6,
+  "toy_T_cut": [0.00239600512, 0.00478404096, 0.00716413824, 0.00953632768, 0.01190064, 0.01425710592, 0.01660575616, 0.01894662144],
+  "max_local_deformation_change": 0.0,
+  "max_analytic_repartition_change": 0.0,
+  "classification": {
+    "arbitrary_local_analytic_C5_tower": "EXACT_NULL_UNDER_DISCONTINUITY_WITHIN_ANALYTIC_DOMAIN",
+    "analytic_W_B_repartition": "EXACT_NULL_UNDER_DISCONTINUITY",
+    "standalone_two_point_cut": "NOT_NOVEL_C4_DEGENERATE_BY_ITERATION170",
+    "linked_three_point_cut": "NEW_PROTOCOL_TARGET_NOT_YET_COMPARATOR_CLOSED",
+    "C5_loop_cut": "REQUIRED_POSITIVE_CONTROL_BLOCKED_NOT_YET_INSTANTIATED",
+    "C4_nonlinear_mediator_cut": "BLOCKED_NOT_ZERO",
+    "AS_realtime_threepoint_cut": "BLOCKED_NOT_ZERO",
+    "C3_ordered_cut": "BLOCKED_NOT_ZERO",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "CUT-NG-001 — DISCONTINUITY_ANNIHILATES_THE_UNBOUNDED_LOCAL_ANALYTIC_DERIVATIVE_TOWER_WITHIN_ITS_ANALYTIC_DOMAIN",
+    "CUT-NG-002 — LINKED_THREEPOINT_MINUS_WARD_OF_TWOPOINT_CUT_IS_INVARIANT_UNDER_ANALYTIC_WARD_TRANSVERSE_REPARTITION",
+    "NG-FUNNEL-061 — NONANALYTICITY_MUST_BE_TESTED_AS_A_LINKED_MULTIPOINT_RELATION_NOT_A_STANDALONE_SPECTRAL_SIGNAL"
+  ],
+  "readiness_change": "unchanged at 23%: the protocol evades the newly exposed analytic-tower blocker structurally, but physical C5/C4/AS/C3 cut comparators are not yet instantiated"
+}
