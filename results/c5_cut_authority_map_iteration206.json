@@ -1,0 +1,66 @@
+{
+  "iteration": 206,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "claim": "A controlled formal route to a C5 one-loop linked three-point cut exists; the remaining blocker is pure-gravity graviton+ghost specialization, gauge/parametrization-safe physical projection, and source-completed retarded RQIR projection, not absence of third-order nonlocal or causal formalism.",
+  "steps": [
+    {
+      "step": "generic_one_loop_effective_action_through_curvature_cubed",
+      "status": "SUPPORTED",
+      "authority": "Barvinsky-Gusev-Zhytnikov-Vilkovisky, Covariant Perturbation Theory IV, arXiv:0911.1168",
+      "content": "basis of nonlocal third-order curvature invariants, all third-order form factors, integral/generalized spectral representations"
+    },
+    {
+      "step": "third_order_spectral_representation_for_massless_one_loop_vertices",
+      "status": "SUPPORTED",
+      "authority": "Barvinsky-Vilkovisky / covariant perturbation-theory third-order spectral machinery",
+      "content": "spectral representations for third-order nonlocal form factors usable for expectation-value equations"
+    },
+    {
+      "step": "euclidean_to_lorentzian_in_vacuum_causal_equations",
+      "status": "SUPPORTED_IN_FORMALISM",
+      "authority": "Barvinsky-Vilkovisky, Beyond Schwinger-DeWitt: in-in currents; later Euclidean Schwinger-Keldysh reviews",
+      "content": "special analytic continuation of Euclidean effective equations gives causal Lorentzian in-vacuum mean-field equations"
+    },
+    {
+      "step": "off_shell_gauge_and_parametrization_safety",
+      "status": "REQUIRED_GUARDRAIL",
+      "authority": "Vilkovisky-DeWitt unique effective action; explicit 4D quantum-gravity checks arXiv:2006.04217 and arXiv:2009.04122",
+      "content": "ordinary off-shell quantum-gravity effective action depends on gauge fixing/metric parametrization; RQIR must use unique-effective-action or an explicitly gauge-invariant source-completed observable construction"
+    },
+    {
+      "step": "specialize_generic_operator_to_pure_gravity_graviton_plus_FP_ghost_Hessians",
+      "status": "BLOCKED_NOT_IMPLEMENTED_IN_RQIR",
+      "content": "must produce the actual C5 graviton+ghost form-factor combination rather than generic-field capability"
+    },
+    {
+      "step": "map_to_fixed_source_completed_metric_convention",
+      "status": "BLOCKED_NOT_IMPLEMENTED_IN_RQIR",
+      "content": "field redefinitions/gauge choices must carry induced source/contact terms; alternatively use a gauge/parametrization-independent unique effective action projected to the physical source observable"
+    },
+    {
+      "step": "retarded_threepoint_discontinuity_projection_and_Ward_link",
+      "status": "BLOCKED_NOT_IMPLEMENTED_IN_RQIR",
+      "content": "compute D Gamma3_ret,soft and subtract executable W[D K2] on frozen timelike rows"
+    }
+  ],
+  "classification": {
+    "C5_generic_third_order_nonlocal_form_factors": "SUPPORTED",
+    "C5_generic_spectral_representation": "SUPPORTED",
+    "causal_in_in_continuation_principle": "SUPPORTED",
+    "ordinary_offshell_effective_action_as_physical_RQIR_vertex": "NOT_AUTHORIZED_GAUGE_PARAMETRIZATION_DEPENDENCE",
+    "unique_or_gauge_invariant_physical_projection": "REQUIRED",
+    "pure_gravity_specific_cut_column": "BLOCKED_SPECIALIZATION_AND_PROJECTION",
+    "local_analytic_tower": "EXACT_NULL_UNDER_ITERATION205_DISCONTINUITY",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "C5-CUT-001 — THIRD_ORDER_NONLOCAL_ONE_LOOP_FORM_FACTOR_AND_SPECTRAL_FORMALISM_EXISTS_FOR_GRAVITATING_FIELDS",
+    "C5-CUT-002 — CAUSAL_IN_VACUUM_EFFECTIVE_EQUATIONS_HAVE_A_CONTROLLED_EUCLIDEAN_TO_LORENTZIAN_CONTINUATION_ROUTE",
+    "C5-CUT-003 — OFFSHELL_QUANTUM_GRAVITY_VERTEX_REQUIRES_GAUGE_PARAMETRIZATION_SAFE_UNIQUE_OR_PHYSICAL_SOURCE_PROJECTION",
+    "NG-FUNNEL-062 — C5_LINKED_CUT_BLOCKER_IS_NOW_PURE_GRAVITY_GRAVITON_GHOST_SPECIALIZATION_PLUS_GAUGE_SAFE_SOURCE_COMPLETED_RQIR_PROJECTION"
+  ],
+  "readiness_change": "unchanged at 23%: the C5 cut task is narrowed to an implementable but substantial specialization/projection; no physical C5 cut comparator column has yet been produced"
+}
