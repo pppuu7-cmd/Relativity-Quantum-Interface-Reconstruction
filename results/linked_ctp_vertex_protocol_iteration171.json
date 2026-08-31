@@ -1,0 +1,31 @@
+{
+  "classification": {
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN",
+    "bare_classical_statistical_missing_quantum_vertex": "USEFUL_QUANTUM_VS_CLASSICAL_CONTROL_ONLY",
+    "closed_quantum_aaa_over_arr_ratio": "GENERIC_C4_AND_C5_UNITARY_IDENTITY_NOT_GRAVITY_SPECIFIC",
+    "fixed_C3_full_ra_vertex": "BLOCKED",
+    "fixed_C4_full_ra_vertex": "PARTIAL_TREE_UNITARY_STRUCTURE_SUPPORTED",
+    "fixed_C5_full_ra_vertex": "PARTIAL_TREE_UNITARY_STRUCTURE_SUPPORTED",
+    "two_point_spectral_dressing": "CALIBRATED_SHARED_LAYER_NOT_NOVELTY"
+  },
+  "closed_unitary_cubic_ra_identity": {
+    "Gamma_aaa": "1/4",
+    "Gamma_aaa_over_Gamma_arr": "1/4",
+    "Gamma_aar": "0",
+    "Gamma_arr": "1"
+  },
+  "external_leg_dressing_illustration": {
+    "max_amputated_vertex_reconstruction_error": 1.1102230246251565e-16,
+    "raw_response_relative_change": 0.255556366906597
+  },
+  "iteration": 171,
+  "model_readiness_percent": 24,
+  "readiness_change": "unchanged: linked protocol is frozen and two false-positive relations are removed, but no residual survives fixed multi-point comparators",
+  "retained_results": [
+    "CTP-NG-001 — CLOSED_UNITARY_CUBIC_AAA_OVER_ARR_RATIO_IS_NOT_GRAVITY_SPECIFIC",
+    "CTP-NG-002 — TWO_POINT_EXTERNAL_LEG_DRESSING_DISAPPEARS_AFTER_FIXED_CONVENTION_THREE_POINT_AMPUTATION",
+    "NG-FUNNEL-031 — CANDIDATE_RESIDUAL_MUST_BE_A_LINKED_CTP_VERTEX_RELATION_AFTER_TWO_POINT_AMPUTATION"
+  ],
+  "scope": "linked post-Gaussian CTP cubic protocol; source-completed convention inherited from Iterations 148-149"
+}
