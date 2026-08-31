@@ -1,0 +1,44 @@
+{
+  "iteration": 207,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "question": "Is there a directly reusable gauge/parametrization-safe finite nonlocal curvature-cubic one-loop pure-Einstein-gravity specialization for the RQIR linked retarded cut?",
+  "authority": [
+    {
+      "id": "Barvinsky-Gusev-Zhytnikov-Vilkovisky_CPT3",
+      "reference": "arXiv:0911.1168",
+      "supports": "generic third-order covariant perturbation theory for Laplace-type operators, nonlocal three-point form factors and generalized spectral representations",
+      "does_not_supply": "a frozen pure-Einstein Vilkovisky-DeWitt finite nonlocal cubic specialization in the RQIR source convention"
+    },
+    {
+      "id": "Giacchini-dePaulaNetto-Shapiro_VD_GR",
+      "reference": "arXiv:2006.04217",
+      "supports": "one-loop Vilkovisky unique effective action for quantum Einstein gravity and explicit gauge/parametrization independence of the divergent part",
+      "does_not_supply": "the full finite nonlocal third-order curvature form factors required for T_cut"
+    },
+    {
+      "id": "Gomez-Jusinskas-LopezArcos-QuinteroVelez_integrands",
+      "reference": "arXiv:2411.07939",
+      "supports": "complete one-loop pure-gravity N-graviton integrands with graviton and ghost loop combinatorics",
+      "does_not_supply": "a gauge/parametrization-independent off-shell RQIR source-completed vertex by itself"
+    }
+  ],
+  "scientific_result": {
+    "direct_published_VD_nonlocal_cubic_pure_GR_specialization": "NOT_FOUND_IN_AUDITED_AUTHORITY",
+    "ordinary_gauge_fixed_CPT3_as_physical_RQIR_column": "FORBIDDEN",
+    "reason": "the Vilkovisky connection modifies the off-shell Hessian; a divergent unique-action result does not justify dropping connection-dependent terms in the finite nonlocal curvature-cubic sector",
+    "heavy_symbolic_CPT3_run": "NOT_AUTHORIZED_YET",
+    "classification": "BLOCKED_C5_VD_NONLOCAL_CUBIC_SPECIALIZATION"
+  },
+  "retained_results": [
+    "C5-CUT-004 — GENERIC_CPT3_PLUS_GAUGE_FIXED_GRAVITON_GHOST_HESSIAN_IS_NOT_YET_A_PHYSICAL_OFFSHELL_RQIR_COMPARATOR",
+    "C5-CUT-005 — PUBLISHED_4D_VILKOVISKY_PURE_GRAVITY_RESULT_CLOSES_DIVERGENT_GAUGE_INDEPENDENCE_BUT_NOT_THE_REQUIRED_FINITE_NONLOCAL_CUBIC_SPECIALIZATION",
+    "NUM-NG-014 — DO_NOT_LAUNCH_HEAVY_SYMBOLIC_SPECIALIZATION_BEFORE_FREEZING_THE_GAUGE_SAFE_QUANTUM_OPERATOR",
+    "NG-FUNNEL-063 — OFFSHELL_LOOP_COMPARATOR_MUST_BE_GAUGE_PARAMETRIZATION_SAFE_BEFORE_NONANALYTIC_RESIDUAL_SUBTRACTION"
+  ],
+  "candidate_residual": "NONE",
+  "ANSATZ_003": "NOT_CREATED",
+  "Fisher_resources": "FORBIDDEN",
+  "readiness_change": "unchanged at 23%; blocker is narrowed but comparator foundation is not re-closed",
+  "next_gate": "Freeze a fully gauge-invariant on-shell pure-Einstein unitarity-cut anchor, including IR-safe/inclusive or explicitly IR-subtracted normalization, as an independent C5 positive control for the nonanalytic sector."
+}
