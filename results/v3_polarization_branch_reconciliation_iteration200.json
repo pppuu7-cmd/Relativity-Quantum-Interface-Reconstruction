@@ -1,0 +1,57 @@
+{
+  "iteration": 200,
+  "scope": "reconciliation of two independently frozen v3 polarization protocols on identical hard q rows; no candidate target",
+  "branches": {
+    "v3_A": {
+      "authority": "hourly automation Iteration 197",
+      "seed_rule": "hard 197000+1000*row; partner 197500+1000*row; first geometry-pass",
+      "rank": 4,
+      "raw_condition_number": 1038.3956935373876,
+      "column_normalized_condition_number": 981.3572610720034,
+      "Riemann3_soft2": [0.002791966005629022,-0.2581196992877426,0.001641675291115765,0.020745938182375526,0.30750307400851506,-0.024343572728527205,2.456544279901893,-0.5807324717023833,0.36455839728118633,-0.43499543790175527,-2.4389329324378224,-0.4569481776425529]
+    },
+    "v3_B": {
+      "authority": "concurrent manual Iterations 198-199",
+      "seed_rule": "hard 198000+1000*row; partner 198500+1000*row; first geometry-pass",
+      "rank": 4,
+      "raw_condition_number": 4837.956523358557,
+      "column_normalized_condition_number": 4587.337088811592,
+      "Riemann3_soft2": [-0.2342367480907922,0.03885720334039703,0.19747961324750216,-0.013040718030417045,-0.024551995092504563,0.05672164019392357,-4.956740678936905,-0.40340860658856637,-7.333276233374885,0.1996690006442663,0.5256632248543467,-0.08172191198556611]
+    }
+  },
+  "subspace_comparison": {
+    "principal_cosines": [0.9997396623570034,0.33219940579494596,0.2293626825413163,0.11044853296789386],
+    "principal_angles_degrees": [1.307416329312857,70.59767502004262,76.74044730879491,83.65882802934674],
+    "projector_frobenius_distance": 2.377123490103065,
+    "projector_operator_distance": 0.9938818452540826,
+    "alternate_subspace_union_rank": 8,
+    "alternate_subspace_union_singular_values": [15.708698837239988,4.867119687767189,1.362393125860325,0.2733430269180072,0.09798000788004246,0.03499976006078213,0.003699736351489155,0.0012530529226054583],
+    "union_rank_interpretation": "rank8 describes the union of two alternate row-functional subspaces in the common 12-index representation; it is NOT eight independent C5 theory parameters"
+  },
+  "dual_setting_diagnostic": {
+    "meaning": "if both A and B polarization settings were measured as separate 24 rows with the same four C5 coefficients",
+    "rank": 4,
+    "raw_condition_number": 1845.8315768518607,
+    "column_normalized_condition_number": 1749.71872020951,
+    "status": "DIAGNOSTIC_ONLY_NOT_A_FROZEN_V4_PROTOCOL"
+  },
+  "classification": {
+    "scientific_conflict": "NONE_BOTH_ARE_DIFFERENT_VALID_OBSERVABLE_PROTOCOLS",
+    "polarization_seed_is_pure_numerical_nuisance": "FALSE",
+    "polarization_setting_is_part_of_observable_definition": "TRUE",
+    "choose_A_or_B_posthoc": "FORBIDDEN",
+    "AS": "BLOCKED_NOT_ZERO",
+    "C3": "BLOCKED_NOT_ZERO",
+    "candidate_residual": "NOT_TESTED",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "PROTO-NG-007 — ADMISSIBLE_TT_POLARIZATION_SETTINGS_DEFINE_DISTINCT_OBSERVABLE_PROTOCOLS_AND_MAY_NOT_BE_TREATED_AS_INTERCHANGEABLE_NUMERICAL_SEEDS",
+    "C5-NG-018 — TWO_PROSPECTIVELY_FROZEN_V3_POLARIZATION_PROTOCOLS_BOTH_HAVE_RANK4_BUT_THEIR_LOCAL_C5_NUISANCE_SUBSPACES_ARE_STRONGLY_ROTATED",
+    "REL-NG-013 — PRINCIPAL_ANGLES_SHOW_ONLY_ONE_NEAR_COMMON_C5_DIRECTION_BETWEEN_V3_A_AND_V3_B",
+    "NG-FUNNEL-054 — COMPARATOR_QUOTIENT_AUTHORITY_MUST_INCLUDE_POLARIZATION_SETTINGS_AS_PART_OF_THE_ROW_DEFINITION_BEFORE_RESIDUAL_TESTING"
+  ],
+  "model_readiness_percent": 24,
+  "readiness_change": "unchanged: a concurrency discrepancy was resolved as protocol branching, not scientific contradiction; AS/C3 remain blocked and no candidate residual exists."
+}
