@@ -1,0 +1,28 @@
+{
+  "iteration": 217,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "construction": "Gamma_B = Gamma_A + K2(p) H(q^2), with D H = 1",
+  "K2_p_samples": [0.0, 0.02, 0.05, 0.1, 0.2],
+  "on_shell_index": 0,
+  "on_shell_cut_difference": 0.0,
+  "off_shell_cut_differences": [0.0, 0.02, 0.05, 0.1, 0.2],
+  "max_off_shell_cut_difference": 0.2,
+  "classification": {
+    "on_shell_cut_identity": "EXACT",
+    "off_shell_cut_identity": "FALSE",
+    "map_on_shell_cut_to_off_shell_T_cut": "NON_IDENTIFIABLE_WITHOUT_ADDITIONAL_SOURCE_COMPLETION",
+    "iteration215_216_physical_C5_vector": "VALID_ONSHELL_POSITIVE_CONTROL_ONLY",
+    "off_shell_source_completed_C5_T_cut": "STILL_BLOCKED",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "C5-CUT-017 — EXACT_ONSHELL_UNITARITY_CUT_DOES_NOT_UNIQUELY_DETERMINE_OFFSHELL_SOURCE_COMPLETED_T_CUT",
+    "REL-NG-019 — EOM_OR_INVERSE_KERNEL_PROPORTIONAL_NONANALYTIC_CUBIC_TERMS_LIE_IN_THE_ONSHELL_RESTRICTION_KERNEL_BUT_CAN_CHANGE_OFFSHELL_CUTS",
+    "NG-FUNNEL-074 — ONSHELL_POSITIVE_CONTROLS_MUST_NOT_BE_PROMOTED_TO_OFFSHELL_COMPARATOR_COLUMNS_WITHOUT_A_PHYSICAL_SOURCE_COMPLETION_MAP"
+  ],
+  "readiness_change": "unchanged at 23%; the on-shell C5 control is robust but cannot close the missing off-shell/source-completed comparator by itself",
+  "next_gate": "Construct the cut directly for a gauge-invariant conserved-source response (or an equivalent physical in-in observable), rather than attempting to infer it from the on-shell graviton S-matrix."
+}
