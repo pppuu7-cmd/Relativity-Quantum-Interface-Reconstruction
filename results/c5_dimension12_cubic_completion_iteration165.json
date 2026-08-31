@@ -1,0 +1,74 @@
+{
+  "iteration": 165,
+  "scope": "12 frozen spacelike TT ordered-response rows; local C5 tree subset through cubic operator dimension 12",
+  "target_independent_completion_rule": "extend the two existing cubic curvature chains with Box^n descendants n=1,2,3 and add the mixed Ricci-Ricci-Riemann cubic invariant; stop at the pre-existing dimension-12 C5 cutoff",
+  "base_columns": ["EH", "Ricci3", "Riemann3", "Ricci2_full", "RicciBoxRicci_full"],
+  "extra_columns": [
+    "mixed_RicciRicciRiemann_dim6",
+    "RicciChain_Box1_dim8", "RiemannChain_Box1_dim8",
+    "RicciChain_Box2_dim10", "RiemannChain_Box2_dim10",
+    "RicciChain_Box3_dim12", "RiemannChain_Box3_dim12"
+  ],
+  "matrix_shape": [12, 12],
+  "rank": 12,
+  "rank_with_dRGT_targets": 12,
+  "raw_singular_values": [25.207363019273178, 11.06552023350292, 2.7880033013657277, 1.2262220336160914, 0.1491320946532912, 0.07808536424440596, 0.07321028302453463, 0.028859135990695256, 0.011061242754142615, 0.003455437211712742, 0.0012313467948222886, 0.00007138112110485352],
+  "audits": {
+    "raw": {
+      "rank": 12,
+      "smin_over_smax": 2.831756778774383e-6,
+      "condition_number": 353137.6732265868,
+      "relative_residuals_dlogm2_dalpha3": [1.1777924987861851e-15, 8.682703792343044e-15],
+      "max_abs_residuals_dlogm2_dalpha3": [2.220446049250313e-15, 4.6629367034256575e-15]
+    },
+    "base_row_l2": {
+      "rank": 12,
+      "smin_over_smax": 6.4568005360815074e-6,
+      "condition_number": 154875.46725531627,
+      "relative_residuals_dlogm2_dalpha3": [1.4392495289855767e-15, 7.843347342234653e-15],
+      "max_abs_residuals_dlogm2_dalpha3": [2.5326962749261384e-16, 5.620504062164855e-16]
+    },
+    "EH_abs_floor": {
+      "rank": 12,
+      "smin_over_smax": 4.4899151881572984e-7,
+      "condition_number": 2227213.5621573045,
+      "relative_residuals_dlogm2_dalpha3": [7.877731875199151e-16, 6.851379117812253e-15],
+      "max_abs_residuals_dlogm2_dalpha3": [2.6645352591003757e-15, 6.189493362285248e-15]
+    }
+  },
+  "progressive_dimension_order": [
+    {"extra_columns_added": 0, "n_columns": 5, "base_rank": 5, "rank_with_both_dRGT_targets": 7},
+    {"extra_columns_added": 1, "n_columns": 6, "base_rank": 6, "rank_with_both_dRGT_targets": 8},
+    {"extra_columns_added": 2, "n_columns": 7, "base_rank": 7, "rank_with_both_dRGT_targets": 9},
+    {"extra_columns_added": 3, "n_columns": 8, "base_rank": 8, "rank_with_both_dRGT_targets": 10},
+    {"extra_columns_added": 4, "n_columns": 9, "base_rank": 9, "rank_with_both_dRGT_targets": 11},
+    {"extra_columns_added": 5, "n_columns": 10, "base_rank": 10, "rank_with_both_dRGT_targets": 12},
+    {"extra_columns_added": 6, "n_columns": 11, "base_rank": 11, "rank_with_both_dRGT_targets": 12},
+    {"extra_columns_added": 7, "n_columns": 12, "base_rank": 12, "rank_with_both_dRGT_targets": 12}
+  ],
+  "ward": {
+    "max_abs_linearized_Ricci_on_gauge": 2.220446049250313e-16,
+    "max_abs_linearized_Riemann_on_gauge": 1.1102230246251565e-16,
+    "max_abs_derivative_descendant_B3_on_gauge": 6.144447427115482e-17,
+    "max_abs_mixed_B3_on_gauge": 1.629408673624775e-17,
+    "status": "PASS_SCOPED_MACHINE_PRECISION"
+  },
+  "classification": {
+    "local_C5_dimension12_subset": "FULL_ROW_RANK_12_OF_12",
+    "dRGT_dlogm2": "ABSORBED_FINITE_PROTOCOL",
+    "dRGT_dalpha3": "ABSORBED_FINITE_PROTOCOL",
+    "full_12row_ordered_TT_novelty_dimension": "ZERO_BECAUSE_C5_SUBSET_ALREADY_SPANS_ROW_SPACE",
+    "theory_identity": false
+  },
+  "retained_results": [
+    "C5-NG-003 — DIMENSION12_LOCAL_C5_CUBIC_SUBSET_SATURATES_ENRICHED_12ROW_TT_PROTOCOL",
+    "C4-NG-007 — ITERATION164_DRGT_RESIDUAL_ABSORBED_BY_TARGET_INDEPENDENT_DIMENSION12_C5_COMPLETION",
+    "NG-FUNNEL-022 — FINITE_PROTOCOL_RESIDUAL_MUST_SURVIVE_THEORY_AUTHORIZED_COMPARATOR_BASIS_COMPLETION",
+    "NG-FUNNEL-023 — ONCE_ONE_AUTHORIZED_COMPARATOR_SPANS_THE_FINITE_ROW_SPACE_ADDITIONAL_BLOCKED_COMPARATORS_CANNOT_RESTORE_A_RESIDUAL_IN_THAT_SAME_SPACE"
+  ],
+  "nonlocal_registry_note": "NL-WNL-001 and QG-NL-EXP-001 are distinct Iteration-158 comparator records. Their blocked nonlinear columns are not needed to establish zero residual inside this already C5-saturated 12-row sector, but both remain relevant outside it.",
+  "ANSATZ_003": "NOT_CREATED",
+  "Fisher_resources": "FORBIDDEN_ZERO_ALGEBRAIC_RESIDUAL",
+  "model_readiness_percent": 24,
+  "readiness_change": "+1 comparator-foundation point (23/25 -> 24/25); robust unique residual remains 0/20"
+}
