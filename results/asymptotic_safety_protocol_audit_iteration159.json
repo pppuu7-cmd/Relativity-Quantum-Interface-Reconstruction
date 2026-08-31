@@ -1,0 +1,45 @@
+{
+  "authority": "Pawlowski & Traenkle, Phys.Rev.D 110, 086011 (2024), arXiv:2309.17043",
+  "blocked": {
+    "full_AS_quotient": "BLOCKED",
+    "lorentzian_retarded_map": "BLOCKED_CTP_RETARDED_CONTINUATION_IN_SAME_PURE_GRAVITON_TRUNCATION",
+    "six_probe_chi2R_tangent": "BLOCKED_OFF_SYMMETRIC_VERTEX_DATA_OR_RECONSTRUCTION"
+  },
+  "comparator_id": "AS-PT-001",
+  "decision": "BLOCKED_OFF_SYMMETRIC_RETARDED_VERTEX_MAP",
+  "fixed_truncation_scope": {
+    "background_effective_action": "curvature expansion through R^2 and Ricci_mn^2 with full covariant momentum dependence",
+    "fluctuation_input": "fully dressed TT 2-, 3-, 4-graviton correlation functions within the stated vertex truncation",
+    "known_tensor_selection": "R^2 has zero TT 3-point overlap; Ricci_mn^2 has nonzero TT 3-point overlap",
+    "three_point_projection": "completely TT coefficient gamma_g^(3)(p) at the momentum-symmetric point"
+  },
+  "frozen_rqir_probe_test": {
+    "max_relative_squared_momentum_spread": 1.0191298981795742,
+    "min_relative_squared_momentum_spread": 0.4390756302521009,
+    "n_probes": 6,
+    "n_symmetric_compatible": 0,
+    "rows": [
+      {"p2":0.7473,"probe":0,"q2":0.5075999999999999,"r2":0.3313,"relative_squared_momentum_spread":0.7867860295044762,"symmetric_point_compatible":false},
+      {"p2":0.6157,"probe":1,"q2":0.3854,"r2":0.2935,"relative_squared_momentum_spread":0.7466398887687318,"symmetric_point_compatible":false},
+      {"p2":0.44179999999999997,"probe":2,"q2":0.426,"r2":0.27459999999999996,"relative_squared_momentum_spread":0.4390756302521009,"symmetric_point_compatible":false},
+      {"p2":0.6119999999999999,"probe":3,"q2":0.3153,"r2":0.2773,"relative_squared_momentum_spread":0.8335547069566659,"symmetric_point_compatible":false},
+      {"p2":0.6682,"probe":4,"q2":0.4004,"r2":0.2278,"relative_squared_momentum_spread":1.0191298981795742,"symmetric_point_compatible":false},
+      {"p2":0.4239,"probe":5,"q2":0.2882,"r2":0.23210000000000003,"relative_squared_momentum_spread":0.6094047871213725,"symmetric_point_compatible":false}
+    ]
+  },
+  "iteration": 159,
+  "nonclaims": [
+    "This is not a consistency failure of asymptotic safety.",
+    "No missing off-symmetric or Lorentzian entries are set to zero.",
+    "The 2026 Lorentzian two-point spectral results and scalar-scattering continuation are separate calculations and are not spliced into AS-PT-001 as if they were the same truncation."
+  ],
+  "retained_results": {
+    "AS_NG_001": "SYMMETRIC_POINT_VERTEX_NOT_GENERAL_OFFSHELL_TANGENT",
+    "NG_FUNNEL_016": "FIXED_TRUNCATION_STILL_REQUIRES_KINEMATIC_AND_CAUSAL_MAP_BEFORE_ENTERING_RQIR_QUOTIENT"
+  },
+  "supported_claims": [
+    "A concrete finite AS vertex truncation is now frozen as comparator authority.",
+    "Its published symmetric-point TT 3-point dressing cannot be directly evaluated on the six frozen non-symmetric RQIR triplets.",
+    "R^2 is TT-3pt blind in this truncation whereas Ricci^2 contributes, so the tensor/operator content is sufficiently specific to localise the missing map."
+  ]
+}
