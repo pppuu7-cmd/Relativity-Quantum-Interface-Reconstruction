@@ -1,0 +1,28 @@
+{
+  "iteration": 218,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "source_model_id": "MSSC-001",
+  "source_action": "S_phi=-1/2 int sqrt(-g)[g^{mu nu} partial_mu phi partial_nu phi + m^2 phi^2]",
+  "vertex_ward_identity": "k_mu V^{mu nu}=(p'^2-m^2)p^nu-(p^2-m^2)p'^nu",
+  "max_offshell_ward_identity_error": 4.440892098500626e-16,
+  "on_shell_vertex_transversality_error": 1.13643300980654e-16,
+  "same_dynamics_contact_rule": "all h^n phi^2 source/contact vertices are fixed by expansion of the same covariant scalar action; independent contact tuning forbidden",
+  "classification": {
+    "linear_source_Ward_identity": "PASS_MACHINE_PRECISION",
+    "on_shell_scalar_source_transversality": "PASS_MACHINE_PRECISION",
+    "nonlinear_source_completion": "DEFINED_BY_PARENT_ACTION_NOT_YET_FULLY_EXPANDED",
+    "gauge_safe_connected_cut_route": "AUTHORIZED_IN_PRINCIPLE_REQUIRES_EXPLICIT_TREE_CONTACT_SET_AND_UNITARITY_CONSTRUCTION",
+    "off_shell_1PI_T_cut_inference_from_graviton_S_matrix": "FORBIDDEN_BY_ITERATION217",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "SRC-NG-001 — MINIMALLY_COUPLED_SCALAR_ACTION_FIXES_SOURCE_WARD_IDENTITY_AND_ALL_NONLINEAR_SOURCE_CONTACTS_FROM_ONE_DYNAMICS",
+    "SRC-NG-002 — DYNAMICAL_SOURCE_COMPLETION_IS_REQUIRED_BEFORE_AN_OFFSHELL_CONNECTED_CUT_CAN_BE_CALLED_GAUGE_SAFE",
+    "NG-FUNNEL-075 — USE_CONNECTED_DYNAMICAL_SOURCE_OBSERVABLES_TO_AVOID_GAUGE_DEPENDENT_OFFSHELL_VERTEX_PROMOTION"
+  ],
+  "readiness_change": "unchanged at 23%; a concrete source-completion route is frozen but the nonlinear connected cut has not yet been computed",
+  "next_gate": "Derive and validate the h^2 phi^2 contact together with h phi phi, then construct the lowest nontrivial conserved-source tree amplitude needed on each side of a physical unitarity cut."
+}
