@@ -1,0 +1,43 @@
+{
+  "iteration": 198,
+  "protocol": "RQIR-WITHHELD-NULLSOFT-12-v3",
+  "parent_kinematics": "Iteration-197 v3 K2-frozen rows at scales 0.80 and 1.40",
+  "seed_rule": {
+    "hard_start": "198000+1000*row",
+    "partner_start": "198500+1000*row",
+    "scan_increment": 1,
+    "hard_accept": "abs(raw TT norm)>=0.25",
+    "partner_accept": "min abs raw TT norm >=0.25 and constant sign on 81-point epsilon grid [-0.01,0.01]"
+  },
+  "rows": [
+    {"row_id":"W3-00","q":[0.144,0.5599999999999999,0.16000000000000003,0.08000000000000002],"q2":0.324864,"hard_seed":198000,"partner_seed":198501,"hard_raw_norm":0.9500994156780929,"partner_min_abs_norm_dense_grid":7.259920115355122,"partner_sign":1},
+    {"row_id":"W3-01","q":[0.11200000000000002,0.44000000000000006,-0.2,0.16000000000000003],"q2":0.24665600000000007,"hard_seed":199000,"partner_seed":199501,"hard_raw_norm":4.783909427550051,"partner_min_abs_norm_dense_grid":7.58801811253033,"partner_sign":-1},
+    {"row_id":"W3-02","q":[0.17600000000000002,0.496,0.144,-0.192],"q2":0.27264,"hard_seed":200000,"partner_seed":200500,"hard_raw_norm":-1.3605451152724735,"partner_min_abs_norm_dense_grid":10.388707992721079,"partner_sign":-1},
+    {"row_id":"W3-03","q":[0.128,0.384,0.248,0.096],"q2":0.201792,"hard_seed":201000,"partner_seed":201500,"hard_raw_norm":-1.3900065909408172,"partner_min_abs_norm_dense_grid":2.7051570102792932,"partner_sign":1},
+    {"row_id":"W3-04","q":[0.16000000000000003,0.46399999999999997,-0.128,-0.22400000000000003],"q2":0.256256,"hard_seed":202000,"partner_seed":202500,"hard_raw_norm":2.324177439075279,"partner_min_abs_norm_dense_grid":4.7760552168284285,"partner_sign":1},
+    {"row_id":"W3-05","q":[0.096,0.35200000000000004,0.21600000000000003,-0.15200000000000002],"q2":0.18444800000000006,"hard_seed":203000,"partner_seed":203500,"hard_raw_norm":0.25445623277800444,"partner_min_abs_norm_dense_grid":1.7985869727421147,"partner_sign":1},
+    {"row_id":"W3-06","q":[0.252,0.9799999999999999,0.27999999999999997,0.13999999999999999],"q2":0.9948959999999997,"hard_seed":204000,"partner_seed":204500,"hard_raw_norm":1.4973054285937386,"partner_min_abs_norm_dense_grid":0.9053777009300372,"partner_sign":1},
+    {"row_id":"W3-07","q":[0.196,0.77,-0.35,0.27999999999999997],"q2":0.7553839999999999,"hard_seed":205000,"partner_seed":205500,"hard_raw_norm":1.3329208623927946,"partner_min_abs_norm_dense_grid":5.615768199262058,"partner_sign":1},
+    {"row_id":"W3-08","q":[0.308,0.868,0.252,-0.33599999999999997],"q2":0.83496,"hard_seed":206000,"partner_seed":206500,"hard_raw_norm":0.8367416227185427,"partner_min_abs_norm_dense_grid":1.2842307678032236,"partner_sign":-1},
+    {"row_id":"W3-09","q":[0.22399999999999998,0.6719999999999999,0.434,0.16799999999999998],"q2":0.617988,"hard_seed":207000,"partner_seed":207501,"hard_raw_norm":3.1478609767756778,"partner_min_abs_norm_dense_grid":3.190953415580285,"partner_sign":1},
+    {"row_id":"W3-10","q":[0.27999999999999997,0.8119999999999999,-0.22399999999999998,-0.392],"q2":0.7847839999999999,"hard_seed":208000,"partner_seed":208500,"hard_raw_norm":2.7329685043441625,"partner_min_abs_norm_dense_grid":2.55310053722833,"partner_sign":1},
+    {"row_id":"W3-11","q":[0.16799999999999998,0.616,0.378,-0.26599999999999996],"q2":0.5648719999999999,"hard_seed":209000,"partner_seed":209501,"hard_raw_norm":-2.051897907681797,"partner_min_abs_norm_dense_grid":0.9735223237293184,"partner_sign":1}
+  ],
+  "minimum_hard_abs_norm": 0.25445623277800444,
+  "minimum_partner_margin": 0.9053777009300372,
+  "status": "PREREGISTERED_V3_ALL_12_ROWS_PASS_GEOMETRIC_CONDITIONING_BEFORE_CUBIC_COMPARATOR_EVALUATION",
+  "classification": {
+    "target_optimized": false,
+    "candidate_evaluated": false,
+    "comparator_cubic_evaluated_before_freeze": false,
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "PROTO-NG-005 — V3_GEOMETRY_ONLY_DENSE_GRID_POLARIZATION_ACCEPTANCE_FROZEN_BEFORE_CUBIC_EVALUATION",
+    "NUM-NG-012 — ALL_12_V3_ROWS_PASS_WITH_MIN_PARTNER_TT_NORM_MARGIN_ABOVE_0P90",
+    "NG-FUNNEL-052 — CONDITIONING_DESIGNED_ROWS_REQUIRE_INDEPENDENT_PROSPECTIVE_POLARIZATION_FREEZE_BEFORE_CUBIC_USE"
+  ],
+  "model_readiness_percent": 24,
+  "readiness_change": "unchanged: v3 cubic geometry is now validly frozen but no v3 cubic comparator or candidate residual has yet been evaluated."
+}
