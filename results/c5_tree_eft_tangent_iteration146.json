@@ -1,0 +1,43 @@
+{
+  "iteration": 146,
+  "scope": "D=4 parity-even local gravitational EFT; tree-level on-shell amplitude fingerprint only",
+  "dimensionless_convention": "Lambda=1, report M_Pl^2 A",
+  "parameters": ["c3", "c_plus", "c_minus", "e_plus", "e_minus", "f_plus", "f_minus", "g_plus", "g_minus", "j1"],
+  "matrix_shape": [12, 10],
+  "rank": 10,
+  "svd_tolerance": 1.0061943332572612e-15,
+  "singular_values": [
+    0.377624716,
+    0.0794667137,
+    0.00908015595,
+    0.000916415267,
+    0.000472836512,
+    0.0000233370720,
+    0.0000172727839,
+    0.00000213079285,
+    0.00000103238331,
+    0.000000927010447
+  ],
+  "condition_ratio_smin_over_smax": 2.4548457953351053e-06,
+  "full_column_rank": true,
+  "frozen_kinematics": [
+    {"s": 0.20, "t": -0.07, "u": -0.13, "phi": 0.0},
+    {"s": 0.20, "t": -0.07, "u": -0.13, "phi": 1.0471975511965976},
+    {"s": 0.20, "t": -0.07, "u": -0.13, "phi": 1.5707963267948966},
+    {"s": 0.30, "t": -0.11, "u": -0.19, "phi": 0.0},
+    {"s": 0.30, "t": -0.11, "u": -0.19, "phi": 1.0471975511965976},
+    {"s": 0.30, "t": -0.11, "u": -0.19, "phi": 1.5707963267948966},
+    {"s": 0.18, "t": -0.05, "u": -0.13, "phi": 0.0},
+    {"s": 0.18, "t": -0.05, "u": -0.13, "phi": 1.0471975511965976},
+    {"s": 0.18, "t": -0.05, "u": -0.13, "phi": 1.5707963267948966},
+    {"s": 0.26, "t": -0.09, "u": -0.17, "phi": 0.5235987755982988},
+    {"s": 0.26, "t": -0.09, "u": -0.17, "phi": 0.7853981633974483},
+    {"s": 0.26, "t": -0.09, "u": -0.17, "phi": 2.0943951023931953}
+  ],
+  "blockers": {
+    "loop_nonanalytic": "BLOCKED_NOT_DERIVED_IN_ITER145_RQIR_COORDINATES",
+    "rqir_retarded_ctp_map": "BLOCKED_ON_SHELL_AMPLITUDE_IS_NOT_CHI2R",
+    "N2_C3sym_rows": "BLOCKED_REQUIRE_CTP_STATE_AND_LOOP_OR_INFLUENCE_FUNCTIONAL_DERIVATION"
+  },
+  "claim": "Finite local C5 tree-EFT Wilson tangent is rank-certified at frozen kinematics; full post-Gaussian RQIR V_C5 remains blocked until retarded/CTP mapping is derived."
+}
