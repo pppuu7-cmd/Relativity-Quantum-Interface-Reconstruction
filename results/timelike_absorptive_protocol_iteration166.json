@@ -1,0 +1,70 @@
+{
+  "iteration": 166,
+  "date": "2026-08-31",
+  "model_readiness_percent": 24,
+  "scope": "eight timelike conserved-TT source-response benchmark frequencies; odd absorptive projection; comparator pre-gate",
+  "protocol": {
+    "s_values": [0.004, 0.008, 0.012, 0.016, 0.020, 0.024, 0.028, 0.032],
+    "omega_values": [0.06324555320336758, 0.08944271909999159, 0.10954451150103323, 0.12649110640673517, 0.1414213562373095, 0.15491933384829668, 0.1673320053068151, 0.17888543819998318],
+    "s_ref": 0.032,
+    "positive_frequency_branch": "log(-s-i0)=log(s)-i*pi",
+    "negative_frequency_branch": "log(-s+i0)=log(s)+i*pi",
+    "Aodd_definition": "[Im chi_R(+omega)-Im chi_R(-omega)]/(2*pi)",
+    "pole_exclusion": "all s<0.04 frozen dRGT TT pole"
+  },
+  "analytic_local_tree": {
+    "absorptive_rank": 0,
+    "statement": "real local Hermitian tree contributions are off-pole absorptively zero; this is not a finite-polynomial interpolation statement"
+  },
+  "leading_massless_log": {
+    "Aodd": [0.9999999999992043, 0.9999999999996022, 0.9999999999997348, 0.9999999999998012, 0.9999999999998408, 0.9999999999998674, 0.9999999999998863, 0.9999999999999006],
+    "rank": 1,
+    "max_even_causality_leak": 0.0
+  },
+  "generic_log_descendant_stress_test": {
+    "basis": "x^n Aodd_log, n=0..3",
+    "rank": 4,
+    "singular_values": [3.6738287734601567, 1.2195863577992239, 0.22188169378565106, 0.02221900663373228],
+    "smin_over_smax": 0.006047915677029647,
+    "condition_number": 165.34622064888586,
+    "interpretation": "illustrative nonanalytic shape capacity only; not a claim that all four are independent fixed C5 Wilson directions"
+  },
+  "lorentzian_AS_IR": {
+    "source": "Pawlowski, Reichert, Wessely, arXiv:2507.22169 v1, Eqs. 12-15, 30-33",
+    "A_h": 0.32361505095352056,
+    "z_spec_approx": 1.486,
+    "A_h_over_z_spec": 0.2177759427681834,
+    "rho_tail_unnormalized_IR": 2.033333333333333,
+    "rho_tail_physical_IR": 1.3683266038582322,
+    "shape_rank_C5_log_plus_AS_IR": 1,
+    "AS_relative_residual_after_C5_log_shape_projection": 1.7153451629555285e-16,
+    "classification": "LEADING_IR_SHAPE_COLLINEAR_WITH_C5_MASSLESS_LOG_AFTER_GAIN",
+    "guardrail": "published AS coefficient is TT/gauge/field-normalization specific and is not treated as the final source-completed RQIR coefficient"
+  },
+  "supported_scoped_comparator_statements": {
+    "C5_local_tree": "ZERO_ABSORPTIVE_OFF_POLE",
+    "C5_massless_loop_log": "NONZERO_CONSTANT_AODD_SHAPE",
+    "C4_dRGT_tree": "ZERO_ABSORPTIVE_ON_CHOSEN_ROWS_BELOW_ISOLATED_TT_POLE; loops/matter completion not inferred",
+    "NL_entire_tree": "NO_FORM_FACTOR_BRANCH_CUT_SCOPED; full CTP/loop completion still blocked",
+    "AS_Lorentzian_IR": "NONZERO_CONTINUUM; leading log shape collinear with C5",
+    "C3_tree_EH": "ZERO_ABSORPTIVE_OFF_POLE_SCOPED; diffusion/MSR ordered corrections remain blocked"
+  },
+  "blocked": [
+    "source-completed gauge-invariant finite-frequency C5 loop coefficient in the exact RQIR detector/source convention",
+    "full C3 diffusion-dependent ordered/absorptive response",
+    "full C4 loop/matter/helicity absorptive completion",
+    "full nonlocal CTP/loop absorptive completion",
+    "finite-frequency AS source-completed RQIR map beyond the leading IR shape",
+    "global cross-observable quotient tying this block to chi2R/N2/C3sym from one dynamics"
+  ],
+  "retained_results": [
+    "C5-NG-004 — LOCAL_HERMITIAN_TREE_EFT_CANNOT_SATURATE_OFF_POLE_ABSORPTIVE_BLOCK",
+    "AS-NG-004 — LORENTZIAN_AS_LEADING_IR_LOG_IS_COLLINEAR_WITH_C5_MASSLESS_LOOP_SHAPE",
+    "NG-FUNNEL-024 — ABSORPTIVE_NONANALYTICITY_ESCAPES_LOCAL_TREE_INTERPOLATION_BUT_NOT_QUANTUM_COMPARATOR_SUBTRACTION",
+    "NG-FUNNEL-025 — BARE_TT_SPECTRAL_COEFFICIENT_IS_NOT_YET_A_SOURCE_COMPLETED_RQIR_OBSERVABLE"
+  ],
+  "candidate_residual": "NOT_DEFINED_FULL_COMPARATOR_ABSORPTIVE_QUOTIENT_BLOCKED",
+  "ANSATZ_003": "NOT_CREATED",
+  "Fisher_resources": "FORBIDDEN",
+  "readiness_change": "unchanged: comparator foundation narrowed but final point not awarded while source-completed absorptive C3/C4/nonlocal/AS quotient is incomplete"
+}
