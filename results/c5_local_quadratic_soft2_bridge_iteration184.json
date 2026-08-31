@@ -1,0 +1,65 @@
+{
+  "blocked_higher_derivative_columns": [
+    "Ricci_mn Box^2 Ricci^mn",
+    "Ricci_mn Box^3 Ricci^mn",
+    "Ricci_mn Box^4 Ricci^mn"
+  ],
+  "classification": {
+    "ANSATZ_003": "NOT_CREATED",
+    "EH_soft2": "PASS_SCOPED_NUMERIC",
+    "Fisher_resources": "FORBIDDEN",
+    "Ricci2_soft2": "PASS_SCOPED_WARD_VALIDATED",
+    "RicciBoxRicci_soft2": "PASS_SCOPED_WARD_VALIDATED",
+    "conditioned_local_quadratic_span": "ZERO_AFTER_EXACT_K2_CALIBRATION_BECAUSE_K_MATRIX_FULL_RANK",
+    "higher_Box_soft2": "BLOCKED_REQUIRES_COVARIANT_OPERATOR_CALCULUS",
+    "novelty_certificate": "NONE",
+    "raw_six_row_soft2": "SATURATED_RANK6_AFTER_V4_PLUS_EH_PLUS_RICCI2"
+  },
+  "columns": {
+    "EH": [1.5075719590841923, 0.2125004724442609, 2.8203238064239287, -1.9851779882902414, -0.19028623369768713, 0.5362481602411892],
+    "Ricci2": [-1.7423297741015908, -0.13235603698224765, -3.34391581969343, 1.3579882480102554, 0.22067265089895402, 0.21693736273720177],
+    "RicciBoxRicci": [1.5754151008269763, 0.04899814060247483, 2.5059613345819, -0.6443314817154456, -0.255835964454193, -0.3828535821035576]
+  },
+  "final_raw_soft2_rank_with_V4_EH_Ricci2_RicciBoxRicci": 6,
+  "final_raw_soft2_singular_values": [6.235445106920747, 2.1752277941147034, 1.0851109347795733, 0.09623303765639384, 0.0424503805318557, 0.0007534043080586568],
+  "hard_K2_conditioning": {
+    "local_quadratic_parameter_null_dimension": 0,
+    "local_quadratic_rank": 6,
+    "interpretation": "raw cubic row rank is not the calibrated comparator rank; local quadratic directions are eliminated individually by exact K2 calibration and re-enter only in compensating combinations with nonlocal/AS K2 variations"
+  },
+  "h_values": [0.02, 0.01, 0.005, 0.0025, 0.00125],
+  "iteration": 184,
+  "max_soft2_error_estimate": {
+    "EH": 1.6599642038706008e-07,
+    "Ricci2": 1.825827635748567e-07,
+    "RicciBoxRicci": 2.919640080811803e-07
+  },
+  "model_readiness_percent": 24,
+  "raw_soft2_rank_progression": [
+    {"added": "EH", "rank": 5, "singular_values": [3.8139190132321614, 2.164410922242085, 0.06309967843841388, 0.004909235634785537, 6.897328884656497e-05]},
+    {"added": "Ricci2", "rank": 6, "singular_values": [5.4860267940228695, 2.1644111374165944, 0.7914653151442451, 0.04418932434045984, 0.004177079520997925, 1.6979090639193791e-06]},
+    {"added": "RicciBoxRicci", "rank": 6, "singular_values": [6.235445106920747, 2.1752277941147034, 1.0851109347795733, 0.09623303765639384, 0.0424503805318557, 0.0007534043080586568]}
+  ],
+  "readiness_change": "unchanged: first calibrated-bridge cubic columns are computed, but higher derivative compensation and full nonlocal/AS/C3 quotient remain open",
+  "retained_results": [
+    "C5-NG-011 — EH_AND_RICCI2_SOFT2_COLUMNS_COMPLETE_THE_RAW_SIX_ROW_LOCAL_C5_SOFT2_RANK_BUT_NOT_THE_HARD_CONDITIONED_SPAN",
+    "REL-NG-002 — RAW_CUBIC_ROW_SATURATION_BY_PARAMETERS_ELIMINATED_BY_EXACT_K2_CALIBRATION_IS_NOT_CONDITIONED_COMPARATOR_SATURATION",
+    "C5-NG-012 — HIGHER_QUADRATIC_DERIVATIVE_SOFT2_COLUMNS_MUST_BE_DERIVED_COVARIANTLY_AND_NOT_INFERRED_FROM_N0_N1"
+  ],
+  "scope": "six frozen physical null-soft TT rows; amputated full cubic soft2 coefficients for first local quadratic C5 directions",
+  "soft_second_derivative": "[Gamma(+h)+Gamma(-h)-2Gamma(0)]/(2h^2) with two Richardson levels",
+  "ward": {
+    "Ricci2": {
+      "max_abs_residual_by_step": [3.1206399692725734e-07, 7.801450971215221e-08],
+      "max_relative_residual_by_step": [0.0002826523176878521, 7.067841116379967e-05],
+      "residual_reduction_factor": 4.000076371416939,
+      "status": "PASS_SCOPED"
+    },
+    "RicciBoxRicci": {
+      "max_abs_residual_by_step": [1.197110910867061e-07, 2.992776262811139e-08],
+      "max_relative_residual_by_step": [0.0007440255948748277, 0.00018611122889807292],
+      "residual_reduction_factor": 4.000001355739854,
+      "status": "PASS_SCOPED"
+    }
+  }
+}
