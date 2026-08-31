@@ -1,0 +1,62 @@
+{
+  "iteration": 167,
+  "date": "2026-08-31",
+  "model_readiness_percent": 24,
+  "observable_clarification": "A_odd is frequency-odd Im chi1R, distinct from post-Gaussian chi2R_odd",
+  "source_completion": {
+    "stress": "T_0mu=0; T_ij=diag(1,-1,0)/sqrt(2)",
+    "max_conservation_error": 0.0,
+    "max_trace_error": 0.0,
+    "max_projector_error": 0.0,
+    "max_overlap_deviation_from_one": 2.220446049250313e-16,
+    "classification": "PASS_SCOPED_LINEAR_CONSERVED_TT_SOURCE_MAP"
+  },
+  "constant_log_null_quotient": {
+    "row_count": 8,
+    "profiled_dimension": 1,
+    "shape_dimension": 7,
+    "max_shape_dot_constant": 2.220446049250313e-16,
+    "max_shape_orthonormality_error": 4.440892098500626e-16,
+    "C5_leading_log_shape_norm_after_projection": 3.801380422159887e-16,
+    "AS_leading_IR_log_shape_norm_after_projection": 1.4437218452423036e-16,
+    "classification": "UNIVERSAL_CONSTANT_LOG_DIRECTION_PROFILED_TO_MACHINE_PRECISION"
+  },
+  "subleading_capacity_audit": {
+    "test_family": ["x", "x^2", "x^3"],
+    "quotient_rank": 3,
+    "singular_values": [1.5426185527078995, 0.22758343116507943, 0.022245050479321002],
+    "smin_over_smax": 0.014420318257078025,
+    "classification": "THREE_INDEPENDENT_SUBLEADING_SHAPE_DIRECTIONS_SURVIVE_CONSTANT_PROFILE",
+    "guardrail": "capacity audit only; not a Candidate Gravity tangent and not a claim of three fixed C5 loop coefficients"
+  },
+  "optional_D4_diagnostic": {
+    "coefficients": [1.0, -4.0, 6.0, -4.0, 1.0],
+    "max_abs_response_to_degree_0_3_polynomials": 0.0,
+    "single_window_white_noise_amplification_l2": 8.366600265340756,
+    "classification": "EXACT_CUBIC_ENVELOPE_NULL_BUT_NOISE_COSTLY_NOT_PRIMARY"
+  },
+  "literature_boundary": {
+    "AS_publication": "Pawlowski, Reichert, Wessely, Physics Letters B 880 (2026) 140844, DOI 10.1016/j.physletb.2026.140844; arXiv:2507.22169",
+    "AS_supported": "positive massless peak plus continuum; universal IR constant onset; finite-frequency continuum decreases at intermediate scales",
+    "AS_finite_frequency_column": "BLOCKED_NUMERICAL_SPECTRAL_DATA_OR_CONTROLLED_REPRODUCTION_REQUIRED",
+    "C5_subleading_loop_shape": "BLOCKED_SOURCE_COMPLETED_LOOP_ORDER_SPECIFICATION"
+  },
+  "retained_results": [
+    "ABS-SHAPE-001 — CONSERVED_TT_SOURCE_MAP_PRESERVES_TIMELIKE_SPECTRAL_SHAPE",
+    "ABS-SHAPE-002 — CONSTANT_LOG_NULL_QUOTIENT_LEAVES_SEVEN_SUBLEADING_SHAPE_DIMENSIONS",
+    "NG-FUNNEL-026 — PROFILE_UNIVERSAL_IR_LOG_BEFORE_SUBLEADING_SPECTRAL_SHAPE_SEARCH",
+    "NG-FUNNEL-027 — PUBLISHED_SPECTRAL_CURVE_IS_NOT_A_NUMERICAL_COMPARATOR_COLUMN_WITHOUT_DATA_OR_CONTROLLED_REPRODUCTION"
+  ],
+  "blocked": [
+    "finite-frequency AS source-completed numerical spectral-shape column",
+    "subleading perturbative-C5 source-completed loop column and truncation order",
+    "C3 diffusion/MSR absorptive corrections",
+    "C4 loop/matter/helicity absorptive completion",
+    "nonlocal CTP/loop absorptive completion",
+    "cross-observable relation to N2/C3sym/chi2R from one parent dynamics"
+  ],
+  "candidate_residual": "NOT_DEFINED",
+  "ANSATZ_003": "NOT_CREATED",
+  "Fisher_resources": "FORBIDDEN",
+  "readiness_change": "unchanged; source/shape ambiguity is reduced, but no comparator-subtracted subleading residual exists yet"
+}
