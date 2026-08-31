@@ -2,26 +2,24 @@
 
 **Version:** 0.1  
 **Status:** DRAFT / TESTING  
-**Iteration introduced:** 138  
+**Iterations:** 138–139  
 **Purpose:** second RQIR-driven Candidate Gravity ansatz, constructed after the analytic rejection of `ANSATZ-RQIR-CTP-001` v0.1. The structural design rule is to make two-point positivity and absence of isolated negative-residue poles manifest at the frozen Gaussian level rather than infer them from Euclidean behavior.
 
 ## 1. Core idea
 
-Instead of modifying the inverse graviton kernel by a factor that can cross zero under Lorentzian continuation, define the physical spin-2 two-point function directly by a nonnegative Källén–Lehmann-type spectral measure.
+Define the physical weak-field two-point function directly by a nonnegative Källén–Lehmann-type spectral measure rather than multiplying the inverse GR kernel by a function that may cross zero after Lorentzian continuation.
 
-The resolved weak-field gravitational transfer contains:
+The resolved transfer contains:
 
 1. the ordinary massless GR pole with unchanged residue;
-2. a positive continuous spin-2 spectral sector starting at scale `M_*`;
-3. no additional isolated pole in v0.1.
+2. a positive continuous massive spin-2 spectral sector starting at scale `M_*`;
+3. no additional isolated continuum pole in v0.1.
 
-The continuum weight is controlled by one dimensionless amplitude `beta>=0`. The same spectral measure fixes the retarded transfer, absorptive threshold and vacuum Gaussian fluctuation kernel; these are not independently fitted RQIR functions.
+The continuum weight is controlled by one dimensionless amplitude `beta>=0`. The same spectral measure fixes retarded transfer, absorptive threshold and vacuum Gaussian fluctuations. These are not independent RQIR fit functions.
 
 This is an effective weak-field model, not a UV completion and not yet a novelty claim.
 
 ## 2. Frozen spectral measure
-
-Use spectral mass variable `mu^2` and define
 
 `rho_g(mu^2) = delta(mu^2) + (beta/M_*^2) rho_hat(mu^2/M_*^2) Theta(mu^2-M_*^2)`,
 
@@ -33,41 +31,37 @@ with
 
 `beta>=0`, `M_*>0`.
 
-Thus the massless pole has fixed unit spectral weight in the frozen GR normalization and the continuum carries integrated dimensionless weight `beta`.
+The massless pole has fixed unit spectral weight in the frozen GR normalization and the continuum carries integrated dimensionless weight `beta`.
 
-## 3. Retarded spin-2 transfer
+## 3. Tensor transfer after Iteration 139
 
-On the conserved-source spin-2 sector, suppressing the frozen tensor projector and overall GR sign convention,
+For conserved external sources the massless and massive spin-2 exchange tensors are not identical.
 
-`D_R(p) = 1/(p^2+i0 p^0) + beta int_1^infty ds rho_hat(s)/(p^2-M_*^2 s+i0 p^0)`.
+The frozen linear tensor amplitude is
 
-Equivalently,
+`A ~ [T_mn T'^mn - (1/2) T T']/(p^2+i0p^0)`
 
-`D_R(p)=int_0^infty dmu^2 rho_g(mu^2)/(p^2-mu^2+i0 p^0)`.
+`    + beta int_1^infty ds rho_hat(s) [T_mn T'^mn - (1/3) T T']/(p^2-M_*^2 s+i0p^0)`.
 
-The Euclidean transfer is
+Equivalently, in Barnes–Rivers language the continuum is a positive `P2` sector while the massless GR exchange contains the standard massless trace coefficient.
 
-`D_E(q^2)=1/q^2 + beta int_1^infty ds rho_hat(s)/(q^2+M_*^2 s)`.
+This is the conservative linear Fierz–Pauli tensor completion of the continuum. It propagates five physical polarizations for each massive spectral component. No nonlinear Vainshtein screening is assumed in v0.1.
 
-For `q^2>0` every term is nonnegative.
+The corresponding scalarized transfer used in Iteration 138 remains useful for spectral positivity, but static normalization must use the full tensor coefficients above.
 
-## 4. Gaussian state / physical-state interpretation
+## 4. Gaussian state / positivity interpretation
 
-At v0.1 the spin-2 sector is a generalized free quantum field specified by a positive spectral measure. Equivalently, its one-particle space can be viewed as a direct integral of positive-norm spectral sectors weighted by `rho_g`, with the massless GR component separated explicitly.
+At v0.1 the continuum is a generalized free positive-norm spin-2 spectral sector. Its one-particle space may be viewed as a direct integral of positive massive spin-2 sectors weighted by `rho_g`, with the massless GR component separated explicitly.
 
-This supplies a scoped Gaussian positivity/unitarity certificate for the two-point sector. It does **not** prove a nonlinear diffeomorphism-complete interacting gravity theory.
-
-The exact completion of the continuum tensor/helicity content is deliberately left as a QG-005 gate. No claim is made that an arbitrary collection of Pauli–Fierz massive fields already supplies the correct nonlinear completion.
+This supplies a scoped linear positivity/unitarity certificate. It does **not** prove a nonlinear ghost-free interacting completion of a continuum of spin-2 modes.
 
 ## 5. Matter coupling
 
-Matter is initially the same scalar QFT used by the reference branch. At linear order the resolved gravitational field couples universally to the conserved stress tensor,
+Matter is initially the same scalar QFT used by the C5 reference branch. At linear order the gravitational exchange couples universally to conserved stress energy.
 
-`S_int = -(kappa/2) int d^4x h_mn T^mn`,
+`S_int = -(kappa/2) int d^4x h_mn T^mn`.
 
-where `h_mn` denotes the RQIR-facing conserved-source spin-2 transfer combination.
-
-The source hierarchy remains
+The matter source hierarchy remains
 
 `J=<T>`,
 
@@ -75,89 +69,123 @@ The source hierarchy remains
 
 `chi_T^R=-i theta <[T,T]>`,
 
-with renormalization/smearing conventions inherited from the RQIR contract.
+with the frozen RQIR smearing/renormalization conventions.
 
-The model-specific gravity sector propagates these source objects through the positive spectral transfer `D_R`; its own vacuum Gaussian fluctuations are fixed by the same `rho_g`.
+The gravity spectral measure propagates the hierarchy and fixes its own Gaussian vacuum fluctuation spectrum.
 
 ## 6. Causality and spectral positivity
 
-Each spectral component has the standard retarded prescription. A nonnegative superposition of retarded massive propagators remains retarded.
+The continuum retarded scalar denominator is
 
-For positive frequency and `p^2>M_*^2`,
+`1/(p^2-M_*^2 s+i0p^0)`.
 
-`Im D_R,cont(p) = -pi beta rho_hat(p^2/M_*^2)/M_*^2 <= 0`
+A nonnegative spectral superposition preserves retarded support.
+
+For positive frequency and `y=p^2/M_*^2>1`,
+
+`Im D_R,cont = -(pi beta/M_*^2) rho_hat(y) <= 0`
 
 in the frozen scalar retarded convention.
 
-Hence the continuum spectral discontinuity has nonnegative Källén–Lehmann weight.
+The smooth continuum therefore has nonnegative spectral weight and a branch cut beginning at `p^2=M_*^2`, with no isolated added pole.
 
-There is no isolated continuum pole because `rho_hat` is smooth on `s>=1`; instead there is a branch cut beginning at `p^2=M_*^2`.
+## 7. Static / Newtonian structure after tensor completion
 
-This avoids the Iteration-136 theorem that rejected the previous ansatz.
+For two nonrelativistic conserved sources,
 
-## 7. Infrared / Newtonian structure
+massless GR exchange coefficient:
 
-The massless pole and its residue are unchanged, so the asymptotic long-range Newtonian `1/r` term is preserved at the frozen linearized level.
+`1 - 1/2 = 1/2`,
 
-For a static point-source transfer, each continuum mass produces a Yukawa factor. The potential therefore has the schematic form
+massive spin-2 exchange coefficient:
 
-`Phi(r) = -G M/r [1 + beta W(M_* r)]`,
+`1 - 1/3 = 2/3`.
+
+Therefore the continuum correction is enhanced by the standard linear vDVZ factor
+
+`(2/3)/(1/2)=4/3`.
+
+The frozen static potential becomes
+
+`Phi(r) = -G M/r [1 + (4/3) beta W(M_* r)]`,
 
 where
 
 `W(u)=int_1^infty ds rho_hat(s) exp(-u sqrt(s))`.
 
-Because `sqrt(s)>=1` and the spectral shape is normalized,
+Because `sqrt(s)>=1`,
 
-`0 < W(u) <= exp(-u)` for `u>0`,
+`0<W(u)<=exp(-u)`.
 
-and `W(0)=1`.
+Hence
 
-Thus the correction is finite-range and the asymptotic Newtonian limit is exponentially recovered:
+`|delta Phi/Phi_GR| <= (4/3) beta exp(-M_* r)`.
 
-`|delta Phi/Phi_GR| <= beta exp(-M_* r)`.
+The asymptotic long-range GR pole remains unchanged. The vDVZ tensor factor is a real prediction/constraint of the **linear** v0.1 completion, not an automatic rejection because the continuum is gapped and finite-range.
 
-The complete tensor normalization/PPN audit remains open before QG-003 can fully PASS.
+## 8. Traceless-probe cross-channel relation
 
-## 8. RQIR-linked fingerprint
+If one conserved probe is traceless, its trace term vanishes in both the massless and massive exchange amplitudes. Thus the continuum/massless tensor coefficient ratio for the traceless channel is `1`, whereas the nonrelativistic calibration ratio is `4/3`.
 
-The same pair `(beta,M_*)` controls three sectors:
+After calibrating the continuum strength using a nonrelativistic force measurement, a traceless-probe response carries the fixed relative factor
 
-1. **static transfer:** the Yukawa-mixture correction `W(M_* r)`;
-2. **dynamic ordered response:** the retarded continuum threshold at `p^2=M_*^2`;
-3. **vacuum Gaussian gravitational fluctuations:** the positive spectral continuum fixed by `rho_g`.
+`3/4`.
 
-Therefore source calibration is not allowed to tune the static, absorptive and noise signatures independently.
+This provides an additional RQIR cross-channel fingerprint that cannot be tuned independently of the static force within v0.1.
 
-The intended RQIR discriminator is the cross-consistency of these three manifestations after the exact hard-constraint quotient.
+## 9. RQIR-linked fingerprint
 
-## 9. Relation to known theory classes
+The same `(beta,M_*)` and spectral shape determine:
 
-This ansatz is **not claimed novel**. Positive spectral continua occur in generalized free fields, interacting Källén–Lehmann representations, hidden-sector/continuum mediator models, extra-dimensional/Kaluza–Klein constructions, unparticle-like models, and some nonlocal quantum-gravity descriptions.
+1. nonrelativistic static transfer with the `4/3` tensor factor;
+2. traceless-probe transfer with the linked `3/4` relative relation after NR calibration;
+3. dynamic branch-cut/absorptive threshold at `p^2=M_*^2`;
+4. Gaussian gravitational spectral fluctuations.
 
-Accordingly QG-007 is BLOCKED until the model is compared explicitly against:
+A serious Paper-I discriminator should combine at least two of these manifestations. A single static Yukawa-like anomaly is too easy for C0/C4 nuisance models to mimic.
 
-- C5 perturbative quantum GR including its interaction-generated continuum;
-- nonlocal/form-factor gravity;
-- hidden/non-gravitational quantum mediator nuisance C4;
-- extra-dimensional/continuum spin-2 models where operationally relevant;
-- stochastic/classical-channel alternatives that may reproduce lower-order transfer/noise.
+## 10. Relation to known theory classes
 
-A failure of novelty will be retained as a useful negative result rather than repaired by changing `rho_hat` post hoc.
+This ansatz is **not claimed novel**. Positive massive spin-2 continua occur or can emerge in generalized spectral fields, extra-dimensional/Kaluza–Klein scenarios, hidden-sector continuum mediators, massive-gravity/DGP-like constructions, interacting spectral representations and nonlocal gravity.
 
-## 10. Immediate falsification conditions
+The standard massive spin-2 `-1/3` trace coefficient and vDVZ behavior are known prior physics; their presence here is a consistency/signature result, not a novelty claim.
+
+QG-007 therefore requires explicit comparison with:
+
+- C5 perturbative quantum GR including interaction-generated cuts;
+- C4 hidden/KK/unparticle-like spin-2 continua;
+- nonlocal/form-factor quantum gravity;
+- C2/C3 stochastic classical transfer models;
+- nonlinear massive-gravity completions if Vainshtein screening is invoked in any future version.
+
+No Vainshtein mechanism may be imported into v0.1 without defining a materially new nonlinear model version.
+
+## 11. Immediate falsification conditions
 
 Reject/supersede v0.1 if:
 
-- the positive spectral measure cannot be embedded in a consistent conserved-source spin-2 physical-state space;
-- restoring the full tensor/helicity structure introduces negative-norm states or violates Ward/Bianchi consistency;
-- the Newtonian/PPN limit fails after full tensor normalization;
-- the linked static/dynamic/noise fingerprint is exactly degenerate with C5 or another required comparator;
-- the candidate direction disappears under exact RQIR calibration/nuisance profiling;
-- required physical resources are divergent/undefined in every admissible region.
+- the positive linear spin-2 continuum cannot be embedded in a consistent nonlinear constraint structure;
+- a required nonlinear completion introduces negative-norm/Boulware–Deser-type sectors in the relevant domain;
+- the fixed vDVZ-linked static/traceless relation is experimentally or internally inconsistent in the parameter region needed for RQIR discrimination;
+- the full fingerprint is exactly degenerate with C4/C5/nonlocal/KK comparators;
+- the candidate direction is removed by exact calibration/nuisance profiling;
+- physical resources are divergent or undefined throughout the admissible domain.
 
-## 11. Current scientific status
+## 12. Current status
 
-The model is stronger than v0.1 only in a **scoped two-point sense**: positivity, retarded support and absence of an isolated opposite-residue pole are built into the spectral representation.
+Passed/retained scoped results:
 
-It is not yet `QG001` and should remain `ANSATZ-*` until the tensor/gauge, comparator and RQIR finite-discriminator gates are completed.
+- positive spectral measure;
+- retarded spectral superposition;
+- no isolated added continuum pole;
+- linear conserved-source tensor completion with standard massive-spin-2 exchange structure;
+- finite-range Newtonian recovery with fixed `4/3` correction coefficient;
+- linked `3/4` traceless-vs-NR calibration relation.
+
+Still blocking promotion:
+
+- nonlinear tensor/constraint completion;
+- exact comparator distinction;
+- finite Paper-I hard-constraint quotient;
+- Paper-II profiled Fisher;
+- Paper-III resource closure.
