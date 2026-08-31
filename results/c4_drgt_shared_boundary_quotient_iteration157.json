@@ -1,0 +1,58 @@
+{
+  "iteration": 157,
+  "comparator_id": "C4-DRGT-001",
+  "scope": "TT six-probe shared-boundary and gain nuisance quotient",
+  "base_columns": ["EH_common", "C5_Ricci3", "C5_Riemann3", "common_response_gain_at_dRGT_reference"],
+  "candidate_C4_tangent_columns": ["log_m2", "alpha3"],
+  "audits": {
+    "raw": {
+      "base_rank": 4,
+      "combined_rank": 6,
+      "combined_singular_values": [26.019451005655675,2.936751887743152,0.45384134069880805,0.07785666048492398,0.034072767967667186,0.00169287937493967],
+      "residual_norms": [0.0037820963384886477,0.03746710154281307],
+      "tangent_norms": [3.0089594343269037,0.7075058956625774],
+      "residual_fractions": [0.001256944940945903,0.0529565926906167]
+    },
+    "base_row_l2": {
+      "base_rank": 4,
+      "combined_rank": 6,
+      "combined_singular_values": [2.3831758522707345,0.5897444819791506,0.2958608805423022,0.014056778458997558,0.007014282694374505,0.00044142071068066095],
+      "residual_norms": [0.0010143997629138543,0.007714673987722905],
+      "tangent_norms": [0.3166942158909453,0.12170094150125269],
+      "residual_fractions": [0.003203089011461978,0.06339042157404753]
+    },
+    "EH_abs_floor": {
+      "base_rank": 4,
+      "combined_rank": 6,
+      "combined_singular_values": [3.4252786713887917,1.0029909632100977,0.4255519916751697,0.01859582860600302,0.009272694170503006,0.0005994462035388717],
+      "residual_norms": [0.0013558328447163385,0.0101757500353967],
+      "tangent_norms": [0.4727605460739788,0.2154911212925464],
+      "residual_fractions": [0.0028679060805217324,0.047221203241976296]
+    },
+    "dRGT_reference_abs_floor": {
+      "base_rank": 4,
+      "combined_rank": 6,
+      "combined_singular_values": [3.926604500547765,0.9332440116769035,0.47362523236536064,0.023380421619401834,0.010943342764160542,0.0007361528614902545],
+      "residual_norms": [0.0016358273292047503,0.01197851855812528],
+      "tangent_norms": [0.532907943346103,0.17253385108950667],
+      "residual_fractions": [0.003069624593946696,0.06942706305159267]
+    }
+  },
+  "summary": {
+    "rank_stable_all_scalings": true,
+    "base_rank_all_scalings": [4],
+    "combined_rank_all_scalings": [6],
+    "log_m2_residual_fraction_range": [0.001256944940945903,0.003203089011461978],
+    "alpha3_residual_fraction_range": [0.047221203241976296,0.06942706305159267],
+    "interpretation": "algebraic independence survives, but log_m2 is near-degenerate after common-EH/gain quotient whereas alpha3 is materially more robust"
+  },
+  "status": {
+    "shared_boundary_quotient": "PASS_SCOPED",
+    "log_m2_direction": "NEAR_DEGENERATE_NOT_PROMOTABLE",
+    "alpha3_direction": "SCOPED_RESIDUAL_SURVIVES",
+    "full_C4": "BLOCKED_HELICITY_AND_HIGHER_POINT_COMPLETION",
+    "full_C5": "BLOCKED_HIGHER_LOCAL_AND_LOOPS",
+    "Fisher_resources": "FORBIDDEN",
+    "ANSATZ_003": "NOT_CREATED"
+  }
+}
