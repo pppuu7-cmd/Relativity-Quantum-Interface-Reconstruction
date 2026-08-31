@@ -1,0 +1,31 @@
+{
+  "iteration": 177,
+  "scope": "six target-independent null-soft TT Ward-subtracted amputated C5 rows",
+  "soft_family": "k1=eps*(1,0,0,1), k2=q_i, k3=-q_i-k1",
+  "ward_subtraction": "W[K2]=0 exactly for these curvature-cubic directions because their quadratic expansion around Minkowski vanishes",
+  "soft_ricci_norm_at_unit_k0": 0.0,
+  "soft_riemann_norm_at_unit_k0": 1.9999999999999998,
+  "analytic_result": "For null TT soft leg, Rmn^(1)=0, so Tr(Ricci^3) B_T is exactly zero in this protocol",
+  "V_C5_B_T": [[0.0,-1.6411697071822275],[0.0,0.06385882717014456],[0.0,0.8548821188463769],[0.0,-0.17055215671317986],[0.0,-0.3261917310634991],[0.0,-0.1655609264695088]],
+  "rank": 1,
+  "n_columns": 2,
+  "singular_values": [1.8950564367982758,0.0],
+  "nonzero_column_norm": 1.8950564367982756,
+  "max_extrapolation_discrepancy": 5.262558013335861e-06,
+  "max_soft_gauge_replacement_abs": 2.818617479042844e-22,
+  "classification": {
+    "Ricci3_B_T": "EXACT_PROTOCOL_ZERO_FROM_NULL_TT_SOFT_RICCI",
+    "Riemann3_B_T": "NONZERO_PASS_SCOPED",
+    "two_operator_rank": "1/2_REGIME_SPECIFIC_NON_IDENTIFIABILITY",
+    "novelty_certificate": "NONE_COMPARATOR_INCOMPLETE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "C5-NG-008 — NULL_TT_SOFT_PROTOCOL_ANNIHILATES_RICCI_CUBED_B_T_BUT_NOT_CYCLIC_RIEMANN_CUBED",
+    "SOFT-NG-004 — FIRST_ACTION_LEVEL_LOCAL_C5_B_T_BASIS_HAS_RANK_ONE_ON_SIX_NULL_SOFT_TT_ROWS",
+    "NG-FUNNEL-037 — PROTOCOL_ZERO_FROM_ONSHELL_SOFT_RICCI_IS_REGIME_SPECIFIC_NOT_OPERATOR_ABSENCE"
+  ],
+  "model_readiness_percent": 24,
+  "readiness_change": "unchanged: first physical C5 B_T column is instantiated, but fixed C4/nonlocal/AS/C3 transverse quotient and any robust candidate residual are still missing"
+}
