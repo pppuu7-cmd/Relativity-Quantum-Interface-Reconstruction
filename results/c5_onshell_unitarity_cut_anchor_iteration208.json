@@ -1,0 +1,41 @@
+{
+  "iteration": 208,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "comparator_id": "C5-SMATRIX-CUT-001",
+  "theory": "four-dimensional pure Einstein gravity",
+  "observable_scope": "one-loop on-shell 2->2 graviton scattering; nonanalytic unitarity/discontinuity sector plus IR-safe physical completion",
+  "authority": [
+    {
+      "reference": "Dunbar-Norridge, arXiv:hep-th/9408014",
+      "supports": "all one-loop four-graviton amplitudes for arbitrary internal particle content; pure-gravity result and unitarity constraints"
+    },
+    {
+      "reference": "Donoghue-Torma, arXiv:hep-th/9901156",
+      "supports": "pure-GR graviton-graviton scattering at one-loop O(E^4) depends only on Newton's constant; remaining virtual divergence is infrared and the cross section is finite and model-independent after bremsstrahlung"
+    }
+  ],
+  "frozen_relations": {
+    "formal_s_channel_cut": "Disc_s M4^(1) is fixed by the two-particle phase-space integral of products of tree Einstein amplitudes, summed over physical intermediate graviton helicities, with the identical-state normalization fixed by convention in any future executable implementation",
+    "local_analytic_counterterms": "Disc_s P(s,t)=0 inside their analytic domain",
+    "operational_IR_rule": "a raw virtual amplitude is not an operational observable; use either the inclusive soft-emission completed cross section or a separately preregistered IR-subtracted hard amplitude"
+  },
+  "classification": {
+    "gauge_safety": "PASS_ONSHELL",
+    "nonanalytic_C5_positive_control": "PASS_SCOPED",
+    "IR_safe_physical_completion_exists": "PASS_SCOPED_AUTHORITY",
+    "direct_RQIR_T_cut_replacement": "NO",
+    "off_shell_source_completed_C5_cut": "BLOCKED_C5_VD_NONLOCAL_CUBIC_SPECIALIZATION",
+    "candidate_residual": "NONE"
+  },
+  "retained_results": [
+    "C5-CUT-006 — PURE_EINSTEIN_ONE_LOOP_FOUR_GRAVITON_UNITARITY_CUT_IS_A_GAUGE_INVARIANT_NONANALYTIC_POSITIVE_CONTROL",
+    "IR-NG-001 — RAW_VIRTUAL_GRAVITON_CUT_IS_NOT_AN_OPERATIONAL_ANCHOR_WITHOUT_IR_COMPLETION_OR_SUBTRACTION",
+    "C5-NG-021 — AT_DECLARED_ONE_LOOP_LOW_ENERGY_ORDER_THE_PHYSICAL_GRAVITON_SCATTERING_RESULT_IS_MODEL_INDEPENDENT_AND_FIXED_BY_NEWTONS_CONSTANT",
+    "NG-FUNNEL-064 — ONSHELL_NONANALYTIC_POSITIVE_CONTROL_DOES_NOT_REPLACE_THE_OFFSHELL_SOURCE_COMPLETED_LINKED_CUT"
+  ],
+  "ANSATZ_003": "NOT_CREATED",
+  "Fisher_resources": "FORBIDDEN",
+  "readiness_change": "unchanged at 23%; a physical C5 nonanalytic anchor is established, but the actual RQIR off-shell comparator remains blocked",
+  "next_gate": "Construct a bridge test from the gauge-invariant four-graviton cut to the soft/linked sector, auditing loop-corrected soft-graviton and IR-factorization relations before claiming any constraint on T_cut."
+}
