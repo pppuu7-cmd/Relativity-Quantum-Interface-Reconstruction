@@ -1,0 +1,53 @@
+{
+  "iteration": 197,
+  "protocol_name": "RQIR-WITHHELD-NULLSOFT-12-v3-K2-FROZEN",
+  "design_status": "K2_GEOMETRY_FROZEN_BEFORE_ANY_CUBIC_OR_CANDIDATE_EVALUATION",
+  "design_rule": {
+    "base_q_vectors": "same six frozen base q vectors",
+    "low_scale_grid": [0.6,0.65,0.7,0.75,0.8,0.85,0.9],
+    "high_scale_grid": [1.1,1.15,1.2,1.25,1.3,1.35,1.4],
+    "hard_x_window": [0.1,1.0],
+    "objective": "minimize column-normalized condition number of [x,...,x^6,x^2 exp(x)]",
+    "tie_break": "minimize raw condition number",
+    "candidate_information_used": false,
+    "soft2_information_used": false,
+    "valid_grid_pairs": 49
+  },
+  "selected": {
+    "low_scale": 0.8,
+    "high_scale": 1.4,
+    "x_values": [0.324864,0.246656,0.27264,0.201792,0.256256,0.184448,0.994896,0.755384,0.83496,0.617988,0.784784,0.564872],
+    "x_min": 0.184448,
+    "x_max": 0.994896,
+    "hard_rank": 7,
+    "raw_singular_values": [5.01841872,0.887699031,0.242072195,0.0256099726,0.00192978617,0.000114577369,7.87932706e-07],
+    "raw_condition_number": 6369095.585559765,
+    "column_normalized_singular_values": [2.57727387,0.578904779,0.148800517,0.0196153858,0.00151691601,9.54842024e-05,3.31433496e-07],
+    "column_normalized_condition_number": 7776141.808944951,
+    "partner_x_min_on_eps_grid": 0.17948800000000006,
+    "partner_x_max_on_eps_grid": 0.9971359999999998
+  },
+  "comparison_to_v2": {
+    "v2_raw_condition_number": 20493465.77309452,
+    "v3_raw_condition_improvement_factor": 3.217641421422222,
+    "v2_column_normalized_condition_number": 23876680.09716509,
+    "v3_column_normalized_condition_improvement_factor": 3.0705047160662087,
+    "v2_raw_smallest_singular_value": 1.3903845821443078e-07,
+    "v3_raw_smallest_singular_value_gain": 5.667012683202058
+  },
+  "classification": {
+    "hard_rank7": "PASS_STRUCTURAL_AND_NUMERICAL",
+    "conditioning": "IMPROVED_BUT_STILL_NEAR_DEGENERATE",
+    "cubic_protocol": "NOT_YET_FROZEN_FOR_V3",
+    "candidate_residual": "NOT_TESTED",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "NUM-NG-011 — TARGET_INDEPENDENT_SCALE_DESIGN_IMPROVES_SUPPORTED_HARD_K2_CONDITIONING_WITHOUT_USING_CANDIDATE_INFORMATION",
+    "PROTO-NG-004 — WITHHELD_V3_K2_GEOMETRY_IS_FROZEN_BEFORE_CUBIC_POLARIZATION_OR_CANDIDATE_EVALUATION",
+    "NG-FUNNEL-051 — CONDITIONING_OPTIMIZATION_MAY_USE_FIXED_COMPARATOR_GEOMETRY_BUT_NOT_FUTURE_CANDIDATE_RESIDUALS"
+  ],
+  "model_readiness_percent": 24,
+  "readiness_change": "unchanged: conditioning improved prospectively, but AS/C3 remain blocked and v3 cubic geometry is not yet frozen."
+}
