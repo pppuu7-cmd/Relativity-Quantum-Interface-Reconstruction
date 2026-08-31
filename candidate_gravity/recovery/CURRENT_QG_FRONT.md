@@ -7,11 +7,11 @@
 **Rejected consistency control:** `ANSATZ-RQIR-CTP-001` v0.1  
 **Positive-spectral Gaussian comparator:** `ANSATZ-RQIR-KL-002` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 179**
+**Authoritative Candidate Gravity front:** **Iteration 180**
 
 ## Scientific state in one sentence
 
-The search is in source-completed, two-point-amputated, Ward-subtracted transverse null-soft three-point space. Iteration 178 compresses the authorized local-C5 cubic subset through dimension 12 to a four-dimensional physical `B_T` span on six frozen rows, while Iteration 179 shows that the fixed nonzero-mass dRGT C4 comparator does not share the physical massless/null soft pole and therefore must be marked protocol-incompatible rather than zero-filled.
+The search is in source-completed, two-point-amputated, Ward-subtracted transverse null-soft three-point space. The frozen local-C5 cubic subset through dimension 12 occupies a physics-aware rank-4 span on six `B_T` rows; fixed nonzero-mass dRGT is physically incompatible with the null-soft pole, while the strongest compatible local/unitary massless-spin-2 C4 control merges exactly with the same C5 soft boundary at the frozen order. The next discriminator is the fixed covariant nonlocal parent action.
 
 ## Stable readiness rubric
 
@@ -24,7 +24,7 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 - identifiability/Fisher `0/10`;
 - resource/experiment closure `0/10`.
 
-`MODEL_READINESS = 24%` remains unchanged through Iteration 179. Do not raise readiness for workload alone. The remaining comparator-family transverse foundation and any full-quotient residual are still open.
+`MODEL_READINESS = 24%` remains unchanged through Iteration 180. Do not raise readiness for workload alone.
 
 ## Frozen rules
 
@@ -49,7 +49,7 @@ Local Hermitian tree EFT is absorptively zero off pole; leading massless one-loo
 
 ### Linked CTP Iterations 171–174
 
-Two-point amputation removes external-leg spectral dressing. Generic closed-unitary cubic structure obeys `Gamma_aar=0`, `Gamma_aaa=Gamma_arr/4`; this is shared quantum structure, not a gravity witness. PQCG ordered cubic completion is `BLOCKED_C3_CTP_ORDERED_COMPLETION`. The fixed exponential nonlocal parent contains a genuine Frechet operator-insertion cubic term, but the old coarse unitary+scalar-Ward relation map annihilates arbitrary closed-unitary diffeomorphic tree amplitudes and is therefore too weak.
+Two-point amputation removes external-leg spectral dressing. Generic closed-unitary cubic structure obeys `Gamma_aar=0`, `Gamma_aaa=Gamma_arr/4`; this is shared quantum structure. PQCG ordered cubic completion is `BLOCKED_C3_CTP_ORDERED_COMPLETION`. The fixed exponential nonlocal parent contains a genuine Frechet operator-insertion cubic term, but the old coarse unitary+scalar-Ward relation map is too weak.
 
 ## Soft-transverse authority
 
@@ -57,101 +57,91 @@ Two-point amputation removes external-leg spectral dressing. Generic closed-unit
 
 Freeze
 
-`Gamma3_soft = W[K2] + Rlin_soft : B3 + higher-soft-order`.
+`Gamma3_soft = W[K2] + Rlin_soft : B3 + higher-soft-order`,
 
-`W[K2]` is shared Ward/covariantization structure determined by the same quadratic inverse kernel. The independent physical carrier starts at `O(k_soft^2)` and is projected into six frozen coordinates
+and six physical coordinates
 
 `B_T(i)=P_T[Gamma_arr(i)-W_i[K2]]`.
 
-Pure-gauge soft polarization gives linearized Riemann zero; physical null plus-TT gives nonzero Riemann scaling exactly as `k_soft^2`.
+The physical null plus-TT soft Riemann scales as `k_soft^2`; pure gauge gives zero.
 
-### Iteration 176 — protocol compatibility guard
+### Iteration 176 — compatibility guard
 
-Finite off-shell Iteration-150 curvature-cubic numbers do not determine soft2. Exact counterfamily `f_c(eps)=f0(eps)+c eps^2(1-eps)^2` preserves soft0, soft1 and one finite point while shifting soft2. Old finite columns cannot be relabeled as `B_T`.
+Finite off-shell cubic response does not determine soft2. Old finite columns cannot be relabeled as `B_T`.
 
-### Iteration 177 — first action-level local-C5 B_T columns
+### Iteration 177 — first local-C5 action-level columns
 
-On six fixed rows
+On the six frozen rows, null-TT soft Ricci vanishes exactly. Hence `Ricci^3` is protocol-zero while cyclic `Riemann^3` survives. Two-operator rank is `1/2`.
 
-`k1=eps*(1,0,0,1)`, `k2=q_i`, `k3=-q_i-k1`,
+### Iteration 178 — local-C5 dimension-12 completion
 
-with physical null plus-TT soft polarization:
+For the authorized cubic subset through dimension 12:
 
-- `Rmn^(1)(soft)=0`;
-- `B_T[Tr(Ricci^3)] = 0` exactly in this protocol;
-- cyclic `Riemann^3` survives with
+- `B_T[Ricci3]=0`;
+- `B_T[RicciChain Box^n]=0`, `n=1,2,3`;
+- `B_T[Ricci Ricci Riemann]=B_T[Riemann3]/12`;
+- `B_T[RiemannChain Box^n]=(2/3)(-q_i^2)^n B_T[Riemann3]`, `n=1,2,3`.
 
-`[-1.6411697072, 0.0638588272, 0.8548821188, -0.1705521567, -0.3261917311, -0.1655609265]`.
+The nine declared operator columns reduce to four physical basis vectors
 
-Two-operator rank is `1/2`; the Ricci zero is regime-specific, not operator absence.
-
-Retain `C5-NG-008`, `SOFT-NG-004`, `NG-FUNNEL-037`.
-
-### Iteration 178 — dimension-12 local-C5 soft-transverse completion
-
-Extend the same frozen six rows by the already-authorized target-independent cubic subset through dimension 12:
-
-- mixed `Ricci Ricci Riemann`;
-- `RicciChain Box^n`, `n=1,2,3`;
-- `RiemannChain Box^n`, `n=1,2,3`.
-
-All start at `O(h^3)` about Minkowski, hence operator-specific `K2=0` and `W[K2]=0`.
-
-Exact/scoped null-TT relations:
-
-`B_T[Ricci3] = 0`,
-
-`B_T[RicciChain Box^n] = 0`, `n=1,2,3`,
-
-`B_T[Ricci Ricci Riemann] = B_T[Riemann3]/12`,
-
-`B_T[RiemannChain Box^n] = (2/3)(-q_i^2)^n B_T[Riemann3]`, `n=1,2,3`.
-
-Therefore the nine declared local cubic columns reduce to the four physical basis vectors
-
-`Riemann3 * {1, (-q^2), (q^2)^2, (-q^2)^3}`
-
-(up to fixed descendant normalization).
+`Riemann3 * {1, (-q^2), (q^2)^2, (-q^2)^3}`.
 
 Physics-aware rank: `4/6`.
 
-Physics-aware singular values:
+Singular values:
 
 `[2.0192478812, 0.0752839640, 0.0037576657, 4.7032262e-5]`.
 
-A blind extrapolated SVD produces a fifth singular value `1.2254e-8`, but the independent extrapolation discrepancy is `5.2626e-6`; exact soft identities remove the fifth direction. Do not promote it.
+A fifth blind numerical singular value is below the `5.2626e-6` extrapolation/error envelope and is removed by exact identities.
 
-Maximum pure-gauge soft-leg residue: `9.51e-23`.
+Retain `C5-NG-009`, `SOFT-NG-005`, `NUM-NG-001`.
 
-Retain:
+### Iteration 179 — dRGT protocol mismatch
 
-- `C5-NG-009 — DIMENSION12_LOCAL_C5_NULL_SOFT_TT_BASIS_COMPRESSES_TO_RIEMANN_CHAIN_POLYNOMIAL_RANK_FOUR`;
-- `SOFT-NG-005 — NULL_SOFT_TT_KINEMATICS_KILLS_RICCI_CHAIN_AND_REDUCES_DERIVATIVE_RIEMANN_DESCENDANTS_TO_HARD_Q2_MOMENTS`;
-- `NUM-NG-001 — SUB_ERROR_SINGULAR_VALUE_MUST_NOT_BE_PROMOTED_WHEN_EXACT_KINEMATIC_IDENTITIES_REMOVE_IT`.
+`C4-DRGT-001` is frozen at `m^2=0.04`. At physical null soft momentum,
 
-### Iteration 179 — fixed dRGT/null-soft compatibility
+`K2_dRGT(k_soft)=k_soft^2+m^2=0.04 != 0`.
 
-`C4-DRGT-001` is frozen at `m^2=0.04`, `alpha3=0`, `alpha4=0`, with TT inverse kernel `K2=k^2+m^2` and cubic TT potential coefficient `m^2(3+alpha3)/8`.
-
-The frozen `B_T` carrier is a physical massless/null soft spin-2 leg with `k_soft^2=0`. At the fixed dRGT point,
-
-`K2_dRGT(k_soft)=0.04 != 0`.
-
-Therefore the null leg is not the physical dRGT soft pole. The fixed comparator cannot be assigned a physical null-soft `B_T` column without changing the model/observable boundary.
-
-Status:
+Thus the null leg is not the physical dRGT soft pole. Status:
 
 `BLOCKED_C4_NULL_SOFT_PROTOCOL_MISMATCH`.
 
-This is not a zero C4 column, not a consistency failure, and not exclusion of massive gravity.
+Do not zero-fill. Do not call this a consistency FAIL or exclusion of massive gravity. At formal `m^2->0` in the scoped TT block the dRGT-specific nonderivative cubic coefficient vanishes and the boundary approaches the shared EH TT structure, but this is not the frozen comparator point.
 
-At the formal TT boundary `m^2->0`, the dRGT-specific nonderivative cubic coefficient vanishes linearly while the TT propagator approaches the massless EH denominator. That boundary is not the frozen `m^2=0.04` comparator and does not authorize a substituted column.
+Retain `C4-NG-009`, `SOFT-NG-006`, `C4-NG-010`.
+
+### Iteration 180 — compatible massless-spin-2 C4 boundary
+
+Freeze the strongest compatible finite C4 control under scoped assumptions:
+
+- one local unitary massless spin-2 field;
+- conserved/universal stress coupling;
+- self-consistent nonlinear parent dynamics;
+- local EFT freedom through the same dimension-12 `B_T` order.
+
+Soft-gauge consistency and standard consistent-deformation/self-coupling results place this control on the same Einstein-type/local-EFT massless-spin-2 boundary represented by C5. Local EFT modifications of sub-subleading soft structure are already admitted in C5.
+
+Finite boundary certificate:
+
+`rank(V_C5)=4`,
+
+`rank(V_C4_massless)=4`,
+
+`rank([V_C5,V_C4_massless])=4`,
+
+with exact zero residual by the frozen boundary construction.
+
+Classification:
+
+`SCOPED_EXACT_BOUNDARY_MERGER_WITH_C5_LOCAL_MASSLESS_SPIN2_EFT`.
+
+This does not exclude all C4 hidden sectors. It states that an otherwise identical consistent massless-spin-2 parent dynamics cannot be distinguished by merely relabeling it an ordinary mediator.
 
 Retain:
 
-- `C4-NG-009 — FIXED_NONZERO_MASS_DRGT_COMPARATOR_DOES_NOT_SHARE_THE_PHYSICAL_NULL_SOFT_POLE_OF_THE_B_T_PROTOCOL`;
-- `SOFT-NG-006 — COMPARATOR_PROTOCOL_MISMATCH_MUST_BE_BLOCKED_NOT_ZERO_FILLED`;
-- `C4-NG-010 — FORMAL_DRGT_MASSLESS_TT_BOUNDARY_REMOVES_THE_NONDERIVATIVE_CUBIC_POTENTIAL_AND_COLLAPSES_TOWARD_THE_SHARED_EH_TT_BOUNDARY`.
+- `C4-NG-011 — CONSISTENT_LOCAL_MASSLESS_SPIN2_MEDIATOR_CONTROL_MERGES_WITH_C5_SOFT_BOUNDARY_AT_FROZEN_ORDER`;
+- `SOFT-NG-007 — SEMANTIC_GRAVITY_VS_MEDIATOR_LABEL_IS_NOT_AN_OPERATIONAL_DISCRIMINATOR_WHEN_PARENT_DYNAMICS_AND_SOURCE_MAP_COINCIDE`;
+- `NG-FUNNEL-038 — C4_NULL_SOFT_CONTROL_SPLITS_INTO_PROTOCOL_INCOMPATIBLE_MASSIVE_CASE_OR_C5_BOUNDARY_MASSLESS_CASE_UNDER_SCOPED_ASSUMPTIONS`.
 
 ## Comparator status
 
@@ -161,15 +151,15 @@ Supported lower-order PQCG pieces remain authoritative. Ordered metric-CTP and t
 
 ### C4
 
-The existing fixed nonlinear dRGT comparator is not physically compatible with the null-soft carrier at its frozen nonzero mass point. The next task is to freeze a compatible massless ordinary-quantum-mediator C4 control under explicit finite dynamics and source convention; no broad class capability mask is allowed.
+For this physical null-soft carrier, fixed nonzero-mass dRGT is protocol-incompatible, while the strongest compatible local/unitary single-massless-spin-2 control adds no independent direction beyond C5 at the frozen order. Other mediator classes remain outside this scoped merger and require explicit testing if they can reproduce the tensor observable.
 
 ### C5
 
-The authorized local cubic subset through dimension 12 occupies physics-aware rank 4/6 in the six-row null-soft TT `B_T` protocol.
+The authorized local cubic subset through dimension 12 occupies rank `4/6`.
 
 ### Nonlocal
 
-`QG-NL-EXP-001` fixes its tree cubic in principle, including the Frechet insertion. Its projection into the six `B_T` rows remains pending.
+`QG-NL-EXP-001` fixes its tree cubic in principle, including the Frechet insertion. Its `B_T` projection is now the immediate next gate.
 
 ### Asymptotic safety
 
@@ -179,7 +169,7 @@ Two-point spectral information is calibrated external-leg data. Real-time/source
 
 There is still **no robust Candidate Gravity residual**.
 
-The two-dimensional algebraic complement after local C5 alone is not a novelty certificate.
+The two-dimensional algebraic complement after local C5/C4-boundary subtraction remains provisional.
 
 `ANSATZ-003`: NOT CREATED.  
 Fisher/resources: FORBIDDEN.
@@ -190,25 +180,30 @@ Fisher/resources: FORBIDDEN.
 - `analysis/c5_soft_transverse_dimension12_iteration178.py`
 - `results/c5_soft_transverse_dimension12_iteration178.json`
 - `candidate_gravity/C5_SOFT_TRANSVERSE_DIMENSION12_ITERATION178.md`
-- `research_log/2026-08-31_iteration_178_c5_soft_transverse_dimension12.md`
 - `recovery/RECOVERY_DELTA_ITERATION_178.md`
 
 ### Iteration 179
 - `analysis/c4_drgt_null_soft_compatibility_iteration179.py`
 - `results/c4_drgt_null_soft_compatibility_iteration179.json`
 - `candidate_gravity/C4_DRGT_NULL_SOFT_COMPATIBILITY_ITERATION179.md`
-- `research_log/2026-08-31_iteration_179_c4_drgt_null_soft_compatibility.md`
 - `recovery/RECOVERY_DELTA_ITERATION_179.md`
 
-## Immediate next scientific priority — Iteration 180
+### Iteration 180
+- `analysis/c4_massless_spin2_boundary_iteration180.py`
+- `results/c4_massless_spin2_boundary_iteration180.json`
+- `candidate_gravity/C4_MASSLESS_SPIN2_BOUNDARY_ITERATION180.md`
+- `research_log/2026-08-31_iteration_180_c4_massless_spin2_boundary.md`
+- `recovery/RECOVERY_DELTA_ITERATION_180.md`
 
-Freeze the strongest finite **massless ordinary-quantum-mediator C4 control** compatible with the same physical null-soft spin-2 observable.
+## Immediate next scientific priority — Iteration 181
+
+Project the already-fixed covariant nonlocal comparator `QG-NL-EXP-001` into the exact same six null-soft TT `B_T` rows.
 
 Required order:
 
-1. define explicit parent dynamics, source/stress coupling and detector/transduction convention;
-2. enforce the same massless soft/Ward boundary used by the `B_T` observable rather than importing dRGT off shell;
-3. determine whether its Ward-subtracted transverse `B_T` directions are independent of or contained in the current C5 soft boundary;
-4. if standard locality/unitarity/universal-coupling assumptions collapse the massless spin-2 control onto the same gravitational soft boundary at the declared order, record a scoped comparator-boundary merger rather than claiming all C4 models impossible;
-5. after C4, project `QG-NL-EXP-001` into the same rows and then address the fixed asymptotic-safety real-time transverse completion;
+1. derive/evaluate the cubic vertex from the full parent action, including the Frechet `delta F(Box)` insertion;
+2. use the same source convention, soft family, hard rows and Ward subtraction;
+3. test whether the fixed nonlocal column enlarges the current rank-4 C5/C4-boundary span to rank 5 or 6;
+4. if its Lorentzian/retarded continuation is not fixed at the required order, mark the missing piece BLOCKED rather than zero-fill;
+5. after nonlocal, address fixed asymptotic-safety real-time transverse completion and the C3 ordered/transverse boundary;
 6. no `ANSATZ-003`, Fisher or resources until a nonzero residual survives the full fixed comparator quotient.
