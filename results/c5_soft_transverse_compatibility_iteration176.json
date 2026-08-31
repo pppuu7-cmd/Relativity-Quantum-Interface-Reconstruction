@@ -1,0 +1,58 @@
+{
+  "analytic_counterfamily": "f_c(epsilon)=f0(epsilon)+c*epsilon^2*(1-epsilon)^2",
+  "answer": "NO",
+  "classification": {
+    "ANSATZ_003": "NOT_CREATED",
+    "C5_B_T": "BLOCKED_NEW_SOFT_DEFORMED_ACTION_LEVEL_COMPUTATION_REQUIRED",
+    "Fisher_resources": "FORBIDDEN",
+    "iteration150_scientific_result": "RETAIN_VALID_IN_ITS_FROZEN_FINITE_OFFSHELL_SCOPE",
+    "reuse_iteration150_numeric_columns_as_B_T": "FORBIDDEN_PROTOCOL_MISMATCH"
+  },
+  "invariants_shared_by_all_c": [
+    "f(0)",
+    "f'(0)",
+    "f(1)"
+  ],
+  "iteration": 176,
+  "iteration150_authority": {
+    "explicit_C5_columns": [
+      "Tr(Ricci^3)",
+      "cyclic(Riemann^3)"
+    ],
+    "finite_response_rank": "2/2",
+    "kinematics": "six finite off-shell triplets (p,-q,-r), p=q+r",
+    "status": "VALID_FINITE_OFFSHELL_C5_AUTHORITY_BUT_NOT_SOFT_B_T_DATA"
+  },
+  "iteration151_authority": {
+    "EH_source_completed_Ward": "PASS_SCOPED",
+    "curvature_cubic_soft_transverse_projection": "NOT_COMPUTED"
+  },
+  "model_readiness_percent": 24,
+  "quantity_not_determined": "epsilon^2 soft coefficient / Ward-subtracted B_T",
+  "question": "Can Iteration-150 finite off-shell C5 cubic columns be reused as Iteration-175 soft-transverse B_T columns?",
+  "readiness_change": "unchanged: protocol incompatibility is resolved, but the required C5 transverse columns still need a new action-level computation",
+  "required_soft_protocol": {
+    "hard_structure": "same physical metric/source convention; hard legs chosen target-independently",
+    "operation_order": [
+      "derive source-completed cubic vertex from covariant action",
+      "subtract W[K2] at each epsilon",
+      "project transverse tensor structure",
+      "extract epsilon^2 coefficient at epsilon->0",
+      "form six-row B_T comparator columns",
+      "compute rank/SVD"
+    ],
+    "soft_family": "k_soft(epsilon)=epsilon*k0 with momentum conservation enforced for all epsilon"
+  },
+  "retained_results": [
+    "C5-NG-007 — FINITE_OFFSHELL_CUBIC_RESPONSE_DOES_NOT_DETERMINE_WARD_SUBTRACTED_SOFT2_COEFFICIENT",
+    "SOFT-NG-003 — PRESERVING_SOFT0_SOFT1_AND_ONE_FINITE_POINT_STILL_LEAVES_SOFT2_FREE",
+    "NG-FUNNEL-036 — TRANSVERSE_SOFT_COMPARATOR_COLUMNS_MUST_BE_RECOMPUTED_FROM_SOFT_DEFORMED_PARENT_ACTION"
+  ],
+  "toy_rows": [
+    {"c": -5.0, "f_at_0": 1.25, "f_at_1": 2.95, "fprime_at_0": -0.7, "soft2_coefficient": -2.6},
+    {"c": -1.0, "f_at_0": 1.25, "f_at_1": 2.95, "fprime_at_0": -0.7, "soft2_coefficient": 1.4},
+    {"c": 0.0, "f_at_0": 1.25, "f_at_1": 2.95, "fprime_at_0": -0.7, "soft2_coefficient": 2.4},
+    {"c": 2.0, "f_at_0": 1.25, "f_at_1": 2.95, "fprime_at_0": -0.7, "soft2_coefficient": 4.4},
+    {"c": 7.5, "f_at_0": 1.25, "f_at_1": 2.95, "fprime_at_0": -0.7, "soft2_coefficient": 9.9}
+  ]
+}
