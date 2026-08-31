@@ -1,0 +1,41 @@
+{
+  "as_ir_operator_set": ["R", "R_mn R^mn", "R^2", "R_mn Box R^mn", "R Box R"],
+  "c5_offshell_basis_contract": "complete unreduced local diffeomorphism-invariant covariant basis through dimension 12, including Ricci/EOM-redundant directions",
+  "current_six_probe_ir_surrogate": "FAIL_DOMAIN_OF_VALIDITY",
+  "decision": {
+    "full_nonlocal_as_retarded_tangent": "STILL_BLOCKED",
+    "strict_deep_ir_as_vs_c5": "EXACT_STRUCTURAL_DEGENERACY_WITH_LOCAL_C5_EFT_FAMILY",
+    "use_ir_expansion_on_iteration149_six_probes": "FORBIDDEN"
+  },
+  "fit_derived_taylor_coefficients": {
+    "c1": 344.0672259121935,
+    "c2": -136.7511182955081,
+    "g_R2": 1.87751,
+    "g_Ricci2": -0.40129099999999995
+  },
+  "iteration": 161,
+  "model_readiness_percent": 23,
+  "paper_rounded_coefficients": {"c1":344.09,"c2":-136.75,"g_R2":1.9,"g_Ricci2":-0.4},
+  "readiness_change": "+1 point: AS strict local-IR comparator sector is now classified; full nonlocal AS remains blocked",
+  "relative_error_ranges": {
+    "R2_max": 384.89448594867974,
+    "R2_min": 45.02312154387796,
+    "Ricci2_max": 69310.07731333924,
+    "Ricci2_min": 1666.9691403682948
+  },
+  "scope": "local IR action embedding and domain-of-validity audit",
+  "source": "Pawlowski & Traenkle arXiv:2309.17043v2, Eqs. (27),(32), Appendix G/H",
+  "structural_embedding": {
+    "all_as_ir_operators_are_c5_local_operators": true,
+    "classification": "AS_LOCAL_IR_SUBSET_OF_C5_EFT",
+    "novelty_relative_to_C5_in_strict_IR": "NONE_AT_ACTION_LEVEL_FOR_THIS_TRUNCATION"
+  },
+  "triplet_domain_audit": [
+    {"triplet":1,"legs":{"p":{"x_k2":0.7473,"full_f_Ricci2":-0.0037039902546036896,"IR1_f_Ricci2":256.7201469241822,"relative_error_Ricci2":69310.07731333924,"full_f_R2":0.261312950235091,"IR1_f_R2":-100.31660070223319,"relative_error_R2":384.89448594867974},"q":{"x_k2":0.5076,"full_f_Ricci2":-0.013870708469499742,"IR1_f_Ricci2":174.24723287302947,"relative_error_Ricci2":12563.244621908188,"full_f_R2":0.3746659503976726,"IR1_f_R2":-67.53735764679992,"relative_error_R2":181.26019598288923},"r":{"x_k2":0.3313,"full_f_Ricci2":-0.02986751165419259,"IR1_f_Ricci2":113.5881809447097,"relative_error_Ricci2":3804.0681048973493,"full_f_R2":0.5245740228914841,"IR1_f_R2":-43.42813549130183,"relative_error_R2":83.78743055541197}}},
+    {"triplet":2,"legs":{"p":{"x_k2":0.6157,"full_f_Ricci2":-0.00822585127172426,"IR1_f_Ricci2":211.44089999413757,"relative_error_Ricci2":25705.43994300622,"full_f_R2":0.3147918278298731,"IR1_f_R2":-82.32015353454433,"relative_error_R2":262.5066410778416},"q":{"x_k2":0.3854,"full_f_Ricci2":-0.023705430147345018,"IR1_f_Ricci2":132.2022178665594,"relative_error_Ricci2":5577.874878238222,"full_f_R2":0.46932436814868417,"IR1_f_R2":-50.82637099108882,"relative_error_R2":109.29689323735857},"r":{"x_k2":0.2935,"full_f_Ricci2":-0.03512018781572479,"IR1_f_Ricci2":100.58243980522879,"relative_error_Ricci2":2864.9493710279585,"full_f_R2":0.5697752497156899,"IR1_f_R2":-38.25894321973162,"relative_error_R2":68.14742916408234}}},
+    {"triplet":3,"legs":{"p":{"x_k2":0.4418,"full_f_Ricci2":-0.018584976977155523,"IR1_f_Ricci2":151.6076094080071,"relative_error_Ricci2":8158.535497319246,"full_f_R2":0.4212216622155585,"IR1_f_R2":-58.539134062955476,"relative_error_R2":139.97465233637084},"q":{"x_k2":0.426,"full_f_Ricci2":-0.01990569186562754,"IR1_f_Ricci2":146.17134723859445,"relative_error_Ricci2":7344.193505923704,"full_f_R2":0.43384727932610173,"IR1_f_R2":-56.37846639388645,"relative_error_R2":130.95002868626847},"r":{"x_k2":0.2746,"full_f_Ricci2":-0.038108176733008196,"IR1_f_Ricci2":94.07956923548835,"relative_error_Ricci2":2469.7502079835626,"full_f_R2":0.594792797573218,"IR1_f_R2":-35.67434708394652,"relative_error_R2":60.9777724772383}}},
+    {"triplet":4,"legs":{"p":{"x_k2":0.612,"full_f_Ricci2":-0.008385223898134677,"IR1_f_Ricci2":210.16785125826243,"relative_error_Ricci2":25065.071491879306,"full_f_R2":0.31656604301743546,"IR1_f_R2":-81.81417439685094,"relative_error_R2":259.4426731844542},"q":{"x_k2":0.3153,"full_f_Ricci2":-0.031982649885576586,"IR1_f_Ricci2":108.08310533011462,"relative_error_Ricci2":3380.4293379942083,"full_f_R2":0.5429705677140853,"IR1_f_R2":-41.240117598573704,"relative_error_R2":76.95276807027544},"r":{"x_k2":0.2773,"full_f_Ricci2":-0.03766484395030743,"IR1_f_Ricci2":95.00855074545126,"relative_error_Ricci2":2523.472968978696,"full_f_R2":0.5911113132720272,"IR1_f_R2":-36.043575103344395,"relative_error_R2":61.97595206532155}}},
+    {"triplet":5,"legs":{"p":{"x_k2":0.6682,"full_f_Ricci2":-0.006172971573013941,"IR1_f_Ricci2":229.50442935452773,"relative_error_Ricci2":37179.92211877993,"full_f_R2":0.29135165503156724,"IR1_f_R2":-89.4995872450585,"relative_error_R2":308.18750245424707},"q":{"x_k2":0.4004,"full_f_Ricci2":-0.022228766620259736,"IR1_f_Ricci2":137.3632262552423,"relative_error_Ricci2":6180.525324182708,"full_f_R2":0.45567802009295694,"IR1_f_R2":-52.877637765521435,"relative_error_R2":117.04166853326512},"r":{"x_k2":0.2278,"full_f_Ricci2":-0.04680592285494515,"IR1_f_Ricci2":77.97722306279769,"relative_error_Ricci2":1666.9691403682948,"full_f_R2":0.6649777144616807,"IR1_f_R2":-29.274394747716745,"relative_error_R2":45.02312154387796}}},
+    {"triplet":6,"legs":{"p":{"x_k2":0.4239,"full_f_Ricci2":-0.020087480029728814,"IR1_f_Ricci2":145.44880606417885,"relative_error_Ricci2":7241.769168104679,"full_f_R2":0.4355725058024616,"IR1_f_R2":-56.09128904546588,"relative_error_R2":129.77600927112715},"q":{"x_k2":0.2882,"full_f_Ricci2":-0.035931561898533144,"IR1_f_Ricci2":98.75888350789418,"relative_error_Ricci2":2749.527430752346,"full_f_R2":0.5766166805957346,"IR1_f_R2":-37.53416229276543,"relative_error_R2":66.09378510171925},"r":{"x_k2":0.2321,"full_f_Ricci2":-0.04591794650875263,"IR1_f_Ricci2":79.45671213422011,"relative_error_Ricci2":1731.406478849713,"full_f_R2":0.6579857755702161,"IR1_f_R2":-29.862424556387428,"relative_error_R2":46.38460505549439}}}
+  ]
+}
