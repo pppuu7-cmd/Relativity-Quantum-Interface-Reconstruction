@@ -1,0 +1,65 @@
+{
+  "iteration": 216,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "source_result": "results/c5_fivepoint_finite_cut_extractor_iteration215.json",
+  "primary_authority": "the 12-point physical finite-cut vector plus pointwise conservative numerical error; fitted coefficients are compression only",
+  "n2_full_window": {
+    "basis": ["1", "L", "z", "zL", "z^2", "z^2L"],
+    "condition_number": 4264.620104188085,
+    "relative_l2_residual": 2.791237182608158e-07,
+    "max_residual_over_pointwise_error": 1209.9258445266119,
+    "rms_residual_over_pointwise_error": 368.3746405844733
+  },
+  "n3_full_window": {
+    "basis": ["1", "L", "z", "zL", "z^2", "z^2L", "z^3", "z^3L"],
+    "condition_number": 279549.57021254627,
+    "relative_l2_residual": 5.097857621076231e-10,
+    "max_residual_over_pointwise_error": 0.6374038683627824,
+    "rms_residual_over_pointwise_error": 0.24665414702851912,
+    "coefficients": [
+      {"real": 183.44668616179354, "imag": 269.9217881871951},
+      {"real": 2.024678864920304e-05, "imag": -6.253448053428201e-05},
+      {"real": 28.685533703106532, "imag": -60.293198563586635},
+      {"real": 0.33500999673530085, "imag": 13.098994213053638},
+      {"real": -1.2051557139673341, "imag": -5.003582220330671},
+      {"real": 0.7383529402987916, "imag": 1.0006974414250172},
+      {"real": -0.3620357112926551, "imag": -0.18624041528727764},
+      {"real": 0.11675597657725767, "imag": 0.023657418038158795}
+    ],
+    "deterministic_pointwise_error_perturbation_relative_coefficient_change": 0.0011746260372903436,
+    "conservative_l2_coefficient_error_bound": 0.004867928099587526
+  },
+  "window_audit_n3": {
+    "full12": {"n_points": 12, "epsilon_min": 0.0003125, "epsilon_max": 0.04, "condition_number": 279549.57021254627, "relative_l2_fit_residual": 5.097857621076231e-10, "relative_coefficient_shift_vs_full12": 0.0},
+    "inner10_drop_two_largest_epsilon": {"n_points": 10, "epsilon_min": 0.0003125, "epsilon_max": 0.016555065597696216, "condition_number": 4004318.5997245694, "relative_l2_fit_residual": 3.6892708575763745e-11, "relative_coefficient_shift_vs_full12": 0.0005472062862520859},
+    "inner8_drop_four_largest_epsilon": {"n_points": 8, "epsilon_min": 0.0003125, "epsilon_max": 0.006851754923600618, "condition_number": 188176205.01017085, "relative_l2_fit_residual": 4.2699923690674635e-16, "relative_coefficient_shift_vs_full12": 0.0029587055776159254},
+    "outer10_drop_two_smallest_epsilon": {"n_points": 10, "epsilon_min": 0.0007550559027527791, "epsilon_max": 0.04, "condition_number": 626355.5418010206, "relative_l2_fit_residual": 2.1984836645698477e-10, "relative_coefficient_shift_vs_full12": 0.0001266933177726149},
+    "middle10_drop_both_endpoints": {"n_points": 10, "epsilon_min": 0.000485751963053412, "epsilon_max": 0.02573329796018864, "condition_number": 1219044.2873749232, "relative_l2_fit_residual": 5.288176814411118e-11, "relative_coefficient_shift_vs_full12": 0.00026157545032671754}
+  },
+  "prediction_audit": {
+    "n3_inner10_predict_two_largest_epsilon": {"relative_l2_prediction_error": 4.865283604462105e-06, "max_prediction_error_over_pointwise_numerical_error": 21637.623264188835},
+    "n3_outer10_predict_two_smallest_epsilon": {"relative_l2_prediction_error": 1.2446083041308483e-08, "max_prediction_error_over_pointwise_numerical_error": 0.19551077293228988},
+    "n3_middle10_predict_both_endpoints": {"relative_l2_prediction_error": 8.22836030731813e-07, "max_prediction_error_over_pointwise_numerical_error": 3705.0497897764003}
+  },
+  "classification": {
+    "n2_basis": "FAIL_NUMERICAL_COMPLETENESS_PHYSICAL_C5_VECTOR",
+    "n3_basis": "PASS_WITHIN_DECLARED_POINTWISE_NUMERICAL_ERROR_ON_FULL_FROZEN_WINDOW",
+    "n3_coefficients_as_exact_global_formula": "NO_COMPRESSION_ONLY",
+    "large_epsilon_asymptotic_prediction_from_inner_window": "FAIL_HIGHER_ORDER_CONTENT_RESOLVED",
+    "small_epsilon_prediction_from_outer_window": "PASS_WITHIN_POINTWISE_NUMERICAL_ERROR",
+    "primary_C5_comparator_datum": "PHYSICAL_12_POINT_VECTOR_PLUS_ERROR_ENVELOPE",
+    "off_shell_source_completed_T_cut": "STILL_BLOCKED",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "C5-CUT-016 — N3_REGULAR_LOG_BASIS_IS_THE_FIRST_FROZEN_ORDER_THAT_DESCRIBES_THE_PHYSICAL_FIVE_GRAVITON_CUT_WITHIN_ITS_DECLARED_NUMERICAL_ERROR",
+    "SOFT-NG-009 — REGULAR_LOG_COEFFICIENTS_ARE_COMPRESSION_NOT_PRIMARY_COMPARATOR_AUTHORITY_WHEN_HIGH_EPSILON_HIGHER_ORDER_CONTENT_IS_RESOLVED",
+    "NUM-NG-018 — PHYSICAL_LOOP_COMPARATOR_AUTHORITY_IS_THE_FINITE_VECTOR_PLUS_POINTWISE_ERROR_ENVELOPE_NOT_A_WINDOW_DEPENDENT_ASYMPTOTIC_FIT",
+    "NG-FUNNEL-073 — CANDIDATE_QUOTIENTS_MUST_PROPAGATE_PHYSICAL_COMPARATOR_VECTOR_ERRORS_AND_SOFT_TRUNCATION_SEPARATELY"
+  ],
+  "readiness_change": "unchanged at 23%; the physical C5 cut representation is now stress-tested, but the off-shell/source-completed C5 linked cut and AS/C3 nonlinear cuts remain open",
+  "next_gate": "Use the physical 12-point C5 vector plus error as the on-shell nonanalytic control; separately determine whether any gauge-safe source-completed off-shell T_cut relation can be bounded or constructed, while continuing AS/C3 cut authority audits."
+}
