@@ -2,25 +2,25 @@
 
 **Updated:** 2026-09-01  
 **Infrastructure status:** READY — 100%  
-**MODEL_READINESS:** **23%** under the frozen model-only rubric  
+**MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 224**
+**Authoritative Candidate Gravity front:** **Iteration 225**
 
 ## Scientific state in one sentence
-Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. The gauge-safe connected scalar-source comparator `MSSC-001` now has Born-fixed local IR completion, but its global finite bulk hard remainder is `BLOCKED_NUMERICAL_BULK_HARD_REMAINDER`: two fixed deterministic angular charts disagree by up to 13.819% on the tested cap-excised grids. AS and C3 real-time nonlinear comparator relations remain BLOCKED. No Candidate Gravity residual exists.
+Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. The gauge-safe connected scalar-source comparator `MSSC-001` now has Born-fixed local IR completion **and** a numerically stable global finite hard remainder after singularity-adapted Voronoi cubature. AS and C3 real-time nonlinear comparator relations remain BLOCKED. No Candidate Gravity residual exists.
 
 ## Stable readiness rubric
 Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 
-- comparator foundation `23/25`;
+- comparator foundation `24/25`;
 - robust unique residual `0/20`;
 - frozen parent dynamics/ANSATZ `0/20`;
 - consistency/positivity/Ward/causality `0/15`;
 - identifiability/Fisher `0/10`;
 - resource/experiment closure `0/10`.
 
-`MODEL_READINESS = 23%`. Protocol/numerical localization alone does not raise the score.
+`MODEL_READINESS = 24%`.
 
 ## Frozen rules
 - Repository/recovery and recent commits are source of truth; if this file lags recent commits, follow the later completed iteration and immediately resynchronize this file.
@@ -58,50 +58,51 @@ Classification: `BLOCKED_C5_VD_NONLOCAL_CUBIC_SPECIALIZATION`.
 ### Iterations 208–220 — physical controls
 A gauge-invariant pure-Einstein on-shell unitarity-cut control is retained, with real gravitational collinear IR structure. `MSSC-001` supplies a distinct gauge-invariant scalar gravitational Compton/source block suitable for a connected-source control, avoiding ordinary off-shell 1PI gauge ambiguity.
 
-### Iteration 221 — first physical connected-source cut
-The scalar+graviton two-particle cut is built entirely from gauge-invariant source tree blocks with a sum over the two physical spin-2 intermediate polarizations. Internal transverse-basis rotation invariance passes at `3.96e-16`. Both physical collinear directions show approximately `delta^-2` kernel behavior; antipodes are finite. The raw phase-space integral is logarithmically IR divergent.
-
-Retain `SRC-CUT-001`, `SRC-CUT-002`, `IR-NG-005`, `NG-FUNNEL-077`.
-
-### Iteration 222 — Born-fixed source-cut collinear factorization
-Across external angles `{0.45,0.8,1.15,1.6,2.1}` and both independent external linear spin-2 polarizations, direct local endpoint limits give
+### Iterations 221–223 — connected-source cut and local IR completion
+The scalar+graviton two-particle cut is built entirely from gauge-invariant source tree blocks with a physical spin-2 intermediate-state sum. Internal transverse-basis rotation invariance passes. Both physical collinear directions are logarithmically divergent before subtraction. Direct local endpoint limits across the frozen kinematics give
 
 `R_in = R_out = -8 M_Born`
 
-in the frozen stripped normalization. Maximum extrapolated error from `-8` is `3.15e-6`; maximum incoming/outgoing ratio mismatch is `3.54e-6`. No cap-regulated integral determines the coefficient.
-
-Classification: `PASS_SCOPED_CROSS_KINEMATIC`. Retain `SRC-CUT-003`, `IR-NG-006`, `NG-FUNNEL-078`.
-
-### Iteration 223 — Born-fixed local source hard-remainder completion
-Freeze
+without cap fitting. With
 
 `I_hard(n) = I_cut(n) - R/(1+n_z) - R/(1-n·n_out)`,
 
-with `R=-8 M_Born` inherited from Iteration 222. For exact spherical annuli `rho in [delta/2,delta]`, `delta={0.08,0.04,0.02,0.01,0.005}`, across five external angles, both linear spin-2 polarizations and both collinear directions, the small-shell exponent lies in
+exact local cap shells vanish as `delta^2`.
 
-`1.9991758663 <= p <= 2.0066517080`.
+Retain `SRC-CUT-001` through `SRC-CUT-004`, `IR-NG-005` through `IR-NG-007`, and `NG-FUNNEL-077` through `NG-FUNNEL-079`.
 
-Classification: local Born-fixed subtraction `PASS_FROM_ITERATION222`; local cap-regulator removal `PASS_SCOPED_LOCAL_IR_COMPLETION`; global finite bulk source hard remainder `NOT_YET`.
+### Iteration 224 — superseded global-grid numerical blocker
+A global cap-excised tensor-product angular grid produced chart disagreement up to `13.819%`. Classification was correctly `BLOCKED_NUMERICAL_BULK_HARD_REMAINDER`, not physics FAIL. This remains useful negative numerical provenance but no longer controls the front.
 
-Retain `SRC-CUT-004`, `IR-NG-007`, `NG-FUNNEL-079`.
+Retain `NUM-NG-013`, `SRC-CUT-005`, `NG-FUNNEL-080` as superseded blocker provenance.
 
-### Iteration 224 — deterministic global bulk quadrature audit
-The Iteration-222 subtraction coefficient is unchanged and the Iteration-223 `delta^2` local-cap result remains frozen. The cap-excised global bulk integral was evaluated with two fixed angular decompositions:
+### Iteration 225 — singularity-adapted global hard-remainder completion
+Keep the Iteration-222 Born coefficient fixed and the Iteration-223 local integrability authority unchanged. Partition the sphere into exact spherical Voronoi cells centered on the two certified collinear directions. In each cell use local polar coordinates with exact great-circle boundary
 
-1. laboratory Gauss-Legendre `mu` x periodic midpoint `phi`;
-2. the same deterministic tensor rule in a chart rotated by `0.371 rad`.
+`rho_max(phi)=atan2(1-cos(gamma), sin(gamma) cos(phi))`.
 
-Resolutions `N={12,16,20}` (`N_phi=2N`) and cap radii `delta={0.08,0.04}` were checked across the same five external angles and two linear spin-2 polarizations.
+Compare two independent deterministic cubatures:
 
-At the finest tested grid, chart disagreement ranges from `3.099967107e-4` to `1.381947503e-1`. Worst row: `theta_ext=0.45`, cross polarization, `delta=0.04`, with lab `49.0040889813` and rotated `56.8621379324`.
+1. Gauss-Legendre radial x periodic midpoint azimuth;
+2. Gauss-Legendre radial x Gauss-Legendre azimuth.
+
+Across the frozen five scattering angles and both linear spin-2 polarizations, order 32 has maximum relative disagreement
+
+`2.584334806770234e-7`.
+
+For the two slowest rows (`theta_ext=2.1`), order 40 reduces this to at most
+
+`6.135670833005235e-9`.
+
+Freeze conservative relative numerical envelope `3e-7`.
 
 Classification:
 - local IR completion: `PASS_FROM_ITERATION223`;
-- global finite source hard remainder: `BLOCKED_NUMERICAL_BULK_HARD_REMAINDER`;
-- physics consistency FAIL: `NO`;
+- global finite `MSSC-001` hard remainder: `PASS_NUMERICAL_GLOBAL_COMPLETION`;
+- Iteration-224 numerical blocker: `RESOLVED`;
 - Candidate Gravity novelty: `NONE`.
 
-Retain `NUM-NG-013`, `SRC-CUT-005`, `NG-FUNNEL-080`.
+Retain `NUM-NG-014`, `SRC-CUT-006`, `NG-FUNNEL-081`.
 
 ## Other comparators
 ### C4
@@ -123,24 +124,24 @@ There is **no robust Candidate Gravity residual**.
 Fisher/resources: FORBIDDEN.
 
 ## Latest authority files
-### Iteration 224
-- `analysis/scalar_source_global_bulk_quadrature_iteration224.py`
-- `results/scalar_source_global_bulk_quadrature_iteration224.json`
-- `candidate_gravity/SCALAR_SOURCE_GLOBAL_BULK_QUADRATURE_ITERATION224.md`
-- `research_log/2026-09-01_iteration_224_global_bulk_quadrature_audit.md`
-- `recovery/RECOVERY_DELTA_ITERATION_224.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION224.md`
+### Iteration 225
+- `analysis/scalar_source_singularity_adapted_bulk_iteration225.py`
+- `results/scalar_source_singularity_adapted_bulk_iteration225.json`
+- `candidate_gravity/SCALAR_SOURCE_SINGULARITY_ADAPTED_BULK_ITERATION225.md`
+- `research_log/2026-09-01_iteration_225_singularity_adapted_bulk_completion.md`
+- `recovery/RECOVERY_DELTA_ITERATION_225.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION225.md`
 
-## Immediate next scientific priority — Iteration 225
-Implement a singularity-adapted domain decomposition for the already Born-subtracted `MSSC-001` source cut.
+## Immediate next scientific priority — Iteration 226
+Use the stable finite `MSSC-001` hard remainder to extract its frozen regular+log/nonanalytic structure in the same source convention and compare that structure with the separate pure-graviton positive control.
 
 Requirements:
-1. do not alter `R=-8 M_Born`;
-2. treat the two certified collinear neighborhoods in their own local polar charts;
-3. apply two genuinely independent high-order cubatures only to the smooth cap-excised bulk;
-4. combine with the separately controlled local cap contribution/extrapolation and require common convergence under cubature and cap-size variation;
-5. if this still fails, retain `BLOCKED_NUMERICAL_BULK_HARD_REMAINDER`, not physics FAIL;
-6. only after a stable finite source hard remainder exists compare its nonanalytic structure with the separate pure-graviton positive control;
+1. keep the source and pure-graviton observables distinct;
+2. propagate the frozen `3e-7` source numerical envelope;
+3. use the declared 4D regular+log basis rather than a pure Taylor fit;
+4. do not promote a residual from source/control mismatch alone;
+5. if the nonanalytic coefficient is not stable under the numerical envelope and prospective row choices, classify numerical/operational BLOCKED;
+6. after that comparison return to missing AS/C3 authority;
 7. AS/C3 remain BLOCKED and must never be zero-filled.
 
-Do not increase readiness for protocol work alone. Do not create `ANSATZ-003`. Do not run Fisher/resources.
+Do not create `ANSATZ-003`. Do not run Fisher/resources.
