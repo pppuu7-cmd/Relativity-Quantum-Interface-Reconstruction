@@ -5,10 +5,10 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 225**
+**Authoritative Candidate Gravity front:** **Iteration 226**
 
 ## Scientific state in one sentence
-Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. The gauge-safe connected scalar-source comparator `MSSC-001` now has Born-fixed local IR completion **and** a numerically stable global finite hard remainder after singularity-adapted Voronoi cubature. AS and C3 real-time nonlinear comparator relations remain BLOCKED. No Candidate Gravity residual exists.
+Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. The connected scalar-source comparator `MSSC-001` has Born-fixed IR completion and a stable global hard remainder, but its forward-transfer log coefficients are **not resolved** above the frozen `3e-7` numerical envelope; the distinct pure-graviton control does resolve log structure. AS and C3 real-time nonlinear comparator relations remain BLOCKED. No Candidate Gravity residual exists.
 
 ## Stable readiness rubric
 Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
@@ -20,7 +20,7 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 - identifiability/Fisher `0/10`;
 - resource/experiment closure `0/10`.
 
-`MODEL_READINESS = 24%`.
+`MODEL_READINESS: 24%`
 
 ## Frozen rules
 - Repository/recovery and recent commits are source of truth; if this file lags recent commits, follow the later completed iteration and immediately resynchronize this file.
@@ -34,6 +34,7 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 - For linked cuts: finite nonzero soft momentum -> hard-channel discontinuity -> source/Ward completion -> physical IR/hard-remainder completion -> regular+log extraction.
 - Do not infer an IR subtraction coefficient by fitting a cap-regulated integral. A subtraction coefficient must be fixed locally by factorization/Born authority or by a complete declared inclusive construction.
 - Keep the pure-graviton on-shell control and the connected-source control as distinct observables; compare structures only after each is independently completed.
+- A fitted log coefficient below the propagated frozen numerical envelope is `regime-specific non-identifiability`, not an exact zero.
 - Do not create `ANSATZ-003` before a concrete residual survives C3/C4/C5/nonlocal/AS subtraction, truncation uncertainty and prospective robustness.
 - Fisher/resources remain forbidden until the robust residual gate passes.
 
@@ -58,8 +59,10 @@ Classification: `BLOCKED_C5_VD_NONLOCAL_CUBIC_SPECIALIZATION`.
 ### Iterations 208–220 — physical controls
 A gauge-invariant pure-Einstein on-shell unitarity-cut control is retained, with real gravitational collinear IR structure. `MSSC-001` supplies a distinct gauge-invariant scalar gravitational Compton/source block suitable for a connected-source control, avoiding ordinary off-shell 1PI gauge ambiguity.
 
-### Iterations 221–223 — connected-source cut and local IR completion
-The scalar+graviton two-particle cut is built entirely from gauge-invariant source tree blocks with a physical spin-2 intermediate-state sum. Internal transverse-basis rotation invariance passes. Both physical collinear directions are logarithmically divergent before subtraction. Direct local endpoint limits across the frozen kinematics give
+Iteration 215 provides the retained pure-graviton regular+log positive control after its declared IR completion. Its equal-parameter pure-Taylor residual is `2790.180298263071` times the control numerical envelope, so nonanalytic structure is resolved there at scoped control level.
+
+### Iterations 221–225 — connected-source cut and numerical hard-remainder completion
+The scalar+graviton two-particle cut is built entirely from gauge-invariant source tree blocks with a physical spin-2 intermediate-state sum. Internal transverse-basis rotation invariance passes. Direct endpoint limits give
 
 `R_in = R_out = -8 M_Born`
 
@@ -67,42 +70,57 @@ without cap fitting. With
 
 `I_hard(n) = I_cut(n) - R/(1+n_z) - R/(1-n·n_out)`,
 
-exact local cap shells vanish as `delta^2`.
+local cap shells vanish as `delta^2`.
 
-Retain `SRC-CUT-001` through `SRC-CUT-004`, `IR-NG-005` through `IR-NG-007`, and `NG-FUNNEL-077` through `NG-FUNNEL-079`.
+Iteration 224's chart-dependent bulk number remains retained as superseded numerical blocker provenance. Iteration 225 resolves it with exact spherical Voronoi local-polar domain decomposition and two independent deterministic cubatures. Across the frozen broad kinematics, order 32 maximum relative disagreement is `2.584334806770234e-7`; slowest order-40 rows reach `6.135670833005235e-9`. Freeze conservative relative source numerical envelope `3e-7`.
 
-### Iteration 224 — superseded global-grid numerical blocker
-A global cap-excised tensor-product angular grid produced chart disagreement up to `13.819%`. Classification was correctly `BLOCKED_NUMERICAL_BULK_HARD_REMAINDER`, not physics FAIL. This remains useful negative numerical provenance but no longer controls the front.
-
-Retain `NUM-NG-013`, `SRC-CUT-005`, `NG-FUNNEL-080` as superseded blocker provenance.
-
-### Iteration 225 — singularity-adapted global hard-remainder completion
-Keep the Iteration-222 Born coefficient fixed and the Iteration-223 local integrability authority unchanged. Partition the sphere into exact spherical Voronoi cells centered on the two certified collinear directions. In each cell use local polar coordinates with exact great-circle boundary
-
-`rho_max(phi)=atan2(1-cos(gamma), sin(gamma) cos(phi))`.
-
-Compare two independent deterministic cubatures:
-
-1. Gauss-Legendre radial x periodic midpoint azimuth;
-2. Gauss-Legendre radial x Gauss-Legendre azimuth.
-
-Across the frozen five scattering angles and both linear spin-2 polarizations, order 32 has maximum relative disagreement
-
-`2.584334806770234e-7`.
-
-For the two slowest rows (`theta_ext=2.1`), order 40 reduces this to at most
-
-`6.135670833005235e-9`.
-
-Freeze conservative relative numerical envelope `3e-7`.
-
-Classification:
+Classification through Iteration 225:
 - local IR completion: `PASS_FROM_ITERATION223`;
 - global finite `MSSC-001` hard remainder: `PASS_NUMERICAL_GLOBAL_COMPLETION`;
 - Iteration-224 numerical blocker: `RESOLVED`;
 - Candidate Gravity novelty: `NONE`.
 
-Retain `NUM-NG-014`, `SRC-CUT-006`, `NG-FUNNEL-081`.
+### Iteration 226 — source forward regular+log resolution gate
+Use the natural transfer coordinate
+
+`z = -t/(4 p^2) = sin^2(theta_ext/2)`
+
+on comparator-only forward rows
+
+`theta_ext=[0.13,0.105,0.085,0.068,0.054,0.043,0.034,0.027]`
+
+for plus and cross external spin-2 polarizations. Keep `R=-8 M_Born`, the Iteration-225 cubature construction and the frozen `3e-7` relative source envelope unchanged.
+
+All 16 rows pass the numerical gate; worst two-cubature relative disagreement is
+
+`2.595262029909852e-7`.
+
+Compare the equal-parameter bases
+
+`[1,L,z,zL,z^2,z^2L]`, `L=log(z)`,
+
+and Taylor degree 5. Full-window relative L2 residuals are:
+
+- plus: regular+log `1.73176347744811e-8`, Taylor-5 `5.180431884151699e-11`;
+- cross: regular+log `6.991589330814055e-10`, Taylor-5 `1.6502718029550426e-12`.
+
+After conservative propagation of the frozen `3e-7` row envelope through the regular+log pseudoinverse, every log coefficient has `|b_i|/Delta b_i < 1`. Maximum is `0.9745719940266064` for plus and `0.03769973874474194` for cross.
+
+Classification:
+- source forward numerical gate: `PASS_WITHIN_FROZEN_3E-7_ENVELOPE`;
+- source log nonanalyticity: `REGIME_SPECIFIC_NON_IDENTIFIABILITY_NO_CERTIFICATE`;
+- analytic-vs-log status: `NEAR_DEGENERACY_WITHIN_NUMERICAL_ENVELOPE`;
+- exact analytic identity: `NOT_CLAIMED`;
+- consistency FAIL: `NO`;
+- source/pure-graviton mismatch as Candidate novelty: `NO`.
+
+Retain:
+- `SRC-CUT-007`;
+- `SRC-CUT-008`;
+- `REL-NG-005`;
+- `NG-FUNNEL-082`.
+
+Do not tune the source window after this negative result to manufacture a log certificate. A new source protocol would require a new prospectively frozen version.
 
 ## Other comparators
 ### C4
@@ -112,7 +130,7 @@ Compatible local unitary massless-spin-2 boundary remains inside C5 at the froze
 Analytic nonlocal hard shapes become Taylor-degenerate in deep IR; genuine nonlinear/loop causal cuts remain comparator work, not novelty.
 
 ### Asymptotic safety
-`BLOCKED_AS_REALTIME_RELATION_COMPLETION`: published authority still does not provide the required same-parent Lorentzian/in-in source-completed nonlinear retarded relation/cut.
+`BLOCKED_AS_REALTIME_RELATION_COMPLETION`: current retained authority does not provide the required same-parent Lorentzian/in-in source-completed nonlinear retarded relation/cut.
 
 ### C3 PQCG
 `BLOCKED_C3_CTP_ORDERED_COMPLETION`: nonlinear OM dynamics plus the published linearized conserved-diffusion MSR/JD construction do not determine the nonlinear metric-dependent ordered cut/soft relation required by RQIR.
@@ -124,24 +142,21 @@ There is **no robust Candidate Gravity residual**.
 Fisher/resources: FORBIDDEN.
 
 ## Latest authority files
-### Iteration 225
-- `analysis/scalar_source_singularity_adapted_bulk_iteration225.py`
-- `results/scalar_source_singularity_adapted_bulk_iteration225.json`
-- `candidate_gravity/SCALAR_SOURCE_SINGULARITY_ADAPTED_BULK_ITERATION225.md`
-- `research_log/2026-09-01_iteration_225_singularity_adapted_bulk_completion.md`
-- `recovery/RECOVERY_DELTA_ITERATION_225.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION225.md`
+### Iteration 226
+- `analysis/scalar_source_forward_regular_log_iteration226.py`
+- `results/scalar_source_forward_regular_log_iteration226.json`
+- `candidate_gravity/SCALAR_SOURCE_FORWARD_REGULAR_LOG_ITERATION226.md`
+- `research_log/2026-09-01_iteration_226_source_forward_regular_log.md`
+- `recovery/RECOVERY_DELTA_ITERATION_226.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION226.md`
 
-## Immediate next scientific priority — Iteration 226
-Use the stable finite `MSSC-001` hard remainder to extract its frozen regular+log/nonanalytic structure in the same source convention and compare that structure with the separate pure-graviton positive control.
+## Immediate next scientific priority — Iteration 227
+Return to missing comparator authority rather than retuning the source-control window.
 
 Requirements:
-1. keep the source and pure-graviton observables distinct;
-2. propagate the frozen `3e-7` source numerical envelope;
-3. use the declared 4D regular+log basis rather than a pure Taylor fit;
-4. do not promote a residual from source/control mismatch alone;
-5. if the nonanalytic coefficient is not stable under the numerical envelope and prospective row choices, classify numerical/operational BLOCKED;
-6. after that comparison return to missing AS/C3 authority;
-7. AS/C3 remain BLOCKED and must never be zero-filled.
-
-Do not create `ANSATZ-003`. Do not run Fisher/resources.
+1. re-audit current asymptotic-safety literature/authority for a same-parent Lorentzian or in-in, source-completed nonlinear retarded three-point relation/cut usable in the RQIR quotient;
+2. do not infer the required AS column from Euclidean fixed-point propagators or analytic continuation not supplied by the theory;
+3. if directly usable authority remains unavailable, retain `BLOCKED_AS_REALTIME_RELATION_COMPLETION` and state the exact missing ingredients;
+4. then proceed to C3 ordered metric-CTP nonlinear completion as the remaining authority blocker;
+5. neither AS nor C3 may be zero-filled;
+6. do not create `ANSATZ-003`; do not run Fisher/resources.
