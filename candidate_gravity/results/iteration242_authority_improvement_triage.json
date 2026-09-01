@@ -1,0 +1,38 @@
+{
+  "iteration": 242,
+  "model_readiness_percent": 24,
+  "classification": "AUTHORITY_IMPROVEMENT_PRIORITY_C5_FULL_VD_FINITE_CPT3",
+  "routes": [
+    {
+      "route": "C5_full_Vilkovisky_finite_CPT3",
+      "priority": 1,
+      "internal_derivability": "HIGH_HEAVY",
+      "new_model_choice_risk": "LOW_IF_EXACT_VD_DEFINITION_RETAINED",
+      "observable_identity": "HIGH",
+      "reproducibility": "HIGH_IN_PRINCIPLE",
+      "external_authority_dependence": "MODERATE"
+    },
+    {
+      "route": "C3_PQCG_nonlinear_conserved_completion",
+      "priority": 2,
+      "internal_derivability": "MEDIUM_LOW",
+      "new_model_choice_risk": "HIGH",
+      "observable_identity": "HIGH_IF_UNIQUELY_COMPLETED",
+      "reproducibility": "MEDIUM",
+      "external_authority_dependence": "HIGH"
+    },
+    {
+      "route": "AS_realtime_three_graviton_completion",
+      "priority": 3,
+      "internal_derivability": "LOW_FROM_PUBLISHED_DATA",
+      "new_model_choice_risk": "HIGH_IF_INTERPOLATED",
+      "observable_identity": "HIGH_ONLY_AFTER_MISSING_OBJECT_EXISTS",
+      "reproducibility": "LOW_MEDIUM",
+      "external_authority_dependence": "VERY_HIGH"
+    }
+  ],
+  "selected_route": "C5_full_Vilkovisky_finite_CPT3",
+  "candidate_residual": false,
+  "ansatz_003_authorized": false,
+  "fisher_resources_authorized": false
+}
