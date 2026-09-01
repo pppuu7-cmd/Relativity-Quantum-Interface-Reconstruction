@@ -5,11 +5,11 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 253**
+**Authoritative Candidate Gravity front:** **Iteration 254**
 
 ## Scientific state in one sentence
 
-The residual funnel remains exhausted under current comparator authority, so the program is improving the finite Vilkovisky C5 authority without proxy observables: Iterations 251–252 froze the first explicit ghost-resolvent variation and the exact orbit/ghost/weight factorization of `U1`; Iteration 253 now proves that the exact cubic Ward/symmetry condition applies to the complete same-parent sum `K0 E3 + K1 E2 + K2 E1`, not to isolated `K1 E2`, preventing a false consistency FAIL while leaving the explicit `delta[R(DR)]E2` numerator as the next derivation.
+The residual funnel remains exhausted under current comparator authority, so the active program is finite Vilkovisky C5 authority improvement: Iteration 254 explicitly validates the first TT background variation of the metric diffeomorphism generator and proves that, in the frozen linear covariant-metric split, there is no independent `delta(partial R)` vertex; the remaining genuinely new geometric ingredient of the `K1E2` kernel variation is the same-parent field-space connection variation `deltaGamma`, while the Iteration-253 full-sum Ward guardrail remains binding.
 
 ## Stable readiness rubric
 
@@ -24,7 +24,7 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 
 `MODEL_READINESS: 24%`
 
-Change from Iteration 252: **0 percentage points**. The correct Ward target is now frozen, but no physical comparator coordinate or robust residual has closed.
+Change from Iteration 253: **0 percentage points**. A genuine numerator-library ambiguity was removed, but no physical comparator coordinate or robust nonzero residual has closed.
 
 ## Non-negotiable frozen rules
 
@@ -41,7 +41,8 @@ Change from Iteration 252: **0 percentage points**. The correct Ward target is n
 - Null-soft linear Einstein equations kill the `e=3` sector but not the surviving nonlinear `e=1/e=2` sectors.
 - Iteration 251's first-order ghost-resolvent insertion is only one component of `E^(2)K^(1)`.
 - Iteration 252 fixes `U1=Nhat^-1 Y^up [R.(D R).E] Nhat^-1`; there are two `delta(Nhat^-1)` placements and one explicit `delta Y^up` placement.
-- **Iteration 253 guardrail:** the exact cubic Ward/symmetry identity constrains `K0E3 + K1E2 + K2E1`; do not declare a standalone Ward FAIL from `K1E2` alone unless an independent same-parent identity proves the sibling partitions separately irrelevant or symmetric.
+- Iteration 253: the exact cubic Ward/symmetry identity constrains `K0E3 + K1E2 + K2E1`; do not declare a standalone Ward FAIL from `K1E2` alone.
+- Iteration 254: for the linear covariant-metric split, `R=L_xi g` is affine in `g`, so `R_,ik=0` and no independent `delta(partial R)` vertex exists; do not reintroduce it as an extra numerator block.
 - Do not redefine the frozen linked observable to match a convenient amplitude, relational observable, asymptotic observable, or scalar-radiation proxy.
 - `T_cut` remains operationally non-executable with current published authority; authority improvement, not proxy search, is the active program.
 
@@ -64,7 +65,8 @@ Finite Vilkovisky/unique-action completion is the active authority-improvement r
 - `e=1/e=2` nonlinear Einstein sectors survive the frozen TT/null-soft controls;
 - first explicit TT ghost-resolvent variation validated numerically;
 - exact orbit/ghost/weight factorization of `U1`;
-- exact cubic Ward partition structure from Iteration 253.
+- exact cubic Ward partition structure from Iteration 253;
+- explicit TT-validated first variation of the diffeomorphism generator and the scoped `K1E2` decomposition from Iteration 254.
 
 Current umbrella blocker:
 
@@ -76,35 +78,41 @@ Current umbrella blocker:
 
 Retain their frozen blockers and negative certificates. No proxy is allowed to replace the frozen comparator identity.
 
-## Iteration 253 exact result
+## Iteration 254 exact scoped result
 
-Gauge invariance gives
+For
 
-`E_j R^j_delta = 0`.
+`g_mu_nu = eta_mu_nu + a eps_mu_nu exp(i q.x)`,
 
-With the same torsion-free field-space covariant derivative used by the Vilkovisky parent,
+`xi^mu = c^mu exp(i p.x)`,
 
-`R^i_gamma (D_i R^j_delta) E_j = -R^i_gamma R^j_delta (D_i E_j)`.
+the metric Lie-derivative generator has first background variation, up to the common Fourier factor,
 
-The full object is symmetric in `gamma,delta` because `D_iE_j=D_iD_jS` is the covariant Hessian.
+`delta R_mu_nu = (c.q) eps_mu_nu + p_mu eps_{rho nu} c^rho + p_nu eps_{mu rho} c^rho`.
+
+The reproducible TT finite-difference certificate agrees at maximum component error `3.05e-12` for step `1e-5`.
+
+Because `R` is affine in the covariant metric,
+
+`R_,ik=0`.
 
 Writing
 
-`K=R.(D R)=K0+tK1+t^2K2+...`,
+`B_i^j = D_i R^j = partial_i R^j + Gamma^j_ik R^k`,
 
-`E=tE1+t^2E2+t^3E3+...`,
+one gets
 
-the cubic coefficient is
+`delta B = deltaGamma * R0 + Gamma0 * deltaR`,
 
-`[K E]_(t^3) = K0 E3 + K1 E2 + K2 E1`.
+and therefore
+
+`deltaA[E2] = deltaR * B0 * E2 + R0 * Gamma0 * deltaR * E2 + R0 * deltaGamma * R0 * E2`.
 
 Freeze:
 
-`PASS_SCOPED_CUBIC_WARD_PARTITION_AUDIT`,
+`PASS_SCOPED_DIFFEO_GENERATOR_FIRST_VARIATION_AND_K1_DECOMPOSITION`.
 
-`NO_STANDALONE_CUBIC_WARD_FAIL_FROM_E2K1_PARTITION`.
-
-This is a scoped algebraic PASS and anti-overclaim guardrail, not a comparator coordinate and not a Candidate Gravity residual.
+This is a scoped algebraic/numerical PASS, not a comparator coordinate, not a full cubic Ward PASS, and not a Candidate Gravity residual.
 
 ## Candidate state
 
@@ -116,29 +124,28 @@ Heavy full C5 run: NOT AUTHORIZED.
 
 ## Latest authority files
 
-### Iteration 252
-- `candidate_gravity/C5_VD_U1_WEIGHT_FACTORIZATION_ITERATION252.md`
-- `candidate_gravity/code/iteration252_vd_u1_weight_factorization.py`
-- `candidate_gravity/results/iteration252_vd_u1_weight_factorization.json`
-- `research_log/2026-09-01_iteration_252_vd_u1_weight_factorization.md`
-- `recovery/RECOVERY_DELTA_ITERATION_252.md`
-
 ### Iteration 253
 - `candidate_gravity/C5_VD_U1_WARD_PARTITION_AUDIT_ITERATION253.md`
 - `candidate_gravity/code/iteration253_vd_u1_ward_partition_audit.py`
 - `candidate_gravity/results/iteration253_vd_u1_ward_partition_audit.json`
 - `research_log/2026-09-02_iteration_253_vd_u1_ward_partition_audit.md`
 - `recovery/RECOVERY_DELTA_ITERATION_253.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION253.md`
 
-## Immediate next scientific priority — Iteration 254
+### Iteration 254
+- `candidate_gravity/C5_VD_DIFFEO_GENERATOR_K1_DECOMPOSITION_ITERATION254.md`
+- `candidate_gravity/code/iteration254_vd_diffeo_generator_k1_decomposition.py`
+- `candidate_gravity/results/iteration254_vd_diffeo_generator_k1_decomposition.json`
+- `research_log/2026-09-02_iteration_254_vd_diffeo_generator_k1_decomposition.md`
+- `recovery/RECOVERY_DELTA_ITERATION_254.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION254.md`
 
-Stay in the same `D=4`, `Lambda=0`, `a=-1/2` convention and:
+## Immediate next scientific priority — Iteration 255
 
-1. derive the explicit `delta[R^i_gamma (D_i R^j_delta)] E^(2)_j` contribution;
-2. combine it with both frozen `delta(Nhat^-1)` placements and the Iteration-252 `delta Y^up` term;
-3. perform local/index-orientation and TT checks on the assembled `E^(2)K^(1)` block;
-4. do **not** impose the final cubic Ward/symmetry PASS/FAIL on this block alone;
-5. prepare the sibling `K0E3` and `K2E1` partitions in the same parent convention so the eventual Ward certificate applies to the full cubic sum;
-6. do not launch heavy tensor integration until this upstream numerator library is complete;
-7. do not create `ANSATZ-003`; do not run Fisher/resources.
+Stay in the same `D=4`, `Lambda=0`, `a=-1/2` parent convention and:
+
+1. derive `deltaGamma^j_ik` from the same frozen field-space metric/connection convention;
+2. validate it with a pointwise TT background check before using it in loop numerators;
+3. assemble the complete `deltaA[E2]` with the explicit `deltaR` pieces, both `delta(Nhat^-1)` placements and `deltaW`;
+4. prepare the sibling `K0E3` and `K2E1` blocks so the eventual Ward certificate applies only to `K0E3+K1E2+K2E1`;
+5. do not launch heavy tensor integration until this upstream numerator library is complete;
+6. do not create `ANSATZ-003`; do not run Fisher/resources.
