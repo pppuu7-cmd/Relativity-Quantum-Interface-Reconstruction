@@ -1,0 +1,11 @@
+{
+  "iteration": 253,
+  "model_readiness": "24%",
+  "ward_identity": "R_gamma^i (D_i R_delta^j) E_j = -R_gamma^i R_delta^j (D_i E_j)",
+  "total_order_3": "K0*E3 + K1*E2 + K2*E1",
+  "partition_match": true,
+  "classification": "PASS_SCOPED_CUBIC_WARD_PARTITION_AUDIT",
+  "guardrail": "Do not impose the full cubic condensed-index Ward/symmetry condition on K1*E2 alone. The same-parent Ward identity constrains the complete cubic sum K0*E3 + K1*E2 + K2*E1 unless separate identities prove each partition independently.",
+  "status": "BLOCKED_NOT_ZERO",
+  "next_gate": "Complete K1*E2 algebraically, but postpone a final cubic Ward PASS/FAIL until K0*E3 and K2*E1 are assembled in the same convention."
+}
