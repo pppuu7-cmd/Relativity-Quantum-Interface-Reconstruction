@@ -1,0 +1,17 @@
+{
+  "D": 4,
+  "Lambda": 0,
+  "a_VD": -0.5,
+  "analytic_input_pair_symmetry_residual": 0.0,
+  "inner_fd_step": 2e-05,
+  "max_base_christoffel_mismatch": 1.8103119003853863e-10,
+  "max_first_variation_component": 1.0000000581140978,
+  "max_first_variation_mismatch": 5.811409775624554e-08,
+  "outer_fd_step": 0.0002,
+  "split": "linear covariant metric, gamma1=1 gamma2..6=0",
+  "status": "PASS_SCOPED_FIELDSPACE_CHRISTOFFEL_FIRST_VARIATION_AND_TT_VALIDATION",
+  "tt_background": {
+    "eta_diag": [-1, 1, 1, 1],
+    "h_diag": [0, 1, -1, 0]
+  }
+}
