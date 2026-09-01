@@ -5,11 +5,11 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 238**
+**Authoritative Candidate Gravity front:** **Iteration 239**
 
 ## Scientific state in one sentence
 
-Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the novelty direction remains the frozen linked nonanalytic relation `T_cut = D_s Gamma3_ret,soft - W[D_s K2]`. C3, C5 and AS remain frozen blocked comparators. Iteration 238 closes the massive-scalar generalized-LSZ route negatively for this target: the complete causal radiation observable is a mixed five-point `phi^4 h` response, while frozen `T_cut` requires a native pure-gravity `h^3` response linked to the same-parent `h^2` metric kernel. Causal completion changes ordering/boundary conditions, not field valence. No Candidate Gravity residual exists.
+Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the novelty direction remains the frozen linked nonanalytic relation `T_cut = D_s Gamma3_ret,soft - W[D_s K2]`. C3, C5 and AS remain frozen blocked comparators; the massive-scalar causal proxy is valence-incompatible. Iteration 239 establishes the present executability boundary of native pure-gravity `T_cut`: generic retarded multipoint dispersion and causal GR technology exist, but no published executable flat-space package was found that simultaneously supplies a gauge-safe/source-completed native metric `h^3` response, same-parent `h^2` kernel, shared normalization, Ward/contact/IR completion and controlled hard-channel discontinuity. The route converges on the missing gauge-safe cubic effective-action authority rather than yielding a residual. No Candidate Gravity residual exists.
 
 ## Stable readiness rubric
 
@@ -24,7 +24,7 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 
 `MODEL_READINESS: 24%`
 
-Change from Iteration 237: **0 percentage points**. The massive-scalar causal branch is now correctly classified as comparator-incompatible, but no rubric block closes.
+Change from Iteration 238: **0 percentage points**. The computability boundary of frozen `T_cut` is now explicit, but no rubric block closes.
 
 ## Frozen rules
 
@@ -47,7 +47,8 @@ Change from Iteration 237: **0 percentage points**. The massive-scalar causal br
 - A reconstructed timelike function without controlled discontinuity is not authority for `D_s`; `|A|^2` is not a discontinuity.
 - A three-point diagram inside a two-point flow is not a computed nonlinear Lorentzian three-point correlator.
 - A single in-out `2 -> 3` amplitude discontinuity is not the complete in-in/retarded radiation observable.
-- **Iteration-238 guardrail:** generalized-LSZ / Keldysh causal completion does not change external field species or functional valence. A mixed `phi^4 h` response is not the frozen pure-gravity `h^3` response, and a lower-point `phi^4` scattering amplitude is not the metric `h^2` inverse kernel `K2` unless an independently derived same-parent source-reduction identity is supplied.
+- Generalized-LSZ / Keldysh causal completion does not change external field species or functional valence. A mixed `phi^4 h` response is not the frozen pure-gravity `h^3` response, and a lower-point `phi^4` scattering amplitude is not the metric `h^2` inverse kernel `K2` unless an independently derived same-parent source-reduction identity is supplied.
+- **Iteration-239 guardrail:** generic existence of retarded three-point dispersion relations does not certify a gauge-safe gravity specialization. A causal worldline/source observable is not automatically a native metric 1PI response. Euclidean-to-retarded continuation inherits any upstream gauge-safe cubic effective-action gap. Real on-shell three-graviton kinematics do not provide the finite hard-channel branch cut required by frozen `D_s`.
 - Do not redefine `T_cut` to match a convenient calculable observable.
 - Do not create `ANSATZ-003` before a concrete residual survives C3/C4/C5/nonlocal/AS subtraction, truncation uncertainty and prospective robustness.
 - Fisher/resources remain forbidden until the robust residual gate passes.
@@ -98,13 +99,25 @@ and
 
 `BLOCKED_COMPARATOR_INCOMPATIBLE_FUNCTIONAL_VALENCE_MIXED_PHI4H_VS_H3_LINKED_H2`.
 
-Retain labels:
-- `REL-NG-018`;
-- `REL-CUT-018`;
-- `REL-BLOCK-003`;
-- `NG-FUNNEL-094`.
+### Iteration 239 — native causal pure-gravity `T_cut` executability boundary
 
-This is comparator incompatibility / observable-identity failure for the proposed branch, **not** consistency FAIL of GR, exact comparator identity, regime-specific non-identifiability, near-degeneracy or a zero comparator column.
+Generic QFT authority supplies causal retarded three-point dispersion relations, and Schwinger-Keldysh GR supplies retarded source/worldline/radiation observables. However, no current published flat-space package was found that simultaneously computes a gauge-safe/source-completed native metric `Gamma3_ret[h,h,h]`, same-parent `K2[h,h]`, common normalization, Ward/contact completion, one physical IR prescription and a controlled hard-channel discontinuity. Euclidean-to-causal effective-equation routes require the gauge-safe finite cubic gravity effective action already blocked by the C5 Vilkovisky finite-CPT3 gap. Modern 2026 BRST Schwinger-Keldysh gauge-theory authority is not yet a diffeomorphism-gravity `h^3/h^2` specialization. The on-shell three-graviton amplitude cannot supply the missing hard-channel cut because real 4D massless three-point kinematics are degenerate and complexified three-point kinematics are not the frozen real causal discontinuity observable.
+
+Freeze:
+
+`BLOCKED_T_CUT_NATIVE_H3_EXECUTABILITY_AT_GAUGE_SAFE_CUBIC_EFFECTIVE_ACTION_BOUNDARY`
+
+with
+
+`BLOCKED_NOT_ZERO`.
+
+Retain labels:
+- `REL-NG-019`;
+- `REL-CUT-019`;
+- `REL-BLOCK-004`;
+- `NG-FUNNEL-095`.
+
+This is an operational BLOCKED / authority-boundary result, not consistency FAIL, exact comparator identity, regime-specific non-identifiability, near-degeneracy, or a zero comparator column.
 
 ## Candidate state
 
@@ -115,22 +128,22 @@ Fisher/resources: FORBIDDEN.
 
 ## Latest authority files
 
-### Iteration 238
-- `candidate_gravity/GENERALIZED_LSZ_T_CUT_STRUCTURE_AUDIT_ITERATION238.md`
-- `research_log/2026-09-01_iteration_238_generalized_lsz_tcut_structure_audit.md`
-- `recovery/RECOVERY_DELTA_ITERATION_238.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION238.md`
+### Iteration 239
+- `candidate_gravity/NATIVE_CAUSAL_PURE_GRAVITY_T_CUT_EXECUTABILITY_AUDIT_ITERATION239.md`
+- `research_log/2026-09-01_iteration_239_native_causal_pure_gravity_tcut_executability_audit.md`
+- `recovery/RECOVERY_DELTA_ITERATION_239.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION239.md`
 
-## Immediate next scientific priority — Iteration 239
+## Immediate next scientific priority — Iteration 240
 
-Search only for a branch whose **native causal functional sector is already pure-gravity `h^3` linked to the same-parent `h^2` metric kernel** in one physical convention.
+Audit whether a **relational/asymptotic pure-gravity gauge-safe observable construction** supplies a source-completed causal `h^3/h^2` linked coordinate structurally identical to frozen `T_cut`.
 
 Requirements:
-1. prioritize Schwinger-Keldysh / causal perturbative Einstein gravity or gravity EFT;
-2. require an explicitly defined retarded three-metric response, not a matter-radiation proxy;
-3. require same-parent `K2`, shared normalization and physical source/Ward completion;
-4. require a controlled hard-channel discontinuity and one IR prescription;
-5. verify gauge/field-redefinition safety before any row extraction;
-6. if no executable native `h^3` object exists, freeze the route as operationally blocked and assess the present computability boundary of `T_cut` itself;
+1. remain in pure gravity; do not return to matter `2 -> 3` proxies;
+2. require one parent dynamics and one parameter convention for both `h^3` and `h^2` sectors;
+3. require exact observable identity, not merely physicality;
+4. require Ward/contact/source completion and a genuine finite hard-channel discontinuity;
+5. reject constructions whose gauge safety is achieved only by changing to boundary/scattering observables with different functional valence or analytic structure;
+6. if no identical construction exists, freeze `T_cut` itself as `OPERATIONALLY_NONEXECUTABLE_WITH_CURRENT_PUBLISHED_AUTHORITY`, explicitly `BLOCKED_NOT_ZERO`;
 7. do not reopen C3/C5/AS without genuinely new authority;
 8. do not create `ANSATZ-003`; do not run Fisher/resources.
