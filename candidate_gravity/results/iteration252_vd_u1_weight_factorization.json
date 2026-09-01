@@ -1,0 +1,29 @@
+{
+  "iteration": 252,
+  "model_readiness_percent": 24,
+  "classification": "PASS_SCOPED_U1_ORBIT_GHOST_WEIGHT_FACTORIZATION_AND_TT_DELTA_WEIGHT",
+  "notation_audit": {
+    "orbit_metric": "N_orb_{alpha beta}=R^i_alpha G_ij R^j_beta (paper Eq. 5)",
+    "minimal_ghost_matrix": "Nhat^alpha_beta=Y^{alpha gamma} N_orb_{gamma beta} (paper Eqs. 14,53)",
+    "rewritten_U1": "U1 = Nhat^-1 Y^up [R.(D R).E] Nhat^-1",
+    "consequence": "the two Iteration-251 delta(Nhat^-1) placements survive; deltaY belongs to the remaining explicit Y^up factor"
+  },
+  "tt_checks": {
+    "trace_eta_epsilon": 0.0,
+    "transversality_max": 8.15843973306311e-18
+  },
+  "relative_weight_variation": "delta[sqrt(|g|) g^{mu nu}] = -epsilon^{mu nu} for TT h",
+  "finite_difference_validation": [
+    {"step": 0.0001, "max_abs_fd_minus_minus_epsilon_up": 1.7301866606089789e-09, "fd_frobenius_norm": 1.000000002500769},
+    {"step": 3e-05, "max_abs_fd_minus_minus_epsilon_up": 1.5681556053692702e-10, "fd_frobenius_norm": 1.0000000002280545},
+    {"step": 1e-05, "max_abs_fd_minus_minus_epsilon_up": 2.113464958597433e-11, "fd_frobenius_norm": 1.0000000000263543},
+    {"step": 3e-06, "max_abs_fd_minus_minus_epsilon_up": 3.2702840435661074e-11, "fd_frobenius_norm": 0.9999999999978365},
+    {"step": 1e-06, "max_abs_fd_minus_minus_epsilon_up": 5.4441340324729026e-11, "fd_frobenius_norm": 0.9999999999879028}
+  ],
+  "matrix_factorization_max_error": 1.1102230246251565e-16,
+  "guardrail": "THIS_DOES_NOT_YET_SUPPLY_delta[R(DR)]E2_OR_COMPLETE_E2K1_NUMERATOR",
+  "remaining_block": "delta[R^i_gamma(D_i R^j_delta)] E^(2)_j plus combined condensed-index/Ward check",
+  "heavy_run_authorized": false,
+  "candidate_residual": false,
+  "next_gate": 253
+}
