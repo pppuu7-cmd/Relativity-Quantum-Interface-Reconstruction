@@ -5,11 +5,11 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 234**
+**Authoritative Candidate Gravity front:** **Iteration 235**
 
 ## Scientific state in one sentence
 
-Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. `MSSC-001` is IR/numerically completed but its forward log coefficients are regime-specifically non-identifiable at the frozen `3e-7` envelope. AS now has a genuine same-construction RG-invariant physical Lorentzian graviton-mediated scalar amplitude, but that result is not the frozen RQIR nonlinear three-graviton linked observable and does not provide an explicit retarded/`Disc_s` map; AS therefore remains `BLOCKED_NOT_ZERO`, sharpened to `BLOCKED_AS_LINKED_RETARDED_DISCONTINUITY_MAP_DESPITE_PHYSICAL_SCALAR_AMPLITUDE`. C3 is frozen as `BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`. C5 remains `BLOCKED_FULL_VD_EOM_INSERTION_SERIES_TO_FINITE_CPT3_MAP`. No Candidate Gravity residual exists.
+Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. `MSSC-001` is IR/numerically completed but its forward log coefficients are regime-specifically non-identifiable at the frozen `3e-7` envelope. AS is now frozen for the current comparator funnel as `BLOCKED_NOT_ZERO`: 2026 direct Lorentzian spectral calculations provide physical self-consistent two-point authority and curvature-quadratic form factors, but not a computed same-parent Lorentzian nonlinear three-graviton `Gamma3_ret` with explicit retarded/discontinuity, `K2` normalization, and source/Ward completion. C3 is frozen as `BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`. C5 remains `BLOCKED_FULL_VD_EOM_INSERTION_SERIES_TO_FINITE_CPT3_MAP`. No Candidate Gravity residual exists.
 
 ## Stable readiness rubric
 
@@ -46,6 +46,8 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 - Reproducing the known 4D Eq. (60) UV pole is necessary but not sufficient evidence of finite-CPT3 insertion completeness.
 - A physical Lorentzian amplitude for one observable must not be substituted for the frozen linked RQIR observable. Observable identity, same-parent normalization, retarded/in-in ordering, source/Ward completion and controlled discontinuity remain mandatory.
 - A reconstructed timelike function without an explicit controlled discontinuity is not authority for `D_s`; `|A|^2` is not a discontinuity.
+- A three-point diagram appearing inside a two-point spectral flow is not a computed nonlinear Lorentzian three-point correlator and cannot populate `D Gamma3_ret,soft`.
+- Prospective conference abstracts or work-in-preparation references are not executable comparator authority.
 - Do not create `ANSATZ-003` before a concrete residual survives C3/C4/C5/nonlocal/AS subtraction, truncation uncertainty and prospective robustness.
 - Fisher/resources remain forbidden until the robust residual gate passes.
 
@@ -73,22 +75,24 @@ Pure-Einstein Vilkovisky authority freezes field-space parameter `a=-1/2`, makin
 
 ### Iteration 234 — AS physical scalar amplitude versus frozen linked discontinuity
 
-Primary authority: Chiesa, Pawlowski, Reichert, arXiv:2603.10168 (2026).
+Chiesa–Pawlowski–Reichert, arXiv:2603.10168 (2026), supplies a materially stronger same-construction RG-invariant physical Lorentzian graviton-mediated scalar amplitude. It is not the frozen nonlinear three-graviton linked observable, its timelike reconstruction is non-unique, no explicit retarded/`Disc_s` prescription for the frozen object is supplied, and the direct scalar contact `A4` is omitted. Retain `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, `BLOCKED_NOT_ZERO`, sharpened to `BLOCKED_AS_LINKED_RETARDED_DISCONTINUITY_MAP_DESPITE_PHYSICAL_SCALAR_AMPLITUDE`.
 
-The paper supplies a materially stronger AS physical object: a same-construction RG-invariant graviton-mediated scalar amplitude built from `barGamma^{phiphi h}`, `barG_hh`, and a reconstructed Lorentzian dressing `V_L(s)`. This means the broad statement that AS lacks every same-normalization physical Lorentzian observable is obsolete.
+### Iteration 235 — AS Lorentzian three-graviton authority boundary
 
-However the frozen RQIR target remains `T_cut = D Gamma3_ret,soft - W[D K2]`. The scalar amplitude uses `phi-phi-h` vertices plus a propagator and is not observable-identical to the nonlinear three-graviton linked relation. Its timelike reconstruction is explicitly non-unique and may introduce artefacts; the paper does not supply an explicit retarded/in-in or `Disc_s` prescription for the frozen object, and tested spectral reconstructions are unstable/highly oscillatory. The scalar calculation also neglects the direct contact `A4`, which the paper notes is needed for the forward divergence.
+Pawlowski–Reichert–Wessely, arXiv:2507.22169, published 2026-08-13 in Physics Letters B 880 (2026) 140844, supplies a self-consistent physical Lorentzian graviton spectral function in an on-shell renormalisation scheme. Its executable object is the RG-invariant graviton **two-point** function. The approximation uses the full momentum-dependent two-point function with Einstein-Hilbert-type nonlinear vertices; the Newton-coupling flow is closed with older `p=0` three-point-flow information, and an on-shell coupling computation is identified as a desirable extension / separate work in preparation. Therefore a three-point diagram in the two-point spectral flow is not authority for a computed `Gamma3_ret`.
 
-Retain umbrella `BLOCKED_AS_REALTIME_RELATION_COMPLETION` and `BLOCKED_NOT_ZERO`, sharpened to:
+Assant–Litim–Reichert, arXiv:2606.19321 (2026), extends direct Lorentzian authority to graviton-mode spectral functions and the quantum effective action through curvature-quadratic order. It still does not provide the curvature-cubic / three-graviton retarded spectral object required by `T_cut`.
 
-`BLOCKED_AS_LINKED_RETARDED_DISCONTINUITY_MAP_DESPITE_PHYSICAL_SCALAR_AMPLITUDE`.
+A public ERG2026 abstract for a talk scheduled 2026-09-03 mentions a first Lorentzian spectral flow for the Newton coupling, but as of 2026-09-01 no public presentation materials are available. It is prospective authority only.
+
+Freeze AS for the current comparator funnel at `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, `BLOCKED_NOT_ZERO`, retaining substatus `BLOCKED_AS_LINKED_RETARDED_DISCONTINUITY_MAP_DESPITE_PHYSICAL_SCALAR_AMPLITUDE`. Reopening requires genuinely new same-parent authority supplying nonlinear Lorentzian three-graviton data, explicit retarded/in-in or controlled spectral discontinuity, normalization tied to physical `K2`, and source/Ward completion in one declared convention.
 
 Retain labels:
-- `AS-NG-006`;
-- `AS-NG-007`;
-- `REL-NG-014`;
-- `AS-BLOCK-002`;
-- `NG-FUNNEL-090`.
+- `AS-NG-008`;
+- `AS-NG-009`;
+- `REL-NG-015`;
+- `AS-BLOCK-003`;
+- `NG-FUNNEL-091`.
 
 This is not a consistency FAIL, not exact comparator identity, not regime-specific non-identifiability, not near-degeneracy, not evidence of a zero AS column, and not Candidate Gravity novelty.
 
@@ -101,7 +105,7 @@ Compatible local unitary massless-spin-2 boundary remains inside C5 at the froze
 Analytic nonlocal hard shapes become Taylor-degenerate in deep IR; genuine nonlinear/loop causal cuts remain comparator work, not novelty.
 
 ### Asymptotic safety
-`BLOCKED_AS_REALTIME_RELATION_COMPLETION`, `BLOCKED_NOT_ZERO`, sharpened to `BLOCKED_AS_LINKED_RETARDED_DISCONTINUITY_MAP_DESPITE_PHYSICAL_SCALAR_AMPLITUDE`.
+Frozen for current funnel: `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, `BLOCKED_NOT_ZERO`, substatus `BLOCKED_AS_LINKED_RETARDED_DISCONTINUITY_MAP_DESPITE_PHYSICAL_SCALAR_AMPLITUDE`.
 
 ### C3 PQCG
 `BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`, frozen for the current comparator funnel. Future reopening requires genuinely new same-parent nonlinear authority that fixes the conserved quotient representative with boundary/Green-function data.
@@ -115,19 +119,19 @@ Fisher/resources: FORBIDDEN.
 
 ## Latest authority files
 
-### Iteration 234
-- `candidate_gravity/AS_PHYSICAL_SCATTERING_DISCONTINUITY_AUDIT_ITERATION234.md`
-- `research_log/2026-09-01_iteration_234_as_physical_scattering_discontinuity_audit.md`
-- `recovery/RECOVERY_DELTA_ITERATION_234.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION234.md`
+### Iteration 235
+- `candidate_gravity/AS_LORENTZIAN_THREE_GRAVITON_AUTHORITY_AUDIT_ITERATION235.md`
+- `research_log/2026-09-01_iteration_235_as_lorentzian_three_graviton_authority_audit.md`
+- `recovery/RECOVERY_DELTA_ITERATION_235.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION235.md`
 
-## Immediate next scientific priority — Iteration 235
+## Immediate next scientific priority — Iteration 236
 
-Audit whether any same-parent AS calculation supplies a Lorentzian nonlinear **three-graviton** quantity with explicit retarded/spectral discontinuity and normalization linked to the two-point sector.
+Redirect primary effort away from frozen AS and select an executable branch for the unchanged linked nonanalytic target.
 
 Requirements:
-1. do not synthesize separate Euclidean three-/four-graviton vertices with an independently reconstructed Lorentzian propagator;
-2. require explicit retarded/in-in or spectral-discontinuity authority, not merely a Wick-rotated real dressing;
-3. preserve `T_cut = D Gamma3_ret,soft - W[D K2]` and do not replace it by scalar scattering;
-4. if absent, freeze AS at the sharpened blocker and redirect primary effort to an executable linked nonanalytic comparator branch;
+1. prioritise a source-completed/on-shell unitary Einstein or matter-plus-gravity amplitude where both `D Gamma3_ret,soft` and `W[D K2]` can be derived in one physical convention;
+2. identify an explicit same-parent calculational chain and literature provenance before any heavy computation;
+3. do not replace `T_cut` by scalar scattering, standalone two-point positivity, or a different observable;
+4. do not reopen C3 or C5 without genuinely new authority that removes their frozen blockers;
 5. do not create `ANSATZ-003`; do not run Fisher/resources.
