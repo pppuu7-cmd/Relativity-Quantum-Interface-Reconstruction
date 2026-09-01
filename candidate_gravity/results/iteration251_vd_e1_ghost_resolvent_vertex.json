@@ -1,0 +1,39 @@
+{
+  "analytic_delta_N_frobenius_norm": 1.0048840729158761,
+  "candidate_residual": false,
+  "classification": "PASS_SCOPED_E1_GHOST_RESOLVENT_VERTEX_FREEZE_AND_TT_VALIDATION",
+  "e1_E2K1_resolvent_identity": "delta(N^-1) = -N0^-1 (delta N) N0^-1; insert on either of the two N^-1 factors in U1 = N^-1 [R.(D R).E] N^-1 Y",
+  "finite_difference_validation": [
+    {"fd_frobenius_norm": 1.0048840809769704, "max_abs_fd_minus_analytic": 5.735558195052448e-09, "step": 0.0001},
+    {"fd_frobenius_norm": 1.004884073644262, "max_abs_fd_minus_analytic": 5.162002492120621e-10, "step": 3e-05},
+    {"fd_frobenius_norm": 1.0048840729912303, "max_abs_fd_minus_analytic": 5.735562025321883e-11, "step": 1e-05},
+    {"fd_frobenius_norm": 1.0048840729051431, "max_abs_fd_minus_analytic": 4.306593970326844e-11, "step": 3e-06},
+    {"fd_frobenius_norm": 1.004884072920623, "max_abs_fd_minus_analytic": 8.007333685000617e-11, "step": 1e-06}
+  ],
+  "frozen_convention": {
+    "D": 4,
+    "Lambda": 0,
+    "deWitt_a": -0.5,
+    "ghost_operator": "N^alpha_beta = delta^alpha_beta Box + R^alpha_beta",
+    "loop_denominator_convention": "D_F(p)=1/(p^2+i0); N0^-1 carries the algebraic minus sign from Box -> -p^2",
+    "plane_wave": "exp(i k.x)",
+    "signature": "-+++"
+  },
+  "guardrail": "THIS_IS_ONLY_THE_GHOST_RESOLVENT_PART_OF_E2_K1; DO_NOT_PROMOTE_TO_COMPLETE_U1_OR_C5_COMPARATOR",
+  "heavy_run_authorized": false,
+  "iteration": 251,
+  "loop_topology_consequence": "one deltaN insertion raises/repeats a ghost segment but creates no fourth external-momentum corner; this subblock stays inside the already-authorized raised bubble/triangle families",
+  "model_readiness_percent": 24,
+  "next_gate": 252,
+  "remaining_mandatory_e1_blocks": [
+    "delta[R^i_gamma (D_i R^j_delta)] times E^(2)_j",
+    "delta Y times E^(2)",
+    "flat-kernel E^(3)",
+    "E^(1) K^(2) placements with soft outside the isolated linear EOM"
+  ],
+  "tt_checks": {
+    "hard_k2": 0.41999999999999993,
+    "hard_trace": 0.0,
+    "hard_transversality_max": 8.161630708574108e-18
+  }
+}
