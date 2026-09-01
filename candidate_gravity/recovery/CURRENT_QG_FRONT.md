@@ -5,11 +5,11 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 254**
+**Authoritative Candidate Gravity front:** **Iteration 255**
 
 ## Scientific state in one sentence
 
-The residual funnel remains exhausted under current comparator authority, so the active program is finite Vilkovisky C5 authority improvement: Iteration 254 explicitly validates the first TT background variation of the metric diffeomorphism generator and proves that, in the frozen linear covariant-metric split, there is no independent `delta(partial R)` vertex; the remaining genuinely new geometric ingredient of the `K1E2` kernel variation is the same-parent field-space connection variation `deltaGamma`, while the Iteration-253 full-sum Ward guardrail remains binding.
+The residual funnel remains exhausted under current comparator authority, so the active program remains finite Vilkovisky C5 authority improvement: Iteration 255 resolves the connection convention in the published `U1/U2` construction, derives and independently validates the same-parent first background variation `deltaGamma` of the local field-space Christoffel, and thereby closes the genuinely new geometric vertex isolated in Iteration 254; the full `K1E2` numerator and the complete cubic `K0E3+K1E2+K2E1` Ward target remain open.
 
 ## Stable readiness rubric
 
@@ -22,9 +22,9 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 - identifiability/Fisher `0/10`;
 - resource/experiment closure `0/10`.
 
-`MODEL_READINESS: 24%`
+MODEL_READINESS: 24%
 
-Change from Iteration 253: **0 percentage points**. A genuine numerator-library ambiguity was removed, but no physical comparator coordinate or robust nonzero residual has closed.
+Change from Iteration 254: **0 percentage points**. A real numerator-library element closed, but no physical comparator coordinate or robust nonzero residual closed a readiness-rubric block.
 
 ## Non-negotiable frozen rules
 
@@ -39,80 +39,50 @@ Change from Iteration 253: **0 percentage points**. A genuine numerator-library 
 - Repeated Green operators raise denominator powers on existing loop segments; at total `R^3` no scalar loop polygon beyond triangle is required.
 - On the frozen Minkowski finite-`R^3` target use the proved `e+c<=3` truncation rule.
 - Null-soft linear Einstein equations kill the `e=3` sector but not the surviving nonlinear `e=1/e=2` sectors.
-- Iteration 251's first-order ghost-resolvent insertion is only one component of `E^(2)K^(1)`.
-- Iteration 252 fixes `U1=Nhat^-1 Y^up [R.(D R).E] Nhat^-1`; there are two `delta(Nhat^-1)` placements and one explicit `delta Y^up` placement.
-- Iteration 253: the exact cubic Ward/symmetry identity constrains `K0E3 + K1E2 + K2E1`; do not declare a standalone Ward FAIL from `K1E2` alone.
-- Iteration 254: for the linear covariant-metric split, `R=L_xi g` is affine in `g`, so `R_,ik=0` and no independent `delta(partial R)` vertex exists; do not reintroduce it as an extra numerator block.
+- Iteration 252 fixes `U1=Nhat^-1 W [R.(D R).E] Nhat^-1`; there are two `delta(Nhat^-1)` placements and one explicit `delta W` placement.
+- Iteration 253 fixes the cubic Ward target: only `K0E3 + K1E2 + K2E1` may receive a final Ward PASS/FAIL; never diagnose a standalone `K1E2` Ward FAIL.
+- Iteration 254 fixes `R=L_xi g` as affine in the linear covariant-metric split: `R_,ik=0`; do not reintroduce an independent `delta(partial R)` vertex.
+- Iteration 255 fixes the connection convention: the `D_i R^j_alpha` used in published `U1,U2` is formed with the configuration-space Christoffel `Gamma`; the nonlocal gauge-orbit correction `T` is not to be inserted into that derivative.
 - Do not redefine the frozen linked observable to match a convenient amplitude, relational observable, asymptotic observable, or scalar-radiation proxy.
 - `T_cut` remains operationally non-executable with current published authority; authority improvement, not proxy search, is the active program.
 
 ## Retained comparator state
 
 ### C3
-
 Frozen `BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`. This is not zero and not a consistency FAIL.
 
 ### C4
-
 Standalone positive two-point spectral/cut information remains mediator-degenerate and is not a promotable unique residual.
 
 ### C5
+Finite Vilkovisky/unique-action completion is the active authority-improvement route. Current umbrella blocker:
 
-Finite Vilkovisky/unique-action completion is the active authority-improvement route. Previous iterations established:
-
-- complete cubic reduced connection identity and `e+c<=3`;
-- composite traces reduce to raised bubbles/triangles, with no polygon beyond triangle;
-- `e=1/e=2` nonlinear Einstein sectors survive the frozen TT/null-soft controls;
-- first explicit TT ghost-resolvent variation validated numerically;
-- exact orbit/ghost/weight factorization of `U1`;
-- exact cubic Ward partition structure from Iteration 253;
-- explicit TT-validated first variation of the diffeomorphism generator and the scoped `K1E2` decomposition from Iteration 254.
-
-Current umbrella blocker:
-
-`BLOCKED_4D_EINSTEIN_VD_RESOLVENT_VERTEX_LIBRARY_TENSOR_REDUCTION_AND_SOURCE_PROJECTION`,
+`BLOCKED_4D_EINSTEIN_VD_RESOLVENT_VERTEX_LIBRARY_TENSOR_REDUCTION_AND_SOURCE_PROJECTION`
 
 `BLOCKED_NOT_ZERO`.
 
 ### Asymptotic safety / nonlocal / proxy routes
+Retain their frozen blockers and negative certificates. No proxy may replace the frozen comparator identity.
 
-Retain their frozen blockers and negative certificates. No proxy is allowed to replace the frozen comparator identity.
+## Iteration 255 exact scoped result
 
-## Iteration 254 exact scoped result
+Primary authority separates the physical-space affine connection as `Tscript=Gamma+T` and explicitly defines the derivative appearing in `U1,U2`, `D_i R^j_alpha`, using the Christoffel `Gamma` of the configuration-space metric.
 
-For
+In the frozen `D=4`, `Lambda=0`, `a=-1/2`, linear covariant split (`gamma1=1`, `gamma2..6=0`), the published Christoffel coefficients reduce to
 
-`g_mu_nu = eta_mu_nu + a eps_mu_nu exp(i q.x)`,
+`c1=-1, c2=1/4, c3=1/4, c4=-1/8`.
 
-`xi^mu = c^mu exp(i p.x)`,
+The corresponding first background variation `deltaGamma` was derived without changing parent dynamics. An independent 10x10 reconstruction of the DeWitt metric and its Christoffel on a Lorentzian TT direction gives:
 
-the metric Lie-derivative generator has first background variation, up to the common Fourier factor,
-
-`delta R_mu_nu = (c.q) eps_mu_nu + p_mu eps_{rho nu} c^rho + p_nu eps_{mu rho} c^rho`.
-
-The reproducible TT finite-difference certificate agrees at maximum component error `3.05e-12` for step `1e-5`.
-
-Because `R` is affine in the covariant metric,
-
-`R_,ik=0`.
-
-Writing
-
-`B_i^j = D_i R^j = partial_i R^j + Gamma^j_ik R^k`,
-
-one gets
-
-`delta B = deltaGamma * R0 + Gamma0 * deltaR`,
-
-and therefore
-
-`deltaA[E2] = deltaR * B0 * E2 + R0 * Gamma0 * deltaR * E2 + R0 * deltaGamma * R0 * E2`.
+- base `Gamma` maximum mismatch `1.81e-10`;
+- `deltaGamma` maximum mismatch `5.82e-8` for O(1) components;
+- analytic input-pair symmetry residual `0.0`.
 
 Freeze:
 
-`PASS_SCOPED_DIFFEO_GENERATOR_FIRST_VARIATION_AND_K1_DECOMPOSITION`.
+`PASS_SCOPED_FIELDSPACE_CHRISTOFFEL_FIRST_VARIATION_AND_TT_VALIDATION`.
 
-This is a scoped algebraic/numerical PASS, not a comparator coordinate, not a full cubic Ward PASS, and not a Candidate Gravity residual.
+This is a scoped algebraic/numerical PASS, not a C5 comparator coordinate, not a full cubic Ward PASS, not an exact comparator identity, and not a Candidate Gravity residual.
 
 ## Candidate state
 
@@ -124,28 +94,28 @@ Heavy full C5 run: NOT AUTHORIZED.
 
 ## Latest authority files
 
-### Iteration 253
-- `candidate_gravity/C5_VD_U1_WARD_PARTITION_AUDIT_ITERATION253.md`
-- `candidate_gravity/code/iteration253_vd_u1_ward_partition_audit.py`
-- `candidate_gravity/results/iteration253_vd_u1_ward_partition_audit.json`
-- `research_log/2026-09-02_iteration_253_vd_u1_ward_partition_audit.md`
-- `recovery/RECOVERY_DELTA_ITERATION_253.md`
-
 ### Iteration 254
 - `candidate_gravity/C5_VD_DIFFEO_GENERATOR_K1_DECOMPOSITION_ITERATION254.md`
 - `candidate_gravity/code/iteration254_vd_diffeo_generator_k1_decomposition.py`
 - `candidate_gravity/results/iteration254_vd_diffeo_generator_k1_decomposition.json`
 - `research_log/2026-09-02_iteration_254_vd_diffeo_generator_k1_decomposition.md`
 - `recovery/RECOVERY_DELTA_ITERATION_254.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION254.md`
 
-## Immediate next scientific priority — Iteration 255
+### Iteration 255
+- `candidate_gravity/C5_VD_FIELDSPACE_CHRISTOFFEL_VARIATION_ITERATION255.md`
+- `candidate_gravity/code/iteration255_vd_fieldspace_christoffel_variation.py`
+- `candidate_gravity/results/iteration255_vd_fieldspace_christoffel_variation.json`
+- `research_log/2026-09-02_iteration_255_vd_fieldspace_christoffel_variation.md`
+- `recovery/RECOVERY_DELTA_ITERATION_255.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION255.md`
 
-Stay in the same `D=4`, `Lambda=0`, `a=-1/2` parent convention and:
+## Immediate next scientific priority — Iteration 256
 
-1. derive `deltaGamma^j_ik` from the same frozen field-space metric/connection convention;
-2. validate it with a pointwise TT background check before using it in loop numerators;
-3. assemble the complete `deltaA[E2]` with the explicit `deltaR` pieces, both `delta(Nhat^-1)` placements and `deltaW`;
-4. prepare the sibling `K0E3` and `K2E1` blocks so the eventual Ward certificate applies only to `K0E3+K1E2+K2E1`;
-5. do not launch heavy tensor integration until this upstream numerator library is complete;
+Stay in the same frozen parent convention and:
+
+1. assemble the complete `E^(2)K^(1)` contribution to `Tr U1` using both `delta(Nhat^-1)` placements, `delta W`, both explicit `deltaR` pieces and the new `deltaGamma` term;
+2. keep all condensed-index orientations and normalizations explicit and run local/index/TT checks before loop tensor integration;
+3. construct the minimal same-parent `K0E3` and `K2E1` siblings required by the Iteration-253 Ward identity;
+4. apply the first genuine cubic Ward/symmetry PASS/FAIL only to `K0E3+K1E2+K2E1`;
+5. do not launch heavy integration until the upstream numerator library is complete;
 6. do not create `ANSATZ-003`; do not run Fisher/resources.
