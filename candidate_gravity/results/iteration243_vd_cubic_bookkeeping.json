@@ -1,0 +1,23 @@
+{
+  "iteration": 243,
+  "scope": "Minkowski_Lambda0_finite_curvature_cubic",
+  "model_readiness_percent": 24,
+  "max_total_curvature_order": 3,
+  "required_eom_orders": [0, 1, 2, 3],
+  "provably_irrelevant_eom_orders_for_R3": "e>=4",
+  "curvature_dressing_requirements": [
+    {"sector": "Tr ln H and Tr ln N", "eom_degree": 0, "required_background_order": 3},
+    {"sector": "Tr U1", "eom_degree": 1, "required_background_order": 2},
+    {"sector": "Tr U2 and Tr U1^2", "eom_degree": 2, "required_background_order": 1},
+    {"sector": "primitive/composite O(epsilon^3)", "eom_degree": 3, "required_background_order": 0}
+  ],
+  "allowed_cubic_trace_topologies": [
+    "Tr(U3_a)",
+    "Tr(U1 U2)",
+    "Tr(U1^3)"
+  ],
+  "coefficients_known": false,
+  "heavy_run_authorized": false,
+  "missing_minimal_authority": "exact full Vilkovisky O(epsilon^3) reduced operator formula and coefficients",
+  "classification": "FINITE_CUBIC_VD_BOOKKEEPING_CLOSED_OEPS3_FORMULA_STILL_BLOCKED"
+}
