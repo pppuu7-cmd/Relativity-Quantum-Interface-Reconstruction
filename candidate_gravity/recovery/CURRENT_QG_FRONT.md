@@ -9,7 +9,7 @@
 
 ## Scientific state in one sentence
 
-The retained residual funnel remains exhausted under current comparator authority, so the program is now improving C5 authority rather than inventing proxy observables: Iterations 243–245 bound the finite Vilkovisky insertion order, recover the exact cubic `U1/U2` connection series, and show that the remaining pure-Einstein finite-`R^3` problem can be organized as a finite same-parent Minkowski resolvent expansion, with the current blocker narrowed to the explicit 4D Einstein VD resolvent vertex library, tensor reduction and source-completed projection.
+The retained residual funnel remains exhausted under current comparator authority, so the program is improving C5 authority rather than inventing proxy observables: Iterations 243–245 bound the finite Vilkovisky insertion order, recover the exact cubic `U1/U2` connection series, and reduce the flat cubic connection sector to raised-propagator triangle families `I222/I212`; the current blocker is now the explicit 4D Einstein VD numerator/vertex library, lower-sector curvature dressing, tensor/Ward reduction and source-completed projection.
 
 ## Stable readiness rubric
 
@@ -24,7 +24,7 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 
 `MODEL_READINESS: 24%`
 
-Change from Iteration 244: **0 percentage points**. The C5 derivation path is materially narrower and more executable, but the physical comparator coordinate is not yet computed and no readiness-rubric block closes.
+Change from Iteration 244: **0 percentage points**. The C5 derivation path is materially narrower and the cubic scalar loop-topology ambiguity is closed, but the physical comparator coordinate is not yet computed and no readiness-rubric block closes.
 
 ## Frozen rules
 
@@ -45,6 +45,7 @@ Change from Iteration 244: **0 percentage points**. The C5 derivation path is ma
 - For Vilkovisky gravity, use the full reduced insertion identity required by the finite target; do not propagate the superseded primitive `U3` placeholder from Iteration 243.
 - EOM degree is not propagator count for `U1/U2` composite traces.
 - Ordinary single-operator CPT3 form factors are not automatically identical to mixed composite traces containing explicit ghost/graviton inverses on different bundles.
+- Repeated Green operators on one loop segment raise denominator powers; they do not by themselves create extra external-momentum corners. At total `R^3`, the cubic flat connection sector is at most triangular in scalar loop topology.
 - On the frozen Minkowski finite-`R^3` target, truncate VD resolvent expansions only by the proved `e+c<=3` rule.
 - A physical Lorentzian amplitude for one observable must not be substituted for the frozen linked RQIR observable.
 - A reconstructed timelike function without controlled discontinuity is not authority for `D_s`; `|A|^2` is not a discontinuity.
@@ -94,11 +95,7 @@ Matter radiation, generalized-LSZ causal response, native metric, relational and
 
 ### Iteration 241 — retained residual funnel audit
 
-Seven previously retained target classes were audited under one frozen survival rule. Executable survivors: **0**. Freeze
-
-`NO_EXECUTABLE_RESIDUAL_TARGET_UNDER_CURRENT_COMPARATOR_AUTHORITY`
-
-with `BLOCKED_NOT_ZERO`. This is an authority/executability boundary, not proof that all residuals vanish.
+Seven previously retained target classes were audited under one frozen survival rule. Executable survivors: **0**. Freeze `NO_EXECUTABLE_RESIDUAL_TARGET_UNDER_CURRENT_COMPARATOR_AUTHORITY` with `BLOCKED_NOT_ZERO`. This is an authority/executability boundary, not proof that all residuals vanish.
 
 ### Iteration 242 — authority-improvement route selection
 
@@ -106,49 +103,34 @@ C5 finite Vilkovisky/unique-action completion was selected over C3 and AS as the
 
 ### Iteration 243 — finite cubic VD bookkeeping
 
-For the frozen Minkowski, `Lambda=0`, finite one-loop `O(R^3)` target, the Einstein EOM have curvature order one. With EOM degree `e` and additional curvature dressing `c`, only
-
-`e+c<=3`
-
-can contribute. Thus `Tr U1` needs dressing through `c=2`; `Tr U2` and `Tr U1^2` through `c=1`; cubic EOM traces need flat kernels only; `e>=4` is irrelevant.
+For the frozen Minkowski, `Lambda=0`, finite one-loop `O(R^3)` target, with EOM degree `e` and additional curvature dressing `c`, only `e+c<=3` can contribute. Thus `Tr U1` needs dressing through `c=2`; `Tr U2` and `Tr U1^2` through `c=1`; cubic EOM traces need flat kernels only; `e>=4` is irrelevant.
 
 ### Iteration 244 — exact reduced VD cubic insertion identity
 
-Primary Cho–Kantowski authority gives the reduced insertion sequence through `O(E^5)`, exactly represented under cyclic trace equivalence by
-
-`-1/2 Tr log(1-U1+U2)`.
-
-Anchoring to the frozen 4D convention gives
-
-`Gamma_conn = +(i/2) Tr log(1-U1+U2)`
-
-and
+Primary Cho–Kantowski authority gives the reduced insertion sequence through `O(E^5)`, exactly represented under cyclic trace equivalence by `-1/2 Tr log(1-U1+U2)`. Anchoring to the frozen 4D convention gives
 
 `Gamma_conn^(3) = +(i/2) Tr(U1 U2) - (i/6) Tr(U1^3)`.
 
 The Iteration-243 primitive `U3` placeholder is superseded. Freeze `PASS_EXACT_VD_OEPS3_INSERTION_SERIES_IDENTITY`.
 
-### Iteration 245 — composite-trace master map
+### Iteration 245 — composite-trace master topology
 
-Primary VD definitions imply primitive inverse counts before cancellations:
+Primary VD definitions imply primitive inverse counts before cancellations: `U1 -> (2 ghost,0 graviton)` and `U2 -> (2 ghost,1 graviton)`. EOM degree is therefore not propagator count and ordinary single-operator CPT3 is not directly identical to these composite traces.
 
-- `U1 -> (2 ghost, 0 graviton)`;
-- `U2 -> (2 ghost, 1 graviton)`;
-- `Tr U1^2 -> (4,0)`;
-- `Tr U1^3 -> (6,0)`;
-- `Tr(U1 U2) -> (4,1)`.
+Cyclic trace reduction plus the total-curvature bound shows that repeated inverses only raise propagator powers on at most three loop-momentum segments at `R^3`. The flat cubic sectors are
 
-Therefore ordinary single-operator CPT3 is not directly identical to these composite traces. However, on the frozen finite Minkowski `R^3` target, the exact `e+c<=3` bound permits a finite resolvent expansion about the already-fixed flat `N0,G0`. All remaining terms reduce to a finite set of one-loop flat-space tensor-integral sectors plus the same-parent source projection.
+- `Tr U1^3 -> I222` (raised ghost triangle);
+- `Tr(U1 U2) -> I212` up to cyclic labeling (mixed raised ghost–graviton triangle).
 
-Freeze:
+No scalar box/pentagon/hexagon or higher polygon is required for the cubic connection sector. Freeze `PASS_COMPOSITE_TRACE_MASTER_TOPOLOGY_REDUCTION` and retain `NO_DIRECT_SINGLE_OPERATOR_CPT3_IDENTITY_FOR_COMPOSITE_U1_U2_TRACES`.
 
-`NO_DIRECT_SINGLE_OPERATOR_CPT3_IDENTITY_FOR_COMPOSITE_U1_U2_TRACES`
+The lower-EOM sectors remain a finite same-parent resolvent expansion around frozen `N0,G0`. Current blocker:
 
-and current blocker
-
-`BLOCKED_4D_EINSTEIN_VD_RESOLVENT_VERTEX_LIBRARY_AND_SOURCE_PROJECTION`,
+`BLOCKED_4D_EINSTEIN_VD_RESOLVENT_VERTEX_LIBRARY_TENSOR_REDUCTION_AND_SOURCE_PROJECTION`,
 
 `BLOCKED_NOT_ZERO`.
+
+A scoped flat `e=3` symbolic C5 component is now authorized; a blind full finite-CPT3 run is still premature.
 
 ## Candidate state
 
@@ -167,6 +149,7 @@ Fisher/resources: FORBIDDEN.
 - `recovery/RECOVERY_DELTA_ITERATION_244.md`
 
 ### Iteration 245
+- `candidate_gravity/C5_VD_COMPOSITE_MASTER_TOPOLOGY_ITERATION245.md`
 - `candidate_gravity/C5_VD_COMPOSITE_TRACE_MASTER_MAP_ITERATION245.md`
 - `candidate_gravity/code/iteration245_vd_composite_trace_bookkeeping.py`
 - `candidate_gravity/results/iteration245_vd_composite_trace_bookkeeping.json`
@@ -176,11 +159,12 @@ Fisher/resources: FORBIDDEN.
 
 ## Immediate next scientific priority — Iteration 246
 
-Derive the leading flat-space 4D pure-Einstein VD kernels in the exact Iteration-232 convention rather than launching a blind full CPT3 run:
+Freeze the explicit flat-space cubic numerator block in the exact Iteration-232 convention rather than launching a blind full CPT3 run:
 
-1. freeze `N0^-1` and `G0` projectors and normalization;
-2. derive linearized Einstein `E_i[h]` and required `Q^i_{alpha;j}` vertices in the same field convention;
-3. construct momentum-space `U1^(1)` and `U2^(2)`;
-4. reproduce the known quadratic VD connection contribution/divergence as a mandatory normalization unit test;
-5. only after that construct flat `Tr U1^3` and `Tr(U1 U2)` tensor integrands and test Ward/source compatibility;
-6. do not create `ANSATZ-003`; do not run Fisher/resources.
+1. freeze `N0^-1` and `G0` projectors/normalization;
+2. specialize the published `V1,V2` / `Q_;,E` vertices to `D=4`, `Lambda=0` in one declared field parametrization;
+3. contract `Tr U1^3` and `Tr(U1 U2)` into the `I222/I212` tensor numerators before integration;
+4. reproduce the published quadratic VD connection contribution/divergence as a mandatory normalization unit test;
+5. test Ward/source structure and repeat the coordinate-level block in a second admissible field parametrization before any parametrization-independent or physical claim;
+6. only then address lower-EOM curvature dressing and final source-completed `T_cut` projection;
+7. do not create `ANSATZ-003`; do not run Fisher/resources.
