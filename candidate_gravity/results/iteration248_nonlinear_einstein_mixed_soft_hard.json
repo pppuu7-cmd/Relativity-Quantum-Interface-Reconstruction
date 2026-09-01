@@ -1,0 +1,37 @@
+{
+  "candidate_residual": false,
+  "classification": "PASS_SCOPED_NONLINEAR_EINSTEIN_MIXED_SOFT_HARD_NONZERO",
+  "guardrail": "DO_NOT_ZERO_VD_E1_E2_SECTORS_FROM_LINEAR_NULL_SOFT_EOM",
+  "hard_k2": 0.41999999999999993,
+  "hard_trace": 0.0,
+  "hard_transversality_max": 8.161630708574108e-18,
+  "iteration": 248,
+  "mixed_second_difference": [
+    {
+      "frobenius_norm": 0.73183724123712,
+      "max_abs_component": 0.46278463609165077,
+      "step": 0.01
+    },
+    {
+      "frobenius_norm": 0.7316734791083271,
+      "max_abs_component": 0.4626937685785494,
+      "step": 0.003
+    },
+    {
+      "frobenius_norm": 0.7316590850993818,
+      "max_abs_component": 0.4626857810415019,
+      "step": 0.001
+    },
+    {
+      "frobenius_norm": 0.7316574478084437,
+      "max_abs_component": 0.46268487246765905,
+      "step": 0.0003
+    }
+  ],
+  "model_readiness_percent": 24,
+  "next_gate": 249,
+  "scientific_claim": "E1_soft_zero_does_not_eliminate_E2_soft_hard",
+  "soft_k2": 0.0,
+  "soft_trace": 0.0,
+  "soft_transversality_max": 0.0
+}
