@@ -13,7 +13,7 @@
   "max_helicity_vector_null_self_contraction": 5.551115123125783e-17,
   "max_independent_gravitational_ward_abs": 2.9562855880031207e-16,
   "max_graviton_exchange_abs_difference": 1.7763568394002505e-15,
-  "nonzero_amplitude_abs_range": [0.062763378555033, 6.400177334631583],
+  "nonzero_amplitude_abs_range": [0.018985350321586422, 11.685578430408453],
   "classification": {
     "pure_Einstein_external_helicity_projection": "PASS",
     "helicity_vector_transverse_and_null": "PASS_MACHINE_PRECISION",
