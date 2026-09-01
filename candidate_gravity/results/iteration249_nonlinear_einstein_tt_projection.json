@@ -1,0 +1,21 @@
+{
+  "iteration": 249,
+  "model_readiness_percent": 24,
+  "classification": "PASS_SCOPED_NONLINEAR_EINSTEIN_MIXED_RESPONSE_SURVIVES_TT_PROJECTION",
+  "soft_tt_projection_by_step": [
+    [0.01, 0.5742616678739184],
+    [0.003, 0.5741509147315723],
+    [0.001, 0.5741411794466784],
+    [0.0003, 0.5741400720710714]
+  ],
+  "hard_tt_projection_by_step": [
+    [0.01, -0.3445707494985487],
+    [0.003, -0.34449178569640987],
+    [0.001, -0.34448484509138627],
+    [0.0003, -0.34448405561078743]
+  ],
+  "scientific_claim": "mixed nonlinear Einstein EOM survives both frozen TT contractions on the explicit null-soft/hard test",
+  "guardrail": "DO_NOT_ASSUME_TT_PROJECTION_ELIMINATES_VD_E1_E2_NONLINEAR_EOM_SECTORS",
+  "candidate_residual": false,
+  "next_gate": 250
+}
