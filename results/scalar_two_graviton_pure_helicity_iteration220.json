@@ -1,0 +1,36 @@
+{
+  "iteration": 220,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "source_model_id": "MSSC-001",
+  "supersedes_state_interpretation": "Iteration 219 real factorized states remain gauge-algebra controls; this iteration supplies the pure Einstein helicity projection",
+  "mass": 0.7,
+  "sqrt_s": 2.0,
+  "angles": [0.45, 0.8, 1.15, 1.6, 2.1],
+  "max_momentum_conservation_error": 0.0,
+  "max_mass_shell_error": 3.3306690738754696e-16,
+  "max_helicity_vector_transversality_error": 1.4145876925044716e-17,
+  "max_helicity_vector_null_self_contraction": 5.551115123125783e-17,
+  "max_independent_gravitational_ward_abs": 2.9562855880031207e-16,
+  "max_graviton_exchange_abs_difference": 1.7763568394002505e-15,
+  "nonzero_amplitude_abs_range": [0.062763378555033, 6.400177334631583],
+  "classification": {
+    "pure_Einstein_external_helicity_projection": "PASS",
+    "helicity_vector_transverse_and_null": "PASS_MACHINE_PRECISION",
+    "independent_graviton_Ward_tests": "PASS_MACHINE_PRECISION",
+    "graviton_exchange_symmetry": "PASS_MACHINE_PRECISION",
+    "Iteration219_real_factorized_state_interpretation": "RESTRICTED_TO_GAUGE_ALGEBRA_CONTROL",
+    "pure_Einstein_source_tree_block_for_unitarity": "AUTHORIZED",
+    "connected_source_loop_cut": "NOT_YET_COMPUTED",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "SRC-CORR-001 — REAL_FACTORIZED_KLT_POLARIZATIONS_ARE_GAUGE_ALGEBRA_CONTROLS_NOT_BY_THEMSELVES_PURE_HELICITY_EINSTEIN_STATES",
+    "SRC-NG-005 — MATCHED_COMPLEX_KLT_HELICITIES_GIVE_A_PURE_EINSTEIN_TWO_SCALAR_TWO_GRAVITON_BLOCK_WITH_MACHINE_PRECISION_WARD_TESTS",
+    "C5-CUT-019 — PURE_EINSTEIN_DYNAMICAL_SCALAR_SOURCE_TREE_BLOCK_IS_READY_FOR_PHYSICAL_UNITARITY_CUT_CONSTRUCTION"
+  ],
+  "readiness_change": "unchanged at 23%; the source tree block is now validated for pure Einstein helicities, but no loop source cut or full comparator quotient exists",
+  "next_gate": "Construct and diagnose the scalar+graviton two-particle unitarity cut of gravitational Compton scattering using only the pure-helicity MSSC-001 tree blocks."
+}
