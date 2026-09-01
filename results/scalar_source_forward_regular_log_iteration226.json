@@ -1,0 +1,89 @@
+{
+  "classification": {
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN",
+    "candidate_residual": "NONE",
+    "pure_graviton_control_log_structure": "PASS_FROM_ITERATION215",
+    "source_consistency_fail": "NO",
+    "source_exact_analytic_identity": "NOT_CLAIMED",
+    "source_forward_numerical_gate": "PASS_WITHIN_FROZEN_3E-7_ENVELOPE",
+    "source_log_nonanalyticity": "REGIME_SPECIFIC_NON_IDENTIFIABILITY_NO_CERTIFICATE",
+    "source_near_degeneracy": "YES_ANALYTIC_VS_LOG_WITHIN_NUMERICAL_ENVELOPE",
+    "source_vs_pure_graviton_mismatch_candidate_novelty": "NO"
+  },
+  "cubature_order": 16,
+  "date": "2026-09-01",
+  "extractions": {
+    "cross": {
+      "L_definition": "log(z)",
+      "all8_regular_log_relative_l2_residual": 6.991589330814055e-10,
+      "all8_taylor_degree5_relative_l2_residual": 1.6502718029550426e-12,
+      "any_log_coefficient_resolved_above_frozen_envelope": false,
+      "basis": ["1", "L", "z", "zL", "z^2", "z^2L"],
+      "deep7_regular_log_relative_l2_residual": 9.450553126601856e-11,
+      "deep7_taylor_degree5_relative_l2_residual": 1.2439342967514897e-12,
+      "full_window_log_coefficient_abs_over_worst_case_bound": {"b0": 0.009188739322718294, "b1": 0.01572696085986553, "b2": 0.03769973874474194},
+      "full_window_log_coefficient_worst_case_bounds_from_3e-7_row_envelope": {"b0": 0.0030752861372349938, "b1": 12.8689039370003, "b2": 2539.475379739094},
+      "full_window_log_coefficients": {"b0": -2.8258002657821635e-05, "b1": -0.20238874852657318, "b2": -95.73755836486816},
+      "outer7_regular_log_relative_l2_residual": 3.252834513466382e-10,
+      "outer7_taylor_degree5_relative_l2_residual": 2.543378458014342e-13
+    },
+    "plus": {
+      "L_definition": "log(z)",
+      "all8_regular_log_relative_l2_residual": 1.73176347744811e-08,
+      "all8_taylor_degree5_relative_l2_residual": 5.180431884151699e-11,
+      "any_log_coefficient_resolved_above_frozen_envelope": false,
+      "basis": ["1", "L", "z", "zL", "z^2", "z^2L"],
+      "deep7_regular_log_relative_l2_residual": 2.4069151207837106e-09,
+      "deep7_taylor_degree5_relative_l2_residual": 4.476508945722198e-12,
+      "full_window_log_coefficient_abs_over_worst_case_bound": {"b0": 0.23186411227492165, "b1": 0.39972597425146983, "b2": 0.9745719940266064},
+      "full_window_log_coefficient_worst_case_bounds_from_3e-7_row_envelope": {"b0": 0.0030763205185059864, "b1": 12.874122225698505, "b2": 2540.7121496553036},
+      "full_window_log_coefficients": {"b0": 0.0007132883260965173, "b1": 5.146121049299836, "b2": 2476.106905937195},
+      "outer7_regular_log_relative_l2_residual": 7.996467996441335e-09,
+      "outer7_taylor_degree5_relative_l2_residual": 4.173597368176151e-11
+    }
+  },
+  "forward_theta_grid": [0.13, 0.105, 0.085, 0.068, 0.054, 0.043, 0.034, 0.027],
+  "frozen_relative_numerical_envelope": 3e-7,
+  "grid_rule": "comparator-only forward-transfer grid; no Candidate Gravity residual or ansatz information used",
+  "iteration": 226,
+  "max_two_cubature_relative_disagreement": 2.595262029909852e-7,
+  "model_readiness_percent": 24,
+  "pure_graviton_positive_control": {
+    "authority": "results/c5_fivepoint_finite_cut_extractor_iteration215.json",
+    "classification": "PASS_SCOPED_LOG_STRUCTURE_RESOLVED",
+    "equal_parameter_pure_taylor_degree5_relative_l2_residual": 9.496951084345664e-5,
+    "pure_taylor_residual_over_numerical_envelope": 2790.180298263071,
+    "regular_log_relative_l2_residual": 2.791237182608158e-7,
+    "relative_l2_numerical_error_envelope": 3.4037051620849225e-8
+  },
+  "readiness_change": "unchanged at 24%; source-comparator forward structure is now classified, but no new comparator-foundation rubric point or unique residual block closes",
+  "records": [
+    {"born": -0.47418543873767094, "cubature_A": -122.22476728209115, "cubature_B": -122.22479889770902, "polarization": "plus", "relative_disagreement": 2.586677839224623e-7, "theta_ext": 0.13, "z": 0.00421905314260598},
+    {"born": -0.47944168554983413, "cubature_A": -124.32295703654528, "cubature_B": -124.32297108905941, "polarization": "plus", "relative_disagreement": 1.130323222554242e-7, "theta_ext": 0.105, "z": 0.0027537186257512785},
+    {"born": -0.4829767616131395, "cubature_A": -125.73871370350159, "cubature_B": -125.73872032002586, "polarization": "plus", "relative_disagreement": 5.262121530591228e-8, "theta_ext": 0.085, "z": 0.0018051627488547641},
+    {"born": -0.4854590219410565, "cubature_A": -126.73504011199319, "cubature_B": -126.73504327063856, "polarization": "plus", "relative_disagreement": 2.4923220039497138e-8, "theta_ext": 0.068, "z": 0.0011555546233189722},
+    {"born": -0.48711711673069036, "cubature_A": -127.40157543856623, "cubature_B": -127.40157700339513, "polarization": "plus", "relative_disagreement": 1.2282649424435536e-8, "theta_ext": 0.054, "z": 0.0007288228702177918},
+    {"born": -0.48816434043781154, "cubature_A": -127.82296357985955, "cubature_B": -127.82296441094877, "polarization": "plus", "relative_disagreement": 6.501877248246875e-9, "theta_ext": 0.043, "z": 0.00046217877936885715},
+    {"born": -0.4888492209306887, "cubature_A": -128.0987237385911, "cubature_B": -128.0987241996715, "polarization": "plus", "relative_disagreement": 3.599414379411648e-9, "theta_ext": 0.034, "z": 0.00028897216073942543},
+    {"born": -0.48927307786793994, "cubature_A": -128.2694541934902, "cubature_B": -128.2694544675145, "polarization": "plus", "relative_disagreement": 2.136317668564981e-9, "theta_ext": 0.027, "z": 0.0001822389285815385},
+    {"born": 0.4730522841156138, "cubature_A": 121.79831109654876, "cubature_B": 121.79827948669555, "polarization": "cross", "relative_disagreement": 2.595262029909852e-7, "theta_ext": 0.13, "z": 0.00421905314260598},
+    {"born": 0.4789547098758532, "cubature_A": 124.13896627082899, "cubature_B": 124.13895221930177, "polarization": "cross", "relative_disagreement": 1.1319191417944012e-7, "theta_ext": 0.105, "z": 0.0027537186257512785},
+    {"born": 0.48276629098252655, "cubature_A": 125.65898969641746, "cubature_B": 125.65898307975952, "polarization": "cross", "relative_disagreement": 5.2655667195277955e-8, "theta_ext": 0.085, "z": 0.0018051627488547641},
+    {"born": 0.4853724341015553, "cubature_A": 126.70218395841844, "cubature_B": 126.70218080007785, "polarization": "cross", "relative_disagreement": 2.4927278214752427e-8, "theta_ext": 0.068, "z": 0.0011555546233189722},
+    {"born": 0.48708258223834194, "cubature_A": 127.38845601236798, "cubature_B": 127.38845444744267, "polarization": "cross", "relative_disagreement": 1.2284671326414241e-8, "theta_ext": 0.054, "z": 0.0007288228702177918},
+    {"born": 0.48815043005054304, "cubature_A": 127.8176752914003, "cubature_B": 127.81767445986048, "polarization": "cross", "relative_disagreement": 6.5056716138247134e-9, "theta_ext": 0.043, "z": 0.00046217877936885715},
+    {"born": 0.4888437772408531, "cubature_A": 128.09665324655572, "cubature_B": 128.09665278584987, "polarization": "cross", "relative_disagreement": 3.5965486755923353e-9, "theta_ext": 0.034, "z": 0.00028897216073942543},
+    {"born": 0.4892709114173516, "cubature_A": 128.26862995110918, "cubature_B": 128.2686296772217, "polarization": "cross", "relative_disagreement": 2.1352647168005103e-9, "theta_ext": 0.027, "z": 0.0001822389285815385}
+  ],
+  "retained_results": [
+    "SRC-CUT-007 — MSSC001_FORWARD_HARD_REMAINDER_IS_NUMERICALLY_STABLE_ON_A_FROZEN_TRANSFER_GRID",
+    "SRC-CUT-008 — MSSC001_FORWARD_LOG_COEFFICIENTS_ARE_NOT_RESOLVED_AGAINST_THE_FROZEN_3E-7_ENVELOPE",
+    "REL-NG-005 — PURE_GRAVITON_LOG_POSITIVE_CONTROL_AND_SOURCE_HARD_REMAINDER_HAVE_DIFFERENT_RESOLUTION_STATUS_AND_MUST_NOT_BE_IDENTIFIED",
+    "NG-FUNNEL-082 — SOURCE_CONTROL_NONANALYTIC_NONIDENTIFIABILITY_IS_NOT_CANDIDATE_NOVELTY"
+  ],
+  "source_model_id": "MSSC-001",
+  "source_observable": "Born-subtracted connected scalar-source s-channel hard remainder from Iterations 221-225",
+  "transfer_coordinate": "z=-t/(4 p^2)=sin^2(theta_ext/2)",
+  "next_gate": "Return to missing comparator authority: audit AS Lorentzian/in-in nonlinear linked-cut authority first; if still BLOCKED, record exact blocker and proceed to C3 CTP ordered nonlinear completion. Do not zero-fill either."
+}
