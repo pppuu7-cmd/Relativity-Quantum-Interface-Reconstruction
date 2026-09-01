@@ -1,0 +1,20 @@
+{
+  "affine_generator_second_field_variation_zero": true,
+  "classification": "PASS_SCOPED_DIFFEO_GENERATOR_FIRST_VARIATION_AND_K1_DECOMPOSITION",
+  "convention": "D=4, Lambda=0, a=-1/2 parent; linear covariant-metric split for this scoped generator test",
+  "delta_A_E2_terms": [
+    "deltaR * B0 * E2",
+    "R0 * Gamma0 * deltaR * E2",
+    "R0 * deltaGamma * R0 * E2"
+  ],
+  "delta_partial_R_zero_for_linear_metric_split": true,
+  "finite_difference_max_errors": {
+    "1e-03": 2.403632848313464e-14,
+    "1e-05": 3.050615315913774e-12,
+    "1e-07": 2.708795410200082e-10
+  },
+  "iteration": 254,
+  "model_readiness": 24,
+  "tt_trace": 0.0,
+  "tt_transversality_max": 0.0
+}
