@@ -1,0 +1,60 @@
+{
+  "iteration": 224,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "source_model_id": "MSSC-001",
+  "subtraction_authority": "R=-8 M_Born fixed by Iteration 222; unchanged",
+  "local_cap_authority": "Iteration 223: omitted Born-subtracted cap shells vanish as delta^2",
+  "quadratures": {
+    "lab_chart": 0.0,
+    "rotated_chart_y_radians": 0.371
+  },
+  "resolutions": [12, 16, 20],
+  "deltas": [0.08, 0.04],
+  "summary": {
+    "worst_finest_grid_chart_relative_disagreement": 0.1381947502657291,
+    "worst_case": {"delta": 0.04, "theta_ext": 0.45, "polarization": "cross"},
+    "best_finest_grid_chart_relative_disagreement": 0.0003099967107463247,
+    "best_case": {"delta": 0.04, "theta_ext": 0.45, "polarization": "plus"},
+    "interpretation": "The cap-local IR problem is solved, but the cap-excised global bulk number is not yet coordinate-chart independent on the tested deterministic tensor grids."
+  },
+  "finest_grid_records": [
+    {"delta":0.08,"theta_ext":0.45,"polarization":"plus","lab":-94.89364519042326,"rotated":-94.80906557388145,"relative_disagreement":0.0008913095958330631},
+    {"delta":0.08,"theta_ext":0.45,"polarization":"cross","lab":53.67484791372029,"rotated":49.672575565573695,"relative_disagreement":0.07456513625488154},
+    {"delta":0.08,"theta_ext":0.8,"polarization":"plus","lab":-149.28959768017143,"rotated":-151.01504516527845,"relative_disagreement":0.01142566611968105},
+    {"delta":0.08,"theta_ext":0.8,"polarization":"cross","lab":-85.8789838299791,"rotated":-88.49613978036382,"relative_disagreement":0.029573673573561086},
+    {"delta":0.08,"theta_ext":1.15,"polarization":"plus","lab":-303.02082676932446,"rotated":-301.4300187413561,"relative_disagreement":0.005249830663221614},
+    {"delta":0.08,"theta_ext":1.15,"polarization":"cross","lab":-273.9550543503128,"rotated":-272.6156732246559,"relative_disagreement":0.00488905426050008},
+    {"delta":0.08,"theta_ext":1.6,"polarization":"plus","lab":-714.9186521065203,"rotated":-751.368588468245,"relative_disagreement":0.04851139230618123},
+    {"delta":0.08,"theta_ext":1.6,"polarization":"cross","lab":-700.178704755092,"rotated":-737.4627894565693,"relative_disagreement":0.05055724198498437},
+    {"delta":0.08,"theta_ext":2.1,"polarization":"plus","lab":-2326.1108196798914,"rotated":-2365.586734175925,"relative_disagreement":0.016687578572250207},
+    {"delta":0.08,"theta_ext":2.1,"polarization":"cross","lab":-2317.3478244389794,"rotated":-2356.829040860196,"relative_disagreement":0.01675183720869581},
+    {"delta":0.04,"theta_ext":0.45,"polarization":"plus","lab":-95.25979846760505,"rotated":-95.28933784890741,"relative_disagreement":0.0003099967107463247},
+    {"delta":0.04,"theta_ext":0.45,"polarization":"cross","lab":49.004088981282365,"rotated":56.86213793242997,"relative_disagreement":0.1381947502657291},
+    {"delta":0.04,"theta_ext":0.8,"polarization":"plus","lab":-149.28959768017143,"rotated":-145.0748834579907,"relative_disagreement":0.028231801060982616},
+    {"delta":0.04,"theta_ext":0.8,"polarization":"cross","lab":-85.8789838299791,"rotated":-79.61511662847822,"relative_disagreement":0.0729383013415939},
+    {"delta":0.04,"theta_ext":1.15,"polarization":"plus","lab":-303.02082676932446,"rotated":-303.81995140646825,"relative_disagreement":0.0026302572739032365},
+    {"delta":0.04,"theta_ext":1.15,"polarization":"cross","lab":-273.9550543503128,"rotated":-275.1049005615155,"relative_disagreement":0.0041796645892374544},
+    {"delta":0.04,"theta_ext":1.6,"polarization":"plus","lab":-714.9186521065203,"rotated":-714.0692767406292,"relative_disagreement":0.0011880727456031431},
+    {"delta":0.04,"theta_ext":1.6,"polarization":"cross","lab":-700.178704755092,"rotated":-699.3376614893448,"relative_disagreement":0.001201183726433643},
+    {"delta":0.04,"theta_ext":2.1,"polarization":"plus","lab":-2313.0005433542788,"rotated":-2237.5479273853184,"relative_disagreement":0.03262109738181907},
+    {"delta":0.04,"theta_ext":2.1,"polarization":"cross","lab":-2303.9715575983196,"rotated":-2228.392517360541,"relative_disagreement":0.03280380783717775}
+  ],
+  "classification": {
+    "local_IR_completion": "PASS_FROM_ITERATION223",
+    "global_bulk_hard_remainder": "BLOCKED_NUMERICAL_BULK_HARD_REMAINDER",
+    "physics_fail": "NO",
+    "exact_comparator_identity": "NO",
+    "near_degeneracy": "NOT_THE_CLASSIFICATION",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "NUM-NG-013 — TWO_FIXED_ANGULAR_DECOMPOSITIONS_DO_NOT_YET_CONVERGE_TO_A_COMMON_MSSC001_GLOBAL_HARD_REMAINDER_ON_THE_TESTED_GRIDS",
+    "SRC-CUT-005 — LOCAL_DELTA2_CAP_COMPLETION_DOES_NOT_GUARANTEE_GLOBAL_BULK_QUADRATURE_STABILITY",
+    "NG-FUNNEL-080 — A_COORDINATE_DEPENDENT_BULK_NUMBER_MUST_NOT_BE_FROZEN_AS_A_PHYSICAL_COMPARATOR_REMAINDER"
+  ],
+  "readiness_change": "MODEL_READINESS remains 23% (0 percentage-point change): the numerical blocker is localized but no rubric block closes.",
+  "next_gate": "Use singularity-adapted domain decomposition: treat the two certified cap neighborhoods in their own local polar charts and apply independent high-order cubatures only to the smooth cap-excised bulk; require common convergence before freezing a finite global remainder."
+}
