@@ -1,0 +1,50 @@
+{
+  "classification": "FINITE_FLAT_RESOLVENT_EXPANSION_REQUIRED_NOT_DIRECT_SINGLE_OPERATOR_CPT3",
+  "iteration": 245,
+  "model_readiness_percent": 24,
+  "primitive_definitions": {
+    "U1": {
+      "eom_degree": 1,
+      "n_G": 0,
+      "n_N": 2
+    },
+    "U2": {
+      "eom_degree": 2,
+      "n_G": 1,
+      "n_N": 2
+    }
+  },
+  "rule": "e+c<=3",
+  "sectors": {
+    "Tr_U1": {
+      "eom_degree": 1,
+      "max_extra_curvature_dressing": 2,
+      "n_G": 0,
+      "n_N": 2
+    },
+    "Tr_U1_U2": {
+      "eom_degree": 3,
+      "max_extra_curvature_dressing": 0,
+      "n_G": 1,
+      "n_N": 4
+    },
+    "Tr_U1_cu": {
+      "eom_degree": 3,
+      "max_extra_curvature_dressing": 0,
+      "n_G": 0,
+      "n_N": 6
+    },
+    "Tr_U1_sq": {
+      "eom_degree": 2,
+      "max_extra_curvature_dressing": 1,
+      "n_G": 0,
+      "n_N": 4
+    },
+    "Tr_U2": {
+      "eom_degree": 2,
+      "max_extra_curvature_dressing": 1,
+      "n_G": 1,
+      "n_N": 2
+    }
+  }
+}
