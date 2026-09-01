@@ -1,0 +1,32 @@
+{
+  "iteration": 246,
+  "model_readiness_percent": 24,
+  "scope": "Minkowski_Lambda0_physical_null_TT_soft_leg_flat_e3_connection_sector",
+  "geometry_checks": {
+    "k2": 0.0,
+    "trace_h": 0.0,
+    "max_transversality_residual": 0.0,
+    "max_linearized_ricci": 0.0,
+    "linearized_ricci_scalar": 0.0,
+    "max_linearized_einstein": 0.0,
+    "max_linearized_riemann": 0.35355339059327373,
+    "linearized_riemann_frobenius_norm": 1.9999999999999998
+  },
+  "soft_linearized_Einstein_EOM_zero": true,
+  "soft_linearized_Riemann_nonzero": true,
+  "e3_c0_terms": ["Tr(U1^3)", "Tr(U1 U2)"],
+  "e3_c0_cubic_soft_projection": "ZERO",
+  "reason": "flat e=3 sector is trilinear in explicit linearized EOM insertions; each cubic permutation contains the null-TT soft EOM factor, which vanishes",
+  "does_not_apply_to": [
+    "determinant e=0 sector",
+    "e=1 sector with c=2 curvature/operator dressing",
+    "e=2 sector with c=1 curvature/operator dressing",
+    "generic off-shell cubic metric vertex without a null-TT soft leg"
+  ],
+  "classification": "PASS_SCOPED_VD_E3_NULL_SOFT_TT_VANISHING",
+  "remaining_C5_authority": "E0_DETERMINANT_PLUS_E1_C2_PLUS_E2_C1_AND_SOURCE_COMPLETED_CAUSAL_PROJECTION",
+  "candidate_residual": false,
+  "ansatz_003_authorized": false,
+  "fisher_resources_authorized": false,
+  "next_gate": 247
+}
