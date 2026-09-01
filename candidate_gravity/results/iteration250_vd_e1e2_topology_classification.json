@@ -1,0 +1,24 @@
+{
+  "iteration": 250,
+  "model_readiness_percent": 24,
+  "inputs": {
+    "iteration245": "composite Vilkovisky traces at cubic order require at most bubble/triangle scalar loop topology; master families include I22, I222, I212",
+    "iteration247": "e1/e2 cubic metric-order partitions survive structurally through nonlinear EOM/kernel variations",
+    "iterations248_249": "mixed nonlinear Einstein EOM is explicitly nonzero and survives frozen TT contractions"
+  },
+  "classification": "PASS_SCOPED_E1_E2_NO_NEW_LOOP_POLYGON_BEYOND_TRIANGLE",
+  "new_scalar_loop_topology_required": false,
+  "remaining_integral_families": ["raised-power bubbles", "I22", "I222", "I212", "tensor-reduced descendants"],
+  "remaining_hard_work": [
+    "4D pure-Einstein Vilkovisky tensor numerator library",
+    "e1/e2 nonlinear EOM insertion coefficients",
+    "connection/kernel variations in the frozen a=-1/2 convention",
+    "source/Ward/contact completion",
+    "Lorentzian retarded hard-channel discontinuity projection"
+  ],
+  "guardrail": "NONZERO_E1_E2_DOES_NOT_AUTHORIZE_NEW_MASTER_POLYGONS_OR_A_CANDIDATE_RESIDUAL",
+  "heavy_full_run_authorized": false,
+  "scoped_symbolic_numerator_run_authorized": true,
+  "candidate_residual": false,
+  "next_gate": 251
+}
