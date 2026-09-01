@@ -5,10 +5,10 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 226**
+**Authoritative Candidate Gravity front:** **Iteration 227**
 
 ## Scientific state in one sentence
-Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. The connected scalar-source comparator `MSSC-001` has Born-fixed IR completion and a stable global hard remainder, but its forward-transfer log coefficients are **not resolved** above the frozen `3e-7` numerical envelope; the distinct pure-graviton control does resolve log structure. AS and C3 real-time nonlinear comparator relations remain BLOCKED. No Candidate Gravity residual exists.
+Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. `MSSC-001` has Born-fixed IR completion and a stable global hard remainder but its forward log coefficients are regime-specifically non-identifiable at the frozen `3e-7` envelope. A fresh 2025–2026 asymptotic-safety audit finds substantially improved Lorentzian two-point/spectral and scalar-scattering authority, but still no directly usable same-parent source-completed nonlinear three-graviton retarded relation/cut; AS remains `BLOCKED_NOT_ZERO`. C3 ordered metric-CTP nonlinear authority is the next gate. No Candidate Gravity residual exists.
 
 ## Stable readiness rubric
 Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
@@ -32,95 +32,45 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 - Standalone positive two-point spectral/cut information remains C4-mediator degenerate.
 - For 4D loop/nonanalytic columns use the frozen polyhomogeneous regular+log basis, not tree pure-Taylor `soft2` extraction.
 - For linked cuts: finite nonzero soft momentum -> hard-channel discontinuity -> source/Ward completion -> physical IR/hard-remainder completion -> regular+log extraction.
-- Do not infer an IR subtraction coefficient by fitting a cap-regulated integral. A subtraction coefficient must be fixed locally by factorization/Born authority or by a complete declared inclusive construction.
-- Keep the pure-graviton on-shell control and the connected-source control as distinct observables; compare structures only after each is independently completed.
-- A fitted log coefficient below the propagated frozen numerical envelope is `regime-specific non-identifiability`, not an exact zero.
+- Do not infer an IR subtraction coefficient by fitting a cap-regulated integral.
+- Keep pure-graviton and connected-source controls distinct.
+- A fitted log coefficient below propagated numerical envelope is `regime-specific non-identifiability`, not exact zero.
 - Do not create `ANSATZ-003` before a concrete residual survives C3/C4/C5/nonlocal/AS subtraction, truncation uncertainty and prospective robustness.
 - Fisher/resources remain forbidden until the robust residual gate passes.
 
 ## Retained comparator authority
 
 ### Iterations 202–205 — analytic tower and nonanalytic target
-The declared local C5 Riemann-chain derivative family gives a row-scaled Vandermonde tower of full finite-row rank; finite analytic single-setting residuals are therefore not model-independent. Freeze
-
-`D_s F = Disc_s F/(2 pi i)`
-
-and
-
-`T_cut = D Gamma3_ret,soft - W[D K2]`.
-
-Local analytic towers have `D=0` in their analytic domain; standalone `D K2` is not promotable because of C4 spectral-mediator degeneracy.
+The declared local C5 Riemann-chain derivative family gives a row-scaled Vandermonde tower of full finite-row rank; finite analytic single-setting residuals are therefore not model-independent. Freeze `D_s F = Disc_s F/(2 pi i)` and `T_cut = D Gamma3_ret,soft - W[D K2]`. Local analytic towers have `D=0` in their analytic domain; standalone `D K2` is not promotable because of C4 spectral-mediator degeneracy.
 
 ### Iterations 206–207 — off-shell C5 authority
-Generic third-order one-loop covariant perturbation theory and causal continuation technology exist, but no directly reusable published object has been established that simultaneously supplies pure-Einstein graviton+ghost finite nonlocal curvature-cubic terms, gauge/parametrization-safe off-shell uniqueness, Lorentzian/in-in continuation and the source-completed RQIR projection.
+Generic third-order one-loop covariant perturbation theory and causal continuation technology exist, but no directly reusable published object has been established that simultaneously supplies pure-Einstein graviton+ghost finite nonlocal curvature-cubic terms, gauge/parametrization-safe off-shell uniqueness, Lorentzian/in-in continuation and the source-completed RQIR projection. Classification: `BLOCKED_C5_VD_NONLOCAL_CUBIC_SPECIALIZATION`.
 
-Classification: `BLOCKED_C5_VD_NONLOCAL_CUBIC_SPECIALIZATION`.
-
-### Iterations 208–220 — physical controls
-A gauge-invariant pure-Einstein on-shell unitarity-cut control is retained, with real gravitational collinear IR structure. `MSSC-001` supplies a distinct gauge-invariant scalar gravitational Compton/source block suitable for a connected-source control, avoiding ordinary off-shell 1PI gauge ambiguity.
-
-Iteration 215 provides the retained pure-graviton regular+log positive control after its declared IR completion. Its equal-parameter pure-Taylor residual is `2790.180298263071` times the control numerical envelope, so nonanalytic structure is resolved there at scoped control level.
-
-### Iterations 221–225 — connected-source cut and numerical hard-remainder completion
-The scalar+graviton two-particle cut is built entirely from gauge-invariant source tree blocks with a physical spin-2 intermediate-state sum. Internal transverse-basis rotation invariance passes. Direct endpoint limits give
-
-`R_in = R_out = -8 M_Born`
-
-without cap fitting. With
-
-`I_hard(n) = I_cut(n) - R/(1+n_z) - R/(1-n·n_out)`,
-
-local cap shells vanish as `delta^2`.
-
-Iteration 224's chart-dependent bulk number remains retained as superseded numerical blocker provenance. Iteration 225 resolves it with exact spherical Voronoi local-polar domain decomposition and two independent deterministic cubatures. Across the frozen broad kinematics, order 32 maximum relative disagreement is `2.584334806770234e-7`; slowest order-40 rows reach `6.135670833005235e-9`. Freeze conservative relative source numerical envelope `3e-7`.
-
-Classification through Iteration 225:
-- local IR completion: `PASS_FROM_ITERATION223`;
-- global finite `MSSC-001` hard remainder: `PASS_NUMERICAL_GLOBAL_COMPLETION`;
-- Iteration-224 numerical blocker: `RESOLVED`;
-- Candidate Gravity novelty: `NONE`.
+### Iterations 208–225 — physical controls and source hard remainder
+A gauge-invariant pure-Einstein on-shell unitarity-cut control is retained. `MSSC-001` supplies a distinct connected scalar-source control. Direct endpoint limits give `R_in=R_out=-8 M_Born`; Born-fixed subtraction makes local cap shells vanish as `delta^2`. Iteration 225 resolves the global quadrature blocker with exact spherical Voronoi local-polar domain decomposition and two independent deterministic cubatures. Freeze conservative relative source numerical envelope `3e-7`.
 
 ### Iteration 226 — source forward regular+log resolution gate
-Use the natural transfer coordinate
+Use `z=-t/(4 p^2)=sin^2(theta_ext/2)` on the frozen forward grid. All 16 rows pass the numerical gate; every propagated regular+log coefficient has `|b_i|/Delta b_i<1`. Classification: `REGIME_SPECIFIC_NON_IDENTIFIABILITY_NO_CERTIFICATE` plus analytic-vs-log near-degeneracy within the numerical envelope. No exact analytic identity is claimed.
 
-`z = -t/(4 p^2) = sin^2(theta_ext/2)`
+### Iteration 227 — AS real-time authority re-audit
+Current Lorentzian AS authority is materially stronger than in earlier audits: direct/self-consistent graviton spectral functions, covariant Lorentzian flow work, a 2026 analytical propagator approximation, and physical scalar-scattering reconstructions exist. Euclidean momentum-dependent three-/four-graviton effective-action authority also remains strong.
 
-on comparator-only forward rows
+However, no retained source supplies one directly usable same-parent object that simultaneously fixes:
+1. physical Lorentzian nonlinear three-graviton momentum dependence;
+2. explicit retarded/in-in ordering;
+3. RQIR source/Ward completion;
+4. same-parent normalization/parameter convention linking nonlinear response to `K2`;
+5. controlled timelike discontinuity / linked-cut prescription for that completed object.
 
-`theta_ext=[0.13,0.105,0.085,0.068,0.054,0.043,0.034,0.027]`
-
-for plus and cross external spin-2 polarizations. Keep `R=-8 M_Born`, the Iteration-225 cubature construction and the frozen `3e-7` relative source envelope unchanged.
-
-All 16 rows pass the numerical gate; worst two-cubature relative disagreement is
-
-`2.595262029909852e-7`.
-
-Compare the equal-parameter bases
-
-`[1,L,z,zL,z^2,z^2L]`, `L=log(z)`,
-
-and Taylor degree 5. Full-window relative L2 residuals are:
-
-- plus: regular+log `1.73176347744811e-8`, Taylor-5 `5.180431884151699e-11`;
-- cross: regular+log `6.991589330814055e-10`, Taylor-5 `1.6502718029550426e-12`.
-
-After conservative propagation of the frozen `3e-7` row envelope through the regular+log pseudoinverse, every log coefficient has `|b_i|/Delta b_i < 1`. Maximum is `0.9745719940266064` for plus and `0.03769973874474194` for cross.
-
-Classification:
-- source forward numerical gate: `PASS_WITHIN_FROZEN_3E-7_ENVELOPE`;
-- source log nonanalyticity: `REGIME_SPECIFIC_NON_IDENTIFIABILITY_NO_CERTIFICATE`;
-- analytic-vs-log status: `NEAR_DEGENERACY_WITHIN_NUMERICAL_ENVELOPE`;
-- exact analytic identity: `NOT_CLAIMED`;
-- consistency FAIL: `NO`;
-- source/pure-graviton mismatch as Candidate novelty: `NO`.
+Classification remains `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, specifically `BLOCKED_NOT_ZERO`.
 
 Retain:
-- `SRC-CUT-007`;
-- `SRC-CUT-008`;
-- `REL-NG-005`;
-- `NG-FUNNEL-082`.
+- `AS-NG-005`;
+- `REL-NG-006`;
+- `AS-BLOCK-001`;
+- `NG-FUNNEL-083`.
 
-Do not tune the source window after this negative result to manufacture a log certificate. A new source protocol would require a new prospectively frozen version.
+This is not a consistency FAIL of asymptotic safety, not an exact comparator identity, not evidence of a zero AS column, and not Candidate Gravity novelty.
 
 ## Other comparators
 ### C4
@@ -130,7 +80,7 @@ Compatible local unitary massless-spin-2 boundary remains inside C5 at the froze
 Analytic nonlocal hard shapes become Taylor-degenerate in deep IR; genuine nonlinear/loop causal cuts remain comparator work, not novelty.
 
 ### Asymptotic safety
-`BLOCKED_AS_REALTIME_RELATION_COMPLETION`: current retained authority does not provide the required same-parent Lorentzian/in-in source-completed nonlinear retarded relation/cut.
+`BLOCKED_AS_REALTIME_RELATION_COMPLETION`: current retained authority does not provide the required same-parent Lorentzian/in-in source-completed nonlinear three-graviton retarded relation/cut.
 
 ### C3 PQCG
 `BLOCKED_C3_CTP_ORDERED_COMPLETION`: nonlinear OM dynamics plus the published linearized conserved-diffusion MSR/JD construction do not determine the nonlinear metric-dependent ordered cut/soft relation required by RQIR.
@@ -142,21 +92,19 @@ There is **no robust Candidate Gravity residual**.
 Fisher/resources: FORBIDDEN.
 
 ## Latest authority files
-### Iteration 226
-- `analysis/scalar_source_forward_regular_log_iteration226.py`
-- `results/scalar_source_forward_regular_log_iteration226.json`
-- `candidate_gravity/SCALAR_SOURCE_FORWARD_REGULAR_LOG_ITERATION226.md`
-- `research_log/2026-09-01_iteration_226_source_forward_regular_log.md`
-- `recovery/RECOVERY_DELTA_ITERATION_226.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION226.md`
+### Iteration 227
+- `candidate_gravity/AS_REALTIME_AUTHORITY_REAUDIT_ITERATION227.md`
+- `research_log/2026-09-01_iteration_227_as_realtime_authority_reaudit.md`
+- `recovery/RECOVERY_DELTA_ITERATION_227.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION227.md`
 
-## Immediate next scientific priority — Iteration 227
-Return to missing comparator authority rather than retuning the source-control window.
+## Immediate next scientific priority — Iteration 228
+Proceed to the C3 PQCG ordered metric-CTP nonlinear authority gate.
 
 Requirements:
-1. re-audit current asymptotic-safety literature/authority for a same-parent Lorentzian or in-in, source-completed nonlinear retarded three-point relation/cut usable in the RQIR quotient;
-2. do not infer the required AS column from Euclidean fixed-point propagators or analytic continuation not supplied by the theory;
-3. if directly usable authority remains unavailable, retain `BLOCKED_AS_REALTIME_RELATION_COMPLETION` and state the exact missing ingredients;
-4. then proceed to C3 ordered metric-CTP nonlinear completion as the remaining authority blocker;
-5. neither AS nor C3 may be zero-filled;
+1. start from the retained PQCG/MSR/JD parent dynamics and current literature;
+2. determine whether one declared dynamics and parameter convention fixes the nonlinear metric-dependent ordered cut/soft relation required by RQIR;
+3. do not infer the nonlinear object from the linear conserved-diffusion MSR/JD sector;
+4. if authority remains incomplete, retain `BLOCKED_C3_CTP_ORDERED_COMPLETION` and write an explicit missing-ingredients ledger;
+5. C3 may not be zero-filled;
 6. do not create `ANSATZ-003`; do not run Fisher/resources.
