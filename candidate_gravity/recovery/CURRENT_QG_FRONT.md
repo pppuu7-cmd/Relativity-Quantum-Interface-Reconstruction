@@ -5,11 +5,11 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 236**
+**Authoritative Candidate Gravity front:** **Iteration 237**
 
 ## Scientific state in one sentence
 
-Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. `MSSC-001` is IR/numerically completed but its forward log coefficients are regime-specifically non-identifiable at the frozen `3e-7` envelope. AS is frozen for the current funnel as `BLOCKED_NOT_ZERO`; C3 is frozen as `BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`; C5 remains `BLOCKED_FULL_VD_EOM_INSERTION_SERIES_TO_FINITE_CPT3_MAP`. Iteration 236 identifies a genuinely executable same-parent **on-shell** GR radiative branch (`2->3` massive scalars plus one graviton linked by the soft theorem to same-parent `2->2` elastic scattering with explicit unitarity cuts), but it is not yet certified observable-identical to the frozen retarded/source-completed `T_cut`. No Candidate Gravity residual exists.
+Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. AS is frozen `BLOCKED_NOT_ZERO`; C3 is frozen formal underdetermination; C5 is blocked on the full Vilkovisky EOM-insertion-to-finite-CPT3 map. Iteration 236 identified an executable same-parent on-shell massive-scalar GR radiative branch, and Iteration 237 now proves that its **single** `2 -> 3` in-out unitarity discontinuity is not observable-identical to the complete in-in/retarded radiation observable: generalized LSZ / Keldysh authority requires amplitude-plus-cut/product terms. The branch remains executable but is frozen at `ON_SHELL_PROXY_NOT_OBSERVABLE_IDENTICAL` until a complete causal-response representation of the unchanged `T_cut` target is built. No Candidate Gravity residual exists.
 
 ## Stable readiness rubric
 
@@ -45,7 +45,9 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 - A physical Lorentzian amplitude for one observable must not be substituted for the frozen linked RQIR observable. Observable identity, same-parent normalization, retarded/in-in ordering, source/Ward completion and controlled discontinuity remain mandatory.
 - A reconstructed timelike function without an explicit controlled discontinuity is not authority for `D_s`; `|A|^2` is not a discontinuity.
 - A three-point diagram appearing inside a two-point spectral flow is not a computed nonlinear Lorentzian three-point correlator and cannot populate `D Gamma3_ret,soft`.
-- **New Iteration-236 guardrail:** an on-shell S-matrix soft relation with explicit unitarity cuts is still not automatically the frozen retarded/source-completed relation. Before using it in `T_cut`, establish an exact same-parent LSZ/CTP/retarded/source-contact identity with the same hard-channel `Disc`, IR subtraction and normalization.
+- An on-shell S-matrix soft relation with explicit unitarity cuts is not automatically the frozen retarded/source-completed relation.
+- **Iteration-237 guardrail:** a single in-out `2 -> 3` amplitude discontinuity is not the complete in-in/retarded radiation observable. Generalized LSZ / Schwinger-Keldysh causal response requires the appropriate amplitude plus cut/product-of-amplitudes completion. Do not identify the five-point discontinuity alone with `D Gamma3_ret,soft`.
+- Do not redefine the frozen `T_cut` target to match a convenient amplitude observable. If a direct causal-response representation is structurally inequivalent, classify the branch as comparator-incompatible.
 - Do not create `ANSATZ-003` before a concrete residual survives C3/C4/C5/nonlocal/AS subtraction, truncation uncertainty and prospective robustness.
 - Fisher/resources remain forbidden until the robust residual gate passes.
 
@@ -69,27 +71,31 @@ Pure-Einstein Vilkovisky authority freezes field-space parameter `a=-1/2` and ma
 
 ### Iterations 234–235 — AS
 
-Current 2026 AS authority now includes physical Lorentzian scalar scattering, self-consistent graviton two-point spectral functions, and curvature-quadratic Lorentzian effective-action information. It still does not supply, in one declared convention, a nonlinear Lorentzian three-graviton `Gamma3_ret`, controlled discontinuity, physical `K2` normalization and source/Ward completion. Freeze AS for the current funnel at `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, `BLOCKED_NOT_ZERO`, substatus `BLOCKED_AS_LINKED_RETARDED_DISCONTINUITY_MAP_DESPITE_PHYSICAL_SCALAR_AMPLITUDE`.
+Current 2026 AS authority includes physical Lorentzian scalar scattering, self-consistent graviton two-point spectral functions and curvature-quadratic Lorentzian effective-action information. It still does not supply, in one declared convention, a nonlinear Lorentzian three-graviton `Gamma3_ret`, controlled discontinuity, physical `K2` normalization and source/Ward completion. Freeze AS for the current funnel at `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, `BLOCKED_NOT_ZERO`, substatus `BLOCKED_AS_LINKED_RETARDED_DISCONTINUITY_MAP_DESPITE_PHYSICAL_SCALAR_AMPLITUDE`.
 
 ### Iteration 236 — executable on-shell radiative linked branch
 
-Selected branch: minimally coupled GR with two massive spinless scalars and one emitted graviton. Georgoudis–Heissenberg–Vazquez-Holm, JHEP 06 (2023) 126, arXiv:2303.07006, supplies a one-loop `2->3` radiative amplitude and same-parent one-loop `2->2` elastic amplitude entering its soft limit, fixed analytic continuation, explicit unitarity cuts, and nonanalytic soft-region terms. Supporting amplitude/waveform authority includes arXiv:2303.06111, 2312.07452 and 2402.06361.
+Selected branch: minimally coupled GR with two massive spinless scalars and one emitted graviton. Same-parent one-loop `2 -> 3` radiation and `2 -> 2` elastic data, soft factorization, analytic continuation and explicit unitarity cuts exist. Freeze positive status `EXECUTABLE_ONSHELL_LINKED_BRANCH_IDENTIFIED`, but require an observable-identity audit before using it in `T_cut`.
 
-Freeze status:
+### Iteration 237 — observable-identity audit
 
-`EXECUTABLE_ONSHELL_LINKED_BRANCH_IDENTIFIED`
+Generalized-LSZ / causal-response authority shows that asymptotic gravitational radiation is an in-in response observable. The physical waveform/response contains a five-point amplitude term plus distinct cut/product-of-amplitudes contributions. Therefore the single in-out `2 -> 3` unitarity discontinuity is not by itself the complete retarded/source-completed observable.
 
-plus hard prerequisite
+Freeze:
 
-`BLOCKED_ONSHELL_TO_RETARDED_SOURCE_COMPLETED_OBSERVABLE_IDENTITY_MAP`.
+`ON_SHELL_PROXY_NOT_OBSERVABLE_IDENTICAL`
+
+and
+
+`BLOCKED_CAUSAL_RESPONSE_COMPLETION_REQUIRED_BEYOND_SINGLE_2TO3_UNITARITY_DISCONTINUITY`.
 
 Retain labels:
-- `REL-CUT-016`;
-- `REL-NG-016`;
-- `REL-BLOCK-001`;
-- `NG-FUNNEL-092`.
+- `REL-NG-017`;
+- `REL-CUT-017`;
+- `REL-BLOCK-002`;
+- `NG-FUNNEL-093`.
 
-This is not consistency FAIL, exact comparator identity, regime-specific non-identifiability, near-degeneracy, or Candidate Gravity novelty.
+This is a negative result for proxy identity, **not** a consistency FAIL of GR and not a zero comparator column.
 
 ## Candidate state
 
@@ -100,21 +106,22 @@ Fisher/resources: FORBIDDEN.
 
 ## Latest authority files
 
-### Iteration 236
-- `candidate_gravity/ONSHELL_RADIATIVE_LINKED_BRANCH_AUDIT_ITERATION236.md`
-- `research_log/2026-09-01_iteration_236_onshell_radiative_linked_branch_selection.md`
-- `recovery/RECOVERY_DELTA_ITERATION_236.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION236.md`
+### Iteration 237
+- `candidate_gravity/ONSHELL_RETARDED_OBSERVABLE_IDENTITY_AUDIT_ITERATION237.md`
+- `research_log/2026-09-01_iteration_237_onshell_retarded_observable_identity_audit.md`
+- `recovery/RECOVERY_DELTA_ITERATION_237.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION237.md`
 
-## Immediate next scientific priority — Iteration 237
+## Immediate next scientific priority — Iteration 238
 
-Perform an observable-identity audit for the selected massive-scalar radiative branch before any numerical fit or heavy calculation.
+Attempt a **direct generalized-LSZ causal-response representation** of the unchanged frozen `T_cut` in the same massive-scalar GR parent.
 
 Requirements:
-1. freeze one LSZ normalization and hard-channel convention for two massive scalar source legs plus one emitted graviton;
-2. write the corresponding CTP/retarded three-point discontinuity and compare it to the physical `2->3` unitarity discontinuity after LSZ;
-3. derive `W[D K2]` from the same one-loop `2->2` parent amplitude and the same momentum/normalization convention;
-4. include all soft/contact/source Ward terms and identical IR subtraction/branch prescription;
-5. if exact observable identity is established, then and only then sample the published amplitude chain on frozen RQIR rows;
-6. if extra arbitrary completion is needed, freeze `ON_SHELL_PROXY_NOT_OBSERVABLE_IDENTICAL` and do not populate `T_cut`;
-7. do not reopen C3/C5/AS without genuinely new authority; do not create `ANSATZ-003`; do not run Fisher/resources.
+1. choose one explicit Schwinger-Keldysh/Keldysh causal convention and retarded leg assignment;
+2. fix LSZ normalization for the two massive scalar source legs and emitted graviton;
+3. write the causal response as the required amplitude plus cut/product-of-amplitudes combination;
+4. carry one hard-channel discontinuity convention consistently through all terms;
+5. include contact/source Ward terms, BMS/asymptotic-frame convention and identical IR subtraction;
+6. compare the completed causal object to `D Gamma3_ret,soft - W[D K2]` without redefining the frozen observable;
+7. if structurally identical, only then proceed to frozen-row extraction; if not, freeze this branch as comparator-incompatible;
+8. do not reopen C3/C5/AS without genuinely new authority; do not create `ANSATZ-003`; do not run Fisher/resources.
