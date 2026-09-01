@@ -5,11 +5,11 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 230**
+**Authoritative Candidate Gravity front:** **Iteration 231**
 
 ## Scientific state in one sentence
 
-Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. `MSSC-001` is IR/numerically completed but its forward log coefficients are regime-specifically non-identifiable at the frozen `3e-7` envelope. AS remains `BLOCKED_NOT_ZERO`. C3 is now frozen for the current comparator funnel as `BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`: PRX-2026 Eq. (26) fixes the parent metric dependence, Iteration 229 constructs an explicit nonlinear conserved homogeneous family, and Iteration 230 finds no published same-parent nonlinear projector/stochastic-constraint/quotient prescription with fixed boundary data that eliminates that family. No Candidate Gravity residual exists.
+Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. `MSSC-001` is IR/numerically completed but its forward log coefficients are regime-specifically non-identifiable at the frozen `3e-7` envelope. AS remains `BLOCKED_NOT_ZERO`. C3 is frozen as `BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`. C5 off-shell nonlocal authority is now narrowed to `BLOCKED_MINIMAL_VD_COVARIANT_HESSIAN_TO_FINITE_CPT3_COEFFICIENT_MAP`: fresh 2025–2026 Vilkovisky-DeWitt applications remain curvature-bilinear and no directly executable pure-Einstein graviton+ghost finite curvature-cubic unique-action coefficient map was found. No Candidate Gravity residual exists.
 
 ## Stable readiness rubric
 
@@ -40,6 +40,7 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 - A fitted log coefficient below propagated numerical envelope is `regime-specific non-identifiability`, not exact zero.
 - A conserved nonlinear comparator completion is not unique merely because the background parent and Bianchi identity are fixed; homogeneous transverse sectors must be eliminated by same-parent authority, not by convenience.
 - Choosing `H=0` or a convenient nonlinear transverse projector is a new C3 comparator model choice unless derived uniquely from the declared parent with fixed boundary/Green-function data.
+- Generic CPT3 form factors must not be spliced to an ordinary gauge-fixed pure-gravity Hessian and promoted as a unique off-shell C5 comparator; the Vilkovisky covariant Hessian/connection and ghost convention must be frozen first.
 - Do not create `ANSATZ-003` before a concrete residual survives C3/C4/C5/nonlocal/AS subtraction, truncation uncertainty and prospective robustness.
 - Fisher/resources remain forbidden until the robust residual gate passes.
 
@@ -51,7 +52,7 @@ The declared local C5 Riemann-chain derivative family gives a row-scaled Vanderm
 
 ### Iterations 206–207 — off-shell C5 authority
 
-Generic third-order one-loop covariant perturbation theory and causal continuation technology exist, but no directly reusable published object has been established that simultaneously supplies pure-Einstein graviton+ghost finite nonlocal curvature-cubic terms, gauge/parametrization-safe off-shell uniqueness, Lorentzian/in-in continuation and the source-completed RQIR projection. Classification: `BLOCKED_C5_VD_NONLOCAL_CUBIC_SPECIALIZATION`.
+Generic third-order one-loop covariant perturbation theory and causal continuation technology exist. Iteration 207 established that generic CPT3, the pure-Einstein Vilkovisky divergent result and pure-gravity graviton/ghost integrand technology existed separately, but not as one finite gauge/parametrization-safe curvature-cubic RQIR specialization.
 
 ### Iterations 208–225 — physical controls and source hard remainder
 
@@ -63,51 +64,33 @@ Use `z=-t/(4 p^2)=sin^2(theta_ext/2)` on the frozen forward grid. All 16 rows pa
 
 ### Iteration 227 — AS real-time authority re-audit
 
-Current Lorentzian AS authority is materially stronger than in earlier audits, but no retained source supplies one directly usable same-parent object that simultaneously fixes physical Lorentzian nonlinear three-graviton momentum dependence, explicit retarded/in-in ordering, RQIR source/Ward completion, same-parent normalization linking the nonlinear response to `K2`, and a controlled timelike discontinuity/linked-cut prescription. Classification remains `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, specifically `BLOCKED_NOT_ZERO`.
+Current Lorentzian AS authority is materially stronger than in earlier audits, but no retained source supplies one directly usable same-parent object that simultaneously fixes physical Lorentzian nonlinear three-graviton momentum dependence, explicit retarded/in-in ordering, RQIR source/Ward completion, same-parent normalization linking nonlinear response to `K2`, and controlled timelike discontinuity/linked-cut prescription. Classification remains `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, specifically `BLOCKED_NOT_ZERO`.
 
-### Iteration 228 — C3 parent-authority correction
+### Iterations 228–230 — C3 parent correction and formal underdetermination
 
-The final published 2026 PRX covariant classical-quantum path-integral paper supplies more nonlinear parent authority than older repository wording credited: Eq. (26) fixes a metric-dependent generalized Wheeler-DeWitt tensor density with parameters `beta` and `D2`, and the action admits an MSR representation. Therefore the generic Iteration-173 free-`lambda` argument is not the final blocker once this parent is adopted.
+The final 2026 PRX parent fixes a metric-dependent generalized Wheeler-DeWitt tensor density and admits an MSR representation, invalidating the older generic free-`lambda` wording as the final C3 blocker. Iteration 229 constructs an explicit doubly-transverse homogeneous `O(h)` family that preserves the linear authority and can survive TT projection. Iteration 230 finds no published same-parent nonlinear projector/stochastic constraint/quotient rule with fixed boundary data that eliminates this family. Freeze `BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION` for the current comparator funnel.
 
-### Iteration 229 — C3 formal nonlinear conserved-completion underdetermination
+### Iteration 231 — fresh C5 VD/nonlocal cubic authority re-audit
 
-Freeze `g=eta+h`, signature `(-,+,+,+)`, and the Eq.-(26) parent. Its ordinary first metric variation is fixed. However, the physical conservation equations determine only an inhomogeneous divergence condition. If one particular solution exists, one may add any doubly-transverse homogeneous `O(h)` tensor.
+Fresh 2025–2026 literature does not close the C5 off-shell cubic authority gap. The 2025 Vilkovisky-DeWitt black-hole application `arXiv:2506.09489` explicitly truncates the universal nonlocal action at second order in curvature, with curvature-bilinear `R log(Box) R`-type terms. Current 2026 VD applications found in the audit likewise use curvature-bilinear nonlocal authority. Recent measure/gauge-invariance papers sharpen the need for careful off-shell authority but do not provide finite pure-Einstein `R^3` unique-action form factors.
 
-An explicit family is
+Generic CPT3 (`arXiv:0911.1168`) remains formal third-order machinery; the pure-Einstein Vilkovisky result (`arXiv:2006.04217`) remains divergent unique-action authority. The missing intersection is now isolated as an executable same-convention map from the **pure-Einstein Vilkovisky covariant Hessian plus ghost operators** to the complete finite CPT3 coefficient set `Gamma_A(Box1,Box2,Box3)` in an independent 4D cubic-curvature basis.
 
-`H^{munu,rhosigma} = lambda F(k,k',q) S_R[h;q,u,v] Q_k^{munu} Q_k'^{rhosigma}`,
+Freeze:
 
-where
+`BLOCKED_C5_VD_NONLOCAL_CUBIC_SPECIALIZATION`
 
-`Q_k^{munu}=k^2 eta^{munu}-k^mu k^nu`
+with sharper substatus
 
-and `S_R` is a scalar contraction of the linearized Riemann tensor. This family vanishes at `h=0`, preserves the background linear two-point authority, is transverse on both response pairs, and can survive TT soft projection. The reproducible witness gives `S_R=-2`, exact zero divergences and nonzero representative norm `198.030300711785`.
-
-Therefore conservation/Bianchi plus Eq. (26) does not uniquely fix the nonlinear conserved C3 completion. Classification:
-
-`FORMAL_UNDERDETERMINATION_CERTIFICATE`
-
-and
-
-`BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`.
-
-### Iteration 230 — same-parent completion audit freezes C3 blocker
-
-Fresh authority audit of the final PRX publication (Phys. Rev. X 16, 031007, published 15 July 2026) and arXiv:`2605.05375` finds no additional same-parent nonlinear conserved projector, stochastic constraint, or quotient-space rule with fixed Green-function/boundary prescription that removes the Iteration-229 homogeneous family.
-
-The PRX parent fixes Eq. (26) and the covariant path-integral dynamics but does not supply an executable unique nonlinear transverse/constraint completion. The 2026 stochastic-mode paper establishes OM/MSR/SDE equivalence after linearizing around Minkowski, so it supplies strong linear authority but not the nonlinear quotient representative.
-
-Freeze for the current comparator funnel:
-
-`BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`.
+`BLOCKED_MINIMAL_VD_COVARIANT_HESSIAN_TO_FINITE_CPT3_COEFFICIENT_MAP`.
 
 Retain:
-- `C3-NG-011`;
-- `REL-NG-010`;
-- `C3-BLOCK-004`;
-- `NG-FUNNEL-086`.
+- `C5-CUT-014`;
+- `C5-CUT-015`;
+- `REL-NG-011`;
+- `NG-FUNNEL-087`.
 
-This is not a consistency FAIL, not exact comparator identity, not near-degeneracy, not evidence of a zero C3 column, and not Candidate Gravity novelty.
+This is not a consistency FAIL, not exact comparator identity, not near-degeneracy, not evidence of a zero C5 column, and not Candidate Gravity novelty.
 
 ## Other comparators
 
@@ -121,7 +104,7 @@ Analytic nonlocal hard shapes become Taylor-degenerate in deep IR; genuine nonli
 `BLOCKED_AS_REALTIME_RELATION_COMPLETION`: current retained authority does not provide the required same-parent Lorentzian/in-in source-completed nonlinear three-graviton retarded relation/cut.
 
 ### C3 PQCG
-`BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`, frozen for the current comparator funnel. Future reopening requires genuinely new same-parent nonlinear authority that fixes the conserved quotient representative with boundary/Green-function data; a convenient choice of representative is insufficient.
+`BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`, frozen for the current comparator funnel. Future reopening requires genuinely new same-parent nonlinear authority that fixes the conserved quotient representative with boundary/Green-function data.
 
 ## Candidate state
 
@@ -132,20 +115,20 @@ Fisher/resources: FORBIDDEN.
 
 ## Latest authority files
 
-### Iteration 230
-- `candidate_gravity/C3_PQCG_SAME_PARENT_COMPLETION_AUDIT_ITERATION230.md`
-- `research_log/2026-09-01_iteration_230_c3_same_parent_completion_audit.md`
-- `recovery/RECOVERY_DELTA_ITERATION_230.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION230.md`
+### Iteration 231
+- `candidate_gravity/C5_VD_NONLOCAL_CUBIC_REAUDIT_ITERATION231.md`
+- `research_log/2026-09-01_iteration_231_c5_vd_nonlocal_cubic_reaudit.md`
+- `recovery/RECOVERY_DELTA_ITERATION_231.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION231.md`
 
-## Immediate next scientific priority — Iteration 231
+## Immediate next scientific priority — Iteration 232
 
-Return the main effort to C5. Audit the latest 2025–2026 gauge-independent/Vilkovisky-DeWitt/nonlocal gravity literature for a directly executable pure-Einstein graviton+ghost curvature-cubic nonlocal object that can be placed in the Lorentzian/source-completed RQIR linked-cut convention.
+Freeze the explicit pure-Einstein Vilkovisky covariant Hessian/operator convention from published authority, including field-space metric/connection, gauge condition and Faddeev–Popov ghost operator. Determine whether the connection-dependent operator can be reduced to CPT3-compatible minimal Laplace-type or controlled nonminimal form.
 
 Requirements:
-1. require pure-Einstein graviton+ghost specialization, not a generic matter heat-kernel result;
-2. require gauge/parametrization-safe authority suitable for a physical comparator projection;
-3. require enough form-factor information to define the relevant hard-channel discontinuity;
-4. require a controlled Lorentzian/retarded or otherwise source-completed continuation path;
-5. if no directly executable object exists, identify the minimal missing specialization/projection and retain `BLOCKED_C5_VD_NONLOCAL_CUBIC_SPECIALIZATION`;
+1. do not use an ordinary gauge-fixed Hessian as a substitute for the unique-action operator;
+2. freeze one field-space metric/connection and one parameter convention from published authority;
+3. explicitly identify the gravity and ghost differential operators accepted by the heat-kernel machinery;
+4. before any finite `R^3` claim, reproduce the known pure-Einstein Vilkovisky divergent `R^2` coefficients as a unit/convention test;
+5. if the operator reduction is not uniquely executable from published authority, retain C5 as `BLOCKED` and return to AS rather than inventing a representative;
 6. do not create `ANSATZ-003`; do not run Fisher/resources.
