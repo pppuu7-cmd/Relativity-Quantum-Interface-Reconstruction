@@ -1,0 +1,13 @@
+{
+  "classification": "FORMAL_UNDERDETERMINATION_CERTIFICATE",
+  "metric_signature": "(-,+,+,+)",
+  "max_abs_kQ": 0.0,
+  "max_abs_kprimeQ": 0.0,
+  "tt_max_abs_qh": 0.0,
+  "tt_trace": 0.0,
+  "tt_curvature_contraction_S": -2.0,
+  "max_abs_left_div_H": 0.0,
+  "max_abs_right_div_H": 0.0,
+  "H_frobenius_norm": 198.030300711785,
+  "interpretation": "A nonzero O(h) doubly-transverse homogeneous completion exists, vanishes on the Minkowski background, leaves linear two-point authority unchanged, and can survive a TT soft perturbation. Conservation/Bianchi plus the Eq.-(26) background parent therefore does not uniquely determine the first nonlinear conserved response completion."
+}
