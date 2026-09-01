@@ -5,11 +5,11 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 231**
+**Authoritative Candidate Gravity front:** **Iteration 232**
 
 ## Scientific state in one sentence
 
-Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. `MSSC-001` is IR/numerically completed but its forward log coefficients are regime-specifically non-identifiable at the frozen `3e-7` envelope. AS remains `BLOCKED_NOT_ZERO`. C3 is frozen as `BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`. C5 off-shell nonlocal authority is now narrowed to `BLOCKED_MINIMAL_VD_COVARIANT_HESSIAN_TO_FINITE_CPT3_COEFFICIENT_MAP`: fresh 2025–2026 Vilkovisky-DeWitt applications remain curvature-bilinear and no directly executable pure-Einstein graviton+ghost finite curvature-cubic unique-action coefficient map was found. No Candidate Gravity residual exists.
+Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. `MSSC-001` is IR/numerically completed but its forward log coefficients are regime-specifically non-identifiable at the frozen `3e-7` envelope. AS remains `BLOCKED_NOT_ZERO`. C3 is frozen as `BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`. C5 off-shell nonlocal authority is now narrowed to `BLOCKED_COMPLETE_VD_CONNECTION_TRACE_TO_FINITE_CPT3_MAP`: published pure-Einstein Vilkovisky authority fixes a nondegenerate `a=-1/2` nonsingular DeWitt convention in which the local graviton and FP ghost operators are minimal Laplace type, but the complete off-shell unique action also contains connection/gauge-orbit traces `U1`, `U2`, and `U1^2`, for which no finite third-order nonlocal CPT3 map has yet been frozen. No Candidate Gravity residual exists.
 
 ## Stable readiness rubric
 
@@ -38,9 +38,10 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 - Do not infer an IR subtraction coefficient by fitting a cap-regulated integral.
 - Keep pure-graviton and connected-source controls distinct.
 - A fitted log coefficient below propagated numerical envelope is `regime-specific non-identifiability`, not exact zero.
-- A conserved nonlinear comparator completion is not unique merely because the background parent and Bianchi identity are fixed; homogeneous transverse sectors must be eliminated by same-parent authority, not by convenience.
+- A conserved nonlinear comparator completion is not unique merely because the background parent and Bianchi identity are fixed; homogeneous transverse sectors must be eliminated by same-parent authority, not convenience.
 - Choosing `H=0` or a convenient nonlinear transverse projector is a new C3 comparator model choice unless derived uniquely from the declared parent with fixed boundary/Green-function data.
-- Generic CPT3 form factors must not be spliced to an ordinary gauge-fixed pure-gravity Hessian and promoted as a unique off-shell C5 comparator; the Vilkovisky covariant Hessian/connection and ghost convention must be frozen first.
+- Generic CPT3 form factors must not be spliced to an ordinary gauge-fixed pure-gravity Hessian and promoted as a unique off-shell C5 comparator.
+- Even after the published Vilkovisky convention makes the local graviton `H` and ghost `N` operators minimal, `H+N` alone is not the off-shell unique action: connection/gauge-orbit traces `U1`, `U2`, `U1^2` must be included in the same convention.
 - Do not create `ANSATZ-003` before a concrete residual survives C3/C4/C5/nonlocal/AS subtraction, truncation uncertainty and prospective robustness.
 - Fisher/resources remain forbidden until the robust residual gate passes.
 
@@ -52,7 +53,7 @@ The declared local C5 Riemann-chain derivative family gives a row-scaled Vanderm
 
 ### Iterations 206–207 — off-shell C5 authority
 
-Generic third-order one-loop covariant perturbation theory and causal continuation technology exist. Iteration 207 established that generic CPT3, the pure-Einstein Vilkovisky divergent result and pure-gravity graviton/ghost integrand technology existed separately, but not as one finite gauge/parametrization-safe curvature-cubic RQIR specialization.
+Generic third-order one-loop covariant perturbation theory and causal continuation technology exist. Generic CPT3, the pure-Einstein Vilkovisky divergent result and pure-gravity graviton/ghost integrand technology existed separately, but not as one finite gauge/parametrization-safe curvature-cubic RQIR specialization.
 
 ### Iterations 208–225 — physical controls and source hard remainder
 
@@ -70,25 +71,40 @@ Current Lorentzian AS authority is materially stronger than in earlier audits, b
 
 The final 2026 PRX parent fixes a metric-dependent generalized Wheeler-DeWitt tensor density and admits an MSR representation, invalidating the older generic free-`lambda` wording as the final C3 blocker. Iteration 229 constructs an explicit doubly-transverse homogeneous `O(h)` family that preserves the linear authority and can survive TT projection. Iteration 230 finds no published same-parent nonlinear projector/stochastic constraint/quotient rule with fixed boundary data that eliminates this family. Freeze `BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION` for the current comparator funnel.
 
-### Iteration 231 — fresh C5 VD/nonlocal cubic authority re-audit
+### Iteration 231 — C5 VD/nonlocal cubic re-audit
 
-Fresh 2025–2026 literature does not close the C5 off-shell cubic authority gap. The 2025 Vilkovisky-DeWitt black-hole application `arXiv:2506.09489` explicitly truncates the universal nonlocal action at second order in curvature, with curvature-bilinear `R log(Box) R`-type terms. Current 2026 VD applications found in the audit likewise use curvature-bilinear nonlocal authority. Recent measure/gauge-invariance papers sharpen the need for careful off-shell authority but do not provide finite pure-Einstein `R^3` unique-action form factors.
+Fresh 2025–2026 literature does not provide a directly executable pure-Einstein graviton+ghost finite curvature-cubic unique-action map. The blocker was narrowed to freezing the actual pure-Einstein Vilkovisky covariant Hessian/ghost convention before any finite CPT3 use.
 
-Generic CPT3 (`arXiv:0911.1168`) remains formal third-order machinery; the pure-Einstein Vilkovisky result (`arXiv:2006.04217`) remains divergent unique-action authority. The missing intersection is now isolated as an executable same-convention map from the **pure-Einstein Vilkovisky covariant Hessian plus ghost operators** to the complete finite CPT3 coefficient set `Gamma_A(Box1,Box2,Box3)` in an independent 4D cubic-curvature basis.
+### Iteration 232 — pure-Einstein VD operator convention freeze
 
-Freeze:
+Primary authority: Giacchini–de Paula Netto–Shapiro, Phys. Rev. D 102, 106006 (2020), arXiv:2006.04217.
+
+Freeze the Vilkovisky field-space metric parameter `a=-1/2`. In `D=4` this is nondegenerate (`a != -1/D`). In the nonsingular DeWitt gauge used by the paper, this value makes the local graviton operator minimal,
+
+`H = -(1 Box + Pi)`,
+
+and makes the FP ghost operator minimal because its nonminimal coefficient `1+2a` vanishes.
+
+However, the same one-loop unique-action formula also contains the connection/gauge-orbit correction traces `U1`, `U2`, and `U1^2`. These are essential to the off-shell gauge/parametrization completion and are not represented by the pair `H,N`. The 2020 authority evaluates them only to the local background-dimension order needed for the UV pole; it does not provide the complete finite third-order nonlocal curvature form factors required by the RQIR C5 comparator.
+
+Freeze umbrella status:
 
 `BLOCKED_C5_VD_NONLOCAL_CUBIC_SPECIALIZATION`
 
-with sharper substatus
+with sharper substatus:
 
-`BLOCKED_MINIMAL_VD_COVARIANT_HESSIAN_TO_FINITE_CPT3_COEFFICIENT_MAP`.
+`BLOCKED_COMPLETE_VD_CONNECTION_TRACE_TO_FINITE_CPT3_MAP`.
 
-Retain:
-- `C5-CUT-014`;
-- `C5-CUT-015`;
-- `REL-NG-011`;
-- `NG-FUNNEL-087`.
+Retain exact Eq. (60) divergent unit target, inside its common overall pole factor:
+
+`53/45 Riemann^2 - 61/90 Ricci^2 + 25/36 R^2 + 8 Lambda R + 12 Lambda^2`.
+
+Retain labels:
+- `C5-CUT-016`;
+- `C5-CUT-017`;
+- `C5-CUT-018`;
+- `REL-NG-012`;
+- `NG-FUNNEL-088`.
 
 This is not a consistency FAIL, not exact comparator identity, not near-degeneracy, not evidence of a zero C5 column, and not Candidate Gravity novelty.
 
@@ -115,20 +131,21 @@ Fisher/resources: FORBIDDEN.
 
 ## Latest authority files
 
-### Iteration 231
-- `candidate_gravity/C5_VD_NONLOCAL_CUBIC_REAUDIT_ITERATION231.md`
-- `research_log/2026-09-01_iteration_231_c5_vd_nonlocal_cubic_reaudit.md`
-- `recovery/RECOVERY_DELTA_ITERATION_231.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION231.md`
+### Iteration 232
+- `candidate_gravity/C5_VD_OPERATOR_FREEZE_ITERATION232.md`
+- `candidate_gravity/code/iteration232_vd_operator_freeze_check.py`
+- `candidate_gravity/results/iteration232_vd_operator_freeze_check.txt`
+- `research_log/2026-09-01_iteration_232_vd_operator_freeze.md`
+- `recovery/RECOVERY_DELTA_ITERATION_232.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION232.md`
 
-## Immediate next scientific priority — Iteration 232
+## Immediate next scientific priority — Iteration 233
 
-Freeze the explicit pure-Einstein Vilkovisky covariant Hessian/operator convention from published authority, including field-space metric/connection, gauge condition and Faddeev–Popov ghost operator. Determine whether the connection-dependent operator can be reduced to CPT3-compatible minimal Laplace-type or controlled nonminimal form.
+Audit the Barvinsky–Vilkovisky generalized Schwinger–DeWitt/covariant perturbation theory literature for a finite nonlocal treatment of the exact composite `U1`, `U2`, `U1^2` trace structures appearing in the 2020 pure-Einstein Vilkovisky reduction.
 
 Requirements:
-1. do not use an ordinary gauge-fixed Hessian as a substitute for the unique-action operator;
-2. freeze one field-space metric/connection and one parameter convention from published authority;
-3. explicitly identify the gravity and ghost differential operators accepted by the heat-kernel machinery;
-4. before any finite `R^3` claim, reproduce the known pure-Einstein Vilkovisky divergent `R^2` coefficients as a unit/convention test;
-5. if the operator reduction is not uniquely executable from published authority, retain C5 as `BLOCKED` and return to AS rather than inventing a representative;
-6. do not create `ANSATZ-003`; do not run Fisher/resources.
+1. keep the frozen `a=-1/2` nonsingular DeWitt convention and the same `H,N,U1,U2` normalization;
+2. do not replace the connection traces by zero or by an ordinary gauge-fixed determinant;
+3. if a finite third-order mapping exists, first reproduce the full published Eq. (60) divergence before any finite `R^3` claim;
+4. if only UV/local universal traces exist for these composite operators and no finite CPT3 form factors are published/derivable without new choices, freeze `BLOCKED_COMPLETE_VD_CONNECTION_TRACE_TO_FINITE_CPT3_MAP` and return to AS;
+5. do not create `ANSATZ-003`; do not run Fisher/resources.
