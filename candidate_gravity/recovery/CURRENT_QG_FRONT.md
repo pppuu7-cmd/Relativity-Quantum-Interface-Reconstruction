@@ -5,11 +5,11 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 245**
+**Authoritative Candidate Gravity front:** **Iteration 251**
 
 ## Scientific state in one sentence
 
-The retained residual funnel remains exhausted under current comparator authority, so the program is improving C5 authority rather than inventing proxy observables: Iterations 243–245 bound the finite Vilkovisky insertion order, recover the exact cubic `U1/U2` connection series, and reduce the flat cubic connection sector to raised-propagator triangle families `I222/I212`; the current blocker is now the explicit 4D Einstein VD numerator/vertex library, lower-sector curvature dressing, tensor/Ward reduction and source-completed projection.
+The retained residual funnel remains exhausted under current comparator authority, so the program is improving C5 authority rather than inventing proxy observables: Iterations 243–250 bounded the finite Vilkovisky insertion series, proved that surviving `e=1/e=2` nonlinear-EOM sectors require no scalar loop topology beyond raised bubbles/triangles, and Iteration 251 has now frozen and independently validated the first explicit `e=1`, `E^(2)K^(1)` ghost-resolvent numerator vertex; the remaining blocker is completion of the same-parent VD numerator/vertex library, Ward/source/contact reduction and Lorentzian hard-channel projection.
 
 ## Stable readiness rubric
 
@@ -24,7 +24,7 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 
 `MODEL_READINESS: 24%`
 
-Change from Iteration 244: **0 percentage points**. The C5 derivation path is materially narrower and the cubic scalar loop-topology ambiguity is closed, but the physical comparator coordinate is not yet computed and no readiness-rubric block closes.
+Change from Iteration 250: **0 percentage points**. One genuine C5 numerator-library subblock is now closed, but the physical comparator coordinate is incomplete and no readiness-rubric block closes.
 
 ## Frozen rules
 
@@ -45,8 +45,10 @@ Change from Iteration 244: **0 percentage points**. The C5 derivation path is ma
 - For Vilkovisky gravity, use the full reduced insertion identity required by the finite target; do not propagate the superseded primitive `U3` placeholder from Iteration 243.
 - EOM degree is not propagator count for `U1/U2` composite traces.
 - Ordinary single-operator CPT3 form factors are not automatically identical to mixed composite traces containing explicit ghost/graviton inverses on different bundles.
-- Repeated Green operators on one loop segment raise denominator powers; they do not by themselves create extra external-momentum corners. At total `R^3`, the cubic flat connection sector is at most triangular in scalar loop topology.
+- Repeated Green operators on one loop segment raise denominator powers; they do not by themselves create extra external-momentum corners. At total `R^3`, the cubic connection sector is at most triangular in scalar loop topology.
 - On the frozen Minkowski finite-`R^3` target, truncate VD resolvent expansions only by the proved `e+c<=3` rule.
+- The null-soft linear Einstein equation kills the `e=3` cubic sector but does **not** justify dropping `e=1/e=2`; nonlinear `E^(2)[h_s,h_h]` is explicitly nonzero and survives both frozen TT contractions.
+- The first-order ghost-resolvent insertion computed in Iteration 251 is only one component of `E^(2)K^(1)`; do not omit `delta[R(DR)]`, `delta Y`, `E^(3)` or surviving `E^(1)K^(2)` terms.
 - A physical Lorentzian amplitude for one observable must not be substituted for the frozen linked RQIR observable.
 - A reconstructed timelike function without controlled discontinuity is not authority for `D_s`; `|A|^2` is not a discontinuity.
 - A three-point diagram inside a two-point flow is not a computed nonlinear Lorentzian three-point correlator.
@@ -83,88 +85,81 @@ Final 2026 PRX parent fixes a metric-dependent generalized Wheeler-DeWitt kernel
 
 ### Iterations 231–233 — C5 initial authority boundary
 
-Pure-Einstein Vilkovisky authority fixes the field-space construction and local graviton/ghost operator convention. Generic third-order covariant perturbation theory alone did not supply the missing complete same-parent finite-cubic unique-action insertion map.
+Pure-Einstein Vilkovisky authority fixes the field-space construction and local graviton/ghost operator convention. Generic third-order covariant perturbation theory alone does not supply the missing complete same-parent finite-cubic unique-action insertion map.
 
 ### Iterations 234–235 — asymptotic safety
 
 Current 2026 AS authority supplies physical Lorentzian scalar scattering, graviton two-point spectra and curvature-quadratic Lorentzian effective-action information, but no one-convention nonlinear Lorentzian three-graviton `Gamma3_ret`, controlled discontinuity, physical `K2` normalization and source/Ward completion. Freeze `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, `BLOCKED_NOT_ZERO`.
 
-### Iterations 236–240 — proxy and native `T_cut` boundary
+### Iterations 236–241 — proxy/native target boundary and funnel audit
 
-Matter radiation, generalized-LSZ causal response, native metric, relational and asymptotic routes were audited. None is observable-identical and executable for the frozen pure-gravity `h^3/h^2` linked coordinate under current authority. Freeze `OPERATIONALLY_NONEXECUTABLE_WITH_CURRENT_PUBLISHED_AUTHORITY`, `BLOCKED_NOT_ZERO` for direct `T_cut` execution.
-
-### Iteration 241 — retained residual funnel audit
-
-Seven previously retained target classes were audited under one frozen survival rule. Executable survivors: **0**. Freeze `NO_EXECUTABLE_RESIDUAL_TARGET_UNDER_CURRENT_COMPARATOR_AUTHORITY` with `BLOCKED_NOT_ZERO`. This is an authority/executability boundary, not proof that all residuals vanish.
+Matter radiation, generalized-LSZ causal response, native metric, relational and asymptotic routes were audited. None is observable-identical and executable for the frozen pure-gravity `h^3/h^2` linked coordinate under current authority. Iteration 241 audited seven retained target classes and found executable survivors: **0**. Freeze `NO_EXECUTABLE_RESIDUAL_TARGET_UNDER_CURRENT_COMPARATOR_AUTHORITY`, `BLOCKED_NOT_ZERO`.
 
 ### Iteration 242 — authority-improvement route selection
 
 C5 finite Vilkovisky/unique-action completion was selected over C3 and AS as the highest-priority route by internal derivability and model-choice risk. No new proxy observable was introduced.
 
-### Iteration 243 — finite cubic VD bookkeeping
+### Iterations 243–245 — finite cubic VD algebra/topology
 
-For the frozen Minkowski, `Lambda=0`, finite one-loop `O(R^3)` target, with EOM degree `e` and additional curvature dressing `c`, only `e+c<=3` can contribute. Thus `Tr U1` needs dressing through `c=2`; `Tr U2` and `Tr U1^2` through `c=1`; cubic EOM traces need flat kernels only; `e>=4` is irrelevant.
-
-### Iteration 244 — exact reduced VD cubic insertion identity
-
-Primary Cho–Kantowski authority gives the reduced insertion sequence through `O(E^5)`, exactly represented under cyclic trace equivalence by `-1/2 Tr log(1-U1+U2)`. Anchoring to the frozen 4D convention gives
+For frozen Minkowski, `Lambda=0`, finite one-loop `O(R^3)`, only `e+c<=3` contributes. Primary Cho–Kantowski authority fixes the reduced cubic connection identity
 
 `Gamma_conn^(3) = +(i/2) Tr(U1 U2) - (i/6) Tr(U1^3)`.
 
-The Iteration-243 primitive `U3` placeholder is superseded. Freeze `PASS_EXACT_VD_OEPS3_INSERTION_SERIES_IDENTITY`.
+Composite-trace reduction gives `Tr U1^3 -> I222` and `Tr(U1 U2) -> I212` up to cyclic labeling. No scalar loop polygon beyond triangle is required.
 
-### Iteration 245 — composite-trace master topology
+### Iterations 246–250 — nonlinear-EOM survival and lower-sector topology
 
-Primary VD definitions imply primitive inverse counts before cancellations: `U1 -> (2 ghost,0 graviton)` and `U2 -> (2 ghost,1 graviton)`. EOM degree is therefore not propagator count and ordinary single-operator CPT3 is not directly identical to these composite traces.
+Iteration 246 established the null-soft killing of the cubic three-EOM sector. Iteration 247 proved this cannot be extended to `e=1/e=2` because cubic partitions contain nonlinear Einstein EOM factors. Iterations 248–249 supplied an explicit same-kinematics certificate: `G^(2)[h_s,h_h]` is nonzero for null-soft TT plus hard TT and survives both frozen TT contractions. Iteration 250 then proved that these surviving lower-EOM insertions modify local numerator/kernel coefficients but still introduce no new scalar loop polygon beyond the raised bubble/triangle basis. Freeze `PASS_SCOPED_E1_E2_NO_NEW_LOOP_POLYGON_BEYOND_TRIANGLE`.
 
-Cyclic trace reduction plus the total-curvature bound shows that repeated inverses only raise propagator powers on at most three loop-momentum segments at `R^3`. The flat cubic sectors are
+### Iteration 251 — first explicit lower-EOM ghost-resolvent vertex
 
-- `Tr U1^3 -> I222` (raised ghost triangle);
-- `Tr(U1 U2) -> I212` up to cyclic labeling (mixed raised ghost–graviton triangle).
+For TT `h_mu_nu = epsilon_mu_nu exp(i q.x)`, the first background variation of the frozen ghost operator is
 
-No scalar box/pentagon/hexagon or higher polygon is required for the cubic connection sector. Freeze `PASS_COMPOSITE_TRACE_MASTER_TOPOLOGY_REDUCTION` and retain `NO_DIRECT_SINGLE_OPERATOR_CPT3_IDENTITY_FOR_COMPOSITE_U1_U2_TRACES`.
+`delta N^alpha_beta = (epsilon^{mu nu} p_mu p_nu) delta^alpha_beta - (p.q) epsilon^alpha_beta - q_beta p_mu epsilon^{alpha mu} + q^alpha p_mu epsilon^mu_beta`.
 
-The lower-EOM sectors remain a finite same-parent resolvent expansion around frozen `N0,G0`. Current blocker:
+Independent finite differentiation of the full covariant vector-Laplacian-plus-Ricci operator agrees to `8.01e-11` maximum component error at step `1e-6`. Freeze
+
+`PASS_SCOPED_E1_GHOST_RESOLVENT_VERTEX_FREEZE_AND_TT_VALIDATION`.
+
+The corresponding resolvent identity `delta N^-1 = -N0^-1 deltaN N0^-1` must be applied to both ghost inverses of `U1`. It raises/repeats an existing ghost segment but creates no fourth momentum corner.
+
+Current umbrella blocker remains
 
 `BLOCKED_4D_EINSTEIN_VD_RESOLVENT_VERTEX_LIBRARY_TENSOR_REDUCTION_AND_SOURCE_PROJECTION`,
 
-`BLOCKED_NOT_ZERO`.
+`BLOCKED_NOT_ZERO`,
 
-A scoped flat `e=3` symbolic C5 component is now authorized; a blind full finite-CPT3 run is still premature.
+now narrowed to the remaining `delta[R(DR)]`, `delta Y`, nonlinear EOM/kernel blocks, tensor/Ward/source/contact completion and Lorentzian hard-channel projection.
 
 ## Candidate state
 
 There is **no robust Candidate Gravity residual**.
 
 `ANSATZ-003`: NOT CREATED.  
-Fisher/resources: FORBIDDEN.
+Fisher/resources: FORBIDDEN.  
+Heavy full C5 run: NOT AUTHORIZED.
 
 ## Latest authority files
 
-### Iteration 244
-- `candidate_gravity/C5_VD_OEPS3_INSERTION_IDENTITY_ITERATION244.md`
-- `candidate_gravity/code/iteration244_vd_insertion_series_identity.py`
-- `candidate_gravity/results/iteration244_vd_insertion_series_identity.json`
-- `research_log/2026-09-01_iteration_244_vd_exact_insertion_identity.md`
-- `recovery/RECOVERY_DELTA_ITERATION_244.md`
+### Iteration 250
+- `candidate_gravity/results/iteration250_vd_e1e2_topology_classification.json`
+- `recovery/RECOVERY_DELTA_ITERATION_250.md`
 
-### Iteration 245
-- `candidate_gravity/C5_VD_COMPOSITE_MASTER_TOPOLOGY_ITERATION245.md`
-- `candidate_gravity/C5_VD_COMPOSITE_TRACE_MASTER_MAP_ITERATION245.md`
-- `candidate_gravity/code/iteration245_vd_composite_trace_bookkeeping.py`
-- `candidate_gravity/results/iteration245_vd_composite_trace_bookkeeping.json`
-- `research_log/2026-09-01_iteration_245_vd_composite_trace_master_map.md`
-- `recovery/RECOVERY_DELTA_ITERATION_245.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION245.md`
+### Iteration 251
+- `candidate_gravity/C5_VD_E1_GHOST_RESOLVENT_VERTEX_ITERATION251.md`
+- `candidate_gravity/code/iteration251_vd_e1_ghost_resolvent_vertex.py`
+- `candidate_gravity/results/iteration251_vd_e1_ghost_resolvent_vertex.json`
+- `research_log/2026-09-01_iteration_251_vd_e1_ghost_resolvent_vertex.md`
+- `recovery/RECOVERY_DELTA_ITERATION_251.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION251.md`
 
-## Immediate next scientific priority — Iteration 246
+## Immediate next scientific priority — Iteration 252
 
-Freeze the explicit flat-space cubic numerator block in the exact Iteration-232 convention rather than launching a blind full CPT3 run:
+Stay in the same `D=4`, `Lambda=0`, `a=-1/2` convention and finish the other first-order pieces of the cubic `E^(2)K^(1)` `Tr U1` numerator:
 
-1. freeze `N0^-1` and `G0` projectors/normalization;
-2. specialize the published `V1,V2` / `Q_;,E` vertices to `D=4`, `Lambda=0` in one declared field parametrization;
-3. contract `Tr U1^3` and `Tr(U1 U2)` into the `I222/I212` tensor numerators before integration;
-4. reproduce the published quadratic VD connection contribution/divergence as a mandatory normalization unit test;
-5. test Ward/source structure and repeat the coordinate-level block in a second admissible field parametrization before any parametrization-independent or physical claim;
-6. only then address lower-EOM curvature dressing and final source-completed `T_cut` projection;
-7. do not create `ANSATZ-003`; do not run Fisher/resources.
+1. derive `delta[R^i_gamma (D_i R^j_delta)] E^(2)_j`;
+2. derive the matching `delta Y * E^(2)` term;
+3. combine them with **both** frozen `delta N^-1` placements from Iteration 251;
+4. perform a condensed-index/Ward consistency check before tensor reduction;
+5. do not launch a heavy integral run until the complete numerator block passes this check;
+6. do not create `ANSATZ-003`; do not run Fisher/resources.
