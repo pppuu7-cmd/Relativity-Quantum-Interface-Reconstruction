@@ -1,0 +1,31 @@
+{
+  "iteration": 244,
+  "model_readiness_percent": 24,
+  "source_identity": "-1/2 Tr log(1-U1+U2)",
+  "source_series_match_through_eom_degree_5": true,
+  "source_series": [
+    {"degree": 1, "term": "Tr(U1)", "coefficient": "1/2"},
+    {"degree": 2, "term": "Tr(U1^2)", "coefficient": "1/4"},
+    {"degree": 2, "term": "Tr(U2)", "coefficient": "-1/2"},
+    {"degree": 3, "term": "Tr(U1^3)", "coefficient": "1/6"},
+    {"degree": 3, "term": "Tr(U1 U2)", "coefficient": "-1/2"},
+    {"degree": 4, "term": "Tr(U1^4)", "coefficient": "1/8"},
+    {"degree": 4, "term": "Tr(U1^2 U2)", "coefficient": "-1/2"},
+    {"degree": 4, "term": "Tr(U2^2)", "coefficient": "1/4"},
+    {"degree": 5, "term": "Tr(U1^5)", "coefficient": "1/10"},
+    {"degree": 5, "term": "Tr(U1^3 U2)", "coefficient": "-1/2"},
+    {"degree": 5, "term": "Tr(U1 U2^2)", "coefficient": "1/2"}
+  ],
+  "mapped_2020_connection_identity": "+(i/2) Tr log(1-U1+U2)",
+  "eq14_quadratic_match": true,
+  "mapped_2020_cubic_terms": [
+    {"term": "i Tr(U1 U2)", "coefficient": "1/2"},
+    {"term": "i Tr(U1^3)", "coefficient": "-1/6"}
+  ],
+  "primitive_U3_required_in_reduced_series": false,
+  "iteration243_U3_placeholder_status": "SUPERSEDED_BY_EXPLICIT_U1_U2_SERIES_AUTHORITY",
+  "classification": "PASS_EXACT_VD_OEPS3_INSERTION_SERIES_IDENTITY",
+  "remaining_blocker": "COMPOSITE_U1_U2_TRACES_TO_FINITE_CPT3_MASTER_MAP_AND_PURE_GRAVITY_PROJECTION",
+  "heavy_full_CPT3_run_authorized": false,
+  "next_gate": 245
+}
