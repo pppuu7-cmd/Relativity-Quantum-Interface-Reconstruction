@@ -1,0 +1,29 @@
+{
+  "iteration": 222,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "source_model_id": "MSSC-001",
+  "local_residue_definition": "R=lim_delta_to_0 (1-cos(delta))*I_cut, evaluated before angular integration",
+  "frozen_delta_samples": [0.01, 0.005, 0.002, 0.001, 0.0005],
+  "tested_external_angles": [0.45, 0.8, 1.15, 1.6, 2.1],
+  "tested_external_linear_spin2_polarizations": ["plus", "cross"],
+  "common_relation": "R_in = R_out = -8 * M_Born in the stripped Iteration-219/221 normalization",
+  "max_abs_extrapolated_ratio_error_from_minus8": 3.1471720864928443e-06,
+  "max_abs_incoming_outgoing_ratio_mismatch": 3.5374722378023193e-06,
+  "classification": {
+    "Born_fixed_collinear_factorization": "PASS_SCOPED_CROSS_KINEMATIC",
+    "residue_from_cap_fit": "NOT_USED",
+    "source_cut_IR_subtraction_coefficient": "FIXED_BY_COMPLETE_BORN_AMPLITUDE_IN_THIS_NORMALIZATION",
+    "IR_safe_integrated_source_cut": "NOT_YET",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "SRC-CUT-003 — BOTH_SCALAR_SOURCE_CUT_COLLINEAR_RESIDUES_FACTORIZE_AS_MINUS_EIGHT_TIMES_THE_COMPLETE_COMPTON_BORN_AMPLITUDE_IN_THE_FROZEN_NORMALIZATION",
+    "IR-NG-006 — SOURCE_CUT_IR_RESIDUES_MUST_BE_FIXED_LOCALLY_BY_BORN_FACTORIZATION_NOT_BY_REGULATED_PHASE_SPACE_FITS",
+    "NG-FUNNEL-078 — CONNECTED_SOURCE_HARD_REMAINDERS_REQUIRE_BORN_FIXED_IR_COMPLETION_BEFORE_LINKED_CUT_COMPARISON"
+  ],
+  "readiness_change": "unchanged at 23%; the source-cut IR coefficient is now fixed by physical Born data, but the finite/inclusive source cut is not yet constructed",
+  "next_gate": "Use R=-8 M_Born to define a regulator-independent source hard remainder, verify cap independence, then compare its nonanalytic soft structure to the on-shell pure-graviton positive control without identifying the two observables."
+}
