@@ -1,0 +1,25 @@
+RQIR Candidate Gravity — Iteration 232 operator freeze certificate
+Date: 2026-09-01
+
+Authority: Giacchini, de Paula Netto, Shapiro, Phys. Rev. D 102, 106006 (2020), arXiv:2006.04217.
+
+D = 4
+a = -1/2
+1 + 2 a = 0
+field-space singular value -1/D = -1/4
+field-space metric nondegenerate = True
+
+Published Eq. (60) divergent-coefficient target, inside the overall factor
+- mu^(D-4)/[(4 pi)^2 (D-4)] int sqrt(|g|) [...]:
+Riemann2 = 53/45
+Ricci2 = -61/90
+R2 = 25/36
+Lambda_R = 8
+Lambda2 = 12
+
+STATUS: PASS_OPERATOR_CONVENTION_ALGEBRA_ONLY
+
+Interpretation:
+- a=-1/2 is nonsingular in D=4 and kills the nonminimal nabla_alpha nabla_beta term in the FP ghost operator.
+- In the nonsingular DeWitt gauge used by the authority, both the local graviton operator H and ghost operator N can be written in minimal Laplace-type form.
+- This does NOT close the unique-action operator map: the same published one-loop Vilkovisky action also contains connection/gauge-orbit correction traces U1, U2, and U1^2. Therefore H+N alone cannot be supplied to CPT3 and called the finite off-shell unique action.
