@@ -1,0 +1,55 @@
+{
+  "iteration": 221,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "source_model_id": "MSSC-001",
+  "observable": "stripped s-channel scalar+graviton two-particle cut kernel for gravitational Compton scattering",
+  "external_state": "scalar + plus-polarized graviton -> scalar + plus-polarized graviton",
+  "intermediate_state_sum": "massive scalar plus two physical spin-2 linear polarizations (plus,cross)",
+  "normalization_scope": "overall Cutkosky/phase-space constants stripped; singularity and basis-invariance gate only",
+  "max_internal_spin2_basis_rotation_relative_error": 3.9607458282939583e-16,
+  "delta_scan": [0.1, 0.05, 0.02, 0.01, 0.005, 0.002],
+  "direction_scans": {
+    "incoming": {
+      "abs_kernel": [1150.1123547596758, 4307.584318877718, 25748.40682712153, 101387.1300313889, 402308.2946402536, 2502224.509919565],
+      "delta2_times_abs": [11.50112354759676, 10.768960797194298, 10.299362730848612, 10.13871300313889, 10.05770736600634, 10.008898039678261],
+      "small_delta_loglog_slope": -1.9879081598976294
+    },
+    "outgoing": {
+      "abs_kernel": [1246.7161182061004, 4452.712381021762, 26043.098723300336, 101932.47401825368, 403355.46942749206, 2504777.6015215022],
+      "delta2_times_abs": [12.467161182061007, 11.131780952554406, 10.417239489320135, 10.193247401825369, 10.083886735687303, 10.019110406086009],
+      "small_delta_loglog_slope": -1.9835555138485714
+    },
+    "antipode_in": {
+      "abs_kernel": [13.072029252425345, 11.90846854339341, 11.203483313138937, 10.968932796153691, 10.851866319753896, 10.781707933748084],
+      "delta2_times_abs": [0.1307202925242535, 0.02977117135848353, 0.004481393325255575, 0.001096893279615369, 0.0002712966579938474, 4.3126831734992335e-05],
+      "small_delta_loglog_slope": 0.016214099516294322
+    },
+    "antipode_out": {
+      "abs_kernel": [14.193178574314611, 12.356005518020673, 11.360328036080233, 11.043984163148211, 10.888576109491414, 10.796199307545267],
+      "delta2_times_abs": [0.14193178574314613, 0.03089001379505169, 0.0045441312144320935, 0.0011043984163148213, 0.00027221440273728537, 4.318479723018107e-05],
+      "small_delta_loglog_slope": 0.02150770736416376
+    }
+  },
+  "classification": {
+    "gauge_invariant_source_tree_blocks": "PASS_FROM_ITERATION220",
+    "physical_intermediate_spin2_sum": "PASS_BASIS_ROTATION_INVARIANCE",
+    "incoming_graviton_collinear_behavior": "DELTA_THETA_MINUS_TWO",
+    "outgoing_graviton_collinear_behavior": "DELTA_THETA_MINUS_TWO",
+    "antipodal_directions": "FINITE",
+    "phase_space_integral": "LOG_IR_DIVERGENT_BEFORE_INCLUSIVE_OR_HARD_REMAINDER_COMPLETION",
+    "source_completion_avoids_offshell_gauge_ambiguity": "YES_AT_ONSHELL_CONNECTED_AMPLITUDE_LEVEL",
+    "IR_safe_source_cut": "NOT_YET",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "SRC-CUT-001 — PHYSICAL_SCALAR_GRAVITON_TWO_PARTICLE_CUT_CAN_BE_BUILT_ENTIRELY_FROM_GAUGE_INVARIANT_DYNAMICAL_SOURCE_TREE_BLOCKS",
+    "SRC-CUT-002 — INTERMEDIATE_SPIN2_POLARIZATION_SUM_IS_INVARIANT_UNDER_TRANSVERSE_BASIS_ROTATION",
+    "IR-NG-005 — SOURCE_COMPLETION_REMOVES_OFFSHELL_GAUGE_AMBIGUITY_BUT_NOT_PHYSICAL_GRAVITATIONAL_COLLINEAR_IR_DIVERGENCES",
+    "NG-FUNNEL-077 — GAUGE_SAFE_CONNECTED_SOURCE_CUTS_STILL_REQUIRE_A_DECLARED_IR_SAFE_OR_HARD_REMAINDER_COMPLETION_BEFORE_COMPARATOR_PROMOTION"
+  ],
+  "readiness_change": "unchanged at 23%; a gauge-safe connected source cut kernel now exists, but its phase-space integral is IR divergent before physical completion",
+  "next_gate": "Factorize the two collinear source-cut residues against the scalar Compton Born amplitude and determine whether a Born-fixed hard-remainder subtraction/inclusive definition can be frozen without cap fitting."
+}
