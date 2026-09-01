@@ -1,0 +1,26 @@
+{
+  "iteration": 245,
+  "model_readiness_percent": 24,
+  "frozen_convention": "4D pure Einstein Vilkovisky, a=-1/2, Lambda=0",
+  "operator_reduction": {
+    "U1": "N V2 N Y",
+    "U2": "N V1 H^{-1} V1 N Y"
+  },
+  "leading_flat_kernel_trace_map": {
+    "Tr(U1)": "one V2 insertion with ghost denominator power 2",
+    "Tr(U2)": "mixed bubble: graviton power 1, ghost power 2",
+    "Tr(U1^2)": "ghost bubble I22",
+    "Tr(U1^3)": "ghost triangle I222",
+    "Tr(U1 U2)": "mixed ghost-graviton triangle I212"
+  },
+  "flat_denominator_statement": "at a=-1/2 and Lambda=0 both minimal ghost and graviton free denominators are massless 1/k^2; species dependence remains in tensor projectors and vertices",
+  "max_external_background_vertices_at_R3": 3,
+  "max_one_loop_scalar_polygon_at_R3": "triangle",
+  "new_loop_topology_beyond_triangle_required": false,
+  "raised_power_integrals_have_standard_feynman_parameter_representation": true,
+  "classification": "PASS_COMPOSITE_TRACE_MASTER_TOPOLOGY_REDUCTION",
+  "remaining_blocker": "PURE_GRAVITY_TENSOR_NUMERATOR_CURVATURE_DRESSING_AND_SOURCE_COMPLETED_T_CUT_PROJECTION",
+  "heavy_full_run_authorized": false,
+  "scoped_flat_e3_symbolic_run_authorized": true,
+  "next_gate": 246
+}
