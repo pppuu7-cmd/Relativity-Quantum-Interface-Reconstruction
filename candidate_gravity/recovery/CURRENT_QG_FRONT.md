@@ -5,11 +5,11 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 228**
+**Authoritative Candidate Gravity front:** **Iteration 229**
 
 ## Scientific state in one sentence
 
-Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. `MSSC-001` is IR/numerically completed but its forward log coefficients are regime-specifically non-identifiable at the frozen `3e-7` envelope. AS remains `BLOCKED_NOT_ZERO`. C3 authority is materially improved by the final PRX-2026 covariant CQ path integral, which explicitly fixes a metric-dependent generalized Wheeler-DeWitt parent kernel and admits an MSR representation; however the physical nonlinear ordered RQIR column remains blocked on conserved response/gauge/source completion. No Candidate Gravity residual exists.
+Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. `MSSC-001` is IR/numerically completed but its forward log coefficients are regime-specifically non-identifiable at the frozen `3e-7` envelope. AS remains `BLOCKED_NOT_ZERO`. C3 authority is now stronger in a different sense: PRX-2026 Eq. (26) fixes the ordinary metric dependence of the generalized Wheeler-DeWitt parent, but Iteration 229 proves that Eq. (26) plus conservation/Bianchi does **not** uniquely determine the first nonlinear conserved response completion. An explicit `O(h)` doubly-transverse homogeneous family leaves the linear two-point authority unchanged and can survive TT soft projection. No Candidate Gravity residual exists.
 
 ## Stable readiness rubric
 
@@ -38,6 +38,7 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 - Do not infer an IR subtraction coefficient by fitting a cap-regulated integral.
 - Keep pure-graviton and connected-source controls distinct.
 - A fitted log coefficient below propagated numerical envelope is `regime-specific non-identifiability`, not exact zero.
+- A conserved nonlinear comparator completion is not unique merely because the background parent and Bianchi identity are fixed; homogeneous transverse sectors must be eliminated by same-parent authority, not by convenience.
 - Do not create `ANSATZ-003` before a concrete residual survives C3/C4/C5/nonlocal/AS subtraction, truncation uncertainty and prospective robustness.
 - Fisher/resources remain forbidden until the robust residual gate passes.
 
@@ -63,30 +64,40 @@ Use `z=-t/(4 p^2)=sin^2(theta_ext/2)` on the frozen forward grid. All 16 rows pa
 
 Current Lorentzian AS authority is materially stronger than in earlier audits, but no retained source supplies one directly usable same-parent object that simultaneously fixes physical Lorentzian nonlinear three-graviton momentum dependence, explicit retarded/in-in ordering, RQIR source/Ward completion, same-parent normalization linking the nonlinear response to `K2`, and a controlled timelike discontinuity/linked-cut prescription. Classification remains `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, specifically `BLOCKED_NOT_ZERO`.
 
-### Iteration 228 — C3 PQCG ordered-response authority correction and narrowing
+### Iteration 228 — C3 parent-authority correction
 
-The final published 2026 PRX covariant classical-quantum path-integral paper supplies more nonlinear parent authority than the Iteration-189 wording credited: its gravity construction uses Einstein-Hilbert plus matter dynamics, writes the diffusion action covariantly in terms of the Einstein residual, explicitly states that it can be put into MSR form through Hubbard-Stratonovich auxiliary fields, and Eq. (26) fixes a metric-dependent generalized Wheeler-DeWitt tensor density with parameters `beta` and `D2`.
+The final published 2026 PRX covariant classical-quantum path-integral paper supplies more nonlinear parent authority than older repository wording credited: Eq. (26) fixes a metric-dependent generalized Wheeler-DeWitt tensor density with parameters `beta` and `D2`, and the action admits an MSR representation. Therefore the generic Iteration-173 free-`lambda` argument is not the final blocker once this parent is adopted.
 
-Therefore the broad old premise that published authority leaves all nonlinear metric dependence of the diffusion kernel unspecified is superseded for this declared parent choice. The Iteration-173 free-`lambda` structural certificate remains valid only when field dependence is not fixed; it is not the final blocker once PRX Eq. (26) is adopted.
+### Iteration 229 — C3 formal nonlinear conserved-completion underdetermination
 
-However, the May-2026 stochastic-modes paper explicitly linearizes around Minkowski and shows that naive JD/MSR use of the ultralocal generalized DeWitt covariance is subtle because that covariance is not conserved. The linear OM/MSR equivalence is recovered only with conserved-sector treatment/projection. The physical nonlinear ordered RQIR column still lacks:
+Freeze `g=eta+h`, signature `(-,+,+,+)`, and the Eq.-(26) parent. Its ordinary first metric variation is fixed. However, the physical conservation equations determine only an inhomogeneous divergence condition. If one particular solution exists, one may add any doubly-transverse homogeneous `O(h)` tensor.
 
-1. nonlinear conserved response-kernel/projection compatible with the Bianchi identity;
-2. nonlinear gauge/constraint reduction on geometries modulo diffeomorphisms;
-3. a same-parent ordered/retarded metric-source plus Ward completion;
-4. one common `beta`, `D2`, Einstein, metric, source and pole/regularization convention across `K2` and nonlinear response;
-5. the resulting frozen six-row `O(k_soft^2)` extraction.
+An explicit family is
 
-Classification remains `BLOCKED_C3_CTP_ORDERED_COMPLETION`, narrowed to `BLOCKED_NONLINEAR_CONSERVED_RESPONSE_AND_ORDERED_SOURCE_COMPLETION`.
+`H^{munu,rhosigma} = lambda F(k,k',q) S_R[h;q,u,v] Q_k^{munu} Q_k'^{rhosigma}`,
+
+where
+
+`Q_k^{munu}=k^2 eta^{munu}-k^mu k^nu`
+
+and `S_R` is a scalar contraction of the linearized Riemann tensor. This family vanishes at `h=0`, preserves the background linear two-point authority, is transverse on both response pairs, and can survive TT soft projection. The reproducible witness gives `S_R=-2`, exact zero divergences and nonzero representative norm `198.030300711785`.
+
+Therefore conservation/Bianchi plus Eq. (26) does not uniquely fix the nonlinear conserved C3 completion. Classification:
+
+`FORMAL_UNDERDETERMINATION_CERTIFICATE`
+
+and
+
+`BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`.
 
 Retain:
-- `C3-NG-007`;
-- `C3-NG-008`;
-- `REL-NG-008`;
-- `C3-BLOCK-002`;
-- `NG-FUNNEL-084`.
+- `C3-NG-009`;
+- `C3-NG-010`;
+- `REL-NG-009`;
+- `C3-BLOCK-003`;
+- `NG-FUNNEL-085`.
 
-This is operational/scientific authority BLOCKED, not a consistency FAIL of PQCG, not an exact comparator identity, not evidence for a zero C3 column, and not Candidate Gravity novelty.
+This is not a consistency FAIL of PQCG, not an exact comparator identity, not near-degeneracy, not evidence of a zero C3 column, and not Candidate Gravity novelty.
 
 ## Other comparators
 
@@ -100,7 +111,7 @@ Analytic nonlocal hard shapes become Taylor-degenerate in deep IR; genuine nonli
 `BLOCKED_AS_REALTIME_RELATION_COMPLETION`: current retained authority does not provide the required same-parent Lorentzian/in-in source-completed nonlinear three-graviton retarded relation/cut.
 
 ### C3 PQCG
-`BLOCKED_NONLINEAR_CONSERVED_RESPONSE_AND_ORDERED_SOURCE_COMPLETION`: PRX 2026 fixes a nonlinear metric-dependent parent kernel, but the conserved nonlinear MSR/JD response projection, nonlinear constraint/gauge completion and ordered source/Ward map required by RQIR are not yet fixed.
+`BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`: PRX 2026 fixes the nonlinear metric-dependent parent kernel, but Eq. (26) plus conservation/Bianchi does not uniquely select the conserved nonlinear MSR/JD response completion. A further same-parent nonlinear projector/stochastic-equation/quotient-space prescription is required before an ordered RQIR C3 column exists.
 
 ## Candidate state
 
@@ -111,20 +122,22 @@ Fisher/resources: FORBIDDEN.
 
 ## Latest authority files
 
-### Iteration 228
-- `candidate_gravity/C3_PQCG_ORDERED_METRIC_CTP_AUTHORITY_REAUDIT_ITERATION228.md`
-- `research_log/2026-09-01_iteration_228_c3_ordered_metric_ctp_authority_reaudit.md`
-- `recovery/RECOVERY_DELTA_ITERATION_228.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION228.md`
+### Iteration 229
+- `candidate_gravity/C3_PQCG_CONSERVED_COMPLETION_UNDERDETERMINATION_ITERATION229.md`
+- `candidate_gravity/code/iteration229_c3_conserved_completion_ambiguity.py`
+- `candidate_gravity/results/iteration229_c3_conserved_completion_ambiguity.json`
+- `research_log/2026-09-01_iteration_229_c3_conserved_completion_underdetermination.md`
+- `recovery/RECOVERY_DELTA_ITERATION_229.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION229.md`
 
-## Immediate next scientific priority — Iteration 229
+## Immediate next scientific priority — Iteration 230
 
-Test whether the nonlinear **conserved** response kernel is uniquely fixed by the declared PRX Eq.-(26) parent plus Bianchi/gauge projection around Minkowski, without adding a new model choice.
+Test whether the declared PQCG/PRX parent literature supplies an **additional same-parent nonlinear completion principle** that eliminates the Iteration-229 homogeneous conserved family without adding a new model choice.
 
 Requirements:
-1. expand the declared metric-dependent kernel to first order in `h_{munu}` using one frozen metric/index convention;
-2. impose the linearized conservation/Bianchi condition required by the response auxiliary-field sector;
-3. determine whether the longitudinal completion is unique or admits a nontrivial homogeneous conserved ambiguity with identical linear two-point authority;
-4. if ambiguous, record formal underdetermination and keep C3 blocked;
-5. if unique, derive the same-parent cubic response vertex before any RQIR soft-row evaluation;
+1. audit for a nonlinear conserved stochastic equation, covariant transverse projector, or quotient-space construction derived from the same parent;
+2. require a fixed Green-function/boundary prescription and the same `beta,D2`, metric/source normalization and pole convention;
+3. explicitly test whether that prescription excludes the Iteration-229 `H` family rather than merely choosing one representative;
+4. if no such authority exists, freeze C3 as `BLOCKED_FORMAL_UNDERDETERMINATION` for the current comparator funnel and return to remaining C5/AS linked-relation closure;
+5. if unique same-parent authority exists, derive its cubic response vertex before any soft2 row evaluation;
 6. do not create `ANSATZ-003`; do not run Fisher/resources.
