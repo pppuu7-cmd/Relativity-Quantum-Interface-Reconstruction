@@ -5,11 +5,11 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 241**
+**Authoritative Candidate Gravity front:** **Iteration 245**
 
 ## Scientific state in one sentence
 
-The retained Candidate Gravity residual funnel is now exhausted under current comparator authority: finite analytic targets are not model-independent against unrestricted local C5 derivative towers; standalone positive linear spectra/cuts are C4-reproducible; generic closed-unitary cubic CTP relations are shared by C4/C5; connected-source and relational/asymptotic controls are not observable-identical to the frozen pure-gravity target; and the strongest linked nonanalytic target `T_cut = D_s Gamma3_ret,soft - W[D_s K2]` cannot be quotiented because required C3/C5/AS entries remain `BLOCKED_NOT_ZERO`. Freeze `NO_EXECUTABLE_RESIDUAL_TARGET_UNDER_CURRENT_COMPARATOR_AUTHORITY`. No robust Candidate Gravity residual exists.
+The retained residual funnel remains exhausted under current comparator authority, so the program is now improving C5 authority rather than inventing proxy observables: Iterations 243–245 bound the finite Vilkovisky insertion order, recover the exact cubic `U1/U2` connection series, and show that the remaining pure-Einstein finite-`R^3` problem can be organized as a finite same-parent Minkowski resolvent expansion, with the current blocker narrowed to the explicit 4D Einstein VD resolvent vertex library, tensor reduction and source-completed projection.
 
 ## Stable readiness rubric
 
@@ -24,7 +24,7 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 
 `MODEL_READINESS: 24%`
 
-Change from Iteration 240: **0 percentage points**. The residual-funnel boundary is now explicit, but blocked comparator coordinates have not been derived and no rubric block closes.
+Change from Iteration 244: **0 percentage points**. The C5 derivation path is materially narrower and more executable, but the physical comparator coordinate is not yet computed and no readiness-rubric block closes.
 
 ## Frozen rules
 
@@ -42,16 +42,18 @@ Change from Iteration 240: **0 percentage points**. The residual-funnel boundary
 - Conserved nonlinear completion is not unique merely because background parent and Bianchi identity are fixed; homogeneous transverse sectors require same-parent elimination.
 - Choosing `H=0` or a convenient projector is a new C3 model choice unless uniquely derived with fixed boundary/Green-function data.
 - Generic CPT3 form factors must not be spliced to ordinary gauge-fixed pure-gravity Hessians and promoted as a unique off-shell C5 comparator.
-- For Vilkovisky gravity, the complete connection/gauge-orbit insertion series through finite cubic curvature order is mandatory; the published UV-sufficient `U1,U2,U1^2` truncation is not enough.
+- For Vilkovisky gravity, use the full reduced insertion identity required by the finite target; do not propagate the superseded primitive `U3` placeholder from Iteration 243.
+- EOM degree is not propagator count for `U1/U2` composite traces.
+- Ordinary single-operator CPT3 form factors are not automatically identical to mixed composite traces containing explicit ghost/graviton inverses on different bundles.
+- On the frozen Minkowski finite-`R^3` target, truncate VD resolvent expansions only by the proved `e+c<=3` rule.
 - A physical Lorentzian amplitude for one observable must not be substituted for the frozen linked RQIR observable.
 - A reconstructed timelike function without controlled discontinuity is not authority for `D_s`; `|A|^2` is not a discontinuity.
 - A three-point diagram inside a two-point flow is not a computed nonlinear Lorentzian three-point correlator.
 - A single in-out `2 -> 3` amplitude discontinuity is not the complete in-in/retarded radiation observable.
-- Generalized-LSZ/Keldysh causal completion does not change external field species or functional valence. Mixed `phi^4 h` is not frozen pure-gravity `h^3`, and `phi^4` scattering is not metric `K2` without an independently derived same-parent source-reduction identity.
-- Generic retarded three-point dispersion does not certify a gauge-safe gravity specialization. Causal worldline/source observables are not automatically native metric 1PI responses. Euclidean-to-retarded continuation inherits the upstream gauge-safe cubic effective-action gap.
+- Generalized-LSZ/Keldysh causal completion does not change external field species or functional valence.
 - Relational/frame-dressed and asymptotic/null-infinity observables are physical but are not identical to frozen bulk/source-completed `h^3/h^2` without an explicit same-parent nonlinear map.
 - Do not redefine `T_cut` to match a convenient calculable observable.
-- **Iteration-241 funnel rule:** a retained target is promotable only if it is algebraically eligible before profiling, executable for every required frozen comparator, observable-identical, zero-fill-free and not already closed by a comparator/no-novelty theorem.
+- A retained target is promotable only if it is algebraically eligible before profiling, executable for every required frozen comparator, observable-identical, zero-fill-free and not already closed by a comparator/no-novelty theorem.
 - Do not search for another proxy after Iteration 241. Improve missing comparator authority instead.
 - Do not create `ANSATZ-003` before a concrete residual survives C3/C4/C5/nonlocal/AS subtraction, truncation uncertainty and prospective robustness.
 - Fisher/resources remain forbidden until the robust residual gate passes.
@@ -78,45 +80,75 @@ Gauge-invariant pure-Einstein on-shell unitarity-cut control retained. `MSSC-001
 
 Final 2026 PRX parent fixes a metric-dependent generalized Wheeler-DeWitt kernel, but an explicit doubly-transverse homogeneous `O(h)` family preserves linear authority and can survive TT projection. No published same-parent nonlinear projector/stochastic constraint/quotient rule with fixed boundary data removes it. Freeze `BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`.
 
-### Iterations 231–233 — C5
+### Iterations 231–233 — C5 initial authority boundary
 
-Pure-Einstein Vilkovisky authority fixes the field-space construction and local graviton/ghost operator convention, but the full unique action requires connection/gauge-orbit insertions beyond the published UV-sufficient truncation. Generic third-order covariant perturbation theory does not by itself supply the missing same-parent finite-cubic unique-action insertion map. Freeze `BLOCKED_FULL_VD_EOM_INSERTION_SERIES_TO_FINITE_CPT3_MAP`.
+Pure-Einstein Vilkovisky authority fixes the field-space construction and local graviton/ghost operator convention. Generic third-order covariant perturbation theory alone did not supply the missing complete same-parent finite-cubic unique-action insertion map.
 
 ### Iterations 234–235 — asymptotic safety
 
 Current 2026 AS authority supplies physical Lorentzian scalar scattering, graviton two-point spectra and curvature-quadratic Lorentzian effective-action information, but no one-convention nonlinear Lorentzian three-graviton `Gamma3_ret`, controlled discontinuity, physical `K2` normalization and source/Ward completion. Freeze `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, `BLOCKED_NOT_ZERO`.
 
-### Iterations 236–238 — matter radiative proxy
+### Iterations 236–240 — proxy and native `T_cut` boundary
 
-A same-parent minimally coupled GR radiation branch is executable, but causal completion remains a `phi^4 h` response, not frozen pure-gravity `h^3` linked to metric `h^2`. Freeze observable/functional-valence mismatch; this is not a GR consistency FAIL.
-
-### Iterations 239–240 — native/relational/asymptotic `T_cut` boundary
-
-No published executable flat-space package was found with gauge-safe/source-completed native metric `Gamma3_ret[h,h,h]`, same-parent `K2[h,h]`, common normalization, Ward/contact/IR completion and controlled hard-channel discontinuity. Relational/frame-dressed constructions change the nonlinear source variable; null-infinity/Bondi constructions use boundary/on-shell radiative variables. Freeze `OPERATIONALLY_NONEXECUTABLE_WITH_CURRENT_PUBLISHED_AUTHORITY`, `BLOCKED_NOT_ZERO`.
+Matter radiation, generalized-LSZ causal response, native metric, relational and asymptotic routes were audited. None is observable-identical and executable for the frozen pure-gravity `h^3/h^2` linked coordinate under current authority. Freeze `OPERATIONALLY_NONEXECUTABLE_WITH_CURRENT_PUBLISHED_AUTHORITY`, `BLOCKED_NOT_ZERO` for direct `T_cut` execution.
 
 ### Iteration 241 — retained residual funnel audit
 
-Seven previously retained target classes were audited under one frozen survival rule:
-
-1. finite analytic soft shape;
-2. standalone linear spectral/cut shape;
-3. generic closed-unitary cubic CTP relation;
-4. `MSSC-001` connected-source regular+log structure;
-5. pure-gravity linked `T_cut`;
-6. relational/asymptotic gauge-safe variants;
-7. cross-polarization finite analytic relation.
-
-Executable survivors: **0**.
-
-Freeze:
+Seven previously retained target classes were audited under one frozen survival rule. Executable survivors: **0**. Freeze
 
 `NO_EXECUTABLE_RESIDUAL_TARGET_UNDER_CURRENT_COMPARATOR_AUTHORITY`
 
-with
+with `BLOCKED_NOT_ZERO`. This is an authority/executability boundary, not proof that all residuals vanish.
+
+### Iteration 242 — authority-improvement route selection
+
+C5 finite Vilkovisky/unique-action completion was selected over C3 and AS as the highest-priority route by internal derivability and model-choice risk. No new proxy observable was introduced.
+
+### Iteration 243 — finite cubic VD bookkeeping
+
+For the frozen Minkowski, `Lambda=0`, finite one-loop `O(R^3)` target, the Einstein EOM have curvature order one. With EOM degree `e` and additional curvature dressing `c`, only
+
+`e+c<=3`
+
+can contribute. Thus `Tr U1` needs dressing through `c=2`; `Tr U2` and `Tr U1^2` through `c=1`; cubic EOM traces need flat kernels only; `e>=4` is irrelevant.
+
+### Iteration 244 — exact reduced VD cubic insertion identity
+
+Primary Cho–Kantowski authority gives the reduced insertion sequence through `O(E^5)`, exactly represented under cyclic trace equivalence by
+
+`-1/2 Tr log(1-U1+U2)`.
+
+Anchoring to the frozen 4D convention gives
+
+`Gamma_conn = +(i/2) Tr log(1-U1+U2)`
+
+and
+
+`Gamma_conn^(3) = +(i/2) Tr(U1 U2) - (i/6) Tr(U1^3)`.
+
+The Iteration-243 primitive `U3` placeholder is superseded. Freeze `PASS_EXACT_VD_OEPS3_INSERTION_SERIES_IDENTITY`.
+
+### Iteration 245 — composite-trace master map
+
+Primary VD definitions imply primitive inverse counts before cancellations:
+
+- `U1 -> (2 ghost, 0 graviton)`;
+- `U2 -> (2 ghost, 1 graviton)`;
+- `Tr U1^2 -> (4,0)`;
+- `Tr U1^3 -> (6,0)`;
+- `Tr(U1 U2) -> (4,1)`.
+
+Therefore ordinary single-operator CPT3 is not directly identical to these composite traces. However, on the frozen finite Minkowski `R^3` target, the exact `e+c<=3` bound permits a finite resolvent expansion about the already-fixed flat `N0,G0`. All remaining terms reduce to a finite set of one-loop flat-space tensor-integral sectors plus the same-parent source projection.
+
+Freeze:
+
+`NO_DIRECT_SINGLE_OPERATOR_CPT3_IDENTITY_FOR_COMPOSITE_U1_U2_TRACES`
+
+and current blocker
+
+`BLOCKED_4D_EINSTEIN_VD_RESOLVENT_VERTEX_LIBRARY_AND_SOURCE_PROJECTION`,
 
 `BLOCKED_NOT_ZERO`.
-
-This is an authority/executability boundary, not proof that all residuals vanish, not a consistency FAIL, and not an exact identity of full theory spaces.
 
 ## Candidate state
 
@@ -127,23 +159,28 @@ Fisher/resources: FORBIDDEN.
 
 ## Latest authority files
 
-### Iteration 241
-- `candidate_gravity/RESIDUAL_FUNNEL_AUDIT_ITERATION241.md`
-- `candidate_gravity/code/iteration241_residual_funnel_audit.py`
-- `candidate_gravity/results/iteration241_residual_funnel_audit.json`
-- `research_log/2026-09-01_iteration_241_residual_funnel_audit.md`
-- `recovery/RECOVERY_DELTA_ITERATION_241.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION241.md`
+### Iteration 244
+- `candidate_gravity/C5_VD_OEPS3_INSERTION_IDENTITY_ITERATION244.md`
+- `candidate_gravity/code/iteration244_vd_insertion_series_identity.py`
+- `candidate_gravity/results/iteration244_vd_insertion_series_identity.json`
+- `research_log/2026-09-01_iteration_244_vd_exact_insertion_identity.md`
+- `recovery/RECOVERY_DELTA_ITERATION_244.md`
 
-## Immediate next scientific priority — Iteration 242
+### Iteration 245
+- `candidate_gravity/C5_VD_COMPOSITE_TRACE_MASTER_MAP_ITERATION245.md`
+- `candidate_gravity/code/iteration245_vd_composite_trace_bookkeeping.py`
+- `candidate_gravity/results/iteration245_vd_composite_trace_bookkeeping.json`
+- `research_log/2026-09-01_iteration_245_vd_composite_trace_master_map.md`
+- `recovery/RECOVERY_DELTA_ITERATION_245.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION245.md`
 
-Begin the **comparator authority-improvement program**. Do not invent another proxy observable.
+## Immediate next scientific priority — Iteration 246
 
-Triage C5, C3 and AS by internal derivability and new-model-choice risk:
+Derive the leading flat-space 4D pure-Einstein VD kernels in the exact Iteration-232 convention rather than launching a blind full CPT3 run:
 
-1. **C5:** determine the minimal complete Vilkovisky-DeWitt/unique one-loop data needed to construct the finite curvature-cubic pure-gravity response and its causal/source-completed `T_cut` projection. Preserve the full connection/gauge-orbit insertion series required at finite cubic order.
-2. **C3:** determine whether any additional same-parent published principle can eliminate the Iteration-229 homogeneous conserved family without choosing a representative/projector by hand.
-3. **AS:** determine whether the missing real-time three-graviton relation can be derived from existing published authority without interpolation or new external input.
-4. Rank the routes by derivability, missing inputs, reproducibility and risk of adding a new model choice.
-5. Select one authority-improvement route for actual derivation.
-6. Do not create `ANSATZ-003`; do not run Fisher/resources.
+1. freeze `N0^-1` and `G0` projectors and normalization;
+2. derive linearized Einstein `E_i[h]` and required `Q^i_{alpha;j}` vertices in the same field convention;
+3. construct momentum-space `U1^(1)` and `U2^(2)`;
+4. reproduce the known quadratic VD connection contribution/divergence as a mandatory normalization unit test;
+5. only after that construct flat `Tr U1^3` and `Tr(U1 U2)` tensor integrands and test Ward/source compatibility;
+6. do not create `ANSATZ-003`; do not run Fisher/resources.
