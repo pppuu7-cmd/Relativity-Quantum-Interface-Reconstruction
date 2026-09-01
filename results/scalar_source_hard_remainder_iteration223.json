@@ -1,0 +1,42 @@
+{
+  "iteration": 223,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "source_model_id": "MSSC-001",
+  "subtraction": "I_hard_kernel = I_cut - R/(1+n_z) - R/(1-n dot n_out), with R=-8 M_Born fixed by Iteration 222",
+  "shell_definition": "exact spherical annulus rho in [delta/2,delta] around each collinear direction",
+  "delta_shells": [0.08, 0.04, 0.02, 0.01, 0.005],
+  "radial_gauss_order": 6,
+  "azimuth_midpoint_count": 32,
+  "min_shell_power": 1.9991758662995467,
+  "max_shell_power": 2.006651708042316,
+  "max_smallest_shell_in_out_relative_mismatch": 2.837715560152279e-06,
+  "records": [
+    {"theta_ext":0.45,"external_linear_polarization":"plus","born_amplitude":-0.4059910167591124,"incoming_shells":[-0.18357192111226536,-0.046084511654677876,-0.011533195928785813,-0.0028840547806423043,-0.0007210611658039237],"outgoing_shells":[-0.18357192111200146,-0.04608451165223034,-0.011533195917012646,-0.0028840547429313844,-0.0007210608563259082],"incoming_shell_power":1.9993671399879924,"outgoing_shell_power":1.999367327464745,"smallest_shell_in_out_relative_mismatch":4.2919800726614816e-07},
+    {"theta_ext":0.45,"external_linear_polarization":"cross","born_amplitude":0.2804642596490465,"incoming_shells":[0.020393812448181826,0.004887285678389626,0.0012084808327935822,0.0003012841864769214,7.526890466484164e-05],"outgoing_shells":[0.020393812447984147,0.004887285676731893,0.0012084808246977728,0.0003012841603384426,7.526869107309968e-05],"incoming_shell_power":2.00665046845004,"outgoing_shell_power":2.006651708042316,"smallest_shell_in_out_relative_mismatch":2.837715560152279e-06},
+    {"theta_ext":0.8,"external_linear_polarization":"plus","born_amplitude":-0.6235172160441371,"incoming_shells":[-0.3101266994930855,-0.07785553657185335,-0.01948420719905725,-0.004872323291705286,-0.0012181606325142006],"outgoing_shells":[-0.31012669949328114,-0.07785553657066752,-0.019484207195236768,-0.004872323281886242,-0.0012181603084013863],"incoming_shell_power":1.999369350097217,"outgoing_shell_power":1.999369465509323,"smallest_shell_in_out_relative_mismatch":2.660673852259278e-07},
+    {"theta_ext":0.8,"external_linear_polarization":"cross","born_amplitude":-0.22501642324390048,"incoming_shells":[-0.25817121989738223,-0.0648958242183013,-0.016246101546338914,-0.004062910768132297,-0.001015814414365216],"outgoing_shells":[-0.25817121989745834,-0.0648958242178471,-0.016246101544926946,-0.0040629107645329616,-0.0010158142977121586],"incoming_shell_power":1.9991758662995467,"outgoing_shell_power":1.9991759161142117,"smallest_shell_in_out_relative_mismatch":1.1483697788663257e-07},
+    {"theta_ext":1.15,"external_linear_polarization":"plus","born_amplitude":-1.4111572835559372,"incoming_shells":[-0.4595935856278546,-0.11517946826445663,-0.028812467693293875,-0.0072042175368648145,-0.0018011239080440345],"outgoing_shells":[-0.45959358562942604,-0.11517946826849088,-0.028812467696270837,-0.0072042175671259995,-0.0018011235877266783],"incoming_shell_power":1.9996306543506437,"outgoing_shell_power":1.999630730746697,"smallest_shell_in_out_relative_mismatch":1.7784304275746774e-07},
+    {"theta_ext":1.15,"external_linear_polarization":"cross","born_amplitude":-1.1898518522665114,"incoming_shells":[-0.4304233388576217,-0.10788969916468924,-0.02699019883230513,-0.006748661134851738,-0.0016872353690406332],"outgoing_shells":[-0.43042333885895667,-0.10788969916806046,-0.026990198834776206,-0.00674866116046538,-0.001687235099054234],"incoming_shell_power":1.999601861199919,"outgoing_shell_power":1.9996019299358363,"smallest_shell_in_out_relative_mismatch":1.6001703382751957e-07},
+    {"theta_ext":1.6,"external_linear_polarization":"plus","born_amplitude":-3.852131077877062,"incoming_shells":[-0.5751196205515158,-0.1439773428750199,-0.03600668900610155,-0.00900244467388464,-0.0022506614334205943],"outgoing_shells":[-0.5751196205662952,-0.14397734292032527,-0.0360066891818971,-0.009002445446699507,-0.0022506628082758742],"incoming_shell_power":1.9997923028005984,"outgoing_shell_power":1.9997920268678935,"smallest_shell_in_out_relative_mismatch":6.108668410544753e-07},
+    {"theta_ext":1.6,"external_linear_polarization":"cross","born_amplitude":-3.7506222326590226,"incoming_shells":[-0.5471107195499877,-0.13697108845098158,-0.034254872690139666,-0.008564474783188423,-0.0021411679199811956],"outgoing_shells":[-0.5471107195643897,-0.13697108849507045,-0.03425487286128336,-0.008564475535748623,-0.002141169258610988],"incoming_shell_power":1.9997861496999685,"outgoing_shell_power":1.9997858672970643,"smallest_shell_in_out_relative_mismatch":6.251863495299636e-07},
+    {"theta_ext":2.1,"external_linear_polarization":"plus","born_amplitude":-11.704563780730041,"incoming_shells":[-0.6377698121357855,-0.159586332700407,-0.0399055840035278,-0.009976959084068253,-0.002494280997904319],"outgoing_shells":[-0.6377698121383066,-0.1595863327134836,-0.039905583840107735,-0.009976958862173976,-0.0024942772072024345],"incoming_shell_power":1.9998626436669247,"outgoing_shell_power":1.99986330408465,"smallest_shell_in_out_relative_mismatch":1.5197573519250138e-06},
+    {"theta_ext":2.1,"external_linear_polarization":"cross","born_amplitude":-11.66659308008687,"incoming_shells":[-0.6090599888937062,-0.15239912844172876,-0.038108170653604195,-0.00952756743048867,-0.0023819306694596197],"outgoing_shells":[-0.6090599888962437,-0.15239912845474252,-0.038108170490672374,-0.009527567209327566,-0.0023819268910547915],"incoming_shell_power":1.9998658797364972,"outgoing_shell_power":1.9998665690607997,"smallest_shell_in_out_relative_mismatch":1.58627825595808e-06}
+  ],
+  "classification": {
+    "Born_fixed_pointwise_subtraction": "PASS_FROM_ITERATION222",
+    "subtracted_cap_shells": "VANISH_AS_DELTA_SQUARED_SCOPED_CROSS_KINEMATIC",
+    "cap_regulator_independence": "PASS_SCOPED_LOCAL_IR_COMPLETION",
+    "global_bulk_hard_remainder_value": "NOT_EVALUATED_THIS_GATE",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "SRC-CUT-004 — BORN_FIXED_SOURCE_CUT_SUBTRACTION_REMOVES_THE_LOG_COLLINEAR_CAP_DEPENDENCE_WITHOUT_CAP_FITTING",
+    "IR-NG-007 — SUBTRACTED_SOURCE_CAP_SHELLS_SCALE_AS_DELTA_SQUARED_ACROSS_FIVE_SCATTERING_ANGLES_AND_BOTH_LINEAR_SPIN2_POLARIZATIONS",
+    "NG-FUNNEL-079 — LOCAL_IR_REGULATOR_INDEPENDENCE_DOES_NOT_BY_ITSELF_CERTIFY_THE_GLOBAL_BULK_HARD_REMAINDER_OR_CANDIDATE_NOVELTY"
+  ],
+  "readiness_change": "unchanged at 23%; local source-cut IR completion is now regulator-independent, but comparator foundation still lacks the global bulk hard remainder and AS/C3 completion",
+  "next_gate": "Construct deterministic singularity-aware bulk quadrature for the Born-subtracted MSSC-001 source cut and then test its linked nonanalytic dependence against the separate pure-graviton positive control without equating the observables."
+}
