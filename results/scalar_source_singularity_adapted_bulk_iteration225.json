@@ -1,0 +1,45 @@
+{
+  "iteration": 225,
+  "date": "2026-09-01",
+  "model_readiness_percent": 24,
+  "source_model_id": "MSSC-001",
+  "subtraction_authority": "R=-8 M_Born fixed by Iteration 222; unchanged",
+  "domain_decomposition": "exact two-cell spherical Voronoi partition in local polar coordinates centered on the two certified collinear directions",
+  "cubature_A": "Gauss-Legendre radial x periodic midpoint azimuth",
+  "cubature_B": "Gauss-Legendre radial x Gauss-Legendre azimuth",
+  "order_32_records": [
+    {"theta_ext":0.45,"polarization":"plus","A":-95.12839193372417,"B":-95.12839193859935,"relative_disagreement":5.124837831531813e-11},
+    {"theta_ext":0.45,"polarization":"cross","A":52.846869246206325,"B":52.84686924244575,"relative_disagreement":7.11598606380967e-11},
+    {"theta_ext":0.8,"polarization":"plus","A":-149.20761484720117,"B":-149.20761614982092,"relative_disagreement":8.730249730841912e-9},
+    {"theta_ext":0.8,"polarization":"cross","A":-85.4862596043514,"B":-85.48626067691913,"relative_disagreement":1.2546667950912138e-8},
+    {"theta_ext":1.15,"polarization":"plus","A":-306.9511061588479,"B":-306.9511165979085,"relative_disagreement":3.4008869894651874e-8},
+    {"theta_ext":1.15,"polarization":"cross","A":-278.47601020889556,"B":-278.476015869682,"relative_disagreement":2.0327734186994772e-8},
+    {"theta_ext":1.6,"polarization":"plus","A":-723.3147702690372,"B":-723.3147834823513,"relative_disagreement":1.8267722998101273e-8},
+    {"theta_ext":1.6,"polarization":"cross","A":-708.805024554553,"B":-708.8050263717638,"relative_disagreement":2.563766769927766e-9},
+    {"theta_ext":2.1,"polarization":"plus","A":-2320.555586077252,"B":-2320.556185786664,"relative_disagreement":2.584334806770234e-7},
+    {"theta_ext":2.1,"polarization":"cross","A":-2311.6349416972653,"B":-2311.635533093976,"relative_disagreement":2.558347551740683e-7}
+  ],
+  "slow_row_order_40_stress": [
+    {"theta_ext":2.1,"polarization":"plus","A":-2320.555586216941,"B":-2320.555600244981,"relative_disagreement":6.045121421330798e-9},
+    {"theta_ext":2.1,"polarization":"cross","A":-2311.6349418364944,"B":-2311.6349560199255,"relative_disagreement":6.135670833005235e-9}
+  ],
+  "worst_relative_disagreement_order_32": 2.584334806770234e-7,
+  "worst_relative_disagreement_slow_rows_order_40": 6.135670833005235e-9,
+  "declared_acceptance_envelope_relative": 3e-7,
+  "classification": {
+    "local_IR_completion": "PASS_FROM_ITERATION223",
+    "global_bulk_hard_remainder": "PASS_NUMERICAL_GLOBAL_COMPLETION",
+    "physics_fail": "NO",
+    "exact_comparator_identity": "NO",
+    "near_degeneracy": "NO",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "NUM-NG-014 — SINGULARITY_ADAPTED_VORONOI_CUBATURE_REMOVES_THE_GLOBAL_CHART_ALIASING_BLOCKER",
+    "SRC-CUT-006 — MSSC001_BORN_SUBTRACTED_GLOBAL_HARD_REMAINDER_IS_NUMERICALLY_STABLE_ACROSS_TWO_INDEPENDENT_CUBATURES",
+    "NG-FUNNEL-081 — NUMERICAL_SOURCE_COMPARATOR_CLOSURE_IS_COMPARATOR_AUTHORITY_NOT_CANDIDATE_NOVELTY"
+  ],
+  "readiness_change": "23% -> 24%: one comparator-foundation point closes because the finite MSSC-001 global source hard remainder is no longer numerically blocked; AS/C3 authority remains blocked."
+}
