@@ -5,12 +5,14 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 227**
+**Authoritative Candidate Gravity front:** **Iteration 228**
 
 ## Scientific state in one sentence
-Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. `MSSC-001` has Born-fixed IR completion and a stable global hard remainder but its forward log coefficients are regime-specifically non-identifiable at the frozen `3e-7` envelope. A fresh 2025–2026 asymptotic-safety audit finds substantially improved Lorentzian two-point/spectral and scalar-scattering authority, but still no directly usable same-parent source-completed nonlinear three-graviton retarded relation/cut; AS remains `BLOCKED_NOT_ZERO`. C3 ordered metric-CTP nonlinear authority is the next gate. No Candidate Gravity residual exists.
+
+Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. `MSSC-001` is IR/numerically completed but its forward log coefficients are regime-specifically non-identifiable at the frozen `3e-7` envelope. AS remains `BLOCKED_NOT_ZERO`. C3 authority is materially improved by the final PRX-2026 covariant CQ path integral, which explicitly fixes a metric-dependent generalized Wheeler-DeWitt parent kernel and admits an MSR representation; however the physical nonlinear ordered RQIR column remains blocked on conserved response/gauge/source completion. No Candidate Gravity residual exists.
 
 ## Stable readiness rubric
+
 Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 
 - comparator foundation `24/25`;
@@ -23,6 +25,7 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 `MODEL_READINESS: 24%`
 
 ## Frozen rules
+
 - Repository/recovery and recent commits are source of truth; if this file lags recent commits, follow the later completed iteration and immediately resynchronize this file.
 - Unsupported comparator coordinates are `BLOCKED`, never zero-filled.
 - Exact hard constraints precede profiling/Fisher.
@@ -41,38 +44,52 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 ## Retained comparator authority
 
 ### Iterations 202–205 — analytic tower and nonanalytic target
+
 The declared local C5 Riemann-chain derivative family gives a row-scaled Vandermonde tower of full finite-row rank; finite analytic single-setting residuals are therefore not model-independent. Freeze `D_s F = Disc_s F/(2 pi i)` and `T_cut = D Gamma3_ret,soft - W[D K2]`. Local analytic towers have `D=0` in their analytic domain; standalone `D K2` is not promotable because of C4 spectral-mediator degeneracy.
 
 ### Iterations 206–207 — off-shell C5 authority
+
 Generic third-order one-loop covariant perturbation theory and causal continuation technology exist, but no directly reusable published object has been established that simultaneously supplies pure-Einstein graviton+ghost finite nonlocal curvature-cubic terms, gauge/parametrization-safe off-shell uniqueness, Lorentzian/in-in continuation and the source-completed RQIR projection. Classification: `BLOCKED_C5_VD_NONLOCAL_CUBIC_SPECIALIZATION`.
 
 ### Iterations 208–225 — physical controls and source hard remainder
+
 A gauge-invariant pure-Einstein on-shell unitarity-cut control is retained. `MSSC-001` supplies a distinct connected scalar-source control. Direct endpoint limits give `R_in=R_out=-8 M_Born`; Born-fixed subtraction makes local cap shells vanish as `delta^2`. Iteration 225 resolves the global quadrature blocker with exact spherical Voronoi local-polar domain decomposition and two independent deterministic cubatures. Freeze conservative relative source numerical envelope `3e-7`.
 
 ### Iteration 226 — source forward regular+log resolution gate
+
 Use `z=-t/(4 p^2)=sin^2(theta_ext/2)` on the frozen forward grid. All 16 rows pass the numerical gate; every propagated regular+log coefficient has `|b_i|/Delta b_i<1`. Classification: `REGIME_SPECIFIC_NON_IDENTIFIABILITY_NO_CERTIFICATE` plus analytic-vs-log near-degeneracy within the numerical envelope. No exact analytic identity is claimed.
 
 ### Iteration 227 — AS real-time authority re-audit
-Current Lorentzian AS authority is materially stronger than in earlier audits: direct/self-consistent graviton spectral functions, covariant Lorentzian flow work, a 2026 analytical propagator approximation, and physical scalar-scattering reconstructions exist. Euclidean momentum-dependent three-/four-graviton effective-action authority also remains strong.
 
-However, no retained source supplies one directly usable same-parent object that simultaneously fixes:
-1. physical Lorentzian nonlinear three-graviton momentum dependence;
-2. explicit retarded/in-in ordering;
-3. RQIR source/Ward completion;
-4. same-parent normalization/parameter convention linking nonlinear response to `K2`;
-5. controlled timelike discontinuity / linked-cut prescription for that completed object.
+Current Lorentzian AS authority is materially stronger than in earlier audits, but no retained source supplies one directly usable same-parent object that simultaneously fixes physical Lorentzian nonlinear three-graviton momentum dependence, explicit retarded/in-in ordering, RQIR source/Ward completion, same-parent normalization linking the nonlinear response to `K2`, and a controlled timelike discontinuity/linked-cut prescription. Classification remains `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, specifically `BLOCKED_NOT_ZERO`.
 
-Classification remains `BLOCKED_AS_REALTIME_RELATION_COMPLETION`, specifically `BLOCKED_NOT_ZERO`.
+### Iteration 228 — C3 PQCG ordered-response authority correction and narrowing
+
+The final published 2026 PRX covariant classical-quantum path-integral paper supplies more nonlinear parent authority than the Iteration-189 wording credited: its gravity construction uses Einstein-Hilbert plus matter dynamics, writes the diffusion action covariantly in terms of the Einstein residual, explicitly states that it can be put into MSR form through Hubbard-Stratonovich auxiliary fields, and Eq. (26) fixes a metric-dependent generalized Wheeler-DeWitt tensor density with parameters `beta` and `D2`.
+
+Therefore the broad old premise that published authority leaves all nonlinear metric dependence of the diffusion kernel unspecified is superseded for this declared parent choice. The Iteration-173 free-`lambda` structural certificate remains valid only when field dependence is not fixed; it is not the final blocker once PRX Eq. (26) is adopted.
+
+However, the May-2026 stochastic-modes paper explicitly linearizes around Minkowski and shows that naive JD/MSR use of the ultralocal generalized DeWitt covariance is subtle because that covariance is not conserved. The linear OM/MSR equivalence is recovered only with conserved-sector treatment/projection. The physical nonlinear ordered RQIR column still lacks:
+
+1. nonlinear conserved response-kernel/projection compatible with the Bianchi identity;
+2. nonlinear gauge/constraint reduction on geometries modulo diffeomorphisms;
+3. a same-parent ordered/retarded metric-source plus Ward completion;
+4. one common `beta`, `D2`, Einstein, metric, source and pole/regularization convention across `K2` and nonlinear response;
+5. the resulting frozen six-row `O(k_soft^2)` extraction.
+
+Classification remains `BLOCKED_C3_CTP_ORDERED_COMPLETION`, narrowed to `BLOCKED_NONLINEAR_CONSERVED_RESPONSE_AND_ORDERED_SOURCE_COMPLETION`.
 
 Retain:
-- `AS-NG-005`;
-- `REL-NG-006`;
-- `AS-BLOCK-001`;
-- `NG-FUNNEL-083`.
+- `C3-NG-007`;
+- `C3-NG-008`;
+- `REL-NG-008`;
+- `C3-BLOCK-002`;
+- `NG-FUNNEL-084`.
 
-This is not a consistency FAIL of asymptotic safety, not an exact comparator identity, not evidence of a zero AS column, and not Candidate Gravity novelty.
+This is operational/scientific authority BLOCKED, not a consistency FAIL of PQCG, not an exact comparator identity, not evidence for a zero C3 column, and not Candidate Gravity novelty.
 
 ## Other comparators
+
 ### C4
 Compatible local unitary massless-spin-2 boundary remains inside C5 at the frozen soft scope. Positive standalone spectral response remains C4-mediator reproducible.
 
@@ -83,28 +100,31 @@ Analytic nonlocal hard shapes become Taylor-degenerate in deep IR; genuine nonli
 `BLOCKED_AS_REALTIME_RELATION_COMPLETION`: current retained authority does not provide the required same-parent Lorentzian/in-in source-completed nonlinear three-graviton retarded relation/cut.
 
 ### C3 PQCG
-`BLOCKED_C3_CTP_ORDERED_COMPLETION`: nonlinear OM dynamics plus the published linearized conserved-diffusion MSR/JD construction do not determine the nonlinear metric-dependent ordered cut/soft relation required by RQIR.
+`BLOCKED_NONLINEAR_CONSERVED_RESPONSE_AND_ORDERED_SOURCE_COMPLETION`: PRX 2026 fixes a nonlinear metric-dependent parent kernel, but the conserved nonlinear MSR/JD response projection, nonlinear constraint/gauge completion and ordered source/Ward map required by RQIR are not yet fixed.
 
 ## Candidate state
+
 There is **no robust Candidate Gravity residual**.
 
 `ANSATZ-003`: NOT CREATED.  
 Fisher/resources: FORBIDDEN.
 
 ## Latest authority files
-### Iteration 227
-- `candidate_gravity/AS_REALTIME_AUTHORITY_REAUDIT_ITERATION227.md`
-- `research_log/2026-09-01_iteration_227_as_realtime_authority_reaudit.md`
-- `recovery/RECOVERY_DELTA_ITERATION_227.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION227.md`
 
-## Immediate next scientific priority — Iteration 228
-Proceed to the C3 PQCG ordered metric-CTP nonlinear authority gate.
+### Iteration 228
+- `candidate_gravity/C3_PQCG_ORDERED_METRIC_CTP_AUTHORITY_REAUDIT_ITERATION228.md`
+- `research_log/2026-09-01_iteration_228_c3_ordered_metric_ctp_authority_reaudit.md`
+- `recovery/RECOVERY_DELTA_ITERATION_228.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION228.md`
+
+## Immediate next scientific priority — Iteration 229
+
+Test whether the nonlinear **conserved** response kernel is uniquely fixed by the declared PRX Eq.-(26) parent plus Bianchi/gauge projection around Minkowski, without adding a new model choice.
 
 Requirements:
-1. start from the retained PQCG/MSR/JD parent dynamics and current literature;
-2. determine whether one declared dynamics and parameter convention fixes the nonlinear metric-dependent ordered cut/soft relation required by RQIR;
-3. do not infer the nonlinear object from the linear conserved-diffusion MSR/JD sector;
-4. if authority remains incomplete, retain `BLOCKED_C3_CTP_ORDERED_COMPLETION` and write an explicit missing-ingredients ledger;
-5. C3 may not be zero-filled;
+1. expand the declared metric-dependent kernel to first order in `h_{munu}` using one frozen metric/index convention;
+2. impose the linearized conservation/Bianchi condition required by the response auxiliary-field sector;
+3. determine whether the longitudinal completion is unique or admits a nontrivial homogeneous conserved ambiguity with identical linear two-point authority;
+4. if ambiguous, record formal underdetermination and keep C3 blocked;
+5. if unique, derive the same-parent cubic response vertex before any RQIR soft-row evaluation;
 6. do not create `ANSATZ-003`; do not run Fisher/resources.
