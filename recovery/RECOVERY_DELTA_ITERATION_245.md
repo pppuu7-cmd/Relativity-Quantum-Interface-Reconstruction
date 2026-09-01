@@ -14,7 +14,7 @@ Primary definitions freeze the primitive inverse-operator content:
 - `U1`: two ghost Green operators `N`, EOM degree 1;
 - `U2`: two `N` plus one field/graviton Green operator `G`, EOM degree 2.
 
-Hence, before explicit Ward/numerator reductions,
+Before explicit Ward/numerator reductions:
 
 - `Tr U1 -> (2N,0G)`;
 - `Tr U2 -> (2N,1G)`;
@@ -24,50 +24,64 @@ Hence, before explicit Ward/numerator reductions,
 
 Do not equate EOM degree with propagator count.
 
-## CPT3 boundary
+## Stronger cyclic master-topology reduction
 
-Standard published CPT3 form factors apply to a generic single Laplace-type operator and cannot simply be substituted for these composite inverse-operator traces, especially the mixed ghost/graviton `U2` sector.
+At frozen total curvature order `R^3`, cyclicity plus locality of the insertions means repeated Green operators raise powers on loop-momentum segments rather than create extra external-momentum corners. There are at most three background insertions around the one-loop trace.
+
+Therefore the flat cubic EOM sectors reduce to raised-index triangle families:
+
+- `Tr U1^3 -> I222`;
+- `Tr(U1 U2) -> I212` up to cyclic labeling.
+
+No one-loop scalar polygon beyond a triangle is required for the cubic VD connection sector at this curvature order.
 
 Freeze:
 
+`PASS_COMPOSITE_TRACE_MASTER_TOPOLOGY_REDUCTION`.
+
+## CPT3 boundary
+
+Standard published CPT3 form factors apply to a generic single Laplace-type operator and cannot simply be substituted for the composite inverse-operator traces. The mixed ghost/graviton sector remains a different functional object. However its flat cubic scalar kinematics are standard raised-propagator one-loop triangles and are therefore directly amenable to Feynman-parameter/tensor-reduction methods.
+
+Retain:
+
 `NO_DIRECT_SINGLE_OPERATOR_CPT3_IDENTITY_FOR_COMPOSITE_U1_U2_TRACES`.
 
-## Executable replacement
+## Finite resolvent completion
 
-On the frozen Minkowski `Lambda=0` finite-`R^3` target, use finite resolvent expansions of the already-fixed operators:
-
-`N^-1=N0^-1-N0^-1 dN N0^-1+...`,
-
-`G=G0-G0 dH G0+...`.
-
-Together with the Iteration-243 bound `e+c<=3`, this requires only:
+Iteration 243 proved `e+c<=3`, so only a finite set of lower-sector dressings is needed:
 
 - `Tr U1`: curvature dressing through `c=2`;
 - `Tr U2`, `Tr U1^2`: through `c=1`;
 - `Tr U1^3`, `Tr(U1 U2)`: flat kernels only (`c=0`).
 
-All remaining pieces are finite one-loop flat-space tensor-integral sectors once the frozen 4D vertices are written explicitly.
+Use same-parent resolvent expansions
+
+`N^-1=N0^-1-N0^-1 dN N0^-1+...`,
+
+`G=G0-G0 dH G0+...`.
 
 ## Current blocker
 
-`BLOCKED_4D_EINSTEIN_VD_RESOLVENT_VERTEX_LIBRARY_AND_SOURCE_PROJECTION`.
+`BLOCKED_4D_EINSTEIN_VD_RESOLVENT_VERTEX_LIBRARY_TENSOR_REDUCTION_AND_SOURCE_PROJECTION`.
 
 `BLOCKED_NOT_ZERO`.
 
-This is an operational/derivational blocker, not a consistency FAIL, exact identity, non-identifiability result, or near-degeneracy.
+This is operational/derivational BLOCKED, not consistency FAIL, exact identity, regime-specific non-identifiability or near-degeneracy.
 
 ## Compute policy
 
-Blind heavy CPT3 remains forbidden. A bounded symbolic flat-kernel/resolvent derivation is authorized next. `ANSATZ-003` remains not created. Fisher/resources remain forbidden.
+A blind full finite-CPT3 run remains forbidden. A **scoped flat `e=3` symbolic run is authorized** as a component/unit block once it uses the exact frozen 4D convention. `ANSATZ-003` remains not created. Fisher/resources remain forbidden.
 
 ## Readiness
 
-`MODEL_READINESS: 24%` — unchanged from Iteration 244. No rubric block closes because the finite physical C5 comparator coordinate is still not computed.
+`MODEL_READINESS: 24%` — unchanged from Iteration 244. The topology ambiguity closes and the C5 route becomes more executable, but the finite physical comparator coordinate is still not computed; no rubric block closes.
 
 ## Restart — Iteration 246
 
-1. freeze `N0^-1` and `G0` in the Iteration-232 4D convention;
-2. derive linearized Einstein `E[h]` and required `Q_;` vertices;
-3. build `U1^(1)` and `U2^(2)` momentum-space kernels;
+1. freeze flat `N0^-1` and `G0` projectors/normalization in the Iteration-232 convention;
+2. derive linearized Einstein `E[h]` and required `Q_;` / `V1,V2` vertices;
+3. contract `Tr U1^3` and `Tr(U1 U2)` into the `I222/I212` tensor numerators;
 4. reproduce the published quadratic VD connection contribution/divergence as a normalization unit test;
-5. only then construct cubic `Tr U1^3` and `Tr(U1 U2)` integrands and test Ward/source projection.
+5. test Ward/source structure and a second admissible field parametrization before any physical claim;
+6. only after those tests address lower-EOM curvature dressing and final source-completed `T_cut` projection.
