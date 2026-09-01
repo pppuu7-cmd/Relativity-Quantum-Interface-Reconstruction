@@ -1,0 +1,35 @@
+{
+  "iteration": 219,
+  "date": "2026-09-01",
+  "model_readiness_percent": 23,
+  "source_model_id": "MSSC-001",
+  "amplitude_authority": "arXiv:1908.09755 Eq.(32) scalar-gluon A4 + Eq.(52) four-point KLT",
+  "convention": "overall coupling/i factors stripped; two KLT polarization copies explicit",
+  "mass": 0.7,
+  "sqrt_s": 2.0,
+  "angles": [0.45, 0.8, 1.15, 1.6, 2.1],
+  "max_momentum_conservation_error": 0.0,
+  "max_mass_shell_error": 3.3306690738754696e-16,
+  "max_independent_gravitational_ward_abs": 2.2511352919400206e-15,
+  "max_graviton_exchange_abs_difference": 4.440892098500626e-16,
+  "nonzero_amplitude_abs_range": [0.04201800884437403, 12.646593080086872],
+  "classification": {
+    "full_two_scalar_two_graviton_tree_amplitude": "PASS_SCOPED",
+    "independent_graviton_Ward_tests": "PASS_MACHINE_PRECISION",
+    "graviton_exchange_symmetry": "PASS_MACHINE_PRECISION",
+    "isolated_hh_phi_phi_contact_as_observable": "FORBIDDEN",
+    "source_tree_building_block_for_unitarity": "AUTHORIZED",
+    "connected_one_loop_source_cut": "NOT_YET_COMPUTED",
+    "candidate_residual": "NONE",
+    "ANSATZ_003": "NOT_CREATED",
+    "Fisher_resources": "FORBIDDEN"
+  },
+  "retained_results": [
+    "SRC-NG-003 — FULL_TWO_SCALAR_TWO_GRAVITON_KLT_AMPLITUDE_PASSES_INDEPENDENT_GRAVITATIONAL_WARD_TESTS",
+    "SRC-NG-004 — NONLINEAR_SOURCE_GAUGE_SAFETY_BELONGS_TO_THE_COMPLETE_AMPLITUDE_NOT_AN_ISOLATED_SEAGULL_VERTEX",
+    "C5-CUT-018 — GAUGE_INVARIANT_DYNAMICAL_SCALAR_SOURCE_TREE_BLOCK_IS_AVAILABLE_FOR_SOURCE_LEVEL_UNITARITY_CUTS",
+    "NG-FUNNEL-076 — BUILD_SOURCE_COMPLETED_CUTS_FROM_GAUGE_INVARIANT_TREE_AMPLITUDES_BEFORE_OFFSHELL_1PI_INTERPRETATION"
+  ],
+  "readiness_change": "unchanged at 23%; the first nonlinear gauge-invariant dynamical-source tree block is executable, but the physical connected source cut has not yet been built",
+  "next_gate": "Construct the lowest one-loop discontinuity of a connected MSSC-001 scalar-source observable from gauge-invariant tree blocks and physical intermediate gravitons, preserving the on-shell/off-shell distinction from Iteration 217."
+}
