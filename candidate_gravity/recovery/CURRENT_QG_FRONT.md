@@ -5,11 +5,11 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 229**
+**Authoritative Candidate Gravity front:** **Iteration 230**
 
 ## Scientific state in one sentence
 
-Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. `MSSC-001` is IR/numerically completed but its forward log coefficients are regime-specifically non-identifiable at the frozen `3e-7` envelope. AS remains `BLOCKED_NOT_ZERO`. C3 authority is now stronger in a different sense: PRX-2026 Eq. (26) fixes the ordinary metric dependence of the generalized Wheeler-DeWitt parent, but Iteration 229 proves that Eq. (26) plus conservation/Bianchi does **not** uniquely determine the first nonlinear conserved response completion. An explicit `O(h)` doubly-transverse homogeneous family leaves the linear two-point authority unchanged and can survive TT soft projection. No Candidate Gravity residual exists.
+Finite analytic soft shape remains non-identifiable against unrestricted local C5 derivative towers, so the authoritative novelty direction remains a linked nonanalytic relation. `MSSC-001` is IR/numerically completed but its forward log coefficients are regime-specifically non-identifiable at the frozen `3e-7` envelope. AS remains `BLOCKED_NOT_ZERO`. C3 is now frozen for the current comparator funnel as `BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`: PRX-2026 Eq. (26) fixes the parent metric dependence, Iteration 229 constructs an explicit nonlinear conserved homogeneous family, and Iteration 230 finds no published same-parent nonlinear projector/stochastic-constraint/quotient prescription with fixed boundary data that eliminates that family. No Candidate Gravity residual exists.
 
 ## Stable readiness rubric
 
@@ -39,6 +39,7 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 - Keep pure-graviton and connected-source controls distinct.
 - A fitted log coefficient below propagated numerical envelope is `regime-specific non-identifiability`, not exact zero.
 - A conserved nonlinear comparator completion is not unique merely because the background parent and Bianchi identity are fixed; homogeneous transverse sectors must be eliminated by same-parent authority, not by convenience.
+- Choosing `H=0` or a convenient nonlinear transverse projector is a new C3 comparator model choice unless derived uniquely from the declared parent with fixed boundary/Green-function data.
 - Do not create `ANSATZ-003` before a concrete residual survives C3/C4/C5/nonlocal/AS subtraction, truncation uncertainty and prospective robustness.
 - Fisher/resources remain forbidden until the robust residual gate passes.
 
@@ -90,14 +91,23 @@ and
 
 `BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`.
 
-Retain:
-- `C3-NG-009`;
-- `C3-NG-010`;
-- `REL-NG-009`;
-- `C3-BLOCK-003`;
-- `NG-FUNNEL-085`.
+### Iteration 230 — same-parent completion audit freezes C3 blocker
 
-This is not a consistency FAIL of PQCG, not an exact comparator identity, not near-degeneracy, not evidence of a zero C3 column, and not Candidate Gravity novelty.
+Fresh authority audit of the final PRX publication (Phys. Rev. X 16, 031007, published 15 July 2026) and arXiv:`2605.05375` finds no additional same-parent nonlinear conserved projector, stochastic constraint, or quotient-space rule with fixed Green-function/boundary prescription that removes the Iteration-229 homogeneous family.
+
+The PRX parent fixes Eq. (26) and the covariant path-integral dynamics but does not supply an executable unique nonlinear transverse/constraint completion. The 2026 stochastic-mode paper establishes OM/MSR/SDE equivalence after linearizing around Minkowski, so it supplies strong linear authority but not the nonlinear quotient representative.
+
+Freeze for the current comparator funnel:
+
+`BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`.
+
+Retain:
+- `C3-NG-011`;
+- `REL-NG-010`;
+- `C3-BLOCK-004`;
+- `NG-FUNNEL-086`.
+
+This is not a consistency FAIL, not exact comparator identity, not near-degeneracy, not evidence of a zero C3 column, and not Candidate Gravity novelty.
 
 ## Other comparators
 
@@ -111,7 +121,7 @@ Analytic nonlocal hard shapes become Taylor-degenerate in deep IR; genuine nonli
 `BLOCKED_AS_REALTIME_RELATION_COMPLETION`: current retained authority does not provide the required same-parent Lorentzian/in-in source-completed nonlinear three-graviton retarded relation/cut.
 
 ### C3 PQCG
-`BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`: PRX 2026 fixes the nonlinear metric-dependent parent kernel, but Eq. (26) plus conservation/Bianchi does not uniquely select the conserved nonlinear MSR/JD response completion. A further same-parent nonlinear projector/stochastic-equation/quotient-space prescription is required before an ordered RQIR C3 column exists.
+`BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION`, frozen for the current comparator funnel. Future reopening requires genuinely new same-parent nonlinear authority that fixes the conserved quotient representative with boundary/Green-function data; a convenient choice of representative is insufficient.
 
 ## Candidate state
 
@@ -122,22 +132,20 @@ Fisher/resources: FORBIDDEN.
 
 ## Latest authority files
 
-### Iteration 229
-- `candidate_gravity/C3_PQCG_CONSERVED_COMPLETION_UNDERDETERMINATION_ITERATION229.md`
-- `candidate_gravity/code/iteration229_c3_conserved_completion_ambiguity.py`
-- `candidate_gravity/results/iteration229_c3_conserved_completion_ambiguity.json`
-- `research_log/2026-09-01_iteration_229_c3_conserved_completion_underdetermination.md`
-- `recovery/RECOVERY_DELTA_ITERATION_229.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION229.md`
+### Iteration 230
+- `candidate_gravity/C3_PQCG_SAME_PARENT_COMPLETION_AUDIT_ITERATION230.md`
+- `research_log/2026-09-01_iteration_230_c3_same_parent_completion_audit.md`
+- `recovery/RECOVERY_DELTA_ITERATION_230.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION230.md`
 
-## Immediate next scientific priority — Iteration 230
+## Immediate next scientific priority — Iteration 231
 
-Test whether the declared PQCG/PRX parent literature supplies an **additional same-parent nonlinear completion principle** that eliminates the Iteration-229 homogeneous conserved family without adding a new model choice.
+Return the main effort to C5. Audit the latest 2025–2026 gauge-independent/Vilkovisky-DeWitt/nonlocal gravity literature for a directly executable pure-Einstein graviton+ghost curvature-cubic nonlocal object that can be placed in the Lorentzian/source-completed RQIR linked-cut convention.
 
 Requirements:
-1. audit for a nonlinear conserved stochastic equation, covariant transverse projector, or quotient-space construction derived from the same parent;
-2. require a fixed Green-function/boundary prescription and the same `beta,D2`, metric/source normalization and pole convention;
-3. explicitly test whether that prescription excludes the Iteration-229 `H` family rather than merely choosing one representative;
-4. if no such authority exists, freeze C3 as `BLOCKED_FORMAL_UNDERDETERMINATION` for the current comparator funnel and return to remaining C5/AS linked-relation closure;
-5. if unique same-parent authority exists, derive its cubic response vertex before any soft2 row evaluation;
+1. require pure-Einstein graviton+ghost specialization, not a generic matter heat-kernel result;
+2. require gauge/parametrization-safe authority suitable for a physical comparator projection;
+3. require enough form-factor information to define the relevant hard-channel discontinuity;
+4. require a controlled Lorentzian/retarded or otherwise source-completed continuation path;
+5. if no directly executable object exists, identify the minimal missing specialization/projection and retain `BLOCKED_C5_VD_NONLOCAL_CUBIC_SPECIALIZATION`;
 6. do not create `ANSATZ-003`; do not run Fisher/resources.
