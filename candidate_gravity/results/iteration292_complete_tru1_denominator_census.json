@@ -1,0 +1,53 @@
+{
+  "iteration": 292,
+  "model_readiness_percent": 24,
+  "workflow_run_id": 33685133240,
+  "workflow_job_id": 100430674009,
+  "workflow_artifact_id": 9867792243,
+  "workflow_artifact_sha256": "401779c7057731731a3f9bb16eb27ab56486544e5e9adabd68fc0f93ea673021",
+  "translation_closed": true,
+  "primitive_branch_count": 36,
+  "primitive_branch_count_by_Y_degree": {"0": 23, "1": 11, "2": 2},
+  "family_counts": {
+    "ordinary_bubble": 5,
+    "ordinary_triangle": 8,
+    "raised_bubble": 10,
+    "raised_triangle": 12,
+    "single_scaleless": 1
+  },
+  "sector_counts": {
+    "ordinary_bubble_a": 2,
+    "ordinary_bubble_b": 2,
+    "ordinary_bubble_null": 1,
+    "ordinary_tri_(0.0,0.21,0.41)": 8,
+    "raised_bubble_a": 4,
+    "raised_bubble_b": 4,
+    "raised_bubble_null": 2,
+    "raised_tri_(0.0, 0.21)": 4,
+    "raised_tri_(0.0, 0.41)": 4,
+    "raised_tri_(0.21, 0.41)": 4,
+    "single_scaleless": 1
+  },
+  "scaleless_sectors": ["ordinary_bubble_null", "raised_bubble_null", "single_scaleless"],
+  "non_scaleless_primitive_branch_count": 32,
+  "new_weight_dressing_topologies": ["ordinary_bubble", "ordinary_triangle"],
+  "direct_complete_trace_at_p0": {"real": 0.8049286124063145, "imag": 0.0},
+  "primitive_denominator_reconstruction_at_p0": {"real": 0.8049286124067728, "imag": 0.0},
+  "primitive_vs_direct_abs_residual": 4.583000645652646e-13,
+  "analytic_degree_ceiling": {
+    "reason": "N1,N2 are degree<=2 in loop momentum; every A_n is degree<=2; local Y_n is loop-momentum independent",
+    "ordinary_bubble": 2,
+    "ordinary_triangle": 4,
+    "raised_bubble_retained_conservative": 4,
+    "raised_triangle_retained_conservative": 6
+  },
+  "classification": "PASS_EXACT_WEIGHT_COMPLETED_TRU1_DENOMINATOR_CENSUS_AND_PRIMITIVE_RECONSTRUCTION",
+  "candidate_residual": false,
+  "guardrails": [
+    "YDOWN_IS_LOCAL_AND_ADDS_NO_PROPAGATOR_BUT_CHANGES_ROUTING_AND_NUMERATOR_CONTRACTION",
+    "OLD_RAISED_ONLY_FAMILY_CENSUS_IS_INCOMPLETE_FOR_TRU1_AFTER_WEIGHT_COMPLETION",
+    "ORDINARY_BUBBLE_AND_ORDINARY_TRIANGLE_FAMILIES_MUST_BE_INCLUDED_BEFORE_TENSOR_REDUCTION",
+    "E3_C0_REMAINS_ZERO_ON_THE_FROZEN_NULL_TT_SOFT_BRANCH_BY_ITERATION246"
+  ],
+  "next_gate": "fit and held-out validate complete polynomial numerator bases for every non-scaleless raised and ordinary family of [Tr U1]_{sab}; only then perform DR tensor/Laurent reduction"
+}
