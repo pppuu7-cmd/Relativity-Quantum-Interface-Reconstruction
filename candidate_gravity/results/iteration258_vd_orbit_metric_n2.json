@@ -1,0 +1,35 @@
+{
+  "iteration": 258,
+  "model_readiness_percent": 24,
+  "frozen_convention": {
+    "D": 4,
+    "Lambda": 0,
+    "deWitt_a": -0.5,
+    "signature": "-+++",
+    "split": "g=eta+t eps exp(i q.x)",
+    "factorization": "Nhat=W N_orb; Q=N_orb^-1"
+  },
+  "tt_checks": {
+    "trace": 0.0,
+    "transversality_max": 8.164311994315688e-18,
+    "tr_H2": 0.9999999999999998
+  },
+  "analytic_weight_inverse_coefficients": {
+    "V0": "eta",
+    "V1": "eps",
+    "V2": "(tr(H^2)/4) eta"
+  },
+  "exact_second_order_identity": "Norb2 = V0*Nhat2 + V1*Nhat1 + V2*Nhat0",
+  "finite_difference_validation": [
+    {"step": 0.01, "max_abs_Norb2_direct_minus_assembled": 2.9341220507461685e-05, "Norb2_frobenius_norm": 1.9496007325763238, "Nhat2_frobenius_norm": 1.7778574392735063},
+    {"step": 0.003, "max_abs_Norb2_direct_minus_assembled": 2.64052561926853e-06, "Norb2_frobenius_norm": 1.9494793657582001, "Nhat2_frobenius_norm": 1.777760932721866},
+    {"step": 0.001, "max_abs_Norb2_direct_minus_assembled": 2.9342435148294044e-07, "Norb2_frobenius_norm": 1.9494686966417678, "Nhat2_frobenius_norm": 1.7777524490391585},
+    {"step": 0.0003, "max_abs_Norb2_direct_minus_assembled": 2.638624341244622e-08, "Norb2_frobenius_norm": 1.9494674810766912, "Nhat2_frobenius_norm": 1.7777514826227094},
+    {"step": 0.0001, "max_abs_Norb2_direct_minus_assembled": 1.5100117711774885e-08, "Norb2_frobenius_norm": 1.9494673597527887, "Nhat2_frobenius_norm": 1.7777513761962513}
+  ],
+  "classification": "PASS_SCOPED_PHYSICAL_ORBIT_METRIC_N2_CONSTRUCTION_AND_DIRECT_VALIDATION",
+  "guardrail": "NO_INDEPENDENT_NORB2_OR_Q2_ANSATZ; Q2 must follow Q0*N1*Q0*N1*Q0-Q0*N2*Q0",
+  "candidate_residual": false,
+  "heavy_run_authorized": false,
+  "next_gate": 259
+}
