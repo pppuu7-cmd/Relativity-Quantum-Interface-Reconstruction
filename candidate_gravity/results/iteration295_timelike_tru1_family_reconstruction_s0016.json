@@ -1,0 +1,29 @@
+{
+  "iteration": 295,
+  "date": "2026-09-03",
+  "classification": "PASS_DIRECT_TIMELIKE_S0016_WEIGHT_COMPLETED_TRU1_ALL_FAMILY_NUMERATOR_RECONSTRUCTION",
+  "s": 0.016,
+  "kinematics": {
+    "ks2": 0.0,
+    "ka2": -0.016,
+    "kb2": -0.216,
+    "ks_dot_ka": -0.1
+  },
+  "primitive_branch_count": 36,
+  "non_scaleless_family_count": 8,
+  "primitive_vs_direct_abs_residual": 6.485922909860165e-13,
+  "max_heldout_relative_error": 4.842076903979733e-09,
+  "max_oracle_imag_abs": 0.0,
+  "candidate_residual": false,
+  "model_readiness_percent": 24,
+  "github_actions": {
+    "run_id": 33688456731,
+    "job_id": 100441403084,
+    "artifact_id": 9869280530,
+    "artifact_name": "iteration295-result",
+    "artifact_digest": "sha256:2c702d3aef66d052b63553590114900b2754b98e6871762ca3bda9ed8ec9ee77",
+    "head_sha": "634e4b00d764ed79ffb952218853b32d9641960c"
+  },
+  "next_gate": "perform common-normalization DR tensor/Laurent plus-minus-i0 reduction of these eight direct timelike families and extract the e=1,c=2 TrU1 discontinuity/pole structure",
+  "guardrail": "This is numerator-reconstruction authority, not an integrated discontinuity, comparator-subtracted residual, or Candidate Gravity signal. Full coefficient arrays remain in the immutable Actions artifact and are reproducible from the committed Iteration-295 script."
+}
