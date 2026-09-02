@@ -5,42 +5,37 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 267**
+**Authoritative Candidate Gravity front:** **Iteration 268**
 
 ## Current scientific state
 
-The active program remains finite Vilkovisky C5 authority improvement. Iterations 261–266 fixed physical multilinear polarization, the null-soft 19-to-15 reduction, exact `Q1/Q2` recursion, project-before-expand `A=K E`, physical `Gamma2[x,y]`, nonzero polarized Einstein `E2/E3`, the exact projected `K0/K1/K2` 2/4/7 primitive library, the 28-primitive null-soft `A3` target, and the exact reduction of the 15 surviving physical `B3[s,a,b]` terms to 8 transpose classes.
+The active program remains finite Vilkovisky C5 authority improvement. Iterations 261–267 fixed physical multilinear polarization, the null-soft 19-to-15 reduction, exact inverse recursion, project-before-expand `A=K E`, physical `Gamma2[x,y]`, nonzero polarized Einstein `E2/E3`, the exact projected `K0/K1/K2` 2/4/7 primitive library, the 28-primitive null-soft `A3` target, the exact reduction of 15 surviving physical `B3[s,a,b]` terms to 8 transpose classes, and the condensed-index/Fourier momentum-routing semantics for those classes.
 
-Iteration 267 freezes the missing condensed-index/Fourier momentum-routing semantics required before those 8 classes may be instantiated numerically.
+Iteration 268 now constructs the physical routed orbit-metric inverse layer itself.
 
-For any polarized background Fourier insertion, translation covariance gives:
+For `Q0(p)=N0(p)^-1`,
 
-- `O1[x]`: `p -> p+k_x`;
-- `O2[x,y]`: `p -> p+k_x+k_y`;
-- `O3[x,y,z]`: `p -> p+k_x+k_y+k_z`;
-- `Q0`: zero background shift, but it must be evaluated at the routed orbit momentum at its insertion.
+`Q1[x](p)=-Q0(p+k_x) N1[x](p) Q0(p)`
 
-All 8 independent null-soft cubic representatives therefore have common support
+and for distinct legs `x,y`,
 
-`<p+K|X|p>`, with `K=k_s+k_a+k_b`.
+`Q2[x,y](p)=Q0(p+k_x+k_y)[N1[x](p+k_y)Q0(p+k_y)N1[y](p)+N1[y](p+k_x)Q0(p+k_x)N1[x](p)-N2[x,y](p)]Q0(p)`.
+
+Physical `N1/N2` are extracted from the same finite-amplitude curved minimal ghost operator and exact `N_orb=W^-1 Nhat` factorization already frozen in the repository. At the frozen generic loop momentum all `Q1` and all mixed `Q2` kernels are explicitly nonzero. First- and second-order convolution residuals of `NQ=I` are <= `8.89e-16`; mixed-leg exchange is stable within the finite-difference envelope.
+
+A deliberately wrong same-loop-momentum implementation fails at first order with residuals `0.5414`, `0.2260`, `0.9130` for `s,a,b`. Thus routed endpoint/intermediate `Q0` factors are mandatory.
 
 Freeze:
 
-`PASS_EXACT_B3_CONDENSED_INDEX_MOMENTUM_SUPPORT`
-
-The Iteration-266 transpose-class reduction remains exact in full operator space, but kernel transpose exchanges endpoints:
-
-`<p+K|X|p>^T = <p|X^T|p+K>`.
-
-When rewritten in canonical forward orientation, the transpose partner carries `-K`. For real backgrounds this is realized by endpoint reversal plus the conjugate Fourier sector `k_s,k_a,k_b -> -k_s,-k_a,-k_b` (with complex conjugation as appropriate). Therefore a raw finite-dimensional matrix transpose at unchanged `p` and unchanged `+k` legs is not the condensed-index kernel transpose.
+`PASS_SCOPED_PHYSICAL_ROUTED_N1_N2_Q1_Q2_KERNEL_LAYER`.
 
 Guardrail:
 
+`Q0 MUST BE EVALUATED AT EACH ROUTED ENDPOINT/INTERMEDIATE MOMENTUM; SAME-p RESOLVENT INSERTION IS FALSE`.
+
+Retain Iteration-267 kernel-transpose guardrail:
+
 `NO_FIXED_PLUS_K_MATRIX_TRANSPOSE_AS_KERNEL_TRANSPOSE`.
-
-This sharpens, but does not revoke,
-
-`PASS_EXACT_NULLSOFT_B3_TRANSPOSE_CLASS_REDUCTION_15_TO_8`.
 
 ## Stable readiness rubric
 
@@ -53,7 +48,7 @@ This sharpens, but does not revoke,
 
 MODEL_READINESS: 24%
 
-Change from Iteration 266: **0 percentage points**. Momentum support and transpose reconstruction are now frozen at the physical kernel level, preventing a false same-routing local-matrix numerator, but explicit contracted `A/N/Q/B3`, tensor reduction, source projection and complete C5 comparator closure remain open.
+Change from Iteration 267: **0 percentage points**. The physical routed inverse-resolvent half of the cubic kernel is now explicit, but routed physical `K/A`, assembled `B3`, tensor reduction, source projection and complete C5 comparator closure remain open.
 
 ## Frozen guardrails retained
 
@@ -70,13 +65,14 @@ Change from Iteration 266: **0 percentage points**. Momentum support and transpo
 - Iteration 255 fixes configuration-space Christoffel `Gamma` in `D_iR`.
 - Iterations 257–259 fix physical orbit-metric inverse recursion through `Q2`; no independent `N2/Q2` ansatz.
 - Iteration 260 fixes exact coefficientwise weighted symmetry of complete same-parent `U1 W`; transpose mismatch is an implementation regression, not a new physical Ward FAIL.
-- Iteration 261 fixes physical multilinear polarization before any three-leg numerator claim and the null-soft 19-to-15 reduction.
+- Iteration 261 fixes physical multilinear polarization and the null-soft 19-to-15 reduction.
 - Iteration 262 fixes polarized `A` bookkeeping, `Q1/Q2` recursion, and proves `Q3/N3` unnecessary because `A0=0`.
 - Iteration 263 fixes project-before-expand `A=K E`, eliminates full unprojected `H3/S5`, and freezes physical `Gamma2[x,y]`.
-- Iteration 264 fixes a scoped nonzero, permutation-symmetric physical `E2/E3` certificate and forbids zero-filling nonlinear EOM sectors from `E1[s]=0`.
+- Iteration 264 fixes nonzero, permutation-symmetric physical `E2/E3` and forbids zero-filling nonlinear EOM sectors from `E1[s]=0`.
 - Iteration 265 fixes the exact polarized `K0/K1/K2` primitive library as 2/4/7, the null-soft projected `A3` primitive count as 28, and forbids `R2/R3/Gamma3` in this cubic route.
-- Iteration 266 fixes the exact null-soft `B3` transpose-class reduction 15-to-8 and forbids double evaluation of abstract transpose partners.
-- Iteration 267 fixes condensed-index/Fourier momentum support for all 8 representatives and forbids implementing operator transpose as a raw same-routing matrix transpose.
+- Iteration 266 fixes the exact null-soft `B3` transpose-class reduction 15-to-8.
+- Iteration 267 fixes condensed-index/Fourier momentum support and endpoint-reversed kernel transpose.
+- Iteration 268 fixes physical routed `N1/N2/Q1/Q2`; all propagator inverses must use the actual routed momenta.
 
 ## Retained comparator state
 
@@ -101,15 +97,14 @@ No robust Candidate Gravity residual exists.
 Fisher/resources: FORBIDDEN.  
 Heavy full C5 run: NOT AUTHORIZED.
 
-## Iteration 267 authority files
+## Iteration 268 authority files
 
-- `candidate_gravity/C5_VD_B3_MOMENTUM_ROUTING_ITERATION267.md`
-- `candidate_gravity/code/iteration267_vd_b3_momentum_routing.py`
-- `candidate_gravity/results/iteration267_vd_b3_momentum_routing.json`
-- `research_log/2026-09-02_iteration_267_vd_b3_momentum_routing.md`
-- `recovery/RECOVERY_DELTA_ITERATION_267.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION267.md`
+- `candidate_gravity/C5_VD_ROUTED_ORBIT_INVERSE_ITERATION268.md`
+- `candidate_gravity/code/iteration268_vd_routed_orbit_inverse.py`
+- `candidate_gravity/results/iteration268_vd_routed_orbit_inverse.json`
+- `research_log/2026-09-02_iteration_268_vd_routed_orbit_inverse.md`
+- `recovery/RECOVERY_DELTA_ITERATION_268.md`
 
-## Exact next gate — Iteration 268
+## Exact next gate — Iteration 269
 
-Implement an explicit routed condensed-index/Fourier kernel layer for only the 8 independent null-soft `B3[s,a,b]` representatives. Build physical `K0/K1/K2 -> A1/A2/A3` with explicit endpoint/intermediate momenta. Derive physical polarized `N1/N2` from the same orbit metric and obtain `Q1/Q2` only through exact inverse recursion at their routed momenta. Evaluate the 8 forward `+K` representatives; reconstruct the seven abstract transpose partners by endpoint-reversed kernel transpose / the real-mode `-K` sector, not by a raw same-routing matrix transpose. Then determine whether the assembled physical `B3[s,a,b]` is explicitly nonzero. Tensor reduction remains forbidden until that algebraic nonzero is established. Do not launch Fisher/resources, blind heavy full-C5 integration, or create `ANSATZ-003`.
+Construct the matching routed physical `K0/K1/K2` kernels from the frozen affine diffeomorphism generator, `P=partial R`, and `Gamma0/Gamma1/Gamma2` library. Contract them with certified physical `E1/E2/E3` to obtain routed `A1/A2/A3`. Then instantiate the eight forward `+K` `B3[s,a,b]` representatives using Iteration-268 `Q0/Q1/Q2`, reconstruct seven transpose partners only by endpoint reversal / the real-mode `-K` sector, and determine whether the assembled physical `B3[s,a,b]` is explicitly nonzero. Tensor reduction remains forbidden until that algebraic nonzero is established. Do not launch Fisher/resources, blind heavy full-C5 integration, or create `ANSATZ-003`.
