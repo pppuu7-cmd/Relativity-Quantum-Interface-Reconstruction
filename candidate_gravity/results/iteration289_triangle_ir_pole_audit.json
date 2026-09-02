@@ -1,0 +1,31 @@
+{
+  "iteration": 289,
+  "model_readiness_percent": 24,
+  "epsilon_points": [0.02,0.01,0.005,0.0025],
+  "calibration": {
+    "tri_(0.0, 0.21)": {"laurent_residue_A_cubic":-3.499391686145881e-08,"laurent_residue_A_quadratic_crosscheck":2.641268766884891e-06,"diagnostic_finite_B_cubic":-3.3452219342134155},
+    "tri_(0.0, 0.41)": {"laurent_residue_A_cubic":-3.685972363703244e-08,"laurent_residue_A_quadratic_crosscheck":3.2069415380475697e-06,"diagnostic_finite_B_cubic":-3.34522053392358},
+    "tri_(0.21, 0.41)": {"laurent_residue_A_cubic":-6.056252161660419e-08,"laurent_residue_A_quadratic_crosscheck":6.538396914359396e-06,"diagnostic_finite_B_cubic":-3.345202777790429}
+  },
+  "triangle_sectors": {
+    "tri_(0.0, 0.21)": {"laurent_residue_A_cubic":-0.05908474654789776,"laurent_residue_A_quadratic_crosscheck":-0.05908464863946863,"residue_method_abs_difference":9.790842913498521e-08,"diagnostic_finite_B_cubic":-0.42577096887307053},
+    "tri_(0.0, 0.41)": {"laurent_residue_A_cubic":0.003959618177742245,"laurent_residue_A_quadratic_crosscheck":0.003960063909188797,"residue_method_abs_difference":4.45731446551724e-07,"diagnostic_finite_B_cubic":0.116881426310661},
+    "tri_(0.21, 0.41)": {"laurent_residue_A_cubic":-0.006164685444448067,"laurent_residue_A_quadratic_crosscheck":-0.006164272105237935,"residue_method_abs_difference":4.133392101325281e-07,"diagnostic_finite_B_cubic":-0.008282976780089633}
+  },
+  "max_abs_calibration_ir_residue": 6.056252161660419e-08,
+  "min_abs_actual_sector_ir_residue": 0.003959618177742245,
+  "total_triangle_common_cut_ir_residue": -0.061289813814603585,
+  "total_current_nonscaleless_B3_common_cut_ir_residue": -0.061289813814603585,
+  "diagnostic_triangle_finite_part_sum_before_pole_completion": -0.3171725193424992,
+  "diagnostic_bubble_plus_triangle_finite_sum_before_pole_completion": -0.3395824187498212,
+  "max_cubic_vs_quadratic_residue_difference": 4.45731446551724e-07,
+  "supersedes_iteration288_workflow_finite_values": true,
+  "classification": "PASS_DETECTED_ROBUST_UNCANCELLED_TRIANGLE_COMMON_CUT_IR_POLE__FINITE_COEFFICIENT_BLOCKED",
+  "candidate_residual": false,
+  "guardrails": [
+    "ITERATION288_POLYNOMIAL_EPS_EXTRAPOLATED_ACTUAL_TRIANGLE_VALUES_ARE_NOT_FINITE_PHYSICAL_COEFFICIENTS",
+    "DO_NOT_PROMOTE_DIAGNOSTIC_FINITE_B_WHILE_TOTAL_1_OVER_EPS_RESIDUE_IS_NONZERO",
+    "CURRENT_B3_COMMON_CUT_IR_POLE_MUST_BE_TESTED_AGAINST_MISSING_SOURCE_WARD_CONTACT_AND_LINKED_K2_PIECES"
+  ],
+  "next_gate": "derive the 1/epsilon pole contributions of missing source/Ward/contact and same-parent K2-linked pieces in T_cut=D Gamma3-W[D K2], test cancellation, and only then extract a finite C5 comparator coordinate"
+}
