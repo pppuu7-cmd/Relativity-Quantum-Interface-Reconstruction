@@ -5,11 +5,11 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 256**
+**Authoritative Candidate Gravity front:** **Iteration 257**
 
 ## Scientific state in one sentence
 
-The residual funnel remains exhausted under current comparator authority, so the active program remains finite Vilkovisky C5 authority improvement: Iteration 256 corrects the future Ward orientation by proving the exact weighted identity `U1 W = Q A Q = W U1^T`, freezes `NO_ORDINARY_U1_SYMMETRY_WARD_FAIL`, and replaces a potentially false ordinary-symmetry gate by an exhaustive six-term cubic weighted assembly target; the physical C5 comparator coordinate remains open.
+The residual funnel remains exhausted under current comparator authority, so the active program remains finite Vilkovisky C5 authority improvement: Iteration 257 proves the exact inverse-orbit-metric recursion for `Q0,Q1,Q2`, eliminates any independent `Q2` resolvent ansatz, and reduces the six-term cubic weighted Ward test to two individually symmetric terms plus two transpose pairs; the physical C5 comparator coordinate remains open.
 
 ## Stable readiness rubric
 
@@ -24,7 +24,7 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 
 MODEL_READINESS: 24%
 
-Change from Iteration 255: **0 percentage points**. The correct weighted Ward gate and cubic assembly bookkeeping closed, but no physical comparator coordinate or robust nonzero residual closed a readiness-rubric block.
+Change from Iteration 256: **0 percentage points**. The upstream cubic Ward assembly is more constrained and a false independent resolvent branch is removed, but no physical comparator coordinate or robust nonzero residual closed a readiness-rubric block.
 
 ## Non-negotiable frozen rules
 
@@ -44,6 +44,8 @@ Change from Iteration 255: **0 percentage points**. The correct weighted Ward ga
 - Iteration 254 fixes `R=L_xi g` as affine in the linear covariant-metric split: `R_,ik=0`; do not reintroduce an independent `delta(partial R)` vertex.
 - Iteration 255 fixes the connection convention: `D_i R^j_alpha` in published `U1,U2` uses the configuration-space Christoffel `Gamma`; do not insert the nonlocal gauge-orbit correction `T` into that derivative.
 - Iteration 256 fixes the full `U1` Ward orientation: test the weighted object `U1 W`, not ordinary `U1`; exact relation `U1 W = W U1^T`. `NO_ORDINARY_U1_SYMMETRY_WARD_FAIL` is frozen.
+- Iteration 257 fixes inverse-resolvent recursion: `Q1=-Q0N1Q0`, `Q2=Q0N1Q0N1Q0-Q0N2Q0`; `NO_INDEPENDENT_Q2_RESOLVENT_ANSATZ` is frozen.
+- Iteration 257 fixes the cubic weighted Ward organization: `Q0A3Q0` and `Q1A1Q1` are individually symmetric; `Q1A2Q0 <-> Q0A2Q1` and `Q2A1Q0 <-> Q0A1Q2` are transpose pairs when the complete same-parent coefficients are symmetric.
 - Do not redefine the frozen linked observable to match a convenient amplitude, relational observable, asymptotic observable, or scalar-radiation proxy.
 - `T_cut` remains operationally non-executable with current published authority; authority improvement, not proxy search, is the active program.
 
@@ -65,37 +67,45 @@ Finite Vilkovisky/unique-action completion is the active authority-improvement r
 ### Asymptotic safety / nonlocal / proxy routes
 Retain their frozen blockers and negative certificates. No proxy may replace the frozen comparator identity.
 
-## Iteration 256 exact scoped result
+## Iteration 257 exact scoped result
 
 Let
 
-`A=R.(D R).E`, `Nhat=W N_orb`, `Q=N_orb^-1=Nhat^-1 W`.
+`N=N0+tN1+t^2N2+...`, `Q=N^-1=Q0+tQ1+t^2Q2+...`.
 
-The exact factorization becomes
+Exact coefficient matching in `NQ=I` gives
 
-`U1 W = Q A Q`.
+`Q0=N0^-1`,
 
-Because the orbit metric and hence `Q` are symmetric, and Iteration 253 proves the complete same-parent `A` symmetric in gauge indices,
+`Q1=-Q0N1Q0`,
 
-`U1 W = W U1^T`.
+`Q2=Q0N1Q0N1Q0-Q0N2Q0`.
 
-Ordinary `U1=U1^T` is not required. A deterministic matrix realization yields weighted-relation residual `2.26e-17` while ordinary `U1` symmetry residual is `2.13e-2`.
+Thus `Q2` is not an independent ansatz. Symmetric `N0,N1,N2` imply symmetric `Q0,Q1,Q2`.
+
+For the frozen cubic weighted coefficient
+
+`B3=Q0A3Q0 + Q1A2Q0 + Q0A2Q1 + Q2A1Q0 + Q0A1Q2 + Q1A1Q1`,
+
+with `A3=K0E3+K1E2+K2E1`, complete same-parent symmetry of `A1,A2,A3` implies pairwise
+
+`(Q1A2Q0)^T=Q0A2Q1`,
+
+`(Q2A1Q0)^T=Q0A1Q2`,
+
+while `Q0A3Q0` and `Q1A1Q1` are individually symmetric. Therefore `B3=B3^T` requires no global fine-tuned six-term cancellation.
 
 Freeze:
 
-`PASS_SCOPED_U1_WEIGHTED_WARD_ORIENTATION_IDENTITY`
+`PASS_SCOPED_CUBIC_WEIGHTED_WARD_PAIRWISE_REDUCTION`
 
 and
 
-`NO_ORDINARY_U1_SYMMETRY_WARD_FAIL`.
+`NO_INDEPENDENT_Q2_RESOLVENT_ANSATZ`.
 
-For `Q=Q0+tQ1+t^2Q2+...`, `A=tA1+t^2A2+t^3A3+...`, the complete cubic weighted coefficient is
+A deterministic certificate gives inverse-series error `5.55e-17`, pair residuals `2.17e-19` and `6.78e-20`, and total cubic symmetry residual `8.67e-19`.
 
-`B3=[U1 W]_3 = Q0A3Q0 + Q1A2Q0 + Q0A2Q1 + Q2A1Q0 + Q0A1Q2 + Q1A1Q1`,
-
-with `A3=K0E3+K1E2+K2E1`.
-
-This is a scoped exact algebraic PASS and false-gate prevention result, not a C5 comparator coordinate, not a Candidate Gravity residual, and not a consistency FAIL.
+This is a scoped exact algebraic PASS and false-branch elimination result, not a C5 comparator coordinate, not a Candidate Gravity residual, and not a consistency FAIL.
 
 ## Candidate state
 
@@ -107,22 +117,21 @@ Heavy full C5 run: NOT AUTHORIZED.
 
 ## Latest authority files
 
-### Iteration 256
-- `candidate_gravity/C5_VD_U1_WEIGHTED_WARD_ORIENTATION_ITERATION256.md`
-- `candidate_gravity/code/iteration256_vd_u1_weighted_ward_orientation.py`
-- `candidate_gravity/results/iteration256_vd_u1_weighted_ward_orientation.json`
-- `research_log/2026-09-02_iteration_256_vd_u1_weighted_ward_orientation.md`
-- `recovery/RECOVERY_DELTA_ITERATION_256.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION256.md`
+### Iteration 257
+- `candidate_gravity/C5_VD_U1_CUBIC_INVERSE_RECURSION_ITERATION257.md`
+- `candidate_gravity/code/iteration257_vd_u1_cubic_inverse_recursion.py`
+- `candidate_gravity/results/iteration257_vd_u1_cubic_inverse_recursion.json`
+- `research_log/2026-09-02_iteration_257_vd_u1_cubic_inverse_recursion.md`
+- `recovery/RECOVERY_DELTA_ITERATION_257.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION257.md`
 
-## Immediate next scientific priority — Iteration 257
+## Immediate next scientific priority — Iteration 258
 
 Stay in the same frozen parent convention and:
 
-1. construct `Q0,Q1,Q2` from the same symmetric orbit metric/resolvent convention;
-2. construct `A1,A2,A3`, with the complete `A3=K0E3+K1E2+K2E1`;
-3. assemble all six terms of `B3=[U1 W]_3`;
-4. require the exact weighted pairwise-transpose/index/TT certificate before tensor reduction;
-5. never use ordinary `U1` symmetry as a Ward FAIL criterion;
-6. do not launch heavy integration until this upstream weighted numerator library is complete;
-7. do not create `ANSATZ-003`; do not run Fisher/resources.
+1. construct the physical same-parent second-order orbit-metric coefficient `N2` in `D=4, Lambda=0, a=-1/2`;
+2. derive `Q2` only from the Iteration-257 inverse recursion; never introduce an independent `Q2` ansatz;
+3. finish complete `A1,A2,A3`, with `A3=K0E3+K1E2+K2E1`;
+4. apply the pairwise weighted transpose/index/TT certificate before tensor reduction;
+5. do not launch heavy integration until this upstream weighted numerator library is complete;
+6. do not create `ANSATZ-003`; do not run Fisher/resources.
