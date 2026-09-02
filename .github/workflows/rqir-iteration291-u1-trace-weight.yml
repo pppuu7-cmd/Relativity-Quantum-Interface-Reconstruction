@@ -1,0 +1,27 @@
+name: rqir-iteration291-u1-trace-weight
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration291_u1_trace_weight_completion.py'
+      - '.github/workflows/rqir-iteration291-u1-trace-weight.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration291:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy
+      - name: Run Iteration 291 U1 trace weight completion
+        run: |
+          python candidate_gravity/code/iteration291_u1_trace_weight_completion.py | tee iteration291_result.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration291-result
+          path: iteration291_result.json
