@@ -1,0 +1,18 @@
+{
+  "candidate_residual": false,
+  "classification": "PASS_SCOPED_POLARIZED_EINSTEIN_E2_E3_NONZERO_AND_SYMMETRIC",
+  "guardrail": "DO_NOT_ZERO_E2_OR_E3_FROM_E1_SOFT_ZERO",
+  "hard_a_k2": 0.41,
+  "hard_b_k2": 0.44250000000000006,
+  "iteration": 264,
+  "model_readiness_percent": 24,
+  "rows": [
+    {"step": 0.01, "e2_sa_fro": 0.7457289119216671, "e2_sa_max": 0.33057971304299544, "e2_sb_fro": 0.7142610523930911, "e2_sb_max": 0.3422403577928106, "e2_ab_fro": 0.6271875469700531, "e2_ab_max": 0.40946019857205546, "e3_sab_fro": 0.5817202220303774, "e3_sab_max": 0.4646212217248056, "e3_leg_permutation_residual": 1.0505485370515544e-13, "e3_output_symmetry_residual": 1.5076828674409626e-13},
+    {"step": 0.003, "e2_sa_fro": 0.7456220169514747, "e2_sa_max": 0.3305297334959776, "e2_sb_fro": 0.7141099598846682, "e2_sb_max": 0.34216864820479365, "e2_ab_fro": 0.6270256293090014, "e2_ab_max": 0.40934459597013306, "e3_sab_fro": 0.5815433627559905, "e3_sab_max": 0.4645001906146815, "e3_leg_permutation_residual": 4.580252843666699e-12, "e3_output_symmetry_residual": 2.0077828288833643e-12},
+    {"step": 0.001, "e2_sa_fro": 0.7456126209298028, "e2_sa_max": 0.3305253402772869, "e2_sb_fro": 0.7140966798831619, "e2_sb_max": 0.34216234536109014, "e2_ab_fro": 0.6270113978260952, "e2_ab_max": 0.40933443533201963, "e3_sab_fro": 0.5815278196028278, "e3_sab_max": 0.4644895530765921, "e3_leg_permutation_residual": 3.8963499093824794e-11, "e3_output_symmetry_residual": 7.255365752634191e-11},
+    {"step": 0.0003, "e2_sa_fro": 0.7456115521460782, "e2_sa_max": 0.33052484055474385, "e2_sb_fro": 0.7140951693123437, "e2_sb_max": 0.3421616284259116, "e2_ab_fro": 0.6270097790259529, "e2_ab_max": 0.4093332795822131, "e3_sab_fro": 0.5815260517855062, "e3_sab_max": 0.4644883431881889, "e3_leg_permutation_residual": 4.391410013404595e-10, "e3_output_symmetry_residual": 1.5685795370923294e-10}
+  ],
+  "soft_E1_fro": 4.577980749436855e-18,
+  "soft_E1_max": 2.9869642745458097e-18,
+  "soft_k2": 0.0
+}
