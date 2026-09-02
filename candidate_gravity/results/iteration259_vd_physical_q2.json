@@ -1,0 +1,28 @@
+{
+  "iteration": 259,
+  "model_readiness_percent": 24,
+  "frozen_convention": {
+    "D": 4,
+    "Lambda": 0,
+    "deWitt_a": -0.5,
+    "signature": "-+++",
+    "split": "g=eta+t eps exp(i q.x)",
+    "physical_inverse": "Q=N_orb^-1"
+  },
+  "identities": {
+    "Q1": "-Q0*N1*Q0",
+    "Q2": "Q0*N1*Q0*N1*Q0-Q0*N2*Q0"
+  },
+  "finite_difference_validation": [
+    {"step": 0.01, "max_abs_Q1_direct_minus_recursion": 0.0003234904909223957, "max_abs_Q2_direct_minus_recursion": 0.0006316797409444685, "Q2_frobenius_norm": 3.904082632406184},
+    {"step": 0.003, "max_abs_Q1_direct_minus_recursion": 2.9114475981639742e-05, "max_abs_Q2_direct_minus_recursion": 5.6850451607637353e-05, "Q2_frobenius_norm": 3.904367778057936},
+    {"step": 0.001, "max_abs_Q1_direct_minus_recursion": 3.234945321395344e-06, "max_abs_Q2_direct_minus_recursion": 6.316710034814932e-06, "Q2_frobenius_norm": 3.9043928473811427},
+    {"step": 0.0003, "max_abs_Q1_direct_minus_recursion": 2.911454735077257e-07, "max_abs_Q2_direct_minus_recursion": 5.685039825564786e-07, "Q2_frobenius_norm": 3.904395696740797},
+    {"step": 0.0001, "max_abs_Q1_direct_minus_recursion": 3.2350440104522704e-08, "max_abs_Q2_direct_minus_recursion": 6.316712886089704e-08, "Q2_frobenius_norm": 3.90439593779004}
+  ],
+  "classification": "PASS_SCOPED_PHYSICAL_Q2_RECURSION_AND_DIRECT_INVERSE_VALIDATION",
+  "guardrail": "NO_INDEPENDENT_Q2_ANSATZ",
+  "candidate_residual": false,
+  "heavy_run_authorized": false,
+  "next_gate": 260
+}
