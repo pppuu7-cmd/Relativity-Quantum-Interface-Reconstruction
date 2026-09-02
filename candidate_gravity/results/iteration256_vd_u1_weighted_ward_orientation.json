@@ -1,0 +1,24 @@
+{
+  "seed": 256,
+  "dimension": 5,
+  "max_left_factor_error": 1.3877787807814457e-16,
+  "max_weighted_factorization_error": 5.551115123125783e-17,
+  "max_weighted_symmetry_residual": 2.2551405187698492e-17,
+  "max_weighted_relation_residual": 2.2551405187698492e-17,
+  "max_ordinary_U1_symmetry_residual": 0.021302349450091667,
+  "cubic_terms": [
+    "Q0 A3 Q0",
+    "Q1 A2 Q0",
+    "Q0 A2 Q1",
+    "Q2 A1 Q0",
+    "Q0 A1 Q2",
+    "Q1 A1 Q1"
+  ],
+  "A3_partitions": [
+    "K0 E3",
+    "K1 E2",
+    "K2 E1"
+  ],
+  "weighted_identity_pass": true,
+  "ordinary_U1_symmetry_required": false
+}
