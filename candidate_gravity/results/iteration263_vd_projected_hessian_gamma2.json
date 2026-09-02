@@ -1,0 +1,34 @@
+{
+  "D": 4,
+  "Lambda": 0,
+  "a_VD": -0.5,
+  "gamma2_validation": {
+    "analytic_input_pair_symmetry_residual": 0.0,
+    "inner_fd_step": 0.0001,
+    "max_second_mixed_variation_component": 0.500008028696318,
+    "max_second_mixed_variation_mismatch": 9.432252612295855e-08,
+    "mixed_leg_exchange_residual": 0.0,
+    "outer_mixed_step": 0.002
+  },
+  "iteration": 263,
+  "projected_A_nullsoft_counts": {
+    "A1_s": 1,
+    "A2_ab": 3,
+    "A2_sa": 2,
+    "A3_sab": 6
+  },
+  "A3_sab_terms": [
+    "K0 E3[s,a,b]",
+    "K1[s] E2[a,b]",
+    "K1[a] E2[s,b]",
+    "K1[b] E2[s,a]",
+    "K2[s,a] E1[b]",
+    "K2[s,b] E1[a]"
+  ],
+  "status": [
+    "PASS_EXACT_PROJECT_BEFORE_EXPAND_A_EQUALS_K_E_CUBIC_REDUCTION",
+    "PASS_SCOPED_FIELDSPACE_CHRISTOFFEL_SECOND_POLARIZED_VARIATION",
+    "NO_FULL_UNPROJECTED_H3_OR_S5_REQUIRED_FOR_PHYSICAL_U1W_B3",
+    "NO_INDEPENDENT_GAMMA2_ANSATZ"
+  ]
+}
