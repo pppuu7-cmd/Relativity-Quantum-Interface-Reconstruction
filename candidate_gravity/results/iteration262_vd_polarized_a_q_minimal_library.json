@@ -1,0 +1,52 @@
+{
+  "iteration": 262,
+  "A1_subterm_count": 3,
+  "A2_subterm_count": 7,
+  "A3_subterm_count": 13,
+  "A1_s_terms": [
+    "Rg1[s] Rd0 H0",
+    "Rg0 Rd1[s] H0",
+    "Rg0 Rd0 H1[s]"
+  ],
+  "A2_s_a_terms": [
+    "Rg0 Rd0 H2[s,a]",
+    "Rg1[s] Rd0 H1[a]",
+    "Rg1[a] Rd0 H1[s]",
+    "Rg0 Rd1[s] H1[a]",
+    "Rg0 Rd1[a] H1[s]",
+    "Rg1[s] Rd1[a] H0",
+    "Rg1[a] Rd1[s] H0"
+  ],
+  "A3_s_a_b_terms": [
+    "Rg0 Rd0 H3[s,a,b]",
+    "Rg1[s] Rd0 H2[a,b]",
+    "Rg0 Rd1[s] H2[a,b]",
+    "Rg1[a] Rd0 H2[s,b]",
+    "Rg0 Rd1[a] H2[s,b]",
+    "Rg1[b] Rd0 H2[s,a]",
+    "Rg0 Rd1[b] H2[s,a]",
+    "Rg1[s] Rd1[a] H1[b]",
+    "Rg1[s] Rd1[b] H1[a]",
+    "Rg1[a] Rd1[s] H1[b]",
+    "Rg1[a] Rd1[b] H1[s]",
+    "Rg1[b] Rd1[s] H1[a]",
+    "Rg1[b] Rd1[a] H1[s]"
+  ],
+  "Q1_formula": "Q1[x] = -Q0 N1[x] Q0",
+  "Q2_s_a_formula_terms": [
+    "+ Q0 N1[s] Q0 N1[a] Q0",
+    "+ Q0 N1[a] Q0 N1[s] Q0",
+    "- Q0 N2[s,a] Q0"
+  ],
+  "higher_generator_variations_required": false,
+  "Q3_required_for_B3_when_A0_zero": false,
+  "minimal_dynamic_inputs": [
+    "N1[x]",
+    "N2[x,y]",
+    "R1[x]",
+    "H1[x]",
+    "H2[x,y]",
+    "H3[s,a,b]"
+  ],
+  "soft_guardrail": "A1[s]=0 applies to the complete three-term sum, not term-by-term"
+}
