@@ -1,0 +1,16 @@
+{
+  "iteration": 261,
+  "legs": ["s", "a", "b"],
+  "total_polarized_terms": 19,
+  "vanish_by_null_soft_A1s": 4,
+  "surviving_terms": 15,
+  "vanishing_terms": [
+    ["Q2[a,b]", "A1[s]", "Q0"],
+    ["Q0", "A1[s]", "Q2[a,b]"],
+    ["Q1[a]", "A1[s]", "Q1[b]"],
+    ["Q1[b]", "A1[s]", "Q1[a]"]
+  ],
+  "status": "PASS_SCOPED_PHYSICAL_B3_MULTILINEAR_POLARIZATION",
+  "guardrail": "NO_UNPOLARIZED_SIX_TERM_B3_AS_PHYSICAL_THREE_LEG_NUMERATOR",
+  "MODEL_READINESS": "24%"
+}
