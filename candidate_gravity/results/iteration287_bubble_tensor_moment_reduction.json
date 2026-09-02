@@ -1,0 +1,38 @@
+{
+  "iteration": 287,
+  "model_readiness_percent": 24,
+  "normalization": "coefficient of log_R(-q^2) after dividing loop integral by i*pi^(D/2); D_q log_R(-q^2)=1",
+  "bubble_a": {
+    "q": [0.25, 0.6, 0.3, 0.15],
+    "q2": 0.41,
+    "basis_size": 70,
+    "fit_rank": 70,
+    "fit_condition_number": 76.74786802042763,
+    "heldout_relative_max": 7.520447097449553e-10,
+    "normalized_log_discontinuity_coefficient": -0.1247249362037728,
+    "loop_reflected_coefficient": -0.1247249362037728,
+    "loop_reflection_abs_residual": 0.0
+  },
+  "bubble_b": {
+    "q": [-1.25, -0.6, -0.3, -1.15],
+    "q2": 0.20999999999999974,
+    "basis_size": 70,
+    "fit_rank": 70,
+    "fit_condition_number": 100.53721039649773,
+    "heldout_relative_max": 3.2353465789325438e-09,
+    "normalized_log_discontinuity_coefficient": 0.10231503679645079,
+    "loop_reflected_coefficient": 0.10231503679645079,
+    "loop_reflection_abs_residual": 0.0
+  },
+  "sanity_checks": {
+    "scalar_expected_1_over_q2": 2.4390243902439024,
+    "scalar_target_1_over_q2": 2.4390243902439024,
+    "l2_expected_minus_one": -1.0,
+    "l2_squared_scaleless_expected_zero": -1.3877787807814457e-17
+  },
+  "classification": "PASS_COMPLETE_70_MONOMIAL_BUBBLE_TENSOR_MOMENT_REDUCTION_NONZERO",
+  "candidate_residual": false,
+  "guardrail": "THESE_ARE_SAME_PARENT_SCALAR_ORBIT_TRACE_BUBBLE CUT COEFFICIENTS, NOT YET SOURCE/WARD/CONTACT-COMPLETED T_cut",
+  "supersedes_preliminary_bubble_a_value": -0.64977,
+  "next_gate": 288
+}
