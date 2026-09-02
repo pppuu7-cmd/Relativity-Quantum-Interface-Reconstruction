@@ -1,0 +1,27 @@
+{
+  "iteration": 278,
+  "model_readiness_percent": 24,
+  "continuation_slice": "k_s=(1,0,0,1), k_s.k_a=-0.1, k_ax=0.6, k_ay=0.3, k_a^2=-s, k_b=-(k_s+k_a)",
+  "timelike_s_rows": [0.004,0.008,0.012,0.016,0.02,0.024,0.028,0.032],
+  "rows": [
+    {"s":0.004,"ka2":-0.004,"kb2":-0.204,"Bfro":17.056451778434134,"Bmax":8.426271600948054,"orbit_trace_real":-15.548534288434482,"endpoint_transpose_residual":7.213839685604739e-7},
+    {"s":0.008,"ka2":-0.008,"kb2":-0.208,"Bfro":18.460040721315643,"Bmax":9.13058210194022,"orbit_trace_real":-16.909196019077626,"endpoint_transpose_residual":7.37917268622823e-7},
+    {"s":0.012,"ka2":-0.012,"kb2":-0.212,"Bfro":20.125649650974978,"Bmax":9.9645484933514,"orbit_trace_real":-18.52096904146891,"endpoint_transpose_residual":7.576223275407301e-7},
+    {"s":0.016,"ka2":-0.016,"kb2":-0.216,"Bfro":22.130829403863736,"Bmax":10.966659804833386,"orbit_trace_real":-20.45847354655217,"endpoint_transpose_residual":7.789768208255055e-7},
+    {"s":0.02,"ka2":-0.02,"kb2":-0.22,"Bfro":24.58704993240987,"Bmax":12.19220981236272,"orbit_trace_real":-22.828900798928146,"endpoint_transpose_residual":8.053544640063137e-7},
+    {"s":0.024,"ka2":-0.024,"kb2":-0.224,"Bfro":27.660456383784503,"Bmax":13.723584674336193,"orbit_trace_real":-25.791953960794444,"endpoint_transpose_residual":8.405393270294326e-7},
+    {"s":0.028,"ka2":-0.028,"kb2":-0.228,"Bfro":31.61000446615895,"Bmax":15.689163758062644,"orbit_trace_real":-29.596483757342945,"endpoint_transpose_residual":8.849729464799339e-7},
+    {"s":0.032,"ka2":-0.032,"kb2":-0.232,"Bfro":36.86270144515377,"Bmax":18.300610419047345,"orbit_trace_real":-34.65276974424139,"endpoint_transpose_residual":9.540928047613306e-7}
+  ],
+  "representative_step_stability": {
+    "s=0.004_Bfro_relative_spread": 1.3615932512191223e-6,
+    "s=0.004_trace_relative_spread": 1.0740732327008303e-6,
+    "s=0.016_Bfro_relative_spread": 1.8290317383896592e-6,
+    "s=0.016_trace_relative_spread": 1.6978552702391964e-6,
+    "s=0.032_Bfro_relative_spread": 2.2506742310903065e-6,
+    "s=0.032_trace_relative_spread": 2.2433742479526057e-6
+  },
+  "classification": "PASS_SCOPED_TIMELIKE_TRANSLATION_CLOSED_B3_ORBIT_TRACE_NONZERO_ON_ALL_EIGHT_ROWS",
+  "guardrail": "NONZERO_TIMELIKE_NUMERATOR_DOES_NOT_BY_ITSELF_EQUAL_A_NONZERO_DISCONTINUITY_COEFFICIENT",
+  "next_gate": "family-resolve non-scaleless timelike bubble/triangle contributions and map their scalar master branch cuts"
+}
