@@ -1,0 +1,30 @@
+{
+  "iteration": 273,
+  "model_readiness_percent": 24,
+  "translation_closed": true,
+  "kinematics": {
+    "k_s": [1.0, 0.0, 0.0, 1.0],
+    "k_a": [0.25, 0.6, 0.3, 0.15],
+    "k_b": [-1.25, -0.6, -0.3, -1.15],
+    "sum": [0.0, 0.0, 0.0, 0.0]
+  },
+  "A1_soft_norm": 1.0006248362441143e-09,
+  "A3_permutation_residual": 8.639733373172476e-11,
+  "surviving_partition_count": 15,
+  "B15_fro": 1.3106212324933462,
+  "B15_max": 0.5424761616499705,
+  "B15_endpoint_transpose_residual": 2.3948450944555333e-07,
+  "step_stability": [
+    {"h_A2": 0.001, "h_A3": 0.002, "B15_fro": 1.310643838492973, "B15_max": 0.54247381361983},
+    {"h_A2": 0.0007, "h_A3": 0.0015, "B15_fro": 1.3106310803782626, "B15_max": 0.5424750907717198},
+    {"h_A2": 0.0005, "h_A3": 0.001, "B15_fro": 1.3106212324933462, "B15_max": 0.5424761616499705},
+    {"h_A2": 0.0003, "h_A3": 0.0008, "B15_fro": 1.310618934019088, "B15_max": 0.542476354015624}
+  ],
+  "step_scan_absolute_spread": 2.4904473885145606e-05,
+  "step_scan_relative_spread": 1.900170981140208e-05,
+  "numerical_envelope": 2.4904473885145606e-05,
+  "classification": "PASS_SCOPED_TRANSLATION_CLOSED_NULLSOFT_B3_EXPLICIT_NONZERO",
+  "candidate_residual": false,
+  "guardrail": "THIS_TESTS_C5_PARENT_B3_ON_THE_MOMENTUM_CONSERVATION_SURFACE; IT_IS_NOT_YET_THE_LINKED_T_CUT_COMPARATOR",
+  "next_gate": "derive the exact closed denominator families, reconstruct B3(p), and only then perform tensor/master reduction"
+}
