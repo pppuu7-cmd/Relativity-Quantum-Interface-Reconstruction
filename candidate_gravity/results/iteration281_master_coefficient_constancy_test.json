@@ -1,0 +1,13 @@
+{
+  "iteration": 281,
+  "model_readiness_percent": 24,
+  "test": "constant coefficients multiplying Iteration-280 three-dimensional scalar cut-support basis",
+  "coefficients": [-0.18793735, -21.47800082, 7.01934896],
+  "relative_l2_residual": 0.08675993597017234,
+  "max_absolute_residual": 3.39573961,
+  "rank": 3,
+  "classification": "FAIL_SCOPED_CONSTANT_MASTER_COEFFICIENT_SURROGATE_ON_TIMELIKE_SLICE",
+  "interpretation": "Iteration-279 pre-integration family traces cannot be replaced by three kinematics-independent coefficients multiplying the scalar master cut-support shapes.",
+  "guardrail": "THIS IS NOT A CONSISTENCY FAIL AND DOES NOT DETERMINE THE TRUE IBP-REDUCED C5 COEFFICIENT FUNCTIONS.",
+  "next_gate": "reconstruct family numerators as p- and invariant-dependent tensor/rational functions and perform genuine tensor/IBP reduction to obtain coefficient functions of s,t"
+}
