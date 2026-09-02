@@ -5,53 +5,47 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 263**
+**Authoritative Candidate Gravity front:** **Iteration 264**
 
 ## Current scientific state
 
-The active program remains finite Vilkovisky C5 authority improvement. Iterations 261–262 established the physical polarized `B3[s,a,b]`, its 15 surviving null-soft terms, the affine `R0/R1` generator library, and exact `Q1/Q2` inverse recursion.
+The active program remains finite Vilkovisky C5 authority improvement. Iterations 261–263 fixed physical multilinear polarization, reduced the null-soft physical `B3[s,a,b]` to 15 surviving terms, froze exact `Q1/Q2` recursion, established project-before-expand `A=K E`, and fixed `Gamma2[x,y]` from the same DeWitt `a=-1/2` metric.
 
-Iteration 263 removes an unnecessary primary tensor layer. Retain the exact same-parent identity
+Iteration 264 closes a scoped physical nonlinear-Einstein EOM vertex certificate on one null-soft TT leg `s` and two distinct spacelike hard TT legs `a,b`. For
 
-`A = K E`, with `K^j_{gamma delta}=R^i_gamma (D_i R^j_delta)`.
+`g=eta+t_s h_s+t_a h_a+t_b h_b`,
 
-Because flat Einstein `E0=0`, multilinear projected coefficients are
+multilinear coefficients are defined directly by amplitude derivatives of the exact Einstein tensor with no factorial convention:
 
-`A1[x]=K0E1[x]`,
+`E2[x,y]=d_x d_y G[g]|0`,
 
-`A2[x,y]=K0E2[x,y]+K1[x]E1[y]+K1[y]E1[x]`,
+`E3[x,y,z]=d_x d_y d_z G[g]|0`.
 
-and generic `A3[x,y,z]` contains `K0E3`, three `K1E2`, and three `K2E1` partitions.
+The soft leg satisfies `k_s^2=0` and `E1[s]=0` to numerical precision. At centered-difference step `3e-4`:
 
-For the frozen null-soft leg `E1[s]=0`, physical `A3[s,a,b]` has six surviving projected terms; `A2[s,a]` and `A2[s,b]` each have two, while `A2[a,b]` has three.
+`||E2[s,a]||_F = 0.7456115521460782`,
 
-This means the physical cubic numerator does **not** require a primary construction of full unprojected `H3=D D S`; that route would expose a fifth action variation `S5` which cancels after gauge projection. The exact projected `A=K E` route needs only `E1/E2/E3` and `K0/K1/K2`, reaching only the fourth action variation through `E3`. The `-RRH` representation remains a regression/cross-check, not the primary construction route.
+`||E2[s,b]||_F = 0.7140951693123437`,
 
-With frozen affine `R` and `D R=P+Gamma R`, `P=partial R` background-independent,
+`||E2[a,b]||_F = 0.6270097790259529`,
 
-`D0=P+Gamma0R0`,
+`||E3[s,a,b]||_F = 0.5815260517855062`,
 
-`D1[x]=Gamma1[x]R0+Gamma0R1[x]`,
+`max|E3[s,a,b]| = 0.4644883431881889`.
 
-`D2[x,y]=Gamma2[x,y]R0+Gamma1[x]R1[y]+Gamma1[y]R1[x]`,
-
-so `K0,K1,K2` require only `Gamma0/Gamma1/Gamma2` and `R0/R1`. No `Gamma3`, `R2`, or `R3` is required.
-
-The physical second polarized DeWitt field-space Christoffel `Gamma2[x,y]` has now been constructed from the same frozen `a=-1/2` metric and independently validated against a direct 10-dimensional field-space Christoffel reconstruction. On the recorded Lorentzian traceless test directions,
-
-`max|Gamma2_direct-Gamma2_formula| = 9.4322526123e-08`
-
-on maximum component scale `0.500008028696`, with zero tested input-pair and mixed-leg exchange symmetry residuals.
+The values converge stably over steps `1e-2 ... 3e-4`. The all-six external-leg permutation residual for `E3` is `4.39e-10`, and output tensor symmetry residual is `1.57e-10` at `3e-4`.
 
 Freeze:
 
-`PASS_EXACT_PROJECT_BEFORE_EXPAND_A_EQUALS_K_E_CUBIC_REDUCTION`
+`PASS_SCOPED_POLARIZED_EINSTEIN_E2_E3_NONZERO_AND_SYMMETRIC`
 
-`PASS_SCOPED_FIELDSPACE_CHRISTOFFEL_SECOND_POLARIZED_VARIATION`
+Guardrail:
 
-`NO_FULL_UNPROJECTED_H3_OR_S5_REQUIRED_FOR_PHYSICAL_U1W_B3`
+`DO_NOT_ZERO_E2_OR_E3_FROM_E1_SOFT_ZERO`.
 
-`NO_INDEPENDENT_GAMMA2_ANSATZ`.
+Therefore the Iteration-263 six-term projected `A3[s,a,b]` target is genuinely nontrivial: the `K0E3` sector and surviving `K1E2` sectors are not eliminated by the linear null-soft equation.
+
+This is a scoped vertex certificate, not a complete symbolic tensor library, not the final C5 comparator coordinate, and not a Candidate Gravity residual.
 
 ## Stable readiness rubric
 
@@ -64,7 +58,7 @@ Freeze:
 
 MODEL_READINESS: 24%
 
-Change from Iteration 262: **0 percentage points**. The numerator route is materially shorter and `Gamma2` is closed, but no complete C5 comparator coordinate or robust nonzero residual exists.
+Change from Iteration 263: **0 percentage points**. The physical nonlinear Einstein EOM portion of the C5 numerator is now explicitly nonzero and permutation-consistent, but the full projected `K/A` numerator, orbit-metric dressing, tensor reduction and final C5 coordinate remain open.
 
 ## Frozen guardrails retained
 
@@ -83,8 +77,9 @@ Change from Iteration 262: **0 percentage points**. The numerator route is mater
 - Iterations 257–259 fix physical orbit-metric inverse recursion through `Q2`; no independent `N2/Q2` ansatz.
 - Iteration 260 fixes exact coefficientwise weighted symmetry of complete same-parent `U1 W`; transpose mismatch is an implementation regression, not a new physical Ward FAIL.
 - Iteration 261 fixes physical multilinear polarization before any three-leg numerator claim.
-- Iteration 262 fixes the polarized `A` 3/7/13 bookkeeping, `Q1/Q2` recursion, and proves `Q3/N3` unnecessary because `A0=0`.
-- Iteration 263 fixes project-before-expand `A=K E` as the primary cubic construction, eliminates the need for full unprojected `H3/S5`, and freezes physical `Gamma2[x,y]` from the same DeWitt metric.
+- Iteration 262 fixes polarized `A` bookkeeping, `Q1/Q2` recursion, and proves `Q3/N3` unnecessary because `A0=0`.
+- Iteration 263 fixes project-before-expand `A=K E` as the primary cubic construction, eliminates full unprojected `H3/S5`, and freezes physical `Gamma2[x,y]`.
+- Iteration 264 fixes a scoped nonzero, permutation-symmetric physical `E2/E3` certificate and forbids zero-filling nonlinear EOM sectors from `E1[s]=0`.
 
 ## Retained comparator state
 
@@ -109,15 +104,15 @@ No robust Candidate Gravity residual exists.
 Fisher/resources: FORBIDDEN.  
 Heavy full C5 run: NOT AUTHORIZED.
 
-## Iteration 263 authority files
+## Iteration 264 authority files
 
-- `candidate_gravity/C5_VD_PROJECTED_HESSIAN_AND_GAMMA2_ITERATION263.md`
-- `candidate_gravity/code/iteration263_vd_projected_hessian_gamma2.py`
-- `candidate_gravity/results/iteration263_vd_projected_hessian_gamma2.json`
-- `research_log/2026-09-02_iteration_263_vd_projected_hessian_gamma2.md`
-- `recovery/RECOVERY_DELTA_ITERATION_263.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION263.md`
+- `candidate_gravity/C5_VD_POLARIZED_EINSTEIN_E2_E3_ITERATION264.md`
+- `candidate_gravity/code/iteration264_polarized_einstein_e2_e3.py`
+- `candidate_gravity/results/iteration264_polarized_einstein_e2_e3.json`
+- `research_log/2026-09-02_iteration_264_polarized_einstein_e2_e3.md`
+- `recovery/RECOVERY_DELTA_ITERATION_264.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION264.md`
 
-## Exact next gate — Iteration 264
+## Exact next gate — Iteration 265
 
-Construct polarized Einstein EOM coefficients `E2[x,y]` and `E3[s,a,b]` in frozen `D=4, Lambda=0, a=-1/2`; combine them with frozen `E1`, `R0/R1`, `P=partial R`, and `Gamma0/Gamma1/Gamma2` to build `K0,K1,K2`, then projected physical `A1,A2,A3`. In parallel derive physical `N1[x],N2[x,y]` from the same orbit metric and obtain `Q1,Q2` only through exact recursion. Assemble the 15 surviving null-soft terms of `B3[s,a,b]`. Tensor reduction remains forbidden until a nonzero physical numerator exists. Do not launch Fisher/resources, blind heavy full-C5 integration, or create `ANSATZ-003`.
+Construct physical `K0/K1/K2` on the same polarized three-leg family from frozen `R0/R1`, `P=partial R`, and `Gamma0/Gamma1/Gamma2`; combine them with frozen/certified `E1/E2/E3` to assemble physical `A1/A2/A3`. In parallel derive physical polarized `N1/N2` from the same orbit metric and obtain `Q1/Q2` only through exact recursion. Assemble all 15 surviving null-soft terms of `B3[s,a,b]`. Tensor reduction remains forbidden until an explicitly nonzero physical numerator exists. Do not launch Fisher/resources, blind heavy full-C5 integration, or create `ANSATZ-003`.
