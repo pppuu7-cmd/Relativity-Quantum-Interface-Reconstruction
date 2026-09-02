@@ -1,0 +1,20 @@
+{
+  "iteration": 288,
+  "model_readiness_percent": 24,
+  "workflow_run_id": 33679733272,
+  "workflow_conclusion": "success",
+  "normalization": "common upper-minus-lower timelike continuation divided by 2*pi*i after loop normalization i*pi^(D/2)",
+  "calibration": {
+    "tri_(0.0, 0.21)": {"eps_scan": [-3.4240128122990487,-3.3850957778326647,-3.365283050118738,-3.355292726593179],"exact_ordinary_triangle_cut":-3.345248144904426,"workflow_extrapolated":-3.3452403060197726},
+    "tri_(0.0, 0.41)": {"eps_scan": [-3.416209081614437,-3.3812942480281394,-3.363407088879372,-3.354360911554814],"exact_ordinary_triangle_cut":-3.3452481449044256,"workflow_extrapolated":-3.345239885278499},
+    "tri_(0.21, 0.41)": {"eps_scan": [-3.3841394769021096,-3.3658488178795656,-3.355828169299285,-3.3506069640728553],"exact_ordinary_triangle_cut":-3.3452481449044256,"workflow_extrapolated":-3.3452345731142836}
+  },
+  "triangle_sectors": {
+    "tri_(0.0, 0.21)": {"eps_scan": [-3.3899624711163687,-6.339240117030013,-12.245221876621946,-24.060921474988277],"workflow_polynomial_extrapolated_value":-31.445262906519414,"heldout_relative_max":3.4580402675172576e-11,"reflection_abs_residual":0.0},
+    "tri_(0.0, 0.41)": {"eps_scan": [0.32253255946699844,0.5165991150734445,0.9106631870668761,1.701652807439814],"workflow_polynomial_extrapolated_value":2.1956809696253403,"heldout_relative_max":3.9845306399710605e-11,"reflection_abs_residual":0.0},
+    "tri_(0.21, 0.41)": {"eps_scan": [-0.31335002721373056,-0.6232413928567614,-1.240483372117197,-2.4737934004409543],"workflow_polynomial_extrapolated_value":-3.244742835115325,"heldout_relative_max":2.9143788994899926e-11,"reflection_abs_residual":0.0}
+  },
+  "raw_workflow_classification": "PASS_COMPLETE_210_MONOMIAL_TRIANGLE_COMMON_HARD_CHANNEL_CUT_NONZERO",
+  "authority_status": "RAW_SCAN_ONLY__FINITE_POLYNOMIAL_EPS_EXTRAPOLATIONS_SUPERSEDED_BY_ITERATION289_LAURENT_POLE_AUDIT",
+  "guardrail": "ACTUAL_TRIANGLE_EPS_SCANS_SHOW_1_OVER_EPS_BEHAVIOR; DO_NOT_USE_WORKFLOW_POLYNOMIAL_EXTRAPOLATED_VALUES_AS_FINITE_PHYSICAL_CUT_COEFFICIENTS"
+}
