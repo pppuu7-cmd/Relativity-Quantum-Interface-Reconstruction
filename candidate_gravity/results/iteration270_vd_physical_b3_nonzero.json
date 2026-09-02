@@ -1,0 +1,45 @@
+{
+  "iteration": 270,
+  "model_readiness_percent": 24,
+  "A_layer": {
+    "A1_s": {"norm": 1.0006248362441143e-09, "endpoint_transpose_residual": 3.308722450212111e-20},
+    "A1_a": {"norm": 0.353890932538799, "endpoint_transpose_residual": 5.551115123125783e-17},
+    "A1_b": {"norm": 0.43736753997880967, "endpoint_transpose_residual": 2.7755575615628914e-17},
+    "A2_sa": {"norm": 0.747221739553916, "endpoint_transpose_residual": 3.023790395850767e-08},
+    "A2_sb": {"norm": 0.7529980726728123, "endpoint_transpose_residual": 1.4872659850895253e-07},
+    "A2_ab": {"norm": 0.6505045916228782, "endpoint_transpose_residual": 2.799507587553096e-08},
+    "A3_sab": {"norm": 2.2278189996613924, "endpoint_transpose_residual": 3.9191452139153427e-07},
+    "A3_permutation_residual": 1.3552531319405148e-10
+  },
+  "generic_partition_count": 19,
+  "surviving_nullsoft_partition_count": 15,
+  "soft_A1_four_term_B19_minus_B15_fro": 2.561796595808274e-08,
+  "soft_A1_four_term_B19_minus_B15_max": 1.105106806065237e-08,
+  "representatives": [
+    {"class": 1, "L": [], "A": ["s","a","b"], "R": [], "representative_norm": 1.8694069518231071, "endpoint_transpose_residual": 3.28863220488973e-07, "partner_norm": null},
+    {"class": 2, "L": ["s"], "A": ["a","b"], "R": [], "representative_norm": 0.5904024824387453, "endpoint_transpose_residual": 1.8829220960192572e-08, "partner_norm": 1.4163963082053221},
+    {"class": 3, "L": ["a"], "A": ["s","b"], "R": [], "representative_norm": 1.2262842185724419, "endpoint_transpose_residual": 2.252462103502495e-07, "partner_norm": 0.904193356547789},
+    {"class": 4, "L": ["b"], "A": ["s","a"], "R": [], "representative_norm": 1.179837544121413, "endpoint_transpose_residual": 4.037212736340834e-08, "partner_norm": 0.9624558526688236},
+    {"class": 5, "L": ["s","b"], "A": ["a"], "R": [], "representative_norm": 0.49756742573833224, "endpoint_transpose_residual": 5.04169371529084e-09, "partner_norm": 0.9101628293371566},
+    {"class": 6, "L": ["s","a"], "A": ["b"], "R": [], "representative_norm": 0.514955405594287, "endpoint_transpose_residual": 1.3188111352979703e-08, "partner_norm": 0.4778055733516777},
+    {"class": 7, "L": ["s"], "A": ["a"], "R": ["b"], "representative_norm": 0.3155077936066476, "endpoint_transpose_residual": 2.589053971213673e-11, "partner_norm": 0.5842029204090198},
+    {"class": 8, "L": ["s"], "A": ["b"], "R": ["a"], "representative_norm": 0.40952957804394563, "endpoint_transpose_residual": 6.478720337987909e-12, "partner_norm": 1.0528318322548265}
+  ],
+  "max_representative_endpoint_transpose_residual": 3.28863220488973e-07,
+  "B15_fro": 2.2209140980569817,
+  "B15_max": 1.3471946831867196,
+  "B15_endpoint_transpose_residual": 3.2491457432892723e-07,
+  "B15_8class_reconstruction_residual": 2.7755575615628914e-16,
+  "step_stability": [
+    {"h_A2": 0.001, "h_A3": 0.002, "B15_fro": 2.2209140431299237, "B15_max": 1.3471984952687102},
+    {"h_A2": 0.0007, "h_A3": 0.0015, "B15_fro": 2.220914195842971, "B15_max": 1.3471963910975209},
+    {"h_A2": 0.0005, "h_A3": 0.001, "B15_fro": 2.2209140980569817, "B15_max": 1.3471946831867196},
+    {"h_A2": 0.0003, "h_A3": 0.0008, "B15_fro": 2.220914221183744, "B15_max": 1.3471943411776506}
+  ],
+  "classification": "PASS_SCOPED_PHYSICAL_ROUTED_NULLSOFT_B3_EXPLICIT_NONZERO_AND_TRANSPOSE_VALIDATED",
+  "guardrail": "NONZERO_B3 IS A C5 NUMERATOR CERTIFICATE ONLY; DO NOT PROMOTE TO FINAL COMPARATOR OR CANDIDATE RESIDUAL BEFORE TENSOR REDUCTION_SOURCE_COMPLETION_AND_HARD_CHANNEL_PROJECTION",
+  "candidate_residual": false,
+  "tensor_reduction_now_authorized": true,
+  "heavy_full_C5_run_authorized": false,
+  "next_gate": 271
+}
