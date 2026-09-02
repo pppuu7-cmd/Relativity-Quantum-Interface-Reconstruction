@@ -1,0 +1,30 @@
+{
+  "iteration": 269,
+  "model_readiness_percent": 24,
+  "primary_density_correction": {
+    "Y_up": "g^{alpha beta}/sqrt(|g|) up to fixed overall sign",
+    "Y_down": "sqrt(|g|) g_{alpha beta}",
+    "Nhat_factorization": "Nhat=Y_up N_orb; N_orb=Y_down Nhat"
+  },
+  "single_mode_TT_density": {
+    "tr_H2": 1.0,
+    "correct_Ydown_t2_coefficient": "-(tr(H^2)/4) eta",
+    "superseded_wrong_coefficient": "+(tr(H^2)/4) eta"
+  },
+  "Q1": {
+    "s": {"norm": 1.5811155820548526, "inverse_residual": 1.1102230246251565e-16, "endpoint_transpose_residual": 1.4131840142539431e-10},
+    "a": {"norm": 2.6872621916132977, "inverse_residual": 1.1102230246251565e-16, "endpoint_transpose_residual": 6.456235546181688e-11},
+    "b": {"norm": 2.370195666799103, "inverse_residual": 1.1102230246251565e-16, "endpoint_transpose_residual": 1.1980483272111542e-10}
+  },
+  "Q2": {
+    "sa": {"N2_norm": 2.3195427489719034, "Q2_norm": 1.8689138370317695, "inverse_residual": 4.440892098500626e-16, "mixed_leg_exchange_residual": 4.400617648059324e-09, "N2_endpoint_transpose_residual": 3.5388358909926865e-08, "Q2_endpoint_transpose_residual": 4.489084737269167e-08, "wrong_density_N2_endpoint_transpose_residual": 0.031649142334666536},
+    "sb": {"N2_norm": 2.080911965664997, "Q2_norm": 3.5158966340802507, "inverse_residual": 3.3306690738754696e-16, "mixed_leg_exchange_residual": 3.3279112798823007e-09, "N2_endpoint_transpose_residual": 1.3773518048321165e-08, "Q2_endpoint_transpose_residual": 1.6677638714490683e-08, "wrong_density_N2_endpoint_transpose_residual": 0.21036222139225735},
+    "ab": {"N2_norm": 3.0307449035042686, "Q2_norm": 1.0700741893521344, "inverse_residual": 2.220446049250313e-16, "mixed_leg_exchange_residual": 1.0374170827942564e-09, "N2_endpoint_transpose_residual": 1.0408340855860843e-08, "Q2_endpoint_transpose_residual": 7.688903028157945e-09, "wrong_density_N2_endpoint_transpose_residual": 0.6280486228305016}
+  },
+  "classification": "PASS_PRIMARY_AUTHORITY_ORBIT_DENSITY_CORRECTION_AND_ROUTED_N2_Q2_TRANSPOSE_RESTORATION",
+  "supersedes": "Iteration 252 density representative and Iterations 258/259/268 second-order Norb/Q2 numerical values only; first-order TT deltaY, Q1, routing logic and inverse-recursion algebra remain valid",
+  "guardrail": "USE_Y_UP=g^-1/sqrt|g| AND Y_DOWN=sqrt|g|*g; DO_NOT_USE_THE_INVERTED_DENSITY_FACTOR",
+  "candidate_residual": false,
+  "heavy_run_authorized": false,
+  "next_gate": 270
+}
