@@ -5,81 +5,53 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 285**
+**Authoritative Candidate Gravity front:** **Iteration 286**
 
 ## Current scientific state
 
-Iterations 278–280 established translation-closed timelike C5 support with nonzero physical routed B3/orbit trace, non-scaleless bubble-a/bubble-b/triangle support and a rank-3 scalar retarded cut-support basis. Iteration 281 rejected a constant fitted-master surrogate. Iteration 282 exactly canonicalized the raised-index denominator sectors. Iteration 283 proved exact numerator degree ceilings: raised bubbles `<=4`, raised triangles `<=6`. Iteration 284 proved affine loop shifts preserve those ceilings and that the proposed denominator-only 9/50 sampling matrices are full rank.
+Iterations 278–280 established translation-closed timelike C5 support with nonzero physical routed `B3`/orbit trace, non-scaleless bubble-a/bubble-b/triangle support and a rank-3 scalar retarded cut-support basis. Iteration 281 rejected a constant fitted-master surrogate. Iteration 282 exactly canonicalized raised-index denominator sectors. Iteration 283 proved exact numerator degree ceilings (`<=4` for raised bubbles, `<=6` for raised triangles). Iteration 284 proved affine loop shifts preserve those ceilings. Iteration 285 then evaluated the actual denominator-stripped same-parent primitive numerator oracle and corrected the insufficient denominator-only 9/50 basis claim.
 
-Iteration 285 now evaluates the **actual denominator-stripped same-parent primitive numerator oracle** and shows that the 9/50 basis-sufficiency claim is false, while the exact degree ceilings and denominator canonicalization remain valid.
+Iteration 286 closes the remaining actual-oracle numerator reconstruction problem for every non-scaleless translation-closed family.
 
-## Iteration 285 — actual numerator oracle and basis correction
+## Iteration 286 — complete non-scaleless numerator reconstruction
 
-The exact 23 primitive branches are obtained by splitting
+Newly certified raised-triangle sectors in complete fixed-coordinate total-degree `<=6` / 210-monomial bases:
 
-- `Q0=-eta/p^2`,
-- `Q1=-Q0 N1 Q0`,
-- `Q2=Q0(N1 Q0 N1 + N1 Q0 N1 - N2)Q0`
+- `(0,0.21)`: train rank `210/210`, condition number `6935.030221597978`, held-out relative max residual `2.7698947208544858e-11`;
+- `(0.21,0.41)`: train rank `210/210`, condition number `8545.513087076448`, held-out relative max residual `1.0083215501606952e-11`.
 
-before sector summation.
+Retain from Iteration 285:
 
-The primitive oracle reproduces the direct translation-closed B3 object with
-
-- `tr B3 = 0.9605914097678994`;
-- `||B3||_F = 1.3106212324929962`;
-- primitive-vs-direct matrix residual `1.32e-12`.
+- triangle `(0,0.41)`: degree<=6 / 210, held-out relative max residual `8.872284498320589e-11`;
+- bubble-a: degree<=4 / 70, held-out relative max residual `9.296403942129201e-10`;
+- bubble-b: degree<=4 / 70, held-out relative max residual `2.223469270656875e-9`.
 
 Freeze:
 
-`PASS_EXACT_DENOMINATOR_STRIPPED_SAME_PARENT_PRIMITIVE_NUMERATOR_ORACLE`.
+`PASS_COMPLETE_NONSCALELESS_ACTUAL_ORACLE_NUMERATOR_RECONSTRUCTION_ALL_BUBBLE_AND_TRIANGLE_SECTORS`.
 
-### Basis audit
+The null raised bubbles and single squared-denominator sector remain scaleless in the frozen massless dimensional-regularization treatment.
 
-The Iteration-283/284 denominator-only scalar bases fail on held-out oracle points:
+## Retained Iteration-285 correction
 
-- bubble-a, 9 columns: relative max error `0.9481450100`;
-- bubble-b, 9 columns: relative max error `0.6811050545`;
-- raised triangle `(0,0.41)`, 50 columns: relative max error `33.2055942841`.
+The denominator-only scalar bases of dimensions 9 (bubble) and 50 (triangle) are **not** complete for the actual same-parent numerator because soft momentum and TT polarization structures remain in the numerator. Do not use them for tensor/IBP reduction.
 
-Conservative full fixed-coordinate polynomial bases at the already-certified degree ceilings pass:
-
-- bubble-a, degree<=4 / 70 monomials: relative max residual `9.30e-10`;
-- bubble-b, degree<=4 / 70 monomials: relative max residual `2.22e-9`;
-- raised triangle `(0,0.41)`, degree<=6 / 210 monomials: relative max residual `8.87e-11`.
-
-Freeze:
-
-`C5-NG-018 — DENOMINATOR_TOPOLOGY_DOES_NOT_EXHAUST_SAME_PARENT_NUMERATOR_TENSOR_DEPENDENCE`.
-
-Freeze:
-
-`PASS_ACTUAL_NUMERATOR_ORACLE_AND_FAIL_TOPOLOGY_ONLY_9_50_BASIS_WITH_COMPLETE_70_210_RECONSTRUCTION_CERTIFICATES`.
-
-The reason is structural: the same-parent numerator retains dependence on the null-soft momentum and TT polarization tensors. Propagator topology alone does not determine a complete numerator basis.
-
-## Superseded vs retained
-
-Superseded only:
-
-- Iterations 283-284 claim that basis dimensions 9 and 50 are sufficient for the actual numerator reconstruction.
-
-Retained:
+Retain instead:
 
 - exact translation closure;
-- translation-closed B3 nonzero;
-- timelike B3/orbit trace nonzero;
+- nonzero translation-closed and timelike `B3`/orbit trace;
 - 23 primitive denominator branches;
-- raised bubble/triangle topology and no closed box master;
-- canonical raised-index sectors;
-- exact numerator degree ceilings `4/6`;
-- affine loop-shift degree preservation;
-- scalar hard-channel cut support.
+- raised bubble/triangle topology with no closed box master;
+- canonical repeated-index sectors;
+- exact degree ceilings `4/6`;
+- actual same-parent oracle;
+- complete 70/210 held-out reconstruction certificates.
 
 ## Current C5 blocker
 
-`BLOCKED_COMPLETE_TENSOR_AWARE_NUMERATOR_RECONSTRUCTION_AND_IBP_REDUCTION`.
+`BLOCKED_IBP_TENSOR_MOMENT_REDUCTION_AND_HARD_CHANNEL_COEFFICIENT_EXTRACTION`.
 
-The bubble sectors now have complete degree<=4 held-out reconstruction certificates. One of three raised-triangle sectors has a complete degree<=6 held-out reconstruction certificate. The remaining two triangle sectors and a complete IBP/tensor-moment or explicitly covariant representation are still required before physical discontinuity coefficients may be frozen.
+Numerator existence/completeness is no longer the blocker. The remaining task is to export the actual complete polynomial coefficients, map them to tensor moments (or an explicitly complete covariant basis including soft momentum and TT polarizations), perform dimensional-regularization tensor/IBP reduction inside the frozen raised bubble/triangle families, and extract the retarded logarithmic/discontinuity coefficient functions.
 
 ## Stable readiness rubric
 
@@ -92,7 +64,11 @@ The bubble sectors now have complete degree<=4 held-out reconstruction certifica
 
 MODEL_READINESS: 24%
 
-Change from Iteration 284: **0 percentage points**. Iteration 285 is a reconstruction correction and completeness certificate, not yet a linked comparator coordinate or comparator-subtracted residual.
+Change from Iteration 285: **0 percentage points**. A real reconstruction blocker closed, but no linked comparator coordinate or comparator-subtracted robust residual has yet been obtained.
+
+## Classification discipline
+
+Iteration 286 is a scoped numerator-reconstruction PASS. It is not a Candidate Gravity consistency PASS/FAIL, not exact comparator identity, not regime-specific non-identifiability, not near-degeneracy, and not a novelty certificate.
 
 ## Retained guardrails
 
@@ -106,29 +82,29 @@ Change from Iteration 284: **0 percentage points**. Iteration 285 is a reconstru
 - Do not reintroduce box masters from unclosed routing.
 - Do not infer master coefficients by fitting pre-integration family traces to scalar cut shapes.
 - Apply every loop shift/reflection to the primitive numerator before sector summation.
-- Retain degree ceilings `<=4` for raised bubbles and `<=6` for raised triangles unless the parent dynamics changes.
-- Full rank of a proposed sampling matrix does not prove basis completeness; actual same-parent held-out oracle residuals are mandatory.
-- Do not use the superseded denominator-only 9/50 bases for tensor/IBP reduction.
+- Retain degree ceilings `<=4` for raised bubbles and `<=6` for raised triangles unless parent dynamics changes.
+- Full rank of a proposed sampling matrix does not prove basis completeness; held-out actual same-parent oracle residuals are mandatory.
+- Do not use superseded 9/50 denominator-only numerator bases.
 
 ## Candidate state
 
 No robust Candidate Gravity residual exists.  
 `ANSATZ-003`: NOT CREATED.  
 Fisher/resources: FORBIDDEN.  
-Blind heavy full C5 run: NOT AUTHORIZED.
+Blind heavy full-C5 run: NOT AUTHORIZED.
 
-## Iteration 285 authority files
+## Iteration 286 authority files
 
-- `candidate_gravity/C5_ACTUAL_NUMERATOR_BASIS_AUDIT_ITERATION285.md`
-- `candidate_gravity/code/iteration285_actual_numerator_basis_audit.py`
-- `candidate_gravity/results/iteration285_actual_numerator_basis_audit.json`
-- `research_log/2026-09-02_iteration_285_actual_numerator_basis_audit.md`
-- `candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_285.md`
+- `candidate_gravity/C5_COMPLETE_TRIANGLE_RECONSTRUCTION_ITERATION286.md`
+- `candidate_gravity/code/iteration286_complete_triangle_reconstruction.py`
+- `candidate_gravity/results/iteration286_complete_triangle_reconstruction.json`
+- `research_log/2026-09-02_iteration_286_complete_non_scaleless_numerator_reconstruction.md`
+- `candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_286.md`
 
-## Exact next gate — Iteration 286
+## Exact next gate — Iteration 287
 
-1. Complete degree<=6 / 210-monomial held-out reconstruction for raised-triangle sectors `(0,0.21)` and `(0.21,0.41)`.
-2. Preserve the validated 70-monomial bubble-a and bubble-b reconstructions.
-3. Convert all complete polynomial coefficients into an IBP/tensor-moment representation, or construct an explicitly complete covariant basis including the soft momentum and TT polarization tensors and cross-check it against the 70/210 oracle.
-4. Only after this completeness step extract the hard-channel logarithmic/discontinuity coefficient functions.
-5. Source/Ward/contact completion, Lorentzian comparator quotient, Fisher/resources and `ANSATZ-003` remain downstream/forbidden.
+1. Export the actual complete 70-monomial bubble-a/bubble-b coefficient vectors rather than only residual metrics.
+2. Map them losslessly to symmetric tensor moments of ranks `0..4` for `1/[(l^2)^2((l+q)^2)]`.
+3. Perform dimensional-regularization tensor/IBP reduction and extract the retarded logarithmic/discontinuity coefficient, verifying loop-reflection invariance and scaleless cancellations.
+4. Repeat for all three degree<=6 / 210 triangle sectors with tensor ranks `0..6`.
+5. Only after physical coefficient extraction proceed to source/Ward/contact completion and the Lorentzian comparator quotient. `ANSATZ-003`, Fisher/resources and blind heavy full-C5 remain forbidden.
