@@ -1,0 +1,27 @@
+name: rqir-iteration289-triangle-ir-pole-audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration289_triangle_ir_pole_audit.py'
+      - '.github/workflows/rqir-iteration289-triangle-ir-pole-audit.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration289:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy
+      - name: Run Iteration 289 IR-pole audit
+        run: |
+          python candidate_gravity/code/iteration289_triangle_ir_pole_audit.py | tee iteration289_result.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration289-result
+          path: iteration289_result.json
