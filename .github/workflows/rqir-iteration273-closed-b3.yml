@@ -1,0 +1,32 @@
+name: rqir-iteration273-closed-b3
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration273-closed-b3.yml'
+      - 'candidate_gravity/code/iteration273_closed_kinematics_physical_b3.py'
+      - 'candidate_gravity/code/iteration270_vd_physical_b3_nonzero.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  closed-b3:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numpy
+        run: python -m pip install numpy
+      - name: Run Iteration 273 closed B3 gate
+        run: |
+          mkdir -p candidate_gravity/results
+          python candidate_gravity/code/iteration273_closed_kinematics_physical_b3.py | tee candidate_gravity/results/iteration273_closed_kinematics_physical_b3.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration273-closed-b3
+          path: candidate_gravity/results/iteration273_closed_kinematics_physical_b3.json
