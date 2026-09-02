@@ -1,0 +1,30 @@
+{
+  "iteration": 272,
+  "model_readiness_percent": 24,
+  "input_authority": [
+    "Iteration 270 explicit nonzero routed open B3 kernel",
+    "Iteration 271 open-B3 resolvent-rank census"
+  ],
+  "iteration270_total_shift": [1.1, 0.8, 0.85, 0.8],
+  "iteration270_total_shift_minkowski_square": 0.7925,
+  "iteration270_is_translation_closed": false,
+  "trace_closure_identity": "Tr B3 Fourier sector carries (2pi)^4 delta^4(k_s+k_a+k_b)",
+  "classification": "PASS_EXACT_TRANSLATION_TRACE_CLOSURE_GATE",
+  "status_of_iteration270_nonzero": "VALID_OFF_CONSERVATION_SURFACE_PARENT_KERNEL_NONIDENTICAL_ZERO_CERTIFICATE; NOT_YET_PHYSICAL_THREE_POINT_NONZERO",
+  "closed_test_kinematics": {
+    "k_s": [1.0, 0.0, 0.0, 1.0],
+    "k_a": [0.25, 0.6, 0.3, 0.15],
+    "k_b": [-1.25, -0.6, -0.3, -1.15],
+    "sum": [0.0, 0.0, 0.0, 0.0],
+    "k_s_sq": 0.0,
+    "k_a_sq": 0.41,
+    "k_b_sq": 0.21
+  },
+  "operational_status": "BLOCKED_PHYSICAL_B3_NONZERO_UNTIL_K_SUM_ZERO_RERUN",
+  "guardrails": [
+    "DO_NOT_CALL_K_NONZERO_OPEN_KERNEL_A_PHYSICAL_THREE_POINT_COMPARATOR",
+    "DO_NOT_APPLY_LOOP_TRACE_MASTER_REDUCTION_BEFORE_GLOBAL_MOMENTUM_CLOSURE",
+    "ITERATION270_REMAINS_A_VALID_NONIDENTICAL_ZERO_CERTIFICATE_FOR_THE_PARENT_KERNEL"
+  ],
+  "next_gate": "rerun the exact Iteration-270 routed A/Q/B3 construction with k_b=-(k_s+k_a), independent TT polarization for b, and K=0; require nonzero B3 plus permutation/endpoint checks on the conservation surface before p-dependent integrand reconstruction"
+}
