@@ -1,0 +1,23 @@
+{
+  "iteration": 275,
+  "model_readiness_percent": 24,
+  "single_squared_family_count": 1,
+  "raised_bubble_invariant_classes": {
+    "a:q2=0.41": 4,
+    "b:q2=0.21": 4,
+    "s:q2=0.0": 2
+  },
+  "raised_triangle_invariant_classes": {
+    "(0.0, 0.21, 0.41)": 12
+  },
+  "massless_DR_scaleless_branch_count": 3,
+  "nontrivial_branch_count_before_tensor_reduction": 20,
+  "nontrivial_scalar_master_kinematic_families": [
+    "raised bubble with q^2=k_a^2=0.41",
+    "raised bubble with q^2=k_b^2=0.21",
+    "raised triangle with edge invariants (k_s^2,k_b^2,k_a^2)=(0,0.21,0.41)"
+  ],
+  "classification": "PASS_SCOPED_CLOSED_B3_THREE_NONTRIVIAL_SCALAR_MASTER_KINEMATIC_FAMILIES",
+  "guardrail": "SCALAR_FAMILY_COLLAPSE_DOES_NOT_ALLOW_BRANCHWISE_DIVERGENCE_OR_LOG_CLAIMS_BEFORE_COMBINED_TENSOR_NUMERATOR_REDUCTION",
+  "next_gate": "freeze exact numerator polynomial-degree bounds and reconstruct combined coefficients for the two bubble and one triangle kinematic families before evaluating master integrals"
+}
