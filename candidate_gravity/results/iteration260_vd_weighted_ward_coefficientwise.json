@@ -1,0 +1,13 @@
+{
+  "seed": 260,
+  "dimension": 6,
+  "max_Q0_sym": 6.938893903907228e-18,
+  "max_Q1_sym": 6.938893903907228e-18,
+  "max_Q2_sym": 1.0408340855860843e-17,
+  "pair_Q1A2Q0_vs_Q0A2Q1": 2.8189256484623115e-18,
+  "pair_Q2A1Q0_vs_Q0A1Q2": 3.550762114890027e-18,
+  "term_Q0A3Q0_sym": 6.938893903907228e-18,
+  "term_Q1A1Q1_sym": 1.3010426069826053e-18,
+  "max_B3_sym": 1.0408340855860843e-17,
+  "interpretation": "Regression certificate only. Exact coefficientwise symmetry follows analytically from symmetric N_orb(t), Q(t)=N_orb(t)^-1, and complete same-parent A(t)."
+}
