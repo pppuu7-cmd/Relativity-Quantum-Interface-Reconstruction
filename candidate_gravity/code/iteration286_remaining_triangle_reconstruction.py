@@ -64,3 +64,5 @@ result={
 assert result['all_three_full_rank']
 assert result['worst_all_three_heldout_rel_max'] < 1e-7
 print(json.dumps(result,indent=2,sort_keys=True))
+
+# Workflow trigger marker: authoritative Iteration 286 execution.
