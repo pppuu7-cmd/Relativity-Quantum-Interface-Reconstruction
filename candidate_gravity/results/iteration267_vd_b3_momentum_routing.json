@@ -1,0 +1,21 @@
+{
+  "candidate_residual": false,
+  "classification": "PASS_EXACT_B3_CONDENSED_INDEX_MOMENTUM_SUPPORT",
+  "guardrail": "NO_FIXED_PLUS_K_MATRIX_TRANSPOSE_AS_KERNEL_TRANSPOSE",
+  "independent_representatives": 8,
+  "iteration": 267,
+  "kernel_transpose_rule": "<p+K|X|p>^T = <p|X^T|p+K>; in canonical forward orientation X^T carries -K and the endpoint momenta are exchanged.",
+  "model_readiness_percent": 24,
+  "real_background_rule": "For h(-k)=h(k)^*, a transpose partner in canonical forward orientation requires endpoint reversal together with k_s,k_a,k_b -> -k_s,-k_a,-k_b (and complex conjugation where appropriate); a raw 4x4 transpose at unchanged p and unchanged +k legs is not the condensed-index kernel transpose.",
+  "representatives": [
+    {"representative":"Q0 A3[s,a,b] Q0","forward_kernel":"<p+k_s+k_a+k_b|X|p>","Q0_momenta":["p","p+k_s+k_a+k_b"]},
+    {"representative":"Q1[s] A2[a,b] Q0","forward_kernel":"<p+k_a+k_b+k_s|X|p>","Q0_momenta":["p"]},
+    {"representative":"Q1[a] A2[s,b] Q0","forward_kernel":"<p+k_s+k_b+k_a|X|p>","Q0_momenta":["p"]},
+    {"representative":"Q1[b] A2[s,a] Q0","forward_kernel":"<p+k_s+k_a+k_b|X|p>","Q0_momenta":["p"]},
+    {"representative":"Q2[s,a] A1[b] Q0","forward_kernel":"<p+k_b+k_s+k_a|X|p>","Q0_momenta":["p"]},
+    {"representative":"Q2[s,b] A1[a] Q0","forward_kernel":"<p+k_a+k_s+k_b|X|p>","Q0_momenta":["p"]},
+    {"representative":"Q1[s] A1[a] Q1[b]","forward_kernel":"<p+k_b+k_a+k_s|X|p>","Q0_momenta":[]},
+    {"representative":"Q1[s] A1[b] Q1[a]","forward_kernel":"<p+k_a+k_b+k_s|X|p>","Q0_momenta":[]}
+  ],
+  "total_external_shift": "K=k_s+k_a+k_b"
+}
