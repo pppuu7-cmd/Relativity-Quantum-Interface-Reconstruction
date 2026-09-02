@@ -5,11 +5,11 @@
 **MODEL_READINESS:** **24%** under the frozen model-only rubric  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none — intentionally withheld  
-**Authoritative Candidate Gravity front:** **Iteration 259**
+**Authoritative Candidate Gravity front:** **Iteration 260**
 
 ## Scientific state in one sentence
 
-The residual funnel remains exhausted under current comparator authority, so the active program remains finite Vilkovisky C5 authority improvement: Iteration 259 constructs and independently validates the physical same-parent second-order inverse-orbit coefficient `Q2` from the Iteration-258 `N2` through exact inverse recursion, eliminating any independent resolvent freedom; the full weighted cubic tensor numerator and physical C5 comparator coordinate remain open.
+The residual funnel remains exhausted under current comparator authority, so the active program remains finite Vilkovisky C5 authority improvement: Iteration 260 proves that the weighted-transpose Ward condition of the complete same-parent `U1 W=Q A Q` sector is an exact coefficientwise identity rather than an independent TT numerical gate; physical `A1,A2,A3`, the nonzero cubic numerator, tensor reduction, source/contact completion and physical C5 comparator coordinate remain open.
 
 ## Stable readiness rubric
 
@@ -24,7 +24,7 @@ Authority: `candidate_gravity/MODEL_READINESS_RUBRIC.md`.
 
 MODEL_READINESS: 24%
 
-Change from Iteration 258: **0 percentage points**. A genuine second-order physical inverse-resolvent ingredient is now constructively fixed and independently validated, but no complete physical comparator coordinate or robust nonzero residual closed a readiness-rubric block.
+Change from Iteration 259: **0 percentage points**. A genuine Ward/consistency sub-uncertainty is removed analytically, but no complete physical comparator coordinate, robust nonzero residual, or full readiness-rubric block closes.
 
 ## Non-negotiable frozen rules
 
@@ -49,6 +49,8 @@ Change from Iteration 258: **0 percentage points**. A genuine second-order physi
 - Iteration 258 fixes the physical second-order orbit metric in the TT channel through `N_orb=V Nhat`, `V=W^-1`: `V0=eta`, `V1=epsilon`, `V2=(tr(H^2)/4)eta`, and `N2=V0Nhat2+V1Nhat1+V2Nhat0`.
 - Iteration 258 freezes `NO_INDEPENDENT_NORB2_OR_Q2_ANSATZ`.
 - Iteration 259 directly validates the physical inverse coefficient against `Q(t)=N_orb(t)^-1`; retain `NO_INDEPENDENT_Q2_ANSATZ`.
+- Iteration 260 freezes `PASS_EXACT_U1W_COEFFICIENTWISE_WEIGHTED_WARD_IDENTITY`: for the complete same-parent sector, `B(t)=U1(t)W(t)=Q(t)A(t)Q(t)` is symmetric for every background amplitude because `Q(t)^T=Q(t)` and `A(t)^T=A(t)`.
+- Iteration 260 freezes `NO_INDEPENDENT_TT_TRANSPOSE_GATE_FOR_COMPLETE_U1W_COEFFICIENTS`: a component TT transpose mismatch is a regression/index/convention bug to debug, not a new physical Ward FAIL.
 - Do not redefine the frozen linked observable to match a convenient amplitude, relational observable, asymptotic observable, or scalar-radiation proxy.
 - `T_cut` remains operationally non-executable with current published authority; authority improvement, not proxy search, is the active program.
 
@@ -70,41 +72,45 @@ Finite Vilkovisky/unique-action completion is the active authority-improvement r
 ### Asymptotic safety / nonlocal / proxy routes
 Retain their frozen blockers and negative certificates. No proxy may replace the frozen comparator identity.
 
-## Iteration 259 exact scoped result
+## Iteration 260 exact result
 
-For the already-fixed physical orbit metric
+Retain
 
-`N_orb(t)=N0+tN1+t^2N2+...`,
+`B(t)=U1(t)W(t)=Q(t)A(t)Q(t)`,
 
-set
+with `Q(t)=N_orb(t)^-1` and
 
-`Q(t)=N_orb(t)^-1=Q0+tQ1+t^2Q2+...`.
+`A_{gamma delta}(t)=R^i_gamma(D_iR^j_delta)E_j=-R^i_gamma R^j_delta D_iE_j`.
 
-Exact coefficient matching gives
+The physical orbit metric is symmetric for each background amplitude, so `Q(t)^T=Q(t)`. The complete same-parent `A(t)` is symmetric because `D_iE_j=D_iD_jS` is the torsion-free covariant Hessian of the scalar parent action. Therefore
 
-`Q0=N0^-1`,
+`B(t)^T=B(t)`
 
-`Q1=-Q0N1Q0`,
+identically, and formal-series coefficient matching gives
 
-`Q2=Q0N1Q0N1Q0-Q0N2Q0`.
+`B_n^T=B_n`
 
-A finite-amplitude TT certificate directly inverting the same physical `N_orb(t)` agrees at step `1e-4` with
+for every `n`, including `B3`.
 
-`max|Q1_direct-Q1_recursion|=3.2350440104522704e-8`,
+Retain exactly
 
-`max|Q2_direct-Q2_recursion|=6.316712886089704e-8`,
+`A3=K0E3+K1E2+K2E1`.
 
-and `||Q2||_F=3.90439593779004`.
+The reproducible seeded regression certificate gives
+
+`max|B3-B3^T|=1.0408340855860843e-17`,
+
+with transpose-pair residuals `2.8189256484623115e-18` and `3.550762114890027e-18`.
 
 Freeze:
 
-`PASS_SCOPED_PHYSICAL_Q2_RECURSION_AND_DIRECT_INVERSE_VALIDATION`
+`PASS_EXACT_U1W_COEFFICIENTWISE_WEIGHTED_WARD_IDENTITY`
 
-and retain
+and
 
-`NO_INDEPENDENT_Q2_ANSATZ`.
+`NO_INDEPENDENT_TT_TRANSPOSE_GATE_FOR_COMPLETE_U1W_COEFFICIENTS`.
 
-This is a scoped comparator-authority PASS, not a C5 comparator coordinate, Candidate Gravity residual, exact comparator identity, near-degeneracy, regime-specific non-identifiability, or consistency FAIL.
+This is an exact identity within the complete same-parent `U1 W` sub-sector, not an exact Candidate-vs-GR comparator identity, not a complete C5 Ward/positivity/causality closure, not regime-specific non-identifiability, near-degeneracy, consistency FAIL, or a novelty certificate.
 
 ## Candidate state
 
@@ -116,18 +122,19 @@ Heavy full C5 run: NOT AUTHORIZED.
 
 ## Latest authority files
 
-### Iteration 259
-- `candidate_gravity/C5_VD_PHYSICAL_Q2_ITERATION259.md`
-- `candidate_gravity/code/iteration259_vd_physical_q2.py`
-- `candidate_gravity/results/iteration259_vd_physical_q2.json`
-- `research_log/2026-09-02_iteration_259_vd_physical_q2.md`
-- `recovery/RECOVERY_DELTA_ITERATION_259.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION259.md`
+### Iteration 260
+- `candidate_gravity/C5_VD_COEFFICIENTWISE_WEIGHTED_WARD_CLOSURE_ITERATION260.md`
+- `candidate_gravity/code/iteration260_vd_weighted_ward_coefficientwise.py`
+- `candidate_gravity/results/iteration260_vd_weighted_ward_coefficientwise.json`
+- `research_log/2026-09-02_iteration_260_vd_weighted_ward_closure.md`
+- `recovery/RECOVERY_DELTA_ITERATION_260.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION260.md`
 
-## Immediate next scientific priority — Iteration 260
+## Immediate next scientific priority — Iteration 261
 
-1. Complete the same-parent physical coefficients `A1,A2,A3`, retaining exactly `A3=K0E3+K1E2+K2E1`.
-2. Assemble all six terms of `B3=[U1W]_3` using only the now-frozen physical `Q0,Q1,Q2`.
-3. Apply the weighted pairwise transpose/index/TT certificate before tensor reduction.
-4. Do not test ordinary `U1` symmetry and do not introduce any independent inverse-resolvent coefficient.
-5. Do not launch heavy integration, Fisher/resources, or create `ANSATZ-003`.
+1. Construct the physical same-parent values of `A1,A2,A3`, retaining exactly `A3=K0E3+K1E2+K2E1`.
+2. Use the exact identity `A=-R R(D E)` as an independent derivation/cross-check against direct `R.(D R).E` where it reduces component work.
+3. Assemble the physical six-term `B3` using only frozen physical `Q0,Q1,Q2`.
+4. Treat weighted transpose as a regression/debug check, not a separate scientific gate.
+5. Tensor reduction remains forbidden until a nonzero physical numerator exists.
+6. Do not launch Fisher/resources, a blind heavy full-C5 run, or create `ANSATZ-003`.
