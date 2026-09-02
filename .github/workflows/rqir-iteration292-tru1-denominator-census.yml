@@ -1,0 +1,27 @@
+name: rqir-iteration292-tru1-denominator-census
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration292_complete_tru1_denominator_census.py'
+      - '.github/workflows/rqir-iteration292-tru1-denominator-census.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration292:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy
+      - name: Run Iteration 292 complete TrU1 denominator census
+        run: |
+          python candidate_gravity/code/iteration292_complete_tru1_denominator_census.py | tee iteration292_result.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration292-result
+          path: iteration292_result.json
