@@ -1,0 +1,22 @@
+{
+  "iteration": 270,
+  "scope": "exact condensed-index/Fourier routing of projected A=K E before numerical K/A evaluation",
+  "identity": "A_{gamma delta}=K^j_{gamma delta} E_j",
+  "routing_rule": "for K_m[S] E_n[T], p_out-p_in=k_S+q_j and the contracted EOM momentum is q_j=k_T, hence total support k_S+k_T",
+  "checks": {
+    "A1_s_nullsoft_survivors": 0,
+    "A2_sa_nullsoft_survivors": 2,
+    "A2_sb_nullsoft_survivors": 2,
+    "A2_ab_survivors": 3,
+    "A3_sab_nullsoft_survivors": 6,
+    "B3_independent_forward_representatives": 8,
+    "B3_total_support": "k_s+k_a+k_b"
+  },
+  "critical_consequence": "K_m must retain the momentum q_j of its contracted field/EOM index until contraction with E[T]; a K_m kernel labelled only by incoming orbit momentum and explicit background subset S is under-specified",
+  "status": [
+    "PASS_EXACT_PROJECTED_A_CONTRACTED_FIELD_MOMENTUM_ROUTING",
+    "NO_DROP_CONTRACTED_EOM_MOMENTUM_IN_K_KERNEL",
+    "NO_PREMATURE_LOCAL_MATRIX_K_TIMES_E_AS_PHYSICAL_A"
+  ],
+  "classification": "implementation/provenance gate; not consistency FAIL, not exact comparator identity, not residual"
+}
