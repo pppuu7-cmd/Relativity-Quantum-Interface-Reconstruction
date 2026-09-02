@@ -1,0 +1,40 @@
+{
+  "iteration": 291,
+  "model_readiness_percent": 24,
+  "workflow_run_id": 33684645434,
+  "workflow_job_id": 100429069663,
+  "workflow_artifact_id": 9867610123,
+  "workflow_artifact_sha256": "9d223da448457b5f01e55b0c9cd86791c92df673212e369a8d8fe3b01c160f09",
+  "identity": "U1 = B Y_down with B=U1 W=Q A Q",
+  "translation_closed": true,
+  "old_proxy_trace_B3": {"real": 0.9605914180462887, "imag": 0.0},
+  "flat_weight_trace_B3_Y0": {"real": 0.1071384536577547, "imag": 0.0},
+  "weight_dressing_sum": {"real": 0.6977901599155829, "imag": 0.0},
+  "complete_cubic_trace_U1_at_fixed_loop_momentum": {"real": 0.8049286135733377, "imag": 0.0},
+  "components": {
+    "B3_Y0": {"real": 0.1071384536577547, "imag": 0.0, "abs": 0.1071384536577547},
+    "B2_sa_Y1_b": {"real": 0.12881941529711502, "imag": 0.0, "abs": 0.12881941529711502},
+    "B2_sb_Y1_a": {"real": 0.0928494721362878, "imag": 0.0, "abs": 0.0928494721362878},
+    "B2_ab_Y1_s": {"real": 0.2229526110219082, "imag": 0.0, "abs": 0.2229526110219082},
+    "B1_s_Y2_ab": {"real": -2.387836215352074e-16, "imag": 0.0, "abs": 2.387836215352074e-16},
+    "B1_a_Y2_sb": {"real": 0.2437591436830562, "imag": 0.0, "abs": 0.2437591436830562},
+    "B1_b_Y2_sa": {"real": 0.009409517777215947, "imag": 0.0, "abs": 0.009409517777215947}
+  },
+  "Y0": [[-1.0,0.0,0.0,0.0],[0.0,1.0,0.0,0.0],[0.0,0.0,1.0,0.0],[0.0,0.0,0.0,1.0]],
+  "max_Y1_minus_TT_polarization_abs": 7.22503168404387e-11,
+  "soft_B1_fro": 4.1536937616951794e-09,
+  "provenance": {
+    "B3_background_degree": 3,
+    "B3_EOM_degree": 1,
+    "effective_action_sector": "linear-EOM connection sector -(i/2) Tr U1 dressed to total curvature/background order 3",
+    "not_equal_to": "cubic-EOM sector +(i/2)Tr(U1 U2)-(i/6)Tr(U1^3)"
+  },
+  "classification": "PASS_EXACT_U1_TRACE_WEIGHT_COMPLETION_FORMULA_AND_B3_EOM_DEGREE_PROVENANCE",
+  "candidate_residual": false,
+  "guardrails": [
+    "ITERATIONS278_289_TRACE_B3_RESULTS_ARE_WEIGHTED_KERNEL_PROXY_RESULTS_NOT_TR_U1_AUTHORITY",
+    "DO_NOT_USE_TRACE_B3_MASTER_COEFFICIENTS_AS_THE_LINEAR_EOM_EFFECTIVE_ACTION_SECTOR_BEFORE_YDOWN_WEIGHT_COMPLETION",
+    "DO_NOT_CONFUSE_BACKGROUND_CUBIC_B3_WITH_EOM_DEGREE3_COMPOSITE_TRACES"
+  ],
+  "next_gate": "reconstruct the p-dependent complete [Tr U1]_{sab} numerator with Y_down convolution terms, then redo denominator-family/tensor/IR-pole audit for the e=1,c=2 sector before source projection; e=2 and e=3 connection sectors remain separately open"
+}
