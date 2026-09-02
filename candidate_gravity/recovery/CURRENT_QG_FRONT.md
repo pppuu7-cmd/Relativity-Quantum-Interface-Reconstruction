@@ -5,79 +5,59 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 271**
+**Authoritative Candidate Gravity front:** **Iteration 273**
 
 ## Current scientific state
 
-The active program remains finite Vilkovisky C5 authority improvement. Iterations 261–267 fixed physical multilinear polarization, null-soft 19-to-15 reduction, project-before-expand `A=K E`, physical `Gamma2`, nonzero Einstein `E2/E3`, exact `K0/K1/K2` 2/4/7 primitive library, the 28-primitive null-soft `A3` target, the exact 15-to-8 `B3` transpose-class reduction, and condensed-index/Fourier endpoint routing. Iteration 268 instantiated exact routed inverse recursion. Iteration 269 corrected the orbit-density orientation
+The active program remains finite Vilkovisky C5 authority improvement. Iterations 261–269 fixed the polarized same-parent construction, null-soft bookkeeping, field-space/orbit density conventions, exact routed inverse recursion and endpoint-transpose rules. Iteration 270 constructed the full routed null-soft cubic parent kernel `B3=[Q A Q]_3` and found it explicitly nonzero at generic `K!=0`; that result remains valid only as an off-conservation-surface parent-kernel nonidentity certificate after the translation-closure correction below.
 
-`Y^up = g^-1/sqrt(|g|)`, `Y_down = sqrt(|g|) g`, `N_orb = Y_down Nhat`,
+Iteration 271 expanded the 15 surviving null-soft terms through exact Q1/Q2 recursion and found 23 primitive open-kernel branches: 1 with 2 Q0 factors, 10 with 3, and 12 with 4. For generic unclosed `K!=0`, the four-Q0 sectors can carry four distinct routed momenta.
 
-restoring second-order routed endpoint transpose for physical `N2/Q2`.
+Iteration 272 imposed the exact translation-invariance gate for a physical closed three-point trace:
 
-Iteration 270 then constructed the same-parent routed `A=R(DR)E` coefficients and the complete physical null-soft `B3=[Q A Q]_3` numerator. It froze
-
-`PASS_SCOPED_PHYSICAL_ROUTED_NULLSOFT_B3_EXPLICIT_NONZERO_AND_TRANSPOSE_VALIDATED`,
-
-with
-
-`||B3[s,a,b](p0)||_F = 2.2209140981`, `max|B3| = 1.3471946832`,
-
-at the frozen generic loop momentum `p0=(0.7,-0.4,0.5,0.9)`. Direct 15-term assembly and eight transpose-class reconstruction agree to `2.78e-16`; the endpoint-reversal envelope is `~3e-7`. The old `BLOCKED_NOT_ZERO` state remains superseded for this scoped numerator.
-
-## Iteration 271 — closure-before-master-reduction hard gate
-
-Before applying the raised bubble/triangle master map, the 15 surviving null-soft `B3` terms were expanded through the already frozen exact inverse recursion
-
-`Q1[x] = -Q0 N1[x] Q0`,
-
-`Q2[x,y] = Q0 N1[x] Q0 N1[y] Q0 + (x<->y) - Q0 N2[x,y] Q0`.
-
-This yields exactly **23 primitive open-kernel branches**:
-
-- 1 branch with 2 `Q0` factors;
-- 10 branches with 3 `Q0` factors;
-- 12 branches with 4 `Q0` factors.
-
-At generic distinct leg labels, every branch has equally many distinct routed `Q0` momentum shifts as `Q0` factors. Four-distinct-resolvent open branches occur in the sequential `Q2 N1N1` and `Q1 A1 Q1` sectors.
+`k_s+k_a+k_b=0`.
 
 Freeze:
 
-`PASS_EXACT_OPEN_B3_RESOLVENT_RANK_CENSUS`.
+`PASS_EXACT_TRANSLATION_TRACE_CLOSURE_GATE`.
 
-For the frozen Iteration-270 external momenta,
+Correct status of the Iteration-270 nonzero result:
 
-`K=k_s+k_a+k_b=(1.1,0.8,0.85,0.8)`,
+`VALID_OFF_CONSERVATION_SURFACE_PARENT_KERNEL_NONIDENTICAL_ZERO_CERTIFICATE; NOT_YET_PHYSICAL_THREE_POINT_NONZERO`.
 
-`K^2=0.7925` in the `(-,+,+,+)` convention, hence `K != 0`. Therefore the certified object is an open Fourier kernel
+## Iteration 273 — exact translation-closed denominator topology
 
-`<p+K|B3|p>`,
+The same 15 null-soft B3 partitions were expanded through the frozen exact routed Q1/Q2 recursion, and `k_b=-(k_s+k_a)` was imposed only after all Q0 momentum arguments were constructed.
 
-not by itself a closed loop trace.
+The primitive branch count remains exactly 23, but duplicate routed endpoints collapse. The exact joint census is:
 
-Iterations 245/250 remain frozen and correct: the **closed composite Vilkovisky trace families** at the relevant order need no scalar polygon beyond raised bubbles/triangles (`I22`, `I222`, `I212` and descendants). Iteration 271 does not weaken that theorem. It establishes a scope/order constraint: the closed topology theorem cannot be imposed on an unclosed fixed-`p` kernel before the linked insertion carrying `-K` (or equivalent momentum-conservation closure) is specified.
+- 1 branch: `2 Q0 / 1 distinct denominator`;
+- 10 branches: `3 Q0 / 2 distinct denominators`;
+- 12 branches: `4 Q0 / 3 distinct denominators`.
 
-A second hard constraint is independent: the Iteration-270 one-point value `B3(p0) != 0` proves algebraic nonzero but is not a tensor-integral numerator reconstruction. Tensor/master reduction requires `B3(p)` or a certified exact/rational interpolation basis over loop momentum with explicit routed denominators.
+Therefore
 
-Freeze operational status:
+`max distinct closed denominators = 3`,
 
-`BLOCKED_MASTER_REDUCTION_UNTIL_KINEMATIC_CLOSURE_AND_P_DEPENDENT_INTEGRAND`.
+and there are exactly zero four-distinct-denominator closed branches.
 
-Guardrails:
+Freeze:
 
-- `DO_NOT_FORCE_OPEN_B3_BRANCHES_INTO_CLOSED_BUBBLE_TRIANGLE_MASTERS_BEFORE_CLOSURE`;
-- `ITER245_250_TOPOLOGY_BOUND_APPLIES_TO_CLOSED_COMPOSITE_TRACE_FAMILIES_NOT_TO_AN_UNCLOSED_FIXED_P_KERNEL`;
-- `NONZERO_AT_ONE_P_IS_NOT_A_LOOP_INTEGRAND_RECONSTRUCTION`.
+`PASS_EXACT_TRANSLATION_CLOSED_B3_DENOMINATOR_TOPOLOGY_REDUCTION`.
 
-This is an operational BLOCKED / hard-ordering correction, not a consistency FAIL, exact comparator identity, regime-specific non-identifiability, near-degeneracy, or novelty certificate.
+This reconciles Iteration 271 with the frozen Iterations 245/250 theorem: after physical translation closure, the B3 primitive families fall entirely within raised bubble/triangle descendants. The 12 four-Q0 branches are raised triangles with one repeated denominator; the 10 three-Q0 branches are raised bubbles; the remaining branch is single-denominator-squared.
 
-## Blocker update
+This topology PASS does not prove that the translation-closed physical B3 is nonzero and is not a final linked `T_cut` comparator coordinate.
 
-The scoped numerator remains explicitly nonzero. The current C5 umbrella blocker is now
+## Current C5 blocker
 
-`BLOCKED_4D_EINSTEIN_VD_CLOSED_P_DEPENDENT_INTEGRAND_TENSOR_REDUCTION_SOURCE_PROJECTION_AND_LORENTZIAN_HARD_CHANNEL`.
+`BLOCKED_TRANSLATION_CLOSED_PHYSICAL_B3_NONZERO_AND_P_DEPENDENT_NUMERATOR_AUTHORITY`.
 
-The next authorized computation is **not** blind loop reduction of the fixed-`p` certificate. It is construction of the closure-aware p-dependent linked `T_cut` integrand, followed by a re-certified closed denominator family and only then scoped tensor/master reduction.
+The existing executable
+
+`candidate_gravity/code/iteration273_closed_kinematics_physical_b3.py`
+
+implements the K=0 physical rerun using the Iteration-270 same-parent dynamics. Its committed numerical result is still missing. Master reduction remains forbidden until that closed numerator is stably classified and, if nonzero, promoted to a reproducible p-dependent numerator/integrand basis.
 
 ## Stable readiness rubric
 
@@ -90,7 +70,7 @@ The next authorized computation is **not** blind loop reduction of the fixed-`p`
 
 MODEL_READINESS: 24%
 
-Change from Iteration 270: **0 percentage points**. The iteration closes a logical ordering ambiguity and prevents an invalid master-map application, but does not yet produce the physical C5 comparator coordinate. Comparator foundation remains `24/25`; robust unique residual remains `0/20`.
+Change from Iteration 272: **0 percentage points**. The translation-closed topology sub-blocker is now exactly closed, but no readiness rubric block closes because the physical K=0 numerator and final comparator coordinate remain uncertified.
 
 ## Retained program guardrails
 
@@ -98,11 +78,13 @@ Change from Iteration 270: **0 percentage points**. The iteration closes a logic
 - Unsupported comparator coordinates are `BLOCKED`, never zero-filled.
 - Keep consistency FAIL, exact comparator identity, regime-specific non-identifiability, operational BLOCKED, near-degeneracy and absence of novelty certificate distinct.
 - Hard constraints precede profiling/Fisher.
-- Do not create `ANSATZ-003` until a concrete residual survives the fixed C3/C4/C5/nonlocal/asymptotic-safety quotient.
-- Fisher/resources remain forbidden until a robust nonzero algebraic residual exists after comparator subtraction; the present nonzero C5 numerator alone is insufficient.
-- `e+c<=3` remains the frozen finite-`R^3` truncation rule.
-- Iteration 269 density correction supersedes only the old second-order density/N2/Q2 numerical representative, not earlier topology/polarization/K/E results.
-- Endpoint transpose always means full condensed-index endpoint reversal / real `-K` sector, never raw same-routing matrix transpose.
+- Do not create `ANSATZ-003` until a concrete residual survives the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient.
+- Fisher/resources remain forbidden until a robust nonzero algebraic residual exists after comparator subtraction.
+- `e+c<=3` remains the frozen finite-R^3 truncation rule.
+- Endpoint transpose means full condensed-index endpoint reversal, never raw same-routing matrix transpose.
+- Do not reintroduce box masters from the unclosed K!=0 census: translation closure removes all four-distinct-denominator branches exactly.
+- Do not claim the translation-closed B3 is nonzero until the K=0 rerun has a committed numerical certificate.
+- Do not master-reduce a one-point numerator value.
 
 ## Retained comparator state
 
@@ -113,9 +95,9 @@ Change from Iteration 270: **0 percentage points**. The iteration closes a logic
 Standalone positive two-point spectral/cut information remains mediator-degenerate.
 
 ### C5
-`BLOCKED_4D_EINSTEIN_VD_CLOSED_P_DEPENDENT_INTEGRAND_TENSOR_REDUCTION_SOURCE_PROJECTION_AND_LORENTZIAN_HARD_CHANNEL`.
-
-The scoped physical numerator is explicitly nonzero; the immediate missing object is a closure-aware p-dependent linked integrand.
+Raised bubble/triangle topology after translation closure: exact PASS.  
+Translation-closed physical B3 nonzero: OPEN / operational BLOCKED.  
+p-dependent numerator, source/Ward/contact completion and Lorentzian hard-channel comparator: downstream BLOCKED.
 
 ### Other routes
 Asymptotic-safety, nonlocal and proxy routes retain their frozen blockers; no proxy replaces the frozen comparator identity.
@@ -126,26 +108,19 @@ No robust Candidate Gravity residual exists.
 `ANSATZ-003`: NOT CREATED.  
 Fisher/resources: FORBIDDEN.  
 Blind heavy full C5 run: NOT AUTHORIZED.  
-Direct master reduction of one-point `B3(p0)`: NOT AUTHORIZED.  
-Closure-aware p-dependent integrand construction: AUTHORIZED.
+Master reduction before closed-numerator authority: NOT AUTHORIZED.
 
-## Iteration 271 authority files
+## Iteration 273 authority files
 
-- `candidate_gravity/C5_VD_OPEN_B3_INTEGRAND_CLOSURE_AUDIT_ITERATION271.md`
-- `candidate_gravity/code/iteration271_open_b3_resolvent_rank_census.py`
-- `candidate_gravity/results/iteration271_open_b3_resolvent_rank_census.json`
-- `research_log/2026-09-02_iteration_271_open_b3_integrand_closure_audit.md`
-- `recovery/RECOVERY_DELTA_ITERATION_271.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION271.md`
+- `candidate_gravity/C5_VD_TRANSLATION_CLOSED_DENOMINATOR_TOPOLOGY_ITERATION273.md`
+- `candidate_gravity/code/iteration273_translation_closed_denominator_census.py`
+- `candidate_gravity/results/iteration273_translation_closed_denominator_census.json`
+- `research_log/2026-09-02_iteration_273_translation_closed_denominator_topology.md`
+- `recovery/RECOVERY_DELTA_ITERATION_273.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION273.md`
 
-## Exact next gate — Iteration 272
+## Exact next gate — Iteration 274
 
-Construct the **closure-aware, p-dependent linked `T_cut` integrand** for the already-certified null-soft `B3` sector:
+Execute/refine the translation-closed physical B3 rerun on the K=0 family and commit a numerical certificate with finite-difference, permutation and endpoint-transpose envelopes. If the K=0 B3 is stably nonzero, reconstruct/sample the full p-dependent B3 numerator and certify a finite polynomial/rational basis, then perform scoped tensor/master reduction only within the now-certified raised bubble/triangle families. If the closed B3 is near-zero or numerically unresolved, improve derivative/precision authority before any master reduction.
 
-1. introduce the explicit closing insertion/momentum `-K` required by the linked observable, without yet performing final source tensor projection;
-2. expose `B3(p)` rather than only `B3(p0)`, keeping exact routed `Q0/Q1/Q2` denominators;
-3. re-run the primitive denominator census after closure and verify explicitly that the resulting scalar families obey the frozen Iteration-245/250 raised bubble/triangle bound;
-4. certify a finite numerator tensor degree/basis or rational interpolation basis sufficient for reproducible reconstruction;
-5. only then perform scoped tensor/master-integral reduction and regular/log/nonanalytic hard-channel extraction.
-
-Final source/Ward/contact projection, Lorentzian discontinuity, comparator quotient, Fisher/resources, and `ANSATZ-003` remain downstream.
+Final source/Ward/contact projection, Lorentzian discontinuity, comparator quotient, Fisher/resources and `ANSATZ-003` remain downstream.
