@@ -1,0 +1,38 @@
+{
+  "iteration": 271,
+  "model_readiness_percent": 24,
+  "input_authority": "Iteration 270 physical routed null-soft B3",
+  "surviving_unexpanded_B3_terms": 15,
+  "primitive_inverse_recursion_branches": 23,
+  "branch_origin_counts": {
+    "A3_Q0Q0": 1,
+    "Q1_A2_Q0": 6,
+    "Q2_contact_A1": 4,
+    "Q2_sequential_A1": 8,
+    "Q1_A1_Q1": 4
+  },
+  "q0_factor_count_histogram": {
+    "2": 1,
+    "3": 10,
+    "4": 12
+  },
+  "distinct_q0_shift_count_histogram": {
+    "2": 1,
+    "3": 10,
+    "4": 12
+  },
+  "maximum_q0_factors_in_one_open_branch": 4,
+  "all_open_branch_q0_shifts_distinct_at_generic_leg_labels": true,
+  "frozen_total_background_shift_K": [1.1, 0.8, 0.8500000000000001, 0.8],
+  "frozen_K_minkowski_square": 0.7925000000000002,
+  "K_is_nonzero": true,
+  "classification": "PASS_EXACT_OPEN_B3_RESOLVENT_RANK_CENSUS",
+  "operational_status": "BLOCKED_MASTER_REDUCTION_UNTIL_KINEMATIC_CLOSURE_AND_P_DEPENDENT_INTEGRAND",
+  "scope_note": "Iteration 245/250 bubble/triangle bounds are closed composite-trace statements. The Iteration-270 certificate is an open fixed-p kernel <p+K|B3|p> with K != 0; its primitive inverse-recursion branches can contain four distinct routed Q0 factors before closure.",
+  "guardrails": [
+    "DO_NOT_FORCE_OPEN_B3_BRANCHES_INTO_CLOSED_BUBBLE_TRIANGLE_MASTERS_BEFORE_CLOSURE",
+    "ITER245_250_TOPOLOGY_BOUND_APPLIES_TO_CLOSED_COMPOSITE_TRACE_FAMILIES_NOT_TO_AN_UNCLOSED_FIXED_P_KERNEL",
+    "NONZERO_AT_ONE_P_IS_NOT_A_LOOP_INTEGRAND_RECONSTRUCTION"
+  ],
+  "next_gate": "construct the closure-aware p-dependent linked T_cut integrand (or an exact/sample-reconstructed numerator function with explicit -K closing insertion), then re-derive the scalar denominator family and only then perform tensor/master-integral reduction"
+}
