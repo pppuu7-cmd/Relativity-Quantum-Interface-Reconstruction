@@ -1,0 +1,30 @@
+{
+  "iteration": 266,
+  "assumptions": [
+    "A1[s]=0",
+    "Qn^T=Qn",
+    "An^T=An",
+    "Q2[x,y]=Q2[y,x]",
+    "A2[x,y]=A2[y,x]"
+  ],
+  "raw_polarized_terms": 19,
+  "nullsoft_vanishing_terms": 4,
+  "nullsoft_surviving_terms": 15,
+  "independent_transpose_classes": 8,
+  "class_sizes": [1,2,2,2,2,2,2,2],
+  "classes": [
+    ["Q0 A3[s,a,b] Q0"],
+    ["Q1[s] A2[a,b] Q0", "Q0 A2[a,b] Q1[s]"],
+    ["Q1[a] A2[s,b] Q0", "Q0 A2[s,b] Q1[a]"],
+    ["Q1[b] A2[s,a] Q0", "Q0 A2[s,a] Q1[b]"],
+    ["Q2[s,b] A1[a] Q0", "Q0 A1[a] Q2[s,b]"],
+    ["Q2[s,a] A1[b] Q0", "Q0 A1[b] Q2[s,a]"],
+    ["Q1[s] A1[a] Q1[b]", "Q1[b] A1[a] Q1[s]"],
+    ["Q1[s] A1[b] Q1[a]", "Q1[a] A1[b] Q1[s]"]
+  ],
+  "reconstruction": "B3 = Q0 A3 Q0 + sum_over_7_nonself_representatives (X + X^T)",
+  "status": [
+    "PASS_EXACT_NULLSOFT_B3_TRANSPOSE_CLASS_REDUCTION_15_TO_8",
+    "NO_DOUBLE_EVALUATION_OF_TRANSPOSE_PAIRED_B3_TERMS"
+  ]
+}
