@@ -1,0 +1,25 @@
+{
+  "iteration": 280,
+  "model_readiness_percent": 24,
+  "linked_slice": "s=-ka^2>0; t=-kb^2=s+0.2; ks^2=0",
+  "normalized_discontinuity_convention": "D_s log_R(-s)=1 (Iteration 205)",
+  "scalar_cut_support_basis": ["1/s", "1/(s+0.2)", "log(s/(s+0.2))/(s-(s+0.2))"],
+  "rows": [
+    {"s":0.004,"t":0.204,"bubble_a_cut_shape":250.0,"bubble_b_cut_shape":4.901960784313725,"triangle_cut_shape":19.659128163621627},
+    {"s":0.008,"t":0.208,"bubble_a_cut_shape":125.0,"bubble_b_cut_shape":4.8076923076923075,"triangle_cut_shape":16.29048269010741},
+    {"s":0.012,"t":0.212,"bubble_a_cut_shape":83.33333333333333,"bubble_b_cut_shape":4.716981132075471,"triangle_cut_shape":14.358398124420061},
+    {"s":0.016,"t":0.216,"bubble_a_cut_shape":62.5,"bubble_b_cut_shape":4.62962962962963,"triangle_cut_shape":13.013448427221919},
+    {"s":0.02,"t":0.22,"bubble_a_cut_shape":50.0,"bubble_b_cut_shape":4.545454545454546,"triangle_cut_shape":11.989476363991853},
+    {"s":0.024,"t":0.224,"bubble_a_cut_shape":41.666666666666664,"bubble_b_cut_shape":4.464285714285714,"triangle_cut_shape":11.16796110753547},
+    {"s":0.028,"t":0.228,"bubble_a_cut_shape":35.714285714285715,"bubble_b_cut_shape":4.385964912280701,"triangle_cut_shape":10.485705593896183},
+    {"s":0.032,"t":0.232,"bubble_a_cut_shape":31.25,"bubble_b_cut_shape":4.310344827586206,"triangle_cut_shape":9.905007344332915}
+  ],
+  "raw_singular_values": [311.09226534,18.92347972,0.72150081],
+  "raw_condition_number": 431.1738284000614,
+  "unit_column_singular_values": [1.66913721,0.46122458,0.03539566],
+  "unit_column_condition_number": 47.156553482975376,
+  "rank": 3,
+  "classification": "PASS_SCOPED_THREE_DIMENSIONAL_SCALAR_MASTER_CUT_SUPPORT_BASIS_ON_TIMELIKE_SLICE",
+  "guardrail": "MASTER_FUNCTION_SUPPORT IS NOT THE C5 TENSOR COEFFICIENT VECTOR OR A CANDIDATE RESIDUAL",
+  "next_gate": "reconstruct combined family numerators and tensor/IBP reduce them to obtain actual C5 coefficients"
+}
