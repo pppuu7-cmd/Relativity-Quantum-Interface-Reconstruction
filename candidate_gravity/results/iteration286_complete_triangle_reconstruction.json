@@ -1,0 +1,45 @@
+{
+  "iteration": 286,
+  "model_readiness_percent": 24,
+  "basis": "full fixed-coordinate polynomial total degree <=6",
+  "basis_size": 210,
+  "triangle_sectors": {
+    "(0,0.21)": {
+      "train_points": 220,
+      "heldout_points": 28,
+      "train_rank": 210,
+      "condition_number": 6935.030221597978,
+      "heldout_max_abs": 3.411443627587829e-10,
+      "heldout_rms": 9.833419662207988e-11,
+      "heldout_relative_max": 2.7698947208544858e-11,
+      "status": "PASS"
+    },
+    "(0,0.41)": {
+      "train_points": 232,
+      "heldout_points": 36,
+      "train_rank": 210,
+      "condition_number": 5186.568989589245,
+      "heldout_max_abs": 3.5559200028956184e-10,
+      "heldout_rms": 8.717599476741253e-11,
+      "heldout_relative_max": 8.872284498320589e-11,
+      "status": "PASS_ITERATION285"
+    },
+    "(0.21,0.41)": {
+      "train_points": 220,
+      "heldout_points": 28,
+      "train_rank": 210,
+      "condition_number": 8545.513087076448,
+      "heldout_max_abs": 1.242611014085071e-10,
+      "heldout_rms": 5.204178930132884e-11,
+      "heldout_relative_max": 1.0083215501606952e-11,
+      "status": "PASS"
+    }
+  },
+  "bubble_reconstruction_retained_from_iteration285": {
+    "bubble_a_degree4_70_heldout_relative_max": 9.296403942129201e-10,
+    "bubble_b_degree4_70_heldout_relative_max": 2.223469270656875e-09
+  },
+  "classification": "PASS_COMPLETE_NONSCALeless_ACTUAL_ORACLE_NUMERATOR_RECONSTRUCTION_ALL_BUBBLE_AND_TRIANGLE_SECTORS",
+  "candidate_residual": false,
+  "next_blocker": "IBP_TENSOR_MOMENT_REDUCTION_AND_HARD_CHANNEL_COEFFICIENT_EXTRACTION"
+}
