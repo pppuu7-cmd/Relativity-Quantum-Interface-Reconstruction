@@ -5,45 +5,53 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 262**
+**Authoritative Candidate Gravity front:** **Iteration 263**
 
 ## Current scientific state
 
-The active program remains finite Vilkovisky C5 authority improvement. Iteration 261 established that the physical distinguishable-leg cubic `B3[s,a,b]` is the multilinear polarization of `B=QAQ`; 19 leg-resolved terms occur before the frozen null-soft condition and 15 survive because the complete `A1[s]=0`.
+The active program remains finite Vilkovisky C5 authority improvement. Iterations 261–262 established the physical polarized `B3[s,a,b]`, its 15 surviving null-soft terms, the affine `R0/R1` generator library, and exact `Q1/Q2` inverse recursion.
 
-Iteration 262 reduces the independent physical vertex library needed to construct those 15 terms. Retain the exact same-parent identity
+Iteration 263 removes an unnecessary primary tensor layer. Retain the exact same-parent identity
 
-`A_{gamma delta} = - R_gamma^i R_delta^j H_ij`, with `H_ij = D_iE_j = D_iD_jS`.
+`A = K E`, with `K^j_{gamma delta}=R^i_gamma (D_i R^j_delta)`.
 
-In the frozen linear covariant-metric split the diffeomorphism generator is affine:
+Because flat Einstein `E0=0`, multilinear projected coefficients are
 
-`R[g]=R0+R1[h]`, hence `R_n=0` for `n>=2`.
+`A1[x]=K0E1[x]`,
 
-Multilinear polarization gives the exact finite library:
+`A2[x,y]=K0E2[x,y]+K1[x]E1[y]+K1[y]E1[x]`,
 
-- `A1[x]`: 3 subterms;
-- `A2[x,y]`: 7 subterms;
-- complete `A3[s,a,b]`: 13 subterms.
+and generic `A3[x,y,z]` contains `K0E3`, three `K1E2`, and three `K2E1` partitions.
 
-Polarized inverse recursion is fixed by the same orbit metric:
+For the frozen null-soft leg `E1[s]=0`, physical `A3[s,a,b]` has six surviving projected terms; `A2[s,a]` and `A2[s,b]` each have two, while `A2[a,b]` has three.
 
-`Q1[x] = -Q0 N1[x] Q0`,
+This means the physical cubic numerator does **not** require a primary construction of full unprojected `H3=D D S`; that route would expose a fifth action variation `S5` which cancels after gauge projection. The exact projected `A=K E` route needs only `E1/E2/E3` and `K0/K1/K2`, reaching only the fourth action variation through `E3`. The `-RRH` representation remains a regression/cross-check, not the primary construction route.
 
-`Q2[x,y] = Q0N1[x]Q0N1[y]Q0 + Q0N1[y]Q0N1[x]Q0 - Q0N2[x,y]Q0`.
+With frozen affine `R` and `D R=P+Gamma R`, `P=partial R` background-independent,
 
-Because flat Einstein `E0=0` implies `A0=0`, cubic `B3` never requires `Q3`; any degree-three resolvent term would multiply `A0`. Therefore no `N3/Q3` construction is needed for this physical cubic `U1 W` sector.
+`D0=P+Gamma0R0`,
+
+`D1[x]=Gamma1[x]R0+Gamma0R1[x]`,
+
+`D2[x,y]=Gamma2[x,y]R0+Gamma1[x]R1[y]+Gamma1[y]R1[x]`,
+
+so `K0,K1,K2` require only `Gamma0/Gamma1/Gamma2` and `R0/R1`. No `Gamma3`, `R2`, or `R3` is required.
+
+The physical second polarized DeWitt field-space Christoffel `Gamma2[x,y]` has now been constructed from the same frozen `a=-1/2` metric and independently validated against a direct 10-dimensional field-space Christoffel reconstruction. On the recorded Lorentzian traceless test directions,
+
+`max|Gamma2_direct-Gamma2_formula| = 9.4322526123e-08`
+
+on maximum component scale `0.500008028696`, with zero tested input-pair and mixed-leg exchange symmetry residuals.
 
 Freeze:
 
-`PASS_SCOPED_POLARIZED_A_MINIMAL_3_7_13_LIBRARY`
+`PASS_EXACT_PROJECT_BEFORE_EXPAND_A_EQUALS_K_E_CUBIC_REDUCTION`
 
-`PASS_SCOPED_POLARIZED_Q1_Q2_INVERSE_RECURSION`
+`PASS_SCOPED_FIELDSPACE_CHRISTOFFEL_SECOND_POLARIZED_VARIATION`
 
-`NO_Q3_OR_N3_REQUIRED_FOR_PHYSICAL_U1W_CUBIC_B3`
+`NO_FULL_UNPROJECTED_H3_OR_S5_REQUIRED_FOR_PHYSICAL_U1W_B3`
 
-`NO_TERM_BY_TERM_SOFT_ZERO_INSIDE_A1`
-
-The remaining independent same-parent dynamic inputs for this sector are `N1[x]`, `N2[x,y]`, `R1[x]`, `H1[x]`, `H2[x,y]`, `H3[s,a,b]`, plus frozen background data. The null-soft identity `A1[s]=0` applies only to the complete three-term sum; individual `R1[s]`/`H1[s]` pieces are not zero-filled.
+`NO_INDEPENDENT_GAMMA2_ANSATZ`.
 
 ## Stable readiness rubric
 
@@ -56,7 +64,7 @@ The remaining independent same-parent dynamic inputs for this sector are `N1[x]`
 
 MODEL_READINESS: 24%
 
-Change from Iteration 261: **0 percentage points**. The cubic vertex space is now finite and sharper, but no complete C5 comparator coordinate or robust nonzero residual exists.
+Change from Iteration 262: **0 percentage points**. The numerator route is materially shorter and `Gamma2` is closed, but no complete C5 comparator coordinate or robust nonzero residual exists.
 
 ## Frozen guardrails retained
 
@@ -75,7 +83,8 @@ Change from Iteration 261: **0 percentage points**. The cubic vertex space is no
 - Iterations 257–259 fix physical orbit-metric inverse recursion through `Q2`; no independent `N2/Q2` ansatz.
 - Iteration 260 fixes exact coefficientwise weighted symmetry of complete same-parent `U1 W`; transpose mismatch is an implementation regression, not a new physical Ward FAIL.
 - Iteration 261 fixes physical multilinear polarization before any three-leg numerator claim.
-- Iteration 262 fixes the polarized `A` 3/7/13 subterm library, polarized `Q1/Q2` recursion, and proves `Q3/N3` unnecessary for cubic `U1 W` because `A0=0`.
+- Iteration 262 fixes the polarized `A` 3/7/13 bookkeeping, `Q1/Q2` recursion, and proves `Q3/N3` unnecessary because `A0=0`.
+- Iteration 263 fixes project-before-expand `A=K E` as the primary cubic construction, eliminates the need for full unprojected `H3/S5`, and freezes physical `Gamma2[x,y]` from the same DeWitt metric.
 
 ## Retained comparator state
 
@@ -100,15 +109,15 @@ No robust Candidate Gravity residual exists.
 Fisher/resources: FORBIDDEN.  
 Heavy full C5 run: NOT AUTHORIZED.
 
-## Iteration 262 authority files
+## Iteration 263 authority files
 
-- `candidate_gravity/C5_VD_POLARIZED_A_AND_Q_MINIMAL_LIBRARY_ITERATION262.md`
-- `candidate_gravity/code/iteration262_vd_polarized_a_q_minimal_library.py`
-- `candidate_gravity/results/iteration262_vd_polarized_a_q_minimal_library.json`
-- `research_log/2026-09-02_iteration_262_vd_polarized_a_q_minimal_library.md`
-- `recovery/RECOVERY_DELTA_ITERATION_262.md`
-- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION262.md`
+- `candidate_gravity/C5_VD_PROJECTED_HESSIAN_AND_GAMMA2_ITERATION263.md`
+- `candidate_gravity/code/iteration263_vd_projected_hessian_gamma2.py`
+- `candidate_gravity/results/iteration263_vd_projected_hessian_gamma2.json`
+- `research_log/2026-09-02_iteration_263_vd_projected_hessian_gamma2.md`
+- `recovery/RECOVERY_DELTA_ITERATION_263.md`
+- `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION263.md`
 
-## Exact next gate — Iteration 263
+## Exact next gate — Iteration 264
 
-Construct polarized same-parent covariant-Hessian coefficients `H1[x]`, `H2[x,y]`, `H3[s,a,b]` in frozen `D=4, Lambda=0, a=-1/2`; combine them with frozen `R0/R1` into physical `A1,A2,A3`. Derive polarized `N1[x],N2[x,y]` from the same orbit metric and obtain `Q1,Q2` only through exact recursion. Then assemble the 15 surviving null-soft terms of `B3[s,a,b]`. Tensor reduction remains forbidden until a nonzero physical numerator exists. Do not launch Fisher/resources, blind heavy full-C5 integration, or create `ANSATZ-003`.
+Construct polarized Einstein EOM coefficients `E2[x,y]` and `E3[s,a,b]` in frozen `D=4, Lambda=0, a=-1/2`; combine them with frozen `E1`, `R0/R1`, `P=partial R`, and `Gamma0/Gamma1/Gamma2` to build `K0,K1,K2`, then projected physical `A1,A2,A3`. In parallel derive physical `N1[x],N2[x,y]` from the same orbit metric and obtain `Q1,Q2` only through exact recursion. Assemble the 15 surviving null-soft terms of `B3[s,a,b]`. Tensor reduction remains forbidden until a nonzero physical numerator exists. Do not launch Fisher/resources, blind heavy full-C5 integration, or create `ANSATZ-003`.
