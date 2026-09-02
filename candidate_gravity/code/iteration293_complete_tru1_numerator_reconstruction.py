@@ -13,9 +13,8 @@ ceilings:
 
 Coefficients are exported for the subsequent DR tensor/Laurent reduction.
 """
-import importlib.util, json, math
+import importlib.util, json
 from pathlib import Path
-from collections import Counter
 import numpy as np
 
 HERE=Path(__file__).resolve().parent
@@ -41,19 +40,13 @@ def exponents(deg):
             for b in range(deg+1-a)
             for c in range(deg+1-a-b)
             for d in range(deg+1-a-b-c)]
-
 def mon(exps,l):
     l=np.asarray(l,float)
     return np.array([np.prod([l[i]**e[i] for i in range(4)]) for e in exps],float)
-
-def multiset_key(vs):
-    return sorted(vk(v) for v in vs)
-
 def same_multiset(a,b,tol=2e-10):
-    aa=sorted(np.asarray(x,float) for x in a, key=lambda z: tuple(np.round(z,12)))
-    bb=sorted(np.asarray(x,float) for x in b, key=lambda z: tuple(np.round(z,12)))
+    aa=sorted((np.asarray(x,float) for x in a), key=lambda z: tuple(np.round(z,12)))
+    bb=sorted((np.asarray(x,float) for x in b), key=lambda z: tuple(np.round(z,12)))
     return len(aa)==len(bb) and all(np.max(np.abs(x-y))<tol for x,y in zip(aa,bb))
-
 def route_to_target(d,target):
     # Under p=sigma*l+delta, denominator shift v becomes sigma*(delta+v).
     for sigma in (1.0,-1.0):
@@ -85,7 +78,6 @@ def sector_num(s,l):
 def fit_sector(s,seed):
     deg=DEG[s]; exps=exponents(deg); n=len(exps)
     rng=np.random.default_rng(seed)
-    # Distinct training/holdout boxes guard against accidental interpolation.
     tr=rng.uniform(-0.92,0.92,(n+18,4))
     ho=rng.uniform(-1.08,1.08,(max(28,n//7),4))
     yc=np.array([sector_num(s,l) for l in tr]); zc=np.array([sector_num(s,l) for l in ho])
