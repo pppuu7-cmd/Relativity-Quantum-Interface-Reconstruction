@@ -1,0 +1,23 @@
+{
+  "iteration": 274,
+  "model_readiness_percent": 24,
+  "translation_closed": true,
+  "primitive_branch_count": 23,
+  "closed_family_counts": {
+    "one_distinct_squared_Q0": 1,
+    "raised_bubble_power_2_1": 10,
+    "raised_triangle_power_2_1_1": 12,
+    "four_distinct_box_or_higher": 0
+  },
+  "origin_breakdown": {
+    "A3_Q0Q0_one_distinct_squared": 1,
+    "Q1_A2_Q0_raised_bubble": 6,
+    "Q2_contact_A1_raised_bubble": 4,
+    "Q2_sequential_A1_raised_triangle": 8,
+    "Q1_A1_Q1_raised_triangle": 4
+  },
+  "classification": "PASS_EXACT_TRANSLATION_CLOSED_B3_RAISED_BUBBLE_TRIANGLE_DENOMINATOR_REDUCTION",
+  "topology_statement": "After imposing k_s+k_a+k_b=0, every primitive branch contains one repeated Q0 shift. No four-distinct scalar denominator family survives; the nontrivial closed families are raised bubbles and raised triangles.",
+  "guardrail": "THE_SINGLE_DISTINCT_Q0^2_A3_BRANCH_IS_SCALELESS_AT_THE_SCALAR_DENOMINATOR_LEVEL_IN_MASSLESS_DIMENSIONAL_REGULARIZATION, BUT DO_NOT DROP IT BEFORE NUMERATOR/REGULATOR_CHECK",
+  "next_gate": "reconstruct the closed B3(p) numerator over the raised-bubble/triangle basis and determine polynomial tensor degree before master reduction"
+}
