@@ -1,0 +1,24 @@
+{
+  "iteration": 277,
+  "model_readiness_percent": 24,
+  "total_orbit_trace_real": 0.9605914097674487,
+  "family_counts": {
+    "single_scaleless": 1,
+    "bubble_null_scaleless": 2,
+    "bubble_a": 4,
+    "bubble_b": 4,
+    "triangle_0_021_041": 12
+  },
+  "family_orbit_trace_real": {
+    "single_scaleless": 3.5827927776531556,
+    "bubble_null_scaleless": 0.7202239149799847,
+    "bubble_a": -0.39367885267979785,
+    "bubble_b": -0.06093021812432356,
+    "triangle_0_021_041": -2.88781621206157
+  },
+  "scaleless_family_integrand_trace_real": 4.303016692633141,
+  "non_scaleless_family_integrand_trace_real": -3.3424252828656913,
+  "classification": "PASS_SCOPED_NONSCALLESS_MASTER_FAMILY_ORBIT_TRACE_NONZERO_AT_P0",
+  "guardrail": "NONZERO_NONSCALLESS_INTEGRAND_SUM_AT_ONE_P_IS_NOT_YET_A_NONZERO_INTEGRATED_LOG_OR_DISCONTINUITY_COEFFICIENT",
+  "next_gate": "canonicalize loop routing within bubble-a, bubble-b and triangle families, reconstruct their scalar numerator polynomials, then tensor-reduce the combined families before evaluating logs/discontinuities"
+}
