@@ -1,0 +1,30 @@
+{
+  "iteration": 279,
+  "model_readiness_percent": 24,
+  "timelike_slice": "same as Iteration 278",
+  "family_counts_each_row": {
+    "single_scaleless": 1,
+    "bubble_null_scaleless": 2,
+    "bubble_a": 4,
+    "bubble_b": 4,
+    "triangle": 12
+  },
+  "rows": [
+    {"s":0.004,"triangle":-7.528113089654264,"bubble_a":-6.175707169941287,"bubble_b":0.09471392671131951,"scaleless_sum":-1.9394279555502498,"non_scaleless_sum":-13.609106332884231},
+    {"s":0.008,"triangle":-8.399844360920774,"bubble_a":-6.6627800716448515,"bubble_b":0.151805546750034,"scaleless_sum":-1.998377133262033,"non_scaleless_sum":-14.910818885815592},
+    {"s":0.012,"triangle":-9.42622389869188,"bubble_a":-7.2474238010453504,"bubble_b":0.2091102803040643,"scaleless_sum":-2.0564316220357473,"non_scaleless_sum":-16.464537419433167},
+    {"s":0.016,"triangle":-10.652817504481202,"bubble_a":-7.958741372158841,"bubble_b":0.26667150889226743,"scaleless_sum":-2.113586178804395,"non_scaleless_sum":-18.344887367747777},
+    {"s":0.02,"triangle":-12.145059439065873,"bubble_a":-8.838533878933038,"bubble_b":0.324528116651462,"scaleless_sum":-2.1698355975806933,"non_scaleless_sum":-20.65906520134745},
+    {"s":0.024,"triangle":-14.00041942570098,"bubble_a":-9.949074908659357,"bubble_b":0.3827150655290116,"scaleless_sum":-2.2251746919631215,"non_scaleless_sum":-23.566779268831326},
+    {"s":0.028,"triangle":-16.370755529245713,"bubble_a":-11.387393791594192,"bubble_b":0.44126384728152745,"scaleless_sum":-2.279598283784569,"non_scaleless_sum":-27.31688547355838},
+    {"s":0.032,"triangle":-19.506415358594634,"bubble_a":-13.313456025519546,"bubble_b":0.5002028732851942,"scaleless_sum":-2.333101233412412,"non_scaleless_sum":-32.31966851082898}
+  ],
+  "timelike_master_invariants": {
+    "bubble_a": "q^2=-s",
+    "bubble_b": "q^2=-(s+0.2)",
+    "triangle": "external squares (0,-s,-(s+0.2))"
+  },
+  "classification": "PASS_SCOPED_TIMELIKE_NONSCALLESS_MASTER_FAMILY_ORBIT_TRACE_NONZERO_ON_ALL_ROWS",
+  "guardrail": "FAMILY_INTEGRAND_NONZERO_IS_NOT_YET_THE_MASTER_REDUCED_DISCONTINUITY_COEFFICIENT",
+  "next_gate": "derive the retarded branch-cut support and normalized D_s structure of the two raised bubbles and one raised triangle, then reconstruct tensor coefficients"
+}
