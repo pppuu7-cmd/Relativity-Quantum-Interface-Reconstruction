@@ -1,0 +1,35 @@
+{
+  "iteration": 276,
+  "model_readiness_percent": 24,
+  "translation_closed": true,
+  "orbit_trace_at_p0": 0.9605914097674485,
+  "orbit_trace_imag_at_p0": 0.0,
+  "trace_step_scan": [
+    {"h_A2": 0.001, "h_A3": 0.002, "trace": 0.9606360102108964},
+    {"h_A2": 0.0007, "h_A3": 0.0015, "trace": 0.960610861989314},
+    {"h_A2": 0.0005, "h_A3": 0.001, "trace": 0.9605914097674485},
+    {"h_A2": 0.0003, "h_A3": 0.0008, "trace": 0.9605868965655184}
+  ],
+  "exact_polynomial_degree_bounds": {
+    "N1_or_N2_local_vertex_degree_in_p": 2,
+    "A_m_local_vertex_degree_in_p": 2,
+    "two_Q0_branch_numerator_degree": 2,
+    "three_Q0_branch_numerator_degree": 4,
+    "four_Q0_branch_numerator_degree": 6
+  },
+  "uv_scaling_scan_matrix_frobenius": [
+    {"lambda": 1.0, "Bfro": 1.3106212324933462, "lambda2_Bfro": 1.3106212324933462},
+    {"lambda": 2.0, "Bfro": 0.42416306244053337, "lambda2_Bfro": 1.6966522497621335},
+    {"lambda": 4.0, "Bfro": 0.1240491950821825, "lambda2_Bfro": 1.98478712131492},
+    {"lambda": 8.0, "Bfro": 0.032115477251367125, "lambda2_Bfro": 2.055390544087496}
+  ],
+  "uv_scaling_scan_orbit_trace": [
+    {"lambda": 1.0, "trace": 0.9605914097674485, "lambda2_abs_trace": 0.9605914097674485},
+    {"lambda": 2.0, "trace": -0.36384156001450124, "lambda2_abs_trace": 1.455366240058005},
+    {"lambda": 4.0, "trace": -0.14130768147861156, "lambda2_abs_trace": 2.260922903657785},
+    {"lambda": 8.0, "trace": -0.038695524768811065, "lambda2_abs_trace": 2.476513585203908}
+  ],
+  "classification": "PASS_SCOPED_TRANSLATION_CLOSED_B3_ORBIT_TRACE_NONZERO_AND_UV_DEGREE_BOUND",
+  "guardrail": "NONZERO_ORBIT_TRACE_AT_ONE_P_STILL_DOES_NOT_PROVE_NONZERO_INTEGRATED_MASTER_COEFFICIENT_AFTER_TENSOR_REDUCTION",
+  "next_gate": "construct family-resolved scalar orbit-trace numerators and reduce them to the two non-null raised bubbles plus one raised triangle master-kinematic family"
+}
