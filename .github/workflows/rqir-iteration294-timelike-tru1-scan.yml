@@ -25,3 +25,4 @@ jobs:
         with:
           name: iteration294-result
           path: iteration294_result.json
+# trigger after workflow registration
