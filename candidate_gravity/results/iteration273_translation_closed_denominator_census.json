@@ -1,0 +1,23 @@
+{
+  "iteration": 273,
+  "model_readiness_percent": 24,
+  "translation_closure": "k_s+k_a+k_b=0",
+  "surviving_nullsoft_partition_count": 15,
+  "primitive_branch_count": 23,
+  "joint_q0_factor_vs_distinct_denominator_census": {
+    "2_Q0__1_distinct": 1,
+    "3_Q0__2_distinct": 10,
+    "4_Q0__3_distinct": 12
+  },
+  "max_distinct_closed_denominators": 3,
+  "classification": "PASS_EXACT_TRANSLATION_CLOSED_B3_DENOMINATOR_TOPOLOGY_REDUCTION",
+  "topology_interpretation": {
+    "raised_triangle_branches": 12,
+    "raised_bubble_branches": 10,
+    "single_denominator_squared_branches": 1,
+    "four_distinct_denominator_branches": 0
+  },
+  "candidate_residual": false,
+  "guardrail": "TOPOLOGY CLOSURE DOES NOT PROVE TRANSLATION-CLOSED B3 NONZERO OR A FINAL C5 COMPARATOR COORDINATE",
+  "next_gate": "execute/refine the K=0 physical B3 rerun across loop momentum p; if stably nonzero, reconstruct its finite p-dependent numerator basis and then reduce only within the certified raised bubble/triangle families"
+}
