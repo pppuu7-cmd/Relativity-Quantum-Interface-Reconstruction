@@ -1,0 +1,27 @@
+name: rqir-iteration293-tru1-numerator-reconstruction
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration293_complete_tru1_numerator_reconstruction.py'
+      - '.github/workflows/rqir-iteration293-tru1-numerator-reconstruction.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration293:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy
+      - name: Run Iteration 293 complete TrU1 numerator reconstruction
+        run: |
+          python candidate_gravity/code/iteration293_complete_tru1_numerator_reconstruction.py | tee iteration293_result.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration293-result
+          path: iteration293_result.json
