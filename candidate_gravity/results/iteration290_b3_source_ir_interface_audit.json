@@ -1,0 +1,32 @@
+{
+  "iteration": 290,
+  "model_readiness_percent": 24,
+  "current_B3_common_cut_ir_residue": -0.061289813814603585,
+  "authority_map": {
+    "current_B3_object": "scoped off-shell/1PI Vilkovisky same-parent scalar orbit-trace contribution; not source-completed",
+    "on_shell_to_off_shell_inversion": "FORBIDDEN_BY_ITERATION217_NONIDENTIFIABILITY",
+    "minimal_scalar_source_parent": "MSSC-001_DEFINED_AND_LINEAR_WARD_IDENTITY_PASS_FROM_ITERATION218",
+    "complete_two_scalar_two_graviton_source_tree": "PASS_GAUGE_INVARIANT_FROM_ITERATION219",
+    "connected_source_cut": "PASS_PHYSICAL_STATE_CONSTRUCTION_FROM_ITERATION221",
+    "source_cut_physical_ir_divergence": "PRESENT_FROM_ITERATION221",
+    "source_ir_residue_factorization": "R_IN_EQUALS_R_OUT_EQUALS_MINUS_8_TIMES_M_BORN_FROM_ITERATION222",
+    "born_fixed_local_hard_remainder": "PASS_LOCAL_IR_COMPLETION_FROM_ITERATION223",
+    "global_source_hard_remainder": "PASS_NUMERICAL_GLOBAL_COMPLETION_FROM_ITERATION225",
+    "direct_subtraction_of_source_Born_residue_from_current_B3": "FORBIDDEN_OBSERVABLE_AND_NORMALIZATION_MISMATCH",
+    "linked_K2_Ward_pole_coefficient_in_current_B3_convention": "BLOCKED_NOT_YET_DERIVED",
+    "current_B3_pole_classification_as_Ward_EOM_vs_physical_IR": "BLOCKED_NOT_YET_RESOLVED"
+  },
+  "three_way_ir_classification": {
+    "A": "Ward/EOM/source-convention pole: must cancel or be removed by the linked/source completion",
+    "B": "physical universal gravitational IR factor: need not cancel; must be removed by the already frozen Born/inclusive hard-remainder prescription in the same physical observable",
+    "C": "finite transverse hard remainder after A/B removal: only this level is eligible for comparator-coordinate promotion"
+  },
+  "classification": "PASS_SOURCE_IR_INTERFACE_AUTHORITY_MAP__B3_POLE_ORIGIN_STILL_BLOCKED",
+  "candidate_residual": false,
+  "guardrails": [
+    "DO_NOT_SUBTRACT_MINUS_8_M_BORN_FROM_THE_CURRENT_B3_RESIDUE_WITHOUT_AN_EXPLICIT_OBSERVABLE_MAP",
+    "DO_NOT_REQUIRE_THE_FULL_SOURCE_COMPLETED_GRAVITATIONAL_IR_POLE_TO_VANISH_IF_IT_IS_A_PHYSICAL_BORN_FACTORIZING_IR_FACTOR",
+    "DO_NOT_PROMOTE_ANY_FINITE_REMAINDER_BEFORE_WARD_EOM_AND_PHYSICAL_IR_FACTORS_ARE_SEPARATED_IN_ONE_SOURCE_CONVENTION"
+  ],
+  "next_gate": "resolve whether the current B3 1/epsilon pole is Ward/EOM-proportional or belongs to a physical Born-factorizing source IR factor; the minimal executable test is a pole-level source/Ward projection in the same convention, before any finite master extraction"
+}
