@@ -1,0 +1,25 @@
+{
+  "iteration": 268,
+  "model_readiness_percent": 24,
+  "loop_momentum": [0.7, -0.4, 0.5, 0.9],
+  "fd_steps": {"N1": 3e-05, "N2_mixed": 0.0005},
+  "Q1": {
+    "s": {"Q1_fro": 1.581115582762809, "inverse_residual_max": 5.551115123125783e-17, "wrong_same_routing_residual_max": 0.5413765562545413},
+    "a": {"Q1_fro": 2.6872621928253255, "inverse_residual_max": 2.220446049250313e-16, "wrong_same_routing_residual_max": 0.2259660187983703},
+    "b": {"Q1_fro": 2.370195667857029, "inverse_residual_max": 1.1102230246251565e-16, "wrong_same_routing_residual_max": 0.9129651252678816}
+  },
+  "Q2": {
+    "sa": {"N2_fro": 2.24257346719663, "Q2_fro": 1.8134643518040645, "mixed_leg_exchange_max": 6.88338275267597e-14, "inverse_residual_max": 3.191891195797325e-16},
+    "sb": {"N2_fro": 2.3102706786985485, "Q2_fro": 3.0273925479532595, "mixed_leg_exchange_max": 2.6623181437201993e-10, "inverse_residual_max": 4.718447854656915e-16},
+    "ab": {"N2_fro": 3.7180881165819084, "Q2_fro": 1.247422437428577, "mixed_leg_exchange_max": 1.0129917737966565e-14, "inverse_residual_max": 8.881784197001252e-16}
+  },
+  "routing_rules": {
+    "Q1": "Q1[x](p)=-Q0(p+k_x) N1[x](p) Q0(p)",
+    "Q2": "Q0(p+kx+ky)[N1[x](p+ky)Q0(p+ky)N1[y](p)+N1[y](p+kx)Q0(p+kx)N1[x](p)-N2[x,y](p)]Q0(p)"
+  },
+  "classification": "PASS_SCOPED_PHYSICAL_ROUTED_N1_N2_Q1_Q2_KERNEL_LAYER",
+  "guardrail": "Q0 MUST BE EVALUATED AT EACH ROUTED ENDPOINT/INTERMEDIATE MOMENTUM; SAME-p RESOLVENT INSERTION IS FALSE",
+  "candidate_residual": false,
+  "heavy_run_authorized": false,
+  "next_gate": 269
+}
