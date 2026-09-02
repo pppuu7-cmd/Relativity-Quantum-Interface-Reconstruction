@@ -1,0 +1,28 @@
+{
+  "iteration": 265,
+  "scope": "abstract noncommuting-matrix regression of exact polarized same-parent K algebra",
+  "frozen_dynamics": "K=R(P+Gamma R), affine R=R0+R1, P background-independent",
+  "primitive_counts": {
+    "K0": 2,
+    "K1_each_leg": 4,
+    "K2_each_leg_pair": 7,
+    "A1_s_before_E1_soft_zero": 2,
+    "A1_s_after_E1_soft_zero": 0,
+    "A2_s_a": 6,
+    "A2_a_b": 10,
+    "A3_s_a_b": 28
+  },
+  "validation": [
+    {"h": 0.01, "max_K1_fd_mismatch": 0.0026321233750437045, "max_K2_mixed_fd_mismatch": 0.0031064111099645686},
+    {"h": 0.003, "max_K1_fd_mismatch": 0.00023689110364522037, "max_K2_mixed_fd_mismatch": 0.00027957702987535527},
+    {"h": 0.001, "max_K1_fd_mismatch": 0.000026321233734805105, "max_K2_mixed_fd_mismatch": 0.00003106353614157342},
+    {"h": 0.0003, "max_K1_fd_mismatch": 0.000002368910127614754, "max_K2_mixed_fd_mismatch": 0.0000028031112755400045},
+    {"h": 0.0001, "max_K1_fd_mismatch": 0.00000026320710944105485, "max_K2_mixed_fd_mismatch": 0.00000023047781283480617}
+  ],
+  "status": [
+    "PASS_EXACT_POLARIZED_K0_K1_K2_PRIMITIVE_LIBRARY_2_4_7",
+    "PASS_EXACT_NULLSOFT_PROJECTED_A3_PRIMITIVE_COUNT_28",
+    "NO_R2_R3_GAMMA3_IN_PHYSICAL_PROJECTED_A3"
+  ],
+  "interpretation": "Algebraic closure/regression only; not a physical C5 numerator, comparator coordinate, or residual."
+}
