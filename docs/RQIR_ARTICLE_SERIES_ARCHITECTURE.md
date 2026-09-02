@@ -181,3 +181,21 @@ Candidate task:
 4. RQIR I–III reconstruct and certify constraints/resources; Paper IV proposes a concrete candidate. These are different epistemic levels.
 5. Paper-III 100% scientific readiness must not be represented as apparatus-specific experimental closure.
 6. The repository remains source of truth. Reopen a scientifically closed paper only for a documented contradiction, failed regression or materially relevant new requirement.
+
+## Post-Candidate-development manuscript strengthening policy
+
+A controlled post-closure audit performed on 2026-09-03 found that Papers I–III do **not** need to wait for Candidate Gravity completion. The detailed integration policy is frozen in:
+
+`docs/PAPERS_I_III_POST_CANDIDATE_STRENGTHENING_PLAN.md`.
+
+Key directives:
+
+- Paper I: optionally add a concise Iteration-217 on-shell/off-shell structural-identifiability bridge;
+- Paper II: add the Iteration-217 distinction between statistical/nuisance and structural/map non-identifiability as the highest-value post-closure strengthening;
+- Paper III: preserve the scientific freeze and allow only a short downstream-model Outlook unless a claim-changing contradiction appears;
+- model-specific C5/Vilkovisky work, including the Iteration-291 `Tr U1` weight-completion correction, stays in the comparator/Candidate-Gravity publication layer;
+- after one controlled integration audit, freeze Papers I–III rather than continuously back-propagating every later Candidate-Gravity iteration.
+
+Frozen publication decision:
+
+`PAPERS_I_II_III_DO_NOT_WAIT_FOR_CANDIDATE_GRAVITY_COMPLETION`.
