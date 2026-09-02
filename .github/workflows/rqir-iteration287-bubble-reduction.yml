@@ -1,0 +1,27 @@
+name: rqir-iteration287-bubble-reduction
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration287_bubble_tensor_moment_reduction.py'
+      - '.github/workflows/rqir-iteration287-bubble-reduction.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration287:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy
+      - name: Run Iteration 287 bubble reduction certificate
+        run: |
+          python candidate_gravity/code/iteration287_bubble_tensor_moment_reduction.py | tee iteration287_result.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration287-result
+          path: iteration287_result.json
