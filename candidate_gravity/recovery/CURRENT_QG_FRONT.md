@@ -5,79 +5,68 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 287**
+**Authoritative Candidate Gravity front:** **Iteration 289**
 
 ## Current scientific state
 
-Iterations 278–280 established translation-closed timelike C5 support with nonzero routed `B3`/orbit trace, non-scaleless raised bubble/triangle support and a rank-3 scalar retarded cut-support basis. Iterations 281–284 rejected an invalid fitted-master shortcut, canonicalized the raised denominator sectors and proved exact numerator degree ceilings (`<=4` bubbles, `<=6` triangles). Iteration 285 corrected the insufficient denominator-only 9/50 numerator bases and certified complete actual-oracle 70/210 fixed-coordinate bases. Iteration 286 completed held-out reconstruction for every non-scaleless bubble and triangle sector.
+Iterations 278–280 established translation-closed timelike C5 support, non-scaleless raised bubble/triangle families and the scalar retarded cut-support basis. Iterations 281–286 canonicalized the denominator sectors, corrected the incomplete topology-only numerator basis, and certified complete actual-oracle polynomial reconstructions: 70 monomials for each degree-`<=4` bubble and 210 for each degree-`<=6` triangle.
 
-Iteration 287 now performs the first complete coefficient-level dimensional-regularization tensor reduction of the actual same-parent numerator.
+Iteration 287 completed the first actual coefficient-level DR tensor reduction. Both hard raised bubbles are nonzero:
 
-## Iteration 287 — complete raised-bubble tensor reduction
-
-For
-
-`N(l) / [(l^2)^2 ((l+q)^2)]`
-
-all 70 actual-oracle degree-`<=4` polynomial coefficients are mapped to rank-0/2/4 tensor moments and reduced in the convention
-
-`D_q log_R(-q^2)=1`,
-
-after dividing the loop integral by `i*pi^(D/2)`.
-
-### Bubble-a
-
-- `q^2 = 0.41`;
-- fit rank `70/70`;
-- held-out relative max residual `7.520447097449553e-10`;
-- normalized logarithmic/discontinuity coefficient
-  `C_a = -0.1247249362037728`;
-- loop-reflected coefficient identical;
-- reflection residual `0.0`.
-
-### Bubble-b
-
-- `q^2 = 0.21`;
-- fit rank `70/70`;
-- held-out relative max residual `3.2353465789325438e-9`;
-- normalized logarithmic/discontinuity coefficient
-  `C_b = +0.10231503679645079`;
-- loop-reflected coefficient identical;
-- reflection residual `0.0`.
-
-Both non-scaleless hard bubbles therefore survive complete tensor reduction and have opposite sign.
+- `C_a = -0.1247249362037728` at `q^2=0.41`;
+- `C_b = +0.10231503679645079` at `q^2=0.21`;
+- loop-reflection residuals: `0.0`;
+- held-out numerator reconstruction errors: `7.52e-10` and `3.24e-9`.
 
 Freeze:
 
 `PASS_COMPLETE_70_MONOMIAL_BUBBLE_TENSOR_MOMENT_REDUCTION_NONZERO`.
 
-The earlier exploratory bubble-a estimate `-0.64977` is superseded and must not be reused; it preceded the Iteration-285 complete-basis correction.
+The older exploratory bubble-a value `-0.64977` is superseded.
 
-## DR sanity checks
+## Iterations 288–289 — complete triangle reduction and IR-pole correction
 
-The reduction reproduces:
+Iteration 288 successfully reduced all three complete 210-monomial triangle numerators with rank-0/2/4/6 tensor moments. The scalar `l^2` cancellation control reproduces the ordinary one-null two-mass triangle cut with absolute errors `7.84e-6`, `8.26e-6`, `1.36e-5`, and all loop-reflection residuals are `0.0`.
 
-- scalar numerator: `1/q^2 = 2.4390243902439024` for the bubble-a calibration;
-- numerator `l^2`: coefficient `-1`;
-- numerator `(l^2)^2`: scaleless value `-1.3877787807814457e-17`.
+However, the raw actual-numerator epsilon scans are not finite as `epsilon -> 0`. The ordinary polynomial extrapolated values produced by the first Iteration-288 workflow are therefore **not physical finite coefficients**.
 
-These checks independently verify the logarithmic residue map and scaleless cancellation.
+Iteration 289 performs the correct Laurent audit
 
-## Retained Iteration-286 authority
+`D_common(epsilon) = A/epsilon + B + O(epsilon)`.
 
-All non-scaleless numerator sectors remain fully reconstructed:
+Actual triangle residues:
 
-- bubble-a/b: degree `<=4`, complete 70-monomial bases;
-- triangles `(0,0.21)`, `(0,0.41)`, `(0.21,0.41)`: degree `<=6`, complete 210-monomial bases;
-- held-out relative reconstruction errors remain approximately `10^-9` or smaller for bubbles and `10^-11` for triangles.
+- `(0,0.21)`: `A=-0.05908474654789776`;
+- `(0,0.41)`: `A=+0.003959618177742245`;
+- `(0.21,0.41)`: `A=-0.006164685444448067`.
 
-The null raised bubbles and the single squared-denominator family remain scaleless in the frozen massless DR treatment.
+Total:
+
+`A_triangle,total = -0.061289813814603585`.
+
+Controls:
+
+- maximum absolute scalar-calibration pole residue: `6.06e-8`;
+- minimum actual-sector pole magnitude: `3.96e-3`;
+- maximum cubic-vs-quadratic residue difference: `4.46e-7`.
+
+Thus the pole is robust and belongs to the current partial same-parent C5 `B3` block rather than to the numerical extrapolation procedure.
+
+Freeze:
+
+`PASS_DETECTED_ROBUST_UNCANCELLED_TRIANGLE_COMMON_CUT_IR_POLE__FINITE_COEFFICIENT_BLOCKED`.
+
+The diagnostic Laurent finite triangle sum `-0.3171725193424992` and diagnostic bubble+triangle finite sum `-0.3395824187498212` are **not authoritative physical finite coefficients** while the total pole is nonzero.
 
 ## Current C5 blocker
 
-`BLOCKED_COMPLETE_TRIANGLE_TENSOR_REDUCTION_AND_SOURCE_WARD_CONTACT_COMPLETION`.
+`BLOCKED_LINKED_SOURCE_WARD_CONTACT_IR_POLE_CANCELLATION_BEFORE_FINITE_C5_T_CUT`.
 
-Numerator completeness and raised-bubble reduction are no longer blockers. The immediate remaining coefficient-level problem is the complete degree-6 raised-triangle reduction, including the one-null-leg two-mass branch and routing/reflection checks. Source/Ward/contact completion and the linked hard-channel `T_cut` remain downstream.
+The next problem is no longer numerator reconstruction or raw tensor reduction. The current partial three-point block has an uncancelled IR pole, so the missing source/Ward/contact completion and the same-parent linked two-point term must be included before a finite comparator coordinate is defined.
+
+The frozen target remains
+
+`T_cut = D Gamma3_ret,soft - W[D K2]`.
 
 ## Stable readiness rubric
 
@@ -90,11 +79,7 @@ Numerator completeness and raised-bubble reduction are no longer blockers. The i
 
 MODEL_READINESS: 24%
 
-Change from Iteration 286: **0 percentage points**. A real tensor-reduction blocker has partially closed, but no source-completed linked comparator coordinate or comparator-subtracted robust residual yet exists.
-
-## Classification discipline
-
-Iteration 287 is a scoped C5 coefficient-level PASS. It is not a Candidate Gravity residual, not a novelty certificate, not a consistency PASS/FAIL of the candidate, and not evidence that other comparator classes vanish.
+Change from Iteration 287: **0 percentage points**. Tensor reduction advanced substantially, but the physical linked C5 comparator coordinate remains blocked by the required IR/source/Ward completion.
 
 ## Retained guardrails
 
@@ -104,14 +89,11 @@ Iteration 287 is a scoped C5 coefficient-level PASS. It is not a Candidate Gravi
 - Hard constraints precede profiling/Fisher.
 - Do not create `ANSATZ-003` until a concrete residual survives the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient.
 - Fisher/resources remain forbidden until a robust nonzero algebraic residual exists after comparator subtraction.
-- Endpoint transpose means full condensed-index endpoint reversal, never raw same-routing matrix transpose.
 - Do not reintroduce box masters from unclosed routing.
-- Do not infer master coefficients by fitting pre-integration family traces to scalar cut shapes.
-- Apply every loop shift/reflection to the primitive numerator before sector summation.
-- Retain exact degree ceilings `<=4` for raised bubbles and `<=6` for raised triangles unless parent dynamics changes.
-- Full rank of a proposed sampling matrix does not prove basis completeness; held-out actual same-parent oracle residuals are mandatory.
+- Apply loop shifts/reflections to primitive numerators before sector summation.
 - Do not use the superseded denominator-only 9/50 bases.
-- Do not reuse the superseded exploratory `-0.64977` bubble-a estimate.
+- Do not use Iteration-288 ordinary polynomial epsilon extrapolations as finite triangle coefficients.
+- Do not promote diagnostic finite Laurent terms before the total linked `1/epsilon` pole is cancelled.
 
 ## Candidate state
 
@@ -120,18 +102,21 @@ No robust Candidate Gravity residual exists.
 Fisher/resources: FORBIDDEN.  
 Blind heavy full-C5 run: NOT AUTHORIZED.
 
-## Iteration 287 authority files
+## Iteration 289 authority files
 
-- `candidate_gravity/C5_BUBBLE_TENSOR_REDUCTION_ITERATION287.md`
-- `candidate_gravity/code/iteration287_bubble_tensor_moment_reduction.py`
-- `candidate_gravity/results/iteration287_bubble_tensor_moment_reduction.json`
-- `candidate_gravity/C5_BUBBLE_TENSOR_REDUCTION_PREGATE_ITERATION287.md`
+- `candidate_gravity/results/iteration288_triangle_common_cut_raw_scan.json`
+- `candidate_gravity/code/iteration288_triangle_common_cut_reduction.py`
+- `candidate_gravity/code/iteration289_triangle_ir_pole_audit.py`
+- `candidate_gravity/results/iteration289_triangle_ir_pole_audit.json`
+- `candidate_gravity/C5_TRIANGLE_IR_POLE_AUDIT_ITERATION289.md`
+- `candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_289.md`
+- `research_log/2026-09-02_iteration_289_triangle_ir_pole_audit.md`
 
-## Exact next gate — Iteration 288
+## Exact next gate — Iteration 290
 
-1. Fit/export the complete 210 coefficients for all three raised-triangle sectors.
-2. Reduce rank-0/2/4/6 moments with the canonical repeated propagator retained.
-3. Calibrate by cancelling the repeated propagator with a numerator `l^2`; all three routings must reproduce the same ordinary one-null two-mass triangle cut.
-4. Extract the coefficient-level common hard-channel discontinuity and verify loop reflection.
-5. Then decompose the full triangle contribution into the scalar triangle plus induced bubble cut basis before assembling the complete C5 hard-channel cut.
-6. Source/Ward/contact completion, comparator quotient, Fisher/resources and `ANSATZ-003` remain downstream/forbidden.
+1. Return to the linked observable `T_cut = D Gamma3_ret,soft - W[D K2]`.
+2. Inventory all source, Ward/covariantization, contact and same-parent two-point pieces omitted from the current scoped `B3` block.
+3. Extract their `1/epsilon` hard-channel residues before computing finite terms.
+4. Test cancellation against the measured current residue `-0.061289813814603585`.
+5. Only after pole cancellation extract a finite C5 linked comparator coordinate and continue comparator subtraction.
+6. `ANSATZ-003`, Fisher/resources and blind heavy full-C5 remain forbidden.
