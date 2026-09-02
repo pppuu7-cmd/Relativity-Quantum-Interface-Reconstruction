@@ -4,73 +4,79 @@
 **Authoritative iteration:** 270  
 **MODEL_READINESS: 24%**
 
-## New exact routing gate
+## Authoritative result
 
-Starting from the Iteration-269 corrected physical orbit density and routed `Q1/Q2`, audit the projected same-parent identity
+Iteration 270 contains two compatible sub-results, both downstream of the Iteration-269 corrected orbit-density convention.
 
-`A_{gamma delta}=K^j_{gamma delta} E_j`
+First, projected `A=K E` was audited in condensed-index/Fourier space. For `K_m[S] E_n[T]`, the contracted field/EOM index carries momentum `q_j=k_T`, so the physical orbit support is
 
-in condensed-index/Fourier space.
+`p_out-p_in = k_S + q_j = k_S+k_T`.
 
-For a polarized term `K_m[S] E_n[T]`, the contracted field-space index `j` carries momentum `q_j`. With the frozen Iteration-267 convention,
+Freeze `PASS_EXACT_PROJECTED_A_CONTRACTED_FIELD_MOMENTUM_ROUTING` with guardrails `NO_DROP_CONTRACTED_EOM_MOMENTUM_IN_K_KERNEL` and `NO_PREMATURE_LOCAL_MATRIX_K_TIMES_E_AS_PHYSICAL_A`.
 
-`p_out-p_in = k_S + q_j`,
+Second, and more strongly, the exact same-parent parent object `A=R(DR)E` was evaluated directly at finite amplitudes with explicit Fourier endpoints, thereby retaining the full `K0E3+K1E2+K2E1` content without a local-matrix shortcut. The routed physical coefficients satisfy:
 
-and contraction with the EOM coefficient fixes
+- `||A1[s]||_F = 1.00e-9` (consistent with exact null-soft zero);
+- `||A1[a]||_F = 0.3538909325`;
+- `||A1[b]||_F = 0.4373675400`;
+- `||A2[s,a]||_F = 0.7472217396`;
+- `||A2[s,b]||_F = 0.7529980727`;
+- `||A2[a,b]||_F = 0.6505045916`;
+- `||A3[s,a,b]||_F = 2.2278189997`.
 
-`q_j = k_T`.
+`A3` permutation residual is `1.36e-10`; endpoint-reversed transpose residuals are `<=3.92e-7`.
 
-Thus
+The exact 19-term cubic Leibniz realization reduces to the frozen 15 null-soft survivors; the four `A1[s]` terms contaminate only at `||B19-B15||_F=2.56e-8`. All eight Iteration-266 forward transpose-class representatives are nonzero. Seven partners were checked through endpoint reversal / real `-K`, with worst representative transpose residual `3.29e-7`.
 
-`p_out-p_in = k_S+k_T`.
+The direct 15-term sum and the 8-class reconstruction agree to `2.78e-16`. Full endpoint-transpose residual is `3.25e-7`.
 
-The contracted EOM momentum cannot be discarded before forming `A`. A finite matrix `K_m(p)` labelled only by orbit momentum and its explicit background subset is not a complete physical Fourier kernel for this contraction.
+Physical routed cubic numerator at the frozen generic loop momentum:
+
+`||B3[s,a,b]||_F = 2.2209140981`,
+
+`max|B3[s,a,b]| = 1.3471946832`.
+
+Step scans keep the Frobenius norm stable at `2.2209140...2.2209142`, excluding numerical near-zero.
 
 Freeze:
 
-`PASS_EXACT_PROJECTED_A_CONTRACTED_FIELD_MOMENTUM_ROUTING`.
+`PASS_SCOPED_PHYSICAL_ROUTED_NULLSOFT_B3_EXPLICIT_NONZERO_AND_TRANSPOSE_VALIDATED`.
 
-Guardrails:
+Guardrail:
 
-`NO_DROP_CONTRACTED_EOM_MOMENTUM_IN_K_KERNEL`.
+`NONZERO_B3 IS A C5 NUMERATOR CERTIFICATE ONLY; DO NOT PROMOTE TO FINAL COMPARATOR OR CANDIDATE RESIDUAL BEFORE TENSOR_REDUCTION_SOURCE_COMPLETION_AND_HARD_CHANNEL_PROJECTION`.
 
-`NO_PREMATURE_LOCAL_MATRIX_K_TIMES_E_AS_PHYSICAL_A`.
+## Classification and blocker update
 
-## Reproducible checks
+This is **not** a Candidate Gravity residual, not an exact comparator identity, not a consistency FAIL, not regime-specific non-identifiability and not near-degeneracy. It is a scoped algebraic nonzero certificate for the physical routed C5 numerator.
 
-The routing enumerator preserves all earlier frozen projected/null-soft counts:
+The old `BLOCKED_NOT_ZERO` status is superseded for this scoped null-soft `B3` target: the numerator is explicitly nonzero. The remaining umbrella blocker is now
 
-- `A1[s]`: 0 survivors;
-- `A2[s,a]`: 2;
-- `A2[s,b]`: 2;
-- `A2[a,b]`: 3;
-- `A3[s,a,b]`: 6.
+`BLOCKED_4D_EINSTEIN_VD_TENSOR_REDUCTION_SOURCE_PROJECTION_AND_LORENTZIAN_HARD_CHANNEL`.
 
-The eight Iteration-266 forward `B3` representatives all have total support `k_s+k_a+k_b`, but their `A` factors must now be instantiated with an explicit contracted-field momentum route before numerical multiplication with the corrected Iteration-269 resolvents.
+Scoped tensor/master-integral reduction is now authorized. Blind heavy full-C5 expansion is still forbidden.
 
-## Classification
-
-This closes an implementation/provenance ambiguity. It is not a consistency FAIL, exact comparator identity, regime-specific non-identifiability, near-degeneracy, novelty certificate or Candidate Gravity residual.
-
-Retain `BLOCKED_4D_EINSTEIN_VD_RESOLVENT_VERTEX_LIBRARY_TENSOR_REDUCTION_AND_SOURCE_PROJECTION` and `BLOCKED_NOT_ZERO`.
-
-No robust residual; `ANSATZ-003` not created; Fisher/resources and blind heavy integration forbidden.
+No robust residual exists; `ANSATZ-003` remains not created. Fisher/resources remain forbidden.
 
 ## Readiness
 
 `MODEL_READINESS: 24%`.
 
-Change from Iteration 269: **0 percentage points**. The routed projected-`A` implementation contract is now exact, but comparator foundation remains `24/25`; explicit routed numerical `K/A/B3`, tensor reduction and source projection remain open, so no rubric category closes.
+Change from Iteration 269: **0 percentage points** under the frozen rubric. This is a major internal C5 milestone, but comparator foundation remains `24/25` until the nonzero numerator is converted into the actual physical C5 comparator coordinate. Robust unique residual remains `0/20`.
 
-## Files
+## Authority files
 
 - `candidate_gravity/C5_VD_PROJECTED_A_FIELD_MOMENTUM_ROUTING_ITERATION270.md`
 - `candidate_gravity/code/iteration270_vd_projected_a_field_momentum_routing.py`
 - `candidate_gravity/results/iteration270_vd_projected_a_field_momentum_routing.json`
+- `candidate_gravity/C5_VD_PHYSICAL_B3_NONZERO_ITERATION270.md`
+- `candidate_gravity/code/iteration270_vd_physical_b3_nonzero.py`
+- `candidate_gravity/results/iteration270_vd_physical_b3_nonzero.json`
 - `research_log/2026-09-02_iteration_270_vd_projected_a_field_momentum_routing.md`
+- `research_log/2026-09-02_iteration_270_vd_physical_b3_nonzero.md`
 - `recovery/RECOVERY_DELTA_ITERATION_270.md`
 - `docs/CANDIDATE_GRAVITY_ARTICLE_NEGATIVE_RESULTS_MATRIX_ITERATION270.md`
 
 ## Exact next gate — Iteration 271
 
-Implement the physical routed kernel `K_m[S](p_out,p_in;q_j)` or an exactly equivalent representation from frozen affine `R`, `Gamma0/Gamma1/Gamma2` and the 2/4/7 primitive library. Contract it with certified `E1/E2/E3` to obtain numerical routed `A1/A2/A3`. Then evaluate the eight forward `+K` `B3[s,a,b]` representatives using corrected Iteration-269 `Q2`, reconstruct the seven endpoint-reversed partners in the real `-K` sector, and require every transpose regression to pass before freezing a nonzero physical `B3`. Tensor reduction remains forbidden until that certificate exists.
+Perform a scoped tensor/master-integral reduction of the certified routed `B3[s,a,b]` numerator at the frozen null-soft kinematics. Preserve the raised bubble/triangle topology bounds from Iterations 245/250. Extract the regular/log/nonanalytic hard-channel structures needed for the linked `T_cut` coordinate before source projection. Then complete source/Ward/contact and Lorentzian hard-channel projection. Do not launch Fisher/resources, create `ANSATZ-003`, or broaden into a blind heavy full-C5 run.
