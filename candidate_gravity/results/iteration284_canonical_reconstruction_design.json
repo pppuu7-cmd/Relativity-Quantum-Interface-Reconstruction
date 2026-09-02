@@ -1,0 +1,20 @@
+{
+  "iteration": 284,
+  "model_readiness_percent": 24,
+  "translation_closed": true,
+  "bubble_basis_size": 9,
+  "triangle_basis_size": 50,
+  "canonical_shift_rule": "repeated denominator (p+v)^2 -> l^2 with p=l-v; apply identical substitution to primitive numerator before summation",
+  "degree_preservation": "affine loop translation preserves degree<=4 for raised bubbles and degree<=6 for raised triangles",
+  "sectors": {
+    "bubble-a": {"q2": 0.41, "train_points": 40, "heldout_points": 18, "train_rank": 9, "heldout_rank": 9, "train_condition_number": 67.00698173438232},
+    "bubble-b": {"q2": 0.21, "train_points": 40, "heldout_points": 18, "train_rank": 9, "heldout_rank": 9, "train_condition_number": 61.89396976785232},
+    "triangle-(0,0.21)": {"basis_size": 50, "train_points": 120, "heldout_points": 70, "train_rank": 50, "heldout_rank": 50, "external_gram_det": -0.010000000000000014, "train_condition_number": 1256676.4279667367},
+    "triangle-(0,0.41)": {"basis_size": 50, "train_points": 120, "heldout_points": 70, "train_rank": 50, "heldout_rank": 50, "external_gram_det": -0.010000000000000004, "train_condition_number": 10528.297187243707},
+    "triangle-(0.21,0.41)": {"basis_size": 50, "train_points": 120, "heldout_points": 70, "train_rank": 50, "heldout_rank": 50, "external_gram_det": -0.010000000000000075, "train_condition_number": 114998.17098091882}
+  },
+  "classification": "PASS_EXACT_CANONICAL_SHIFT_DEGREE_PRESERVATION_AND_FULL_RANK_RECONSTRUCTION_DESIGN",
+  "guardrail": "DO_NOT_INTERPRET_FULL_RANK_SAMPLING_AS_NUMERATOR_RECONSTRUCTION; ACTUAL SAME_PARENT PRIMITIVE NUMERATOR ORACLE VALUES AND HELD_OUT RESIDUALS ARE STILL REQUIRED",
+  "candidate_residual": false,
+  "next_gate": 285
+}
