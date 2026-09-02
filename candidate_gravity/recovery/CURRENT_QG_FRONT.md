@@ -1,72 +1,63 @@
 # Candidate Gravity Current Front
 
-**Updated:** 2026-09-02  
+**Updated:** 2026-09-03  
 **Infrastructure status:** READY — 100%  
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 289**
+**Authoritative Candidate Gravity front:** **Iteration 290**
 
 ## Current scientific state
 
-Iterations 278–280 established translation-closed timelike C5 support, non-scaleless raised bubble/triangle families and the scalar retarded cut-support basis. Iterations 281–286 canonicalized the denominator sectors, corrected the incomplete topology-only numerator basis, and certified complete actual-oracle polynomial reconstructions: 70 monomials for each degree-`<=4` bubble and 210 for each degree-`<=6` triangle.
+Iterations 278–286 established translation-closed timelike C5 support, canonical raised bubble/triangle sectors and complete actual-oracle numerator reconstructions. Iteration 287 reduced both hard raised bubbles to nonzero coefficient-level DR results. Iteration 288 reduced all three complete raised-triangle numerators, and Iteration 289 corrected the naive finite extrapolation by a Laurent audit.
 
-Iteration 287 completed the first actual coefficient-level DR tensor reduction. Both hard raised bubbles are nonzero:
+The current scoped same-parent triangle block has a robust common-cut pole
 
-- `C_a = -0.1247249362037728` at `q^2=0.41`;
-- `C_b = +0.10231503679645079` at `q^2=0.21`;
-- loop-reflection residuals: `0.0`;
-- held-out numerator reconstruction errors: `7.52e-10` and `3.24e-9`.
+`A_B3 = -0.061289813814603585`,
 
-Freeze:
+with scalar-calibration pole residues below `6.1e-8`. Therefore the finite diagnostic triangle/bubble sums are not yet physical C5 coefficients.
 
-`PASS_COMPLETE_70_MONOMIAL_BUBBLE_TENSOR_MOMENT_REDUCTION_NONZERO`.
-
-The older exploratory bubble-a value `-0.64977` is superseded.
-
-## Iterations 288–289 — complete triangle reduction and IR-pole correction
-
-Iteration 288 successfully reduced all three complete 210-monomial triangle numerators with rank-0/2/4/6 tensor moments. The scalar `l^2` cancellation control reproduces the ordinary one-null two-mass triangle cut with absolute errors `7.84e-6`, `8.26e-6`, `1.36e-5`, and all loop-reflection residuals are `0.0`.
-
-However, the raw actual-numerator epsilon scans are not finite as `epsilon -> 0`. The ordinary polynomial extrapolated values produced by the first Iteration-288 workflow are therefore **not physical finite coefficients**.
-
-Iteration 289 performs the correct Laurent audit
-
-`D_common(epsilon) = A/epsilon + B + O(epsilon)`.
-
-Actual triangle residues:
-
-- `(0,0.21)`: `A=-0.05908474654789776`;
-- `(0,0.41)`: `A=+0.003959618177742245`;
-- `(0.21,0.41)`: `A=-0.006164685444448067`.
-
-Total:
-
-`A_triangle,total = -0.061289813814603585`.
-
-Controls:
-
-- maximum absolute scalar-calibration pole residue: `6.06e-8`;
-- minimum actual-sector pole magnitude: `3.96e-3`;
-- maximum cubic-vs-quadratic residue difference: `4.46e-7`.
-
-Thus the pole is robust and belongs to the current partial same-parent C5 `B3` block rather than to the numerical extrapolation procedure.
-
-Freeze:
+Freeze retained from Iteration 289:
 
 `PASS_DETECTED_ROBUST_UNCANCELLED_TRIANGLE_COMMON_CUT_IR_POLE__FINITE_COEFFICIENT_BLOCKED`.
 
-The diagnostic Laurent finite triangle sum `-0.3171725193424992` and diagnostic bubble+triangle finite sum `-0.3395824187498212` are **not authoritative physical finite coefficients** while the total pole is nonzero.
+## Iteration 290 — B3/source IR interface authority map
+
+The existing MSSC-001 source sector already has a physical connected-cut IR factorization
+
+`R_in = R_out = -8 M_Born`
+
+from Iteration 222. It cannot be subtracted directly from `A_B3`.
+
+Reason: the two residues belong to different objects/conventions. The current `B3` pole is a scoped off-shell/1PI Vilkovisky same-parent contribution before source/Ward/contact completion, whereas the `-8 M_Born` relation is an on-shell connected scalar+graviton source-cut result in the stripped Iteration-219/221 normalization.
+
+The same MSSC-001 parent action fixes the off-shell Ward identity
+
+`k_mu V^{mu nu} = (p'^2-m^2)p^nu - (p^2-m^2)p'^nu`.
+
+Thus the longitudinal off-shell completion is tied to inverse scalar propagators and nonlinear contact terms; these EOM contributions vanish on shell and cannot be inferred from the on-shell Born-factorizing residue alone. This preserves the Iteration-217 non-identifiability boundary.
+
+Freeze:
+
+`PASS_SOURCE_IR_INTERFACE_AUTHORITY_MAP__B3_POLE_ORIGIN_STILL_BLOCKED`.
+
+The pole must be separated into:
+
+- A: Ward/EOM/source-convention pole — cancel/remove in linked/source completion;
+- B: physical universal gravitational IR factor — need not vanish; subtract only in the matched physical connected observable using the frozen Born/inclusive prescription;
+- C: finite transverse hard remainder — only this is eligible for comparator-coordinate promotion.
+
+Current data do not identify whether `A_B3` is A, B, or a mixture.
 
 ## Current C5 blocker
 
-`BLOCKED_LINKED_SOURCE_WARD_CONTACT_IR_POLE_CANCELLATION_BEFORE_FINITE_C5_T_CUT`.
+`BLOCKED_POLE_LEVEL_LINKED_K2_SOURCE_WARD_CONTACT_COMPLETION_IN_SAME_CONVENTION`.
 
-The next problem is no longer numerator reconstruction or raw tensor reduction. The current partial three-point block has an uncancelled IR pole, so the missing source/Ward/contact completion and the same-parent linked two-point term must be included before a finite comparator coordinate is defined.
-
-The frozen target remains
+The frozen linked target remains
 
 `T_cut = D Gamma3_ret,soft - W[D K2]`.
+
+No additional finite master extraction is authoritative until the `1/epsilon` coefficient of the linked `W[D K2]` plus MSSC-001 source/contact completion is derived in the same convention as `B3`.
 
 ## Stable readiness rubric
 
@@ -79,7 +70,7 @@ The frozen target remains
 
 MODEL_READINESS: 24%
 
-Change from Iteration 287: **0 percentage points**. Tensor reduction advanced substantially, but the physical linked C5 comparator coordinate remains blocked by the required IR/source/Ward completion.
+Change from Iteration 289: **0 percentage points**. The source/IR interface is now authority-clean, but no new readiness-rubric block is closed.
 
 ## Retained guardrails
 
@@ -93,7 +84,9 @@ Change from Iteration 287: **0 percentage points**. Tensor reduction advanced su
 - Apply loop shifts/reflections to primitive numerators before sector summation.
 - Do not use the superseded denominator-only 9/50 bases.
 - Do not use Iteration-288 ordinary polynomial epsilon extrapolations as finite triangle coefficients.
-- Do not promote diagnostic finite Laurent terms before the total linked `1/epsilon` pole is cancelled.
+- Do not promote diagnostic finite Laurent terms before pole classification/completion.
+- Do not subtract `-8 M_Born` from the current `B3` residue without an explicit observable/normalization map.
+- Do not require a physical Born-factorizing gravitational IR pole to vanish merely because the partial 1PI block must be completed.
 
 ## Candidate state
 
@@ -102,21 +95,18 @@ No robust Candidate Gravity residual exists.
 Fisher/resources: FORBIDDEN.  
 Blind heavy full-C5 run: NOT AUTHORIZED.
 
-## Iteration 289 authority files
+## Iteration 290 authority files
 
-- `candidate_gravity/results/iteration288_triangle_common_cut_raw_scan.json`
-- `candidate_gravity/code/iteration288_triangle_common_cut_reduction.py`
-- `candidate_gravity/code/iteration289_triangle_ir_pole_audit.py`
-- `candidate_gravity/results/iteration289_triangle_ir_pole_audit.json`
-- `candidate_gravity/C5_TRIANGLE_IR_POLE_AUDIT_ITERATION289.md`
-- `candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_289.md`
-- `research_log/2026-09-02_iteration_289_triangle_ir_pole_audit.md`
+- `candidate_gravity/results/iteration290_b3_source_ir_interface_audit.json`
+- `candidate_gravity/C5_B3_SOURCE_IR_INTERFACE_ITERATION290.md`
+- `candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_290.md`
+- `research_log/2026-09-03_iteration_290_b3_source_ir_interface.md`
 
-## Exact next gate — Iteration 290
+## Exact next gate — Iteration 291
 
-1. Return to the linked observable `T_cut = D Gamma3_ret,soft - W[D K2]`.
-2. Inventory all source, Ward/covariantization, contact and same-parent two-point pieces omitted from the current scoped `B3` block.
-3. Extract their `1/epsilon` hard-channel residues before computing finite terms.
-4. Test cancellation against the measured current residue `-0.061289813814603585`.
-5. Only after pole cancellation extract a finite C5 linked comparator coordinate and continue comparator subtraction.
+1. Construct the pole-level linked quantity `T_cut = D Gamma3_ret,soft - W[D K2]` in one parameter and normalization convention.
+2. Derive the `1/epsilon` coefficient of the same-parent `W[D K2]` term and every MSSC-001 source/contact term fixed by the parent action.
+3. Test the Ward/EOM pole sum against `A_B3 = -0.061289813814603585` before computing finite terms.
+4. If a residual pole survives, determine whether it factorizes onto the matched physical Born amplitude; only then apply the already frozen source hard-remainder prescription.
+5. Only a finite transverse remainder after A/B separation may enter the C5 comparator quotient.
 6. `ANSATZ-003`, Fisher/resources and blind heavy full-C5 remain forbidden.
