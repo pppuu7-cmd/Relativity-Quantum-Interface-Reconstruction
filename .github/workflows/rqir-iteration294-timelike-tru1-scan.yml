@@ -1,0 +1,27 @@
+name: rqir-iteration294-timelike-tru1-scan
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration294_timelike_weight_completed_tru1_scan.py'
+      - '.github/workflows/rqir-iteration294-timelike-tru1-scan.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration294:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy
+      - name: Run Iteration 294 timelike TrU1 scan
+        run: |
+          python candidate_gravity/code/iteration294_timelike_weight_completed_tru1_scan.py | tee iteration294_result.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration294-result
+          path: iteration294_result.json
