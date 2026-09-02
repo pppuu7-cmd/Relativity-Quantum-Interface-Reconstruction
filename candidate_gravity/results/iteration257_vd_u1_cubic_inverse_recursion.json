@@ -1,0 +1,12 @@
+{
+  "seed": 257,
+  "inverse_series_error_at_eps_1e-5": 5.551115123125783e-17,
+  "symmetry_residual_Q0": 2.0816681711721685e-17,
+  "symmetry_residual_Q1": 3.469446951953614e-18,
+  "symmetry_residual_Q2": 5.421010862427522e-19,
+  "pair_residual_T2T3": 2.168404344971009e-19,
+  "pair_residual_T4T5": 6.776263578034403e-20,
+  "symmetry_residual_T1": 4.336808689942018e-19,
+  "symmetry_residual_T6": 1.0842021724855044e-19,
+  "symmetry_residual_B3": 8.673617379884035e-19
+}
