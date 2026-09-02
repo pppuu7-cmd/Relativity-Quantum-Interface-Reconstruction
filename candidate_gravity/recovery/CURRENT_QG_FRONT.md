@@ -5,50 +5,40 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 282**
+**Authoritative Candidate Gravity front:** **Iteration 283**
 
 ## Current scientific state
+Iterations 278–280 established a translation-closed timelike continuation family with nonzero physical routed B3/orbit trace, non-scaleless bubble-a/bubble-b/triangle support and a rank-3 scalar retarded cut-support basis. Iteration 281 rejected a constant fitted-master surrogate. Iteration 282 exactly canonicalized the raised-index denominator sectors. Iteration 283 now proves a finite loop-momentum numerator degree/basis bound before any interpolation or IBP.
 
-Iterations 278–280 established a translation-closed timelike continuation family with nonzero physical routed B3/orbit trace, resolved its non-scaleless support into bubble-a, bubble-b and triangle families, and established a rank-3 scalar retarded cut-support basis on the controlled linked timelike slice. Iteration 281 then rejected the invalid shortcut of fitting three kinematics-independent master coefficients directly to the pre-integration family trace.
+## Iteration 283 — exact numerator degree and finite-basis bound
+On the flat Einstein background, `Q0(p)=-eta/p^2` exactly. In the frozen same-parent dynamics `N1,N2` and polarized `A1,A2,A3` are at most quadratic in routed loop momentum. Exact inverse recursion therefore gives `Q1` numerator degree <=2, sequential `Q2` degree <=4, and `Q2` N2-contact degree <=2.
 
-## Iteration 282 — exact raised-index sector canonicalization
+Expanding all 23 translation-closed primitive B3 branches gives:
 
-Before reconstructing genuine p-dependent numerators, Iteration 282 removed the remaining loop-routing ambiguity exactly by enumerating all 23 translation-closed primitive B3 denominator branches.
+- single squared scaleless: 1 branch, numerator degree <=2;
+- null raised bubble: 2 branches, degree <=4;
+- bubble-a: 4 branches, degree <=4;
+- bubble-b: 4 branches, degree <=4;
+- raised triangle: 12 branches, degree <=6.
 
-The exact multiplicity/invariant census is:
-
-- 1 single squared scaleless branch: `(2)`;
-- 2 null raised bubbles: `(2,1)` with `q^2=0`;
-- 4 bubble-b branches: `(2,1)` with `q^2=0.21`;
-- 4 bubble-a branches: `(2,1)` with `q^2=0.41`;
-- 12 raised triangles: `(2,1,1)` with pairwise edge invariants `(0,0.21,0.41)`.
-
-Thus every nontrivial closed primitive branch has exactly one squared denominator, with no propagator power above two.
-
-For the twelve triangle branches, choosing the doubled propagator as canonical loop origin splits the raised-index numerator problem into exactly three sectors of four branches each, labeled by the two invariant edges incident on the squared denominator:
-
-- `(0,0.21)`: 4;
-- `(0,0.41)`: 4;
-- `(0.21,0.41)`: 4.
+Thus no primitive branch requires numerator degree above six. For scalar orbit-trace reconstruction at fixed external invariants, the Lorentz monomial basis `(l^2)^a prod_i(l.q_i)^b_i` with weighted degree `2a+sum b_i<=d` has ceiling sizes 2 (single), 9 (raised bubble with one independent external q) and 50 (raised triangle with two independent external q's), before symmetry/Gram reductions.
 
 Freeze:
 
-`PASS_EXACT_TRANSLATION_CLOSED_RAISED_INDEX_SECTOR_CANONICALIZATION`.
+`PASS_EXACT_TRANSLATION_CLOSED_B3_NUMERATOR_DEGREE_AND_FINITE_BASIS_BOUND`.
 
 Guardrail:
 
-`DO_NOT_COMBINE_TRIANGLE_BRANCHES_BEFORE_MAPPING_THE_SQUARED_DENOMINATOR_TO_A_CANONICAL_VERTEX_AND_TRANSFORMING_THE_NUMERATOR_WITH_THE_SAME_LOOP_SHIFT`.
+`DO_NOT_FIT_CANONICAL_SECTOR_NUMERATORS_WITH_DEGREE_ABOVE_THE_EXACT_2_4_6_BOUNDS_WITHOUT_A_NEW_DYNAMICAL_VERSION`.
 
-This does not alter the previously frozen scalar-master statement: the nontrivial scalar topology remains two raised bubbles plus one triangle kinematic family. The new result resolves the raised-index numerator routing required before tensor/IBP coefficient extraction.
+This is an exact power-counting/reconstruction-bound result, not a consistency PASS/FAIL, comparator identity, regime-specific non-identifiability, near-degeneracy or novelty certificate.
 
 ## Current C5 blocker
+`BLOCKED_CANONICAL_SHIFTED_P_DEPENDENT_NUMERATOR_RECONSTRUCTION_AND_TENSOR_IBP_COEFFICIENT_EXTRACTION`.
 
-`BLOCKED_CANONICAL_SECTOR_P_DEPENDENT_NUMERATOR_RECONSTRUCTION_AND_TENSOR_IBP_COEFFICIENT_EXTRACTION`.
-
-The blocker is operational. Translation closure, nonzero B3 numerator existence, scalar master support, and raised-index routing canonicalization are retained. What remains missing is the genuine p-dependent numerator reconstruction and coefficient extraction.
+Operational BLOCKED only. Translation closure, nonzero B3 numerator existence, scalar master support, raised-index canonicalization and finite numerator degree bounds are retained. Missing: actual canonical-shifted p-dependent sector numerators, held-out reconstruction validation and tensor/IBP coefficient functions.
 
 ## Stable readiness rubric
-
 - comparator foundation `24/25`;
 - robust unique residual `0/20`;
 - frozen parent dynamics/ANSATZ `0/20`;
@@ -58,10 +48,9 @@ The blocker is operational. Translation closure, nonzero B3 numerator existence,
 
 MODEL_READINESS: 24%
 
-Change from previous recorded estimate: **0 percentage points**. Iteration 282 removes an exact routing ambiguity required for a valid C5 IBP reduction, but it does not yet produce a physical linked comparator coordinate or comparator-subtracted residual.
+Change from previous recorded estimate: **0 percentage points**. Iteration 283 proves the remaining reconstruction is finite and bounded by frozen dynamics, but no linked comparator coordinate or comparator-subtracted residual has yet been produced.
 
 ## Retained guardrails
-
 - Repository recovery files and recent commits are source of truth.
 - Unsupported comparator coordinates are `BLOCKED`, never zero-filled.
 - Keep consistency FAIL, exact comparator identity, regime-specific non-identifiability, operational BLOCKED, near-degeneracy and absence of novelty certificate distinct.
@@ -73,9 +62,9 @@ Change from previous recorded estimate: **0 percentage points**. Iteration 282 r
 - Do not reintroduce box masters from unclosed routing.
 - Do not infer master coefficients by fitting pre-integration family traces to scalar cut shapes.
 - Do not combine raised triangle numerator branches before canonicalizing the squared-denominator vertex and applying the same loop shift to the numerator.
+- Do not enlarge the canonical-sector numerator fit above degree 4 for raised bubbles or degree 6 for raised triangles without a new dynamical version.
 
 ## Retained comparator state
-
 ### C3
 `BLOCKED_FORMAL_UNDERDETERMINATION_OF_NONLINEAR_CONSERVED_COMPLETION` — not zero and not consistency FAIL.
 
@@ -90,26 +79,24 @@ Timelike non-scaleless family-resolved orbit trace: scoped PASS.
 Three-dimensional scalar retarded cut-support basis: scoped PASS.  
 Constant fitted master-coefficient surrogate: scoped FAIL.  
 Raised-index sector canonicalization: exact PASS.  
-Canonical-sector p-dependent numerator reconstruction and tensor/IBP coefficient extraction: BLOCKED downstream.
+Finite numerator degree/basis bound: exact PASS.  
+Canonical-shifted p-dependent numerator reconstruction and tensor/IBP coefficient extraction: BLOCKED downstream.
 
 ### Other routes
 Asymptotic-safety, nonlocal and proxy routes retain frozen blockers; no proxy replaces the fixed comparator quotient.
 
 ## Candidate state
-
 No robust Candidate Gravity residual exists.  
 `ANSATZ-003`: NOT CREATED.  
 Fisher/resources: FORBIDDEN.  
 Blind heavy full C5 run: NOT AUTHORIZED.
 
-## Iteration 282 authority files
+## Iteration 283 authority files
+- `candidate_gravity/C5_NUMERATOR_DEGREE_BASIS_ITERATION283.md`
+- `candidate_gravity/code/iteration283_numerator_degree_basis_bound.py`
+- `candidate_gravity/results/iteration283_numerator_degree_basis_bound.json`
+- `research_log/2026-09-02_iteration_283_numerator_degree_basis_bound.md`
+- `recovery/RECOVERY_DELTA_ITERATION_283.md`
 
-- `candidate_gravity/C5_RAISED_INDEX_CANONICALIZATION_ITERATION282.md`
-- `candidate_gravity/code/iteration282_canonical_raised_family_routing.py`
-- `candidate_gravity/results/iteration282_canonical_raised_family_routing.json`
-- `research_log/2026-09-02_iteration_282_raised_index_canonicalization.md`
-- `recovery/RECOVERY_DELTA_ITERATION_282.md`
-
-## Exact next gate — Iteration 283
-
-For bubble-a, bubble-b and each of the three canonical raised-triangle vertex sectors, apply the exact loop shift that places the squared denominator at `l^2` and transform the numerator with the identical shift. Reconstruct each sector-summed p-dependent numerator in a finite Lorentz-covariant tensor/rational basis in `l` and external invariants; validate on held-out loop-momentum points; then tensor/IBP reduce the canonical sector sums to actual kinematic coefficient functions multiplying the frozen scalar cut-support basis. Source/Ward/contact completion, Lorentzian comparator quotient, Fisher/resources and `ANSATZ-003` remain downstream/forbidden.
+## Exact next gate — Iteration 284
+Apply the Iteration-282 canonical loop shifts to the actual p-dependent primitive numerators and only then form sector sums. Reconstruct bubble-a and bubble-b sector sums in Lorentz bases of degree <=4 and each raised-triangle canonical vertex sector in a Lorentz basis of degree <=6; validate all reconstructions on held-out loop-momentum points. Only after that perform scoped tensor/IBP reduction to kinematic coefficient functions multiplying the already frozen scalar cut-support basis. Source/Ward/contact completion, Lorentzian comparator quotient, Fisher/resources and `ANSATZ-003` remain downstream/forbidden.
