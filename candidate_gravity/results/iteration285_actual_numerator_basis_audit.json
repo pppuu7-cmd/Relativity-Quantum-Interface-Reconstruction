@@ -1,0 +1,26 @@
+{
+  "iteration": 285,
+  "model_readiness_percent": 24,
+  "oracle_crosscheck": {
+    "trace": 0.9605914097678994,
+    "fro": 1.3106212324929962,
+    "matrix_residual_vs_direct_Q1_Q2_sum": 1.3153367284246542e-12
+  },
+  "degree_bounds_retained": {"bubble": 4, "triangle": 6},
+  "bubble_a": {
+    "topology_only_9": {"rank": 9, "basis_size": 9, "condition_number": 42.158085625465866, "heldout_max_abs": 10.329619337815334, "heldout_rms": 3.208860797195839, "heldout_rel_max": 0.948145010025525},
+    "full_coordinate_degree4_70": {"rank": 70, "basis_size": 70, "condition_number": 195.75086164621882, "heldout_max_abs": 1.0128019756194817e-08, "heldout_rms": 3.5642326876172467e-09, "heldout_rel_max": 9.296403942129201e-10}
+  },
+  "bubble_b": {
+    "topology_only_9": {"rank": 9, "basis_size": 9, "condition_number": 71.09172052381814, "heldout_max_abs": 5.922479859517175, "heldout_rms": 2.082488622274656, "heldout_rel_max": 0.681105054511143},
+    "full_coordinate_degree4_70": {"rank": 70, "basis_size": 70, "condition_number": 155.64142207707815, "heldout_max_abs": 1.9333951328803778e-08, "heldout_rms": 5.815755899751432e-09, "heldout_rel_max": 2.223469270656875e-09}
+  },
+  "triangle_test_sector": "tri_(0.0, 0.41)",
+  "triangle_topology_only_50": {"rank": 50, "basis_size": 50, "condition_number": 15880.778281512028, "heldout_max_abs": 54.2356922813419, "heldout_rms": 13.135227733862866, "heldout_rel_max": 33.20559428413743},
+  "triangle_full_coordinate_degree6_210": {"rank": 210, "basis_size": 210, "condition_number": 5186.568989589245, "heldout_max_abs": 3.5559200028956184e-10, "heldout_rms": 8.717599476741253e-11, "heldout_rel_max": 8.872284498320589e-11},
+  "classification": "PASS_ACTUAL_NUMERATOR_ORACLE_AND_FAIL_TOPOLOGY_ONLY_9_50_BASIS_WITH_COMPLETE_70_210_RECONSTRUCTION_CERTIFICATES",
+  "supersedes": "Iterations 283-284 minimal 9/50 numerator-basis sufficiency; exact degree ceilings and denominator canonicalization remain valid",
+  "guardrail": "DENOMINATOR_TOPOLOGY_DOES_NOT_REMOVE_SOFT_MOMENTUM_OR_TT_POLARIZATION_DEPENDENCE_FROM_THE_NUMERATOR",
+  "candidate_residual": false,
+  "next_gate": 286
+}
