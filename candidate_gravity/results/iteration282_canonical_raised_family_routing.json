@@ -1,0 +1,23 @@
+{
+  "iteration": 282,
+  "model_readiness_percent": 24,
+  "translation_closed": true,
+  "primitive_branch_count": 23,
+  "denominator_multiplicity_patterns": [
+    {"multiplicities":[2],"pair_q2":[],"count":1},
+    {"multiplicities":[2,1],"pair_q2":[0.0],"count":2},
+    {"multiplicities":[2,1],"pair_q2":[0.21],"count":4},
+    {"multiplicities":[2,1],"pair_q2":[0.41],"count":4},
+    {"multiplicities":[2,1,1],"pair_q2":[0.0,0.21,0.41],"count":12}
+  ],
+  "bubble_squared_origin_q2_census": {"0.0":2,"0.21":4,"0.41":4},
+  "triangle_squared_vertex_incident_q2_sectors": {
+    "(0.0, 0.21)":4,
+    "(0.0, 0.41)":4,
+    "(0.21, 0.41)":4
+  },
+  "exact_reduction_statement": "Every nontrivial closed primitive branch has exactly one squared denominator. The 12 triangle branches split into three canonical raised-index sectors of four branches each, according to the two invariant edges incident on the squared denominator: (0,0.21), (0,0.41), and (0.21,0.41). Bubble sectors have multiplicity pattern (2,1).",
+  "classification": "PASS_EXACT_TRANSLATION_CLOSED_RAISED_INDEX_SECTOR_CANONICALIZATION",
+  "guardrail": "DO_NOT_COMBINE_TRIANGLE_BRANCHES_BEFORE_MAPPING_THE_SQUARED_DENOMINATOR_TO_A_CANONICAL_VERTEX_AND_TRANSFORMING_THE_NUMERATOR_WITH_THE_SAME_LOOP_SHIFT",
+  "next_gate": "For bubble-a, bubble-b and the three raised triangle vertex sectors separately, apply the canonical loop shift that places the squared denominator at l^2, reconstruct the combined numerator as a finite Lorentz-covariant function of l and external invariants, validate on held-out loop momenta, then IBP-reduce the sector-summed numerators."
+}
