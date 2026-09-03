@@ -1,0 +1,53 @@
+{
+  "iteration": 387,
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "classification": "PASS_SCOPED_EVANESCENT_AMBIGUITY_DOES_NOT_CHANGE_FROZEN_HARD_BRANCH_DISCONTINUITY__FULL_FINITE_REMAINDER_STILL_BLOCKED",
+  "scope": "one-loop determinant ordinary two-particle hard-channel discontinuity at frozen off-shell q2 coordinates only; not the full finite DR determinant",
+  "frozen_coordinates": [-1.0, -0.34, -0.14],
+  "starting_authority": {
+    "iteration297": "4D-numerator/D-dimensional-measure prescription is definite, but full finite same-parent remainder is blocked because 4D numerator oracle does not determine evanescent mu^2 or D-4 numerator structures",
+    "iteration383": "ordinary two-simple-particle determinant absorptive vector is raw-valid in the declared 4D-numerator/D-measure prescription"
+  },
+  "argument": {
+    "one_loop_extra_dimensional_decomposition": "write l_D=l_4+l_perp and mu2=-l_perp^2; powers mu2^r map to dimension-shifted scalar/tensor integrals multiplied by a product containing D-4=-2 epsilon",
+    "missing_numerator_scaling": "every genuinely evanescent numerator contribution absent from the strict 4D oracle carries at least one O(epsilon) or mu2 factor",
+    "frozen_kinematics_ir_status": "all three external virtualities are nonzero; the ordinary determinant bubble/triangle masters in the frozen hard fixture have no massless on-shell soft/collinear external IR configuration",
+    "one_loop_pole_order": "with no IR pole in the scoped off-shell masters, the relevant evanescent dimension-shifted integrals can contribute at epsilon^0 only through at most a simple UV 1/epsilon pole",
+    "uv_locality": "the residue of the one-loop UV pole is local in external momenta; multiplying it by the explicit O(epsilon) evanescent factor yields a finite rational/local R2-type term",
+    "branch_cut_consequence": "local/rational R2-type completion has no hard logarithmic/polylogarithmic branch cut at q2=-1,-0.34,-0.14; therefore its D_s in those frozen hard channels is zero",
+    "nonlocal_terms": "any finite nonlocal/logarithmic part of the dimension-shifted integral is multiplied by O(epsilon) and vanishes as epsilon->0 in the missing evanescent contribution"
+  },
+  "literature_authority": [
+    {
+      "reference": "Gnendiger et al., To d, or not to d: recent developments and comparisons of regularization schemes, Eur. Phys. J. C 77, 471 (2017), DOI 10.1140/epjc/s10052-017-5023-2",
+      "use": "mu2 powers generate dimension-shifted integrals and are responsible for rational one-loop terms"
+    },
+    {
+      "reference": "Buccioni et al., OpenLoops 2, Eur. Phys. J. C 79, 866 (2019)",
+      "use": "D-4 numerator remainder is separated as the R2 rational contribution while the four-dimensional numerator is integrated with D-dimensional denominators"
+    },
+    {
+      "reference": "Berger et al., On-shell methods in perturbative QCD / unitarity review authority",
+      "use": "four-dimensional unitarity yields logarithmic/polylogarithmic branch-cut terms and generically misses rational terms"
+    }
+  ],
+  "result": {
+    "iteration383_absorptive_vector_scheme_scope": "PROMOTED_FROM_IMPLEMENTED_4D_NUMERATOR_D_MEASURE_ONLY_TO_EVANESCENT_INSENSITIVE_HARD_BRANCH_DISCONTINUITY_WITHIN_STATED_ONE_LOOP_OFFSHELL_ASSUMPTIONS",
+    "iteration297_full_finite_remainder_status": "STILL_BLOCKED",
+    "evanescent_missing_piece_D_s_at_frozen_hard_coordinates": [0.0, 0.0, 0.0],
+    "zero_type": "SCOPED_HARD_BRANCH_DISCONTINUITY_ZERO_OF_LOCAL_RATIONAL_SCHEME_COMPLETION__NOT_ZERO_FULL_AMPLITUDE"
+  },
+  "guardrails": [
+    "DO_NOT_USE_THIS_TO_PROMOTE_FULL_FINITE_DR_REMAINDER",
+    "DO_NOT_USE_AT_ONSHELL_OR_IR_SINGULAR_EXTERNAL_KINEMATICS_WITHOUT_NEW_AUDIT",
+    "DO_NOT_USE_IF_A_MULTI_LOOP_HIGHER_POLE_STRUCTURE_IS_INTRODUCED",
+    "DO_NOT_ZERO_FILL_ANY_NONLOCAL_COMPARATOR_COORDINATE",
+    "DISTINCT_Q2_COORDINATES_NEVER_SUMMED",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "readiness_change": "0 pp; a determinant-discontinuity scheme ambiguity is removed, but the full finite determinant and comparator-subtracted residual remain open.",
+  "next_gate": "retain Iteration383 as the complete ordinary-simple determinant hard absorptive vector under this scoped evanescent-insensitivity theorem; keep the full finite DR remainder blocked separately and continue active e=2 repeated-cut closure"
+}
