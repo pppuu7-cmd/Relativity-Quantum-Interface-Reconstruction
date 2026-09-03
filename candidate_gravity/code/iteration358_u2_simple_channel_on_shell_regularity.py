@@ -28,18 +28,21 @@ raw = P355['raw']
 enumerate_subterms = P355['enumerate_subterms']
 mdot = P355['mdot']
 
-# Frozen/inherited numerical guards. The timelike classification tolerance is
-# exactly the Iteration-356 value. The denominator-separation guard is the same
-# flat-pole safety scale used in the Iteration-355 stripped reconstruction.
 TIMELIKE_TOL = 2e-12
 UNCUT_SEPARATION_TOL = 1e-10
 NUMERATOR_FINITE_LIMIT = 1e100
 PREF = np.array([.43, -.27, .39, .21], dtype=float)
 
 
+def bdot(a,b):
+    """Bilinear Minkowski product recovered from frozen quadratic mdot."""
+    a=np.asarray(a,float); b=np.asarray(b,float)
+    return 0.5*(mdot(a+b)-mdot(a)-mdot(b))
+
+
 def mproj_orth(v, q):
     q2 = float(np.real(mdot(q)))
-    return np.asarray(v, float) - np.asarray(q, float) * (float(np.real(mdot(v, q))) / q2)
+    return np.asarray(v, float) - np.asarray(q, float) * (float(np.real(bdot(v, q))) / q2)
 
 
 def transverse_basis(q):
@@ -48,14 +51,14 @@ def transverse_basis(q):
     basis=[]
     for s in seeds:
         v=mproj_orth(s,q)
-        for e in basis: v=v-float(np.real(mdot(v,e)))*e
+        for e in basis: v=v-float(np.real(bdot(v,e)))*e
         n2=float(np.real(mdot(v)))
         if n2>1e-12: basis.append(v/math.sqrt(n2))
         if len(basis)==3: break
     if len(basis)!=3: raise RuntimeError('could_not_construct_timelike_transverse_basis')
-    gram=np.array([[float(np.real(mdot(a,b))) for b in basis] for a in basis])
+    gram=np.array([[float(np.real(bdot(a,b))) for b in basis] for a in basis])
     if np.max(np.abs(gram-np.eye(3)))>2e-10: raise RuntimeError(('bad_transverse_gram',gram.tolist()))
-    if max(abs(float(np.real(mdot(e,q)))) for e in basis)>2e-10: raise RuntimeError('basis_not_q_orthogonal')
+    if max(abs(float(np.real(bdot(e,q)))) for e in basis)>2e-10: raise RuntimeError('basis_not_q_orthogonal')
     return basis
 
 
