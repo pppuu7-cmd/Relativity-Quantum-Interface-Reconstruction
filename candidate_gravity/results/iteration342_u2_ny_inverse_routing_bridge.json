@@ -1,0 +1,62 @@
+{
+  "candidate_residual": false,
+  "classification": "PASS_U2_SAME_PARENT_NY_INVERSE_ROUTING_BRIDGE_WITH_PHYSICAL_GHOST_N1__FIRST_BACKGROUND_TRU2_ASSEMBLY_AUTHORIZED_NEXT",
+  "frozen_parent": {
+    "D": 4,
+    "Lambda": 0,
+    "a": "-1/2",
+    "ghost_operator": "Iteration317 hatN=delta Box+R",
+    "mode": [1, 0, 0],
+    "p": [0.7, -0.4, 0.2, 0.6],
+    "q": [0.3, -0.2, 0.4, 0.1]
+  },
+  "guardrails": [
+    "ITERATION340_A_TRANSPOSE_A_ORIENTATION_BINDING",
+    "ITERATION340_HINV_VD_MINUS_KINV_BINDING",
+    "NO_DOUBLE_GHOST_INVERSE_OR_Y_FACTOR",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "NO_BLIND_FULL_C5"
+  ],
+  "iteration": 342,
+  "model_readiness_percent": 24,
+  "next_gate": "assemble the complete first-background-order physical Tr U2 from the six typed Iteration309 derivative sites using Iteration341 A1/A2, this N/Y bridge, the Iteration339 shifted graviton inverse routing with Iteration340 Hinv_VD=-K^-1, and independently validate route/trace closure before any cut integration",
+  "primary_authority": {
+    "paper": "Giacchini-de Paula Netto-Shapiro 2020 arXiv:2006.04217v4",
+    "relations": ["hatN=Yupper*Nlower", "Ylower=-g", "Yupper=-g^{-1}", "Eq57 ghost Green expansion"]
+  },
+  "routing": {
+    "Q0": "hatN0(p)^{-1}",
+    "Q1": "-Q0(p+q) @ hatN1(q;p) @ Q0(p)",
+    "left_N0": "Q0(p) @ Yupper0",
+    "left_N1": "Q0(p+q) @ Yupper1(q) + Q1(q;p) @ Yupper0",
+    "right_NY": "Q = hatN^{-1}"
+  },
+  "scientific_gate_pass": true,
+  "status": {
+    "Hinv_VD_sign": "FROZEN_FROM_ITERATION340_MINUS_KINV",
+    "N_Y_inverse_routing": "FROZEN_EXECUTABLE",
+    "first_background_TrU2_assembly": "AUTHORIZED_NEXT",
+    "physical_A1_A2": "FROZEN_FROM_ITERATION341"
+  },
+  "validation": {
+    "Eq57_flat_sign_error": 0.0,
+    "Nupper_Ylower_equals_Q_error": 4.4267192589395986e-15,
+    "Nupper_equals_QYupper_error": 4.391615997560502e-15,
+    "Yupper_Ylower_inverse_error": 0.0,
+    "flat_parent_error": 1.3877787807814457e-17,
+    "left_first_order_block_formula_error": 4.506429307853555e-15,
+    "left_inverse_error": 4.440892098500626e-16,
+    "right_inverse_error": 1.1102230246251565e-16,
+    "thresholds": {
+      "Eq57_flat_abs_max": 2e-12,
+      "NY_bridge_abs_max": 2e-11,
+      "Y_inverse_abs_max": 2e-12,
+      "block_inverse_abs_max": 2e-11,
+      "flat_parent_abs_max": 1e-12,
+      "inverse_identity_abs_max": 2e-11
+    },
+    "two_momentum_block_inverse_error": 4.671944434071913e-15
+  }
+}
