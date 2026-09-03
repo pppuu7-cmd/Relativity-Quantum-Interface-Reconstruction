@@ -1,0 +1,34 @@
+{
+  "iteration": 361,
+  "classification": "PASS_U2_SIMPLE_NORMALIZED_CHANNEL_CUT_CLASSIFICATION__ALL_CONVERGED__Q2_RESOLVED_SIMPLE_SECTOR_CANCELS_TO_ZERO",
+  "scientific_gate_pass": true,
+  "scope": "ORDINARY_SIMPLE_U2_NORMALIZED_CHANNEL_RESOLVED_CUT_ONLY__DISTINCT_Q2_NOT_SUMMED",
+  "census": {
+    "typed_channels": 36,
+    "CONVERGED": 36,
+    "BLOCKED_CONVERGENCE": 0,
+    "q2_buckets": 3,
+    "max_cut_shell_abs_error": 3.1176990904323794e-16,
+    "max_scaled_convergence_error": 2.481513269677227e-10,
+    "minimum_sampled_uncut_abs_denominator": 0.12097829436145643
+  },
+  "by_q2": {
+    "-0.14": {"channel_count": 12, "converged_channel_count": 12, "status": "CONVERGED", "D_s_TrU2_simple_sector_sum": [0.0, 0.0]},
+    "-0.34": {"channel_count": 12, "converged_channel_count": 12, "status": "CONVERGED", "D_s_TrU2_simple_sector_sum": [0.0, 0.0]},
+    "-1.0": {"channel_count": 12, "converged_channel_count": 12, "status": "CONVERGED", "D_s_TrU2_simple_sector_sum": [0.0, 0.0]}
+  },
+  "normalization": "ITERATION337_D_s_I_EQUALS_MINUS_SPHERE_MEAN",
+  "effective_action_weight": "NOT_FOLDED__ITERATION308_PLUS_I_OVER_2_TRU2_SEPARATE",
+  "candidate_residual": false,
+  "model_readiness_percent": 24,
+  "provenance": {
+    "run": 33795340192,
+    "job": 100781555423,
+    "artifact": 9909223767,
+    "artifact_digest": "sha256:8473b567e8d7188b35f3472b1e33c309b12749596fbfe00dd2490a6c8b7c4d90",
+    "raw_scientific_json_sha256": "c3d6a916a42faf560ac1196cff789de5ba2384b94864c4a9284dfbd7dc96c0ec",
+    "workflow_head": "02ae17bfe6f2a89d918e1c904373bd71dd06e12c"
+  },
+  "interpretation": "All 36 ordinary-simple channels converge. Within each external q2 bucket the 12 channel contributions cancel pairwise/exactly in the stored numerical coordinate to 0.0. This is a scoped cancellation of the ordinary-simple Tr U2 sector only; it is not a comparator identity, not a zero certificate for repeated-pole U2, not a consistency FAIL, and not a Candidate residual.",
+  "next_gate": "Repeated-pole auxiliary-mass first-derivative/distributional validation under the frozen Iteration-359 contract; no ordinary simple-cut substitution for repeated poles."
+}
