@@ -1,0 +1,31 @@
+{
+  "iteration": 301,
+  "date": "2026-09-03",
+  "classification": "PASS_HV_EVANESCENT_BUBBLE_CUT_PROTECTION_THROUGH_MU4__FULL_AMPLITUDE_FINITE_REMAINDER_NOT_PROMOTED",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "scope": "HV-like barred external states, D-dimensional loop, bubble powers (1,1) and (2,1), polynomial numerator degree <=4, normalized discontinuity only",
+  "max_abs_dimension_shifted_master_cut_one_over_eps_residue": 7.521202908025835e-06,
+  "max_abs_mu_evanescent_cut_epsilon_to_zero_limit_r_gt_0": 3.007543926089192e-07,
+  "tested_mu_powers": [0, 2, 4],
+  "result": "Dimension-shifted ordinary and raised bubble normalized cuts are pole-free within the audit envelope; genuine mu^2 and mu^4 evanescent insertions vanish in the epsilon->0 normalized cut. This protects the bubble CUT within this scope, not the full finite amplitude.",
+  "github_actions": {
+    "run_id": 33701149537,
+    "job_id": 100480524189,
+    "artifact_id": 9873554188,
+    "artifact_name": "iteration301-result",
+    "artifact_digest": "sha256:65da0aced88aff06fdb32fc118b5b8dd7554195ba76503ad2940f1b10671a8d8",
+    "head_sha": "fee498270389e76a0bebef06a432331bee038af6",
+    "scientific_json_sha256": "c70c565a7fbae87058d782f24291e6b040a2684c6ca0cc0a03f183455697e2a0",
+    "schema_validator_pass": true,
+    "top_level_object_count": 1,
+    "found_iterations": [301]
+  },
+  "guardrails": [
+    "RESULT_IS_FOR_NORMALIZED_DISCONTINUITY_NOT_FULL_FINITE_AMPLITUDE",
+    "RESULT_IS_SCOPED_TO_BUBBLE_POWERS_11_AND_21_AND_POLYNOMIAL_NUMERATOR_DEGREE_LE4",
+    "TRIANGLE_EVANESCENT_SECTOR_REMAINS_OPEN_BECAUSE_TRIANGLE_CUTS_CAN_CARRY_IR_POLES",
+    "COMMON_REGULATOR_EXTERNAL_STATE_CONVENTION_MUST_EVENTUALLY_BE_SHARED_BY_K2_AND_GAMMA3",
+    "NO_CANDIDATE_RESIDUAL_OR_SOURCE_COMPLETION_CLAIM"
+  ]
+}
