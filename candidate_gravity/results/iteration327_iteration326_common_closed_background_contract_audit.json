@@ -1,0 +1,62 @@
+{
+  "iteration": 327,
+  "model_readiness_percent": 24,
+  "audit_execution_pass": true,
+  "scientific_gate_pass": false,
+  "classification": "FAIL_SCOPED_GATE_DESIGN_ITERATION326_NOT_COMMON_CLOSED_TRIAD_BACKGROUND",
+  "candidate_residual": false,
+  "authority_audited": {
+    "denominator_routing": "ITERATION_324_CLOSED_TRIAD",
+    "numerator_routing": "ITERATION_326",
+    "shared_background_precedent": "ITERATION_322"
+  },
+  "checks": {
+    "iteration326_loads_graviton319_directly": true,
+    "iteration326_loads_ghost317_directly": true,
+    "iteration326_rebinds_incoming_p": true,
+    "iteration326_rebinds_external_qs_to_closed_triad": false,
+    "iteration326_rebinds_H_and_N_to_one_shared_background_hs": false,
+    "iteration319_qs_equal_iteration322_closed_triad": false,
+    "iteration317_qs_equal_iteration322_closed_triad": false,
+    "iteration317_and_319_use_independent_background_generators": true,
+    "iteration322_explicitly_rebinds_closed_q3": true,
+    "iteration322_uses_shared_HN_parent_assembly": true,
+    "common_closed_background_contract_established": false
+  },
+  "fixture_differences": {
+    "closed_triad_q": [[0.27,-0.19,0.31,0.11],[-0.13,0.37,0.17,-0.29],[-0.14,-0.18,-0.48,0.18]],
+    "iteration319_q": [[0.27,-0.19,0.31,0.11],[-0.13,0.37,0.17,-0.29],[0.22,0.08,-0.34,0.41]],
+    "iteration317_q": [[0.30,-0.20,0.40,0.10],[-0.10,0.50,0.20,-0.30],[0.20,0.10,-0.40,0.45]],
+    "max_abs_q_difference_iteration319_vs_closed": 0.36,
+    "max_abs_q_difference_iteration317_vs_closed": 0.34,
+    "graviton_background_generator": "rng seed 319; h scale 0.12",
+    "ghost_background_generator": "rng seed 317; h scale 0.2"
+  },
+  "scientific_interpretation": {
+    "iteration326_retained_scope": "arbitrary-incoming-p validation of the historical H and N fixture kernels, including full 1+6+6 topology coverage",
+    "iteration326_not_certified_as": "common-background closed-triad physical numerator certificate compatible with Iteration-324 denominator routes",
+    "physical_HN_kernel_consistency_fail": false,
+    "candidate_gravity_consistency_fail": false,
+    "operational_failure": false,
+    "typed_result": "SCOPED_GATE_DESIGN_FAIL_AND_DEPENDENT_PHYSICAL_TRACE_BLOCKED"
+  },
+  "denominator_family_census_before_blocker": {
+    "full_cubic_sequences": 13,
+    "singleton_translation_families": 1,
+    "pair_translation_families": 3,
+    "triple_translation_families": 2,
+    "interpretation": "structural routing census only; no nonzero discontinuity is promoted while numerator/background authority is mismatched"
+  },
+  "guardrails": [
+    "ITERATION326_NOT_RETROACTIVELY_EDITED",
+    "DO_NOT_COMBINE_DENOMINATORS_AND_NUMERATORS_FROM_DIFFERENT_BACKGROUND_FIXTURES",
+    "ONE_SHARED_BACKGROUND_FOR_GRAVITON_AND_GHOST",
+    "CUT_CAPABLE_TOPOLOGY_IS_NOT_NONZERO_DISCONTINUITY",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "NO_BLIND_HEAVY_FULL_C5"
+  ],
+  "next_gate": "create a new gate version from the Iteration-322 common closed-triad background: rebind both external qs and incoming p for the graviton factory, reconstruct ghost N on exactly the same hs/qs/p parent as Iteration 320, and revalidate all 19 full-cubic routed insertion requests against same-parent exact geometry before determinant trace assembly"
+}
