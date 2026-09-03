@@ -46,15 +46,21 @@ Frozen repeated-pole bridge:
 
 The same `i0` prescription is mandatory. Overall `Disc` sign and `2πi` normalization remain inherited from the repository's frozen cut convention.
 
+## Active computation
+
+**Iteration 361 is active:** run `33795340192`, job `100781555423`, workflow `rqir-iteration361-u2-simple-normalized-channel-cut`, head `02ae17bfe6f2a89d918e1c904373bd71dd06e12c`. The scientific normalized-cut step is currently `in_progress`. It evaluates only the 36 Iteration-360 `REGULAR` channels. Scientific authority remains Iteration 360 until a raw Iteration-361 artifact and sentinel/schema audit are validated.
+
 ## Active sectors
 
 - connection `e=1,c<=2`: actual `Tr U1` cut frozen by Iteration 307.
-- connection `e=2,c<=1`: physical timelike U2 route/additive-family/cut-origin authority frozen through Iteration 360. All 36 ordinary-simple channels may now proceed to normalized channel-resolved integration. The repeated-pole sector remains on the Iteration-359 first-auxiliary-mass-derivative/distributional branch.
+- connection `e=2,c<=1`: physical timelike U2 route/additive-family/cut-origin authority frozen through Iteration 360. Iteration 361 normalized ordinary-simple integration is active. The repeated-pole sector remains on the Iteration-359 first-auxiliary-mass-derivative/distributional branch.
 - determinant `e=0,c<=3`: three bubbles NONZERO; triangle family NONZERO in two certified channels; one `q^2=-1` triangle channel remains BLOCKED pending analytic/symbolic angular reduction.
 
 ## Exact next gates
 
-**Iteration 361:** for only the 36 Iteration-360 `REGULAR` ordinary-simple channels, compute the normalized channel-resolved `D_s Tr U2` simple-cut coordinate using frozen Iteration-337 `D_s I[F] = -sphere_mean(F)`, with physical ghost/graviton propagator signs retained explicitly. Keep distinct external timelike `q^2` cuts separate; do not sum different discontinuity variables into one coordinate. Do not silently fold in the effective-action coefficient: Iteration 308 separately freezes `+(i/2) Tr U2 -(i/4) Tr U1^2`.
+**Iteration 361 (active):** for only the 36 Iteration-360 `REGULAR` ordinary-simple channels, compute the normalized channel-resolved `D_s Tr U2` simple-cut coordinate using frozen Iteration-337 `D_s I[F] = -sphere_mean(F)`, with physical ghost/graviton propagator signs retained explicitly. Keep distinct external timelike `q^2` cuts separate; do not sum different discontinuity variables into one coordinate. Do not silently fold in the effective-action coefficient: Iteration 308 separately freezes `+(i/2) Tr U2 -(i/4) Tr U1^2`.
+
+If raw Iteration 361 resolves all 36 channels as converged, freeze the three `q^2`-resolved ordinary-simple `D_s Tr U2` coordinates and proceed to the independent repeated-pole auxiliary-mass derivative/distributional validation. If any channel is convergence-BLOCKED, resolve only those channels with a stronger demonstrably different quadrature or analytic reduction without threshold weakening.
 
 **Repeated-pole branch after Iteration 359:** introduce one auxiliary mass-squared parameter for the unique double-pole momentum group of each family, derive the channel-resolved simple-massive cut representation, differentiate once, then take `mu2 -> 0`. Validate against an independent smooth test-function distributional oracle before physical repeated-pole integration.
 
