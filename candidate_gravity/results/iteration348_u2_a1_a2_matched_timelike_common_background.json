@@ -1,0 +1,76 @@
+{
+  "background_coefficients": {
+    "A0_max_abs": 0.0,
+    "A1_mode_count": 3,
+    "A1_oracle_max_abs_error": 7.69426189428657e-12,
+    "A2_oracle_max_abs_error": 5.675424640666504e-09,
+    "A2_partition_count": 6,
+    "max_abs_A1_kernel": 0.15244821081057558,
+    "max_abs_A2_kernel": 0.1154017158446708,
+    "per_multiindex_oracle_max_abs_error": {
+      "(0, 0, 0)": 6.120138467815767e-16,
+      "(0, 0, 1)": 3.7041203437837567e-13,
+      "(0, 0, 2)": 9.869059866204899e-10,
+      "(0, 1, 0)": 5.5914474439422435e-14,
+      "(0, 1, 1)": 1.6141452371769283e-09,
+      "(0, 2, 0)": 1.0790225908954842e-09,
+      "(1, 0, 0)": 7.69426189428657e-12,
+      "(1, 0, 1)": 2.946366716577442e-09,
+      "(1, 1, 0)": 5.675424640666504e-09,
+      "(2, 0, 0)": 4.265991442042871e-09
+    },
+    "thresholds": {
+      "A0_abs_max": 1e-12,
+      "A1_oracle_abs_max": 1e-09,
+      "A2_oracle_abs_max": 2e-07
+    }
+  },
+  "candidate_residual": false,
+  "classification": "PASS_U2_A1_A2_MATCHED_TIMELIKE_COMMON_BACKGROUND_PROVIDER_EQ55_EXACT_GEOMETRY_ORACLE__NY_HINV_ROUTE_ASSEMBLY_NEXT",
+  "guardrails": [
+    "NO_U2_ASSEMBLY_BEFORE_NY_ROUTING",
+    "ITERATION340_AT_A_ORIENTATION_AND_HINV_MINUS_SIGN_BINDING",
+    "UNSUPPORTED_IS_BLOCKED_NOT_ZERO_FILLED",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "NO_BLIND_FULL_C5"
+  ],
+  "iteration": 348,
+  "matched_timelike_common_background": {
+    "metric_tensor_scale": 0.12,
+    "metric_tensor_seed": 319,
+    "q_squared": [-1.0, -0.14, -0.34],
+    "source_parent": "Iteration319/330 common background"
+  },
+  "model_readiness_percent": 24,
+  "next_gate": "re-specialize frozen N/Y and shifted Hinv providers on this exact common timelike background, then substitute A/N/Y/Hinv into all 12 Iteration-346 routes and canonicalize physical numerator/denominator families before cut integration",
+  "oracle": {
+    "amplitude_fit_scale": 0.0008,
+    "coordinate_fd_step": 2e-05,
+    "type": "exact geometry plus coordinate finite differences for nabla Ricci and independent amplitude fit"
+  },
+  "orientation": {
+    "A": "field x ghost (10x4)",
+    "V1_L": "A.T (4x10)",
+    "V1_R": "A (10x4)",
+    "u2_sign_bridge": "Hinv_VD=-K^{-1} from Iteration340"
+  },
+  "primary_authority": "Giacchini-de Paula Netto-Shapiro 2020 arXiv:2006.04217v4 Eqs.54-55",
+  "scientific_gate_pass": true,
+  "specialization": {
+    "D": 4,
+    "Lambda": 0,
+    "a": "-1/2",
+    "background_modes": 3,
+    "gamma1": 1,
+    "gamma2": 0,
+    "ghost_test_momentum": [0.43, -0.27, 0.39, 0.21],
+    "metric_split": "g=eta+h"
+  },
+  "status": {
+    "N_Y_inverse_routing": "BLOCKED_SEPARATE_GATE",
+    "physical_A1_A2": "FROZEN_EXECUTABLE",
+    "physical_TrU2_numerator": "BLOCKED_UNTIL_NY_ROUTING"
+  }
+}
