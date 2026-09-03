@@ -5,17 +5,17 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 297**
+**Authoritative Candidate Gravity front:** **Iteration 298**
 
-Repository commits, validated Actions artifacts and recovery material are source of truth. Do not reconstruct state from stale chat.
+Repository commits, schema-validated Actions artifacts and recovery material are source of truth. Do not reconstruct state from stale chat. A green workflow conclusion alone is not scientific authority.
 
 ## Current scientific state
 
 ### Iterations 291–295 — weight-completed timelike TrU1 authority
 
-Iteration 291 proved `U1=B Y_down`, so the old weighted-kernel proxy `tr(B3)` is not the cubic effective-action coefficient when the trace weight is background dependent. Iterations 292–293 established the exact denominator census and full family structural reconstruction. Iteration 294 showed the actual weight-completed `[Tr U1]_{sab}` is nonzero across the tested timelike translation-closed slice. Iteration 295 then reconstructed all eight non-scaleless numerator families directly from the timelike parent/oracle at `s=0.016`.
+Iteration 291 proved `U1=B Y_down`, so the old weighted-kernel proxy `tr(B3)` is not the cubic effective-action coefficient when the trace weight is background dependent. Iterations 292–293 established the exact denominator census and full family structural reconstruction. Iteration 294 showed the actual weight-completed `[Tr U1]_{sab}` is nonzero across the tested timelike translation-closed slice. Iteration 295 reconstructed all eight non-scaleless numerator families directly from the timelike parent/oracle at `s=0.016`.
 
-Iteration-295 numerical authority:
+Iteration-295 numerical authority remains:
 
 - primitive branches: `36`;
 - non-scaleless families: `8`;
@@ -27,17 +27,11 @@ Freeze:
 
 `PASS_DIRECT_TIMELIKE_S0016_WEIGHT_COMPLETED_TRU1_ALL_FAMILY_NUMERATOR_RECONSTRUCTION`.
 
-### Iteration 296 — direct timelike bubble DR reduction is computationally active
+### Iteration 297 — DR numerator-continuation interface audit remains frozen
 
-A dedicated reducer and GitHub Actions workflow were added for ordinary/raised bubble families of the actual timelike `Tr U1`. It explicitly does not import the obsolete Iteration-289 weighted-kernel pole. At the time Iteration 297 was closed, the Iteration-296 Action was still running and was not duplicated. Therefore no numerical Iteration-296 PASS is promoted here until its artifact/raw epsilon scans are audited.
+The Iteration-296 reducer represents the numerator in four loop-momentum components and applies a four-dimensional Minkowski Laplacian, while scalar loop integration is analytically continued to `D=4-2 epsilon`.
 
-### Iteration 297 — DR numerator-continuation interface audit
-
-Static audit of the Iteration-296 reducer establishes that the numerator is represented in four loop-momentum components and acted on by a four-dimensional Minkowski Laplacian, while scalar loop integration is analytically continued to `D=4-2 epsilon`.
-
-This is a definite **4D-numerator / D-dimensional-measure prescription**, but the repository does not yet contain an authoritative same-parent D-dimensional continuation of the numerator algebra or an explicit finite conversion map to the comparator convention.
-
-Four-dimensional numerator samples cannot identify evanescent structures such as `mu^2=-l_{[-2 epsilon]}^2`. Their absence from the Iteration-295 4D oracle is therefore non-identifiability of the evanescent sector, not an exact-zero certificate. Such terms can affect finite rational/local DR pieces.
+This defines a 4D-numerator / D-dimensional-measure prescription. The repository still lacks an authoritative same-parent D-dimensional continuation of numerator algebra or explicit finite scheme conversion to the comparator convention. Four-dimensional oracle samples cannot identify evanescent structures such as `mu^2=-l_{[-2 epsilon]}^2`; therefore their absence is non-identifiability of the evanescent sector, not an exact-zero certificate.
 
 Freeze:
 
@@ -47,9 +41,45 @@ Guardrail:
 
 `DO_NOT_PROMOTE_4D_ORACLE_DR_FINITE_REMAINDER_TO_SCHEME_INDEPENDENT_SAME_PARENT_RESULT_WITHOUT_EVANESCENT_CONTINUATION_OR_EXPLICIT_SCHEME_CONVERSION`.
 
-This does **not** invalidate the active Iteration-296 discontinuity calculation. Its `+i0/-i0` cut/log result may be audited and used in the explicitly declared 4D-numerator/D-measure prescription. What is blocked is promotion of a complete finite same-parent covariant DR remainder without regulator-scheme authority.
-
 This is operational/regulator `BLOCKED`, not Candidate consistency FAIL, exact comparator identity, near-degeneracy, or novelty certificate.
+
+### Iteration 298 — completed Iteration-296 Action fails scientific artifact authority
+
+The previously active Iteration-296 GitHub Action has completed with workflow conclusion `success`, but the persisted artifact does not contain the expected Iteration-296 final scientific payload.
+
+Audited provenance:
+
+- workflow run: `33693775575`;
+- job: `100458128185`;
+- artifact: `9871204017`;
+- workflow commit: `f49474b77fb7f1682c3365dd0854b6cb19a5e7ef`;
+- artifact member: `iteration296_result.json`;
+- bytes: `103185`;
+- SHA-256: `99af1466a132d8c116b2ef5f8466fb67dbdd53e857e93a088ff53d4d577b3a7a`.
+
+A complete repeated JSON decode finds exactly three concatenated top-level payloads with iteration sentinels
+
+`[270, 273, 295]`.
+
+The required `iteration = 296` payload is absent. Therefore no Iteration-296 bubble discontinuity, Laurent coefficient, IR pole, or finite remainder from this run is promoted.
+
+Freeze:
+
+`FAIL_OPERATIONAL_ITERATION296_ARTIFACT_MISSING_EXPECTED_FINAL_RESULT_SCHEMA`.
+
+Classification: **operational/reproducibility FAIL** only. This is not Candidate Gravity consistency FAIL, exact comparator identity, regime-specific non-identifiability, near-degeneracy, or novelty statement.
+
+New guardrail:
+
+`DO_NOT_ACCEPT_GREEN_ACTION_AS_SCIENTIFIC_PASS_WITHOUT_EXPECTED_ITERATION_SENTINEL_AND_SCHEMA_VALIDATION`.
+
+A fail-closed validator is now committed at:
+
+`candidate_gravity/code/iteration298_validate_action_result.py`.
+
+It accepts a scientific result only if there is exactly one top-level JSON object and its iteration sentinel equals the expected iteration. Concatenated JSON emitted by imports is detected and rejected.
+
+The exact underlying Python termination mechanism of the failed Iteration-296 scientific artifact is not inferred from the artifact alone. That inference is unnecessary for the authority decision.
 
 ## Frozen timelike kinematics
 
@@ -77,9 +107,9 @@ Active pieces remain:
 
 ## Current blockers
 
-1. `BLOCKED_ACTIVE_ITERATION296_TIMELIKE_TRU1_BUBBLE_DR_RESULT_AUDIT`.
-2. `BLOCKED_FULL_FINITE_DR_REMAINDER_UNTIL_EVANESCENT_NUMERATOR_CONTINUATION_OR_EXPLICIT_SCHEME_CONVERSION`.
-3. Downstream: complete direct-timelike triangle reduction, combine all eight `e=1,c=2` families, remaining `e=0/e=2` pieces, source/Ward/contact completion, Lorentzian comparator quotient.
+1. `BLOCKED_VALIDATED_TIMELIKE_TRU1_BUBBLE_DR_RESULT` — the prior green run is not scientific numerical authority.
+2. `BLOCKED_FULL_FINITE_DR_REMAINDER_UNTIL_EVANESCENT_NUMERATOR_CONTINUATION_OR_EXPLICIT_SCHEME_CONVERSION` — retained independently from Iteration 297.
+3. Downstream: direct-timelike triangle reduction, combine all eight `e=1,c=2` families, remaining `e=0/e=2` pieces, source/Ward/contact completion, Lorentzian comparator quotient.
 
 ## Stable readiness rubric
 
@@ -92,7 +122,7 @@ Active pieces remain:
 
 MODEL_READINESS: 24%
 
-Change from Iteration 295: **0 percentage points**. Iteration 297 prevents a regulator-scheme overclaim but does not yet close an additional readiness block.
+Change from Iteration 297: **0 percentage points**. Iteration 298 prevents invalid numerical evidence from entering authority but closes no model-readiness block.
 
 ## Retained guardrails
 
@@ -103,6 +133,7 @@ Change from Iteration 295: **0 percentage points**. Iteration 297 prevents a reg
 - Do not subtract `-8 M_Born` from a 1PI/comparator intermediate without an explicit matched source-observable map.
 - Reconstruct timelike numerator coefficients directly from the same parent dynamics; do not rotate denominators only.
 - Do not interpret absence of evanescent terms in a 4D loop oracle as an exact-zero statement.
+- Do not accept a green GitHub Action as a scientific PASS unless its persisted artifact is schema-valid and carries the expected iteration sentinel.
 - Blind heavy full-C5 remains unauthorized.
 
 ## Candidate state
@@ -112,16 +143,18 @@ No robust Candidate Gravity residual exists.
 Fisher/resources: FORBIDDEN.  
 Blind heavy full-C5 run: NOT AUTHORIZED.
 
-## Iteration 297 authority files
+## Iteration 298 authority files
 
-- `candidate_gravity/C5_DR_NUMERATOR_CONTINUATION_AUDIT_ITERATION297.md`
-- `candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_297.md`
-- `research_log/2026-09-03_iteration_297_dr_numerator_continuation_audit.md`
+- `candidate_gravity/C5_ACTION_ARTIFACT_AUTHORITY_AUDIT_ITERATION298.md`
+- `candidate_gravity/results/iteration298_action_artifact_authority_audit.json`
+- `candidate_gravity/code/iteration298_validate_action_result.py`
+- `candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_298.md`
+- `research_log/2026-09-03_iteration_298_action_artifact_authority_audit.md`
 
 ## Exact next gate
 
-1. Consume/audit the already-running Iteration-296 bubble Action when complete: scalar calibration, branch conjugacy, raw epsilon scans, Laurent stability and family discontinuities.
-2. Scope its cut/log result explicitly to the implemented 4D-numerator/D-measure prescription.
-3. Before promoting a complete finite remainder, freeze either a same-parent D-dimensional numerator continuation or an explicit finite scheme-conversion/counterterm map.
-4. Reduce the direct-timelike triangle families in the same declared prescription and combine all eight `e=1,c=2` families.
-5. Continue active `e=2,c<=1` and determinant `e=0,c<=3`, then linked source/Ward/contact completion and the fixed comparator quotient.
+1. Repair the Iteration-296 bubble execution path before any scientific rerun: use fail-closed shell execution (`set -euo pipefail` or equivalent), write the final scientific JSON directly to a dedicated file rather than treating mixed stdout as authority, and validate exactly one expected iteration sentinel before artifact upload.
+2. Run one corrected direct-timelike `Tr U1` bubble DR calculation. Accept it only after the Iteration-298 schema validator passes.
+3. Then audit scalar calibration, retarded/advanced conjugacy, raw epsilon scans, Laurent stability and family discontinuities, explicitly scoped to the implemented 4D-numerator/D-measure prescription.
+4. Before promoting a complete finite remainder, freeze either a same-parent D-dimensional numerator continuation or an explicit finite scheme-conversion/counterterm map.
+5. Only then reduce direct-timelike triangle families, combine all eight `e=1,c=2` families, continue `e=2,c<=1` and determinant `e=0,c<=3`, and proceed to linked source/Ward/contact completion and the fixed comparator quotient.
