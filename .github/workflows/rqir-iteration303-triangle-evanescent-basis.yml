@@ -1,0 +1,42 @@
+name: rqir-iteration303-triangle-evanescent-basis
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration303_triangle_evanescent_basis_dimension_audit.py'
+      - 'candidate_gravity/results/iteration295_timelike_tru1_family_reconstruction_s0016.json'
+      - 'candidate_gravity/code/iteration298_validate_action_result.py'
+      - '.github/workflows/rqir-iteration303-triangle-evanescent-basis.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration303:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Iteration 303 triangle evanescent basis audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration303_triangle_evanescent_basis_dimension_audit.py > iteration303_result.json
+      - name: Validate Iteration 303 authority sentinel/schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration298_validate_action_result.py \
+            iteration303_result.json \
+            --expected-iteration 303 \
+            --output iteration303_authority_audit.json
+      - name: Upload Iteration 303 result
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration303-result
+          path: |
+            iteration303_result.json
+            iteration303_authority_audit.json
+          if-no-files-found: error
