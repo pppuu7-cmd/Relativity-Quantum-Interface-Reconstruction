@@ -5,7 +5,7 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 351**
+**Authoritative Candidate Gravity front:** **Iteration 352**
 
 Repository commits, schema-validated Actions artifacts, primary-authority audits and recovery material are source of truth. A green workflow conclusion alone is never scientific authority.
 
@@ -17,36 +17,35 @@ Repository commits, schema-validated Actions artifacts, primary-authority audits
 - Iteration 312 freezes exact cubic `log det` topology.
 - Iterations 314-331 derive/validate physical ghost+graviton components, common-background routing and physical cubic determinant numerator-family reconstruction.
 - Iterations 332-334 establish the timelike determinant fixture and direct absorptive authority; one `q^2=-1` triangle channel remains numerical-convergence BLOCKED.
-- Iteration 335 attempts ended operationally before scientific authority; do not launch another blind-heavy copy. Use analytic/symbolic angular reduction or a demonstrably different method.
+- Iteration 335 attempts ended operationally before scientific authority; no blind-heavy retry. Use analytic/symbolic angular reduction or a demonstrably different method.
 - Iterations 336-338 freeze exact 4D phase space, repository simple-cut normalization and determinant outer effective-action factor.
 - Iterations 339-345 freeze shifted graviton inverse routing, Vilkovisky U2 orientation/sign, physical A1/A2, N/Y bridge and functional-transpose routing. Iterations 343-344 remain preserved scoped implementation/gate-design FAILs.
 - Iteration 346 freezes an operator-level U2 census with 30 raw placements, 18 singleton-soft kills and 12 survivors under the inherited null-soft rule; it is not timelike physical route authority.
 - Iteration 347 freezes exact matched-timelike rebase `q_i^2=(-1,-0.14,-0.34)` and forbids copying historical random-fixture matrices.
 - Iteration 348 freezes matched-timelike physical A1/A2.
 - Iteration 349 freezes matched-timelike N/Y and shifted `Hinv_VD=-K^-1` providers.
-- Iteration 350 proves the timelike rebase breaks the old singleton-soft `A1=0` pruning; the former soft mode has `|A1|_max=0.15244821081057558`, so the old 18 kills cannot be zero-filled.
-- **Iteration 351 rebuilds the structural timelike U2 census from all 30 raw placements and finds all 30 structurally alive from physical A1/A2; exact-A structural kills = 0.** This is structural component authority only, not yet a claim that every full traced route is nonzero.
+- Iteration 350 proves the timelike rebase breaks the old singleton-soft `A1=0` pruning; the former soft mode has `|A1|_max=0.15244821081057558`, so the old 18 kills cannot be zero-filled. This is a scoped negative result, not a Candidate Gravity consistency FAIL.
+- Iteration 351 rebuilds the structural timelike U2 census from all 30 raw placements and finds all 30 structurally alive from physical A1/A2; exact-A structural kills = 0.
+- **Iteration 352 evaluates all 30 full physical matched-timelike U2 matrix products/traces with shifted routing and functional transpose. All 30 are nonzero at threshold `1e-12`; zero routes = 0.**
 
-Iteration-351 authority:
-`PASS_U2_MATCHED_TIMELIKE_30_RAW_ROUTE_STRUCTURAL_CENSUS_WITH_PHYSICAL_A_COMPONENTS__FULL_PHYSICAL_ROUTE_PRODUCTS_NEXT`.
+Iteration-352 authority:
+`PASS_U2_MATCHED_TIMELIKE_FULL_PHYSICAL_30_ROUTE_MATRIX_PRODUCTS_WITH_SHIFTED_ROUTING_AND_FUNCTIONAL_TRANSPOSE__FAMILY_REDUCTION_NEXT`.
 
-Provenance: run `33782839444`, job `100740425386`, artifact `9904248985`, artifact digest `sha256:389c52fd492b74dd780d9c232ab6da0277624d35e94b6ba01d679e627967357b`, scientific JSON SHA-256 `49f31685fc4c0b3e2b8ac5ca4e39cfb31a6cf241a85c958528d8ba272317c247`, workflow head `d8482cd0290d3955aaeb45b61fc4bfdc31443318`.
+Provenance: run `33783059442`, job `100741144797`, artifact `9904335285`, artifact digest `sha256:f2dc3fa3a7aed039b8216a7b54d06858851686efb718b1f2c7b9d55e2ab0f99c`, scientific JSON SHA-256 `12f9f443f10b0ec588960eaf39803b12d878d566ad1cbfc507ea0346975c85c0`, workflow head `a1650b095b9885f9b70ae7429272366ca92c55da`.
+
+Validation: maximum loop-closure error `1.6653345369377348e-16`; minimum deliberately wrong unshifted-routing difference `0.01679808545013024`; minimum deliberately wrong same-`k` transpose difference `0.0009230339516555774`.
 
 ## Active sectors
 
 - connection `e=1,c<=2`: actual `Tr U1` cut frozen by Iteration 307.
-- connection `e=2,c<=1`: matched-timelike A1/A2, N/Y, shifted Hinv, U2 sign/orientation and functional transpose are frozen. Timelike route census is 30 structurally alive placements; full physical matrix products/traces are now the active gate.
+- connection `e=2,c<=1`: matched-timelike A1/A2, N/Y, shifted Hinv, U2 sign/orientation, functional transpose, corrected 30-route census, and full physical 30-route matrix products are frozen. **Family reduction is now the exact active gate; cut integration remains forbidden until family authority.**
 - determinant `e=0,c<=3`: three bubbles NONZERO; triangle family NONZERO in two certified channels; one `q^2=-1` triangle channel remains BLOCKED pending analytic/symbolic angular reduction.
 
-## Active Action / exact next gate
+## Exact next gate
 
-**Iteration 352 is in progress:** evaluate full matched-timelike physical matrix products and traces for all 30 structurally alive U2 routes using Iteration-348 A1/A2, Iteration-349 N/Y/Hinv, exact shifted incoming momentum, Iteration-345 functional transpose and `Hinv_VD=-K^-1`.
+**Iteration 353:** canonicalize the physical 30-route `Tr U2` numerator/denominator families under only proven loop-momentum transformations. Denominator equivalence must not be promoted to numerator equivalence: every numerator transport must be checked route-by-route on held-out loop momenta. Classify resulting families as local/scaleless/rational versus cut-capable before any `Tr U2` cut integration.
 
-Run: `33783059442`; workflow head `a1650b095b9885f9b70ae7429272366ca92c55da`.
-
-If raw Iteration 352 passes, exact next gate: canonicalize physical numerator/denominator families under allowed loop-momentum shifts without assuming numerator equivalence; classify local/scaleless/rational versus cut-capable origins before any Tr U2 cut integration.
-
-Iteration-297 evanescent/regulator warning remains binding for the full finite DR remainder. Source/Born subtraction remains forbidden until normalized determinant contribution enters matched-observable origin accounting. No Candidate residual may be declared before the fixed comparator quotient is executable.
+Iteration-297 evanescent/regulator warning remains binding for the full finite DR remainder. Source/Born subtraction remains forbidden until normalized determinant contribution enters matched-observable origin accounting. No Candidate residual may be declared before the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient is executable and survived.
 
 ## Stable readiness rubric
 
@@ -59,11 +58,11 @@ Iteration-297 evanescent/regulator warning remains binding for the full finite D
 
 MODEL_READINESS: 24%
 
-Change through Iteration 351: `0 pp`. Invalid null-soft transfer was removed and the correct timelike route census was rebuilt, but no complete readiness bucket or robust comparator-subtracted residual closed.
+Change through Iteration 352: `0 pp`. A major physical U2 routing prerequisite closed, but no complete readiness bucket and no robust comparator-subtracted residual closed.
 
 ## Retained guardrails
 
-Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results remain preserved. Null-soft pruning is not transferable to a timelike fixture unless re-proven. Denominator equivalence is not numerator equivalence. Family-level nonzero discontinuity is not the normalized observable coefficient. In U2 distinguish `K`, `K^-1`, and `Hinv_VD=-K^-1`; shifted incoming momentum and functional-transpose routing are mandatory. Do not create `ANSATZ-003` before a concrete robust comparator-subtracted residual survives fixed comparator quotient. Fisher/resources remain forbidden until then. Source/Born subtraction only after normalized cut/origin classification. Blind heavy full-C5 remains unauthorized.
+Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results remain preserved. Null-soft pruning is not transferable to a timelike fixture unless re-proven. Denominator equivalence is not numerator equivalence. Family-level nonzero discontinuity is not the normalized observable coefficient. In U2 distinguish `K`, `K^-1`, and `Hinv_VD=-K^-1`; shifted incoming momentum and functional-transpose routing are mandatory. Do not create `ANSATZ-003` before a concrete robust comparator-subtracted residual survives the fixed comparator quotient. Fisher/resources remain forbidden until then. Source/Born subtraction only after normalized cut/origin classification. Blind heavy full-C5 remains unauthorized.
 
 ## Candidate state
 
