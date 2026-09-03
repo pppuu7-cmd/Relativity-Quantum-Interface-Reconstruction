@@ -1,0 +1,72 @@
+{
+  "iteration": 333,
+  "classification": "PASS_DIRECT_TIMELIKE_DETERMINANT_DISCONTINUITY_FAMILY_REDUCTION",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "model_readiness_percent": 24,
+  "validated_action": {
+    "run_id": 33748344954,
+    "job_id": 100625932251,
+    "artifact_id": 9890612109,
+    "artifact_digest": "sha256:41f2e2e91e8b425c0f2704e5feec5982dac96e64cbd8ca2c3f8eb6a7e51ae545",
+    "scientific_json_sha256": "0620bce57a69d8e2f51a63989301cc281c53a8b7d5144f4d2d4636bfc64e4567",
+    "scientific_exit_code": 0
+  },
+  "denominator_stripping_validation": {
+    "max_scaled_error": 1.5265566588595902e-16,
+    "threshold": 2e-8,
+    "flat_H0_identity_error": 5.551115123125783e-17,
+    "flat_N0_minus_identity_error": 0.0
+  },
+  "bubble_families": [
+    {
+      "q2": -1.0,
+      "cut_proxy_degree7": -0.004517862848697545,
+      "central_to_sample_ratio": 0.4478472831184257,
+      "cubature_disagreement_to_sample": 2.5793983406399823e-16,
+      "status": "NONZERO_TWO_PARTICLE_DISCONTINUITY_CERTIFICATE"
+    },
+    {
+      "q2": -0.33999999999999997,
+      "cut_proxy_degree7": 9.802036921027348e-05,
+      "central_to_sample_ratio": 0.07652820867938592,
+      "cubature_disagreement_to_sample": 1.0580970411443571e-17,
+      "status": "NONZERO_TWO_PARTICLE_DISCONTINUITY_CERTIFICATE"
+    },
+    {
+      "q2": -0.14,
+      "cut_proxy_degree7": 0.00013296877895753044,
+      "central_to_sample_ratio": 0.1067443747719409,
+      "cubature_disagreement_to_sample": 4.351866804210843e-17,
+      "status": "NONZERO_TWO_PARTICLE_DISCONTINUITY_CERTIFICATE"
+    }
+  ],
+  "triangle_family": {
+    "status": "NONZERO_DISCONTINUITY_CERTIFICATE",
+    "channels": [
+      {
+        "q2": -0.14,
+        "cut_proxy": -0.0013719252833873718,
+        "cubature_disagreement_to_sample": 3.2288870222487253e-07,
+        "third_denominator_range": [-0.7414213562373098, -0.4585786437626907],
+        "status": "NONZERO_TWO_PARTICLE_CHANNEL_DISCONTINUITY_CERTIFICATE"
+      },
+      {
+        "q2": -1.0,
+        "cut_proxy": 0.006875140047126713,
+        "cubature_disagreement_to_sample": 0.0001405487804189524,
+        "third_denominator_range": [0.11857864376269048, 0.40142135623730957],
+        "status": "BLOCKED_NEAR_CANCELLATION_OR_CUBATURE_CONVERGENCE"
+      },
+      {
+        "q2": -0.33999999999999997,
+        "cut_proxy": -0.0015607797207829274,
+        "cubature_disagreement_to_sample": 9.064567695989222e-06,
+        "third_denominator_range": [-0.5414213562373095, -0.25857864376269046],
+        "status": "NONZERO_TWO_PARTICLE_CHANNEL_DISCONTINUITY_CERTIFICATE"
+      }
+    ]
+  },
+  "scope": "Family-level direct-timelike Cutkosky zero/nonzero/BLOCKED classification only. Universal nonzero phase-space normalization omitted; full finite DR remainder remains blocked by Iteration 297.",
+  "next_gate": "Resolve the one q2=-1 triangle channel with a stronger independent quadrature without weakening the frozen Iteration-333 threshold, then freeze the complete channel-resolved determinant absorptive vector before normalized determinant-cut assembly."
+}
