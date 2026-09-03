@@ -5,7 +5,7 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 361**
+**Authoritative Candidate Gravity front:** **Iteration 362**
 
 Repository commits, schema-validated Actions artifacts, primary-authority audits and recovery material are source of truth. A green workflow conclusion alone is never scientific authority.
 
@@ -24,14 +24,15 @@ Repository commits, schema-validated Actions artifacts, primary-authority audits
 - Iteration 358 is preserved as `OPERATIONAL_FAIL_ITERATION358_MD0T_ARITY__NO_PHYSICS_GATE_EVALUATED`.
 - Iteration 359 freezes repeated-pole structure: all 30 repeated families contain exactly one double-pole group, no higher poles; 48 timelike channels cut the repeated group; one auxiliary-mass derivative is sufficient by contract.
 - Iteration 360 freezes the ordinary-simple on-shell prerequisite: all 12 simple families / 36 typed channels are `REGULAR`; `ZERO=0`, `BLOCKED=0`; max shell error `3.434752482434078e-16`; analytic minimum uncut-pole separation `0.11857864376269048`.
-- **Iteration 361 freezes normalized ordinary-simple `Tr U2` integration. All `36/36` channels converge, `BLOCKED=0`; max shell error `3.1176990904323794e-16`, max scaled convergence error `2.481513269677227e-10` under frozen `2e-5`. The 12 nonzero channel contributions in each q2 bucket cancel in the stored normalized coordinate: `D_s TrU2_simple(q^2=-0.14)=0.0`, `D_s TrU2_simple(q^2=-0.34)=0.0`, `D_s TrU2_simple(q^2=-1.0)=0.0`. This is a scoped ordinary-simple-sector routed cancellation only.**
+- Iteration 361 freezes normalized ordinary-simple `Tr U2` integration. All `36/36` channels converge, `BLOCKED=0`; max shell error `3.1176990904323794e-16`, max scaled convergence error `2.481513269677227e-10` under frozen `2e-5`. The 12 nonzero channel contributions in each q2 bucket cancel in the stored normalized coordinate: `D_s TrU2_simple(q^2=-0.14)=0.0`, `D_s TrU2_simple(q^2=-0.34)=0.0`, `D_s TrU2_simple(q^2=-1.0)=0.0`. This is a scoped ordinary-simple-sector routed cancellation only.
+- **Iteration 362 validates the repeated-pole auxiliary-mass derivative/distributional bridge. All 4 smooth-test oracles pass. Maximum scaled auxiliary-derivative error is `9.825899614424007e-11` under fixed `2e-8`; independent direct finite-eta squared-pole regularization with Richardson extrapolation has maximum scaled error `2.3002016237729086e-4` under fixed `2e-3`. No physical repeated-pole channel was integrated.**
 
-Iteration-361 authority:
-`PASS_U2_SIMPLE_NORMALIZED_CHANNEL_CUT_CLASSIFICATION__ALL_CONVERGED__Q2_RESOLVED_SIMPLE_SECTOR_CANCELS_TO_ZERO`.
+Iteration-362 authority:
+`PASS_U2_REPEATED_POLE_AUXILIARY_MASS_DERIVATIVE_DISTRIBUTIONAL_ORACLE`.
 
-Provenance: run `33795340192`, job `100781555423`, artifact `9909223767`, artifact digest `sha256:8473b567e8d7188b35f3472b1e33c309b12749596fbfe00dd2490a6c8b7c4d90`, raw scientific JSON SHA-256 `c3d6a916a42faf560ac1196cff789de5ba2384b94864c4a9284dfbd7dc96c0ec`, workflow head `02ae17bfe6f2a89d918e1c904373bd71dd06e12c`.
+Provenance: run `33800631629`, job `100799000169`, artifact `9910904000`, artifact digest `sha256:7721ae5f7df7070b7a74dcba16e1271ead8c7ab0e3dbf542c3a513f806a0c7cf`, raw scientific JSON SHA-256 `2f326362a1ddbaef069f859df5f72fdab31fa0ec7df12395460e0219e28eeb44`, workflow head `160acc4351a5e0e2d42569fb8f6b702b7dbe25a7`.
 
-Frozen repeated-pole bridge from Iteration 359 remains binding:
+Frozen repeated-pole bridge remains:
 
 \[
 \frac{1}{(D+i0)^2}=-\left.\frac{\partial}{\partial\mu^2}\frac{1}{D+\mu^2+i0}\right|_{\mu^2=0}.
@@ -39,19 +40,25 @@ Frozen repeated-pole bridge from Iteration 359 remains binding:
 
 Same `i0` prescription is mandatory. Overall discontinuity sign and normalization remain inherited from frozen repository convention.
 
+## Active computation
+
+**Iteration 363 is active:** run `33800789921`, workflow `rqir-iteration363-u2-repeated-pole-massive-cut-kinematic-separation`, head `9bc367c42b2da7cc2279bfd4f4a3fd75029a7886`. The run was queued immediately after workflow registration. Scientific authority remains Iteration 362 until a raw Iteration-363 artifact and sentinel/schema audit are validated.
+
+Iteration 363 classifies only the 48 repeated-pole timelike channels under the one-auxiliary-mass simple-cut representation. It probes `mu^2={-1e-5,0,+1e-5}` and analytically computes the full-sphere affine range of every uncut massless squared momentum. It does not differentiate or integrate the physical repeated-pole discontinuity.
+
 ## Active sectors
 
 - connection `e=1,c<=2`: actual `Tr U1` cut frozen by Iteration 307.
-- connection `e=2,c<=1`: ordinary-simple physical `Tr U2` normalized cut is now closed and q2-resolved sum cancels to zero. This does **not** close full `U2`: 30 repeated-pole families remain on the Iteration-359 derivative/distributional branch.
+- connection `e=2,c<=1`: ordinary-simple physical `Tr U2` normalized cut is closed and cancels q2-by-q2. The repeated-pole distributional method is now validated by Iteration 362; physical repeated-pole channels remain unresolved pending Iteration 363 and subsequent derivative integration.
 - determinant `e=0,c<=3`: three bubbles NONZERO; triangle family NONZERO in two certified channels; one `q^2=-1` triangle channel remains BLOCKED pending analytic/symbolic angular reduction.
 
-## Exact next gate
+## Exact next gates
 
-**Iteration 362:** repeated-pole auxiliary-mass/distributional validation only. For each structural repeated-pole type, introduce one `mu^2` on the unique double-pole momentum group, derive the corresponding simple-massive channel cut with the same `i0`, differentiate once with respect to `mu^2`, and take `mu^2 -> 0`. Before physical repeated-pole integration, validate the derivative/distributional implementation against an independent smooth test-function oracle. Ordinary simple Cutkosky substitution for the double pole is forbidden.
+**Iteration 363 (active):** require all 48 repeated-pole channels to remain kinematically admissible under the auxiliary-mass probes and require analytic full-sphere uncut-denominator separation above `1e-10`. Unsupported channels are `BLOCKED`, never zero-filled.
 
-Only after this oracle PASS may channel-resolved repeated-pole physical integration begin. Do not infer repeated-sector zero from Iteration 361. Do not perform Source/Born subtraction until normalized origin accounting is complete.
+If raw Iteration 363 reports all channels `REGULAR`, the next gate is symmetric-`mu^2` normalized simple-massive cut evaluation with the frozen negative derivative at zero and an independent step-size convergence check. If any channel is BLOCKED, isolate only those channels for analytic reduction without weakening thresholds.
 
-Iteration-297 evanescent/regulator warning remains binding for the full finite DR remainder. No Candidate residual may be declared before the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient is executable and survived.
+Iteration-297 evanescent/regulator warning remains binding for the full finite DR remainder. Source/Born subtraction remains forbidden until normalized origin accounting is complete. No Candidate residual may be declared before the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient is executable and survived.
 
 ## Stable readiness rubric
 
@@ -64,7 +71,7 @@ Iteration-297 evanescent/regulator warning remains binding for the full finite D
 
 MODEL_READINESS: 24%
 
-Change through Iteration 361: `0 pp`. A complete ordinary-simple U2 cut sub-sector closed and cancels q2-by-q2, but repeated-pole U2 remains unresolved; no complete readiness bucket and no robust comparator-subtracted residual closed.
+Change through Iteration 362: `0 pp`. The ordinary-simple U2 cut sub-sector is closed and the repeated-pole derivative/distributional method is validated, but physical repeated-pole U2 remains unresolved; no complete readiness bucket and no robust comparator-subtracted residual closed.
 
 ## Retained guardrails
 
