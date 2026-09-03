@@ -5,7 +5,7 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 347**
+**Authoritative Candidate Gravity front:** **Iteration 348**
 
 Repository commits, schema-validated Actions artifacts, primary-authority audits and recovery material are source of truth. A green workflow conclusion alone is never scientific authority.
 
@@ -27,24 +27,25 @@ Repository commits, schema-validated Actions artifacts, primary-authority audits
 - Iterations 343 and 344 are preserved implementation/gate-design FAILs involving a hand-coded Eq.55 oracle/partial repair; no threshold was weakened and they are not Candidate Gravity consistency FAILs.
 - Iteration 345 freezes the functional-transpose Fourier routing from the already validated Iteration-341 component authority: `A_R(Q;p)=A(Q;p)` and `A_T(Q;k)=A(Q;-k-Q)^T`, with the same external `+Q` and unchanged loop closure `sum Q_i=0`.
 - Iteration 346 freezes the complete executable cubic `Tr U2` operator-route assembly: `30` raw placements, `18` exact singleton-soft kills, `12` surviving routes, exact route/sum closure and nontrivial discrimination against wrong transpose/unshifted routing.
-- **Iteration 347 freezes the matched-timelike physical-component rebase contract.** The exact Iteration-332 triad has closure error `0.0`, all three legs timelike with invariants `(-1.0,-0.14,-0.34)` to `5.55e-17`, and the current repository copies of Iterations 339/341/342/345/346 retain all binding routing/orientation/sign conventions. Historical random-fixture matrices may not be copied; frozen formulas must be re-specialized on this exact common timelike background and route momentum.
+- Iteration 347 freezes the matched-timelike physical-component rebase contract. The exact Iteration-332 triad has closure error `0.0`, all three legs timelike with invariants `(-1.0,-0.14,-0.34)` to `5.55e-17`, and historical random-fixture matrices are forbidden from being copied; frozen formulas must be re-specialized on this exact common timelike background and route momentum.
+- **Iteration 348 freezes the physical `A1/A2` re-specialization on that exact matched timelike/common background.** With seed-319 metric tensors and unchanged parent/convention/oracle thresholds, `A0_max_abs=0.0`, `A1_oracle_max_abs_error=7.69426189428657e-12 < 1e-9`, and `A2_oracle_max_abs_error=5.675424640666504e-09 < 2e-7`. All three first-order modes and six second-order partitions pass; physical kernels are nonzero. No threshold was weakened.
 
-Iteration-347 authority:
-`PASS_U2_MATCHED_TIMELIKE_PHYSICAL_COMPONENT_REBASE_CONTRACT__12_ROUTE_SUBSTITUTION_AUTHORIZED_NEXT`.
+Iteration-348 authority:
+`PASS_U2_A1_A2_MATCHED_TIMELIKE_COMMON_BACKGROUND_PROVIDER_EQ55_EXACT_GEOMETRY_ORACLE__NY_HINV_ROUTE_ASSEMBLY_NEXT`.
 
-Provenance: run `33776852072`, artifact `9901922754`, artifact digest `sha256:c3aaa23fe14bdcb6d7a01186d5f640955a503f3739ae706b7b4300da361a0f82`, scientific JSON SHA-256 `f8d246b316d744f16c649cce7e7bd840d37696297891fbc8b6d64320c5cf30b5`, workflow head `c7f787acfa7336463f9e73b4e39afd5e24f08689`.
+Provenance: run `33777026420`, job `100721180705`, artifact `9901993803`, artifact digest `sha256:37c60e89f919f5a61c3abb3d797dbe966097b9bab5c384d20361294eb915bb29`, scientific JSON SHA-256 `89201feaea36e12e6342e0ede4bed6b4dedc423365beade497e62adba9b4a3e6`, workflow head `8e1b7237325b1a5b5c25f924fea88fa7a755f2f6`.
 
 ## Active sectors
 
 - connection `e=1,c<=2`: actual `Tr U1` cut frozen by Iteration 307.
-- connection `e=2,c<=1`: typed U2 topology, `A.T/A` orientation, VD inverse sign, physical `A1/A2`, `N/Y`, ordinary graviton shifted inverse, functional-transpose Fourier routing, complete 12-route cubic operator assembly, and exact matched-timelike rebase contract are frozen. **Iteration 348 run `33777026420` is queued** to re-specialize the physical `A1/A2` provider on the exact timelike triad with the same seed-319/common-background metric tensors and unchanged Iteration-341 exact-geometry oracle/thresholds.
+- connection `e=2,c<=1`: typed U2 topology, `A.T/A` orientation, VD inverse sign, physical `A1/A2`, `N/Y`, ordinary graviton shifted inverse, functional-transpose Fourier routing, complete 12-route cubic operator assembly, exact matched-timelike rebase contract, and **matched-timelike physical `A1/A2` provider** are frozen. Physical `Tr U2` remains BLOCKED until the already-frozen `N/Y` and shifted `Hinv_VD` formulas are re-specialized on the same exact common timelike parent and the 12 physical routes are family-reduced.
 - determinant `e=0,c<=3`: singleton is scoped scaleless/local DR-zero-cut; three bubbles have NONZERO direct-timelike discontinuities; triangle family is NONZERO with two certified channels and one unresolved numerical-convergence channel. Two Iteration-335 product-quadrature attempts ended operationally before scientific authority; the next determinant resolution must use analytic/symbolic angular reduction or another demonstrably non-blind method rather than a third copy of the same heavy quadrature.
 
 ## Exact next gates
 
-**Determinant:** derive symbolic/analytic angular reduction for the unresolved `q^2=-1` triangle channel under the unchanged `2e-5` authority threshold; do not weaken thresholds and do not blindly repeat Iteration 335.
+**Independent U2 — primary next gate:** re-specialize frozen Iteration-342 `N/Y` and Iteration-339 shifted graviton inverse on the exact Iteration-348 timelike/common metric background, applying the Iteration-340 `Hinv_VD=-K^-1` sign. Then substitute physical `A/N/Y/Hinv` route-by-route into all 12 Iteration-346 survivors. Preserve exact left/right incoming momentum and Iteration-345 functional-transpose provenance; canonicalize physical numerator/denominator families and classify local/scaleless/rational versus cut-capable origins. Only after this physical family gate passes may `Tr U2` cut integration begin.
 
-**Independent U2:** validate raw Iteration-348 artifact. If PASS, re-specialize frozen `N/Y` and shifted graviton `Hinv_VD` on the same exact timelike/common metric background, then substitute physical `A/N/Y/Hinv` route-by-route into all 12 Iteration-346 survivors. Preserve exact left/right incoming momentum and functional-transpose provenance, canonicalize physical numerator/denominator families, and classify local/scaleless/rational versus cut-capable origins. Only after that physical family gate passes may `Tr U2` cut integration begin.
+**Determinant:** derive symbolic/analytic angular reduction for the unresolved `q^2=-1` triangle channel under the unchanged `2e-5` authority threshold; do not weaken thresholds and do not blindly repeat Iteration 335.
 
 Iteration-297 evanescent/regulator warning remains binding for the full finite DR remainder. Source/Born subtraction remains forbidden until normalized determinant contribution enters matched-observable origin accounting. No Candidate residual may be declared before the fixed comparator quotient is executable.
 
@@ -59,7 +60,7 @@ Iteration-297 evanescent/regulator warning remains binding for the full finite D
 
 MODEL_READINESS: 24%
 
-Change through Iteration 347: `0 pp`. The exact matched-timelike rebase contract closed, but no complete readiness bucket and no robust comparator-subtracted residual closed.
+Change through Iteration 348: `0 pp`. A real matched-timelike U2 physical-component prerequisite closed, but no complete readiness bucket and no robust comparator-subtracted residual closed.
 
 ## Retained guardrails
 
