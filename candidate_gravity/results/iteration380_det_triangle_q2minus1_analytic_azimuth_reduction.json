@@ -1,0 +1,87 @@
+{
+  "analytic_sphere_mean": [
+    0.006875651912582228,
+    0.0
+  ],
+  "azimuth_numerator": {
+    "chebyshev_fit_degree": 6,
+    "heldout": [
+      {"phase_shifted_phi_mean": [0.0011961625911548466, 0.0], "physical_phi_mean": [0.001196162591154846, 0.0], "poly_prediction": [0.001196162591154846, 0.0], "z": -0.97},
+      {"phase_shifted_phi_mean": [0.0014365112712024538, 0.0], "physical_phi_mean": [0.0014365112712024534, 0.0], "poly_prediction": [0.001436511271202456, 0.0], "z": -0.81},
+      {"phase_shifted_phi_mean": [0.0020289626603848814, 0.0], "physical_phi_mean": [0.002028962660384882, 0.0], "poly_prediction": [0.0020289626603848822, 0.0], "z": -0.53},
+      {"phase_shifted_phi_mean": [0.002430254909369043, 0.0], "physical_phi_mean": [0.002430254909369043, 0.0], "poly_prediction": [0.002430254909369044, 0.0], "z": -0.19},
+      {"phase_shifted_phi_mean": [0.0021375699070530127, 0.0], "physical_phi_mean": [0.002137569907053013, 0.0], "poly_prediction": [0.002137569907053013, 0.0], "z": 0.14},
+      {"phase_shifted_phi_mean": [0.0012898704038111096, 0.0], "physical_phi_mean": [0.0012898704038111098, 0.0], "poly_prediction": [0.0012898704038111102, 0.0], "z": 0.44},
+      {"phase_shifted_phi_mean": [8.408628221110345e-05, 0.0], "physical_phi_mean": [8.408628221110389e-05, 0.0], "poly_prediction": [8.408628221110706e-05, 0.0], "z": 0.76},
+      {"phase_shifted_phi_mean": [-0.0005212301553565751, 0.0], "physical_phi_mean": [-0.000521230155356575, 0.0], "poly_prediction": [-0.0005212301553565741, 0.0], "z": 0.96}
+    ],
+    "heldout_scaled_max_error": 7.4395060457410295e-16,
+    "max_phase_shift_scaled_error": 1.526052522203288e-16,
+    "power_coefficients": [
+      [0.002351021704980894, 0.0],
+      [-0.0010580120028294568, 0.0],
+      [-0.003380509960959116, 0.0],
+      [0.0001798661571310669, 0.0],
+      [0.0011280279521176816, 0.0],
+      [-8.29939557259219e-06, 0.0],
+      [0.00018966788935100273, 0.0]
+    ],
+    "train_scaled_max_error": 6.104210088813152e-16
+  },
+  "candidate_residual": false,
+  "central_to_sample_ratio": 0.3677211535824982,
+  "classification": "PASS_DET_TRIANGLE_Q2_MINUS1_ANALYTIC_AZIMUTH_REDUCTION_NONZERO_DISCONTINUITY",
+  "cut_pair": [0, 2],
+  "direct_sparse_crosscheck": {
+    "base_mean": [0.006875651912566607, 0.0],
+    "grid": [12, 24],
+    "max_abs_sample": 0.018698004848501804,
+    "max_cut_shell_error": 1.6653345369377348e-16,
+    "minimum_sampled_third_abs_denominator": 0.12118636387567519,
+    "phase": 0.37123456789,
+    "scaled_disagreement": 8.354002293824815e-13,
+    "shifted_mean": [0.006875651912566607, 0.0]
+  },
+  "guardrails": [
+    "NO_PARENT_OR_NUMERATOR_CHANGE",
+    "NO_THRESHOLD_WEAKENING",
+    "DEGREE6_CLAIM_HELDOUT_TESTED",
+    "DIRECT_ORIGINAL_INTEGRAND_CROSSCHECK_REQUIRED",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "ITERATION297_FINITE_DR_WARNING_REMAINS"
+  ],
+  "iteration": 380,
+  "model_readiness_percent": 24,
+  "next_gate": "if PASS, freeze all three determinant triangle two-particle channels as NONZERO and assemble the complete channel-resolved normalized determinant absorptive vector; full finite-DR remainder still remains separately blocked by Iteration297",
+  "polynomial_degree_bound": 6,
+  "q2": -1.0,
+  "scientific_gate_pass": true,
+  "scope": "SOLE_Q2_MINUS1_DETERMINANT_TRIANGLE_CHANNEL__ANALYTIC_AZIMUTH_REDUCTION__NO_OTHER_CHANNEL_RECOMPUTE",
+  "third_denominator": {
+    "a": 0.14142135623730953,
+    "c": 0.26,
+    "exact_range": [0.11857864376269048, 0.40142135623730957],
+    "form": "c+a*z",
+    "max_direct_affine_abs_error": 2.220446049250313e-16
+  },
+  "thresholds": {
+    "azimuth_phase_scaled_max": 2e-08,
+    "denominator_affine_abs_max": 2e-10,
+    "polynomial_heldout_scaled_max": 2e-08,
+    "unchanged_discontinuity_scaled_convergence_max": 2e-05,
+    "unchanged_nonzero_ratio_min": 2e-06
+  },
+  "triangle_all_insertions_first_background_order": true,
+  "triangle_route_count": 6,
+  "uncut_index": 1,
+  "validated_action": {
+    "run_id": 33814113932,
+    "job_id": 100842299850,
+    "artifact_id": 9916838615,
+    "artifact_digest": "sha256:198d91e9ef7a5a09cdbaca11eb4c02135462fe831f01fbf3c54c7daf7820df63",
+    "scientific_json_sha256": "217e1fabe4f97967ee82c31101ecce3aeac27826599b516f779a9db84f098ef4",
+    "workflow_head": "c24850b08f5617868b366d7ec47b68a6cb9cdf40"
+  }
+}
