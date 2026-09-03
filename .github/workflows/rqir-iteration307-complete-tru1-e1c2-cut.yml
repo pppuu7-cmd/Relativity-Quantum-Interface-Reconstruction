@@ -1,0 +1,61 @@
+name: rqir-iteration307-complete-tru1-e1c2-cut
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration307_complete_tru1_e1c2_cut_combination.py'
+      - 'candidate_gravity/code/iteration298_validate_action_result.py'
+      - '.github/workflows/rqir-iteration307-complete-tru1-e1c2-cut.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  iteration307:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download Iteration 302 bubble authority
+        uses: actions/download-artifact@v4
+        with:
+          name: iteration302-result
+          path: iteration302_source
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33701297866
+      - name: Download Iteration 305 triangle authority
+        uses: actions/download-artifact@v4
+        with:
+          name: iteration305-result
+          path: iteration305_source
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33703120855
+      - name: Combine complete eight-family e1c2 TrU1 cut
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration307_complete_tru1_e1c2_cut_combination.py > iteration307_result.json
+      - name: Validate Iteration 307 authority sentinel/schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration298_validate_action_result.py \
+            iteration307_result.json \
+            --expected-iteration 307 \
+            --output iteration307_authority_audit.json
+      - name: Upload Iteration 307 result
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration307-result
+          path: |
+            iteration307_result.json
+            iteration307_authority_audit.json
+          if-no-files-found: error
