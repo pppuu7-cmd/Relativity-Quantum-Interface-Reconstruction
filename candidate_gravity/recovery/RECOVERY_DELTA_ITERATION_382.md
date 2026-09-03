@@ -1,15 +1,31 @@
 # RQIR Candidate Gravity — Recovery Delta Iteration 382
 
 **Date:** 2026-09-04  
-**Status:** ACTIVE / NOT YET SCIENTIFIC AUTHORITY  
-**Previous validated authority:** Iteration 378  
+**Status:** RAW-VALID SCIENTIFIC AUTHORITY FOR ONE PRESELECTED CHANNEL / RESOURCE AUTHORITY FOR NEXT ARCHITECTURE  
 **MODEL_READINESS: 24%**
 
-## Purpose
-Recover the still-open 48 physical timelike `Tr U2` cut-through-double-pole channels without treating operationally cancelled Iterations 364 or 376 as scientific results.
+## Authority
+
+Iteration 382 validates one prospectively fixed cut-through-double-pole `Tr U2` channel with the Iteration-364 `channel_derivative` arithmetic used verbatim. It is scientific authority for this one channel and resource/runtime authority for choosing a smaller complete-48 architecture. It is **not** authority for the other 47 channels.
+
+Freeze:
+
+`PASS_U2_REPEATED_CUT_ONE_CHANNEL_PILOT__CONVERGED`
+
+Validated Actions provenance:
+
+- run `33816704205`
+- job `100850328336`
+- workflow head `7fb92f2bd6488ccf7b7a4aaf141bd913ad2aa46a`
+- artifact `9916963796`, `iteration382-result`
+- artifact digest `sha256:e4ce19e00d8b58f78407c68974f9baa326d8777a4cb84af9ec58ac42fc0ee143`
+- scientific JSON SHA-256 `5fddd09cc07224063434e2abeef1c8d0a044cfcf88ee85cb9e825bb69b005648`
+- exactly one top-level JSON object, sentinel `382`, `scientific_authority_pass=true`.
 
 ## Frozen parent contract
+
 Iteration 382 does **not** change the Iteration-364 physics arithmetic. It imports `channel_derivative` verbatim and keeps:
+
 - Iterations 359/362/363 parent authority;
 - the same repeated-pole auxiliary-mass derivative identity and sign;
 - `BASE_H=5e-6`, `HALF_H=2.5e-6`;
@@ -20,29 +36,38 @@ Iteration 382 does **not** change the Iteration-364 physics arithmetic. It impor
 - the same routing, physical numerator and normalization;
 - no effective-action `+i/2` weight folded.
 
-## Why the resource architecture changed
-Iteration 364 was cancelled before sentinel/schema/artifact. Iteration 376 preserved the same arithmetic but used three fixed 16-channel jobs with a 30-minute timeout; all three jobs were cancelled during the scientific step at the timeout and produced no sentinel or artifact. Therefore neither attempt supplies scientific PASS/FAIL authority.
+## Scientific result
 
-Iteration 382 prospectively selects exactly global channel index `0` from the frozen 48-channel ordering and evaluates that one channel only. This is a resource/pipeline pilot. Its eventual value can become authority only for that one preselected channel after raw artifact + sentinel validation; it can never close the other 47 channels by extrapolation.
+Frozen global channel index `0`:
 
-## Reproducibility
-Added:
-- `candidate_gravity/code/iteration382_u2_repeated_cut_one_channel_pilot.py`
-- `.github/workflows/rqir-iteration382-u2-repeated-cut-one-channel-pilot.yml`
+- `q^2=-1`
+- route `1`, subterm `1`
+- cut group pair `(0,2)`
+- repeated group `2`
+- other cut group `0`
+- algebraic cut sign `+1`
+- `D_s Tr U2 = -1.1437983592303379e-05`
+- half-step value `-1.1437983587686573e-05`
+- shifted-phi value `-1.1438001667849296e-05`
+- scaled convergence error `8.280353369982061e-10 < 2e-5`
+- maximum cut-shell absolute error `1.6132928326584306e-16 < 2e-10`
+- minimum sampled uncut denominator `0.12097568457851282`
+- status `CONVERGED`.
 
-Workflow run: `33816704205`, job `100850328336`, head `7fb92f2bd6488ccf7b7a4aaf141bd913ad2aa46a`.
+Runtime: `341.30850966599996 s`.
 
-At this recovery checkpoint the scientific step is still `in_progress`; sentinel/schema audit and artifact upload are pending. Therefore **Iteration 382 is not promoted to Candidate Gravity authority in this delta**.
+## Resource conclusion
 
-## Classification discipline
-- Iterations 364/376: **operational cancellation**, not scientific FAIL and not zero.
-- Iteration 382 current state: **ACTIVE / operationally unresolved**, not PASS, FAIL, identity, non-identifiability, near-degeneracy, or novelty certificate.
-- The other 47 `Tr U2` cut-through-double-pole channels remain open and cannot be zero-filled.
+Iterations 364 and 376 remain **operational cancellations**, not scientific FAIL and not zero. Iteration 382 demonstrates that the frozen arithmetic is viable when one channel is isolated. A complete-48 run may therefore be prospectively decomposed into much smaller fixed chunks while preserving all physics and numerical thresholds. The value of channel 0 must never be extrapolated to the other 47 channels.
+
+## Scope boundary
+
+No effective-action `+i/2` weight is folded here. No Source/Born subtraction, matched `K2`, comparator quotient, ANSATZ-003, Fisher or resource claim is authorized.
 
 ## Readiness
-`MODEL_READINESS: 24%`
 
-Change from previous assessment: `0 pp`. A safer resource-recovery experiment was launched, but no additional readiness-rubric component closes until a raw validated physical result is obtained and eventually the complete `Tr U2` coordinate is assembled.
+`MODEL_READINESS: 24%`. Change: `0 pp`; this closes a one-channel physical/resource prerequisite but not a full readiness rubric bucket.
 
 ## Exact next gate
-Consume run `33816704205` only after raw artifact and sentinel/schema validation. If the preselected channel is `CONVERGED`, use measured runtime **only prospectively** to freeze a smaller complete-48 chunk architecture with identical arithmetic and unchanged thresholds. If it is `BLOCKED_CONVERGENCE`, isolate this channel with stronger angular/analytic treatment without weakening the frozen threshold.
+
+Freeze a complete 48-index architecture with small prospectively fixed chunks and identical Iteration-364 arithmetic. Require exact index coverage, no overlap/gap, per-channel sentinel/status, and preserve the three distinct `q^2` buckets. Any nonconverged channel remains `BLOCKED`, never zero-filled.
