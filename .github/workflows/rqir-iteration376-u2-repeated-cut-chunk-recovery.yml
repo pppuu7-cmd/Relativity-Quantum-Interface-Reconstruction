@@ -1,0 +1,46 @@
+name: rqir-iteration376-u2-repeated-cut-chunk-recovery
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration376_u2_repeated_cut_chunk_recovery.py'
+      - '.github/workflows/rqir-iteration376-u2-repeated-cut-chunk-recovery.yml'
+
+jobs:
+  iteration376:
+    strategy:
+      fail-fast: false
+      matrix:
+        chunk: [0, 1, 2]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      RQIR_CHUNK: ${{ matrix.chunk }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical dependency
+        run: pip install numpy
+      - name: Run fixed 16-channel repeated-cut recovery chunk
+        run: python candidate_gravity/code/iteration376_u2_repeated_cut_chunk_recovery.py > iteration376_chunk${RQIR_CHUNK}_result.json
+      - name: Sentinel/schema/chunk audit
+        run: |
+          python - <<'PY'
+          import json,hashlib,os
+          c=int(os.environ['RQIR_CHUNK']); fn=f'iteration376_chunk{c}_result.json'; raw=open(fn,'rb').read(); o=json.loads(raw)
+          ok=isinstance(o,dict) and o.get('iteration')==376 and o.get('chunk')==c and o.get('global_channel_range')==[16*c,16*c+16] and o.get('scientific_gate_pass') is True
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':376,'expected_chunk':c,
+             'found_iteration':o.get('iteration'),'found_chunk':o.get('chunk'),'valid_single_top_level':True,
+             'scientific_authority_pass':bool(ok),'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw)}
+          open(f'iteration376_chunk{c}_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          assert ok
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration376-chunk-${{ matrix.chunk }}
+          path: |
+            iteration376_chunk${{ matrix.chunk }}_result.json
+            iteration376_chunk${{ matrix.chunk }}_authority_audit.json
