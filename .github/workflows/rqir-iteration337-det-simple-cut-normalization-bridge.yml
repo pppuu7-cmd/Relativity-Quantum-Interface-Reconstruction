@@ -1,0 +1,38 @@
+name: rqir-iteration337-det-simple-cut-normalization-bridge
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration337_det_simple_cut_normalization_bridge.py'
+      - '.github/workflows/rqir-iteration337-det-simple-cut-normalization-bridge.yml'
+
+jobs:
+  iteration337:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Run repository-normalized simple-cut bridge gate
+        run: python candidate_gravity/code/iteration337_det_simple_cut_normalization_bridge.py > iteration337_result.json
+      - name: Sentinel/schema audit
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          raw=open('iteration337_result.json','rb').read(); o=json.loads(raw)
+          ok=isinstance(o,dict) and o.get('iteration')==337 and o.get('scientific_gate_pass') is True
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':337,
+             'found_iterations':[o.get('iteration')],'top_level_object_count':1,
+             'valid_single_top_level':True,'valid_expected_iteration':o.get('iteration')==337,
+             'scientific_authority_pass':bool(ok),'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw)}
+          open('iteration337_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          assert ok
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration337-result
+          path: |
+            iteration337_result.json
+            iteration337_authority_audit.json
