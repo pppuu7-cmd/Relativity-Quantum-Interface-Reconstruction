@@ -1,0 +1,40 @@
+name: rqir-iteration357-u2-simple-vs-repeated-pole-cut-contract
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration357_u2_simple_vs_repeated_pole_cut_contract.py'
+      - '.github/workflows/rqir-iteration357-u2-simple-vs-repeated-pole-cut-contract.yml'
+
+jobs:
+  iteration357:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install numerical dependency
+        run: pip install numpy
+      - name: Run U2 simple versus repeated-pole cut contract
+        run: python candidate_gravity/code/iteration357_u2_simple_vs_repeated_pole_cut_contract.py > iteration357_result.json
+      - name: Sentinel/schema audit
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          raw=open('iteration357_result.json','rb').read(); o=json.loads(raw)
+          ok=isinstance(o,dict) and o.get('iteration')==357 and o.get('scientific_gate_pass') is True
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':357,
+             'found_iterations':[o.get('iteration')],'top_level_object_count':1,
+             'valid_single_top_level':True,'valid_expected_iteration':o.get('iteration')==357,
+             'scientific_authority_pass':bool(ok),'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw)}
+          open('iteration357_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          assert ok
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration357-result
+          path: |
+            iteration357_result.json
+            iteration357_authority_audit.json
