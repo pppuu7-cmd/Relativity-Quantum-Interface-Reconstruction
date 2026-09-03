@@ -1,0 +1,39 @@
+name: rqir-iteration378-tru1sq-simple-double-one-channel-pilot
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration378_tru1sq_simple_double_one_channel_pilot.py'
+      - '.github/workflows/rqir-iteration378-tru1sq-simple-double-one-channel-pilot.yml'
+
+jobs:
+  iteration378:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical dependency
+        run: pip install numpy
+      - name: Run one-channel physical simple-double pilot
+        run: python candidate_gravity/code/iteration378_tru1sq_simple_double_one_channel_pilot.py > iteration378_result.json
+      - name: Sentinel/schema audit
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          raw=open('iteration378_result.json','rb').read(); o=json.loads(raw)
+          ok=isinstance(o,dict) and o.get('iteration')==378 and o.get('scientific_gate_pass') is True
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':378,'found_iteration':o.get('iteration'),
+             'valid_single_top_level':True,'scientific_authority_pass':bool(ok),'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw)}
+          open('iteration378_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          assert ok
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration378-result
+          path: |
+            iteration378_result.json
+            iteration378_authority_audit.json
