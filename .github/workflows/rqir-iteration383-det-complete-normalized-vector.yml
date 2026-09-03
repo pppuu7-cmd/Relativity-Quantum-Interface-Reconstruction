@@ -1,0 +1,44 @@
+name: rqir-iteration383-det-complete-normalized-vector
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration383_det_complete_normalized_absorptive_vector.py'
+      - '.github/workflows/rqir-iteration383-det-complete-normalized-vector.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration383:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble complete normalized determinant ordinary-simple cut vector
+        run: |
+          mkdir -p candidate_gravity/artifacts/iteration383
+          python candidate_gravity/code/iteration383_det_complete_normalized_absorptive_vector.py > candidate_gravity/artifacts/iteration383/iteration383_result.json
+      - name: Sentinel and schema audit
+        run: |
+          python - <<'PY'
+          import hashlib, json, pathlib
+          p=pathlib.Path('candidate_gravity/artifacts/iteration383/iteration383_result.json')
+          raw=p.read_bytes(); o=json.loads(raw)
+          assert o['iteration']==383
+          assert o['scientific_gate_pass'] is True
+          assert len(o['coordinates'])==3
+          assert all(x['status']=='NONZERO' for x in o['coordinates'])
+          audit={
+            'schema':'rqir_action_result_authority_audit_v1',
+            'expected_iteration':383,
+            'found_iteration':o['iteration'],
+            'valid_single_top_level':isinstance(o,dict),
+            'scientific_authority_pass':bool(o['scientific_gate_pass']),
+            'sha256':hashlib.sha256(raw).hexdigest(),
+            'bytes':len(raw),
+          }
+          pathlib.Path('candidate_gravity/artifacts/iteration383/iteration383_authority_audit.json').write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration383-result
+          path: candidate_gravity/artifacts/iteration383/
+          if-no-files-found: error
