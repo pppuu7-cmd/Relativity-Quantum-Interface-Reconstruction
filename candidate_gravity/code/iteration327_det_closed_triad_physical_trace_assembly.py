@@ -235,3 +235,5 @@ result={
 }
 print(json.dumps(result,indent=2,sort_keys=True))
 if not ok: raise SystemExit(2)
+
+# Trigger-only marker: scientific contract above is unchanged.
