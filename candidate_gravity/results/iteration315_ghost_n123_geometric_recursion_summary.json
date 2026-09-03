@@ -1,0 +1,27 @@
+{
+  "iteration": 315,
+  "date": "2026-09-03",
+  "model_readiness_percent": 24,
+  "classification": "PASS_GHOST_N123_GEOMETRIC_RECURSION_PRINCIPAL_PLUS_RICCI__COVARIANT_BOX_CONNECTION_ROUTING_REMAINS_BLOCKED",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "scope": {"D": 4, "Lambda": 0, "a": "-1/2", "parent_operator": "N^alpha_beta = delta^alpha_beta Box + R^alpha_beta"},
+  "validated_provenance": {
+    "run": 33713975395,
+    "head_commit": "4997efbcf4ce198cad98a047ae1bc2dc10390513",
+    "code_commit": "389dc70eb76770fd36b89f0a662730df3f56c501",
+    "artifact": 9877851387,
+    "artifact_digest": "sha256:644413a787083f35916eb7f22454cf7163c0a64fdcd25b095c5d637cfd302115",
+    "scientific_json_sha256": "0e31d3a123ceb45b5c305e0a68b78712b59abad6d3febc24a9033c263a21c826",
+    "top_level_object_count": 1,
+    "sentinel": 315
+  },
+  "validation_max_abs_error_by_order": [8.283688954807686e-12, 9.73450209329485e-11, 0.00011025703905076512, 0.0006288007404791074],
+  "validation_threshold_by_order": [1e-09, 2e-06, 0.002, 2.0],
+  "physical_status": {
+    "ghost_N1_N2_N3_principal_plus_Ricci": "DERIVED_AND_VALIDATED",
+    "ghost_covariant_Box_connection_routing": "BLOCKED_NEXT_SUBGATE",
+    "graviton_H1_H2_H3": "BLOCKED_UNCHANGED"
+  },
+  "next_gate": "Complete vector covariant-Box connection terms and routed ghost N1/N2/N3 in the same convention, preserving diagnostics on failure; then independently validate before proceeding to graviton H1/H2/H3."
+}
