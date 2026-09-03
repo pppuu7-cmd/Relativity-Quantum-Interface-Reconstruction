@@ -1,0 +1,37 @@
+{
+  "iteration": 346,
+  "model_readiness_percent": 24,
+  "scientific_gate_pass": true,
+  "classification": "PASS_U2_COMPLETE_12_SURVIVING_CUBIC_ROUTE_OPERATOR_ASSEMBLY_WITH_FUNCTIONAL_TRANSPOSE_AND_MOMENTUM_PROVENANCE__PHYSICAL_CUT_REDUCTION_AUTHORIZED_NEXT",
+  "scope": "OPERATOR_ROUTING_ASSEMBLY_ONLY__FROZEN_PHYSICAL_COMPONENT_AUTHORITIES_NOT_REDERIVED",
+  "candidate_residual": false,
+  "validation": {
+    "raw_cubic_placements": 30,
+    "null_soft_killed": 18,
+    "surviving_routes": 12,
+    "survivor_site_census": {"NL": 2, "AT": 2, "H": 2, "AR": 2, "NR": 2, "Y": 2},
+    "max_route_matrix_match_error": 0.0,
+    "max_route_trace_match_error": 0.0,
+    "summed_matrix_match_error": 0.0,
+    "summed_trace_match_error": 0.0,
+    "max_loop_closure_error": 5.551115123125783e-17,
+    "max_null_soft_killed_matrix_norm": 0.0,
+    "min_wrong_same_k_transpose_matrix_difference": 8.593309331286214,
+    "min_unshifted_routing_matrix_difference": 1.900214417122233
+  },
+  "provenance": {
+    "run": 33771412442,
+    "job": 100702287231,
+    "artifact": 9899772352,
+    "artifact_digest": "sha256:109079c6f4e2f47f096fc3a3ba10c7930f34260f111f97c54d6e5c898c2ad63a",
+    "scientific_json_sha256": "8fae654f1c713770b6d6f91e0dfe646d37ffa9b2c11ccffe4ebaca189d5e3d4e",
+    "workflow_head": "3f2212743bf376c8947bb2a15e6199bba6dd4a56"
+  },
+  "status": {
+    "TrU2_cubic_route_assembly": "FROZEN_EXECUTABLE",
+    "physical_component_values": "RETAIN_FROZEN_ITERATIONS_341_342_339_340_345",
+    "cut_integrand_reduction": "AUTHORIZED_NEXT",
+    "integrated_TrU2_cut": "NOT_YET_COMPUTED"
+  },
+  "next_gate": "Replace typed surrogate slots route-by-route with the already-frozen physical A1/A2, N/Y and graviton Hinv components on the matched timelike fixture; canonicalize the resulting 12 physical Tr U2 numerator/denominator families and classify cut-capable origins before integration."
+}
