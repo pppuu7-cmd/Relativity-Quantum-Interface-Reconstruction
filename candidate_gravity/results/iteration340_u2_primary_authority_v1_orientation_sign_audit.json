@@ -1,0 +1,20 @@
+{
+  "iteration": 340,
+  "MODEL_READINESS": "24%",
+  "primary_authority": "Giacchini-de Paula Netto-Shapiro 2020, arXiv:2006.04217v4, Eqs.14-17",
+  "u2_component_definition": "A_{i gamma}=(D_i R^k_gamma) epsilon_k",
+  "v1_storage": "A: field x ghost",
+  "v1_left_orientation": "A^T: ghost x field",
+  "v1_right_orientation": "A: field x ghost",
+  "u2_matrix_order": "N_left @ A.T @ Hinv_VD @ A @ N_right @ Y",
+  "paper_inverse_convention": "H * Hinv_VD = -1",
+  "same_parent_bridge": "Hinv_VD = -K^{-1} when K is the Iteration-319 differential operator",
+  "iteration339_status": "shifted inverse routing retained; interpretation as the Eq17 U2 Green object requires one global minus sign",
+  "exact_index_vs_matrix_contraction_pass": true,
+  "exact_fixture_u2": [[-194, -471], [181, 323]],
+  "exact_global_sign_check_pass": true,
+  "classification": "PASS_U2_PRIMARY_AUTHORITY_V1_LEFT_RIGHT_ORIENTATION_AND_VD_GREEN_MINUS_SIGN__PHYSICAL_A1_A2_COMPONENTS_REMAIN_BLOCKED",
+  "candidate_gravity_consistency_fail": false,
+  "candidate_residual": false,
+  "next_gate": "derive physical same-parent A1/A2=(D R)*epsilon background expansions in this frozen orientation; then bridge N/Y routing before Tr U2"
+}
