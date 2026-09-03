@@ -1,0 +1,49 @@
+{
+  "iteration": 324,
+  "date": "2026-09-03",
+  "model_readiness_percent": 24,
+  "classification": "PASS_SHIFTED_FREE_PROPAGATOR_ROUTING_ENGINE_CYCLIC_EQUIVALENCE",
+  "candidate_residual": false,
+  "scope": {
+    "target_multiindex": [1, 1, 1],
+    "q_total_int100": [0, 0, 0, 0],
+    "q_rank": 2,
+    "ordered_pair_count": 6,
+    "ordered_triple_count": 6,
+    "routing_rule": "G0(p+Q_before_each_insertion); Q accumulates ordered Fourier insertion momenta"
+  },
+  "checks": {
+    "all_trace_sequences_close": true,
+    "all_fixture_denominators_finite_nonzero": true,
+    "all_pair_cyclic_families_equivalent_up_to_loop_shift": true,
+    "all_triple_cyclic_families_equivalent_up_to_loop_shift": true,
+    "explicit_nonzero_shifted_propagators_present": true
+  },
+  "physical_status": {
+    "shifted_denominator_routing_engine": "FROZEN",
+    "physical_HN_arbitrary_incoming_momentum_numerators": "BLOCKED_NEXT_DEPENDENT_GATE",
+    "full_physical_determinant_loop_integrand_ready": false,
+    "denominator_family_reduction_ready": false
+  },
+  "actions_authority": {
+    "workflow_run": 33726739255,
+    "job": 100557310502,
+    "artifact": 9882247698,
+    "artifact_digest": "sha256:4bec2f0a1fc9c5de098f6b3ac5fa6f35dd7b506a2b45cb6035f1981bc64fe97f",
+    "scientific_result_sha256": "efd8c34ceb18a379396e6cfa9f9af2bacbb5d6d0d70d8408125dde2ee11d8717",
+    "single_top_level_object": true,
+    "expected_iteration_sentinel": true,
+    "scientific_authority_pass": true
+  },
+  "operational_note": "The first run 33726453589 failed before scientific execution because numpy was absent. Only the dependency was repaired; scientific routing code and frozen gate were unchanged.",
+  "next_gate": "Refactor/evaluate frozen graviton H1/H2/H3 and ghost N1/N2/N3 insertion kernels as functions of the correct incoming loop momentum p+Q and validate them against exact geometry before assembling the shifted physical cubic trace.",
+  "guardrails": [
+    "NO_NUMERATOR_ZERO_FILL",
+    "NO_PHYSICAL_COEFFICIENT_PROMOTION_FROM_ROUTING_SKELETON",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "NO_BLIND_HEAVY_FULL_C5",
+    "UNSUPPORTED_IS_BLOCKED_NOT_ZERO_FILLED"
+  ]
+}
