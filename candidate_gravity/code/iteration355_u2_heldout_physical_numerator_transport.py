@@ -171,3 +171,5 @@ result={
 }
 print(json.dumps(result,indent=2,sort_keys=True))
 if not passed: raise SystemExit(2)
+
+# Trigger marker: workflow was registered in the immediately preceding commit.
