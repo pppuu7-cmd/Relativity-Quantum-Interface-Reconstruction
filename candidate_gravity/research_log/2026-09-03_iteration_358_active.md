@@ -8,9 +8,11 @@ Method: for each simple channel, parameterize the exact massless two-particle cu
 
 Inherited guards: Iteration-356 timelike tolerance `2e-12`; uncut denominator separation guard `1e-10` matching the Iteration-355 stripped flat-pole safety scale; cut-shell closure threshold `2e-10`. No threshold weakening.
 
-Code commit: `43254a83c9ca374bc141c423ae74cac8276ba4b8`. Workflow commit: `11d80102bc739cc3220deb8eeec3a41e52d0ba6f`. Trigger-only code commit after workflow registration: `e5dd24c442ff3b11b6bca240fe2b04acebea01b9`.
+Initial code commit: `43254a83c9ca374bc141c423ae74cac8276ba4b8`. Workflow commit: `11d80102bc739cc3220deb8eeec3a41e52d0ba6f`. Trigger-only commit: `e5dd24c442ff3b11b6bca240fe2b04acebea01b9`.
 
-Active run: `33794527084`, job `100778886976`, workflow `rqir-iteration358-u2-simple-channel-on-shell-regularity`.
+Run `33794527084`, job `100778886976`, failed during the scientific Python step before sentinel/schema audit and before artifact upload. The failure is implementation-only: the frozen parent `mdot` is a one-argument quadratic form, while the first Iteration-358 implementation mistakenly called it as a two-argument bilinear product. No scientific PASS/FAIL is assigned to that run and no threshold/physics change follows from it.
+
+Repair commit `f80e10ca6d868ea0fd2878454b5d4b3cc2107f3d` introduces only the Minkowski bilinear helper by polarization of the frozen quadratic form, `B(a,b)=(mdot(a+b)-mdot(a)-mdot(b))/2`. Replacement run: `33794678777`, job `100779381741`.
 
 Scientific authority remains Iteration 357 until the raw Iteration-358 artifact and authority audit are validated. A green workflow alone will not be promoted.
 
