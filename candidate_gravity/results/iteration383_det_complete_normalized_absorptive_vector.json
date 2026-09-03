@@ -1,0 +1,69 @@
+{
+  "candidate_residual": false,
+  "classification": "PASS_COMPLETE_CHANNEL_RESOLVED_NORMALIZED_DETERMINANT_ORDINARY_SIMPLE_CUT_ABSORPTIVE_VECTOR",
+  "coordinates": [
+    {
+      "D_s_C_det": -0.002357789063884683,
+      "D_s_Gamma_det_complex": [0.0, -0.002357789063884683],
+      "bubble_normalized_angular_mean": -0.004517862848697545,
+      "q2": -1.0,
+      "status": "NONZERO",
+      "total_normalized_angular_mean": 0.002357789063884683,
+      "triangle_normalized_angular_mean": 0.006875651912582228
+    },
+    {
+      "D_s_C_det": 0.001462759351572654,
+      "D_s_Gamma_det_complex": [0.0, 0.001462759351572654],
+      "bubble_normalized_angular_mean": 9.802036921027348e-05,
+      "q2": -0.34,
+      "status": "NONZERO",
+      "total_normalized_angular_mean": -0.001462759351572654,
+      "triangle_normalized_angular_mean": -0.0015607797207829275
+    },
+    {
+      "D_s_C_det": 0.0012389565044298413,
+      "D_s_Gamma_det_complex": [0.0, 0.0012389565044298413],
+      "bubble_normalized_angular_mean": 0.00013296877895753044,
+      "q2": -0.14,
+      "status": "NONZERO",
+      "total_normalized_angular_mean": -0.0012389565044298413,
+      "triangle_normalized_angular_mean": -0.0013719252833873717
+    }
+  ],
+  "family_counts": {"bubble": 3, "q2_coordinates": 3, "triangle": 3},
+  "guardrails": [
+    "DISTINCT_Q2_COORDINATES_NOT_SUMMED",
+    "ITERATION333_BLOCKED_Q2_MINUS1_TRIANGLE_VALUE_NOT_USED",
+    "ITERATION380_VALUE_USED_ONLY_FOR_Q2_MINUS1_TRIANGLE",
+    "NO_DOUBLE_APPLICATION_OF_DETERMINANT_WEIGHTS",
+    "ITERATION297_FINITE_DR_WARNING_REMAINS_BINDING",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "input_authorities": {
+    "determinant_outer_effective_action_prefactor": 338,
+    "family_and_two_converged_triangle_channels": 333,
+    "q2_minus1_triangle_replacement": 380,
+    "simple_cut_normalization_bridge": 337
+  },
+  "iteration": 383,
+  "model_readiness_percent": 24,
+  "next_gate": "retain this vector as determinant ordinary-simple origin accounting; continue active TrU1sq/TrU2 repeated-cut closures, then perform Source/Ward/contact completion and matched K2 subtraction only after operator coordinates are complete",
+  "normalization": {
+    "D_s_C_det": "-sphere_mean",
+    "D_s_Gamma_det": "-i*sphere_mean",
+    "Gamma_det": "+i*C_det",
+    "internal_graviton_ghost_weights_reapplied": false
+  },
+  "scientific_gate_pass": true,
+  "scope": "ordinary two-simple-particle determinant cut vector only; not the full finite-DR determinant, not source-completed, not comparator-subtracted",
+  "validated_action": {
+    "run_id": 33817475548,
+    "job_id": 100852689209,
+    "artifact_id": 9917045046,
+    "artifact_digest": "sha256:4de76d7ce811ca34a17b9e21b6408c38a632c2850c41b3008f94292a78504c00",
+    "scientific_json_sha256": "7c00c0d7e959375d9b8e4614994a16e482dc21c7444e0f589ec8d40c531560f4",
+    "workflow_head": "72a06217529f4e2f47736542397afdeb4fa65f27"
+  }
+}
