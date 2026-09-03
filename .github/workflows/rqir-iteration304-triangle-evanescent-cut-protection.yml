@@ -1,0 +1,44 @@
+name: rqir-iteration304-triangle-evanescent-cut-protection
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration304_hv_triangle_evanescent_cut_protection.py'
+      - 'candidate_gravity/code/iteration298_validate_action_result.py'
+      - '.github/workflows/rqir-iteration304-triangle-evanescent-cut-protection.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration304:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependencies
+        shell: bash
+        run: python -m pip install --upgrade pip numpy scipy
+      - name: Run Iteration 304 triangle evanescent cut protection audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration304_hv_triangle_evanescent_cut_protection.py > iteration304_result.json
+      - name: Validate Iteration 304 authority sentinel/schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration298_validate_action_result.py \
+            iteration304_result.json \
+            --expected-iteration 304 \
+            --output iteration304_authority_audit.json
+      - name: Upload Iteration 304 result
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration304-result
+          path: |
+            iteration304_result.json
+            iteration304_authority_audit.json
+          if-no-files-found: error
