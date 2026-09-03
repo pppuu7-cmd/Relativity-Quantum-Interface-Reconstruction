@@ -1,0 +1,35 @@
+{
+  "iteration": 331,
+  "model_readiness_percent": 24,
+  "scientific_gate_pass": true,
+  "classification": "PASS_PHYSICAL_CUBIC_DETERMINANT_NUMERATOR_SIGNED_AFFINE_FAMILY_RECONSTRUCTION_V2_CLOSED_TARGET_EXCLUDED_FROM_NONZERO_PROPER_SUBINDEX_CHECK",
+  "candidate_residual": false,
+  "run": 33742866100,
+  "job": 100608562495,
+  "artifact": 9888424625,
+  "artifact_digest": "sha256:ab86eeeb40dcf4d1e0f9d6529e7560147c1ca83a0da9cb33da1247ad02027f28",
+  "scientific_json_sha256": "813b7a770d8bcdd9b90b29bfe1027e92e20f23cf13ad3d0b844381faae1c7c29",
+  "workflow_head": "3c8113149da878053c10a8b75993c84b17e82a2b",
+  "validation": {
+    "workflow_conclusion": "success",
+    "scientific_execution": "success",
+    "sentinel_schema_audit": "success",
+    "artifact_upload": "success",
+    "final_scientific_enforcement": "success",
+    "max_heldout_reconstruction_scaled_error": 1.3877787807814457e-17,
+    "max_heldout_denominator_map_scaled_error": 1.1102230246251565e-16
+  },
+  "scope": {
+    "families": "1 singleton + 3 bubbles + 1 signed-affine triangle",
+    "singleton": "scaleless/local DR-zero-cut topology",
+    "bubble_triangle": "cut-capable topology only; nonzero discontinuity not yet certified"
+  },
+  "guardrails": [
+    "CUT_CAPABLE_TOPOLOGY_IS_NOT_NONZERO_DISCONTINUITY",
+    "ITERATION297_EVANESCENT_SCHEME_BLOCKER_REMAINS",
+    "NO_SOURCE_BORN_SUBTRACTION_YET",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "NO_BLIND_HEAVY_FULL_C5"
+  ]
+}
