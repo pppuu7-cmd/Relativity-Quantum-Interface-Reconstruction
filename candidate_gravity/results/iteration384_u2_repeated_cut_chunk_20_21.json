@@ -1,0 +1,19 @@
+{
+  "iteration": 384,
+  "chunk_label": "20-21",
+  "classification": "PASS_U2_REPEATED_CUT_FULL48_TWO_CHANNEL_CHUNK_EXECUTION",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "model_readiness_percent": 24,
+  "chunk": {"start_index": 20, "end_index_exclusive": 22, "expected_indices": [20, 21]},
+  "converged_count": 2,
+  "blocked_convergence_count": 0,
+  "records": [
+    {"global_channel_index":20,"q2":-0.33999999999999997,"route":17,"subterm":1,"group_pair":[0,1],"repeated_group":0,"other_cut_group":1,"cut_algebraic_sign":1.0,"D_s_TrU2_repeated_high":[3.464496321673011e-06,0.0],"D_s_TrU2_repeated_low":[3.4644978994575296e-06,0.0],"D_s_TrU2_repeated_high_phi_shifted":[3.4644963268200067e-06,0.0],"D_s_TrU2_repeated_halfstep":[3.4644963212534163e-06,0.0],"scaled_convergence_error":1.5777845186365795e-12,"max_cut_shell_abs_error":1.4660990759423431e-16,"minimum_sampled_uncut_abs_denominator":0.260988925267721,"runtime_seconds":261.45049766000005,"status":"CONVERGED"},
+    {"global_channel_index":21,"q2":-1.0,"route":17,"subterm":1,"group_pair":[0,2],"repeated_group":0,"other_cut_group":2,"cut_algebraic_sign":-1.0,"D_s_TrU2_repeated_high":[7.602803300509556e-07,0.0],"D_s_TrU2_repeated_low":[7.603649703498959e-07,0.0],"D_s_TrU2_repeated_high_phi_shifted":[7.602859206769317e-07,0.0],"D_s_TrU2_repeated_halfstep":[7.602803253926403e-07,0.0],"scaled_convergence_error":8.464029894035508e-11,"max_cut_shell_abs_error":1.424535775527546e-16,"minimum_sampled_uncut_abs_denominator":0.12097568457851285,"runtime_seconds":271.89813422400005,"status":"CONVERGED"}
+  ],
+  "runtime_seconds":533.348687339,
+  "frozen_arithmetic":{"parent":"Iteration364 channel_derivative verbatim","base_h":5e-06,"halfstep_h":2.5e-06,"low_grid":[6,12],"high_grid":[8,16],"phi_shift_check":0.5,"convergence_threshold":2e-05,"shell_threshold":2e-10,"normalization":"D_s_repeated=sphere_mean[d_mu2(beta*cut_sign*num/D_uncut)]"},
+  "validated_action":{"run_id":33817712381,"job_id":100853419010,"artifact_id":9917357375,"artifact_digest":"sha256:97f133c2cb17a8154de4f61dbae98e1985b674798a0ddefb8de819f6714cb9f2","scientific_json_sha256":"62cfa3d389e62be907579089addf2569dad6287145a9e6edaf0d03613c7fafcc","workflow_head":"dcae3ac454fd81f19c6d02d4815f07a741afefc7"},
+  "guardrails":["PARTIAL_CHUNK_ONLY","NO_Q2_BUCKET_PROMOTION_FROM_PARTIAL_CHANNELS","EXACT_48_INDEX_ASSEMBLY_REQUIRED","BLOCKED_NEVER_ZERO_FILLED","NO_EFFECTIVE_ACTION_WEIGHT_FOLDING","NO_SOURCE_BORN_SUBTRACTION","NO_ANSATZ003","NO_FISHER_RESOURCES"]
+}
