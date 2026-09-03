@@ -5,7 +5,7 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 318**
+**Authoritative Candidate Gravity front:** **Iteration 321**
 
 Repository commits, schema-validated Actions artifacts and recovery material are source of truth. A green workflow conclusion alone is never scientific authority.
 
@@ -15,32 +15,31 @@ Repository commits, schema-validated Actions artifacts and recovery material are
 - Iteration 307 freezes the complete eight-family `e=1,c=2` weight-completed `Tr U1` normalized cut at `s=0.016`: `D_s TrU1[e=1,c=2] = -0.5157080054161807`, fitted combined cut `1/epsilon` residue `1.2896746939995822e-09`.
 - Iterations 308-310 freeze `e=2,c<=1` placement/null-soft bookkeeping, typed U2 contract, and the eight cyclic `Tr U1^2` routing classes. Physical U2 `V1_1/V1_2/H0/H1` remain BLOCKED.
 - Iteration 311 remains a negative numerical-audit result, not an analytic refutation.
-- Iteration 312 freezes the exact determinant cubic logdet topology; it is an operator identity, not a physical determinant coefficient.
+- Iteration 312 freezes the exact determinant cubic logdet topology; it is an operator identity, not by itself a physical determinant coefficient.
 - Iteration 313 proves explicit physical `H1/H2/H3,N1/N2/N3` formula authority was absent.
-- Iteration 314 locates all frozen same-parent derivation prerequisites and authorizes explicit component derivation.
-- Iteration 315 derives/validates the ghost inverse-metric, Levi-Civita, Ricci/mixed-Ricci and principal-symbol recursion sublayer.
-- Iteration 316 validates the full routed vector covariant-Box ghost operator for a single Fourier mode after correcting only a mixed-Ricci allocation bug without threshold changes.
-- Iteration 317 independently validates non-collinear three-mode ghost routing including the fully mixed cubic `(1,1,1)` coefficient; full physical ghost `N1/N2/N3` component authority is frozen.
-- Iteration 318 freezes the exact same-parent local graviton operator specialization at `D=4, Lambda=0, a=-1/2`. From the primary authority, `H=-(I Box+Pi)` and the coefficients reduce identically to `p1=p2=p3=1` for every allowed nondegenerate linear parametrization, so no post-hoc `gamma2` choice is needed. The frozen potential is
+- Iterations 314-317 derive and independently validate the full routed physical ghost `N1/N2/N3` layer, including a non-collinear three-mode mixed `(1,1,1)` certificate.
+- Iteration 318 freezes the exact same-parent local graviton operator specialization at `D=4, Lambda=0, a=-1/2`, with `H=-(I Box+Pi)` and
   `Pi^{munu}_{alphabeta} = 2 R^mu_.alpha^nu_.beta - 1/2 g^{munu}R_{alphabeta} - 1/2 g_{alphabeta}R^{munu} + 1/4 g^{munu}g_{alphabeta}R - 1/2 delta^{munu}_{alphabeta}R`.
-  Executable routed `H1/H2/H3` remain BLOCKED.
+- Iteration 319 independently validates executable physical graviton `H1/H2/H3` routing in a fixed 10-component symmetric-tensor basis against a direct exact-geometry oracle on a rank-3 non-collinear three-mode background. Result SHA-256: `517adcb91f53f5758adf9af01c8b68a21c0a645627241639312b66a01e659671`; run `33722207947`; artifact `9880621340`.
+- Iteration 320 reconstructs ghost and graviton on one common three-mode fixture and validates the cubic frozen logdet assembly. The routed fixture gives `1/2 H - N = -54.25609587678333` for multiindex `(1,1,1)`, with result SHA-256 `04f782373f1a831ad62fe0c934fb1f0d09c7ed7553b42d336b9e91c4778b51fe`, run `33722485847`, artifact `9880718552`. This number is retained as a validated integrand/routing fixture only.
+- Iteration 321 performs the higher-level functional-trace momentum-closure audit. For the Iteration-320 fixture, `q1+q2+q3=(0.36,0.26,0.14,0.23)`, norm `0.5193264869039513`, so the fixture is not delta-supported and must not be promoted to a physical `Tr log` coefficient. Run `33722818612`, job `100545349697`, artifact `9880841854`, result SHA-256 `504fd85d0998e1c10ae94af1fa0f3883f9209a83da95fd3adfc8bf6fa062f77d`.
 
-Iteration-318 freeze:
-`PASS_D4_LAMBDA0_VD_GRAVITON_OPERATOR_PARAMETRIZATION_INDEPENDENT_SPECIALIZATION__H123_ROUTING_REMAINS_BLOCKED`.
+Iteration-321 authority:
+`PASS_TRACE_CLOSURE_AUDIT__ITERATION320_IS_ROUTING_FIXTURE_NOT_PHYSICAL_TRACE`.
 
 ## Active sectors
 
-- connection `e=1,c<=2`: `Tr U1` cut frozen by Iteration 307.
+- connection `e=1,c<=2`: actual `Tr U1` cut frozen by Iteration 307.
 - connection `e=2,c<=1`: physical U2 `V1_1/V1_2/H0/H1` remains BLOCKED; U1^2 routing frozen through Iteration 310.
-- determinant `e=0,c<=3`: cubic topology frozen by Iteration 312; full routed ghost `N1/N2/N3` authority frozen through Iteration 317; local graviton operator form frozen through Iteration 318; executable routed graviton `H1/H2/H3` remains BLOCKED.
+- determinant `e=0,c<=3`: cubic topology frozen by Iteration 312; full routed ghost `N1/N2/N3` frozen through Iteration 317; full routed graviton `H1/H2/H3` frozen through Iteration 319; common-fixture assembly validated by Iteration 320; functional-trace closure requirement identified by Iteration 321.
 
 ## Exact next gate
 
-Expand the Iteration-318 frozen minimal tensor Laplace operator under `g=eta+kappa h` through cubic background order:
-`H[g]=H0+kappa H1+kappa^2 H2+kappa^3 H3+...`.
-The derivation must include the full covariant `Box` acting on symmetric rank-2 tensors and all curvature terms in `Pi`, use one explicit 10-component symmetric-tensor basis with fixed normalization/transposes and momentum routing, and be independently validated on non-collinear multimode backgrounds against a direct exact-geometry or equivalent primary-parent oracle before any insertion into the Iteration-312 cubic logdet topology.
+**Iteration 322 is launched:** recompute the shared graviton+ghost cubic determinant coefficient on a non-collinear momentum-closed triad `q3=-(q1+q2)`, independently revalidate both H and N routing on that common fixture, and enforce the frozen Iteration-312 cubic `1/2 Tr log H - Tr log N` topology.
 
-Do not populate missing graviton kernels with random matrices, inferred zeros or guessed formulas. The independent connection-sector blocker remains: U2 physical `V1_1/V1_2/H0/H1` formulas must not be invented or zero-filled.
+If and only if the raw Iteration-322 artifact passes, reduce/enumerate the resulting momentum-closed determinant integrand into loop-denominator families and classify pole/cut origin. Source/Born subtraction remains forbidden until that origin classification is performed in the matched observable.
+
+Do not invent or zero-fill physical U2 `V1_1/V1_2/H0/H1`.
 
 ## Stable readiness rubric
 
@@ -53,21 +52,18 @@ Do not populate missing graviton kernels with random matrices, inferred zeros or
 
 MODEL_READINESS: 24%
 
-Change from Iteration 317: `0 pp`. The graviton operator-form/linear-parametrization ambiguity is now closed, but executable `H1/H2/H3`, a physical determinant coefficient, and a robust comparator-subtracted residual remain open.
+Change from Iteration 318: `0 pp`. Routed graviton authority and determinant routing prerequisites advanced, but no robust comparator-subtracted residual or promotable candidate ansatz exists yet.
 
 ## Retained guardrails
 
 - Unsupported comparator/kernel coordinates are `BLOCKED`, never zero-filled.
-- Operator specialization is not executable component/routing authority.
-- Keyword/prerequisite presence is not physical component formula authority.
-- Do not promote random/synthetic matrix tests to physical determinant coefficients.
 - Do not create `ANSATZ-003` until a concrete robust residual survives the fixed comparator quotient.
 - Fisher/resources remain forbidden until a robust nonzero algebraic residual exists after comparator subtraction.
 - Source/Born subtraction only in a matched observable after pole/cut-origin classification.
 - Do not accept green Actions without sentinel/schema/raw artifact audit.
 - Do not accept failed Actions as scientific FAIL without schema-valid preserved diagnostics.
-- No unproven reversal quotient for U2 or U1^2 classes.
-- Blind heavy full-C5 remains unauthorized.
+- Do not retroactively weaken frozen gates or reinterpret the nonclosed Iteration-320 fixture as a physical trace coefficient.
+- Blind heavy full-C5 remains unauthorized; closed C5 `e=3` authority is not reopened.
 
 ## Candidate state
 
