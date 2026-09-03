@@ -14,7 +14,9 @@ Laplacians for isotropic tensor moments in D=4-2 eps.  The common loop
 normalization is i*pi^(D/2).  The retarded branch is (-s-i0), and the
 normalized discontinuity is fixed as
   D_s F = (F_advanced-F_retarded)/(2*pi*i),
-so D_s log_R(-s)=1 exactly.
+so D_s log_R(-s)=1 exactly.  The massless scalar bubble has nonlocal term
+-log_R(-s), hence its normalized cut tends to -1; that sign is the calibration
+used below.
 
 This is a scoped prerequisite for the subsequent triangle reduction.  It is
 not the full e=1,c=2 TrU1 comparator coordinate and not a Candidate residual.
@@ -76,7 +78,6 @@ def xpoly_coeff(poly,q):
     deg=max(sum(e) for e in poly)
     xs=np.linspace(-.35,1.25,deg+5)
     ys=np.array([eval_poly(poly,-(1-x)*np.asarray(q,float)) for x in xs])
-    # polynomial.polynomial.polyfit returns ascending powers.
     pc=np.polynomial.polynomial.polyfit(xs,ys,deg)
     chk=np.max(np.abs(np.polynomial.polynomial.polyval(xs,pc)-ys))
     scale=max(np.max(np.abs(ys)),1.0)
@@ -109,7 +110,8 @@ def disc(poly,q,a,b,eps):
     adv=bubble_branch(poly,q,a,b,eps,+1)
     return (adv-ret)/(2j*np.pi),ret,adv
 
-# Exact scalar ordinary-bubble calibration in the same normalization.
+# Exact scalar ordinary-bubble calibration in the same normalization.  Its
+# nonlocal finite term is -log_R(-s), so D_s bubble -> -1.
 def scalar_bubble_exact(s,eps,phase):
     Z=s*np.exp(1j*phase*np.pi)
     return gamma(eps)*gamma(1-eps)**2/gamma(2-2*eps)*(Z**(-eps))
@@ -121,7 +123,6 @@ EPS=np.array([.04,.02,.01,.005,.0025],float)
 
 def laurent(vals):
     y=np.asarray(vals,complex); z=EPS*y
-    # z=A+B eps+C eps^2+D eps^3; overdetermined least squares.
     X=np.column_stack([np.ones_like(EPS),EPS,EPS**2,EPS**3])
     cr=np.linalg.lstsq(X,z.real,rcond=None)[0]; ci=np.linalg.lstsq(X,z.imag,rcond=None)[0]
     A=cr[0]+1j*ci[0]; B=cr[1]+1j*ci[1]
@@ -146,7 +147,6 @@ for name,row in R295['families'].items():
     if row['family'] not in ('ordinary_bubble','raised_bubble'): continue
     pts,cnts=unique_points(row['canonical_denominator_shifts'])
     if len(pts)!=2: raise RuntimeError((name,len(pts),cnts))
-    # Put the repeated point at zero for raised bubbles; ordinary uses first point.
     if row['family']=='raised_bubble':
         ir=cnts.index(2); io=1-ir
     else:
@@ -167,23 +167,22 @@ for name,row in R295['families'].items():
                 'max_advanced_minus_conj_retarded_abs':float(max_branch_conj)}
 
 cal={}
+SCALAR_CUT_TARGET=-1.0
 for s in (.016,.216):
     vals=[scalar_disc_exact(s,float(e)) for e in EPS]
     cal[str(s)]={'raw_cut':[[float(v.real),float(v.imag)] for v in vals],
                  'laurent':laurent(vals),
-                 'limit_target':1.0}
-max_cal=max(abs(v['laurent']['finite_B_if_A_zero'][0]-1.0) for v in cal.values())
+                 'limit_target':SCALAR_CUT_TARGET}
+max_cal=max(abs(v['laurent']['finite_B_if_A_zero'][0]-SCALAR_CUT_TARGET) for v in cal.values())
 max_imag=max(abs(x['cut'][1]) for r in rows.values() for x in r['raw_scans'])
 max_pole=max(abs(r['laurent_cut']['pole_residue_A'][0]) for r in rows.values())
 
-# Calibration finite B is the cut limit when A=0.  Tolerance allows the short
-# five-point Laurent regression while still detecting sign/normalization errors.
 passed=(len(rows)==4 and max_translation_rel<2e-7 and max_cal<2e-3 and max_imag<2e-8)
 cls=('PASS_DIRECT_TIMELIKE_TRU1_BUBBLE_COMMON_DR_PLUS_MINUS_I0_LAURENT_REDUCTION'
      if passed else 'BLOCKED_TIMELIKE_TRU1_BUBBLE_DR_REDUCTION_AUDIT')
 result={'iteration':296,'model_readiness_percent':24,
  'scope':'actual weight-completed TrU1 e=1,c=2 ordinary+raised bubble families at timelike s=0.016 row',
- 'normalization':'loop i*pi^(D/2); D_s=(advanced-retarded)/(2*pi*i); retarded argument (-s-i0); D_s log_R(-s)=1',
+ 'normalization':'loop i*pi^(D/2); D_s=(advanced-retarded)/(2*pi*i); retarded argument (-s-i0); D_s log_R(-s)=1; scalar bubble D_s -> -1 because its finite nonlocal term is -log_R(-s)',
  'epsilon_points':EPS.tolist(),'scalar_bubble_calibration':cal,'bubble_families':rows,
  'max_translation_fit_relative_error':max_translation_rel,
  'max_scalar_cut_limit_abs_error':max_cal,'max_cut_imag_abs':max_imag,
@@ -191,7 +190,8 @@ result={'iteration':296,'model_readiness_percent':24,
  'classification':cls,'candidate_residual':False,
  'guardrails':['ITERATION289_WEIGHTED_KERNEL_PROXY_POLE_NOT_IMPORTED',
    'THIS_PASS_DOES_NOT_COMPLETE_TRIANGLE_SECTORS_OR_FULL_E1C2_TRU1',
+   'FOUR_D_NUMERATOR_D_MEASURE_FINITE_REMAINDER_REMAINS_SCHEME_SCOPED_UNDER_ITERATION297_299',
    'NO_SOURCE_BORN_SUBTRACTION_BEFORE_MATCHED_OBSERVABLE_POLE_CLASSIFICATION'],
- 'next_gate':'direct-timelike ordinary+raised triangle DR/Laurent plus-minus-i0 reduction in the same normalization, then combine all eight e=1,c=2 TrU1 families'}
+ 'next_gate':'apply Iteration299 evanescent-sensitivity promotion rule to the validated bubble Laurent structure; same-parent finite remainder still requires D-dimensional numerator continuation or explicit scheme conversion before direct-timelike triangle completion'}
 assert passed,result
 print(json.dumps(result,indent=2,sort_keys=True))
