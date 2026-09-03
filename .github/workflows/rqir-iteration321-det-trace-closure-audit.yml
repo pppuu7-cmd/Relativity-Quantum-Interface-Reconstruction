@@ -1,0 +1,38 @@
+name: rqir-iteration321-det-trace-closure-audit
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration321_det_trace_closure_audit.py'
+      - '.github/workflows/rqir-iteration321-det-trace-closure-audit.yml'
+
+jobs:
+  iteration321:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install numpy
+      - name: Audit determinant trace closure
+        run: python candidate_gravity/code/iteration321_det_trace_closure_audit.py > iteration321_result.json
+      - name: Sentinel/schema audit
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          raw=open('iteration321_result.json','rb').read(); o=json.loads(raw)
+          ok=isinstance(o,dict) and o.get('iteration')==321 and 'scientific_gate_pass' in o
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':321,'found_iterations':[o.get('iteration')],'top_level_object_count':1,'valid_single_top_level':True,'valid_expected_iteration':o.get('iteration')==321,'scientific_authority_pass':bool(ok and o.get('scientific_gate_pass')),'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw)}
+          open('iteration321_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          assert ok
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration321-result
+          path: |
+            iteration321_result.json
+            iteration321_authority_audit.json
+      - name: Enforce scientific gate
+        run: python -c "import json; o=json.load(open('iteration321_result.json')); assert o['scientific_gate_pass'], o"
