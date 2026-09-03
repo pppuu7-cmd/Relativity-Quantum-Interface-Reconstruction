@@ -5,7 +5,7 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 323**
+**Authoritative Candidate Gravity front:** **Iteration 324**
 
 Repository commits, schema-validated Actions artifacts and recovery material are source of truth. A green workflow conclusion alone is never scientific authority.
 
@@ -21,24 +21,25 @@ Repository commits, schema-validated Actions artifacts and recovery material are
 - Iteration 320 validates common-fixture H/N cubic assembly but its original Fourier triad is not trace-closed; Iteration 321 therefore retains it only as a routed/local integrand fixture.
 - Iteration 321 raw authority: run `33722818612`, job `100545349697`, artifact `9880841854`, result SHA-256 `504fd85d0998e1c10ae94af1fa0f3883f9209a83da95fd3adfc8bf6fa062f77d`; classification `PASS_TRACE_CLOSURE_AUDIT__ITERATION320_IS_ROUTING_FIXTURE_NOT_PHYSICAL_TRACE`.
 - Iteration 322 recomputes the common H/N cubic assembly on the non-collinear closed triad `q3=-(q1+q2)`, exactly `q_total=0`. Run `33723018932`, job `100545950518`, artifact `9880912068`, result SHA-256 `1510534fa6075289abee867bf40582f39e2167063fd6617a36620a2f68eb2f2f`. Its local closed-triad coefficient is graviton `-98.26141308373494`, ghost `-26.491576721630462`, effective `1/2 H-N=-22.639129820237006`.
-- Iteration 323 audits the higher-level functional-trace momentum routing. Raw authority: run `33723183698`, job `100546443379`, artifact `9880968545`, scientific result SHA-256 `39101bb6ee6aaf49dca554474fa40fb260c6bfa8bc770f7767d8a49e80933880`. It finds `explicit_shifted_K0_inverse=false` and classifies Iteration 322 as `MOMENTUM_CLOSED_LOCAL_OPERATOR_ROUTING_FIXTURE_ONLY`.
+- Iteration 323 audits the higher-level functional-trace momentum routing and finds `explicit_shifted_K0_inverse=false`; Iteration 322 is therefore retained only as `MOMENTUM_CLOSED_LOCAL_OPERATOR_ROUTING_FIXTURE_ONLY`.
+- Iteration 324 implements the missing explicit ordered shifted-free-propagator routing engine. The first run `33726453589` failed operationally before scientific execution because `numpy` was absent; only that dependency was repaired. Validated rerun `33726739255`, job `100557310502`, artifact `9882247698`, artifact digest `sha256:4bec2f0a1fc9c5de098f6b3ac5fa6f35dd7b506a2b45cb6035f1981bc64fe97f`, scientific result SHA-256 `efd8c34ceb18a379396e6cfa9f9af2bacbb5d6d0d70d8408125dde2ee11d8717`. It validates six ordered pair and six ordered triple routes on the closed non-collinear `(1,1,1)` triad, with exact trace closure, explicit nonzero shifted propagators, finite/nonzero fixture denominators, and cyclic denominator-family equivalence up to a common loop-momentum translation.
 
-Iteration-323 authority:
-`PASS_SHIFTED_PROPAGATOR_ROUTING_AUDIT__ITERATION322_COEFFICIENT_REMAINS_LOCAL_ROUTING_FIXTURE`.
+Iteration-324 authority:
+`PASS_SHIFTED_FREE_PROPAGATOR_ROUTING_ENGINE_CYCLIC_EQUIVALENCE`.
 
-This is a successful fail-closed audit, not a promotion of the determinant loop integrand.
+This freezes the denominator/routing skeleton only. It does not promote a physical determinant coefficient because the physical H/N insertion numerators still have to be evaluated at the correct incoming loop momenta for each ordered route.
 
 ## Active sectors
 
 - connection `e=1,c<=2`: actual `Tr U1` cut frozen by Iteration 307.
 - connection `e=2,c<=1`: physical U2 `V1_1/V1_2/H0/H1` remains BLOCKED; no zero-fill.
-- determinant `e=0,c<=3`: topology plus local routed ghost/graviton kernels are frozen, and trace closure is satisfied. Physical denominator routing is NOT yet frozen because the functional trace requires successive `K0^{-1}(p+Q)` propagators.
+- determinant `e=0,c<=3`: topology, local routed ghost/graviton kernels, trace closure, and explicit shifted denominator routing are frozen. Physical arbitrary-incoming-momentum H/N numerator evaluation remains BLOCKED, so the full physical determinant loop integrand is not yet ready.
 
 ## Exact next gate
 
-**Iteration 324:** implement and validate an explicit ordered pair/triple shifted-free-propagator routing engine on the closed triad, carrying cumulative loop momentum through every insertion and checking cyclic-routing equivalence. This gate must remain numerator-agnostic where physical incoming-momentum-dependent H/N insertion factories are not yet available; those missing physical numerator evaluations are `BLOCKED`, never zero-filled.
+**Iteration 325:** refactor/evaluate the frozen physical graviton `H1/H2/H3` and ghost `N1/N2/N3` insertion kernels as explicit functions of their correct incoming loop momentum `p+Q` for each ordered pair/triple route from Iteration 324. Validate those routed numerator insertions against the same-parent exact-geometry oracle on the non-collinear closed triad, including genuinely mixed cubic routing and cyclic-equivalent route checks.
 
-After the shifted-propagator routing engine is certified, the next dependent gate is to refactor/evaluate the frozen H/N insertion kernels at the correct incoming loop momentum for each ordered routing. Only after both denominator and numerator routing are certified may the determinant contour advance to denominator-family reduction and pole/cut-origin classification. Source/Born subtraction remains forbidden until origin classification in the matched observable.
+Unsupported numerator evaluations are `BLOCKED`, never zero-filled. Only after denominator and numerator routing are jointly certified may the determinant contour advance to assembling the physical cubic trace, denominator-family reduction, and pole/cut-origin classification. Source/Born subtraction remains forbidden until origin classification in the matched observable.
 
 ## Stable readiness rubric
 
@@ -51,7 +52,7 @@ After the shifted-propagator routing engine is certified, the next dependent gat
 
 MODEL_READINESS: 24%
 
-Change from Iteration 323: `0 pp`. The determinant routing interpretation is narrowed correctly, but no robust comparator-subtracted residual or promotable ansatz exists.
+Change from Iteration 324: `0 pp` relative to Iteration 323. A real determinant-routing subgate closed, but no robust comparator-subtracted residual or complete new readiness bucket closed.
 
 ## Retained guardrails
 
