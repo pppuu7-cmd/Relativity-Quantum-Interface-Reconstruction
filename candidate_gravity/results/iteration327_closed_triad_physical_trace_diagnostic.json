@@ -1,0 +1,37 @@
+{
+  "iteration": 327,
+  "status": "FAIL_SCOPED_GATE_DESIGN_TRIANGLE_ORIENTATION_CARDINALITY",
+  "run": 33737348840,
+  "job": 100590933413,
+  "artifact": 9886267472,
+  "artifact_digest": "sha256:cfe8b7ab964a2f880d3e5e4875f1664d50081ab584f0eed868dea656b5c1cd42",
+  "scientific_json_sha256": "27d992ca60937ecbd55d2c6be3143a886391c58930d9d71b4b2f005e97999ceb",
+  "scientific_exit_code": 2,
+  "schema_valid": true,
+  "closed_triad_exact_geometry_revalidation": {
+    "ghost_pass": true,
+    "ghost_max_scaled_error_order_1": 2.032239210247866e-09,
+    "ghost_max_scaled_error_order_2": 5.41716954627347e-09,
+    "ghost_max_scaled_error_order_3": 1.11248396910818e-05,
+    "graviton_pass": true,
+    "graviton_max_scaled_error_order_1": 8.288956743207621e-10,
+    "graviton_max_scaled_error_order_2": 5.204004593570288e-09,
+    "graviton_max_scaled_error_order_3": 1.189775670946882e-05,
+    "thresholds_unchanged_from_iteration326": true
+  },
+  "assembled_fixture_trace": {
+    "graviton_logdet_cubic": 29.689621577219228,
+    "ghost_logdet_cubic": -7.938805925639534,
+    "effective_half_graviton_minus_ghost": 22.78361671424915,
+    "imaginary_part": 0.0
+  },
+  "denominator_family_census": {
+    "tadpole_families": 1,
+    "bubble_families": 3,
+    "triangle_translation_only_families": 2,
+    "all_origin_classes_supported": true
+  },
+  "interpretation": "All physical closed-triad H/N revalidation and trace-assembly checks passed. The gate failed only because it asserted one triangle family under common loop translations. The six triple routes split into two orientation classes (3+3). Iteration 327 is preserved unchanged; whether the two classes are integration-equivalent under loop reversal plus translation is delegated to Iteration 328.",
+  "candidate_residual": false,
+  "model_readiness_percent": 24
+}
