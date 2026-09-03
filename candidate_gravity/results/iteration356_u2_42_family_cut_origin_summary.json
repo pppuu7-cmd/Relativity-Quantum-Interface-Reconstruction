@@ -1,0 +1,37 @@
+{
+  "iteration": 356,
+  "model_readiness_percent": 24,
+  "scientific_gate_pass": true,
+  "classification": "PASS_U2_42_DISTINCT_PHYSICAL_FAMILY_CUT_ORIGIN_CLASSIFICATION__ALL_CUT_CAPABLE_TOPOLOGIES__DISCONTINUITY_NOT_YET_CLAIMED",
+  "census": {
+    "frozen_distinct_numerator_denominator_families": 42,
+    "cut_capable_topologies": 42,
+    "single_shift_scaleless_or_local_origins": 0,
+    "no_direct_timelike_pair_support": 0,
+    "families_with_repeated_scalar_poles": 30,
+    "by_total_propagator_count": {"3": 24, "4": 18},
+    "by_unique_scalar_denominator_shifts": {"2": 12, "3": 30},
+    "repeated_pole_patterns": {
+      "(3, (1, 1, 1))": 12,
+      "(3, (2, 1))": 12,
+      "(4, (2, 1, 1))": 18
+    },
+    "timelike_channel_set_census": {
+      "('a', 'b', 's')": 30,
+      "('a',)": 4,
+      "('b',)": 4,
+      "('s',)": 4
+    },
+    "external_channel_q2": {"s": -1.0, "a": -0.14, "b": -0.33999999999999997}
+  },
+  "scope": "KINEMATIC_ORIGIN_AND_PROPAGATOR_TOPOLOGY_ONLY__NO_NUMERATOR_INTEGRATION__NO_NONZERO_CUT_CLAIM",
+  "provenance": {
+    "run": 33789211981,
+    "job": 100761409220,
+    "artifact": 9906627982,
+    "artifact_digest": "sha256:2e4caa84cc5ec07f24c98519f197042b909512114a318ccf0258ac2197d52b70",
+    "scientific_json_sha256": "220c8c0c014caca0ff213bb72baa3afbe2f5e2334738d50e8b0d7736596b257d",
+    "workflow_head": "870949cdd963ab89a1a00056dd31cbc3ea021461"
+  },
+  "next_gate": "derive family-resolved direct timelike discontinuity reductions, explicitly treating the 30 repeated-pole families and the 12 three-simple-shift families; assign zero/nonzero/BLOCKED per family before summing Tr U2"
+}
