@@ -5,7 +5,7 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 310**
+**Authoritative Candidate Gravity front:** **Iteration 312**
 
 Repository commits, schema-validated Actions artifacts and recovery material are source of truth. A green workflow conclusion alone is never scientific authority.
 
@@ -15,27 +15,39 @@ Iteration 307 freezes the complete eight-family `e=1,c=2` weight-completed `Tr U
 
 `D_s TrU1[e=1,c=2] = -0.5157080054161807`, with fitted combined cut `1/epsilon` residue `1.2896746939995822e-09`.
 
-Iteration 308 freezes `e=2,c<=1` placement/null-soft bookkeeping: `Tr U2` has 12 surviving ordered placements (2 at each `N_L,V1_L,H,V1_R,N_R,Y` site); `Tr U1^2` has 16 ordered survivors = 8 cyclic classes. Mixed soft-hard vertices are retained, never zero-filled.
+Iteration 308 freezes `e=2,c<=1` placement/null-soft bookkeeping: `Tr U2` has 12 surviving ordered placements; `Tr U1^2` has 16 ordered survivors = 8 cyclic classes. Mixed soft-hard vertices are retained, never zero-filled.
 
 Iteration 309 freezes the typed U2 index/variation contract
 
 `(U2)^a_b = N_L^a_c (V1_L)^c_I H^I_J (V1_R)^J_d N_R^d_e Y^e_b`,
 
-with finite-difference residual `1.2814180793518664e-10` and cyclic-trace residual `8.526512829121202e-14`. Physical `V1_1/V1_2/H0/H1` component kernels remain BLOCKED.
+while physical `V1_1/V1_2/H0/H1` component kernels remain BLOCKED.
 
-Iteration 310 freezes the exact routing contract for the eight surviving cyclic `Tr U1^2` classes, indexed by hard singleton first-order leg `{a,b}` times second-order extra site `{V2,N_L,N_R,Y}`. Only cyclic trace equivalence is used; no reversal quotient and no new numeric U1 coefficients are introduced.
+Iteration 310 freezes the exact routing contract for the eight surviving cyclic `Tr U1^2` classes, using cyclic trace equivalence only.
 
-Validated Iteration-310 provenance:
+Iteration 311 is retained as a negative numerical-audit result: its schema-valid artifact failed the small-|t| degree-6 polynomial-fit cubic extraction. This failure is diagnosed as an ill-conditioned numerical audit and is not promoted as an analytic identity refutation.
 
-- run `33706762120`
-- head `552958d76a22c6963c98258bcf61e00d5a62def5`
-- artifact `9875470186`, digest `sha256:2af3ddb3eb78885713e8e8ca4642573b5334f04464a559199a96f8c196b08903`
-- scientific JSON SHA-256 `1d8b776f65ad55eb3878114edebbbfdf0050c233cc0b5e16b7ed80d4358e839a`
-- exactly one top-level JSON object, sentinel `310`, `scientific_gate_pass=true`.
+Iteration 312 independently freezes the determinant `e=0,c<=3` exact cubic logdet operator topology under
+
+`H(t)=H0+t H1+t^2 H2+t^3 H3+O(t^4)`:
+
+`[t^3] log det H = Tr(G0 H3) - 1/2 Tr(G0 H1 G0 H2) - 1/2 Tr(G0 H2 G0 H1) + 1/3 Tr(G0 H1 G0 H1 G0 H1)`,
+
+`G0=H0^{-1}`.
+
+Validated Iteration-312 provenance:
+
+- run `33710153241`
+- job `100507684815`
+- head/workflow commit `18dbff26a90266d3d21848263176d3015537e048`
+- code commit `dec32a0bcc6069f35c3c7abc843d94e560be4a92`
+- artifact `9876618078`, digest `sha256:5ca0bc6d200a0c8e48f4a799f695442970b9b4f53406fca7f515732ca7d43bca`
+- scientific JSON SHA-256 `ec5ff14b1944cafb76f31faeb6f6e6861516efb90ff0f4f84ff68f742c121553`
+- exactly one top-level JSON object, sentinel `312`, `scientific_gate_pass=true`.
 
 Freeze:
 
-`PASS_E2C1_TRU1SQ_EIGHT_CYCLIC_CLASSES_MAPPED_TO_AUTHORITATIVE_U1_ROUTING_CONTRACT`.
+`PASS_DETERMINANT_E0C3_EXACT_CUBIC_LOGDET_OPERATOR_TOPOLOGY_HIGH_PRECISION_AUDIT__PHYSICAL_COMPONENTS_REMAIN_BLOCKED`.
 
 ## Active sectors
 
@@ -43,24 +55,17 @@ Iteration 246 already closes generic connection `e=3,c=0`; do not reopen it.
 
 - connection `e=1,c<=2`: `Tr U1` cut frozen by Iteration 307
 - connection `e=2,c<=1`: U2 physical components BLOCKED; U1^2 routing frozen through Iteration 310
-- determinant `e=0,c<=3`: active independent route.
+- determinant `e=0,c<=3`: exact cubic topology frozen through Iteration 312; same-parent physical graviton/ghost components are the active prerequisite.
 
 ## Running process
 
-Iteration 311 is queued:
+No determinant physical component numerator/cut computation is authorized until explicit same-parent `H1/H2/H3` and ghost `N1/N2/N3` formulas/routing have repository authority. Unsupported components must remain BLOCKED.
 
-- workflow `rqir-iteration311-det-e0c3-cubic-logdet-contract`
-- run `33706890915`
-- head `5b7e33b01a9a3b724ffd662398b6ea7c331ff281`
-- code commit `dc4ffeffa8e309d6ab86ae5a63251f79ccf944fa`
-- last checked status: `queued`
-- task: freeze the exact cubic operator/logdet topology for determinant `e=0,c<=3` using `H=H0+tH1+t^2H2+t^3H3+...`, without physical-component invention or heavy full-C5 integration.
-
-Do not duplicate this run.
+Iteration 313 is the exact next lightweight authority-inventory gate: inspect repository sources for those formulas/routing, emit exact provenance when present, otherwise a typed BLOCKED certificate and identify any independent permitted prerequisite. It must not infer formula authority from keyword presence alone.
 
 ## Exact next gate
 
-Consume/validate Iteration 311 artifact. If PASS, freeze same-parent determinant graviton/ghost `H1,H2,H3` component conventions and routing before scoped numerator/cut evaluation. If those physical components are unavailable, record them BLOCKED rather than zero-fill. In parallel, U2 physical `V1_1/V1_2/H0/H1` remains BLOCKED pending explicit same-parent formulas.
+Run/consume Iteration 313 repository-authority inventory. If authoritative same-parent determinant component formulas are present, freeze their conventions/routing before any scoped numerator/cut evaluation. If absent, record determinant physical layer BLOCKED rather than zero-fill and pursue only an independent prerequisite explicitly permitted by the then-current front. U2 physical `V1_1/V1_2/H0/H1` remains independently BLOCKED pending explicit same-parent formulas.
 
 ## Stable readiness rubric
 
