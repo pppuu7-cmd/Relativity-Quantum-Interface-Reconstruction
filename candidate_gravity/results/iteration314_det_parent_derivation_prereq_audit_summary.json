@@ -1,0 +1,26 @@
+{
+  "iteration": 314,
+  "classification": "PASS_DETERMINANT_SAME_PARENT_DERIVATION_PREREQUISITES_LOCATED__COMPONENT_DERIVATION_AUTHORIZED_NEXT",
+  "scientific_gate_pass": true,
+  "prerequisite_authority_complete": true,
+  "missing_prerequisites": [],
+  "component_formulas_derived": false,
+  "candidate_residual": false,
+  "scope": {"D": 4, "Lambda": 0, "a": "-1/2"},
+  "run_id": 33713832088,
+  "job_id": 100518734399,
+  "head_workflow_commit": "de8dc75cee81104922d145de94a3e1dbc35befc0",
+  "code_commit": "e790667cb935a03f064b57f0200641196b5ee325",
+  "artifact_id": 9877804358,
+  "artifact_digest": "sha256:810993aeffdcbc6b908de030edeb543d05c91390b8031e1b87ee26c0017c2b1d",
+  "scientific_json_sha256": "6fb01cdc931e7434bf4a8be520cd1915482b1857a28e81092100b99b7c1850ad",
+  "scientific_json_bytes": 92850,
+  "model_readiness_percent": 24,
+  "guardrails": [
+    "UNSUPPORTED_IS_BLOCKED_NOT_ZERO_FILLED",
+    "NO_SYNTHETIC_COMPONENT_PROMOTION",
+    "NO_BLIND_HEAVY_FULL_C5",
+    "NO_ANSATZ003_FISHER_RESOURCES"
+  ],
+  "next_gate": "derive executable same-parent H1/H2/H3 and N1/N2/N3 from located frozen parent sources, with explicit index spaces/transposes, normalization and momentum routing; independently validate before Iteration-312 cubic-logdet insertion"
+}
