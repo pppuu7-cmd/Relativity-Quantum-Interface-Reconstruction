@@ -1,0 +1,35 @@
+{
+  "iteration": 328,
+  "model_readiness_percent": 24,
+  "scientific_gate_pass": true,
+  "classification": "PASS_TRIANGLE_TWO_ORIENTATIONS_ONE_SIGNED_AFFINE_INTEGRATION_FAMILY",
+  "candidate_residual": false,
+  "run": 33737560245,
+  "job": 100591621644,
+  "artifact": 9886351787,
+  "artifact_digest": "sha256:712f7bf5f10325480716f464e50eb584e97f99cbca0fb03cba9e38b029e302b7",
+  "workflow_head": "aa3617208a78fc4ec2ac472eb7194d3257faa23a",
+  "validation": {
+    "workflow_conclusion": "success",
+    "scientific_execution": "success",
+    "sentinel_schema_audit": "success",
+    "artifact_upload": "success",
+    "final_scientific_enforcement": "success"
+  },
+  "scope": {
+    "ordered_triangle_routes": 6,
+    "translation_only_triangle_families": 2,
+    "translation_only_split": "3+3",
+    "signed_affine_triangle_families": 1,
+    "allowed_change_of_loop_variable": "p -> sigma p + C, sigma in {+1,-1}",
+    "claim_level": "denominator integration-family equivalence only"
+  },
+  "interpretation": "The two translation-only triangle orientation classes are one denominator integration family after including loop reversal with unit absolute Jacobian. This does not establish numerator equivalence or a nonzero discontinuity.",
+  "guardrails": [
+    "DENOMINATOR_EQUIVALENCE_NOT_NUMERATOR_EQUIVALENCE",
+    "CUT_CAPABLE_TOPOLOGY_IS_NOT_NONZERO_DISCONTINUITY",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
