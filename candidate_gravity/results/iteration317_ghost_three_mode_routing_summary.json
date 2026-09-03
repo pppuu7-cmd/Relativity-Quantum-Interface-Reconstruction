@@ -1,0 +1,39 @@
+{
+  "iteration": 317,
+  "model_readiness_percent": 24,
+  "classification": "PASS_GHOST_N123_THREE_MODE_NONCOLLINEAR_ROUTING_CERTIFICATE__FULL_GHOST_COMPONENT_AUTHORITY_FROZEN",
+  "scope": {
+    "D": 4,
+    "Lambda": 0,
+    "a": "-1/2",
+    "parent_operator": "N^a_b = delta^a_b Box + R^a_b",
+    "independent_fourier_modes": 3,
+    "target_total_background_degree": 3,
+    "explicitly_tested_cubic_cross_multiindex": [1, 1, 1]
+  },
+  "provenance": {
+    "run": 33717920513,
+    "job": 100530900560,
+    "head_commit": "654ffc6df7a9663996ea5fe996ac222e651b530d",
+    "code_commit": "71550c10edd2dcd3fa3b3bbcc4cedeca52981183",
+    "artifact": 9879177569,
+    "artifact_digest": "sha256:048d5fa8d47f782b48e4015ab9786bd82bdc9e35a73a704277e4952741e4296a",
+    "execution": "PASS",
+    "sentinel_schema_audit": "PASS",
+    "artifact_upload": "PASS",
+    "scientific_gate": "PASS"
+  },
+  "authority": {
+    "ghost_N1_N2_N3": "FROZEN_FULL_ROUTED_COMPONENT_AUTHORITY",
+    "graviton_H1_H2_H3": "BLOCKED_UNCHANGED",
+    "determinant_logdet_physical_insertion": "BLOCKED_UNTIL_GRAVITON_AUTHORITY"
+  },
+  "candidate_residual": false,
+  "guardrails": [
+    "NO_ZERO_FILL",
+    "NO_LOGDET_PHYSICAL_COEFFICIENT_BEFORE_GRAVITON_AUTHORITY",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "NO_BLIND_HEAVY_FULL_C5"
+  ]
+}
