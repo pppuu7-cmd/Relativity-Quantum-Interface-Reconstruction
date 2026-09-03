@@ -1,0 +1,43 @@
+name: rqir-iteration302-tru1-bubble-cut-promotion
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration302_tru1_bubble_cut_subsector_promotion.py'
+      - 'candidate_gravity/results/iteration296_timelike_tru1_bubble_dr_laurent_authority.json'
+      - 'candidate_gravity/results/iteration301_hv_evanescent_bubble_cut_protection_authority.json'
+      - 'candidate_gravity/code/iteration298_validate_action_result.py'
+      - '.github/workflows/rqir-iteration302-tru1-bubble-cut-promotion.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration302:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Iteration 302 bubble cut subsector promotion
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration302_tru1_bubble_cut_subsector_promotion.py > iteration302_result.json
+      - name: Validate Iteration 302 authority sentinel/schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration298_validate_action_result.py \
+            iteration302_result.json \
+            --expected-iteration 302 \
+            --output iteration302_authority_audit.json
+      - name: Upload Iteration 302 result
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration302-result
+          path: |
+            iteration302_result.json
+            iteration302_authority_audit.json
+          if-no-files-found: error
