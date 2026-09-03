@@ -36,11 +36,15 @@ The determinant branch now has compatible authority for exact cubic logdet topol
   - singleton: scoped scaleless/local DR-zero-cut topology;
   - bubbles/triangle: cut-capable topology only; a nonzero discontinuity is not yet certified.
 
-## Exact next gate
+## Active computation / exact next gate
 
-**Iteration 332:** perform scoped DR/direct-timelike discontinuity reduction of the three canonical bubble families and the signed-affine triangle family using the frozen Iteration-331 transported physical numerators. Certify each family as zero/nonzero/BLOCKED at the actual discontinuity level and classify pole/cut origin before any matched Source/Born subtraction.
+A prerequisite audit after Iteration 331 found that its frozen exact closed triad has `q_i^2>0` in signature `(-,+,+,+)`, so it is spacelike rather than a direct timelike-cut row. A direct timelike discontinuity must not be claimed from that fixture.
 
-The Iteration-297 evanescent/regulator warning remains binding for claims about the full finite DR remainder. Source/Born subtraction remains forbidden until actual pole/cut-origin classification is complete.
+**Iteration 332 is running:** rebuild the already-frozen route-specific numerator-family construction on the exact rank-2 closed timelike triad `q1=(1,0,0,0)`, `q2=(-0.4,0.1,0.1,0)`, `q3=(-0.6,-0.1,-0.1,0)`, for which all three `q_i^2<0`. Parent dynamics, common-background construction, logdet weights, shifted routing, signed-affine maps, held-out tests and threshold are unchanged. Run `33743095697`, workflow head `95a60bb51a6dcedfc07b338493ab283a05170b77`.
+
+If Iteration 332 passes raw artifact validation, the exact next gate is **Iteration 333:** scoped direct-timelike DR/discontinuity reduction of the three bubble families and one signed-affine triangle family on that certified timelike fixture, family by family. Certify zero/nonzero/BLOCKED discontinuity and classify pole/cut origin before any matched Source/Born subtraction.
+
+The Iteration-297 evanescent/regulator warning remains binding for claims about the full finite DR remainder.
 
 ## Stable readiness rubric
 
@@ -61,6 +65,7 @@ Change from Iteration 329: `0 pp`. The physical determinant numerator-family pre
 - Negative/scoped gate-design results remain preserved and are not retroactively edited into passes.
 - Denominator equivalence is not numerator equivalence.
 - Cut-capable topology is not a nonzero discontinuity certificate.
+- Spacelike fixture data are not promoted to direct timelike-cut authority.
 - Do not create `ANSATZ-003` before a concrete robust comparator-subtracted residual survives the fixed comparator quotient.
 - Fisher/resources remain forbidden until a robust nonzero residual survives comparator subtraction.
 - Source/Born subtraction only after pole/cut-origin classification in a matched observable.
