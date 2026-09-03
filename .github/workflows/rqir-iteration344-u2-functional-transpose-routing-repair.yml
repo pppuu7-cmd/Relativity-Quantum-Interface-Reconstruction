@@ -1,0 +1,40 @@
+name: rqir-iteration344-u2-functional-transpose-routing-repair
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration344_u2_functional_transpose_routing_eq55_repair.py'
+      - '.github/workflows/rqir-iteration344-u2-functional-transpose-routing-repair.yml'
+
+jobs:
+  iteration344:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install numerical dependency
+        run: pip install numpy
+      - name: Run corrected U2 functional-transpose routing gate
+        run: python candidate_gravity/code/iteration344_u2_functional_transpose_routing_eq55_repair.py > iteration344_result.json
+      - name: Sentinel/schema audit
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          raw=open('iteration344_result.json','rb').read(); o=json.loads(raw)
+          ok=isinstance(o,dict) and o.get('iteration')==344 and o.get('scientific_gate_pass') is True
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':344,
+             'found_iterations':[o.get('iteration')],'top_level_object_count':1,
+             'valid_single_top_level':True,'valid_expected_iteration':o.get('iteration')==344,
+             'scientific_authority_pass':bool(ok),'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw)}
+          open('iteration344_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          assert ok
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration344-result
+          path: |
+            iteration344_result.json
+            iteration344_authority_audit.json
