@@ -5,9 +5,9 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 304**
+**Authoritative Candidate Gravity front:** **Iteration 306**
 
-Repository commits, schema-validated Actions artifacts and recovery material are source of truth. A green workflow conclusion alone is never scientific authority.
+Repository commits, schema-validated Actions artifacts and recovery material are source of truth. A green workflow conclusion alone is never scientific authority. A failed workflow is not a scientific FAIL unless its raw diagnostic artifact survives and identifies the violated frozen threshold.
 
 ## Current scientific state
 
@@ -46,6 +46,18 @@ Freeze:
 
 This certificate protects the CUT only. It does not assert that the 274 coefficients vanish and does not promote a scheme-independent full finite amplitude.
 
+### Iteration 306 — failed direct-305 diagnostic-observability audit
+
+A second direct-timelike Iteration305 workflow run `33702862824` / job `100485680662` at head `11e593ea1ff3b3e49043e14fb4ee76c22fe1006d` failed in the scientific reduction step. Its validator and artifact-upload steps were skipped.
+
+Static execution-contract audit identifies the reproducibility defect: the reducer computes raw epsilon scans, Laurent fits, scalar and raised-triangle calibrations, quadrature/conjugacy diagnostics and a `passed` Boolean, builds the result object, but executes `assert passed,result` before printing JSON. Under workflow `set -euo pipefail`, a failed frozen threshold therefore destroys the diagnostic artifact before validation/upload.
+
+Freeze:
+
+`FAIL_OPERATIONAL_ITERATION305_DIRECT_TRIANGLE_RUN_DROPS_SCIENTIFIC_DIAGNOSTICS_ON_THRESHOLD_FAILURE`.
+
+This is operational/reproducibility FAIL only. It is not a Candidate Gravity consistency FAIL and does not authorize any triangle coefficient or tell us which frozen threshold failed.
+
 ## Frozen timelike kinematics
 
 At the current `s=0.016` row:
@@ -72,23 +84,26 @@ Active pieces:
 
 ## Running process
 
-Iteration 305 workflow is the active scientific process:
+The original Iteration305 workflow remains the active independent scientific process:
 
 - workflow `rqir-iteration305-timelike-tru1-visible-triangle-cut`
 - run `33702724483`
 - head `7bed9233515782f7a81b9fe0d1f14e1ec57a6aa7`
+- last checked status: `in_progress`
 - task: integrate the four actual visible direct-timelike ordinary/raised triangle numerator families from Iteration 295 with analytic-continuation-safe Beta/2F1 tensor reduction, raw epsilon scans, branch conjugacy and Laurent fits.
 
 Do not duplicate this run.
 
 ## Current blockers / downstream
 
-1. Consume and validate Iteration 305 artifact; a workflow success alone is insufficient.
-2. If 305 passes, combine validated four bubble + four triangle normalized-cut coefficients to freeze complete `e=1,c=2` weight-completed `Tr U1` cut subsector.
-3. Then continue remaining `e=2,c<=1` and determinant `e=0,c<=3` pieces.
-4. Source/Ward/contact completion and matched `K2` bridge remain required before any source/Born subtraction.
-5. Only then perform the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient.
-6. Full finite-amplitude scheme authority remains separately blocked unless a same-parent D-dimensional numerator continuation or explicit scheme-conversion/counterterm map is frozen.
+1. Consume and validate Iteration305 run `33702724483`; workflow status alone is insufficient.
+2. Do not classify failed direct run `33702862824` as scientific FAIL because its raw metrics were not preserved.
+3. If the active run also fails without schema-valid diagnostics, repair execution so a diagnostic JSON with `scientific_gate_pass=false` is uploaded before the final nonzero scientific exit status; rerun exactly once without changing thresholds.
+4. If triangle cut passes, combine validated four bubble + four triangle normalized-cut coefficients to freeze complete `e=1,c=2` weight-completed `Tr U1` cut subsector.
+5. Then continue remaining `e=2,c<=1` and determinant `e=0,c<=3` pieces.
+6. Source/Ward/contact completion and matched `K2` bridge remain required before any source/Born subtraction.
+7. Only then perform the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient.
+8. Full finite-amplitude scheme authority remains separately blocked unless a same-parent D-dimensional numerator continuation or explicit scheme-conversion/counterterm map is frozen.
 
 ## Stable readiness rubric
 
@@ -101,7 +116,7 @@ Do not duplicate this run.
 
 MODEL_READINESS: 24%
 
-No readiness points are added by Iterations 299–304 because they close regulator/reproducibility prerequisites rather than a rubric block.
+No readiness points are added by Iteration306 because it closes a scientific-classification/reproducibility prerequisite rather than a rubric block. Change from previous assessment: `0 pp`.
 
 ## Retained guardrails
 
@@ -112,6 +127,8 @@ No readiness points are added by Iterations 299–304 because they close regulat
 - Do not subtract `-8 M_Born` from a 1PI/comparator intermediate without an explicit matched source-observable map.
 - Hidden evanescent coefficients are not zero; Iterations 301/304 are cut-protection statements only.
 - Do not accept a green Action without expected sentinel/schema validation and raw artifact audit.
+- Do not accept a failed Action as scientific FAIL unless a schema-valid diagnostic artifact preserves the violated frozen threshold and raw metrics.
+- Fail-closed scientific execution must preserve evidence for both PASS and BLOCKED outcomes; authority promotion may fail after artifact upload.
 - Blind heavy full-C5 remains unauthorized.
 
 ## Candidate state
@@ -123,4 +140,4 @@ Blind heavy full-C5 run: NOT AUTHORIZED.
 
 ## Exact next gate
 
-Consume Iteration 305 raw artifact. If its prospective calibration, parameter-polynomial fit, branch-conjugacy and schema gates pass, freeze the four visible triangle normalized-cut Laurent coefficients and immediately launch the eight-family `e=1,c=2 Tr U1` cut-combination authority gate. If 305 fails operationally, repair the first causal defect without weakening scientific thresholds; if it fails scientifically under the frozen contract, preserve the negative result and do not promote the subsector.
+Consume Iteration305 run `33702724483` without duplication. If it yields a schema-valid artifact and the prospective calibration, parameter-polynomial fit, branch-conjugacy and Laurent gates pass, freeze the four visible triangle normalized-cut coefficients and immediately perform the eight-family `e=1,c=2 Tr U1` cut-combination authority gate. If it fails without preserving diagnostics, first repair the execution contract so raw metrics are always uploaded, then rerun exactly once and preserve the first violated frozen threshold without weakening it.
