@@ -8,7 +8,7 @@ Validated the Iteration-318 frozen minimal tensor Laplace operator `H=-(I Box+Pi
 ### Iterations 320-324 — common fixture, closure and shifted propagators
 Iteration 320 assembled common H/N local routing; Iteration 321 correctly blocked physical promotion because the original triad was not trace-closed. Iteration 322 rebuilt on `q3=-(q1+q2)`. Iteration 323 found the higher-level missing successive shifted propagators. Iteration 324 then froze explicit ordered `G0(p+Q)` routing and cyclic denominator-family equivalence. Missing numerator evaluations remained fail-closed rather than zero-filled.
 
-## 2026-09-03 — Iterations 325-334
+## 2026-09-03 — Iterations 325-336
 
 ### Iterations 325-331 — common-background physical determinant family reconstruction
 Scoped gate-design failures in Iterations 325, 327 and 330 were preserved rather than relabelled. Iteration 329 closed the one-common-background H/N requirement and validated the routed physical insertions. Iteration 328 supplied only denominator signed-affine equivalence, never numerator equivalence. Iteration 331 then froze the physical cubic determinant integrand into `1 singleton + 3 bubbles + 1 signed-affine triangle` with route-specific transformed numerators. Raw run `33742866100`, job `100608562495`, artifact `9888424625`; maximum held-out numerator reconstruction error `1.3877787807814457e-17`, denominator-map error `1.1102230246251565e-16`.
@@ -33,11 +33,29 @@ The signed-affine triangle family is NONZERO at family level: its `q^2=-0.14` an
 Authority: `PASS_DIRECT_TIMELIKE_DETERMINANT_DISCONTINUITY_FAMILY_REDUCTION__THREE_BUBBLES_NONZERO__TRIANGLE_FAMILY_NONZERO__Q2_MINUS1_TRIANGLE_CHANNEL_NUMERICALLY_BLOCKED`.
 
 ### Iteration 334 — high-resolution resolution remains BLOCKED
-Raw artifact from run `33748965082`, job `100627871946`, artifact `9891879802`, digest `sha256:6cf1702b0a3733d9110d9316133037b327bf27de8cf9b9d7ba846d40d66718b8`, scientific JSON SHA-256 `a01ec6eae6395edfd339b74ae0e43faed48aceff49cd3e06d4dac470595c5fe6` is schema-valid and scientifically BLOCKED, not an infrastructure failure. The deterministic Fibonacci-sphere means converge near `0.006876`, but the frozen normalized convergence ratio is `2.2111065687680303e-4`, still above `2e-5`. The third propagator remains analytically bounded away from zero on the cut sphere, `[0.11857864376269048,0.40142135623730957]`, and cut-shell errors are below `8.1e-17`. Thus the remaining blocker is numerical angular-integration authority only; no threshold weakening is permitted. The next gate uses an independent higher-order tensor-product Gauss-Legendre/periodic-azimuth integration or an analytic angular reduction.
+Raw artifact from run `33748965082`, job `100627871946`, artifact `9891879802`, digest `sha256:6cf1702b0a3733d9110d9316133037b327bf27de8cf9b9d7ba846d40d66718b8`, scientific JSON SHA-256 `a01ec6eae6395edfd339b74ae0e43faed48aceff49cd3e06d4dac470595c5fe6` is schema-valid and scientifically BLOCKED, not an infrastructure failure. The deterministic Fibonacci-sphere means converge near `0.006876`, but the frozen normalized convergence ratio is `2.2111065687680303e-4`, still above `2e-5`. The third propagator remains analytically bounded away from zero on the cut sphere, `[0.11857864376269048,0.40142135623730957]`, and cut-shell errors are below `8.1e-17`. Thus the remaining blocker is numerical angular-integration authority only; no threshold weakening is permitted.
+
+### Iteration 335 — independent product quadrature active
+Only the unresolved `q^2=-1` triangle channel is being evaluated with a genuinely independent tensor-product rule: Gauss-Legendre in `z=cos(theta)` times periodic azimuth quadrature, plus a phase-shifted azimuth cross-check. Parent dynamics, exact fixture, numerator, cut surface and frozen convergence threshold `2e-5` are unchanged. Run `33753368856` is active and is not duplicated.
+
+### Iteration 336 — exact massless two-particle phase-space normalization PASS
+Independent of the active Iteration 335 angular calculation, the exact geometric 4D massless two-particle cut normalization is now frozen in signature `(-,+,+,+)`:
+
+`dPhi2 = dOmega/(32*pi^2)`, hence `int dPhi2 = 1/(8*pi)`.
+
+Because Iteration-333/335 cut proxies are normalized sphere means `mean=(1/(4*pi)) int dOmega F`, their exact geometric conversion is
+
+`int dPhi2 F = mean/(8*pi)`.
+
+Validated run `33754035543`, job `100644020489`, artifact `9892688060`, artifact digest `sha256:eaa23f7411d63f0d66216498b750a20609fa19a478662f9fde1f1e14bce0165e`, scientific JSON SHA-256 `5f84fd4616dcca8eb3bd5beeb396718a74caab9637f77758e4e63aa529f07e53`; exact closure error `0.0`.
+
+Authority: `PASS_EXACT_4D_MASSLESS_TWO_PARTICLE_PHASE_SPACE_NORMALIZATION`.
+
+This does **not** yet freeze the overall Cutkosky `Disc` sign, factors of `i`, loop prefactor or matched-observable normalization. Those remain a separate provenance gate and must not be guessed. Iteration 336 does not consume or recompute Iteration 335.
 
 ### Guardrails
-Physical U2 `V1_1/V1_2/H0/H1` remains independently BLOCKED. Iteration-297 remains binding for the full finite DR remainder. Family-level absorptive nonzero is not yet the normalized determinant coefficient and not a comparator-subtracted Candidate Gravity residual. No Source/Born subtraction before normalized determinant cut / matched-observable origin accounting. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5 and no reopening of closed `e=3`.
+Physical U2 `V1_1/V1_2/H0/H1` remains independently BLOCKED. Iteration-297 remains binding for the full finite DR remainder. Family-level absorptive nonzero plus geometric phase-space normalization is still not the normalized determinant coefficient until the exact loop/propagator/`i` convention is audited. No Source/Born subtraction before normalized determinant cut / matched-observable origin accounting. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5 and no reopening of closed `e=3`.
 
 MODEL_READINESS: 24%
 
-Change from Iteration 332: `0 pp`. A genuine nonzero determinant absorptive sublayer has been established, but no complete readiness-rubric bucket and no robust comparator-subtracted residual have closed.
+Change from Iteration 334: `0 pp`. The exact phase-space normalization prerequisite closed, but no complete readiness-rubric bucket and no robust comparator-subtracted residual have closed.
