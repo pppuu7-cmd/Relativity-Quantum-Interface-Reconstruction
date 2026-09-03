@@ -1,0 +1,44 @@
+name: rqir-iteration385-tru1sq-double-double-parallel-pilot
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration385_tru1sq_double_double_parallel_one_channel_pilot.py'
+      - '.github/workflows/rqir-iteration385-tru1sq-double-double-parallel-pilot.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration385:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical dependency
+        run: pip install numpy
+      - name: Run parallel resource-repaired double-double pilot
+        run: |
+          mkdir -p candidate_gravity/artifacts/iteration385
+          python candidate_gravity/code/iteration385_tru1sq_double_double_parallel_one_channel_pilot.py > candidate_gravity/artifacts/iteration385/iteration385_result.json
+      - name: Sentinel/schema audit
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          p=pathlib.Path('candidate_gravity/artifacts/iteration385/iteration385_result.json')
+          raw=p.read_bytes(); o=json.loads(raw)
+          assert o['iteration']==385
+          assert o['scientific_gate_pass'] is True
+          assert o['serial_parallel_oracle']['scaled_max_error'] <= o['serial_parallel_oracle']['threshold']
+          assert o['channel']['status'] in ('CONVERGED','BLOCKED_CONVERGENCE')
+          audit={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':385,'found_iteration':o['iteration'],
+                 'valid_single_top_level':isinstance(o,dict),'scientific_authority_pass':bool(o['scientific_gate_pass']),
+                 'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw)}
+          pathlib.Path('candidate_gravity/artifacts/iteration385/iteration385_authority_audit.json').write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration385-result
+          path: candidate_gravity/artifacts/iteration385/
+          if-no-files-found: error
