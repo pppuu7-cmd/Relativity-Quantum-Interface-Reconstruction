@@ -40,7 +40,11 @@ The determinant branch now has compatible authority for exact cubic logdet topol
 
 A prerequisite audit after Iteration 331 found that its frozen exact closed triad has `q_i^2>0` in signature `(-,+,+,+)`, so it is spacelike rather than a direct timelike-cut row. A direct timelike discontinuity must not be claimed from that fixture.
 
-**Iteration 332 is running:** rebuild the already-frozen route-specific numerator-family construction on the exact rank-2 closed timelike triad `q1=(1,0,0,0)`, `q2=(-0.4,0.1,0.1,0)`, `q3=(-0.6,-0.1,-0.1,0)`, for which all three `q_i^2<0`. Parent dynamics, common-background construction, logdet weights, shifted routing, signed-affine maps, held-out tests and threshold are unchanged. Run `33743095697`, workflow head `95a60bb51a6dcedfc07b338493ab283a05170b77`.
+**Iteration 332:** rebuild the already-frozen route-specific numerator-family construction on the exact rank-2 closed timelike triad `q1=(1,0,0,0)`, `q2=(-0.4,0.1,0.1,0)`, `q3=(-0.6,-0.1,-0.1,0)`, for which all three `q_i^2<0`. Parent dynamics, common-background construction, logdet weights, shifted routing, signed-affine maps, held-out tests and threshold are unchanged.
+
+The first run `33743095697`, job `100609311473`, produced no schema-valid scientific artifact: the numerical gate reached final JSON serialization and failed on a NumPy scalar (`ValueError: Circular reference detected`) before artifact upload. This is an operational serialization failure, not a scientific FAIL. The only repair casts the reported timelike invariants to builtin JSON scalars; no formula, fixture, threshold, routing or parent convention changed. Repair commit `b53b23733a718df3404fda4cda3554c14727ff72`.
+
+The repaired gate is now queued as run `33743302046`, workflow head `b04ce242bf01d84a0588cf31ba8d14ee8a3fa124`.
 
 If Iteration 332 passes raw artifact validation, the exact next gate is **Iteration 333:** scoped direct-timelike DR/discontinuity reduction of the three bubble families and one signed-affine triangle family on that certified timelike fixture, family by family. Certify zero/nonzero/BLOCKED discontinuity and classify pole/cut origin before any matched Source/Born subtraction.
 
