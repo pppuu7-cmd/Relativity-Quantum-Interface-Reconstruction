@@ -1,0 +1,54 @@
+name: rqir-iteration388-u2-chunk12-13-preserve-raw
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration388-u2-chunk12-13-preserve-raw.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration388:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check -q numpy
+      - name: Re-run frozen Iteration 384 indices 12-13 and preserve raw JSON
+        id: science
+        continue-on-error: true
+        env:
+          START_INDEX: 12
+          END_INDEX: 14
+        run: |
+          mkdir -p candidate_gravity/artifacts/iteration388
+          python candidate_gravity/code/iteration384_u2_repeated_cut_full48_chunk.py > candidate_gravity/artifacts/iteration388/iteration384_chunk12_13_raw.json
+      - name: Raw parse and provenance audit regardless of scientific status
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          p=pathlib.Path('candidate_gravity/artifacts/iteration388/iteration384_chunk12_13_raw.json')
+          raw=p.read_bytes(); o=json.loads(raw)
+          assert o['iteration']==384
+          assert o['chunk']['start_index']==12 and o['chunk']['end_index_exclusive']==14
+          assert [r['global_channel_index'] for r in o['records']]==[12,13]
+          audit={
+            'recovery_iteration':388,
+            'source_scientific_iteration':384,
+            'schema':'rqir_raw_preservation_audit_v1',
+            'scientific_authority_pass':bool(o['scientific_gate_pass']),
+            'classification':o['classification'],
+            'statuses':[r['status'] for r in o['records']],
+            'sha256':hashlib.sha256(raw).hexdigest(),
+            'bytes':len(raw),
+          }
+          pathlib.Path('candidate_gravity/artifacts/iteration388/iteration388_raw_preservation_audit.json').write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration388-u2-chunk12-13-raw-preservation
+          path: candidate_gravity/artifacts/iteration388/
+          if-no-files-found: error
