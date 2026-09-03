@@ -1,0 +1,42 @@
+name: rqir-iteration315-det-ghost-n123-recursion
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration315_det_ghost_n123_recursion.py'
+      - '.github/workflows/rqir-iteration315-det-ghost-n123-recursion.yml'
+
+jobs:
+  iteration315:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy
+      - name: Run executable ghost N1/N2/N3 recursion audit
+        run: python candidate_gravity/code/iteration315_det_ghost_n123_recursion.py > iteration315_result.json
+      - name: Sentinel/schema audit
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          p='iteration315_result.json'; raw=open(p,'rb').read(); o=json.loads(raw)
+          ok=isinstance(o,dict) and o.get('iteration')==315 and 'scientific_gate_pass' in o
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':315,'found_iterations':[o.get('iteration')],
+             'top_level_object_count':1,'valid_single_top_level':True,'valid_expected_iteration':o.get('iteration')==315,
+             'scientific_authority_pass':bool(ok and o.get('scientific_gate_pass')),
+             'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw)}
+          open('iteration315_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          assert ok,a
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration315-result
+          path: |
+            iteration315_result.json
+            iteration315_authority_audit.json
+      - name: Enforce scientific gate
+        run: python -c "import json; o=json.load(open('iteration315_result.json')); assert o['scientific_gate_pass'], (o['classification'],o.get('validation_max_abs_error_by_order'))"
