@@ -42,9 +42,10 @@ Iteration-378 provenance: run `33813604738`, job `100840748044`, artifact `99163
 
 ## Active computations
 
-- **Iteration 379:** run `33813761466`, job `100841217582`; physical one-channel double-double mixed-derivative pilot, currently `in_progress` at last check. Its pilot grid is resource/pipeline authority only, not full-sector authority.
-- **Iteration 380:** run `33814113932`, job `100842299850`; determinant `q^2=-1` analytic-azimuth reduction, currently `in_progress` at last check. No determinant promotion before raw artifact validation.
-- **Iteration 381:** run `33816213900`, workflow head `5ecb485240ffc39f4bd7b8950ec8963e7b06f92f`; full 36-channel simple-double `Tr U1^2` evaluation in 12 prospectively frozen chunks of exactly 3 channels, queued at launch. Architecture is frozen from raw Iteration-378 runtime only; arithmetic/thresholds are unchanged. Full authority requires all 12 raw artifacts and an exact 36-index assembly.
+- **Iteration 379:** run `33813761466`, job `100841217582`; physical one-channel double-double mixed-derivative pilot, `in_progress` at last check. Its pilot grid is resource/pipeline authority only, not full-sector authority.
+- **Iteration 380:** run `33814113932`, job `100842299850`; determinant `q^2=-1` analytic-azimuth reduction, `in_progress` at last check. No determinant promotion before raw artifact validation.
+- **Iteration 381:** run `33816213900`, workflow head `5ecb485240ffc39f4bd7b8950ec8963e7b06f92f`; full 36-channel simple-double `Tr U1^2` evaluation in 12 prospectively frozen chunks of exactly 3 channels. Full authority requires all 12 raw artifacts and an exact 36-index assembly.
+- **Iteration 382:** run `33816704205`, job `100850328336`, workflow head `7fb92f2bd6488ccf7b7a4aaf141bd913ad2aa46a`; one prospectively fixed `Tr U2` cut-through-double-pole channel (global index `0`) using Iteration-364 `channel_derivative` verbatim. This is a resource/pipeline recovery pilot only. At last check the scientific step was `in_progress`, with sentinel/schema and artifact still pending. No promotion before raw artifact validation; the other 47 channels remain open.
 
 Do not duplicate any active computation.
 
@@ -53,7 +54,7 @@ Do not duplicate any active computation.
 1. Consume Iteration 381 chunks only after raw chunk/sentinel validation. Assemble exactly 36 unique frozen simple-double indices with no gaps/overlaps and preserve the three distinct q2 buckets. Any nonconverged channel stays `BLOCKED`, never zero-filled.
 2. Consume Iteration 379. If its raw pilot validates, use measured runtime/convergence margin only to prospectively freeze the complete 15-channel double-double architecture; the pilot value itself cannot close the sector.
 3. Consume Iteration 380. If raw PASS, freeze the determinant `q^2=-1` triangle and assemble the complete channel-resolved normalized determinant absorptive vector. If structural/cross-check failure occurs, preserve the triangle as BLOCKED and continue analytic reduction without weakening thresholds.
-4. Recover the 48 open cut-through-double-pole `Tr U2` channels with a new resource architecture; cancelled Iterations 364/376 cannot be treated as authority.
+4. Consume Iteration 382 only after raw artifact + sentinel validation. If channel 0 converges, use measured runtime only to prospectively freeze a smaller complete-48 resource architecture with identical Iteration-364 arithmetic; if blocked, isolate only that channel without weakening thresholds. Cancelled Iterations 364/376 remain non-authoritative.
 5. Only after complete physical `Tr U2` and complete `Tr U1^2` closure may `+(i/2)Tr U2 -(i/4)Tr U1^2` be assembled.
 6. Source/Ward/contact completion and matched `K2` subtraction remain downstream. Source/Born subtraction is forbidden before normalized origin accounting.
 
@@ -72,7 +73,7 @@ Iteration-297 evanescent/regulator warning remains binding. No Candidate residua
 
 MODEL_READINESS: 24%
 
-Change through validated Iteration 378 plus late-consumed Iteration 374: `0 pp`. The ordinary-simple `Tr U1^2` sub-sector and all repeated-cut method/kinematic prerequisites are closed, and one simple-double physical pilot is validated, but complete `Tr U1^2`, complete `Tr U2`, and a robust comparator-subtracted residual remain open.
+Change through validated Iteration 378 plus active recovery Iteration 382: `0 pp`. The ordinary-simple `Tr U1^2` sub-sector and all repeated-cut method/kinematic prerequisites are closed, and one simple-double physical pilot is validated, but complete `Tr U1^2`, complete `Tr U2`, and a robust comparator-subtracted residual remain open. Iteration 382 has not yet produced raw scientific authority.
 
 ## Retained guardrails
 
