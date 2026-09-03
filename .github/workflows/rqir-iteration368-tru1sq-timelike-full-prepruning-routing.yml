@@ -1,0 +1,41 @@
+name: rqir-iteration368-tru1sq-timelike-full-prepruning-routing
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration368_tru1sq_timelike_full_prepruning_routing.py'
+      - '.github/workflows/rqir-iteration368-tru1sq-timelike-full-prepruning-routing.yml'
+
+jobs:
+  iteration368:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical dependency
+        run: pip install numpy
+      - name: Run full timelike TrU1sq pre-pruning routing gate
+        run: python candidate_gravity/code/iteration368_tru1sq_timelike_full_prepruning_routing.py > iteration368_result.json
+      - name: Sentinel/schema audit
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          raw=open('iteration368_result.json','rb').read(); o=json.loads(raw)
+          ok=isinstance(o,dict) and o.get('iteration')==368 and o.get('scientific_gate_pass') is True
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':368,
+             'found_iterations':[o.get('iteration')],'top_level_object_count':1,
+             'valid_single_top_level':True,'valid_expected_iteration':o.get('iteration')==368,
+             'scientific_authority_pass':bool(ok),'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw)}
+          open('iteration368_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          assert ok
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration368-result
+          path: |
+            iteration368_result.json
+            iteration368_authority_audit.json
