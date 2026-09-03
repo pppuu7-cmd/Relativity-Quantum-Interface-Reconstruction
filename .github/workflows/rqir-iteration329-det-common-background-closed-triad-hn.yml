@@ -1,0 +1,49 @@
+name: rqir-iteration329-det-common-background-closed-triad-hn
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration329_det_common_background_closed_triad_hn.py'
+      - '.github/workflows/rqir-iteration329-det-common-background-closed-triad-hn.yml'
+
+jobs:
+  iteration329:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Run common-background closed-triad H/N gate and preserve diagnostics
+        run: |
+          set +e
+          python candidate_gravity/code/iteration329_det_common_background_closed_triad_hn.py > iteration329_result.json
+          code=$?
+          echo "$code" > iteration329_scientific_exit_code.txt
+          exit 0
+      - name: Sentinel/schema audit
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          raw=open('iteration329_result.json','rb').read(); o=json.loads(raw)
+          ok=isinstance(o,dict) and o.get('iteration')==329 and 'scientific_gate_pass' in o
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':329,'found_iterations':[o.get('iteration')],
+             'top_level_object_count':1,'valid_single_top_level':True,'valid_expected_iteration':o.get('iteration')==329,
+             'scientific_authority_pass':bool(ok and o.get('scientific_gate_pass')),
+             'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw),
+             'scientific_exit_code':int(open('iteration329_scientific_exit_code.txt').read())}
+          open('iteration329_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          assert ok
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration329-result
+          path: |
+            iteration329_result.json
+            iteration329_authority_audit.json
+            iteration329_scientific_exit_code.txt
+      - name: Enforce scientific gate
+        run: python -c "import json; o=json.load(open('iteration329_result.json')); assert o['scientific_gate_pass'], o"
