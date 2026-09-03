@@ -1,0 +1,63 @@
+{
+  "candidate_residual": false,
+  "classification": "PASS_U2_FUNCTIONAL_TRANSPOSE_FOURIER_ROUTING_FROM_FROZEN_ITERATION341_A1_AUTHORITY__TRU2_CUBIC_ROUTE_ASSEMBLY_AUTHORIZED_NEXT",
+  "component_authority": {
+    "sha256": "be553e596a8fa8cddf40769583190b187dc711d8219377906497c7acaf47ca25",
+    "source": "candidate_gravity/code/iteration341_u2_v1_a12_same_parent_geometry.py",
+    "status": "FROZEN_PHYSICAL_A1_A2_FROM_ITERATION341"
+  },
+  "frozen_rule": {
+    "closed_loop_condition": "sum external Q_i = 0 unchanged by transpose",
+    "external_background_momentum": "same +Q for right and functional-transpose orientations",
+    "left": "A_T(Q;k)=A(Q;-k-Q)^T: k -> k+Q",
+    "right": "A_R(Q;p)=A(Q;p): p -> p+Q"
+  },
+  "guardrails": [
+    "NO_SECOND_HAND_CODED_EQ55_ORACLE_IN_THIS_GATE",
+    "DO_NOT_USE_NAIVE_A_Q_K_TRANSPOSE_AT_SAME_K",
+    "ITERATION340_A_TRANSPOSE_A_INDEX_ORIENTATION_BINDING",
+    "ITERATION340_HINV_VD_MINUS_KINV_BINDING",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "NO_BLIND_FULL_C5"
+  ],
+  "iteration": 345,
+  "model_readiness_percent": 24,
+  "next_gate": "assemble and independently validate the 12 surviving cubic-background Tr U2 routes from Iteration308 with frozen A1/A2, N/Y, Hinv and functional-transpose momentum routing before any cut integration",
+  "predecessor_disposition": {
+    "iteration343": "PRESERVED_IMPLEMENTATION_FAIL_HAND_CODED_EQ55_ORACLE__TRANSPOSE_PAIRING_SUBTESTS_PASSED",
+    "iteration344": "PRESERVED_IMPLEMENTATION_FAIL_PARTIAL_EQ55_ORACLE_REPAIR__NO_THRESHOLD_CHANGE",
+    "reason_for_new_gate": "component correctness belongs to independently validated Iteration341; this gate isolates routing only"
+  },
+  "scientific_gate_pass": true,
+  "status": {
+    "A1_A2": "FROZEN_ITERATION341",
+    "N_Y": "FROZEN_ITERATION342",
+    "TrU2_cubic_12_route_assembly": "AUTHORIZED_NEXT",
+    "functional_transpose_routing": "FROZEN_EXECUTABLE"
+  },
+  "validation": {
+    "closed_triad_loop_error": 0.0,
+    "fixture_count": 6,
+    "max_bilinear_pairing_error": 1.734723475976807e-17,
+    "max_kernel_error": 3.469446951953614e-18,
+    "max_phase_closure_error": 5.551115123125783e-17,
+    "min_naive_same_k_transpose_difference": 0.01221058902446782,
+    "thresholds": {
+      "kernel_abs_max": 2e-13,
+      "loop_closure_abs_max": 2e-15,
+      "naive_same_k_difference_min": 1e-05,
+      "pairing_abs_max": 2e-12,
+      "phase_abs_max": 2e-15
+    }
+  },
+  "provenance": {
+    "run_id": 33769608279,
+    "job_id": 100696159016,
+    "artifact_id": 9899021604,
+    "artifact_digest": "sha256:adaf0d811580d697791f7f33ef8922fcb487c82362c3ed714591a5ac6e0e8cb7",
+    "scientific_json_sha256": "41edecce8d1a8ac4e90d8f513ac4367b5237db0d9db614f0e9119cb4ce06988a",
+    "head_sha": "755599b4027668c0cd7b5a766a13d8a4b2ab912d"
+  }
+}
