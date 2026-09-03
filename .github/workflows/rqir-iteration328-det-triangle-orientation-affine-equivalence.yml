@@ -1,0 +1,48 @@
+name: rqir-iteration328-det-triangle-orientation-affine-equivalence
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration328_det_triangle_orientation_affine_equivalence.py'
+      - '.github/workflows/rqir-iteration328-det-triangle-orientation-affine-equivalence.yml'
+
+jobs:
+  iteration328:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Run triangle orientation affine-equivalence audit
+        run: |
+          set +e
+          python candidate_gravity/code/iteration328_det_triangle_orientation_affine_equivalence.py > iteration328_result.json
+          code=$?
+          echo "$code" > iteration328_scientific_exit_code.txt
+          exit 0
+      - name: Sentinel/schema audit
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          raw=open('iteration328_result.json','rb').read(); o=json.loads(raw)
+          ok=isinstance(o,dict) and o.get('iteration')==328 and 'scientific_gate_pass' in o
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':328,
+             'found_iterations':[o.get('iteration')],'top_level_object_count':1,
+             'valid_single_top_level':True,'valid_expected_iteration':o.get('iteration')==328,
+             'scientific_authority_pass':bool(ok and o.get('scientific_gate_pass')),
+             'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw),
+             'scientific_exit_code':int(open('iteration328_scientific_exit_code.txt').read())}
+          open('iteration328_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          assert ok
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration328-result
+          path: |
+            iteration328_result.json
+            iteration328_authority_audit.json
+            iteration328_scientific_exit_code.txt
+      - name: Enforce scientific gate
+        run: python -c "import json; o=json.load(open('iteration328_result.json')); assert o['scientific_gate_pass'], o"
