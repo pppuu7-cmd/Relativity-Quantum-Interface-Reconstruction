@@ -1,0 +1,49 @@
+name: rqir-iteration327-det-closed-triad-physical-trace
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration327_det_closed_triad_physical_trace_assembly.py'
+      - '.github/workflows/rqir-iteration327-det-closed-triad-physical-trace.yml'
+
+jobs:
+  iteration327:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Run closed-triad physical determinant trace gate and preserve diagnostics
+        run: |
+          set +e
+          python candidate_gravity/code/iteration327_det_closed_triad_physical_trace_assembly.py > iteration327_result.json
+          code=$?
+          echo "$code" > iteration327_scientific_exit_code.txt
+          exit 0
+      - name: Sentinel/schema audit
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          raw=open('iteration327_result.json','rb').read(); o=json.loads(raw)
+          ok=isinstance(o,dict) and o.get('iteration')==327 and 'scientific_gate_pass' in o and 'denominator_family_census' in o
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':327,'found_iterations':[o.get('iteration')],
+             'top_level_object_count':1,'valid_single_top_level':True,'valid_expected_iteration':o.get('iteration')==327,
+             'scientific_authority_pass':bool(ok and o.get('scientific_gate_pass')),
+             'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw),
+             'scientific_exit_code':int(open('iteration327_scientific_exit_code.txt').read())}
+          open('iteration327_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          assert ok
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration327-result
+          path: |
+            iteration327_result.json
+            iteration327_authority_audit.json
+            iteration327_scientific_exit_code.txt
+      - name: Enforce scientific gate
+        run: python -c "import json; o=json.load(open('iteration327_result.json')); assert o['scientific_gate_pass'], o"
