@@ -34,7 +34,9 @@ for n in range(1,4):
      j=n-i
      for l in range(D): T[m,v]+=Gam[i][a,a,l]*Gam[j][l,m,v]-Gam[i][a,v,l]*Gam[j][l,m,a]
  R.append(T)
-Rm=[np.zeros((D,D),complex)]
+# Mixed Ricci coefficients R^a_b = g^{a m} R_{m b}; allocate all orders
+# explicitly so unsupported orders cannot be silently zero-filled or indexed past.
+Rm=[np.zeros((D,D),complex) for _ in range(4)]
 for n in range(1,4):
  for k in range(n+1): Rm[n]+=G[k]@R[n-k]
 
