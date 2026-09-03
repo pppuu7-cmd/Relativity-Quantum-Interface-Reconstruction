@@ -5,7 +5,7 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 315**
+**Authoritative Candidate Gravity front:** **Iteration 317**
 
 Repository commits, schema-validated Actions artifacts and recovery material are source of truth. A green workflow conclusion alone is never scientific authority.
 
@@ -18,37 +18,42 @@ Repository commits, schema-validated Actions artifacts and recovery material are
 - Iteration 312 freezes the exact determinant cubic logdet topology; it is an operator identity, not a physical determinant coefficient.
 - Iteration 313 proves explicit physical `H1/H2/H3,N1/N2/N3` formula authority was absent.
 - Iteration 314 locates all frozen same-parent derivation prerequisites and authorizes explicit component derivation.
-- Iteration 315 derives and validates the ghost `N1/N2/N3` geometric recursion sublayer consisting of inverse-metric/principal-symbol plus Ricci/mixed-Ricci pieces, while explicitly leaving the full vector covariant-Box connection routing BLOCKED.
+- Iteration 315 derives/validates the ghost inverse-metric, Levi-Civita, Ricci/mixed-Ricci and principal-symbol recursion sublayer.
+- Iteration 316, after correcting only a mixed-Ricci coefficient-allocation bug without threshold changes, validates the full routed vector covariant-Box ghost operator for a single Fourier mode.
+- Iteration 317 independently validates non-collinear mixed ghost routing with three explicit Fourier modes, including the fully mixed cubic `(1,1,1)` coefficient. Full physical ghost `N1/N2/N3` component authority is now frozen for the determinant branch.
 
-Validated Iteration-315 provenance:
-- run `33713975395`
-- head/workflow commit `4997efbcf4ce198cad98a047ae1bc2dc10390513`
-- code commit `389dc70eb76770fd36b89f0a662730df3f56c501`
-- artifact `9877851387`, digest `sha256:644413a787083f35916eb7f22454cf7163c0a64fdcd25b095c5d637cfd302115`
-- scientific JSON SHA-256 `0e31d3a123ceb45b5c305e0a68b78712b59abad6d3febc24a9033c263a21c826`
-- exactly one top-level JSON object, sentinel `315`, schema/scientific authority PASS.
+Validated Iteration-316 provenance:
+- run `33717509817`
+- job `100529695008`
+- head/code commit `debc401e441e5ed0ec16706cdaaf1a75500a722b`
+- artifact `9879043723`, digest `sha256:4fa8792815eb5a2e41ec3232d292c2f985221d1493dc2cbcaf6e46ee866f558b`
+- scientific execution, sentinel/schema audit, upload and final scientific gate PASS.
 
 Freeze:
-`PASS_GHOST_N123_GEOMETRIC_RECURSION_PRINCIPAL_PLUS_RICCI__COVARIANT_BOX_CONNECTION_ROUTING_REMAINS_BLOCKED`.
+`PASS_FULL_ROUTED_GHOST_N123_SINGLE_MODE_CERTIFICATE__MULTIMODE_CROSS_ROUTING_REMAINS_TO_BE_TESTED`.
 
-Validation max absolute errors for orders `n=0..3`:
-`[8.283688954807686e-12, 9.73450209329485e-11, 1.1025703905076512e-4, 6.288007404791074e-4]`, below frozen thresholds `[1e-9, 2e-6, 2e-3, 2.0]`.
+Validated Iteration-317 provenance:
+- run `33717920513`
+- job `100530900560`
+- workflow/head commit `654ffc6df7a9663996ea5fe996ac222e651b530d`
+- code commit `71550c10edd2dcd3fa3b3bbcc4cedeca52981183`
+- artifact `9879177569`, digest `sha256:048d5fa8d47f782b48e4015ab9786bd82bdc9e35a73a704277e4952741e4296a`
+- scientific execution, sentinel/schema audit, upload and final scientific gate PASS.
+
+Freeze:
+`PASS_GHOST_N123_THREE_MODE_NONCOLLINEAR_ROUTING_CERTIFICATE__FULL_GHOST_COMPONENT_AUTHORITY_FROZEN`.
 
 ## Active sectors
 
-- connection `e=1,c<=2`: `Tr U1` cut frozen by Iteration 307
-- connection `e=2,c<=1`: U2 physical components BLOCKED; U1^2 routing frozen through Iteration 310
-- determinant `e=0,c<=3`: cubic topology frozen; ghost principal+Ricci sublayer validated through Iteration 315; full routed ghost `N1/N2/N3` and graviton `H1/H2/H3` remain BLOCKED.
-
-## Running process / latest non-authoritative event
-
-Iteration 316 was launched as the dependent vector covariant-Box routing completion. Run `33714074939` completed with workflow failure at the scientific execution step; schema audit and artifact upload were skipped, and no artifact exists. Therefore Iteration 316 is **not** scientific authority and its failure is classified only as operational/unobservable until diagnostics are preserved. Do not call it a consistency FAIL and do not weaken thresholds.
+- connection `e=1,c<=2`: `Tr U1` cut frozen by Iteration 307.
+- connection `e=2,c<=1`: physical U2 `V1_1/V1_2/H0/H1` remains BLOCKED; U1^2 routing frozen through Iteration 310.
+- determinant `e=0,c<=3`: cubic topology frozen by Iteration 312; full routed ghost `N1/N2/N3` component authority is now frozen through Iteration 317; physical graviton `H1/H2/H3` remains BLOCKED.
 
 ## Exact next gate
 
-Repair the Iteration-316 execution contract so raw scientific diagnostics and schema-valid JSON are written/uploaded before any final nonzero exit. Then perform exactly one rerun of the full routed vector covariant-Box ghost completion in the same `D=4, Lambda=0, a=-1/2` convention. If it passes, freeze full ghost `N1/N2/N3`; only then proceed to independent graviton `H1/H2/H3` derivation and validation before insertion into the Iteration-312 cubic logdet topology.
+Derive executable same-parent physical graviton `H1/H2/H3` from the frozen minimal Vilkovisky graviton operator at `D=4, Lambda=0, a=-1/2`, with explicit symmetric-tensor index basis, normalization/transposes and momentum routing. Independently validate the series against a direct exact-geometry or equivalent primary-parent oracle before any insertion into the Iteration-312 cubic logdet topology.
 
-The independent connection-sector blocker remains: U2 physical `V1_1/V1_2/H0/H1` formulas must not be invented or zero-filled.
+Do not populate missing graviton kernels with random matrices, keyword matches, inferred zeros or guessed formulas. The independent connection-sector blocker remains: U2 physical `V1_1/V1_2/H0/H1` formulas must not be invented or zero-filled.
 
 ## Stable readiness rubric
 
@@ -61,7 +66,7 @@ The independent connection-sector blocker remains: U2 physical `V1_1/V1_2/H0/H1`
 
 MODEL_READINESS: 24%
 
-Change from Iteration 314: `0 pp`. A scoped ghost component sublayer is now derived and validated, but no readiness-rubric block or robust comparator-subtracted residual is closed.
+Change from Iteration 316: `0 pp`. Full ghost determinant component authority is now closed, but no readiness-rubric component and no robust comparator-subtracted residual is closed.
 
 ## Retained guardrails
 
