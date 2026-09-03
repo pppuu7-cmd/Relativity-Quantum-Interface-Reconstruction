@@ -1,0 +1,62 @@
+{
+  "candidate_residual": false,
+  "checks": {
+    "block_inverse_errors": [
+      8.881784197001252e-16,
+      4.440892098500626e-16,
+      4.440892098500626e-16
+    ],
+    "block_inverse_max_error": 8.881784197001252e-16,
+    "finite_difference_G1_error": 1.7763568394002505e-15,
+    "flat_K0_in_max_error": 0.0,
+    "flat_K0_out_max_error": 5.551115123125783e-17,
+    "p2": [0.06480000000000002, 0.0],
+    "pout2": [0.19540000000000007, 0.0],
+    "shifted_vs_wrong_unshifted_frobenius_norm": 78.53690403309817,
+    "thresholds": {
+      "block_inverse_max": 1e-11,
+      "finite_difference_G1_max": 1e-09,
+      "flat_K0_identity_max": 1e-12,
+      "shift_matter_min_norm": 1e-06
+    }
+  },
+  "classification": "PASS_E2C1_U2_GRAVITON_GREEN_H0_H1_SAME_PARENT_ROUTING_BRIDGE__V1_KERNELS_REMAIN_BLOCKED",
+  "guardrails": [
+    "OPERATOR_K_IS_NOT_THE_U2_GREEN_H_NOTATION",
+    "LEFT_GREEN_PROPAGATOR_USES_SHIFTED_MOMENTUM_P_PLUS_Q",
+    "UNSUPPORTED_V1_COMPONENTS_REMAIN_BLOCKED_NOT_ZERO_FILLED",
+    "NO_U2_NUMERATOR_ASSEMBLY_FROM_THIS_BRIDGE_ALONE",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "NO_BLIND_HEAVY_FULL_C5"
+  ],
+  "iteration": 339,
+  "model_readiness_percent": 24,
+  "next_gate": "derive/freeze same-parent physical V1_1 and V1_2 kernels in the Iteration-309 index orientation; separately bridge any required N/Y inverse routing before U2 numerator assembly",
+  "notation_disambiguation": {
+    "G": "field-space Green operator denoted H in Iteration 309 U2 contract",
+    "G0": "K0^-1",
+    "G1": "-G0(p+q) K1(q;p) G0(p)",
+    "K": "physical graviton differential operator frozen by Iteration 319"
+  },
+  "physical_status": {
+    "N_and_Y_green_routing_bridge": "NOT_CLOSED_BY_THIS_GATE",
+    "U2_H0_flat_graviton_green": "FROZEN_FROM_SAME_PARENT_IF_PASS",
+    "U2_H1_first_background_graviton_green": "FROZEN_FROM_SAME_PARENT_IF_PASS",
+    "V1_1_flat_momentum_kernel": "BLOCKED_UNCHANGED",
+    "V1_2_mixed_background_kernel": "BLOCKED_UNCHANGED",
+    "e2c1_U2_numerator": "NOT_AUTHORIZED"
+  },
+  "scientific_gate_pass": true,
+  "scope": {
+    "background_q": [0.27, -0.19, 0.31, 0.11],
+    "convention": {"D": 4, "Lambda": 0, "a": "-1/2"},
+    "input_p": [0.61, -0.33, 0.24, 0.52],
+    "output_p": [0.88, -0.52, 0.55, 0.63],
+    "parent": "Iteration-319 minimal graviton operator K=-(Box+Pi)",
+    "routing": "K1(q;p): p -> p+q",
+    "sector": "connection e=2,c<=1 physical U2 prerequisite",
+    "tensor_basis_dimension": 10
+  }
+}
