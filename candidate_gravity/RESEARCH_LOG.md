@@ -36,10 +36,10 @@ Authority: `PASS_DIRECT_TIMELIKE_DETERMINANT_DISCONTINUITY_FAMILY_REDUCTION__THR
 Raw artifact from run `33748965082`, job `100627871946`, artifact `9891879802`, digest `sha256:6cf1702b0a3733d9110d9316133037b327bf27de8cf9b9d7ba846d40d66718b8`, scientific JSON SHA-256 `a01ec6eae6395edfd339b74ae0e43faed48aceff49cd3e06d4dac470595c5fe6` is schema-valid and scientifically BLOCKED, not an infrastructure failure. The deterministic Fibonacci-sphere means converge near `0.006876`, but the frozen normalized convergence ratio is `2.2111065687680303e-4`, still above `2e-5`. The third propagator remains analytically bounded away from zero on the cut sphere, `[0.11857864376269048,0.40142135623730957]`, and cut-shell errors are below `8.1e-17`. Thus the remaining blocker is numerical angular-integration authority only; no threshold weakening is permitted.
 
 ### Iteration 335 — independent product quadrature active
-Only the unresolved `q^2=-1` triangle channel is being evaluated with a genuinely independent tensor-product rule: Gauss-Legendre in `z=cos(theta)` times periodic azimuth quadrature, plus a phase-shifted azimuth cross-check. Parent dynamics, exact fixture, numerator, cut surface and frozen convergence threshold `2e-5` are unchanged. Run `33753368856` is active and is not duplicated.
+Only the unresolved `q^2=-1` triangle channel is being evaluated with a genuinely independent tensor-product rule: Gauss-Legendre in `z=cos(theta)` times periodic azimuth quadrature, plus a phase-shifted azimuth cross-check. Parent dynamics, exact fixture, numerator, cut surface and frozen convergence threshold `2e-5` are unchanged. Original run `33753368856` was cancelled during the scientific step at the workflow time limit before schema-valid output or artifact upload. Timeout only was raised to 180 minutes; replacement run `33759144658` is in progress and is not duplicated.
 
 ### Iteration 336 — exact massless two-particle phase-space normalization PASS
-Independent of the active Iteration 335 angular calculation, the exact geometric 4D massless two-particle cut normalization is now frozen in signature `(-,+,+,+)`:
+Independent of the active Iteration 335 angular calculation, the exact geometric 4D massless two-particle cut normalization is frozen in signature `(-,+,+,+)`:
 
 `dPhi2 = dOmega/(32*pi^2)`, hence `int dPhi2 = 1/(8*pi)`.
 
@@ -51,11 +51,53 @@ Validated run `33754035543`, job `100644020489`, artifact `9892688060`, artifact
 
 Authority: `PASS_EXACT_4D_MASSLESS_TWO_PARTICLE_PHASE_SPACE_NORMALIZATION`.
 
-This does **not** yet freeze the overall Cutkosky `Disc` sign, factors of `i`, loop prefactor or matched-observable normalization. Those remain a separate provenance gate and must not be guessed. Iteration 336 does not consume or recompute Iteration 335.
+## 2026-09-03 — Iterations 337-339
+
+### Iteration 337 — repository-normalized simple-cut bridge
+The Iteration-336 geometric factor was calibrated against the frozen Iteration-296 scalar-bubble convention. For an ordinary two-simple-line channel with normalized angular mean `m`,
+
+`D_s I[F] = -8*pi int(dPhi2 F) = -m`.
+
+Authority: `PASS_REPOSITORY_NORMALIZED_SIMPLE_TWO_PARTICLE_CUT_CONVERSION__DET_OUTER_EFFECTIVE_ACTION_FACTOR_REMAINS_BLOCKED`.
+
+Validated run `33756194728`, job `100651082826`, artifact `9893533178`, digest `sha256:aaeca20e2906d240417b6c9d301639068c62076f11281694525a5263d1096161`, scientific JSON SHA-256 `7d6ba8fd46c01fb9af79b21932daa49787587122c47e51af85d8d7997bad64`.
+
+### Iteration 338 — determinant effective-action prefactor
+The reduced one-loop convention is reconciled with `C_det=(1/2)Tr_H-Tr_N`, giving
+
+`Gamma_det=+i*C_det`, hence `D_s Gamma_det=-i*m`
+
+for ordinary two-simple-line determinant channels. This cross-checks the independently frozen Iteration-307 `Tr U1` coefficient `-i/2` and prevents double application of determinant weights.
+
+Authority: `PASS_SAME_PARENT_DETERMINANT_EFFECTIVE_ACTION_OUTER_PLUS_I_PREFactor__TRU1_MINUS_I_OVER_2_CROSSCHECK`.
+
+Validated run `33756324238`, job `100651503806`, artifact `9893580250`, digest `sha256:54eb5733ebfd08afeaccfbe7c775968436136f9ae05f5cbddfee96b53ca86da4`, scientific JSON SHA-256 `2a0a99466b08ce30ff639739079c97461078e80429b42e92f95c90367f902f6b`.
+
+### Iteration 339 — U2 graviton Green H0/H1 bridge PASS
+While the independent Iteration-335 determinant calculation remained in progress, the old `e=2,c<=1` U2 blocker was revisited without duplicating that Action. Iteration 309 denotes the field-space Green operator inside `U2=N_L V1_L H V1_R N_R Y` by `H`, whereas Iteration 319 uses `H` for the minimal graviton differential operator. Iteration 339 calls the latter `K` and freezes the Green expansion
+
+`G0(p)=K0(p)^-1`,
+
+`G1(q;p)=-G0(p+q) K1(q;p) G0(p)`.
+
+The actual physical Iteration-319 `K1` matrix in `D=4, Lambda=0, a=-1/2` is used. Flat `K0` is reconstructed independently at `p` and `p+q`, and an explicit two-momentum-sector block inverse provides the independent routing oracle.
+
+Numerical closure:
+- flat `K0(p)` error `0.0`;
+- flat `K0(p+q)` error `5.551115123125783e-17`;
+- maximum block-inverse error `8.881784197001252e-16`;
+- finite-difference inverse derivative error `1.7763568394002505e-15`;
+- correct shifted vs incorrect unshifted-left Green separation norm `78.53690403309817`.
+
+Authority: `PASS_E2C1_U2_GRAVITON_GREEN_H0_H1_SAME_PARENT_ROUTING_BRIDGE__V1_KERNELS_REMAIN_BLOCKED`.
+
+Validated run `33759581615`, job `100662270347`, artifact `9894856112`, digest `sha256:9e8593512de6fbef0238b0c1001950a34183d5f6484b179dd34c9e0f46528b05`, scientific JSON SHA-256 `9cdbedc4897d4ed8be746ac0d2ac4fc3c73251b36dce23f7a243322ab779e318`.
+
+Scientific consequence: same-parent graviton Green `H0/H1` is no longer part of the U2 blocker. Physical `V1_1/V1_2` remains BLOCKED; any required N/Y inverse-routing bridge remains unclosed; no physical U2 numerator is authorized.
 
 ### Guardrails
-Physical U2 `V1_1/V1_2/H0/H1` remains independently BLOCKED. Iteration-297 remains binding for the full finite DR remainder. Family-level absorptive nonzero plus geometric phase-space normalization is still not the normalized determinant coefficient until the exact loop/propagator/`i` convention is audited. No Source/Born subtraction before normalized determinant cut / matched-observable origin accounting. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5 and no reopening of closed `e=3`.
+Iteration-297 remains binding for the full finite DR remainder. Family-level absorptive nonzero is not the full matched observable. No Source/Born subtraction before normalized cut/origin accounting. Unsupported U2 kernels are BLOCKED, never zero-filled. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5 and no reopening of closed `e=3`.
 
 MODEL_READINESS: 24%
 
-Change from Iteration 334: `0 pp`. The exact phase-space normalization prerequisite closed, but no complete readiness-rubric bucket and no robust comparator-subtracted residual have closed.
+Change through Iteration 339: `0 pp`. Exact normalization and a genuine U2 Green-routing prerequisite closed, but no complete readiness-rubric bucket and no robust comparator-subtracted residual have closed.
