@@ -1,0 +1,54 @@
+{
+  "iteration": 313,
+  "date": "2026-09-03",
+  "scope": "RQIR Candidate Gravity determinant e=0,c<=3 physical component authority inventory",
+  "authoritative_predecessor": 312,
+  "model_readiness_percent": 24,
+  "scientific_gate_pass": true,
+  "classification": "PASS_DETERMINANT_COMPONENT_AUTHORITY_INVENTORY__PHYSICAL_COMPONENT_FORMULAS_BLOCKED_ABSENT_EXPLICIT_AUTHORITY",
+  "candidate_residual": false,
+  "action_provenance": {
+    "run": 33710514505,
+    "job": 100508774508,
+    "head_sha": "64fc602924b653ccfd2c02347f1f13876f5426f7",
+    "artifact": 9876732038,
+    "artifact_name": "iteration313-result",
+    "artifact_digest": "sha256:3f0d0462ac6ec72abe4bf1e81460a7b117908613253ba4f7dc6ffa9370ae9510",
+    "scientific_json_sha256": "d6c2f44c1b09fdacd660e7561c3d45d91ad5e8547bafa9916f16ff806b81d4b6",
+    "top_level_object_count": 1,
+    "sentinel": 313,
+    "scientific_authority_pass": true
+  },
+  "inventory_result": {
+    "explicit_authority_files": [],
+    "keyword_evidence_paths_examined_max": 200,
+    "keyword_hits_are_authority": false,
+    "promotion_requires_components": ["H1", "H2", "H3", "N1", "N2", "N3"],
+    "promotion_requires_frozen_scope": ["D=4", "Lambda=0", "a=-1/2"],
+    "physical_same_parent_component_authority_found": false
+  },
+  "physical_component_status": {
+    "graviton_H1_H2_H3": "BLOCKED_EXPLICIT_SAME_PARENT_FORMULAS_NOT_FOUND",
+    "ghost_N1_N2_N3": "BLOCKED_EXPLICIT_SAME_PARENT_FORMULAS_NOT_FOUND",
+    "U2_V1_1_V1_2_H0_H1": "BLOCKED_UNCHANGED",
+    "source_contact_completion": "BLOCKED_DOWNSTREAM"
+  },
+  "interpretation": {
+    "consistency_fail": false,
+    "exact_comparator_identity": false,
+    "regime_specific_non_identifiability": false,
+    "near_degeneracy": false,
+    "novelty_certificate": false,
+    "operational_blocked": true,
+    "statement": "Iteration 312 proves the cubic logdet operator identity only. Iteration 313 finds no explicit repository authority for the physical same-parent determinant component kernels. Missing components are unsupported/BLOCKED and must not be zero-filled or replaced by synthetic random matrices."
+  },
+  "guardrails": [
+    "UNSUPPORTED_IS_BLOCKED_NOT_ZERO_FILLED",
+    "KEYWORD_PRESENCE_IS_NOT_AUTHORITY",
+    "DO_NOT_PROMOTE_RANDOM_MATRIX_LOGDET_IDENTITY_TEST_TO_PHYSICAL_DETERMINANT_COEFFICIENT",
+    "NO_BLIND_HEAVY_FULL_C5",
+    "NO_ANSATZ003_FISHER_RESOURCES"
+  ],
+  "next_gate": "Derive and freeze executable same-parent determinant graviton H1/H2/H3 and ghost N1/N2/N3 component kernels, including index spaces, normalization, routing and D=4 Lambda=0 a=-1/2 convention, from the frozen parent dynamics. Validate those kernels before inserting them into the Iteration-312 cubic logdet topology; until then the physical determinant numerator/cut remains BLOCKED.",
+  "MODEL_READINESS": "24%"
+}
