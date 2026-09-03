@@ -1,0 +1,44 @@
+{
+  "candidate_residual": false,
+  "classification": "PASS_AUDIT_TIMELIKE_REBASE_BREAKS_SINGLETON_SOFT_A1_ZERO__ITERATION346_12_SURVIVORS_NOT_PHYSICAL_AUTHORITY__REBUILD_30_ROUTE_CENSUS_NEXT",
+  "fixture": {
+    "designated_iteration346_soft_leg": "mode (1,0,0)",
+    "matched_timelike_source": "Iteration348",
+    "q_squared": [-1.0, -0.14, -0.33999999999999997]
+  },
+  "guardrails": [
+    "DO_NOT_ZERO_FILL_TIMELIKE_A1",
+    "DO_NOT_REUSE_NULL_SOFT_KILLS_OUTSIDE_THEIR_LIMIT",
+    "NEGATIVE_AUDIT_RESULT_IS_SCIENTIFIC_RESULT",
+    "NO_CUT_INTEGRATION_BEFORE_PHYSICAL_ROUTE_CENSUS",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "NO_BLIND_FULL_C5"
+  ],
+  "iteration": 350,
+  "model_readiness_percent": 24,
+  "next_gate": "rebuild matched-timelike physical cubic U2 route census from all 30 Iteration308 raw placements; evaluate which routes are actually zero/nonzero with Iteration348/349 providers before family reduction",
+  "physical_A1": {
+    "designated_soft_mode_max_abs": 0.15244821081057558,
+    "exact_zero_threshold": 1e-12,
+    "per_mode_max_abs": {
+      "(0, 0, 1)": 0.009534510280358474,
+      "(0, 1, 0)": 0.00703595144704195,
+      "(1, 0, 0)": 0.15244821081057558
+    },
+    "singleton_soft_zero_preserved": false
+  },
+  "route_authority": {
+    "if_false": "BLOCKED_REBUILD_FROM_ALL_30_RAW_PLACEMENTS_WITH_PHYSICAL_A_COMPONENTS",
+    "iteration346_12_survivors_reusable_on_timelike_fixture": false
+  },
+  "scientific_gate_pass": true,
+  "raw_actions_authority": {
+    "run": 33782652005,
+    "artifact": 9904177872,
+    "artifact_digest": "sha256:af10e53d0e1754e171b5b846fc9c646c40e48ffe5ed13db0fdad197f79cf176a",
+    "scientific_json_sha256": "280f1fe620d8b40a5458192c2cec4391d9c4763d793f12cc5a45a7489edb3704",
+    "workflow_head": "c102bf08edc7427c8642277d3456133f811b60d6"
+  }
+}
