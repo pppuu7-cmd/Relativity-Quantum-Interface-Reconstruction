@@ -1,0 +1,64 @@
+name: rqir-iteration381-tru1sq-simple-double-full-chunks
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration381_tru1sq_simple_double_full_chunk.py'
+      - '.github/workflows/rqir-iteration381-tru1sq-simple-double-full-chunks.yml'
+
+jobs:
+  iteration381:
+    strategy:
+      fail-fast: false
+      matrix:
+        chunk:
+          - { start: 0, end: 3, label: '00-02' }
+          - { start: 3, end: 6, label: '03-05' }
+          - { start: 6, end: 9, label: '06-08' }
+          - { start: 9, end: 12, label: '09-11' }
+          - { start: 12, end: 15, label: '12-14' }
+          - { start: 15, end: 18, label: '15-17' }
+          - { start: 18, end: 21, label: '18-20' }
+          - { start: 21, end: 24, label: '21-23' }
+          - { start: 24, end: 27, label: '24-26' }
+          - { start: 27, end: 30, label: '27-29' }
+          - { start: 30, end: 33, label: '30-32' }
+          - { start: 33, end: 36, label: '33-35' }
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical dependency
+        run: pip install numpy
+      - name: Run fixed three-channel simple-double chunk
+        run: >-
+          python candidate_gravity/code/iteration381_tru1sq_simple_double_full_chunk.py
+          --start ${{ matrix.chunk.start }} --end ${{ matrix.chunk.end }}
+          > iteration381_chunk_${{ matrix.chunk.label }}.json
+      - name: Sentinel/schema audit
+        run: |
+          python - <<'PY'
+          import json,hashlib,glob
+          fs=glob.glob('iteration381_chunk_*.json')
+          assert len(fs)==1,fs
+          p=fs[0]; raw=open(p,'rb').read(); o=json.loads(raw)
+          ch=o.get('channels',[]); c=o.get('chunk',{})
+          ok=(isinstance(o,dict) and o.get('iteration')==381 and o.get('scientific_gate_pass') is True
+              and len(ch)==3 and c.get('size')==3
+              and [x.get('global_simple_double_index') for x in ch]==list(range(c.get('start_inclusive'),c.get('end_exclusive'))))
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':381,'found_iteration':o.get('iteration'),
+             'valid_single_top_level':True,'scientific_authority_pass':bool(ok),'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw),
+             'chunk_start':c.get('start_inclusive'),'chunk_end':c.get('end_exclusive')}
+          open('iteration381_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          assert ok
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration381-chunk-${{ matrix.chunk.label }}
+          path: |
+            iteration381_chunk_${{ matrix.chunk.label }}.json
+            iteration381_authority_audit.json
