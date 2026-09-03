@@ -1,0 +1,22 @@
+{
+  "iteration": 330,
+  "model_readiness_percent": 24,
+  "scientific_gate_pass": false,
+  "classification": "FAIL_SCOPED_GATE_DESIGN_CLOSED_TARGET_INCORRECTLY_REQUIRED_NONZERO__PHYSICAL_NUMERATOR_MAPS_PASS",
+  "candidate_residual": false,
+  "run": 33742740272,
+  "job": 100608154572,
+  "artifact": 9888378042,
+  "artifact_digest": "sha256:368ea05e9fbef3ec4c3aa9907290aebfc8f208e97bf07f3d2744269bf2541c76",
+  "validated_observations": {
+    "sequence_count": 13,
+    "canonical_family_counts": {"singleton": 1, "bubble": 3, "signed_affine_triangle": 1},
+    "max_heldout_denominator_map_scaled_error": 1.1102230246251565e-16,
+    "max_heldout_reconstruction_scaled_error": 1.3877787807814457e-17,
+    "numerical_threshold": 5e-10,
+    "physical_route_checks_pass": true
+  },
+  "failure_cause": "Auxiliary qdiff_nonzero assertion ranged over all nonzero subindices including TARGET=(1,1,1). On the frozen closed triad q(TARGET)=q1+q2+q3=0 by definition. The assertion should apply only to proper nonzero subindices that define external denominator differences.",
+  "typed_interpretation": "Scoped gate-design FAIL only; not a Candidate Gravity consistency FAIL, not an H/N kernel FAIL, not comparator identity, near-degeneracy, non-identifiability, or novelty result.",
+  "guardrails": ["PRESERVE_ITERATION330_FAIL", "NO_RETROACTIVE_PASS", "NO_THRESHOLD_CHANGE", "NO_PARENT_DYNAMICS_CHANGE", "NO_ANSATZ003", "NO_FISHER_RESOURCES"]
+}
