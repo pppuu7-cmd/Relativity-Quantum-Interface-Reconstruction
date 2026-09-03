@@ -7,6 +7,7 @@ on:
       - 'candidate_gravity/code/iteration332_det_timelike_closed_triad_numerator_family_fixture.py'
       - '.github/workflows/rqir-iteration332-det-timelike-closed-triad-numerator-family-fixture.yml'
 
+# Rerun after serialization-only repair; scientific fixture and thresholds unchanged.
 jobs:
   iteration332:
     runs-on: ubuntu-latest
