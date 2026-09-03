@@ -1,0 +1,87 @@
+name: rqir-iteration384-u2-repeated-cut-full48-two-channel-chunks
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration384_u2_repeated_cut_full48_chunk.py'
+      - '.github/workflows/rqir-iteration384-u2-repeated-cut-full48-two-channel-chunks.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration384:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        include:
+          - {start: 0, end: 2, label: '00-01'}
+          - {start: 2, end: 4, label: '02-03'}
+          - {start: 4, end: 6, label: '04-05'}
+          - {start: 6, end: 8, label: '06-07'}
+          - {start: 8, end: 10, label: '08-09'}
+          - {start: 10, end: 12, label: '10-11'}
+          - {start: 12, end: 14, label: '12-13'}
+          - {start: 14, end: 16, label: '14-15'}
+          - {start: 16, end: 18, label: '16-17'}
+          - {start: 18, end: 20, label: '18-19'}
+          - {start: 20, end: 22, label: '20-21'}
+          - {start: 22, end: 24, label: '22-23'}
+          - {start: 24, end: 26, label: '24-25'}
+          - {start: 26, end: 28, label: '26-27'}
+          - {start: 28, end: 30, label: '28-29'}
+          - {start: 30, end: 32, label: '30-31'}
+          - {start: 32, end: 34, label: '32-33'}
+          - {start: 34, end: 36, label: '34-35'}
+          - {start: 36, end: 38, label: '36-37'}
+          - {start: 38, end: 40, label: '38-39'}
+          - {start: 40, end: 42, label: '40-41'}
+          - {start: 42, end: 44, label: '42-43'}
+          - {start: 44, end: 46, label: '44-45'}
+          - {start: 46, end: 48, label: '46-47'}
+    name: iteration384 (${{ matrix.label }})
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check -q numpy
+      - name: Run fixed two-channel U2 repeated-cut chunk
+        env:
+          START_INDEX: ${{ matrix.start }}
+          END_INDEX: ${{ matrix.end }}
+        run: |
+          mkdir -p candidate_gravity/artifacts/iteration384/${{ matrix.label }}
+          python candidate_gravity/code/iteration384_u2_repeated_cut_full48_chunk.py > candidate_gravity/artifacts/iteration384/${{ matrix.label }}/iteration384_result.json
+      - name: Sentinel/schema/chunk audit
+        env:
+          START_INDEX: ${{ matrix.start }}
+          END_INDEX: ${{ matrix.end }}
+        run: |
+          python - <<'PY'
+          import hashlib,json,os,pathlib
+          label='${{ matrix.label }}'
+          p=pathlib.Path(f'candidate_gravity/artifacts/iteration384/{label}/iteration384_result.json')
+          raw=p.read_bytes(); o=json.loads(raw)
+          start=int(os.environ['START_INDEX']); end=int(os.environ['END_INDEX'])
+          assert o['iteration']==384
+          assert o['scientific_gate_pass'] is True
+          assert o['chunk']['start_index']==start and o['chunk']['end_index_exclusive']==end
+          assert [r['global_channel_index'] for r in o['records']]==list(range(start,end))
+          assert len(o['records'])==2
+          assert all(r['status'] in ('CONVERGED','BLOCKED_CONVERGENCE') for r in o['records'])
+          audit={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':384,
+                 'found_iteration':o['iteration'],'valid_single_top_level':isinstance(o,dict),
+                 'scientific_authority_pass':bool(o['scientific_gate_pass']),
+                 'start_index':start,'end_index_exclusive':end,
+                 'record_indices':[r['global_channel_index'] for r in o['records']],
+                 'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw)}
+          pathlib.Path(f'candidate_gravity/artifacts/iteration384/{label}/iteration384_authority_audit.json').write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration384-${{ matrix.label }}
+          path: candidate_gravity/artifacts/iteration384/${{ matrix.label }}/
+          if-no-files-found: error
