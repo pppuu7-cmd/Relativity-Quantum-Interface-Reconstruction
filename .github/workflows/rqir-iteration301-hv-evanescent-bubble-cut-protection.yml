@@ -1,0 +1,43 @@
+name: rqir-iteration301-hv-evanescent-bubble-cut-protection
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration301_hv_evanescent_bubble_cut_protection.py'
+      - 'candidate_gravity/code/iteration298_validate_action_result.py'
+      - '.github/workflows/rqir-iteration301-hv-evanescent-bubble-cut-protection.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration301:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependencies
+        run: python -m pip install --upgrade pip numpy scipy
+      - name: Run Iteration 301 HV evanescent bubble-cut protection audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration301_hv_evanescent_bubble_cut_protection.py > iteration301_result.json
+      - name: Validate Iteration 301 authority sentinel/schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration298_validate_action_result.py \
+            iteration301_result.json \
+            --expected-iteration 301 \
+            --output iteration301_authority_audit.json
+      - name: Upload Iteration 301 result
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration301-result
+          path: |
+            iteration301_result.json
+            iteration301_authority_audit.json
+          if-no-files-found: error
