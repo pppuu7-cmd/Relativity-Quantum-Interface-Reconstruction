@@ -1,0 +1,38 @@
+name: rqir-iteration305-timelike-tru1-visible-triangle-cut
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration305_timelike_tru1_visible_triangle_cut_laurent.py'
+      - '.github/workflows/rqir-iteration305-timelike-tru1-visible-triangle-cut.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration305:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependencies
+        run: pip install numpy scipy
+      - name: Run Iteration 305 visible triangle cut reduction
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration305_timelike_tru1_visible_triangle_cut_laurent.py > iteration305_result.json
+      - name: Validate Iteration 305 authority sentinel/schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration298_validate_action_result.py iteration305_result.json 305 > iteration305_authority_audit.json
+      - name: Upload Iteration 305 result
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration305-result
+          path: |
+            iteration305_result.json
+            iteration305_authority_audit.json
