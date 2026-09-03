@@ -1,0 +1,55 @@
+{
+  "iteration": 308,
+  "date": "2026-09-03",
+  "classification": "PASS_E2C1_CUBIC_BACKGROUND_PLACEMENT_AND_NULLSOFT_PRUNING_AUDIT__EXACT_V1_H_KERNEL_IMPLEMENTATION_REMAINS",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "U2": {
+    "factor_sequence": ["N_L", "V1_L", "H", "V1_R", "N_R", "Y"],
+    "raw_ordered_primitive_count": 30,
+    "singleton_soft_killed_count": 18,
+    "surviving_ordered_primitive_count": 12,
+    "surviving_by_extra_site": {
+      "N_L": 2,
+      "V1_L": 2,
+      "H": 2,
+      "V1_R": 2,
+      "N_R": 2,
+      "Y": 2
+    }
+  },
+  "Tr_U1_sq": {
+    "U1_factor_sequence": ["N_L", "V2", "N_R", "Y"],
+    "raw_ordered_primitive_count": 42,
+    "singleton_soft_killed_count": 26,
+    "surviving_ordered_primitive_count": 16,
+    "surviving_cyclic_trace_class_count": 8,
+    "surviving_by_second_order_extra_site": {
+      "V2": 4,
+      "N_L": 4,
+      "N_R": 4,
+      "Y": 4
+    }
+  },
+  "proven_zero_rule": "Only a singleton null-soft leg on a linear EOM vertex V1 or V2 is removed via E^(1)[h_s]=0. Mixed soft-hard quadratic EOM vertices are retained.",
+  "effective_action_identity_scope": "+(i/2) Tr U2 -(i/4) Tr U1^2 at EOM degree 2, with cubic background placement enumerated here.",
+  "github_actions": {
+    "run_id": 33703692659,
+    "job_id": 100488195810,
+    "artifact_id": 9874425140,
+    "artifact_name": "iteration308-result",
+    "artifact_digest": "sha256:bfbdb7e04859109b79f337132a29d94624fa226d089dbee9f95410a8c0dc53e3",
+    "head_sha": "2bfd7ac2cdab22aeca3f443aa329d012ab7ecb3b",
+    "scientific_json_sha256": "7623aa20ab729d2fe13a3da8f8d464431d32fc431b042c94a712a169f125db5b",
+    "top_level_object_count": 1,
+    "validator_pass": true
+  },
+  "guardrails": [
+    "NO_UNPROVEN_LEFT_RIGHT_OR_REVERSAL_QUOTIENT_APPLIED_TO_U2_SURVIVORS",
+    "MIXED_SOFT_HARD_EOM_VERTICES_ARE_NOT_ZERO_FILLED",
+    "THIS_AUDIT_DOES_NOT_EVALUATE_TRU2_OR_TRU1SQ_NUMERICALLY",
+    "NO_HEAVY_FULL_C5_RUN_AUTHORIZED",
+    "NO_SOURCE_WARD_K2_COMPLETION_NO_COMPARATOR_RESIDUAL_NO_ANSATZ003"
+  ],
+  "next_gate": "Derive and freeze the exact same-parent primary U2 index formula as an executable V1-H-V1 kernel, including H0 and the first-background H1/V1_2 ingredients required by the 12 surviving U2 placements; reuse authoritative U1 primitives for the 8 cyclic Tr U1^2 classes."
+}
