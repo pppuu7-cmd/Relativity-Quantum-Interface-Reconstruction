@@ -33,14 +33,15 @@ src=src.replace('PASS_PHYSICAL_CUBIC_DETERMINANT_NUMERATOR_SIGNED_AFFINE_FAMILY_
 src=src.replace('FAIL_PHYSICAL_CUBIC_DETERMINANT_NUMERATOR_SIGNED_AFFINE_FAMILY_RECONSTRUCTION',
                 'FAIL_TIMELIKE_CLOSED_TRIAD_PHYSICAL_CUBIC_DETERMINANT_NUMERATOR_FAMILY_FIXTURE')
 # Add an explicit all-three-timelike check to the final scientific gate.
+# Cast to builtin float so the unchanged parent JSON encoder sees ordinary JSON scalars.
 needle="ok=(len(seqs)==13 and len(single_reps)==1 and len(bubble_reps)==3 and len(tri_reps)==1\n    and max_reconstruction<threshold and max_denmap<threshold and qdiff_nonzero)"
-replacement="timelike_q2=[denom(np.array(q,float)/100.0) for q in QINT]\ntimelike_closed_fixture=(all(x < -1e-12 for x in timelike_q2) and np.linalg.matrix_rank(np.array(QINT,float))==2)\nok=(len(seqs)==13 and len(single_reps)==1 and len(bubble_reps)==3 and len(tri_reps)==1\n    and max_reconstruction<threshold and max_denmap<threshold and qdiff_nonzero and timelike_closed_fixture)"
+replacement="timelike_q2=[float(denom(np.array(q,float)/100.0)) for q in QINT]\ntimelike_closed_fixture=(all(x < -1e-12 for x in timelike_q2) and np.linalg.matrix_rank(np.array(QINT,float))==2)\nok=(len(seqs)==13 and len(single_reps)==1 and len(bubble_reps)==3 and len(tri_reps)==1\n    and max_reconstruction<threshold and max_denmap<threshold and qdiff_nonzero and timelike_closed_fixture)"
 if src.count(needle)!=1:
     raise RuntimeError('Iteration-330 final gate signature changed; refuse implicit rebase')
 src=src.replace(needle,replacement,1)
 # Surface the timelike invariants in the JSON checks.
 needle2="'checks':{'max_heldout_reconstruction_scaled_error':max_reconstruction,"
-replacement2="'timelike_fixture':{'q_squared':timelike_q2,'all_three_timelike':timelike_closed_fixture},\n 'checks':{'max_heldout_reconstruction_scaled_error':max_reconstruction,"
+replacement2="'timelike_fixture':{'q_squared':timelike_q2,'all_three_timelike':bool(timelike_closed_fixture)},\n 'checks':{'max_heldout_reconstruction_scaled_error':max_reconstruction,"
 if src.count(needle2)!=1:
     raise RuntimeError('Iteration-330 checks signature changed; refuse implicit rebase')
 src=src.replace(needle2,replacement2,1)
