@@ -5,7 +5,7 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Latest validated Candidate Gravity authority:** **Iteration 372**
+**Latest validated Candidate Gravity authority:** **Iteration 373**
 
 Repository commits, raw schema-validated Actions artifacts, recovery material and this current front are source of truth. Green workflow colour alone is never scientific authority.
 
@@ -18,25 +18,23 @@ Repository commits, raw schema-validated Actions artifacts, recovery material an
 - Iteration 368 freezes full physical timelike routing: all `42/42` ordered placements NONZERO; cyclic routing identity leaves 21 classes.
 - Iteration 369 finds 15 denominator-translation candidates; Iteration 370 proves `0/6` multi-member candidates are physically numerator-equivalent, so all 21 cyclic classes remain distinct physical numerator+denominator families.
 - Iteration 371 freezes physical repeated-pole authority: all 36 multiplicity-two raw denominator targets survive as physical double poles (`SURVIVE=36`, `CANCEL=0`, `BLOCKED=0`).
-- **Iteration 372 freezes timelike cut-support topology across those 21 physical families: 57 channels total, exactly 19 per q2 coordinate. Singularity census is 6 simple-simple, 36 simple-double, 15 double-double.** Only the six simple-simple channels may enter an ordinary-simple regularity/integration branch; all 51 channels containing a double pole remain outside ordinary-simple Cutkosky authority.
+- Iteration 372 freezes timelike cut-support topology across those 21 physical families: 57 channels total, exactly 19 per q2 coordinate. Singularity census is 6 simple-simple, 36 simple-double, 15 double-double.
+- **Iteration 373 closes the ordinary-simple on-shell prerequisite: all 6/6 simple-simple channels are `REGULAR`, `BLOCKED=0`; the minimum analytically certified absolute uncut denominator over the full cut sphere is `0.11857864376269048`, and the maximum cut-shell error is `5.551115123125783e-17`.** These six channels may now enter normalized q2-resolved discontinuity integration. All 51 channels containing a double pole remain outside ordinary-simple authority.
 
-Iteration-372 authority: `PASS_TRU1SQ_21_PHYSICAL_FAMILIES_TIMELIKE_CUT_SUPPORT_AND_SINGULARITY_TOPOLOGY`.
+Iteration-373 authority: `PASS_TRU1SQ_SIMPLE_SIMPLE_ON_SHELL_REGULARITY_AND_UNCUT_SEPARATION__REGULAR_6__BLOCKED_0`.
 
-Provenance: run `33807434918`, job `100821143369`, artifact `9913468040`, artifact digest `sha256:430936e6bbfc0cb374ab0db0d79f7082a6364d1e99317836a0ea6b20c72898ee`, raw scientific JSON SHA-256 `10938d2749dfd437c9385b68540a23dbb8a5fde4eb77c60ce60e97777a740bc4`, workflow head `16c262b221c5d02cb5a6c6129e4e1cb6fca96a3b`.
+Provenance: run `33811317505`, job `100833556196`, artifact `9914922078`, artifact digest `sha256:f42b3e73a019a0556a3f37ba3ea56328e4137648f961f3248abe81517f8c9ca1`, raw scientific JSON SHA-256 `249b7705e72cb0aa0d7e72bc7becd75fbbcd68091924bfb883c76ff4f48bbf92`, workflow head `0e4790fc220f698482b08832f9436e3ec2b59868`.
 
 ## Active computation
 
-**Iteration 373 is in progress and must not be duplicated:** run `33811317505`, job `100833556196`, workflow `rqir-iteration373-tru1sq-simple-simple-regularity`, head `0e4790fc220f698482b08832f9436e3ec2b59868`.
-
-Iteration 373 evaluates only the six Iteration-372 simple-simple channels. It constructs the exact massless two-line cut sphere, analytically certifies all uncut denominator groups over the full sphere, and checks convergence/regularity of the fully stripped physical traced numerator using symmetric radial off-shell limits. It performs no discontinuity integral and excludes all double-pole channels.
+No duplicate Iteration 373 run is allowed. Before launching a normalized simple-simple cut, check current Actions for an already active successor.
 
 ## Exact next gates
 
-1. Consume Iteration 373 raw artifact and freeze only REGULAR simple-simple channels.
-2. If all six simple-simple channels are REGULAR, perform normalized q2-resolved `Tr U1^2` discontinuity for those six only, preserving the three q2 coordinates separately.
-3. For the 36 simple-double and 15 double-double channels, generalize and validate the already-frozen auxiliary-mass derivative/distributional bridge to the exact cut multiplicities/kinematics before any integration. Ordinary-simple substitution is forbidden.
-4. Independently replace cancelled Iteration 364 only with targeted reduced/analytic or isolated-channel treatment of the 48 cut-through-double-pole `Tr U2` channels.
-5. Only after complete physical `Tr U2` and `Tr U1^2` closure may `+(i/2)Tr U2 -(i/4)Tr U1^2` be assembled. Source/Ward/contact completion and matched `K2` subtraction remain downstream; Source/Born subtraction is forbidden before normalized origin accounting.
+1. Perform normalized q2-resolved `Tr U1^2` discontinuity for **only the six Iteration-373 REGULAR simple-simple channels**, inheriting frozen massless two-particle phase-space and loop/effective-action normalization conventions and preserving `q^2=-0.14`, `-0.34`, `-1` separately.
+2. For the 36 simple-double and 15 double-double channels, generalize and validate the already-frozen auxiliary-mass derivative/distributional bridge to the exact cut multiplicities/kinematics before any integration. Ordinary-simple substitution is forbidden.
+3. Independently replace cancelled Iteration 364 only with targeted reduced/analytic or isolated-channel treatment of the 48 cut-through-double-pole `Tr U2` channels.
+4. Only after complete physical `Tr U2` and `Tr U1^2` closure may `+(i/2)Tr U2 -(i/4)Tr U1^2` be assembled. Source/Ward/contact completion and matched `K2` subtraction remain downstream; Source/Born subtraction is forbidden before normalized origin accounting.
 
 Iteration-297 evanescent/regulator warning remains binding. No Candidate residual may be declared before the fixed comparator quotient survives.
 
@@ -51,7 +49,7 @@ Iteration-297 evanescent/regulator warning remains binding. No Candidate residua
 
 MODEL_READINESS: 24%
 
-Change through Iteration 372: `0 pp`. Timelike `Tr U1^2` cut-support and singularity classes are now frozen, but no complete readiness-rubric point or robust comparator-subtracted residual has closed.
+Change through Iteration 373: `0 pp`. The simple-simple `Tr U1^2` on-shell regularity prerequisite is now closed, but no complete readiness-rubric point or robust comparator-subtracted residual has closed.
 
 ## Retained guardrails
 
