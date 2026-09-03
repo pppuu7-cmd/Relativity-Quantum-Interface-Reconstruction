@@ -1,0 +1,41 @@
+name: rqir-iteration367-tru1sq-timelike-singleton-pruning-reaudit
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration367_tru1sq_timelike_singleton_pruning_reaudit.py'
+      - '.github/workflows/rqir-iteration367-tru1sq-timelike-singleton-pruning-reaudit.yml'
+
+jobs:
+  iteration367:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical dependency
+        run: pip install numpy
+      - name: Run TrU1sq timelike singleton pruning reaudit
+        run: python candidate_gravity/code/iteration367_tru1sq_timelike_singleton_pruning_reaudit.py > iteration367_result.json
+      - name: Sentinel/schema audit
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          raw=open('iteration367_result.json','rb').read(); o=json.loads(raw)
+          ok=isinstance(o,dict) and o.get('iteration')==367 and o.get('scientific_gate_pass') is True
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':367,
+             'found_iterations':[o.get('iteration')],'top_level_object_count':1,
+             'valid_single_top_level':True,'valid_expected_iteration':o.get('iteration')==367,
+             'scientific_authority_pass':bool(ok),'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw)}
+          open('iteration367_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          assert ok
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration367-result
+          path: |
+            iteration367_result.json
+            iteration367_authority_audit.json
