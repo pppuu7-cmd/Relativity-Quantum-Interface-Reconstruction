@@ -27,11 +27,13 @@ Provenance: run `33811317505`, job `100833556196`, artifact `9914922078`, artifa
 
 ## Active computation
 
-No duplicate Iteration 373 run is allowed. Before launching a normalized simple-simple cut, check current Actions for an already active successor.
+- **Iteration 374** normalized q2-resolved `Tr U1^2` simple-simple discontinuity is active as a single Actions run: `33812352303`, job `100836834321`, workflow head `cb2ddc7d838d0ba1844339d447445b3a8a613124`.
+- It evaluates only the six Iteration-373 `REGULAR` simple-simple channels and inherits the frozen Iteration-337 bridge `D_s I[F] = - sphere_mean(F)`; the separate reduced-one-loop coefficient `-i/4 Tr U1^2` is not folded into this coordinate.
+- Do **not** launch a duplicate Iteration 374 while this run is active. Its result has no scientific authority until sentinel/schema and raw artifact validation complete.
 
 ## Exact next gates
 
-1. Perform normalized q2-resolved `Tr U1^2` discontinuity for **only the six Iteration-373 REGULAR simple-simple channels**, inheriting frozen massless two-particle phase-space and loop/effective-action normalization conventions and preserving `q^2=-0.14`, `-0.34`, `-1` separately.
+1. Consume Iteration 374 only after raw artifact validation. If all six channels converge, freeze the three q2-resolved simple-simple `Tr U1^2` coordinates separately. If any channel is convergence-BLOCKED, strengthen only that channel's quadrature/analytic reduction without weakening thresholds.
 2. For the 36 simple-double and 15 double-double channels, generalize and validate the already-frozen auxiliary-mass derivative/distributional bridge to the exact cut multiplicities/kinematics before any integration. Ordinary-simple substitution is forbidden.
 3. Independently replace cancelled Iteration 364 only with targeted reduced/analytic or isolated-channel treatment of the 48 cut-through-double-pole `Tr U2` channels.
 4. Only after complete physical `Tr U2` and `Tr U1^2` closure may `+(i/2)Tr U2 -(i/4)Tr U1^2` be assembled. Source/Ward/contact completion and matched `K2` subtraction remain downstream; Source/Born subtraction is forbidden before normalized origin accounting.
@@ -49,7 +51,7 @@ Iteration-297 evanescent/regulator warning remains binding. No Candidate residua
 
 MODEL_READINESS: 24%
 
-Change through Iteration 373: `0 pp`. The simple-simple `Tr U1^2` on-shell regularity prerequisite is now closed, but no complete readiness-rubric point or robust comparator-subtracted residual has closed.
+Change through Iteration 373: `0 pp`. The simple-simple `Tr U1^2` on-shell regularity prerequisite is now closed, but no complete readiness-rubric point or robust comparator-subtracted residual has closed. Iteration 374 is not counted until validated.
 
 ## Retained guardrails
 
