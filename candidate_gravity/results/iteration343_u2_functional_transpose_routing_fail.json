@@ -1,0 +1,51 @@
+{
+  "candidate_residual": false,
+  "classification": "FAIL_U2_FUNCTIONAL_TRANSPOSE_FOURIER_ROUTING",
+  "frozen_rule": {
+    "background_momentum": "both orientations carry the same +Q external insertion",
+    "left_transposed_vertex": "A_T(Q;k)=A(Q;-k-Q)^T, maps field momentum k -> ghost momentum k+Q",
+    "right_vertex": "A_R(Q;p)=A(Q;p), maps ghost momentum p -> field momentum p+Q",
+    "trace_consequence": "ordinary closed-loop external-momentum sum remains sum_i Q_i=0"
+  },
+  "guardrails": [
+    "DO_NOT_USE_A_Q_K_TRANSPOSE_AT_SAME_K_FOR_LEFT_VERTEX",
+    "ITERATION340_INDEX_TRANSPOSE_ORIENTATION_BINDING",
+    "ITERATION340_HINV_VD_MINUS_KINV_BINDING",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "iteration": 343,
+  "model_readiness_percent": 24,
+  "next_gate": "assemble the cubic-background physical Tr U2 coefficient with the frozen Iteration308 placement map, using A_T(Q;k)=A(Q;-k-Q)^T on the left, Iteration339/340 Hinv routing/sign, and Iteration342 ghost N/Y routing; validate the 12 null-soft surviving routes before cut integration",
+  "scientific_gate_pass": false,
+  "scope": {
+    "D": 4,
+    "Lambda": 0,
+    "gamma1": 1,
+    "gamma2": 0,
+    "metric_split": "g=eta+h",
+    "physical_vertex": "primary Eq55 linear A1"
+  },
+  "status": {
+    "A1_A2_components": "FROZEN_ITERATION341",
+    "N_Y_routing": "FROZEN_ITERATION342",
+    "TrU2_assembly": "BLOCKED",
+    "functional_A_transpose_routing": "FAIL_PRESERVE"
+  },
+  "validation": {
+    "bilinear_pairing_error": 3.469446951953614e-17,
+    "fourier_phase_closure_error": 5.551115123125783e-17,
+    "iteration341_A1_mode0_crosscheck_error": 0.013671081585830242,
+    "iteration341_A1_mode1_crosscheck_error": 0.008503207545917577,
+    "thresholds": {
+      "A1_independent_crosscheck_abs_max": 2e-12,
+      "pairing_abs_max": 2e-13,
+      "phase_closure_abs_max": 1e-15,
+      "transpose_kernel_abs_max": 1e-13,
+      "wrong_route_difference_min": 1e-06
+    },
+    "transpose_kernel_error": 3.469446951953614e-18,
+    "wrong_same_momentum_route_difference": 0.04970204462797344
+  }
+}
