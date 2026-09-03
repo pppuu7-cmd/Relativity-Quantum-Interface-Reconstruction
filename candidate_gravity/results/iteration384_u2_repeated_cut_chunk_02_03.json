@@ -1,0 +1,19 @@
+{
+  "iteration": 384,
+  "chunk_label": "02-03",
+  "classification": "PASS_U2_REPEATED_CUT_FULL48_TWO_CHANNEL_CHUNK_EXECUTION",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "model_readiness_percent": 24,
+  "chunk": {"start_index": 2, "end_index_exclusive": 4, "expected_indices": [2, 3]},
+  "converged_count": 2,
+  "blocked_convergence_count": 0,
+  "records": [
+    {"global_channel_index":2,"q2":-1.0,"route":3,"subterm":1,"group_pair":[0,2],"repeated_group":2,"other_cut_group":0,"cut_algebraic_sign":1.0,"D_s_TrU2_repeated_high":[-5.658515752253817e-05,0.0],"D_s_TrU2_repeated_low":[-5.658013341451364e-05,0.0],"D_s_TrU2_repeated_high_phi_shifted":[-5.658505010340744e-05,0.0],"D_s_TrU2_repeated_halfstep":[-5.658515752254915e-05,0.0],"scaled_convergence_error":5.024108024534045e-09,"max_cut_shell_abs_error":1.424535775527546e-16,"minimum_sampled_uncut_abs_denominator":0.12097368457851283,"runtime_seconds":241.467174199,"status":"CONVERGED"},
+    {"global_channel_index":3,"q2":-0.14,"route":3,"subterm":1,"group_pair":[1,2],"repeated_group":2,"other_cut_group":1,"cut_algebraic_sign":-1.0,"D_s_TrU2_repeated_high":[-3.1312915780569454e-05,0.0],"D_s_TrU2_repeated_low":[-3.1312915738707764e-05,0.0],"D_s_TrU2_repeated_high_phi_shifted":[-3.1312915780406356e-05,0.0],"D_s_TrU2_repeated_halfstep":[-3.1312915779974735e-05,0.0],"scaled_convergence_error":4.186168962470524e-14,"max_cut_shell_abs_error":6.012578672789926e-17,"minimum_sampled_uncut_abs_denominator":0.46104698933205535,"runtime_seconds":250.423068731,"status":"CONVERGED"}
+  ],
+  "runtime_seconds":491.890302884,
+  "frozen_arithmetic":{"parent":"Iteration364 channel_derivative verbatim","base_h":5e-06,"halfstep_h":2.5e-06,"low_grid":[6,12],"high_grid":[8,16],"phi_shift_check":0.5,"convergence_threshold":2e-05,"shell_threshold":2e-10,"normalization":"D_s_repeated=sphere_mean[d_mu2(beta*cut_sign*num/D_uncut)]"},
+  "validated_action":{"run_id":33817712381,"job_id":100853419008,"artifact_id":9917341947,"artifact_digest":"sha256:73df9fd4d654e677dc02acdfe283abb4d9c26bf91bd478fae40f1d0c7993528f","scientific_json_sha256":"12e077f1b0a6f26ca7af44d4378f5895f7a0b84a0075dd4232c657a95c96e85f","workflow_head":"dcae3ac454fd81f19c6d02d4815f07a741afefc7"},
+  "guardrails":["PARTIAL_CHUNK_ONLY","NO_Q2_BUCKET_PROMOTION_FROM_PARTIAL_CHANNELS","EXACT_48_INDEX_ASSEMBLY_REQUIRED","BLOCKED_NEVER_ZERO_FILLED","NO_EFFECTIVE_ACTION_WEIGHT_FOLDING","NO_SOURCE_BORN_SUBTRACTION","NO_ANSATZ003","NO_FISHER_RESOURCES"]
+}
