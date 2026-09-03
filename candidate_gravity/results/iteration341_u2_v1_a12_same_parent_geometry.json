@@ -1,0 +1,71 @@
+{
+  "background_coefficients": {
+    "A0_max_abs": 0.0,
+    "A1_mode_count": 2,
+    "A1_oracle_max_abs_error": 5.3656298154569626e-14,
+    "A2_oracle_max_abs_error": 4.2452437485490657e-10,
+    "A2_partition_count": 3,
+    "max_abs_A1_kernel": 0.018650374927342728,
+    "max_abs_A2_kernel": 0.003959180245018564,
+    "per_multiindex_oracle_max_abs_error": {
+      "(0, 0)": 3.090079200061381e-17,
+      "(0, 1)": 5.3656298154569626e-14,
+      "(0, 2)": 5.848665898377375e-11,
+      "(1, 0)": 3.1748909057327523e-14,
+      "(1, 1)": 3.1988092903667553e-10,
+      "(2, 0)": 4.2452437485490657e-10
+    },
+    "thresholds": {
+      "A0_abs_max": 1e-12,
+      "A1_oracle_abs_max": 1e-09,
+      "A2_oracle_abs_max": 2e-07
+    }
+  },
+  "candidate_residual": false,
+  "classification": "PASS_U2_PHYSICAL_SAME_PARENT_V1_A1_A2_BACKGROUND_KERNELS_EQ55_EXACT_GEOMETRY_ORACLE__NY_ROUTING_REMAINS_BLOCKED",
+  "guardrails": [
+    "NO_U2_ASSEMBLY_BEFORE_NY_ROUTING",
+    "ITERATION340_AT_A_ORIENTATION_AND_HINV_MINUS_SIGN_BINDING",
+    "UNSUPPORTED_IS_BLOCKED_NOT_ZERO_FILLED",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "NO_BLIND_FULL_C5"
+  ],
+  "iteration": 341,
+  "model_readiness_percent": 24,
+  "next_gate": "close same-parent N/Y inverse-routing bridge in the a=-1/2 minimal ghost convention, using Eq57 and the already-frozen ghost operator; then assemble first-background-order Tr U2 with A.T/A and Hinv_VD=-K^-1",
+  "oracle": {
+    "amplitude_fit_scale": 0.0008,
+    "coordinate_fd_step": 2e-05,
+    "type": "exact geometry plus coordinate finite differences for nabla Ricci and independent amplitude fit"
+  },
+  "orientation": {
+    "A": "field x ghost (10x4)",
+    "V1_L": "A.T (4x10)",
+    "V1_R": "A (10x4)",
+    "u2_sign_bridge": "Hinv_VD=-K^{-1} from Iteration340"
+  },
+  "primary_authority": "Giacchini-de Paula Netto-Shapiro 2020 arXiv:2006.04217v4 Eqs.54-55",
+  "scientific_gate_pass": true,
+  "specialization": {
+    "D": 4,
+    "Lambda": 0,
+    "a": "-1/2",
+    "background_modes": 2,
+    "gamma1": 1,
+    "gamma2": 0,
+    "ghost_test_momentum": [
+      0.43,
+      -0.27,
+      0.39,
+      0.21
+    ],
+    "metric_split": "g=eta+h"
+  },
+  "status": {
+    "N_Y_inverse_routing": "BLOCKED_SEPARATE_GATE",
+    "physical_A1_A2": "FROZEN_EXECUTABLE",
+    "physical_TrU2_numerator": "BLOCKED_UNTIL_NY_ROUTING"
+  }
+}
