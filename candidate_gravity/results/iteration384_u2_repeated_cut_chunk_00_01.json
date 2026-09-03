@@ -1,0 +1,20 @@
+{
+  "iteration":384,
+  "chunk_label":"00-01",
+  "classification":"PASS_U2_REPEATED_CUT_FULL48_TWO_CHANNEL_CHUNK_EXECUTION",
+  "scientific_gate_pass":true,
+  "candidate_residual":false,
+  "model_readiness_percent":24,
+  "chunk":{"start_index":0,"end_index_exclusive":2,"expected_indices":[0,1]},
+  "converged_count":2,
+  "blocked_convergence_count":0,
+  "records":[
+    {"global_channel_index":0,"q2":-1.0,"route":1,"subterm":1,"group_pair":[0,2],"repeated_group":2,"other_cut_group":0,"cut_algebraic_sign":1.0,"D_s_TrU2_repeated_high":[-1.1437983592303379e-05,0.0],"D_s_TrU2_repeated_low":[-1.1438811627640377e-05,0.0],"D_s_TrU2_repeated_high_phi_shifted":[-1.1438001667849296e-05,0.0],"D_s_TrU2_repeated_halfstep":[-1.1437983587686573e-05,0.0],"scaled_convergence_error":8.280353369982061e-10,"max_cut_shell_abs_error":1.6132928326584306e-16,"minimum_sampled_uncut_abs_denominator":0.12097568457851282,"runtime_seconds":412.10371859199995,"status":"CONVERGED"},
+    {"global_channel_index":1,"q2":-0.33999999999999997,"route":1,"subterm":1,"group_pair":[1,2],"repeated_group":2,"other_cut_group":1,"cut_algebraic_sign":-1.0,"D_s_TrU2_repeated_high":[-4.274478525717443e-05,0.0],"D_s_TrU2_repeated_low":[-4.27447924763372e-05,0.0],"D_s_TrU2_repeated_high_phi_shifted":[-4.2744785266779054e-05,0.0],"D_s_TrU2_repeated_halfstep":[-4.274478525878212e-05,0.0],"scaled_convergence_error":7.219162767579945e-12,"max_cut_shell_abs_error":1.3053794156725473e-16,"minimum_sampled_uncut_abs_denominator":0.26098892526772083,"runtime_seconds":422.6424863320001,"status":"CONVERGED"}
+  ],
+  "runtime_seconds":834.7462630939999,
+  "cross_run_reproducibility":{"reference_iteration":382,"global_channel_index":0,"high_value_exact_match":true,"low_value_exact_match":true,"shifted_value_exact_match":true,"halfstep_value_exact_match":true,"convergence_error_exact_match":true,"shell_error_exact_match":true,"uncut_min_exact_match":true,"interpretation":"two-channel resource partition reproduces the one-channel frozen arithmetic exactly for the shared channel; runtime is not expected to match"},
+  "frozen_arithmetic":{"parent":"Iteration364 channel_derivative verbatim","base_h":5e-06,"halfstep_h":2.5e-06,"low_grid":[6,12],"high_grid":[8,16],"phi_shift_check":0.5,"convergence_threshold":2e-05,"shell_threshold":2e-10,"normalization":"D_s_repeated=sphere_mean[d_mu2(beta*cut_sign*num/D_uncut)]"},
+  "validated_action":{"run_id":33817712381,"job_id":100853418970,"artifact_id":9917501536,"artifact_digest":"sha256:ed91eb56e89d5b86371ada5c282703af2dcee64bac6dd762aefdc8636f0145ee","scientific_json_sha256":"5e78b07e6b99ca9faba03c6cb2b6aa8e5b46f6b011d43760ff7fef4dad261d6a","workflow_head":"dcae3ac454fd81f19c6d02d4815f07a741afefc7"},
+  "guardrails":["PARTIAL_CHUNK_ONLY","EXACT_48_INDEX_ASSEMBLY_REQUIRED","NO_Q2_BUCKET_PROMOTION_FROM_PARTIAL_CHANNELS","BLOCKED_NEVER_ZERO_FILLED","NO_EFFECTIVE_ACTION_WEIGHT_FOLDING","NO_SOURCE_BORN_SUBTRACTION","NO_ANSATZ003","NO_FISHER_RESOURCES"]
+}
