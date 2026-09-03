@@ -1,0 +1,51 @@
+name: rqir-iteration311-det-e0c3-cubic-logdet-contract
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration311_det_e0c3_cubic_logdet_operator_contract.py'
+      - '.github/workflows/rqir-iteration311-det-e0c3-cubic-logdet-contract.yml'
+
+jobs:
+  iteration311:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check numpy
+      - name: Run determinant operator contract and preserve diagnostics
+        shell: bash
+        run: |
+          set +e
+          python candidate_gravity/code/iteration311_det_e0c3_cubic_logdet_operator_contract.py > iteration311_result.json
+          echo $? > iteration311_exit_code.txt
+          exit 0
+      - name: Authority schema/sentinel audit
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          p='iteration311_result.json'; raw=open(p,'rb').read(); obj=json.loads(raw)
+          ok=isinstance(obj,dict) and obj.get('iteration')==311 and 'scientific_gate_pass' in obj
+          audit={'schema':'rqir_action_result_authority_audit_v1','path':p,'expected_iteration':311,
+                 'found_iterations':[obj.get('iteration')],'top_level_object_count':1,
+                 'valid_single_top_level':True,'valid_expected_iteration':obj.get('iteration')==311,
+                 'scientific_authority_pass':bool(ok and obj.get('scientific_gate_pass')),
+                 'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw)}
+          open('iteration311_authority_audit.json','w').write(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          assert ok, audit
+          PY
+      - name: Upload raw scientific evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration311-result
+          path: |
+            iteration311_result.json
+            iteration311_authority_audit.json
+            iteration311_exit_code.txt
+      - name: Enforce scientific gate after evidence upload
+        run: python -c "import json; o=json.load(open('iteration311_result.json')); assert o['scientific_gate_pass'], o['classification']"
