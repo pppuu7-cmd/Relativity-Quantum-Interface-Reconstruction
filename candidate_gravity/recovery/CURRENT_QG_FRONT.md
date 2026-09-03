@@ -5,7 +5,7 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 317**
+**Authoritative Candidate Gravity front:** **Iteration 318**
 
 Repository commits, schema-validated Actions artifacts and recovery material are source of truth. A green workflow conclusion alone is never scientific authority.
 
@@ -19,41 +19,28 @@ Repository commits, schema-validated Actions artifacts and recovery material are
 - Iteration 313 proves explicit physical `H1/H2/H3,N1/N2/N3` formula authority was absent.
 - Iteration 314 locates all frozen same-parent derivation prerequisites and authorizes explicit component derivation.
 - Iteration 315 derives/validates the ghost inverse-metric, Levi-Civita, Ricci/mixed-Ricci and principal-symbol recursion sublayer.
-- Iteration 316, after correcting only a mixed-Ricci coefficient-allocation bug without threshold changes, validates the full routed vector covariant-Box ghost operator for a single Fourier mode.
-- Iteration 317 independently validates non-collinear mixed ghost routing with three explicit Fourier modes, including the fully mixed cubic `(1,1,1)` coefficient. Full physical ghost `N1/N2/N3` component authority is now frozen for the determinant branch.
+- Iteration 316 validates the full routed vector covariant-Box ghost operator for a single Fourier mode after correcting only a mixed-Ricci allocation bug without threshold changes.
+- Iteration 317 independently validates non-collinear three-mode ghost routing including the fully mixed cubic `(1,1,1)` coefficient; full physical ghost `N1/N2/N3` component authority is frozen.
+- Iteration 318 freezes the exact same-parent local graviton operator specialization at `D=4, Lambda=0, a=-1/2`. From the primary authority, `H=-(I Box+Pi)` and the coefficients reduce identically to `p1=p2=p3=1` for every allowed nondegenerate linear parametrization, so no post-hoc `gamma2` choice is needed. The frozen potential is
+  `Pi^{munu}_{alphabeta} = 2 R^mu_.alpha^nu_.beta - 1/2 g^{munu}R_{alphabeta} - 1/2 g_{alphabeta}R^{munu} + 1/4 g^{munu}g_{alphabeta}R - 1/2 delta^{munu}_{alphabeta}R`.
+  Executable routed `H1/H2/H3` remain BLOCKED.
 
-Validated Iteration-316 provenance:
-- run `33717509817`
-- job `100529695008`
-- head/code commit `debc401e441e5ed0ec16706cdaaf1a75500a722b`
-- artifact `9879043723`, digest `sha256:4fa8792815eb5a2e41ec3232d292c2f985221d1493dc2cbcaf6e46ee866f558b`
-- scientific execution, sentinel/schema audit, upload and final scientific gate PASS.
-
-Freeze:
-`PASS_FULL_ROUTED_GHOST_N123_SINGLE_MODE_CERTIFICATE__MULTIMODE_CROSS_ROUTING_REMAINS_TO_BE_TESTED`.
-
-Validated Iteration-317 provenance:
-- run `33717920513`
-- job `100530900560`
-- workflow/head commit `654ffc6df7a9663996ea5fe996ac222e651b530d`
-- code commit `71550c10edd2dcd3fa3b3bbcc4cedeca52981183`
-- artifact `9879177569`, digest `sha256:048d5fa8d47f782b48e4015ab9786bd82bdc9e35a73a704277e4952741e4296a`
-- scientific execution, sentinel/schema audit, upload and final scientific gate PASS.
-
-Freeze:
-`PASS_GHOST_N123_THREE_MODE_NONCOLLINEAR_ROUTING_CERTIFICATE__FULL_GHOST_COMPONENT_AUTHORITY_FROZEN`.
+Iteration-318 freeze:
+`PASS_D4_LAMBDA0_VD_GRAVITON_OPERATOR_PARAMETRIZATION_INDEPENDENT_SPECIALIZATION__H123_ROUTING_REMAINS_BLOCKED`.
 
 ## Active sectors
 
 - connection `e=1,c<=2`: `Tr U1` cut frozen by Iteration 307.
 - connection `e=2,c<=1`: physical U2 `V1_1/V1_2/H0/H1` remains BLOCKED; U1^2 routing frozen through Iteration 310.
-- determinant `e=0,c<=3`: cubic topology frozen by Iteration 312; full routed ghost `N1/N2/N3` component authority is now frozen through Iteration 317; physical graviton `H1/H2/H3` remains BLOCKED.
+- determinant `e=0,c<=3`: cubic topology frozen by Iteration 312; full routed ghost `N1/N2/N3` authority frozen through Iteration 317; local graviton operator form frozen through Iteration 318; executable routed graviton `H1/H2/H3` remains BLOCKED.
 
 ## Exact next gate
 
-Derive executable same-parent physical graviton `H1/H2/H3` from the frozen minimal Vilkovisky graviton operator at `D=4, Lambda=0, a=-1/2`, with explicit symmetric-tensor index basis, normalization/transposes and momentum routing. Independently validate the series against a direct exact-geometry or equivalent primary-parent oracle before any insertion into the Iteration-312 cubic logdet topology.
+Expand the Iteration-318 frozen minimal tensor Laplace operator under `g=eta+kappa h` through cubic background order:
+`H[g]=H0+kappa H1+kappa^2 H2+kappa^3 H3+...`.
+The derivation must include the full covariant `Box` acting on symmetric rank-2 tensors and all curvature terms in `Pi`, use one explicit 10-component symmetric-tensor basis with fixed normalization/transposes and momentum routing, and be independently validated on non-collinear multimode backgrounds against a direct exact-geometry or equivalent primary-parent oracle before any insertion into the Iteration-312 cubic logdet topology.
 
-Do not populate missing graviton kernels with random matrices, keyword matches, inferred zeros or guessed formulas. The independent connection-sector blocker remains: U2 physical `V1_1/V1_2/H0/H1` formulas must not be invented or zero-filled.
+Do not populate missing graviton kernels with random matrices, inferred zeros or guessed formulas. The independent connection-sector blocker remains: U2 physical `V1_1/V1_2/H0/H1` formulas must not be invented or zero-filled.
 
 ## Stable readiness rubric
 
@@ -66,11 +53,12 @@ Do not populate missing graviton kernels with random matrices, keyword matches, 
 
 MODEL_READINESS: 24%
 
-Change from Iteration 316: `0 pp`. Full ghost determinant component authority is now closed, but no readiness-rubric component and no robust comparator-subtracted residual is closed.
+Change from Iteration 317: `0 pp`. The graviton operator-form/linear-parametrization ambiguity is now closed, but executable `H1/H2/H3`, a physical determinant coefficient, and a robust comparator-subtracted residual remain open.
 
 ## Retained guardrails
 
 - Unsupported comparator/kernel coordinates are `BLOCKED`, never zero-filled.
+- Operator specialization is not executable component/routing authority.
 - Keyword/prerequisite presence is not physical component formula authority.
 - Do not promote random/synthetic matrix tests to physical determinant coefficients.
 - Do not create `ANSATZ-003` until a concrete robust residual survives the fixed comparator quotient.
