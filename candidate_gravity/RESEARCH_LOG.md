@@ -101,3 +101,20 @@ Iteration-297 remains binding for the full finite DR remainder. Family-level abs
 MODEL_READINESS: 24%
 
 Change through Iteration 339: `0 pp`. Exact normalization and a genuine U2 Green-routing prerequisite closed, but no complete readiness-rubric bucket and no robust comparator-subtracted residual have closed.
+
+## 2026-09-04 — Iteration 367
+
+### Iteration 367 — physical timelike `Tr U1^2` pruning re-audit
+Fresh Actions state first established that Iteration 364 had ended operationally cancelled before sentinel/schema validation and without an artifact; no scientific conclusion is assigned to its 48 cut-through-double-pole channels.
+
+Iteration 367 then re-audited only the historical Iteration-310 singleton-soft pruning premise on the current matched timelike common-background fixture. Raw run `33806321673` completed successfully; artifact `9913046693` has digest `sha256:4361ce81fb2be3863b030a4eab5a686c69aceeab0160b229d307353031393e50`, and the raw scientific JSON SHA-256 is `e71b895495d3e00187372430427895e56423ea1be576991cb99e5fdd6f35f87d`. Sentinel/schema authority passed.
+
+The historical null-soft control reproduces `||U1^(1)[s]||_F=4.172141756553574e-16`, but on the timelike fixture the same singleton is decisively nonzero: `||U1^(1)[s]||_F=0.5850412233520722` at `q_s^2=-1`, with nonzero margin `585041.2233520722` over the frozen `1e-6` threshold. Independent derivative checks are stable: step relative spread `9.488417057724452e-16`, two-point versus five-point relative error `7.760065778909101e-10` under frozen `2e-4` tolerances. The other timelike legs are also nonzero: `0.2519141158697874` at `q_a^2=-0.14` and `1.2355711687033575` at `q_b^2=-0.34`.
+
+Authority: `PASS_TRU1SQ_TIMELIKE_REBASE_INVALIDATES_OLD_SINGLETON_SOFT_PRUNING__FULL_PREPRUNING_PHYSICAL_ROUTING_REQUIRED`.
+
+Scientific consequence: the historical Iteration-310 reduction `42 raw ordered placements -> 16 survivors -> 8 cyclic classes` is not transferable to the current physical timelike fixture. Physical `Tr U1^2` must restart from all 42 pre-pruning ordered placements, with route-by-route same-parent `U1=N_L V2 N_R Y` contraction and exact cumulative incoming momenta before any cyclic quotient or cut integration. This is a scoped negative pruning result, not a Candidate Gravity consistency FAIL or comparator identity.
+
+MODEL_READINESS: 24%
+
+Change through Iteration 367: `0 pp`. A false historical shortcut is removed and the physical `Tr U1^2` starting space is now fixed correctly, but no complete readiness-rubric bucket and no robust comparator-subtracted residual have closed. `ANSATZ-003` remains uncreated; Fisher/resources remain forbidden.
