@@ -1,0 +1,43 @@
+{
+  "authority_boundary": {
+    "frozen": "geometric phase-space factor multiplying Iteration-333/335 normalized angular means",
+    "not_frozen": "overall Cutkosky discontinuity sign, i factors, loop prefactor and matched-observable normalization",
+    "reason": "those depend on exact propagator/effective-action convention and require explicit provenance audit"
+  },
+  "candidate_residual": false,
+  "classification": "PASS_EXACT_4D_MASSLESS_TWO_PARTICLE_PHASE_SPACE_NORMALIZATION",
+  "derivation": {
+    "dPhi2_per_dOmega": "1/(32*pi^2)",
+    "integrated_dPhi2": "1/(8*pi)",
+    "loop_2pi_factor": "1/(4*pi^2)",
+    "normalized_sphere_mean_to_phase_space": "1/(8*pi)",
+    "radial_and_delta_jacobian": "1/8"
+  },
+  "guardrails": [
+    "NO_USE_OF_ITERATION335_RESULT",
+    "NO_CHANGE_TO_PARENT_DYNAMICS_OR_NUMERATORS",
+    "NO_CUTKOSKY_SIGN_ASSUMPTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "ITERATION297_FINITE_DR_WARNING_REMAINS_BINDING"
+  ],
+  "iteration": 336,
+  "model_readiness_percent": 24,
+  "next_gate": "audit exact loop-measure/propagator/i convention and then combine with the complete channel-resolved absorptive vector once Iteration 335 resolves or is analytically replaced",
+  "numeric": {
+    "closure_error": 0.0,
+    "dPhi2_per_dOmega": 0.0031662869888230555,
+    "integrated_dPhi2": 0.039788735772973836,
+    "normalized_sphere_mean_factor": 0.039788735772973836
+  },
+  "provenance": {
+    "workflow_run": 33754035543,
+    "job": 100644020489,
+    "artifact": 9892688060,
+    "artifact_digest": "sha256:eaa23f7411d63f0d66216498b750a20609fa19a478662f9fde1f1e14bce0165e",
+    "scientific_json_sha256": "5f84fd4616dcca8eb3bd5beeb396718a74caab9637f77758e4e63aa529f07e53"
+  },
+  "scientific_gate_pass": true,
+  "scope": "geometric Lorentz-invariant two-massless-particle cut phase-space normalization only",
+  "signature": "(-,+,+,+)"
+}
