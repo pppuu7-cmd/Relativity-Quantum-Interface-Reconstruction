@@ -5,7 +5,7 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 312**
+**Authoritative Candidate Gravity front:** **Iteration 313**
 
 Repository commits, schema-validated Actions artifacts and recovery material are source of truth. A green workflow conclusion alone is never scientific authority.
 
@@ -49,23 +49,48 @@ Freeze:
 
 `PASS_DETERMINANT_E0C3_EXACT_CUBIC_LOGDET_OPERATOR_TOPOLOGY_HIGH_PRECISION_AUDIT__PHYSICAL_COMPONENTS_REMAIN_BLOCKED`.
 
+Iteration 313 closes the exact repository-authority inventory prerequisite for physical determinant components. The fail-closed inventory requires all `H1,H2,H3,N1,N2,N3`, frozen scope markers `D=4`, `Lambda=0`, `a=-1/2`, and an explicit authority declaration; keyword presence alone is not formula authority.
+
+Validated Iteration-313 provenance:
+
+- run `33710514505`
+- job `100508774508`
+- head/workflow commit `64fc602924b653ccfd2c02347f1f13876f5426f7`
+- inventory-code commit `8fe5591366e839296c2faf60d95a25b6259fa5bf`
+- artifact `9876732038`, digest `sha256:3f0d0462ac6ec72abe4bf1e81460a7b117908613253ba4f7dc6ffa9370ae9510`
+- scientific JSON SHA-256 `d6c2f44c1b09fdacd660e7561c3d45d91ad5e8547bafa9916f16ff806b81d4b6`
+- exactly one top-level JSON object, sentinel `313`, `scientific_authority_pass=true`
+- `authority_files=[]`.
+
+Freeze:
+
+`PASS_DETERMINANT_COMPONENT_AUTHORITY_INVENTORY__PHYSICAL_COMPONENT_FORMULAS_BLOCKED_ABSENT_EXPLICIT_AUTHORITY`.
+
+Typed blocker:
+
+`BLOCKED_SAME_PARENT_DETERMINANT_COMPONENT_KERNEL_AUTHORITY`.
+
+Scientific interpretation: Iteration 312 proves the cubic logdet operator identity, not a physical determinant coefficient. Iteration 313 finds no explicit same-parent physical component authority in the repository. Missing kernels are unsupported/BLOCKED, not zero; synthetic/random matrix identity tests may not be promoted to physical determinant coefficients. This is operational/provenance BLOCKED, not a Candidate Gravity consistency FAIL, comparator identity, regime-specific non-identifiability, near-degeneracy or novelty certificate.
+
 ## Active sectors
 
 Iteration 246 already closes generic connection `e=3,c=0`; do not reopen it.
 
 - connection `e=1,c<=2`: `Tr U1` cut frozen by Iteration 307
 - connection `e=2,c<=1`: U2 physical components BLOCKED; U1^2 routing frozen through Iteration 310
-- determinant `e=0,c<=3`: exact cubic topology frozen through Iteration 312; same-parent physical graviton/ghost components are the active prerequisite.
+- determinant `e=0,c<=3`: exact cubic topology frozen through Iteration 312; Iteration 313 proves explicit same-parent graviton/ghost component authority is absent and the physical layer remains BLOCKED.
 
 ## Running process
 
-No determinant physical component numerator/cut computation is authorized until explicit same-parent `H1/H2/H3` and ghost `N1/N2/N3` formulas/routing have repository authority. Unsupported components must remain BLOCKED.
+No determinant physical component numerator/cut computation is authorized until explicit same-parent graviton `H1/H2/H3` and ghost `N1/N2/N3` formulas/routing have repository authority. Unsupported components must remain BLOCKED and must not be zero-filled or replaced by synthetic matrices.
 
-Iteration 313 is the exact next lightweight authority-inventory gate: inspect repository sources for those formulas/routing, emit exact provenance when present, otherwise a typed BLOCKED certificate and identify any independent permitted prerequisite. It must not infer formula authority from keyword presence alone.
+No duplicate heavy Action is authorized for this blocker. The next work is a derivation/authority task from the frozen parent dynamics, not blind numerical contraction.
 
 ## Exact next gate
 
-Run/consume Iteration 313 repository-authority inventory. If authoritative same-parent determinant component formulas are present, freeze their conventions/routing before any scoped numerator/cut evaluation. If absent, record determinant physical layer BLOCKED rather than zero-fill and pursue only an independent prerequisite explicitly permitted by the then-current front. U2 physical `V1_1/V1_2/H0/H1` remains independently BLOCKED pending explicit same-parent formulas.
+Derive and freeze executable same-parent determinant graviton `H1/H2/H3` and ghost `N1/N2/N3` component kernels from the frozen parent dynamics in one parameter convention. The derivation must explicitly state index spaces/transposes, normalization, momentum routing, and the `D=4, Lambda=0, a=-1/2` scope, and must receive an independent algebraic/index/routing validation before insertion into the frozen Iteration-312 cubic logdet topology. Until that authority exists, the determinant physical numerator/cut remains BLOCKED.
+
+The independent connection-sector blocker also remains: U2 physical `V1_1/V1_2/H0/H1` component formulas must not be invented or zero-filled.
 
 ## Stable readiness rubric
 
@@ -78,9 +103,13 @@ Run/consume Iteration 313 repository-authority inventory. If authoritative same-
 
 MODEL_READINESS: 24%
 
+Change from Iteration 312: `0 pp`. The authority ambiguity is closed, but no new readiness-rubric block or robust comparator-subtracted residual is closed.
+
 ## Retained guardrails
 
 - Unsupported comparator/kernel coordinates are `BLOCKED`, never zero-filled.
+- Keyword presence is not physical component authority.
+- Do not promote random/synthetic matrix logdet identity tests to physical determinant coefficients.
 - Do not create `ANSATZ-003` until a concrete robust residual survives the fixed comparator quotient.
 - Fisher/resources remain forbidden until a robust nonzero algebraic residual exists after comparator subtraction.
 - Source/Born subtraction only in a matched observable after pole/cut-origin classification.
