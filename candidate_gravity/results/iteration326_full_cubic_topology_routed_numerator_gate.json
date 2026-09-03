@@ -1,0 +1,56 @@
+{
+  "iteration": 326,
+  "date": "2026-09-03",
+  "classification": "PASS_PHYSICAL_HN_ARBITRARY_INCOMING_MOMENTUM_FULL_CUBIC_TOPOLOGY_CERTIFICATE",
+  "candidate_residual": false,
+  "model_readiness_percent": 24,
+  "workflow": {
+    "run_id": 33732390687,
+    "job_id": 100575080806,
+    "artifact_id": 9884357539,
+    "artifact_digest": "sha256:147fe5e1a63d238310ecb26b46280420f2ef7f93db26e554d769c9dbf75e0470",
+    "scientific_result_sha256": "12174bc74e9cb350a6c6ea9c15cdc4db255f9794b91d0289947519a59e75db35",
+    "scientific_exit_code": 0
+  },
+  "scope": {
+    "target_multiindex": [1, 1, 1],
+    "singleton_sequences": 1,
+    "ordered_pair_sequences": 6,
+    "ordered_triple_sequences": 6,
+    "full_cubic_topology_sequences": 13,
+    "unique_incoming_shift_insertion_requests": 19,
+    "all_routes_close": true,
+    "nonzero_shifted_incoming_momenta_tested": true,
+    "cubic_111_singleton_tested": true
+  },
+  "ghost": {
+    "request_count_by_order": {"1": 12, "2": 6, "3": 1},
+    "max_scaled_error_by_order": {"1": 2.4427370126645087e-09, "2": 4.154289856561633e-09, "3": 3.5029705029235303e-06},
+    "frozen_threshold_by_order": {"1": 2e-06, "2": 0.0003, "3": 0.08},
+    "pass": true
+  },
+  "graviton": {
+    "request_count_by_order": {"1": 12, "2": 6, "3": 1},
+    "max_scaled_error_by_order": {"1": 7.896245324268136e-10, "2": 3.99741803894238e-09, "3": 8.485603715067437e-06},
+    "frozen_threshold_by_order": {"1": 3e-06, "2": 0.0005, "3": 0.12},
+    "pass": true
+  },
+  "frozen_authority": {
+    "shifted_denominator_routing": "ITERATION_324",
+    "ghost_N123_arbitrary_incoming_momentum": true,
+    "graviton_H123_arbitrary_incoming_momentum": true,
+    "full_cubic_HN_routing_layer_ready": true,
+    "physical_cubic_determinant_trace_assembly_ready": true,
+    "integrated_determinant_coefficient_ready": false
+  },
+  "guardrails": [
+    "NO_ZERO_FILL",
+    "NO_THRESHOLD_WEAKENING_AFTER_RUN",
+    "ITERATION325_NOT_RETROACTIVELY_EDITED",
+    "NO_SOURCE_BORN_SUBTRACTION_BEFORE_ORIGIN_CLASSIFICATION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "NO_BLIND_HEAVY_FULL_C5"
+  ],
+  "next_gate": "Assemble the physical cubic graviton-minus-ghost determinant trace with the Iteration-324 shifted propagators and Iteration-326 routed H/N numerators; canonicalize denominator families and classify pole/cut origins before Source/Born subtraction."
+}
