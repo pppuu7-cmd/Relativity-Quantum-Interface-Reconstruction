@@ -1,0 +1,30 @@
+{
+  "iteration": 304,
+  "date": "2026-09-03",
+  "classification": "PASS_HV_TRIANGLE_EVANESCENT_CUT_PROTECTION_ALL_274_HIDDEN_POLYNOMIAL_COEFFICIENTS_CUT_NULL_WITHIN_SCOPE",
+  "model_readiness_percent": 24,
+  "scope": "HV-like barred external states; normalized common timelike cut only; one-null two-mass ordinary and all three raised triangle placements on frozen s=0.016 row",
+  "hidden_polynomial_coefficients_screened": 274,
+  "hidden_tensor_screen_count": 21,
+  "max_abs_dimension_shifted_triangle_master_cut_one_over_eps_residue_R_ge_1": 8.606328628868795e-09,
+  "max_abs_hidden_evanescent_triangle_cut_epsilon_to_zero_limit": 8.606328628868795e-09,
+  "max_hidden_evanescent_limit_fit_abs_residual": 1.5300496257887423e-09,
+  "max_hard_edge_swap_covariance_abs_residual": 1.8705037518884637e-12,
+  "ordinary_scalar_triangle_calibration": {
+    "exact_target": 13.013448427221919,
+    "epsilon_to_zero_limit": 13.0134484165539,
+    "abs_residual": 1.0668019359008074e-08
+  },
+  "candidate_residual": false,
+  "github_actions": {
+    "run_id": 33702437466,
+    "job_id": 100484390001,
+    "artifact_id": 9873994705,
+    "artifact_name": "iteration304-result",
+    "artifact_digest": "sha256:3e5ea9c01327c47483664258162aaf1780615c8baf86433cb9db49426905ca18",
+    "head_sha": "477e957511eb7e7051ecf0d8b61d14f279cd30dc",
+    "scientific_json_sha256": "27efdba75eee39591ed5be0d2a766627c8fb1bf38af901a7aa823c441fd1086d"
+  },
+  "guardrail": "CUT_NULL does not mean the 274 hidden coefficients are zero. The result protects the normalized discontinuity only, in the stated HV-like scope, assuming same-parent D-dimensional numerator coefficients are regular at D=4. It does not promote the full finite amplitude scheme.",
+  "next_gate": "Integrate the four actual direct-timelike visible triangle numerator families from Iteration 295 with raw epsilon scans and Laurent fits."
+}
