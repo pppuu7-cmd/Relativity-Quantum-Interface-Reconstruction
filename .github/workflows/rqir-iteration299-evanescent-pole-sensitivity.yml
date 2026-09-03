@@ -1,0 +1,41 @@
+name: rqir-iteration299-evanescent-pole-sensitivity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration299_evanscent_pole_sensitivity_audit.py'
+      - 'candidate_gravity/code/iteration298_validate_action_result.py'
+      - '.github/workflows/rqir-iteration299-evanescent-pole-sensitivity.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration299:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Iteration 299 exact evanescent pole-sensitivity audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration299_evanscent_pole_sensitivity_audit.py > iteration299_result.json
+      - name: Validate Iteration 299 authority sentinel/schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration298_validate_action_result.py \
+            iteration299_result.json \
+            --expected-iteration 299 \
+            --output iteration299_authority_audit.json
+      - name: Upload Iteration 299 result
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration299-result
+          path: |
+            iteration299_result.json
+            iteration299_authority_audit.json
+          if-no-files-found: error
