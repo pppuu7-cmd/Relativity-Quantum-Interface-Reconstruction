@@ -1,0 +1,44 @@
+{
+  "iteration": 300,
+  "date": "2026-09-03",
+  "classification": "PASS_D_DIMENSIONAL_PARENT_GAP_LOCALIZED_AND_IMPLEMENTATION_CONTRACT_FROZEN__NUMERICAL_D_CONTINUATION_STILL_BLOCKED",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "hardcoded_4d_checks": {
+    "parent_eta_is_explicit_4d": true,
+    "parent_has_range4_internal_contractions": true,
+    "parent_has_explicit_rank6_4d_fieldspace_tensor": true,
+    "parent_tt_uses_3d_cross_product": true,
+    "timelike295_full_coordinate_loop_basis_4d": true,
+    "dr296_uses_4d_minkowski_laplacian": true,
+    "dr296_measure_is_D_continued": true,
+    "dr296_declares_4d_numerator_scheme_guard": true
+  },
+  "minimum_contract": {
+    "regulator_convention": "Freeze one common regulator/external-state convention for K2 and Gamma3.",
+    "internal_parent_algebra": "Carry D dependence through field-space/orbit and numerator contractions Nhat,N1,N2,Q1,Q2,A,Y_down and Tr before Laurent expansion, or derive an explicit equivalent scheme-conversion map.",
+    "pole_order_rule": "Use Iteration 299 to determine how many numerator orders in D-4 are required by the observed Laurent pole order.",
+    "regression": "At D=4 reproduce Iterations 291/292 identities and Iteration-295 eight-family numerator/primitive reconstruction within their certified envelopes.",
+    "d_derivative_validation": "Validate D-derivative coefficients independently; no one-sided finite-difference authority alone.",
+    "artifact_authority": "Apply Iteration-298 fail-closed sentinel/schema validation."
+  },
+  "guardrails": [
+    "DO_NOT_TREAT_D_DIMENSIONAL_MEASURE_ALONE_AS_A_D_DIMENSIONAL_PARENT",
+    "DO_NOT_REPLACE_MISSING_EVANESCENT_PARENT_COEFFICIENTS_BY_ZERO",
+    "D4_REGRESSION_IS_NECESSARY_NOT_SUFFICIENT_FOR_D_DIMENSIONAL_AUTHORITY",
+    "K2_AND_GAMMA3_MUST_SHARE_THE_SAME_REGULATOR_AND_EXTERNAL_STATE_CONVENTION"
+  ],
+  "github_actions": {
+    "run_id": 33700933336,
+    "job_id": 100479855584,
+    "artifact_id": 9873476354,
+    "artifact_name": "iteration300-result",
+    "artifact_digest": "sha256:92ccc7186b7d5f91b2265dde086491e99dd41fdbf7ca9ed1741b2b37c3583af0",
+    "head_sha": "624af327a2f2d1d560c7833aa8a3998c19d900c6",
+    "scientific_json_sha256": "a9bd1b33404c455493e6d8febb3a4e3a2471043f49a6eb8b2c1e10e08b9e014e",
+    "schema_validator_pass": true,
+    "top_level_object_count": 1,
+    "found_iterations": [300]
+  },
+  "next_gate": "Use the corrected Iteration-296 Laurent result to select the minimum D-aware numerator order actually required; then implement that D-aware parent sublayer or an explicit scheme-conversion map before promoting a full finite C5 comparator coordinate."
+}
