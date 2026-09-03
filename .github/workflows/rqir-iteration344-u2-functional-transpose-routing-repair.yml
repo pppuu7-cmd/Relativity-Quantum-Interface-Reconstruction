@@ -18,8 +18,11 @@ jobs:
       - name: Install numerical dependency
         run: pip install numpy
       - name: Run corrected U2 functional-transpose routing gate
+        id: scientific
+        continue-on-error: true
         run: python candidate_gravity/code/iteration344_u2_functional_transpose_routing_eq55_repair.py > iteration344_result.json
-      - name: Sentinel/schema audit
+      - name: Build sentinel/schema audit
+        if: always()
         run: |
           python - <<'PY'
           import json,hashlib
@@ -30,11 +33,14 @@ jobs:
              'valid_single_top_level':True,'valid_expected_iteration':o.get('iteration')==344,
              'scientific_authority_pass':bool(ok),'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw)}
           open('iteration344_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
-          assert ok
           PY
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: iteration344-result
           path: |
             iteration344_result.json
             iteration344_authority_audit.json
+      - name: Enforce scientific gate
+        if: steps.scientific.outcome != 'success'
+        run: exit 2
