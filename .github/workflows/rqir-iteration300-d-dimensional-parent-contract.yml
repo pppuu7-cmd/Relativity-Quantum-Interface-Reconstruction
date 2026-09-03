@@ -1,0 +1,41 @@
+name: rqir-iteration300-d-dimensional-parent-contract
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration300_d_dimensional_parent_contract_audit.py'
+      - 'candidate_gravity/code/iteration298_validate_action_result.py'
+      - '.github/workflows/rqir-iteration300-d-dimensional-parent-contract.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration300:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Iteration 300 D-dimensional parent contract audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration300_d_dimensional_parent_contract_audit.py > iteration300_result.json
+      - name: Validate Iteration 300 authority sentinel/schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration298_validate_action_result.py \
+            iteration300_result.json \
+            --expected-iteration 300 \
+            --output iteration300_authority_audit.json
+      - name: Upload Iteration 300 result
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration300-result
+          path: |
+            iteration300_result.json
+            iteration300_authority_audit.json
+          if-no-files-found: error
