@@ -1,0 +1,48 @@
+{
+  "iteration": 299,
+  "date": "2026-09-03",
+  "classification": "PASS_EXACT_EVANESCENT_POLE_SENSITIVITY_PROMOTION_RULE__FINITE_SAME_PARENT_REMAINDER_STILL_BLOCKED",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "scope": "exact algebraic evanescent/pole sensitivity theorem for 4D numerator oracle plus D-dimensional loop measure",
+  "delta_definition": "delta=D-4=-2 epsilon",
+  "theorem": {
+    "general": "If N(delta)=sum_j N_j delta^j and M(delta)=sum_k A_k delta^k, then C_r=[delta^r](N M)=sum_j N_j A_{r-j}.",
+    "simple_pole": {
+      "leading_pole": "C_-1=N0*A_-1",
+      "finite": "C_0=N0*A_0+N1*A_-1",
+      "consequence": "The leading simple-pole residue is protected against positive-delta numerator orders, but the finite remainder is not fixed by a 4D numerator oracle when A_-1 is nonzero."
+    },
+    "double_pole": {
+      "leading_pole": "C_-2=N0*A_-2",
+      "single_pole": "C_-1=N0*A_-1+N1*A_-2",
+      "finite": "C_0=N0*A_0+N1*A_-1+N2*A_-2",
+      "consequence": "For double or higher poles, subleading pole coefficients as well as finite terms can be evanescent-sensitive."
+    },
+    "no_pole": "If the relevant discontinuity has no Laurent pole, the pole-times-evanescent mechanism does not obstruct its finite coefficient at that order; other matched-observable/scheme issues may remain."
+  },
+  "parent_authority": {
+    "paper": "Giacchini, de Paula Netto, Shapiro, Phys. Rev. D 102, 106006 (2020), arXiv:2006.04217",
+    "authority_fact": "The underlying calculation is formulated at arbitrary D and only later takes D->4 for the pole coefficient; intermediate coefficients contain explicit D dependence, including D-4 factors.",
+    "interpretation": "A four-dimensional oracle cannot license N_{j>0}=0."
+  },
+  "guardrails": [
+    "FOUR_DIMENSIONAL_ORACLE_ABSENCE_OF_EVANESCENT_TERMS_IS_NONIDENTIFIABILITY_NOT_ZERO",
+    "DO_NOT_PROMOTE_FINITE_REMAINDER_ACROSS_A_NONZERO_POLE_WITHOUT_REQUIRED_D_DIMENSIONAL_NUMERATOR_COEFFICIENTS_OR_EXPLICIT_SCHEME_CONVERSION",
+    "LEADING_HIGHEST_LAURENT_POLE_IS_INSENSITIVE_TO_POSITIVE_DELTA_NUMERATOR_ORDERS",
+    "FOR_DOUBLE_OR_HIGHER_POLES_SUBLEADING_POLES_CAN_BE_EVANESCENT_SENSITIVE"
+  ],
+  "github_actions": {
+    "run_id": 33700556512,
+    "job_id": 100478719987,
+    "artifact_id": 9873345427,
+    "artifact_name": "iteration299-result",
+    "artifact_digest": "sha256:e01b2e24de344944675819c3af1cd3b6d8f2a41ddff5dba9c592b1173ac428f1",
+    "head_sha": "ae442b799fd1834e9a41cc20012b667cccddac88",
+    "scientific_json_sha256": "735c4806e3780434410a343bfea0e8497a7d2e00b51f2967cc008a31004a47f9",
+    "schema_validator_pass": true,
+    "top_level_object_count": 1,
+    "found_iterations": [299]
+  },
+  "next_gate": "Classify the corrected Iteration-296 bubble Laurent structure under this theorem; if its discontinuity is pole-free, the pole-times-evanescent obstruction does not apply to that finite cut at this order. Full same-parent finite effective-action authority still requires D-dimensional numerator continuation or explicit scheme conversion before promotion."
+}
