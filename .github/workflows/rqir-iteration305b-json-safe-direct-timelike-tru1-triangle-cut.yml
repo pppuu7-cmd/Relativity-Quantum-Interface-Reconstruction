@@ -1,0 +1,65 @@
+name: rqir-iteration305b-json-safe-direct-timelike-tru1-triangle-cut
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration305_json_safe_runner.py'
+      - 'candidate_gravity/code/iteration305_direct_timelike_tru1_triangle_cut.py'
+      - 'candidate_gravity/code/iteration298_validate_action_result.py'
+      - '.github/workflows/rqir-iteration305b-json-safe-direct-timelike-tru1-triangle-cut.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  iteration305:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependencies
+        shell: bash
+        run: python -m pip install --upgrade pip numpy scipy
+      - name: Download immutable Iteration 295 source artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: iteration295-result
+          path: iteration295_source
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33688456731
+      - name: Download schema-valid Iteration 304 cut-protection artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: iteration304-result
+          path: iteration304_source
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33702437466
+      - name: Run unchanged Iteration 305 science through JSON-safe launcher
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration305_json_safe_runner.py > iteration305_result.json
+      - name: Validate Iteration 305 authority sentinel/schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/iteration298_validate_action_result.py \
+            iteration305_result.json \
+            --expected-iteration 305 \
+            --output iteration305_authority_audit.json
+      - name: Upload Iteration 305 result
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration305-result
+          path: |
+            iteration305_result.json
+            iteration305_authority_audit.json
+          if-no-files-found: error
