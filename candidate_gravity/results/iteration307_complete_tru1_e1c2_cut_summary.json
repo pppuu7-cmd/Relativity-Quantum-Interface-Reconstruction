@@ -1,0 +1,32 @@
+{
+  "iteration": 307,
+  "date": "2026-09-03",
+  "classification": "PASS_COMPLETE_WEIGHT_COMPLETED_TRU1_E1C2_EIGHT_FAMILY_NORMALIZED_CUT_AT_FROZEN_TIMELIKE_ROW",
+  "model_readiness_percent": 24,
+  "complete_e1c2_tru1_family_count": 8,
+  "complete_e1c2_tru1_normalized_cut": -0.5157080054161807,
+  "complete_e1c2_tru1_cut_one_over_eps_residue": 1.2896746939995822e-09,
+  "effective_action_prefactor_applied": false,
+  "bubble_subsector": {
+    "iteration": 302,
+    "normalized_cut": -0.010850153804447154,
+    "cut_one_over_eps_residue": 1.077895050620636e-09
+  },
+  "triangle_subsector": {
+    "iteration": 305,
+    "normalized_cut": -0.5048578516117335,
+    "cut_one_over_eps_residue": 2.1177964337894638e-10
+  },
+  "candidate_residual": false,
+  "github_actions": {
+    "run_id": 33703335692,
+    "job_id": 100487121536,
+    "artifact_id": 9874302096,
+    "artifact_name": "iteration307-result",
+    "artifact_digest": "sha256:7e620a8bdf096db25f971a06a118d94cb67f138880fd3392a8378e235bb45e71",
+    "head_sha": "4c7fe35ddfa1084bfeb7785d7cd2012d87da81be",
+    "scientific_json_sha256": "3bc271990d63b90da42b339139b8ca68b8c9830242292adcb18696cc111ef22e"
+  },
+  "guardrail": "This is the complete e=1,c=2 Tr U1 normalized cut only. It is not the complete C5 Gamma3, does not include the -i/2 effective-action prefactor, e=2 or determinant sectors, source/Ward/contact completion, matched K2 subtraction, comparator quotient, or Candidate Gravity residual.",
+  "next_gate": "Freeze the exact e=2,c<=1 composite connection operator and cubic background-order placement for Tr U2 and Tr U1^2 before scoped numerator computation."
+}
