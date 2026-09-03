@@ -1,0 +1,37 @@
+{
+  "iteration": 314,
+  "date": "2026-09-03",
+  "model_readiness_percent": 24,
+  "classification": "PASS_DETERMINANT_SAME_PARENT_DERIVATION_PREREQUISITES_LOCATED__COMPONENT_DERIVATION_AUTHORIZED_NEXT",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "component_formulas_derived": false,
+  "prerequisite_authority_complete": true,
+  "missing_prerequisites": [],
+  "scope": {"D": 4, "Lambda": 0, "a": "-1/2"},
+  "validated_provenance": {
+    "run": 33713832088,
+    "job": 100518734399,
+    "head_commit": "de8dc75cee81104922d145de94a3e1dbc35befc0",
+    "code_commit": "e790667cb935a03f064b57f0200641196b5ee325",
+    "artifact": 9877804358,
+    "artifact_digest": "sha256:810993aeffdcbc6b908de030edeb543d05c91390b8031e1b87ee26c0017c2b1d",
+    "scientific_json_sha256": "6fb01cdc931e7434bf4a8be520cd1915482b1857a28e81092100b99b7c1850ad",
+    "top_level_object_count": 1,
+    "sentinel": 314
+  },
+  "primary_authority_interpretation": {
+    "iteration232": "Freezes the pure-Einstein Vilkovisky convention with nondegenerate a=-1/2 and minimal local graviton H and FP ghost N operators.",
+    "model001": "Freezes the EH low-energy parent action and background split g=eta+kappa h, but MODEL.md itself leaves S_GF and S_ghost only structurally declared.",
+    "iteration147": "Provides a de-Donder real-time comparator convention, useful as convention evidence but not by itself executable determinant component authority.",
+    "remaining_missing_object": "Explicit same-parent background expansions H1,H2,H3 and N1,N2,N3 with index normalization and momentum routing."
+  },
+  "guardrails": [
+    "PREREQUISITE_LOCATION_IS_NOT_COMPONENT_FORMULA_AUTHORITY",
+    "UNSUPPORTED_IS_BLOCKED_NOT_ZERO_FILLED",
+    "NO_SYNTHETIC_COMPONENT_PROMOTION",
+    "NO_BLIND_HEAVY_FULL_C5",
+    "NO_ANSATZ003_FISHER_RESOURCES"
+  ],
+  "next_gate": "Derive H[g]=H0+kappa H1+kappa^2 H2+kappa^3 H3+... and N[g]=N0+kappa N1+kappa^2 N2+kappa^3 N3+... directly from the frozen a=-1/2 minimal Vilkovisky graviton/ghost differential operators under g=eta+kappa h, D=4, Lambda=0. State field/index spaces, transpose convention, Fourier sign and momentum routing; independently validate flat limits and covariance before Iteration-312 logdet insertion."
+}
