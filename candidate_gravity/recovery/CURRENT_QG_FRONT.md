@@ -19,8 +19,9 @@ Repository commits, raw schema-validated Actions artifacts, recovery material an
 - Iterations 369-370 show all 21 cyclic classes remain physically distinct numerator+denominator families.
 - Iteration 371 freezes all 36 multiplicity-two raw denominator targets as surviving physical double poles (`SURVIVE=36`, `CANCEL=0`, `BLOCKED=0`).
 - Iteration 372 freezes 57 timelike channels, exactly 19 per q2 coordinate: 6 simple-simple, 36 simple-double, 15 double-double.
-- Iteration 373 closes the ordinary-simple prerequisite: all `6/6` simple-simple channels `REGULAR`, `BLOCKED=0`; minimum analytic uncut separation `0.11857864376269048`; maximum shell error `5.551115123125783e-17`.
-- Iteration 375 validates the repeated-cut auxiliary-mass/distributional bridge for simple-double and double-double channels. Frozen identities are
+- Iteration 373 closes the ordinary-simple prerequisite: all `6/6` simple-simple channels `REGULAR`, `BLOCKED=0`.
+- **Iteration 374 closes the physical ordinary-simple `Tr U1^2` discontinuity:** all `6/6 CONVERGED`, `BLOCKED=0`. q2-resolved sums are `6.253219881951187e-05` at `q^2=-1`, `3.5044107116946374e-05` at `q^2=-0.34`, and `2.9297648005638963e-05` at `q^2=-0.14`; all three are `NONZERO`. Maximum scaled angular error `9.023987581011366e-10` under frozen `2e-5`; maximum radial Richardson error `3.1484214649442344e-17`; maximum shell error `7.35968036186944e-17`; minimum sampled uncut denominator `0.12097829436145643`.
+- Iteration 375 validates the repeated-cut auxiliary-mass/distributional bridge:
 
 \[
 D_1^{-2}D_2^{-1}=-\partial_{\mu_1^2}[(D_1+\mu_1^2)^{-1}D_2^{-1}]_{0},
@@ -30,31 +31,29 @@ D_1^{-2}D_2^{-1}=-\partial_{\mu_1^2}[(D_1+\mu_1^2)^{-1}D_2^{-1}]_{0},
 D_1^{-2}D_2^{-2}=+\partial_{\mu_1^2}\partial_{\mu_2^2}[(D_1+\mu_1^2)^{-1}(D_2+\mu_2^2)^{-1}]_{0,0}.
 \]
 
-- **Iteration 377 closes the physical auxiliary-mass kinematic prerequisite for every repeated-cut `Tr U1^2` channel:** `51/51 REGULAR`, `BLOCKED=0`; 36 simple-double + 15 double-double; 17 channels in each `q^2` coordinate. Minimum analytically certified uncut absolute denominator over all mass probes and the full cut sphere is `0.11857147221810005`; maximum cut-shell error is `1.2622654386573035e-16`; maximum q2 error `5.551115123125783e-17`; minimum Kallen function `0.019594400000000005`.
+- **Iteration 377 closes the physical auxiliary-mass kinematic prerequisite for every repeated-cut `Tr U1^2` channel:** `51/51 REGULAR`, `BLOCKED=0`; 36 simple-double + 15 double-double; 17 channels in each q2 coordinate. Minimum analytic uncut separation `0.11857147221810005`; maximum shell error `1.2622654386573035e-16`; minimum Kallen function `0.019594400000000005`.
 
-Iteration-377 authority: `PASS_TRU1SQ_REPEATED_CUT_MASS_PROBE_KINEMATIC_SEPARATION__REGULAR_51__BLOCKED_0`.
+Iteration-374 provenance: run `33812352303`, job `100836834321`, artifact `9915759849`, artifact digest `sha256:2293a37961230bed7eaed2298fcfaddfcffb342c2e5579b29b9e73986b47450d`, raw JSON SHA-256 `ad84a0e59751171f906e0fbd9b868357e19b3cf8ce948970b3b529e134e84c3c`, workflow head `cb2ddc7d838d0ba1844339d447445b3a8a613124`.
 
-Iteration-377 provenance: run `33813366983`, job `100840032070`, artifact `9915623215`, artifact digest `sha256:f6f1860a74a6d84c24023b2a7e8c1d131f9133e2eba00ed743d098d225946c4b`, raw scientific JSON SHA-256 `e27aa368470c4c0091cf72956b4ef13302f8a6cc979519c199aa2a63444ae2a5`, workflow head `e8de37295817456a36acc6289898342804a143ac`.
+Iteration-377 provenance: run `33813366983`, job `100840032070`, artifact `9915623215`, artifact digest `sha256:f6f1860a74a6d84c24023b2a7e8c1d131f9133e2eba00ed743d098d225946c4b`, raw JSON SHA-256 `e27aa368470c4c0091cf72956b4ef13302f8a6cc979519c199aa2a63444ae2a5`, workflow head `e8de37295817456a36acc6289898342804a143ac`.
 
 ## Active computations
 
-- **Iteration 374:** run `33812352303`, job `100836834321`; normalized q2-resolved simple-simple `Tr U1^2` discontinuity for the six Iteration-373 REGULAR channels. No authority until raw artifact validation.
-- **Iteration 376:** run `33813179996`; three fixed matrix jobs for global channel ranges `[0:16]`, `[16:32]`, `[32:48]`, prospectively recovering cancelled Iteration 364 with the exact same frozen `channel_derivative`, auxiliary-mass nodes, quadratures and `2e-5` convergence threshold. All three raw chunk artifacts are required before full 48-channel assembly.
-- **Iteration 378:** run `33813604738`; one prospectively preselected physical simple-double `Tr U1^2` channel pilot. It uses the full Iteration-370/374 stripped numerator, symmetric mass derivative, h vs h/2, low/high/shifted angular grids and records runtime. One channel can validate the pipeline and resource architecture only; it cannot promote the other 35 channels.
-- **Iteration 379:** one prospectively preselected physical double-double `Tr U1^2` channel mixed-derivative pilot is registered. Its resource-aware pilot grid cannot serve as full-sector authority; a full-sector grid/chunk architecture must be frozen prospectively only after pilot validation.
+- **Iteration 376:** run `33813179996`; three fixed jobs for channel ranges `[0:16]`, `[16:32]`, `[32:48]`, recovering cancelled Iteration 364 with the exact frozen `channel_derivative`, mass nodes, quadratures and `2e-5` convergence threshold. All three raw chunk artifacts are required before 48-channel assembly.
+- **Iteration 378:** run `33813604738`, job `100840748044`; one prospectively selected physical simple-double `Tr U1^2` pilot with full stripped numerator, h vs h/2 and low/high/shifted angular checks. It may validate pipeline/runtime only, never the other 35 channels.
+- **Iteration 379:** run `33813761466`, job `100841217582`; one prospectively selected physical double-double mixed-derivative pilot. Its resource-aware pilot grid is not full-sector authority.
 
 Do not duplicate any active computation.
 
 ## Exact next gates
 
-1. Consume Iteration 374 only after raw artifact validation; preserve the three q2 coordinates separately.
-2. Consume all three Iteration-376 chunks only after raw chunk/sentinel validation. Reject overlap, gaps or provenance mismatch, then assemble exactly 48 unique global channel indices q2-by-q2 with no threshold change.
-3. Consume Iteration 378. If the selected simple-double channel converges, use its measured runtime only to prospectively choose a fixed chunk size for all 36 simple-double channels with identical arithmetic; do not infer the other channel values from the pilot.
-4. Consume Iteration 379. If the selected double-double channel validates, use its measured runtime/convergence margin to prospectively freeze the full-sector angular grid and chunk size for all 15 channels. The pilot grid itself is not complete-sector authority.
-5. Only after complete physical `Tr U2` and `Tr U1^2` closure may `+(i/2)Tr U2 -(i/4)Tr U1^2` be assembled.
-6. Source/Ward/contact completion and matched `K2` subtraction remain downstream. Source/Born subtraction is forbidden before normalized origin accounting.
+1. Consume all three Iteration-376 chunks only after raw chunk/sentinel validation. Reject overlap, gaps or provenance mismatch, then assemble exactly 48 unique global channel indices q2-by-q2 with no threshold change.
+2. Consume Iteration 378. If it converges, use measured runtime only to prospectively freeze a fixed chunk architecture for all 36 simple-double channels with identical arithmetic.
+3. Consume Iteration 379. If it validates, use measured runtime and convergence margin to prospectively freeze the full-sector angular grid and chunk architecture for all 15 double-double channels; the pilot grid itself is not full-sector authority.
+4. Only after complete physical `Tr U2` and `Tr U1^2` closure may `+(i/2)Tr U2 -(i/4)Tr U1^2` be assembled.
+5. Source/Ward/contact completion and matched `K2` subtraction remain downstream. Source/Born subtraction is forbidden before normalized origin accounting.
 
-For signs in the repeated-cut normalized coordinate: Iteration 337 contributes `D_s(simple)=-sphere_mean`; therefore simple-double has `D_s=+sphere_mean[d_mu G]`, while double-double has `D_s=-sphere_mean[d_mu1 d_mu2 G]` under the Iteration-375 identities.
+Repeated-cut normalized signs remain: `D_s(simple)=-sphere_mean`; simple-double `D_s=+sphere_mean[d_mu G]`; double-double `D_s=-sphere_mean[d_mu1 d_mu2 G]`.
 
 Iteration-297 evanescent/regulator warning remains binding. No Candidate residual may be declared before the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient survives.
 
@@ -69,8 +68,8 @@ Iteration-297 evanescent/regulator warning remains binding. No Candidate residua
 
 MODEL_READINESS: 24%
 
-Change through Iteration 377: `0 pp`. Repeated-cut derivative and physical kinematic prerequisites are closed, but neither complete `Tr U1^2`, complete `Tr U2`, nor a robust comparator-subtracted residual has closed a readiness-rubric point.
+Change through validated Iteration 377 plus late-consumed Iteration 374: `0 pp`. The ordinary-simple `Tr U1^2` sub-sector and all repeated-cut method/kinematic prerequisites are closed, but complete `Tr U1^2`, complete `Tr U2`, and a robust comparator-subtracted residual remain open.
 
 ## Retained guardrails
 
-Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results remain preserved. Operational failure is not scientific FAIL. Denominator equivalence is not numerator equivalence. Repeated poles are never ordinary simple cuts. Distinct q2 discontinuity variables are never summed together. Same `i0` is mandatory under auxiliary-mass differentiation. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5.
+Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results remain preserved. Operational failure is not scientific FAIL. Denominator equivalence is not numerator equivalence. Repeated poles are never ordinary simple cuts. Distinct q2 discontinuity variables are never summed. Same `i0` is mandatory. No effective-action weight is folded before the corresponding operator coordinate is complete. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5.
