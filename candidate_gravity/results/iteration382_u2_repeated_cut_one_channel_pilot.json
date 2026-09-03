@@ -1,0 +1,59 @@
+{
+  "candidate_residual": false,
+  "channel": {
+    "D_s_TrU2_repeated_halfstep": [-1.1437983587686573e-05, 0.0],
+    "D_s_TrU2_repeated_high": [-1.1437983592303379e-05, 0.0],
+    "D_s_TrU2_repeated_high_phi_shifted": [-1.1438001667849296e-05, 0.0],
+    "D_s_TrU2_repeated_low": [-1.1438811627640377e-05, 0.0],
+    "cut_algebraic_sign": 1.0,
+    "global_channel_index": 0,
+    "group_pair": [0, 2],
+    "max_cut_shell_abs_error": 1.6132928326584306e-16,
+    "minimum_sampled_uncut_abs_denominator": 0.12097568457851282,
+    "other_cut_group": 0,
+    "q2": -1.0,
+    "repeated_group": 2,
+    "route": 1,
+    "scaled_convergence_error": 8.280353369982061e-10,
+    "status": "CONVERGED",
+    "subterm": 1
+  },
+  "classification": "PASS_U2_REPEATED_CUT_ONE_CHANNEL_PILOT__CONVERGED",
+  "frozen_arithmetic": {
+    "base_h": 5e-06,
+    "convergence_threshold": 2e-05,
+    "halfstep_h": 2.5e-06,
+    "high_grid": [8, 16],
+    "low_grid": [6, 12],
+    "normalization": "D_s_repeated=sphere_mean[d_mu2(beta*cut_sign*num/D_uncut)]",
+    "parent": "Iteration364 channel_derivative verbatim",
+    "phi_shift_check": 0.5,
+    "shell_threshold": 2e-10
+  },
+  "guardrails": [
+    "ITERATION359_362_363_BINDING",
+    "ITERATION364_CHANNEL_DERIVATIVE_VERBATIM",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_48_CHANNEL_EXTRAPOLATION_FROM_ONE_CHANNEL",
+    "DISTINCT_Q2_BUCKETS_NEVER_SUMMED",
+    "NO_EFFECTIVE_ACTION_WEIGHT_FOLDING",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "iteration": 382,
+  "model_readiness_percent": 24,
+  "next_gate": "if CONVERGED, use measured runtime only to prospectively freeze a smaller complete-48 chunk architecture with identical arithmetic; if BLOCKED, isolate this channel with analytic/stronger-angular treatment without weakening thresholds",
+  "runtime_seconds": 341.30850966599996,
+  "scientific_gate_pass": true,
+  "scope": "ONE_PRESELECTED_U2_CUT_THROUGH_DOUBLE_POLE_CHANNEL_ONLY__PIPELINE_RUNTIME_AND_PHYSICAL_VALUE",
+  "selected_channel_rule": "FIRST_CUT_THROUGH_DOUBLE_POLE_CHANNEL_IN_ITERATION359_364_FROZEN_ORDER",
+  "validated_action": {
+    "run_id": 33816704205,
+    "job_id": 100850328336,
+    "artifact_id": 9916963796,
+    "artifact_digest": "sha256:e4ce19e00d8b58f78407c68974f9baa326d8777a4cb84af9ec58ac42fc0ee143",
+    "scientific_json_sha256": "5fddd09cc07224063434e2abeef1c8d0a044cfcf88ee85cb9e825bb69b005648",
+    "workflow_head": "7fb92f2bd6488ccf7b7a4aaf141bd913ad2aa46a"
+  }
+}
