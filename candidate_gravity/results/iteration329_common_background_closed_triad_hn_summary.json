@@ -1,0 +1,39 @@
+{
+  "iteration": 329,
+  "model_readiness_percent": 24,
+  "scientific_gate_pass": true,
+  "classification": "PASS_COMMON_BACKGROUND_CLOSED_TRIAD_PHYSICAL_HN_FULL_CUBIC_ROUTING_CERTIFICATE",
+  "candidate_residual": false,
+  "run": 33737812923,
+  "job": 100592429867,
+  "artifact": 9886457281,
+  "artifact_digest": "sha256:69b41c7c36aefe98c6e03523d97bbf2eaf639b9d3d831d8eb800bc6a9252bfe6",
+  "workflow_head": "ce2ca28ce9379bbe982fe326ed87a007c421e2a2",
+  "validation": {
+    "workflow_conclusion": "success",
+    "scientific_execution": "success",
+    "sentinel_schema_audit": "success",
+    "artifact_upload": "success",
+    "final_scientific_enforcement": "success"
+  },
+  "scope": {
+    "shared_metric_background": "Iteration-319 hs fixture used identically for graviton H and reconstructed ghost N",
+    "closed_external_triad": [[0.27,-0.19,0.31,0.11],[-0.13,0.37,0.17,-0.29],[-0.14,-0.18,-0.48,0.18]],
+    "full_cubic_sequences": 13,
+    "unique_routed_requests": 19,
+    "incoming_rule": "p + Q_before_insertion",
+    "ghost_parent": "Iteration-320 same-background reconstruction N=Box_vector+Rmix",
+    "thresholds": "unchanged from Iteration 326"
+  },
+  "interpretation": "The common-background blocker found by Iteration 327 is closed. Graviton and ghost routed insertions are now certified on one closed triad and one shared metric background for all 19 full-cubic requests. This permits physical determinant trace assembly but is not an integrated cut or comparator residual.",
+  "guardrails": [
+    "ONE_SHARED_BACKGROUND_FOR_GRAVITON_AND_GHOST",
+    "NO_THRESHOLD_WEAKENING",
+    "UNSUPPORTED_IS_BLOCKED_NOT_ZERO_FILLED",
+    "DENOMINATOR_EQUIVALENCE_NOT_NUMERATOR_EQUIVALENCE",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "NO_BLIND_HEAVY_FULL_C5"
+  ]
+}
