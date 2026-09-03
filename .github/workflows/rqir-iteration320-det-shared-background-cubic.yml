@@ -1,0 +1,38 @@
+name: rqir-iteration320-det-shared-background-cubic
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration320_det_shared_background_cubic_coefficient.py'
+      - '.github/workflows/rqir-iteration320-det-shared-background-cubic.yml'
+
+jobs:
+  iteration320:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: pip install numpy
+      - name: Compute common-background physical determinant cubic coefficient
+        run: python candidate_gravity/code/iteration320_det_shared_background_cubic_coefficient.py > iteration320_result.json
+      - name: Sentinel/schema audit
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          raw=open('iteration320_result.json','rb').read(); o=json.loads(raw)
+          ok=isinstance(o,dict) and o.get('iteration')==320 and 'scientific_gate_pass' in o
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':320,'found_iterations':[o.get('iteration')],'top_level_object_count':1,'valid_single_top_level':True,'valid_expected_iteration':o.get('iteration')==320,'scientific_authority_pass':bool(ok and o.get('scientific_gate_pass')),'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw)}
+          open('iteration320_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          assert ok
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration320-result
+          path: |
+            iteration320_result.json
+            iteration320_authority_audit.json
+      - name: Enforce scientific gate
+        run: python -c "import json; o=json.load(open('iteration320_result.json')); assert o['scientific_gate_pass'], o"
