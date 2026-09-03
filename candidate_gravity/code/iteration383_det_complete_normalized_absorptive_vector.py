@@ -18,7 +18,9 @@ assert i333["scientific_gate_pass"] is True and i333["iteration"] == 333
 assert i380["scientific_gate_pass"] is True and i380["iteration"] == 380
 assert len(i333["bubble_families"]) == 3
 assert len(i333["triangle_family"]["channels"]) == 3
-assert "D_s I[F] = - sphere_mean(F)" in r337
+# Provenance-only text checks.  Iteration 337 records the full bridge
+# D_s I[F] = -8*pi*int dPhi2 F = -sphere_mean(F), not the shortened form.
+assert "D_s I[F] = -8*pi" in r337 and "= - sphere_mean(F)" in r337
 assert "D_s Gamma_det = -i*m" in r338
 
 # Canonical three coordinates.  They remain distinct and are never summed.
