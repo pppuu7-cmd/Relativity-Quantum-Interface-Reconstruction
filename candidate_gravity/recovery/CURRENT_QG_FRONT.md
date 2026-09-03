@@ -5,7 +5,7 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Authoritative Candidate Gravity front:** **Iteration 356**
+**Authoritative Candidate Gravity front:** **Iteration 357**
 
 Repository commits, schema-validated Actions artifacts, primary-authority audits and recovery material are source of truth. A green workflow conclusion alone is never scientific authority.
 
@@ -23,29 +23,30 @@ Repository commits, schema-validated Actions artifacts, primary-authority audits
 - Iteration 350 proves the timelike rebase breaks the old singleton-soft pruning; old kills cannot be zero-filled.
 - Iterations 351-353 rebuild all 30 timelike physical U2 routes and expand them into 42 additive denominator subterms.
 - Iteration 354 finds 30 denominator common-translation candidate classes, 9 multi-member; denominator map error is `0.0`, numerator equivalence not claimed.
-- Iteration 355 tests physical traced numerator transport at four held-out loop momenta. `0/9` multi-member denominator candidates are numerator-equivalent; all 42 additive subterms remain distinct physical numerator+denominator families. Max stripped-factor reconstruction scaled error `1.6978418670987586e-15`; max numerator mismatch `0.004476953018918176`.
-- **Iteration 356 classifies kinematic origin/topology of all 42 distinct families. All `42/42` contain a direct timelike two-line cut candidate; `30/42` contain repeated pole momentum and cannot use ordinary simple-cut substitution; `12/42` have only simple distinct pole momenta.**
+- Iteration 355 tests physical traced numerator transport at four held-out loop momenta. `0/9` multi-member denominator candidates are numerator-equivalent; all 42 additive subterms remain distinct physical numerator+denominator families. Max stripped-factor reconstruction scaled error `1.6978418670987586e-15`; max numerator mismatch `0.004476953018918176`. This is a scoped negative family-equivalence result, not a consistency FAIL.
+- Iteration 356 classifies kinematic origin/topology of all 42 distinct families. All `42/42` contain a direct timelike two-line cut candidate; `30/42` contain repeated pole momentum and cannot use ordinary simple-cut substitution; `12/42` have only simple distinct pole momenta.
+- **Iteration 357 freezes the cut-method contract: the 12 simple-distinct-pole families provide 36 ordinary-simple timelike pair channels and may proceed to ordinary on-shell diagnostics; the 30 repeated-pole families provide 114 repeated-pole timelike pair channels and remain fail-closed pending explicit derivative/distributional or analytically equivalent reduction.**
 
-Iteration-356 authority:
-`PASS_U2_42_FAMILY_KINEMATIC_ORIGIN_AND_PROPAGATOR_TOPOLOGY_CLASSIFICATION__CUT_INTEGRATION_NEXT_ONLY_FOR_TYPED_CHANNELS`.
+Iteration-357 authority:
+`PASS_U2_SIMPLE_VS_REPEATED_POLE_CUT_CONTRACT__12_SIMPLE_FAMILIES_NEXT__30_REPEATED_FAMILIES_DISTRIBUTIONAL_BLOCKED`.
 
-Provenance: run `33789091660`, artifact `9906593595`, artifact digest `sha256:eae98a499dd767c3061ed620c48da73b3095b15433ccaf57a6d0eb106501459b`, scientific JSON SHA-256 `d698467d9f5634c7a418ff3dfdc6d5eed59139e8736ea58a5c908c56b0c1f1bd`, workflow head `a552bf0d2f27cdc7f36efc356229d0429bd5ce99`.
+Provenance: run `33789235049`, job `100761488578`, artifact `9906649986`, artifact digest `sha256:3be8fe0a2b1762a9965adab669a422157db77226dc33e52c4e1287d9d0d4a2e8`, scientific JSON SHA-256 `71d775d456527a0ebad19f08aae36872e3602884cd1a85b5f8379911daff0918`, workflow head `38826d8383880ef7a1adc3b79dd7315529366438`.
+
+A later redundant Iteration-356 cross-check was not promoted and its added workflow/code/result summary were removed; authoritative Iteration 356 remains run `33789091660` from the prior front.
 
 ## Active sectors
 
 - connection `e=1,c<=2`: actual `Tr U1` cut frozen by Iteration 307.
-- connection `e=2,c<=1`: physical timelike U2 route, additive-family, numerator-transport and cut-origin authority are frozen through Iteration 356. Active task is cut-method typing and then normalized channel-resolved discontinuity.
+- connection `e=2,c<=1`: physical timelike U2 route, additive-family, negative numerator-equivalence, cut-origin and cut-method authority are frozen through Iteration 357. The ordinary-simple sub-sector may now proceed to on-shell regularity diagnostics; repeated-pole U2 remains methodologically BLOCKED.
 - determinant `e=0,c<=3`: three bubbles NONZERO; triangle family NONZERO in two certified channels; one `q^2=-1` triangle channel remains BLOCKED pending analytic/symbolic angular reduction.
 
-## Active Action / exact next gate
+## Exact next gate
 
-**Iteration 357 is queued:** freeze fail-closed cut-method typing for the 42 U2 families. Ordinary simple-cut substitution is allowed only for the 12 simple-distinct-pole families. The 30 repeated-pole families remain BLOCKED until explicit derivative/distributional reduction.
+**Iteration 358:** evaluate numerator-on-shell regularity and uncut-denominator separation only for the 12 ordinary-simple U2 families on each of their 36 typed timelike pair channels. Each channel must receive an explicit `REGULAR`, `ZERO`, or `BLOCKED` status under frozen thresholds before normalized integration is allowed.
 
-Run: `33789235049`; workflow head `38826d8383880ef7a1adc3b79dd7315529366438`.
+The 30 repeated-pole families remain separate and BLOCKED for ordinary simple Cutkosky substitution. Their next permitted branch is an explicit repeated-pole derivative/distributional (or analytically equivalent) derivation, not threshold weakening or zero-filling.
 
-If raw Iteration 357 passes, exact next gate: evaluate numerator-on-shell regularity and uncut-denominator separation only for the 12 ordinary-simple families on each typed timelike pair channel. Repeated-pole families must remain separate and cannot be treated by simple Cutkosky substitution.
-
-Iteration-297 evanescent/regulator warning remains binding for the full finite DR remainder. Source/Born subtraction remains forbidden until normalized origin accounting. No Candidate residual may be declared before the fixed comparator quotient is executable and survived.
+Iteration-297 evanescent/regulator warning remains binding for the full finite DR remainder. Source/Born subtraction remains forbidden until normalized origin accounting. No Candidate residual may be declared before the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient is executable and survived.
 
 ## Stable readiness rubric
 
@@ -58,11 +59,11 @@ Iteration-297 evanescent/regulator warning remains binding for the full finite D
 
 MODEL_READINESS: 24%
 
-Change through Iteration 356: `0 pp`. Major U2 family/origin prerequisites closed, but no complete readiness bucket and no robust comparator-subtracted residual closed.
+Change through Iteration 357: `0 pp`. Major U2 family/origin/method prerequisites closed, but no complete readiness bucket and no robust comparator-subtracted residual closed.
 
 ## Retained guardrails
 
-Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results remain preserved. Null-soft pruning is not transferable to a timelike fixture unless re-proven. Denominator equivalence is not numerator equivalence. Additive inverse-routing pieces must not be collapsed prematurely. Repeated poles are never ordinary simple cuts. Family-level nonzero discontinuity is not the normalized observable coefficient. In U2 distinguish `K`, `K^-1`, and `Hinv_VD=-K^-1`; shifted incoming momentum and functional-transpose routing are mandatory. Do not create `ANSATZ-003` before a concrete robust comparator-subtracted residual survives the fixed comparator quotient. Fisher/resources remain forbidden until then. Source/Born subtraction only after normalized cut/origin classification. Blind heavy full-C5 remains unauthorized.
+Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results remain preserved. Null-soft pruning is not transferable to a timelike fixture unless re-proven. Denominator equivalence is not numerator equivalence. Additive inverse-routing pieces must not be collapsed prematurely. Repeated poles are never ordinary simple cuts. Family-level cut-capable topology is not a nonzero discontinuity certificate. In U2 distinguish `K`, `K^-1`, and `Hinv_VD=-K^-1`; shifted incoming momentum and functional-transpose routing are mandatory. Do not create `ANSATZ-003` before a concrete robust comparator-subtracted residual survives the fixed comparator quotient. Fisher/resources remain forbidden until then. Source/Born subtraction only after normalized cut/origin classification. Blind heavy full-C5 remains unauthorized.
 
 ## Candidate state
 
