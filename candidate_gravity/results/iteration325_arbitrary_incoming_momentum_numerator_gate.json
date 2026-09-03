@@ -1,0 +1,27 @@
+{
+  "iteration": 325,
+  "date": "2026-09-03",
+  "classification": "FAIL_SCOPED_GATE_DESIGN_INCOMPLETE_CUBIC_TOPOLOGY__TESTED_SHIFTED_HN_INSERTIONS_PASS",
+  "candidate_gravity_consistency_fail": false,
+  "candidate_residual": false,
+  "model_readiness_percent": 24,
+  "workflow": {
+    "diagnostic_run_id": 33732034116,
+    "artifact_id": 9884220998,
+    "scientific_result_sha256": "7fbcac2f284f4036bfde903be789662601282afad7f5b182ee5be68fae892185",
+    "scientific_exit_code": 2
+  },
+  "finding": {
+    "tested_unique_shifted_insertions": 18,
+    "ghost_tested_insertions_pass": true,
+    "graviton_tested_insertions_pass": true,
+    "ghost_max_scaled_error_order1": 2.4427370126645087e-09,
+    "ghost_max_scaled_error_order2": 4.154289856561633e-09,
+    "graviton_max_scaled_error_order1": 7.896245324268136e-10,
+    "graviton_max_scaled_error_order2": 3.99741803894238e-09,
+    "order3_was_not_tested": true,
+    "root_cause": "The request inventory contained only ordered pair/triple partitions of target (1,1,1), so it could not include the singleton cubic logdet insertion K3 with multiindex (1,1,1)."
+  },
+  "scientific_interpretation": "This is a scoped gate-design/completeness failure, not a failure of the physical H/N kernels and not a Candidate Gravity consistency failure. No threshold was weakened and Iteration 325 was not retroactively edited.",
+  "resolution": "Create a new gate version, Iteration 326, adding the missing singleton Tr(G0 K3) topology while keeping physical kernels, finite-difference h and thresholds unchanged."
+}
