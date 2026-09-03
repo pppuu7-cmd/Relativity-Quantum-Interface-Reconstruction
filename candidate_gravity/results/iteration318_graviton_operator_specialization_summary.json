@@ -1,0 +1,25 @@
+{
+  "iteration": 318,
+  "date": "2026-09-03",
+  "model_readiness_percent": 24,
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "scope": {"D": 4, "Lambda": 0, "a": "-1/2"},
+  "assumptions": ["gamma1 != 0", "gamma1 + 4 gamma2 != 0"],
+  "primary_authority": "Giacchini, de Paula Netto, Shapiro, Phys. Rev. D 102, 106006 (2020), arXiv:2006.04217v4, Eqs. (51)-(53)",
+  "p_coefficients_D4": {"p1": "1", "p2": "1", "p3": "1"},
+  "frozen_operator": {
+    "H": "-(I Box + Pi)",
+    "Pi": "2 R^mu_.alpha^nu_.beta - 1/2 g^munu R_alphabeta - 1/2 g_alphabeta R^munu + 1/4 g^munu g_alphabeta R - 1/2 delta^munu_alphabeta R"
+  },
+  "classification": "PASS_D4_LAMBDA0_VD_GRAVITON_OPERATOR_PARAMETRIZATION_INDEPENDENT_SPECIALIZATION__H123_ROUTING_REMAINS_BLOCKED",
+  "H123_derived": false,
+  "interpretation": "In D=4 all p1,p2,p3 reduce exactly to one for every nondegenerate linear parametrization allowed by the frozen authority. The local graviton potential is therefore fixed without selecting gamma2 post hoc. This closes operator-form ambiguity only; executable H1/H2/H3 and routing remain blocked.",
+  "guardrails": [
+    "OPERATOR_SPECIALIZATION_IS_NOT_H123_COMPONENT_AUTHORITY",
+    "UNSUPPORTED_H123_IS_BLOCKED_NOT_ZERO_FILLED",
+    "NO_ITERATION312_DETERMINANT_INSERTION_BEFORE_ROUTING_VALIDATION",
+    "NO_ANSATZ003_FISHER_RESOURCES"
+  ],
+  "next_gate": "Expand the frozen minimal tensor Laplace operator under g=eta+kappa h through cubic background order, including covariant-Box connection terms and Pi curvature terms, in one explicit 10-component symmetric-tensor convention; independently validate H1/H2/H3 on non-collinear multimode backgrounds before determinant insertion."
+}
