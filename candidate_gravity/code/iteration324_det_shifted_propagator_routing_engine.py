@@ -45,7 +45,7 @@ def ordered_triples():
     return out
 
 def cumulative_shifts(seq):
-    # One free inverse before each insertion.  The final closure shift is checked
+    # One free inverse before each insertion. The final closure shift is checked
     # separately and must return to the starting loop momentum.
     shifts=[(0,0,0,0)]
     cur=(0,0,0,0)
