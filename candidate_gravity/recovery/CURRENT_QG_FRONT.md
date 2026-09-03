@@ -5,22 +5,28 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Latest validated Candidate Gravity authority:** **Iteration 378**
+**Latest validated Candidate Gravity authority:** **Iteration 383**
 
 Repository commits, raw schema-validated Actions artifacts, recovery material and this file are source of truth. Green workflow colour alone is never scientific authority.
 
 ## Authoritative state
 
 - `e=3,c=0` remains closed by Iteration 246; actual `e=1,c=2 Tr U1` normalized cut remains frozen by Iteration 307.
-- Determinant `e=0,c<=3`: three bubbles NONZERO, two triangle channels NONZERO; `q^2=-1` triangle remains analytic/symbolic BLOCKED pending Iteration 380.
-- Timelike `Tr U2`: ordinary-simple sector (361) closes and cancels q2-by-q2; repeated-family simple-simple sector (366) closes and is NONZERO q2-by-q2. The 48 cut-through-double-pole channels remain open. Iteration 364 was operationally cancelled before sentinel/schema/artifact; Iteration 376 recovery run `33813179996` also ended `cancelled`, so neither run supplies scientific PASS/FAIL authority for those 48 channels.
+- Determinant `e=0,c<=3`: Iteration 333 froze three NONZERO bubble channels and two NONZERO triangle channels while leaving only the `q^2=-1` triangle numerically BLOCKED. **Iteration 380 closes that last triangle obstruction analytically/numerically without threshold weakening:** normalized angular mean `0.006875651912582228`, direct-original-integrand cross-check `0.006875651912566607`, scaled disagreement `8.354002293824815e-13`, exact uncut-denominator range `[0.11857864376269048, 0.40142135623730957]`; status NONZERO.
+- **Iteration 383 closes the complete channel-resolved ordinary-two-simple-particle determinant absorptive vector** using the frozen Iterations-337/338 normalization `D_s Gamma_det=-i*sphere_mean`, without reapplying internal graviton/ghost weights:
+  - `q^2=-1`: `D_s Gamma_det=-0.002357789063884683 i`;
+  - `q^2=-0.34`: `D_s Gamma_det=+0.001462759351572654 i`;
+  - `q^2=-0.14`: `D_s Gamma_det=+0.0012389565044298413 i`.
+  All three coordinates are NONZERO and remain separate. The Iteration-297 finite-DR/evanescent warning remains binding; Iteration 383 is not a full finite-DR determinant or a candidate residual.
+- Timelike `Tr U2`: ordinary-simple sector (361) closes and cancels q2-by-q2; repeated-family simple-simple sector (366) closes and is NONZERO q2-by-q2. The 48 cut-through-double-pole channels require repeated-cut treatment. Iterations 364 and 376 were operationally cancelled before complete authority and remain non-scientific.
+- **Iteration 382 raw-validates the frozen repeated-cut `Tr U2` arithmetic on prospectively fixed global channel 0:** `q^2=-1`, `D_s Tr U2=-1.1437983592303379e-05`, half-step `-1.1437983587686573e-05`, shifted-phi `-1.1438001667849296e-05`, scaled convergence error `8.280353369982061e-10 < 2e-5`, shell error `1.6132928326584306e-16`, minimum uncut denominator `0.12097568457851282`, runtime `341.30850966599996 s`. This is authority for channel 0 and resource architecture only; no extrapolation to the other 47 channels.
 - Iteration 367 invalidates historical singleton-soft `Tr U1^2` pruning on the timelike fixture.
 - Iteration 368 freezes full physical timelike `Tr U1^2` routing: all `42/42` ordered placements NONZERO; cyclic routing leaves 21 classes.
 - Iterations 369-370 show all 21 cyclic classes remain physically distinct numerator+denominator families.
 - Iteration 371 freezes all 36 multiplicity-two raw denominator targets as surviving physical double poles (`SURVIVE=36`, `CANCEL=0`, `BLOCKED=0`).
-- Iteration 372 freezes 57 timelike channels, exactly 19 per q2 coordinate: 6 simple-simple, 36 simple-double, 15 double-double.
+- Iteration 372 freezes 57 timelike `Tr U1^2` channels, exactly 19 per q2 coordinate: 6 simple-simple, 36 simple-double, 15 double-double.
 - Iteration 373 closes the ordinary-simple prerequisite: all `6/6` simple-simple channels `REGULAR`, `BLOCKED=0`.
-- **Iteration 374 closes the physical ordinary-simple `Tr U1^2` discontinuity:** all `6/6 CONVERGED`, `BLOCKED=0`. q2-resolved sums are `6.253219881951187e-05` at `q^2=-1`, `3.5044107116946374e-05` at `q^2=-0.34`, and `2.9297648005638963e-05` at `q^2=-0.14`; all three are `NONZERO`.
+- **Iteration 374 closes the physical ordinary-simple `Tr U1^2` discontinuity:** all `6/6 CONVERGED`, `BLOCKED=0`; q2-resolved sums are `6.253219881951187e-05` at `q^2=-1`, `3.5044107116946374e-05` at `q^2=-0.34`, and `2.9297648005638963e-05` at `q^2=-0.14`, all NONZERO.
 - Iteration 375 validates the repeated-cut auxiliary-mass/distributional bridge:
 
 \[
@@ -32,35 +38,39 @@ D_1^{-2}D_2^{-2}=+\partial_{\mu_1^2}\partial_{\mu_2^2}[(D_1+\mu_1^2)^{-1}(D_2+\m
 \]
 
 - **Iteration 377 closes the physical auxiliary-mass kinematic prerequisite for every repeated-cut `Tr U1^2` channel:** `51/51 REGULAR`, `BLOCKED=0`; 36 simple-double + 15 double-double; 17 channels in each q2 coordinate. Minimum analytic uncut separation `0.11857147221810005`; maximum shell error `1.2622654386573035e-16`; minimum Kallen function `0.019594400000000005`.
-- **Iteration 378 raw-validates the complete physical simple-double pipeline on the prospectively first frozen channel only:** class `2`, `q^2=-0.34`, multiplicities `2x1`, `CONVERGED`, `D_s Tr U1^2=-2.5401676390398016e-05`; scaled convergence error `2.3732431469379806e-11` under unchanged `2e-5`, max shell error `1.726049858596923e-16`, min sampled uncut denominator `0.2609889252677208`, runtime `1312.8183083709998 s`. This is pipeline/runtime authority only, never authority for the other 35 channels.
+- **Iteration 378 raw-validates the full physical simple-double pipeline on one prospectively frozen channel only:** class `2`, `q^2=-0.34`, multiplicities `2x1`, `CONVERGED`, `D_s Tr U1^2=-2.5401676390398016e-05`; scaled convergence error `2.3732431469379806e-11`, max shell error `1.726049858596923e-16`, min sampled uncut denominator `0.2609889252677208`, runtime `1312.8183083709998 s`.
+- **Iteration 379 is an operational cancellation, not scientific FAIL:** the one-channel double-double scientific step ran for about 45 minutes and was cancelled before sentinel/artifact. No physical value from it is authority.
 
-Iteration-374 provenance: run `33812352303`, job `100836834321`, artifact `9915759849`, artifact digest `sha256:2293a37961230bed7eaed2298fcfaddfcffb342c2e5579b29b9e73986b47450d`, raw JSON SHA-256 `ad84a0e59751171f906e0fbd9b868357e19b3cf8ce948970b3b529e134e84c3c`, workflow head `cb2ddc7d838d0ba1844339d447445b3a8a613124`.
+## Provenance of new validated authorities
 
-Iteration-377 provenance: run `33813366983`, job `100840032070`, artifact `9915623215`, artifact digest `sha256:f6f1860a74a6d84c24023b2a7e8c1d131f9133e2eba00ed743d098d225946c4b`, raw JSON SHA-256 `e27aa368470c4c0091cf72956b4ef13302f8a6cc979519c199aa2a63444ae2a5`, workflow head `e8de37295817456a36acc6289898342804a143ac`.
+- Iteration 380: run `33814113932`, job `100842299850`, artifact `9916838615`, digest `sha256:198d91e9ef7a5a09cdbaca11eb4c02135462fe831f01fbf3c54c7daf7820df63`, raw JSON SHA-256 `217e1fabe4f97967ee82c31101ecce3aeac27826599b516f779a9db84f098ef4`, workflow head `c24850b08f5617868b366d7ec47b68a6cb9cdf40`.
+- Iteration 382: run `33816704205`, job `100850328336`, artifact `9916963796`, digest `sha256:e4ce19e00d8b58f78407c68974f9baa326d8777a4cb84af9ec58ac42fc0ee143`, raw JSON SHA-256 `5fddd09cc07224063434e2abeef1c8d0a044cfcf88ee85cb9e825bb69b005648`, workflow head `7fb92f2bd6488ccf7b7a4aaf141bd913ad2aa46a`.
+- Iteration 383: successful run `33817475548`, job `100852689209`, artifact `9917045046`, digest `sha256:4de76d7ce811ca34a17b9e21b6408c38a632c2850c41b3008f94292a78504c00`, raw JSON SHA-256 `7c00c0d7e959375d9b8e4614994a16e482dc21c7444e0f589ec8d40c531560f4`, workflow head `72a06217529f4e2f47736542397afdeb4fa65f27`. The prior run `33817415864` failed only an over-literal provenance-string assertion; no scientific input changed in the repair.
 
-Iteration-378 provenance: run `33813604738`, job `100840748044`, artifact `9916310237`, artifact digest `sha256:eb426b188200236c07074b89b07f11cfefb4feaa74857b757bae73f478a8c62c`, raw JSON SHA-256 `637756f51e7ee0338a8d531edc5f1d2d58541ad803aa7c5dfd2026e2f9d33355`, workflow head `14255294b9b6d4dafd4ec0b769ccfd4318717ead`.
+## Active computations / resource recovery
 
-## Active computations
+- **Iteration 381:** run `33816213900`, workflow head `5ecb485240ffc39f4bd7b8950ec8963e7b06f92f`; full 36-channel simple-double `Tr U1^2` evaluation in 12 prospectively frozen chunks of exactly 3 channels. Full authority requires all 12 raw artifacts and exact 36-index coverage.
+- **Iteration 384:** run `33817712381`, workflow head `dcae3ac454fd81f19c6d02d4815f07a741afefc7`; complete 48-channel repeated-cut `Tr U2` recovery in 24 prospectively fixed two-channel chunks `[0,2),[2,4),..., [46,48)`. It uses Iteration-364 `channel_derivative` verbatim with unchanged `h`, `h/2`, angular grids, shifted-phi check, normalization, and thresholds. Full authority requires exact indices `0..47` once each. `BLOCKED_CONVERGENCE` is preserved and never zero-filled.
+- **Iteration 385:** code/workflow committed (`bd8f33cd3135966050309711c0a151c445f90f7b`, `dd657f3a1ba115e57fdd0fc5c8b3f2c2fe31615d`) as a resource-only repair of cancelled 379. It preserves the complete Iteration-379 one-channel double-double arithmetic and parallelizes only independent angular points via ordered `fork` map, with a prospectively fixed serial-vs-parallel identity oracle (`2e-13`). At this front update a GitHub Actions run had not yet registered; do not duplicate blindly.
 
-- **Iteration 379:** run `33813761466`, job `100841217582`; physical one-channel double-double mixed-derivative pilot, `in_progress` at last check. Its pilot grid is resource/pipeline authority only, not full-sector authority.
-- **Iteration 380:** run `33814113932`, job `100842299850`; determinant `q^2=-1` analytic-azimuth reduction, `in_progress` at last check. No determinant promotion before raw artifact validation.
-- **Iteration 381:** run `33816213900`, workflow head `5ecb485240ffc39f4bd7b8950ec8963e7b06f92f`; full 36-channel simple-double `Tr U1^2` evaluation in 12 prospectively frozen chunks of exactly 3 channels. Full authority requires all 12 raw artifacts and an exact 36-index assembly.
-- **Iteration 382:** run `33816704205`, job `100850328336`, workflow head `7fb92f2bd6488ccf7b7a4aaf141bd913ad2aa46a`; one prospectively fixed `Tr U2` cut-through-double-pole channel (global index `0`) using Iteration-364 `channel_derivative` verbatim. This is a resource/pipeline recovery pilot only. At last check the scientific step was `in_progress`, with sentinel/schema and artifact still pending. No promotion before raw artifact validation; the other 47 channels remain open.
-
-Do not duplicate any active computation.
+Do not duplicate active computations.
 
 ## Exact next gates
 
-1. Consume Iteration 381 chunks only after raw chunk/sentinel validation. Assemble exactly 36 unique frozen simple-double indices with no gaps/overlaps and preserve the three distinct q2 buckets. Any nonconverged channel stays `BLOCKED`, never zero-filled.
-2. Consume Iteration 379. If its raw pilot validates, use measured runtime/convergence margin only to prospectively freeze the complete 15-channel double-double architecture; the pilot value itself cannot close the sector.
-3. Consume Iteration 380. If raw PASS, freeze the determinant `q^2=-1` triangle and assemble the complete channel-resolved normalized determinant absorptive vector. If structural/cross-check failure occurs, preserve the triangle as BLOCKED and continue analytic reduction without weakening thresholds.
-4. Consume Iteration 382 only after raw artifact + sentinel validation. If channel 0 converges, use measured runtime only to prospectively freeze a smaller complete-48 resource architecture with identical Iteration-364 arithmetic; if blocked, isolate only that channel without weakening thresholds. Cancelled Iterations 364/376 remain non-authoritative.
-5. Only after complete physical `Tr U2` and complete `Tr U1^2` closure may `+(i/2)Tr U2 -(i/4)Tr U1^2` be assembled.
-6. Source/Ward/contact completion and matched `K2` subtraction remain downstream. Source/Born subtraction is forbidden before normalized origin accounting.
+1. Consume Iteration 381 only after all 12 raw chunks exist; validate exactly 36 unique simple-double indices with no gaps/overlaps, preserve q2 buckets, and keep any nonconverged channel BLOCKED.
+2. Consume Iteration 384 only after raw chunk/sentinel validation; validate exactly 48 unique repeated `Tr U2` indices. Assemble a q2 coordinate only if every required channel in that bucket is scientifically resolved.
+3. Recheck Iteration 385 registration. If a raw-valid one-channel result converges, use measured parallel runtime only to prospectively freeze a complete 15-channel double-double architecture with identical arithmetic. If it remains operationally unregistered or fails structurally, repair resource plumbing only; do not alter physics thresholds.
+4. Retain the Iteration-383 determinant vector as immutable normalized origin accounting. Iteration-297 finite-DR warning remains separate and binding.
+5. Only after complete physical `Tr U2` and complete `Tr U1^2` closure may
+
+\[
+D_s\Gamma_{e=2}=+\frac{i}{2}D_s\mathrm{Tr}U_2-\frac{i}{4}D_s\mathrm{Tr}U_1^2
+\]
+
+be assembled q2-by-q2.
+6. Source/Ward/contact completion and matched `K2` subtraction remain downstream. Source/Born subtraction is forbidden before normalized origin accounting. No candidate residual may be declared before the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient survives.
 
 Repeated-cut normalized signs remain: `D_s(simple)=-sphere_mean`; simple-double `D_s=+sphere_mean[d_mu G]`; double-double `D_s=-sphere_mean[d_mu1 d_mu2 G]`.
-
-Iteration-297 evanescent/regulator warning remains binding. No Candidate residual may be declared before the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient survives.
 
 ## Stable readiness rubric
 
@@ -73,7 +83,7 @@ Iteration-297 evanescent/regulator warning remains binding. No Candidate residua
 
 MODEL_READINESS: 24%
 
-Change through validated Iteration 378 plus active recovery Iteration 382: `0 pp`. The ordinary-simple `Tr U1^2` sub-sector and all repeated-cut method/kinematic prerequisites are closed, and one simple-double physical pilot is validated, but complete `Tr U1^2`, complete `Tr U2`, and a robust comparator-subtracted residual remain open. Iteration 382 has not yet produced raw scientific authority.
+Change through validated Iteration 383 plus active 381/384/385 resource work: `0 pp`. Several hard sub-sectors are now physically closed, including the complete ordinary-simple determinant vector, but complete repeated `Tr U1^2`, complete repeated `Tr U2`, Source/Ward/contact + matched `K2`, and a robust comparator-subtracted residual remain open.
 
 ## Retained guardrails
 
