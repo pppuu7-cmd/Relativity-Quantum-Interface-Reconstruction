@@ -1,0 +1,37 @@
+name: rqir-iteration324-det-shifted-propagator-routing-engine
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration324_det_shifted_propagator_routing_engine.py'
+      - '.github/workflows/rqir-iteration324-det-shifted-propagator-routing-engine.yml'
+
+jobs:
+  iteration324:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Run shifted-propagator routing engine
+        run: python candidate_gravity/code/iteration324_det_shifted_propagator_routing_engine.py > iteration324_result.json
+      - name: Sentinel/schema audit
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          raw=open('iteration324_result.json','rb').read(); o=json.loads(raw)
+          ok=isinstance(o,dict) and o.get('iteration')==324 and 'scientific_gate_pass' in o
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':324,'found_iterations':[o.get('iteration')],'top_level_object_count':1,'valid_single_top_level':True,'valid_expected_iteration':o.get('iteration')==324,'scientific_authority_pass':bool(ok and o.get('scientific_gate_pass')),'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw)}
+          open('iteration324_authority_audit.json','w').write(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          assert ok
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iteration324-result
+          path: |
+            iteration324_result.json
+            iteration324_authority_audit.json
+      - name: Enforce scientific gate
+        run: python -c "import json; o=json.load(open('iteration324_result.json')); assert o['scientific_gate_pass'], o"
