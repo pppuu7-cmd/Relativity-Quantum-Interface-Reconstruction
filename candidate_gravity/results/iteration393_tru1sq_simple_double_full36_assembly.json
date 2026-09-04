@@ -1,0 +1,49 @@
+{
+  "iteration": 393,
+  "model_readiness_percent": 24,
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "classification": "PASS_TRU1SQ_SIMPLE_DOUBLE_FULL36_RAW_MANIFEST_ASSEMBLY__ALL_CONVERGED",
+  "source_iteration": 381,
+  "source_run": 33816213900,
+  "source_workflow_head": "5ecb485240ffc39f4bd7b8950ec8963e7b06f92f",
+  "census": {
+    "channel_count": 36,
+    "unique_index_count": 36,
+    "exact_indices_0_to_35": true,
+    "raw_chunk_count": 12,
+    "exact_12_chunk_provenance": true,
+    "all_channels_converged": true,
+    "all_thresholds_pass": true,
+    "channel_count_by_q2": {"-1.0": 12, "-0.34": 12, "-0.14": 12}
+  },
+  "D_s_TrU1sq_simple_double_sum_by_q2": {
+    "-1.0": [-0.002329411286740447, 0.0],
+    "-0.34": [-0.0005948791870822445, 0.0],
+    "-0.14": [-0.00007368142632096214, 0.0]
+  },
+  "numerical_envelope": {
+    "max_scaled_convergence_error": 1.2832512405556301e-08,
+    "max_radial_richardson_scaled_error": 9.7822954164134e-15,
+    "max_cut_shell_abs_error": 1.9796472878401243e-16,
+    "minimum_sampled_uncut_abs_denominator": 0.1209736845785128
+  },
+  "effective_action_weight": "NOT_FOLDED__MINUS_I_OVER_4_TRU1SQ_SEPARATE",
+  "validated_actions": {
+    "run": 33820949571,
+    "artifact": 9918228922,
+    "artifact_digest": "sha256:f642776e365eaa0301913c49c17f1e89048f43ce32dc828580164dfae0bbe5a7",
+    "raw_result_sha256": "8eec56bd5d0d48e36c4490407bcc88c9d2ee3d3e59d976a9a0e1ad5f16d86226"
+  },
+  "scope": "COMPLETE_36_CHANNEL_SIMPLE_DOUBLE_OPERATOR_COORDINATE_ONLY",
+  "guardrails": [
+    "EXACT_RAW_MANIFEST_COVERAGE_REQUIRED",
+    "NO_ZERO_FILL",
+    "DISTINCT_Q2_COORDINATES_NOT_SUMMED",
+    "NO_EFFECTIVE_ACTION_WEIGHT_FOLDING",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "next_gate": "combine with Iteration374 simple-simple and complete Iteration389 double-double only after the 15-channel double-double operator coordinate is fully resolved; apply -i/4 only after complete TrU1sq closure"
+}
