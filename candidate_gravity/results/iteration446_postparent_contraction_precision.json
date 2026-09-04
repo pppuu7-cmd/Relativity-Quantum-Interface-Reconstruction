@@ -1,0 +1,13 @@
+{
+  "MODEL_READINESS":"24%",
+  "authority_scope":"ITER444_FROZEN_LAYER368_370_POSTPARENT_7_MATMUL_PLUS_TRACE_PRECISION__NON_PROMOTING",
+  "classification":"PASS_POSTPARENT_CONTINUOUS_MP80_MP120_CONTRACTION_CERTIFICATE__NON_PROMOTING",
+  "scientific_gate_pass":true,
+  "promotes_physical_coordinate":false,
+  "observed":{"scaled_mp80_vs_mp120_max":"5.88078000546852010816680540366e-80","scaled_binary64_vs_mp120_max_diagnostic":"2.88197990019611433767821721255e-15","contraction_count":126,"all_finite":true},
+  "thresholds":{"scaled_mp80_vs_mp120_max":"1e-30","required_contraction_count":126,"all_finite":true},
+  "frozen":{"precision_digits":[80,120],"post_parent_matmuls_per_contraction":7,"trace_operations_per_contraction":1,"representative_contraction_count":126,"orientations":["A","B","A_SHIFT"],"classes":21,"probes_per_class":2,"same_parent_values":true,"same_routing_and_orientation":true},
+  "provenance":{"run_id":33920431333,"job_id":101177249464,"artifact_id":9954810135,"artifact_digest":"sha256:da2d7bbf585503316afecaee9e13201f5d65848d455b1530ed5c2d99a80c41c7","raw_json_sha256":"c94464caa7e261cfd29cffba72bd4addcee2ef2e0bd3ef0c3a5d22a1bf68e1e7","raw_authority_audit_sha256":"520f120b4bf71c4eb617fa8ff1e9e27b710dea1db1172cd92cb80f0eecf443b4","code_commit":"626887eb9a453003383b999103d751bbbb73d0b4","workflow_commit":"74910896d64feed84b1f913dfa6803e8020b5387"},
+  "guardrails":["NO_OUTER_MP_AROUND_BINARY64_MATMUL_OR_TRACE","PARENT_VALUES_FROZEN_BEFORE_POSTPARENT_PRODUCTS","NO_THRESHOLD_WEAKENING","NO_ROUTING_CHANGE","NO_NUMERATOR_CHANGE","NO_ZERO_FILL","NO_PHYSICAL_DS_PROMOTION"],
+  "readiness_change_pp":0
+}
