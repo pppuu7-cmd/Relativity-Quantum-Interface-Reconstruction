@@ -1,0 +1,56 @@
+{
+  "iteration": 426,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "scientific_gate_pass": true,
+  "classification": "PASS_CHANNEL2_PHI_MEAN_RESOLUTION__STABLE_DIAGNOSTIC_ONLY",
+  "authority_scope": "DIAGNOSTIC_ONLY__NO_PHYSICAL_COORDINATE_PROMOTION",
+  "target": {
+    "double_double_global_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0
+  },
+  "max_cross_scaled_nphi16_vs_nphi32_delta": 1.231653667943533e-05,
+  "physical_materiality_threshold": 2e-05,
+  "max_fixed_mass_scaled_nphi16_vs_nphi32_delta": 6.006480035569695e-16,
+  "reproduction_oracle_scaled_delta": 8.673617379884035e-19,
+  "records": [
+    {
+      "radius": 1e-05,
+      "cross_ratio_nphi16": -0.0035790619599962432,
+      "cross_ratio_nphi32": -0.0035787833200379144,
+      "scaled_delta": 2.7863995832877464e-07
+    },
+    {
+      "radius": 5e-06,
+      "cross_ratio_nphi16": -0.0035707244452898297,
+      "cross_ratio_nphi32": -0.003583040981969265,
+      "scaled_delta": 1.231653667943533e-05
+    }
+  ],
+  "structure_observed": {
+    "max_polynomial_heldout_scaled_error": 4.547143911404206e-16,
+    "max_radial_richardson_scaled_error": 4.599294035900758e-15,
+    "minimum_analytic_uncut_abs_denominator": 0.11857147221810008,
+    "minimum_kallen": 0.99996
+  },
+  "provenance": {
+    "run": 33886485823,
+    "job": 101067408773,
+    "artifact": 9943246167,
+    "artifact_digest": "sha256:efd42550e9e5be80436585f1d4090d7ad29cb8adeed573f40dbadc3fc6fe6a66",
+    "workflow_head_sha": "2c5e41dafa37f3e917aea6828011b77ac454b5ff"
+  },
+  "interpretation": "Increasing the frozen phi mean from 16 to 32 nodes changes the symmetric-cross quotient by at most 1.23165e-5, below the unchanged physical materiality threshold 2e-5. Individual fixed-mass F values differ only at roughly 6e-16 scaled. Phi-node resolution is therefore not a dominant explanation of the Iteration-421 convergence block; priority moves to the deeper traced-numerator/full-precision chain.",
+  "guardrails": [
+    "DIAGNOSTIC_ONLY",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_SMALLER_MASS_STEP",
+    "NO_ANGULAR_GRID_ESCALATION_FOR_PHYSICAL_PROMOTION",
+    "NO_ZERO_FILL",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
