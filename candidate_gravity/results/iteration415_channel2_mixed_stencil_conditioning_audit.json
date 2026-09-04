@@ -1,0 +1,60 @@
+{
+  "candidate_residual": false,
+  "classification": "PASS_CHANNEL2_CENTRAL4X4_NUMERICAL_CONDITIONING_AUDIT__NON_PROMOTING",
+  "date": "2026-09-04",
+  "float64_machine_epsilon": 2.220446049250313e-16,
+  "frozen_physical_convergence_threshold": 2e-05,
+  "guardrails": [
+    "NO_ITERATION413_OUTPUT_USED",
+    "NO_PHYSICAL_DS_VALUE",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_CLAIM_THAT_ACTUAL_NODE_ERRORS_EQUAL_MACHINE_EPSILON",
+    "NO_MORE_BLIND_H_SHRINKING_IF_ITERATION413_BLOCKS",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "interpretation": [
+    "The h^-2 amplification is an exact conditioning property of the unchanged mixed finite-difference stencil, not a statement about the actual correlated node error.",
+    "At h=2.5e-6 and 1.25e-6, a worst-case guarantee at the 2e-5 derivative threshold would require sub-epsilon absolute accuracy for unit-scale independent node noise.",
+    "Therefore a failed Iteration413 halving cannot by itself be interpreted as physical nonconvergence; roundoff/cancellation conditioning must be separated from truncation.",
+    "Iteration414 remains the complementary truncation-dominated O(h^4) predictor; Iteration415 supplies the roundoff-conditioning side of the error budget."
+  ],
+  "iteration": 415,
+  "model_readiness_percent": 24,
+  "next_gate": "consume Iteration413 raw result; if it blocks, build a prospectively validated auxiliary-mass derivative extraction with better conditioning (for example symmetric mass-spectral/Taylor coefficient recovery or higher-precision node evaluation) rather than further h shrinking",
+  "physical_authority_promoted": false,
+  "scales": [
+    {
+      "h": 5e-06,
+      "mixed_stencil_l1_gain": 89999999999.99998,
+      "required_node_absolute_error_for_worst_case_derivative_below_threshold": 2.222222222222223e-16,
+      "required_node_error_in_float64_eps_units": 1.0007999171934439,
+      "unit_scale_float64_epsilon_worst_case_derivative_bound": 1.9984014443252814e-05
+    },
+    {
+      "h": 2.5e-06,
+      "mixed_stencil_l1_gain": 359999999999.99994,
+      "required_node_absolute_error_for_worst_case_derivative_below_threshold": 5.555555555555557e-17,
+      "required_node_error_in_float64_eps_units": 0.25019997929836096,
+      "unit_scale_float64_epsilon_worst_case_derivative_bound": 7.993605777301126e-05
+    },
+    {
+      "h": 1.25e-06,
+      "mixed_stencil_l1_gain": 1439999999999.9998,
+      "required_node_absolute_error_for_worst_case_derivative_below_threshold": 1.3888888888888893e-17,
+      "required_node_error_in_float64_eps_units": 0.06254999482459024,
+      "unit_scale_float64_epsilon_worst_case_derivative_bound": 0.00031974423109204503
+    }
+  ],
+  "scientific_gate_pass": true,
+  "stencil": {
+    "mixed_l1_gain": "2.25/h^2",
+    "one_derivative_l1_gain": "1.5/h",
+    "one_derivative_weights": "(1,-8,8,-1)/(12h)"
+  },
+  "target": {
+    "class_id": 3,
+    "double_double_global_index": 2,
+    "q_squared": -1.0
+  }
+}
