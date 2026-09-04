@@ -1,0 +1,21 @@
+{
+  "iteration": 405,
+  "date": "2026-09-04",
+  "classification": "PASS_U2_REPEATED_CUT_EXACT48_FAIL_CLOSED_ASSEMBLY",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "source_run": 33832181526,
+  "source_artifact_id": 9922054102,
+  "source_artifact_digest": "sha256:1dd9bbc6c863954059263171c5a160510ce3605bb416a46498c3453b48343729",
+  "source_result_sha256": "f766c6641fb9a89838784ae7572fa1f8459dd0260fd71007f8de93e727840cab",
+  "exact_channel_count": 48,
+  "q2_channel_counts": {"-1.0":16,"-0.34":16,"-0.14":16},
+  "D_s_TrU2_repeated_cut_q2": {
+    "-1.0": [0.0006026660521292439,0.0],
+    "-0.34": [-0.0006500414994361118,0.0],
+    "-0.14": [-0.0015019714311265522,0.0]
+  },
+  "effective_action_weight": "NOT_FOLDED__PLUS_I_OVER_2_TRU2_SEPARATE",
+  "model_readiness_percent": 24,
+  "guardrails": ["EXACTLY_ONE_RECORD_PER_INDEX_0_TO_47","ALL_RECORDS_CONVERGED","ITERATION392_TOPOLOGY_MASK_BINDING","DISTINCT_Q2_BUCKETS_NEVER_SUMMED","NO_ZERO_FILL","NO_EFFECTIVE_ACTION_WEIGHT_FOLDING","NO_SOURCE_BORN_SUBTRACTION","NO_ANSATZ003","NO_FISHER_RESOURCES"]
+}
