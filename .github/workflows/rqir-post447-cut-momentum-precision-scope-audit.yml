@@ -1,0 +1,54 @@
+name: RQIR post447 cut-momentum precision scope audit
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/post447_cut_momentum_precision_scope_audit.py'
+      - '.github/workflows/rqir-post447-cut-momentum-precision-scope-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scope_audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run collision-safe source scope audit
+        run: |
+          root="candidate_gravity/artifacts/post447_cut_momentum_precision_scope"
+          mkdir -p "$root"
+          python candidate_gravity/code/post447_cut_momentum_precision_scope_audit.py > "$root/result.json"
+      - name: Raw authority audit
+        if: always()
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('candidate_gravity/artifacts/post447_cut_momentum_precision_scope')
+          p=root/'result.json'
+          if not p.exists() or p.stat().st_size==0: raise SystemExit(2)
+          raw=p.read_bytes(); o=json.loads(raw); sd=o.get('scope_distinction',{})
+          ok=bool(
+            o.get('stage')=='POST447_CUT_MOMENTUM_PARENT_PRECISION_SCOPE_AUDIT__UNNUMBERED_COLLISION_SAFE' and
+            o.get('classification')=='PASS_REPRESENTATIVE_PARENT_MP_DOES_NOT_YET_EQUAL_CONTINUOUS_CUT_MOMENTUM_MP__NON_PROMOTING' and
+            o.get('scientific_gate_pass') is True and o.get('promotes_physical_coordinate') is False and
+            'continuous arbitrary-precision' in sd.get('not_yet_certified','') and
+            o.get('prospective_next_numerical_gate',{}).get('status')=='PROSPECTIVE_ONLY__NO_PHYSICAL_ACCEPTANCE_RULE_CHANGED'
+          )
+          a={'schema':'rqir_action_result_authority_audit_v1','stage':o.get('stage'),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),'classification':o.get('classification'),'scientific_authority_pass':ok,'authority_scope':'SOURCE_SCOPE_ONLY__NON_PROMOTING'}
+          (root/'authority_audit.json').write_text(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          if not ok: raise SystemExit(2)
+          PY
+      - name: Upload raw artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-post447-cut-momentum-precision-scope
+          path: candidate_gravity/artifacts/post447_cut_momentum_precision_scope/
+          if-no-files-found: warn
+          retention-days: 90
