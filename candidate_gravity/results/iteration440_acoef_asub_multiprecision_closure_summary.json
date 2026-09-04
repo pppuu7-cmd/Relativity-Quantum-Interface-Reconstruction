@@ -1,0 +1,31 @@
+{
+  "iteration": 440,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "scientific_gate_pass": true,
+  "classification": "PASS_ITER270_ACOEF_ASUB_80_120_DIGIT_ARITHMETIC_CLOSURE__NON_PROMOTING",
+  "authority_scope": "PARENT_PRECISION_CLOSURE__ITERATION270_ACOEF_ASUB_SIGNED_ASSEMBLY__NON_PROMOTING",
+  "observed": {
+    "max_mp80_vs_mp120_Acoef_scaled": "1.4149749985220297225776578971e-75",
+    "max_binary64_vs_mp120_Acoef_scaled_diagnostic_only": 1.890704312519492e-10,
+    "all_values_finite": true,
+    "node_count": 26,
+    "subset_count": 7
+  },
+  "thresholds": {
+    "mp80_vs_mp120_Acoef_scaled_max": "1e-30",
+    "required_node_count": 26,
+    "required_subset_count": 7
+  },
+  "provenance": {
+    "run": 33904321843,
+    "job": 101125537041,
+    "artifact": 9948876125,
+    "artifact_digest": "sha256:244e52df6a951a21d5ea20638fdf0d15875a07f6b0b3c77355d5b336cf4b479d",
+    "raw_scientific_json_sha256": "36ff8634a6bafae0281e99110739416d4a8a6313a62c918a9d12bfebffb6f964",
+    "workflow_head_sha": "c84a9991c8d11c5d863d7f8b39bd01e5eeb4d5f9"
+  },
+  "interpretation": "The exact frozen Iteration-270 Acoef/Asub signed assembly is internally closed at 80/120 digits by an enormous margin. This certifies arithmetic precision only; finite-difference truncation remains separately unclosed. Binary64-vs-mp120 disagreement is diagnostic only and peaks at 1.89e-10 scaled for the three-leg subset.",
+  "guardrails": ["NO_PHYSICAL_DS_VALUE","UNCHANGED_H1_H2_H3","ARITHMETIC_PRECISION_ONLY","NO_THRESHOLD_WEAKENING","NO_PARENT_DYNAMICS_CHANGE","NO_ZERO_FILL","NO_ANSATZ003","NO_FISHER_RESOURCES"]
+}
