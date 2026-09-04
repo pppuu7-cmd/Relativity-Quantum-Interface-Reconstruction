@@ -1,0 +1,20 @@
+{
+  "iteration": 406,
+  "date": "2026-09-04",
+  "classification": "PASS_TRU2_COMPLETE_TIMELIKE_OPERATOR_COORDINATE_Q2_RESOLVED",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "D_s_TrU2_complete_q2": {
+    "-1.0": [0.0005345424186332474,0.0],
+    "-0.34": [-0.000734101259784574,0.0],
+    "-0.14": [-0.001572666890130343,0.0]
+  },
+  "components": {
+    "ordinary_simple_iteration": 361,
+    "repeated_family_simple_simple_iteration": 366,
+    "repeated_cut_iteration": 405
+  },
+  "effective_action_weight": "NOT_FOLDED__PLUS_I_OVER_2_TRU2_SEPARATE",
+  "model_readiness_percent": 24,
+  "next_gate": "resolve TrU1^2 double-double blockers 2,4,11, assemble complete TrU1^2, then combine e=2 weights q2-by-q2"
+}
