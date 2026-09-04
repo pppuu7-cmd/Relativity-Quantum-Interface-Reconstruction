@@ -7,7 +7,8 @@
 **Active promotable ansatz:** none  
 **Latest validated Candidate Gravity physical/operator authority:** **Iteration 411**  
 **Latest validated structural authority:** **Iteration 410**  
-**Latest validated numerical-method diagnosis:** **Iteration 415**
+**Latest validated numerical-method diagnosis:** **Iteration 415**  
+**Latest prospective methodological authority:** **Iteration 420**
 
 Repository commits, raw schema-validated Actions artifacts, recovery material and this file are source of truth. Green/red workflow colour alone is never scientific authority.
 
@@ -75,14 +76,26 @@ Iteration 419 changes only the operational marker selection to the final executa
 
 No useful heavy physical run is duplicated.
 
+## Iteration 420 prospective interpretation contract
+
+Iteration 420 is a methodological-only PASS frozen before Iteration-419 raw consumption. It uses the raw Iteration-413 discrepancy `2.769196909034482e-04` and prospectively defines a materially explanatory binary64 scale at 25% of that value:
+
+`6.922992272586205e-05`.
+
+- If either Iteration-419 `max_binary64_roundoff_bound_scaled` or `max_naive_vs_compensated_scaled_delta` is at least this threshold, binary64 cancellation is classified as materially capable of explaining the instability; the next gate is an algebraically identical higher-precision evaluation at the same frozen mass nodes and central4×central4 derivative.
+- If both metrics are below this threshold, binary64 summation alone is insufficient; the next gate is a high-precision conditioning audit inside the fixed-mass `analytic_sphere_G` evaluation itself (kinematics, polynomial reconstruction, affine-denominator recurrence, radial extrapolation), again with no smaller `h`.
+- Neither branch can promote index 2. Physical authority still requires a later raw-valid `CONVERGED` algebraically equivalent high-precision representation with unchanged `2e-5` and the existing structural/direct-original-integrand checks.
+
+Code: `candidate_gravity/code/iteration420_channel2_cancellation_interpretation_contract.py`. Recovery: `candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_420.md`.
+
 ## Iteration 412 exact15 assembly contract
 
 Iteration 412 remains frozen and fail-closed. It requires exactly 15 unique double-double indices, five scientifically valid `CONVERGED` records per `q^2` bucket, finite coordinates, no duplicates, no missing indices and no zero fill. It remains BLOCKED until index 2 obtains raw-valid physical authority.
 
 ## Exact next gates
 
-1. Raw-consume Iteration 419 artifact fail-closed and quantify whether binary64 cancellation/roundoff can explain the index-2 instability.
-2. Construct an algebraically equivalent analytic/high-precision auxiliary-mass mixed-derivative representation for index 2, with prospectively frozen precision/stability checks and the existing original-integrand structural cross-check. Diagnostics alone cannot promote a physical coordinate.
+1. Raw-consume Iteration 419 artifact fail-closed and apply the already-frozen Iteration-420 decision rule; do not reinterpret the cancellation metrics post-hoc.
+2. Construct the branch-appropriate algebraically equivalent high-precision auxiliary-mass representation for index 2 at the same frozen mass nodes, with prospectively frozen precision/stability checks and the existing original-integrand structural cross-check. Diagnostics alone cannot promote a physical coordinate.
 3. Only if index 2 becomes raw-valid `CONVERGED`, run frozen Iteration 412 exact15 assembly, then complete `Tr U1^2`.
 4. Only after complete `Tr U1^2`, assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2 using Iteration 406 `Tr U2`.
 5. Source/Ward/contact completion + matched K2 and the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain downstream. No Candidate residual before comparator quotient closure.
@@ -100,7 +113,7 @@ Repeated-cut signs remain frozen: `D_s(simple)=-sphere_mean`; simple-double `D_s
 
 **MODEL_READINESS: 24%**
 
-No readiness point is added by Iterations 413–419. Index 2 remains physically unresolved, exact15 `Tr U1^2` is blocked, and no robust comparator-subtracted residual exists.
+No readiness point is added by Iterations 413–420. Index 2 remains physically unresolved, exact15 `Tr U1^2` is blocked, and no robust comparator-subtracted residual exists.
 
 ## Retained guardrails
 
