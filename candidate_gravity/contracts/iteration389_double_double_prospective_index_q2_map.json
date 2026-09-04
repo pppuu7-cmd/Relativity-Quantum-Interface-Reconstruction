@@ -1,0 +1,53 @@
+{
+  "source_topology_iteration": 372,
+  "target_compute_iteration": 389,
+  "frozen_before_remaining_numeric_results": true,
+  "double_double_channel_count": 15,
+  "index_q2_map": {
+    "0": -1.0,
+    "1": -1.0,
+    "2": -1.0,
+    "3": -1.0,
+    "4": -1.0,
+    "5": -0.14,
+    "6": -0.14,
+    "7": -0.14,
+    "8": -0.14,
+    "9": -0.14,
+    "10": -0.34,
+    "11": -0.34,
+    "12": -0.34,
+    "13": -0.34,
+    "14": -0.34
+  },
+  "index_class_id_map": {
+    "0": 1,
+    "1": 2,
+    "2": 3,
+    "3": 4,
+    "4": 5,
+    "5": 8,
+    "6": 9,
+    "7": 10,
+    "8": 11,
+    "9": 12,
+    "10": 15,
+    "11": 16,
+    "12": 17,
+    "13": 18,
+    "14": 19
+  },
+  "required_bucket_census": {
+    "-1.0": 5,
+    "-0.14": 5,
+    "-0.34": 5
+  },
+  "assembly_guardrails": [
+    "EXACT_INDICES_0_TO_14_ONCE_EACH",
+    "Q2_MUST_MATCH_THIS_PROSPECTIVE_MAP",
+    "FIVE_CHANNELS_PER_Q2_BUCKET",
+    "BLOCKED_CHANNEL_NEVER_ZERO_FILLED",
+    "CHANNEL4_CURRENTLY_BLOCKS_ONLY_Q2_MINUS1_UNTIL_ITERATION395_OR_STRONGER_AUTHORITY",
+    "NO_EFFECTIVE_ACTION_MINUS_I_OVER_4_WEIGHT_BEFORE_COMPLETE_TRU1SQ"
+  ]
+}
