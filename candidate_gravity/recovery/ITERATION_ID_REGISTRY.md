@@ -4,7 +4,7 @@ Purpose: prevent recovery/provenance ambiguity when workflows are launched concu
 
 ## Rule
 
-An authoritative iteration number is allocated by the first committed `RESEARCH_LOG_ITERATION_N.md` / recovery record pair for that scientific iteration. A later workflow that embeds the same integer but represents a different scientific object is a **workflow-local duplicate identifier**. Its raw payload may be consumed only under a new unique authoritative iteration; it must never overwrite the earlier research/recovery meaning.
+An authoritative iteration number is allocated by the first committed research/recovery record pair for that scientific iteration. A later workflow that embeds the same integer but represents a different scientific object is a **workflow-local duplicate identifier**. Its raw payload may be consumed only under a new unique authoritative iteration; it must never overwrite the earlier research/recovery meaning.
 
 This is a provenance/operational rule. Identifier collision is not a physics FAIL.
 
@@ -25,6 +25,9 @@ This is a provenance/operational rule. Identifier collision is not a physics FAI
 - **442:** authoritative raw consumption of Iteration-441 PASS, closing the scoped Iteration-270 `Acoef/Asub` arithmetic + fixed-h representation/truncation parent layer; non-promoting.
 - **443:** source/provenance audit of outward Iterations 368/370 identifying the independently formed Y-site `y1` at frozen `h=4e-5` and post-parent matrix-product/trace arithmetic as still-unclosed precision boundaries; prospectively freezes the Y-site 80/120 + same-h fourth-order subgate; non-promoting.
 - **444:** source/provenance audit freezing the exact Iteration-368 post-parent contraction arithmetic graph (7 matrix multiplications + 1 trace per routed amplitude) and the continuous 80/120-digit contraction certificate to be run only after Y-site PASS; non-promoting.
+- **445:** raw consumption of the frozen Iteration-443 Y-site `y1` 80/120-digit + same-h fourth-order oracle; PASS, non-promoting.
+- **446:** raw consumption of the Iteration-444 continuous post-parent seven-matmul + trace 80/120-digit certificate; PASS, non-promoting.
+- **447:** raw consumption of the downstream source/provenance boundary audit after Iteration 446; locates still-uncertified Iteration-407 spectral/sample binary64 arithmetic; source-boundary PASS only, not numerical closure and non-promoting.
 
 A later workflow-local job labelled `431` (`rqir-iteration431-channel2-cut-kinematic-h1-sensitivity`, run `33918967955`) is a duplicate identifier because authoritative 431 is already reserved. It may only be consumed under a future unique authoritative iteration and may not overwrite prior records.
 
