@@ -1,0 +1,24 @@
+{
+  "candidate_residual": false,
+  "classification": "PASS_MATERIALIZE_ITERATION395_RAW_WITHOUT_RECOMPUTATION",
+  "guardrails": [
+    "NO_RECOMPUTATION",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_ZERO_FILL",
+    "NO_EFFECTIVE_ACTION_WEIGHT_FOLDING",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "iteration": 396,
+  "iteration395_D_s_TrU1sq_double_double_channel": null,
+  "iteration395_classification": "PASS_TRU1SQ_DOUBLE_DOUBLE_CHANNEL4_STRONGER_ANGULAR__STILL_BLOCKED",
+  "iteration395_frozen_threshold": 2e-05,
+  "iteration395_scaled_convergence_error": 2.792425135668121e-05,
+  "iteration395_status": "BLOCKED_CONVERGENCE",
+  "model_readiness_percent": 24,
+  "scientific_gate_pass": true,
+  "source_artifact_digest": "sha256:ecf6b54dea9a2eb8d0231782015b02335c799baa32d5948b385e11cf3c40d30c",
+  "source_artifact_id": 9918963191,
+  "source_raw_sha256": "605d121616c36eb144b657d45de7be8a4dfd0d167402ec06eb48308daa8e5634",
+  "source_run_id": 33821555831
+}
