@@ -1,0 +1,62 @@
+{
+  "iteration": 430,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "scientific_gate_pass": true,
+  "classification": "PASS_CHANNEL2_DEEPEST_FIRST_PRECISION_PORT_CONTRACT__NON_PROMOTING",
+  "authority_scope": "PROSPECTIVE_IMPLEMENTATION_CONTRACT__NO_PHYSICAL_COORDINATE_PROMOTION",
+  "target": {
+    "double_double_global_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0,
+    "physical_authority": "ITERATION_421_BLOCKED_CONVERGENCE"
+  },
+  "upstream_authority": {
+    "iteration_424": "authorized 80/120-digit fixed-node fallback with frozen physical acceptance rules",
+    "iteration_425": "complete auxiliary-mass dependence of F must be retained",
+    "iteration_427": "independent exact factorized derivative-coordinate oracle",
+    "iteration_428": "whole-path conditioning requires genuine full-path precision provenance",
+    "iteration_429": "raw-valid dependency-chain manifest 407->379->374->370->368"
+  },
+  "deepest_first_order": [
+    "stage_1_iteration_368_370_traced_numerator_primitives",
+    "stage_2_iteration_379_374_radial_stripped_limit_wrapper",
+    "stage_3_iteration_407_complete_fixed_mass_F",
+    "stage_4_iteration_424_frozen_mass_nodes_80_120_digits",
+    "stage_5_iteration_427_factorized_oracle_comparison"
+  ],
+  "stage_1_contract": {
+    "preserve": [
+      "same parent dynamics",
+      "same routing",
+      "same numerator definition",
+      "same derivative definitions and finite-difference nodes inherited from the frozen source",
+      "same sign and normalization",
+      "same parameter convention"
+    ],
+    "precision_rule": "Any arithmetic layer that remains binary64 must carry a quantitative error bound tight enough to preserve the downstream frozen Iteration-424 gates; otherwise that layer must be ported to arbitrary precision.",
+    "no_local_promotion": "Passing an inner-layer port/certification does not promote D_s or index 2. Physical authority is only possible after the complete full-F 80/120-digit fixed-node path passes all Iteration-424 acceptance gates.",
+    "finite_difference_rule": "Increasing arithmetic precision does not alter or excuse truncation from inherited finite-difference definitions; no smaller mass step and no post-hoc stencil change are authorized."
+  },
+  "final_acceptance_inherited_from_iteration_424": {
+    "mass_step_discrepancy_max": 2e-5,
+    "direct_original_integrand_crosscheck_max": 2e-6,
+    "tensor_degree_1_1_fit_residual_max": 2e-5,
+    "cross_precision_Ds_80_vs_120_max": 2e-6,
+    "finite_outputs_required": true
+  },
+  "forbidden": [
+    "outer_only_high_precision_presented_as_full_F_precision",
+    "denominator_only_auxiliary_mass_derivative",
+    "smaller_mass_step",
+    "angular_grid_escalation",
+    "threshold_weakening",
+    "zero_fill",
+    "numerator_or_routing_change",
+    "ANSATZ_003",
+    "Fisher_or_resource_claims_before_nonzero_residual"
+  ],
+  "readiness_change_pp": 0,
+  "readiness_reason": "The contract removes implementation ambiguity but does not close a physical coordinate or any additional readiness-rubric block."
+}
