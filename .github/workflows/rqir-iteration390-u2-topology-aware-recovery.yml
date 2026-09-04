@@ -1,0 +1,85 @@
+name: rqir-iteration390-u2-topology-aware-recovery
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration390_u2_repeated_cut_topology_aware_recovery_chunk.py'
+      - '.github/workflows/rqir-iteration390-u2-topology-aware-recovery.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  iteration390:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        include:
+          - {start: 4, end: 6, label: '04-05'}
+          - {start: 14, end: 16, label: '14-15'}
+          - {start: 16, end: 18, label: '16-17'}
+          - {start: 22, end: 24, label: '22-23'}
+          - {start: 28, end: 30, label: '28-29'}
+          - {start: 30, end: 32, label: '30-31'}
+    name: iteration390 ${{ matrix.label }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check -q numpy
+      - name: Run topology-aware recovery and preserve raw
+        id: compute
+        shell: bash
+        env:
+          START_INDEX: ${{ matrix.start }}
+          END_INDEX: ${{ matrix.end }}
+          LABEL: ${{ matrix.label }}
+        run: |
+          mkdir -p candidate_gravity/artifacts/iteration390/${LABEL}
+          set +e
+          python candidate_gravity/code/iteration390_u2_repeated_cut_topology_aware_recovery_chunk.py \
+            > candidate_gravity/artifacts/iteration390/${LABEL}/iteration390_result.json
+          rc=$?
+          echo "$rc" > candidate_gravity/artifacts/iteration390/${LABEL}/python_exit_code.txt
+          echo "python_exit_code=$rc" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Raw parse and provenance audit
+        shell: bash
+        env:
+          START_INDEX: ${{ matrix.start }}
+          END_INDEX: ${{ matrix.end }}
+          LABEL: ${{ matrix.label }}
+        run: |
+          python - <<'PY'
+          import hashlib,json,os,pathlib
+          s=int(os.environ['START_INDEX']); e=int(os.environ['END_INDEX']); label=os.environ['LABEL']
+          root=pathlib.Path(f'candidate_gravity/artifacts/iteration390/{label}')
+          p=root/'iteration390_result.json'; raw=p.read_bytes()
+          audit={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':390,'expected_indices':[s,s+1],
+                 'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),'scientific_authority_pass':False}
+          ok=False
+          try:
+            obj=json.loads(raw); recs=obj.get('records',[]) if isinstance(obj,dict) else []
+            inds=[r.get('global_channel_index') for r in recs if isinstance(r,dict)]
+            audit.update({'found_iteration':obj.get('iteration'),'found_indices':inds,'classification':obj.get('classification'),
+                          'reported_scientific_gate_pass':obj.get('scientific_gate_pass'),'statuses':[r.get('status') for r in recs]})
+            ok=bool(obj.get('iteration')==390 and obj.get('source_scientific_iteration')==384 and inds==[s,s+1] and obj.get('scientific_gate_pass') is True)
+          except Exception as exc: audit['parse_error']=repr(exc)
+          audit['scientific_authority_pass']=ok
+          (root/'iteration390_authority_audit.json').write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          if not ok: raise SystemExit(2)
+          PY
+      - name: Upload raw recovery artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration390-${{ matrix.label }}
+          path: candidate_gravity/artifacts/iteration390/${{ matrix.label }}/
+          if-no-files-found: error
+          retention-days: 90
