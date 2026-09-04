@@ -5,111 +5,57 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Latest validated Candidate Gravity physical/operator authority:** **Iteration 411**  
+**Latest validated physical/operator authority:** **Iteration 411**  
 **Latest validated structural authority:** **Iteration 410**  
-**Latest validated physical-blocking result:** **Iteration 421 — raw-valid `BLOCKED_CONVERGENCE` for index 2**  
-**Latest raw parent precision/representation authority:** **Iteration 442 consuming Iteration 441 PASS**  
-**Latest methodological precision-boundary authority:** **Iteration 444 — exact 368 post-parent contraction graph + 80/120 precision contract PASS, non-promoting**  
-**Active gate:** **frozen 80/120-digit Iteration-443 Y-site `y1` subgate at unchanged `h=4e-5`; on PASS, frozen Iteration-444 continuous 7-matmul + trace contraction certificate**
+**Latest raw-valid physical blocker:** **Iteration 421 — `BLOCKED_CONVERGENCE`, double-double index 2 / class 3 / q^2=-1**  
+**Latest parent precision/representation authority:** **Iteration 442 consuming Iteration 441 PASS**  
+**Latest methodological post-parent contract authority:** **Iteration 444**  
+**Latest raw numerical sublayer authority:** **Iteration 445 — Y-site `y1` 80/120 + same-h fourth-order PASS, non-promoting**  
+**Active gate:** **Iteration-444 frozen continuous post-parent 7-matmul + trace certificate**, descriptive stage run `33920431333`, job `101177249464`.
 
-Repository commits, raw schema-validated Actions artifacts, recovery material and this file are source of truth. Workflow colour alone is never scientific authority. Authoritative iteration numbers are governed by `candidate_gravity/recovery/ITERATION_ID_REGISTRY.md`.
+Repository commits, raw schema-validated Actions artifacts, recovery material and this file are source of truth. Workflow colour alone is never scientific authority. Authoritative iteration IDs are never reused; race-created newer registry/recovery state wins.
 
-## Retained operator coordinates
+## Retained physical operator coordinates
 
-### Timelike `Tr U2`
-Iteration 406 complete coordinate before `+i/2` weight:
+Timelike `Tr U2` from Iteration 406 before `+i/2` weight:
 - `q^2=-1 -> +0.0005345424186332474`;
 - `q^2=-0.34 -> -0.000734101259784574`;
 - `q^2=-0.14 -> -0.001572666890130343`.
 
-### Timelike `Tr U1^2`
-Frozen census: 57 physical channels = 6 simple-simple + 36 simple-double + 15 double-double, exactly 19 per `q^2`.
-
-Retained closures:
-- Iteration 374 simple-simple 6/6;
-- Iteration 393 simple-double 36/36;
-- Iteration 399 index 5 / `q^2=-0.14` = `+0.000119747535002548`;
-- Iteration 409 index 4 / `q^2=-1` = `+0.003562716046166582`;
-- Iteration 411 index 11 / `q^2=-0.34` = `+0.013050543643260309`.
+Timelike `Tr U1^2` frozen census: 57 physical channels = 6 simple-simple + 36 simple-double + 15 double-double, exactly 19 per q^2. Retained closures include Iteration 374 simple-simple 6/6, Iteration 393 simple-double 36/36, Iteration 399 index 5 / q^2=-0.14 = `+0.000119747535002548`, Iteration 409 index 4 / q^2=-1 = `+0.003562716046166582`, and Iteration 411 index 11 / q^2=-0.34 = `+0.013050543643260309`.
 
 **Exact unresolved double-double physical set: `[2]`.**
 
-## Index 2 physical authority
+Iteration 421 remains the latest physical attempt: run `33871920373`, job `101019660127`, artifact `9942128452`, raw-valid `BLOCKED_CONVERGENCE`. Diagnostic `D_s Tr(U1^2)[2] ~= +0.0035843041850530683` is not authority. Frozen failures were `max_stability_scaled = 2.2720400683804223e-05 > 2e-05` and `max_required_fit_residual_scaled = 2.585665489102237e-05 > 2e-05`. No zero fill is allowed.
 
-Iteration 421 remains latest raw-valid physical attempt: run `33871920373`, job `101019660127`, artifact `9942128452`, classification `BLOCKED_CONVERGENCE`. Diagnostic estimate `D_s Tr(U1^2)[2] ~= +0.0035843041850530683` is not authority.
+## Precision-chain authority
 
-Frozen failures:
-- `max_stability_scaled = 2.2720400683804223e-05 > 2e-05`;
-- `max_required_fit_residual_scaled = 2.585665489102237e-05 > 2e-05`.
+Iterations 419/422 exclude simple summation and affine-moment instability as dominant explanations. Iteration 425 requires differentiating the full fixed-mass `F(u,v)`. Iteration 427 is retained as exact non-measure-chain oracle. Iteration 428 exposes severe whole-path symmetric-cross conditioning. Iteration 431 localizes the true inner precision boundary to Iteration-270 primitives. Iterations 436/437 close N1/Q1 at 80/120 digits. Iteration 438 closes exact `A_finite` arithmetic over 26 frozen nodes. Iteration 439 diagnoses severe binary64 Acoef cancellation. Iteration 440 closes Acoef/Asub 80/120 arithmetic. Iteration 441, raw-consumed as Iteration 442, closes the fixed-h fourth-order Acoef/Asub representation oracle with unchanged `h1=1e-4`, `h2=5e-4`, `h3=1e-3`.
 
-Direct original-integrand and structural checks otherwise pass. No coordinate is promoted and no zero fill is allowed.
+Iteration 443 identifies the still-uncovered Iteration-368 Y-site derivative and downstream NumPy contraction boundary. Iteration 444 freezes the exact post-parent arithmetic graph: each traced routed amplitude has 3 matrix products per U1 block plus one joining product, exactly **7 matrix multiplications + 1 trace**; the certificate requires continuous 80/120-digit arithmetic, complete representative 368/370 coverage, finite outputs, and max scaled `80-vs-120 <= 1e-30`. Binary64-vs-120 is diagnostic only; outer-only precision around already-binary64 products/trace is forbidden.
 
-## Parent precision / representation authority
+## Iteration 445 raw Y-site authority
 
-- Iteration 419: summation-level binary64 effects alone insufficient.
-- Iteration 422: affine moments `J_0..J_4` stable against 80-digit reference.
-- Iteration 425: full fixed-mass `F(u,v)` must be differentiated; denominator-only auxiliary-mass differentiation forbidden.
-- Iteration 427: exact non-measure chain oracle retained.
-- Iteration 428: whole-path symmetric-cross conditioning severe; outer-only high precision insufficient.
-- Iteration 431: true inner precision boundary reaches Iteration-270 parent primitives and recursive dependencies.
-- Iterations 436/437: exact N1 and Q1 80/120-digit closures PASS at frozen conventions.
-- Iteration 438: exact `A_finite` arithmetic core PASS on all 26 frozen signed nodes; max 80-vs-120 scaled discrepancy `9.243186772758836e-84`.
-- Iteration 439: binary64 `Acoef` signed-sum conditioning diagnostic found max cancellation amplification `1790391356.9083405`, largest for `(s,a,b)`; diagnostic only.
-- Iteration 440: frozen `Acoef/Asub` signed assembly raw-valid arithmetic PASS at 80/120 digits. Run `33904321843`, artifact `9948876125`; max 80-vs-120 discrepancy `1.4149749985220297e-75`; diagnostic binary64-vs-120 discrepancy `1.890704312519492e-10`.
-- Iteration 441, raw-consumed as Iteration 442: fixed-h finite-amplitude representation/truncation oracle PASS. Run `33904593636`, artifact `9949120808`, artifact digest `sha256:49e17960074953f502fec7672a6e7c67b471dca4882a8426120dea49d2b55e44`, raw JSON SHA-256 `141aa237b79d3acf8ba428c08dbcfe5ca0d81051abff260c3255e7789d37ffae`. At unchanged `h1=1e-4`, `h2=5e-4`, `h3=1e-3`, independent tensor-product fourth-order derivative oracle gives max central-vs-high-order 120-digit scaled discrepancy `4.47609790628742112552755346023e-6 <= 2e-5`; max 80-vs-120 high-order discrepancy `3.39660363388259398057433228844e-75 <= 1e-30`; 124/124 nodes, 7/7 subsets, all finite. Worst subset `(s,a,b)`.
-- Iteration 443: direct source/provenance audit of the next outward `368/370` layer PASS, non-promoting. It proves an uncovered Y-site derivative `y1=[y_down(+h)-y_down(-h)]/(2h)` at the frozen `h=4e-5`, followed by NumPy complex matrix products/trace contractions. Therefore the Iteration-270 parent certificates do not by themselves constitute a continuous precision certificate for `368/370`. Iteration 370 inherits the Iteration-368 numerator machinery. The next Y-site 80/120 + same-h fourth-order oracle criteria were frozen before observing any result.
-- Iteration 444: source/provenance audit freezes the exact post-parent contraction graph in Iteration 368. Each routed traced amplitude contains 3 matrix products in each U1 block plus 1 product joining the blocks before trace: exactly 7 matrix multiplications + 1 trace. After Y-site PASS, these operations must be evaluated continuously at 80 and 120 digits with max scaled cross-precision discrepancy `<=1e-30`, finite outputs and full representative 368/370 coverage. Binary64-vs-120 is diagnostic only; outer-only high precision around binary64 matrix products is forbidden.
+Prospectively frozen Iteration-443 Y-site stage was raw-consumed after Actions run `33919939617`, job `101175715064`, artifact `9954611316`, artifact digest `sha256:b42764f0b076544e24ab4aec61de824093158afc4f9c7356b2c432df533d87f6`, raw scientific JSON SHA-256 `432499fd8afa13d7acf560ae112c87c11858d3840eaeedd117fcd7607724c5c9`.
 
-**Consequence:** Iterations 440+441/442 close arithmetic precision and fixed-h stencil representation/truncation for the frozen Iteration-270 `Acoef/Asub` layer. Iterations 443/444 prevent promoting that scoped parent closure into a false `368/370` precision claim and prospectively freeze both remaining sublayers. These are numerical-method authorities only; they do not promote a physical `D_s` coordinate.
+At unchanged `h=4e-5`, 80/120 digits and all 3 frozen Y-site pairs:
+- max `|y1_80-y1_120| = 4.09656958147226919955796882988e-77 <= 1e-30`;
+- max central-vs-same-h-fourth-order scaled discrepancy `3.74207475261066955599469102919e-11 <= 2e-5`;
+- 3/3 pairs finite.
 
-## Frozen Iteration 443 Y-site subgate
+Classification: `PASS_ITER445_YSITE_Y1_MP80_MP120_AND_FIXED_H_FOURTH_ORDER_ORACLE__NON_PROMOTING`. Physical authority is unchanged. A race-misnumbered result file under Iteration 444 was removed in commit `bb826570bdbec0695f7dbd7590dfe49963bc8969`; the correct result was stored as Iteration 445 in commit `1abffb0ecb28b3f0d480d46ee2cb36025cc66f27`.
 
-For every distinct frozen Y-site input pair exercised by the Iterations 368/370 representative/transport probe set:
-- retain exactly `h=4e-5`;
-- evaluate the same frozen `y_down` dynamics at 80 and 120 decimal digits;
-- retain the original central derivative `y1=[y(+h)-y(-h)]/(2h)`;
-- compare to the independent same-h fourth-order oracle `y1_4=[y(-2h)-8y(-h)+8y(+h)-y(+2h)]/(12h)`;
-- require `max |y1_80-y1_120| <= 1e-30`;
-- require central-vs-fourth-order scaled discrepancy `<=2e-5`;
-- require all outputs finite and complete frozen-pair coverage.
+## Active post-parent gate
 
-Forbidden: smaller/adapted `h`, threshold weakening, altered routing/numerator, or outer-only arbitrary precision around binary64 Y-site values.
+Code commit `626887eb9a453003383b999103d751bbbb73d0b4`; workflow commit `74910896d64feed84b1f913dfa6803e8020b5387`. Run `33920431333`, job `101177249464` is active. The gate retains the exact Iteration-368 parent matrix values/routing/orientation before any post-parent product, then evaluates all seven matrix products and final trace continuously in multiprecision for all 126 representative contractions = 21 routed classes x 2 probes x orientations A/B/A_SHIFT. Acceptance is max scaled 80-vs-120 `<=1e-30`, 126/126 finite, with binary64-vs-120 diagnostic only. No physical value can be promoted by this gate.
 
-## Frozen Iteration 444 post-parent contraction subgate
+## Downstream exact gates
 
-Authorized only after Iteration-443 Y-site PASS. For every representative frozen 368/370 routed contraction:
-- reuse identical parent matrix values, routed momenta and block orientation;
-- perform the complete 7 matrix multiplications + final trace continuously at 80 and 120 decimal digits;
-- require max scaled `80-vs-120 <= 1e-30`;
-- require finite outputs and complete representative contraction coverage;
-- treat binary64-vs-120 only as a diagnostic.
-
-Forbidden: threshold weakening, altered routing/numerator, premature cyclic/orientation quotient, or arbitrary precision applied only outside binary64 matrix multiplications/trace.
-
-## Frozen Iteration 424 physical fallback
-
-Authorized only after the remaining outward precision chain closes. Acceptance remains:
-- physical mass-step discrepancy `<=2e-5`;
-- direct original-integrand cross-check `<=2e-6`;
-- tensor-degree-(1,1) fit residual `<=2e-5`;
-- identical fixed-node evaluation at 80 and 120 decimal digits with `|D_s(80)-D_s(120)|<=2e-6`;
-- finite outputs.
-
-No smaller physical mass step, angular-grid escalation, threshold weakening or zero fill.
-
-## Frozen Iteration 412 exact15 assembly
-
-Exactly 15 unique double-double indices are required, five scientifically valid `CONVERGED` records per `q^2` bucket, finite coordinates, no duplicates/missing indices/zero fill. It remains BLOCKED until index 2 gets raw-valid physical authority.
-
-## Exact next gates
-
-1. Execute the prospectively frozen Iteration-443 Y-site `y1` 80/120-digit plus same-h fourth-order oracle test over every distinct frozen 368/370 Y-site pair.
-2. If and only if it passes, execute the Iteration-444 continuous 80/120-digit 7-matmul + trace contraction certificate, closing `368/370` only upon PASS.
-3. Then proceed `379/374 -> 407` under the same precision discipline.
-4. Evaluate frozen Iteration 424 physical mass nodes independently at 80 and 120 digits and compare with Iteration 427.
-5. Promote index 2 only if all frozen physical, tensor-fit, direct-integrand, cross-precision and finite-output conditions pass.
-6. If index 2 closes, execute Iteration 412 exact15 assembly, complete `Tr U1^2`, then assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2 using Iteration 406 `Tr U2`.
-7. Source/Ward/contact+K2 and fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain downstream. No Candidate residual before comparator closure.
+1. Raw-consume the active post-parent certificate fail-closed. If PASS, close this retained 368/370 post-parent arithmetic sublayer and continue `379/374 -> 407` under the same continuous-precision discipline.
+2. Then evaluate the frozen Iteration 424 physical mass nodes independently at 80 and 120 digits and compare with Iteration 427. Physical acceptance remains: mass-step discrepancy `<=2e-5`, direct original-integrand cross-check `<=2e-6`, tensor-degree-(1,1) fit residual `<=2e-5`, `|D_s(80)-D_s(120)|<=2e-6`, all finite; no smaller physical mass step, angular-grid escalation, threshold weakening or zero fill.
+3. Promote index 2 only if every frozen condition passes.
+4. Only then execute Iteration 412 exact15, requiring all 15 unique double-double indices and five valid records per q^2, then assemble complete `Tr U1^2` and `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2.
+5. Comparator quotient / Source-Ward-contact+K2 / C3-C5 / nonlocal / asymptotic-safety closure remains downstream. Source/Born subtraction only in the matched observable after pole/cut-origin classification. No candidate residual before comparator closure.
 
 ## Stable readiness rubric
 
@@ -122,8 +68,8 @@ Exactly 15 unique double-double indices are required, five scientifically valid 
 
 **MODEL_READINESS: 24%**
 
-Readiness change through Iteration 444: **0 percentage points**. The complete remaining 368/370 numerical subgate structure is now prospectively frozen, but no additional stable model-readiness rubric component closed and no new physical coordinate was promoted.
+Readiness change through Iteration 445: **0 percentage points**. Numerical sublayers closed, but no additional readiness-rubric component and no new physical coordinate closed.
 
 ## Retained guardrails
 
-Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Authoritative iteration numbers are never reused. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5. Source/Born subtraction only in a matched observable after pole/cut-origin classification.
+Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Authoritative IDs are never reused. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct q^2 variables are never summed. Same i0 is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5. Source/Born subtraction only in a matched observable after pole/cut-origin classification.
