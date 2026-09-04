@@ -1,0 +1,40 @@
+{
+  "iteration": 392,
+  "model_readiness_percent": 24,
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "classification": "PASS_U2_FULL48_UNCUT_TOPOLOGY_CENSUS__EMPTY_INFINITY_SENTINEL_EXACTLY_WHEN_NO_UNCUT_GROUP",
+  "source_authority": "Iteration359 exact repeated-cut 48-channel ordering",
+  "census": {
+    "total_repeated_cut_channels": 48,
+    "denominator_group_count_census": {"2": 12, "3": 36},
+    "no_uncut_channel_count": 12,
+    "finite_uncut_required_channel_count": 36,
+    "no_uncut_global_channel_indices": [4, 13, 22, 27, 28, 29, 30, 33, 36, 39, 42, 45],
+    "q2_channel_counts": {"-1": 16, "-0.34": 16, "-0.14": 16},
+    "q2_no_uncut_counts": {"-1": 4, "-0.34": 4, "-0.14": 4},
+    "multiplicity_pair_census": {"(1, 2)": 25, "(2, 1)": 23},
+    "structural_equivalence_no_uncut_iff_two_groups": true
+  },
+  "validated_actions": {
+    "run": 33820820805,
+    "job": 100862890933,
+    "workflow_head": "53bceca5108ec5523c0464607e50cf652d32b472",
+    "artifact": 9918201690,
+    "artifact_digest": "sha256:256f2039ab85bf5358f4aad8a6f7cd51479af2071ba6b34174a35e8186debd5b",
+    "raw_result_sha256": "d2ba75a4ba98afb28fc187bd28715fe999f55553323695f083013cac2040ad3d"
+  },
+  "scope": "TOPOLOGY_ONLY__NO_PHYSICAL_REINTEGRATION__NO_DISCONTINUITY_REASSEMBLY",
+  "guardrails": [
+    "ITERATION359_ORDERING_BINDING",
+    "INFINITY_ALLOWED_ONLY_FOR_EMPTY_UNCUT_GROUP_SET",
+    "FINITE_UNCUT_CHANNELS_STILL_REQUIRE_POSITIVE_SEPARATION",
+    "NO_THRESHOLD_WEAKENING",
+    "BLOCKED_NEVER_ZERO_FILLED",
+    "DISTINCT_Q2_BUCKETS_NEVER_SUMMED",
+    "NO_EFFECTIVE_ACTION_WEIGHT_FOLDING",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
