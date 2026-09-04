@@ -1,0 +1,63 @@
+name: RQIR Iteration 437 Iter270 Q1 multiprecision closure
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration437_iter270_q1_multiprecision_closure.py'
+      - '.github/workflows/rqir-iteration437-iter270-q1-multiprecision-closure.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  iteration437:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install frozen numerical dependencies
+        run: python -m pip install --disable-pip-version-check -q numpy==2.1.3 mpmath==1.3.0
+      - name: Run Iteration 437 Q1 multiprecision closure
+        run: |
+          root="candidate_gravity/artifacts/iteration437"
+          mkdir -p "$root"
+          python candidate_gravity/code/iteration437_iter270_q1_multiprecision_closure.py > "$root/iteration437_result.json"
+      - name: Raw authority audit
+        if: always()
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('candidate_gravity/artifacts/iteration437'); p=root/'iteration437_result.json'
+          if not p.exists() or p.stat().st_size==0: raise SystemExit(2)
+          raw=p.read_bytes(); o=json.loads(raw); obs=o.get('observed',{}); th=o.get('thresholds',{}); pre=o.get('prerequisite_iteration436',{})
+          ok=bool(
+              o.get('iteration')==437 and o.get('scientific_gate_pass') is True and
+              o.get('authority_scope')=='PARENT_PRECISION_CLOSURE__ITERATION270_Q1_ONLY__NON_PROMOTING' and
+              o.get('classification') in (
+                  'PASS_ITER270_Q1_80_120_DIGIT_CLOSURE__LEGACY_REPRODUCED__NON_PROMOTING',
+                  'PASS_ITER270_Q1_80_120_DIGIT_CLOSURE__LEGACY_DRIFT_MATERIAL__NON_PROMOTING') and
+              o.get('precision_levels_decimal_digits')==[80,120] and
+              abs(float(o.get('frozen_inputs',{}).get('h'))-3e-5)<1e-20 and
+              th.get('mp80_vs_mp120_Q0_scaled_max')=='1e-40' and
+              float(th.get('binary64_vs_mp120_Q0_scaled_max'))==1e-12 and
+              th.get('mp80_vs_mp120_Q1_scaled_max')=='1e-40' and
+              float(th.get('legacy_binary64_vs_mp120_Q1_physical_reference'))==2e-5 and
+              pre.get('classification')=='PASS_ITER270_N1_80_120_DIGIT_CLOSURE__LEGACY_REPRODUCED__NON_PROMOTING' and
+              obs.get('all_values_finite') is True
+          )
+          audit={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':437,'authority_scope':'PARENT_PRECISION_CLOSURE__ITERATION270_Q1_ONLY__NON_PROMOTING','classification':o.get('classification'),'scientific_authority_pass':ok,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}
+          (root/'iteration437_authority_audit.json').write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          if not ok: raise SystemExit(2)
+          PY
+      - name: Upload raw Iteration 437 artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration437-iter270-q1-multiprecision-closure
+          path: candidate_gravity/artifacts/iteration437/
+          if-no-files-found: error
+          retention-days: 90
