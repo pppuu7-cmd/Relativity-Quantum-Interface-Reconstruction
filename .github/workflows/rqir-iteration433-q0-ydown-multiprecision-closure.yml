@@ -1,0 +1,130 @@
+name: RQIR Iteration 433 Q0 y_down multiprecision closure
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration433-q0-ydown-multiprecision-closure.yml'
+permissions:
+  contents: read
+jobs:
+  q0-ydown-multiprecision-closure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Evaluate frozen Q0 and y_down at 80/120 digits
+        run: |
+          python - <<'PY'
+          import hashlib, json, pathlib
+          import numpy as np
+          import mpmath as mp
+
+          src = pathlib.Path('candidate_gravity/code/iteration270_vd_physical_b3_nonzero.py')
+          raw = src.read_bytes()
+          text = raw.decode()
+          prefix = text.split('# A-layer certificates.')[0]
+          ns = {'__name__':'iteration270_prefix'}
+          exec(compile(prefix, str(src), 'exec'), ns)
+
+          def mp_matrix_from_np(a):
+              return mp.matrix([[mp.mpc(str(complex(a[i,j]).real), str(complex(a[i,j]).imag)) for j in range(a.shape[1])] for i in range(a.shape[0])])
+          def max_abs_diff_np_mp(a,b):
+              return max(float(abs(mp.mpc(str(complex(a[i,j]).real),str(complex(a[i,j]).imag))-b[i,j])) for i in range(a.shape[0]) for j in range(a.shape[1]))
+          def max_abs_diff_mp(a,b):
+              return max(abs(a[i,j]-b[i,j]) for i in range(a.rows) for j in range(a.cols))
+
+          ETA_mp = mp.matrix([[-1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]])
+          momenta = [
+              [mp.mpf('0.7'),mp.mpf('-0.4'),mp.mpf('0.5'),mp.mpf('0.9')],
+              [mp.mpf('1.05'),mp.mpf('0.2'),mp.mpf('-0.35'),mp.mpf('0.65')],
+              [mp.mpf('0.83'),mp.mpf('-0.17'),mp.mpf('0.44'),mp.mpf('1.21')],
+          ]
+          amp_cases = [
+              (['s'], ['0.0001']),
+              (['a'], ['-0.0002']),
+              (['s','b'], ['0.0001','-0.00015']),
+              (['s','a','b'], ['0.00008','-0.00011','0.00013']),
+          ]
+
+          def q0_mp(p):
+              p2 = -p[0]*p[0] + sum(x*x for x in p[1:])
+              if p2 == 0: raise ValueError('null p forbidden in Q0 test')
+              return (-1/p2)*ETA_mp
+
+          def ydown_mp(labels, amps):
+              g = mp.matrix(ETA_mp)
+              for lab, av in zip(labels, amps):
+                  e = ns['POS'][lab][1]
+                  for i in range(4):
+                      for j in range(4):
+                          g[i,j] += mp.mpf(av)*mp.mpf(str(float(e[i,j])))
+              detg = mp.det(g)
+              return mp.sqrt(abs(detg))*g
+
+          rows=[]
+          max_80_120 = mp.mpf('0')
+          max_binary64 = 0.0
+          for p in momenta:
+              refs={}
+              for dps in (80,120):
+                  with mp.workdps(dps): refs[dps]=q0_mp([mp.mpf(str(x)) for x in p])
+              d=max_abs_diff_mp(refs[80],refs[120]); max_80_120=max(max_80_120,d)
+              p_np=np.array([float(x) for x in p])
+              q_np=ns['Q0'](p_np)
+              db=max_abs_diff_np_mp(q_np,refs[120]); max_binary64=max(max_binary64,db)
+              rows.append({'primitive':'Q0','input':[str(x) for x in p],'mp80_vs_mp120':mp.nstr(d,20),'binary64_vs_mp120':db})
+          for labels, amps in amp_cases:
+              refs={}
+              for dps in (80,120):
+                  with mp.workdps(dps): refs[dps]=ydown_mp(labels,amps)
+              d=max_abs_diff_mp(refs[80],refs[120]); max_80_120=max(max_80_120,d)
+              modes=[ns['POS'][x] for x in labels]
+              y_np=ns['y_down']([float(x) for x in amps],modes)
+              db=max_abs_diff_np_mp(y_np,refs[120]); max_binary64=max(max_binary64,db)
+              rows.append({'primitive':'y_down','labels':labels,'amps':amps,'mp80_vs_mp120':mp.nstr(d,20),'binary64_vs_mp120':db})
+
+          cross_precision_limit=mp.mpf('1e-40')
+          binary64_reproduction_limit=1e-12
+          gate = (max_80_120 <= cross_precision_limit and max_binary64 <= binary64_reproduction_limit)
+          result={
+            'iteration':433,
+            'authority_scope':'DIAGNOSTIC_ONLY__ITERATION270_PARENT_PRECISION_SUBCLOSURE_Q0_Y_DOWN',
+            'classification':'PASS_ITER270_Q0_YDOWN_80_120_DIGIT_SUBCLOSURE__NON_PROMOTING' if gate else 'BLOCKED_ITER270_Q0_YDOWN_MULTIPRECISION_SUBCLOSURE',
+            'scientific_gate_pass':bool(gate),
+            'source_path':str(src),
+            'source_sha256':hashlib.sha256(raw).hexdigest(),
+            'frozen_primitives':['Q0','y_down'],
+            'not_certified':['Q1','Asub','recursive geometry/nhat/A_finite layers beyond this subclosure'],
+            'max_mp80_vs_mp120':mp.nstr(max_80_120,30),
+            'mp80_vs_mp120_limit':'1e-40',
+            'max_binary64_vs_mp120':max_binary64,
+            'binary64_reproduction_limit':binary64_reproduction_limit,
+            'rows':rows,
+            'model_readiness_percent':24,
+            'interpretation':'This is a deepest-first non-promoting subclosure only. PASS certifies Q0 and y_down numerical realization at frozen representative inputs; it does not certify Q1 or Asub and cannot promote index 2.',
+            'guardrails':['NO_PHYSICAL_DS_VALUE','NO_THRESHOLD_WEAKENING','NO_SMALLER_MASS_STEP','NO_ZERO_FILL','NO_ANGULAR_GRID_ESCALATION','NO_ANSATZ003','NO_FISHER_RESOURCES']
+          }
+          out=pathlib.Path('iteration433_result.json'); out.write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
+          b=out.read_bytes(); audit={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':433,'authority_scope':'DIAGNOSTIC_ONLY','classification':result['classification'],'scientific_authority_pass':result['scientific_gate_pass'],'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()}
+          pathlib.Path('iteration433_authority_audit.json').write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(result,indent=2,sort_keys=True))
+          if not gate: raise SystemExit('BLOCKED: Iteration 270 Q0/y_down multiprecision subclosure failed')
+          PY
+      - name: Raw authority audit
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          b=pathlib.Path('iteration433_result.json').read_bytes(); a=json.loads(pathlib.Path('iteration433_authority_audit.json').read_text())
+          assert a['sha256']==hashlib.sha256(b).hexdigest(); assert a['bytes']==len(b); assert a['expected_iteration']==433
+          print(json.dumps(a,indent=2))
+          PY
+      - name: Upload raw Iteration 433 artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration433-q0-ydown-multiprecision-closure
+          path: |
+            iteration433_result.json
+            iteration433_authority_audit.json
+          if-no-files-found: error
+          retention-days: 30
