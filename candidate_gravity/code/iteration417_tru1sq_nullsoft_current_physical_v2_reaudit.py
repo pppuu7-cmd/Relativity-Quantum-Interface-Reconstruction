@@ -51,8 +51,7 @@ for p in PROBES:
     ext_fine=(4.0*soft[2]-soft[1])/3.0
     soft_ext=float(np.max(np.abs(ext_fine)))
     soft_rich=float(np.max(np.abs(ext_fine-ext_coarse)))
-    hard_a=float(np.max(np.abs(m.As
-ub(M,('a',),p,h1=H1[1]))))
+    hard_a=float(np.max(np.abs(m.Asub(M,('a',),p,h1=H1[1]))))
     hard_b=float(np.max(np.abs(m.Asub(M,('b',),p,h1=H1[1]))))
     mixed={}
     for pair in (('s','a'),('s','b')):
