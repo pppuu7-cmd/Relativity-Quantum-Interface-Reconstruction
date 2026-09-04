@@ -9,7 +9,8 @@
 **Latest validated structural authority:** **Iteration 410**  
 **Latest validated numerical-method diagnosis:** **Iterations 419 + 422 under prospective Iteration-420 contract**  
 **Latest source-of-truth reconciliation:** **Iteration 423**  
-**Latest prospective numerical fallback contract:** **Iteration 424**
+**Latest prospective numerical fallback contract:** **Iteration 424**  
+**Latest auxiliary-mass dependency/derivative contract:** **Iteration 425**
 
 Repository commits, raw schema-validated Actions artifacts, recovery material and this file are source of truth. Workflow colour alone is never scientific authority.
 
@@ -95,6 +96,14 @@ Before any fallback result exists, fail-closed acceptance is frozen to require s
 
 Cross-precision failure is `NUMERICAL_PRECISION_BLOCKED`; cross-precision PASS together with physical mass-step FAIL is `REPRESENTATION_OR_TRUE_MASS_STEP_BLOCKED`; direct-integrand or tensor-fit failure is `REPRESENTATION_CONSISTENCY_BLOCKED`. No branch promotes a coordinate without raw-valid workflow authority.
 
+## Iteration 425 full auxiliary-mass chain contract
+
+Iteration 425 source-audits the actual frozen Iteration-407 fixed-mass function. Auxiliary masses enter `lambda(u,v)` and hence `alpha`, `rho`, and `beta`; `alpha,rho` enter both the traced numerator through `stripped_limit_massive` and the affine denominator, while `beta` multiplies the sphere integral. Thus the frozen representation has the form
+
+`F(u,v)=1/2 beta(u,v) sum_k c_k(u,v) J_k(cc(u,v),aa(u,v))`.
+
+A denominator-only mixed derivative is algebraically incomplete. Any exact/AD implementation used under Iteration 424 must differentiate the complete frozen `F(u,v)`, including kinematics, numerator/phi-mean coefficients, affine moments, and measure factor. Classification: `PASS_CHANNEL2_FULL_AUXILIARY_MASS_CHAIN_DEPENDENCE_CONTRACT__NON_PROMOTING`. This promotes no `D_s` and is not a consistency FAIL.
+
 ## Frozen Iteration 412 exact15 assembly
 
 Iteration 412 requires exactly 15 unique double-double indices, five scientifically valid `CONVERGED` records per `q^2` bucket, finite coordinates, no duplicates, no missing indices and no zero fill. It remains BLOCKED until index 2 obtains raw-valid physical authority.
@@ -103,7 +112,7 @@ Iteration 412 requires exactly 15 unique double-double indices, five scientifica
 
 1. Raw-consume Iteration 421 fail-closed.
 2. If Iteration 421 is `CONVERGED`, append exactly index 2 to frozen 14/15 staging authority and execute Iteration 412 exact15 assembly; do not invoke the Iteration-424 fallback.
-3. If Iteration 421 remains `BLOCKED_CONVERGENCE`, implement the prospectively frozen Iteration-424 80/120-digit fixed-mass fallback exactly as specified. Do not shrink `h`, weaken thresholds, or escalate angular grids.
+3. If Iteration 421 remains `BLOCKED_CONVERGENCE`, implement the prospectively frozen Iteration-424 80/120-digit fixed-mass fallback exactly as specified, subject to Iteration-425 full-chain differentiation of the complete `F(u,v)`. Do not shrink `h`, weaken thresholds, or escalate angular grids.
 4. Only after complete `Tr U1^2`, assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2 using Iteration 406 `Tr U2`.
 5. Source/Ward/contact completion + matched K2 and the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain downstream. No Candidate residual before comparator quotient closure.
 
@@ -120,8 +129,8 @@ Repeated-cut signs remain frozen: `D_s(simple)=-sphere_mean`; simple-double `D_s
 
 **MODEL_READINESS: 24%**
 
-No readiness point is added by Iterations 419, 420, 422, 423, or 424. Index 2 remains physically unresolved, exact15 `Tr U1^2` is blocked, and no robust comparator-subtracted residual exists.
+No readiness point is added by Iterations 419, 420, 422, 423, 424, or 425. Index 2 remains physically unresolved, exact15 `Tr U1^2` is blocked, and no robust comparator-subtracted residual exists.
 
 ## Retained guardrails
 
-Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results remain preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5. Source/Born subtraction only in a matched observable after pole/cut-origin classification.
+Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results remain preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden for the frozen Iteration-407 representation. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5. Source/Born subtraction only in a matched observable after pole/cut-origin classification.
