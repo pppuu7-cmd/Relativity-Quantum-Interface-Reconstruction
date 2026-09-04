@@ -9,9 +9,9 @@
 **Latest validated structural authority:** **Iteration 410**  
 **Latest validated physical-blocking result:** **Iteration 421 — raw-valid `BLOCKED_CONVERGENCE` for index 2**  
 **Latest source/dependency precision-boundary authority:** **Iteration 431**  
-**Latest raw phi-resolution diagnostic consumption:** **Iteration 432**  
-**Latest raw parent-precision authority reconciliation:** **Iteration 434**  
-**Latest raw parent-conditioning diagnostic:** **Iteration 435**
+**Latest raw parent precision closures:** **436 N1, 437 Q1, 438 A_finite**  
+**Latest raw parent conditioning diagnostic:** **Iteration 439 Acoef signed-sum conditioning**  
+**Active gate:** **Iteration 440 Acoef/Asub 80/120-digit signed-assembly arithmetic closure**
 
 Repository commits, raw schema-validated Actions artifacts, recovery material and this file are source of truth. Workflow colour alone is never scientific authority. Authoritative iteration numbers are governed by `candidate_gravity/recovery/ITERATION_ID_REGISTRY.md` and may not be reused for a different scientific object.
 
@@ -45,59 +45,44 @@ Frozen failures:
 - `max_stability_scaled = 2.2720400683804223e-05 > 2e-05`;
 - `max_required_fit_residual_scaled = 2.585665489102237e-05 > 2e-05`.
 
-Direct original-integrand and structural checks otherwise pass strongly. This remains a convergence/representation blocker, not a Candidate-Gravity consistency FAIL. No coordinate is promoted and no zero fill is allowed.
+Direct original-integrand and structural checks otherwise pass. This remains a convergence/representation blocker, not a Candidate-Gravity consistency FAIL. No coordinate is promoted and no zero fill is allowed.
 
-## Numerical / representation authority retained
+## Retained numerical / representation authority
 
-- Iteration 419: summation-level binary64 effects alone are insufficient.
+- Iteration 419: summation-level binary64 effects alone insufficient.
 - Iteration 422: affine moments `J_0..J_4` stable against 80-digit reference.
-- Iteration 425: full fixed-mass `F(u,v)` must be differentiated; denominator-only auxiliary-mass differentiation is forbidden.
-- Iteration 426, consumed in authoritative Iteration 432: phi resolution alone is not material enough to explain the blocker.
+- Iteration 425: full fixed-mass `F(u,v)` must be differentiated; denominator-only auxiliary-mass differentiation forbidden.
+- Iteration 426, consumed under 432: phi resolution alone not material enough to explain blocker.
 - Iteration 427: exact non-measure chain oracle `D_s = H/s^2 + H_alphaalpha/(8s^2) - H_rhorho/(8s)`; at `s=1`, `D_s = H + (H_alphaalpha-H_rhorho)/8`.
-- Iteration 428: whole-path symmetric-cross conditioning is severe; outer-only high precision is insufficient.
-- Iteration 429: full-F precision manifest requires arbitrary-precision provenance or quantitative retained-binary64 error bounds.
-- Iteration 430: deepest-first order originally frozen as `368/370 -> 379/374 -> 407 -> 424 -> 427`.
-- Iteration 431 corrected the true inner boundary to Iteration 270 parent primitives `Q0/Q1/Asub/y_down` and recursive numerical dependencies.
+- Iteration 428: whole-path symmetric-cross conditioning severe; outer-only high precision insufficient.
+- Iteration 429: full-F precision manifest requires arbitrary-precision provenance or quantitative retained-binary64 bounds.
+- Iteration 431: true inner precision boundary reaches Iteration-270 parent primitives `Q0/Q1/Asub/y_down` and recursive numerical dependencies.
+- Iteration 433/434: `Q0/y_down` multiprecision subclosure plus recursive-parent reconciliation.
+- Iteration 435: `Q1/N1` conditioning localized; `s` leg amplification `7.651429239818539e11`.
+- Iteration 436: exact `geometry -> nhat -> y_down -> norb -> N1` 80/120-digit closure PASS at frozen `h=3e-5`.
+- Iteration 437: exact shifted-Q0 `Q1` 80/120-digit closure PASS.
+- Iteration 438: exact `A_finite` arithmetic core PASS on all 26 frozen signed nodes. Raw run `33901348951`, job `101115917242`, artifact `9947778073`, digest `sha256:52442233d7b721ef9196033dd392b02c6af4c5145e2b29bd79e7057466b24f1a`; max 80-vs-120 scaled discrepancy `9.243186772758836e-84`, binary64-vs-120 `6.527324701910789e-19`.
+- Iteration 439: exact binary64 `Acoef` signed-sum diagnostic PASS. Raw run `33901517012`, job `101116462908`, artifact `9947813555`, digest `sha256:7dc18bb0754513c6334b792a8602b4157734ee720e31050f9c98b5b9b4330397`; maximum componentwise cancellation amplification `1790391356.9083405`, largest for subset `(s,a,b)`. Amplification is diagnostic only and does not promote or block a physical coordinate by itself.
 
-## Parent recursive closure — consumed in Iteration 434
+## Active Actions / anti-idle
 
-Workflow run `33894344918` completed successfully and uploaded artifact `9945106288`, digest `sha256:4232ad499e6cba069477ce2cad08502b78fd0623306fd303bed3ab101ece8b7a`; raw result SHA-256 `1b48b68a060e5e69082fd95e62e99dfb801045cbb9967c15bd2384cc984c103f`.
+Iteration 440 is the active nonduplicating deepest-first gate. It evaluates the exact frozen Iteration-270 `Acoef/Asub` signed assembly at 80 and 120 decimal digits using the already raw-valid Iteration-438 `A_finite_mp` implementation.
 
-Its workflow-local payload reused identifier `432`, while authoritative Iteration 432 was already allocated to Iteration-426 raw consumption. The earlier authority is not overwritten; this payload was reconciled under authoritative Iteration 434.
-
-The source-level closure for roots `Q0/Q1/Asub/y_down` reaches 17 functions and retains low-precision-sensitive matrix inversions, determinants/square roots, tensor contractions and finite-difference/convolution layers. Outward 368/370 precision claims remain forbidden until parent arithmetic is certified or quantitatively bounded.
-
-## Iteration 433 `Q0/y_down` multiprecision subclosure — consumed in Iteration 434
-
-Two precursor runs failed only operationally before scientific authority:
-- `33898986792`: missing `mpmath`;
-- `33899067536`: missing `numpy`.
-
-With only runner dependencies repaired and all scientific definitions/thresholds unchanged, run `33899226761` completed successfully. Artifact `9946960234`, digest `sha256:6805d65e4abae5e8cdfbcd34f7e55e84eaaf7fc7e98463d952331bd9387bede8`; raw result SHA-256 `645b7716a03cd7fb472e52ee6be6afadf15986b5efca3b12559c8fd44a6b7c67`.
-
-Frozen checks pass:
-- max 80-vs-120 digit discrepancy `4.04372230286233612878107151881e-81 <= 1e-40`;
-- max binary64-vs-120-digit discrepancy `3.0035019023675733e-16 <= 1e-12`;
+Frozen Iteration-440 acceptance before result:
+- unchanged `M=POS`, `p=P0`;
+- unchanged `h1=1e-4`, `h2=5e-4`, `h3=1e-3`;
+- exact 26-node / 7-subset census;
+- max scaled 80-vs-120 `Acoef` discrepancy `<=1e-30`;
 - finite outputs.
 
-Classification: `PASS_ITER270_Q0_YDOWN_80_120_DIGIT_SUBCLOSURE__NON_PROMOTING`. This certifies only `Q0` and `y_down` at frozen representative inputs; it does not certify `N1`, `Q1`, `geometry`, `nhat`, `A_finite`, `Acoef`, or `Asub`.
+Binary64-vs-120 `Acoef` discrepancy is diagnostic only; no post-hoc threshold is attached to it.
 
-## Q1/N1 conditioning — consumed in Iteration 435
+Launch provenance:
+- code commit `a1b62afb4936d98b069280d25975fd09cade3a25`;
+- workflow commit `c84a9991c8d11c5d863d7f8b39bd01e5eeb4d5f9`;
+- run `33904321843`.
 
-A concurrent workflow embedded local identifier `434` after authoritative Iteration 434 had already been allocated. Per the iteration-ID registry, its payload is consumed here under authoritative Iteration 435 rather than overwriting Iteration 434.
-
-Run `33899370539` completed successfully. Artifact `9947015319`, digest `sha256:64a927fc1ad743e3d55e483069a8aad420c30b3676d27120e3c9fa79713405d7`; raw result SHA-256 `c4c32a5b6f0fa5e52efefcbc48493fc213567cee954bb7db47c9e76b2b95da7e`.
-
-At the unchanged Iteration-270 `N1` symmetric-difference step `h=3e-5`, maximum componentwise cancellation amplification `(abs(f+)+abs(f-))/abs(f+-f-)` is:
-- leg `s`: `7.651429239818539e11`;
-- leg `a`: `3.970596742897022e4`;
-- leg `b`: `3.66588017886033e4`.
-
-All current binary64 `N1/Q1` outputs are finite, so this is a scoped conditioning diagnostic PASS. It is **not** an 80/120-digit precision certificate. The `s` leg is exceptionally ill-conditioned and makes a complete arbitrary-precision `geometry -> nhat -> y_down -> norb -> N1` evaluation materially necessary before any `Q1` precision claim. The result localizes a numerical risk but does not by itself prove causation of the final index-2 physical blocker.
-
-## Active Actions / anti-duplication
-
-No known active Action currently carries physical authority beyond Iteration 421. The parent recursive closure, Iteration 433 and the workflow-local Q1/N1 conditioning audit have completed and were consumed. Do not duplicate them.
+A PASS certifies signed-assembly arithmetic only. It does not certify finite-difference truncation, alternate-step stability, 368/370, 379/374, 407, frozen Iteration 424, or physical index-2 `D_s`.
 
 ## Frozen Iteration 424 fallback
 
@@ -116,14 +101,13 @@ Exactly 15 unique double-double indices are required, five scientifically valid 
 
 ## Exact next gates
 
-1. Freeze and execute a separately auditable 80/120-digit `N1` closure carrying the exact Iteration-270 dynamics through `geometry -> nhat -> y_down -> norb` at the same `h=3e-5`, momenta, modes and conventions. Acceptance must be frozen before the result is inspected.
-2. Only after raw-valid `N1` precision closure, certify `Q1=-Q0(p+k)@N1@Q0(p)` with unchanged conventions.
-3. Then close `A_finite/Acoef/Asub` and their recursive geometry layers.
-4. Only then certify `368/370 -> 379/374 -> 407` under continuous arbitrary-precision provenance or quantitative retained-binary64 bounds sufficient for final gates.
-5. Evaluate frozen Iteration 424 physical mass nodes independently at 80 and 120 digits and compare with Iteration 427.
-6. Promote index 2 only if all frozen physical, tensor-fit, direct-integrand, cross-precision and finite-output conditions pass under raw workflow authority.
-7. If index 2 closes, execute Iteration 412 exact15 assembly, complete `Tr U1^2`, then assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2 using Iteration 406 `Tr U2`.
-8. Comparator quotient / matched-observable completion remains downstream. No Candidate residual before comparator closure.
+1. Raw-consume Iteration 440 fail-closed.
+2. If 440 PASS, freeze a separate `Acoef/Asub` finite-difference truncation / algebraic-derivative consistency gate before any outward precision claim. No post-hoc step tuning.
+3. After `Asub` arithmetic plus truncation representation is closed, certify `368/370 -> 379/374 -> 407` under continuous arbitrary-precision provenance or quantitative retained-binary64 bounds sufficient for final gates.
+4. Evaluate frozen Iteration 424 physical mass nodes independently at 80 and 120 digits and compare with Iteration 427.
+5. Promote index 2 only if all frozen physical, tensor-fit, direct-integrand, cross-precision and finite-output conditions pass under raw workflow authority.
+6. If index 2 closes, execute Iteration 412 exact15 assembly, complete `Tr U1^2`, then assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2 using Iteration 406 `Tr U2`.
+7. Comparator quotient / matched-observable completion remains downstream. No Candidate residual before comparator closure.
 
 ## Stable readiness rubric
 
@@ -136,8 +120,8 @@ Exactly 15 unique double-double indices are required, five scientifically valid 
 
 **MODEL_READINESS: 24%**
 
-Readiness change at Iteration 435: **0 percentage points**. Parent-chain conditioning is now quantitatively localized, but no physical coordinate, comparator-subtracted residual, or stable readiness-rubric block has closed.
+Readiness change through Iteration 440 launch: **0 percentage points**. Parent precision closure is advancing, but no physical coordinate, comparator-subtracted residual, or stable readiness-rubric block has closed.
 
 ## Retained guardrails
 
-Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Authoritative iteration numbers are never reused. Workflow-local identifier collisions are reconciled under a new authoritative number and never overwrite prior recovery meaning. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5. Source/Born subtraction only in a matched observable after pole/cut-origin classification.
+Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Authoritative iteration numbers are never reused. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5. Source/Born subtraction only in a matched observable after pole/cut-origin classification.
