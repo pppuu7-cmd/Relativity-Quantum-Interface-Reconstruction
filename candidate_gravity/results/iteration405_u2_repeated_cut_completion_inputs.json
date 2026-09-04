@@ -1,0 +1,14 @@
+{
+  "iteration": 405,
+  "source_run": 33829453920,
+  "source_head_sha": "3c2d556fa23514afb93eefe9c57c58426bcfa969",
+  "source_workflow_conclusion": "success_not_scientific_authority_by_itself",
+  "records": [
+    {"global_channel_index":14,"q2":-0.34,"status":"CONVERGED","D_s_TrU2_repeated_high":[-0.00011341677230793501,0.0],"iteration392_mask_consistent":true,"uncut_policy_pass":true,"scaled_convergence_error":1.58509967982225e-11,"artifact_id":9921511851,"artifact_digest":"sha256:6eea1b0ca1ad2800c93f4fa9519a93892f0bb3c8bc6aec926a41ba579aa9ac9d","source_result_sha256":"428652214fb6b9a4e35d475e1a26faca7a63af23eb2351050bd0bf6f1ca30fea","source_authority_audit_sha256":"8020a63212b7585fa6842931923c9697de993e000fdc93365b86b1d3daa48b1d"},
+    {"global_channel_index":15,"q2":-0.14,"status":"CONVERGED","D_s_TrU2_repeated_high":[-0.00019874443441835922,0.0],"iteration392_mask_consistent":true,"uncut_policy_pass":true,"scaled_convergence_error":5.946266157415281e-14,"artifact_id":9921509155,"artifact_digest":"sha256:16f7aad7ef2b42d7be87541fe1a8c51c635c85f59dbdcb24a12cda666bbe3bb9","source_result_sha256":"4b2db87614344511346a7d429a774ee013cd8b2c1caeba0bc0e27dfd97a7f53d","source_authority_audit_sha256":"9ef2ef756af5d72c6606e9c8972d6c22c674b5730df5fe2ad3aba5f1dfa810fc"},
+    {"global_channel_index":16,"q2":-0.14,"status":"CONVERGED","D_s_TrU2_repeated_high":[0.0006290774853610352,0.0],"iteration392_mask_consistent":true,"uncut_policy_pass":true,"scaled_convergence_error":2.1322505393273072e-13,"artifact_id":9921545387,"artifact_digest":"sha256:2bdab7a265b77bbc307db5336704aa901d69c4db2dfec73051d3e2deffb1b5ea","source_result_sha256":"bfa3e6421ba5f53bdd051e6ac4dc6be2eea66f8881563159082346d11f850f77","source_authority_audit_sha256":"ae64bdc5a08caee96e7bf5ddd8b4048404720d5727ba715d8353f528f3a23adf"},
+    {"global_channel_index":17,"q2":-1.0,"status":"CONVERGED","D_s_TrU2_repeated_high":[0.00006894241423070089,0.0],"iteration392_mask_consistent":true,"uncut_policy_pass":true,"scaled_convergence_error":6.284090672860885e-09,"artifact_id":9921530148,"artifact_digest":"sha256:e49e666f96bd4d6b21cfff34364bf9afd247fbc3a2a60ad9102dcd89c34ac131","source_result_sha256":"4eda197f9a7367498ba5bb48248b6bf0579104fc6a814bd9d8a88ef7ed138003","source_authority_audit_sha256":"6cd8a99946bff06f4e24caf8f05106ca1c90e0fac4a75ef64f53f09cb1fe7e4b"}
+  ],
+  "guardrails": ["NO_ZERO_FILL","EXACT_48_INDEX_ASSEMBLY_REQUIRED","DISTINCT_Q2_BUCKETS_NEVER_SUMMED","NO_EFFECTIVE_ACTION_WEIGHT_FOLDING","NO_SOURCE_BORN_SUBTRACTION","NO_ANSATZ003","NO_FISHER_RESOURCES"],
+  "model_readiness_percent": 24
+}
