@@ -1,0 +1,52 @@
+{
+  "iteration": 403,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "classification": "PASS_DOUBLE_DOUBLE_CENTRAL4_X_CENTRAL4_EXACTLY_COMMUTES_WITH_SPHERE_MEAN",
+  "scope": "TRU1SQ_DOUBLE_DOUBLE_REDUCED_ANGULAR_ARCHITECTURE_ONLY__NO_NEW_PHYSICAL_VALUE",
+  "target_blocked_indices": [2, 4, 11],
+  "operational_gap_index": 5,
+  "source_authorities": {
+    "mass_derivative_identity": "Iteration 375",
+    "full_probe_kinematic_regularity": "Iteration 377",
+    "double_double_numeric_stencil": "Iterations 379/385/389",
+    "exact_unresolved_census": "Iteration 402"
+  },
+  "frozen_stencil": {
+    "one_dimensional_operator": "C_h[f]=[f(-2h)-8 f(-h)+8 f(+h)-f(+2h)]/(12h)",
+    "double_double_operator": "C_h^(u) C_h^(v)",
+    "base_h": 5e-6,
+    "halfstep_h": 2.5e-6,
+    "mass_nodes_per_axis": 4,
+    "mass_node_integrals_per_stencil": 16
+  },
+  "exact_identity": "C_h^(u) C_h^(v) sphere_mean[G(u,v,n)] = sphere_mean[C_h^(u) C_h^(v) G(u,v,n)]",
+  "proof": [
+    "central4 is a finite linear combination of four function values",
+    "central4 x central4 is therefore a finite linear combination of sixteen fixed auxiliary-mass-node values",
+    "sphere integration is linear, so a finite sum commutes exactly with the sphere integral",
+    "no continuum differentiation-under-the-integral assumption is required",
+    "Iteration 377 proves all frozen auxiliary-mass probe-node cut integrands are regular: 51/51 REGULAR, minimum analytic uncut separation 0.11857147221810005 and minimum Kallen 0.019594400000000005"
+  ],
+  "numerical_consequence": [
+    "the reduced method may compute each sphere_mean[G(u_i,v_j)] first, including analytically/spectrally, and only then apply the unchanged central4 x central4 coefficients",
+    "this is algebraically the same frozen mass stencil as Iteration 389 and does not weaken or alter the physical 2e-5 convergence threshold",
+    "angular quadrature noise is no longer differentiated pointwise before integration, directly addressing the observed high-vs-halfstep instability in blocked channels 2 and 11"
+  ],
+  "guardrails": [
+    "NO_MASS_STENCIL_CHANGE",
+    "NO_DERIVATIVE_STEP_CHANGE",
+    "NO_NORMALIZATION_CHANGE",
+    "NO_THRESHOLD_WEAKENING",
+    "EVERY_MASS_NODE_INTEGRAL_MUST_HAVE_INDEPENDENT_STRUCTURAL_VALIDATION",
+    "FINAL_PHYSICAL_VALUE_REQUIRES_ORIGINAL_INTEGRAND_CROSSCHECK",
+    "BLOCKED_NEVER_ZERO_FILLED",
+    "NO_EFFECTIVE_ACTION_WEIGHT_FOLDING",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "next_gate": "Use Iteration401 to validate an analytic/spectral sphere-mean evaluator for the one-affine-denominator topology; then apply that evaluator at every frozen mass node and apply the unchanged central4 x central4 stencil outside the sphere integral, with independent original-integrand crosscheck."
+}
