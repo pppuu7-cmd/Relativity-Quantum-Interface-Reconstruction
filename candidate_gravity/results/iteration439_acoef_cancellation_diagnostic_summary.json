@@ -1,0 +1,35 @@
+{
+  "iteration": 439,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "scientific_gate_pass": true,
+  "classification": "PASS_ITER270_ACOEF_CANCELLATION_DIAGNOSTIC__NON_PROMOTING",
+  "authority_scope": "DIAGNOSTIC_ONLY__ITERATION270_ACOEF_SIGNED_SUM_CONDITIONING",
+  "observed": {
+    "max_component_cancellation_amplification": 1790391356.9083405,
+    "max_explicit_vs_parent_Acoef_scaled": 0.0,
+    "all_values_finite": true,
+    "node_count": 26,
+    "subset_count": 7
+  },
+  "per_subset_max_cancellation_amplification": {
+    "s": 152420.79198926463,
+    "a": 1.0,
+    "b": 1.0,
+    "s,a": 30928.179260832883,
+    "s,b": 22753.51067234419,
+    "a,b": 749563.81810269,
+    "s,a,b": 1790391356.9083405
+  },
+  "provenance": {
+    "run": 33901517012,
+    "job": 101116462908,
+    "artifact": 9947813555,
+    "artifact_digest": "sha256:7dc18bb0754513c6334b792a8602b4157734ee720e31050f9c98b5b9b4330397",
+    "raw_scientific_json_sha256": "c8840b0f8ee5134383bdc6749f009afc813010d8f39e543fa79a275b564b7aa3",
+    "workflow_head_sha": "9d5ef30ad700cb3bac6b15eb295f375fe15e3343"
+  },
+  "interpretation": "The exact binary64 Acoef signed-sum implementation reproduces its parent formula exactly and is finite, but several subsets are strongly cancellation-conditioned. The triple (s,a,b) signed numerator reaches ~1.79e9 maximum componentwise amplification, making Acoef/Asub the first newly localized layer where tiny node-level arithmetic differences can plausibly be strongly magnified. Amplification itself is diagnostic only and does not establish a material physical error; direct 80/120-digit Acoef/Asub closure is required.",
+  "guardrails": ["DIAGNOSTIC_ONLY","NO_CANCELLATION_PHYSICAL_CEILING","NO_PHYSICAL_DS_VALUE","NO_STEP_CHANGE","NO_THRESHOLD_WEAKENING","NO_ZERO_FILL","NO_ANSATZ003","NO_FISHER_RESOURCES"]
+}
