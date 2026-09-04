@@ -20,7 +20,8 @@ This is a provenance/operational rule. Identifier collision is not a physics FAI
 - **437:** exact Iteration-270 `Q1=-Q0(p+k)@N1@Q0(p)` 80/120-digit precision closure with shifted-Q0 certification; raw-consumed PASS.
 - **438:** exact Iteration-270 `A_finite` 80/120-digit arithmetic-core closure over the 26 signed nodes entering the seven frozen `Acoef/Asub` subsets; raw-consumed PASS.
 - **439:** exact Iteration-270 `Acoef` signed-sum binary64 cancellation-conditioning diagnostic at unchanged `h1/h2/h3`; raw-consumed non-promoting PASS.
-- **440:** exact Iteration-270 `Acoef/Asub` 80/120-digit signed-assembly arithmetic closure at unchanged `h1/h2/h3`; prospectively allocated before result consumption.
+- **440:** exact Iteration-270 `Acoef/Asub` 80/120-digit signed-assembly arithmetic closure at unchanged `h1/h2/h3`; raw-consumed PASS.
+- **441:** exact Iteration-270 `Acoef/Asub` fixed-h representation/truncation oracle comparing the frozen central stencil against a same-spacing tensor-product fourth-order derivative rule; prospectively allocated before result consumption.
 
 These meanings are reserved and may not be reused by concurrent workflows or research records.
 
