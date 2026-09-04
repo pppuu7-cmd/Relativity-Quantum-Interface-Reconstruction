@@ -28,6 +28,7 @@ This is a provenance/operational rule. Identifier collision is not a physics FAI
 - **445:** raw consumption of the frozen Iteration-443 Y-site `y1` 80/120-digit + same-h fourth-order oracle; PASS, non-promoting.
 - **446:** raw consumption of the Iteration-444 continuous post-parent seven-matmul + trace 80/120-digit certificate; PASS, non-promoting.
 - **447:** raw consumption of the downstream source/provenance boundary audit after Iteration 446; locates still-uncertified Iteration-407 spectral/sample binary64 arithmetic; source-boundary PASS only, not numerical closure and non-promoting.
+- **448:** prospective staged-coverage/promotion barrier for the already-running post-447 class-3 phi/sample MP slab; freezes selected-slab PASS/BLOCKED interpretation and forbids treating 48-row one-mass-corner coverage as full-`F(u,v)` closure; non-promoting.
 
 A later workflow-local job labelled `431` (`rqir-iteration431-channel2-cut-kinematic-h1-sensitivity`, run `33918967955`) is a duplicate identifier because authoritative 431 is already reserved. It may only be consumed under a future unique authoritative iteration and may not overwrite prior records.
 
