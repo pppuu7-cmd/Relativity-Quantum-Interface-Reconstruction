@@ -1,9 +1,10 @@
-# retrigger-only: no scientific gate or arithmetic change
+# retrigger-only: namespace plumbing repaired; no scientific gate or arithmetic change
 name: rqir-iteration401-tru1sq-channel4-analytic-azimuth-structure
 
 on:
   push:
     paths:
+      - 'candidate_gravity/code/iteration401_tru1sq_channel4_analytic_azimuth_structure_oracle.py'
       - '.github/workflows/rqir-iteration401-tru1sq-channel4-analytic-azimuth-structure.yml'
   workflow_dispatch:
 
