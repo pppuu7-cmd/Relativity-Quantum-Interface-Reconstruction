@@ -1,0 +1,52 @@
+{
+  "iteration": 436,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "scientific_gate_pass": true,
+  "classification": "PASS_ITER270_N1_80_120_DIGIT_CLOSURE__LEGACY_REPRODUCED__NON_PROMOTING",
+  "authority_scope": "PARENT_PRECISION_CLOSURE__ITERATION270_N1_ONLY__NON_PROMOTING",
+  "frozen_inputs": {
+    "M": "POS",
+    "legs": ["s", "a", "b"],
+    "P0": [0.7, -0.4, 0.5, 0.9],
+    "h": 3e-5
+  },
+  "thresholds": {
+    "mp80_vs_mp120_N1_scaled_max": "1e-40",
+    "binary64_vs_mp120_endpoint_norb_scaled_max": 1e-12,
+    "legacy_binary64_vs_mp120_N1_physical_reference": 2e-5
+  },
+  "observed": {
+    "max_mp80_vs_mp120_N1_scaled": "8.3327272424668097078681587999e-77",
+    "max_binary64_vs_mp120_endpoint_norb_scaled": 4.1643458019829987e-16,
+    "max_binary64_vs_mp120_N1_scaled": 6.088515466627416e-12,
+    "legacy_N1_reproduced_within_2e-5": true,
+    "all_values_finite": true
+  },
+  "per_leg_binary64_vs_mp120_N1_scaled": {
+    "s": 6.088515466627416e-12,
+    "a": 4.596099727609572e-12,
+    "b": 5.02312511827027e-12
+  },
+  "interpretation": "The complete Iteration-270 geometry->nhat->y_down->norb->N1 chain is internally closed at 80/120 digits on the frozen representative inputs, and the current binary64 N1 agrees with the 120-digit realization far inside the unchanged 2e-5 physical reference tolerance. Therefore the large cancellation-amplification diagnostic from Iteration 435 does not translate into a material N1 numerical error at these frozen inputs. This certifies N1 only; Q1 and all downstream layers remain separate gates.",
+  "provenance": {
+    "run": 33900713097,
+    "job": 101113864821,
+    "artifact": 9947511772,
+    "artifact_digest": "sha256:3ebddf912b2e662dc884980c9b2578b1452ee5888dbdf3533307fe80ba76d8ad",
+    "raw_scientific_json_sha256": "RETRIEVE_FROM_AUTHORITY_AUDIT_BEFORE_FINAL_RECOVERY_CONSUMPTION",
+    "workflow_head_sha": "c561593fe5b60f25c229a73a15fdc91ecced8ff9"
+  },
+  "guardrails": [
+    "NO_PHYSICAL_DS_VALUE",
+    "N1_ONLY",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_H_CHANGE",
+    "NO_MOMENTUM_OR_POLARIZATION_CHANGE",
+    "NO_PARENT_DYNAMICS_CHANGE",
+    "NO_ZERO_FILL",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
