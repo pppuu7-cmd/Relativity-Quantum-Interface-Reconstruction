@@ -1,0 +1,56 @@
+{
+  "iteration": 427,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "scientific_gate_pass": true,
+  "classification": "PASS_CHANNEL2_EXACT_MASS_TO_KINEMATIC_CHAIN_REDUCTION__NON_PROMOTING",
+  "authority_scope": "EXACT_ANALYTIC_CONTRACT__NO_PHYSICAL_COORDINATE_PROMOTION",
+  "target": {
+    "double_double_global_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0,
+    "s": 1.0
+  },
+  "exact_general_formula": "D_s=-F_uv=H/s^2 + H_alphaalpha/(8*s^2) - H_rhorho/(8*s)",
+  "exact_target_formula": "q^2=-1 => s=1 => D_s=H+(H_alphaalpha-H_rhorho)/8",
+  "exact_cancellations": ["H_alpha", "H_rho", "H_alpharho"],
+  "identity_checks": {
+    "general_chain_identity": true,
+    "coefficient_identity": true,
+    "target_s1_identity": true
+  },
+  "kinematic_derivatives_general_s": {
+    "alpha_0": "-1/2",
+    "alpha_u": "-1/(2*s)",
+    "alpha_v": "1/(2*s)",
+    "alpha_uv": "0",
+    "rho_0": "sqrt(s)/2",
+    "rho_u": "-1/(2*sqrt(s))",
+    "rho_v": "-1/(2*sqrt(s))",
+    "rho_uv": "-1/s**(3/2)",
+    "beta_0": "1",
+    "beta_u": "-1/s",
+    "beta_v": "-1/s",
+    "beta_uv": "-2/s**2"
+  },
+  "provenance": {
+    "run": 33886660110,
+    "artifact": 9942115984,
+    "artifact_digest": "sha256:cf92be01da583f07f12fc6b487cea2e3dbb8e178067d9eef3e6af9a54944269e",
+    "raw_scientific_json_sha256": "fab84900f469dcdb9bae95f1070ebfedbf967a8f8fb5ef0387ccedb9a4ae2d9b",
+    "workflow_head_sha": "a1abd2ff97f02d1feb958d7457767ecdaa1e604f"
+  },
+  "interpretation": "The complete frozen auxiliary-mass derivative admits an exact coordinate reduction. For the target q^2=-1, D_s can be computed from H and only the pure alpha-alpha and rho-rho second derivatives; all first-derivative and alpha-rho mixed terms cancel identically. This is prospective and non-promoting. If Iteration 421 returns BLOCKED_CONVERGENCE, the Iteration-424 fallback should prefer this exact full-H kinematic-coordinate form over another mixed u,v finite difference, while retaining all frozen consistency checks and thresholds.",
+  "guardrails": [
+    "PROSPECTIVE_BEFORE_ITERATION421_RESULT",
+    "NO_PHYSICAL_DS_VALUE",
+    "NO_DENOMINATOR_ONLY_SHORTCUT",
+    "FULL_H_INCLUDES_NUMERATOR_AND_AFFINE_MOMENTS",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_SMALLER_MASS_STEP",
+    "NO_ZERO_FILL",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
