@@ -16,7 +16,9 @@ ROOT=Path(__file__).resolve().parents[2]
 P=ROOT/'candidate_gravity/code/iteration407_tru1sq_channel4_analytic_spectral_reduction.py'
 s=P.read_text(); marker='start=time.perf_counter()'
 ns={'__name__':'rqir407_spectral_stage','__file__':str(P)}
-with contextlib.redirect_stdout(io.StringIO()): exec(compile(s.split(marker,1)[0],str(P),'exec'),ns,ns)
+# Operational source-loader repair: Iteration 407 itself contains the marker
+# literal while loading its parent, so split at the final run marker only.
+with contextlib.redirect_stdout(io.StringIO()): exec(compile(s.rsplit(marker,1)[0],str(P),'exec'),ns,ns)
 BASE=float(ns['BASE_H']); HALF=float(ns['HALF_H']); TRAIN=np.asarray(ns['TRAIN_Z'],float); DEG=int(ns['POLY_DEGREE'])
 phi_mean=ns['phi_mean_num']; affine=ns['affine_coeffs']; beta_of=lambda u,v: ns['kin'](u,v)[2]
 TH=mp.mpf('1e-30')
