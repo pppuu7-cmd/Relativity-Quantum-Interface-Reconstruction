@@ -1,0 +1,45 @@
+{
+  "stage": "ITER407_SPECTRAL_ALGEBRA_PRECISION__POST_ITER446_SOURCE_AUDIT__UNNUMBERED_UNTIL_RAW_CONSUME",
+  "classification": "PASS_ITER407_SPECTRAL_ALGEBRA_MP80_MP120__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "work_completion_percent": 61,
+  "authority_scope": "ITER407_DEG4_INTERPOLATION_AFFINE_LOG_RECURRENCE_TERMINAL_SPECTRAL_ASSEMBLY__FROZEN_PARENT_SAMPLES__NON_PROMOTING",
+  "frozen": {
+    "degree": 4,
+    "mass_nodes": 32,
+    "mass_steps": [5e-6, 2.5e-6],
+    "precision_digits": [80, 120],
+    "training_z": [-0.86, -0.43, 0.0, 0.43, 0.86]
+  },
+  "thresholds": {
+    "scaled_mp80_vs_mp120_max": "1e-30",
+    "required_nodes": 32
+  },
+  "observed": {
+    "scaled_mp80_vs_mp120_max": "2.44054108444388552441376805074e-80",
+    "node_count": 32,
+    "all_finite": true
+  },
+  "parent_sample_generation_precision_closed_by_this_gate": false,
+  "raw_provenance": {
+    "run_id": 33924198609,
+    "job_id": 101189000423,
+    "artifact_id": 9957221889,
+    "artifact_digest": "sha256:67da51140222305be3b293f5289ca62ce6eeda799fb144b8692bdff2d5c213c1",
+    "head_sha": "4e4b168a47afe5e294b4551785d8b76d09630b3e",
+    "raw_result_sha256": "7f3000cd8e83ce6f1c2d81762273f7960c76e716bd1e4a33f2589c92a9f7090b",
+    "raw_authority_audit_pass": true
+  },
+  "interpretation": "Degree-4 interpolation, affine-denominator logarithmic recurrence and terminal spectral assembly are stable under independent 80/120-digit evaluation over all 32 frozen mass nodes. This closes only the spectral arithmetic layer built from frozen parent samples. It does not certify the precision of phi-mean/sample generation and cannot promote physical index 2.",
+  "next_gate": "carry continuous 80/120-digit provenance through actual index-2 phi-mean/sample generation before frozen Iteration424 physical mass-node reevaluation",
+  "guardrails": [
+    "FROZEN_PARENT_SAMPLES_ONLY",
+    "SOURCE_AUDIT_NOT_NUMERICAL_CLOSURE",
+    "NO_REOPEN_ITER374",
+    "NO_PHYSICAL_INDEX2_PROMOTION",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_ZERO_FILL"
+  ]
+}
