@@ -1,21 +1,18 @@
 #!/usr/bin/env python3
 """RQIR Candidate Gravity Iteration 401.
 
-Structural oracle for analytic/spectral angular reduction of the sole persistent
-Tr(U1^2) double-double convergence blocker: Iteration-389 global index 4,
-class 5, q^2=-1.
+Structural oracle for analytic/spectral angular reduction of the prospectively
+targeted Tr(U1^2) double-double convergence blocker: Iteration-389 global index
+4, class 5, q^2=-1. Iteration 402 later establishes that indices 2 and 11 are
+additional blockers; this oracle remains a channel-4 structural template only.
 
 This is NOT another angular-grid convergence ladder and does NOT promote a new
-physical D_s value.  It tests whether the exact frozen integrand admits the same
+physical D_s value. It tests whether the exact frozen integrand admits the same
 kind of controlled azimuth reduction used successfully in Iteration 380:
 
-1. after cutting the two multiplicity-2 groups, exactly one uncut propagator
-   remains;
-2. after aligning one transverse axis with that uncut shift, its denominator is
-   affine in z and independent of phi;
-3. the off-shell stripped physical numerator has a finite low harmonic content
-   in phi and its azimuthal mean is represented by a low-degree polynomial in z,
-   validated on held-out z nodes and an independent phi phase.
+1. after cutting the two multiplicity-2 groups, exactly one uncut propagator remains;
+2. after aligning one transverse axis with that uncut shift, its denominator is affine in z and independent of phi;
+3. the off-shell stripped physical numerator has finite low harmonic content in phi and its azimuthal mean is represented by a low-degree polynomial in z, validated on held-out z nodes and an independent phi phase.
 
 No physics threshold, derivative stencil, radial Richardson rule, numerator,
 routing, normalization, or source subtraction is changed.
@@ -43,10 +40,13 @@ q2=float(np.real(ns['mdot'](q))); s=-q2
 if abs(q2+1.0)>1e-12 or int(ch['class_id'])!=5: raise RuntimeError(('target_identity_drift',q2,ch['class_id']))
 for name,val in {'ch':ch,'row':row,'a':a,'b':b,'q':q,'q2':q2,'s':s}.items(): ns[name]=val
 
-vk=ns['vk']; mdot=ns['mdot']; mbilin=ns['mbilin']; mproj_orth=ns['mproj_orth']
+# Iteration379 executes Iteration374 in an inner namespace stored as ns['ns'];
+# geometry helpers live there, while vk/mdot/transverse_basis are explicitly
+# re-exported by Iteration379. This lookup is plumbing only, not a gate change.
+parent374=ns['ns']
+vk=ns['vk']; mdot=ns['mdot']; mbilin=parent374['mbilin']; mproj_orth=parent374['mproj_orth']
 stripped_limit_massive=ns['stripped_limit_massive']; BASE_H=ns['BASE_H']
 
-# Raw denominator multiplicities and the unique uncut group.
 mult={}; reps={}
 for sh in row['shifts']:
     k=vk(sh); mult[k]=mult.get(k,0)+1; reps[k]=np.asarray(sh,float)
@@ -56,8 +56,6 @@ uncut_keys=[k for k,m in mult.items() if k not in (ka,kb)]
 if len(uncut_keys)!=1 or mult[uncut_keys[0]]!=1: raise RuntimeError(('expected_exactly_one_simple_uncut_group',mult,uncut_keys))
 c=reps[uncut_keys[0]]
 
-# Build a q-transverse orthonormal basis with e3 aligned to the transverse
-# projection of the unique uncut shift relative to cut group a.
 rvec=mproj_orth(c-a,q); r2=float(np.real(mdot(rvec)))
 if r2<=1e-12: raise RuntimeError(('uncut_transverse_projection_degenerate',r2))
 e3=rvec/math.sqrt(r2)
@@ -75,8 +73,6 @@ basis_gram=np.array([[mbilin(x,y) for y in (e1,e2,e3)] for x in (e1,e2,e3)])
 basis_orth_error=float(np.max(np.abs(basis_gram-np.eye(3))))
 if basis_orth_error>BASIS_ORTHO_TOL: raise RuntimeError(('basis_orthogonality_failed',basis_orth_error))
 
-# Predeclared structural test settings. These thresholds are oracle-only and do
-# not replace the frozen physical convergence threshold 2e-5.
 DEN_AFFINE_REL_TOL=2e-11
 PHASE_MEAN_REL_TOL=2e-6
 FOURIER_TAIL_REL_TOL=2e-6
@@ -87,10 +83,7 @@ MEAN_NPHI=16
 DEGREES=(4,6,8,10,12)
 TRAIN_Z=np.linspace(-0.9,0.9,13)
 HELDOUT_Z=np.array([-0.83,-0.57,-0.31,-0.07,0.23,0.49,0.77,0.88])
-# Representative mass nodes chosen prospectively from the already-frozen base-h
-# stencil; no zero-mass singular shortcut is introduced.
 MASS_PAIRS=[(-2*BASE_H,-2*BASE_H),(-BASE_H,BASE_H),(2*BASE_H,BASE_H)]
-
 
 def kin(u,v):
     lam=s*s+u*u+v*v-2*s*u-2*s*v-2*u*v
@@ -98,27 +91,22 @@ def kin(u,v):
     alpha=-(s+u-v)/(2.0*s); rho=math.sqrt(lam)/(2.0*math.sqrt(s)); beta=math.sqrt(lam)/s
     return alpha,rho,beta,lam
 
-
 def unit_from(z,phi):
     rr=math.sqrt(max(0.0,1.0-float(z)*float(z)))
     return rr*math.cos(phi)*e1 + rr*math.sin(phi)*e2 + float(z)*e3
-
 
 def numerator_at(u,v,z,phi):
     alpha,rho,_,_=kin(u,v); unit=unit_from(z,phi)
     num,raderr=stripped_limit_massive(alpha,rho*unit)
     return complex(num),float(raderr)
 
-
 def direct_uncut(u,v,z,phi):
     alpha,rho,_,_=kin(u,v); unit=unit_from(z,phi)
     p0=-a+alpha*q+rho*unit
     return complex(mdot(p0+c))
 
-
 def affine_coeffs(u,v):
     alpha,rho,_,_=kin(u,v); r0=-a+alpha*q+c
-    # mdot(r0+rho*n)=mdot(r0)+rho^2+2 rho <r0,n> and only e3 survives.
     cc=complex(mdot(r0)+rho*rho)
     aa=complex(2.0*rho*mbilin(r0,e3))
     return cc,aa
@@ -131,21 +119,18 @@ mass_results=[]
 
 for u,v in MASS_PAIRS:
     cc,aa=affine_coeffs(u,v)
-    # Independent denominator-affine checks at points not reused by polynomial fit.
     for z in (-0.73,-0.18,0.41,0.86):
         for frac in (0.07,0.31,0.68):
             phi=2*math.pi*frac
             d=direct_uncut(u,v,z,phi); pred=cc+aa*z
             max_den_affine_rel=max(max_den_affine_rel,float(abs(d-pred)/max(1.0,abs(d),abs(pred))))
 
-    # Fourier content of the stripped numerator at independent fixed z values.
     fourier_rows=[]
     for z in (-0.62,0.11,0.71):
         vals=[]
         for m in range(FOURIER_N):
             num,ra=numerator_at(u,v,z,2*math.pi*m/FOURIER_N); vals.append(num); max_radial=max(max_radial,ra)
         arr=np.asarray(vals,complex); coeff=np.fft.fft(arr)/FOURIER_N
-        # |m| mapping for discrete Fourier modes.
         modes=np.array([min(k,FOURIER_N-k) for k in range(FOURIER_N)])
         scale=max(1.0,float(np.max(np.abs(coeff))))
         tail=float(np.max(np.abs(coeff[modes>FOURIER_MAX_ACCEPTED_MODE]))/scale)
@@ -156,7 +141,7 @@ for u,v in MASS_PAIRS:
     def phi_mean(z,phase):
         vals=[]
         for m in range(MEAN_NPHI):
-            num,ra=numerator_at(u,v,z,2*math.pi*(m+phase)/MEAN_NPHI); vals.append(num); max_ra=ra
+            num,_=numerator_at(u,v,z,2*math.pi*(m+phase)/MEAN_NPHI); vals.append(num)
         return sum(vals,0j)/MEAN_NPHI
 
     train0=np.array([phi_mean(float(z),0.0) for z in TRAIN_Z],complex)
@@ -176,11 +161,9 @@ for u,v in MASS_PAIRS:
         scale=max(1.0,float(np.max(np.abs(target_held))),float(np.max(np.abs(pred))))
         err=float(np.max(np.abs(pred-target_held))/scale)
         if best is None or err<best['heldout_scaled_error']:
-            best={'degree':int(deg),'heldout_scaled_error':err,
-                  'coeff_real':[float(x) for x in cr],'coeff_imag':[float(x) for x in ci]}
+            best={'degree':int(deg),'heldout_scaled_error':err,'coeff_real':[float(x) for x in cr],'coeff_imag':[float(x) for x in ci]}
         if err<=POLY_HELDOUT_REL_TOL:
-            best={'degree':int(deg),'heldout_scaled_error':err,
-                  'coeff_real':[float(x) for x in cr],'coeff_imag':[float(x) for x in ci]}
+            best={'degree':int(deg),'heldout_scaled_error':err,'coeff_real':[float(x) for x in cr],'coeff_imag':[float(x) for x in ci]}
             break
     mass_results.append({'u':float(u),'v':float(v),'denominator_affine_c':[float(cc.real),float(cc.imag)],
                          'denominator_affine_a':[float(aa.real),float(aa.imag)],'fourier_checks':fourier_rows,
@@ -188,12 +171,10 @@ for u,v in MASS_PAIRS:
 
 max_poly=max(r['azimuth_mean_polynomial_fit']['heldout_scaled_error'] for r in mass_results)
 all_poly=all(r['azimuth_mean_polynomial_fit']['heldout_scaled_error']<=POLY_HELDOUT_REL_TOL for r in mass_results)
-structure_pass=bool(max_den_affine_rel<=DEN_AFFINE_REL_TOL and max_fourier_tail_rel<=FOURIER_TAIL_REL_TOL and
-                    max_phase_mean_rel<=PHASE_MEAN_REL_TOL and all_poly)
+structure_pass=bool(max_den_affine_rel<=DEN_AFFINE_REL_TOL and max_fourier_tail_rel<=FOURIER_TAIL_REL_TOL and max_phase_mean_rel<=PHASE_MEAN_REL_TOL and all_poly)
 result={
  'iteration':ITERATION,'model_readiness_percent':24,'scientific_gate_pass':True,'candidate_residual':False,
- 'classification':('PASS_TRU1SQ_CHANNEL4_ANALYTIC_AZIMUTH_STRUCTURE_ORACLE' if structure_pass else
-                   'BLOCKED_TRU1SQ_CHANNEL4_ANALYTIC_AZIMUTH_STRUCTURE_ORACLE'),
+ 'classification':('PASS_TRU1SQ_CHANNEL4_ANALYTIC_AZIMUTH_STRUCTURE_ORACLE' if structure_pass else 'BLOCKED_TRU1SQ_CHANNEL4_ANALYTIC_AZIMUTH_STRUCTURE_ORACLE'),
  'target':{'double_double_global_index':TARGET_INDEX,'class_id':int(ch['class_id']),'q_squared':q2,
            'cut_group_multiplicities':[mult[ka],mult[kb]],'distinct_denominator_group_count':len(mult),
            'remaining_uncut_group_count':1,'remaining_uncut_multiplicity':1,'remaining_uncut_shift':c.tolist()},
