@@ -1,0 +1,49 @@
+{
+  "iteration": 447,
+  "date": "2026-09-05",
+  "classification": "PASS_SOURCE_BOUNDARY_LOCATED__NON_PROMOTING_NOT_NUMERICAL_CLOSURE",
+  "authority_scope": "SOURCE_PROVENANCE_ONLY__ACTIVE_INDEX2_DOWNSTREAM_OF_CERTIFIED_368_370_POSTPARENT",
+  "scientific_gate_pass": true,
+  "numerical_precision_closed": false,
+  "promotes_physical_coordinate": false,
+  "run": 33921051425,
+  "job": 101179211149,
+  "artifact": 9955020563,
+  "artifact_digest": "sha256:844f689499bb3984130735423b29b6e089f21dc737f4ea7febc410888cd4ea34",
+  "raw_json_sha256": "16aadcbe0725fc903a594c7c7587ee35239f0a842defbb6fa1eeaef4f1ee129e",
+  "active_code_records": 18,
+  "iteration407_code_records": 1,
+  "first_material_uncertified_active_boundary": "candidate_gravity/code/iteration407_tru1sq_channel4_analytic_spectral_reduction.py",
+  "material_binary64_operations": [
+    "kinematic/basis arrays and scalar reductions",
+    "phi-mean complex sample arrays",
+    "degree-4 polynomial fit/evaluation",
+    "affine logarithmic moment recurrence",
+    "mass-node central4 mixed derivative assembly"
+  ],
+  "already_closed_upstream_scope": [
+    "Iteration-270 parent precision chain through Q0/N1/Q1/A_finite/Acoef/Asub",
+    "Iteration-368/370 Y-site y1 precision and fixed-h oracle",
+    "Iteration-368 post-parent seven-matmul plus trace continuous precision certificate"
+  ],
+  "active_independent_run": {
+    "name": "RQIR Iteration407 spectral-algebra precision stage",
+    "run": 33924198609,
+    "head_sha": "4e4b168a47afe5e294b4551785d8b76d09630b3e",
+    "status_at_consumption": "in_progress",
+    "note": "not duplicated; repaired source-loader boundary uses rsplit at final Iteration-407 execution marker"
+  },
+  "guardrails": [
+    "SOURCE_AUDIT_IS_NOT_NUMERICAL_PASS",
+    "DO_NOT_REOPEN_ITER374_PHYSICS",
+    "NO_ZERO_FILL",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_ROUTING_OR_NUMERATOR_CHANGE",
+    "INDEX2_REMAINS_BLOCKED",
+    "ANSATZ003_FORBIDDEN_BEFORE_COMPARATOR_QUOTIENT",
+    "FISHER_AND_RESOURCES_FORBIDDEN"
+  ],
+  "next_gate": "raw-consume the repaired Iteration-407 spectral-algebra 80/120-digit stage when complete; if PASS, continue continuous precision inward through phi-mean/sample generation before the frozen Iteration-424 physical mass-node reevaluation",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0
+}
