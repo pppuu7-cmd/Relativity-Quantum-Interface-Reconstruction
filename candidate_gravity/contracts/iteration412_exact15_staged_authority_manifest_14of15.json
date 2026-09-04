@@ -1,0 +1,41 @@
+{
+  "assembly_contract_iteration": 412,
+  "classification": "PASS_EXACT15_STAGING_MANIFEST__14_OF_15_RAW_AUTHORITY_CONVERGED__ONLY_INDEX2_MISSING",
+  "date": "2026-09-04",
+  "guardrails": [
+    "RUNTIME_ZIP_NAMES_ARE_LOCAL_STAGING_LABELS_NOT_REPOSITORY_AUTHORITY",
+    "EVERY_STAGED_RECORD_RAW_SHA_MATCHED_TO_PASSING_AUTHORITY_AUDIT",
+    "INDEX2_NOT_PRESENT",
+    "NO_DIAGNOSTIC_BLOCKED_VALUE",
+    "NO_ZERO_FILL",
+    "ITERATION412_EXACT15_CONTRACT_BINDING",
+    "NO_EFFECTIVE_ACTION_WEIGHT_FOLDING",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "missing_indices": [2],
+  "model_readiness_percent": 24,
+  "next_gate": "after raw-valid Iteration413 CONVERGED authority for index2, append exactly one index2 record and execute frozen Iteration412 exact15 assembly; if Iteration413 is BLOCKED, preserve this 14/15 staging manifest unchanged",
+  "physical_authority_through_iteration": 411,
+  "q2_counts_staged": {"-0.14": 5, "-0.34": 5, "-1.0": 4},
+  "record_count": 14,
+  "records": [
+    {"index":0,"q_squared":-1.0,"class_id":1,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[-0.002145445723860034,-0.0],"source_iteration":389,"source_zip_runtime_copy":"iter389-0.zip","scientific_json_member":"iteration389_result.json","raw_result_sha256":"43a71480e6fa5780a929e1bd6091986143729d9644e06403cfb5d71b25c64eb5","authority_audit_member":"iteration389_authority_audit.json","authority_audit_sha256":"c58df4e2d07e498f5591c466f1d710fb27badbf40a73f607d3f4f02bad07a60a"},
+    {"index":1,"q_squared":-1.0,"class_id":2,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[0.00012996086447902933,-0.0],"source_iteration":389,"source_zip_runtime_copy":"iter389-1.zip","scientific_json_member":"iteration389_result.json","raw_result_sha256":"006e9afa0c0f66241257f85228412c16d1e63ef3a1b48dbb9d55e786fc477d35","authority_audit_member":"iteration389_authority_audit.json","authority_audit_sha256":"cc2c3b4454901a425b46fecfd926b802156c6ba538d3d21b6a292905b122993f"},
+    {"index":3,"q_squared":-1.0,"class_id":4,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[0.00014514046746150512,-0.0],"source_iteration":389,"source_zip_runtime_copy":"iter389-3.zip","scientific_json_member":"iteration389_result.json","raw_result_sha256":"cec15b2bdb8bf2fd483db0c8d91722719ee94327ca65ec41c3a2483dbff6a20e","authority_audit_member":"iteration389_authority_audit.json","authority_audit_sha256":"276552958b5df5a8013b7c85ab119964afd6838e6ee62446520bce189e1b645d"},
+    {"index":4,"q_squared":-1.0,"class_id":5,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[0.003562716046166582,-0.0],"source_iteration":407,"source_zip_runtime_copy":"iteration409-index4.zip","scientific_json_member":"iteration407_result.json","raw_result_sha256":"bba7c203ca9694c70b79f762820cdcd26768ee6bb286d1dbc8c31c8ee93eee68","authority_audit_member":"iteration407_authority_audit.json","authority_audit_sha256":"b11b53b829f8ad8fe109ee947f1889c3bb63729f3807987cf2d2cd1944bec7aa"},
+    {"index":5,"q_squared":-0.14,"class_id":8,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[0.000119747535002548,-0.0],"source_iteration":389,"source_zip_runtime_copy":"iteration399-index5.zip","scientific_json_member":"iteration389_channel5_result.json","raw_result_sha256":"63cf00714ce2c17abc5c0d9a223b5698df889c7d8586adac80c1cc74f5407e87","authority_audit_member":"iteration399_authority_audit.json","authority_audit_sha256":"ac3a9d30857a201d93b08d483d906dd2db3569e3863fa7510d4ce8d4df0453ce"},
+    {"index":6,"q_squared":-0.14,"class_id":9,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[5.522381432854397e-05,-0.0],"source_iteration":389,"source_zip_runtime_copy":"iter389-6.zip","scientific_json_member":"iteration389_result.json","raw_result_sha256":"ec72ebe75c906263dc15507cd894400236e269206e9935afd8bc566f48e218c2","authority_audit_member":"iteration389_authority_audit.json","authority_audit_sha256":"6eb95127a77f9530636cdc30dd64f5a95e4732195b13606100054b3f36b867ff"},
+    {"index":7,"q_squared":-0.14,"class_id":10,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[-6.622069722921997e-05,-0.0],"source_iteration":389,"source_zip_runtime_copy":"iter389-7.zip","scientific_json_member":"iteration389_result.json","raw_result_sha256":"522c95a1ee311dcff6fd069b4075f0786a138e917b1eb47aca4e9ed992d58772","authority_audit_member":"iteration389_authority_audit.json","authority_audit_sha256":"2ed920199f981d5f200f36027a43b5cb8998b72c24d11a72e3e9e17cd627c6f0"},
+    {"index":8,"q_squared":-0.14,"class_id":11,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[5.5343463549200315e-05,-0.0],"source_iteration":389,"source_zip_runtime_copy":"iter389-8.zip","scientific_json_member":"iteration389_result.json","raw_result_sha256":"0d8a83a083807f4728558800c2a3f3e479711250cba3f541f20d004437f83a27","authority_audit_member":"iteration389_authority_audit.json","authority_audit_sha256":"168cf54a3bb3ea4722390003996f4e61d06ba2bef3b60ceacc4d83c1ea6782fc"},
+    {"index":9,"q_squared":-0.14,"class_id":12,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[-6.613794419181772e-05,-0.0],"source_iteration":389,"source_zip_runtime_copy":"iter389-9.zip","scientific_json_member":"iteration389_result.json","raw_result_sha256":"6242c338947f1e0f0cffc939f1576e20ac939f1d6a5b5a9215cdce1150c4db41","authority_audit_member":"iteration389_authority_audit.json","authority_audit_sha256":"74e00c4660ce1afbab084693492aa19afedfd129a28171632a77b01e76cd67e3"},
+    {"index":10,"q_squared":-0.34,"class_id":15,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[0.0001479132931053537,-0.0],"source_iteration":389,"source_zip_runtime_copy":"iter389-10.zip","scientific_json_member":"iteration389_result.json","raw_result_sha256":"94e672a77eda0889056551f29445ac9d38baa3bc686d2abc2e9634c2e0740149","authority_audit_member":"iteration389_authority_audit.json","authority_audit_sha256":"54cf7d428b6c6cffebc5f0d79e5d7565606ddd39b72cdfc073ce26b0c53dea0c"},
+    {"index":11,"q_squared":-0.33999999999999997,"class_id":16,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[0.013050543643260309,-0.0],"source_iteration":411,"source_zip_runtime_copy":"iteration411-index11.zip","scientific_json_member":"iteration411_result.json","raw_result_sha256":"f8aea08be16636dcf5d83afaa29dd3059c734a1a3ad8f778f07ef53b3041abf1","authority_audit_member":"iteration411_authority_audit.json","authority_audit_sha256":"ff8c98b7eed639ebde720da612c00e12ceb980ce9fef572a04630d24414f43eb"},
+    {"index":12,"q_squared":-0.34,"class_id":17,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[-4.076313524950876e-05,-0.0],"source_iteration":389,"source_zip_runtime_copy":"iter389-12.zip","scientific_json_member":"iteration389_result.json","raw_result_sha256":"8c4473424180b179649751cbd63b24e3283360d8941fd9fac9993cf2a0e392cc","authority_audit_member":"iteration389_authority_audit.json","authority_audit_sha256":"a7e1a440bcea68c8720c8de2645cc3fb56a5a6a6934447b8eee8c9e53e78c91b"},
+    {"index":13,"q_squared":-0.34,"class_id":18,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[0.0008414366643141488,-0.0],"source_iteration":389,"source_zip_runtime_copy":"iter389-13.zip","scientific_json_member":"iteration389_result.json","raw_result_sha256":"bddb359cbd88738252daa4ec56c00076e057db57ed06b3b3d0cddb589baea1ae","authority_audit_member":"iteration389_authority_audit.json","authority_audit_sha256":"1189cff5f2831c6405c8401f486cd930fce9d1ece67138222d87f070c1e6113c"},
+    {"index":14,"q_squared":-0.34,"class_id":19,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[-4.08440575812317e-05,-0.0],"source_iteration":389,"source_zip_runtime_copy":"iter389-14.zip","scientific_json_member":"iteration389_result.json","raw_result_sha256":"f8552b53759700c1824fa8f08205622d16c665ee3a305aeacb56a763b1ff3940","authority_audit_member":"iteration389_authority_audit.json","authority_audit_sha256":"b45f8d08999ee7f8db248a4a60f3792d0be2cb6119808e29f41f97807d886ca6"}
+  ],
+  "resolved_indices": [0,1,3,4,5,6,7,8,9,10,11,12,13,14],
+  "schema": "rqir_tru1sq_double_double_exact15_staged_authority_manifest_v1",
+  "scientific_gate_pass": true
+}
