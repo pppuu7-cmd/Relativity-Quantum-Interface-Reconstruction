@@ -1,0 +1,43 @@
+{
+  "source_iteration": 384,
+  "source_run": 33817712381,
+  "workflow_head": "dcae3ac454fd81f19c6d02d4815f07a741afefc7",
+  "model_readiness_percent": 24,
+  "scientific_gate_pass": true,
+  "classification": "PASS_ITERATION384_ADDITIONAL_ORIGINAL_SUCCESS_CHUNKS__SIX_OF_SIX_CONVERGED",
+  "chunks": {
+    "34-35": {
+      "artifact": 9918119654,
+      "artifact_digest": "sha256:a4b31f43e5f05e3d1bd304859a9d9d969af214574397833fadd6727928eb5174",
+      "raw_result_sha256": "16047627ed7807ee9ccc6712d814bbebfe379adb1b9e5802e468e0a0963572a5",
+      "authority_audit_pass": true,
+      "records": [
+        {"index":34,"q2":-1.0,"status":"CONVERGED","D_s_TrU2":1.8666840954688312e-05,"scaled_convergence_error":4.148193205220311e-10,"minimum_sampled_uncut_abs_denominator":0.12097368457851285},
+        {"index":35,"q2":-0.14,"status":"CONVERGED","D_s_TrU2":-1.7077300181183044e-05,"scaled_convergence_error":3.3579774160949483e-15,"minimum_sampled_uncut_abs_denominator":0.46104698933205535}
+      ]
+    },
+    "40-41": {
+      "artifact": 9918188500,
+      "artifact_digest": "sha256:0d6e3612016d8441e9928aec2a420e1a64a5d286e5a4e74ff0354a492010f7f0",
+      "raw_result_sha256": "f6966fa370743532d44213b41bebdf54c00a7d6b7ad0394801788ab4c4b8ff59",
+      "authority_audit_pass": true,
+      "records": [
+        {"index":40,"q2":-0.14,"status":"CONVERGED","D_s_TrU2":-9.487553958831483e-06,"scaled_convergence_error":3.919249737846086e-14,"minimum_sampled_uncut_abs_denominator":0.46104698933205535},
+        {"index":41,"q2":-1.0,"status":"CONVERGED","D_s_TrU2":-1.9273348830599412e-05,"scaled_convergence_error":5.236817774206332e-09,"minimum_sampled_uncut_abs_denominator":0.12097368457851282}
+      ]
+    },
+    "46-47": {
+      "artifact": 9918171671,
+      "artifact_digest": "sha256:2f5fad4292138369b8e97988734f53171bde0080ff528f01e56c0eee3e40375a",
+      "raw_result_sha256": "83c6ba26d2620c918c775d4e61dc08562190447853b9b2a3d75aa0e77cd89973",
+      "authority_audit_pass": true,
+      "records": [
+        {"index":46,"q2":-0.34,"status":"CONVERGED","D_s_TrU2":0.00011667019867127497,"scaled_convergence_error":7.82576819102418e-12,"minimum_sampled_uncut_abs_denominator":0.260988925267721},
+        {"index":47,"q2":-1.0,"status":"CONVERGED","D_s_TrU2":-6.170037660281772e-05,"scaled_convergence_error":5.453426387905117e-10,"minimum_sampled_uncut_abs_denominator":0.12097568457851285}
+      ]
+    }
+  },
+  "resolved_indices": [34,35,40,41,46,47],
+  "guardrails": ["RAW_ACTIONS_AUTHORITY_REQUIRED","NO_ZERO_FILL","DISTINCT_Q2_BUCKETS_NOT_SUMMED","NO_EFFECTIVE_ACTION_WEIGHT_FOLDING","NO_SOURCE_BORN_SUBTRACTION"],
+  "next_gate": "merge these six original records exactly once with Iteration391 and topology-aware recovery records; complete repeated-U2 q2 sums only after exact unique indices 0..47 are resolved"
+}
