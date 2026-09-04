@@ -1,0 +1,51 @@
+{
+  "authority_scope": "METHODOLOGICAL_PRECISION_CONTRACT__NO_PHYSICAL_COORDINATE_PROMOTION",
+  "candidate_residual": false,
+  "classification": "PASS_ITER444_LAYER368_POSTPARENT_CONTRACTION_BOUNDARY_CONTRACT__NON_PROMOTING",
+  "frozen_next_contract": {
+    "all_representative_368_370_contractions_required": true,
+    "binary64_vs_120": "diagnostic_only_not_acceptance",
+    "cross_precision_scaled_discrepancy_max": 1e-30,
+    "finite_outputs_required": true,
+    "forbidden": [
+      "threshold_weakening",
+      "routing_change",
+      "numerator_change",
+      "orientation_quotient_before_routed_translation_check",
+      "outer_high_precision_around_binary64_matmul_or_trace"
+    ],
+    "precision_digits": [80, 120],
+    "precondition": "Iteration-443 Y-site y1 gate must PASS first",
+    "same_parent_values": true,
+    "same_routing_and_orientation": true
+  },
+  "guardrails": [
+    "NO_PHYSICAL_DS_VALUE",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_ZERO_FILL",
+    "NO_PARENT_DYNAMICS_CHANGE"
+  ],
+  "interpretation": "Iteration-270 parent precision closure and a future Y-site PASS still do not certify the post-parent arithmetic unless the matrix products and traces themselves are performed continuously at 80/120 digits (or equivalently certified before use). The exact contraction graph is now frozen prospectively.",
+  "iteration": 444,
+  "model_readiness_percent": 24,
+  "per_traced_amplitude_arithmetic_graph": {
+    "block_product_matmuls": 1,
+    "total_matmuls": 7,
+    "trace_operations": 1,
+    "u1_block_matmuls_each": 3
+  },
+  "required_source_pattern_counts": {
+    "cyclic_shift": 1,
+    "first_u1_chain": 1,
+    "nl_chain": 1,
+    "nr_chain": 1,
+    "orientation_a": 1,
+    "orientation_b": 1,
+    "v2_chain": 1,
+    "y_chain": 1
+  },
+  "scientific_gate_pass": true,
+  "source_file": "iteration368_tru1sq_timelike_full_prepruning_routing.py"
+}
