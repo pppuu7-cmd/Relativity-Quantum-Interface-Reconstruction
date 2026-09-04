@@ -1,0 +1,42 @@
+{
+  "iteration": 442,
+  "consumes_iteration": 441,
+  "authority_scope": "RAW_CONSUMPTION__ITERATION270_ASUB_FIXED_H_STENCIL_REPRESENTATION__NON_PROMOTING",
+  "classification": "PASS_RAW_CONSUMED_ITER441_ASUB_FIXED_H_FOURTH_ORDER_ORACLE__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "model_readiness_percent": 24,
+  "provenance": {
+    "workflow_run_id": 33904593636,
+    "workflow_head_sha": "ebd52b26936d7f6d15a9541d0cbdcfe5cb0f66b0",
+    "artifact_id": 9949120808,
+    "artifact_digest": "sha256:49e17960074953f502fec7672a6e7c67b471dca4882a8426120dea49d2b55e44",
+    "raw_scientific_json_sha256": "141aa237b79d3acf8ba428c08dbcfe5ca0d81051abff260c3255e7789d37ffae"
+  },
+  "frozen_thresholds": {
+    "max_mp80_vs_mp120_highorder_scaled": "1e-30",
+    "max_central_vs_highorder_mp120_scaled": "2e-5",
+    "required_highorder_node_count": 124,
+    "required_subset_count": 7
+  },
+  "observed": {
+    "max_mp80_vs_mp120_highorder_scaled": "3.39660363388259398057433228844e-75",
+    "max_central_vs_highorder_mp120_scaled": "4.47609790628742112552755346023e-6",
+    "worst_subset": ["s", "a", "b"],
+    "all_values_finite": true,
+    "highorder_node_count": 124,
+    "subset_count": 7
+  },
+  "scientific_interpretation": "The exact frozen Iteration-270 central Acoef/Asub finite-amplitude stencil agrees with an independent tensor-product fourth-order derivative oracle at the same base spacings h1=1e-4, h2=5e-4, h3=1e-3. This closes the parent finite-amplitude representation/truncation gate prospectively frozen in Iteration 441. It does not promote any physical D_s coordinate, does not alter the Iteration-421 BLOCKED_CONVERGENCE authority for index 2, and is not a Candidate-Gravity consistency certificate.",
+  "next_gate": "Certify the next outward dependency layer 368/370 under continuous arbitrary-precision provenance or quantitative retained-binary64 error bounds sufficient for downstream Iteration-424 gates.",
+  "guardrails": [
+    "NO_PHYSICAL_DS_VALUE",
+    "NO_SMALLER_AMPLITUDE_H",
+    "NO_PHYSICAL_MASS_STEP_CHANGE",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_PARENT_DYNAMICS_CHANGE",
+    "NO_ZERO_FILL",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
