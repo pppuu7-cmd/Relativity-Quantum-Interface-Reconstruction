@@ -1,0 +1,34 @@
+{
+  "iteration": 437,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "scientific_gate_pass": true,
+  "classification": "PASS_ITER270_Q1_80_120_DIGIT_CLOSURE__LEGACY_REPRODUCED__NON_PROMOTING",
+  "authority_scope": "PARENT_PRECISION_CLOSURE__ITERATION270_Q1_ONLY__NON_PROMOTING",
+  "observed": {
+    "max_mp80_vs_mp120_Q0_scaled": "5.41580455956839560032791707408e-81",
+    "max_binary64_vs_mp120_Q0_scaled": 2.805309734513274e-16,
+    "max_mp80_vs_mp120_Q1_scaled": "9.99130736310542374770824291349e-77",
+    "max_binary64_vs_mp120_Q1_scaled": 7.380458997002565e-12,
+    "legacy_Q1_reproduced_within_2e-5": true,
+    "all_values_finite": true
+  },
+  "thresholds": {
+    "mp80_vs_mp120_Q0_scaled_max": "1e-40",
+    "binary64_vs_mp120_Q0_scaled_max": 1e-12,
+    "mp80_vs_mp120_Q1_scaled_max": "1e-40",
+    "legacy_binary64_vs_mp120_Q1_physical_reference": 2e-5
+  },
+  "prerequisite_iteration436_raw_scientific_json_sha256": "154ab6654784f44967a43c5d84bc008544ce02260253724c0b9edd28aaeec5a2",
+  "provenance": {
+    "run": 33901017066,
+    "job": 101114844067,
+    "artifact": 9947628767,
+    "artifact_digest": "sha256:3797aef5b6e7883a9329b3bbbc1c23779f069fe6a7a197b75217bdf489def270",
+    "raw_scientific_json_sha256": "541652223024ae98a5f12c7cfc073f1d91c0ebd346a3f6ce47cb3c805f7719d8",
+    "workflow_head_sha": "1532bb647d34ae12bec78cf79dff4946d8a53cdc"
+  },
+  "interpretation": "Q1 is internally closed at 80/120 digits at the exact Iteration-270 frozen Q1 momenta, including independent shifted-Q0 certification, and current binary64 Q1 agrees far inside the unchanged 2e-5 physical reference tolerance. N1/Q1 parent arithmetic at this frozen scope is therefore not a material explanation of the final index-2 blocker. A_finite/Acoef/Asub remain uncertified.",
+  "guardrails": ["NO_PHYSICAL_DS_VALUE","Q1_ONLY","ITERATION436_N1_PREREQUISITE","NO_THRESHOLD_WEAKENING","NO_H_CHANGE","NO_PARENT_DYNAMICS_CHANGE","NO_ZERO_FILL","NO_ANSATZ003","NO_FISHER_RESOURCES"]
+}
