@@ -1,0 +1,43 @@
+{
+  "iteration": 398,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "classification": "PASS_FAIL_CLOSED_DOUBLE_DOUBLE_RECOVERY_CENSUS__14_RAW_AUDITED__CHANNEL5_OPERATIONAL_GAP__ITER397_OPERATIONAL_CANCELLATION",
+  "source_run_iteration389": 33820063115,
+  "source_run_iteration397": 33825015898,
+  "iteration389": {
+    "frozen_channel_count": 15,
+    "raw_audit_success_count": 14,
+    "scientific_step_cancelled_channels": [5],
+    "empty_raw_channels": [5],
+    "channel5_artifact_id": 9919098876,
+    "channel5_artifact_digest": "sha256:216e85cceb67de3b0daa899f67672e9fa8623add2423fada7976af31f6969802",
+    "channel5_classification": "OPERATIONAL_CANCELLATION__NO_SCIENTIFIC_VALUE",
+    "zero_fill_forbidden": true
+  },
+  "iteration397": {
+    "run_id": 33825015898,
+    "job_id": 100875702157,
+    "artifact_id": 9920798871,
+    "artifact_digest": "sha256:29f6688b9d7b8b670ebe3215d6d68090d532523f1b766b3264ad17256f422ecd",
+    "workflow_timeout_minutes": 55,
+    "scientific_step_conclusion": "cancelled",
+    "audit_step": "skipped",
+    "raw_json_bytes": 0,
+    "classification": "OPERATIONAL_CANCELLATION__NOT_BLOCKED_CONVERGENCE__NOT_SCIENTIFIC_FAIL"
+  },
+  "scientific_claims": [
+    "No new physics value is promoted for Iteration 397.",
+    "Iteration 389 channel 5 remains unresolved and may not be zero-filled.",
+    "The 14 other Iteration 389 channel jobs reached their raw authority audit; channel 4 retains its prior BLOCKED_CONVERGENCE classification until superseded by a valid new-version result."
+  ],
+  "guardrails": [
+    "NO_THRESHOLD_WEAKENING",
+    "NO_ZERO_FILL",
+    "OPERATIONAL_CANCELLATION_IS_NOT_SCIENTIFIC_FAIL",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "next_gate": "Recover only unresolved Iteration389 channel 5 with identical physics arithmetic under a longer one-channel resource envelope; independently obtain a valid Iteration397 scientific result or move channel 4 to analytic/spectral angular reduction without further grid escalation."
+}
