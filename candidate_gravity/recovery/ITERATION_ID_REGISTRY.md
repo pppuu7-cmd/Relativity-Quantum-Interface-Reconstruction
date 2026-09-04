@@ -22,6 +22,8 @@ This is a provenance/operational rule. Identifier collision is not a physics FAI
 - **439:** exact Iteration-270 `Acoef` signed-sum binary64 cancellation-conditioning diagnostic at unchanged `h1/h2/h3`; raw-consumed non-promoting PASS.
 - **440:** exact Iteration-270 `Acoef/Asub` 80/120-digit signed-assembly arithmetic closure at unchanged `h1/h2/h3`; raw-consumed PASS.
 - **441:** exact Iteration-270 `Acoef/Asub` fixed-h representation/truncation oracle comparing the frozen central stencil against a same-spacing tensor-product fourth-order derivative rule; prospectively allocated before result consumption.
+- **442:** authoritative raw consumption of Iteration-441 PASS, closing the scoped Iteration-270 `Acoef/Asub` arithmetic + fixed-h representation/truncation parent layer; non-promoting.
+- **443:** source/provenance audit of outward Iterations 368/370 identifying the independently formed Y-site `y1` at frozen `h=4e-5` and post-parent matrix-product/trace arithmetic as still-unclosed precision boundaries; prospectively freezes the Y-site 80/120 + same-h fourth-order subgate; non-promoting.
 
 These meanings are reserved and may not be reused by concurrent workflows or research records.
 
