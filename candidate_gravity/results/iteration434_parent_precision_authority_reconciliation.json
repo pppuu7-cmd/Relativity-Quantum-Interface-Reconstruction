@@ -1,0 +1,72 @@
+{
+  "iteration": 434,
+  "status": "PASS_NON_PROMOTING",
+  "classification": "PASS_ITER270_PARENT_PRECISION_SUBCLOSURE_RECONCILIATION__NON_PROMOTING",
+  "authority_scope": "DIAGNOSTIC_ONLY__PARENT_PRECISION_PROVENANCE",
+  "physical_authority_changed": false,
+  "target": {
+    "double_double_index": 2,
+    "class": 3,
+    "q2": -1.0
+  },
+  "legacy_workflow_local_iteration_432": {
+    "run_id": 33894344918,
+    "artifact_id": 9945106288,
+    "artifact_digest": "sha256:4232ad499e6cba069477ce2cad08502b78fd0623306fd303bed3ab101ece8b7a",
+    "raw_result_sha256": "1b48b68a060e5e69082fd95e62e99dfb801045cbb9967c15bd2384cc984c103f",
+    "classification": "PASS_PARENT_PRIMITIVE_RECURSIVE_CLOSURE_BOUND__NON_PROMOTING",
+    "scientific_gate_pass": true,
+    "roots": ["Q0", "Q1", "Asub", "y_down"],
+    "recursive_functions_count": 17,
+    "note": "Workflow-local iteration identifier 432 collides with the already authoritative Iteration 432 raw-consumption record for Iteration 426. The payload is consumed here under authoritative Iteration 434; prior Iteration 432 is not overwritten."
+  },
+  "iteration433": {
+    "run_id": 33899226761,
+    "artifact_id": 9946960234,
+    "artifact_digest": "sha256:6805d65e4abae5e8cdfbcd34f7e55e84eaaf7fc7e98463d952331bd9387bede8",
+    "raw_result_sha256": "645b7716a03cd7fb472e52ee6be6afadf15986b5efca3b12559c8fd44a6b7c67",
+    "classification": "PASS_ITER270_Q0_YDOWN_80_120_DIGIT_SUBCLOSURE__NON_PROMOTING",
+    "scientific_gate_pass": true,
+    "max_mp80_vs_mp120": "4.04372230286233612878107151881e-81",
+    "mp80_vs_mp120_limit": "1e-40",
+    "max_binary64_vs_mp120": 3.0035019023675733e-16,
+    "binary64_reproduction_limit": 1e-12,
+    "certified_scope": ["Q0", "y_down"],
+    "not_certified": ["N1", "Q1", "geometry", "nhat", "A_finite", "Acoef", "Asub"]
+  },
+  "operational_failures": [
+    {
+      "run_id": 33898986792,
+      "classification": "OPERATIONAL_FAIL_MISSING_MPMATH",
+      "scientific_interpretation": "NONE"
+    },
+    {
+      "run_id": 33899067536,
+      "classification": "OPERATIONAL_FAIL_MISSING_NUMPY",
+      "scientific_interpretation": "NONE"
+    }
+  ],
+  "retained_parent_precision_chain": [
+    "iteration270:N1/geometry/nhat",
+    "iteration270:Q1",
+    "iteration270:A_finite/Acoef/Asub",
+    "iteration368/370",
+    "iteration379/374",
+    "iteration407",
+    "iteration424",
+    "iteration427"
+  ],
+  "guardrails": [
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_SMALLER_MASS_STEP",
+    "NO_ZERO_FILL",
+    "NO_ANGULAR_GRID_ESCALATION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "NO_AUTHORITATIVE_ITERATION_NUMBER_REUSE"
+  ],
+  "model_readiness_percent": 24,
+  "readiness_change_percentage_points": 0,
+  "next_gate": "Implement a separately auditable 80/120-digit N1 closure including the full geometry->nhat->norb chain at the same frozen representative kinematics; only after N1 passes may Q1 be certified."
+}
