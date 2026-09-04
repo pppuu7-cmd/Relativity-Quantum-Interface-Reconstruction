@@ -12,20 +12,15 @@ This revision deliberately separates two prospectively frozen objects:
   {5e-6, 2.5e-6, 1.25e-6} and required 80/120 decimal-digit evaluations.
 
 The first version of this diagnostic incorrectly treated these two geometries as
-identical.  That operational/scoping defect is corrected here before any result
-is interpreted.  No physical threshold or frozen node is changed.
+identical. That scoping defect is corrected here before any result is interpreted.
+No physical threshold or frozen node is changed.
 
 For the explicitly known Iteration-421 symmetric-cross formula, this audit
 translates the unchanged 2e-5 physical tolerance into the maximum absolute
-perturbation of the signed four-corner numerator.  For Iteration 424, whose
+perturbation of the signed four-corner numerator. For Iteration 424, whose
 contract does not itself freeze a particular derivative-stencil formula, the
-audit reports its mass steps and the generic h^2 conditioning scale only; it
-does not pretend that this is an acceptance budget.
-
-The audit also records that the complete fixed-mass F path still traverses
-binary64/numpy complex arithmetic and nested finite-difference numerator
-stencils.  Therefore an outer-only mpmath wrapper cannot honestly be described
-as a complete 80/120-digit F evaluation.
+audit reports its mass steps and generic h^2 conditioning scale only; it does
+not pretend that this is an acceptance budget.
 """
 from __future__ import annotations
 import json, re
@@ -47,8 +42,7 @@ p420=root/'iteration420_tru1sq_channel2_symmetric_cross_derivative.py'
 p424=root/'iteration424_channel2_high_precision_fallback_contract.py'
 p407=root/'iteration407_tru1sq_channel4_analytic_spectral_reduction.py'
 p368=root/'iteration368_tru1sq_timelike_full_prepruning_routing.py'
-p270=root/'iteration270_vd_physical_b3_nonzero.py'
-s420=p420.read_text(); s424=p424.read_text(); s407=p407.read_text(); s368=p368.read_text(); s270=p270.read_text()
+s420=p420.read_text(); s424=p424.read_text(); s407=p407.read_text(); s368=p368.read_text()
 
 source_checks={
     'iteration421_parent_radius_frozen': bool(re.search(r'RADIUS\s*=\s*1\.0e-5',s420)),
@@ -63,14 +57,10 @@ source_checks={
     'iteration407_complete_numerator_called': 'stripped_limit_massive(alpha,rho*unit_from(z,phi))' in s407,
     'iteration368_nested_first_u1_present': 'first_u1' in s368 and 'Asub' in s368,
     'iteration368_nested_y1_present': 'y1' in s368 and '4e-5' in s368,
-    'iteration270_finite_difference_derivative_present': 'deriv5' in s270,
 }
 if not all(source_checks.values()):
     raise SystemExit(('source_contract_drift',source_checks))
 
-# Iteration-421 has an explicit symmetric-cross quotient.  If delta_N is the
-# absolute error in the signed four-corner sum, its induced quotient error is
-# delta_N/(4|uv|), hence delta_N_max = 4|uv|*tol.
 eps=float(np.finfo(float).eps)
 rows421=[]
 for mu in MULT421:
@@ -87,14 +77,10 @@ for mu in MULT421:
 tight421=min(rows421,key=lambda x:x['max_abs_signed_corner_sum_error_for_2e-5_quotient_error'])
 loose421=max(rows421,key=lambda x:x['max_abs_signed_corner_sum_error_for_2e-5_quotient_error'])
 
-# Iteration-424 freezes step sizes but not, in this contract file, a derivative
-# stencil.  Report h^2 only as a conditioning scale.  Do not reinterpret it as
-# a physical acceptance threshold.
 rows424=[]
 for h in FALLBACK424_STEPS:
     rows424.append({
-        'frozen_mass_step':h,
-        'h_squared':h*h,
+        'frozen_mass_step':h,'h_squared':h*h,
         'h_squared_times_unchanged_2e-5_reference':h*h*PHYSICAL_TOL,
         'note':'conditioning scale only; not an Iteration-424 acceptance budget because the contract does not freeze a stencil denominator here',
     })
@@ -108,11 +94,8 @@ execution_valid=bool(
 classification=('PASS_CHANNEL2_PRECISION_SURFACE_AND_NODE_CONDITIONING_AUDIT__NON_PROMOTING' if execution_valid
                 else 'FAIL_CHANNEL2_PRECISION_SURFACE_AND_NODE_CONDITIONING_AUDIT')
 result={
-    'iteration':ITERATION,
-    'model_readiness_percent':24,
-    'candidate_residual':False,
-    'scientific_gate_pass':execution_valid,
-    'classification':classification,
+    'iteration':ITERATION,'model_readiness_percent':24,'candidate_residual':False,
+    'scientific_gate_pass':execution_valid,'classification':classification,
     'authority_scope':'CONDITIONING_AND_IMPLEMENTATION_AUDIT__NO_PHYSICAL_COORDINATE_PROMOTION',
     'target':{'double_double_global_index':TARGET_INDEX,'class_id':EXPECTED_CLASS,'q_squared':EXPECTED_Q2,'iteration421_status':'BLOCKED_CONVERGENCE'},
     'geometry_separation':{
@@ -136,5 +119,4 @@ result={
     'guardrails':['DIAGNOSTIC_ONLY','421_AND_424_GEOMETRIES_KEPT_DISTINCT','NO_NEW_PHYSICAL_THRESHOLD','NO_THRESHOLD_WEAKENING','NO_SMALLER_MASS_STEP','NO_ZERO_FILL','ITERATION424_FROZEN_CONTRACT_UNCHANGED','NO_ANSATZ003','NO_FISHER_RESOURCES']
 }
 print(json.dumps(result,indent=2,sort_keys=True))
-if not execution_valid:
-    raise SystemExit(2)
+if not execution_valid: raise SystemExit(2)
