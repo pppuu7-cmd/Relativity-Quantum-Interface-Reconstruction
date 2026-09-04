@@ -18,7 +18,9 @@ This is a provenance/operational rule. Identifier collision is not a physics FAI
 - **435:** raw-consumed frozen `Q1/N1` conditioning diagnostic; non-promoting.
 - **436:** exact Iteration-270 `geometry -> nhat -> y_down -> norb -> N1` 80/120-digit precision closure at frozen `h=3e-5`; raw-consumed PASS.
 - **437:** exact Iteration-270 `Q1=-Q0(p+k)@N1@Q0(p)` 80/120-digit precision closure with shifted-Q0 certification; raw-consumed PASS.
-- **438:** exact Iteration-270 `A_finite` 80/120-digit arithmetic-core closure over the 26 signed nodes entering the seven frozen `Acoef/Asub` subsets; prospectively allocated before result consumption.
+- **438:** exact Iteration-270 `A_finite` 80/120-digit arithmetic-core closure over the 26 signed nodes entering the seven frozen `Acoef/Asub` subsets; raw-consumed PASS.
+- **439:** exact Iteration-270 `Acoef` signed-sum binary64 cancellation-conditioning diagnostic at unchanged `h1/h2/h3`; raw-consumed non-promoting PASS.
+- **440:** exact Iteration-270 `Acoef/Asub` 80/120-digit signed-assembly arithmetic closure at unchanged `h1/h2/h3`; prospectively allocated before result consumption.
 
 These meanings are reserved and may not be reused by concurrent workflows or research records.
 
