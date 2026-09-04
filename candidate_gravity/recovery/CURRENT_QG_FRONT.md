@@ -8,7 +8,8 @@
 **Latest validated Candidate Gravity physical/operator authority:** **Iteration 411**  
 **Latest validated structural authority:** **Iteration 410**  
 **Latest validated numerical-method diagnosis:** **Iterations 419 + 422 under prospective Iteration-420 contract**  
-**Latest source-of-truth reconciliation:** **Iteration 423**
+**Latest source-of-truth reconciliation:** **Iteration 423**  
+**Latest prospective numerical fallback contract:** **Iteration 424**
 
 Repository commits, raw schema-validated Actions artifacts, recovery material and this file are source of truth. Workflow colour alone is never scientific authority.
 
@@ -79,6 +80,21 @@ Repaired symmetric-cross physical gate run `33871920373`, job `101019660127` is 
 
 Raw consumption is fail-closed. Besides the unchanged physical threshold `2e-5` and existing direct/original-integrand requirements, the prospectively frozen addendum requires the full tensor-degree-(1,1) fit residual `<=2e-5`.
 
+## Prospective Iteration 424 high-precision fallback contract
+
+Iteration 424 is methodological-only and promotes no physical coordinate. It is authorized only if Iteration 421 remains `BLOCKED_CONVERGENCE`.
+
+The fallback preserves the same parent dynamics, routing, numerator, sign, normalization, fixed mass nodes and existing mass-step set `{5e-6, 2.5e-6, 1.25e-6}`. It forbids smaller `h`, angular-grid escalation, threshold weakening and zero fill.
+
+Before any fallback result exists, fail-closed acceptance is frozen to require simultaneously:
+- physical mass-step discrepancy `<=2e-5`;
+- direct original-integrand cross-check `<=2e-6`;
+- full tensor-degree-(1,1) fit residual `<=2e-5`;
+- identical fixed-node evaluation at 80 and 120 decimal digits with `|D_s(80)-D_s(120)|<=2e-6`;
+- finite outputs.
+
+Cross-precision failure is `NUMERICAL_PRECISION_BLOCKED`; cross-precision PASS together with physical mass-step FAIL is `REPRESENTATION_OR_TRUE_MASS_STEP_BLOCKED`; direct-integrand or tensor-fit failure is `REPRESENTATION_CONSISTENCY_BLOCKED`. No branch promotes a coordinate without raw-valid workflow authority.
+
 ## Frozen Iteration 412 exact15 assembly
 
 Iteration 412 requires exactly 15 unique double-double indices, five scientifically valid `CONVERGED` records per `q^2` bucket, finite coordinates, no duplicates, no missing indices and no zero fill. It remains BLOCKED until index 2 obtains raw-valid physical authority.
@@ -86,8 +102,8 @@ Iteration 412 requires exactly 15 unique double-double indices, five scientifica
 ## Exact next gates
 
 1. Raw-consume Iteration 421 fail-closed.
-2. If Iteration 421 is `CONVERGED`, append exactly index 2 to frozen 14/15 staging authority and execute Iteration 412 exact15 assembly.
-3. If Iteration 421 remains `BLOCKED_CONVERGENCE`, preserve the blocker and construct a genuinely better-conditioned or higher-precision fixed-mass traced-numerator / phi-mean / radial evaluation at the same frozen mass nodes. Do not shrink `h`, weaken thresholds, or escalate angular grids.
+2. If Iteration 421 is `CONVERGED`, append exactly index 2 to frozen 14/15 staging authority and execute Iteration 412 exact15 assembly; do not invoke the Iteration-424 fallback.
+3. If Iteration 421 remains `BLOCKED_CONVERGENCE`, implement the prospectively frozen Iteration-424 80/120-digit fixed-mass fallback exactly as specified. Do not shrink `h`, weaken thresholds, or escalate angular grids.
 4. Only after complete `Tr U1^2`, assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2 using Iteration 406 `Tr U2`.
 5. Source/Ward/contact completion + matched K2 and the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain downstream. No Candidate residual before comparator quotient closure.
 
@@ -104,7 +120,7 @@ Repeated-cut signs remain frozen: `D_s(simple)=-sphere_mean`; simple-double `D_s
 
 **MODEL_READINESS: 24%**
 
-No readiness point is added by Iterations 419, 420, 422, or 423. Index 2 remains physically unresolved, exact15 `Tr U1^2` is blocked, and no robust comparator-subtracted residual exists.
+No readiness point is added by Iterations 419, 420, 422, 423, or 424. Index 2 remains physically unresolved, exact15 `Tr U1^2` is blocked, and no robust comparator-subtracted residual exists.
 
 ## Retained guardrails
 
