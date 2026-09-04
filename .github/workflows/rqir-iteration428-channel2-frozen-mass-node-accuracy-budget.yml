@@ -1,0 +1,57 @@
+name: rqir-iteration428-channel2-frozen-mass-node-accuracy-budget
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration428_channel2_frozen_mass_node_accuracy_budget.py'
+      - '.github/workflows/rqir-iteration428-channel2-frozen-mass-node-accuracy-budget.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  iteration428:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check -q numpy
+      - name: Run frozen mass-node accuracy budget audit
+        run: |
+          root="candidate_gravity/artifacts/iteration428"
+          mkdir -p "$root"
+          python candidate_gravity/code/iteration428_channel2_frozen_mass_node_accuracy_budget.py > "$root/iteration428_result.json"
+      - name: Raw parse and authority audit
+        if: always()
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('candidate_gravity/artifacts/iteration428')
+          p=root/'iteration428_result.json'
+          if not p.exists() or p.stat().st_size==0: raise SystemExit(2)
+          raw=p.read_bytes(); o=json.loads(raw); t=o.get('target',{}); tight=o.get('tightest_budget',{})
+          ok=bool(
+              o.get('iteration')==428 and o.get('scientific_gate_pass') is True and
+              o.get('authority_scope')=='CONDITIONING_AND_IMPLEMENTATION_AUDIT__NO_PHYSICAL_COORDINATE_PROMOTION' and
+              o.get('classification')=='PASS_CHANNEL2_FROZEN_MASS_NODE_ACCURACY_BUDGET__NON_PROMOTING' and
+              t.get('double_double_global_index')==2 and t.get('class_id')==3 and abs(float(t.get('q_squared'))+1.0)<1e-12 and
+              t.get('iteration421_status')=='BLOCKED_CONVERGENCE' and
+              abs(float(tight.get('max_abs_signed_corner_sum_error_for_physical_tol'))-5e-16)<1e-28
+          )
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':428,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),'classification':o.get('classification'),'scientific_authority_pass':ok,'authority_scope':'CONDITIONING_AND_IMPLEMENTATION_AUDIT__NO_PHYSICAL_COORDINATE_PROMOTION'}
+          (root/'iteration428_authority_audit.json').write_text(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          if not ok: raise SystemExit(2)
+          PY
+      - name: Upload diagnostic artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration428-channel2-frozen-mass-node-accuracy-budget
+          path: candidate_gravity/artifacts/iteration428/
+          if-no-files-found: warn
+          retention-days: 90
