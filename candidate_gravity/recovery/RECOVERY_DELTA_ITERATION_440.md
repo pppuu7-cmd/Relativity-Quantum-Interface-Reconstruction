@@ -1,40 +1,40 @@
 # RECOVERY DELTA — ITERATION 440
 
-**Status:** prospectively frozen and launched; raw result pending.  
-**Authority target:** Iteration-270 `Acoef/Asub` 80/120-digit signed-assembly arithmetic closure only; non-promoting.  
-**MODEL_READINESS:** 24%.
+**Status:** raw-consumed PASS; parent arithmetic precision closure, non-promoting.  
+**Classification:** `PASS_ITER270_ACOEF_ASUB_80_120_DIGIT_ARITHMETIC_CLOSURE__NON_PROMOTING`  
+**MODEL_READINESS:** 24% (unchanged).
 
 ## Preconditions consumed
 
 - Iteration 438 raw-valid PASS: exact `A_finite` arithmetic core closed across all 26 signed nodes.
-- Iteration 439 raw-valid diagnostic PASS: signed `Acoef` assembly is strongly cancellation-conditioned, with maximum componentwise amplification `1790391356.9083405`; this is diagnostic only, not a physical ceiling.
-- Physical index 2 remains blocked by Iteration 421 and is not changed here.
+- Iteration 439 raw-valid diagnostic PASS: signed `Acoef` assembly cancellation amplification reaches `1790391356.9083405`; diagnostic only.
+- Physical index 2 remains blocked by Iteration 421.
 
-## Frozen Iteration 440 contract
+## Frozen object
 
-Object:
+Exact Iteration-270
 
-`Acoef = sum_sigma prod(sigma) A_finite(sigma*h)/(2h)^n`, identical to Iteration 270 `Asub`.
+`Acoef = sum_sigma prod(sigma) A_finite(sigma*h)/(2h)^n`, identical to `Asub`,
 
-Inputs and steps are unchanged:
-- `M=POS`, `p=P0`;
-- `h1=1e-4`, `h2=5e-4`, `h3=1e-3`;
-- seven nonempty subsets, 26 signed nodes total;
-- 80 and 120 decimal digit evaluations use the raw-valid Iteration-438 `A_finite_mp` implementation.
+at unchanged `M=POS`, `p=P0`, `h1=1e-4`, `h2=5e-4`, `h3=1e-3`, all seven nonempty subsets and 26 signed nodes.
 
-Acceptance frozen before result:
-- max scaled 80-vs-120 `Acoef` discrepancy `<=1e-30`;
-- finite outputs;
-- exact 26-node / 7-subset census.
+## Raw provenance
 
-Binary64-vs-120 discrepancy is diagnostic only. PASS does not certify finite-difference truncation or downstream physical authority.
+Run `33904321843`, job `101125537041`, artifact `9948876125`, digest `sha256:244e52df6a951a21d5ea20638fdf0d15875a07f6b0b3c77355d5b336cf4b479d`; raw scientific JSON SHA-256 `36ff8634a6bafae0281e99110739416d4a8a6313a62c918a9d12bfebffb6f964`. Workflow head `c84a9991c8d11c5d863d7f8b39bd01e5eeb4d5f9`.
 
-## Launch provenance
+## Frozen acceptance and observed result
 
-Code commit: `a1b62afb4936d98b069280d25975fd09cade3a25`.  
-Workflow commit: `c84a9991c8d11c5d863d7f8b39bd01e5eeb4d5f9`.  
-GitHub Actions run: `33904321843` (queued immediately after workflow creation).
+- max scaled 80-vs-120 `Acoef` discrepancy: `1.4149749985220297e-75 <= 1e-30`;
+- all outputs finite;
+- exact 26-node / 7-subset census;
+- diagnostic-only max binary64-vs-120 `Acoef` discrepancy: `1.890704312519492e-10`, attained in the three-leg `(s,a,b)` subset.
+
+The arithmetic precision of the frozen signed assembly is therefore closed by an enormous margin. This does **not** certify finite-difference truncation or alternate representation consistency.
+
+## Scientific consequence
+
+The next unresolved parent layer is now representation/truncation rather than floating-point precision. The authorized next gate is an independent derivative oracle for the same `A_finite` function at zero amplitude, compared against the unchanged frozen `Acoef/Asub` stencil without reducing `h` or retuning thresholds.
 
 ## Guardrails
 
-No step reduction, no parent-dynamics change, no threshold weakening, no zero fill. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. Physical index 2 and Iteration 412 exact15 remain BLOCKED pending full precision/representation closure.
+No physical `D_s` promotion, no amplitude-step reduction, no physical mass-step change, no threshold weakening, no parent-dynamics/routing/sign/normalization change, no zero fill. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. Iteration 412 exact15 remains BLOCKED until index 2 gets raw-valid physical authority.
