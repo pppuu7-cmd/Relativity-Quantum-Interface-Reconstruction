@@ -5,7 +5,7 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Latest validated Candidate Gravity authority:** **Iteration 406**
+**Latest validated Candidate Gravity authority:** **Iteration 409**
 
 Repository commits, raw schema-validated Actions artifacts, recovery material and this file are source of truth. Green/red workflow colour alone is never scientific authority.
 
@@ -53,15 +53,15 @@ Repository commits, raw schema-validated Actions artifacts, recovery material an
   - `q^2=-0.14`: `-7.368142632096214e-05`.
 - Iteration 402 raw census found double-double blockers 2,4,11 and operational gap 5.
 - Iteration 399 closes index 5 / class 8 / `q^2=-0.14` as CONVERGED: `D_s TrU1^2 double-double=0.000119747535002548`, scaled convergence error `1.8393013149631406e-7`.
-- Exact unresolved double-double physical set remains **`[2,4,11]`**, all `BLOCKED_CONVERGENCE`; none may enter sums.
 - Classes 3,5,16 have multiplicities `2,2,1`; one-affine-denominator analytic/spectral reduction is topologically available. Iteration 403 proves exact central4×central4 auxiliary-mass stencil commutation with the sphere mean as a finite linear combination.
 - Iteration 401 is raw-validated as `PASS_TRU1SQ_CHANNEL4_ANALYTIC_AZIMUTH_STRUCTURE_ORACLE`: run `33830352712`, artifact `9922183136`, digest `sha256:82ebf8b245f61365474c6180a772619854ece34b64a897c649c7afa35690b0eb`, scientific JSON SHA-256 `046ef14ba3ab7baf0552adcd233907c9f6078f37dcb1b1af347765d789417d4b`. It is structural only: max affine-denominator error `1.1102230246251565e-16`, max Fourier tail `4.4190104140298897e-16`, max phase-mean error `6.534223913356486e-16`, and max held-out degree-4 polynomial error `1.7438316162996242e-06 < 2e-6`. It promotes no physical `D_s` value.
-- No further blind angular-grid escalation is authorized for blockers 2,4,11.
+- Iteration 409 raw-consumes Iteration 407 and removes physical blocker index 4 / class 5 / `q^2=-1`: run `33835806522`, job `100907970715`, artifact `9924759934`, digest `sha256:eec059d48944771897d09341d888a4f0691664ce12f6c6258ff4cc3aad8947ae`, raw scientific JSON SHA-256 `bba7c203ca9694c70b79f762820cdcd26768ee6bb286d1dbc8c31c8ee93eee68`. Authoritative `D_s TrU1^2 double-double channel=+0.003562716046166582`; scaled mass-step convergence error `1.694511628814576e-05 < 2e-05`; max direct original-integrand cross-check error `2.0657185788308663e-09 < 2e-06`; minimum analytic uncut separation `0.11857147221810008`.
+- Exact unresolved double-double physical set is now **`[2,11]`**, both still `BLOCKED_CONVERGENCE` until a separately authorized physical reduction resolves them.
+- No further blind angular-grid escalation is authorized for blockers 2 and 11.
 
 ## Active computation
 
-- **Iteration 407:** run `33835806522`, workflow/head commit `26ecca2bc0706e3ace22e361e2a73994f9f92f70`, evaluator commit `3c236e8b9a1be7c9798b39d95bc6a34cf35b058e`, remains the active physical channel-4 analytic/spectral fixed-mass reduction authorized by Iteration 401. It preserves the Iteration-379/389 physical integrand, central4×central4 mass stencil, `D_s(double-double)=-sphere_mean[d_mu1 d_mu2 G]`, and physical `2e-5` convergence threshold. It must not be duplicated.
-- **Iteration 408:** run `33839449598`, workflow/head commit `66381c31d63038093f1fa1bb859fb635abe46612`, evaluator commit `38d800418bdda1fdaa52edbb94ffc0277813aa99`, is an independent STRUCTURE-ONLY oracle for unresolved indices 2 / class 3 / `q^2=-1` and 11 / class 16 / `q^2=-0.34`. It binds the already frozen Iteration-401 structural thresholds (`2e-11` affine denominator, `2e-6` Fourier-tail/phase-mean/held-out polynomial), computes no physical `D_s`, cannot remove any blocker by itself, and does not pre-empt Iteration 407. It must not be duplicated.
+- **Iteration 408:** run `33839449598`, workflow/head commit `66381c31d63038093f1fa1bb859fb635abe46612`, evaluator commit `38d800418bdda1fdaa52edbb94ffc0277813aa99`, is the active STRUCTURE-ONLY oracle for unresolved indices 2 / class 3 / `q^2=-1` and 11 / class 16 / `q^2=-0.34`. It binds the already frozen Iteration-401 structural thresholds (`2e-11` affine denominator, `2e-6` Fourier-tail/phase-mean/held-out polynomial), computes no physical `D_s`, and cannot remove either blocker by itself. It must not be duplicated.
 
 No useful heavy run is duplicated.
 
@@ -76,8 +76,8 @@ Iteration 386 restores the downstream DAG:
 
 ## Exact next gates
 
-1. Raw-consume Iteration 407 fail-closed. If channel 4 is CONVERGED, replace only blocker index 4. If 407 is BLOCKED_CONVERGENCE, preserve it and diagnose only the failed fixed-mass representation or mass-step convergence without weakening `2e-5`.
-2. Raw-consume Iteration 408 fail-closed. It can certify only structural executability for indices 2 and 11. Only if Iteration 407 physically converges and the corresponding 408 structural target passes may the same frozen analytic/spectral physical reduction be executed separately for indices 2 and 11 with their own held-out original-integrand checks.
+1. Raw-consume Iteration 408 fail-closed. It can certify only structural executability for indices 2 and 11.
+2. For each structural PASS from Iteration 408, execute the same prospectively frozen Iteration-407 analytic/spectral physical reduction separately for that index, preserving the parent physical integrand, central4×central4 mass stencil, held-out original-integrand checks and unchanged `2e-5` physical convergence threshold.
 3. Assemble double-double q2 sums only after all 15 unique channels are scientifically resolved. Then assemble complete `Tr U1^2` = Iteration-374 simple-simple + Iteration-393 simple-double + complete double-double, still without `-i/4`.
 4. Only after complete `Tr U1^2` assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2, using the complete Iteration-406 `Tr U2` coordinate.
 5. Source/Ward/contact completion + matched K2 and the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain downstream. No Candidate residual before comparator quotient closure.
@@ -95,7 +95,7 @@ Repeated-cut normalized signs remain: `D_s(simple)=-sphere_mean`; simple-double 
 
 **MODEL_READINESS: 24%**
 
-Change through validated Iteration 406 plus active structural Iteration 408: `0 pp`. Complete timelike `Tr U2` is closed as an operator coordinate and the remaining double-double analytic route is being tested without threshold weakening, but complete `Tr U1^2`, linked Source/Ward/K2 closure and a robust comparator-subtracted residual remain open; therefore no additional stable-rubric point is awarded.
+Change through validated Iteration 409: `0 pp`. One genuine physical double-double numerical blocker is removed without threshold weakening, but complete `Tr U1^2`, linked Source/Ward/K2 closure and a robust comparator-subtracted residual remain open; therefore no additional stable-rubric point is awarded.
 
 ## Retained guardrails
 
