@@ -35,11 +35,16 @@ OLD6=float(p395['old_6x12_mixed_derivative_high'])
 SOURCE_RAW_SHA='605d121616c36eb144b657d45de7be8a4dfd0d167402ec06eb48308daa8e5634'
 
 PARENT=ROOT/'iteration395_tru1sq_double_double_channel4_stronger_angular.py'
-src=PARENT.read_text(); marker='start=time.perf_counter()'
-if src.count(marker)!=1: raise RuntimeError('iteration395_run_marker_drift')
+src=PARENT.read_text()
+# Import only the frozen Iteration-395 definitions.  The earlier implementation
+# searched for the shorter token ``start=time.perf_counter()`` and therefore
+# also matched Iteration-395's own marker string.  Anchor the actual execution
+# statement instead; this is an implementation repair only, not a gate change.
+run_anchor='\nstart=time.perf_counter(); ctx=mp.get_context(\'fork\')'
+if src.count(run_anchor)!=1: raise RuntimeError('iteration395_run_anchor_drift')
 ns={'__name__':'iteration397_parent395_prefix','__file__':str(PARENT)}
 with contextlib.redirect_stdout(io.StringIO()):
-    exec(compile(src.split(marker,1)[0],str(PARENT),'exec'),ns,ns)
+    exec(compile(src.split(run_anchor,1)[0],str(PARENT),'exec'),ns,ns)
 
 point_task=ns['point_task']; sphere_parallel=ns['sphere_parallel']
 BASE_H=ns['BASE_H']; HALF_H=ns['HALF_H']; TOL=ns['TOL']; SHELL_TOL=ns['SHELL_TOL']
