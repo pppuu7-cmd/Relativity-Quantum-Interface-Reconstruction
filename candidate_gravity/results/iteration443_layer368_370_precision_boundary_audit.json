@@ -1,0 +1,38 @@
+{
+  "iteration": 443,
+  "scope": "layer368_370_precision_boundary_source_audit",
+  "classification": "PASS_ITER443_LAYER368_370_PRECISION_BOUNDARY_AUDIT__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "changes_dynamics": false,
+  "changes_thresholds": false,
+  "frozen_findings": {
+    "unclosed_y_site_object": "y1 = [y_down(+h)-y_down(-h)]/(2h)",
+    "frozen_y1_h": 0.00004,
+    "unclosed_post_parent_arithmetic": [
+      "binary64/NumPy matrix products",
+      "binary64/NumPy trace contractions"
+    ],
+    "iteration370_inherits_iteration368_layer": true,
+    "interpretation": "Iteration-270 Q0/Q1/Acoef/Asub closure is necessary but not sufficient for a continuous precision certificate of layer 368/370."
+  },
+  "prospective_next_gate": {
+    "object": "Y-site y1, followed by post-parent contractions/trace",
+    "same_h_only": 0.00004,
+    "precision_digits": [80, 120],
+    "y1_cross_precision_threshold": 1e-30,
+    "y1_central_vs_same_h_fourth_order_threshold": 2e-5,
+    "fourth_order_formula": "[f(-2h)-8f(-h)+8f(+h)-f(+2h)]/(12h)",
+    "must_cover": "all distinct frozen Y-site input pairs used by the 368/370 representative/transport probe set",
+    "forbidden": [
+      "smaller/adapted h",
+      "threshold weakening",
+      "changed routing",
+      "changed numerator",
+      "outer-only high precision around binary64 Y-site values"
+    ]
+  },
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "provenance_note": "Frozen from direct source inspection of Iterations 368/370 after Iteration 442. Reproducible fail-closed audit code is candidate_gravity/code/iteration443_layer368_370_precision_boundary_audit.py."
+}
