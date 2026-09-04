@@ -1,0 +1,13 @@
+{
+  "MODEL_READINESS": "24%",
+  "authority_scope": "LAYER368_370_YSITE_Y1_PRECISION_AND_FIXED_H_REPRESENTATION__NON_PROMOTING",
+  "classification": "PASS_ITER445_YSITE_Y1_MP80_MP120_AND_FIXED_H_FOURTH_ORDER_ORACLE__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "frozen": {"h":"4e-5","precision_digits":[80,120],"pair_labels":["s","a","b"],"pair_count":3,"central_formula":"[y(+h)-y(-h)]/(2h)","fourth_order_formula":"[y(-2h)-8y(-h)+8y(+h)-y(+2h)]/(12h)","fixture_seed":319},
+  "thresholds": {"central_mp80_vs_mp120_max_abs":"1e-30","central_vs_fourth_mp120_scaled_max":"2e-5","required_pair_count":3},
+  "observed": {"central_mp80_vs_mp120_max_abs":"4.09656958147226919955796882988e-77","central_vs_fourth_mp120_scaled_max":"3.74207475261066955599469102919e-11","pair_count":3,"all_values_finite":true},
+  "provenance": {"run_id":33919939617,"job_id":101175715064,"artifact_id":9954611316,"artifact_digest":"sha256:b42764f0b076544e24ab4aec61de824093158afc4f9c7356b2c432df533d87f6","raw_json_sha256":"432499fd8afa13d7acf560ae112c87c11858d3840eaeedd117fcd7607724c5c9","workflow_commit":"8fdc9b3a0cbfd06dedbdfdc24b4ed881105bcd72","code_commit":"bbc502964d8107fdce31ad3337e2b845fe7a050d","misnumbered_result_removed_commit":"bb826570bdbec0695f7dbd7590dfe49963bc8969"},
+  "guardrails": ["SAME_H_ONLY_4E-5","NO_ADAPTIVE_OR_SMALLER_H","NO_THRESHOLD_WEAKENING","NO_ROUTING_OR_NUMERATOR_CHANGE","NON_PROMOTING_PARENT_NUMERICAL_GATE","UNSUPPORTED_IS_BLOCKED_NOT_ZERO_FILL"],
+  "readiness_change_pp": 0
+}
