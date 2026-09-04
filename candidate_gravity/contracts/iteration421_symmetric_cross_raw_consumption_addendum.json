@@ -1,0 +1,31 @@
+{
+  "iteration": 421,
+  "date": "2026-09-04",
+  "classification": "PROSPECTIVE_FAIL_CLOSED_RAW_CONSUMPTION_ADDENDUM",
+  "frozen_before_iteration421_result": true,
+  "physical_status_promotion_rule": "CONVERGED only if workflow/raw authority passes AND every listed criterion passes",
+  "additional_required_criterion": {
+    "json_path": "fit_residuals_scaled.tensor11",
+    "maximum": 2e-05,
+    "reason": "the full tensor degree-(1,1) fit is an explicitly predeclared independent intercept check and its reported fit residual must be held to the same unchanged physical stability budget as the other required extrapolation fits"
+  },
+  "retained_workflow_criteria": {
+    "max_stability_scaled": 2e-05,
+    "max_required_fit_residual_scaled": 2e-05,
+    "max_design_condition_number": 1000.0,
+    "synthetic_absolute_error": 1e-12,
+    "polynomial_heldout_scaled_error": 2e-06,
+    "denominator_affine_scaled_error": 2e-11,
+    "direct_original_integrand_crosscheck_scaled_error": 2e-06
+  },
+  "guardrails": [
+    "FROZEN_BEFORE_RESULT",
+    "ADDENDUM_CAN_ONLY_REJECT_NOT_PROMOTE",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_NODE_OR_RADIUS_CHANGE",
+    "NO_ZERO_FILL",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "model_readiness_percent": 24
+}
