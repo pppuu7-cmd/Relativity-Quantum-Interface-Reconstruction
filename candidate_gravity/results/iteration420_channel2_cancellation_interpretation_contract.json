@@ -1,0 +1,22 @@
+{
+  "iteration": 420,
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "scientific_gate_pass": true,
+  "classification": "PASS_CHANNEL2_CANCELLATION_INTERPRETATION_CONTRACT__PROSPECTIVE_NONPROMOTING",
+  "authority_scope": "METHODOLOGICAL_ONLY__NO_PHYSICAL_COORDINATE_PROMOTION",
+  "target": {
+    "double_double_global_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0,
+    "physical_status": "BLOCKED_CONVERGENCE"
+  },
+  "frozen_inputs": {
+    "iteration413_scaled_mass_step_discrepancy": 0.0002769196909034482,
+    "physical_threshold": 0.00002,
+    "material_roundoff_fraction_of_observed_discrepancy": 0.25,
+    "material_roundoff_absolute_threshold": 0.00006922992272586205
+  },
+  "promotion_rule": "Iteration 419 and Iteration 420 cannot promote index 2. A later raw-valid CONVERGED algebraically-equivalent higher-precision representation is required with the unchanged 2e-5 threshold and existing structural/direct-integrand checks.",
+  "model_readiness_change_percentage_points": 0
+}
