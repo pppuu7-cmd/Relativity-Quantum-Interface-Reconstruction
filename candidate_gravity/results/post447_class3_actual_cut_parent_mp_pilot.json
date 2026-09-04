@@ -1,0 +1,63 @@
+{
+  "stage": "POST447_CLASS3_ACTUAL_CUT_PARENT_MP_PILOT__UNNUMBERED_COLLISION_SAFE",
+  "classification": "PASS_CLASS3_ACTUAL_CUT_PARENT_MP80_MP120_PILOT__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "work_completion_percent": 61,
+  "target": {
+    "double_double_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0
+  },
+  "scope": "ACTUAL_ITER407_NEAR_CUT_PARENT_ARITHMETIC_PILOT__FOUR_MASS_CORNERS_ONE_ANGULAR_POINT_FINEST_RADIAL_PAIR_ONLY",
+  "frozen": {
+    "mass_radius": 5e-6,
+    "mass_corners": 4,
+    "z": -0.43,
+    "phi": 0.0,
+    "radial_h": 5e-4,
+    "radial_signs": [-1, 1],
+    "precision_digits": [80, 120],
+    "A1_h1": 1e-4,
+    "N1_h": 3e-5,
+    "M_fixture": "Iteration368 TIMELIKE M seed319"
+  },
+  "thresholds": {
+    "scaled_mp80_vs_mp120_max": "1e-30",
+    "required_sample_count": 8,
+    "all_finite": true,
+    "binary64_vs_mp120_physical_reference_diagnostic_only": "2e-5"
+  },
+  "observed": {
+    "scaled_mp80_vs_mp120_max": "4.82848380400305053290438160355e-81",
+    "scaled_binary64_vs_mp120_max_diagnostic": "6.95379333966267071268483411462e-16",
+    "binary64_drift_material_relative_to_2e-5_reference": false,
+    "sample_count": 8,
+    "all_finite": true,
+    "runtime_seconds": 92.56931143600002
+  },
+  "raw_provenance": {
+    "run_id": 33926910105,
+    "job_id": 101197313961,
+    "artifact_id": 9957177323,
+    "artifact_digest": "sha256:bb04a3ff558e9e90dfad8b3badc75b67947475fb703091a472479dc953cd6a34",
+    "head_sha": "2dba68b4772b02af62ba3be618d033af0a67add2",
+    "raw_result_sha256": "bc1c0560e16221e3b34969bb8682d1f4b709f97f9fd2511472906023c47db26a",
+    "raw_authority_audit_pass": true
+  },
+  "interpretation": "Generalized parent arbitrary-precision arithmetic remains internally stable at 80/120 digits on actual index-2 near-cut momenta with the real Iteration-368 timelike M fixture. The binary64-vs-MP120 diagnostic drift is far below the frozen 2e-5 physical reference, so this pilot does not support parent binary64 arithmetic at this sampled point as the dominant cause of the Iteration421 blocker. This is non-promoting and does not close full phi/sample generation, radial Richardson, mass differentiation, Iteration424, or D_s.",
+  "next_gate": "extend direct parent MP evaluation through prospectively frozen actual phi/z sample generation required by the active index-2 fixed-mass F path, without binary-parent recasting or guardrail changes",
+  "guardrails": [
+    "NO_AUTHORITATIVE_ITERATION_NUMBER_REUSE",
+    "NO_BINARY_PARENT_RECAST_AS_MP",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_H_CHANGE",
+    "NO_MASS_NODE_CHANGE",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_ANGULAR_GRID_ESCALATION",
+    "NO_ZERO_FILL",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
