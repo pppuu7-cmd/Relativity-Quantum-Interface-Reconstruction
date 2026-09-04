@@ -1,0 +1,20 @@
+{
+  "candidate_residual": false,
+  "classification": "PASS_CHANNEL2_FULL_AUXILIARY_MASS_CHAIN_DEPENDENCE_CONTRACT__NON_PROMOTING",
+  "exact_chain_structure": "F(u,v)=1/2 beta(u,v) sum_k c_k(u,v) J_k(cc(u,v),aa(u,v)); F_uv=1/2[beta_uv S + beta_u S_v + beta_v S_u + beta S_uv], S_uv=sum_k[c_k,uv J_k + c_k,u J_k,v + c_k,v J_k,u + c_k J_k,uv]",
+  "iteration": 425,
+  "model_readiness_percent": 24,
+  "negative_method_result": "DENOMINATOR_ONLY_MIXED_DERIVATIVE_IS_ALGEBRAICALLY_INCOMPLETE",
+  "observed_dependencies": {
+    "affine_denominator_uses_kinematics": true,
+    "alpha_mass_dependence": true,
+    "beta_mass_dependence": true,
+    "kin_mass_dependence": true,
+    "numerator_uses_kinematics": true,
+    "rho_mass_dependence": true,
+    "sphere_measure_uses_beta": true
+  },
+  "reason": "u,v enter lambda and hence alpha,rho,beta; alpha/rho enter stripped_limit_massive and the affine denominator, while beta multiplies the sphere integral. A correct exact/AD fallback must differentiate the complete frozen F(u,v), not only the affine denominator.",
+  "scientific_gate_pass": true,
+  "scope": "METHODOLOGICAL_SOURCE_DEPENDENCY_AUDIT_ONLY__NO_DS_PROMOTION"
+}
