@@ -1,0 +1,67 @@
+name: rqir-iteration407-consume-iteration401-raw-structure-authority
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration407-consume-iteration401-raw-structure-authority.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  iteration407:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download exact Iteration 401 artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p candidate_gravity/artifacts/iteration407/raw401
+          gh api repos/${{ github.repository }}/actions/artifacts/9922183136/zip > /tmp/it401.zip
+          unzip -q /tmp/it401.zip -d candidate_gravity/artifacts/iteration407/raw401
+      - name: Fail-closed raw scientific authority discrimination
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('candidate_gravity/artifacts/iteration407')
+          p=root/'raw401'/'iteration401_result.json'
+          raw=p.read_bytes(); o=json.loads(raw)
+          expected='PASS_TRU1SQ_CHANNEL4_ANALYTIC_AZIMUTH_STRUCTURE_ORACLE'
+          ok=(o.get('iteration')==401 and o.get('scientific_gate_pass') is True and
+              o.get('classification')==expected and
+              o.get('target',{}).get('double_double_global_index')==4 and
+              o.get('target',{}).get('class_id')==5 and
+              o.get('target',{}).get('remaining_uncut_group_count')==1 and
+              o.get('model_readiness_percent')==24)
+          out={
+            'iteration':407,
+            'scientific_gate_pass':bool(ok),
+            'classification':('PASS_ITER401_RAW_STRUCTURE_AUTHORITY_CONSUMED' if ok else 'BLOCKED_ITER401_RAW_STRUCTURE_AUTHORITY_CONSUMPTION'),
+            'source_run_id':33830352712,
+            'source_artifact_id':9922183136,
+            'source_artifact_digest':'sha256:82ebf8b245f61365474c6180a772619854ece34b64a897c649c7afa35690b0eb',
+            'source_result_sha256':hashlib.sha256(raw).hexdigest(),
+            'source_classification':o.get('classification'),
+            'source_observed':o.get('observed'),
+            'source_target':o.get('target'),
+            'model_readiness_percent':24,
+            'scope':'RAW_AUTHORITY_CONSUMPTION_ONLY__NO_RECOMPUTATION__NO_PHYSICAL_D_S_VALUE',
+            'next_gate':'If PASS, implement controlled analytic/spectral fixed-mass sphere means for blockers 2,4,11 under Iteration-403 stencil commutation, unchanged 2e-5 physical threshold, and held-out original-integrand checks.'
+          }
+          q=root/'iteration407_result.json'; q.write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          if not ok:
+              print(json.dumps(out,indent=2,sort_keys=True))
+              raise SystemExit(2)
+          print(json.dumps(out,indent=2,sort_keys=True))
+          PY
+      - name: Upload Iteration 407 authority record
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration407-consumed-iteration401-authority
+          path: candidate_gravity/artifacts/iteration407/
+          if-no-files-found: error
+          retention-days: 90
