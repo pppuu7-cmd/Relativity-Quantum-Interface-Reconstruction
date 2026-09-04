@@ -1,0 +1,40 @@
+{
+  "iteration": 409,
+  "date": "2026-09-04",
+  "classification": "PASS_TRU1SQ_CHANNEL4_RAW_AUTHORITY_FREEZE__BLOCKER4_REMOVED",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "source_iteration": 407,
+  "workflow_run": 33835806522,
+  "workflow_job": 100907970715,
+  "artifact_id": 9924759934,
+  "artifact_digest": "sha256:eec059d48944771897d09341d888a4f0691664ce12f6c6258ff4cc3aad8947ae",
+  "raw_result_sha256": "bba7c203ca9694c70b79f762820cdcd26768ee6bb286d1dbc8c31c8ee93eee68",
+  "channel": {
+    "double_double_global_index": 4,
+    "class_id": 5,
+    "q_squared": -1.0,
+    "D_s_TrU1sq_double_double_channel": [0.003562716046166582, -0.0],
+    "scaled_mass_step_convergence_error": 1.694511628814576e-05,
+    "status": "CONVERGED"
+  },
+  "crosschecks": {
+    "max_denominator_affine_scaled_error": 1.6653345369377348e-16,
+    "max_direct_original_integrand_crosscheck_scaled_error": 2.0657185788308663e-09,
+    "max_polynomial_heldout_scaled_error": 6.772468870430703e-16,
+    "max_radial_richardson_scaled_error": 5.8150099319087545e-15,
+    "minimum_analytic_uncut_abs_denominator": 0.11857147221810008
+  },
+  "thresholds": {
+    "physical_convergence_scaled_max": 2e-05,
+    "direct_original_integrand_crosscheck_scaled_max": 2e-06,
+    "denominator_affine_scaled_max": 2e-11,
+    "polynomial_heldout_scaled_max": 2e-06,
+    "radial_richardson_scaled_max": 0.0005,
+    "uncut_abs_min": 1e-10
+  },
+  "effective_action_weight": "NOT_FOLDED__MINUS_I_OVER_4_TRU1SQ_SEPARATE",
+  "unresolved_double_double_indices_after_freeze": [2, 11],
+  "model_readiness_percent": 24,
+  "next_gate": "raw-consume Iteration 408; only structural PASS for an index authorizes the already-frozen analytic/spectral physical reduction separately for indices 2 and 11"
+}
