@@ -1,0 +1,65 @@
+name: rqir-iteration399-tru1sq-double-double-channel5-resource-recovery
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration399-tru1sq-double-double-channel5-resource-recovery.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  iteration399:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check -q numpy
+      - name: Run frozen Iteration-389 arithmetic for unresolved channel 5
+        shell: bash
+        env:
+          CHANNEL_INDEX: '5'
+        run: |
+          mkdir -p candidate_gravity/artifacts/iteration399
+          set +e
+          python candidate_gravity/code/iteration389_tru1sq_double_double_full15_parallel_channel.py > candidate_gravity/artifacts/iteration399/iteration389_channel5_result.json
+          rc=$?
+          echo "$rc" > candidate_gravity/artifacts/iteration399/python_exit_code.txt
+          exit 0
+      - name: Raw parse and inherited-authority audit
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('candidate_gravity/artifacts/iteration399')
+          p=root/'iteration389_channel5_result.json'; raw=p.read_bytes()
+          a={'schema':'rqir_action_result_authority_audit_v1','recovery_iteration':399,
+             'expected_source_iteration':389,'expected_channel_index':5,'bytes':len(raw),
+             'sha256':hashlib.sha256(raw).hexdigest(),'scientific_authority_pass':False}
+          ok=False
+          try:
+            o=json.loads(raw)
+            a.update({'found_iteration':o.get('iteration'),'found_channel_index':o.get('channel_index'),
+                      'classification':o.get('classification'),'reported_scientific_gate_pass':o.get('scientific_gate_pass'),
+                      'status':o.get('channel',{}).get('status') if isinstance(o,dict) else None})
+            ok=bool(isinstance(o,dict) and o.get('iteration')==389 and o.get('channel_index')==5 and
+                    o.get('frozen_channel_count')==15 and o.get('scientific_gate_pass') is True)
+          except Exception as exc:
+            a['parse_error']=repr(exc)
+          a['scientific_authority_pass']=ok
+          (root/'iteration399_authority_audit.json').write_text(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          if not ok: raise SystemExit(2)
+          PY
+      - name: Upload targeted recovery artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration399-channel5-recovery
+          path: candidate_gravity/artifacts/iteration399/
+          if-no-files-found: error
+          retention-days: 90
