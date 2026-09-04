@@ -67,7 +67,7 @@ Repository commits, raw schema-validated Actions artifacts, recovery material an
 - Run `33839449598` attempt 2 completed `cancelled`; job `100928697231` was cancelled during the scientific oracle step at the 45-minute resource boundary. Raw authority audit was skipped.
 - Artifact `9926539839`, digest `sha256:f7d8d24b3ed9ce6f9cb29f4d19daa5f714b08837bde253f1910c7443f2e1e67f`, contains a zero-byte `iteration408_result.json`.
 - Therefore Iteration 408 is `OPERATIONAL_CANCELLATION`: neither structural PASS nor structural FAIL, and it promotes no physical value.
-- A later repaired Iteration-408 run may still execute due to a race. It is superseded operationally by validated Iteration 410 and cannot override Iteration 411 physical authority.
+- A later repaired Iteration-408 run completed successfully but is superseded by validated Iteration 410 and cannot override Iteration 411 physical authority.
 
 ## Active computation
 
@@ -77,6 +77,15 @@ Repository commits, raw schema-validated Actions artifacts, recovery material an
 - Iteration 411 is ACTIVE / NOT YET SCIENTIFIC AUTHORITY. Each per-target raw artifact must be consumed fail-closed; `CONVERGED` removes only its own blocker, while `BLOCKED_CONVERGENCE` remains a physical blocker.
 
 No useful heavy physical run is duplicated.
+
+## Iteration 412 prospective exact15 assembly contract
+
+- Iteration 412 freezes downstream assembly logic before Iteration-411 physical values are visible.
+- Reproducible code: `candidate_gravity/code/iteration412_tru1sq_exact15_and_complete_preassembly.py`, initial freeze commit `8d0aa6bf3a47d9e7f7616b74a672b912b77976ac`.
+- It requires exactly 15 unique frozen double-double indices, exactly five scientifically valid `CONVERGED` records per q2 bucket, finite coordinates, no duplicates, no missing indices, no zero fill and no diagnostic blocked values.
+- Frozen index/q2 mapping is Iteration-402 authority: `0..4 -> -1`, `5..9 -> -0.14`, `10..14 -> -0.34`.
+- Only after exact 15/15 closure may it add the authoritative Iteration-374 simple-simple and Iteration-393 simple-double coordinates to produce complete `Tr U1^2`, still without `-i/4`.
+- Iteration 412 is a prospective methodological/assembly-contract PASS only. It promotes no new physical value and does not supersede Iteration 409 physical/operator authority or Iteration 410 structural authority.
 
 ## Post-e2 dependency authority
 
@@ -90,7 +99,7 @@ Iteration 386 restores the downstream DAG:
 ## Exact next gates
 
 1. Raw-consume both Iteration-411 per-index physical artifacts fail-closed.
-2. Assemble double-double q2 sums only after all 15 unique channels are scientifically resolved. Then assemble complete `Tr U1^2` = Iteration-374 simple-simple + Iteration-393 simple-double + complete double-double, still without `-i/4`.
+2. If both are `CONVERGED`, run the already-frozen Iteration-412 exact15 assembly against all 15 raw-authority double-double records and validate the complete `Tr U1^2` operator coordinate.
 3. Only after complete `Tr U1^2` assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2, using the complete Iteration-406 `Tr U2` coordinate.
 4. Source/Ward/contact completion + matched K2 and the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain downstream. No Candidate residual before comparator quotient closure.
 
@@ -107,7 +116,7 @@ Repeated-cut normalized signs remain: `D_s(simple)=-sphere_mean`; simple-double 
 
 **MODEL_READINESS: 24%**
 
-Change through validated physical/operator Iteration 409 / validated structural Iteration 410 / active physical Iteration 411: `0 pp`. Structural executability alone does not close a readiness-rubric bucket. Complete `Tr U1^2`, linked Source/Ward/K2 closure and a robust comparator-subtracted residual remain open.
+Change through validated physical/operator Iteration 409 / validated structural Iteration 410 / active physical Iteration 411 / prospective assembly-contract Iteration 412: `0 pp`. The assembly ambiguity is now frozen prospectively, but methodology alone does not close a readiness-rubric bucket. Complete `Tr U1^2`, linked Source/Ward/K2 closure and a robust comparator-subtracted residual remain open.
 
 ## Retained guardrails
 
