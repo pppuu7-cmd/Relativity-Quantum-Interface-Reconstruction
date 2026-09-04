@@ -1,0 +1,39 @@
+{
+  "classification": "PASS_PROSPECTIVE_CHANNEL2_HIGH_PRECISION_FALLBACK_CONTRACT__NON_PROMOTING",
+  "explicit_nonclaims": [
+    "not a physical D_s result",
+    "not a consistency certificate",
+    "not a comparator identity",
+    "not a novelty certificate",
+    "not permission for ANSATZ-003 or Fisher/resources"
+  ],
+  "fail_closed_acceptance": {
+    "abs_Ds_80digit_minus_Ds_120digit_max": 2e-06,
+    "all_values_finite": true,
+    "direct_original_integrand_crosscheck_max": 2e-06,
+    "physical_mass_step_discrepancy_max": 2e-05,
+    "same_fixed_mass_node_values_compared_across_precisions": true,
+    "tensor_degree_1_1_fit_residual_max": 2e-05
+  },
+  "frozen_invariants": {
+    "mass_steps": [5e-06, 2.5e-06, 1.25e-06],
+    "no_angular_grid_escalation": true,
+    "no_smaller_h": true,
+    "no_threshold_weakening": true,
+    "no_zero_fill": true,
+    "same_mass_nodes": true,
+    "same_parent_dynamics": true,
+    "same_routing_numerator_sign_normalization": true
+  },
+  "interpretation": {
+    "if_all_pass": "HIGH_PRECISION_REPRESENTATION_STABLE__physical promotion still requires raw-valid workflow authority",
+    "if_cross_precision_fails": "NUMERICAL_PRECISION_BLOCKED; do not promote D_s",
+    "if_direct_or_tensor_fit_fails": "REPRESENTATION_CONSISTENCY_BLOCKED; do not promote D_s",
+    "if_physical_mass_step_fails_but_cross_precision_passes": "REPRESENTATION_OR_TRUE_MASS_STEP_BLOCKED; summation precision is not sufficient remedy"
+  },
+  "iteration": 424,
+  "model_readiness_percent": 24,
+  "purpose": "Conditional fallback only if Iteration 421 remains BLOCKED_CONVERGENCE.",
+  "required_precision_evaluations_decimal_digits": [80, 120],
+  "target": {"class": 3, "index": 2, "q2": -1.0}
+}
