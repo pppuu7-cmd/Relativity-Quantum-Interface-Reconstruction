@@ -1,0 +1,53 @@
+{
+  "iteration": 413,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "target": {
+    "double_double_global_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0
+  },
+  "source_iteration": 411,
+  "source_run": 33851983789,
+  "source_job": 100956624953,
+  "source_artifact": 9930938547,
+  "source_artifact_digest": "sha256:3c34f0110e3dbf97b7abf5dedf7b70bf918d4bb3a9e2b5572c7d1f92df7120c2",
+  "source_raw_result_sha256": "53a185ae9825cde0a273161b1ee093ede54103b52d513ea291a3bfc8e1381486",
+  "source_authority_audit_sha256": "7cd59a6e7876549962438a30416f75f4920cea107f569bb5952c38cd50f3e3bd",
+  "source_status": "BLOCKED_CONVERGENCE",
+  "source_mixed_derivative_h": -0.003560682203382001,
+  "source_mixed_derivative_h_over_2": -0.0036107242774472896,
+  "source_scaled_pair_error": 5.0042074065288766e-05,
+  "frozen_steps": {
+    "h": 5e-06,
+    "h_over_2": 2.5e-06,
+    "h_over_4": 1.25e-06
+  },
+  "frozen_physical_convergence_threshold": 2e-05,
+  "new_gate": {
+    "require_h_over_2_vs_h_over_4_scaled_error_le": 2e-05,
+    "require_successive_order4_richardson_extrapolants_scaled_error_le": 2e-05,
+    "require_error_contraction_ratio_lt": 1.0,
+    "promoted_value_if_pass": "DIRECT_H_OVER_4_CENTRAL4_X_CENTRAL4_NOT_RICHARDSON_EXTRAPOLATE"
+  },
+  "fixed_mass_checks": {
+    "polynomial_heldout_scaled_max": 2e-06,
+    "denominator_affine_scaled_max": 2e-11,
+    "direct_original_integrand_crosscheck_scaled_max": 2e-06,
+    "radial_richardson_scaled_max": 0.0005,
+    "uncut_abs_min": 1e-10
+  },
+  "guardrails": [
+    "INDEX2_ONLY",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_FURTHER_ANGULAR_GRID_ESCALATION",
+    "ONE_ADDITIONAL_MASS_STEP_LEVEL_ONLY",
+    "RICHARDSON_IS_DIAGNOSTIC_NOT_PROMOTED_VALUE",
+    "IF_FAIL_STOP_STEP_SHRINKING_AND_MOVE_TO_MASS_SPECTRAL_RECONSTRUCTION",
+    "NO_ZERO_FILL",
+    "NO_EFFECTIVE_ACTION_WEIGHT_FOLDING",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
