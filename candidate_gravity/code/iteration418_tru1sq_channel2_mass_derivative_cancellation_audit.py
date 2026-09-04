@@ -8,14 +8,14 @@ Iteration 413 falsified the previously assumed O(h^4) truncation regime: after
 halving h from 2.5e-6 to 1.25e-6 the mixed-derivative discrepancy increased.
 This diagnostic therefore does NOT refine h again, does NOT change the angular
 representation, observable, normalization, or any physical threshold, and does
-NOT promote a physical coordinate.  It reuses the exact Iteration-407 analytic
+NOT promote a physical coordinate. It reuses the exact Iteration-407 analytic
 sphere function specialized to index 2 and measures the numerical condition of
 the already-used central4 x central4 mass derivative at the three h values that
 have already been evaluated (5e-6, 2.5e-6, 1.25e-6).
 
 The audit decomposes the mixed derivative into its 16 weighted contributions,
 computes cancellation condition numbers, compares naive and compensated sums,
-and estimates binary64 roundoff amplification.  Any unsupported interpretation
+and estimates binary64 roundoff amplification. Any unsupported interpretation
 remains BLOCKED.
 """
 from __future__ import annotations
@@ -47,10 +47,13 @@ for old, new in [
         raise RuntimeError(("iteration407_specialization_drift", old, src.count(old)))
     src = src.replace(old, new, 1)
 
-marker = "start=time.perf_counter()"
+# The parent contains the literal run-marker text once inside its own source-
+# extraction guard and once as the actual execution boundary. Match the full
+# executable boundary instead of counting the short literal globally.
+marker = "\nstart=time.perf_counter()\nd_base,diag_base=derivative_from_analytic(BASE_H)"
 if src.count(marker) != 1:
-    raise RuntimeError(("iteration407_start_marker_drift", src.count(marker)))
-prefix = src.split(marker, 1)[0]
+    raise RuntimeError(("iteration407_execution_boundary_drift", src.count(marker)))
+prefix = src.split(marker, 1)[0] + "\n"
 ns = {"__name__": "iteration418_parent407_prefix", "__file__": str(parent)}
 with contextlib.redirect_stdout(io.StringIO()):
     exec(compile(prefix, str(parent), "exec"), ns, ns)
@@ -109,7 +112,7 @@ def audit_h(h):
     }
 
 records = [audit_h(h) for h in H_VALUES]
-derivs = [complex(*()) if False else complex(r["mixed_derivative_compensated"][0], r["mixed_derivative_compensated"][1]) for r in records]
+derivs = [complex(r["mixed_derivative_compensated"][0], r["mixed_derivative_compensated"][1]) for r in records]
 pair_discrepancies = [float(abs(derivs[i]-derivs[i+1]) / max(1.0, abs(derivs[i]), abs(derivs[i+1]))) for i in range(len(derivs)-1)]
 ratio = float(pair_discrepancies[1] / pair_discrepancies[0]) if pair_discrepancies[0] else float("inf")
 observed_order = float(math.log(pair_discrepancies[0]/pair_discrepancies[1], 2.0)) if all(x > 0 for x in pair_discrepancies) else None
