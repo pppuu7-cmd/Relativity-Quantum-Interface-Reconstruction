@@ -1,0 +1,60 @@
+{
+  "iteration": 428,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "scientific_gate_pass": true,
+  "classification": "PASS_CHANNEL2_PRECISION_SURFACE_AND_NODE_CONDITIONING_AUDIT__NON_PROMOTING",
+  "authority_scope": "CONDITIONING_AND_IMPLEMENTATION_AUDIT__NO_PHYSICAL_COORDINATE_PROMOTION",
+  "target": {
+    "double_double_global_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0,
+    "iteration421_status": "BLOCKED_CONVERGENCE"
+  },
+  "iteration421_conditioning": {
+    "radius": 1e-5,
+    "radius_multipliers": [1.0, 0.75, 0.5, 0.25],
+    "formula": "signed_four_corner_sum/(4*u*v)",
+    "physical_tolerance_scaled": 2e-5,
+    "tightest_signed_corner_sum_budget": 5.000000000000001e-16,
+    "tightest_budget_in_float64_eps_at_unit_scale": 2.2517998136852486,
+    "equal_corner_share_in_float64_eps_at_unit_scale": 0.5629499534213122,
+    "loosest_signed_corner_sum_budget": 8.000000000000002e-15
+  },
+  "iteration424_contract": {
+    "frozen_mass_steps": [5e-6, 2.5e-6, 1.25e-6],
+    "required_precision_digits": [80, 120],
+    "same_mass_nodes": true,
+    "no_smaller_h": true,
+    "stencil_formula_frozen_in_contract_file": false,
+    "conditioning_scales_h2_times_2e-5_not_acceptance_budgets": [5.000000000000001e-16, 1.2500000000000003e-16, 3.125000000000001e-17]
+  },
+  "precision_surface": {
+    "iteration407_numpy_complex_coefficients": true,
+    "iteration407_complete_numerator_called": true,
+    "iteration368_nested_first_u1_present": true,
+    "iteration368_nested_y1_present": true,
+    "conclusion": "Outer-only high precision is insufficient to claim a complete 80/120-digit fixed-mass F evaluation; precision provenance must cover the complete F path or quantify retained lower-precision sublayers."
+  },
+  "provenance": {
+    "run": 33887682539,
+    "job": 101071391720,
+    "artifact": 9942518066,
+    "artifact_digest": "sha256:4cc83230f7571a08995ff2008fd9e3b0900e1908ac818019c12431e7345ccca3",
+    "raw_scientific_json_sha256": "d79330bb9ca0a5f8dbeffa012dde391f5e549c530db36f8a090d1477d62116a5",
+    "workflow_head_sha": "29585e389175d78359741fd527df05c25081cc87"
+  },
+  "interpretation": "The narrow Iteration-421 miss is numerically consistent with binary64 conditioning at the smallest symmetric-cross nodes. This does not prove that roundoff is the sole cause. Iteration 424 must remain a distinct frozen fallback with its own mass steps and must not be silently reinterpreted as the Iteration-421 grid. A faithful physical fallback needs complete fixed-F precision provenance.",
+  "guardrails": [
+    "NO_PHYSICAL_DS_PROMOTION",
+    "421_AND_424_GEOMETRIES_KEPT_DISTINCT",
+    "NO_NEW_PHYSICAL_THRESHOLD",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_SMALLER_MASS_STEP",
+    "NO_ZERO_FILL",
+    "ITERATION424_FROZEN_CONTRACT_UNCHANGED",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
