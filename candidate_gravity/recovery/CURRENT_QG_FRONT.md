@@ -5,7 +5,7 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Latest validated Candidate Gravity physical/operator authority:** **Iteration 409**  
+**Latest validated Candidate Gravity physical/operator authority:** **Iteration 411**  
 **Latest validated structural authority:** **Iteration 410**
 
 Repository commits, raw schema-validated Actions artifacts, recovery material and this file are source of truth. Green/red workflow colour alone is never scientific authority.
@@ -59,8 +59,11 @@ Repository commits, raw schema-validated Actions artifacts, recovery material an
 - Iteration 410 raw-validates the structural oracle separately for both remaining physical blockers. Run `33847425175` completed success, but raw artifacts were independently checked:
   - index 2 / class 3 / `q^2=-1`: artifact `9928039298`, digest `sha256:0f2d759480a688fb71db5542c20429f79beea1737708ec92665c82cb8ba7db2f`, raw SHA-256 `dbaea9b9d015d6df7ab465c0748596462949eb682a8a2a662f88b5d667e8d2c7`; structural PASS;
   - index 11 / class 16 / `q^2=-0.34`: artifact `9928100131`, digest `sha256:efdeb91cf58ed05c7b06bf300823e20e9b1f46dcb8c01b8dec24112bef662114`, raw SHA-256 `2ecfc9d9812a8258803e20e6e402df3c93dac2f0245bf61e390517839605693b`; structural PASS.
-- Iteration 410 promotes no physical `D_s` value. Exact unresolved double-double physical set remains **`[2,11]`** until Iteration 411 physical reductions are raw-validated.
-- No further blind angular-grid escalation is authorized for blockers 2 and 11.
+- Iteration 411 run `33851983789` is raw-consumed per target; workflow colour was not used as authority:
+  - index 11 / class 16 / `q^2=-0.34`: artifact `9931076355`, digest `sha256:8551fba98b0f3f218960820a01369ca183da1234d22754bd5c647fa8909cf6f8`, raw scientific JSON SHA-256 `f8aea08be16636dcf5d83afaa29dd3059c734a1a3ad8f778f07ef53b3041abf1`; `CONVERGED`, authoritative `D_s TrU1^2 double-double channel=+0.013050543643260309`, scaled mass-step error `5.421327239850046e-06 < 2e-05`, max direct original-integrand cross-check `1.1526331104849685e-12 < 2e-06`;
+  - index 2 / class 3 / `q^2=-1`: artifact `9930938547`, digest `sha256:3c34f0110e3dbf97b7abf5dedf7b70bf918d4bb3a9e2b5572c7d1f92df7120c2`, raw scientific JSON SHA-256 `53a185ae9825cde0a273161b1ee093ede54103b52d513ea291a3bfc8e1381486`; `BLOCKED_CONVERGENCE`, mass-step error `5.0042074065288766e-05 > 2e-05`. Its diagnostic coarse value `+0.003560682203382001` is not authority and is not inserted into any sum. All structural/direct-integrand checks pass, localizing the blocker to auxiliary-mass finite-difference convergence.
+- Exact unresolved double-double physical set is now **`[2]`**.
+- No blind angular-grid escalation is authorized for index 2.
 
 ## Iteration 408 operational classification
 
@@ -71,21 +74,21 @@ Repository commits, raw schema-validated Actions artifacts, recovery material an
 
 ## Active computation
 
-- **Iteration 411:** run `33851983789`, evaluator commit `1e01f7f4abf3ee00daafcf3580019a74ada9a670`, workflow/head commit `a50b25c408903112dc6962487b58478a7f34e3f3`, is the active split physical analytic/spectral reduction for indices 2 and 11.
-- It applies the already-frozen Iteration-407 physical architecture separately per target after Iteration-410 structural PASS.
-- Parent Iteration-379/389 physical integrand, central4×central4 auxiliary-mass stencil, normalized sign `D_s=-sphere_mean[d_u d_v G]`, held-out original-integrand checks, structural thresholds and physical convergence threshold `2e-5` are unchanged.
-- Iteration 411 is ACTIVE / NOT YET SCIENTIFIC AUTHORITY. Each per-target raw artifact must be consumed fail-closed; `CONVERGED` removes only its own blocker, while `BLOCKED_CONVERGENCE` remains a physical blocker.
+- **Iteration 413:** run `33861440653`, code commit `b3a94b2c37ad4ea005127822c304855095cfd0b0`, workflow/head commit `a8ecf715f49ca9a45fde149087359924ec856b36`, is the active physical mass-step refinement for the sole remaining blocker index 2.
+- It keeps the Iteration-407/411 physical integrand, analytic/spectral angular reduction, central4×central4 stencil, normalized sign `D_s=-sphere_mean[d_u d_v G]`, held-out original-integrand checks, and every scientific threshold unchanged.
+- The only prospective numerical refinement is the next deterministic halving pair `h=2.5e-6`, `h/2=1.25e-6`; the new coarse scale exactly equals the prior Iteration-411 half-step scale.
+- Iteration 413 is ACTIVE / NOT YET SCIENTIFIC AUTHORITY. A raw `CONVERGED` result removes only blocker 2; a raw `BLOCKED_CONVERGENCE` remains a physical blocker and requires dedicated auxiliary-mass derivative representation/error analysis without threshold weakening.
 
 No useful heavy physical run is duplicated.
 
 ## Iteration 412 prospective exact15 assembly contract
 
-- Iteration 412 freezes downstream assembly logic before Iteration-411 physical values are visible.
+- Iteration 412 freezes downstream assembly logic before Iteration-411 physical values were visible.
 - Reproducible code: `candidate_gravity/code/iteration412_tru1sq_exact15_and_complete_preassembly.py`, initial freeze commit `8d0aa6bf3a47d9e7f7616b74a672b912b77976ac`.
 - It requires exactly 15 unique frozen double-double indices, exactly five scientifically valid `CONVERGED` records per q2 bucket, finite coordinates, no duplicates, no missing indices, no zero fill and no diagnostic blocked values.
 - Frozen index/q2 mapping is Iteration-402 authority: `0..4 -> -1`, `5..9 -> -0.14`, `10..14 -> -0.34`.
 - Only after exact 15/15 closure may it add the authoritative Iteration-374 simple-simple and Iteration-393 simple-double coordinates to produce complete `Tr U1^2`, still without `-i/4`.
-- Iteration 412 is a prospective methodological/assembly-contract PASS only. It promotes no new physical value and does not supersede Iteration 409 physical/operator authority or Iteration 410 structural authority.
+- Iteration 412 remains correctly BLOCKED until index 2 obtains raw-valid physical `CONVERGED` authority.
 
 ## Post-e2 dependency authority
 
@@ -98,10 +101,11 @@ Iteration 386 restores the downstream DAG:
 
 ## Exact next gates
 
-1. Raw-consume both Iteration-411 per-index physical artifacts fail-closed.
-2. If both are `CONVERGED`, run the already-frozen Iteration-412 exact15 assembly against all 15 raw-authority double-double records and validate the complete `Tr U1^2` operator coordinate.
-3. Only after complete `Tr U1^2` assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2, using the complete Iteration-406 `Tr U2` coordinate.
-4. Source/Ward/contact completion + matched K2 and the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain downstream. No Candidate residual before comparator quotient closure.
+1. Raw-consume Iteration-413 artifact fail-closed.
+2. If index 2 is `CONVERGED`, materialize its authority record and run the already-frozen Iteration-412 exact15 assembly against all 15 raw-authority double-double records; validate complete `Tr U1^2`.
+3. If index 2 remains `BLOCKED_CONVERGENCE`, preserve the negative result and move to a dedicated auxiliary-mass derivative representation/error analysis; no threshold weakening and no angular-grid escalation.
+4. Only after complete `Tr U1^2` assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2, using the complete Iteration-406 `Tr U2` coordinate.
+5. Source/Ward/contact completion + matched K2 and the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain downstream. No Candidate residual before comparator quotient closure.
 
 Repeated-cut normalized signs remain: `D_s(simple)=-sphere_mean`; simple-double `D_s=+sphere_mean[d_mu G]`; double-double `D_s=-sphere_mean[d_mu1 d_mu2 G]`.
 
@@ -116,7 +120,7 @@ Repeated-cut normalized signs remain: `D_s(simple)=-sphere_mean`; simple-double 
 
 **MODEL_READINESS: 24%**
 
-Change through validated physical/operator Iteration 409 / validated structural Iteration 410 / active physical Iteration 411 / prospective assembly-contract Iteration 412: `0 pp`. The assembly ambiguity is now frozen prospectively, but methodology alone does not close a readiness-rubric bucket. Complete `Tr U1^2`, linked Source/Ward/K2 closure and a robust comparator-subtracted residual remain open.
+Change through validated physical/operator Iteration 411 / validated structural Iteration 410 / prospective assembly-contract Iteration 412 / active physical Iteration 413: `0 pp`. Index 11 is now physically closed, but no readiness-rubric bucket closes until index 2, exact 15/15 `Tr U1^2`, linked Source/Ward/K2 closure and a robust comparator-subtracted residual are obtained.
 
 ## Retained guardrails
 
