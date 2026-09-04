@@ -81,6 +81,16 @@ Repository commits, raw schema-validated Actions artifacts, recovery material an
 
 No useful heavy physical run is duplicated.
 
+## Iteration 414 prospective mass-step error predictor
+
+- Iteration 414 freezes a non-promoting numerical-method prediction before Iteration-413 output is visible, using only raw-authoritative Iteration-411 index-2 values.
+- Reproducible code: `candidate_gravity/code/iteration414_channel2_mass_step_error_predictor.py`; frozen result: `candidate_gravity/results/iteration414_channel2_mass_step_error_predictor.json`.
+- Iteration-411 pair: `D(5e-6)=-0.003560682203382001`, `D(2.5e-6)=-0.0036107242774472896`, discrepancy `5.0042074065288766e-05`.
+- Under the explicit leading-truncation hypothesis for the central4×central4 mixed derivative, the discretization error is `O(h^4)`, so the next halving discrepancy should shrink by approximately 16.
+- Prospectively frozen Iteration-413 expected signed pair difference: `-3.127629629080548e-06`; expected scaled discrepancy: `3.127629629080548e-06 < 2e-05`.
+- Richardson diagnostic from Iteration 411 only: extrapolated mixed derivative `-0.003614060415718309`; estimated absolute error of the `h=2.5e-6` member `3.336138271019251e-06`.
+- These values are diagnostic only and promote no physical `D_s`. If Iteration 413 fails to show the expected order-4 improvement, the next gate is dedicated auxiliary-mass derivative representation / cancellation-roundoff analysis; thresholds remain frozen and angular-grid escalation remains forbidden.
+
 ## Iteration 412 prospective exact15 assembly contract
 
 - Iteration 412 freezes downstream assembly logic before Iteration-411 physical values were visible.
@@ -101,9 +111,9 @@ Iteration 386 restores the downstream DAG:
 
 ## Exact next gates
 
-1. Raw-consume Iteration-413 artifact fail-closed.
+1. Raw-consume Iteration-413 artifact fail-closed and compare its pair discrepancy against the prospectively frozen Iteration-414 order-4 predictor.
 2. If index 2 is `CONVERGED`, materialize its authority record and run the already-frozen Iteration-412 exact15 assembly against all 15 raw-authority double-double records; validate complete `Tr U1^2`.
-3. If index 2 remains `BLOCKED_CONVERGENCE`, preserve the negative result and move to a dedicated auxiliary-mass derivative representation/error analysis; no threshold weakening and no angular-grid escalation.
+3. If index 2 remains `BLOCKED_CONVERGENCE`, preserve the negative result. If the order-4 reduction prediction fails, move directly to dedicated auxiliary-mass derivative representation / cancellation-roundoff analysis; no threshold weakening and no angular-grid escalation.
 4. Only after complete `Tr U1^2` assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2, using the complete Iteration-406 `Tr U2` coordinate.
 5. Source/Ward/contact completion + matched K2 and the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain downstream. No Candidate residual before comparator quotient closure.
 
@@ -120,7 +130,7 @@ Repeated-cut normalized signs remain: `D_s(simple)=-sphere_mean`; simple-double 
 
 **MODEL_READINESS: 24%**
 
-Change through validated physical/operator Iteration 411 / validated structural Iteration 410 / prospective assembly-contract Iteration 412 / active physical Iteration 413: `0 pp`. Index 11 is now physically closed, but no readiness-rubric bucket closes until index 2, exact 15/15 `Tr U1^2`, linked Source/Ward/K2 closure and a robust comparator-subtracted residual are obtained.
+Change through validated physical/operator Iteration 411 / validated structural Iteration 410 / prospective assembly-contract Iteration 412 / active physical Iteration 413 / prospective diagnostic Iteration 414: `0 pp`. Index 11 is physically closed and the index-2 mass-step interpretation is prospectively constrained, but no readiness-rubric bucket closes until index 2, exact 15/15 `Tr U1^2`, linked Source/Ward/K2 closure and a robust comparator-subtracted residual are obtained.
 
 ## Retained guardrails
 
