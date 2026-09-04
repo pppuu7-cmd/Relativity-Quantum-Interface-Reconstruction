@@ -1,0 +1,68 @@
+name: RQIR Iteration 432 parent primitive recursive precision closure
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration432-parent-primitive-recursive-closure.yml'
+permissions:
+  contents: read
+jobs:
+  parent-primitive-recursive-closure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build exact Iteration-270 dependency closure
+        run: |
+          python - <<'PY'
+          import ast, hashlib, json, pathlib
+          p=pathlib.Path('candidate_gravity/code/iteration270_vd_physical_b3_nonzero.py')
+          raw=p.read_bytes(); tree=ast.parse(raw.decode())
+          funcs={n.name:n for n in tree.body if isinstance(n,ast.FunctionDef)}
+          roots=['Q0','Q1','Asub','y_down']
+          calls={}
+          np_attrs={}
+          for name,n in funcs.items():
+              local=set(); attrs=set()
+              for x in ast.walk(n):
+                  if isinstance(x,ast.Call):
+                      f=x.func
+                      if isinstance(f,ast.Name): local.add(f.id)
+                      elif isinstance(f,ast.Attribute) and isinstance(f.value,ast.Name) and f.value.id=='np': attrs.add('np.'+f.attr)
+                      elif isinstance(f,ast.Attribute) and isinstance(f.value,ast.Attribute) and isinstance(f.value.value,ast.Name) and f.value.value.id=='np': attrs.add('np.'+f.value.attr+'.'+f.attr)
+              calls[name]=sorted(local & set(funcs)); np_attrs[name]=sorted(attrs)
+          seen=set(); stack=list(roots)
+          while stack:
+              a=stack.pop()
+              if a in seen or a not in funcs: continue
+              seen.add(a); stack.extend(calls[a])
+          closure=[]
+          for name in sorted(seen):
+              n=funcs[name]
+              closure.append({'function':name,'lines':[n.lineno,getattr(n,'end_lineno',n.lineno)],'calls':calls[name],'numpy_ops':np_attrs[name]})
+          required={'Q0','Q1','Asub','y_down'}
+          missing=sorted(required-set(seen))
+          low=[{'function':r['function'],'numpy_ops':r['numpy_ops']} for r in closure if r['numpy_ops']]
+          result={'iteration':432,'authority_scope':'DIAGNOSTIC_ONLY__PARENT_PRECISION_RECURSIVE_CLOSURE','classification':'PASS_PARENT_PRIMITIVE_RECURSIVE_CLOSURE_BOUND__NON_PROMOTING' if not missing else 'BLOCKED_PARENT_PRIMITIVE_CLOSURE_INCOMPLETE','scientific_gate_pass':not missing,'source_path':str(p),'source_sha256':hashlib.sha256(raw).hexdigest(),'roots':roots,'recursive_closure':closure,'retained_numpy_operations':low,'missing_roots':missing,'model_readiness_percent':24,'interpretation':'This binds the exact source-level recursive function closure that must be ported to 80/120-digit arithmetic or quantitatively bounded. It does not certify arithmetic precision and cannot promote index 2.','guardrails':['NO_PHYSICAL_DS_VALUE','NO_THRESHOLD_WEAKENING','NO_SMALLER_MASS_STEP','NO_ZERO_FILL','NO_ANGULAR_GRID_ESCALATION','NO_ANSATZ003','NO_FISHER_RESOURCES']}
+          pathlib.Path('iteration432_result.json').write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
+          b=pathlib.Path('iteration432_result.json').read_bytes(); audit={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':432,'authority_scope':'DIAGNOSTIC_ONLY','classification':result['classification'],'scientific_authority_pass':result['scientific_gate_pass'],'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()}
+          pathlib.Path('iteration432_authority_audit.json').write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(result,indent=2,sort_keys=True))
+          if missing: raise SystemExit('BLOCKED: required parent roots not bound')
+          PY
+      - name: Raw authority audit
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          b=pathlib.Path('iteration432_result.json').read_bytes(); a=json.loads(pathlib.Path('iteration432_authority_audit.json').read_text()); assert a['sha256']==hashlib.sha256(b).hexdigest(); assert a['bytes']==len(b); assert a['expected_iteration']==432; print(json.dumps(a,indent=2))
+          PY
+      - name: Upload raw Iteration 432 artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration432-parent-primitive-recursive-closure
+          path: |
+            iteration432_result.json
+            iteration432_authority_audit.json
+          if-no-files-found: error
+          retention-days: 30
