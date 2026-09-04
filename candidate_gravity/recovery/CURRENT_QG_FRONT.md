@@ -7,102 +7,122 @@
 **Active promotable ansatz:** none  
 **Latest validated Candidate Gravity physical/operator authority:** **Iteration 411**  
 **Latest validated structural authority:** **Iteration 410**  
-**Latest validated numerical-method diagnosis:** **Iterations 419 + 422 under prospective Iteration-420 contract**  
-**Latest source-of-truth reconciliation:** **Iteration 423**  
-**Latest prospective numerical fallback contract:** **Iteration 424**  
-**Latest auxiliary-mass dependency/derivative contract:** **Iteration 425**
+**Latest validated physical-blocking result:** **Iteration 421 — raw-valid `BLOCKED_CONVERGENCE` for index 2**  
+**Latest validated numerical/conditioning diagnostics:** **Iterations 419, 422, 428**  
+**Latest exact non-promoting derivative-coordinate contract:** **Iteration 427**  
+**Prospective authorized fallback:** **Iteration 424**, constrained by Iterations 425/427/428
 
 Repository commits, raw schema-validated Actions artifacts, recovery material and this file are source of truth. Workflow colour alone is never scientific authority.
 
-## Authoritative physical/operator state
+## Closed operator coordinates retained
 
-### Determinant `e=0,c<=3`
+### Timelike `Tr U2`
 
-Iteration 383 closes the ordinary-two-simple-particle determinant absorptive vector: `q^2=-1 -> -0.002357789063884683 i`, `q^2=-0.34 -> +0.001462759351572654 i`, `q^2=-0.14 -> +0.0012389565044298413 i`. Iteration 387 preserves the evanescent/R2 warning: the hard-branch discontinuity is valid but the full finite local/rational DR remainder remains BLOCKED. This is not a Candidate residual.
+Iteration 405 raw-validates exact 48/48 repeated-cut assembly. Iteration 406 gives the complete timelike coordinate before the `+i/2` effective-action weight:
 
-### Timelike `Tr U2` — COMPLETE OPERATOR COORDINATE
-
-Iteration 405 raw-validates exact 48/48 repeated-cut assembly: run `33832181526`, artifact `9922054102`, digest `sha256:1dd9bbc6c863954059263171c5a160510ce3605bb416a46498c3453b48343729`, result SHA-256 `f766c6641fb9a89838784ae7572fa1f8459dd0260fd71007f8de93e727840cab`.
-
-Iteration 406 complete timelike coordinate, still before `+i/2`:
 - `q^2=-1 -> +0.0005345424186332474`;
 - `q^2=-0.34 -> -0.000734101259784574`;
 - `q^2=-0.14 -> -0.001572666890130343`.
-
-Iterations 416/417 do not reopen this authority; both had post-science raw-output parsing/audit failures and are operational/audit failures, not scientific FAILs.
 
 ### Timelike `Tr U1^2`
 
 Frozen census: 57 physical channels = 6 simple-simple + 36 simple-double + 15 double-double, exactly 19 per `q^2`.
 
-Closed components:
-- Iteration 374 simple-simple 6/6: `[-1:+6.253219881951187e-05, -0.34:+3.5044107116946374e-05, -0.14:+2.9297648005638963e-05]`;
-- Iteration 393 simple-double 36/36: `[-1:-0.002329411286740447, -0.34:-0.0005948791870822445, -0.14:-7.368142632096214e-05]`;
-- Iteration 399 double-double index 5 / class 8 / `q^2=-0.14`: `+0.000119747535002548`;
-- Iteration 409 index 4 / class 5 / `q^2=-1`: `+0.003562716046166582`, mass-step error `1.694511628814576e-05 < 2e-05`, direct original-integrand cross-check `2.0657185788308663e-09 < 2e-06`;
-- Iteration 411 index 11 / class 16 / `q^2=-0.34`: `+0.013050543643260309`, mass-step error `5.421327239850046e-06 < 2e-05`, direct cross-check `1.1526331104849685e-12 < 2e-06`.
+Closed components retained:
+- Iteration 374 simple-simple 6/6;
+- Iteration 393 simple-double 36/36;
+- Iteration 399 double-double index 5 / class 8 / `q^2=-0.14` = `+0.000119747535002548`;
+- Iteration 409 index 4 / class 5 / `q^2=-1` = `+0.003562716046166582`;
+- Iteration 411 index 11 / class 16 / `q^2=-0.34` = `+0.013050543643260309`.
 
-**Exact unresolved double-double physical set: `[2]`.** Index 2 / class 3 / `q^2=-1` remains `BLOCKED_CONVERGENCE`. Iteration 411 discrepancy was `5.0042074065288766e-05 > 2e-05`. Iteration 413 refined-step discrepancy worsened to `2.769196909034482e-04 > 2e-05`; its diagnostic value is not authority. No blind angular-grid escalation or further blind `h` refinement is authorized.
+**Exact unresolved double-double physical set: `[2]`.**
+
+## Index 2 current authority
+
+Target: double-double index 2 / class 3 / `q^2=-1`.
+
+Iteration 421 is now the latest raw-valid physical attempt: run `33871920373`, job `101019660127`, artifact `9942128452`, digest `sha256:d75c5063b81e02872fe1255421c62e0679de22ae13fce7e2013358eba73152ff`, scientific JSON SHA-256 `c297cb15b707ef59b9d940c159a1fcb7e9f3a1e64135ccebc077b48a869f5e20`.
+
+Classification: `BLOCKED_CONVERGENCE`; diagnostic estimate only `D_s Tr(U1^2)[2] ~= +0.0035843041850530683` is **not authority**.
+
+Frozen failures:
+- `max_stability_scaled = 2.2720400683804223e-05 > 2e-05`;
+- `max_required_fit_residual_scaled = 2.585665489102237e-05 > 2e-05`.
+
+Strongly passing checks:
+- direct original-integrand cross-check `2.0658997659274425e-09 < 2e-06`;
+- polynomial heldout `7.852876335312509e-16 < 2e-06`;
+- affine-denominator `2.220446049250313e-16 < 2e-11`;
+- radial Richardson `5.29849601693666e-15 < 5e-4`;
+- design condition number `362.20107548262695 < 1000`;
+- synthetic oracle `1.6653345369377348e-16 < 1e-12`.
+
+This is a narrow convergence/representation block, not evidence that cut support or the frozen physical integrand is invalid. No coordinate is promoted and no zero fill is allowed.
 
 ## Numerical-method authority for index 2
 
-Iteration 415 established observed refinement order `-2.4682571634198707` instead of expected `+4`, localizing the issue to cancellation/conditioning or the derivative representation.
+### Iteration 419
 
-### Iteration 419 — raw-valid cancellation audit
+Raw-valid cancellation audit: summation-level binary64 effects are far below the prospectively frozen materiality threshold and are not materially sufficient by themselves.
 
-Run `33867065291`, job `101004215030`, artifact `9936648612`, artifact digest `sha256:6d6c12547c85df99444a9ca18bceee43cd1cd335af149598b143507d9e8b32fd`, raw scientific JSON SHA-256 `978f611512859a618175da5e5c9d54ab05475c58c929e4dd105635906601a3c5`.
+### Iteration 422
 
-Classification: `PASS_CHANNEL2_MASS_DERIVATIVE_CANCELLATION_AUDIT__DIAGNOSTIC_ONLY`.
+Raw-valid affine-moment conditioning audit: max float64-vs-80-digit `J_0..J_4` discrepancy `1.8927180676033106e-14`; Vandermonde condition number `32.67245147666588`. Affine moments alone are not the dominant arithmetic problem.
 
-Prospectively frozen Iteration-420 materiality threshold: `6.922992272586205e-05`.
+### Iteration 425
 
-Observed:
-- `max_binary64_roundoff_bound_scaled = 6.830096385136159e-07`;
-- `max_naive_vs_compensated_scaled_delta = 1.4886690874290067e-08`.
+The complete frozen fixed-mass function is
 
-Both are far below the frozen threshold, so the canonical decision is `SUMMATION_LEVEL_BINARY64_CANCELLATION_NOT_MATERIALLY_SUFFICIENT`. The mixed derivative is severely conditioned, but summation-level binary64 effects do not materially explain the observed physical mass-step drift. Iteration 419 is diagnostic-only and promotes no `D_s` coordinate.
+`F(u,v)=1/2 beta(u,v) sum_k c_k(u,v) J_k(cc(u,v),aa(u,v))`.
 
-### Iteration 422 — raw-valid affine-moment conditioning audit
+Auxiliary masses enter the complete kinematics, traced numerator / phi-mean coefficients, affine moments and measure factor. Denominator-only differentiation is algebraically incomplete and forbidden.
 
-Run `33872242674`, artifact `9936404619`, digest `sha256:44dc4cedd992bc402e773592c34aa51e9e65c039671c1393ceaa12913bb0aa43`, scientific JSON SHA-256 `790631db3b782f684653292ca45633839f8de396f3fe0d7d8c3d08869cf73075`.
+### Iteration 427
 
-Classification: `PASS_CHANNEL2_AFFINE_MOMENT_CONDITIONING__FLOAT64_STABLE_DIAGNOSTIC_ONLY`.
+Raw-valid exact chain reduction for the complete non-measure function `H` gives
 
-- max float64-vs-80-digit `J_0..J_4` discrepancy: `1.8927180676033106e-14 < 1e-10`;
-- degree-4 interpolation Vandermonde condition number: `32.67245147666588 < 1e3`;
-- max analytic recurrence cancellation factor: `17.53621242151807`;
-- minimum affine endpoint denominator magnitude: `0.11857147221810008`.
+`D_s = H/s^2 + H_alphaalpha/(8 s^2) - H_rhorho/(8 s)`.
 
-Therefore arbitrary-precision replacement of the affine analytic moments alone is not justified. Remaining numerical suspicion is localized to mass-cancellation itself and/or traced-numerator / phi-mean / radial fixed-mass evaluation.
+At target `q^2=-1`, `s=1`:
 
-## Active computation — Iteration 421
+`D_s = H + (H_alphaalpha - H_rhorho)/8`.
 
-Repaired symmetric-cross physical gate run `33871920373`, job `101019660127` is `in_progress` and is the useful active physical computation. It is not duplicated.
+This is non-promoting but provides an independent factorized consistency oracle for the fallback.
 
-Raw consumption is fail-closed. Besides the unchanged physical threshold `2e-5` and existing direct/original-integrand requirements, the prospectively frozen addendum requires the full tensor-degree-(1,1) fit residual `<=2e-5`.
+### Iteration 428
 
-## Prospective Iteration 424 high-precision fallback contract
+Raw-valid run `33887682539`, job `101071391720`, artifact `9942518066`, digest `sha256:4cc83230f7571a08995ff2008fd9e3b0900e1908ac818019c12431e7345ccca3`, scientific JSON SHA-256 `d79330bb9ca0a5f8dbeffa012dde391f5e549c530db36f8a090d1477d62116a5`.
 
-Iteration 424 is methodological-only and promotes no physical coordinate. It is authorized only if Iteration 421 remains `BLOCKED_CONVERGENCE`.
+Classification: `PASS_CHANNEL2_PRECISION_SURFACE_AND_NODE_CONDITIONING_AUDIT__NON_PROMOTING`.
 
-The fallback preserves the same parent dynamics, routing, numerator, sign, normalization, fixed mass nodes and existing mass-step set `{5e-6, 2.5e-6, 1.25e-6}`. It forbids smaller `h`, angular-grid escalation, threshold weakening and zero fill.
+For the Iteration-421 symmetric-cross quotient, the smallest frozen node `|u|=|v|=2.5e-6` permits only `5e-16` absolute perturbation of the complete signed four-corner numerator to preserve the `2e-5` quotient tolerance. That is about `2.2518` binary64 epsilons at unit `F` scale for the entire signed sum. This establishes severe whole-path conditioning.
 
-Before any fallback result exists, fail-closed acceptance is frozen to require simultaneously:
+Iteration 428 also confirms that Iteration 424 is a **distinct frozen geometry** with mass steps `{5e-6, 2.5e-6, 1.25e-6}`, required precision levels 80/120 decimal digits, same mass nodes and no smaller `h`. The current complete fixed-mass `F` implementation still contains `numpy/complex` binary64 and nested finite-difference numerator machinery. Therefore outer-only arbitrary precision is diagnostic only and cannot be called a complete 80/120-digit `F` evaluation.
+
+Any physical Iteration-424 implementation must carry arbitrary precision through the complete fixed-mass `F` dependency chain or quantitatively bound every retained lower-precision sublayer tightly enough to preserve the frozen physical and cross-precision conditions.
+
+## Active Actions
+
+At the latest checked state:
+
+- Iteration 428 run `33887682539`, job `101071391720`: scientific calculation, raw authority audit and artifact upload completed successfully; workflow remained `in_progress` only in post-job cleanup.
+- Iteration 426 phi-mean 16-vs-32 diagnostic run `33886485823`: `in_progress` and independent/non-promoting.
+- queued useful RQIR runs: none at that checkpoint.
+
+No additional heavy run is launched while these useful non-duplicating computations remain active.
+
+## Authorized fallback — Iteration 424
+
+Because Iteration 421 is raw-valid `BLOCKED_CONVERGENCE`, Iteration 424 is now authorized.
+
+Frozen acceptance remains simultaneous:
 - physical mass-step discrepancy `<=2e-5`;
 - direct original-integrand cross-check `<=2e-6`;
 - full tensor-degree-(1,1) fit residual `<=2e-5`;
 - identical fixed-node evaluation at 80 and 120 decimal digits with `|D_s(80)-D_s(120)|<=2e-6`;
 - finite outputs.
 
-Cross-precision failure is `NUMERICAL_PRECISION_BLOCKED`; cross-precision PASS together with physical mass-step FAIL is `REPRESENTATION_OR_TRUE_MASS_STEP_BLOCKED`; direct-integrand or tensor-fit failure is `REPRESENTATION_CONSISTENCY_BLOCKED`. No branch promotes a coordinate without raw-valid workflow authority.
-
-## Iteration 425 full auxiliary-mass chain contract
-
-Iteration 425 source-audits the actual frozen Iteration-407 fixed-mass function. Auxiliary masses enter `lambda(u,v)` and hence `alpha`, `rho`, and `beta`; `alpha,rho` enter both the traced numerator through `stripped_limit_massive` and the affine denominator, while `beta` multiplies the sphere integral. Thus the frozen representation has the form
-
-`F(u,v)=1/2 beta(u,v) sum_k c_k(u,v) J_k(cc(u,v),aa(u,v))`.
-
-A denominator-only mixed derivative is algebraically incomplete. Any exact/AD implementation used under Iteration 424 must differentiate the complete frozen `F(u,v)`, including kinematics, numerator/phi-mean coefficients, affine moments, and measure factor. Classification: `PASS_CHANNEL2_FULL_AUXILIARY_MASS_CHAIN_DEPENDENCE_CONTRACT__NON_PROMOTING`. This promotes no `D_s` and is not a consistency FAIL.
+Guardrails: same parent dynamics, routing, numerator, sign, normalization and mass nodes; no smaller `h`; no angular-grid escalation; no threshold weakening; no zero fill; full `F` precision provenance required.
 
 ## Frozen Iteration 412 exact15 assembly
 
@@ -110,13 +130,12 @@ Iteration 412 requires exactly 15 unique double-double indices, five scientifica
 
 ## Exact next gates
 
-1. Raw-consume Iteration 421 fail-closed.
-2. If Iteration 421 is `CONVERGED`, append exactly index 2 to frozen 14/15 staging authority and execute Iteration 412 exact15 assembly; do not invoke the Iteration-424 fallback.
-3. If Iteration 421 remains `BLOCKED_CONVERGENCE`, implement the prospectively frozen Iteration-424 80/120-digit fixed-mass fallback exactly as specified, subject to Iteration-425 full-chain differentiation of the complete `F(u,v)`. Do not shrink `h`, weaken thresholds, or escalate angular grids.
-4. Only after complete `Tr U1^2`, assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2 using Iteration 406 `Tr U2`.
-5. Source/Ward/contact completion + matched K2 and the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain downstream. No Candidate residual before comparator quotient closure.
-
-Repeated-cut signs remain frozen: `D_s(simple)=-sphere_mean`; simple-double `D_s=+sphere_mean[d_mu G]`; double-double `D_s=-sphere_mean[d_mu1 d_mu2 G]`.
+1. Raw-consume Iteration 426 fail-closed when its artifact appears; it is diagnostic-only and cannot promote index 2 by itself.
+2. Implement a precision-closure manifest for the complete fixed-mass `F(u,v)` dependency chain, from deepest numerator primitives outward.
+3. Stage the true Iteration-424 80/120-digit fallback under the frozen mass nodes/steps and all existing acceptance thresholds, using Iteration 427 as an independent exact consistency oracle.
+4. Promote index 2 only if all frozen physical, tensor-fit, direct-integrand, cross-precision and finite-output conditions pass under raw workflow authority.
+5. If index 2 closes, immediately execute frozen Iteration 412 exact15 assembly, then complete `Tr U1^2` and assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2 using Iteration 406 `Tr U2`.
+6. Comparator quotient / matched-observable completion remains downstream. No Candidate residual before comparator closure.
 
 ## Stable readiness rubric
 
@@ -129,8 +148,8 @@ Repeated-cut signs remain frozen: `D_s(simple)=-sphere_mean`; simple-double `D_s
 
 **MODEL_READINESS: 24%**
 
-No readiness point is added by Iterations 419, 420, 422, 423, 424, or 425. Index 2 remains physically unresolved, exact15 `Tr U1^2` is blocked, and no robust comparator-subtracted residual exists.
+No readiness point is added by Iterations 419, 422, 421-BLOCKED, 425, 427, or 428. Index 2 remains physically unresolved, exact15 `Tr U1^2` is blocked, and no robust comparator-subtracted residual exists.
 
 ## Retained guardrails
 
-Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results remain preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden for the frozen Iteration-407 representation. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5. Source/Born subtraction only in a matched observable after pole/cut-origin classification.
+Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5. Source/Born subtraction only in a matched observable after pole/cut-origin classification.
