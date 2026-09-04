@@ -1,6 +1,6 @@
 # Candidate Gravity Current Front
 
-**Updated:** 2026-09-04  
+**Updated:** 2026-09-05  
 **Infrastructure status:** READY — 100%  
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
@@ -9,8 +9,8 @@
 **Latest validated structural authority:** **Iteration 410**  
 **Latest validated physical-blocking result:** **Iteration 421 — raw-valid `BLOCKED_CONVERGENCE` for index 2**  
 **Latest raw parent precision/representation authority:** **Iteration 442 consuming Iteration 441 PASS**  
-**Latest methodological precision-boundary authority:** **Iteration 443 — 368/370 Y-site + post-parent contraction boundary audit PASS, non-promoting**  
-**Active gate:** **frozen 80/120-digit Iteration-368 Y-site `y1` subgate at unchanged `h=4e-5`, then post-parent contraction/trace precision closure**
+**Latest methodological precision-boundary authority:** **Iteration 444 — exact 368 post-parent contraction graph + 80/120 precision contract PASS, non-promoting**  
+**Active gate:** **frozen 80/120-digit Iteration-443 Y-site `y1` subgate at unchanged `h=4e-5`; on PASS, frozen Iteration-444 continuous 7-matmul + trace contraction certificate**
 
 Repository commits, raw schema-validated Actions artifacts, recovery material and this file are source of truth. Workflow colour alone is never scientific authority. Authoritative iteration numbers are governed by `candidate_gravity/recovery/ITERATION_ID_REGISTRY.md`.
 
@@ -58,8 +58,9 @@ Direct original-integrand and structural checks otherwise pass. No coordinate is
 - Iteration 440: frozen `Acoef/Asub` signed assembly raw-valid arithmetic PASS at 80/120 digits. Run `33904321843`, artifact `9948876125`; max 80-vs-120 discrepancy `1.4149749985220297e-75`; diagnostic binary64-vs-120 discrepancy `1.890704312519492e-10`.
 - Iteration 441, raw-consumed as Iteration 442: fixed-h finite-amplitude representation/truncation oracle PASS. Run `33904593636`, artifact `9949120808`, artifact digest `sha256:49e17960074953f502fec7672a6e7c67b471dca4882a8426120dea49d2b55e44`, raw JSON SHA-256 `141aa237b79d3acf8ba428c08dbcfe5ca0d81051abff260c3255e7789d37ffae`. At unchanged `h1=1e-4`, `h2=5e-4`, `h3=1e-3`, independent tensor-product fourth-order derivative oracle gives max central-vs-high-order 120-digit scaled discrepancy `4.47609790628742112552755346023e-6 <= 2e-5`; max 80-vs-120 high-order discrepancy `3.39660363388259398057433228844e-75 <= 1e-30`; 124/124 nodes, 7/7 subsets, all finite. Worst subset `(s,a,b)`.
 - Iteration 443: direct source/provenance audit of the next outward `368/370` layer PASS, non-promoting. It proves an uncovered Y-site derivative `y1=[y_down(+h)-y_down(-h)]/(2h)` at the frozen `h=4e-5`, followed by NumPy complex matrix products/trace contractions. Therefore the Iteration-270 parent certificates do not by themselves constitute a continuous precision certificate for `368/370`. Iteration 370 inherits the Iteration-368 numerator machinery. The next Y-site 80/120 + same-h fourth-order oracle criteria were frozen before observing any result.
+- Iteration 444: source/provenance audit freezes the exact post-parent contraction graph in Iteration 368. Each routed traced amplitude contains 3 matrix products in each U1 block plus 1 product joining the blocks before trace: exactly 7 matrix multiplications + 1 trace. After Y-site PASS, these operations must be evaluated continuously at 80 and 120 digits with max scaled cross-precision discrepancy `<=1e-30`, finite outputs and full representative 368/370 coverage. Binary64-vs-120 is diagnostic only; outer-only high precision around binary64 matrix products is forbidden.
 
-**Consequence:** Iterations 440+441/442 close arithmetic precision and fixed-h stencil representation/truncation for the frozen Iteration-270 `Acoef/Asub` layer. Iteration 443 prevents promoting that scoped parent closure into a false `368/370` precision claim. These are numerical-method authorities only; they do not promote a physical `D_s` coordinate.
+**Consequence:** Iterations 440+441/442 close arithmetic precision and fixed-h stencil representation/truncation for the frozen Iteration-270 `Acoef/Asub` layer. Iterations 443/444 prevent promoting that scoped parent closure into a false `368/370` precision claim and prospectively freeze both remaining sublayers. These are numerical-method authorities only; they do not promote a physical `D_s` coordinate.
 
 ## Frozen Iteration 443 Y-site subgate
 
@@ -72,7 +73,18 @@ For every distinct frozen Y-site input pair exercised by the Iterations 368/370 
 - require central-vs-fourth-order scaled discrepancy `<=2e-5`;
 - require all outputs finite and complete frozen-pair coverage.
 
-Forbidden: smaller/adapted `h`, threshold weakening, altered routing/numerator, or outer-only arbitrary precision around binary64 Y-site values. If Y-site passes, the post-parent matrix products/trace contractions must still receive a precision certificate before advancing outward.
+Forbidden: smaller/adapted `h`, threshold weakening, altered routing/numerator, or outer-only arbitrary precision around binary64 Y-site values.
+
+## Frozen Iteration 444 post-parent contraction subgate
+
+Authorized only after Iteration-443 Y-site PASS. For every representative frozen 368/370 routed contraction:
+- reuse identical parent matrix values, routed momenta and block orientation;
+- perform the complete 7 matrix multiplications + final trace continuously at 80 and 120 decimal digits;
+- require max scaled `80-vs-120 <= 1e-30`;
+- require finite outputs and complete representative contraction coverage;
+- treat binary64-vs-120 only as a diagnostic.
+
+Forbidden: threshold weakening, altered routing/numerator, premature cyclic/orientation quotient, or arbitrary precision applied only outside binary64 matrix multiplications/trace.
 
 ## Frozen Iteration 424 physical fallback
 
@@ -92,7 +104,7 @@ Exactly 15 unique double-double indices are required, five scientifically valid 
 ## Exact next gates
 
 1. Execute the prospectively frozen Iteration-443 Y-site `y1` 80/120-digit plus same-h fourth-order oracle test over every distinct frozen 368/370 Y-site pair.
-2. If and only if it passes, certify the post-parent matrix products/trace contractions under continuous arbitrary precision or quantitative retained-binary64 bounds sufficient for final gates, closing `368/370`.
+2. If and only if it passes, execute the Iteration-444 continuous 80/120-digit 7-matmul + trace contraction certificate, closing `368/370` only upon PASS.
 3. Then proceed `379/374 -> 407` under the same precision discipline.
 4. Evaluate frozen Iteration 424 physical mass nodes independently at 80 and 120 digits and compare with Iteration 427.
 5. Promote index 2 only if all frozen physical, tensor-fit, direct-integrand, cross-precision and finite-output conditions pass.
@@ -110,7 +122,7 @@ Exactly 15 unique double-double indices are required, five scientifically valid 
 
 **MODEL_READINESS: 24%**
 
-Readiness change through Iteration 443: **0 percentage points**. A false precision-closure shortcut was removed and the next numerical subgate frozen, but no additional stable model-readiness rubric component closed and no new physical coordinate was promoted.
+Readiness change through Iteration 444: **0 percentage points**. The complete remaining 368/370 numerical subgate structure is now prospectively frozen, but no additional stable model-readiness rubric component closed and no new physical coordinate was promoted.
 
 ## Retained guardrails
 
