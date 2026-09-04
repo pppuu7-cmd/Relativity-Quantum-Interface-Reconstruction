@@ -1,0 +1,30 @@
+{
+  "all_validated_status_converged": true,
+  "chunk_raw_sha256": {
+    "00-02": "fa976204a47dfcccfaaaacac7b493f9f3fbdd612274510bd5179ebd688e9b2a4",
+    "09-11": "a981c12f01cbb240e60f66cc44997d47a99b698e3712388626a52cf9fe12c6a1",
+    "12-14": "9a6ea04290611476af87b3d21c3112f8c81526ad0eb68b07b72a1c89d19c6ec9",
+    "15-17": "d3c0c4d302638c6e68b01701a83243ac872c94deee9445516f8f1755983c089e",
+    "18-20": "681519dbbc603be344220c52e99c6ff91137336623021aac235c4001c13929b2",
+    "21-23": "e9b7b4385bae6a698692a569665cc89ad0dff96937c0aa9182cdbf2a65c2c0e1",
+    "24-26": "a951a907b20f046e8face9fa2d129cb865b8c488ed023f97ac9cde4481f32b18",
+    "30-32": "b0ce675ee60583aeb7871f5e3a8e86c25df5d6d9f1bd2556944cf2c3d4d74199",
+    "33-35": "174478886424e83267c014061fb2eb9c814b00f486add5d2cde4eb2e308bffbe"
+  },
+  "guardrail": "DO_NOT_PROMOTE_PARTIAL_Q2_SUMS_BEFORE_EXACT_36_OF_36_COVERAGE",
+  "iteration": 381,
+  "max_cut_shell_abs_error": 1.9796472878401243e-16,
+  "max_radial_richardson_scaled_error": 9.7822954164134e-15,
+  "max_scaled_convergence_error": 1.2520175103158775e-08,
+  "minimum_finite_sampled_uncut_abs_denominator": 0.1209736845785128,
+  "missing_indices": [3,4,5,6,7,8,27,28,29],
+  "partial_by_q2_for_audit_not_physical_coordinate": {
+    "-0.14": [8,-3.8475553347230775e-05],
+    "-0.34": [9,3.418285084856993e-05],
+    "-1.0": [10,-0.0015352603688811124]
+  },
+  "scope": "RAW_VALIDATED_PARTIAL_COVERAGE_ONLY__NOT_FULL_Q2_AUTHORITY",
+  "validated_channel_count": 27,
+  "validated_chunk_count": 9,
+  "validated_indices": [0,1,2,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,30,31,32,33,34,35]
+}
