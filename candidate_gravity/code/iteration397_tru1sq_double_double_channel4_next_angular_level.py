@@ -47,6 +47,13 @@ with contextlib.redirect_stdout(io.StringIO()):
     exec(compile(src.split(run_anchor,1)[0],str(PARENT),'exec'),ns,ns)
 
 point_task=ns['point_task']; sphere_parallel=ns['sphere_parallel']
+# The frozen helper was defined by exec in a synthetic namespace. Linux fork
+# preserves its globals, but multiprocessing pickles the callable by
+# module/name. Publish only that callable in __main__ so workers can resolve it.
+# This changes execution plumbing only; no scientific arithmetic/gate changes.
+point_task.__module__='__main__'
+point_task.__qualname__='point_task'
+globals()['point_task']=point_task
 BASE_H=ns['BASE_H']; HALF_H=ns['HALF_H']; TOL=ns['TOL']; SHELL_TOL=ns['SHELL_TOL']
 UNCUT_MIN_TOL=ns['UNCUT_MIN_TOL']; RADIAL_TOL=ns['RADIAL_TOL']; ORACLE_TOL=ns['ORACLE_TOL']
 WORKERS=min(4,max(1,mp.cpu_count() or 1))
