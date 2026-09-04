@@ -1,0 +1,61 @@
+{
+  "iteration": 402,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "classification": "PASS_TRU1SQ_DOUBLE_DOUBLE_FULL15_FAIL_CLOSED_RAW_CENSUS__11_CONVERGED__3_BLOCKED_CONVERGENCE__1_OPERATIONAL_GAP",
+  "source_compute_iteration": 389,
+  "source_run": 33820063115,
+  "prospective_index_map_authority": "candidate_gravity/contracts/iteration389_double_double_prospective_index_q2_map.json",
+  "counts": {
+    "frozen_channels": 15,
+    "raw_audited_channels": 14,
+    "CONVERGED": 11,
+    "BLOCKED_CONVERGENCE": 3,
+    "OPERATIONAL_GAP": 1
+  },
+  "exact_unresolved_indices": [2, 4, 5, 11],
+  "blocked_convergence_indices": [2, 4, 11],
+  "operational_gap_indices": [5],
+  "by_q2": {
+    "-1.0": {"required": 5, "CONVERGED": 3, "BLOCKED_CONVERGENCE": 2, "OPERATIONAL_GAP": 0, "unresolved_indices": [2, 4]},
+    "-0.14": {"required": 5, "CONVERGED": 4, "BLOCKED_CONVERGENCE": 0, "OPERATIONAL_GAP": 1, "unresolved_indices": [5]},
+    "-0.34": {"required": 5, "CONVERGED": 4, "BLOCKED_CONVERGENCE": 1, "OPERATIONAL_GAP": 0, "unresolved_indices": [11]}
+  },
+  "channels": [
+    {"index":0,"q2":-1.0,"class_id":1,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[-0.002145445723860034,-0.0],"scaled_convergence_error":2.8356469278854705e-06,"raw_sha256":"43a71480e6fa5780a929e1bd6091986143729d9644e06403cfb5d71b25c64eb5"},
+    {"index":1,"q2":-1.0,"class_id":2,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[0.00012996086447902933,-0.0],"scaled_convergence_error":1.379328479065469e-05,"raw_sha256":"006e9afa0c0f66241257f85228412c16d1e63ef3a1b48dbb9d55e786fc477d35"},
+    {"index":2,"q2":-1.0,"class_id":3,"status":"BLOCKED_CONVERGENCE","diagnostic_D_s_not_authority":[0.00034692153792232624,-0.0],"scaled_convergence_error":0.00015049962643109467,"raw_sha256":"ef9f2bc82d50a40c48378e0d8ce3345d6200175445fd901d04f7937596ad3721"},
+    {"index":3,"q2":-1.0,"class_id":4,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[0.00014514046746150512,-0.0],"scaled_convergence_error":1.4970351753107165e-05,"raw_sha256":"cec15b2bdb8bf2fd483db0c8d91722719ee94327ca65ec41c3a2483dbff6a20e"},
+    {"index":4,"q2":-1.0,"class_id":5,"status":"BLOCKED_CONVERGENCE","diagnostic_D_s_not_authority":[0.00030932102687618925,-0.0],"scaled_convergence_error":4.228399680597229e-05,"raw_sha256":"ebea978b752e01703270de0c075e8c94d260ce8cd75ff56d404397c153981197"},
+    {"index":5,"q2":-0.14,"class_id":8,"status":"OPERATIONAL_GAP","D_s_TrU1sq_double_double_channel":null,"source_artifact":9919098876,"source_artifact_digest":"sha256:216e85cceb67de3b0daa899f67672e9fa8623add2423fada7976af31f6969802","reason":"Iteration389 scientific step cancelled with empty raw JSON; Iteration399 targeted recovery active"},
+    {"index":6,"q2":-0.14,"class_id":9,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[5.522381432854397e-05,-0.0],"scaled_convergence_error":9.742125066164716e-07,"raw_sha256":"ec72ebe75c906263dc15507cd894400236e269206e9935afd8bc566f48e218c2"},
+    {"index":7,"q2":-0.14,"class_id":10,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[-6.622069722921997e-05,-0.0],"scaled_convergence_error":5.422195465260558e-07,"raw_sha256":"522c95a1ee311dcff6fd069b4075f0786a138e917b1eb47aca4e9ed992d58772"},
+    {"index":8,"q2":-0.14,"class_id":11,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[5.5343463549200315e-05,-0.0],"scaled_convergence_error":1.1821352330591698e-07,"raw_sha256":"0d8a83a083807f4728558800c2a3f3e479711250cba3f541f20d004437f83a27"},
+    {"index":9,"q2":-0.14,"class_id":12,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[-6.613794419181772e-05,-0.0],"scaled_convergence_error":2.7535369258384042e-08,"raw_sha256":"6242c338947f1e0f0cffc939f1576e20ac939f1d6a5b5a9215cdce1150c4db41"},
+    {"index":10,"q2":-0.34,"class_id":15,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[0.0001479132931053537,-0.0],"scaled_convergence_error":1.8722247001339183e-06,"raw_sha256":"94e672a77eda0889056551f29445ac9d38baa3bc686d2abc2e9634c2e0740149"},
+    {"index":11,"q2":-0.34,"class_id":16,"status":"BLOCKED_CONVERGENCE","diagnostic_D_s_not_authority":[0.0008430771761004127,-0.0],"scaled_convergence_error":4.25543001219428e-05,"raw_sha256":"cc19408e093dd06fe3a463c9a8264cdd1243fb04b3eddbe784fc428ab2163e0a"},
+    {"index":12,"q2":-0.34,"class_id":17,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[-4.076313524950876e-05,-0.0],"scaled_convergence_error":1.4193134663936582e-06,"raw_sha256":"8c4473424180b179649751cbd63b24e3283360d8941fd9fac9993cf2a0e392cc"},
+    {"index":13,"q2":-0.34,"class_id":18,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[0.0008414366643141488,-0.0],"scaled_convergence_error":4.464976123209094e-06,"raw_sha256":"bddb359cbd88738252daa4ec56c00076e057db57ed06b3b3d0cddb589baea1ae"},
+    {"index":14,"q2":-0.34,"class_id":19,"status":"CONVERGED","D_s_TrU1sq_double_double_channel":[-4.08440575812317e-05,-0.0],"scaled_convergence_error":2.509041783978769e-07,"raw_sha256":"f8552b53759700c1824fa8f08205622d16c665ee3a305aeacb56a763b1ff3940"}
+  ],
+  "scientific_interpretation": [
+    "Eleven channels have raw-audited converged physical values.",
+    "Channels 2, 4 and 11 are genuine numerical BLOCKED_CONVERGENCE under the unchanged 2e-5 threshold and may not enter q2 sums.",
+    "Channel 5 is not a convergence result at all; it is an operationally missing value and may not be zero-filled.",
+    "Complete double-double TrU1sq remains blocked independently in q2=-1 and q2=-0.34, while q2=-0.14 awaits channel5 recovery."
+  ],
+  "guardrails": [
+    "EXACT_INDICES_0_TO_14_ONCE_EACH",
+    "PROSPECTIVE_Q2_MAP_BINDING",
+    "BLOCKED_VALUES_ARE_DIAGNOSTIC_NOT_AUTHORITY",
+    "OPERATIONAL_GAP_NEVER_ZERO_FILLED",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_EFFECTIVE_ACTION_WEIGHT_FOLDING",
+    "NO_SOURCE_BORN_SUBTRACTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "next_gate": "Consume Iteration399 for channel5; use analytic/spectral or algebraically reduced angular treatment for genuine blockers 2,4,11 rather than another blind grid ladder; assemble q2 double-double sums only after all 15 indices are scientifically resolved."
+}
