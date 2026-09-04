@@ -1,0 +1,63 @@
+{
+  "iteration": 421,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "scientific_gate_pass": true,
+  "classification": "PASS_TRU1SQ_CHANNEL2_SYMMETRIC_CROSS_DERIVATIVE__BLOCKED_CONVERGENCE",
+  "target": {
+    "double_double_global_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0,
+    "status": "BLOCKED_CONVERGENCE"
+  },
+  "physical_D_s_authority": null,
+  "diagnostic_D_s_not_authority": [0.0035843041850530683, -0.0],
+  "max_stability_scaled": 2.2720400683804223e-05,
+  "max_required_fit_residual_scaled": 2.585665489102237e-05,
+  "thresholds": {
+    "physical_stability_scaled_max": 2e-05,
+    "fit_residual_scaled_max": 2e-05,
+    "design_condition_number_max": 1000.0,
+    "direct_original_integrand_crosscheck_scaled_max": 2e-06
+  },
+  "structure_observed": {
+    "max_polynomial_heldout_scaled_error": 7.852876335312509e-16,
+    "max_denominator_affine_scaled_error": 2.220446049250313e-16,
+    "max_radial_richardson_scaled_error": 5.29849601693666e-15,
+    "minimum_analytic_uncut_abs_denominator": 0.11857147221810008,
+    "minimum_kallen": 0.99996,
+    "max_direct_original_integrand_crosscheck_scaled_error": 2.0658997659274425e-09
+  },
+  "design_condition_numbers": {
+    "tensor22": 362.20107548262695,
+    "tensor11": 12.293687723551681,
+    "inner_tensor11": 27.85711911514064,
+    "diagonal": 19.03158100323323
+  },
+  "intercepts": {
+    "tensor22": [-0.0035843041850530683, 0.0],
+    "tensor11": [-0.003561583784369264, 0.0],
+    "inner_tensor11": [-0.003569703613627997, 0.0],
+    "diagonal_quadratic": [-0.0035817387684239387, 0.0]
+  },
+  "provenance": {
+    "run": 33871920373,
+    "job": 101019660127,
+    "artifact": 9942128452,
+    "artifact_digest": "sha256:d75c5063b81e02872fe1255421c62e0679de22ae13fce7e2013358eba73152ff",
+    "raw_scientific_json_sha256": "c297cb15b707ef59b9d940c159a1fcb7e9f3a1e64135ccebc077b48a869f5e20",
+    "workflow_head_sha": "4fd7ad9d24855ae40e6ddc82babf4829571d2020",
+    "runtime_seconds": 9615.534805333
+  },
+  "interpretation": "The repaired symmetric-cross physical gate is scientifically valid but remains BLOCKED_CONVERGENCE. Structural, direct-integrand, synthetic-oracle and design-conditioning checks pass; the prospective physical stability and required fit-residual thresholds fail narrowly. No physical D_s is promoted. This outcome activates the prospectively frozen Iteration-424 high-precision fallback; exact15 Iteration 412 remains blocked until index 2 obtains raw-valid CONVERGED authority.",
+  "guardrails": [
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ZERO_FILL",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_SMALLER_MASS_STEP",
+    "NO_ANGULAR_GRID_ESCALATION",
+    "ITERATION424_FALLBACK_NOW_AUTHORIZED",
+    "ITERATION427_EXACT_CHAIN_IS_NON_PROMOTING_CROSSCHECK_ONLY_UNLESS_FROZEN_NODE_CONTRACT_IS_PRESERVED"
+  ]
+}
