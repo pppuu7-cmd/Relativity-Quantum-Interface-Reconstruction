@@ -1,0 +1,37 @@
+{
+  "iteration": 438,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "scientific_gate_pass": true,
+  "classification": "PASS_ITER270_A_FINITE_80_120_DIGIT_ARITHMETIC_CORE__NON_PROMOTING",
+  "authority_scope": "PARENT_PRECISION_CLOSURE__ITERATION270_A_FINITE_CORE_ONLY__NON_PROMOTING",
+  "frozen_scope": {
+    "M": "POS",
+    "P0": [0.7, -0.4, 0.5, 0.9],
+    "h_by_subset_size": {"1": 0.0001, "2": 0.0005, "3": 0.001},
+    "node_count": 26,
+    "subset_count": 7
+  },
+  "thresholds": {
+    "mp80_vs_mp120_A_finite_scaled_max": "1e-40",
+    "binary64_vs_mp120_A_finite_scaled_max": 1e-9
+  },
+  "observed": {
+    "max_mp80_vs_mp120_A_finite_scaled": "9.24318677275883647504733993494e-84",
+    "max_binary64_vs_mp120_A_finite_scaled": 6.527324701910789e-19,
+    "all_values_finite": true,
+    "node_count": 26,
+    "subset_count": 7
+  },
+  "provenance": {
+    "run": 33901348951,
+    "job": 101115917242,
+    "artifact": 9947778073,
+    "artifact_digest": "sha256:52442233d7b721ef9196033dd392b02c6af4c5145e2b29bd79e7057466b24f1a",
+    "raw_scientific_json_sha256": "2c693cf1507f4c0e07fd6d587a479343b52a6c9d8d96b8c75103a6fa16a1a110",
+    "workflow_head_sha": "55e089917974805a3fbc4aaf7562928c7b2c1c74"
+  },
+  "interpretation": "The exact Iteration-270 A_finite arithmetic core is internally closed at 80/120 digits across every one of the 26 signed nodes used by the seven frozen Acoef/Asub subsets. Binary64 A_finite agrees with the 120-digit realization by <=6.53e-19 scaled, vastly inside the prospectively frozen 1e-9 implementation-equivalence threshold. Therefore individual A_finite arithmetic is not a material explanation of the downstream blocker at this frozen scope. Acoef/Asub signed finite-difference combination and truncation remain separate uncertified layers.",
+  "guardrails": ["NO_PHYSICAL_DS_VALUE","A_FINITE_CORE_ONLY","NO_THRESHOLD_WEAKENING","NO_AMPLITUDE_STEP_CHANGE","NO_PARENT_DYNAMICS_CHANGE","NO_ZERO_FILL","NO_ANSATZ003","NO_FISHER_RESOURCES"]
+}
