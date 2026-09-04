@@ -5,7 +5,7 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Latest validated Candidate Gravity authority:** **Iteration 391**
+**Latest validated Candidate Gravity authority:** **Iteration 393**
 
 Repository commits, raw schema-validated Actions artifacts, recovery material and this file are source of truth. Green/red workflow colour alone is never scientific authority.
 
@@ -18,7 +18,7 @@ Repository commits, raw schema-validated Actions artifacts, recovery material an
   - `q^2=-1`: `D_s Gamma_det=-0.002357789063884683 i`;
   - `q^2=-0.34`: `D_s Gamma_det=+0.001462759351572654 i`;
   - `q^2=-0.14`: `D_s Gamma_det=+0.0012389565044298413 i`.
-- Iteration 387 sharpens the Iteration-297 regulator warning: evanescent/R2 ambiguity still blocks the **full finite local/rational DR remainder**, but does not invalidate the frozen off-shell one-loop hard branch discontinuity. Therefore the Iteration-383 absorptive vector is retained as hard-cut authority; it is not a full finite determinant and not a Candidate residual.
+- Iteration 387 sharpens the Iteration-297 regulator warning: evanescent/R2 ambiguity still blocks the **full finite local/rational DR remainder**, but does not invalidate the frozen off-shell one-loop hard branch discontinuity. The Iteration-383 absorptive vector remains hard-cut authority; it is not a full finite determinant and not a Candidate residual.
 
 ### Timelike `Tr U2`
 
@@ -28,14 +28,16 @@ Repository commits, raw schema-validated Actions artifacts, recovery material an
   - `q^2=-0.34`: `-8.405976034846215e-05`;
   - `q^2=-0.14`: `-7.069545900379072e-05`.
 - Iteration 382 raw-validates the frozen repeated-cut arithmetic on global channel 0: `D_s TrU2=-1.1437983592303379e-05`, convergence `8.280353369982061e-10`, shell `1.6132928326584306e-16`.
-- Iteration 384 is the complete 48-channel cut-through-double-pole computation, split into fixed two-channel jobs. Raw-valid CONVERGED original chunks currently include `00-01`, `02-03`, `06-07`, `08-09`, `10-11`, `18-19`, `20-21`. These cover indices `{0,1,2,3,6,7,8,9,10,11,18,19,20,21}`.
-- The old Iteration-384 wrapper incorrectly required `minimum_sampled_uncut_abs_denominator` to be finite. For topologies in which the cut exhausts all denominator groups, the correct empty-minimum sentinel is `+Infinity`; rejecting it is a wrapper-classification bug, not a physics failure.
-- Iteration 388 preserved the formerly lost raw result for indices 12-13. Index 12 was directly CONVERGED. Index 13 had excellent numerical diagnostics but was falsely labelled `FAIL_EXECUTION` only because `umin=+Infinity`.
-- **Iteration 391 formally closes that diagnosis without reintegration:** frozen Iteration-359 topology gives index 13 exactly two denominator groups with cut pair `[0,1]`, hence zero uncut groups. Both indices 12 and 13 are therefore CONVERGED. Values:
+- Iteration 384 is the complete 48-channel cut-through-double-pole computation split into fixed two-channel jobs. Raw-valid original chunks already cover indices `{0,1,2,3,6,7,8,9,10,11,18,19,20,21}`.
+- Iteration 391 resolves preserved indices 12-13 without reintegration. Index 13 has no uncut denominator and its `+Infinity` minimum is the correct empty-set sentinel. Values:
   - index 12, `q^2=-1`: `D_s TrU2=-1.6409523141466878e-05`;
   - index 13, `q^2=-0.14`: `D_s TrU2=-0.0004977890941608628`.
-  Iteration-391 run `33820559335`, job `100862111192`, artifact `9918118094`, raw result SHA-256 `ec9bced6138f631f6d426b69ec5f88cad22afe0e72623e0bac215176bf6bd839`, source Iteration-388 raw SHA-256 `5e7ab80c114f0c178adb4277cc65f161e7fa55a45d8e846c455042d14aa540dd`.
-- Thus at this front update **16/48 cut-through-double-pole U2 indices are already raw-resolved CONVERGED**: `0,1,2,3,6,7,8,9,10,11,12,13,18,19,20,21`. No full q2 sum is authorized yet.
+- **Iteration 392 freezes the full prospective topology mask for all 48 repeated-cut channels.** Exactly 12 channels have only two distinct denominator momentum groups, so the cut exhausts all groups and no uncut denominator exists; exactly 36 channels have three groups and retain one uncut denominator. The no-uncut indices are
+
+  `[4,13,22,27,28,29,30,33,36,39,42,45]`.
+
+  There are exactly four no-uncut channels in each q2 bucket. Therefore `minimum_sampled_uncut_abs_denominator=+Infinity` is authorized **only** on those 12 indices; it is never a generic exemption. Iteration-392 run `33820820805`, job `100862890933`, artifact `9918201690`, raw result SHA-256 `d2ba75a4ba98afb28fc187bd28715fe999f55553323695f083013cac2040ad3d`.
+- At this front, at least 16/48 repeated-cut indices are already raw-resolved CONVERGED: `0,1,2,3,6,7,8,9,10,11,12,13,18,19,20,21`. No full q2 sum is authorized until exact 48-index coverage is closed.
 
 ### Timelike `Tr U1^2`
 
@@ -49,17 +51,23 @@ Repository commits, raw schema-validated Actions artifacts, recovery material an
   - `q^2=-0.34`: `3.5044107116946374e-05`;
   - `q^2=-0.14`: `2.9297648005638963e-05`.
 - Iteration 377 closes the repeated-cut kinematic prerequisite: 51/51 REGULAR, BLOCKED=0.
-- Iteration 381 is the full 36-channel simple-double matrix. At this front update **33/36 raw channels are CONVERGED, BLOCKED=0**; validated indices are all except `6,7,8`. The last chunk `06-08` remains in progress. Partial q2 sums are not physical coordinates and must not be promoted before exact 36/36 coverage.
-- **Iteration 385 raw-validates the complete double-double physical pipeline on the first prospectively selected channel:** class 1, `q^2=-1`, `D_s TrU1^2=-0.0021448992853041436`, convergence `1.7976503775178967e-06 < 2e-5`, radial Richardson `5.16535599015544e-15`, shell `2.639515599904378e-16`, serial-vs-parallel oracle exactly `0.0`, runtime `944.963664277 s`. Run `33817847310`, artifact `9917692253`, raw SHA-256 `9455e75eaf0e12510113de3bf9e644866a1668ffcc3b629ef8cf15449304c966`.
+- **Iteration 393 closes the complete 36-channel simple-double operator coordinate from the preserved Iteration-381 raw manifest.** Exact indices `0..35` occur once each, 12/12 chunks are present, 36/36 channels are CONVERGED, all thresholds PASS, and each q2 bucket contains 12 channels. The normalized sums, with no `-i/4` weight folded, are:
+  - `q^2=-1`: `D_s TrU1^2=-0.002329411286740447`;
+  - `q^2=-0.34`: `D_s TrU1^2=-0.0005948791870822445`;
+  - `q^2=-0.14`: `D_s TrU1^2=-7.368142632096214e-05`.
+  Numerical envelope: max convergence `1.2832512405556301e-08`, max radial Richardson `9.7822954164134e-15`, max shell error `1.9796472878401243e-16`, min uncut denominator `0.1209736845785128`. Iteration-393 run `33820949571`, artifact `9918228922`, raw result SHA-256 `8eec56bd5d0d48e36c4490407bcc88c9d2ee3d3e59d976a9a0e1ad5f16d86226`.
+- Iteration 385 raw-validates the complete double-double physical pipeline on the first prospectively selected channel: class 1, `q^2=-1`, `D_s TrU1^2=-0.0021448992853041436`, convergence `1.7976503775178967e-06 < 2e-5`, radial Richardson `5.16535599015544e-15`, shell `2.639515599904378e-16`, serial-vs-parallel oracle exactly `0.0`.
+- Complete `Tr U1^2` remains BLOCKED only by the unresolved 15-channel double-double operator coordinate; no partial double-double sum may be promoted.
 
 ## Active computations / resource recovery
 
-- **Iteration 381:** run `33816213900`; only simple-double chunk `06-08` remains in progress. Full authority requires exact 36/36 raw index coverage.
-- **Iteration 384:** run `33817712381`; original full-48 matrix continues for still-running chunks. Do not duplicate active original jobs.
-- **Iteration 389:** run `33820063115`, workflow head `dbc0f1a622b3998132fcf3c1686c2e1033af5add`; full 15-channel `Tr U1^2` double-double matrix, one channel/job, `max-parallel=5`, identical Iteration-385 arithmetic, raw artifact preserved even on non-success status.
-- **Iteration 390:** run `33820418026`, workflow head `54a200a941b487cb81940f5256ff94a15d1a1c36`; topology-aware recovery only for previously failed/cancelled Iteration-384 chunks `04-05`, `14-15`, `16-17`, `22-23`, `28-29`, `30-31`. The physical Iteration-364 channel arithmetic and all thresholds are unchanged; only the empty-uncut-set classification is repaired. Chunk `12-13` is excluded because Iteration 391 already resolved it from preserved raw authority.
+- **Iteration 384:** run `33817712381`; original full-48 repeated-`Tr U2` matrix continues for still-running chunks. Do not duplicate active original jobs.
+- **Iteration 389:** run `33820063115`, workflow head `dbc0f1a622b3998132fcf3c1686c2e1033af5add`; full 15-channel `Tr U1^2` double-double matrix, one channel/job, `max-parallel=5`, identical Iteration-385 arithmetic, raw artifact preserved even on non-success status. Current run state at this front update: queued.
+- **Iteration 390:** run `33820418026`, workflow head `54a200a941b487cb81940f5256ff94a15d1a1c36`; topology-aware recovery for previously failed/cancelled Iteration-384 chunks `04-05`, `14-15`, `16-17`, `22-23`, `28-29`, `30-31`. The physical Iteration-364 arithmetic and all thresholds are unchanged; only empty-uncut-set classification is repaired. Current run state at this front update: queued.
 
-Do not duplicate active computations.
+Iteration 381 is no longer active: its complete raw manifest has been consumed and scientifically assembled by Iteration 393.
+
+Do not duplicate active or queued computations.
 
 ## Post-e2 dependency authority
 
@@ -75,19 +83,18 @@ Iteration 386 restores the correct downstream DAG:
 
 ## Exact next gates
 
-1. Consume the final Iteration-381 chunk `06-08`. If raw-valid, run the existing fail-closed 36-index assembly contract and freeze the complete simple-double q2 vector.
-2. Consume Iteration 389 only from raw per-channel artifacts. Assemble double-double q2 sums only after exactly 15 unique channel indices are resolved; any `BLOCKED_CONVERGENCE` remains BLOCKED.
-3. Continue consuming original Iteration-384 successes and Iteration-390 recovery artifacts. Merge Iteration-391 indices 12-13 exactly once. Run the fail-closed exact-48 assembly only after every index 0..47 has one authoritative resolved record.
-4. After complete `Tr U1^2`, assemble its q2 operator coordinate as simple-simple + simple-double + double-double, still without the `-i/4` effective-action weight.
-5. After complete `Tr U2`, assemble its q2 operator coordinate as Iteration-361 ordinary-simple + Iteration-366 repeated-family simple-simple + complete cut-through-double-pole sector, still without the `+i/2` weight.
-6. Only then assemble
+1. Consume Iteration 389 only from raw per-channel artifacts. Assemble double-double q2 sums only after exactly 15 unique channel indices are resolved; any `BLOCKED_CONVERGENCE` remains BLOCKED.
+2. Continue consuming original Iteration-384 successes and Iteration-390 recovery artifacts using the immutable Iteration-392 topology mask. Merge Iteration-391 indices 12-13 exactly once. Run the fail-closed exact-48 assembly only after every index `0..47` has one authoritative resolved record.
+3. After complete double-double closure, assemble complete `Tr U1^2` q2-by-q2 as Iteration-374 simple-simple + Iteration-393 simple-double + complete double-double, still without the `-i/4` effective-action weight.
+4. After complete repeated-`Tr U2`, assemble complete `Tr U2` q2-by-q2 as Iteration-361 ordinary-simple + Iteration-366 repeated-family simple-simple + complete cut-through-double-pole sector, still without the `+i/2` weight.
+5. Only then assemble
 
 \[
 D_s\Gamma_{e=2}=+\frac{i}{2}D_s\mathrm{Tr}U_2-\frac{i}{4}D_s\mathrm{Tr}U_1^2
 \]
 
 q2-by-q2.
-7. Source/Ward/contact completion + matched K2 and the fixed comparator quotient remain downstream. No source/Born subtraction before origin accounting. No Candidate residual before comparator quotient closure.
+6. Source/Ward/contact completion + matched K2 and the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain downstream. No source/Born subtraction before origin accounting. No Candidate residual before comparator quotient closure.
 
 Repeated-cut normalized signs remain: `D_s(simple)=-sphere_mean`; simple-double `D_s=+sphere_mean[d_mu G]`; double-double `D_s=-sphere_mean[d_mu1 d_mu2 G]`.
 
@@ -102,8 +109,8 @@ Repeated-cut normalized signs remain: `D_s(simple)=-sphere_mean`; simple-double 
 
 **MODEL_READINESS: 24%**
 
-Change through validated Iteration 391 plus active 381/384/389/390 work: `0 pp`. Major one-loop sub-sectors are closing, but complete `Tr U1^2`, complete `Tr U2`, the linked source/Ward/K2 observable and a robust comparator-subtracted residual remain open.
+Change through validated Iterations 392-393: `0 pp`. A major `Tr U1^2` sub-sector is now complete and the `Tr U2` recovery topology is fully certified, but complete `Tr U1^2`, complete `Tr U2`, the linked source/Ward/K2 observable and a robust comparator-subtracted residual remain open.
 
 ## Retained guardrails
 
-Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results remain preserved. Operational failure is not scientific FAIL. Empty uncut topology may use `+Infinity` only after explicit topology proof; it is never a generic exemption. Denominator equivalence is not numerator equivalence. Repeated poles are never ordinary simple cuts. Distinct q2 variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5.
+Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results remain preserved. Operational failure is not scientific FAIL. Empty uncut topology may use `+Infinity` only on the exact Iteration-392 topology mask; it is never a generic exemption. Denominator equivalence is not numerator equivalence. Repeated poles are never ordinary simple cuts. Distinct q2 variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5.
