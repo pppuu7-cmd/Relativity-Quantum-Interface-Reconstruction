@@ -1,0 +1,55 @@
+name: RQIR post447 class3 actual phi sample MP stage
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  actual_phi_sample_mp:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install frozen numerical dependencies
+        run: python -m pip install --disable-pip-version-check -q numpy mpmath
+      - name: Run actual-cut phi sample MP stage
+        run: |
+          root="candidate_gravity/artifacts/post447_class3_actual_phi_sample_mp"
+          mkdir -p "$root"
+          python candidate_gravity/code/post447_class3_actual_phi_sample_mp_stage.py > "$root/result.json"
+      - name: Raw authority audit
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('candidate_gravity/artifacts/post447_class3_actual_phi_sample_mp'); p=root/'result.json'
+          if not p.exists() or p.stat().st_size==0: raise SystemExit(2)
+          raw=p.read_bytes(); o=json.loads(raw); obs=o.get('observed',{}); fr=o.get('frozen',{}); t=o.get('target',{})
+          ok=bool(
+            o.get('stage')=='POST447_CLASS3_ACTUAL_PHI_SAMPLE_MP_STAGE__UNNUMBERED_COLLISION_SAFE' and
+            o.get('classification')=='PASS_CLASS3_ACTUAL_PHI_SAMPLE_MP80_MP120_FINEST_RADIAL_PAIR__NON_PROMOTING' and
+            o.get('scientific_gate_pass') is True and o.get('promotes_physical_coordinate') is False and
+            t.get('double_double_index')==2 and t.get('class_id')==3 and abs(float(t.get('q_squared'))+1.0)<1e-12 and
+            fr.get('precision_digits')==[80,120] and fr.get('nphi')==16 and
+            obs.get('raw_sample_count')==288 and obs.get('all_finite') is True and
+            float(obs.get('max_raw_sample_scaled_mp80_vs_mp120'))<=1e-30 and
+            float(obs.get('max_radial_midpoint_scaled_mp80_vs_mp120'))<=1e-30 and
+            float(obs.get('max_phi_mean_scaled_mp80_vs_mp120'))<=1e-30
+          )
+          audit={'schema':'rqir_action_result_authority_audit_v1','stage':o.get('stage'),'classification':o.get('classification'),
+                 'scientific_authority_pass':ok,'authority_scope':'ACTUAL_INDEX2_PHI_SAMPLE_MP__FINEST_RADIAL_PAIR__NON_PROMOTING',
+                 'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}
+          (root/'authority_audit.json').write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          if not ok: raise SystemExit(2)
+          PY
+      - name: Upload raw artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-post447-class3-actual-phi-sample-mp-stage
+          path: candidate_gravity/artifacts/post447_class3_actual_phi_sample_mp/
+          retention-days: 90
