@@ -1,0 +1,53 @@
+name: rqir-iteration407-tru1sq-channel4-analytic-spectral-reduction
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration407_tru1sq_channel4_analytic_spectral_reduction.py'
+      - '.github/workflows/rqir-iteration407-tru1sq-channel4-analytic-spectral-reduction.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  iteration407:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check -q numpy
+      - name: Run channel-4 analytic spectral reduction
+        run: |
+          mkdir -p candidate_gravity/artifacts/iteration407
+          python candidate_gravity/code/iteration407_tru1sq_channel4_analytic_spectral_reduction.py > candidate_gravity/artifacts/iteration407/iteration407_result.json
+      - name: Raw parse and authority audit
+        if: always()
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('candidate_gravity/artifacts/iteration407'); p=root/'iteration407_result.json'
+          if not p.exists() or p.stat().st_size==0:
+              raise SystemExit(2)
+          raw=p.read_bytes(); o=json.loads(raw); ch=o.get('channel',{})
+          ok=bool(o.get('iteration')==407 and o.get('scientific_gate_pass') is True and
+                  o.get('classification') in ('PASS_TRU1SQ_CHANNEL4_ANALYTIC_SPECTRAL_REDUCTION__CONVERGED','PASS_TRU1SQ_CHANNEL4_ANALYTIC_SPECTRAL_REDUCTION__BLOCKED_CONVERGENCE') and
+                  ch.get('double_double_global_index')==4 and ch.get('class_id')==5 and ch.get('q_squared')==-1.0 and
+                  o.get('thresholds',{}).get('physical_convergence_scaled_max')==2e-05)
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':407,'bytes':len(raw),
+             'sha256':hashlib.sha256(raw).hexdigest(),'classification':o.get('classification'),'scientific_authority_pass':ok}
+          (root/'iteration407_authority_audit.json').write_text(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          if not ok: raise SystemExit(2)
+          PY
+      - name: Upload analytic-spectral artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration407-channel4-analytic-spectral-reduction
+          path: candidate_gravity/artifacts/iteration407/
+          if-no-files-found: warn
+          retention-days: 90
