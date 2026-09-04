@@ -1,0 +1,143 @@
+name: RQIR Iteration 431 traced-numerator precision provenance
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration431-traced-numerator-precision-provenance.yml'
+
+permissions:
+  contents: read
+
+env:
+  PYTHONUNBUFFERED: '1'
+
+jobs:
+  traced-numerator-precision-provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build fail-closed Iteration 368/370 provenance manifest
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, json, pathlib, re
+
+          roots = [pathlib.Path('candidate_gravity'), pathlib.Path('.github/workflows')]
+          text_ext = {'.py','.md','.yml','.yaml','.json','.txt'}
+          records = []
+          for root in roots:
+              if not root.exists():
+                  continue
+              for p in root.rglob('*'):
+                  if not p.is_file() or p.suffix.lower() not in text_ext:
+                      continue
+                  try:
+                      raw = p.read_bytes()
+                      txt = raw.decode('utf-8')
+                  except Exception:
+                      continue
+                  key = (p.as_posix() + '\n' + txt).lower()
+                  if ('iteration368' in key or 'iteration 368' in key or
+                      'iteration370' in key or 'iteration 370' in key):
+                      anchors = []
+                      patterns = {
+                          'numpy_import': r'\b(import numpy|from numpy)\b',
+                          'numpy_trace': r'\bnp\.trace\b',
+                          'numpy_linalg': r'\bnp\.linalg\b',
+                          'numpy_array': r'\bnp\.(array|asarray|zeros|ones|empty)\b',
+                          'complex_cast': r'\bcomplex\s*\(',
+                          'float_cast': r'\bfloat\s*\(',
+                          'complex_dtype': r'(complex128|complex64|dtype\s*=\s*complex)',
+                          'finite_difference': r'(finite.?difference|central.?difference|derivative|\bd[1-9]?\w*\s*=)',
+                          'trace_token': r'\btrace\b',
+                          'numerator_token': r'\bnumerator\b',
+                      }
+                      for name, pat in patterns.items():
+                          hits = [i+1 for i,line in enumerate(txt.splitlines()) if re.search(pat, line, re.I)]
+                          if hits:
+                              anchors.append({'kind':name,'lines':hits[:40],'count':len(hits)})
+                      records.append({
+                          'path': p.as_posix(),
+                          'sha256': hashlib.sha256(raw).hexdigest(),
+                          'bytes': len(raw),
+                          'mentions_368': ('iteration368' in key or 'iteration 368' in key),
+                          'mentions_370': ('iteration370' in key or 'iteration 370' in key),
+                          'anchors': anchors,
+                      })
+
+          source_like = [r for r in records if r['path'].endswith('.py')]
+          binary64_like = []
+          for r in source_like:
+              kinds = {a['kind'] for a in r['anchors']}
+              if kinds & {'numpy_import','numpy_trace','numpy_linalg','numpy_array','complex_cast','float_cast','complex_dtype'}:
+                  binary64_like.append(r['path'])
+
+          result = {
+              'iteration': 431,
+              'authority_scope': 'DIAGNOSTIC_ONLY__DEEPEST_FIRST_PRECISION_PROVENANCE',
+              'target': 'Iteration-368/370 traced-numerator primitives for double-double index 2 / class 3 / q^2=-1',
+              'classification': 'PASS_TRACED_NUMERATOR_PRECISION_BOUNDARY_LOCATED__NON_PROMOTING' if source_like else 'BLOCKED_SOURCE_PROVENANCE_NOT_LOCATED',
+              'scientific_gate_pass': bool(source_like),
+              'model_readiness_percent': 24,
+              'source_records': records,
+              'source_like_count': len(source_like),
+              'retained_binary64_candidate_paths': sorted(set(binary64_like)),
+              'guardrails': [
+                  'NON_PROMOTING', 'NO_PHYSICAL_DS_VALUE', 'NO_THRESHOLD_WEAKENING',
+                  'NO_SMALLER_MASS_STEP', 'NO_ZERO_FILL', 'NO_ANGULAR_GRID_ESCALATION',
+                  'NO_ANSATZ003', 'NO_FISHER_RESOURCES',
+                  'NO_OUTER_LAYER_PORT_BEFORE_INNER_LAYER_PROVENANCE'
+              ],
+              'interpretation': (
+                  'This gate only hashes and locates the deepest 368/370 traced-numerator implementation boundary and retained lower-precision anchors. '
+                  'It does not certify 80/120-digit arithmetic and cannot promote index 2. '
+                  'The next implementation must port or quantitatively bound every retained lower-precision anchor before proceeding outward.'
+              ),
+              'frozen_final_iteration424_gates': {
+                  'mass_step_discrepancy_max': 2e-5,
+                  'original_integrand_crosscheck_max': 2e-6,
+                  'tensor_degree_1_1_fit_residual_max': 2e-5,
+                  'identical_node_ds_80_vs_120_max': 2e-6,
+                  'finite_outputs_required': True,
+              }
+          }
+          pathlib.Path('iteration431_result.json').write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
+          raw = pathlib.Path('iteration431_result.json').read_bytes()
+          audit = {
+              'schema':'rqir_action_result_authority_audit_v1',
+              'expected_iteration':431,
+              'authority_scope':'DIAGNOSTIC_ONLY',
+              'classification':result['classification'],
+              'scientific_authority_pass':result['scientific_gate_pass'],
+              'bytes':len(raw),
+              'sha256':hashlib.sha256(raw).hexdigest(),
+          }
+          pathlib.Path('iteration431_authority_audit.json').write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(result,indent=2,sort_keys=True))
+          if not result['scientific_gate_pass']:
+              raise SystemExit('BLOCKED: exact Iteration-368/370 source provenance was not located; do not infer or zero-fill')
+          PY
+      - name: Raw authority audit
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          r=pathlib.Path('iteration431_result.json').read_bytes()
+          a=json.loads(pathlib.Path('iteration431_authority_audit.json').read_text())
+          assert a['expected_iteration']==431
+          assert a['sha256']==hashlib.sha256(r).hexdigest()
+          assert a['bytes']==len(r)
+          print(json.dumps(a,indent=2,sort_keys=True))
+          PY
+      - name: Upload raw Iteration 431 authority artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration431-traced-numerator-precision-provenance
+          path: |
+            iteration431_result.json
+            iteration431_authority_audit.json
+          if-no-files-found: error
+          retention-days: 30
