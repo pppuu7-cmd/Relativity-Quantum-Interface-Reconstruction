@@ -2,6 +2,9 @@ name: RQIR post447 class3 actual phi sample MP stage
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/rqir_triggers/post447_actual_phi_sample_mp.txt'
 
 permissions:
   contents: read
