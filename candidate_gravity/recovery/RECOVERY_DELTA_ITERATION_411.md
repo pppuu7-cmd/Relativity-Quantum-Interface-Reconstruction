@@ -28,7 +28,13 @@ Launch state at recording: `queued`.
 
 Iteration 411 is ACTIVE / NOT YET SCIENTIFIC AUTHORITY. Each target must be consumed fail-closed from its own raw artifact. `CONVERGED` removes only that index; `BLOCKED_CONVERGENCE` remains a physical blocker and is never zero-filled.
 
-The older repaired Iteration-408 run may still be executing due to a race, but it is structural-only and superseded operationally by the already raw-validated Iteration 410; it must not duplicate or override Iteration 411 physical authority.
+## Superseded repaired Iteration 408 completion
+
+The race-created repaired Iteration-408 run `33847487303` later completed `success` at 2026-09-04T08:30:18Z. Its workflow colour was not accepted as authority. Artifact `9929332270`, digest `sha256:d537f46afbadc538df9f87fe52d5659cb8d2a8657925c61c9ba32076099a9965`, was downloaded and inspected directly. `iteration408_result.json` SHA-256 is `d568406b391dc22e5a7d15330ff162b18f5abc43c4bfe8c2ef3fc868cccc6c5c`; its authority-audit file SHA-256 is `40f93d5b8aafbe6d36501c2b54e2f31252f5e012b814c8bb2e75967551fd9320` and records `scientific_authority_pass=true` for the structure-only classification `PASS_TRU1SQ_BLOCKERS2_11_ANALYTIC_AZIMUTH_STRUCTURE_ORACLE`.
+
+The repaired Iteration 408 reproduces the same structure-only conclusion already superseded by the independently split and raw-validated Iteration 410. It promotes no physical D_s value, changes no blocker, and cannot override active Iteration 411. No duplicate physical run is authorized from this result.
+
+At the latest Actions audit, Iteration-411 run `33851983789` remains `in_progress`; both jobs `100956624953` (index 2) and `100956624748` (index 11) are still executing the frozen physical analytic/spectral reduction step. Raw audit/upload steps remain pending and no Iteration-411 artifacts exist yet.
 
 ## Exact next gate
 
@@ -36,4 +42,4 @@ Raw-consume both Iteration-411 per-index artifacts. If both are `CONVERGED`, ass
 
 MODEL_READINESS: 24%
 
-Change: `0 pp`; structural executability was closed for the two blockers, but no stable readiness-rubric bucket closes until the physical coordinate and downstream comparator quotient close.
+Change: `0 pp`; the superseded Iteration-408 completion adds provenance but no scientific readiness point. Iteration 411 remains the active physical gate.
