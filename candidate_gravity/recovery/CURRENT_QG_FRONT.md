@@ -10,7 +10,9 @@
 **Latest validated physical-blocking result:** **Iteration 421 — raw-valid `BLOCKED_CONVERGENCE` for index 2**  
 **Latest validated numerical/conditioning diagnostics:** **Iterations 419, 422, 428**  
 **Latest exact non-promoting derivative-coordinate contract:** **Iteration 427**  
-**Prospective authorized fallback:** **Iteration 424**, constrained by Iterations 425/427/428
+**Latest raw-valid implementation manifest:** **Iteration 429**  
+**Latest prospective implementation contract:** **Iteration 430**  
+**Prospective authorized physical fallback:** **Iteration 424**, constrained by Iterations 425/427/428/429/430
 
 Repository commits, raw schema-validated Actions artifacts, recovery material and this file are source of truth. Workflow colour alone is never scientific authority.
 
@@ -37,11 +39,11 @@ Closed components retained:
 
 **Exact unresolved double-double physical set: `[2]`.**
 
-## Index 2 current authority
+## Index 2 physical authority
 
 Target: double-double index 2 / class 3 / `q^2=-1`.
 
-Iteration 421 is now the latest raw-valid physical attempt: run `33871920373`, job `101019660127`, artifact `9942128452`, digest `sha256:d75c5063b81e02872fe1255421c62e0679de22ae13fce7e2013358eba73152ff`, scientific JSON SHA-256 `c297cb15b707ef59b9d940c159a1fcb7e9f3a1e64135ccebc077b48a869f5e20`.
+Iteration 421 is the latest raw-valid physical attempt: run `33871920373`, job `101019660127`, artifact `9942128452`, digest `sha256:d75c5063b81e02872fe1255421c62e0679de22ae13fce7e2013358eba73152ff`, scientific JSON SHA-256 `c297cb15b707ef59b9d940c159a1fcb7e9f3a1e64135ccebc077b48a869f5e20`.
 
 Classification: `BLOCKED_CONVERGENCE`; diagnostic estimate only `D_s Tr(U1^2)[2] ~= +0.0035843041850530683` is **not authority**.
 
@@ -57,9 +59,9 @@ Strongly passing checks:
 - design condition number `362.20107548262695 < 1000`;
 - synthetic oracle `1.6653345369377348e-16 < 1e-12`.
 
-This is a narrow convergence/representation block, not evidence that cut support or the frozen physical integrand is invalid. No coordinate is promoted and no zero fill is allowed.
+This is a narrow convergence/representation block, not a Candidate-Gravity consistency FAIL. No coordinate is promoted and no zero fill is allowed.
 
-## Numerical-method authority for index 2
+## Numerical and representation authority for index 2
 
 ### Iteration 419
 
@@ -95,25 +97,47 @@ Raw-valid run `33887682539`, job `101071391720`, artifact `9942518066`, digest `
 
 Classification: `PASS_CHANNEL2_PRECISION_SURFACE_AND_NODE_CONDITIONING_AUDIT__NON_PROMOTING`.
 
-For the Iteration-421 symmetric-cross quotient, the smallest frozen node `|u|=|v|=2.5e-6` permits only `5e-16` absolute perturbation of the complete signed four-corner numerator to preserve the `2e-5` quotient tolerance. That is about `2.2518` binary64 epsilons at unit `F` scale for the entire signed sum. This establishes severe whole-path conditioning.
+For the Iteration-421 symmetric-cross quotient, the smallest frozen node `|u|=|v|=2.5e-6` permits only `5e-16` absolute perturbation of the complete signed four-corner numerator to preserve the `2e-5` quotient tolerance, about `2.2518` binary64 epsilons at unit `F` scale for the entire signed sum. This establishes severe whole-path conditioning.
 
-Iteration 428 also confirms that Iteration 424 is a **distinct frozen geometry** with mass steps `{5e-6, 2.5e-6, 1.25e-6}`, required precision levels 80/120 decimal digits, same mass nodes and no smaller `h`. The current complete fixed-mass `F` implementation still contains `numpy/complex` binary64 and nested finite-difference numerator machinery. Therefore outer-only arbitrary precision is diagnostic only and cannot be called a complete 80/120-digit `F` evaluation.
+Iteration 428 also confirms that Iteration 424 is a distinct frozen geometry with mass steps `{5e-6, 2.5e-6, 1.25e-6}`, required precision levels 80/120 decimal digits, same mass nodes and no smaller `h`. Outer-only arbitrary precision is diagnostic only and cannot be called a complete 80/120-digit `F` evaluation.
 
-Any physical Iteration-424 implementation must carry arbitrary precision through the complete fixed-mass `F` dependency chain or quantitatively bound every retained lower-precision sublayer tightly enough to preserve the frozen physical and cross-precision conditions.
+### Iteration 429 — raw-valid full-F precision-closure manifest
+
+Run `33887876664`, job `101072041025`, artifact `9942593929`, digest `sha256:18b10e47179e4bcd464d02d7d63cb4fbfa2a087c3a88c37f84523f7044d82a5f`, raw scientific JSON SHA-256 `e45b004510953ddaa1de7f2be84bb9642bfe9cdc91987396b5fc1947c8e54da1`.
+
+Classification: `PASS_CHANNEL2_FULL_F_PRECISION_CLOSURE_MANIFEST__NON_PROMOTING`.
+
+The complete dependency chain relevant to a true Iteration-424 fallback is bound fail-closed as
+
+`407 -> 379 -> 374 -> 370 -> 368`.
+
+A valid 80/120-digit implementation cannot start at the final mass derivative only. Kinematics/basis, phi mean and degree-4 interpolation, affine moments, radial stripped-limit evaluation, traced numerator transport, nested parent derivatives, and final mass-node/cross-precision logic all require arbitrary-precision provenance or a quantitative lower-precision error bound sufficient for the downstream frozen gates.
+
+### Iteration 430 — deepest-first precision-port contract
+
+Classification: `PASS_CHANNEL2_DEEPEST_FIRST_PRECISION_PORT_CONTRACT__NON_PROMOTING`.
+
+The implementation order is prospectively frozen:
+
+1. Iteration 368/370 traced-numerator primitives;
+2. Iteration 379/374 radial stripped-limit wrapper;
+3. Iteration 407 complete fixed-mass analytic/spectral `F`;
+4. Iteration 424 identical frozen mass nodes independently at 80 and 120 decimal digits;
+5. Iteration 427 factorized derivative-coordinate oracle comparison.
+
+For every retained binary64 sublayer, a quantitative error bound must be shown tight enough to preserve the final Iteration-424 gates; otherwise that layer must be ported to arbitrary precision. Passing an inner port stage never promotes `D_s`. More arithmetic digits do not alter finite-difference truncation, and no stencil/node/mass-step change is authorized.
 
 ## Active Actions
 
 At the latest checked state:
 
-- Iteration 428 run `33887682539`, job `101071391720`: scientific calculation, raw authority audit and artifact upload completed successfully; workflow remained `in_progress` only in post-job cleanup.
-- Iteration 426 phi-mean 16-vs-32 diagnostic run `33886485823`: `in_progress` and independent/non-promoting.
-- queued useful RQIR runs: none at that checkpoint.
-
-No additional heavy run is launched while these useful non-duplicating computations remain active.
+- Iteration 429 run `33887876664`: scientific calculation, raw authority audit and artifact upload completed successfully and is consumed above.
+- Iteration 426 phi-mean 16-vs-32 diagnostic run `33886485823`: still `in_progress` and independent/non-promoting.
+- no duplicate Iteration-426 run is authorized.
 
 ## Authorized fallback — Iteration 424
 
-Because Iteration 421 is raw-valid `BLOCKED_CONVERGENCE`, Iteration 424 is now authorized.
+Because Iteration 421 is raw-valid `BLOCKED_CONVERGENCE`, Iteration 424 remains authorized.
 
 Frozen acceptance remains simultaneous:
 - physical mass-step discrepancy `<=2e-5`;
@@ -122,7 +146,7 @@ Frozen acceptance remains simultaneous:
 - identical fixed-node evaluation at 80 and 120 decimal digits with `|D_s(80)-D_s(120)|<=2e-6`;
 - finite outputs.
 
-Guardrails: same parent dynamics, routing, numerator, sign, normalization and mass nodes; no smaller `h`; no angular-grid escalation; no threshold weakening; no zero fill; full `F` precision provenance required.
+Guardrails: same parent dynamics, routing, numerator, sign, normalization and mass nodes; no smaller `h`; no angular-grid escalation; no threshold weakening; no zero fill; full `F` precision provenance required under Iterations 425/428/429/430.
 
 ## Frozen Iteration 412 exact15 assembly
 
@@ -131,11 +155,12 @@ Iteration 412 requires exactly 15 unique double-double indices, five scientifica
 ## Exact next gates
 
 1. Raw-consume Iteration 426 fail-closed when its artifact appears; it is diagnostic-only and cannot promote index 2 by itself.
-2. Implement a precision-closure manifest for the complete fixed-mass `F(u,v)` dependency chain, from deepest numerator primitives outward.
-3. Stage the true Iteration-424 80/120-digit fallback under the frozen mass nodes/steps and all existing acceptance thresholds, using Iteration 427 as an independent exact consistency oracle.
-4. Promote index 2 only if all frozen physical, tensor-fit, direct-integrand, cross-precision and finite-output conditions pass under raw workflow authority.
-5. If index 2 closes, immediately execute frozen Iteration 412 exact15 assembly, then complete `Tr U1^2` and assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2 using Iteration 406 `Tr U2`.
-6. Comparator quotient / matched-observable completion remains downstream. No Candidate residual before comparator closure.
+2. Begin only the deepest Iteration-368/370 traced-numerator precision-provenance layer under Iteration 430.
+3. Continue outward through 379/374 and then 407 only after each inner layer has arbitrary-precision provenance or a quantitative retained-binary64 bound sufficient for the final gates.
+4. Evaluate the exact Iteration-424 frozen mass nodes independently at 80 and 120 digits and compare against Iteration 427.
+5. Promote index 2 only if all frozen physical, tensor-fit, direct-integrand, cross-precision and finite-output conditions pass under raw workflow authority.
+6. If index 2 closes, immediately execute frozen Iteration 412 exact15 assembly, then complete `Tr U1^2` and assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2 using Iteration 406 `Tr U2`.
+7. Comparator quotient / matched-observable completion remains downstream. No Candidate residual before comparator closure.
 
 ## Stable readiness rubric
 
@@ -148,7 +173,7 @@ Iteration 412 requires exactly 15 unique double-double indices, five scientifica
 
 **MODEL_READINESS: 24%**
 
-No readiness point is added by Iterations 419, 422, 421-BLOCKED, 425, 427, or 428. Index 2 remains physically unresolved, exact15 `Tr U1^2` is blocked, and no robust comparator-subtracted residual exists.
+Readiness change at Iteration 430: **0 percentage points**. Iterations 429/430 remove implementation ambiguity but do not close index 2, exact15, a comparator-subtracted residual, or any additional stable-rubric block.
 
 ## Retained guardrails
 
