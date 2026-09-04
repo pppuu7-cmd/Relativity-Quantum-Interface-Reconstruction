@@ -1,0 +1,30 @@
+{
+  "iteration": 430,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "scientific_gate_pass": true,
+  "classification": "PASS_CHANNEL2_DEEP_NUMERATOR_STENCIL_SENSITIVITY__SUBTHRESHOLD_DIAGNOSTIC_ONLY",
+  "authority_scope": "DIAGNOSTIC_ONLY__NO_PHYSICAL_COORDINATE_PROMOTION",
+  "target": {"double_double_global_index": 2, "class_id": 3, "q_squared": -1.0},
+  "row_identity": {"singleton_leg": "s", "pair_legs": ["a", "b"], "spec_index": 2, "extra_site": "N_L", "V2_leg": "b", "extra_local_leg": "a"},
+  "base_steps": {"h1": 0.0001, "h2": 0.0005, "hy": 0.00004},
+  "scale_factors": [0.75, 1.0, 1.25],
+  "max_simultaneous_nontrivial_scaled_delta": 1.941194194320442e-13,
+  "max_one_at_a_time_scaled_delta": 1.941194194320442e-13,
+  "one_at_a_time": {
+    "h1": {"scale_0.75": 1.509817797043858e-13, "scale_1.25": 1.941194194320442e-13},
+    "h2": {"scale_0.75": 0.0, "scale_1.25": 0.0},
+    "hy": {"scale_0.75": 0.0, "scale_1.25": 0.0}
+  },
+  "physical_reference_tolerance_only_not_acceptance": 2e-5,
+  "provenance": {
+    "run": 33918788554,
+    "job": 101172043739,
+    "artifact": 9954179434,
+    "artifact_digest": "sha256:dbdf4e202dd2d8a3cbe0dfa477c93b25513a0e8ea00e660fe099a8b70c179f7f",
+    "workflow_head_sha": "8236da5fa94b8c1ca5b3a06ac7c38311010d84ed"
+  },
+  "interpretation": "At generic routed probes for the exact class-3 row, varying the inherited numerator derivative steps by plus/minus 25 percent produces only ~1.94e-13 scaled change. This strongly disfavors gross deep-stencil truncation as the dominant source of the Iteration-421 2e-5 convergence miss. Because these are generic probes rather than physical cut nodes, a cut-kinematic stencil audit remains necessary before closing the truncation hypothesis.",
+  "guardrails": ["DIAGNOSTIC_ONLY","GENERIC_ROUTED_PROBES_NOT_CUT_AUTHORITY","NO_PHYSICAL_DS_VALUE","NO_THRESHOLD_WEAKENING","NO_MASS_STEP_CHANGE","NO_NUMERATOR_CHANGE","NO_ROUTING_CHANGE","NO_ZERO_FILL","NO_ANSATZ003","NO_FISHER_RESOURCES"]
+}
