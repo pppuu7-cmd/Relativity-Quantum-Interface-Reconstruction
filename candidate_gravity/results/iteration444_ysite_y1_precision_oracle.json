@@ -1,0 +1,56 @@
+{
+  "MODEL_READINESS": "24%",
+  "authority_scope": "LAYER368_370_YSITE_Y1_PRECISION_AND_FIXED_H_REPRESENTATION__NON_PROMOTING",
+  "classification": "PASS_YSITE_Y1_MP80_MP120_AND_FIXED_H_FOURTH_ORDER_ORACLE__NON_PROMOTING",
+  "frozen": {
+    "central_formula": "[y(+h)-y(-h)]/(2h)",
+    "fixture_seed": 319,
+    "fourth_order_formula": "[y(-2h)-8y(-h)+8y(+h)-y(+2h)]/(12h)",
+    "h": "4e-5",
+    "pair_count": 3,
+    "pair_labels": ["s", "a", "b"],
+    "precision_digits": [80, 120]
+  },
+  "guardrails": [
+    "SAME_H_ONLY_4E-5",
+    "NO_ADAPTIVE_OR_SMALLER_H",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_ROUTING_OR_NUMERATOR_CHANGE",
+    "NO_OUTER_ONLY_MP_AROUND_BINARY64_YSITE",
+    "NON_PROMOTING_PARENT_NUMERICAL_GATE",
+    "UNSUPPORTED_IS_BLOCKED_NOT_ZERO_FILL"
+  ],
+  "observed": {
+    "all_values_finite": true,
+    "central_mp80_vs_mp120_max_abs": "4.09656958147226919955796882988e-77",
+    "central_vs_fourth_mp120_scaled_max": "3.74207475261066955599469102919e-11",
+    "pair_count": 3
+  },
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "rows": [
+    {"central_mp80_vs_mp120_max_abs":"4.06915174720455538378383910678e-77","central_vs_fourth_mp120_scaled_max":"8.62758385237578348862809074445e-12","finite":true,"fourth_mp80_vs_mp120_max_abs":"5.92429076137004261460374944097e-77","leg":"s","metric_tensor_sha256":"42d9387836ce7e3fe0e486df8dcc44bfec9c29643ef4ca5b490baf918e794105","q":[1.0,0.0,0.0,0.0]},
+    {"central_mp80_vs_mp120_max_abs":"2.56948687359406851421357648781e-77","central_vs_fourth_mp120_scaled_max":"3.74207475261066955599469102919e-11","finite":true,"fourth_mp80_vs_mp120_max_abs":"3.70321300718794288012155459072e-77","leg":"a","metric_tensor_sha256":"381f667d51c33e985ee92800cb2c34249ce7bed5e2f22c8404d069d8c4e43ca1","q":[-0.4,0.1,0.1,0.0]},
+    {"central_mp80_vs_mp120_max_abs":"4.09656958147226919955796882988e-77","central_vs_fourth_mp120_scaled_max":"2.45334696353166946348898113883e-11","finite":true,"fourth_mp80_vs_mp120_max_abs":"4.41054514193396676095424204332e-77","leg":"b","metric_tensor_sha256":"1dd4c0fbbb07a8fd94f61857e28b8f22177e65d5ca46e59bf7bcbcd141fd95ef","q":[-0.6,-0.1,-0.1,0.0]}
+  ],
+  "scientific_gate_pass": true,
+  "source_sha256": {
+    "candidate_gravity/code/iteration368_tru1sq_timelike_full_prepruning_routing.py": "46542ff09c5df1fb4c03a0e4058fef5999547ceed005753c3cd8ed75459081eb",
+    "candidate_gravity/code/iteration443_layer368_370_precision_boundary_audit.py": "acc4568b9a8560505bf67097a5eb359273f6713e24a30b1f84944cab66625a71"
+  },
+  "stage": "YSITE_Y1_PRECISION_ORACLE_STAGE__POST_ITER443__RAW_CONSUMED_AS_ITER444",
+  "thresholds": {
+    "central_mp80_vs_mp120_max_abs": "1e-30",
+    "central_vs_fourth_mp120_scaled_max": "2e-5",
+    "required_pair_count": 3
+  },
+  "provenance": {
+    "run_id": 33919939617,
+    "job_id": 101175715064,
+    "artifact_id": 9954611316,
+    "artifact_digest": "sha256:b42764f0b076544e24ab4aec61de824093158afc4f9c7356b2c432df533d87f6",
+    "raw_json_sha256": "432499fd8afa13d7acf560ae112c87c11858d3840eaeedd117fcd7607724c5c9",
+    "workflow_commit": "8fdc9b3a0cbfd06dedbdfdc24b4ed881105bcd72",
+    "code_commit": "bbc502964d8107fdce31ad3337e2b845fe7a050d"
+  }
+}
