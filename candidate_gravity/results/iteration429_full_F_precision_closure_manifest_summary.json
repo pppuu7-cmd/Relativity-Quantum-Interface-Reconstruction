@@ -1,0 +1,52 @@
+{
+  "iteration": 429,
+  "date": "2026-09-04",
+  "model_readiness_percent": 24,
+  "candidate_residual": false,
+  "scientific_gate_pass": true,
+  "classification": "PASS_CHANNEL2_FULL_F_PRECISION_CLOSURE_MANIFEST__NON_PROMOTING",
+  "authority_scope": "IMPLEMENTATION_MANIFEST__NO_PHYSICAL_COORDINATE_PROMOTION",
+  "target": {
+    "double_double_global_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0,
+    "iteration421_status": "BLOCKED_CONVERGENCE"
+  },
+  "dependency_chain": ["407", "379", "374", "370", "368"],
+  "core_requirement": "A true 80/120-digit Iteration-424 result requires arbitrary-precision provenance through the complete fixed-mass F path. Finite-difference truncation is a separate error source and is not cured merely by more digits.",
+  "precision_layers": [
+    "kinematics_and_basis",
+    "phi_mean_and_degree4_interpolation",
+    "analytic_affine_moments",
+    "radial_stripped_limit",
+    "traced_numerator_transport",
+    "nested_parent_derivatives",
+    "mass_derivative_and_cross_precision"
+  ],
+  "implementation_stages": [
+    "368/370 traced numerator primitives",
+    "379/374 radial stripped-limit wrapper",
+    "407 fixed-mass analytic/spectral F",
+    "424 frozen mass nodes at 80/120 digits",
+    "427 independent factorized oracle"
+  ],
+  "provenance": {
+    "run": 33887876664,
+    "job": 101072041025,
+    "artifact": 9942593929,
+    "artifact_digest": "sha256:18b10e47179e4bcd464d02d7d63cb4fbfa2a087c3a88c37f84523f7044d82a5f",
+    "raw_scientific_json_sha256": "e45b004510953ddaa1de7f2be84bb9642bfe9cdc91987396b5fc1947c8e54da1",
+    "workflow_head_sha": "f5d533e66cc01b9c2af9ecf59196f746d0ea8fa4"
+  },
+  "guardrails": [
+    "NON_PROMOTING",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_SMALLER_MASS_STEP",
+    "NO_NUMERATOR_CHANGE",
+    "NO_ROUTING_CHANGE",
+    "NO_SIGN_OR_NORMALIZATION_CHANGE",
+    "NO_ZERO_FILL",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
