@@ -1,0 +1,41 @@
+{
+  "iteration": 448,
+  "classification": "PASS_PROSPECTIVE_PHI_SAMPLE_COVERAGE_PROMOTION_BARRIER__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "bound_active_run": 33928248369,
+  "active_scope": {
+    "target": "double-double index 2 / class 3 / q^2=-1",
+    "mass_points": [[5e-6, 5e-6]],
+    "z_samples": [-0.86, 0.0, 0.86],
+    "phi_nodes": 16,
+    "radial_hs": [0.002, 0.001, 0.0005],
+    "precision_digits": [80, 120],
+    "required_output_sample_rows": 48,
+    "direct_parent_mp_evaluations": 576
+  },
+  "frozen_interpretation": {
+    "if_active_stage_pass": "REPRESENTATIVE_SLAB_PRECISION_PASS__NON_PROMOTING; extend to every remaining frozen z support point at the same mass corner and then every frozen mass-node family required by index-2 F(u,v), with unchanged thresholds/nodes.",
+    "if_active_stage_blocked": "NUMERICAL_SAMPLE_LAYER_BLOCKED__NON_PROMOTING; localize the first failing z/phi/radial sample at unchanged mass point and conventions; no resampling, threshold weakening, or precision cherry-picking.",
+    "full_F_promotion_requirement": "Only explicit exhaustive coverage of frozen Iteration-407 z/phi/radial support at every frozen mass node entering index-2 F(u,v) may be called full-F precision provenance closure.",
+    "forbidden_inferences": [
+      "PASS of 48 rows is not full-z closure",
+      "PASS at u=v=+5e-6 is not mass-family closure",
+      "PASS of sample generation is not physical D_s authority",
+      "No coverage percentage may be inferred before the full frozen support denominator is enumerated from source"
+    ]
+  },
+  "guardrails": [
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_Z_RESAMPLING",
+    "NO_PHI_ESCALATION",
+    "NO_RADIAL_NODE_CHANGE",
+    "NO_MASS_NODE_CHANGE",
+    "NO_ZERO_FILL",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
