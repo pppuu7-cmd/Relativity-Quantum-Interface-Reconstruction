@@ -1,0 +1,59 @@
+name: rqir-iteration426-channel2-phi-mean-resolution-diagnostic
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration426_channel2_phi_mean_resolution_diagnostic.py'
+      - '.github/workflows/rqir-iteration426-channel2-phi-mean-resolution-diagnostic.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  iteration426:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check -q numpy
+      - name: Run phi-mean resolution diagnostic
+        run: |
+          root="candidate_gravity/artifacts/iteration426"
+          mkdir -p "$root"
+          python candidate_gravity/code/iteration426_channel2_phi_mean_resolution_diagnostic.py > "$root/iteration426_result.json"
+      - name: Raw parse and authority audit
+        if: always()
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('candidate_gravity/artifacts/iteration426')
+          p=root/'iteration426_result.json'
+          if not p.exists() or p.stat().st_size==0: raise SystemExit(2)
+          raw=p.read_bytes(); o=json.loads(raw); t=o.get('target',{}); th=o.get('thresholds',{})
+          ok=bool(
+              o.get('iteration')==426 and o.get('scientific_gate_pass') is True and
+              o.get('authority_scope')=='DIAGNOSTIC_ONLY__NO_PHYSICAL_COORDINATE_PROMOTION' and
+              t.get('double_double_global_index')==2 and t.get('class_id')==3 and abs(float(t.get('q_squared'))+1.0)<1e-12 and
+              o.get('classification') in (
+                  'PASS_CHANNEL2_PHI_MEAN_RESOLUTION__MATERIAL_DIAGNOSTIC_ONLY',
+                  'PASS_CHANNEL2_PHI_MEAN_RESOLUTION__STABLE_DIAGNOSTIC_ONLY') and
+              th.get('physical_materiality_scaled')==2e-05 and
+              th.get('reproduction_scaled_max')==1e-13
+          )
+          a={'schema':'rqir_action_result_authority_audit_v1','expected_iteration':426,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),'classification':o.get('classification'),'scientific_authority_pass':ok,'authority_scope':'DIAGNOSTIC_ONLY'}
+          (root/'iteration426_authority_audit.json').write_text(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          if not ok: raise SystemExit(2)
+          PY
+      - name: Upload diagnostic artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration426-channel2-phi-mean-resolution
+          path: candidate_gravity/artifacts/iteration426/
+          if-no-files-found: warn
+          retention-days: 90
