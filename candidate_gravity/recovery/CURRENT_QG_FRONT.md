@@ -5,10 +5,7 @@
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none  
-**Latest fully raw-validated Candidate Gravity authority:** **Iteration 402**  
-**Latest exact algebraic authority:** **Iteration 403**  
-**Latest preassembly authority:** **Iteration 404**  
-**Active assembly gate:** **Iteration 405**
+**Latest validated Candidate Gravity authority:** **Iteration 406**
 
 Repository commits, raw schema-validated Actions artifacts, recovery material and this file are source of truth. Green/red workflow colour alone is never scientific authority.
 
@@ -23,7 +20,7 @@ Repository commits, raw schema-validated Actions artifacts, recovery material an
   - `q^2=-0.14`: `D_s Gamma_det=+0.0012389565044298413 i`.
 - Iteration 387 preserves the evanescent/R2 warning: hard-branch discontinuity is valid, but full finite local/rational DR remainder remains blocked. This is not a full finite determinant and not a Candidate residual.
 
-### Timelike `Tr U2`
+### Timelike `Tr U2` — COMPLETE OPERATOR COORDINATE
 
 - Iteration 361 ordinary-simple sector closes and cancels q2-by-q2.
 - Iteration 366 repeated-family simple-simple sector closes 18/18:
@@ -31,17 +28,16 @@ Repository commits, raw schema-validated Actions artifacts, recovery material an
   - `q^2=-0.34`: `-8.405976034846215e-05`;
   - `q^2=-0.14`: `-7.069545900379072e-05`.
 - Iteration 392 freezes the exact 48-channel topology mask. No-uncut indices are `[4,13,22,27,28,29,30,33,36,39,42,45]`; only these may use `+Infinity` as empty-set minimum-uncut sentinel. All other indices require finite positive uncut separation.
-- Iteration 404 freezes an exact 44/48 raw-provenance preassembly manifest with missing indices `[14,15,16,17]` and no promoted partial q2 coordinate.
-- Iteration 400 run `33829453920` is now raw-consumed: all four missing indices 14-17 are `CONVERGED`, authority-audited, topology-mask consistent, with unchanged frozen arithmetic and threshold. Values:
-  - 14 / `q^2=-0.34`: `-0.00011341677230793501`;
-  - 15 / `q^2=-0.14`: `-0.00019874443441835922`;
-  - 16 / `q^2=-0.14`: `+0.0006290774853610352`;
-  - 17 / `q^2=-1`: `+0.00006894241423070089`.
-- Diagnostic exact-48 repeated-cut sums implied by Iteration 404 + raw Iteration 400 are:
-  - `q^2=-1`: `0.0004825971545254671`;
-  - `q^2=-0.34`: `-0.0005645318371195369`;
-  - `q^2=-0.14`: `-0.0014213811702222749`.
-  These are **not promoted** until Iteration 405 raw artifact/audit passes.
+- Iteration 405 raw-validates exact 48/48 repeated-cut assembly. Workflow run `33832181526`, artifact `9922054102`, digest `sha256:1dd9bbc6c863954059263171c5a160510ce3605bb416a46498c3453b48343729`, result SHA-256 `f766c6641fb9a89838784ae7572fa1f8459dd0260fd71007f8de93e727840cab`. Exactly 16 channels occur in each q2 bucket; all 48 records are CONVERGED.
+- Authoritative repeated-cut vector:
+  - `q^2=-1`: `+0.0006026660521292439`;
+  - `q^2=-0.34`: `-0.0006500414994361118`;
+  - `q^2=-0.14`: `-0.0015019714311265522`.
+- The earlier diagnostic 44+4 arithmetic is superseded by the raw fail-closed Iteration-405 assembly and is not scientific authority.
+- Iteration 406 assembles the complete timelike operator coordinate, still without `+i/2`:
+  - `q^2=-1`: `D_s TrU2=+0.0005345424186332474`;
+  - `q^2=-0.34`: `D_s TrU2=-0.000734101259784574`;
+  - `q^2=-0.14`: `D_s TrU2=-0.001572666890130343`.
 
 ### Timelike `Tr U1^2`
 
@@ -55,16 +51,15 @@ Repository commits, raw schema-validated Actions artifacts, recovery material an
   - `q^2=-1`: `-0.002329411286740447`;
   - `q^2=-0.34`: `-0.0005948791870822445`;
   - `q^2=-0.14`: `-7.368142632096214e-05`.
-- Iteration 402 raw census: 11/15 double-double CONVERGED, blockers 2,4,11, and former operational gap 5.
-- Iteration 399 run `33828617524`, artifact `9921602344`, is now raw-consumed and closes index 5 / class 8 / `q^2=-0.14` as `CONVERGED`: `D_s TrU1^2 double-double=0.000119747535002548`, scaled convergence error `1.8393013149631406e-7`, result SHA-256 `63cf00714ce2c17abc5c0d9a223b5698df889c7d8586adac80c1cc74f5407e87`.
-- Exact unresolved double-double set is therefore now **`[2,4,11]`**, all numerical convergence blockers, never zero-filled.
-- Classes 3,5,16 all have multiplicities `2,2,1`, so the same one-affine-denominator analytic/spectral architecture is structurally applicable. Iteration 403 proves the exact central4×central4 auxiliary-mass stencil commutes with the sphere mean as a finite linear combination; this changes no mass nodes, normalization or threshold.
+- Iteration 402 raw census found double-double blockers 2,4,11 and operational gap 5.
+- Iteration 399 closes index 5 / class 8 / `q^2=-0.14` as CONVERGED: `D_s TrU1^2 double-double=0.000119747535002548`, scaled convergence error `1.8393013149631406e-7`.
+- Exact unresolved double-double set is now **`[2,4,11]`**, all `BLOCKED_CONVERGENCE`; none may enter sums.
+- Classes 3,5,16 have multiplicities `2,2,1`; the same one-affine-denominator analytic/spectral architecture is structurally applicable. Iteration 403 proves exact central4×central4 auxiliary-mass stencil commutation with the sphere mean as a finite linear combination.
 - No further blind angular-grid escalation is authorized for blockers 2,4,11.
 
-## Active computations
+## Active computation
 
-- **Iteration 401:** run `33830352712`, repaired analytic-azimuth structure oracle for double-double channel 4, currently `in_progress`. It does not promote a physical value by itself. If PASS, validate the same reduced fixed-mass sphere-mean architecture separately for blockers 2,4,11 with held-out original-integrand checks.
-- **Iteration 405:** run `33832181526`, head `069ea4ad388f73998a8bca3f594d496f13710637`, exact fail-closed repeated-U2 48-index assembly, currently `in_progress`. It requires exactly one CONVERGED record for every index 0..47 and keeps `+i/2` separate.
+- **Iteration 401:** run `33830352712`, repaired analytic-azimuth structure oracle for double-double channel 4, still `in_progress` at the latest check. It does not promote a physical value by itself and must not be duplicated.
 
 No useful heavy run is duplicated.
 
@@ -79,11 +74,10 @@ Iteration 386 restores the downstream DAG:
 
 ## Exact next gates
 
-1. Consume Iteration 405 fail-closed. If raw authority PASS, freeze exact repeated-cut `Tr U2` q2 vector and then assemble complete `Tr U2` = Iteration-361 ordinary-simple zero + Iteration-366 repeated-family simple-simple + Iteration-405 repeated-cut, still without `+i/2`.
-2. Consume Iteration 401. If structural oracle PASS, implement controlled analytic/spectral fixed-mass sphere mean for blockers 2,4,11 under the exact Iteration-403 commutation contract; preserve original mass stencil and physical `2e-5` gate, and require independent original-integrand cross-checks.
-3. Assemble double-double q2 sums only after all 15 unique channels are scientifically resolved. Then assemble complete `Tr U1^2` = Iteration-374 simple-simple + Iteration-393 simple-double + complete double-double, still without `-i/4`.
-4. Only after both operator coordinates are complete assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2.
-5. Source/Ward/contact completion + matched K2 and the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain downstream. No Candidate residual before comparator quotient closure.
+1. Consume Iteration 401 fail-closed. If structural oracle PASS, implement controlled analytic/spectral fixed-mass sphere means separately for double-double blockers 2,4,11 under the exact Iteration-403 commutation contract, preserving the original mass stencil and physical `2e-5` gate and requiring held-out original-integrand checks.
+2. Assemble double-double q2 sums only after all 15 unique channels are scientifically resolved. Then assemble complete `Tr U1^2` = Iteration-374 simple-simple + Iteration-393 simple-double + complete double-double, still without `-i/4`.
+3. Only after complete `Tr U1^2` assemble `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2, using the complete Iteration-406 `Tr U2` coordinate.
+4. Source/Ward/contact completion + matched K2 and the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain downstream. No Candidate residual before comparator quotient closure.
 
 Repeated-cut normalized signs remain: `D_s(simple)=-sphere_mean`; simple-double `D_s=+sphere_mean[d_mu G]`; double-double `D_s=-sphere_mean[d_mu1 d_mu2 G]`.
 
@@ -98,7 +92,7 @@ Repeated-cut normalized signs remain: `D_s(simple)=-sphere_mean`; simple-double 
 
 **MODEL_READINESS: 24%**
 
-Change through raw-consumed Iterations 399/400 plus active Iterations 401/405: `0 pp`. Numerical ambiguity has narrowed, but complete `Tr U1^2`, complete validated `Tr U2`, the linked source/Ward/K2 observable and a robust comparator-subtracted residual remain open.
+Change through validated Iteration 406: `0 pp`. Complete timelike `Tr U2` is now closed as an operator coordinate, but complete `Tr U1^2`, linked Source/Ward/K2 closure and a robust comparator-subtracted residual remain open; therefore no additional stable-rubric point is awarded.
 
 ## Retained guardrails
 
