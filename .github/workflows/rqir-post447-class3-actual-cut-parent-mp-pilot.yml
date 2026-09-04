@@ -1,0 +1,56 @@
+name: RQIR post447 class3 actual-cut parent MP pilot
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/post447_class3_actual_cut_parent_mp_pilot.py'
+      - '.github/workflows/rqir-post447-class3-actual-cut-parent-mp-pilot.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  actual_cut_parent_mp:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install frozen numerical dependencies
+        run: python -m pip install --disable-pip-version-check -q numpy mpmath
+      - name: Run class3 actual-cut parent MP pilot
+        run: |
+          root="candidate_gravity/artifacts/post447_class3_actual_cut_parent_mp"
+          mkdir -p "$root"
+          python candidate_gravity/code/post447_class3_actual_cut_parent_mp_pilot.py > "$root/result.json"
+      - name: Raw authority audit
+        if: always()
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('candidate_gravity/artifacts/post447_class3_actual_cut_parent_mp'); p=root/'result.json'
+          if not p.exists() or p.stat().st_size==0: raise SystemExit(2)
+          raw=p.read_bytes(); o=json.loads(raw); obs=o.get('observed',{}); fr=o.get('frozen',{}); t=o.get('target',{})
+          ok=bool(
+            o.get('stage')=='POST447_CLASS3_ACTUAL_CUT_PARENT_MP_PILOT__UNNUMBERED_COLLISION_SAFE' and
+            o.get('classification')=='PASS_CLASS3_ACTUAL_CUT_PARENT_MP80_MP120_PILOT__NON_PROMOTING' and
+            o.get('scientific_gate_pass') is True and o.get('promotes_physical_coordinate') is False and
+            t.get('double_double_index')==2 and t.get('class_id')==3 and abs(float(t.get('q_squared'))+1.0)<1e-12 and
+            fr.get('precision_digits')==[80,120] and fr.get('M_fixture')=='Iteration368 TIMELIKE M seed319' and
+            obs.get('sample_count')==8 and obs.get('all_finite') is True and float(obs.get('scaled_mp80_vs_mp120_max'))<=1e-30
+          )
+          a={'schema':'rqir_action_result_authority_audit_v1','stage':o.get('stage'),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),'classification':o.get('classification'),'scientific_authority_pass':ok,'authority_scope':'ACTUAL_CUT_PARENT_MP_PILOT__NON_PROMOTING'}
+          (root/'authority_audit.json').write_text(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          if not ok: raise SystemExit(2)
+          PY
+      - name: Upload raw artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-post447-class3-actual-cut-parent-mp-pilot
+          path: candidate_gravity/artifacts/post447_class3_actual_cut_parent_mp/
+          if-no-files-found: warn
+          retention-days: 90
