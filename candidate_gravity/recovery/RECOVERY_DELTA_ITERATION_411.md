@@ -4,42 +4,75 @@ Date: 2026-09-04
 
 MODEL_READINESS: 24%
 
-## Fresh source-of-truth audit
+## Scope
+Fail-closed raw consumption of the split analytic/spectral physical reductions for the two double-double `Tr(U1^2)` targets inherited from Iteration 410 structural PASS. Workflow colour alone is not authority. Both artifacts were downloaded and their scientific JSON plus authority audits were inspected directly.
 
-At entry, `CURRENT_QG_FRONT.md` named Iteration 409 as latest validated Candidate Gravity physical/operator authority, with unresolved Tr(U1^2) double-double indices `[2,11]` and Iteration 410 active as a structure-only split recovery oracle. Latest recovery, recent commits, queued/in-progress Actions and newly completed relevant runs were checked before advancing the front.
+## Index 11 — CONVERGED
 
-## Iteration 410 raw structural authority
+- double-double global index: `11`
+- class: `16`
+- `q^2=-0.34`
+- status: `CONVERGED`
+- authoritative `D_s TrU1^2 double-double channel = +0.013050543643260309`
+- mixed derivative at `h=5e-6`: `-0.013050543643260309`
+- mixed derivative at `h/2=2.5e-6`: `-0.01305596497050016`
+- scaled mass-step convergence error: `5.421327239850046e-06 < 2e-05`
+- max direct original-integrand cross-check: `1.1526331104849685e-12 < 2e-06`
+- max held-out polynomial error: `5.998077468732932e-16`
+- minimum analytic uncut separation: `0.25855334940036967`
+- minimum Kallen: `0.11558639999999996`
 
-Run `33847425175` completed `success`, but workflow colour is not used as scientific authority. Both per-index artifacts were downloaded and raw-audited independently.
+Provenance:
+- run `33851983789`
+- job `100956624748`
+- artifact `9931076355`
+- artifact digest `sha256:8551fba98b0f3f218960820a01369ca183da1234d22754bd5c647fa8909cf6f8`
+- raw result SHA-256 `f8aea08be16636dcf5d83afaa29dd3059c734a1a3ad8f778f07ef53b3041abf1`
+- authority-audit SHA-256 `ff8c98b7eed639ebde720da612c00e12ceb980ce9fef572a04630d24414f43eb`
+- authority audit: PASS
 
-- Index 2: artifact `9928039298`, artifact digest `sha256:0f2d759480a688fb71db5542c20429f79beea1737708ec92665c82cb8ba7db2f`; raw scientific JSON SHA-256 `dbaea9b9d015d6df7ab465c0748596462949eb682a8a2a662f88b5d667e8d2c7`. Classification `PASS_TRU1SQ_BLOCKER2_ANALYTIC_AZIMUTH_STRUCTURE_SPLIT_RECOVERY`; class 3, q^2=-1; maximum denominator-affine scaled error `1.6653345369377348e-16`, Fourier tail `4.741306450460151e-16`, phase mean `8.279509890185555e-16`, held-out polynomial error `3.795791805871751e-16`.
-- Index 11: artifact `9928100131`, artifact digest `sha256:efdeb91cf58ed05c7b06bf300823e20e9b1f46dcb8c01b8dec24112bef662114`; raw scientific JSON SHA-256 `2ecfc9d9812a8258803e20e6e402df3c93dac2f0245bf61e390517839605693b`. Classification `PASS_TRU1SQ_BLOCKER11_ANALYTIC_AZIMUTH_STRUCTURE_SPLIT_RECOVERY`; class 16, q^2=-0.34; maximum denominator-affine scaled error `2.7755575615628914e-16`, Fourier tail `1.726456434411605e-16`, phase mean `3.9310460268893177e-16`, held-out polynomial error `2.019326546254252e-16`.
+Index 11 therefore replaces only its previous blocked entry.
 
-Both structural gates therefore PASS at the frozen Iteration-410 thresholds. They certify executability only and promote no physical D_s value. Physical blockers `[2,11]` remain open until the physical reduction converges and raw authority is validated.
+## Index 2 — sole remaining physical blocker
 
-## Iteration 411 physical gate
+- double-double global index: `2`
+- class: `3`
+- `q^2=-1`
+- status: `BLOCKED_CONVERGENCE`
+- diagnostic only, NOT authority: `D_s TrU1^2 double-double channel = +0.003560682203382001`
+- mixed derivative at `h=5e-6`: `-0.003560682203382001`
+- mixed derivative at `h/2=2.5e-6`: `-0.0036107242774472896`
+- scaled mass-step convergence error: `5.0042074065288766e-05 > 2e-05`
+- max direct original-integrand cross-check: `2.0658472996495925e-09 < 2e-06`
+- max held-out polynomial error: `6.081289985471194e-16`
+- minimum analytic uncut separation: `0.11857147221810008`
+- minimum Kallen: `0.99996`
 
-The next authorized model gate has been created and launched as a two-job split physical reduction, one target per job. It specializes the already validated Iteration-407 analytic/spectral physical program only by target identity and iteration labels; the Iteration-379/389 physical integrand, central4 x central4 auxiliary-mass stencil, sign `D_s=-sphere_mean[d_u d_v G]`, held-out original-integrand cross-check, and all thresholds are unchanged.
+Provenance:
+- run `33851983789`
+- job `100956624953`
+- artifact `9930938547`
+- artifact digest `sha256:3c34f0110e3dbf97b7abf5dedf7b70bf918d4bb3a9e2b5572c7d1f92df7120c2`
+- raw result SHA-256 `53a185ae9825cde0a273161b1ee093ede54103b52d513ea291a3bfc8e1381486`
+- authority-audit SHA-256 `7cd59a6e7876549962438a30416f75f4920cea107f569bb5952c38cd50f3e3bd`
+- authority audit: PASS
 
-Evaluator commit: `1e01f7f4abf3ee00daafcf3580019a74ada9a670`.
-Workflow/head commit: `a50b25c408903112dc6962487b58478a7f34e3f3`.
-Run: `33851983789`.
-Launch state at recording: `queued`.
+The fixed-mass analytic/spectral representation is not the blocker: denominator-affine, polynomial-heldout, radial, Kallen, uncut-separation and original-integrand checks all pass by wide margins. The remaining failure is isolated to auxiliary-mass step convergence.
 
-Iteration 411 is ACTIVE / NOT YET SCIENTIFIC AUTHORITY. Each target must be consumed fail-closed from its own raw artifact. `CONVERGED` removes only that index; `BLOCKED_CONVERGENCE` remains a physical blocker and is never zero-filled.
+## Consequence
+The exact unresolved double-double physical set is now **`[2]` only**. Iteration 412 exact15 assembly remains blocked until index 2 is scientifically converged. No diagnostic value and no zero-fill may enter the q2 sum.
 
-## Superseded repaired Iteration 408 completion
+## Prospectively frozen next gate
+Iteration 413 contract was frozen before the next numerical value is visible. It computes one additional central4×central4 level only, `h/4=1.25e-6`, preserving the physical `2e-5` threshold. Promotion requires:
 
-The race-created repaired Iteration-408 run `33847487303` later completed `success` at 2026-09-04T08:30:18Z. Its workflow colour was not accepted as authority. Artifact `9929332270`, digest `sha256:d537f46afbadc538df9f87fe52d5659cb8d2a8657925c61c9ba32076099a9965`, was downloaded and inspected directly. `iteration408_result.json` SHA-256 is `d568406b391dc22e5a7d15330ff162b18f5abc43c4bfe8c2ef3fc868cccc6c5c`; its authority-audit file SHA-256 is `40f93d5b8aafbe6d36501c2b54e2f31252f5e012b814c8bb2e75967551fd9320` and records `scientific_authority_pass=true` for the structure-only classification `PASS_TRU1SQ_BLOCKERS2_11_ANALYTIC_AZIMUTH_STRUCTURE_ORACLE`.
+1. scaled `|D(h/2)-D(h/4)| <= 2e-5`;
+2. successive order-4 Richardson extrapolants from `(h,h/2)` and `(h/2,h/4)` agree within `2e-5`;
+3. error contraction ratio is `<1`;
+4. all fixed-mass heldout / affine-denominator / radial / direct-original checks pass at their frozen thresholds.
 
-The repaired Iteration 408 reproduces the same structure-only conclusion already superseded by the independently split and raw-validated Iteration 410. It promotes no physical D_s value, changes no blocker, and cannot override active Iteration 411. No duplicate physical run is authorized from this result.
+If PASS, the promoted channel value is the **direct `h/4` central4×central4 result**, not the Richardson extrapolate. If FAIL/BLOCKED, step shrinking stops and the next method is an independently validated auxiliary-mass spectral/Taylor reconstruction.
 
-At the latest Actions audit, Iteration-411 run `33851983789` remains `in_progress`; both jobs `100956624953` (index 2) and `100956624748` (index 11) are still executing the frozen physical analytic/spectral reduction step. Raw audit/upload steps remain pending and no Iteration-411 artifacts exist yet.
-
-## Exact next gate
-
-Raw-consume both Iteration-411 per-index artifacts. If both are `CONVERGED`, assemble exact 15/15 double-double q^2 sums, then complete `Tr U1^2` from Iteration 374 + Iteration 393 + complete double-double. Only after that may `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` be assembled q^2-by-q^2 using Iteration 406 TrU2. If either physical target remains BLOCKED, preserve that negative result and diagnose the fixed-mass/mass-step representation without threshold weakening or blind angular-grid escalation.
+## Guardrails
+No threshold weakening. No blind angular-grid escalation. No zero fill. No effective-action `-i/4` folding before complete `TrU1^2`. No source/Born subtraction. No `ANSATZ-003`. No Fisher/resources.
 
 MODEL_READINESS: 24%
-
-Change: `0 pp`; the superseded Iteration-408 completion adds provenance but no scientific readiness point. Iteration 411 remains the active physical gate.
