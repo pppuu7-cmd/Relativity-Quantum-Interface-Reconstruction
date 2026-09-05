@@ -1,0 +1,38 @@
+{
+  "base_to_half_expected_scaling_if_single_term_dominates": {
+    "h4": "16",
+    "h6": "64"
+  },
+  "classification": "PASS_CENTRAL4_LEADING_TRUNCATION_STRUCTURE__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "diagnostic_only_h4_cancelling_combination": {
+    "D_base": "-1/15",
+    "D_half": "16/15"
+  },
+  "guardrail": "No Richardson promotion: retained physics remains ds=-d_base; BASE/HALF scaled discrepancy threshold remains <=2e-5; assembled MP80/120 threshold remains <=2e-6.",
+  "iteration": 464,
+  "moments_k0_to_k9": {
+    "0": "0",
+    "1": "1",
+    "2": "0",
+    "3": "0",
+    "4": "0",
+    "5": "-4",
+    "6": "0",
+    "7": "-20",
+    "8": "0",
+    "9": "-84"
+  },
+  "one_dimensional_error_coefficients": {
+    "h4_f5": "-1/30",
+    "h6_f7": "-1/252"
+  },
+  "promotion": false,
+  "tensor_expansion_through_h6": {
+    "F_1_1": "1",
+    "h4_F_1_5": "-1/30",
+    "h4_F_5_1": "-1/30",
+    "h6_F_1_7": "-1/252",
+    "h6_F_7_1": "-1/252",
+    "h8_F_5_5_cross": "1/900"
+  }
+}
