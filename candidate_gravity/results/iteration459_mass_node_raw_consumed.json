@@ -1,0 +1,25 @@
+{
+  "authoritative_iteration": 459,
+  "authority_scope": "ONE_MANIFEST_SOURCE_ORDER_MASS_NODE_FULL_TRAINING_Z__NON_PROMOTING",
+  "source_run_id": 33946347229,
+  "source_job_id": 101253020122,
+  "source_artifact_id": 9964610341,
+  "source_artifact_digest": "sha256:8a3f2ec89403a45ad525a4428cc3212b4ee47f632dba306dcb5a530145760a7b",
+  "scientific_json_sha256": "0eafc8afad813c42b245ba9f49280b26b241a1b638cdb21fc9f83845d69e03d9",
+  "classification": "PASS_NEXT_MASS_NODE_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "frozen_coordinate": {"u": -1e-5, "v": 5e-6, "distinct_rank": 2, "multiplicity": 1},
+  "observed": {
+    "sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "3.26861120435911150741540805708e-80",
+    "max_radial_richardson_scaled_error": "2.56975832612797362560915878496e-15"
+  },
+  "thresholds": {"scaled_mp80_vs_mp120_max": "1e-30", "radial_richardson_scaled_max": "5e-4"},
+  "certified_occurrence_weight_after": 5,
+  "certified_occurrence_fraction_after": "5/32 = 15.625%",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "next_distinct_coordinate": {"u": -1e-5, "v": 1e-5, "distinct_rank": 3, "multiplicity": 1}
+}
