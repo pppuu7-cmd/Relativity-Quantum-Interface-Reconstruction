@@ -1,0 +1,68 @@
+{
+  "iteration": 449,
+  "date": "2026-09-05",
+  "authority_type": "raw-consumption plus frozen coverage enumeration; non-promoting",
+  "classification": "PASS_RAW_CONSUMED_SELECTED_PHI_SAMPLE_SLAB__FULL_SUPPORT_DENOMINATOR_ENUMERATED__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "target": {
+    "double_double_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0
+  },
+  "raw_provenance": {
+    "run_id": 33928248369,
+    "job_id": 101201330811,
+    "artifact_id": 9958661360,
+    "artifact_digest": "sha256:16d70f63275c451c15cb13243240612dcdc2fc09f598fe08194b1b91c2ecd3c8",
+    "head_sha": "8257cda2607fde9ec73245719b00671a17b43aeb",
+    "raw_result_sha256": "d7a148b1f55364145612e3c032aaa13a24634b87bad965a9f40a4d1db2b478bb",
+    "raw_authority_audit_pass": true
+  },
+  "selected_slab": {
+    "mass_point": {"u": 5e-6, "v": 5e-6},
+    "z": [-0.86, 0.0, 0.86],
+    "phi_nodes": 16,
+    "radial_hs": [0.002, 0.001, 0.0005],
+    "precision_digits": [80, 120],
+    "output_rows": 48,
+    "direct_parent_mp_evaluations": 576,
+    "observed_scaled_mp80_vs_mp120_max": "1.87674211442491552330414104428e-80",
+    "observed_max_radial_richardson_scaled_error": "2.57040398242795503891540021587e-15",
+    "all_finite": true
+  },
+  "frozen_full_support_denominator": {
+    "source": "raw-consumed Iteration-407 spectral algebra frozen support",
+    "mass_nodes": 32,
+    "training_z": [-0.86, -0.43, 0.0, 0.43, 0.86],
+    "z_count": 5,
+    "phi_nodes": 16,
+    "output_rows": 2560,
+    "direct_parent_mp_evaluations_per_output_row": 12,
+    "direct_parent_mp_evaluations": 30720,
+    "selected_slab_rows_already_passed": 48,
+    "remaining_rows_after_selected_slab": 2512,
+    "selected_slab_fraction": 0.01875
+  },
+  "same_corner_next_stage": {
+    "mass_point": {"u": 5e-6, "v": 5e-6},
+    "remaining_z": [-0.43, 0.43],
+    "phi_nodes": 16,
+    "output_rows": 32,
+    "direct_parent_mp_evaluations": 384,
+    "precision_digits": [80, 120],
+    "radial_hs": [0.002, 0.001, 0.0005]
+  },
+  "interpretation": "The selected 48-row slab is a raw-valid precision PASS only. With the complete frozen support denominator now enumerated as 32 mass nodes x 5 z x 16 phi = 2560 output rows, its coverage is 48/2560 = 1.875%. This percentage is a numerical-provenance coverage fraction only, never model readiness and never physical promotion. The only allowed immediate extension is the remaining z={-0.43,+0.43} at the same mass corner under unchanged conventions.",
+  "guardrails": [
+    "NO_PHYSICAL_INDEX2_PROMOTION",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_NODE_CHANGE",
+    "NO_ZERO_FILL",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "COVERAGE_FRACTION_IS_NOT_MODEL_READINESS"
+  ]
+}
