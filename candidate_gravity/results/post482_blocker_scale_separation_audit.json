@@ -1,0 +1,49 @@
+{
+  "stage": "POST482_INDEX2_BLOCKER_SCALE_SEPARATION_AUDIT",
+  "classification": "PASS_BLOCKER_LOCALIZED_ABOVE_ARITHMETIC_AND_RADIAL_ERROR_SCALES__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "authority_scope": "MECHANISM_LOCALIZATION_ONLY__NO_PHYSICAL_DS_PROMOTION",
+  "target": {"double_double_global_index": 2, "class_id": 3, "q_squared": -1.0},
+  "iteration421_authority": {
+    "classification": "PASS_TRU1SQ_CHANNEL2_SYMMETRIC_CROSS_DERIVATIVE__BLOCKED_CONVERGENCE",
+    "max_stability_scaled": 2.2720400683804223e-05,
+    "max_required_fit_residual_scaled": 2.585665489102237e-05,
+    "threshold": 2e-05,
+    "max_radial_richardson_scaled_error": 5.29849601693666e-15,
+    "max_direct_original_integrand_crosscheck_scaled_error": 2.0658997659274425e-09
+  },
+  "latest_local_precision_reference": {
+    "authority_iteration": 480,
+    "manifest_rank": 11,
+    "max_scaled_mp80_vs_mp120": 2.947794720034203e-80,
+    "max_radial_richardson_scaled_error": 2.561554874883875e-15
+  },
+  "derived_scale_separation": {
+    "stability_threshold_excess_fraction": 0.13602003419021114,
+    "fit_residual_threshold_excess_fraction": 0.2928327445511183,
+    "stability_over_iteration421_radial_error": 4288084885.065193,
+    "fit_residual_over_iteration421_radial_error": 4879998929.577655,
+    "stability_over_direct_integrand_crosscheck_error": 10997.82334967465,
+    "fit_residual_over_direct_integrand_crosscheck_error": 12515.92904819105,
+    "stability_over_rank11_radial_error": 8869769258.733614,
+    "fit_residual_over_rank11_radial_error": 10094124917.856602
+  },
+  "interpretation": [
+    "The Iteration-421 convergence failure is not on the same scale as radial Richardson error or the direct original-integrand crosscheck error.",
+    "Increasing arithmetic precision alone is therefore not evidenced as a sufficient remedy; the unresolved issue is more plausibly in mass-step/derivative reconstruction or representation consistency.",
+    "The frozen mass-support program is scientifically relevant because it enables an independently assembled BASE/HALF derivative closure without relaxing the original convergence thresholds.",
+    "This scale-separation audit is diagnostic only and cannot convert index 2 from BLOCKED_CONVERGENCE to CONVERGED."
+  ],
+  "next_gate": "continue exact frozen mass-support certification; after all 28 distinct coordinates are raw-certified, perform independent BASE/HALF MP80/MP120 assembled derivative closure under retained thresholds",
+  "guardrails": [
+    "NO_THRESHOLD_WEAKENING",
+    "NO_SMALLER_MASS_STEP_AS_UNFROZEN_RESCUE",
+    "NO_ANGULAR_GRID_ESCALATION_AS_UNFROZEN_RESCUE",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
