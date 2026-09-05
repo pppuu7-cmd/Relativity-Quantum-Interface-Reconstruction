@@ -1,0 +1,31 @@
+{
+  "iteration": 474,
+  "date": "2026-09-05",
+  "classification": "PASS_MIXED_DERIVATIVE_PRECISION_NULLSPACE__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "scope": "post-support assembled MP80<->MP120 precision provenance for frozen central4xcentral4 mixed derivative",
+  "central4_coefficients": ["1/12", "-2/3", "2/3", "-1/12"],
+  "exact_identities": {
+    "sum_c": "0",
+    "c_l2_squared": "65/72",
+    "projector": "P = I - (1/4) 11^T",
+    "double_centering": "DeltaD = c^T DeltaF c = c^T P DeltaF P c",
+    "separable_nullspace": "DeltaD is invariant under DeltaF -> DeltaF + a 1^T + 1 b^T + gamma 11^T",
+    "correlation_aware_bound": "|DeltaD| <= (65/72) ||P DeltaF P||_F"
+  },
+  "counterexample": {
+    "DeltaF": "a 1^T with a=(1,2,3,4)",
+    "max_local_absolute_discrepancy": "4",
+    "assembled_DeltaD": "0",
+    "interpretation": "large local precision disagreement can be exactly invisible to the mixed derivative when it lies in the exact row/column-separable nullspace"
+  },
+  "relation_to_iteration472": "Iteration 472 proved local sample PASS is not sufficient for assembled MP PASS. Iteration 474 proves the converse also fails: local sample FAIL is not necessary for assembled MP FAIL. Only the interaction component P DeltaF P can affect the mixed derivative.",
+  "future_assembly_requirement": "In addition to frozen Iterations 460/471/472 diagnostics, report the double-centered precision interaction norm ||P DeltaF P||_F and verify DeltaD from raw DeltaF equals DeltaD from P DeltaF P up to arithmetic roundoff. Violation is implementation/provenance BLOCKED, not physics FAIL.",
+  "guardrails": [
+    "No estimator, threshold, dynamics, support order, or promotion rule changes.",
+    "This does not replace the frozen assembled scaled MP80<->MP120 threshold 2e-6.",
+    "This is not a Candidate-Gravity consistency FAIL, comparator identity, model non-identifiability, near-degeneracy, or novelty certificate.",
+    "ANSATZ-003 remains forbidden; Fisher/resources remain forbidden before a nonzero robust algebraic residual."
+  ],
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0
+}
