@@ -1,0 +1,33 @@
+{
+  "iteration": 472,
+  "date": "2026-09-05",
+  "classification": "PASS_LOCAL_TO_ASSEMBLED_MP_SUFFICIENCY_CONTRACT__NON_PROMOTING",
+  "scope": "post-support linear assembly precision provenance",
+  "definitions": {
+    "delta_i": "F80_i-F120_i",
+    "s_i": "max(1,|F80_i|,|F120_i|)",
+    "e_i": "|delta_i|/s_i",
+    "E": "sum_i |w_i| s_i",
+    "DeltaD": "sum_i w_i delta_i"
+  },
+  "exact_implication": "if max_i e_i <= eps_local then |DeltaD| <= B_sample_delta <= eps_local * E",
+  "assembled_sufficient_condition": "eps_local * E / max(1,|D80|,|D120|) <= tau_assembled",
+  "counterexample": {
+    "weights": ["4/9", "-4/9"],
+    "F120": ["10^30", "10^30"],
+    "F80": ["10^30+1", "10^30-1"],
+    "max_local_scaled_error": "1/10^30",
+    "D120": "0",
+    "D80": "8/9",
+    "assembled_scaled_error": "8/9",
+    "frozen_assembled_threshold": "2e-6"
+  },
+  "interpretation": [
+    "A local MP sample PASS alone cannot certify the assembled MP threshold.",
+    "The weighted magnitude envelope E or the exact weighted discrepancy bound must be evaluated.",
+    "Failure of the sufficiency condition is not physics FAIL; it means assembled precision remains unproven.",
+    "No estimator, threshold, dynamics, support order, or promotion rule changes."
+  ],
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0
+}
