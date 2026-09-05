@@ -14,7 +14,7 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest raw-valid physical blocker: Iteration 421 — `BLOCKED_CONVERGENCE`, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: `[2]`.
 - Latest completed numerical mass-support authority: **Iteration 475**, raw-consuming canonical rank-9 run `33983416847` as non-promoting PASS at `u=+5e-6, v=-5e-6`.
-- Latest authoritative research iteration: **Iteration 476**.
+- Latest authoritative research iteration: **Iteration 477**.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16; occurrence denominator `32 x 5 x 16 = 2560` rows.
 - Certified occurrence-weighted precision coverage: **`15/32 = 46.875%`**, i.e. **`1200/2560`** row occurrences.
 - Frozen Iteration-455 rank 10 `(+5e-6,+5e-6)`, multiplicity 2, was already `CERTIFIED` in the initial baseline and is already included in coverage. It must not be launched again.
@@ -28,12 +28,24 @@ At `u=+5e-6, v=-5e-6`: `80/80` finite; max scaled MP80↔MP120 `2.91451824771117
 ## Manifest correction retained in authority
 The frozen Iteration-455 manifest, not stale prospective wording, determines coordinate state. Rank 10 `(+5e-6,+5e-6)` was `CERTIFIED` before the sequential queue and contributed multiplicity 2 to the initial certified baseline. Therefore after rank-9 PASS the next scientifically allowed untested coordinate is rank 11 `(+5e-6,+1e-5)`, multiplicity 1. Re-running rank 10 would be a duplicate heavy calculation and is forbidden.
 
-## Latest precision/provenance closure — Iteration 476
-For frozen central4 `c=(1/12,-2/3,+2/3,-1/12)` and any 4x4 MP discrepancy matrix `DeltaF`, the assembled discrepancy is the Frobenius functional `DeltaD=<cc^T,DeltaF>_F`. Exact rational arithmetic gives `||c||_2^2=65/72`, hence `||cc^T||_F=65/72` and `||cc^T||_F^2=4225/5184`.
+## Latest precision/provenance closure — Iteration 477
+For positive central4 magnitudes `a,b in {1,2}`, define the signed MP discrepancy quartet
 
-The 16-dimensional discrepancy-matrix space therefore contains only a **one-dimensional derivative-sensitive subspace**, parallel to `cc^T`, and a **15-dimensional exact functional nullspace**. The unique sensitive projection is `DeltaF_sens=(5184/4225) DeltaD cc^T`, with `||DeltaF_sens||_F=(72/65)|DeltaD|`. Every Frobenius-orthogonal remainder is exactly invisible to the frozen mixed derivative.
+`DeltaQ_ab = DeltaF(+a,+b)-DeltaF(-a,+b)-DeltaF(+a,-b)+DeltaF(-a,-b)`.
 
-With `P=I-(1/4)11^T` from Iteration 474 and odd-parity projector `Qo=(I-R)/2` implied by Iteration 467, `Pc=c` and `Qo c=c`, so `DeltaD=<cc^T,DeltaF>_F=<cc^T,P DeltaF P>_F=<cc^T,Qo DeltaF Qo>_F`. Exact diagnostic hierarchy: `|DeltaD| <= (65/72)||Qo DeltaF Qo||_F <= (65/72)||P DeltaF P||_F <= (65/72)||DeltaF||_F`. Dimension hierarchy: ambient 16, double-centered 9, odd-odd 4, derivative-sensitive 1; therefore even the odd-odd sector contains a 3-dimensional exact derivative nullspace. Classification: `PASS_MIXED_DERIVATIVE_RANK1_PRECISION_SENSITIVE_MODE__DIAGNOSTIC_ONLY_NON_PROMOTING`. No estimator, threshold, dynamics, support order, or promotion rule changed.
+With positive-node derivative vector `g=(2/3,-1/12)=(1/12)(8,-1)`, the frozen mixed-derivative discrepancy compresses exactly to
+
+`DeltaD=<Wq,DeltaQ>_F=(64 DeltaQ11-8 DeltaQ12-8 DeltaQ21+DeltaQ22)/144`,
+
+where `Wq=g g^T=(1/144)[[64,-8],[-8,1]]`. No `u<->v` identity is assumed: `DeltaQ12` and `DeltaQ21` remain distinct.
+
+Exact quartet-space structure: `rank(Wq)=1`, `||Wq||_F=65/144`, `||Wq||_F^2=4225/20736`; quartet dimension 4, derivative-sensitive dimension 1, exact quartet nullspace dimension 3. An explicit integer null basis in order `(Q11,Q12,Q21,Q22)` is `(1,0,0,-64)`, `(0,1,0,8)`, `(0,0,1,8)`. The unique sensitive quartet projection is `DeltaQ_sens=(144/4225)DeltaD[[64,-8],[-8,1]]`, with `||DeltaQ_sens||_F=(144/65)|DeltaD|`.
+
+For the Iteration-467 odd-odd projector `X=Qo DeltaF Qo`, exact sign replication gives `||X||_F=(1/2)||DeltaQ||_F`, so
+
+`|DeltaD| <= (65/144)||DeltaQ||_F = (65/72)||Qo DeltaF Qo||_F`.
+
+This is exactly consistent with Iteration 476's full-matrix rank-1 sensitive norm `(72/65)|DeltaD|`. Classification: `PASS_QUARTET_RANK1_COMPRESSED_PRECISION_CERTIFICATE__DIAGNOSTIC_ONLY_NON_PROMOTING`. The result is implementation/provenance compression only: no estimator, threshold, dynamics, support ordering, occurrence accounting, coordinate state, or physical promotion rule changed, and no support deduplication is authorized.
 
 ## Retained physical authority and blocker
 Timelike `Tr U2` before `+i/2` weight: `q^2=-1 -> +0.0005345424186332474`; `q^2=-0.34 -> -0.000734101259784574`; `q^2=-0.14 -> -0.001572666890130343`.
@@ -45,7 +57,7 @@ Iteration 421 remains blocker authority: run `33871920373`, raw-valid `BLOCKED_C
 ## Frozen numerical/assembly contracts
 Iterations 436/437 close `N1/Q1`; 438 exact `A_finite`; 440 `Acoef/Asub`; 442 same-h representation/truncation; 445 Y-site; 446 post-parent contraction arithmetic; 447 localized the remaining Iteration-407 spectral/sample boundary. Iterations 449/450/453/456/459/461/463/466/468/470/473/475 progressively close direct-parent full-training-z mass support. Iteration 454 forbids unsupported `u<->v` deduplication. Iteration 455 freezes exact source order and coordinate states. Iteration 457 permits shared local precision certificates only for exact BASE/HALF coordinate overlaps while keeping derivative weights distinct.
 
-After all 28 distinct support coordinates are locally certified, BASE and HALF central4 assemblies must be evaluated independently at MP80 and MP120. Retain `ds=-d_base`; there is no Richardson promotion. Require all finite, assembled scaled MP80↔MP120 discrepancy `<=2e-6`, retained BASE↔HALF mass-step discrepancy `<=2e-5`, and report weighted local error budgets. Iteration 460 requires `D`, `S_abs`, `kappa_cancel`, `B_80_120` and triangle-inequality consistency. Iteration 462 exact synthetic moment probes and Iteration 467 canonical-16 versus exact four-quartet parity-projector equivalence are mandatory implementation/provenance checks. Iteration 469 requires `S_quartet`, `kappa_quartet`, `rho_parity`, and `rho_shell` independently for BASE/HALF and MP80/MP120. Iteration 471 additionally requires `B_quartet_delta`, `rho_precision_parity`, and `rho_precision_shell` for the MP80↔MP120 discrepancy itself, with `|DeltaD|<=B_quartet_delta<=B_sample_delta`. Iteration 472 proves local scaled MP sample PASS does not imply assembled MP closure and requires exact weighted-discrepancy evaluation or the sufficient envelope test. Iteration 474 additionally requires double-centering `DeltaF_int=P DeltaF P`, raw/double-centered `DeltaD` equality up to arithmetic roundoff, and the Frobenius bound. Iteration 476 sharpens this further: only the Frobenius component parallel to `cc^T` can change the derivative; future assembly should report/verify the exact rank-1 sensitive projection alongside odd-odd and double-centered norms. Iteration 464 h4/h6 signatures are diagnostic only; Iteration 465 proves two-level truncation order is not identifiable and forbids Richardson promotion.
+After all 28 distinct support coordinates are locally certified, BASE and HALF central4 assemblies must be evaluated independently at MP80 and MP120. Retain `ds=-d_base`; there is no Richardson promotion. Require all finite, assembled scaled MP80↔MP120 discrepancy `<=2e-6`, retained BASE↔HALF mass-step discrepancy `<=2e-5`, and report weighted local error budgets. Iteration 460 requires `D`, `S_abs`, `kappa_cancel`, `B_80_120` and triangle-inequality consistency. Iteration 462 exact synthetic moment probes and Iteration 467 canonical-16 versus exact four-quartet parity-projector equivalence are mandatory implementation/provenance checks. Iteration 469 requires `S_quartet`, `kappa_quartet`, `rho_parity`, and `rho_shell` independently for BASE/HALF and MP80/MP120. Iteration 471 additionally requires `B_quartet_delta`, `rho_precision_parity`, and `rho_precision_shell` for the MP80↔MP120 discrepancy itself, with `|DeltaD|<=B_quartet_delta<=B_sample_delta`. Iteration 472 proves local scaled MP sample PASS does not imply assembled MP closure and requires exact weighted-discrepancy evaluation or the sufficient envelope test. Iteration 474 additionally requires double-centering `DeltaF_int=P DeltaF P`, raw/double-centered `DeltaD` equality up to arithmetic roundoff, and the Frobenius bound. Iteration 476 proves only the Frobenius component parallel to `cc^T` can change the derivative. Iteration 477 gives an exact four-quartet implementation of that rank-1 sensitive certificate: future assembly should verify canonical-16, quartet, odd-odd and rank-1 forms agree without identifying `Q12` and `Q21`. Iteration 464 h4/h6 signatures are diagnostic only; Iteration 465 proves two-level truncation order is not identifiable and forbids Richardson promotion.
 
 ## Active gate
 Iteration-455 distinct rank 11: `u=+5e-6, v=+1e-5`, multiplicity 1. Canonical run `33989317870`, job `101368577097`, remains active. This is the first untested deterministic manifest coordinate after raw-valid rank 9 because rank 10 is already certified. Raw-consume fail-closed after completion. PASS closes only this exact coordinate and permits only the next UNTESTED manifest coordinate; BLOCKED requires localization of the first failing `z/phi/radial` sample at exactly rank 11.
@@ -60,7 +72,7 @@ Iteration-455 distinct rank 11: `u=+5e-6, v=+1e-5`, multiplicity 1. Canonical ru
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 476 strengthens exact precision attribution/provenance but closes no additional stable readiness-rubric component.
+Readiness change: **0 percentage points**. Iteration 477 compresses the final assembled MP precision attribution to an exact four-quartet rank-1 certificate but closes no additional stable readiness-rubric component.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct q^2 variables are never summed. Same i0 is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Local MP sample PASS never substitutes for assembled derivative MP closure. Large cancellation condition number is diagnostic only. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists. No blind heavy full-C5. Do not reopen the already-closed C5 null-soft e=3 sector. Old weighted-B3 proxy residues are not actual `Tr U1` authority. Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification.
