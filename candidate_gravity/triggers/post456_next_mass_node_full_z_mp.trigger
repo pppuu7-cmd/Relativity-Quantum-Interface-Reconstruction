@@ -1,0 +1,10 @@
+launch: post456_next_mass_node_full_z_mp
+source_authority_iteration: 456
+manifest_authority_iteration: 455
+target_u: -1e-5
+target_v: +5e-6
+frozen_z: [-0.86,-0.43,0,+0.43,+0.86]
+phi_nodes: 16
+radial_hs: [2e-3,1e-3,5e-4]
+precision_digits: [80,120]
+physical_promotion: false
