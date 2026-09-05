@@ -1,0 +1,1 @@
+2026-09-05 Iteration468 raw PASS authorizes exactly Iteration455 distinct rank 7 u=-5e-6 v=+1e-5 under frozen five-z/NPHI16/radial/direct-MP80/120 conventions. No later coordinate is authorized before raw consumption.
