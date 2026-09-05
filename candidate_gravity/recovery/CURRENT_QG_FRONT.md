@@ -21,8 +21,9 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - **Latest spectral arithmetic authority:** raw-consumed post-447 Iteration-407 spectral-algebra MP PASS, non-promoting.
 - **Latest actual-cut parent arithmetic authority:** raw-consumed post-447 class-3 actual-cut parent MP pilot PASS, non-promoting.
 - **Latest selected-slab phi/sample authority:** Iteration 449 raw-consumes run `33928248369` as PASS, non-promoting.
-- **Latest exhaustive support-denominator authority:** Iteration 449 — `32 mass nodes x 5 z x 16 phi = 2560` output rows.
-- **Active gate:** post-449 same-corner remaining-z MP stage for z=`{-0.43,+0.43}` at `u=v=+5e-6`; workflow intentionally unnumbered until raw consumption.
+- **Latest one-mass-coordinate full-training-z authority:** Iteration 450 raw-consumes run `33932061794` as PASS, non-promoting.
+- **Frozen sample-support denominator:** `32 mass nodes x 5 training-z x 16 phi = 2560` output rows.
+- **Next active numerical gate:** first untested Iteration-407 base-stencil source-order coordinate `u=v=-1e-5`, all five training-z, NPHI16, full unchanged radial Richardson, direct MP80/120; unnumbered until raw consumption.
 
 ## Retained physical coordinates
 
@@ -37,52 +38,30 @@ Iteration 421 remains the physical blocker authority: run `33871920373`, job `10
 
 ## Precision-chain state
 
-Iterations 419/422 exclude simple summation and affine-moment instability as dominant explanations. Iteration 425 requires differentiating the full fixed-mass `F(u,v)`. Iteration 427 remains the exact non-measure-chain oracle. Iteration 428 exposes severe whole-path symmetric-cross conditioning. Iteration 431 localizes the inner precision boundary to Iteration-270 primitives. Iterations 436/437 close `N1/Q1` at 80/120 digits. Iteration 438 closes exact `A_finite` arithmetic. Iteration 440 closes `Acoef/Asub` 80/120 arithmetic, and Iteration 442 closes the same-h representation/truncation parent layer. Iterations 445 and 446 close the Y-site and continuous post-parent contraction arithmetic on their frozen scopes.
+Iterations 419/422 exclude simple summation and affine-moment instability as dominant explanations. Iteration 425 requires differentiating the full fixed-mass `F(u,v)`. Iteration 427 remains the exact non-measure-chain oracle. Iteration 428 exposes severe whole-path symmetric-cross conditioning. Iteration 431 localizes the inner precision boundary to Iteration-270 primitives. Iterations 436/437 close `N1/Q1` at 80/120 digits. Iteration 438 closes exact `A_finite` arithmetic. Iteration 440 closes `Acoef/Asub` 80/120 arithmetic, and Iteration 442 closes the same-h representation/truncation parent layer. Iterations 445 and 446 close the Y-site and continuous post-parent contraction arithmetic on their frozen scopes. The post-447 spectral algebra closes degree-4 interpolation, affine-log recurrence and terminal spectral assembly given frozen parent samples over all 32 stencil evaluations; actual-cut parent MP pilot also passed on its sampled scope.
 
-Iteration 447 showed that full fixed-mass sample generation remained uncertified. The post-447 Iteration-407 spectral algebra PASS then closed degree-4 interpolation, affine-log recurrence and terminal spectral assembly **given frozen parent samples** over all 32 mass nodes, with max 80/120 discrepancy `2.4405410844438855e-80`. The actual-cut parent MP pilot likewise passed on eight near-cut samples with max 80/120 discrepancy `4.82848380400305e-81`.
+## Iteration 450 raw PASS
 
-## Iteration 449 selected-slab raw PASS
+Run `33932061794`, job `101212520875`, artifact `9959560285`, artifact digest `sha256:84509a60d16e660e52c7873261694249e1167f1d95d6a34bd5e91e4026199c54`, scientific JSON SHA-256 `2467e807b8b5f1c8a93a83a1e5be2107d2c5ae3d8747bb2f5f586b16501d1c03`.
 
-Run `33928248369`, job `101201330811`, artifact `9958661360`, artifact digest `sha256:16d70f63275c451c15cb13243240612dcdc2fc09f598fe08194b1b91c2ecd3c8`, head `8257cda2607fde9ec73245719b00671a17b43aeb`, raw scientific JSON SHA-256 `d7a148b1f55364145612e3c032aaa13a24634b87bad965a9f40a4d1db2b478bb`.
+Raw classification: `PASS_SAME_CORNER_FULL_Z_SUPPORT_MP80_MP120__NON_PROMOTING`.
 
-Classification: `PASS_RAW_CONSUMED_SELECTED_PHI_SAMPLE_SLAB__FULL_SUPPORT_DENOMINATOR_ENUMERATED__NON_PROMOTING`.
+At mass `u=v=+5e-6`, newly consumed z=`{-0.43,+0.43}`, all 16 phi nodes and radial h=`{2e-3,1e-3,5e-4}` with both signs:
+- 32/32 rows finite;
+- max scaled 80↔120 discrepancy `2.78393261527753298550080747733e-80 <= 1e-30`;
+- max radial Richardson scaled error `1.96385912050971757112266495724e-15`.
 
-Frozen selected slab:
-- mass point `u=v=+5e-6`;
-- z=`{-0.86,0,+0.86}`;
-- all 16 phi nodes;
-- radial h=`{2e-3,1e-3,5e-4}`, both signs;
-- direct parent recomputation at 80/120 digits.
+Combined with Iteration 449, all five frozen training-z values `{-0.86,-0.43,0,+0.43,+0.86}` are precision-closed at this one mass coordinate. Under the already-frozen Iteration-449 denominator convention this is `80/2560 = 3.125%` numerical sample-provenance coverage. This is not MODEL_READINESS and not physical closure.
 
-Observed:
-- 48/48 output rows finite;
-- max scaled 80/120 discrepancy `1.8767421144249155e-80 <= 1e-30`;
-- max radial Richardson scaled error `2.570403982427955e-15`;
-- 576 direct parent MP evaluations.
+## Exact next gate
 
-This is a genuine numerical precision PASS for the selected slab only. It does not promote physical index 2.
+Iteration 407 uses `nodes=[-2*h,-h,h,2*h]` inside `derivative_from_analytic(h)`. Iteration 379 fixes `BASE_H=5e-6`, `HALF_H=2.5e-6`. The first untested base-stencil coordinate in source order is `u=v=-1e-5`.
 
-## Exhaustive frozen sample-support denominator
+Freeze the next bounded gate to exactly this one coordinate, all five training-z, NPHI16, radial `{2e-3,1e-3,5e-4}` both signs, direct parent recomputation at 80/120 digits, MP cross-precision `<=1e-30`, unchanged inherited radial threshold, exact 80-row census and all finite. No blind remaining-grid sweep.
 
-The retained raw-consumed Iteration-407 support fixes 32 mass nodes, training z=`{-0.86,-0.43,0,+0.43,+0.86}`, and 16 phi nodes. Therefore full sample-generation provenance requires exactly:
+If PASS, raw-consume it under the next collision-safe authority ID and continue one bounded frozen mass coordinate at a time (or a prospectively justified non-blind chunk if runtime evidence supports it). If BLOCKED, localize the first failing z/phi/radial sample with unchanged conventions.
 
-`32 x 5 x 16 = 2560` output `(mass-node,z,phi)` rows.
-
-Each row requires 3 radial h x 2 signs x 2 precision levels = 12 direct parent MP evaluations, hence exhaustive support requires `30720` direct parent MP evaluations.
-
-The Iteration-449 selected slab covers `48/2560 = 1.875%` of this numerical-provenance support. This is **not** MODEL_READINESS and not a physical-closure percentage.
-
-At the already-tested mass corner, only z=`{-0.43,+0.43}` remain: 32 output rows / 384 direct parent MP evaluations. That stage has been launched under an unnumbered collision-safe workflow and must be raw-consumed before further mass-node expansion.
-
-## Downstream gates
-
-1. Raw-consume the post-449 same-corner remaining-z stage fail-closed.
-2. PASS closes all five frozen z values only at `u=v=+5e-6`; then extend the exact same 80/120 direct-parent sample generation across the remaining frozen mass-node support, without changing phi/radial nodes or thresholds.
-3. BLOCKED requires localization of the first failing z/phi/radial sample at unchanged conventions. No resampling, threshold weakening or precision cherry-picking.
-4. Only after full `F(u,v)` precision provenance closure evaluate frozen Iteration-424 independently at 80 and 120 digits. Physical acceptance remains: mass-step discrepancy `<=2e-5`, direct original-integrand cross-check `<=2e-6`, tensor-degree-(1,1) fit residual `<=2e-5`, `|D_s(80)-D_s(120)|<=2e-6`, all finite; no smaller physical mass step, angular-grid escalation, threshold weakening, or zero fill.
-5. Promote index 2 only if every frozen condition passes.
-6. Only then execute Iteration 412 exact15, requiring all 15 unique double-double indices and five valid records per q^2, and assemble complete `Tr U1^2` and `D_s Gamma_{e=2}=+(i/2)D_s TrU2-(i/4)D_s TrU1^2` q2-by-q2.
-7. Comparator quotient / Source-Ward-contact+K2 / C3-C5 / nonlocal / asymptotic-safety closure remains downstream. Source/Born subtraction only in the matched observable after pole/cut-origin classification. No candidate residual before comparator closure.
+Only after full `F(u,v)` precision-provenance closure may frozen Iteration 424 be evaluated independently at 80 and 120 digits. Physical acceptance remains: mass-step discrepancy `<=2e-5`, direct original-integrand cross-check `<=2e-6`, tensor-degree-(1,1) fit residual `<=2e-5`, `|D_s(80)-D_s(120)|<=2e-6`, all finite; no smaller physical mass step, angular-grid escalation, threshold weakening or zero fill. Only a full physical PASS can promote index 2 and unblock Iteration 412 exact15.
 
 ## Stable readiness rubric
 
@@ -95,7 +74,7 @@ At the already-tested mass corner, only z=`{-0.43,+0.43}` remain: 32 output rows
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 449 closes a real selected-slab precision subgate and enumerates the full numerical support denominator, but no new stable model-readiness rubric point has closed.
+Readiness change: **0 percentage points**. Iteration 450 closes one real numerical support coordinate but no stable model-readiness rubric point.
 
 ## Retained guardrails
 
