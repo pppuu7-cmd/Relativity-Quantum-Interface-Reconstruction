@@ -45,6 +45,7 @@ An authoritative iteration number is allocated by the first committed research/r
 - 466: raw PASS at Iteration-455 distinct rank 5 `(-5e-6,-5e-6)` from run `33962417750`, job `101296485227`, artifact `9969255401`; exact BASE/HALF overlap multiplicity 2; occurrence-weighted certified coverage `9/32=28.125%`; non-promoting.
 - 467: exact central4×central4 parity-projector audit. Proves arbitrary-data annihilation of even-even/even-odd/odd-even sectors, survival only of odd-odd parity, and exact equivalence of the canonical 16-term sum to four signed parity quartets. Adds a post-support implementation/provenance cross-check only; no support deduplication, no `u<->v` identity, no physical promotion.
 - 468: raw PASS at Iteration-455 distinct rank 6 `(-5e-6,+5e-6)` from canonical run `33968129883`, job `101311756122`, artifact `9971336666`; exact BASE/HALF overlap multiplicity 2; occurrence-weighted certified coverage `11/32=34.375%`; non-promoting. Rank 7 `(-5e-6,+1e-5)` is the sole active next gate under unchanged frozen conventions.
+- 469: exact quartet cancellation decomposition. Refines the Iteration-460 sample-level condition number using Iteration-467 parity quartets: `|D|<=S_quartet<=S_sample`, hence `kappa_sample>=kappa_quartet>=1`; defines bounded `rho_parity=S_quartet/S_sample` and `rho_shell=|D|/S_quartet` with exact factorization `kappa_sample=1/(rho_parity*rho_shell)`. Diagnostic/provenance only; no physical promotion or threshold change.
 
 These meanings are reserved and may not be reused by concurrent workflows or research records.
 
