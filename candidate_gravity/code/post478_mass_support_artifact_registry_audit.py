@@ -27,7 +27,7 @@ def vd(x): return isinstance(x,str) and re.fullmatch(r'sha256:[0-9a-f]{64}',x) i
 def vs(x): return isinstance(x,str) and re.fullmatch(r'[0-9a-f]{64}',x) is not None
 
 def first_coord(o):
-    for key in ('frozen_coordinate','mass_coordinate','mass_node'):
+    for key in ('frozen_coordinate','mass_coordinate','mass_node','coordinate'):
         x=o.get(key)
         if isinstance(x,dict) and 'u' in x and 'v' in x: return x,key
     x=o.get('frozen')
@@ -47,9 +47,6 @@ def provenance(o):
     return run,job,art,name,dig,sj
 
 def coverage(o):
-    # Return explicit z rows and row count when encoded. A full 80-sample raw
-    # certificate is sufficient to infer the frozen five-z support because its
-    # classification is FULL_Z and NPHI is frozen at 16.
     z=None; rows=None; mode='unknown'
     obs=o.get('observed') if isinstance(o.get('observed'),dict) else {}
     if isinstance(o.get('selected_slab'),dict):
@@ -95,21 +92,16 @@ for m in manifest:
         if not refs:
             reg='CERTIFIED_BUT_RAW_ARTIFACT_BINDING_NOT_FOUND'; missing.append(rank)
         else:
-            # Deduplicate identical wrappers first.
             unique={}
             for r in refs:
                 ident=(r['source_run_id'],r['artifact_id'],r['artifact_digest'],r['scientific_json_sha256'])
                 unique.setdefault(ident,r)
             rr=list(unique.values())
-            # A single full 80-row source is a complete exact binding.
             full=[r for r in rr if r.get('row_count')==80 and set(r.get('z_coverage') or [])==set(map(norm,FROZEN_Z))]
             if len(full)>=1:
-                # If there are additional partial historical sources, they are
-                # retained as provenance but not required for this full binding.
                 reg='EXACT_RAW_ARTIFACT_BOUND__FULL_80_ROW_SOURCE'
                 complete.append(rank); reason={'full_source_count':len(full),'total_unique_sources':len(rr)}
             else:
-                # Otherwise permit only an exact disjoint z-partition composite.
                 zsets=[]; total=0; good=True
                 for r in rr:
                     zs=r.get('z_coverage'); n=r.get('row_count')
@@ -135,7 +127,7 @@ closed_occ=sum(int(m['source_occurrence_multiplicity']) for m in manifest if int
 bound_occ=sum(int(m['source_occurrence_multiplicity']) for m in manifest if int(m['distinct_rank']) in complete)
 passed=(not missing and not ambiguous and len(complete)==11 and bound_occ==15)
 out={
- 'stage':'POST478_MASS_SUPPORT_ARTIFACT_REGISTRY_AUDIT_V2__COLLISION_SAFE',
+ 'stage':'POST478_MASS_SUPPORT_ARTIFACT_REGISTRY_AUDIT_V3__COLLISION_SAFE',
  'classification':('PASS_ALL_CURRENT_CERTIFIED_MASS_SUPPORT_RAW_ARTIFACT_BINDINGS_RECOVERED__NON_PROMOTING' if passed else 'BLOCKED_CURRENT_CERTIFIED_MASS_SUPPORT_RAW_ARTIFACT_REGISTRY_INCOMPLETE__NON_PROMOTING'),
  'scientific_gate_pass':passed,'promotes_physical_coordinate':False,'MODEL_READINESS':'24%','readiness_change_pp':0,
  'authority_snapshot':{'latest_canonical_iteration':478,'latest_mass_support_authority':475,'certified_ranks':'0..10','active_rank':11,'certified_occurrences':closed_occ,'total_occurrences':32},
