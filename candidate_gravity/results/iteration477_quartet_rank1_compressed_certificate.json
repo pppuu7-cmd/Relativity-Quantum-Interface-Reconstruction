@@ -1,0 +1,45 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "PASS_QUARTET_RANK1_COMPRESSED_PRECISION_CERTIFICATE__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "exact_structure": {
+    "derivative_sensitive_dimension": 1,
+    "equivalent_bound": "|DeltaD| <= (65/144)||DeltaQ||_F = (65/72)||Qo DeltaF Qo||_F",
+    "full_oddodd_norm_relation": "||Qo DeltaF Qo||_F=(1/2)||DeltaQ||_F",
+    "integer_nullspace_basis_Q11_Q12_Q21_Q22": [
+      [1, 0, 0, -64],
+      [0, 1, 0, 8],
+      [0, 0, 1, 8]
+    ],
+    "quartet_nullspace_dimension": 3,
+    "quartet_space_dimension": 4,
+    "sensitive_norm": "||DeltaQ_sens||_F=(144/65)|DeltaD|",
+    "sensitive_projection": "DeltaQ_sens=(144/4225) DeltaD [[64,-8],[-8,1]]"
+  },
+  "guardrails": [
+    "NO_UV_SYMMETRY_ASSUMPTION",
+    "Q12_AND_Q21_REMAIN_DISTINCT",
+    "DIAGNOSTIC_PROVENANCE_ONLY",
+    "NO_THRESHOLD_CHANGE",
+    "NO_ESTIMATOR_CHANGE",
+    "NO_SUPPORT_DEDUPLICATION",
+    "NO_PHYSICAL_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "interpretation": "The future assembled MP precision audit can compute the exact derivative-sensitive discrepancy directly from four signed quartets. Three independent quartet discrepancy combinations are exact derivative null modes. This is an implementation/provenance compression only and does not permit dropping or identifying source coordinates.",
+  "iteration": 477,
+  "next_gate": "raw-consume canonical Iteration455 rank11 run 33989317870 fail-closed; if PASS advance only to next UNTESTED frozen-manifest coordinate",
+  "promotes_physical_coordinate": false,
+  "quartet_definition": "DeltaQ_ab=DeltaF(+a,+b)-DeltaF(-a,+b)-DeltaF(+a,-b)+DeltaF(-a,-b), a,b in {1,2}",
+  "quartet_functional": {
+    "identity": "DeltaD=<Wq,DeltaQ>_F=(64 DeltaQ11-8 DeltaQ12-8 DeltaQ21+DeltaQ22)/144",
+    "integer_weight_matrix": [[64, -8], [-8, 1]],
+    "positive_weight_vector_g": ["2/3", "-1/12"],
+    "weight_frobenius_norm": "65/144",
+    "weight_frobenius_norm_squared": "4225/20736",
+    "weight_matrix_Wq": [["4/9", "-1/18"], ["-1/18", "1/144"]],
+    "weight_rank": 1
+  },
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true
+}
