@@ -41,6 +41,7 @@ An authoritative iteration number is allocated by the first committed research/r
 - 462: exact central4×central4 tensor-moment invariants. Verifies 1D moments `m0=0,m1=1,m2=m3=m4=0,m5=-4`, tensor exactness on all `u^a v^b` with `0<=a,b<=4`, and freezes post-support operator sanity probes. Implementation/provenance closure only; non-promoting.
 - 463: raw PASS at Iteration-455 distinct rank 4 `(-5e-6,-1e-5)` from canonical run `33957232727`, job `101282656909`, artifact `9968019110`; occurrence-weighted certified coverage `7/32=21.875%`; non-promoting. Concurrent race-duplicate rank-4 run is not separate authority.
 - 464: exact central4 leading truncation-structure audit. Extends moments through `m9`, derives `D_h f=f'-h^4 f^(5)/30-h^6 f^(7)/252+O(h^8)` and the tensor mixed-derivative analogue; freezes BASE/HALF asymptotic scaling signatures `16` for isolated `h^4` and `64` for isolated `h^6`. `(16 D_half-D_base)/15` is diagnostic-only and cannot replace `ds=-d_base` or any frozen threshold. Non-promoting.
+- 465: exact two-level truncation-order identifiability audit. Proves that BASE `D(h)` plus HALF `D(h/2)` alone cannot identify the leading power `p`: every assumed `p!=0` admits an exact `D0+a h^p` fit. In particular p=4 and p=6 imply distinct continua `(16H-B)/15` and `(64H-B)/63` while fitting the same two levels. Scoped numerical regime-specific non-identifiability only; non-promoting.
 
 These meanings are reserved and may not be reused by concurrent workflows or research records.
 
