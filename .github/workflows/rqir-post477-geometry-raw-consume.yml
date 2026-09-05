@@ -1,0 +1,71 @@
+name: RQIR post477 geometry raw consume
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-post477-geometry-raw-consume.yml'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  raw_consume:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download exact source artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rm -rf raw_authority
+          mkdir -p raw_authority
+          gh run download 33992073492 \
+            --repo pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction \
+            --name rqir-post477-frozen-basis-geometry-mp-audit \
+            --dir raw_authority
+          test -f raw_authority/post477_frozen_basis_geometry_mp_audit.json
+      - name: Verify and wrap provenance
+        run: |
+          python - <<'PY'
+          import hashlib, json, pathlib
+          src=pathlib.Path('raw_authority/post477_frozen_basis_geometry_mp_audit.json')
+          raw=src.read_bytes(); o=json.loads(raw)
+          assert o['scientific_gate_pass'] is True
+          assert o['promotes_physical_coordinate'] is False
+          assert o['MODEL_READINESS']=='24%'
+          assert o['observed']['point_sample_count']==13440
+          assert o['frozen']['distinct_mass_coordinates']==28
+          out={
+            'stage':'POST477_FROZEN_BASIS_GEOMETRY_MP_RAW_CONSUMPTION__COLLISION_SAFE_NON_PROMOTING',
+            'source_run_id':33992073492,
+            'source_job_id':101375971739,
+            'source_artifact_id':9976943399,
+            'source_artifact_name':'rqir-post477-frozen-basis-geometry-mp-audit',
+            'source_artifact_digest':'sha256:8b853b49a040d4f0eef99b0aaeedd427f657b8fda47dc49707b639566977f473',
+            'scientific_json_sha256':hashlib.sha256(raw).hexdigest(),
+            'scientific_result':o,
+            'classification':'PASS_RAW_CONSUMED_FROZEN_BASIS_GEOMETRY_MP_AUDIT__NON_PROMOTING',
+            'scientific_gate_pass':True,
+            'promotes_physical_coordinate':False,
+            'MODEL_READINESS':'24%',
+            'readiness_change_pp':0,
+            'guardrails':['EXACT_SOURCE_ARTIFACT_CONSUMED','NO_PHYSICAL_DS_PROMOTION','NO_THRESHOLD_CHANGE','NO_SUPPORT_REORDERING']
+          }
+          dst=pathlib.Path('candidate_gravity/results/post477_frozen_basis_geometry_mp_raw_consumed.json')
+          dst.parent.mkdir(parents=True,exist_ok=True)
+          dst.write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(o['observed'],indent=2,sort_keys=True))
+          print('SCIENTIFIC_JSON_SHA256',out['scientific_json_sha256'])
+          PY
+      - name: Commit exact raw consumption
+        run: |
+          git config user.name 'rqir-actions'
+          git config user.email 'actions@users.noreply.github.com'
+          git add candidate_gravity/results/post477_frozen_basis_geometry_mp_raw_consumed.json
+          git commit -m 'RQIR post477: raw-consume frozen-basis geometry MP PASS'
+          git pull --rebase origin main
+          git push origin HEAD:main
