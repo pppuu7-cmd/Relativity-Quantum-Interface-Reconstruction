@@ -1,0 +1,11 @@
+{
+  "classification": "REGIME_SPECIFIC_NON_IDENTIFIABILITY__TWO_LEVEL_TRUNCATION_ORDER__NON_PROMOTING",
+  "guardrail": "The 16 and 64 signatures from Iteration 464 are theoretical single-term scalings, not empirically identifiable orders from two levels alone. No Richardson promotion; retained ds=-d_base and all frozen thresholds are unchanged.",
+  "iteration": 465,
+  "model_readiness": 24,
+  "p4_continuum_weights": {"B": "-1/15", "H": "16/15"},
+  "p4_minus_p6_inferred_continuum": {"B": "-16/315", "H": "16/315"},
+  "p6_continuum_weights": {"B": "-1/63", "H": "64/63"},
+  "promotion": false,
+  "statement": "With only BASE=D(h) and HALF=D(h/2), the formal leading power p is not identifiable: for every assumed p!=0, D0 and amplitude a can be chosen to fit both levels exactly."
+}
