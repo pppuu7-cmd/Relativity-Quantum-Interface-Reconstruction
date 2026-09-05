@@ -1,0 +1,30 @@
+{
+  "MODEL_READINESS": "24%",
+  "central4": {
+    "c": ["1/12", "-2/3", "2/3", "-1/12"],
+    "norm_c_squared": "65/72",
+    "sensitive_matrix_frobenius_norm": "65/72",
+    "sensitive_matrix_frobenius_norm_squared": "4225/5184",
+    "sum_c": "0"
+  },
+  "classification": "PASS_MIXED_DERIVATIVE_RANK1_PRECISION_SENSITIVE_MODE__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "exact_structure": {
+    "ambient_matrix_dimension": 16,
+    "derivative_sensitive_subspace_dimension": 1,
+    "double_centered_subspace_dimension": 9,
+    "full_functional_nullspace_dimension": 15,
+    "functional_identity": "DeltaD=<cc^T,DeltaF>_F=<cc^T,Qo DeltaF Qo>_F=<cc^T,P DeltaF P>_F",
+    "hierarchy": "|DeltaD| <= (65/72)||Qo DeltaF Qo||_F <= (65/72)||P DeltaF P||_F <= (65/72)||DeltaF||_F",
+    "odd_odd_nullspace_dimension": 3,
+    "odd_odd_subspace_dimension": 4,
+    "sensitive_norm": "||DeltaF_sens||_F=(72/65)|DeltaD|",
+    "sensitive_projection": "DeltaF_sens=(DeltaD/(65/72)^2) c c^T=(5184/4225) DeltaD c c^T"
+  },
+  "guardrails": ["DIAGNOSTIC_PROVENANCE_ONLY", "NO_THRESHOLD_CHANGE", "NO_ESTIMATOR_CHANGE", "NO_SUPPORT_DEDUPLICATION", "NO_PHYSICAL_PROMOTION", "NO_ANSATZ003", "NO_FISHER_RESOURCES"],
+  "interpretation": "Only the one-dimensional Frobenius component parallel to cc^T can alter the frozen central4xcentral4 mixed derivative. All Frobenius-orthogonal discrepancy modes are exact derivative nullspace, including but not limited to row/column/common modes.",
+  "iteration": 476,
+  "next_gate": "raw-consume canonical Iteration455 rank11 run 33989317870 fail-closed; if PASS advance only to next UNTESTED frozen-manifest coordinate",
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true
+}
