@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     env:
+      GH_TOKEN: ${{ github.token }}
       SOURCE_RUN_ID: '33993624602'
       SOURCE_ARTIFACT_ID: '9977377034'
       SOURCE_ARTIFACT_NAME: 'rqir-post479-artifact-digest-semantics-diagnostic'
@@ -56,7 +57,6 @@ jobs:
           rest_digest=d['rest_download_sha256']
           meta_matches=(metadata_digest==registry_digest)
           rest_matches=(rest_digest==registry_digest)
-          # The diagnostic is useful only if the authoritative metadata digest is bound to the registry.
           assert meta_matches is True, (metadata_digest,registry_digest)
           classification=('PASS_ARTIFACT_METADATA_DIGEST_MATCHES_REGISTRY_WHILE_REST_REPACK_SHA_DIFFERS__NON_PROMOTING'
                           if not rest_matches else
