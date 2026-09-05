@@ -1,0 +1,40 @@
+name: RQIR post478 mass-support artifact registry audit
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/post478_mass_support_artifact_registry_audit.py'
+      - '.github/workflows/rqir-post478-mass-support-artifact-registry-audit.yml'
+  workflow_dispatch:
+
+jobs:
+  registry_audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run artifact registry audit
+        run: |
+          mkdir -p raw_authority
+          python candidate_gravity/code/post478_mass_support_artifact_registry_audit.py | tee raw_authority/post478_mass_support_artifact_registry_audit.json
+      - name: Raw audit
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          o=json.loads(pathlib.Path('raw_authority/post478_mass_support_artifact_registry_audit.json').read_text())
+          assert o['scientific_gate_pass'] is True
+          assert o['promotes_physical_coordinate'] is False
+          assert o['MODEL_READINESS']=='24%'
+          assert o['authority_snapshot']['active_rank']==11
+          assert o['authority_snapshot']['certified_occurrences']==15
+          print('RAW_AUTHORITY_AUDIT_PASS')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rqir-post478-mass-support-artifact-registry-audit
+          path: raw_authority/post478_mass_support_artifact_registry_audit.json
+          if-no-files-found: error
