@@ -1,0 +1,53 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "PASS_RAW_CONSUMED_MANIFEST_RANK11_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "coverage": {
+    "certified_occurrences_after": 16,
+    "certified_occurrences_before": 15,
+    "fraction_after": 0.5,
+    "new_occurrences": 1,
+    "rows_after": 1280,
+    "rows_total": 2560,
+    "total_occurrences": 32
+  },
+  "guardrails": [
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_THRESHOLD_CHANGE",
+    "NO_SUPPORT_REORDERING",
+    "NO_UV_SWAP_DEDUPLICATION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "interpretation": [
+    "Rank 11 is raw-consumed from the exact Actions artifact and independently revalidated against its embedded authority audit and GitHub artifact metadata.",
+    "This closes only the local manifest-coordinate precision certificate; it does not promote physical double-double index 2.",
+    "The next heavy coordinate must be selected only from the frozen Iteration-455 manifest after re-reading current repository authority."
+  ],
+  "observed": {
+    "all_finite": true,
+    "max_radial_richardson_scaled_error": "2.56155487488387492604714966234e-15",
+    "radial_richardson_scaled_max_threshold": 0.0005,
+    "sample_count": 80,
+    "scaled_mp80_vs_mp120_max": "2.94779472003420316940302965078e-80"
+  },
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true,
+  "source": {
+    "artifact_digest": "sha256:603e51865eb13242556c41700a6e9ee54b916fe18a2c2fdd9281976aadd3e71c",
+    "artifact_id": 9977375478,
+    "artifact_name": "rqir-post475-manifest-rank11-full-z-mp",
+    "authority_audit_sha256": "08f195745b8e88ffe39eca51a2f217a77e26fe04d69d521cb1ca8cb661696f81",
+    "job_id": 101368577097,
+    "run_id": 33989317870,
+    "scientific_json_sha256": "7cc7c36a6dd5fd628280f370ad68a3b93b018fc919a0948471420a6f945b8b9f",
+    "workflow_head_sha": "1c8c34ec3c38f8e83e888c3bc9298bb9d458e0bd"
+  },
+  "stage": "POST479_RANK11_RAW_CONSUMPTION__COLLISION_SAFE",
+  "target": {
+    "manifest_rank": 11,
+    "source_occurrence_multiplicity": 1,
+    "u": 5e-06,
+    "v": 1e-05
+  }
+}
