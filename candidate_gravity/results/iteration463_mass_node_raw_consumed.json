@@ -1,0 +1,33 @@
+{
+  "authoritative_iteration": 463,
+  "classification": "PASS_NEXT_MASS_NODE_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "run_id": 33957232727,
+  "job_id": 101282656909,
+  "artifact_id": 9968019110,
+  "artifact_digest": "sha256:fa1c16c9860a2f929be9595251ce382ca5fae033ca97fbca869adb021a5e82cd",
+  "scientific_json_sha256": "18d2fe2a9eb5a9a6cdbef4010916ef6d045addad8141d269f9a4dc0dbb94db44",
+  "coordinate": {"u": -5e-6, "v": -1e-5, "manifest_distinct_rank": 4},
+  "frozen": {
+    "z_samples": [-0.86, -0.43, 0.0, 0.43, 0.86],
+    "phi_nodes": 16,
+    "radial_hs": [0.002, 0.001, 0.0005],
+    "precision_digits": [80, 120]
+  },
+  "observed": {
+    "sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "2.7478339564891277832684813337e-80",
+    "max_radial_richardson_scaled_error": "2.56287746810567343755321966286e-15"
+  },
+  "thresholds": {
+    "scaled_mp80_vs_mp120_max": "1e-30",
+    "radial_richardson_scaled_max": 0.0005,
+    "required_sample_count": 80
+  },
+  "coverage_occurrences_after": "7/32 = 21.875%",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "next_gate": "Iteration-455 distinct rank 5 only: u=-5e-6, v=-5e-6 under unchanged frozen conventions"
+}
