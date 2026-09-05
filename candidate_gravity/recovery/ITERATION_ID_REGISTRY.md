@@ -38,6 +38,7 @@ An authoritative iteration number is allocated by the first committed research/r
 - 459: raw PASS at Iteration-455 distinct rank 2 `(-1e-5,+5e-6)` from run `33946347229`, artifact `9964610341`; occurrence-weighted certified coverage `5/32=15.625%`; non-promoting.
 - 460: prospective post-support assembly cancellation/provenance contract. Requires reporting `D=sum w_i F_i`, `S_abs=sum |w_i F_i|`, `kappa_cancel`, and the weighted cross-precision bound `B_80_120=sum |w_i||F_i^80-F_i^120|` independently for BASE/HALF, while retaining the frozen assembled scaled MP80↔120 threshold `<=2e-6`. Triangle-bound violation is implementation/provenance BLOCKED; large cancellation is diagnostic only. Non-promoting.
 - 461: raw PASS at Iteration-455 distinct rank 3 `(-1e-5,+1e-5)` from run `33951807833`, job `101267895504`, artifact `9966351908`; occurrence-weighted certified coverage `6/32=18.75%`; non-promoting.
+- 462: exact central4×central4 tensor-moment invariants. Verifies 1D moments `m0=0,m1=1,m2=m3=m4=0,m5=-4`, tensor exactness on all `u^a v^b` with `0<=a,b<=4`, and freezes post-support operator sanity probes. Implementation/provenance closure only; non-promoting.
 
 These meanings are reserved and may not be reused by concurrent workflows or research records.
 
