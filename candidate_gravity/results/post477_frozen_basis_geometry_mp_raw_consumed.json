@@ -1,0 +1,111 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "PASS_RAW_CONSUMED_FROZEN_BASIS_GEOMETRY_MP_AUDIT__NON_PROMOTING",
+  "guardrails": [
+    "EXACT_SOURCE_ARTIFACT_CONSUMED",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_THRESHOLD_CHANGE",
+    "NO_SUPPORT_REORDERING"
+  ],
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true,
+  "scientific_json_sha256": "77a334ba3de6812c0bb3b37bd403fb7e71884c5a27de13bdf31cc46f01b1f614",
+  "scientific_result": {
+    "MODEL_READINESS": "24%",
+    "classification": "PASS_FROZEN_BASIS_GEOMETRY_ARITHMETIC_MP80_MP120__BINARY_DRIFT_DIAGNOSTIC_ONLY_NON_PROMOTING",
+    "frozen": {
+      "basis_source": "Iteration431/407 e1,e2,e3 frozen float vectors treated as exact decimal inputs",
+      "distinct_mass_coordinates": 28,
+      "mass_occurrences": 32,
+      "phi_nodes": 16,
+      "precision_digits": [
+        80,
+        120
+      ],
+      "radial_hs": [
+        0.002,
+        0.001,
+        0.0005
+      ],
+      "radial_signs": [
+        -1,
+        1
+      ],
+      "source_vectors": "a,q,c,ETA frozen float arrays treated as exact decimal inputs",
+      "z_samples": [
+        -0.86,
+        -0.43,
+        0.0,
+        0.43,
+        0.86
+      ]
+    },
+    "guardrails": [
+      "NO_ACTIVE_RANK11_DUPLICATION",
+      "NO_SUPPORT_REORDERING",
+      "NO_BINARY_PARENT_RECAST_AS_MP",
+      "FROZEN_BASIS_SCOPE_EXPLICIT",
+      "NO_THRESHOLD_WEAKENING",
+      "NO_MASS_STEP_CHANGE",
+      "NO_PHI_ESCALATION",
+      "NO_ZERO_FILL",
+      "NO_PHYSICAL_DS_PROMOTION",
+      "NO_ANSATZ003",
+      "NO_FISHER_RESOURCES"
+    ],
+    "interpretation": [
+      "PASS closes MP80/120 arithmetic for alpha,rho,beta,p,cc,aa given the frozen Iteration431/407 source vectors and basis.",
+      "The binary64-vs-MP120 values are diagnostics of geometry arithmetic drift and do not alter thresholds.",
+      "This gate does not certify arbitrary-precision reconstruction of e1,e2,e3 or upstream external/source vectors.",
+      "Existing parent-MP and mass-node PASS results remain valid in their stated scope; this audit narrows the remaining continuous-precision boundary."
+    ],
+    "next_gate_if_blocked": "localize alpha/rho/beta/p/cc/aa at the first failing frozen coordinate without changing mass/z/phi/radial support or thresholds",
+    "next_gate_if_pass": "if binary drift is subthreshold, freeze it as a representation diagnostic and separately audit/reconstruct the aligned transverse basis in MP before final full-F assembly; if material, port kinematic point generation itself to MP in the mass-node sampling chain before assembly",
+    "observed": {
+      "all_finite": true,
+      "binary64_geometry_drift_material_relative_to_2e-5": false,
+      "binary64_geometry_drift_material_relative_to_2e-6": false,
+      "binary64_vs_mp120_scaled_beta": "2.37499609372265604492026365878e-16",
+      "binary64_vs_mp120_scaled_max_affine_cc_aa": "1.0e-16",
+      "binary64_vs_mp120_scaled_max_any_geometry": "3.55401690420536569154467606735e-16",
+      "binary64_vs_mp120_scaled_max_p": "3.55401690420536569154467606735e-16",
+      "mp80_vs_mp120_scaled_max": "3.2476704251336853442545536696e-81",
+      "point_sample_count": 13440,
+      "runtime_seconds": 16.08030652100001,
+      "worst_binary_vs_mp120_location": {
+        "distinct_rank": 8,
+        "phi_index": 15,
+        "quantity": "p",
+        "radial_h": 0.0005,
+        "radial_sign": -1.0,
+        "u": 5e-06,
+        "v": -1e-05,
+        "z": 0.0
+      }
+    },
+    "promotes_physical_coordinate": false,
+    "readiness_change_pp": 0,
+    "scientific_gate_pass": true,
+    "scope": "ALL_28_DISTINCT_MASS_COORDS__5Z__16PHI__3_RADIAL_H__2_SIGNS__FROZEN_BINARY_SOURCE_VECTORS_RECOMPUTED_IN_MP",
+    "stage": "POST477_FROZEN_BASIS_GEOMETRY_MP_AUDIT__COLLISION_SAFE",
+    "target": {
+      "class_id": 3,
+      "double_double_index": 2,
+      "q_squared": -1.0
+    },
+    "thresholds": {
+      "all_finite": true,
+      "assembly_reference_diagnostic_only": "2e-6",
+      "mp80_vs_mp120_scaled_max": "1e-30",
+      "physical_reference_diagnostic_only": "2e-5",
+      "required_point_samples": 13440
+    }
+  },
+  "source_artifact_digest": "sha256:8b853b49a040d4f0eef99b0aaeedd427f657b8fda47dc49707b639566977f473",
+  "source_artifact_id": 9976943399,
+  "source_artifact_name": "rqir-post477-frozen-basis-geometry-mp-audit",
+  "source_job_id": 101375971739,
+  "source_run_id": 33992073492,
+  "stage": "POST477_FROZEN_BASIS_GEOMETRY_MP_RAW_CONSUMPTION__COLLISION_SAFE_NON_PROMOTING"
+}
