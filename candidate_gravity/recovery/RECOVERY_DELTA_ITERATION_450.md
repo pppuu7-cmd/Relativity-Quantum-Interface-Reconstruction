@@ -45,6 +45,8 @@ The next bounded, non-promoting gate is frozen to:
 
 No threshold weakening, smaller physical mass step, angular escalation, binary-parent recast, zero fill or physical promotion is allowed.
 
+Implementation provenance: code commit `9d24cc4c76a4ae1b32ecb6a0c616ec184bc21251`, workflow commit `88679427ac079750baea287748148e465dac8542`, launch commit `1b906b9bb9f4061d849a791b14184f1b71fc5cf1`. Active Actions provenance after launch: run `33935454815`, job `101222379474`, `in_progress`.
+
 **MODEL_READINESS: 24%**
 
 Readiness change: 0 percentage points.
