@@ -1,0 +1,63 @@
+{
+  "stage": "POST482_RANK12_PROTOCOL_INVARIANCE_AUDIT",
+  "classification": "PASS_RANK11_TO_RANK12_FROZEN_PROTOCOL_INVARIANCE__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "authority_scope": "SOURCE_PROTOCOL_AUDIT_ONLY__NOT_RANK12_NUMERICAL_AUTHORITY",
+  "compared_source_commits": {
+    "rank11_stage": "bf65311e91cc88ad1ea3351b071e4de00f594bae",
+    "rank11_workflow": "63cb7315186e5c8dcb134bb6a5fc865e54dc03b8",
+    "rank12_stage": "8e79541391934f9d391bec811f5e51eae732633d",
+    "rank12_workflow": "93bd9f1c61d6499e439e15909146ee39d2d76171"
+  },
+  "rank12_target": {
+    "manifest_rank": 12,
+    "u": 0.00001,
+    "v": -0.00001,
+    "source_occurrence_multiplicity": 1,
+    "canonical_run": 33997856739,
+    "canonical_job": 101391409387
+  },
+  "invariants_verified": {
+    "parent_sampling_code": "candidate_gravity/code/post447_class3_phi_sample_mp_stage.py",
+    "mass_binding_source": "candidate_gravity/code/iteration379_tru1sq_double_double_one_channel_pilot.py",
+    "base_h": 0.000005,
+    "python": "3.12",
+    "numpy": "2.1.3",
+    "mpmath": "1.3.0",
+    "scipy": "1.14.1",
+    "z_samples": [-0.86, -0.43, 0.0, 0.43, 0.86],
+    "phi_nodes": 16,
+    "radial_hs": [0.002, 0.001, 0.0005],
+    "precision_digits": [80, 120],
+    "scaled_mp80_vs_mp120_max": "1e-30",
+    "required_sample_count": 80,
+    "all_finite_required": true,
+    "workflow_timeout_minutes": 150,
+    "raw_authority_audit_schema": "rqir_action_result_authority_audit_v1"
+  },
+  "allowed_rank_specific_changes": [
+    "raw-certified prerequisite binding",
+    "manifest rank and exact (u,v) coordinate",
+    "stage/workflow/artifact names",
+    "blocked-localization coordinate text"
+  ],
+  "interpretation": [
+    "No numerical precision, sampling support, dependency version, finite-sample requirement, radial grid, or acceptance threshold was weakened from rank 11 to rank 12.",
+    "Rank 12 therefore tests a new frozen manifest coordinate under the same local numerical acceptance protocol as rank 11.",
+    "This audit cannot classify rank 12 PASS or BLOCKED; only raw consumption of canonical run 33997856739 may do that."
+  ],
+  "next_gate": "raw-consume canonical rank12 run 33997856739/job 101391409387 fail-closed; do not duplicate while active",
+  "guardrails": [
+    "NO_RANK12_NUMERICAL_PROMOTION_FROM_SOURCE_AUDIT",
+    "NO_DUPLICATE_ACTIVE_RUN",
+    "NO_THRESHOLD_CHANGE",
+    "NO_SUPPORT_REORDERING",
+    "NO_UV_SWAP_DEDUPLICATION",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
