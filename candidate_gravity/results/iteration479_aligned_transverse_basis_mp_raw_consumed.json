@@ -1,0 +1,55 @@
+{
+  "iteration": 479,
+  "stage": "POST478_ALIGNED_TRANSVERSE_BASIS_MP_AUDIT__RAW_CONSUMED",
+  "classification": "PASS_ALIGNED_TRANSVERSE_BASIS_MP80_MP120__BINARY_DRIFT_DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "provenance": {
+    "workflow_run": 33992301400,
+    "artifact_id": 9977002318,
+    "artifact_name": "rqir-post478-aligned-transverse-basis-mp-audit",
+    "artifact_digest": "sha256:34ec19c65bd9fdd97643f5b80142176d3487298219cb4671d5396dc9719d8026",
+    "workflow_head_sha": "48cdcf4302df279fa8241197e71d398b58c9fa1f",
+    "scientific_json_sha256": "e718a1e78b1a16923ff51ba56b8788be46b64d62e33c75e531f97b2e49927740",
+    "raw_artifact_filename": "post478_aligned_transverse_basis_mp_audit.json"
+  },
+  "target": {
+    "double_double_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0
+  },
+  "scope": "RECONSTRUCT_TRANSVERSE_BASIS_AND_ITER407_ALIGNED_E1_E2_E3_FROM_FROZEN_SOURCE_SHIFTS_AT_MP80_MP120",
+  "thresholds": {
+    "mp80_vs_mp120_scaled_max": "1e-30",
+    "assembly_reference_diagnostic_only": "2e-6",
+    "physical_reference_diagnostic_only": "2e-5",
+    "all_finite": true
+  },
+  "observed": {
+    "all_finite": true,
+    "mp80_vs_mp120_scaled_basis_max": "1.64877120019418172037013725225e-81",
+    "mp80_vs_mp120_scaled_q2": "0.0",
+    "binary64_vs_mp120_scaled_basis_max": "1.75599155637895150960715164062e-16",
+    "mp80_gram_max_abs_error": "2.10843958864610464486971481025e-81",
+    "mp120_gram_max_abs_error": "1.93629595742465913640901531664e-121",
+    "mp120_q_orthogonality_max_abs": "0.0",
+    "binary_basis_drift_material_relative_to_2e-6": false,
+    "binary_basis_drift_material_relative_to_2e-5": false
+  },
+  "scientific_interpretation": [
+    "PASS closes arithmetic precision of the Iter407 transverse/aligned basis construction from the frozen index-2 physical source shifts at MP80/MP120.",
+    "The observed binary64-to-MP120 aligned-basis drift is far below the retained 2e-6 assembled and 2e-5 physical diagnostic reference scales and cannot alter frozen thresholds.",
+    "This is a precision/provenance closure only. It does not promote physical double-double index 2, certify final full-F or BASE/HALF assembly, or authorize ANSATZ-003/Fisher/resources.",
+    "The source construction is consumed exactly at the repository scope declared by the audited program; claims beyond that scope are not promoted."
+  ],
+  "guardrails": [
+    "NO_SUPPORT_REORDERING",
+    "NO_ACTIVE_RANK11_DUPLICATION",
+    "NO_THRESHOLD_CHANGE",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
