@@ -1,0 +1,37 @@
+{
+  "authoritative_iteration": 450,
+  "authority_type": "RAW_CONSUMPTION__ONE_MASS_NODE_FULL_TRAINING_Z_PRECISION_CLOSURE__NON_PROMOTING",
+  "source_run": 33932061794,
+  "source_job": 101212520875,
+  "source_artifact": 9959560285,
+  "artifact_digest": "sha256:84509a60d16e660e52c7873261694249e1167f1d95d6a34bd5e91e4026199c54",
+  "scientific_json_sha256": "2467e807b8b5f1c8a93a83a1e5be2107d2c5ae3d8747bb2f5f586b16501d1c03",
+  "raw_classification": "PASS_SAME_CORNER_FULL_Z_SUPPORT_MP80_MP120__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "mass_node": {"u": 5e-6, "v": 5e-6},
+  "newly_consumed_z": [-0.43, 0.43],
+  "combined_training_z_closed_at_this_mass_node": [-0.86, -0.43, 0.0, 0.43, 0.86],
+  "phi_nodes": 16,
+  "radial_hs": [0.002, 0.001, 0.0005],
+  "precision_digits": [80, 120],
+  "new_rows": 32,
+  "combined_rows_at_this_mass_node": 80,
+  "full_support_denominator_rows": 2560,
+  "numerical_support_fraction_closed_under_iteration449_counting": 0.03125,
+  "observed": {
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "2.78393261527753298550080747733e-80",
+    "max_radial_richardson_scaled_error": "1.96385912050971757112266495724e-15"
+  },
+  "thresholds": {
+    "scaled_mp80_vs_mp120_max": "1e-30",
+    "radial_richardson_scaled_max": "inherited_frozen_parent_limit"
+  },
+  "physical_operator_authority": 411,
+  "physical_blocker_authority": 421,
+  "unresolved_physical_set": [2],
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "next_gate": "first untested mass node in retained Iteration-407 base-stencil source order: u=v=-1e-5; all five TRAIN_Z x NPHI16 x full radial Richardson x direct MP80/120 parent recomputation; non-promoting"
+}
