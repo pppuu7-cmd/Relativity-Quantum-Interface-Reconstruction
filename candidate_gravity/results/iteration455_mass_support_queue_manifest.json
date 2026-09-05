@@ -1,0 +1,91 @@
+{
+  "MODEL_READINESS": "24%",
+  "audit": {
+    "active_coordinate": {
+      "distinct_rank": 1,
+      "multiplicity": 1,
+      "u": -1e-05,
+      "v": -5e-06
+    },
+    "certified_coordinates": [
+      {
+        "multiplicity": 1,
+        "u": -1e-05,
+        "v": -1e-05
+      },
+      {
+        "multiplicity": 2,
+        "u": 5e-06,
+        "v": 5e-06
+      }
+    ],
+    "certified_occurrence_weight": 3,
+    "multiplicity_two_coordinates": [
+      {"u": -5e-06, "v": -5e-06},
+      {"u": -5e-06, "v": 5e-06},
+      {"u": 5e-06, "v": -5e-06},
+      {"u": 5e-06, "v": 5e-06}
+    ],
+    "multiplicity_two_count": 4,
+    "next_coordinate_if_active_passes": {
+      "distinct_rank": 2,
+      "multiplicity": 1,
+      "u": -1e-05,
+      "v": 5e-06
+    }
+  },
+  "classification": "PASS_FROZEN_MASS_SUPPORT_SOURCE_ORDER_MANIFEST__NON_PROMOTING",
+  "frozen": {
+    "base_h": 5e-06,
+    "central4_node_rule": "[-2h,-h,+h,+2h]",
+    "distinct_coordinate_count": 28,
+    "half_h": 2.5e-06,
+    "occurrence_count": 32,
+    "source_order": "BASE 4x4 u-major/v-major, then HALF 4x4 u-major/v-major"
+  },
+  "guardrails": [
+    "NO_FUV_EVALUATION_IN_THIS_ITERATION",
+    "NO_ACTIVE_RUN_DUPLICATION",
+    "NO_UV_SWAP_DEDUPLICATION",
+    "ONLY_EXACT_BASE_HALF_COORDINATE_OVERLAPS_SHARE_CERTIFICATES",
+    "NO_THRESHOLD_CHANGE",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "iteration": 455,
+  "manifest": [
+    {"distinct_rank":0,"u":-1e-05,"v":-1e-05,"source_occurrence_multiplicity":1,"source_labels":[{"level":"BASE","local_index":0}],"state":"CERTIFIED"},
+    {"distinct_rank":1,"u":-1e-05,"v":-5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"BASE","local_index":1}],"state":"ACTIVE_GATE"},
+    {"distinct_rank":2,"u":-1e-05,"v":5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"BASE","local_index":2}],"state":"UNTESTED"},
+    {"distinct_rank":3,"u":-1e-05,"v":1e-05,"source_occurrence_multiplicity":1,"source_labels":[{"level":"BASE","local_index":3}],"state":"UNTESTED"},
+    {"distinct_rank":4,"u":-5e-06,"v":-1e-05,"source_occurrence_multiplicity":1,"source_labels":[{"level":"BASE","local_index":4}],"state":"UNTESTED"},
+    {"distinct_rank":5,"u":-5e-06,"v":-5e-06,"source_occurrence_multiplicity":2,"source_labels":[{"level":"BASE","local_index":5},{"level":"HALF","local_index":0}],"state":"UNTESTED"},
+    {"distinct_rank":6,"u":-5e-06,"v":5e-06,"source_occurrence_multiplicity":2,"source_labels":[{"level":"BASE","local_index":6},{"level":"HALF","local_index":3}],"state":"UNTESTED"},
+    {"distinct_rank":7,"u":-5e-06,"v":1e-05,"source_occurrence_multiplicity":1,"source_labels":[{"level":"BASE","local_index":7}],"state":"UNTESTED"},
+    {"distinct_rank":8,"u":5e-06,"v":-1e-05,"source_occurrence_multiplicity":1,"source_labels":[{"level":"BASE","local_index":8}],"state":"UNTESTED"},
+    {"distinct_rank":9,"u":5e-06,"v":-5e-06,"source_occurrence_multiplicity":2,"source_labels":[{"level":"BASE","local_index":9},{"level":"HALF","local_index":12}],"state":"UNTESTED"},
+    {"distinct_rank":10,"u":5e-06,"v":5e-06,"source_occurrence_multiplicity":2,"source_labels":[{"level":"BASE","local_index":10},{"level":"HALF","local_index":15}],"state":"CERTIFIED"},
+    {"distinct_rank":11,"u":5e-06,"v":1e-05,"source_occurrence_multiplicity":1,"source_labels":[{"level":"BASE","local_index":11}],"state":"UNTESTED"},
+    {"distinct_rank":12,"u":1e-05,"v":-1e-05,"source_occurrence_multiplicity":1,"source_labels":[{"level":"BASE","local_index":12}],"state":"UNTESTED"},
+    {"distinct_rank":13,"u":1e-05,"v":-5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"BASE","local_index":13}],"state":"UNTESTED"},
+    {"distinct_rank":14,"u":1e-05,"v":5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"BASE","local_index":14}],"state":"UNTESTED"},
+    {"distinct_rank":15,"u":1e-05,"v":1e-05,"source_occurrence_multiplicity":1,"source_labels":[{"level":"BASE","local_index":15}],"state":"UNTESTED"},
+    {"distinct_rank":16,"u":-5e-06,"v":-2.5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"HALF","local_index":1}],"state":"UNTESTED"},
+    {"distinct_rank":17,"u":-5e-06,"v":2.5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"HALF","local_index":2}],"state":"UNTESTED"},
+    {"distinct_rank":18,"u":-2.5e-06,"v":-5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"HALF","local_index":4}],"state":"UNTESTED"},
+    {"distinct_rank":19,"u":-2.5e-06,"v":-2.5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"HALF","local_index":5}],"state":"UNTESTED"},
+    {"distinct_rank":20,"u":-2.5e-06,"v":2.5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"HALF","local_index":6}],"state":"UNTESTED"},
+    {"distinct_rank":21,"u":-2.5e-06,"v":5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"HALF","local_index":7}],"state":"UNTESTED"},
+    {"distinct_rank":22,"u":2.5e-06,"v":-5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"HALF","local_index":8}],"state":"UNTESTED"},
+    {"distinct_rank":23,"u":2.5e-06,"v":-2.5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"HALF","local_index":9}],"state":"UNTESTED"},
+    {"distinct_rank":24,"u":2.5e-06,"v":2.5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"HALF","local_index":10}],"state":"UNTESTED"},
+    {"distinct_rank":25,"u":2.5e-06,"v":5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"HALF","local_index":11}],"state":"UNTESTED"},
+    {"distinct_rank":26,"u":5e-06,"v":-2.5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"HALF","local_index":13}],"state":"UNTESTED"},
+    {"distinct_rank":27,"u":5e-06,"v":2.5e-06,"source_occurrence_multiplicity":1,"source_labels":[{"level":"HALF","local_index":14}],"state":"UNTESTED"}
+  ],
+  "next_gate": "raw-consume active run 33940931120; if PASS advance only to manifest next_coordinate_if_active_passes",
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true
+}
