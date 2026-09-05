@@ -1,0 +1,38 @@
+{
+  "iteration": 482,
+  "classification": "PASS_FROZEN_MANIFEST_TAIL_EXACT_RECONSTRUCTION__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "audit": {
+    "next_exact_unresolved": {"distinct_rank": 12, "u": 1e-05, "v": -1e-05, "multiplicity": 1},
+    "remaining_distinct_count_after_rank11": 16,
+    "remaining_occurrence_weight_after_rank11": 16,
+    "all_remaining_multiplicity_one": true,
+    "coverage_increment_per_remaining_coordinate_fraction": "1/32",
+    "coverage_increment_per_remaining_coordinate_percent": 3.125,
+    "remaining_base_ranks": [12, 13, 14, 15],
+    "half_exclusive_ranks": [16, 27],
+    "remaining_manifest": [
+      {"distinct_rank": 12, "u": 1e-05, "v": -1e-05, "multiplicity": 1, "support_scope": "BASE"},
+      {"distinct_rank": 13, "u": 1e-05, "v": -5e-06, "multiplicity": 1, "support_scope": "BASE"},
+      {"distinct_rank": 14, "u": 1e-05, "v": 5e-06, "multiplicity": 1, "support_scope": "BASE"},
+      {"distinct_rank": 15, "u": 1e-05, "v": 1e-05, "multiplicity": 1, "support_scope": "BASE"},
+      {"distinct_rank": 16, "u": -5e-06, "v": -2.5e-06, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE"},
+      {"distinct_rank": 17, "u": -5e-06, "v": 2.5e-06, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE"},
+      {"distinct_rank": 18, "u": -2.5e-06, "v": -5e-06, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE"},
+      {"distinct_rank": 19, "u": -2.5e-06, "v": -2.5e-06, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE"},
+      {"distinct_rank": 20, "u": -2.5e-06, "v": 2.5e-06, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE"},
+      {"distinct_rank": 21, "u": -2.5e-06, "v": 5e-06, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE"},
+      {"distinct_rank": 22, "u": 2.5e-06, "v": -5e-06, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE"},
+      {"distinct_rank": 23, "u": 2.5e-06, "v": -2.5e-06, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE"},
+      {"distinct_rank": 24, "u": 2.5e-06, "v": 2.5e-06, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE"},
+      {"distinct_rank": 25, "u": 2.5e-06, "v": 5e-06, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE"},
+      {"distinct_rank": 26, "u": 5e-06, "v": -2.5e-06, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE"},
+      {"distinct_rank": 27, "u": 5e-06, "v": 2.5e-06, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE"}
+    ]
+  },
+  "guardrails": ["NO_UV_SWAP_INFERENCE","NO_CERTIFIED_RANK_RELAUNCH","NO_EARLY_ASSEMBLY_PROMOTION","NO_THRESHOLD_CHANGE","NO_PHYSICAL_DS_PROMOTION","NO_ANSATZ003","NO_FISHER_RESOURCES"],
+  "next_gate": "raw-consume canonical rank12 run 33997856739 fail-closed; on PASS advance only to rank13 (+1e-5,-5e-6)"
+}
