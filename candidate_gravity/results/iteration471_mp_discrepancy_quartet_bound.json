@@ -1,0 +1,26 @@
+{
+  "iteration": 471,
+  "date": "2026-09-05",
+  "classification": "PASS_MP_DISCREPANCY_QUARTET_BOUND__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "scope": "post-support assembled MP80-vs-MP120 provenance only",
+  "identities": [
+    "DeltaD = sum_ab alpha_ab DeltaQ_ab",
+    "|DeltaD| <= B_quartet_delta <= B_sample_delta",
+    "B_quartet_delta = sum_ab |alpha_ab| |DeltaQ_ab|",
+    "B_sample_delta = sum_ab |alpha_ab| sum_signs |DeltaF_ab,sign|"
+  ],
+  "diagnostics": {
+    "rho_precision_parity": "B_quartet_delta/B_sample_delta",
+    "rho_precision_shell": "|DeltaD|/B_quartet_delta",
+    "bounds": "both ratios lie in [0,1] when denominators are nonzero"
+  },
+  "guardrails": [
+    "No threshold change",
+    "No estimator change",
+    "No Richardson promotion",
+    "No physics promotion/fail from cancellation ratios",
+    "Triangle-bound violation is implementation/provenance BLOCKED"
+  ],
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0
+}
