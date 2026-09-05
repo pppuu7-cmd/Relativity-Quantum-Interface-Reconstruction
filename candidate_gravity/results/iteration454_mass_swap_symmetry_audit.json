@@ -1,0 +1,35 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "PASS_MASS_SWAP_SHORTCUT_REJECTED__NON_PROMOTING",
+  "frozen_identity": {
+    "alpha": "-(s+u-v)/(2s)",
+    "alpha_swap_delta": "alpha(v,u)-alpha(u,v)=(u-v)/s",
+    "lambda": "s^2+u^2+v^2-2su-2sv-2uv",
+    "rho_beta_swap_symmetric": true,
+    "routed_momentum_swap_shift": "p(v,u)-p(u,v)=((u-v)/s) q for fixed angular unit"
+  },
+  "guardrails": [
+    "NO_UV_SWAP_DEDUPLICATION",
+    "RETAIN_32_SOURCE_OCCURRENCE_DENOMINATOR",
+    "RETAIN_28_DISTINCT_COORDINATES",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_THRESHOLD_CHANGE",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "interpretation": "The remaining 28 distinct mass coordinates cannot be deduplicated further by an assumed u<->v symmetry. Only exact BASE/HALF coordinate overlaps established in Iteration 452 may share a precision certificate. This is a shortcut no-go, not a physics FAIL.",
+  "iteration": 454,
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true,
+  "source_dependency": [
+    "Iteration407 numerator_at(u,v,z,phi) uses alpha and rho to build the parent momentum",
+    "Iteration407 direct_uncut(u,v,z,phi) uses the same alpha and rho in p0=-a+alpha*q+rho*unit",
+    "No frozen source identity certifies invariance of either object under p -> p + delta*q"
+  ],
+  "target": {
+    "class_id": 3,
+    "double_double_index": 2,
+    "q_squared": -1.0
+  }
+}
