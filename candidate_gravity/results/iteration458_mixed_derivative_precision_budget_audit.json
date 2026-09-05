@@ -1,0 +1,50 @@
+{
+  "MODEL_READINESS": "24%",
+  "base": {
+    "central4xcentral4_l1_operator_norm": 90000000000.0,
+    "exact_operator_norm": "90000000000/1",
+    "exact_uniform_abs_delta_sufficient": "1/45000000000000000",
+    "h": 5e-06,
+    "max_uniform_sample_scale_compatible_with_1e-30_local_scaled_gate_if_saturated": 22222222222222.223,
+    "uniform_absolute_sample_delta_sufficient_for_2e-6_assembly": 2.2222222222222222e-17
+  },
+  "classification": "PASS_MIXED_DERIVATIVE_PRECISION_BUDGET_FROZEN__NON_PROMOTING",
+  "frozen_algebra": {
+    "central4_coefficients": ["1/12", "-2/3", "2/3", "-1/12"],
+    "first_derivative_l1_sum": 1.5,
+    "local_scaled_mp_tolerance": 1e-30,
+    "physical_mp_cross_precision_tolerance": 2e-06,
+    "tensor_l1_sum_before_h_scaling": 2.25
+  },
+  "guardrails": [
+    "NO_FUV_EVALUATION_IN_THIS_ITERATION",
+    "NO_ACTIVE_RUN_DUPLICATION",
+    "NO_LOCAL_PASS_TO_ASSEMBLY_PASS_SHORTCUT",
+    "NO_BASE_HALF_WEIGHT_COLLAPSE",
+    "NO_THRESHOLD_CHANGE",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "half": {
+    "central4xcentral4_l1_operator_norm": 360000000000.0,
+    "exact_operator_norm": "360000000000/1",
+    "exact_uniform_abs_delta_sufficient": "1/180000000000000000",
+    "h": 2.5e-06,
+    "max_uniform_sample_scale_compatible_with_1e-30_local_scaled_gate_if_saturated": 5555555555555.556,
+    "uniform_absolute_sample_delta_sufficient_for_2e-6_assembly": 5.5555555555555555e-18
+  },
+  "iteration": 458,
+  "next_gate": "raw-consume active run 33946347229 fail-closed; continue only through Iteration-455 manifest order. After complete support coverage, execute this frozen assembly-level MP80/120 contract before Iteration-424 physical promotion.",
+  "promotes_physical_coordinate": false,
+  "prospective_post_support_contract": [
+    "After all 28 distinct F(u,v) coordinates have local MP80/120 precision certificates, assemble BASE and HALF mixed derivatives independently at MP80 and MP120 from the same frozen 32 source occurrences and level-specific central4 weights.",
+    "Require all four assembled derivatives finite.",
+    "Require |d_base_80-d_base_120|/max(1,|d_base_80|,|d_base_120|) <= 2e-6.",
+    "Require |d_half_80-d_half_120|/max(1,|d_half_80|,|d_half_120|) <= 2e-6.",
+    "Retain the independent frozen BASE-vs-HALF physical mass-step gate <=2e-5; MP cross-precision and mass-step convergence are distinct gates.",
+    "Report the maximum absolute F80-F120 difference, maximum local sample scale max(1,|F80|,|F120|), and the weighted error budget sum_ij |w_ij| |F80-F120| for each level."
+  ],
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true
+}
