@@ -1,0 +1,31 @@
+{
+  "authoritative_iteration": 456,
+  "source_run_id": 33940931120,
+  "source_job_id": 101238084215,
+  "artifact_id": 9963059047,
+  "artifact_digest": "sha256:89c81547f8459cea496c1b604c542a188626a656ad88aa1718d830deee442ae9",
+  "scientific_json_sha256": "f51d13b29e5b433fe3a6c2acfae8a058bef2c2cd5259fb1165766a136428b004",
+  "classification": "PASS_NEXT_MASS_NODE_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "mass_coordinate": {"u": -1e-5, "v": -5e-6},
+  "observed": {
+    "sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "2.65374002672710098003207217509e-80",
+    "max_radial_richardson_scaled_error": "2.56305443510302572305063501212e-15"
+  },
+  "frozen_thresholds": {
+    "scaled_mp80_vs_mp120_max": "1e-30",
+    "radial_richardson_scaled_max": 0.0005
+  },
+  "occurrence_weight_closed_this_iteration": 1,
+  "certified_occurrence_weight_total": 4,
+  "certified_row_occurrences_total": 320,
+  "frozen_row_occurrences_denominator": 2560,
+  "certified_occurrence_fraction": 0.125,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "next_manifest_coordinate_if_pass": {"u": -1e-5, "v": 5e-6},
+  "guardrail": "numerical precision provenance only; physical index 2 remains blocked"
+}
