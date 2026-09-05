@@ -1,0 +1,42 @@
+name: RQIR post478 aligned transverse basis MP audit
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/post478_aligned_transverse_basis_mp_audit.py'
+      - '.github/workflows/rqir-post478-aligned-transverse-basis-mp-audit.yml'
+  workflow_dispatch:
+
+jobs:
+  basis_mp_audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install frozen numerical dependencies
+        run: python -m pip install --disable-pip-version-check numpy mpmath
+      - name: Run aligned transverse-basis MP audit
+        run: |
+          mkdir -p raw_authority
+          python candidate_gravity/code/post478_aligned_transverse_basis_mp_audit.py | tee raw_authority/post478_aligned_transverse_basis_mp_audit.json
+      - name: Raw authority audit
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          o=json.loads(pathlib.Path('raw_authority/post478_aligned_transverse_basis_mp_audit.json').read_text())
+          assert o['scientific_gate_pass'] is True
+          assert o['promotes_physical_coordinate'] is False
+          assert o['MODEL_READINESS']=='24%'
+          assert o['thresholds']['mp80_vs_mp120_scaled_max']=='1e-30'
+          print('RAW_AUTHORITY_AUDIT_PASS')
+          PY
+      - name: Upload raw artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rqir-post478-aligned-transverse-basis-mp-audit
+          path: raw_authority/post478_aligned_transverse_basis_mp_audit.json
+          if-no-files-found: error
