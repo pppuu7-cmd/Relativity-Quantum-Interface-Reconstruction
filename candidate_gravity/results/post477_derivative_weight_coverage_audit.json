@@ -1,0 +1,61 @@
+{
+  "classification": "PASS_BASE_DERIVATIVE_SENSITIVITY_WEIGHT_COVERAGE_AUDIT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "authority_anchor": "Iteration 477 current front; Iteration 475 latest completed mass-support authority",
+  "active_run": {
+    "run_id": 33989317870,
+    "distinct_rank": 11,
+    "u": 0.000005,
+    "v": 0.00001,
+    "status_at_audit": "in_progress"
+  },
+  "central4": {
+    "c": ["1/12", "-2/3", "2/3", "-1/12"],
+    "sum_abs_weights": "9/4",
+    "frob2_total": "4225/5184"
+  },
+  "current": {
+    "certified_occurrence_coverage": "15/32",
+    "certified_occurrence_percent": 46.875,
+    "certified_distinct_coordinates": "11/28",
+    "base_ranks_certified": "0..10",
+    "base_l1_sensitivity_fraction": "149/162",
+    "base_l1_sensitivity_percent": 91.9753086419753,
+    "base_frob2_sensitivity_fraction": "8353/8450",
+    "base_frob2_sensitivity_percent": 98.85207100591716,
+    "half_overlap_l1_fraction": "1/81",
+    "half_overlap_l1_percent": 1.2345679012345678,
+    "half_overlap_frob2_fraction": "1/4225",
+    "half_overlap_frob2_percent": 0.023668639053254437
+  },
+  "if_active_rank11_passes": {
+    "certified_occurrence_coverage": "16/32",
+    "certified_occurrence_percent": 50.0,
+    "certified_distinct_coordinates": "12/28",
+    "base_ranks_certified": "0..11",
+    "base_l1_sensitivity_fraction": "17/18",
+    "base_l1_sensitivity_percent": 94.44444444444444,
+    "base_frob2_sensitivity_fraction": "129/130",
+    "base_frob2_sensitivity_percent": 99.23076923076923,
+    "half_overlap_unchanged": true
+  },
+  "interpretation": [
+    "Occurrence coverage is not a derivative-sensitivity metric.",
+    "BASE local MP coverage already spans most frozen central4 derivative sensitivity.",
+    "HALF remains largely uncertified in derivative-sensitive weight, so BASE-vs-HALF convergence remains open.",
+    "Sensitivity-weight coverage is diagnostic only and cannot reorder or skip Iteration-455 manifest coordinates."
+  ],
+  "guardrails": [
+    "NO_SUPPORT_REORDERING",
+    "NO_UV_SWAP_DEDUPLICATION",
+    "NO_SKIPPING_UNTESTED_COORDINATES",
+    "NO_THRESHOLD_CHANGE",
+    "NO_LOCAL_PASS_ASSEMBLY_SUBSTITUTION",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0
+}
