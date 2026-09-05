@@ -38,11 +38,12 @@ def first_coord(o):
 
 def provenance(o):
     rp=o.get('raw_provenance') if isinstance(o.get('raw_provenance'),dict) else {}
-    run=o.get('source_run_id',o.get('run_id',o.get('source_run',rp.get('run_id'))))
-    job=o.get('source_job_id',o.get('job_id',o.get('source_job',rp.get('job_id'))))
-    art=o.get('artifact_id',o.get('source_artifact_id',o.get('source_artifact',rp.get('artifact_id'))))
-    dig=o.get('artifact_digest',o.get('source_artifact_digest',rp.get('artifact_digest')))
-    sj=o.get('scientific_json_sha256',rp.get('raw_result_sha256'))
+    pr=o.get('provenance') if isinstance(o.get('provenance'),dict) else {}
+    run=o.get('source_run_id',o.get('run_id',o.get('source_run',rp.get('run_id',pr.get('run_id')))))
+    job=o.get('source_job_id',o.get('job_id',o.get('source_job',rp.get('job_id',pr.get('job_id')))))
+    art=o.get('artifact_id',o.get('source_artifact_id',o.get('source_artifact',rp.get('artifact_id',pr.get('artifact_id')))))
+    dig=o.get('artifact_digest',o.get('source_artifact_digest',rp.get('artifact_digest',pr.get('artifact_digest'))))
+    sj=o.get('scientific_json_sha256',rp.get('raw_result_sha256',pr.get('scientific_json_sha256')))
     name=o.get('artifact_name',o.get('source_artifact_name'))
     return run,job,art,name,dig,sj
 
@@ -127,7 +128,7 @@ closed_occ=sum(int(m['source_occurrence_multiplicity']) for m in manifest if int
 bound_occ=sum(int(m['source_occurrence_multiplicity']) for m in manifest if int(m['distinct_rank']) in complete)
 passed=(not missing and not ambiguous and len(complete)==11 and bound_occ==15)
 out={
- 'stage':'POST478_MASS_SUPPORT_ARTIFACT_REGISTRY_AUDIT_V3__COLLISION_SAFE',
+ 'stage':'POST478_MASS_SUPPORT_ARTIFACT_REGISTRY_AUDIT_V4__COLLISION_SAFE',
  'classification':('PASS_ALL_CURRENT_CERTIFIED_MASS_SUPPORT_RAW_ARTIFACT_BINDINGS_RECOVERED__NON_PROMOTING' if passed else 'BLOCKED_CURRENT_CERTIFIED_MASS_SUPPORT_RAW_ARTIFACT_REGISTRY_INCOMPLETE__NON_PROMOTING'),
  'scientific_gate_pass':passed,'promotes_physical_coordinate':False,'MODEL_READINESS':'24%','readiness_change_pp':0,
  'authority_snapshot':{'latest_canonical_iteration':478,'latest_mass_support_authority':475,'certified_ranks':'0..10','active_rank':11,'certified_occurrences':closed_occ,'total_occurrences':32},
@@ -136,7 +137,7 @@ out={
                      'certified_occurrences_with_complete_raw_binding':bound_occ,'certified_occurrences_total':closed_occ,'normalized_provenance_file_count':len(files)},
  'manifest_registry':rows_out,
  'interpretation':[
-   'Historical raw-consumption schemas were normalized; artifact_name is not required because artifact_id plus run/job/digest/SHA is an exact binding.',
+   'Historical raw-consumption schemas were normalized, including top-level provenance objects; artifact_name is not required because run/job/artifact_id/digest/scientific-SHA is an exact binding.',
    'A full local certificate requires exactly 80 frozen rows (5 z x 16 phi) either from one full-z artifact or a provably disjoint composite partition.',
    'Rank 10 is intentionally composite: Iteration449 contributes 48 rows at z={-0.86,0,+0.86}; Iteration450 contributes 32 rows at z={-0.43,+0.43}.',
    'No u<->v symmetry, neighboring coordinate substitution, recomputation, threshold change, or physical promotion is used.'
