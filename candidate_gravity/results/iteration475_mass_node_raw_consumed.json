@@ -1,0 +1,56 @@
+{
+  "authoritative_iteration": 475,
+  "date": "2026-09-05",
+  "source_run_id": 33983416847,
+  "source_job_id": 101352576616,
+  "artifact_id": 9975782294,
+  "artifact_name": "rqir-post473-manifest-rank9-full-z-mp",
+  "artifact_digest": "sha256:a0e4d481dd4b34addf7a11316730dee3240e7843f12b586307f40608c08e15c5",
+  "scientific_json_sha256": "533e5ab27c3631c25023e30ee70fecdb3bd845c18015cc6cf277ea42fd3ea8d8",
+  "classification": "PASS_NEXT_MASS_NODE_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "frozen_coordinate": {
+    "distinct_rank": 9,
+    "u": 0.000005,
+    "v": -0.000005,
+    "source_occurrence_multiplicity": 2
+  },
+  "observed": {
+    "sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "2.91451824771117558020302499753e-80",
+    "max_radial_richardson_scaled_error": "2.55741734246055448980134948906e-15"
+  },
+  "thresholds": {
+    "scaled_mp80_vs_mp120_max": "1e-30",
+    "radial_richardson_scaled_max": "5e-4"
+  },
+  "certified_occurrence_coverage": {
+    "closed_occurrences": 15,
+    "total_occurrences": 32,
+    "fraction": "15/32",
+    "percent": 46.875,
+    "closed_rows": 1200,
+    "total_rows": 2560
+  },
+  "manifest_note": "Iteration455 distinct rank 10 (+5e-6,+5e-6), multiplicity 2, was already CERTIFIED before the queue began and is already included in coverage; therefore the next untested deterministic manifest coordinate is rank 11.",
+  "next_gate": {
+    "distinct_rank": 11,
+    "u": 0.000005,
+    "v": 0.00001,
+    "source_occurrence_multiplicity": 1
+  },
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "guardrails": [
+    "RAW_ARTIFACT_CONSUMED_FAIL_CLOSED",
+    "NON_PROMOTING_LOCAL_PRECISION_CERTIFICATE_ONLY",
+    "ITERATION455_MANIFEST_STATE_RESPECTED",
+    "SKIP_ALREADY_CERTIFIED_RANK10",
+    "NO_PHYSICAL_INDEX2_PROMOTION",
+    "NO_THRESHOLD_CHANGE",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
