@@ -1,0 +1,48 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "PASS_ARTIFACT_METADATA_AND_REST_ZIP_SHA_BOTH_MATCH_REGISTRY__NON_PROMOTING",
+  "conclusion": {
+    "artifact_metadata_digest_matches_frozen_registry": true,
+    "old_inventory_raw_zip_sha_test_is_valid_for_upload_digest": true,
+    "required_fix": "retain exact metadata and scientific JSON SHA binding; REST ZIP SHA is also compatible for this artifact",
+    "rest_download_zip_sha_matches_frozen_registry": true
+  },
+  "diagnostic": {
+    "MODEL_READINESS": "24%",
+    "artifact_id": 9961449686,
+    "downloaded_zip_bytes": 11695,
+    "expired": false,
+    "metadata_digest": "sha256:800fa05a9891c7cb3890d07c92bc3ab37df8ce22d94d5a2219ca5f58668e9792",
+    "promotes_physical_coordinate": false,
+    "registry_expected_digest": "sha256:800fa05a9891c7cb3890d07c92bc3ab37df8ce22d94d5a2219ca5f58668e9792",
+    "rest_download_matches_registry": true,
+    "rest_download_sha256": "sha256:800fa05a9891c7cb3890d07c92bc3ab37df8ce22d94d5a2219ca5f58668e9792",
+    "scientific_recomputation": false,
+    "size_in_bytes_metadata": 11695,
+    "stage": "POST479_ARTIFACT_DIGEST_SEMANTICS_DIAGNOSTIC__COLLISION_SAFE",
+    "zip_entries": [
+      "authority_audit.json",
+      "result.json"
+    ]
+  },
+  "guardrails": [
+    "NO_SCIENTIFIC_REGENERATION",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ACTIVE_MASS_NODE_DUPLICATION",
+    "NO_THRESHOLD_CHANGE",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true,
+  "source": {
+    "artifact_digest": "sha256:f022684784fcce7c27a2208baad4a9410261dddc75ab959f037fbef911dacab3",
+    "artifact_id": 9977377034,
+    "artifact_name": "rqir-post479-artifact-digest-semantics-diagnostic",
+    "diagnostic_json_sha256": "07d6ecba52c0fc76e3313cdcdb04e44fe2d7d44fe1bfbd2049048f9fff0801ae",
+    "run_id": 33993624602,
+    "workflow_head_sha": "ee5195626132c42057da49678d3ae32fae421572"
+  },
+  "stage": "POST479_DIGEST_DIAGNOSTIC_RAW_CONSUMPTION__COLLISION_SAFE"
+}
