@@ -1,0 +1,134 @@
+name: RQIR post479 rank11 raw consume
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-post479-rank11-raw-consume.yml'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  raw_consume:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      SOURCE_RUN_ID: '33989317870'
+      SOURCE_JOB_ID: '101368577097'
+      SOURCE_ARTIFACT_ID: '9977375478'
+      SOURCE_ARTIFACT_NAME: 'rqir-post475-manifest-rank11-full-z-mp'
+      SOURCE_ARTIFACT_DIGEST: 'sha256:603e51865eb13242556c41700a6e9ee54b916fe18a2c2fdd9281976aadd3e71c'
+      SOURCE_HEAD_SHA: '1c8c34ec3c38f8e83e888c3bc9298bb9d458e0bd'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download exact source artifact using Actions service
+        uses: actions/download-artifact@v4
+        with:
+          name: rqir-post475-manifest-rank11-full-z-mp
+          path: raw_rank11
+          github-token: ${{ github.token }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33989317870
+      - name: Fail-closed raw scientific authority consume
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os,pathlib,subprocess
+          root=pathlib.Path('raw_rank11')
+          rp=root/'result.json'; ap=root/'authority_audit.json'
+          assert rp.exists() and rp.stat().st_size>0
+          assert ap.exists() and ap.stat().st_size>0
+          raw=rp.read_bytes(); sha=hashlib.sha256(raw).hexdigest()
+          o=json.loads(raw); a=json.loads(ap.read_text())
+          obs=o['observed']; fr=o['frozen']; t=o['target']; th=o['thresholds']
+          assert a['scientific_authority_pass'] is True
+          assert a['sha256']==sha
+          assert a['classification']=='PASS_NEXT_MASS_NODE_FULL_Z_MP80_MP120__NON_PROMOTING'
+          assert o['stage']=='POST475_MANIFEST_RANK11_FULL_Z_MP_STAGE__UNNUMBERED_COLLISION_SAFE'
+          assert o['classification']=='PASS_NEXT_MASS_NODE_FULL_Z_MP80_MP120__NON_PROMOTING'
+          assert o['scientific_gate_pass'] is True
+          assert o['promotes_physical_coordinate'] is False
+          assert t['double_double_index']==2 and t['class_id']==3
+          assert abs(float(t['q_squared'])+1.0)<1e-12
+          assert abs(float(fr['u'])-5e-6)<1e-18 and abs(float(fr['v'])-1e-5)<1e-18
+          assert fr['source_occurrence_multiplicity']==1
+          assert fr['precision_digits']==[80,120]
+          assert fr['phi_nodes']==16
+          assert fr['radial_hs']==[0.002,0.001,0.0005]
+          assert fr['z_samples']==[-0.86,-0.43,0.0,0.43,0.86]
+          assert obs['sample_count']==80 and obs['all_finite'] is True
+          assert float(obs['scaled_mp80_vs_mp120_max']) <= 1e-30
+          assert float(obs['max_radial_richardson_scaled_error']) <= float(th['radial_richardson_scaled_max'])
+          meta=json.loads(subprocess.check_output([
+              'gh','api',f"repos/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction/actions/artifacts/{os.environ['SOURCE_ARTIFACT_ID']}"
+          ],text=True))
+          assert meta['name']==os.environ['SOURCE_ARTIFACT_NAME']
+          assert meta['expired'] is False
+          assert meta['digest']==os.environ['SOURCE_ARTIFACT_DIGEST']
+          wr=meta['workflow_run']
+          assert str(wr['id'])==os.environ['SOURCE_RUN_ID']
+          assert wr['head_sha']==os.environ['SOURCE_HEAD_SHA']
+          coverage_before=15; mult=int(fr['source_occurrence_multiplicity']); coverage_after=coverage_before+mult
+          out={
+            'stage':'POST479_RANK11_RAW_CONSUMPTION__COLLISION_SAFE',
+            'classification':'PASS_RAW_CONSUMED_MANIFEST_RANK11_FULL_Z_MP80_MP120__NON_PROMOTING',
+            'scientific_gate_pass':True,
+            'promotes_physical_coordinate':False,
+            'MODEL_READINESS':'24%',
+            'readiness_change_pp':0,
+            'source':{
+              'run_id':int(os.environ['SOURCE_RUN_ID']),
+              'job_id':int(os.environ['SOURCE_JOB_ID']),
+              'artifact_id':int(os.environ['SOURCE_ARTIFACT_ID']),
+              'artifact_name':os.environ['SOURCE_ARTIFACT_NAME'],
+              'artifact_digest':os.environ['SOURCE_ARTIFACT_DIGEST'],
+              'workflow_head_sha':os.environ['SOURCE_HEAD_SHA'],
+              'scientific_json_sha256':sha,
+              'authority_audit_sha256':hashlib.sha256(ap.read_bytes()).hexdigest()
+            },
+            'target':{'manifest_rank':11,'u':fr['u'],'v':fr['v'],'source_occurrence_multiplicity':mult},
+            'observed':{
+              'sample_count':obs['sample_count'],
+              'all_finite':obs['all_finite'],
+              'scaled_mp80_vs_mp120_max':obs['scaled_mp80_vs_mp120_max'],
+              'max_radial_richardson_scaled_error':obs['max_radial_richardson_scaled_error'],
+              'radial_richardson_scaled_max_threshold':th['radial_richardson_scaled_max']
+            },
+            'coverage':{
+              'certified_occurrences_before':coverage_before,
+              'new_occurrences':mult,
+              'certified_occurrences_after':coverage_after,
+              'total_occurrences':32,
+              'fraction_after':coverage_after/32,
+              'rows_after':coverage_after*5*16,
+              'rows_total':32*5*16
+            },
+            'interpretation':[
+              'Rank 11 is raw-consumed from the exact Actions artifact and independently revalidated against its embedded authority audit and GitHub artifact metadata.',
+              'This closes only the local manifest-coordinate precision certificate; it does not promote physical double-double index 2.',
+              'The next heavy coordinate must be selected only from the frozen Iteration-455 manifest after re-reading current repository authority.'
+            ],
+            'guardrails':['NO_PHYSICAL_DS_PROMOTION','NO_THRESHOLD_CHANGE','NO_SUPPORT_REORDERING','NO_UV_SWAP_DEDUPLICATION','NO_ANSATZ003','NO_FISHER_RESOURCES']
+          }
+          pathlib.Path('candidate_gravity/results/post479_rank11_raw_consumption.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          rec=f'''# Post-479 rank-11 raw consumption delta\n\n**MODEL_READINESS:** 24% (unchanged)  \n**Physical promotion:** none\n\nRaw-consumed canonical run `{os.environ['SOURCE_RUN_ID']}`, job `{os.environ['SOURCE_JOB_ID']}`, artifact `{os.environ['SOURCE_ARTIFACT_ID']}` (`{os.environ['SOURCE_ARTIFACT_DIGEST']}`). Scientific JSON SHA-256: `{sha}`.\n\nManifest rank 11 `(u,v)=({fr['u']},{fr['v']})`, multiplicity `{mult}`: `{obs['sample_count']}/80` finite; max scaled MP80↔MP120 `{obs['scaled_mp80_vs_mp120_max']} <= 1e-30`; max radial Richardson scaled error `{obs['max_radial_richardson_scaled_error']} <= {th['radial_richardson_scaled_max']}`.\n\nClassification: `PASS_RAW_CONSUMED_MANIFEST_RANK11_FULL_Z_MP80_MP120__NON_PROMOTING`.\n\nOccurrence-weighted support coverage advances from `15/32 = 46.875%` to `{coverage_after}/32 = {100*coverage_after/32:.3f}%`, i.e. `{coverage_after*80}/2560` row occurrences.\n\nNo physical `D_s` is promoted. Before any next heavy launch, re-read current authority and frozen Iteration-455 manifest; never infer the next coordinate by symmetry.\n'''
+          pathlib.Path('candidate_gravity/recovery/POST479_RANK11_RAW_CONSUMPTION_DELTA.md').write_text(rec)
+          print(json.dumps(out,indent=2,sort_keys=True))
+          PY
+      - name: Commit collision-safe raw-consumption record
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add candidate_gravity/results/post479_rank11_raw_consumption.json candidate_gravity/recovery/POST479_RANK11_RAW_CONSUMPTION_DELTA.md
+          git commit -m 'RQIR post479: raw-consume manifest rank11 PASS'
+          git pull --rebase origin main
+          git push origin HEAD:main
