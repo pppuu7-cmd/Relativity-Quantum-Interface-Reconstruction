@@ -1,0 +1,28 @@
+{
+  "classification": "PASS_CENTRAL4_TENSOR_MOMENT_INVARIANTS__NON_PROMOTING",
+  "coefficients": ["1/12", "-2/3", "2/3", "-1/12"],
+  "exactness_statement": "For a,b in {0,1,2,3,4}, sum_ij c_i c_j x_i^a x_j^b = 1 only for (a,b)=(1,1), and 0 otherwise.",
+  "first_nonzero_1d_truncation_moment": {"k": 5, "value": "-4"},
+  "iteration": 462,
+  "l1_1d": "3/2",
+  "l1_tensor_prescaling": "9/4",
+  "moments_k0_to_k7": {
+    "0": "0",
+    "1": "1",
+    "2": "0",
+    "3": "0",
+    "4": "0",
+    "5": "-4",
+    "6": "0",
+    "7": "-20"
+  },
+  "nodes": [-2, -1, 1, 2],
+  "promotion": false,
+  "required_post_support_sanity_checks": [
+    "constant field -> mixed derivative exactly 0",
+    "pure-u polynomial degree <=4 -> mixed derivative exactly 0",
+    "pure-v polynomial degree <=4 -> mixed derivative exactly 0",
+    "u*v -> mixed derivative exactly 1",
+    "for all monomials u^a v^b with 0<=a,b<=4, only a=b=1 gives nonzero normalized tensor moment"
+  ]
+}
