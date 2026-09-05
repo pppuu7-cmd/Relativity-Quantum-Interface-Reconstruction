@@ -1,0 +1,61 @@
+{
+  "MODEL_READINESS": "24%",
+  "audit": {
+    "all_remaining_multiplicity_one": true,
+    "base_manifest_ranks": [0, 15],
+    "coverage_increment_per_remaining_coordinate_fraction": "1/32",
+    "coverage_increment_per_remaining_coordinate_percent": 3.125,
+    "half_exclusive_manifest_ranks": [16, 27],
+    "next_exact_unresolved": {
+      "distinct_rank": 12,
+      "multiplicity": 1,
+      "u": 1e-05,
+      "v": -1e-05
+    },
+    "remaining_base_only_ranks_after_rank11": [12, 13, 14, 15],
+    "remaining_distinct_count_after_rank11": 16,
+    "remaining_occurrence_weight_after_rank11": 16,
+    "remaining_manifest": [
+      {"distinct_rank": 12, "multiplicity": 1, "support_scope": "BASE", "u": 1e-05, "v": -1e-05},
+      {"distinct_rank": 13, "multiplicity": 1, "support_scope": "BASE", "u": 1e-05, "v": -5e-06},
+      {"distinct_rank": 14, "multiplicity": 1, "support_scope": "BASE", "u": 1e-05, "v": 5e-06},
+      {"distinct_rank": 15, "multiplicity": 1, "support_scope": "BASE", "u": 1e-05, "v": 1e-05},
+      {"distinct_rank": 16, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE", "u": -5e-06, "v": -2.5e-06},
+      {"distinct_rank": 17, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE", "u": -5e-06, "v": 2.5e-06},
+      {"distinct_rank": 18, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE", "u": -2.5e-06, "v": -5e-06},
+      {"distinct_rank": 19, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE", "u": -2.5e-06, "v": -2.5e-06},
+      {"distinct_rank": 20, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE", "u": -2.5e-06, "v": 2.5e-06},
+      {"distinct_rank": 21, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE", "u": -2.5e-06, "v": 5e-06},
+      {"distinct_rank": 22, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE", "u": 2.5e-06, "v": -5e-06},
+      {"distinct_rank": 23, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE", "u": 2.5e-06, "v": -2.5e-06},
+      {"distinct_rank": 24, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE", "u": 2.5e-06, "v": 2.5e-06},
+      {"distinct_rank": 25, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE", "u": 2.5e-06, "v": 5e-06},
+      {"distinct_rank": 26, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE", "u": 5e-06, "v": -2.5e-06},
+      {"distinct_rank": 27, "multiplicity": 1, "support_scope": "HALF_EXCLUSIVE", "u": 5e-06, "v": 2.5e-06}
+    ]
+  },
+  "classification": "PASS_FROZEN_MANIFEST_TAIL_EXACT_RECONSTRUCTION__NON_PROMOTING",
+  "frozen": {
+    "base_h": 5e-06,
+    "certified_occurrence_weight_through_rank11": 16,
+    "distinct_coordinate_count": 28,
+    "half_h": 2.5e-06,
+    "occurrence_count": 32,
+    "raw_valid_through_rank": 11,
+    "source_order": "BASE 4x4 u-major/v-major, then HALF 4x4 u-major/v-major"
+  },
+  "guardrails": [
+    "NO_UV_SWAP_INFERENCE",
+    "NO_CERTIFIED_RANK_RELAUNCH",
+    "NO_EARLY_ASSEMBLY_PROMOTION",
+    "NO_THRESHOLD_CHANGE",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "iteration": 481,
+  "next_gate": "raw-consume canonical rank12 run 33997856739 fail-closed; only on PASS advance to frozen manifest rank13 (+1e-5,-5e-6)",
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true
+}
