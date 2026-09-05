@@ -1,0 +1,53 @@
+{
+  "authoritative_iteration": 473,
+  "date": "2026-09-05",
+  "source_run_id": 33980045356,
+  "source_job_id": 101343539742,
+  "artifact_id": 9974359345,
+  "artifact_name": "rqir-post470-manifest-rank8-full-z-mp",
+  "artifact_digest": "sha256:119fa95d1d86780c1b0e281eb2403b9d229717bd12cf940d8c0acb4a6da87d50",
+  "scientific_json_sha256": "c65576e782850d9060ec6549ba0158ea10257ce4289e4bc72fbf43e5f16ae21d",
+  "classification": "PASS_NEXT_MASS_NODE_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "frozen_coordinate": {
+    "distinct_rank": 8,
+    "u": 0.000005,
+    "v": -0.00001,
+    "source_occurrence_multiplicity": 1
+  },
+  "observed": {
+    "sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "2.50535867256002728371956691164e-80",
+    "max_radial_richardson_scaled_error": "2.55352643477510396069343790579e-15"
+  },
+  "thresholds": {
+    "scaled_mp80_vs_mp120_max": "1e-30",
+    "radial_richardson_scaled_max": "5e-4"
+  },
+  "certified_occurrence_coverage": {
+    "closed_occurrences": 13,
+    "total_occurrences": 32,
+    "fraction": "13/32",
+    "percent": 40.625,
+    "closed_rows": 1040,
+    "total_rows": 2560
+  },
+  "next_gate": {
+    "distinct_rank": 9,
+    "u": 0.000005,
+    "v": -0.000005,
+    "source_occurrence_multiplicity": 2
+  },
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "guardrails": [
+    "RAW_ARTIFACT_CONSUMED_FAIL_CLOSED",
+    "NON_PROMOTING_LOCAL_PRECISION_CERTIFICATE_ONLY",
+    "NO_PHYSICAL_INDEX2_PROMOTION",
+    "NO_THRESHOLD_CHANGE",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
