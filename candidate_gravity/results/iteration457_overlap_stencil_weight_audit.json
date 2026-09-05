@@ -1,0 +1,35 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "PASS_OVERLAP_PRECISION_SHARE_BUT_STENCIL_WEIGHT_COLLAPSE_FORBIDDEN__NON_PROMOTING",
+  "claim": "Exact BASE/HALF coordinate overlaps may share one F(u,v) precision certificate, but BASE and HALF mixed-derivative occurrences cannot be merged because their central4xcentral4 weights differ by an exact factor 16.",
+  "frozen": {
+    "base_h": "5e-6",
+    "central4_coefficients": ["1/12", "-2/3", "2/3", "-1/12"],
+    "half_h": "2.5e-6",
+    "half_over_base_h": "1/2"
+  },
+  "guardrails": [
+    "NO_FUV_EVALUATION",
+    "NO_ACTIVE_RUN_DUPLICATION",
+    "NO_THRESHOLD_CHANGE",
+    "NO_OCCURRENCE_DENOMINATOR_COLLAPSE",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "iteration": 457,
+  "next_gate": "raw-consume active run 33946347229 fail-closed; if PASS advance only to the next Iteration-455 manifest coordinate",
+  "observed": {
+    "exact_weight_ratio_base_over_half": 16,
+    "overlap_count": 4,
+    "rows": [
+      {"coordinate_in_base_h_units": [-1, -1], "base_indices": [1, 1], "half_indices": [0, 0], "base_weight_times_base_h2": "4/9", "half_weight_times_base_h2": "1/36", "base_over_half_weight_ratio": "16", "same_sign": true},
+      {"coordinate_in_base_h_units": [-1, 1], "base_indices": [1, 2], "half_indices": [0, 3], "base_weight_times_base_h2": "-4/9", "half_weight_times_base_h2": "-1/36", "base_over_half_weight_ratio": "16", "same_sign": true},
+      {"coordinate_in_base_h_units": [1, -1], "base_indices": [2, 1], "half_indices": [3, 0], "base_weight_times_base_h2": "-4/9", "half_weight_times_base_h2": "-1/36", "base_over_half_weight_ratio": "16", "same_sign": true},
+      {"coordinate_in_base_h_units": [1, 1], "base_indices": [2, 2], "half_indices": [3, 3], "base_weight_times_base_h2": "4/9", "half_weight_times_base_h2": "1/36", "base_over_half_weight_ratio": "16", "same_sign": true}
+    ]
+  },
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true
+}
