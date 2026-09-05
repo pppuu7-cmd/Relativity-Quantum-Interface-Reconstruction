@@ -15,7 +15,21 @@ Certified occurrence-weighted precision coverage is now `15/32 = 46.875%`, i.e. 
 ## Frozen-manifest correction
 Iteration-455 distinct rank 10 `(+5e-6,+5e-6)`, multiplicity 2, is explicitly `CERTIFIED` in the frozen source-order manifest and was part of the initial certified baseline. It must not be recomputed as a new heavy gate. The stale prospective wording that rank-9 PASS permits rank 10 is superseded by the frozen manifest state.
 
-The exact next untested coordinate is distinct rank 11: `u=+5e-6`, `v=+1e-5`, multiplicity 1. Launch only that coordinate under unchanged frozen conventions; raw-consume fail-closed.
+The exact next untested coordinate is distinct rank 11: `u=+5e-6`, `v=+1e-5`, multiplicity 1.
+
+## Rank-11 launch provenance
+- raw-consumed result commit: `e2ad73bddc0b049c9ac15ba7cee1268d7588e74c`
+- research-log commit: `7377e1ba59ece841ca2aba78f39e0b71b09d2447`
+- initial recovery-delta commit: `e03116a9075322aef9277f60081c87073c845f17`
+- rank-11 stage commit: `bf65311e91cc88ad1ea3351b071e4de00f594bae`
+- rank-11 workflow commit: `63cb7315186e5c8dcb134bb6a5fc865e54dc03b8`
+- first current-front Iteration-475 commit: `1003ce2abb67c2c53953b2e25ea7fda96b8278b6`
+- trigger commit: `1c8c34ec3c38f8e83e888c3bc9298bb9d458e0bd`
+- canonical rank-11 run: `33989317870`
+- canonical rank-11 job: `101368577097`
+- run state at recording: `in_progress`; raw authority audit/artifact pending.
+
+Rank 11 is the sole permitted heavy gate under unchanged five-z/NPHI16/radial/direct-MP80/120 conventions and thresholds. Raw-consume fail-closed after completion. No duplicate run is permitted.
 
 `ANSATZ-003` remains uncreated. Comparator-subtracted residual and Fisher/resources remain BLOCKED.
 
