@@ -17,7 +17,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Run artifact registry audit
+        shell: bash
         run: |
+          set -euo pipefail
           mkdir -p raw_authority
           python candidate_gravity/code/post478_mass_support_artifact_registry_audit.py | tee raw_authority/post478_mass_support_artifact_registry_audit.json
       - name: Raw audit
@@ -30,6 +32,8 @@ jobs:
           assert o['MODEL_READINESS']=='24%'
           assert o['authority_snapshot']['active_rank']==11
           assert o['authority_snapshot']['certified_occurrences']==15
+          assert o['registry_summary']['complete_raw_bound_distinct']==11
+          assert o['registry_summary']['certified_occurrences_with_complete_raw_binding']==15
           print('RAW_AUTHORITY_AUDIT_PASS')
           PY
       - uses: actions/upload-artifact@v4
