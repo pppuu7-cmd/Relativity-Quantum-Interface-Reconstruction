@@ -14,10 +14,14 @@ Classification: `PASS_RAW_CONSUMED_MANIFEST_RANK11_FULL_Z_MP80_MP120__NON_PROMOT
 
 Occurrence-weighted support coverage: `16/32 = 50.000%`, `1280/2560` frozen row occurrences.
 
-## Operational provenance blocker localized and repaired
-Digest diagnostic raw-consume run `33994982284`, job `101383835758`, failed before scientific digest assertions because GitHub CLI had no `GH_TOKEN`; artifact download itself succeeded. Classification: `OPERATIONAL_BLOCKED__GH_CLI_AUTH_MISSING`. This is not a Candidate-Gravity consistency FAIL and does not alter rank-11 authority.
+## Provenance blocker localized, repaired, and closed
+Initial digest diagnostic raw-consume run `33994982284`, job `101383835758`, failed before scientific digest assertions because GitHub CLI had no `GH_TOKEN`; artifact download itself succeeded. Initial classification: `OPERATIONAL_BLOCKED__GH_CLI_AUTH_MISSING`, not a Candidate-Gravity consistency FAIL.
 
-Minimal workflow repair commit: `b5a1f9f54ebf04eccb95d9d718d789932747f523`, adding only `GH_TOKEN: ${{ github.token }}`. Scientific inputs and thresholds unchanged.
+Minimal repair commit `b5a1f9f54ebf04eccb95d9d718d789932747f523` added only `GH_TOKEN: ${{ github.token }}`. Corrected run `33995476897` completed successfully and committed raw-consumption result `3fb99e821d0b4c45d131102032f6b0609823e7ee`.
+
+Frozen source artifact `9961449686`: metadata digest = registry digest = REST ZIP SHA = `sha256:800fa05a9891c7cb3890d07c92bc3ab37df8ce22d94d5a2219ca5f58668e9792`. Diagnostic JSON SHA-256 `07d6ecba52c0fc76e3313cdcdb04e44fe2d7d44fe1bfbd2049048f9fff0801ae`.
+
+Classification: `PASS_ARTIFACT_METADATA_AND_REST_ZIP_SHA_BOTH_MATCH_REGISTRY__NON_PROMOTING`.
 
 ## Authority retained
 - physical/operator authority: Iteration 411;
@@ -28,7 +32,7 @@ Minimal workflow repair commit: `b5a1f9f54ebf04eccb95d9d718d789932747f523`, addi
 - Fisher/resources forbidden.
 
 ## Exact next gate
-Raw-consume corrected digest diagnostic fail-closed. Before any further heavy support launch, obtain the exact next `UNTESTED` coordinate from frozen Iteration-455 manifest; do not infer by symmetry and do not rerun certified rank 10.
+Before any further heavy support launch, obtain the exact next `UNTESTED` coordinate from frozen Iteration-455 manifest; do not infer by symmetry and do not rerun certified rank 10. If the manifest state cannot be recovered explicitly, selection is operationally BLOCKED rather than guessed.
 
 MODEL_READINESS: 24%
 
