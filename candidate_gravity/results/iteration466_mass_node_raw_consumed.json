@@ -1,0 +1,18 @@
+{
+  "authoritative_iteration": 466,
+  "date": "2026-09-05",
+  "classification": "PASS_NEXT_MASS_NODE_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "target": {"double_double_index": 2, "class_id": 3, "q_squared": -1.0},
+  "coordinate": {"distinct_rank": 5, "u": -5e-6, "v": -5e-6, "source_occurrence_multiplicity": 2},
+  "frozen": {"z_samples": [-0.86,-0.43,0.0,0.43,0.86], "phi_nodes": 16, "radial_hs": [0.002,0.001,0.0005], "precision_digits": [80,120]},
+  "observed": {"sample_count": 80, "all_finite": true, "scaled_mp80_vs_mp120_max": "2.59165437384054839689680025034e-80", "max_radial_richardson_scaled_error": "2.56657001909125782768345484024e-15", "runtime_seconds": 3886.549597193},
+  "thresholds": {"scaled_mp80_vs_mp120_max": "1e-30", "radial_richardson_scaled_max": 0.0005, "required_sample_count": 80, "all_finite": true},
+  "provenance": {"run_id": 33962417750, "job_id": 101296485227, "artifact_id": 9969255401, "artifact_digest": "sha256:ed83538b25fd05314a94f950fdda030932212da7010b0e72f1164b740978d0d4", "scientific_json_sha256": "01d21d82547ba774086b5cd1aad8a9d627fece034fa872183da0e366ffa5fde8", "raw_authority_audit_pass": true},
+  "coverage": {"certified_occurrence_weight": 9, "occurrence_denominator": 32, "fraction": 0.28125, "rows_certified": 720, "rows_denominator": 2560},
+  "next_gate": {"distinct_rank": 6, "u": -5e-6, "v": 5e-6, "source_occurrence_multiplicity": 2},
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "guardrails": ["NON_PROMOTING_LOCAL_PRECISION_CERTIFICATE", "BASE_HALF_OVERLAP_CERTIFICATE_SHARED_BUT_WEIGHTS_DISTINCT", "NO_THRESHOLD_CHANGE", "NO_PHYSICAL_DS_PROMOTION", "NO_ANSATZ003", "NO_FISHER_RESOURCES"]
+}
