@@ -1,0 +1,32 @@
+{
+  "authoritative_iteration": 453,
+  "authority_type": "one source-order mass coordinate full-training-z precision authority; non-promoting",
+  "classification": "PASS_NEXT_MASS_NODE_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "physical_operator_authority": 411,
+  "physical_blocker_authority": 421,
+  "unresolved_physical_set": [2],
+  "run_id": 33935454815,
+  "job_id": 101222379474,
+  "artifact_id": 9961449686,
+  "artifact_digest": "sha256:800fa05a9891c7cb3890d07c92bc3ab37df8ce22d94d5a2219ca5f58668e9792",
+  "scientific_json_sha256": "6da491178860fa75f73e009973e65e1d6ad805648c1717d89219f1c19e7256e8",
+  "frozen": {
+    "u": -1e-5,
+    "v": -1e-5,
+    "z_samples": [-0.86, -0.43, 0.0, 0.43, 0.86],
+    "phi_nodes": 16,
+    "radial_hs": [0.002, 0.001, 0.0005],
+    "precision_digits": [80, 120]
+  },
+  "observed": {
+    "sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "2.14713728875952584644057620487e-80",
+    "max_radial_richardson_scaled_error": "2.55677406158203497847579626974e-15"
+  },
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "next_gate": "u=-1e-5, v=-5e-6 under unchanged z/phi/radial/precision conventions"
+}
