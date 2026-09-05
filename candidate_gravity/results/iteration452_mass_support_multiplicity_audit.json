@@ -1,0 +1,53 @@
+{
+  "MODEL_READINESS": "24%",
+  "active_gate_guard": {
+    "coordinate": [-1e-05, -1e-05],
+    "do_not_duplicate": true,
+    "run": "33935454815",
+    "source_occurrence_multiplicity": 1
+  },
+  "classification": "PASS_MASS_SUPPORT_SOURCE_OCCURRENCE_MULTIPLICITY_AUDIT__NON_PROMOTING",
+  "coverage_semantics": {
+    "distinct_coordinate_denominator_rows": 2240,
+    "frozen_occurrence_denominator_rows": 2560,
+    "iteration450_closed_coordinate": [5e-06, 5e-06],
+    "iteration450_distinct_coordinate_fraction": 0.03571428571428571,
+    "iteration450_occurrence_weighted_fraction": 0.0625,
+    "iteration450_occurrence_weighted_rows_covered": 160,
+    "iteration450_source_occurrences_covered_by_same_coordinate_certificate": 2,
+    "note": "The existing 32-occurrence frozen denominator is retained. Distinct-coordinate accounting is an auxiliary deduplication view, not a weakened gate.",
+    "rows_per_distinct_mass_coordinate": 80
+  },
+  "frozen": {
+    "base_h": 5e-06,
+    "half_h": 2.5e-06,
+    "nodes_rule": "[-2h,-h,+h,+2h] nested u-major then v-major",
+    "phi_nodes": 16,
+    "training_z": [-0.86, -0.43, 0.0, 0.43, 0.86]
+  },
+  "guardrails": [
+    "NO_THRESHOLD_CHANGE",
+    "NO_STENCIL_CHANGE",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_DUPLICATE_ACTIVE_RUN",
+    "KEEP_32_SOURCE_OCCURRENCE_DENOMINATOR",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "iteration": 452,
+  "next_source_order_coordinate_if_active_passes": [-1e-05, -5e-06],
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true,
+  "support": {
+    "distinct_mass_coordinate_count": 28,
+    "overlap_coordinate_count": 4,
+    "overlap_coordinates": [
+      [-5e-06, -5e-06],
+      [-5e-06, 5e-06],
+      [5e-06, -5e-06],
+      [5e-06, 5e-06]
+    ],
+    "source_occurrence_count": 32
+  }
+}
