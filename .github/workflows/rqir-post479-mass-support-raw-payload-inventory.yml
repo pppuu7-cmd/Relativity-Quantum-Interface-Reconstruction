@@ -1,0 +1,95 @@
+name: RQIR post479 mass-support raw payload inventory
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/post479_mass_support_raw_payload_inventory.py'
+      - '.github/workflows/rqir-post479-mass-support-raw-payload-inventory.yml'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  payload_inventory:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Freeze exact current raw source registry
+        run: |
+          mkdir -p raw_payloads
+          cat > raw_payloads/expected_sources.json <<'JSON'
+          {
+            "sources": [
+              {"rank":0,"u":-0.00001,"v":-0.00001,"artifact_id":9961449686,"run_id":33935454815,"job_id":101222379474,"artifact_digest":"sha256:800fa05a9891c7cb3890d07c92bc3ab37df8ce22d94d5a2219ca5f58668e9792","scientific_json_sha256":"6da491178860fa75f73e009973e65e1d6ad805648c1717d89219f1c19e7256e8","expected_rows":80},
+              {"rank":1,"u":-0.00001,"v":-0.000005,"artifact_id":9963059047,"run_id":33940931120,"job_id":101238084215,"artifact_digest":"sha256:89c81547f8459cea496c1b604c542a188626a656ad88aa1718d830deee442ae9","scientific_json_sha256":"f51d13b29e5b433fe3a6c2acfae8a058bef2c2cd5259fb1165766a136428b004","expected_rows":80},
+              {"rank":2,"u":-0.00001,"v":0.000005,"artifact_id":9964610341,"run_id":33946347229,"job_id":101253020122,"artifact_digest":"sha256:8a3f2ec89403a45ad525a4428cc3212b4ee47f632dba306dcb5a530145760a7b","scientific_json_sha256":"0eafc8afad813c42b245ba9f49280b26b241a1b638cdb21fc9f83845d69e03d9","expected_rows":80},
+              {"rank":3,"u":-0.00001,"v":0.00001,"artifact_id":9966351908,"run_id":33951807833,"job_id":101267895504,"artifact_digest":"sha256:7fc24cc6edbe18a8f90d17373668b15b0c6a749be1519365619d1778859630ad","scientific_json_sha256":"0c5be48463f88f44a409c2ef39d5b05a12ebb7aefd9e3229675ddfe7d74bbda6","expected_rows":80},
+              {"rank":4,"u":-0.000005,"v":-0.00001,"artifact_id":9968019110,"run_id":33957232727,"job_id":101282656909,"artifact_digest":"sha256:fa1c16c9860a2f929be9595251ce382ca5fae033ca97fbca869adb021a5e82cd","scientific_json_sha256":"18d2fe2a9eb5a9a6cdbef4010916ef6d045addad8141d269f9a4dc0dbb94db44","expected_rows":80},
+              {"rank":5,"u":-0.000005,"v":-0.000005,"artifact_id":9969255401,"run_id":33962417750,"job_id":101296485227,"artifact_digest":"sha256:ed83538b25fd05314a94f950fdda030932212da7010b0e72f1164b740978d0d4","scientific_json_sha256":"01d21d82547ba774086b5cd1aad8a9d627fece034fa872183da0e366ffa5fde8","expected_rows":80},
+              {"rank":6,"u":-0.000005,"v":0.000005,"artifact_id":9971336666,"run_id":33968129883,"job_id":101311756122,"artifact_digest":"sha256:6d502989834d91f4d02b04968a3ef156a9400321eb5dea1ec693687ec13baaec","scientific_json_sha256":"220f50d31c1e9ca326c1303c3e74b39139f68fc4dbe3388450220389fef5211a","expected_rows":80},
+              {"rank":7,"u":-0.000005,"v":0.00001,"artifact_id":9973031198,"run_id":33973849536,"job_id":101326982817,"artifact_digest":"sha256:570eca5c0594a27a487a080625eebbfaaeaf12f0ea9da7bc3837a5572fa5f455","scientific_json_sha256":"6b939fba5b62a7a35ddfe12388cb4b567d836725a7e56ad6e18785f2ffca92b6","expected_rows":80},
+              {"rank":8,"u":0.000005,"v":-0.00001,"artifact_id":9974359345,"run_id":33980045356,"job_id":101343539742,"artifact_digest":"sha256:119fa95d1d86780c1b0e281eb2403b9d229717bd12cf940d8c0acb4a6da87d50","scientific_json_sha256":"c65576e782850d9060ec6549ba0158ea10257ce4289e4bc72fbf43e5f16ae21d","expected_rows":80},
+              {"rank":9,"u":0.000005,"v":-0.000005,"artifact_id":9975782294,"run_id":33983416847,"job_id":101352576616,"artifact_digest":"sha256:a0e4d481dd4b34addf7a11316730dee3240e7843f12b586307f40608c08e15c5","scientific_json_sha256":"533e5ab27c3631c25023e30ee70fecdb3bd845c18015cc6cf277ea42fd3ea8d8","expected_rows":80},
+              {"rank":10,"part":"z_outer_center","u":0.000005,"v":0.000005,"artifact_id":9958661360,"run_id":33928248369,"job_id":101201330811,"artifact_digest":"sha256:16d70f63275c451c15cb13243240612dcdc2fc09f598fe08194b1b91c2ecd3c8","scientific_json_sha256":"d7a148b1f55364145612e3c032aaa13a24634b87bad965a9f40a4d1db2b478bb","expected_rows":48},
+              {"rank":10,"part":"z_inner","u":0.000005,"v":0.000005,"artifact_id":9959560285,"run_id":33932061794,"job_id":101212520875,"artifact_digest":"sha256:84509a60d16e660e52c7873261694249e1167f1d95d6a34bd5e91e4026199c54","scientific_json_sha256":"2467e807b8b5f1c8a93a83a1e5be2107d2c5ae3d8747bb2f5f586b16501d1c03","expected_rows":32}
+            ]
+          }
+          JSON
+      - name: Download exact artifact ZIPs and verify upload digests
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python - <<'PY' > /tmp/sources.tsv
+          import json
+          o=json.load(open('raw_payloads/expected_sources.json'))
+          for s in o['sources']:
+              print(s['artifact_id'], s['artifact_digest'].split(':',1)[1], sep='\t')
+          PY
+          while IFS=$'\t' read -r aid expected; do
+            echo "DOWNLOAD_ARTIFACT $aid"
+            curl -L --fail --retry 3 \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "https://api.github.com/repos/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction/actions/artifacts/${aid}/zip" \
+              -o "raw_payloads/${aid}.zip"
+            actual=$(sha256sum "raw_payloads/${aid}.zip" | awk '{print $1}')
+            test "$actual" = "$expected" || { echo "DIGEST_MISMATCH $aid $actual $expected"; exit 2; }
+            mkdir "raw_payloads/${aid}"
+            unzip -q "raw_payloads/${aid}.zip" -d "raw_payloads/${aid}"
+          done < /tmp/sources.tsv
+      - name: Inventory payload schemas
+        shell: bash
+        run: |
+          set -euo pipefail
+          python candidate_gravity/code/post479_mass_support_raw_payload_inventory.py | tee raw_payloads/post479_mass_support_raw_payload_inventory.json
+      - name: Raw authority audit
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          o=json.loads(pathlib.Path('raw_payloads/post479_mass_support_raw_payload_inventory.json').read_text())
+          assert o['scientific_gate_pass'] is True
+          assert o['promotes_physical_coordinate'] is False
+          assert o['MODEL_READINESS']=='24%'
+          assert o['scope']['artifact_sources']==12
+          assert o['observed']['all_extracted'] is True
+          assert o['observed']['all_json_parseable'] is True
+          assert o['observed']['all_expected_row_count_candidates_found'] is True
+          print('RAW_AUTHORITY_AUDIT_PASS')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rqir-post479-mass-support-raw-payload-inventory
+          path: |
+            raw_payloads/post479_mass_support_raw_payload_inventory.json
+            raw_payloads/expected_sources.json
+          if-no-files-found: error
