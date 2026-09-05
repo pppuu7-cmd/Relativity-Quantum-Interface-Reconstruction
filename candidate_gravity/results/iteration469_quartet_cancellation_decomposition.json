@@ -1,0 +1,33 @@
+{
+  "iteration": 469,
+  "classification": "PASS_QUARTET_CANCELLATION_DECOMPOSITION__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "scope": "frozen central4xcentral4 post-support assembly provenance",
+  "sum_abs_quartet_coefficients": "9/16",
+  "canonical_sample_L1_norm_dimensionless": "9/4",
+  "definitions": {
+    "D": "sum_ab alpha_ab Q_ab",
+    "S_quartet": "sum_ab |alpha_ab Q_ab|",
+    "S_sample": "sum_ab |alpha_ab| sum_signs |F(sign*a,sign*b)|",
+    "rho_parity": "S_quartet/S_sample",
+    "rho_shell": "|D|/S_quartet"
+  },
+  "exact_relations": [
+    "|D| <= S_quartet <= S_sample",
+    "kappa_sample >= kappa_quartet >= 1 for D != 0",
+    "0 <= rho_parity <= 1",
+    "0 <= rho_shell <= 1",
+    "kappa_sample = 1/(rho_parity*rho_shell)",
+    "kappa_quartet = 1/rho_shell"
+  ],
+  "interpretation": {
+    "rho_parity": "isolates cancellation inside the exact odd-odd parity quartets",
+    "rho_shell": "isolates cancellation among the four weighted quartet scales",
+    "guardrail": "large cancellation remains diagnostic only; no physics FAIL or promotion follows"
+  },
+  "reproducible_audit": "candidate_gravity/code/iteration469_quartet_cancellation_decomposition_audit.py",
+  "stress_test_exact_rational_cases": 5000,
+  "stress_test_zero_D_cases": 0,
+  "active_external_gate_unchanged": "run 33973849536 rank 7 u=-5e-6,v=+1e-5",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0
+}
