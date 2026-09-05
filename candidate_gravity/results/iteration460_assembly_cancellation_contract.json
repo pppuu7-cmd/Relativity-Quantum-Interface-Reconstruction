@@ -1,0 +1,32 @@
+{
+  "iteration": 460,
+  "classification": "PASS_ASSEMBLY_CANCELLATION_DIAGNOSTIC_CONTRACT_FROZEN__NON_PROMOTING",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "central4": {
+    "coefficients": ["1/12", "-2/3", "2/3", "-1/12"],
+    "l1_1d": "3/2",
+    "l1_tensor": "9/4",
+    "base_operator_l1": 90000000000.0,
+    "half_operator_l1": 360000000000.0
+  },
+  "post_support_required_metrics": [
+    "D=sum_i w_i F_i independently for BASE/HALF and MP80/MP120",
+    "S_abs=sum_i |w_i F_i|",
+    "kappa_cancel=S_abs/max(|D|,tiny), diagnostic only",
+    "B_80_120=sum_i |w_i| |F_i^80-F_i^120|",
+    "direct |D80-D120|",
+    "existing scaled MP80/MP120 discrepancy <=2e-6"
+  ],
+  "mandatory_provenance_check": "|D80-D120| <= B_80_120 apart from explicitly bounded assembly roundoff",
+  "classification_guardrails": {
+    "large_kappa_cancel": "conditioning/near-cancellation diagnostic only",
+    "bound_violation": "operational/implementation provenance BLOCKED, not physics FAIL",
+    "thresholds_changed": false,
+    "physical_index_2_promoted": false,
+    "ansatz_003_created": false,
+    "fisher_or_resources_run": false
+  },
+  "active_run_not_duplicated": 33951807833,
+  "next_gate": "raw-consume run 33951807833 fail-closed; PASS permits only Iteration-455 distinct rank 4 (-5e-6,-1e-5)"
+}
