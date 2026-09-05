@@ -37,6 +37,7 @@ An authoritative iteration number is allocated by the first committed research/r
 - 458: exact central4×central4 mixed-derivative precision-budget audit. Establishes operator L1 norms `9e10` (BASE) and `3.6e11` (HALF), rejects any shortcut from local MP sample PASS directly to derivative-level MP closure, and prospectively freezes independent assembled BASE/MP80↔120 and HALF/MP80↔120 scaled discrepancy gates `<=2e-6` after all 28 distinct coordinates are locally certified. Non-promoting.
 - 459: raw PASS at Iteration-455 distinct rank 2 `(-1e-5,+5e-6)` from run `33946347229`, artifact `9964610341`; occurrence-weighted certified coverage `5/32=15.625%`; non-promoting.
 - 460: prospective post-support assembly cancellation/provenance contract. Requires reporting `D=sum w_i F_i`, `S_abs=sum |w_i F_i|`, `kappa_cancel`, and the weighted cross-precision bound `B_80_120=sum |w_i||F_i^80-F_i^120|` independently for BASE/HALF, while retaining the frozen assembled scaled MP80↔120 threshold `<=2e-6`. Triangle-bound violation is implementation/provenance BLOCKED; large cancellation is diagnostic only. Non-promoting.
+- 461: raw PASS at Iteration-455 distinct rank 3 `(-1e-5,+1e-5)` from run `33951807833`, job `101267895504`, artifact `9966351908`; occurrence-weighted certified coverage `6/32=18.75%`; non-promoting.
 
 These meanings are reserved and may not be reused by concurrent workflows or research records.
 
