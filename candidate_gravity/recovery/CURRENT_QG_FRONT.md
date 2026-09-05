@@ -13,11 +13,11 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest validated structural authority: Iteration 410.
 - Latest raw-valid physical blocker: Iteration 421 — `BLOCKED_CONVERGENCE`, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: `[2]`.
-- Latest completed numerical mass-support authority: Iteration 463 raw-consumes canonical run `33957232727` as PASS at `u=-5e-6, v=-1e-5`; non-promoting.
-- Latest authoritative research iteration: Iteration 465.
+- Latest completed numerical mass-support authority: Iteration 466 raw-consumes canonical run `33962417750` as PASS at `u=-5e-6, v=-5e-6`; non-promoting.
+- Latest authoritative research iteration: Iteration 466.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16; occurrence denominator `32 x 5 x 16 = 2560` rows.
-- Certified occurrence-weighted precision coverage: `7/32 = 21.875%`, i.e. `560/2560` row occurrences.
-- Active numerical gate: run `33962417750`, job `101296485227`, at Iteration-455 distinct rank 5, `u=-5e-6, v=-5e-6`, all five training-z, NPHI16, unchanged radial Richardson, direct MP80/120. This is the sole authorized numerical gate; do not duplicate.
+- Certified occurrence-weighted precision coverage: `9/32 = 28.125%`, i.e. `720/2560` row occurrences.
+- Active numerical gate: run `33968129883`, job `101311756122`, at Iteration-455 distinct rank 6, `u=-5e-6, v=+5e-6`, all five training-z, NPHI16, unchanged radial Richardson, direct MP80/120. This is the sole authorized numerical gate; do not duplicate.
 
 ## Retained physical authority
 Timelike `Tr U2` before `+i/2` weight: `q^2=-1 -> +0.0005345424186332474`; `q^2=-0.34 -> -0.000734101259784574`; `q^2=-0.14 -> -0.001572666890130343`.
@@ -27,7 +27,7 @@ Frozen timelike `Tr U1^2` census: 57 physical channels = 6 simple-simple + 36 si
 Iteration 421 remains blocker authority: run `33871920373`, raw-valid `BLOCKED_CONVERGENCE`. Diagnostic index-2 value `~+0.0035843041850530683` is not authority. Frozen failures remain `max_stability_scaled=2.2720400683804223e-05 > 2e-05` and `max_required_fit_residual_scaled=2.585665489102237e-05 > 2e-05`. No zero fill.
 
 ## Numerical precision chain
-Iterations 436/437 close `N1/Q1`; 438 exact `A_finite`; 440 `Acoef/Asub`; 442 same-h representation/truncation; 445 Y-site; 446 post-parent contraction arithmetic. Iteration 447 localized the remaining Iteration-407 spectral/sample boundary. Iterations 449/450/453/456/459/461/463 progressively close direct-parent full-training-z mass support. Iteration 454 rejects `u<->v` deduplication. Iteration 455 freezes exact support order. Iteration 457 proves the four exact BASE/HALF coordinate overlaps may share one `F(u,v)` precision certificate but must retain separate derivative weights.
+Iterations 436/437 close `N1/Q1`; 438 exact `A_finite`; 440 `Acoef/Asub`; 442 same-h representation/truncation; 445 Y-site; 446 post-parent contraction arithmetic. Iteration 447 localized the remaining Iteration-407 spectral/sample boundary. Iterations 449/450/453/456/459/461/463/466 progressively close direct-parent full-training-z mass support. Iteration 454 rejects `u<->v` deduplication. Iteration 455 freezes exact support order. Iteration 457 proves the four exact BASE/HALF coordinate overlaps may share one `F(u,v)` precision certificate but must retain separate derivative weights.
 
 ## Iteration 458 assembly-level precision barrier
 The authoritative Iteration-407 mixed auxiliary-mass derivative uses tensor-product central4 first derivatives with coefficients `[1/12,-2/3,+2/3,-1/12]/h`. BASE and HALF are formed separately; the frozen physical quantity retains `ds=-d_base`, while BASE/HALF disagreement is a separate mass-step convergence test. There is no BASE/HALF Richardson extrapolation.
@@ -48,11 +48,11 @@ Extending the same frozen central4 moments gives exactly `m6=0`, `m7=-20`, `m8=0
 ## Iteration 465 two-level truncation-order non-identifiability
 With only BASE `B=D(h)` and HALF `H=D(h/2)`, the leading truncation exponent is not empirically identifiable. Under `D(h)=D0+a h^p`, every assumed `p!=0` fits the same pair exactly with `D0(p)=(2^p H-B)/(2^p-1)`. In particular, `p=4` gives `(16H-B)/15` and `p=6` gives `(64H-B)/63`; both exactly fit the same two levels, while their inferred continua differ by `16(H-B)/315`. Classification is `REGIME_SPECIFIC_NON_IDENTIFIABILITY__TWO_LEVEL_TRUNCATION_ORDER__NON_PROMOTING`, scoped strictly to numerical truncation-order identification. It is not Candidate-Gravity model non-identifiability, consistency FAIL, comparator identity, near-degeneracy, or novelty certificate. Iteration-464 factors 16/64 are theoretical single-term signatures only; BASE/HALF alone cannot select between them. A third independent step level or an external continuum/truncation prior would be required to identify order, but no new level is authorized because that would alter the frozen design. No Richardson promotion; retained `ds=-d_base` and all frozen thresholds are unchanged.
 
-## Iteration 463 raw authority
-Canonical run `33957232727`, job `101282656909`, artifact `9968019110`, artifact digest `sha256:fa1c16c9860a2f929be9595251ce382ca5fae033ca97fbca869adb021a5e82cd`, scientific JSON SHA-256 `18d2fe2a9eb5a9a6cdbef4010916ef6d045addad8141d269f9a4dc0dbb94db44`. At `u=-5e-6, v=-1e-5`: `80/80` finite, max scaled MP80↔MP120 `2.7478339564891277832684813337e-80 <= 1e-30`, max radial Richardson scaled error `2.56287746810567343755321966286e-15 <= 5e-4`. Non-promoting PASS. The race-duplicate rank-4 run is not independent support and does not increment coverage.
+## Iteration 466 raw authority
+Canonical run `33962417750`, job `101296485227`, artifact `9969255401`, artifact digest `sha256:ed83538b25fd05314a94f950fdda030932212da7010b0e72f1164b740978d0d4`, scientific JSON SHA-256 `01d21d82547ba774086b5cd1aad8a9d627fece034fa872183da0e366ffa5fde8`. At `u=-5e-6, v=-5e-6`: `80/80` finite, max scaled MP80↔MP120 `2.59165437384054839689680025034e-80 <= 1e-30`, max radial Richardson scaled error `2.56657001909125782768345484024e-15 <= 5e-4`. Non-promoting PASS. Because this is an exact BASE/HALF overlap, the one local precision certificate increments occurrence-weighted coverage by two while leaving the two derivative occurrences and weights distinct.
 
 ## Active gate
-Run `33962417750`, job `101296485227`: raw-consume fail-closed at `u=-5e-6, v=-5e-6` (Iteration-455 distinct rank 5). This exact coordinate has BASE/HALF source multiplicity two; one local `F(u,v)` precision certificate may be shared, but level-specific derivative weights remain distinct. PASS closes only that exact coordinate and permits only distinct rank 6 under the deterministic manifest and unchanged five-z/NPHI16/radial/direct-MP80/120 conventions. BLOCKED requires localization of the first failing sample at exactly the active coordinate. No later coordinate may be launched before raw consumption.
+Run `33968129883`, job `101311756122`: raw-consume fail-closed at `u=-5e-6, v=+5e-6` (Iteration-455 distinct rank 6). This exact coordinate also has BASE/HALF source multiplicity two; one local `F(u,v)` precision certificate may be shared, but level-specific derivative weights remain distinct. PASS closes only that exact coordinate and permits only distinct rank 7 under the deterministic manifest and unchanged five-z/NPHI16/radial/direct-MP80/120 conventions. BLOCKED requires localization of the first failing sample at exactly the active coordinate. No later coordinate may be launched before raw consumption.
 
 ## Stable readiness rubric
 - comparator foundation `24/25`
