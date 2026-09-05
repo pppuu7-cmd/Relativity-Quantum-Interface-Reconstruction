@@ -1,0 +1,47 @@
+{
+  "stage": "POST479_MASS_SUPPORT_ARTIFACT_REGISTRY_AUDIT__COLLISION_SAFE",
+  "classification": "PASS_ALL_CURRENT_CERTIFIED_MASS_SUPPORT_RAW_ARTIFACT_BINDINGS_RECOVERED__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "canonical_authority_anchor": "Iteration 479",
+  "source_run_id": 33992724283,
+  "source_job_id": 101377700420,
+  "source_artifact_id": 9977106680,
+  "source_artifact_name": "rqir-post478-mass-support-artifact-registry-audit",
+  "source_artifact_digest": "sha256:428b6793780c49341b082dc7a9eac455506d747f5bc368669f4351f92adc7b4c",
+  "authority_snapshot": {
+    "latest_mass_support_authority": 475,
+    "certified_ranks": "0..10",
+    "active_rank": 11,
+    "certified_occurrences": 15,
+    "total_occurrences": 32
+  },
+  "registry_summary": {
+    "certified_distinct_coordinates": 11,
+    "complete_raw_bound_distinct": 11,
+    "missing_raw_bound_distinct": 0,
+    "ambiguous_raw_bound_distinct": 0,
+    "complete_raw_bound_ranks": [0,1,2,3,4,5,6,7,8,9,10],
+    "composite_raw_bound_ranks": [10],
+    "certified_occurrences_with_complete_raw_binding": 15,
+    "certified_occurrences_total": 15,
+    "normalized_provenance_file_count": 12
+  },
+  "rank10_composite": {
+    "coordinate": {"u": 0.000005, "v": 0.000005},
+    "part_1": {"iteration": 449, "rows": 48, "z": [-0.86,0.0,0.86], "run_id": 33928248369, "job_id": 101201330811, "artifact_id": 9958661360, "artifact_digest": "sha256:16d70f63275c451c15cb13243240612dcdc2fc09f598fe08194b1b91c2ecd3c8", "scientific_json_sha256": "d7a148b1f55364145612e3c032aaa13a24634b87bad965a9f40a4d1db2b478bb"},
+    "part_2": {"iteration": 450, "rows": 32, "z": [-0.43,0.43], "run_id": 33932061794, "job_id": 101212520875, "artifact_id": 9959560285, "artifact_digest": "sha256:84509a60d16e660e52c7873261694249e1167f1d95d6a34bd5e91e4026199c54", "scientific_json_sha256": "2467e807b8b5f1c8a93a83a1e5be2107d2c5ae3d8747bb2f5f586b16501d1c03"},
+    "union_rows": 80,
+    "disjoint_z_partition": true
+  },
+  "interpretation": [
+    "All currently certified mass-support coordinates are bound to exact raw Actions artifacts; no regeneration or neighboring-coordinate substitution is required.",
+    "Historical result schemas were normalized without weakening provenance: run, job, artifact id, artifact digest and scientific JSON SHA remain exact bindings.",
+    "Rank 10 is a composite certificate and must be reconstructed from both disjoint-z raw artifacts before any future full-F assembly.",
+    "This result is provenance only and cannot replace the pending rank-11 numerical gate or final assembled derivative closure."
+  ],
+  "next_gate": "verify exact artifact downloadability and raw payload schema, then freeze assembly-input schema bindings; full-F assembly remains forbidden until all 28 distinct coordinates are locally certified",
+  "guardrails": ["NO_FUV_EVALUATION","NO_ACTIVE_RANK11_DUPLICATION","NO_SUPPORT_REORDERING","NO_UV_SWAP_DEDUPLICATION","NO_REGENERATION_AS_PROVENANCE_SUBSTITUTE","NO_THRESHOLD_CHANGE","NO_PHYSICAL_DS_PROMOTION","NO_ANSATZ003","NO_FISHER_RESOURCES"]
+}
