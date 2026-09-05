@@ -23,5 +23,8 @@ No physical promotion. Unresolved set remains `[2]`. Iteration-458/460/462 assem
 
 Readiness change: 0 pp; local numerical support advanced but no stable readiness-rubric component closed.
 
+## Anti-idle continuation
+The rank-6 stage and workflow were checked against the frozen parent conventions and launched without duplicating another useful queued/in-progress gate. Active run: `33968129883`, job `101311756122`, head `0f86a7e2c4ea0ceb13358c8a1c3f0712e9e03217`, Iteration-455 distinct rank 6 at `u=-5e-6, v=+5e-6`, source-occurrence multiplicity 2. Five training-z, NPHI16, radial steps `[0.002,0.001,0.0005]`, and direct MP80/120 are unchanged. The run is scientific authority only after raw artifact audit; workflow colour alone is not a PASS.
+
 ## Exact next gate
-Only Iteration-455 distinct rank 6 is authorized: `u=-5e-6, v=+5e-6`, source-occurrence multiplicity 2, unchanged five-z/NPHI16/radial/direct-MP80/120 conventions. Raw-consume fail-closed before any later coordinate.
+Raw-consume run `33968129883` fail-closed at rank 6. PASS permits only Iteration-455 distinct rank 7, `u=-5e-6, v=+1e-5`, under unchanged frozen conventions. BLOCKED requires localization of the first failing z/phi/radial sample at rank 6. No later coordinate may be launched before raw consumption.
