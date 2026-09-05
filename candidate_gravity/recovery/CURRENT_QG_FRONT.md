@@ -14,7 +14,7 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest raw-valid physical blocker: Iteration 421 — `BLOCKED_CONVERGENCE`, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: `[2]`.
 - Latest completed numerical mass-support authority: Iteration 459 raw-consumes run `33946347229` as PASS at `u=-1e-5, v=+5e-6`; non-promoting.
-- Latest authoritative research iteration: Iteration 459.
+- Latest authoritative research iteration: Iteration 460.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16; occurrence denominator `32 x 5 x 16 = 2560` rows.
 - Certified occurrence-weighted precision coverage: `5/32 = 15.625%`, i.e. `400/2560` row occurrences.
 - Active numerical gate: run `33951807833` at Iteration-455 distinct rank 3, `u=-1e-5, v=+1e-5`, all five training-z, NPHI16, unchanged radial Richardson, direct MP80/120. This is the sole authorized numerical gate; do not duplicate.
@@ -36,6 +36,9 @@ The first-derivative coefficient L1 sum is exactly `3/2`, hence the tensor mixed
 
 After all 28 distinct `F(u,v)` coordinates have local certificates, assemble BASE and HALF independently at MP80 and MP120, require all finite, require each assembled scaled MP80↔120 discrepancy `<=2e-6`, retain BASE↔HALF physical mass-step discrepancy `<=2e-5`, and report weighted local error budgets. Only after that PASS may frozen Iteration 424 be reevaluated.
 
+## Iteration 460 cancellation/provenance augmentation
+The post-support assembly gate must additionally report, independently for BASE/HALF and MP80/MP120, `D=sum_i w_i F_i`, `S_abs=sum_i |w_i F_i|`, `kappa_cancel=S_abs/max(|D|,tiny)`, and `B_80_120=sum_i |w_i||F_i^80-F_i^120|`. The triangle inequality requires direct `|D80-D120| <= B_80_120` apart from explicitly bounded assembly roundoff. Violation is implementation/provenance `BLOCKED`, not physics FAIL. Large `kappa_cancel` is conditioning/near-cancellation evidence only; it cannot weaken frozen thresholds or support novelty/non-identifiability claims. The Iteration-458 scaled assembled MP80↔120 threshold `<=2e-6` remains unchanged.
+
 ## Iteration 459 raw authority
 Run `33946347229`, job `101253020122`, artifact `9964610341`, artifact digest `sha256:8a3f2ec89403a45ad525a4428cc3212b4ee47f632dba306dcb5a530145760a7b`, scientific JSON SHA-256 `0eafc8afad813c42b245ba9f49280b26b241a1b638cdb21fc9f83845d69e03d9`. At `u=-1e-5, v=+5e-6`: `80/80` finite, max scaled MP80↔MP120 `3.26861120435911150741540805708e-80 <= 1e-30`, max radial Richardson scaled error `2.56975832612797362560915878496e-15 <= 5e-4`. Non-promoting PASS.
 
@@ -55,4 +58,4 @@ Run `33951807833`: raw-consume fail-closed at `u=-1e-5, v=+1e-5` (Iteration-455 
 Readiness change: **0 percentage points**.
 
 ## Retained guardrails
-Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct q^2 variables are never summed. Same i0 is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Only exact BASE/HALF coordinate overlaps may share precision certificates, and shared certificates never erase level-specific central4 derivative weights. Local MP sample PASS never substitutes for assembled derivative MP closure. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5. Source/Born subtraction only in a matched observable after pole/cut-origin classification.
+Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct q^2 variables are never summed. Same i0 is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Only exact BASE/HALF coordinate overlaps may share precision certificates, and shared certificates never erase level-specific central4 derivative weights. Local MP sample PASS never substitutes for assembled derivative MP closure. Large cancellation condition number is diagnostic only. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden. No blind heavy full-C5. Source/Born subtraction only in a matched observable after pole/cut-origin classification.
