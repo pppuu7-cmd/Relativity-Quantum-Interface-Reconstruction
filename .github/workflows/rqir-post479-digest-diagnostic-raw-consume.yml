@@ -1,0 +1,108 @@
+name: RQIR post479 digest diagnostic raw consume
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-post479-digest-diagnostic-raw-consume.yml'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  raw_consume:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      SOURCE_RUN_ID: '33993624602'
+      SOURCE_ARTIFACT_ID: '9977377034'
+      SOURCE_ARTIFACT_NAME: 'rqir-post479-artifact-digest-semantics-diagnostic'
+      SOURCE_ARTIFACT_DIGEST: 'sha256:f022684784fcce7c27a2208baad4a9410261dddc75ab959f037fbef911dacab3'
+      SOURCE_HEAD_SHA: 'ee5195626132c42057da49678d3ae32fae421572'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/download-artifact@v4
+        with:
+          name: rqir-post479-artifact-digest-semantics-diagnostic
+          path: raw_digest_diag
+          github-token: ${{ github.token }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33993624602
+      - name: Raw-consume digest semantics diagnostic
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,hashlib,os,pathlib,subprocess
+          p=pathlib.Path('raw_digest_diag/digest_diagnostic.json')
+          assert p.exists() and p.stat().st_size>0
+          raw=p.read_bytes(); d=json.loads(raw)
+          meta=json.loads(subprocess.check_output(['gh','api',f"repos/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction/actions/artifacts/{os.environ['SOURCE_ARTIFACT_ID']}"],text=True))
+          assert meta['name']==os.environ['SOURCE_ARTIFACT_NAME']
+          assert meta['digest']==os.environ['SOURCE_ARTIFACT_DIGEST']
+          assert meta['expired'] is False
+          assert str(meta['workflow_run']['id'])==os.environ['SOURCE_RUN_ID']
+          assert meta['workflow_run']['head_sha']==os.environ['SOURCE_HEAD_SHA']
+          assert d['stage']=='POST479_ARTIFACT_DIGEST_SEMANTICS_DIAGNOSTIC__COLLISION_SAFE'
+          assert d['artifact_id']==9961449686
+          assert d['scientific_recomputation'] is False
+          assert d['promotes_physical_coordinate'] is False
+          assert d['MODEL_READINESS']=='24%'
+          metadata_digest=d['metadata_digest']
+          registry_digest=d['registry_expected_digest']
+          rest_digest=d['rest_download_sha256']
+          meta_matches=(metadata_digest==registry_digest)
+          rest_matches=(rest_digest==registry_digest)
+          # The diagnostic is useful only if the authoritative metadata digest is bound to the registry.
+          assert meta_matches is True, (metadata_digest,registry_digest)
+          classification=('PASS_ARTIFACT_METADATA_DIGEST_MATCHES_REGISTRY_WHILE_REST_REPACK_SHA_DIFFERS__NON_PROMOTING'
+                          if not rest_matches else
+                          'PASS_ARTIFACT_METADATA_AND_REST_ZIP_SHA_BOTH_MATCH_REGISTRY__NON_PROMOTING')
+          out={
+            'stage':'POST479_DIGEST_DIAGNOSTIC_RAW_CONSUMPTION__COLLISION_SAFE',
+            'classification':classification,
+            'scientific_gate_pass':True,
+            'promotes_physical_coordinate':False,
+            'MODEL_READINESS':'24%',
+            'readiness_change_pp':0,
+            'source':{
+              'run_id':int(os.environ['SOURCE_RUN_ID']),
+              'artifact_id':int(os.environ['SOURCE_ARTIFACT_ID']),
+              'artifact_name':os.environ['SOURCE_ARTIFACT_NAME'],
+              'artifact_digest':os.environ['SOURCE_ARTIFACT_DIGEST'],
+              'workflow_head_sha':os.environ['SOURCE_HEAD_SHA'],
+              'diagnostic_json_sha256':hashlib.sha256(raw).hexdigest()
+            },
+            'diagnostic':d,
+            'conclusion':{
+              'artifact_metadata_digest_matches_frozen_registry':meta_matches,
+              'rest_download_zip_sha_matches_frozen_registry':rest_matches,
+              'old_inventory_raw_zip_sha_test_is_valid_for_upload_digest':bool(rest_matches),
+              'required_fix':('verify GitHub artifact metadata digest exactly, then bind the canonical scientific JSON by its frozen scientific_json_sha256; do not use REST-downloaded ZIP byte SHA as the upload digest' if not rest_matches else 'retain exact metadata and scientific JSON SHA binding; REST ZIP SHA is also compatible for this artifact')
+            },
+            'guardrails':['NO_SCIENTIFIC_REGENERATION','NO_PHYSICAL_DS_PROMOTION','NO_ACTIVE_MASS_NODE_DUPLICATION','NO_THRESHOLD_CHANGE','NO_ANSATZ003','NO_FISHER_RESOURCES']
+          }
+          pathlib.Path('candidate_gravity/results/post479_digest_diagnostic_raw_consumption.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          pathlib.Path('candidate_gravity/recovery/POST479_DIGEST_DIAGNOSTIC_RAW_CONSUMPTION_DELTA.md').write_text(
+              '# Post-479 artifact digest diagnostic raw-consumption delta\n\n'
+              '**MODEL_READINESS:** 24% (unchanged)  \n**Physical promotion:** none\n\n'
+              f"Raw-consumed diagnostic run `{os.environ['SOURCE_RUN_ID']}`, artifact `{os.environ['SOURCE_ARTIFACT_ID']}`. Diagnostic JSON SHA-256 `{hashlib.sha256(raw).hexdigest()}`.\n\n"
+              f"Frozen source artifact 9961449686: metadata digest `{metadata_digest}`; registry digest `{registry_digest}`; REST-downloaded ZIP SHA `{rest_digest}`. Metadata↔registry match: `{meta_matches}`; REST ZIP↔registry match: `{rest_matches}`.\n\n"
+              f"Classification: `{classification}`.\n\n"
+              + ('The failed post-479 inventory used the wrong digest object: GitHub artifact metadata is the authoritative upload digest, while the REST archive bytes are not byte-identical to that digest representation. Future provenance must verify metadata digest and separately require an exact `scientific_json_sha256` match for the canonical JSON payload.\n' if not rest_matches else 'For this artifact the REST archive SHA also matches; provenance still must independently bind the canonical scientific JSON SHA.\n')
+          )
+          print(json.dumps(out,indent=2,sort_keys=True))
+          PY
+      - name: Commit raw-consumption result
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add candidate_gravity/results/post479_digest_diagnostic_raw_consumption.json candidate_gravity/recovery/POST479_DIGEST_DIAGNOSTIC_RAW_CONSUMPTION_DELTA.md
+          git commit -m 'RQIR post479: raw-consume artifact digest diagnostic'
+          git pull --rebase origin main
+          git push origin HEAD:main
