@@ -1,0 +1,28 @@
+{
+  "classification": "PASS_CENTRAL4_ODD_ODD_PARITY_PROJECTION_EXACT__NON_PROMOTING",
+  "identities": {
+    "F_oo": "(F(x,y)-F(-x,y)-F(x,-y)+F(-x,-y))/4",
+    "annihilated_exactly": [
+      "even-in-x sector",
+      "even-in-y sector"
+    ],
+    "assembly_projection": "D_h[F] = D_h[F_oo]",
+    "c_minus_x": "-c_x",
+    "orbit_reduction": "16-sample signed assembly equals four positive-quadrant odd-odd orbit differences",
+    "w_minus_x_minus_y": "w_x_y",
+    "w_minus_x_y": "-w_x_y",
+    "w_x_minus_y": "-w_x_y"
+  },
+  "iteration": 497,
+  "model_readiness_percent": 24,
+  "nodes": [-2, -1, 1, 2],
+  "coefficients": {
+    "-2": "1/12",
+    "-1": "-2/3",
+    "1": "2/3",
+    "2": "-1/12"
+  },
+  "scope": "estimator/assembly provenance only",
+  "scientific_promotion": false,
+  "thresholds_changed": false
+}
