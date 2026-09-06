@@ -14,7 +14,7 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: **`[2]`**.
 - Latest completed numerical mass-support authority: **Iteration 513**, raw-consumed frozen rank23 `(u,v)=(+2.5e-6,-2.5e-6)`, HALF local index 9, multiplicity 1.
-- Latest authoritative research iteration: **Iteration 513**.
+- Latest authoritative research iteration: **Iteration 514**.
 - Certified occurrence-weighted precision coverage: **`28/32 = 87.5% = 2240/2560`** row occurrences.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16. Frozen rank10 `(+5e-6,+5e-6)`, multiplicity 2, was already certified in Iteration 455 and must not be relaunched.
 
@@ -44,12 +44,14 @@ Only raw-valid rank24 PASS permits rank25 `(+2.5e-6,+5e-6)`, HALF local index 11
 
 Conditional coverage after future sequential raw-valid PASS: rank24 `29/32=90.625%`; rank25 `30/32=93.750%`; rank26 `31/32=96.875%`; rank27 `32/32=100%`. These are arithmetic consequences only, not PASS claims.
 
-## Exact assembly authority — Iterations 510–512
+## Exact assembly authority — Iterations 510–514
 Iteration 510 established exact BASE/HALF row independence: `rank([W_BASE,W_HALF])=2`; `W_DELTA=W_BASE-W_HALF` adds no independent row. Exact Gram matrix `G=[[4225/5184,4/81],[4/81,4225/324]]`, determinant `5948843/559872`. BASE-minus-HALF is derived and never an extra Fisher constraint.
 
 Iteration 511 established exact shared-node numerical covariance under the explicitly scoped iid equal-variance coordinate-error model: `Cov(BASE,HALF)=(4/81)sigma^2/h^4`, correlation `64/4225`, `Var(BASE-HALF)=(23771/1728)sigma^2/h^4`. This is numerical-error provenance, not physical covariance authority.
 
 Iteration 512 quantified the exact Gram singular spectrum: eigenvalues `(71825±sqrt(4016652769))/10368`, approximately `0.81480824040386763744` and `13.0403229324356385354`; Gram condition number approximately `16.00416182091147668`, assembly singular-value condition number approximately `4.0005201937887373552`. This creates no new frozen threshold and no physical PASS.
+
+Iteration 514 established a distribution-free deterministic assembly-error contract. If every absolute coordinate perturbation on the frozen 28-coordinate union obeys `|e_i|<=epsilon`, then `|delta BASE| <= (9/4) epsilon/h^2`, `|delta HALF| <= 9 epsilon/h^2`, and union-aggregated `|delta(BASE-HALF)| <= (397/36) epsilon/h^2`. Treating BASE/HALF separately would give the looser coefficient `45/4`; exact four-node shared-support aggregation reduces it by `2/9`, i.e. relative reduction `8/405`. Classification: `PASS_BASE_HALF_DETERMINISTIC_LINF_ERROR_OPERATOR_BOUND_EXACT__NON_PROMOTING`. This absolute bound does not turn local scaled MP discrepancies into assembled scaled discrepancies without an explicit common absolute normalization and creates no new threshold.
 
 ## Retained comparator and physical blockers
 Iteration 504 remains `BLOCKED_FIXED_COMPARATOR_QUOTIENT_UPSTREAM_TARGET_NOT_ASSEMBLED__NON_PROMOTING`: concrete upstream algebraic target not assembled, so comparator identity/rank loss/near-degeneracy/novelty remain unevaluable. BLOCKED is not scientific FAIL.
@@ -71,10 +73,10 @@ The frozen Iteration-424 high-precision fallback remains downstream of complete 
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**.
+Readiness change: **0 percentage points**. Iteration 514 closed an exact numerical assembly/error-propagation subgate only; no additional rubric sector was completed.
 
 ## Exact downstream chain
 Complete support closure → independent BASE/HALF MP80/120 assembly → frozen Iteration-424 reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient → robust nonzero residual.
 
 ## Retained guardrails
-Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Exact BASE/HALF coordinate overlap may share local sampled precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Shared BASE/HALF support coordinates induce nonzero numerical-error covariance under iid coordinate noise. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists. No blind heavy full-C5. Do not reopen the closed C5 null-soft e=3 sector. Old weighted-B3 proxy residues are not actual `Tr U1` authority. Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification.
+Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Exact BASE/HALF coordinate overlap may share local sampled precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Shared BASE/HALF support coordinates induce nonzero numerical-error covariance under iid coordinate noise. Deterministic absolute assembly-error bounds cannot be substituted for assembled scaled-discrepancy gates without an explicit common absolute normalization. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists. No blind heavy full-C5. Do not reopen the closed C5 null-soft e=3 sector. Old weighted-B3 proxy residues are not actual `Tr U1` authority. Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification.
