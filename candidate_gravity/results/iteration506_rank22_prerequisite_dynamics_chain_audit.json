@@ -1,0 +1,47 @@
+{
+  "MODEL_READINESS": "24%",
+  "checks": {
+    "base_h_frozen_5e6": true,
+    "mp_threshold_inherited": true,
+    "no_ansatz003_guardrail": true,
+    "no_fisher_resources_guardrail": true,
+    "no_physical_promotion_guardrail": true,
+    "no_threshold_weakening_guardrail": true,
+    "phi_nodes_inherited": true,
+    "precision_levels_inherited": true,
+    "radial_threshold_inherited": true,
+    "rank21_raw_pass_required": true,
+    "rank21_successor_is_rank22": true,
+    "rank22_coordinate_exact": true,
+    "rank22_half_local_index_8": true,
+    "rank22_mass_binding_from_base_h": true,
+    "rank22_multiplicity_one": true,
+    "stage_inherits_frozen_mass_binding_parent": true,
+    "stage_inherits_frozen_sampling_parent": true,
+    "stage_reads_rank21_authority": true,
+    "stage_requires_rank21_pass_classification": true,
+    "training_z_frozen": true
+  },
+  "classification": "PASS_RANK22_PREREQUISITE_DYNAMICS_PARAMETER_CHAIN_EXACT__NON_PROMOTING",
+  "iteration": 506,
+  "readiness_change_pp": 0,
+  "schema": "rqir.candidate_gravity.rank22_prerequisite_dynamics_chain.v1",
+  "scientific_gate_pass": true,
+  "scientific_semantics": {
+    "candidate_gravity_consistency_fail": false,
+    "exact_comparator_identity": false,
+    "near_degeneracy": false,
+    "novelty_certificate": false,
+    "operational_blocked_if_failed": true,
+    "regime_specific_non_identifiability": false
+  },
+  "scope": "SOURCE_PROVENANCE_AND_FROZEN_PARAMETER_CONVENTION_ONLY",
+  "target": {
+    "manifest_rank": 22,
+    "source_level": "HALF",
+    "source_local_index": 8,
+    "source_occurrence_multiplicity": 1,
+    "u": 2.5e-06,
+    "v": -5e-06
+  }
+}
