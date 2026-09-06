@@ -14,7 +14,7 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: **`[2]`**.
 - Latest completed numerical mass-support authority: **Iteration 505**, raw-consumed frozen Iteration-455 rank21 `(u,v)=(-2.5e-6,+5e-6)`, HALF local index 7, multiplicity 1.
-- Latest authoritative research iteration: **Iteration 507**.
+- Latest authoritative research iteration: **Iteration 508**.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16; denominator `32 x 5 x 16 = 2560` row occurrences.
 - Certified occurrence-weighted precision coverage: **`26/32 = 81.25%`**, i.e. **`2080/2560`** row occurrences.
 - Frozen rank10 `(+5e-6,+5e-6)`, multiplicity 2, was already `CERTIFIED` in the Iteration-455 baseline and must not be relaunched.
@@ -37,7 +37,7 @@ The frozen Iteration-455 manifest identifies rank22 `(u,v)=(+2.5e-6,-5e-6)`, HAL
 
 Reproducible stage: `candidate_gravity/code/post505_manifest_rank22_full_z_mp_stage.py`. Workflow: `.github/workflows/rqir-post505-manifest-rank22-full-z-mp.yml`. Trigger/head commit: `3c50345c19fff8e41b8333921ff25a6cbf7dbc38`.
 
-Canonical run **`34053331578`**, job **`101540723619`**, is **`in_progress`** on the Iteration-507 live check. Do not duplicate it. Raw authority audit and artifact consumption are required before any scientific PASS.
+Canonical run **`34053331578`**, job **`101540723619`**, is **`in_progress`** on the Iteration-508 live check. Do not duplicate it. Raw authority audit and artifact consumption are required before any scientific PASS.
 
 If raw PASS, advance only to the preregistered rank23 coordinate below. If BLOCKED, localize the first failing `z/phi/radial` sample without changing frozen dynamics, thresholds, support order, or precision conventions.
 
@@ -67,7 +67,18 @@ Conditional occurrence-weighted coverage after sequential future raw-valid PASS 
 
 Reproducible audit: `candidate_gravity/code/iteration507_rank23_successor_suffix_preregistration_audit.py`. Machine-readable record: `candidate_gravity/results/iteration507_rank23_successor_suffix_preregistration_audit.json`.
 
-No literature refresh was required for Iterations 506–507 because neither advances an external comparator, novelty, phenomenology, or consistency claim.
+## Iteration 508 — exact BASE/HALF 32-occurrence / 28-distinct union geometry
+Classification: `PASS_BASE_HALF_32_OCCURRENCES_28_DISTINCT_OVERLAP_WEIGHTS_EXACT__NON_PROMOTING`.
+
+Frozen central4 BASE uses the 4x4 tensor product of offsets `{-2,-1,+1,+2}` in units of `h`; HALF uses the same stencil at step `h/2`, i.e. coordinates `{-1,-1/2,+1/2,+1}` in BASE-h units. Each contributes 16 source occurrences. Their exact intersection is only `(±1,±1)`, so the union has exactly `16+16-4=28` distinct coordinates while retaining `32` derivative-source occurrences.
+
+At those four shared coordinates, in units of `1/h^2`, BASE mixed weights are `±4/9`, HALF mixed weights are `±1/36`, and exact `D_BASE-D_HALF` common-node weights are `±5/12` with checkerboard signs. Therefore identical local sampled precision certificates may be shared only at the four exact coordinate overlaps; BASE and HALF derivative weights remain distinct and both must be applied in independent assembly.
+
+Exact L1 weight norms are BASE `9/4`, HALF `9`, separate bookkeeping `45/4`, and union-aggregated `D_BASE-D_HALF` `397/36`, with exact overlap cancellation reduction `2/9`. These are assembly/noise-propagation provenance facts only; no frozen threshold, `ds=-d_base`, support order, or Richardson guardrail is changed.
+
+Reproducible audit: `candidate_gravity/code/iteration508_base_half_union_overlap_exact_audit.py`. Machine-readable record: `candidate_gravity/results/iteration508_base_half_union_overlap_exact_audit.json`.
+
+No literature refresh was required for Iterations 506–508 because none advances an external comparator, novelty, phenomenology, or consistency claim.
 
 ## Retained comparator preflight authority
 Iteration 504 remains `BLOCKED_FIXED_COMPARATOR_QUOTIENT_UPSTREAM_TARGET_NOT_ASSEMBLED__NON_PROMOTING`. The frozen downstream chain places `Source/Ward/contact+K2` before the fixed `C3/C4/C5/nonlocal/asymptotic-safety` comparator quotient. The concrete upstream algebraic target is not yet assembled, so comparator identity, rank loss, near-degeneracy, and novelty are not currently evaluable. This is operational BLOCKED, not scientific FAIL.
@@ -98,7 +109,7 @@ The frozen Iteration-424 high-precision fallback remains downstream of complete 
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 507 removes post-rank22 successor discretion and strengthens recovery/provenance, but no additional stable-rubric Candidate-Gravity component is completed.
+Readiness change: **0 percentage points**. Iteration 508 closes an exact assembly/provenance subgate but no additional stable-rubric Candidate-Gravity component is completed.
 
 ## Exact downstream chain
 After complete support closure: independent BASE/HALF MP80/120 assembly → frozen Iteration-424 reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient → robust nonzero residual.
