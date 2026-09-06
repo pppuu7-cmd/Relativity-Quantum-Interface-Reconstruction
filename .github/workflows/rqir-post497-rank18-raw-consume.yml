@@ -1,0 +1,98 @@
+name: RQIR post497 rank18 raw consume
+on:
+  push:
+    paths:
+      - 'candidate_gravity/triggers/post497_rank18_raw_consume.trigger'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  raw_consume_rank18:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download canonical rank18 raw artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: rqir-post496-manifest-rank18-full-z-mp
+          path: /tmp/rank18
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: 34029482604
+      - name: Fail-closed raw consume and write Iteration 498 authority files
+        env:
+          EXPECTED_ARTIFACT_DIGEST: sha256:03c0f613abc04d3653b8ec2152a07ddf22c275b93fcbbf72c9ad1826b6e4ddc3
+        run: |
+          python - <<'PY'
+          import hashlib, json, pathlib
+          p=pathlib.Path('/tmp/rank18/result.json'); a=pathlib.Path('/tmp/rank18/authority_audit.json')
+          if not p.exists() or not a.exists(): raise SystemExit('missing raw artifact members')
+          raw=p.read_bytes(); araw=a.read_bytes(); o=json.loads(raw); au=json.loads(araw)
+          obs=o.get('observed',{}); fr=o.get('frozen',{}); t=o.get('target',{}); th=o.get('thresholds',{})
+          rsha=hashlib.sha256(raw).hexdigest(); asha=hashlib.sha256(araw).hexdigest()
+          ok=bool(
+            o.get('stage')=='POST496_MANIFEST_RANK18_FULL_Z_MP_STAGE__UNNUMBERED_COLLISION_SAFE' and
+            o.get('classification')=='PASS_NEXT_MASS_NODE_FULL_Z_MP80_MP120__NON_PROMOTING' and
+            o.get('scientific_gate_pass') is True and o.get('promotes_physical_coordinate') is False and
+            t.get('double_double_index')==2 and t.get('class_id')==3 and abs(float(t.get('q_squared'))+1.0)<1e-12 and
+            abs(float(fr.get('u'))+2.5e-6)<1e-18 and abs(float(fr.get('v'))+5e-6)<1e-18 and
+            fr.get('source_occurrence_multiplicity')==1 and fr.get('precision_digits')==[80,120] and
+            fr.get('phi_nodes')==16 and fr.get('radial_hs')==[0.002,0.001,0.0005] and
+            fr.get('z_samples')==[-0.86,-0.43,0.0,0.43,0.86] and obs.get('sample_count')==80 and
+            obs.get('all_finite') is True and float(obs.get('scaled_mp80_vs_mp120_max'))<=1e-30 and
+            float(obs.get('max_radial_richardson_scaled_error'))<=float(th.get('radial_richardson_scaled_max')) and
+            au.get('scientific_authority_pass') is True and au.get('sha256')==rsha and
+            au.get('classification')==o.get('classification'))
+          if not ok: raise SystemExit('rank18 raw authority audit failed')
+          result={
+            'iteration':498,'MODEL_READINESS':'24%','readiness_change_pp':0,
+            'classification':'PASS_RAW_CONSUMED_MANIFEST_RANK18_FULL_Z_MP80_MP120__NON_PROMOTING',
+            'scientific_gate_pass':True,'promotes_physical_coordinate':False,
+            'authority_scope':'ONE_MANIFEST_SOURCE_ORDER_MASS_NODE_FULL_TRAINING_Z__NON_PROMOTING',
+            'provenance':{'run_id':34029482604,'job_id':101476261793,'artifact_id':9989492191,
+              'artifact_name':'rqir-post496-manifest-rank18-full-z-mp',
+              'artifact_digest':'sha256:03c0f613abc04d3653b8ec2152a07ddf22c275b93fcbbf72c9ad1826b6e4ddc3',
+              'head_sha':'f14bffa6705217a45ab661378dec9d08bdb058d5','scientific_json_sha256':rsha,'authority_audit_sha256':asha},
+            'target':{'double_double_index':2,'class_id':3,'q_squared':-1.0,'manifest_rank':18,'u':-2.5e-6,'v':-5e-6,'source_occurrence_multiplicity':1},
+            'frozen':{'z_samples':[-0.86,-0.43,0.0,0.43,0.86],'phi_nodes':16,'radial_hs':[0.002,0.001,0.0005],'precision_digits':[80,120]},
+            'observed':{'sample_count':80,'all_finite':True,'scaled_mp80_vs_mp120_max':str(obs['scaled_mp80_vs_mp120_max']),'max_radial_richardson_scaled_error':str(obs['max_radial_richardson_scaled_error'])},
+            'thresholds':{'scaled_mp80_vs_mp120_max':'1e-30','radial_richardson_scaled_max':'5e-4'},
+            'certified_occurrence_weight_after_pass':23,'certified_occurrence_fraction_after_pass':'23/32 = 71.875%',
+            'next_manifest_rank':19,'next_coordinate':{'u':-2.5e-6,'v':-2.5e-6,'source_occurrence_multiplicity':1},
+            'guardrails':['NON_PROMOTING_LOCAL_SUPPORT_ONLY','NO_THRESHOLD_WEAKENING','NO_ZERO_FILL','NO_ANSATZ003','NO_FISHER_RESOURCES']}
+          out=pathlib.Path('candidate_gravity/results/post498_rank18_raw_consumption.json'); out.write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
+          log=f'''# RQIR Candidate Gravity — Iteration 498\n\nDate: 2026-09-06\nMODEL_READINESS: 24%\n\n## Rank18 raw consumption\nCanonical frozen rank18 `(u,v)=(-2.5e-6,-5e-6)`, multiplicity 1, run `34029482604`, job `101476261793`, artifact `9989492191` was downloaded and raw-consumed fail-closed.\n\nClassification: `PASS_RAW_CONSUMED_MANIFEST_RANK18_FULL_Z_MP80_MP120__NON_PROMOTING`.\n\nObserved: `80/80` finite; max scaled MP80↔MP120 `{obs['scaled_mp80_vs_mp120_max']} <= 1e-30`; max radial Richardson scaled error `{obs['max_radial_richardson_scaled_error']} <= 5e-4`. Scientific JSON SHA-256 `{rsha}`; authority-audit SHA-256 `{asha}`; artifact digest `sha256:03c0f613abc04d3653b8ec2152a07ddf22c275b93fcbbf72c9ad1826b6e4ddc3`.\n\nCertified occurrence-weighted support advances to `23/32 = 71.875%`, i.e. `1840/2560` frozen row occurrences. This is local numerical/provenance PASS only; it does not promote physical index 2, assembled BASE/HALF authority, robust residual, ansatz authority, or readiness.\n\n## Retained post497 exact support audit\nThe HALF parity-orbit audit remains controlling: every remaining rank 19..27 lies in an incomplete nonzero-coefficient parity orbit, so Iteration-497 parity projection is a checksum/form reduction, not permission to skip nodes.\n\n## Readiness\nMODEL_READINESS: 24%\nReadiness change: 0 percentage points. Rank18 closes one numerical-support subgate but no additional stable-rubric component.\n\n## Exact next gate\nOnly frozen manifest rank19 `(u,v)=(-2.5e-6,-2.5e-6)`, multiplicity 1, is authorized next. No ANSATZ-003; no Fisher/resources.\n'''
+          pathlib.Path('candidate_gravity/research_log/2026-09-06_iteration_498.md').write_text(log)
+          rec=log.replace('# RQIR Candidate Gravity — Iteration 498','# RECOVERY DELTA — ITERATION 498')
+          pathlib.Path('candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_498.md').write_text(rec)
+          front=pathlib.Path('candidate_gravity/recovery/CURRENT_QG_FRONT.md')
+          s=front.read_text()
+          s=s.replace('Latest completed numerical mass-support authority: **Iteration 496**, raw-consumed frozen Iteration-455 rank17 `(u,v)=(-5e-6,+2.5e-6)`, multiplicity 1.','Latest completed numerical mass-support authority: **Iteration 498**, raw-consumed frozen Iteration-455 rank18 `(u,v)=(-2.5e-6,-5e-6)`, multiplicity 1.')
+          s=s.replace('Latest authoritative research iteration: **Iteration 497**.','Latest authoritative research iteration: **Iteration 498**.')
+          s=s.replace('Certified occurrence-weighted precision coverage: **`22/32 = 68.75%`**, i.e. **`1760/2560`** row occurrences.','Certified occurrence-weighted precision coverage: **`23/32 = 71.875%`**, i.e. **`1840/2560`** row occurrences.')
+          marker='## Latest numerical authority — Iteration 496 rank17'
+          idx=s.find(marker)
+          if idx<0: raise SystemExit('front numerical marker drift')
+          nxt=s.find('\n## Latest exact assembly/provenance authority',idx)
+          if nxt<0: raise SystemExit('front next marker drift')
+          block=f'''## Latest numerical authority — Iteration 498 rank18\nCanonical rank18 `(u,v)=(-2.5e-6,-5e-6)`, multiplicity 1: run `34029482604`, job `101476261793`, artifact `9989492191`, head SHA `f14bffa6705217a45ab661378dec9d08bdb058d5`.\n\nRaw-consumed classification: `PASS_RAW_CONSUMED_MANIFEST_RANK18_FULL_Z_MP80_MP120__NON_PROMOTING`.\n\nArtifact digest: `sha256:03c0f613abc04d3653b8ec2152a07ddf22c275b93fcbbf72c9ad1826b6e4ddc3`. Scientific JSON SHA-256: `{rsha}`. Authority-audit SHA-256: `{asha}`.\n\nObserved: `80/80` finite; max scaled MP80↔MP120 `{obs['scaled_mp80_vs_mp120_max']} <= 1e-30`; max radial Richardson scaled error `{obs['max_radial_richardson_scaled_error']} <= 5e-4`.\n\nThis advances local precision support only. It does not promote physical index 2, assembled BASE/HALF authority, robust residual, ansatz authority, or readiness.\n'''
+          s=s[:idx]+block+s[nxt:]
+          ag='## Active gate — Iteration 497'
+          ai=s.find(ag)
+          if ai<0: raise SystemExit('front active marker drift')
+          gi=s.find('\n## Stable readiness rubric',ai)
+          if gi<0: raise SystemExit('front readiness marker drift')
+          active='''## Active gate — Iteration 498\nFrozen Iteration-455 manifest rank19 `(u,v)=(-2.5e-6,-2.5e-6)`, multiplicity 1, is the sole authorized next heavy support gate. It must not be launched until its stage/workflow is frozen against the rank18 raw-consumption prerequisite.\n\nIf raw PASS, only the next explicit `UNTESTED` manifest coordinate becomes authorized. If BLOCKED, localize the first failing `z/phi/radial` sample without changing frozen dynamics, thresholds, support order, or precision conventions.\n'''
+          s=s[:ai]+active+s[gi:]
+          s=s.replace('Readiness change: **0 percentage points**. Iteration 497 closes an exact assembly/provenance subgate but no additional stable-rubric component.','Readiness change: **0 percentage points**. Iteration 498 closes one numerical-support subgate but no additional stable-rubric component.')
+          front.write_text(s)
+          PY
+      - name: Commit raw authority
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add candidate_gravity/results/post498_rank18_raw_consumption.json candidate_gravity/research_log/2026-09-06_iteration_498.md candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_498.md candidate_gravity/recovery/CURRENT_QG_FRONT.md
+          git commit -m 'RQIR iteration498: raw-consume manifest rank18'
+          git push
