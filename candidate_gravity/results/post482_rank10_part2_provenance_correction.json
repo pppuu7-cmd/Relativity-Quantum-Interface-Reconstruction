@@ -1,0 +1,38 @@
+{
+  "stage": "POST482_RANK10_PART2_PROVENANCE_CORRECTION__FAIL_CLOSED",
+  "classification": "PASS_PAYLOAD_IDENTITY_RETAINED__ARTIFACT_DIGEST_FIELD_CORRECTED_NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "coordinate": {"manifest_rank": 10, "u": 0.000005, "v": 0.000005},
+  "source": {
+    "run_id": 33932061794,
+    "job_id": 101212520875,
+    "artifact_id": 9959560285,
+    "artifact_name": "rqir-post449-same-corner-remaining-z-mp",
+    "workflow_head_sha": "521e05910c4aeb789604f14ee5404ac7b6e7d354",
+    "z_partition": [-0.43, 0.43],
+    "row_count": 32
+  },
+  "payload_identity": {
+    "scientific_json_sha256_historical": "2467e807b8b5f1c8a93a83a1e5be2107d2c5ae3d8747bb2f5f586b16501d1c03",
+    "scientific_json_sha256_redownloaded": "2467e807b8b5f1c8a93a83a1e5be2107d2c5ae3d8747bb2f5f586b16501d1c03",
+    "match": true
+  },
+  "artifact_digest_correction": {
+    "historical_recorded_value": "sha256:84509a60d16e660e52c7873261694249e1167f1d95d6a34bd5e91e4026199c54",
+    "canonical_current_github_metadata_value": "sha256:ac18e784e54414c89e08830d917679ffe0403028abc5ecf6e4e2cdd289158909",
+    "independent_rest_downloaded_zip_sha256": "sha256:ac18e784e54414c89e08830d917679ffe0403028abc5ecf6e4e2cdd289158909",
+    "metadata_equals_zip": true,
+    "historical_value_matches_neither": true
+  },
+  "interpretation": [
+    "The historical artifact_digest field for rank-10 part 2 is stale or incorrect.",
+    "The scientific result payload is unchanged: the redownloaded result.json SHA-256 exactly matches the historical scientific JSON SHA-256.",
+    "Future assembly/provenance gates must bind artifact 9959560285 to the corrected GitHub metadata/REST ZIP digest while retaining the exact scientific JSON SHA-256.",
+    "This correction is provenance-only and does not alter any numerical value, threshold, support order, estimator, or physical conclusion."
+  ],
+  "supersedes_only_field": "artifact_digest for artifact_id 9959560285 in historical normalized provenance views",
+  "guardrails": ["NO_HISTORICAL_PAYLOAD_REWRITE", "NO_FUV_EVALUATION", "NO_THRESHOLD_CHANGE", "NO_SUPPORT_REORDERING", "NO_PHYSICAL_DS_PROMOTION", "NO_ANSATZ003", "NO_FISHER_RESOURCES"]
+}
