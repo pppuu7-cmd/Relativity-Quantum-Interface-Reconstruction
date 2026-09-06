@@ -1,0 +1,24 @@
+{
+  "assembly_singular_condition_number_decimal": "4.00052019378873735520915717110447174695350836597617649876046",
+  "classification": "AUDIT_BASE_HALF_ASSEMBLY_SINGULAR_SPECTRUM_EXACT__NON_PROMOTING",
+  "determinant_exact": "5948843/559872",
+  "eigenvalue_max_decimal": "13.0403229324356385353976058691704612135270368701789394031587",
+  "eigenvalue_min_decimal": "0.814808240403867637441900303669044959312469302660566769680855",
+  "eigenvalues_exact": [
+    "(71825-sqrt(4016652769))/10368",
+    "(71825+sqrt(4016652769))/10368"
+  ],
+  "gram_condition_number_decimal": "16.0041618209114766825974006185307268454471865715173607446427",
+  "gram_matrix": [
+    ["4225/5184", "4/81"],
+    ["4/81", "4225/324"]
+  ],
+  "interpretation": "BASE and HALF assembly rows remain linearly independent and moderately conditioned in their two-dimensional row space. This quantifies numerical geometry only; it is not a new frozen threshold, observable covariance claim, Fisher authority, or Candidate-Gravity PASS.",
+  "iteration": 512,
+  "model_readiness_percent": 24,
+  "positive_definite": true,
+  "rank": 2,
+  "readiness_change_percentage_points": 0,
+  "scope": "exact numerical/provenance conditioning of the frozen two-row BASE/HALF assembly map; no physical promotion",
+  "trace_exact": "71825/5184"
+}
