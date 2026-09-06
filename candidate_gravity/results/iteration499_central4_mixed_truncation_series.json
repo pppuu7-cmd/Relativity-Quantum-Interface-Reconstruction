@@ -1,0 +1,42 @@
+{
+  "iteration": 499,
+  "classification": "PASS_CENTRAL4_MIXED_TRUNCATION_SERIES_EXACT__NON_PROMOTING",
+  "nodes": [-2, -1, 1, 2],
+  "coefficients": ["1/12", "-2/3", "2/3", "-1/12"],
+  "moments_0_to_9": {
+    "0": "0",
+    "1": "1",
+    "2": "0",
+    "3": "0",
+    "4": "0",
+    "5": "-4",
+    "6": "0",
+    "7": "-20",
+    "8": "0",
+    "9": "-84"
+  },
+  "one_dimensional_series": {
+    "1": "1",
+    "5": "-1/30",
+    "7": "-1/252",
+    "9": "-1/4320"
+  },
+  "mixed_through_h8": {
+    "h4_axis_terms": "-1/30",
+    "h6_axis_terms": "-1/252",
+    "h8_axis_terms": "-1/4320",
+    "h8_cross_d5x_d5y": "1/900"
+  },
+  "half_scaling_by_order": {
+    "4": "1/16",
+    "6": "1/64",
+    "8": "1/256"
+  },
+  "base_minus_half_factor_by_order": {
+    "4": "15/16",
+    "6": "63/64",
+    "8": "255/256"
+  },
+  "scope": "Estimator/provenance only. The 16x leading-error reduction is asymptotic for sufficiently smooth low-frequency fields and is not an exact mode-independent Richardson law.",
+  "model_readiness": 24
+}
