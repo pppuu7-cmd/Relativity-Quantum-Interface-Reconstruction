@@ -1,0 +1,93 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "PASS_BASE_KNOWN12_SPECTRAL_PARTIAL_MP80_MP120__NON_PROMOTING",
+  "diagnostic_threshold": {
+    "scaled_partial_mp80_vs_mp120_max": "2e-6"
+  },
+  "frozen": {
+    "base_h": 5e-06,
+    "degree": 4,
+    "known_ranks": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "missing_ranks": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "phi_nodes": 16,
+    "precision_digits": [
+      80,
+      120
+    ],
+    "training_z": [
+      -0.86,
+      -0.43,
+      0.0,
+      0.43,
+      0.86
+    ]
+  },
+  "guardrails": [
+    "NO_ZERO_FILL_MISSING_ROW",
+    "NO_FULL_BASE_DERIVATIVE_CLAIM",
+    "NO_HALF_ASSEMBLY",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_SUPPORT_REORDERING",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "interpretation": [
+    "This directly propagates every currently raw-certified BASE node through the exact class-3 spectral contraction and central4 weights.",
+    "The last BASE u-row ranks 12..15 is omitted, not zero-filled; therefore the partial sum is not a derivative authority and cannot be compared as physical D_s.",
+    "A PASS isolates cross-precision stability of the known 12-node contribution while rank12 and later BASE nodes remain required."
+  ],
+  "observed": {
+    "max_per_node_spectral_mp_discrepancy": "2.15631969820365518067225336408142127175e-80",
+    "partial_cancellation_condition_proxy": "962727.8234451725693270643974768602850716",
+    "partial_mp120_im": "0.0",
+    "partial_mp120_re": "-4.05237834303081693079011472045946723276022337333049046963581711973840765441869511103721139169528397755804930721384038428",
+    "partial_mp80_im": "0.0",
+    "partial_mp80_re": "-4.0523783430308169307901147204594672327602233733304904696358171197384077414065647",
+    "per_node_scaled_mp_discrepancy": {
+      "0": "1.800996811448556906184667683040867249037e-80",
+      "1": "1.557440463149746221307378267817355944188e-80",
+      "10": "2.013497406197430144300619294396055948707e-80",
+      "11": "2.15631969820365518067225336408142127175e-80",
+      "2": "1.804131069633265767578168190141823283501e-80",
+      "3": "1.683341387338584229140074402380464763399e-80",
+      "4": "1.684458844209840391748712094102300199944e-80",
+      "5": "1.891049324998842405660880066389952350361e-80",
+      "6": "1.730134007678706041949757134699028556329e-80",
+      "7": "1.991006600011513914889696992411071331805e-80",
+      "8": "1.673636603708370389754494081781710237415e-80",
+      "9": "1.69576373141398264302849278489592595212e-80"
+    },
+    "q11_fraction_of_abs_partial": "0.000146829979240754952454335470790373971365",
+    "q11_mp120_re": "-0.000595010627982899801604120084807437634925541533219939485188333",
+    "scaled_mp80_vs_mp120": "2.146588058927205698285793417007992475884e-71"
+  },
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true,
+  "scope": "KNOWN_BASE_RANKS_0_11_ONLY__MISSING_RANKS_12_15_EXPLICIT__NOT_FULL_DERIVATIVE",
+  "stage": "POST483_BASE_KNOWN12_CLASS3_SPECTRAL_PARTIAL_MP__NON_PROMOTING",
+  "target": {
+    "class_id": 3,
+    "double_double_index": 2,
+    "q_squared": -1.0
+  }
+}
