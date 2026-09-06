@@ -37,9 +37,25 @@ Result: `candidate_gravity/results/post497_level_decomposed_support_preflight.js
 
 If rank18 raw-consumes PASS, the purely local support counts become HALF `7/16 = 43.75%`, distinct `19/28 = 67.85714285714286%`, and occurrence-weighted `23/32 = 71.875%`; only rank19 then becomes authorized.
 
+## New HALF parity-orbit no-skip audit
+Combining the Iteration-497 odd-odd projection with the exact HALF rank matrix gives four disjoint parity orbits. Their exact coefficients before the common `1/h^2` factor are:
+- `(|x|,|y|)=(1,1)`: `4/9`, ranks `[24,20,23,19]`;
+- `(1,2)`: `-1/18`, ranks `[25,21,22,18]`;
+- `(2,1)`: `-1/18`, ranks `[27,17,26,16]`;
+- `(2,2)`: `1/144`, ranks `[10,6,9,5]`.
+
+All four coefficients are exactly nonzero. At the current snapshot only the outer-outer `(2,2)` orbit is complete; the `(2,1)` orbit has only ranks 16 and 17 certified; the other two are incomplete. Every remaining rank 18..27 belongs to one of these incomplete nonzero-coefficient orbits.
+
+Classification: `PASS_PARITY_PROJECTION_REDUCES_FORM_NOT_REQUIRED_SUPPORT__NON_PROMOTING`.
+
+Exact consequence: Iteration-497 parity projection is an assembly/checksum reduction, not a license to skip HALF nodes. Without an additional independently frozen field-symmetry identity, all remaining ranks 18..27 remain necessary. Frozen manifest order therefore remains controlling.
+
+Reproducible code: `candidate_gravity/code/post497_half_parity_orbit_support_audit.py`.
+Result: `candidate_gravity/results/post497_half_parity_orbit_support_audit.json`.
+
 ## Retained physical status
 Physical/operator authority remains Iteration 411. Iteration 421 remains raw-valid `BLOCKED_CONVERGENCE` at unresolved double-double index 2/class3/q^2=-1. No physical Ds authority exists. Robust comparator-subtracted residual remains absent; ANSATZ-003 is uncreated; Fisher/resources remain forbidden.
 
 ## Readiness
 MODEL_READINESS: 24%
-Readiness change: 0 percentage points. The new preflight closes an assembly/provenance bookkeeping subgate but no stable readiness-rubric component.
+Readiness change: 0 percentage points. The new preflights close assembly/provenance bookkeeping subgates but no stable readiness-rubric component.
