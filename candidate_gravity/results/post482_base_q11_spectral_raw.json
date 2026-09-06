@@ -1,0 +1,98 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "PASS_BASE_Q11_CLASS3_SPECTRAL_RAW_MP80_MP120__NON_PROMOTING",
+  "diagnostic_threshold": {
+    "scaled_q11_mp80_vs_mp120_max": "2e-6"
+  },
+  "formula": "Q11_spectral=(4/9)/BASE_H^2 * (F_r5-F_r6-F_r9+F_r10)",
+  "frozen": {
+    "base_h": 5e-06,
+    "degree": 4,
+    "manifest_ranks": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "phi_nodes": 16,
+    "precision_digits": [
+      80,
+      120
+    ],
+    "training_z": [
+      -0.86,
+      -0.43,
+      0.0,
+      0.43,
+      0.86
+    ]
+  },
+  "guardrails": [
+    "CLASS3_GEOMETRY_ONLY",
+    "EXACT_RAW_PARENT_SAMPLES",
+    "NO_CLASS5_GEOMETRY_SUBSTITUTION",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_SUPPORT_REORDERING",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "interpretation": [
+    "The exact class-3/index-2 spectral geometry is reconstructed by the frozen Iteration-431 specialization of Iteration-407, while parent numerator samples come only from exact raw Actions artifacts.",
+    "This closes cross-precision stability of the dominant BASE inner-inner quartet through the downstream spectral contraction, but not the complete BASE or HALF mixed derivative."
+  ],
+  "limitations": [
+    "NO_HELDOUT_Z_RECOMPUTATION_FROM_RAW_ARTIFACTS",
+    "NO_REMAINING_BASE_QUARTETS",
+    "NO_HALF_ASSEMBLY",
+    "NOT_PHYSICAL_DS_AUTHORITY"
+  ],
+  "observed": {
+    "q11_mp120_im": "0.0",
+    "q11_mp120_re": "-0.000595010354104526298570955308443393283163981123337788744213186971795863879741373202242606465093247105373270287067206655643",
+    "q11_mp80_im": "0.0",
+    "q11_mp80_re": "-0.00059501035410452629857095530844339328316398112333778874421318697179594894023793966",
+    "quartet_cancellation_condition_proxy": "5485386655.942740473067413303290766672968",
+    "scaled_q11_mp80_vs_mp120": "8.506049656645329822605200157347746312433e-71"
+  },
+  "per_node": {
+    "10": {
+      "F_mp120_im": "0.0",
+      "F_mp120_re": "0.0000458965911459817587882420695560729928610150628188258176760936596332923532626323304142674086520955046085794576537736205533",
+      "F_mp80_im": "0.0",
+      "F_mp80_re": "0.000045896591145981758788242069556072992861015062818825817676093659633292353262612197",
+      "scaled_mp80_vs_mp120": "2.013313707280146081838912362055812888162e-80"
+    },
+    "5": {
+      "F_mp120_im": "0.0",
+      "F_mp120_re": "0.0000458995235528292012021792733728508699767865110304453014542112787582394462815645109850536217997944552650963060399112044014",
+      "F_mp80_im": "0.0",
+      "F_mp80_re": "0.0000458995235528292012021792733728508699767865110304453014542112787582394462815456",
+      "scaled_mp80_vs_mp120": "1.891049324998842405660880066389952350361e-80"
+    },
+    "6": {
+      "F_mp120_im": "0.0",
+      "F_mp120_re": "0.0000458970923768461956898612897599909701059992743735906259175186097379698959617386313524433170737267037725145986934046835513",
+      "F_mp80_im": "0.0",
+      "F_mp80_re": "0.00004589709237684619568986128975999097010599927437359062591751860973796989596172133",
+      "scaled_mp80_vs_mp120": "1.730134007678706041949757134699028556329e-80"
+    },
+    "9": {
+      "F_mp120_im": "0.0",
+      "F_mp120_re": "0.0000458990223554340967189396574635491288317431716536544314005369455155536707459755532823299560043098697626563146775265950509",
+      "F_mp80_im": "0.0",
+      "F_mp80_re": "0.000045899022355434096718939657463549128831743171653654431400536945515553670745958596",
+      "scaled_mp80_vs_mp120": "1.69576373141398264302849278489592595212e-80"
+    }
+  },
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true,
+  "scope": "DOMINANT_BASE_INNER_INNER_QUARTET_ONLY__FULL_FROZEN_16PHI_MEAN_DEG4_TRAIN_Z_INTERPOLATION_AFFINE_SPECTRAL_CONTRACTION__NOT_FULL_16_NODE_DERIVATIVE",
+  "stage": "POST482_BASE_Q11_CLASS3_SPECTRAL_CONTRACTION_FROM_EXACT_RAW_SAMPLES__NON_PROMOTING",
+  "target": {
+    "class_id": 3,
+    "double_double_index": 2,
+    "q_squared": -1.0
+  }
+}
