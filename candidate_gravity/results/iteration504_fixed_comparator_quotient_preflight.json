@@ -1,0 +1,49 @@
+{
+  "schema": "rqir.candidate_gravity.comparator_preflight.v1",
+  "iteration": 504,
+  "date": "2026-09-06",
+  "classification": "BLOCKED_FIXED_COMPARATOR_QUOTIENT_UPSTREAM_TARGET_NOT_ASSEMBLED__NON_PROMOTING",
+  "upstream_target_assembled": false,
+  "authoritative_inputs": {
+    "physical_operator_iteration": 411,
+    "physical_blocker_iteration": 421,
+    "latest_mass_support_iteration": 503,
+    "previous_research_iteration": 503,
+    "physical_unresolved_set": [2],
+    "certified_support_occurrences": 25,
+    "frozen_support_occurrences": 32,
+    "certified_row_occurrences": 2000,
+    "frozen_row_occurrences": 2560
+  },
+  "dependency_chain": [
+    "complete frozen local support",
+    "independent BASE/HALF MP80/120 assembly",
+    "frozen Iteration-424 reevaluation",
+    "exact15",
+    "full TrU1^2",
+    "DsGamma_e=2",
+    "Source/Ward/contact+K2",
+    "fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient",
+    "robust nonzero comparator-subtracted residual"
+  ],
+  "scientific_semantics": {
+    "operational_blocked": true,
+    "consistency_fail": false,
+    "exact_comparator_identity": false,
+    "regime_specific_non_identifiability": false,
+    "near_degeneracy": false,
+    "novelty_certificate_available": false,
+    "novelty_failure_demonstrated": false
+  },
+  "guardrails": {
+    "ANSATZ-003": "FORBIDDEN",
+    "Fisher": "FORBIDDEN",
+    "resources": "FORBIDDEN",
+    "frozen_gate_change": false,
+    "dynamics_change": false,
+    "parameter_convention_change": false
+  },
+  "model_readiness_percent": 24,
+  "model_readiness_delta_pp": 0,
+  "literature_refresh": "NOT_REQUIRED_NO_EXTERNAL_COMPARATOR_OR_NOVELTY_CLAIM_ADVANCED"
+}

@@ -14,7 +14,7 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: **`[2]`**.
 - Latest completed numerical mass-support authority: **Iteration 503**, raw-consumed frozen Iteration-455 rank20 `(u,v)=(-2.5e-6,+2.5e-6)`, multiplicity 1.
-- Latest authoritative research iteration: **Iteration 503**.
+- Latest authoritative research iteration: **Iteration 504**.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16; denominator `32 x 5 x 16 = 2560` row occurrences.
 - Certified occurrence-weighted precision coverage: **`25/32 = 78.125%`**, i.e. **`2000/2560`** row occurrences.
 - Frozen rank10 `(+5e-6,+5e-6)`, multiplicity 2, was already `CERTIFIED` in the Iteration-455 baseline and must not be relaunched.
@@ -32,14 +32,25 @@ This advances local precision support only. It does not promote physical index 2
 
 Machine-readable raw-consumption record: `candidate_gravity/results/post502_rank20_raw_consumption.json`.
 
-## Active gate — Iteration 503
+## Active heavy gate — retained from Iteration 503
 The frozen Iteration-455 distinct u-major/v-major support manifest directly identifies rank21 `(u,v)=(-2.5e-6,+5e-6)`, HALF local index 7, multiplicity 1, as the sole authorized heavy support gate after rank20 raw PASS.
 
 Reproducible stage: `candidate_gravity/code/post503_manifest_rank21_full_z_mp_stage.py`. Workflow: `.github/workflows/rqir-post503-manifest-rank21-full-z-mp.yml`. Trigger/head commit: `b4f0bef2a3a55ea2186f3508aacf336e98292320`.
 
-Canonical run **`34048058915`**, job **`101526571416`**, is **`in_progress`** on the latest Iteration-503 live check; the scientific stage itself is running. Do not duplicate it. Raw authority audit and artifact consumption are required before any scientific PASS.
+Canonical run **`34048058915`**, job **`101526571416`**, is **`in_progress`** on the latest Iteration-504 live check; do not duplicate it. Raw authority audit and artifact consumption are required before any scientific PASS.
 
 If raw PASS, only frozen manifest rank22 `(u,v)=(+2.5e-6,-5e-6)`, HALF local index 8, multiplicity 1, becomes authorized. If BLOCKED, localize the first failing `z/phi/radial` sample without changing frozen dynamics, thresholds, support order, or precision conventions.
+
+## Iteration 504 — fixed comparator-quotient preflight
+Classification: `BLOCKED_FIXED_COMPARATOR_QUOTIENT_UPSTREAM_TARGET_NOT_ASSEMBLED__NON_PROMOTING`.
+
+The frozen downstream chain places `Source/Ward/contact+K2` before the fixed `C3/C4/C5/nonlocal/asymptotic-safety` comparator quotient. At this front the unresolved physical set is still `[2]`, local support is incomplete, independent BASE/HALF assembly has not occurred, and the concrete upstream algebraic target has not been assembled. The comparator quotient therefore has no current target on which identity, rank loss, near-degeneracy, or novelty can be evaluated.
+
+Strict taxonomy: this is **operational BLOCKED**, not Candidate-Gravity consistency FAIL, not exact comparator identity, not regime-specific non-identifiability, and not near-degeneracy. A novelty certificate is unavailable/evaluable; novelty failure has not been demonstrated. Once the concrete target exists, an exact comparator identity or scoped non-identifiability result must be preserved as a genuine negative result rather than tuned away.
+
+Reproducible audit: `candidate_gravity/code/iteration504_fixed_comparator_quotient_preflight.py`. Machine-readable record: `candidate_gravity/results/iteration504_fixed_comparator_quotient_preflight.json`.
+
+No literature refresh was required for Iteration 504 because no external comparator/novelty/consistency claim was advanced; only the logical domain/precondition semantics of the already-frozen internal comparator stage were fixed.
 
 ## Retained exact estimator/provenance authority
 Iteration 502 exact h^10 BASE-minus-HALF sector remains `PASS_BASE_HALF_DISCREPANCY_H10_EXACT__NON_PROMOTING`. Iterations 501 and 499 retain the lower-order smooth-field asymptotic discrepancy/truncation series; Iterations 489–490 remain authority that exact spectral transfer is mode-dependent outside the low-frequency asymptotic regime. Iteration 497 odd-odd projection and Iterations 492/494/495 conditioning/reproduction diagnostics remain assembly/provenance authority only. No Richardson promotion; frozen `ds=-d_base` remains unchanged.
@@ -63,7 +74,7 @@ After all 28 distinct support coordinates are locally certified, evaluate BASE a
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 503 closes one genuine numerical-support subgate and advances coverage, but no additional stable-rubric model component is completed.
+Readiness change: **0 percentage points**. Iteration 504 closes a genuine fail-closed comparator-domain/taxonomy subgate, but no additional stable-rubric model component is completed.
 
 ## Exact downstream chain
 After complete support closure: independent BASE/HALF MP80/120 assembly → frozen Iteration-424 reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient → robust nonzero residual.
