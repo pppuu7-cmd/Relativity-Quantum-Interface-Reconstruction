@@ -14,7 +14,7 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest raw-valid physical blocker: Iteration 421 — `BLOCKED_CONVERGENCE`, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: `[2]`.
 - Latest completed numerical mass-support authority: **Iteration 489**, raw-consumed frozen Iteration-455 rank14 `(u,v)=(+1e-5,+5e-6)`, multiplicity 1.
-- Latest authoritative research iteration: **Iteration 489**.
+- Latest authoritative research iteration: **Iteration 490**.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16; occurrence denominator `32 x 5 x 16 = 2560` rows.
 - Certified occurrence-weighted precision coverage: **`19/32 = 59.375%`**, i.e. **`1520/2560`** row occurrences.
 - Frozen rank10 `(+5e-6,+5e-6)`, multiplicity 2, was already `CERTIFIED` in the initial baseline and must not be relaunched.
@@ -33,32 +33,32 @@ Observed: `80/80` finite; max scaled MP80↔MP120 `2.899009408777844375925860376
 
 This advances local support coverage only. It does not promote physical index 2, does not constitute assembled BASE/HALF authority, and does not change model readiness.
 
-## Iteration 489 exact BASE↔HALF spectral-transfer authority
-For frozen central4
+## Iteration 490 exact BASE↔HALF transfer monotonicity authority
+Retain Iteration489
 
-`A(theta)=i sin(theta)(4-cos(theta))/3`,
+`rho(theta)=(4-cos(theta/2))/(cos(theta/2)*(4-cos(theta)))`.
 
-define away from BASE zeros
+With `t=cos(theta/2)`, `0<t<1` for `0<theta<pi`,
 
-`rho(theta)=2 A(theta/2)/A(theta)`.
+`rho(t)=(4-t)/(t*(5-2t^2))`,
 
-Exact simplification gives
+and exactly
 
-`rho(theta)=(4-cos(theta/2))/(cos(theta/2)*(4-cos(theta)))`,
+`d rho/dt = -4 (t-1)(t^2-5t-5) / [t^2 (2t^2-5)^2] < 0`.
 
-hence
+Since `dt/dtheta<0`, `d rho/dtheta>0` throughout the open Nyquist interval. Endpoint limits are `rho(0+)=1` and `rho(pi-)=+infinity`. Therefore every resolved nonzero one-dimensional mode obeys `rho(theta)>1`; for a single mixed Fourier mode with both BASE factors nonzero,
 
-`D_half/D_base=rho(theta_x)rho(theta_y)`.
+`D_half/D_base=rho(theta_x)rho(theta_y)>1`.
 
-For `0<|theta|<pi`, `rho(theta)>0` but is nonconstant. Near zero,
+The divergence near `|theta|=pi` is an estimator effect tied to the BASE Nyquist zero and is not by itself a Candidate-Gravity consistency FAIL. Generic multimode assembled signals may cancel, so no global sign/magnitude or scalar-transfer promotion is authorized.
 
-`rho(theta)=1+theta^4/32-theta^6/256+469 theta^8/368640+O(theta^10)`.
+Classification: `PASS_BASE_HALF_TRANSFER_STRICT_MONOTONICITY_EXACT__NON_PROMOTING`.
 
-Therefore no exact mode-independent scalar maps BASE to HALF over the resolved spectrum. Generic multimode two-level data do not authorize a universal Richardson factor. Classification: `PASS_BASE_HALF_SPECTRAL_TRANSFER_RATIO_EXACT__NON_PROMOTING`.
-
-This is estimator/provenance authority only. It is not Candidate-Gravity consistency PASS/FAIL, comparator identity, model non-identifiability, near-degeneracy, or novelty certificate. Frozen `ds=-d_base` remains unchanged.
+This is estimator/provenance authority only. It is not Candidate-Gravity consistency PASS/FAIL, exact comparator identity, regime-specific non-identifiability, near-degeneracy, or novelty certificate. Frozen `ds=-d_base` remains unchanged.
 
 ## Retained estimator authorities
+Iteration 489: exact transfer ratio `rho(theta)=2A(theta/2)/A(theta)` is positive but nonconstant on the open resolved interval, so no universal exact BASE→HALF scalar or Richardson promotion exists for generic multimode content.
+
 Iteration 488: exact central4 Fourier symbol `A(theta)=i sin(theta)(4-cos(theta))/3`, with no additional interior blind spot for `0<|theta|<pi`; mixed symbols `D_h=A(theta_x)A(theta_y)/h^2` and `D_half=4 A(theta_x/2)A(theta_y/2)/h^2`.
 
 Iteration 487: exact two-level truncation mismatch
@@ -81,8 +81,8 @@ Iterations 436/437 close `N1/Q1`; 438 exact `A_finite`; 440 `Acoef/Asub`; 442 sa
 
 After all 28 distinct support coordinates are locally certified, BASE and HALF central4 assemblies must be evaluated independently at MP80 and MP120. Retain `ds=-d_base`; no Richardson promotion. Require all finite, assembled scaled MP80↔MP120 discrepancy `<=2e-6`, retained BASE↔HALF mass-step discrepancy `<=2e-5`, plus retained provenance and conditioning contracts.
 
-## Active gate — Iteration 489
-The exact next frozen coordinate is rank15
+## Active gate — Iteration 490
+The exact next frozen coordinate remains rank15
 
 `(u,v)=(+1e-5,+1e-5)`, multiplicity 1.
 
@@ -100,7 +100,7 @@ After completion, fail-closed raw-consume the artifact. Only on raw scientific P
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 489 closes one additional local numerical-support coordinate and an exact estimator/provenance subgate, but no additional stable readiness-rubric component.
+Readiness change: **0 percentage points**. Iteration 490 closes an exact estimator/provenance subgate but no additional stable readiness-rubric component.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct q^2 variables are never summed. Same i0 is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Local MP sample PASS never substitutes for assembled derivative MP closure. Large cancellation condition number is diagnostic only. Exact BASE/HALF coordinate overlap may share the local sampled precision certificate but never the derivative weight. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists. No blind heavy full-C5. Do not reopen the already-closed C5 null-soft e=3 sector. Old weighted-B3 proxy residues are not actual `Tr U1` authority. Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification.
