@@ -14,7 +14,7 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: **`[2]`**.
 - Latest completed numerical mass-support authority: **Iteration 509**, raw-consumed frozen Iteration-455 rank22 `(u,v)=(+2.5e-6,-5e-6)`, HALF local index 8, multiplicity 1.
-- Latest authoritative research iteration: **Iteration 510**.
+- Latest authoritative research iteration: **Iteration 511**.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16; denominator `32 x 5 x 16 = 2560` row occurrences.
 - Certified occurrence-weighted precision coverage: **`27/32 = 84.375%`**, i.e. **`2160/2560`** row occurrences.
 - Frozen rank10 `(+5e-6,+5e-6)`, multiplicity 2, was already `CERTIFIED` in the Iteration-455 baseline and must not be relaunched.
@@ -59,6 +59,15 @@ Operational consequence: BASE and HALF must remain independently assembled, but 
 
 Reproducible audit: `candidate_gravity/code/iteration510_base_half_assembly_linear_independence_exact_audit.py`. Machine-readable result: `candidate_gravity/results/iteration510_base_half_assembly_linear_independence_exact_audit.json`.
 
+## Iteration 511 — exact shared-node covariance/error propagation
+Classification: `PASS_BASE_HALF_SHARED_NODE_COVARIANCE_EXACT__NON_PROMOTING`.
+
+Under the explicitly scoped diagnostic model of iid equal-variance coordinate-level sampling error `sigma^2`, the exact Iteration-510 Gram matrix gives the assembled numerical-error covariance `sigma^2 G/h^4`. Thus `Var(BASE)=(4225/5184)sigma^2/h^4`, `Var(HALF)=(4225/324)sigma^2/h^4`, and the four exact shared coordinates induce `Cov(BASE,HALF)=(4/81)sigma^2/h^4`. The exact correlation is `64/4225`, and for `DELTA=BASE-HALF`, `Var(DELTA)=(23771/1728)sigma^2/h^4`.
+
+Operational consequence: even under iid coordinate noise, BASE and HALF numerical sampling errors are not strictly independent because the assemblies share four coordinates. Future error propagation must retain this covariance; the result is numerical-error/provenance authority only and is not a claim about physical-observable covariance.
+
+Reproducible audit: `candidate_gravity/code/iteration511_base_half_shared_node_covariance_exact_audit.py`. Machine-readable result: `candidate_gravity/results/iteration511_base_half_shared_node_covariance_exact_audit.json`.
+
 ## Retained comparator preflight authority
 Iteration 504 remains `BLOCKED_FIXED_COMPARATOR_QUOTIENT_UPSTREAM_TARGET_NOT_ASSEMBLED__NON_PROMOTING`. The concrete upstream algebraic target is not yet assembled, so comparator identity, rank loss, near-degeneracy, and novelty are not currently evaluable. This is operational BLOCKED, not scientific FAIL.
 
@@ -82,10 +91,10 @@ The frozen Iteration-424 high-precision fallback remains downstream of complete 
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 510 closes an exact assembly linear-algebra guardrail, but no additional stable-rubric Candidate-Gravity component is complete.
+Readiness change: **0 percentage points**. Iteration 511 closes an exact assembly numerical-error covariance guardrail, but no additional stable-rubric Candidate-Gravity component is complete.
 
 ## Exact downstream chain
 After complete support closure: independent BASE/HALF MP80/120 assembly → frozen Iteration-424 reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient → robust nonzero residual.
 
 ## Retained guardrails
-Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Exact BASE/HALF coordinate overlap may share the local sampled precision certificate but never the derivative weight. BASE-minus-HALF is a derived diagnostic of the two independent BASE/HALF assembly rows and must not be counted as a third independent observable or Fisher constraint. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists. No blind heavy full-C5. Do not reopen the already-closed C5 null-soft e=3 sector. Old weighted-B3 proxy residues are not actual `Tr U1` authority. Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification.
+Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Exact BASE/HALF coordinate overlap may share the local sampled precision certificate but never the derivative weight. BASE-minus-HALF is a derived diagnostic of the two independent BASE/HALF assembly rows and must not be counted as a third independent observable or Fisher constraint. Shared BASE/HALF support coordinates induce nonzero numerical-error covariance under iid coordinate noise and must not be propagated as disjoint samples. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists. No blind heavy full-C5. Do not reopen the already-closed C5 null-soft e=3 sector. Old weighted-B3 proxy residues are not actual `Tr U1` authority. Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification.
