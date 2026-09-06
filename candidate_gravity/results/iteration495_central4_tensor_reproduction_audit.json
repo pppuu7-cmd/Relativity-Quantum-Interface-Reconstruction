@@ -1,0 +1,43 @@
+{
+  "classification": "PASS_CENTRAL4_TENSOR_NULLSPACE_POLYNOMIAL_REPRODUCTION_EXACT__NON_PROMOTING",
+  "coefficients": [
+    "1/12",
+    "-2/3",
+    "2/3",
+    "-1/12"
+  ],
+  "column_sums": [
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "exact_claims": {
+    "additive_nullspace": "For arbitrary sampled F_ij=f_i+g_j+const, D_h=0 exactly.",
+    "bilinear_normalization": "For p(x,y)=x*y, D_h=1 exactly for every nonzero h.",
+    "polynomial_reproduction": "For degree <=4 in each variable, D_h p(0,0)=partial_x partial_y p(0,0) exactly."
+  },
+  "iteration": 495,
+  "moments_k0_to_k4": [
+    "0",
+    "1",
+    "0",
+    "0",
+    "0"
+  ],
+  "nodes": [
+    -2,
+    -1,
+    1,
+    2
+  ],
+  "row_sums": [
+    "0",
+    "0",
+    "0",
+    "0"
+  ],
+  "tensor_nonzero_moments_a_b_le_4": {
+    "1,1": "1"
+  }
+}
