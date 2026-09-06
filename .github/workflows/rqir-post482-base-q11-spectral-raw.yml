@@ -1,0 +1,206 @@
+name: RQIR post482 BASE-Q11 spectral raw
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-post482-base-q11-spectral-raw.yml'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  base_q11_spectral_raw:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install frozen dependencies
+        run: python -m pip install --disable-pip-version-check -q numpy==2.1.3 mpmath==1.3.0 scipy==1.14.1
+
+      - name: Download rank5
+        uses: actions/download-artifact@v4
+        with:
+          name: rqir-post463-manifest-rank5-full-z-mp
+          path: raw/r5
+          github-token: ${{ github.token }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33962417750
+      - name: Download rank6
+        uses: actions/download-artifact@v4
+        with:
+          name: rqir-post466-manifest-rank6-full-z-mp
+          path: raw/r6
+          github-token: ${{ github.token }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33968129883
+      - name: Download rank9
+        uses: actions/download-artifact@v4
+        with:
+          name: rqir-post473-manifest-rank9-full-z-mp
+          path: raw/r9
+          github-token: ${{ github.token }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33983416847
+      - name: Download rank10 part1
+        uses: actions/download-artifact@v4
+        with:
+          name: rqir-post447-class3-phi-sample-mp-stage
+          path: raw/r10a
+          github-token: ${{ github.token }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33928248369
+      - name: Download rank10 part2
+        uses: actions/download-artifact@v4
+        with:
+          name: rqir-post449-same-corner-remaining-z-mp
+          path: raw/r10b
+          github-token: ${{ github.token }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33932061794
+
+      - name: Reconstruct class3 spectral contraction from exact raw samples
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p candidate_gravity/artifacts/post482_base_q11_spectral_raw
+          python - <<'PY'
+          from __future__ import annotations
+          import contextlib,io,json,hashlib,pathlib,subprocess
+          import mpmath as mp
+
+          # Bind the exact active class-3/index-2 spectral geometry by the same
+          # specialization contract used in Iteration 431. Do not borrow class-5 geometry.
+          ROOT=pathlib.Path('candidate_gravity/code')
+          p407=ROOT/'iteration407_tru1sq_channel4_analytic_spectral_reduction.py'
+          s407=p407.read_text()
+          repl=[
+            ('ITERATION=407','ITERATION=431'),('TARGET_INDEX=4','TARGET_INDEX=2'),
+            ("if int(ch['class_id'])!=5 or abs(q2+1.0)>1e-12: raise RuntimeError(('target_identity_drift',ch['class_id'],q2))",
+             "if int(ch['class_id'])!=3 or abs(q2+1.0)>1e-12: raise RuntimeError(('target_identity_drift',ch['class_id'],q2))")]
+          for old,new in repl:
+            assert s407.count(old)==1, ('specialization_drift',old,s407.count(old))
+            s407=s407.replace(old,new,1)
+          marker='\nstart=time.perf_counter()\nd_base,diag_base=derivative_from_analytic(BASE_H)'
+          assert s407.count(marker)==1
+          ns={'__name__':'post482_class3_spectral_geometry','__file__':str(p407)}
+          with contextlib.redirect_stdout(io.StringIO()): exec(compile(s407.split(marker,1)[0]+'\n',str(p407),'exec'),ns,ns)
+          assert int(ns['ch']['class_id'])==3 and abs(float(ns['q2'])+1.0)<1e-12
+          affine=ns['affine_coeffs']; kin=ns['kin']; DEG=int(ns['POLY_DEGREE']); TRAIN=[float(x) for x in ns['TRAIN_Z']]
+          assert DEG==4 and TRAIN==[-0.86,-0.43,0.0,0.43,0.86]
+          BASE_H=float(ns['BASE_H']); assert abs(BASE_H-5e-6)<1e-18
+
+          # Exact payload/provenance bindings. Rank10 part2 uses the post482 corrected
+          # artifact metadata digest while preserving its historical scientific JSON SHA.
+          specs={
+            5: dict(path='raw/r5/result.json', run=33962417750, artifact=9969255401, digest='sha256:ed83538b25fd05314a94f950fdda030932212da7010b0e72f1164b740978d0d4', sci='01d21d82547ba774086b5cd1aad8a9d627fece034fa872183da0e366ffa5fde8', uv=(-5e-6,-5e-6)),
+            6: dict(path='raw/r6/result.json', run=33968129883, artifact=9971336666, digest='sha256:6d502989834d91f4d02b04968a3ef156a9400321eb5dea1ec693687ec13baaec', sci='220f50d31c1e9ca326c1303c3e74b39139f68fc4dbe3388450220389fef5211a', uv=(-5e-6,5e-6)),
+            9: dict(path='raw/r9/result.json', run=33983416847, artifact=9975782294, digest='sha256:a0e4d481dd4b34addf7a11316730dee3240e7843f12b586307f40608c08e15c5', sci='533e5ab27c3631c25023e30ee70fecdb3bd845c18015cc6cf277ea42fd3ea8d8', uv=(5e-6,-5e-6)),
+          }
+          for r,s in specs.items():
+            p=pathlib.Path(s['path']); assert hashlib.sha256(p.read_bytes()).hexdigest()==s['sci']
+            md=json.loads(subprocess.check_output(['gh','api',f"repos/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction/actions/artifacts/{s['artifact']}"],text=True))
+            assert md['workflow_run']['id']==s['run'] and md['digest']==s['digest'] and md['expired'] is False
+          p10a=pathlib.Path('raw/r10a/result.json'); p10b=pathlib.Path('raw/r10b/result.json')
+          assert hashlib.sha256(p10a.read_bytes()).hexdigest()=='d7a148b1f55364145612e3c032aaa13a24634b87bad965a9f40a4d1db2b478bb'
+          assert hashlib.sha256(p10b.read_bytes()).hexdigest()=='2467e807b8b5f1c8a93a83a1e5be2107d2c5ae3d8747bb2f5f586b16501d1c03'
+          for aid,dig in {9958661360:'sha256:16d70f63275c451c15cb13243240612dcdc2fc09f598fe08194b1b91c2ecd3c8',9959560285:'sha256:ac18e784e54414c89e08830d917679ffe0403028abc5ecf6e4e2cdd289158909'}.items():
+            md=json.loads(subprocess.check_output(['gh','api',f'repos/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction/actions/artifacts/{aid}'],text=True))
+            assert md['digest']==dig and md['expired'] is False
+
+          objs={r:json.loads(pathlib.Path(s['path']).read_text()) for r,s in specs.items()}
+          o10a=json.loads(p10a.read_text()); o10b=json.loads(p10b.read_text())
+          rows_by_rank={r:o['rows'] for r,o in objs.items()}; rows_by_rank[10]=o10a['rows']+o10b['rows']
+          for r,rows in rows_by_rank.items():
+            assert len(rows)==80, (r,len(rows))
+
+          def key(x): return (round(float(x['z']),12),int(x['phi_index']))
+          def mpc_row(x,dps): return mp.mpc(mp.mpf(x[f'mp{dps}_re']),mp.mpf(x[f'mp{dps}_im']))
+          maps={r:{key(x):x for x in rows} for r,rows in rows_by_rank.items()}
+          allkeys=set(maps[5]); assert all(set(maps[r])==allkeys for r in maps) and len(allkeys)==80
+
+          uv={5:(-5e-6,-5e-6),6:(-5e-6,5e-6),9:(5e-6,-5e-6),10:(5e-6,5e-6)}
+          def spectral_F(rank,dps):
+            u,v=uv[rank]
+            with mp.workdps(dps):
+              zz=[mp.mpf(repr(z)) for z in TRAIN]
+              # Exact frozen azimuth mean at each training-z from the 16 raw rows.
+              yy=[]
+              for z in TRAIN:
+                vals=[mpc_row(maps[rank][(round(z,12),m)],dps) for m in range(16)]
+                yy.append(sum(vals,mp.mpc(0))/16)
+              V=mp.matrix([[z**k for k in range(DEG+1)] for z in zz]); coeff=mp.lu_solve(V,mp.matrix(yy))
+              cc0,aa0=affine(u,v); beta0=kin(u,v)[2]
+              cc=mp.mpc(repr(float(cc0.real)),repr(float(cc0.imag))); aa=mp.mpc(repr(float(aa0.real)),repr(float(aa0.imag))); beta=mp.mpf(repr(float(beta0)))
+              if abs(aa)<mp.mpf('1e-50'):
+                js=[(mp.mpf(0) if k%2 else mp.mpf(2)/(k+1))/cc for k in range(DEG+1)]
+              else:
+                js=[(mp.log(cc+aa)-mp.log(cc-aa))/aa]
+                for k in range(1,DEG+1):
+                  im1=mp.mpf(0) if (k-1)%2 else mp.mpf(2)/k
+                  js.append((im1-cc*js[-1])/aa)
+              return mp.mpf('0.5')*beta*sum(coeff[k]*js[k] for k in range(DEG+1))
+
+          F={}
+          for r in (5,6,9,10):
+            F[r]={}
+            for dps in (80,120): F[r][dps]=spectral_F(r,dps)
+          with mp.workdps(180):
+            h=mp.mpf('5e-6'); coef=mp.mpf(4)/9/(h*h)
+            q80=coef*(F[5][80]-F[6][80]-F[9][80]+F[10][80])
+            q120=coef*(F[5][120]-F[6][120]-F[9][120]+F[10][120])
+            scale=max(mp.mpf(1),abs(q80),abs(q120)); disc=abs(q80-q120)/scale
+            num120=F[5][120]-F[6][120]-F[9][120]+F[10][120]
+            cond=sum(abs(F[r][120]) for r in (5,6,9,10))/abs(num120) if num120!=0 else mp.inf
+            per_node={str(r):{
+              'F_mp80_re':mp.nstr(mp.re(F[r][80]),80),'F_mp80_im':mp.nstr(mp.im(F[r][80]),80),
+              'F_mp120_re':mp.nstr(mp.re(F[r][120]),120),'F_mp120_im':mp.nstr(mp.im(F[r][120]),120),
+              'scaled_mp80_vs_mp120':mp.nstr(abs(F[r][80]-F[r][120])/max(mp.mpf(1),abs(F[r][80]),abs(F[r][120])),40)} for r in (5,6,9,10)}
+            passed=bool(mp.isfinite(q120.real) and mp.isfinite(q120.imag) and disc<=mp.mpf('2e-6'))
+            result={
+              'stage':'POST482_BASE_Q11_CLASS3_SPECTRAL_CONTRACTION_FROM_EXACT_RAW_SAMPLES__NON_PROMOTING',
+              'classification':('PASS_BASE_Q11_CLASS3_SPECTRAL_RAW_MP80_MP120__NON_PROMOTING' if passed else 'BLOCKED_BASE_Q11_CLASS3_SPECTRAL_RAW_MP_STABILITY__NON_PROMOTING'),
+              'scientific_gate_pass':passed,'promotes_physical_coordinate':False,'MODEL_READINESS':'24%','readiness_change_pp':0,
+              'target':{'double_double_index':2,'class_id':3,'q_squared':-1.0},
+              'scope':'DOMINANT_BASE_INNER_INNER_QUARTET_ONLY__FULL_FROZEN_16PHI_MEAN_DEG4_TRAIN_Z_INTERPOLATION_AFFINE_SPECTRAL_CONTRACTION__NOT_FULL_16_NODE_DERIVATIVE',
+              'formula':'Q11_spectral=(4/9)/BASE_H^2 * (F_r5-F_r6-F_r9+F_r10)',
+              'frozen':{'manifest_ranks':[5,6,9,10],'base_h':5e-6,'training_z':TRAIN,'phi_nodes':16,'degree':4,'precision_digits':[80,120]},
+              'observed':{'scaled_q11_mp80_vs_mp120':mp.nstr(disc,40),'quartet_cancellation_condition_proxy':mp.nstr(cond,40),'q11_mp80_re':mp.nstr(mp.re(q80),80),'q11_mp80_im':mp.nstr(mp.im(q80),80),'q11_mp120_re':mp.nstr(mp.re(q120),120),'q11_mp120_im':mp.nstr(mp.im(q120),120)},
+              'per_node':per_node,
+              'diagnostic_threshold':{'scaled_q11_mp80_vs_mp120_max':'2e-6'},
+              'limitations':['NO_HELDOUT_Z_RECOMPUTATION_FROM_RAW_ARTIFACTS','NO_REMAINING_BASE_QUARTETS','NO_HALF_ASSEMBLY','NOT_PHYSICAL_DS_AUTHORITY'],
+              'interpretation':['The exact class-3/index-2 spectral geometry is reconstructed by the frozen Iteration-431 specialization of Iteration-407, while parent numerator samples come only from exact raw Actions artifacts.','This closes cross-precision stability of the dominant BASE inner-inner quartet through the downstream spectral contraction, but not the complete BASE or HALF mixed derivative.'],
+              'guardrails':['CLASS3_GEOMETRY_ONLY','EXACT_RAW_PARENT_SAMPLES','NO_CLASS5_GEOMETRY_SUBSTITUTION','NO_PHYSICAL_DS_PROMOTION','NO_THRESHOLD_WEAKENING','NO_SUPPORT_REORDERING','NO_ANSATZ003','NO_FISHER_RESOURCES']}
+          out=pathlib.Path('candidate_gravity/artifacts/post482_base_q11_spectral_raw/result.json'); out.write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(result,indent=2,sort_keys=True))
+          if not passed: raise SystemExit(2)
+          PY
+
+      - name: Upload spectral Q11 diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-post482-base-q11-spectral-raw
+          path: candidate_gravity/artifacts/post482_base_q11_spectral_raw/
+          retention-days: 90
+
+      - name: Commit PASS diagnostic
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp candidate_gravity/artifacts/post482_base_q11_spectral_raw/result.json candidate_gravity/results/post482_base_q11_spectral_raw.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add candidate_gravity/results/post482_base_q11_spectral_raw.json
+          git commit -m 'RQIR post482: record BASE Q11 spectral-raw PASS'
+          git pull --rebase origin main
+          git push origin HEAD:main
