@@ -1,0 +1,28 @@
+{
+  "iteration": 500,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "classification": "PASS_RAW_CONSUMED_MANIFEST_RANK19_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "authority_scope": "ONE_MANIFEST_SOURCE_ORDER_MASS_NODE_FULL_TRAINING_Z__NON_PROMOTING",
+  "provenance": {
+    "run_id": 34035315540,
+    "job_id": 101492185537,
+    "artifact_id": 9991366491,
+    "artifact_name": "rqir-post498-manifest-rank19-full-z-mp",
+    "artifact_digest": "sha256:ae0fb7a2017c48219dc859632c3496f90911c04ca31272de4a8796d4d8d5f9ef",
+    "head_sha": "b4d2d2f75412f783f991804dd06f7f8174767c85",
+    "scientific_json_sha256": "d3afb8b89fb4a4e7ac41767b84630834c4fc660e1d310e65899392bdd49470f2",
+    "authority_audit_sha256": "2ecec2b06bafa3b8c30aa3582b08c3cca6da9ffcd18d3388c76eeb0443006ea3"
+  },
+  "target": {"double_double_index": 2, "class_id": 3, "q_squared": -1.0, "manifest_rank": 19, "u": -2.5e-6, "v": -2.5e-6, "source_occurrence_multiplicity": 1},
+  "frozen": {"z_samples": [-0.86,-0.43,0.0,0.43,0.86], "phi_nodes": 16, "radial_hs": [0.002,0.001,0.0005], "precision_digits": [80,120]},
+  "observed": {"sample_count": 80, "all_finite": true, "scaled_mp80_vs_mp120_max": "3.40027675963242142165008504499e-80", "max_radial_richardson_scaled_error": "2.57110613298711345992132746523e-15"},
+  "thresholds": {"scaled_mp80_vs_mp120_max": "1e-30", "radial_richardson_scaled_max": "5e-4"},
+  "certified_occurrence_weight_after_pass": 24,
+  "certified_occurrence_fraction_after_pass": "24/32 = 75.000%",
+  "next_manifest_rank": 20,
+  "next_coordinate": {"u": -2.5e-6, "v": 2.5e-6, "source_occurrence_multiplicity": 1},
+  "guardrails": ["NON_PROMOTING_LOCAL_SUPPORT_ONLY","NO_THRESHOLD_WEAKENING","NO_ZERO_FILL","NO_ANSATZ003","NO_FISHER_RESOURCES"]
+}
