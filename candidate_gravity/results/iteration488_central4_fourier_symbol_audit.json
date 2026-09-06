@@ -1,0 +1,13 @@
+{
+  "iteration": 488,
+  "classification": "PASS_CENTRAL4_FOURIER_SYMBOL_EXACT__NON_PROMOTING",
+  "nodes": [-2, -1, 1, 2],
+  "coefficients": ["1/12", "-2/3", "2/3", "-1/12"],
+  "dimensionless_symbol": "A(theta)=i*sin(theta)*(4-cos(theta))/3",
+  "normalized_symbol": "R(theta)=sin(theta)*(4-cos(theta))/(3*theta)",
+  "real_zero_structure": "A(theta)=0 iff sin(theta)=0, because 4-cos(theta)>0 for real theta; hence on 0<|theta|<pi there are no interior zeros or sign reversals of the odd derivative symbol",
+  "tensor_mixed_symbol": "D_h(theta_x,theta_y)=A(theta_x)*A(theta_y)/h^2",
+  "half_level_symbol": "D_half=4*A(theta_x/2)*A(theta_y/2)/h^2",
+  "scope": "exact estimator/provenance diagnostic only; no physics promotion, no comparator identity, no novelty certificate",
+  "model_readiness": "24%"
+}
