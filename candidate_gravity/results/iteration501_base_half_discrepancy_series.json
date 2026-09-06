@@ -1,0 +1,11 @@
+{
+  "classification": "PASS_BASE_HALF_DISCREPANCY_ASYMPTOTIC_SERIES_EXACT__NON_PROMOTING",
+  "base_minus_half": {
+    "h4_S4": "-1/32",
+    "h6_S6": "-1/256",
+    "h8_Spure8": "-17/73728",
+    "h8_Scross8": "17/15360"
+  },
+  "statement": "D_BASE-D_HALF = -h^4/32 S4 - h^6/256 S6 + h^8[-17/73728 Spure8 + 17/15360 Scross8] + O(h^10).",
+  "scope": "smooth-field asymptotic estimator/provenance authority only; no universal mode-independent Richardson promotion"
+}
