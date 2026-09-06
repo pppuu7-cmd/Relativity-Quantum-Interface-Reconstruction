@@ -1,0 +1,20 @@
+{
+  "MODEL_READINESS": "24%",
+  "checks": [
+    {"abs_difference": 0.0, "rho_closed_form": 1.0000031211064462, "theta": 0.1, "two_Ahalf_over_A": [1.0000031211064462, 0.0]},
+    {"abs_difference": 0.0, "rho_closed_form": 1.0002503592983394, "theta": 0.3, "two_Ahalf_over_A": [1.0002503592983394, 0.0]},
+    {"abs_difference": 0.0, "rho_closed_form": 1.0071102932685563, "theta": 0.7, "two_Ahalf_over_A": [1.0071102932685563, 0.0]},
+    {"abs_difference": 0.0, "rho_closed_form": 1.0574193387991873, "theta": 1.2, "two_Ahalf_over_A": [1.0574193387991873, 0.0]},
+    {"abs_difference": 0.0, "rho_closed_form": 1.4499660241664944, "theta": 2.0, "two_Ahalf_over_A": [1.4499660241664944, 0.0]}
+  ],
+  "classification": "PASS_BASE_HALF_SPECTRAL_TRANSFER_RATIO_EXACT__NON_PROMOTING",
+  "consequence": "no single mode-independent exact scalar maps BASE to HALF over the resolved spectrum; two-level Richardson promotion is not spectrally identifiable for generic multimode data",
+  "domain_statement": "for 0<|theta|<pi, cos(theta/2)>0 and 4-cos(theta)>0, so rho(theta)>0 and is nonconstant",
+  "exact_1d_ratio": "rho(theta)=2 A(theta/2)/A(theta)=(4-cos(theta/2))/(cos(theta/2)*(4-cos(theta)))",
+  "exact_mixed_ratio": "D_half/D_base=rho(theta_x)*rho(theta_y)",
+  "max_numeric_identity_error": 0.0,
+  "operator": "central4 c=[1/12,-2/3,2/3,-1/12] nodes=[-2,-1,+1,+2]",
+  "schema": "rqir_iteration489_base_half_spectral_ratio_v1",
+  "scientific_scope": "estimator/provenance only",
+  "small_theta_series": "rho(theta)=1+theta^4/32-theta^6/256+469 theta^8/368640+O(theta^10)"
+}
