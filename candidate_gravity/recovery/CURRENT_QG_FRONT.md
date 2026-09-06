@@ -13,50 +13,53 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest validated structural authority: **Iteration 410**.
 - Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: **`[2]`**.
-- Latest completed numerical mass-support authority: **Iteration 503**, raw-consumed frozen Iteration-455 rank20 `(u,v)=(-2.5e-6,+2.5e-6)`, multiplicity 1.
-- Latest authoritative research iteration: **Iteration 504**.
+- Latest completed numerical mass-support authority: **Iteration 505**, raw-consumed frozen Iteration-455 rank21 `(u,v)=(-2.5e-6,+5e-6)`, HALF local index 7, multiplicity 1.
+- Latest authoritative research iteration: **Iteration 506**.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16; denominator `32 x 5 x 16 = 2560` row occurrences.
-- Certified occurrence-weighted precision coverage: **`25/32 = 78.125%`**, i.e. **`2000/2560`** row occurrences.
+- Certified occurrence-weighted precision coverage: **`26/32 = 81.25%`**, i.e. **`2080/2560`** row occurrences.
 - Frozen rank10 `(+5e-6,+5e-6)`, multiplicity 2, was already `CERTIFIED` in the Iteration-455 baseline and must not be relaunched.
 
-## Latest numerical authority — Iteration 503 rank20
-Canonical rank20 `(u,v)=(-2.5e-6,+2.5e-6)`, HALF local index 6, multiplicity 1: run `34041245929`, job `101508280675`, artifact `9993124996`, head SHA `ce1122519bde0e8c56692ebeda7a854c9dc0a9c3`.
+## Latest numerical authority — Iteration 505 rank21
+Canonical rank21 `(u,v)=(-2.5e-6,+5e-6)`, HALF local index 7, multiplicity 1: run `34048058915`, job `101526571416`, artifact `9995075679`, head SHA `b4f0bef2a3a55ea2186f3508aacf336e98292320`.
 
-Raw-consumed classification: `PASS_RAW_CONSUMED_MANIFEST_RANK20_FULL_Z_MP80_MP120__NON_PROMOTING`.
+Raw-consumed classification: `PASS_RAW_CONSUMED_MANIFEST_RANK21_FULL_Z_MP80_MP120__NON_PROMOTING`.
 
-Artifact digest: `sha256:c657bd01dbfff21b4bb37c6cfccaadc421cc68a2d6d397da7cdbd254e7e7f02f`. Scientific JSON SHA-256: `5bd5af97df1524997ab52a10a58cc4842b65c49091325ba1b57aba6e3d253f1a`. Authority-audit SHA-256: `a38d1260678c07a1c180916a081e86b8bbcc2a2f7fe28713f6dcd3029f09178a`.
+Artifact digest: `sha256:2d36e21cee40d46ac8ea66c9e62588567d34459ea5d5d6d8bc4322a1c2de56a5`. Scientific JSON SHA-256: `a032df9c94b2eecbf41aade69b94c12522b4893f5d0942f5958054eb8d052f43`. Authority-audit SHA-256: `11004f720fd0e34f86b89b30258190beb7292e4862d1c0e6bfc06318ab1201da`.
 
-Observed: `80/80` finite; max scaled MP80↔MP120 `3.02217788257280141868089115421e-80 <= 1e-30`; max radial Richardson scaled error `2.56742621216093884196200081234e-15 <= 5e-4`.
+Observed: `80/80` finite; max scaled MP80↔MP120 `2.85307369375164535133530348086e-80 <= 1e-30`; max radial Richardson scaled error `2.56469779948098174399002859023e-15 <= 5e-4`.
 
 This advances local precision support only. It does not promote physical index 2, assembled BASE/HALF authority, robust residual, ansatz authority, comparator novelty, or readiness.
 
-Machine-readable raw-consumption record: `candidate_gravity/results/post502_rank20_raw_consumption.json`.
+Machine-readable raw-consumption record: `candidate_gravity/results/post504_rank21_raw_consumption.json`.
 
-## Active heavy gate — retained from Iteration 503
-The frozen Iteration-455 distinct u-major/v-major support manifest directly identifies rank21 `(u,v)=(-2.5e-6,+5e-6)`, HALF local index 7, multiplicity 1, as the sole authorized heavy support gate after rank20 raw PASS.
+## Active heavy gate — rank22
+The frozen Iteration-455 manifest identifies rank22 `(u,v)=(+2.5e-6,-5e-6)`, HALF local index 8, multiplicity 1, as the sole authorized heavy support gate after rank21 raw PASS.
 
-Reproducible stage: `candidate_gravity/code/post503_manifest_rank21_full_z_mp_stage.py`. Workflow: `.github/workflows/rqir-post503-manifest-rank21-full-z-mp.yml`. Trigger/head commit: `b4f0bef2a3a55ea2186f3508aacf336e98292320`.
+Reproducible stage: `candidate_gravity/code/post505_manifest_rank22_full_z_mp_stage.py`. Workflow: `.github/workflows/rqir-post505-manifest-rank22-full-z-mp.yml`. Trigger/head commit: `3c50345c19fff8e41b8333921ff25a6cbf7dbc38`.
 
-Canonical run **`34048058915`**, job **`101526571416`**, is **`in_progress`** on the latest Iteration-504 live check; do not duplicate it. Raw authority audit and artifact consumption are required before any scientific PASS.
+Canonical run **`34053331578`**, job **`101540723619`**, is **`in_progress`** on the Iteration-506 live check. Do not duplicate it. Raw authority audit and artifact consumption are required before any scientific PASS.
 
-If raw PASS, only frozen manifest rank22 `(u,v)=(+2.5e-6,-5e-6)`, HALF local index 8, multiplicity 1, becomes authorized. If BLOCKED, localize the first failing `z/phi/radial` sample without changing frozen dynamics, thresholds, support order, or precision conventions.
+If raw PASS, advance only to the next explicit `UNTESTED` frozen Iteration-455 coordinate. If BLOCKED, localize the first failing `z/phi/radial` sample without changing frozen dynamics, thresholds, support order, or precision conventions.
 
-## Iteration 504 — fixed comparator-quotient preflight
-Classification: `BLOCKED_FIXED_COMPARATOR_QUOTIENT_UPSTREAM_TARGET_NOT_ASSEMBLED__NON_PROMOTING`.
+## Iteration 506 — rank22 prerequisite dynamics/parameter-chain audit
+Classification: `PASS_RANK22_PREREQUISITE_DYNAMICS_PARAMETER_CHAIN_EXACT__NON_PROMOTING`.
 
-The frozen downstream chain places `Source/Ward/contact+K2` before the fixed `C3/C4/C5/nonlocal/asymptotic-safety` comparator quotient. At this front the unresolved physical set is still `[2]`, local support is incomplete, independent BASE/HALF assembly has not occurred, and the concrete upstream algebraic target has not been assembled. The comparator quotient therefore has no current target on which identity, rank loss, near-degeneracy, or novelty can be evaluated.
+The active rank22 stage was audited against raw-valid rank21 authority and its frozen parent source chain. It requires the exact rank21 PASS and exact rank22 manifest successor; inherits the sampling/dynamics definitions from `post447_class3_phi_sample_mp_stage.py`; inherits frozen mass binding from `iteration379_tru1sq_double_double_one_channel_pilot.py`; requires `BASE_H=5e-6`; sets `MASS_U=0.5*BASE_H`, `MASS_V=-BASE_H`; preserves the five training-z points, inherited NPHI, MP80/MP120 convention, radial thresholds, and no-promotion/no-threshold-weakening guardrails.
 
-Strict taxonomy: this is **operational BLOCKED**, not Candidate-Gravity consistency FAIL, not exact comparator identity, not regime-specific non-identifiability, and not near-degeneracy. A novelty certificate is unavailable/evaluable; novelty failure has not been demonstrated. Once the concrete target exists, an exact comparator identity or scoped non-identifiability result must be preserved as a genuine negative result rather than tuned away.
+This is source/provenance and parameter-convention authority only. It is not Candidate-Gravity consistency PASS or FAIL, not exact comparator identity, not regime-specific non-identifiability, not near-degeneracy, not novelty certification, and not physical promotion. Failure of this audit would be operational/provenance BLOCKED.
 
-Reproducible audit: `candidate_gravity/code/iteration504_fixed_comparator_quotient_preflight.py`. Machine-readable record: `candidate_gravity/results/iteration504_fixed_comparator_quotient_preflight.json`.
+Reproducible audit: `candidate_gravity/code/iteration506_rank22_prerequisite_dynamics_chain_audit.py`. Machine-readable record: `candidate_gravity/results/iteration506_rank22_prerequisite_dynamics_chain_audit.json`.
 
-No literature refresh was required for Iteration 504 because no external comparator/novelty/consistency claim was advanced; only the logical domain/precondition semantics of the already-frozen internal comparator stage were fixed.
+No literature refresh was required because no external comparator/novelty/consistency claim was advanced.
+
+## Retained comparator preflight authority
+Iteration 504 remains `BLOCKED_FIXED_COMPARATOR_QUOTIENT_UPSTREAM_TARGET_NOT_ASSEMBLED__NON_PROMOTING`. The frozen downstream chain places `Source/Ward/contact+K2` before the fixed `C3/C4/C5/nonlocal/asymptotic-safety` comparator quotient. The concrete upstream algebraic target is not yet assembled, so comparator identity, rank loss, near-degeneracy, and novelty are not currently evaluable. This is operational BLOCKED, not scientific FAIL.
 
 ## Retained exact estimator/provenance authority
-Iteration 502 exact h^10 BASE-minus-HALF sector remains `PASS_BASE_HALF_DISCREPANCY_H10_EXACT__NON_PROMOTING`. Iterations 501 and 499 retain the lower-order smooth-field asymptotic discrepancy/truncation series; Iterations 489–490 remain authority that exact spectral transfer is mode-dependent outside the low-frequency asymptotic regime. Iteration 497 odd-odd projection and Iterations 492/494/495 conditioning/reproduction diagnostics remain assembly/provenance authority only. No Richardson promotion; frozen `ds=-d_base` remains unchanged.
+Iteration 502 exact h^10 BASE-minus-HALF sector remains `PASS_BASE_HALF_DISCREPANCY_H10_EXACT__NON_PROMOTING`. Iterations 501 and 499 retain lower-order smooth-field asymptotic discrepancy/truncation series; Iterations 489–490 remain authority that exact spectral transfer is mode-dependent outside the low-frequency asymptotic regime. Iteration 497 odd-odd projection and Iterations 492/494/495 conditioning/reproduction diagnostics remain assembly/provenance authority only. No Richardson promotion; frozen `ds=-d_base` remains unchanged.
 
 ## Retained physical blocker
-Frozen timelike `Tr U1^2` census remains 57 physical channels = 6 simple-simple + 36 simple-double + 15 double-double, exactly 19 per q^2. Iteration 421 run `33871920373` remains raw-valid `BLOCKED_CONVERGENCE`; diagnostic index-2 value is not authority. No zero-fill.
+Frozen timelike `Tr U1^2` census remains 57 physical channels = 6 simple-simple + 36 simple-double + 15 double-double, exactly 19 per `q^2`. Iteration 421 run `33871920373` remains raw-valid `BLOCKED_CONVERGENCE`; diagnostic index-2 value is not authority. No zero-fill.
 
 ## Frozen numerical/assembly contract
 After all 28 distinct support coordinates are locally certified, evaluate BASE and HALF central4 assemblies independently at MP80 and MP120. Retain `ds=-d_base`; no Richardson promotion. Require all finite, assembled scaled MP80↔MP120 discrepancy `<=2e-6`, retained BASE↔HALF mass-step discrepancy `<=2e-5`, plus retained provenance and conditioning contracts. Local MP PASS never substitutes for assembled derivative closure.
@@ -74,10 +77,10 @@ After all 28 distinct support coordinates are locally certified, evaluate BASE a
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 504 closes a genuine fail-closed comparator-domain/taxonomy subgate, but no additional stable-rubric model component is completed.
+Readiness change: **0 percentage points**. Iteration 506 closes a genuine provenance/parameter-chain subgate, but no additional stable-rubric model component is completed.
 
 ## Exact downstream chain
 After complete support closure: independent BASE/HALF MP80/120 assembly → frozen Iteration-424 reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient → robust nonzero residual.
 
 ## Retained guardrails
-Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct q^2 variables are never summed. Same i0 is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Exact BASE/HALF coordinate overlap may share the local sampled precision certificate but never the derivative weight. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists. No blind heavy full-C5. Do not reopen the already-closed C5 null-soft e=3 sector. Old weighted-B3 proxy residues are not actual `Tr U1` authority. Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification.
+Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Exact BASE/HALF coordinate overlap may share the local sampled precision certificate but never the derivative weight. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists. No blind heavy full-C5. Do not reopen the already-closed C5 null-soft e=3 sector. Old weighted-B3 proxy residues are not actual `Tr U1` authority. Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification.
