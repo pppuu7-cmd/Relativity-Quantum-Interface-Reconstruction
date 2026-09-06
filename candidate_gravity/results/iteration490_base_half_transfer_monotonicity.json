@@ -1,0 +1,27 @@
+{
+  "iteration": 490,
+  "classification": "PASS_BASE_HALF_TRANSFER_STRICT_MONOTONICITY_EXACT__NON_PROMOTING",
+  "rho_theta": "(4 - cos(theta/2))/(cos(theta/2)*(4 - cos(theta)))",
+  "rho_t": "(4 - t)/(t*(5 - 2*t**2))",
+  "drho_dt_factorized": "-4*(t - 1)*(t**2 - 5*t - 5)/(t**2*(2*t**2 - 5)**2)",
+  "domain": "0 < |theta| < pi",
+  "proof_signs": {
+    "t_range": "0 < t=cos(theta/2) < 1",
+    "t_minus_1": "negative",
+    "t2_minus_5t_minus_5": "negative",
+    "denominator": "positive",
+    "drho_dt": "negative",
+    "dt_dtheta": "negative",
+    "drho_dtheta": "positive"
+  },
+  "limits": {
+    "theta_to_0": "1",
+    "theta_to_pi_minus": "+infinity"
+  },
+  "consequence_1d": "1 < rho(theta) < infinity for 0<|theta|<pi",
+  "consequence_mixed_single_mode": "D_half/D_base=rho(theta_x)rho(theta_y)>1 whenever both BASE factors are nonzero in the open Nyquist cell",
+  "scope": "estimator/provenance only; not gravity consistency, comparator identity, non-identifiability, near-degeneracy, or novelty certificate",
+  "frozen_contracts_changed": false,
+  "model_readiness": "24%",
+  "readiness_change_percentage_points": 0
+}
