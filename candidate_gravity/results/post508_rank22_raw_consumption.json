@@ -1,0 +1,65 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "PASS_RAW_CONSUMED_MANIFEST_RANK22_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "iteration": 509,
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "target": {
+    "manifest_rank": 22,
+    "u": 2.5e-06,
+    "v": -5e-06,
+    "source_occurrence_multiplicity": 1,
+    "double_double_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0
+  },
+  "canonical_action": {
+    "run_id": 34053331578,
+    "job_id": 101540723619,
+    "artifact_id": 9996510520,
+    "head_sha": "3c50345c19fff8e41b8333921ff25a6cbf7dbc38",
+    "artifact_digest": "sha256:3370f13c34c2060616f6311f594107526948656c365dbcf623c4e3435a15fc17",
+    "scientific_json_sha256": "311c15e99d71dbf38529a248d5b2cd99c89d6d656e098d58370c61aa214feba0",
+    "authority_audit_sha256": "bf9b139e7dc810d55cf811f88169a6fcf032885a172449e6904cf3cfec544610"
+  },
+  "observed": {
+    "sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "3.83354568012384696441586399316e-80",
+    "max_radial_richardson_scaled_error": "2.56445151996503781362143041011e-15",
+    "runtime_seconds": 5003.062778552
+  },
+  "thresholds": {
+    "required_sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "1e-30",
+    "radial_richardson_scaled_max": 0.0005
+  },
+  "coverage_after_pass": {
+    "certified_occurrence_weight": 27,
+    "total_occurrence_weight": 32,
+    "fraction": "27/32",
+    "percent": "84.375%",
+    "certified_rows": 2160,
+    "total_rows": 2560
+  },
+  "next_manifest_coordinate": {
+    "manifest_rank": 23,
+    "u": 2.5e-06,
+    "v": -2.5e-06,
+    "source_occurrence_multiplicity": 1,
+    "source_level": "HALF",
+    "source_local_index": 9
+  },
+  "scope": "LOCAL_NUMERICAL_PRECISION_AND_PROVENANCE_ONLY",
+  "guardrails": [
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ASSEMBLED_BASE_HALF_PROMOTION",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_ZERO_FILL",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "ITERATION455_MANIFEST_ORDER_ONLY"
+  ]
+}
