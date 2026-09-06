@@ -14,7 +14,7 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: **`[2]`**.
 - Latest completed numerical mass-support authority: **Iteration 500**, raw-consumed frozen Iteration-455 rank19 `(u,v)=(-2.5e-6,-2.5e-6)`, multiplicity 1.
-- Latest authoritative research iteration: **Iteration 501**.
+- Latest authoritative research iteration: **Iteration 502**.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16; denominator `32 x 5 x 16 = 2560` row occurrences.
 - Certified occurrence-weighted precision coverage: **`24/32 = 75.000%`**, i.e. **`1920/2560`** row occurrences.
 - Frozen rank10 `(+5e-6,+5e-6)`, multiplicity 2, was already `CERTIFIED` in the Iteration-455 baseline and must not be relaunched.
@@ -32,14 +32,16 @@ This advances local precision support only. It does not promote physical index 2
 
 Raw-consumption commit: `7d3666346b68d6a7a968b4a4803aeb64a5aaf30a`.
 
-## Latest exact estimator/provenance authority — Iteration 501
-From the frozen Iteration-499 mixed-central4 smooth-field series, the exact BASE-minus-HALF asymptotic discrepancy is
+## Latest exact estimator/provenance authority — Iteration 502
+For the frozen one-dimensional central4 stencil, exact moment `M11=-340` gives the h^10 coefficient `-17/1995840`. Hence the tensor-product mixed estimator has total h^10 sector
 
-`D_BASE - D_HALF = -h^4/32 S4 - h^6/256 S6 + h^8[-17/73728 Spure8 + 17/15360 Scross8] + O(h^10)`,
+`h^10[-17/1995840 (d_x^11 d_y+d_x d_y^11) + 1/7560 (d_x^5 d_y^7+d_x^7 d_y^5)]`.
 
-where `S4=d_x^5 d_y+d_x d_y^5`, `S6=d_x^7 d_y+d_x d_y^7`, `Spure8=d_x^9 d_y+d_x d_y^9`, and `Scross8=d_x^5 d_y^5`.
+Because HALF uses step `h/2`, BASE-minus-HALF multiplies the whole total-order-h^10 sector by `1-2^-10=1023/1024`, yielding
 
-Classification: `PASS_BASE_HALF_DISCREPANCY_ASYMPTOTIC_SERIES_EXACT__NON_PROMOTING`. This is smooth-field asymptotic estimator/provenance authority only: no exact mode-independent Richardson identity, no frozen `ds=-d_base` change, no threshold weakening, and no physical promotion. Iterations 489–490 remain authority that exact spectral transfer is mode-dependent outside the low-frequency asymptotic regime.
+`h^10[-527/61931520 (d_x^11 d_y+d_x d_y^11) + 341/2580480 (d_x^5 d_y^7+d_x^7 d_y^5)]`.
+
+Classification: `PASS_BASE_HALF_DISCREPANCY_H10_EXACT__NON_PROMOTING`. This extends smooth-field asymptotic estimator/provenance authority only: no exact mode-independent Richardson identity, no frozen `ds=-d_base` change, no threshold weakening, and no physical promotion. Iterations 489–490 remain authority that exact spectral transfer is mode-dependent outside the low-frequency asymptotic regime. Iteration 501 lower-order discrepancy coefficients remain retained authority.
 
 Iteration 497 exact odd-odd parity projection and Iterations 492/494/495 conditioning/reproduction diagnostics remain retained assembly/provenance authority only. BASE/HALF derivative weights remain level-specific even where a local sampled coordinate is shared.
 
@@ -49,12 +51,12 @@ Frozen timelike `Tr U1^2` census remains 57 physical channels = 6 simple-simple 
 ## Frozen numerical/assembly contract
 After all 28 distinct support coordinates are locally certified, evaluate BASE and HALF central4 assemblies independently at MP80 and MP120. Retain `ds=-d_base`; no Richardson promotion. Require all finite, assembled scaled MP80↔MP120 discrepancy `<=2e-6`, retained BASE↔HALF mass-step discrepancy `<=2e-5`, plus retained provenance and conditioning contracts. Local MP PASS never substitutes for assembled derivative closure.
 
-## Active gate — Iteration 501
+## Active gate — Iteration 502
 The frozen Iteration-455 distinct u-major/v-major support order identifies rank20 `(u,v)=(-2.5e-6,+2.5e-6)`, multiplicity 1, as the sole authorized heavy support gate after rank19 raw PASS.
 
 Rank20 provenance: prerequisite/raw-consumption commit `7d3666346b68d6a7a968b4a4803aeb64a5aaf30a`; stage commit `adc06426efed165ce98b9b3cda59b056423f8ef0`; workflow commit `17b54cbea09c9c246ef3d09dcf7bcea2331e42c8`; trigger/head commit `ce1122519bde0e8c56692ebeda7a854c9dc0a9c3`.
 
-Canonical run **`34041245929`** is **`in_progress`** on the Iteration-501 live check. Do not duplicate it. Raw authority audit and artifact consumption are required before any scientific PASS.
+Canonical run **`34041245929`** is **`in_progress`** on the Iteration-502 live check. Do not duplicate it. Raw authority audit and artifact consumption are required before any scientific PASS.
 
 If raw PASS, only the next explicit `UNTESTED` coordinate in the frozen Iteration-455 manifest becomes authorized. If BLOCKED, localize the first failing `z/phi/radial` sample without changing frozen dynamics, thresholds, support order, or precision conventions.
 
@@ -74,7 +76,7 @@ Core rule: **KG = minimal established/surviving physics core + minimal irreducib
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 501 closes an exact assembly-diagnostic subgate only and no additional stable-rubric model component. The architectural doctrine is also non-promoting.
+Readiness change: **0 percentage points**. Iteration 502 closes an additional exact assembly-diagnostic subgate only and no additional stable-rubric model component. The architectural doctrine is also non-promoting.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct q^2 variables are never summed. Same i0 is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Exact BASE/HALF coordinate overlap may share the local sampled precision certificate but never the derivative weight. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists. No blind heavy full-C5. Do not reopen the already-closed C5 null-soft e=3 sector. Old weighted-B3 proxy residues are not actual `Tr U1` authority. Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification. Future KG construction must preserve `KG_ARCHITECTURAL_PRINCIPLES.md`: no silent drift to “new physics only”, no mechanical union of comparator models, and no tuning of an independent novelty/holdout gate to force a PASS.
