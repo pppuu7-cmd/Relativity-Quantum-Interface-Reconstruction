@@ -14,10 +14,21 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest raw-valid physical blocker: Iteration 421 — `BLOCKED_CONVERGENCE`, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: `[2]`.
 - Latest completed numerical mass-support authority: **Iteration 486**, raw-consumed frozen Iteration-455 rank 13 `(u,v)=(+1e-5,-5e-6)`, multiplicity 1.
-- Latest authoritative research iteration: **Iteration 487**.
+- Latest authoritative research iteration: **Iteration 488**.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16; occurrence denominator `32 x 5 x 16 = 2560` rows.
 - Certified occurrence-weighted precision coverage: **`18/32 = 56.25%`**, i.e. **`1440/2560`** row occurrences pending rank14 raw-consume.
 - Frozen rank 10 `(+5e-6,+5e-6)`, multiplicity 2, was already `CERTIFIED` in the initial baseline and must not be relaunched.
+
+## Iteration 488 exact Fourier-symbol authority
+For frozen central4 coefficients `c=[1/12,-2/3,2/3,-1/12]` on nodes `[-2,-1,+1,+2]`, acting on `exp(i k x)` with `theta=k h`, the exact dimensionless symbol is
+
+`A(theta)=i sin(theta)(4-cos(theta))/3`,
+
+so `lambda_h=A(theta)/h` and `R(theta)=sin(theta)(4-cos(theta))/(3 theta)`. Because `4-cos(theta)>0` for real `theta`, all real zeros are inherited from `sin(theta)`. Hence there is no additional interior Fourier blind spot for `0<|theta|<pi`; within the Nyquist cell the only zeros are `theta=0` and `theta=±pi`.
+
+For the tensor mixed derivative, the exact BASE symbol is `D_h=A(theta_x)A(theta_y)/h^2`; for HALF step `h/2` at the same physical wave numbers it is `D_half=4 A(theta_x/2)A(theta_y/2)/h^2`.
+
+Classification: `PASS_CENTRAL4_FOURIER_SYMBOL_EXACT__NON_PROMOTING`. This is a future assembly sanity/provenance contract only. It does not promote index 2, identify a comparator residual, authorize Richardson, reorder support, or change any threshold. Implementation violation is `BLOCKED`, not Candidate-Gravity consistency FAIL.
 
 ## Iteration 487 exact two-level truncation authority
 For frozen one-dimensional central4 coefficients `c=[1/12,-2/3,2/3,-1/12]` on nodes `[-2,-1,+1,+2]`, exact moments through k=11 are `[0,1,0,0,0,-4,0,-20,0,-84,0,-340]`. The derivative expansion coefficients are therefore `a5=-1/30`, `a7=-1/252`, `a9=-1/4320`.
@@ -59,12 +70,12 @@ Frozen timelike `Tr U1^2` census: 57 physical channels = 6 simple-simple + 36 si
 Iteration 421 remains blocker authority: run `33871920373`, raw-valid `BLOCKED_CONVERGENCE`. Diagnostic index-2 value `~+0.0035843041850530683` is not authority. Frozen failures remain `max_stability_scaled=2.2720400683804223e-05 > 2e-05` and `max_required_fit_residual_scaled=2.585665489102237e-05 > 2e-05`. No zero fill.
 
 ## Frozen numerical/assembly contracts
-Iterations 436/437 close `N1/Q1`; 438 exact `A_finite`; 440 `Acoef/Asub`; 442 same-h representation/truncation; 445 Y-site; 446 post-parent contraction arithmetic; 447 localized the remaining Iteration-407 spectral/sample boundary. Iterations 449/450/453/456/459/461/463/466/468/470/473/475/480/484/486 progressively close direct-parent full-training-z mass support. Iteration 454 forbids unsupported `u<->v` deduplication. Iteration 455 freezes exact source order and coordinate states. Iteration 457 permits shared local precision certificates only for exact BASE/HALF coordinate overlaps while keeping derivative weights distinct. Iteration 485 makes that distinction quantitative: at every shared overlap the HALF mixed-derivative weight is exactly `1/16` of the BASE weight, with the same sign. Iteration 487 fixes the exact two-level central4 truncation mismatch structure and reinforces that two levels cannot identify a unique truncation power.
+Iterations 436/437 close `N1/Q1`; 438 exact `A_finite`; 440 `Acoef/Asub`; 442 same-h representation/truncation; 445 Y-site; 446 post-parent contraction arithmetic; 447 localized the remaining Iteration-407 spectral/sample boundary. Iterations 449/450/453/456/459/461/463/466/468/470/473/475/480/484/486 progressively close direct-parent full-training-z mass support. Iteration 454 forbids unsupported `u<->v` deduplication. Iteration 455 freezes exact source order and coordinate states. Iteration 457 permits shared local precision certificates only for exact BASE/HALF coordinate overlaps while keeping derivative weights distinct. Iteration 485 makes that distinction quantitative: at every shared overlap the HALF mixed-derivative weight is exactly `1/16` of the BASE weight, with the same sign. Iteration 487 fixes the exact two-level central4 truncation mismatch structure and reinforces that two levels cannot identify a unique truncation power. Iteration 488 fixes the exact Fourier symbol and no-interior-blind-spot sanity contract for the same frozen operator.
 
 After all 28 distinct support coordinates are locally certified, BASE and HALF central4 assemblies must be evaluated independently at MP80 and MP120. Retain `ds=-d_base`; no Richardson promotion. Require all finite, assembled scaled MP80↔MP120 discrepancy `<=2e-6`, retained BASE↔HALF mass-step discrepancy `<=2e-5`, plus retained provenance and conditioning contracts. Two-level truncation order is not identifiable and cannot authorize Richardson promotion.
 
-## Active gate — Iteration 487
-Rank13 raw-passed and was consumed in Iteration 486. The exact next frozen coordinate remains rank14 `(u,v)=(+1e-5,+5e-6)`, multiplicity 1. Canonical rank14 run **`34008118612`**, job **`101418951867`**, head SHA `1f0b876dc4178e4aaa4935c01455741dd81fd2c9`, is the sole authorized heavy gate and remains `in_progress`. It is not scientific PASS until its raw artifact is downloaded and fail-closed audited. If rank14 is BLOCKED, localize the first failing `z/phi/radial` sample without changing frozen thresholds. If and only if rank14 raw-passes, raw-consume it and advance only to the next UNTESTED coordinate from the frozen Iteration-455 manifest. Do not infer alternatives by symmetry and do not run blind remaining-grid sweeps.
+## Active gate — Iteration 488
+Rank13 raw-passed and was consumed in Iteration 486. The exact next frozen coordinate remains rank14 `(u,v)=(+1e-5,+5e-6)`, multiplicity 1. Canonical rank14 run **`34008118612`**, job **`101418951867`**, head SHA `1f0b876dc4178e4aaa4935c01455741dd81fd2c9`, is the sole authorized heavy gate and remains `in_progress` at the latest check. It is not scientific PASS until its raw artifact is downloaded and fail-closed audited. If rank14 is BLOCKED, localize the first failing `z/phi/radial` sample without changing frozen thresholds. If and only if rank14 raw-passes, raw-consume it and advance only to the next UNTESTED coordinate from the frozen Iteration-455 manifest. Do not infer alternatives by symmetry and do not run blind remaining-grid sweeps.
 
 ## Stable readiness rubric
 - comparator foundation `24/25`
@@ -76,7 +87,7 @@ Rank13 raw-passed and was consumed in Iteration 486. The exact next frozen coord
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 487 closes an exact estimator/truncation provenance subgate but no additional stable readiness-rubric component.
+Readiness change: **0 percentage points**. Iteration 488 closes an exact spectral estimator/provenance subgate but no additional stable readiness-rubric component.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct q^2 variables are never summed. Same i0 is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Local MP sample PASS never substitutes for assembled derivative MP closure. Large cancellation condition number is diagnostic only. Exact BASE/HALF coordinate overlap may share the local sampled precision certificate but never the derivative weight. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists. No blind heavy full-C5. Do not reopen the already-closed C5 null-soft e=3 sector. Old weighted-B3 proxy residues are not actual `Tr U1` authority. Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification.
