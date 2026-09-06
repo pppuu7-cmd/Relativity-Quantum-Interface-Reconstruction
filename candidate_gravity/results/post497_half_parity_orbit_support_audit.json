@@ -1,0 +1,76 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "PASS_PARITY_PROJECTION_REDUCES_FORM_NOT_REQUIRED_SUPPORT__NON_PROMOTING",
+  "exact_conclusion": {
+    "all_orbit_coefficients_nonzero": true,
+    "all_remaining_ranks_18_to_27_are_required_by_incomplete_orbits": true,
+    "complete_orbit_count": 1,
+    "remaining_required_ranks": [18,19,20,21,22,23,24,25,26,27],
+    "total_orbit_count": 4
+  },
+  "guardrails": [
+    "NO_PARITY_BASED_SUPPORT_SKIPPING",
+    "NO_ZERO_FILL",
+    "NO_UV_SWAP_DEDUPLICATION",
+    "NO_SUPPORT_REORDERING",
+    "NO_UNFROZEN_FIELD_SYMMETRY_ASSUMPTION",
+    "NO_THRESHOLD_CHANGE",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "interpretation": [
+    "Iteration-497 odd-odd parity projection reduces the 16-sample HALF assembly to four orbit differences, but every orbit coefficient is exactly nonzero: 4/9, -1/18, -1/18, 1/144 before the common 1/h^2 factor.",
+    "At the Iteration-497 support snapshot only the outer-outer |x|=2,|y|=2 orbit is complete, using the four exact BASE/HALF overlap ranks 5,6,9,10.",
+    "The outer-inner orbit is only half complete (ranks 16,17 certified; 26,27 missing), while the two inner-containing orbits remain incomplete.",
+    "Every remaining rank 18..27 appears in an incomplete orbit with nonzero coefficient. Therefore parity projection provides an exact assembly/checksum reduction but does not authorize skipping any remaining HALF support coordinate without an additional independently frozen field symmetry identity.",
+    "Frozen manifest order remains controlling; rank18 stays the sole active heavy gate and PASS would authorize only rank19 next."
+  ],
+  "iteration497_snapshot": {
+    "active_rank": 18,
+    "certified_distinct_ranks": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17],
+    "remaining_half_exclusive_ranks": [18,19,20,21,22,23,24,25,26,27]
+  },
+  "parity_orbits": [
+    {
+      "abs_node_pair": [1,1],
+      "certified_ranks": [],
+      "coefficient_nonzero": true,
+      "complete": false,
+      "distinct_ranks": [24,20,23,19],
+      "missing_ranks": [24,20,23,19],
+      "orbit_coefficient_before_h2": "4/9"
+    },
+    {
+      "abs_node_pair": [1,2],
+      "certified_ranks": [],
+      "coefficient_nonzero": true,
+      "complete": false,
+      "distinct_ranks": [25,21,22,18],
+      "missing_ranks": [25,21,22,18],
+      "orbit_coefficient_before_h2": "-1/18"
+    },
+    {
+      "abs_node_pair": [2,1],
+      "certified_ranks": [17,16],
+      "coefficient_nonzero": true,
+      "complete": false,
+      "distinct_ranks": [27,17,26,16],
+      "missing_ranks": [27,26],
+      "orbit_coefficient_before_h2": "-1/18"
+    },
+    {
+      "abs_node_pair": [2,2],
+      "certified_ranks": [10,6,9,5],
+      "coefficient_nonzero": true,
+      "complete": true,
+      "distinct_ranks": [10,6,9,5],
+      "missing_ranks": [],
+      "orbit_coefficient_before_h2": "1/144"
+    }
+  ],
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true,
+  "stage": "POST497_HALF_PARITY_ORBIT_SUPPORT_NOSKIP_AUDIT"
+}
