@@ -14,7 +14,7 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest raw-valid physical blocker: Iteration 421 — `BLOCKED_CONVERGENCE`, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: `[2]`.
 - Latest completed numerical mass-support authority: **Iteration 480**, raw-consumed frozen Iteration-455 rank 11 `(u,v)=(+5e-6,+1e-5)`, multiplicity 1.
-- Latest authoritative research iteration: **Iteration 482**.
+- Latest authoritative research iteration: **Iteration 483**.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16; occurrence denominator `32 x 5 x 16 = 2560` rows.
 - Certified occurrence-weighted precision coverage: **`16/32 = 50.000%`**, i.e. **`1280/2560`** row occurrences pending rank12 raw-consume.
 - Frozen rank 10 `(+5e-6,+5e-6)`, multiplicity 2, was already `CERTIFIED` in the initial baseline and must not be relaunched.
@@ -36,12 +36,23 @@ Ranks 12-15 are the final four BASE coordinates: `(+1e-5,-1e-5)`, `(+1e-5,-5e-6)
 
 This is queue/provenance closure only. It does not authorize early BASE assembly promotion; the retained rule still requires all 28 distinct local support coordinates before independent BASE/HALF MP80/120 assembled closure.
 
+## Iteration 483 stencil-sensitivity coverage audit
+For frozen central4×central4, total absolute stencil weight per assembly is exactly `9/4`. Mapping already raw-certified ranks `0..11` onto the frozen Iteration-455 stencil shows that BASE has certified absolute weight `17/8`, i.e. `17/18 = 94.444444...%` of BASE stencil-L1 sensitivity. The entire remaining BASE tail ranks `12..15` carries only `1/8 = 1/18` of BASE absolute weight.
+
+HALF is qualitatively different: its only currently certified entries are the four exact shared-corner coordinates (manifest ranks `5,6,9,10`), total HALF absolute weight `1/36`, i.e. only `1/81 = 1.2345679...%` of HALF stencil-L1 sensitivity. The HALF-exclusive peak-sensitivity manifest ranks `19,20,23,24` alone carry `16/9 = 64/81 = 79.012345...%` of HALF absolute stencil weight and remain untested.
+
+Therefore occurrence-weighted support coverage (`16/32 = 50.000%`) is a completion/provenance metric and is not a proxy for derivative-sensitivity coverage. This strengthens the requirement for complete local support followed by independent BASE/HALF assembled closure and forbids interpreting nominal 50% support as 50% derivative stress-testing. No source reorder is authorized despite the late concentration of HALF sensitivity.
+
+Classification: `PASS_OCCURRENCE_COVERAGE_DISTINCT_FROM_ASSEMBLY_SENSITIVITY_COVERAGE__NON_PROMOTING`.
+
 ## Retained physical authority and blocker
 Timelike `Tr U2` before `+i/2` weight: `q^2=-1 -> +0.0005345424186332474`; `q^2=-0.34 -> -0.000734101259784574`; `q^2=-0.14 -> -0.001572666890130343`.
 
 Frozen timelike `Tr U1^2` census: 57 physical channels = 6 simple-simple + 36 simple-double + 15 double-double, exactly 19 per q^2. Retained closures include Iteration 374 simple-simple 6/6, Iteration 393 simple-double 36/36, Iteration 399 index 5 / `q^2=-0.14 = +0.000119747535002548`, Iteration 409 index 4 / `q^2=-1 = +0.003562716046166582`, and Iteration 411 index 11 / `q^2=-0.34 = +0.013050543643260309`.
 
 Iteration 421 remains blocker authority: run `33871920373`, raw-valid `BLOCKED_CONVERGENCE`. Diagnostic index-2 value `~+0.0035843041850530683` is not authority. Frozen failures remain `max_stability_scaled=2.2720400683804223e-05 > 2e-05` and `max_required_fit_residual_scaled=2.585665489102237e-05 > 2e-05`. No zero fill.
+
+Post-482 scale localization shows these blocker residuals remain orders of magnitude above already-passed arithmetic/radial diagnostics; higher decimal precision alone is not established as a sufficient remedy. This is diagnostic localization only, not a new consistency FAIL.
 
 ## Frozen numerical/assembly contracts
 Iterations 436/437 close `N1/Q1`; 438 exact `A_finite`; 440 `Acoef/Asub`; 442 same-h representation/truncation; 445 Y-site; 446 post-parent contraction arithmetic; 447 localized the remaining Iteration-407 spectral/sample boundary. Iterations 449/450/453/456/459/461/463/466/468/470/473/475/480 progressively close direct-parent full-training-z mass support. Iteration 454 forbids unsupported `u<->v` deduplication. Iteration 455 freezes exact source order and coordinate states. Iteration 457 permits shared local precision certificates only for exact BASE/HALF coordinate overlaps while keeping derivative weights distinct.
@@ -61,7 +72,7 @@ Raw-consume canonical rank12 run `33997856739`, job `101391409387`, fail-closed.
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 482 closes the exact tail multiplicity/order ambiguity but no additional stable readiness-rubric component.
+Readiness change: **0 percentage points**. Iteration 483 closes a diagnostic distinction between occurrence completion and derivative sensitivity, but no additional stable readiness-rubric component.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct q^2 variables are never summed. Same i0 is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Local MP sample PASS never substitutes for assembled derivative MP closure. Large cancellation condition number is diagnostic only. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists. No blind heavy full-C5. Do not reopen the already-closed C5 null-soft e=3 sector. Old weighted-B3 proxy residues are not actual `Tr U1` authority. Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification.
