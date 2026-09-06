@@ -1,0 +1,24 @@
+{
+  "schema": "rqir_raw_consumption_v1",
+  "iteration": 486,
+  "date": "2026-09-06",
+  "classification": "PASS_RAW_CONSUMED_MANIFEST_RANK13_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "canonical_provenance": {
+    "run_id": 34003038811,
+    "job_id": 101405200967,
+    "artifact_id": 9981274527,
+    "artifact_digest": "sha256:020b0bcc7f5dc9addb305d999996c60dce3b39755df0d33ab621567e82eb7e6a",
+    "scientific_json_sha256": "a4dda8d7e6ec15a40f09bc8d996850a5d13eba078ed6f14fb91aebdcba9ff2f1",
+    "head_sha": "3eb81dee858b86e825939b9fabac65b57f8a1ee5"
+  },
+  "target": {"manifest_rank":13,"u":0.00001,"v":-0.000005,"source_occurrence_multiplicity":1,"double_double_index":2,"class_id":3,"q_squared":-1.0},
+  "observed": {"sample_count":80,"all_finite":true,"scaled_mp80_vs_mp120_max":"2.73638650835045783979016930046e-80","max_radial_richardson_scaled_error":"2.57164812525073028434007436334e-15"},
+  "thresholds": {"scaled_mp80_vs_mp120_max":"1e-30","radial_richardson_scaled_max":"5e-4","required_sample_count":80,"all_finite":true},
+  "coverage_after_pass": {"certified_occurrences":18,"total_occurrences":32,"fraction":"18/32","percent":56.25,"certified_row_occurrences":1440,"total_row_occurrences":2560},
+  "next_gate": {"manifest_rank":14,"u":0.00001,"v":0.000005,"source_occurrence_multiplicity":1},
+  "guardrails": ["RAW_ARTIFACT_VALIDATED_NOT_WORKFLOW_COLOR","NON_PROMOTING_LOCAL_SUPPORT_ONLY","NO_THRESHOLD_WEAKENING","NO_ZERO_FILL","NO_UV_SYMMETRY_SUBSTITUTION","NO_ANSATZ003","NO_FISHER_RESOURCES"]
+}
