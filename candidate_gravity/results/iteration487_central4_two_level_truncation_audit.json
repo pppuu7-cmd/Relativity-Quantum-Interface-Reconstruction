@@ -1,0 +1,20 @@
+{
+  "classification": "PASS_CENTRAL4_TWO_LEVEL_TRUNCATION_MISMATCH_EXACT__NON_PROMOTING",
+  "nodes": [-2, -1, 1, 2],
+  "coefficients": ["1/12", "-2/3", "2/3", "-1/12"],
+  "moments_k0_to_k11": {
+    "0": "0", "1": "1", "2": "0", "3": "0", "4": "0", "5": "-4",
+    "6": "0", "7": "-20", "8": "0", "9": "-84", "10": "0", "11": "-340"
+  },
+  "one_dimensional_taylor_coefficients": {
+    "1": "1", "5": "-1/30", "7": "-1/252", "9": "-1/4320", "11": "-17/1995840"
+  },
+  "base_minus_half_coefficients_through_h8": {
+    "h4_single": "-1/32",
+    "h6_single": "-1/256",
+    "h8_single": "-17/73728",
+    "h8_cross": "17/15360"
+  },
+  "leading_identity": "D_h-D_h/2 = -(h^4/32)(f_51+f_15) -(h^6/256)(f_71+f_17) + h^8[-17/73728(f_91+f_19)+17/15360 f_55] + O(h^10)",
+  "scope": "exact estimator/truncation provenance only; no physics promotion; two levels do not identify truncation order or authorize Richardson"
+}
