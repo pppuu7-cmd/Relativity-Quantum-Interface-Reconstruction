@@ -1,0 +1,127 @@
+name: RQIR post483 live certified artifact sweep
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-post483-live-certified-artifact-sweep.yml'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  live_sweep:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Live-check certified raw artifact metadata and ZIP digests
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p candidate_gravity/artifacts/post483_live_certified_artifact_sweep /tmp/rqir_live_sweep
+          python - <<'PY'
+          import json,re,pathlib,subprocess,hashlib,urllib.request,os
+          RES=pathlib.Path('candidate_gravity/results')
+          man=json.loads((RES/'iteration455_mass_support_queue_manifest.json').read_text())['manifest']
+          coord_to_rank={(round(float(x['u']),15),round(float(x['v']),15)):int(x['distinct_rank']) for x in man}
+          candidates={}
+
+          def add(rank,run,job,aid,name,digest,sci,path,note='canonical-result-scan'):
+            if not all(isinstance(x,int) for x in (rank,run,job,aid)): return
+            if not isinstance(name,str) or not isinstance(digest,str) or not isinstance(sci,str): return
+            rec={'rank':rank,'run_id':run,'job_id':job,'artifact_id':aid,'artifact_name':name,'recorded_digest':digest,'scientific_json_sha256':sci,'source_path':path,'note':note}
+            candidates.setdefault(rank,[]).append(rec)
+
+          for p in sorted(RES.glob('*.json')):
+            try:o=json.loads(p.read_text())
+            except Exception: continue
+            if not isinstance(o,dict) or o.get('scientific_gate_pass') is not True: continue
+            fc=o.get('frozen_coordinate')
+            if isinstance(fc,dict) and 'u' in fc and 'v' in fc:
+              rank=fc.get('distinct_rank')
+              if not isinstance(rank,int): rank=coord_to_rank.get((round(float(fc['u']),15),round(float(fc['v']),15)))
+              add(rank,o.get('source_run_id',o.get('run_id')),o.get('source_job_id',o.get('job_id')),o.get('artifact_id',o.get('source_artifact_id')),o.get('artifact_name',o.get('source_artifact_name')),o.get('artifact_digest',o.get('source_artifact_digest')),o.get('scientific_json_sha256'),str(p))
+            if p.name=='post479_rank11_raw_consumption.json':
+              s=o.get('source',{}); t=o.get('target',{})
+              add(11,s.get('run_id'),s.get('job_id'),s.get('artifact_id'),s.get('artifact_name'),s.get('artifact_digest'),s.get('scientific_json_sha256'),str(p),'rank11-source-object')
+
+          # Composite rank10 is explicitly two raw artifacts. Apply only the frozen
+          # correction overlay to part2; do not rewrite historical files.
+          add(10,33928248369,101201330811,9958661360,'rqir-post447-class3-phi-sample-mp-stage','sha256:16d70f63275c451c15cb13243240612dcdc2fc09f598fe08194b1b91c2ecd3c8','d7a148b1f55364145612e3c032aaa13a24634b87bad965a9f40a4d1db2b478bb','explicit-rank10-composite','rank10-part1')
+          add(10,33932061794,101212520875,9959560285,'rqir-post449-same-corner-remaining-z-mp','sha256:ac18e784e54414c89e08830d917679ffe0403028abc5ecf6e4e2cdd289158909','2467e807b8b5f1c8a93a83a1e5be2107d2c5ae3d8747bb2f5f586b16501d1c03','post482_rank10_part2_provenance_correction.json','rank10-part2-corrected')
+
+          rows=[]; missing=[]; ambiguous=[]; mismatches=[]
+          for rank in range(12):
+            cs=candidates.get(rank,[])
+            # Dedupe exact artifact IDs; prefer corrected explicit record for 9959560285.
+            byid={}
+            for r in cs:
+              old=byid.get(r['artifact_id'])
+              if old is None or r['note']=='rank10-part2-corrected': byid[r['artifact_id']]=r
+            rs=list(byid.values())
+            if rank==10:
+              expected_ids={9958661360,9959560285}
+              rs=[r for r in rs if r['artifact_id'] in expected_ids]
+              if {r['artifact_id'] for r in rs}!=expected_ids: missing.append(rank)
+            elif len(rs)==0:
+              missing.append(rank); continue
+            elif len(rs)>1:
+              # Multiple historical wrappers/sources for a non-composite rank are
+              # fail-closed unless they collapse to one artifact ID above.
+              ambiguous.append({'rank':rank,'artifact_ids':[r['artifact_id'] for r in rs]}); continue
+            for r in rs:
+              meta=json.loads(subprocess.check_output(['gh','api',f"repos/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction/actions/artifacts/{r['artifact_id']}"],text=True))
+              zip_path=pathlib.Path('/tmp/rqir_live_sweep')/f"{r['artifact_id']}.zip"
+              subprocess.check_call(['curl','-fsSL','-H',f"Authorization: Bearer {os.environ['GH_TOKEN']}",'-H','Accept: application/vnd.github+json',f"https://api.github.com/repos/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction/actions/artifacts/{r['artifact_id']}/zip",'-o',str(zip_path)])
+              zip_sha='sha256:'+hashlib.sha256(zip_path.read_bytes()).hexdigest()
+              meta_digest=meta.get('digest')
+              ok=bool(meta.get('expired') is False and meta.get('name')==r['artifact_name'] and meta.get('workflow_run',{}).get('id')==r['run_id'] and meta_digest==zip_sha and meta_digest==r['recorded_digest'])
+              row={**r,'metadata_digest':meta_digest,'rest_zip_sha256':zip_sha,'expired':meta.get('expired'),'metadata_name':meta.get('name'),'metadata_run_id':meta.get('workflow_run',{}).get('id'),'live_binding_pass':ok}
+              rows.append(row)
+              if not ok: mismatches.append(row)
+
+          complete_ranks=sorted(set(r['rank'] for r in rows if r['live_binding_pass']))
+          pass_all=(not missing and not ambiguous and not mismatches and complete_ranks==list(range(12)))
+          out={
+            'stage':'POST483_LIVE_CERTIFIED_MASS_SUPPORT_ARTIFACT_SWEEP__NON_PROMOTING',
+            'classification':('PASS_ALL_CERTIFIED_RANK0_11_LIVE_METADATA_AND_ZIP_BINDINGS__NON_PROMOTING' if pass_all else 'BLOCKED_CERTIFIED_ARTIFACT_LIVE_PROVENANCE_SWEEP__NON_PROMOTING'),
+            'scientific_gate_pass':pass_all,'promotes_physical_coordinate':False,'MODEL_READINESS':'24%','readiness_change_pp':0,
+            'scope':{'certified_ranks':'0..11','rank10_composite_parts':2,'live_checks':['artifact_not_expired','artifact_name','workflow_run_id','github_metadata_digest','independent_REST_ZIP_SHA256','recorded_or_corrected_digest']},
+            'complete_live_bound_ranks':complete_ranks,'missing_ranks':missing,'ambiguous':ambiguous,'mismatch_count':len(mismatches),'rows':rows,
+            'interpretation':['This is provenance-only and does not re-evaluate any scientific result payload.','Rank10 part2 uses the frozen post482 correction overlay; historical payload files remain unchanged.','A PASS makes live metadata/ZIP artifact bindings suitable as provenance inputs for later assembly, but full-F assembly remains blocked until all 28 distinct coordinates are locally certified.'],
+            'guardrails':['PROVENANCE_ONLY','NO_RESULT_PAYLOAD_REWRITE','NO_FUV_EVALUATION','NO_SUPPORT_REORDERING','NO_THRESHOLD_CHANGE','NO_PHYSICAL_DS_PROMOTION','NO_ANSATZ003','NO_FISHER_RESOURCES']}
+          p=pathlib.Path('candidate_gravity/artifacts/post483_live_certified_artifact_sweep/result.json'); p.write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps({k:v for k,v in out.items() if k!='rows'},indent=2,sort_keys=True))
+          PY
+
+      - name: Upload live sweep
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-post483-live-certified-artifact-sweep
+          path: candidate_gravity/artifacts/post483_live_certified_artifact_sweep/
+          retention-days: 90
+
+      - name: Commit live sweep result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s candidate_gravity/artifacts/post483_live_certified_artifact_sweep/result.json
+          cp candidate_gravity/artifacts/post483_live_certified_artifact_sweep/result.json candidate_gravity/results/post483_live_certified_artifact_sweep.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add candidate_gravity/results/post483_live_certified_artifact_sweep.json
+          git commit -m 'RQIR post483: record live certified artifact sweep'
+          git pull --rebase origin main
+          git push origin HEAD:main
