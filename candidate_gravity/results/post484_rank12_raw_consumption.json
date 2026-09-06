@@ -1,0 +1,68 @@
+{
+  "schema": "rqir_raw_consumption_v1",
+  "iteration": 484,
+  "date": "2026-09-06",
+  "classification": "PASS_RAW_CONSUMED_MANIFEST_RANK12_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "canonical_provenance": {
+    "run_id": 33997856739,
+    "job_id": 101391409387,
+    "artifact_id": 9979716360,
+    "artifact_digest": "sha256:ade9b2fbdb7f5ef623dc63c8d757db356c7426f20b6ac2ae5f09528884ce7112",
+    "scientific_json_sha256": "a7512548da32e8a5545241d179532dc8b92aec69e5e91d4e4cd40429e83fc8e1",
+    "head_sha": "54f9fee0fea91256b5c0d1a2297aae80b1dad6e3"
+  },
+  "target": {
+    "manifest_rank": 12,
+    "u": 0.00001,
+    "v": -0.00001,
+    "source_occurrence_multiplicity": 1,
+    "double_double_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0
+  },
+  "frozen": {
+    "z_samples": [-0.86, -0.43, 0.0, 0.43, 0.86],
+    "phi_nodes": 16,
+    "radial_hs": [0.002, 0.001, 0.0005],
+    "precision_digits": [80, 120]
+  },
+  "observed": {
+    "sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "2.07719600745524401993175741985e-80",
+    "max_radial_richardson_scaled_error": "2.56858312184114196282042364589e-15"
+  },
+  "thresholds": {
+    "scaled_mp80_vs_mp120_max": "1e-30",
+    "radial_richardson_scaled_max": "5e-4",
+    "required_sample_count": 80,
+    "all_finite": true
+  },
+  "coverage_after_pass": {
+    "certified_occurrences": 17,
+    "total_occurrences": 32,
+    "fraction": "17/32",
+    "percent": 53.125,
+    "certified_row_occurrences": 1360,
+    "total_row_occurrences": 2560
+  },
+  "next_gate": {
+    "manifest_rank": 13,
+    "u": 0.00001,
+    "v": -0.000005,
+    "source_occurrence_multiplicity": 1
+  },
+  "guardrails": [
+    "RAW_ARTIFACT_VALIDATED_NOT_WORKFLOW_COLOR",
+    "NON_PROMOTING_LOCAL_SUPPORT_ONLY",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_ZERO_FILL",
+    "NO_UV_SYMMETRY_SUBSTITUTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
