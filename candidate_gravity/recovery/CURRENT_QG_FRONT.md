@@ -37,7 +37,7 @@ The frozen Iteration-455 distinct u-major/v-major support manifest directly iden
 
 Reproducible stage: `candidate_gravity/code/post503_manifest_rank21_full_z_mp_stage.py`. Workflow: `.github/workflows/rqir-post503-manifest-rank21-full-z-mp.yml`. Trigger/head commit: `b4f0bef2a3a55ea2186f3508aacf336e98292320`.
 
-Canonical run **`34048058915`** was **`queued`** on the first Iteration-503 live check. Do not duplicate it. Raw authority audit and artifact consumption are required before any scientific PASS.
+Canonical run **`34048058915`**, job **`101526571416`**, is **`in_progress`** on the latest Iteration-503 live check; the scientific stage itself is running. Do not duplicate it. Raw authority audit and artifact consumption are required before any scientific PASS.
 
 If raw PASS, only frozen manifest rank22 `(u,v)=(+2.5e-6,-5e-6)`, HALF local index 8, multiplicity 1, becomes authorized. If BLOCKED, localize the first failing `z/phi/radial` sample without changing frozen dynamics, thresholds, support order, or precision conventions.
 
