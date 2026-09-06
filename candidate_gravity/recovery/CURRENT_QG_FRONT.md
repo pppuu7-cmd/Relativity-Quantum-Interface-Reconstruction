@@ -58,6 +58,12 @@ Canonical run **`34041245929`** is **`in_progress`** on the Iteration-501 live c
 
 If raw PASS, only the next explicit `UNTESTED` coordinate in the frozen Iteration-455 manifest becomes authorized. If BLOCKED, localize the first failing `z/phi/radial` sample without changing frozen dynamics, thresholds, support order, or precision conventions.
 
+## Frozen Candidate Gravity design doctrine
+
+`candidate_gravity/recovery/KG_ARCHITECTURAL_PRINCIPLES.md` is now a frozen recovery-level design doctrine for all future KG construction.
+
+Core rule: **KG = minimal established/surviving physics core + minimal irreducible comparator-subtracted novel sector**, not “new physics only” and not a concatenation of all surviving models. RQIR may use lessons from existing models to constrain the admissible KG design space, but the final novelty result must not be fitted into existence. Training/design, validation, and independent holdout logic must remain distinguishable. A comparator-identical residual receives novelty failure, not promotion. This doctrine is architectural and non-promoting; it does not alter the current numerical gate, physical authority, thresholds, or readiness.
+
 ## Stable readiness rubric
 - comparator foundation `24/25`
 - robust unique residual `0/20`
@@ -68,7 +74,7 @@ If raw PASS, only the next explicit `UNTESTED` coordinate in the frozen Iteratio
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 501 closes an exact assembly-diagnostic subgate only and no additional stable-rubric model component.
+Readiness change: **0 percentage points**. Iteration 501 closes an exact assembly-diagnostic subgate only and no additional stable-rubric model component. The architectural doctrine is also non-promoting.
 
 ## Retained guardrails
-Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct q^2 variables are never summed. Same i0 is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Exact BASE/HALF coordinate overlap may share the local sampled precision certificate but never the derivative weight. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists. No blind heavy full-C5. Do not reopen the already-closed C5 null-soft e=3 sector. Old weighted-B3 proxy residues are not actual `Tr U1` authority. Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification.
+Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct q^2 variables are never summed. Same i0 is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Exact BASE/HALF coordinate overlap may share the local sampled precision certificate but never the derivative weight. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists. No blind heavy full-C5. Do not reopen the already-closed C5 null-soft e=3 sector. Old weighted-B3 proxy residues are not actual `Tr U1` authority. Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification. Future KG construction must preserve `KG_ARCHITECTURAL_PRINCIPLES.md`: no silent drift to “new physics only”, no mechanical union of comparator models, and no tuning of an independent novelty/holdout gate to force a PASS.
