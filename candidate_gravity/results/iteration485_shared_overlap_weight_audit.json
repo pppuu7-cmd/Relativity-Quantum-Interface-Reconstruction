@@ -1,0 +1,33 @@
+{
+  "iteration": 485,
+  "classification": "PASS_SHARED_BASE_HALF_CERTIFICATE_WEIGHT_RATIO_EXACT__NON_PROMOTING",
+  "identity": "For each exact BASE/HALF shared coordinate, w_HALF = w_BASE / 16 for the frozen central4 mixed derivative.",
+  "derivation": {
+    "central4_coefficients": ["1/12", "-2/3", "2/3", "-1/12"],
+    "h_half_over_h_base": "1/2",
+    "base_shared_node_coeff_magnitude": "2/3",
+    "half_shared_node_coeff_magnitude": "1/12",
+    "coefficient_product_ratio_half_over_base": "1/64",
+    "inverse_h2_ratio_half_over_base": "4",
+    "net_weight_ratio_half_over_base": "1/16"
+  },
+  "shared_coordinates_count": 4,
+  "shared_coordinates": [
+    {"coordinate_signs":"(-,-)","base_weight_scaled":"4/9","half_weight_scaled":"1/36","half_over_base":"1/16","same_sign":true},
+    {"coordinate_signs":"(-,+)","base_weight_scaled":"-4/9","half_weight_scaled":"-1/36","half_over_base":"1/16","same_sign":true},
+    {"coordinate_signs":"(+,-)","base_weight_scaled":"-4/9","half_weight_scaled":"-1/36","half_over_base":"1/16","same_sign":true},
+    {"coordinate_signs":"(+,+)","base_weight_scaled":"4/9","half_weight_scaled":"1/36","half_over_base":"1/16","same_sign":true}
+  ],
+  "interpretation": "Iteration 457 permits reuse of a local precision certificate at exact BASE/HALF coordinate overlaps, but not reuse of the derivative contribution. The frozen mixed-derivative weights differ exactly by a factor 16, with preserved sign. Assembly must therefore multiply the same certified F(u,v) by level-specific weights.",
+  "guardrails": [
+    "PRECISION_CERTIFICATE_MAY_BE_SHARED_ONLY_AT_EXACT_COORDINATE_OVERLAP",
+    "DERIVATIVE_CONTRIBUTION_WEIGHT_MUST_NOT_BE_SHARED",
+    "NO_SOURCE_REORDER",
+    "NO_THRESHOLD_CHANGE",
+    "NO_PHYSICAL_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0
+}
