@@ -1,0 +1,31 @@
+{
+  "iteration": 510,
+  "classification": "PASS_BASE_HALF_ASSEMBLY_LINEAR_INDEPENDENCE_EXACT__NON_PROMOTING",
+  "scope": "exact frozen central4 assembly/provenance only",
+  "coordinate_count": 28,
+  "base_source_occurrences": 16,
+  "half_source_occurrences": 16,
+  "overlap_coordinates": 4,
+  "rank_base_half": 2,
+  "rank_base_half_delta": 2,
+  "nullity_base_half_on_union": 26,
+  "exact_relation": "W_DELTA = W_BASE - W_HALF",
+  "gram_matrix": [
+    ["4225/5184", "4/81"],
+    ["4/81", "4225/324"]
+  ],
+  "gram_determinant": "5948843/559872",
+  "independence_witness": {
+    "base_only_nonzero_count": 12,
+    "half_only_nonzero_count": 12
+  },
+  "guardrail": "BASE, HALF, and BASE-HALF discrepancy must not be counted as three independent assembled observables/constraints; delta is a derived diagnostic from the same two linear functionals.",
+  "nonclaims": [
+    "not Candidate-Gravity consistency PASS or FAIL",
+    "not physical promotion of unresolved index 2",
+    "not comparator identity or novelty certificate",
+    "not identifiability/Fisher authority",
+    "does not authorize ANSATZ-003 or Fisher/resources"
+  ],
+  "model_readiness_percent": 24
+}
