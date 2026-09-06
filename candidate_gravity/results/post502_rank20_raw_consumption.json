@@ -1,0 +1,64 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "PASS_RAW_CONSUMED_MANIFEST_RANK20_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "iteration": 503,
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "target": {
+    "manifest_rank": 20,
+    "u": -2.5e-06,
+    "v": 2.5e-06,
+    "source_occurrence_multiplicity": 1,
+    "double_double_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0
+  },
+  "canonical_action": {
+    "run_id": 34041245929,
+    "job_id": 101508280675,
+    "artifact_id": 9993124996,
+    "head_sha": "ce1122519bde0e8c56692ebeda7a854c9dc0a9c3",
+    "artifact_digest": "sha256:c657bd01dbfff21b4bb37c6cfccaadc421cc68a2d6d397da7cdbd254e7e7f02f",
+    "scientific_json_sha256": "5bd5af97df1524997ab52a10a58cc4842b65c49091325ba1b57aba6e3d253f1a",
+    "authority_audit_sha256": "a38d1260678c07a1c180916a081e86b8bbcc2a2f7fe28713f6dcd3029f09178a"
+  },
+  "observed": {
+    "sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "3.02217788257280141868089115421e-80",
+    "max_radial_richardson_scaled_error": "2.56742621216093884196200081234e-15"
+  },
+  "thresholds": {
+    "required_sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "1e-30",
+    "radial_richardson_scaled_max": 0.0005
+  },
+  "coverage_after_pass": {
+    "certified_occurrence_weight": 25,
+    "total_occurrence_weight": 32,
+    "fraction": "25/32",
+    "percent": "78.125%",
+    "certified_rows": 2000,
+    "total_rows": 2560
+  },
+  "next_manifest_coordinate": {
+    "manifest_rank": 21,
+    "u": -2.5e-06,
+    "v": 5e-06,
+    "source_occurrence_multiplicity": 1,
+    "source_level": "HALF",
+    "source_local_index": 7
+  },
+  "scope": "LOCAL_NUMERICAL_PRECISION_AND_PROVENANCE_ONLY",
+  "guardrails": [
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ASSEMBLED_BASE_HALF_PROMOTION",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_ZERO_FILL",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES",
+    "ITERATION455_MANIFEST_ORDER_ONLY"
+  ]
+}
