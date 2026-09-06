@@ -10,7 +10,7 @@ nodes = [-2, -1, 1, 2]
 c = [Fraction(1, 12), Fraction(-2, 3), Fraction(2, 3), Fraction(-1, 12)]
 
 moments = {
-    k: sum(ci * Fraction(n) ** k for ci, n in zip(c, nodes))
+    k: sum((ci * Fraction(n) ** k for ci, n in zip(c, nodes)), Fraction(0))
     for k in range(5)
 }
 expected = {0: Fraction(0), 1: Fraction(1), 2: Fraction(0), 3: Fraction(0), 4: Fraction(0)}
@@ -26,7 +26,7 @@ for (a, b), value in tensor.items():
 # polynomial assumption.
 weights = [[ci * cj for cj in c] for ci in c]
 row_sums = [sum(row, Fraction(0)) for row in weights]
-col_sums = [sum(weights[i][j] for i in range(4), Fraction(0)) for j in range(4)]
+col_sums = [sum((weights[i][j] for i in range(4)), Fraction(0)) for j in range(4)]
 assert all(x == 0 for x in row_sums)
 assert all(x == 0 for x in col_sums)
 
