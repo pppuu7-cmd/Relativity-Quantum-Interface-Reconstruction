@@ -1,0 +1,62 @@
+{
+  "schema": "rqir.candidate_gravity.rank23_successor_suffix_preregistration.v1",
+  "iteration": 507,
+  "classification": "PASS_RANK23_SUCCESSOR_AND_RANK22_27_SUFFIX_PREREGISTERED_EXACT__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "scope": "MANIFEST_ORDER_AND_COVERAGE_ARITHMETIC_ONLY",
+  "checks": {
+    "frozen_manifest_iteration_455": true,
+    "frozen_manifest_28_distinct": true,
+    "frozen_manifest_32_occurrences": true,
+    "rank21_raw_authority_exact": true,
+    "rank21_coverage_exact_26_of_32": true,
+    "rank21_points_exactly_to_rank22": true,
+    "rank21_rank22_coordinate_exact": true,
+    "suffix_ranks_22_through_27_exact": true,
+    "suffix_all_multiplicity_one": true,
+    "rank23_is_strict_successor_of_rank22": true
+  },
+  "active_heavy_gate_unchanged": {
+    "manifest_rank": 22,
+    "u": 2.5e-06,
+    "v": -5e-06,
+    "source_level": "HALF",
+    "source_local_index": 8
+  },
+  "next_only_if_rank22_raw_valid_pass": {
+    "manifest_rank": 23,
+    "u": 2.5e-06,
+    "v": -2.5e-06,
+    "source_occurrence_multiplicity": 1,
+    "source_level": "HALF",
+    "source_local_index": 9
+  },
+  "frozen_suffix": [
+    {"manifest_rank": 22, "u": 2.5e-06, "v": -5e-06, "source_occurrence_multiplicity": 1, "source_level": "HALF", "source_local_index": 8},
+    {"manifest_rank": 23, "u": 2.5e-06, "v": -2.5e-06, "source_occurrence_multiplicity": 1, "source_level": "HALF", "source_local_index": 9},
+    {"manifest_rank": 24, "u": 2.5e-06, "v": 2.5e-06, "source_occurrence_multiplicity": 1, "source_level": "HALF", "source_local_index": 10},
+    {"manifest_rank": 25, "u": 2.5e-06, "v": 5e-06, "source_occurrence_multiplicity": 1, "source_level": "HALF", "source_local_index": 11},
+    {"manifest_rank": 26, "u": 5e-06, "v": -2.5e-06, "source_occurrence_multiplicity": 1, "source_level": "HALF", "source_local_index": 13},
+    {"manifest_rank": 27, "u": 5e-06, "v": 2.5e-06, "source_occurrence_multiplicity": 1, "source_level": "HALF", "source_local_index": 14}
+  ],
+  "coverage_forecast_conditional_on_sequential_raw_valid_pass": [
+    {"after_raw_valid_pass_of_rank": 22, "certified_occurrence_weight": 27, "total_occurrence_weight": 32, "fraction": "27/32", "percent": "84.375%", "certified_rows": 2160, "total_rows": 2560},
+    {"after_raw_valid_pass_of_rank": 23, "certified_occurrence_weight": 28, "total_occurrence_weight": 32, "fraction": "28/32", "percent": "87.500%", "certified_rows": 2240, "total_rows": 2560},
+    {"after_raw_valid_pass_of_rank": 24, "certified_occurrence_weight": 29, "total_occurrence_weight": 32, "fraction": "29/32", "percent": "90.625%", "certified_rows": 2320, "total_rows": 2560},
+    {"after_raw_valid_pass_of_rank": 25, "certified_occurrence_weight": 30, "total_occurrence_weight": 32, "fraction": "30/32", "percent": "93.750%", "certified_rows": 2400, "total_rows": 2560},
+    {"after_raw_valid_pass_of_rank": 26, "certified_occurrence_weight": 31, "total_occurrence_weight": 32, "fraction": "31/32", "percent": "96.875%", "certified_rows": 2480, "total_rows": 2560},
+    {"after_raw_valid_pass_of_rank": 27, "certified_occurrence_weight": 32, "total_occurrence_weight": 32, "fraction": "32/32", "percent": "100.000%", "certified_rows": 2560, "total_rows": 2560}
+  ],
+  "explicit_nonclaims": [
+    "NOT_A_RANK22_NUMERICAL_RESULT",
+    "NOT_A_PHYSICAL_DS_PROMOTION",
+    "NOT_AN_ASSEMBLED_BASE_HALF_PROMOTION",
+    "NOT_A_CANDIDATE_GRAVITY_CONSISTENCY_PASS_OR_FAIL",
+    "NOT_A_COMPARATOR_OR_NOVELTY_CERTIFICATE",
+    "NO_THRESHOLD_CHANGE",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0
+}
