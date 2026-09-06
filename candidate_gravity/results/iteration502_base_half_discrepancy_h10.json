@@ -1,0 +1,17 @@
+{
+  "classification": "PASS_BASE_HALF_DISCREPANCY_H10_EXACT__NON_PROMOTING",
+  "frozen_operator": "mixed central4 BASE versus HALF smooth-field asymptotic discrepancy",
+  "one_d": {
+    "M11": "-17/126",
+    "h10_coefficient": "-17/1995840"
+  },
+  "mixed_h10": {
+    "pure_before_base_minus_half": "-17/1995840",
+    "cross_before_base_minus_half": "1/7560",
+    "base_minus_half_factor": "1023/1024",
+    "pure_discrepancy": "-527/61931520",
+    "cross_discrepancy": "341/2580480"
+  },
+  "statement": "At total h^10, D_BASE-D_HALF contributes h^10[-527/61931520 Spure10 + 341/2580480 Scross10], where Spure10=d_x^11 d_y+d_x d_y^11 and Scross10=d_x^7 d_y^5+d_x^5 d_y^7.",
+  "scope": "exact rational smooth-field asymptotic estimator/provenance authority only; no exact mode-independent Richardson identity, no threshold change, no physical promotion"
+}
