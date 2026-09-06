@@ -1,0 +1,34 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "BLOCKED_HISTORICAL_ARTIFACT_DIGEST_STALE_OR_INCORRECT__CURRENT_METADATA_AND_ZIP_AGREE",
+  "digests": {
+    "authority_audit_json_sha256": "1b6c027b4e3bd4ce9f7e5e49e18febd6ce4ad8ca3b91e6eebddc9eb50cd459b4",
+    "github_metadata_digest": "sha256:ac18e784e54414c89e08830d917679ffe0403028abc5ecf6e4e2cdd289158909",
+    "historical_recorded_artifact_digest": "sha256:84509a60d16e660e52c7873261694249e1167f1d95d6a34bd5e91e4026199c54",
+    "historical_scientific_json_sha256": "2467e807b8b5f1c8a93a83a1e5be2107d2c5ae3d8747bb2f5f586b16501d1c03",
+    "rest_downloaded_zip_sha256": "sha256:ac18e784e54414c89e08830d917679ffe0403028abc5ecf6e4e2cdd289158909",
+    "result_json_sha256": "2467e807b8b5f1c8a93a83a1e5be2107d2c5ae3d8747bb2f5f586b16501d1c03"
+  },
+  "guardrails": [
+    "PROVENANCE_ONLY",
+    "NO_FUV_EVALUATION",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_THRESHOLD_CHANGE",
+    "NO_SUPPORT_REORDERING"
+  ],
+  "matches": {
+    "historical_artifact_equals_metadata": false,
+    "historical_artifact_equals_rest_zip": false,
+    "historical_scientific_json_equals_result_json": true,
+    "metadata_equals_rest_zip": true
+  },
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true,
+  "source": {
+    "artifact_id": 9959560285,
+    "artifact_name": "rqir-post449-same-corner-remaining-z-mp",
+    "run_id": 33932061794
+  },
+  "stage": "POST482_RANK10_PART2_DIGEST_SEMANTICS__PROVENANCE_ONLY"
+}
