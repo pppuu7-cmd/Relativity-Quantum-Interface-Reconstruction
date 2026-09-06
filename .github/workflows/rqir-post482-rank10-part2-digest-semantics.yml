@@ -1,0 +1,122 @@
+name: RQIR post482 rank10-part2 digest semantics
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-post482-rank10-part2-digest-semantics.yml'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  digest_semantics:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN_ID: '33932061794'
+      SOURCE_ARTIFACT_ID: '9959560285'
+      SOURCE_ARTIFACT_NAME: 'rqir-post449-same-corner-remaining-z-mp'
+      HISTORICAL_RECORDED_DIGEST: 'sha256:84509a60d16e660e52c7873261694249e1167f1d95d6a34bd5e91e4026199c54'
+      HISTORICAL_SCIENTIFIC_JSON_SHA256: '2467e807b8b5f1c8a93a83a1e5be2107d2c5ae3d8747bb2f5f586b16501d1c03'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download exact unpacked artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: rqir-post449-same-corner-remaining-z-mp
+          path: raw_rank10_part2
+          github-token: ${{ github.token }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33932061794
+
+      - name: Resolve digest semantics fail-closed
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p candidate_gravity/artifacts/post482_rank10_part2_digest_semantics
+          gh api "repos/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction/actions/artifacts/${SOURCE_ARTIFACT_ID}" > /tmp/meta.json
+          curl -fsSL -H "Authorization: Bearer ${GH_TOKEN}" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction/actions/artifacts/${SOURCE_ARTIFACT_ID}/zip" \
+            -o /tmp/source.zip
+          python - <<'PY'
+          import hashlib,json,os,pathlib
+          outdir=pathlib.Path('candidate_gravity/artifacts/post482_rank10_part2_digest_semantics')
+          meta=json.loads(pathlib.Path('/tmp/meta.json').read_text())
+          rp=pathlib.Path('raw_rank10_part2/result.json')
+          ap=pathlib.Path('raw_rank10_part2/authority_audit.json')
+          assert rp.exists() and rp.stat().st_size>0
+          assert ap.exists() and ap.stat().st_size>0
+          z=pathlib.Path('/tmp/source.zip').read_bytes()
+          result_sha=hashlib.sha256(rp.read_bytes()).hexdigest()
+          audit_sha=hashlib.sha256(ap.read_bytes()).hexdigest()
+          zip_sha='sha256:'+hashlib.sha256(z).hexdigest()
+          md=meta.get('digest')
+          hist=os.environ['HISTORICAL_RECORDED_DIGEST']
+          hist_sci=os.environ['HISTORICAL_SCIENTIFIC_JSON_SHA256']
+          result={
+            'stage':'POST482_RANK10_PART2_DIGEST_SEMANTICS__PROVENANCE_ONLY',
+            'scientific_gate_pass':True,
+            'promotes_physical_coordinate':False,
+            'MODEL_READINESS':'24%',
+            'readiness_change_pp':0,
+            'source':{
+              'run_id':int(os.environ['SOURCE_RUN_ID']),
+              'artifact_id':int(os.environ['SOURCE_ARTIFACT_ID']),
+              'artifact_name':os.environ['SOURCE_ARTIFACT_NAME'],
+            },
+            'digests':{
+              'github_metadata_digest':md,
+              'rest_downloaded_zip_sha256':zip_sha,
+              'historical_recorded_artifact_digest':hist,
+              'result_json_sha256':result_sha,
+              'historical_scientific_json_sha256':hist_sci,
+              'authority_audit_json_sha256':audit_sha,
+            },
+            'matches':{
+              'metadata_equals_rest_zip': md==zip_sha,
+              'historical_artifact_equals_metadata': hist==md,
+              'historical_artifact_equals_rest_zip': hist==zip_sha,
+              'historical_scientific_json_equals_result_json': hist_sci==result_sha,
+            },
+            'classification':None,
+            'guardrails':['PROVENANCE_ONLY','NO_FUV_EVALUATION','NO_PHYSICAL_DS_PROMOTION','NO_THRESHOLD_CHANGE','NO_SUPPORT_REORDERING']
+          }
+          if hist_sci!=result_sha:
+              result['classification']='BLOCKED_HISTORICAL_SCIENTIFIC_JSON_BINDING_MISMATCH'
+          elif hist==md:
+              result['classification']='PASS_HISTORICAL_ARTIFACT_DIGEST_MATCHES_CURRENT_METADATA'
+          elif hist==zip_sha:
+              result['classification']='PASS_HISTORICAL_DIGEST_IS_REST_ZIP_SHA_NOT_METADATA_DIGEST'
+          elif md==zip_sha:
+              result['classification']='BLOCKED_HISTORICAL_ARTIFACT_DIGEST_STALE_OR_INCORRECT__CURRENT_METADATA_AND_ZIP_AGREE'
+          else:
+              result['classification']='BLOCKED_DIGEST_SEMANTICS_DIVERGE__REQUIRES_EXPLICIT_LAYER_BINDING'
+          (outdir/'result.json').write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(result,indent=2,sort_keys=True))
+          PY
+
+      - name: Upload diagnostic
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-post482-rank10-part2-digest-semantics
+          path: candidate_gravity/artifacts/post482_rank10_part2_digest_semantics/
+          retention-days: 90
+
+      - name: Commit diagnostic result
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p candidate_gravity/results
+          cp candidate_gravity/artifacts/post482_rank10_part2_digest_semantics/result.json candidate_gravity/results/post482_rank10_part2_digest_semantics.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add candidate_gravity/results/post482_rank10_part2_digest_semantics.json
+          git commit -m 'RQIR post482: record rank10 part2 digest semantics'
+          git pull --rebase origin main
+          git push origin HEAD:main
