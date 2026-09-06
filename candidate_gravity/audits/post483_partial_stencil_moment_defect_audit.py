@@ -12,8 +12,8 @@ full=moments(range(4),5)
 known=moments(range(3),5)
 missing=moments([3],5)
 assert full == [0,1,0,0,0,-4]
-assert known == [Fraction(1,12),Fraction(7,6),Fraction(1,3),Fraction(2,3),Fraction(4,3),Fraction(8,3)]
-assert missing == [Fraction(-1,12),Fraction(-1,6),Fraction(-1,3),Fraction(-2,3),Fraction(-4,3),Fraction(-20,3)]
+assert known == [Fraction(1,12),Fraction(7,6),Fraction(1,3),Fraction(2,3),Fraction(4,3),Fraction(-4,3)]
+assert missing == [Fraction(-1,12),Fraction(-1,6),Fraction(-1,3),Fraction(-2,3),Fraction(-4,3),Fraction(-8,3)]
 assert [known[k]+missing[k] for k in range(6)] == full
 
 # Tensor-product mixed derivative inherits exactness only when both complete
