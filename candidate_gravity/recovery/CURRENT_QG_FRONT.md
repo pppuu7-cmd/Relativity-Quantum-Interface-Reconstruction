@@ -13,44 +13,29 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest validated structural authority: **Iteration 410**.
 - Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: **`[2]`**.
-- Latest completed numerical mass-support authority: **Iteration 498**, raw-consumed frozen Iteration-455 rank18 `(u,v)=(-2.5e-6,-5e-6)`, multiplicity 1.
-- Latest authoritative research iteration: **Iteration 499**.
+- Latest completed numerical mass-support authority: **Iteration 500**, raw-consumed frozen Iteration-455 rank19 `(u,v)=(-2.5e-6,-2.5e-6)`, multiplicity 1.
+- Latest authoritative research iteration: **Iteration 500**.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16; denominator `32 x 5 x 16 = 2560` row occurrences.
-- Certified occurrence-weighted precision coverage: **`23/32 = 71.875%`**, i.e. **`1840/2560`** row occurrences.
+- Certified occurrence-weighted precision coverage: **`24/32 = 75.000%`**, i.e. **`1920/2560`** row occurrences.
 - Frozen rank10 `(+5e-6,+5e-6)`, multiplicity 2, was already `CERTIFIED` in the Iteration-455 baseline and must not be relaunched.
 
-## Latest numerical authority — Iteration 498 rank18
-Canonical rank18 `(u,v)=(-2.5e-6,-5e-6)`, multiplicity 1: run `34029482604`, job `101476261793`, artifact `9989492191`, head SHA `f14bffa6705217a45ab661378dec9d08bdb058d5`.
+## Latest numerical authority — Iteration 500 rank19
+Canonical rank19 `(u,v)=(-2.5e-6,-2.5e-6)`, multiplicity 1: run `34035315540`, job `101492185537`, artifact `9991366491`, head SHA `b4d2d2f75412f783f991804dd06f7f8174767c85`.
 
-Raw-consumed classification: `PASS_RAW_CONSUMED_MANIFEST_RANK18_FULL_Z_MP80_MP120__NON_PROMOTING`.
+Raw-consumed classification: `PASS_RAW_CONSUMED_MANIFEST_RANK19_FULL_Z_MP80_MP120__NON_PROMOTING`.
 
-Artifact digest: `sha256:03c0f613abc04d3653b8ec2152a07ddf22c275b93fcbbf72c9ad1826b6e4ddc3`. Scientific JSON SHA-256: `f1dbbb575bfe9d1c531214912039d0bc92ca0f7b0fc11a340204d81a419b8542`. Authority-audit SHA-256: `3c823309226fdc5ef817481d9d9c51ef5e757c7a7270a3581ae1ea531df39021`.
+Artifact digest: `sha256:ae0fb7a2017c48219dc859632c3496f90911c04ca31272de4a8796d4d8d5f9ef`. Scientific JSON SHA-256: `d3afb8b89fb4a4e7ac41767b84630834c4fc660e1d310e65899392bdd49470f2`. Authority-audit SHA-256: `2ecec2b06bafa3b8c30aa3582b08c3cca6da9ffcd18d3388c76eeb0443006ea3`.
 
-Observed: `80/80` finite; max scaled MP80↔MP120 `1.85854765131259206880892292545e-80 <= 1e-30`; max radial Richardson scaled error `2.56923687047759737861125588118e-15 <= 5e-4`.
+Observed: `80/80` finite; max scaled MP80↔MP120 `3.40027675963242142165008504499e-80 <= 1e-30`; max radial Richardson scaled error `2.57110613298711345992132746523e-15 <= 5e-4`.
 
 This advances local precision support only. It does not promote physical index 2, assembled BASE/HALF authority, robust residual, ansatz authority, or readiness.
 
-Raw-consumption commit: `44185dd9f05bc996b84a7e4f6fdc85dd8af2b2d8`.
+Raw-consumption commit: `7d3666346b68d6a7a968b4a4803aeb64a5aaf30a`.
 
-## Latest exact estimator/provenance authority — Iteration 499
-For frozen one-dimensional central4, exact moments imply
+## Retained exact estimator/provenance authority — Iteration 499
+Frozen central4 exact moments imply `L_h = d - h^4/30 d^5 - h^6/252 d^7 - h^8/4320 d^9 + O(h^10)` and the retained mixed-tensor expansion documented in Iteration 499. HALF smooth-field truncation sectors scale relative to BASE by `1/16`, `1/64`, `1/256` at orders `h^4,h^6,h^8`; no universal Richardson promotion is licensed.
 
-`L_h = d - h^4/30 d^5 - h^6/252 d^7 - h^8/4320 d^9 + O(h^10)`.
-
-For the tensor mixed estimator `D_h=L_h^x L_h^y`, through order `h^8`,
-
-`D_h = d_x d_y - h^4/30(d_x^5 d_y+d_x d_y^5) - h^6/252(d_x^7 d_y+d_x d_y^7) + h^8[-(d_x^9 d_y+d_x d_y^9)/4320 + d_x^5 d_y^5/900] + O(h^10)`.
-
-HALF smooth-field truncation sectors scale relative to BASE by `1/16`, `1/64`, `1/256` at orders `h^4,h^6,h^8`; BASE-minus-HALF factors are `15/16,63/64,255/256`.
-
-Classification: `PASS_CENTRAL4_MIXED_TRUNCATION_SERIES_EXACT__NON_PROMOTING`.
-
-This is asymptotic smooth/low-frequency estimator authority only. It is not an exact universal Richardson transfer identity and does not supersede Iterations 489-490 exact spectral-transfer results. No Richardson promotion is licensed.
-
-## Retained assembly/provenance authority
-Iteration 497 proves exact odd-odd parity projection of the frozen mixed central4 assembly: `D_h[F]=D_h[F_oo]`. This is assembly/checksum authority only and does not license skipping any remaining HALF support node. The post497 HALF parity-orbit audit confirms every remaining rank 18..27 belongs to an incomplete nonzero-coefficient orbit absent an additional independently frozen field-symmetry identity.
-
-Iterations 492/494/495 retain exact error amplification, signed-cancellation, tensor reproduction/nullspace and bilinear normalization diagnostics. BASE/HALF derivative weights remain level-specific even where a local sampled coordinate is shared.
+Iteration 497 exact odd-odd parity projection and Iterations 492/494/495 conditioning/reproduction diagnostics remain retained assembly/provenance authority only. BASE/HALF derivative weights remain level-specific even where a local sampled coordinate is shared.
 
 ## Retained physical blocker
 Frozen timelike `Tr U1^2` census remains 57 physical channels = 6 simple-simple + 36 simple-double + 15 double-double, exactly 19 per q^2. Iteration 421 run `33871920373` remains raw-valid `BLOCKED_CONVERGENCE`; diagnostic index-2 value is not authority. No zero-fill.
@@ -58,12 +43,12 @@ Frozen timelike `Tr U1^2` census remains 57 physical channels = 6 simple-simple 
 ## Frozen numerical/assembly contract
 After all 28 distinct support coordinates are locally certified, evaluate BASE and HALF central4 assemblies independently at MP80 and MP120. Retain `ds=-d_base`; no Richardson promotion. Require all finite, assembled scaled MP80↔MP120 discrepancy `<=2e-6`, retained BASE↔HALF mass-step discrepancy `<=2e-5`, plus retained provenance and conditioning contracts. Local MP PASS never substitutes for assembled derivative closure.
 
-## Active gate — Iteration 499
-The frozen Iteration-455 manifest identifies rank19 `(u,v)=(-2.5e-6,-2.5e-6)`, multiplicity 1, as the sole authorized heavy support gate after rank18 raw PASS.
+## Active gate — Iteration 500
+The frozen Iteration-455 distinct u-major/v-major support order identifies rank20 `(u,v)=(-2.5e-6,+2.5e-6)`, multiplicity 1, as the sole authorized heavy support gate after rank19 raw PASS.
 
-Rank19 provenance: prerequisite/raw-consumption commit `44185dd9f05bc996b84a7e4f6fdc85dd8af2b2d8`; stage commit `1f0c7ca747953016abe14f1e0248f8c0c712f378`; workflow commit `10e7d0c74d31de32851d4f7b90f0fe4c789c0870`; trigger/head commit `b4d2d2f75412f783f991804dd06f7f8174767c85`.
+Rank20 provenance: prerequisite/raw-consumption commit `7d3666346b68d6a7a968b4a4803aeb64a5aaf30a`; stage commit `adc06426efed165ce98b9b3cda59b056423f8ef0`; workflow commit `17b54cbea09c9c246ef3d09dcf7bcea2331e42c8`; trigger/head commit `ce1122519bde0e8c56692ebeda7a854c9dc0a9c3`.
 
-Canonical run **`34035315540`**, job **`101492185537`**, was **`in_progress`** on the Iteration-499 live check. Do not duplicate it. Raw authority audit and artifact consumption are required before any scientific PASS.
+Canonical run **`34041245929`** was **`queued`** on the Iteration-500 live post-trigger check. Do not duplicate it. Raw authority audit and artifact consumption are required before any scientific PASS.
 
 If raw PASS, only the next explicit `UNTESTED` coordinate in the frozen Iteration-455 manifest becomes authorized. If BLOCKED, localize the first failing `z/phi/radial` sample without changing frozen dynamics, thresholds, support order, or precision conventions.
 
@@ -77,7 +62,7 @@ If raw PASS, only the next explicit `UNTESTED` coordinate in the frozen Iteratio
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 499 closes an exact estimator/provenance subgate but no additional stable-rubric model component.
+Readiness change: **0 percentage points**. Iteration 500 advances local numerical support only and closes no additional stable-rubric model component.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct q^2 variables are never summed. Same i0 is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Exact BASE/HALF coordinate overlap may share the local sampled precision certificate but never the derivative weight. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists. No blind heavy full-C5. Do not reopen the already-closed C5 null-soft e=3 sector. Old weighted-B3 proxy residues are not actual `Tr U1` authority. Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification.
