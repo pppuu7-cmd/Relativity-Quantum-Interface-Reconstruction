@@ -1,0 +1,21 @@
+{
+  "iteration": 511,
+  "classification": "PASS_BASE_HALF_SHARED_NODE_COVARIANCE_EXACT__NON_PROMOTING",
+  "assumption_scope": "iid equal-variance coordinate-level sampling error on the frozen 28-coordinate BASE/HALF union; exact assembly weights retained from Iteration 510",
+  "units": "variance factors in sigma^2/h^4",
+  "base_variance_factor": "4225/5184",
+  "half_variance_factor": "4225/324",
+  "base_half_covariance_factor": "4/81",
+  "base_half_correlation": "64/4225",
+  "delta_variance_factor": "23771/1728",
+  "scientific_scope": "assembly numerical-error propagation/provenance only",
+  "nonclaims": [
+    "not Candidate-Gravity consistency PASS or FAIL",
+    "not comparator identity",
+    "not regime-specific non-identifiability",
+    "not near-degeneracy",
+    "not novelty certificate",
+    "not Fisher authority"
+  ],
+  "model_readiness_percent": 24
+}
