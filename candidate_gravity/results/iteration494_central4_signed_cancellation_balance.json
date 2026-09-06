@@ -1,0 +1,12 @@
+{
+  "classification": "PASS_CENTRAL4_SIGNED_WEIGHT_CANCELLATION_BALANCE_EXACT__NON_PROMOTING",
+  "positive_mixed_weight_mass": "9/8",
+  "negative_mixed_weight_mass_abs": "9/8",
+  "net_mixed_weight_mass": "0",
+  "mixed_l1_weight_mass": "9/4",
+  "assembly_split": "D_h=(P-N)/h^2",
+  "cancellation_indicator": "kappa_cancel=(|P|+|N|)/|P-N| for P!=N",
+  "interpretation": "small assembled derivative can arise from exact stencil cancellation structure; large cancellation indicator is diagnostic only, not a Candidate-Gravity consistency FAIL",
+  "frozen_gate_effect": "none; thresholds, dynamics, support order and ds=-d_base remain unchanged",
+  "MODEL_READINESS": "24%"
+}
