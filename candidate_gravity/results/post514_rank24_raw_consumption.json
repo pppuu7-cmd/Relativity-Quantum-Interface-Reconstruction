@@ -1,0 +1,43 @@
+{
+  "iteration": 515,
+  "classification": "PASS_RAW_CONSUMED_MANIFEST_RANK24_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "run_id": 34063351852,
+  "job_id": 101567716622,
+  "artifact_id": 9999001385,
+  "artifact_digest": "sha256:bc7212cef5cb89cd2817726f7645199e515e28fe476d672130b3155889064b29",
+  "head_sha": "965841a77f63e30c3fd18e7ac0e495b51e7dc52f",
+  "scientific_json_sha256": "655cc19ecbdf0db078c8bd500ff7f257691a8695c1cdee28fbee65edd069e4ba",
+  "authority_audit_sha256": "e80f6b77c8b232b4e0db04d17975af59852dc049581073341532074039c1af81",
+  "target": {
+    "manifest_rank": 24,
+    "u": 0.0000025,
+    "v": 0.0000025,
+    "source_level": "HALF",
+    "source_local_index": 10,
+    "source_occurrence_multiplicity": 1
+  },
+  "observed": {
+    "sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "1.83640479682421701214847913369e-80",
+    "max_radial_richardson_scaled_error": "2.56417244121825547577146152507e-15"
+  },
+  "thresholds": {
+    "scaled_mp80_vs_mp120_max": "1e-30",
+    "radial_richardson_scaled_max": "5e-4"
+  },
+  "certified_occurrence_weighted_support": "29/32 = 90.625% = 2320/2560",
+  "next_manifest_coordinate": {
+    "manifest_rank": 25,
+    "u": 0.0000025,
+    "v": 0.000005,
+    "source_level": "HALF",
+    "source_local_index": 11,
+    "source_occurrence_multiplicity": 1
+  },
+  "guardrails": ["NO_PHYSICAL_DS_PROMOTION","NO_THRESHOLD_WEAKENING","NO_ZERO_FILL","NO_ANSATZ003","NO_FISHER_RESOURCES"]
+}
