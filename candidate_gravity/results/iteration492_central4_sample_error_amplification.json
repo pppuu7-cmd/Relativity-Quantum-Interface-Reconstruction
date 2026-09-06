@@ -1,0 +1,13 @@
+{
+  "classification": "PASS_CENTRAL4_SAMPLE_ERROR_AMPLIFICATION_BOUND_EXACT__NON_PROMOTING",
+  "central4_coefficients": ["1/12", "-2/3", "2/3", "-1/12"],
+  "sum_abs_1d": "3/2",
+  "mixed_l1_weight_sum": "9/4",
+  "mixed_frobenius_norm_sq": "4225/5184",
+  "max_abs_mixed_weight": "4/9",
+  "base_absolute_error_bound": "|delta D_BASE| <= (9/4) eps / h^2",
+  "half_absolute_error_bound_same_eps_base_h_units": "|delta D_HALF| <= 9 eps / h^2",
+  "half_to_base_worst_case_bound_ratio_same_sample_eps": 4,
+  "interpretation": "For a uniform per-sample absolute perturbation cap, the HALF assembly has a four-times larger worst-case absolute amplification bound than BASE solely from the 1/h^2 scaling. This does not imply actual errors saturate the bound and does not alter frozen MP or BASE-HALF thresholds.",
+  "scope": "estimator/provenance only; not Candidate-Gravity consistency PASS/FAIL, comparator identity, novelty certificate, or physical promotion"
+}
