@@ -1,0 +1,191 @@
+name: RQIR post482 BASE-Q11 raw quartet
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-post482-base-q11-raw-quartet.yml'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  base_q11_raw_quartet:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install frozen diagnostic dependency
+        run: python -m pip install --disable-pip-version-check -q mpmath==1.3.0
+
+      - name: Download rank5
+        uses: actions/download-artifact@v4
+        with:
+          name: rqir-post463-manifest-rank5-full-z-mp
+          path: raw/r5
+          github-token: ${{ github.token }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33962417750
+      - name: Download rank6
+        uses: actions/download-artifact@v4
+        with:
+          name: rqir-post466-manifest-rank6-full-z-mp
+          path: raw/r6
+          github-token: ${{ github.token }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33968129883
+      - name: Download rank9
+        uses: actions/download-artifact@v4
+        with:
+          name: rqir-post473-manifest-rank9-full-z-mp
+          path: raw/r9
+          github-token: ${{ github.token }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33983416847
+      - name: Download rank10 part1
+        uses: actions/download-artifact@v4
+        with:
+          name: rqir-post447-class3-phi-sample-mp-stage
+          path: raw/r10a
+          github-token: ${{ github.token }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33928248369
+      - name: Download rank10 part2
+        uses: actions/download-artifact@v4
+        with:
+          name: rqir-post449-same-corner-remaining-z-mp
+          path: raw/r10b
+          github-token: ${{ github.token }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: 33932061794
+
+      - name: Fail-closed provenance and BASE-Q11 sample-layer diagnostic
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p candidate_gravity/artifacts/post482_base_q11_raw_quartet
+          python - <<'PY'
+          import hashlib,json,pathlib,subprocess
+          import mpmath as mp
+
+          specs={
+            5: dict(path='raw/r5/result.json', run=33962417750, artifact=9969255401, digest='sha256:ed83538b25fd05314a94f950fdda030932212da7010b0e72f1164b740978d0d4', sci='01d21d82547ba774086b5cd1aad8a9d627fece034fa872183da0e366ffa5fde8', uv=(-5e-6,-5e-6)),
+            6: dict(path='raw/r6/result.json', run=33968129883, artifact=9971336666, digest='sha256:6d502989834d91f4d02b04968a3ef156a9400321eb5dea1ec693687ec13baaec', sci='220f50d31c1e9ca326c1303c3e74b39139f68fc4dbe3388450220389fef5211a', uv=(-5e-6,5e-6)),
+            9: dict(path='raw/r9/result.json', run=33983416847, artifact=9975782294, digest='sha256:a0e4d481dd4b34addf7a11316730dee3240e7843f12b586307f40608c08e15c5', sci='533e5ab27c3631c25023e30ee70fecdb3bd845c18015cc6cf277ea42fd3ea8d8', uv=(5e-6,-5e-6)),
+          }
+          # Current canonical metadata digest for rank10 part2 comes from the
+          # post482 correction overlay; scientific payload SHA is unchanged.
+          meta_specs={
+            9958661360:'sha256:16d70f63275c451c15cb13243240612dcdc2fc09f598fe08194b1b91c2ecd3c8',
+            9959560285:'sha256:ac18e784e54414c89e08830d917679ffe0403028abc5ecf6e4e2cdd289158909',
+          }
+          for r,s in specs.items():
+            p=pathlib.Path(s['path']); assert p.exists() and p.stat().st_size>0
+            assert hashlib.sha256(p.read_bytes()).hexdigest()==s['sci'], (r,'scientific_sha')
+            m=json.loads(subprocess.check_output(['gh','api',f"repos/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction/actions/artifacts/{s['artifact']}"],text=True))
+            assert m['workflow_run']['id']==s['run'] and m['digest']==s['digest'] and m['expired'] is False, (r,'metadata')
+
+          p10a=pathlib.Path('raw/r10a/result.json'); p10b=pathlib.Path('raw/r10b/result.json')
+          assert hashlib.sha256(p10a.read_bytes()).hexdigest()=='d7a148b1f55364145612e3c032aaa13a24634b87bad965a9f40a4d1db2b478bb'
+          assert hashlib.sha256(p10b.read_bytes()).hexdigest()=='2467e807b8b5f1c8a93a83a1e5be2107d2c5ae3d8747bb2f5f586b16501d1c03'
+          for aid,expected in meta_specs.items():
+            m=json.loads(subprocess.check_output(['gh','api',f'repos/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction/actions/artifacts/{aid}'],text=True))
+            assert m['digest']==expected and m['expired'] is False, ('rank10_metadata',aid,m.get('digest'))
+
+          objs={r:json.loads(pathlib.Path(s['path']).read_text()) for r,s in specs.items()}
+          o10a=json.loads(p10a.read_text()); o10b=json.loads(p10b.read_text())
+          for r,o in objs.items():
+            assert o.get('scientific_gate_pass') is True and o.get('promotes_physical_coordinate') is False
+            rows=o.get('rows'); assert isinstance(rows,list) and len(rows)==80, (r,len(rows) if isinstance(rows,list) else None)
+          assert o10a.get('scientific_gate_pass') is True and o10b.get('scientific_gate_pass') is True
+          assert len(o10a['rows'])==48 and len(o10b['rows'])==32
+
+          def key(x): return (round(float(x['z']),12), int(x['phi_index']))
+          def rowmap(rows):
+            d={key(x):x for x in rows}; assert len(d)==len(rows); return d
+          maps={r:rowmap(o['rows']) for r,o in objs.items()}
+          m10=rowmap(o10a['rows']+o10b['rows']); assert len(m10)==80
+          ks=set(m10)
+          assert all(set(maps[r])==ks for r in (5,6,9))
+          assert sorted({z for z,_ in ks})==[-0.86,-0.43,0.0,0.43,0.86]
+          assert sorted({m for _,m in ks})==list(range(16))
+
+          def val(row,dps): return mp.mpc(mp.mpf(row[f'mp{dps}_re']),mp.mpf(row[f'mp{dps}_im']))
+          def scaled(a,b): return abs(a-b)/max(mp.mpf(1),abs(a),abs(b))
+          H=mp.mpf('5e-6'); coef=mp.mpf(4)/9/(H*H)
+          outrows=[]; mx=mp.mpf('0'); mx_cond=mp.mpf('0'); min_signal=None
+          for k in sorted(ks):
+            r5,r6,r9,r10=maps[5][k],maps[6][k],maps[9][k],m10[k]
+            with mp.workdps(180):
+              f80=[val(r,80) for r in (r5,r6,r9,r10)]
+              f120=[val(r,120) for r in (r5,r6,r9,r10)]
+              n80=f80[0]-f80[1]-f80[2]+f80[3]
+              n120=f120[0]-f120[1]-f120[2]+f120[3]
+              q80=coef*n80; q120=coef*n120; cr=scaled(q80,q120)
+              denom=abs(n120); cond=sum(abs(x) for x in f120)/denom if denom!=0 else mp.inf
+              mx=max(mx,cr); mx_cond=max(mx_cond,cond)
+              min_signal=denom if min_signal is None else min(min_signal,denom)
+              outrows.append({'z':k[0],'phi_index':k[1],
+                'q11_mp80_re':mp.nstr(mp.re(q80),80),'q11_mp80_im':mp.nstr(mp.im(q80),80),
+                'q11_mp120_re':mp.nstr(mp.re(q120),120),'q11_mp120_im':mp.nstr(mp.im(q120),120),
+                'scaled_mp80_vs_mp120':mp.nstr(cr,40),
+                'quartet_cancellation_condition_proxy':mp.nstr(cond,40)})
+          passed=bool(mx<=mp.mpf('2e-6') and mp.isfinite(mx_cond))
+          result={
+            'stage':'POST482_BASE_Q11_RAW_SAMPLE_LAYER_QUARTET__NON_PROMOTING',
+            'classification':('PASS_BASE_Q11_RAW_SAMPLE_LAYER_MP80_MP120__NON_PROMOTING' if passed else 'BLOCKED_BASE_Q11_RAW_SAMPLE_LAYER_MP_STABILITY__NON_PROMOTING'),
+            'scientific_gate_pass':passed,'promotes_physical_coordinate':False,'MODEL_READINESS':'24%','readiness_change_pp':0,
+            'scope':'RAW_RADIAL_LIMIT_SAMPLE_LAYER_ONLY__NOT_FULL_FUV_ASSEMBLY',
+            'formula':'Q11_sample=(4/9)/BASE_H^2 * (F_r5 - F_r6 - F_r9 + F_r10)',
+            'base_h':5e-6,
+            'manifest_ranks':[5,6,9,10],
+            'sample_count':80,
+            'observed':{
+              'max_scaled_mp80_vs_mp120':mp.nstr(mx,40),
+              'max_quartet_cancellation_condition_proxy':mp.nstr(mx_cond,40),
+              'min_abs_raw_quartet_numerator_mp120':mp.nstr(min_signal,40),
+            },
+            'diagnostic_threshold':{'max_scaled_mp80_vs_mp120':'2e-6'},
+            'rank10_part2_digest_correction_applied':'sha256:ac18e784e54414c89e08830d917679ffe0403028abc5ecf6e4e2cdd289158909',
+            'interpretation':[
+              'This directly tests cross-precision cancellation of the dominant BASE inner-inner quartet at the raw radial-limit sample layer.',
+              'It does not substitute for the frozen full F(u,v) spectral/azimuth/z assembly or the final independent BASE/HALF derivative closure.',
+              'No physical D_s can be promoted from this diagnostic.'
+            ],
+            'rows':outrows,
+            'guardrails':['RAW_SAMPLE_LAYER_ONLY','NO_FULL_FUV_PROMOTION','NO_PHYSICAL_DS_PROMOTION','NO_THRESHOLD_WEAKENING','NO_SUPPORT_REORDERING','NO_ANSATZ003','NO_FISHER_RESOURCES']
+          }
+          root=pathlib.Path('candidate_gravity/artifacts/post482_base_q11_raw_quartet')
+          root.joinpath('result.json').write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
+          print(json.dumps({k:v for k,v in result.items() if k!='rows'},indent=2,sort_keys=True))
+          if not passed: raise SystemExit(2)
+          PY
+
+      - name: Upload Q11 diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-post482-base-q11-raw-quartet
+          path: candidate_gravity/artifacts/post482_base_q11_raw_quartet/
+          retention-days: 90
+
+      - name: Commit PASS diagnostic result
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp candidate_gravity/artifacts/post482_base_q11_raw_quartet/result.json candidate_gravity/results/post482_base_q11_raw_quartet.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add candidate_gravity/results/post482_base_q11_raw_quartet.json
+          git commit -m 'RQIR post482: record BASE Q11 raw-quartet PASS'
+          git pull --rebase origin main
+          git push origin HEAD:main
