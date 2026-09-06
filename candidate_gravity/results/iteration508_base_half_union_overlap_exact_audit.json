@@ -1,0 +1,26 @@
+{
+  "iteration": 508,
+  "classification": "PASS_BASE_HALF_32_OCCURRENCES_28_DISTINCT_OVERLAP_WEIGHTS_EXACT__NON_PROMOTING",
+  "base_source_occurrences": 16,
+  "half_source_occurrences": 16,
+  "total_source_occurrences": 32,
+  "distinct_union_coordinates": 28,
+  "exact_overlap_count": 4,
+  "overlap_coordinates_in_BASE_H_units": [["-1", "-1"], ["-1", "1"], ["1", "-1"], ["1", "1"]],
+  "overlap_weights_in_1_over_h2": {
+    "(-1,-1)": {"BASE": "4/9", "HALF": "1/36", "BASE_minus_HALF": "5/12"},
+    "(-1,1)": {"BASE": "-4/9", "HALF": "-1/36", "BASE_minus_HALF": "-5/12"},
+    "(1,-1)": {"BASE": "-4/9", "HALF": "-1/36", "BASE_minus_HALF": "-5/12"},
+    "(1,1)": {"BASE": "4/9", "HALF": "1/36", "BASE_minus_HALF": "5/12"}
+  },
+  "l1_weight_norms_in_1_over_h2": {
+    "BASE": "9/4",
+    "HALF": "9",
+    "BASE_plus_HALF_separate": "45/4",
+    "BASE_minus_HALF_union_aggregated": "397/36",
+    "overlap_cancellation_reduction": "2/9"
+  },
+  "scope": "exact frozen central4 coordinate/weight geometry only; local sample certificates may be shared at the four identical coordinates, but BASE and HALF derivative weights remain distinct",
+  "promotion": false,
+  "model_readiness_percent": 24
+}
