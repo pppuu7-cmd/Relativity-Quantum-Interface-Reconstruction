@@ -1,0 +1,122 @@
+name: RQIR post483 live certified artifact sweep v3
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-post483-live-certified-artifact-sweep-v3.yml'
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  live_sweep_v3:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Resolve every historical authority schema and live-check artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p candidate_gravity/artifacts/post483_live_certified_artifact_sweep_v3 /tmp/rqir_live_sweep_v3
+          python - <<'PY'
+          import json,pathlib,subprocess,hashlib,os,re
+          RES=pathlib.Path('candidate_gravity/results')
+          man=json.loads((RES/'iteration455_mass_support_queue_manifest.json').read_text())['manifest']
+          coord_to_rank={(round(float(x['u']),15),round(float(x['v']),15)):int(x['distinct_rank']) for x in man}
+          candidates={}
+          def vd(x): return isinstance(x,str) and re.fullmatch(r'sha256:[0-9a-f]{64}',x) is not None
+          def vs(x): return isinstance(x,str) and re.fullmatch(r'[0-9a-f]{64}',x) is not None
+          def add(rank,run,job,aid,name,digest,sci,path,note):
+            if not all(isinstance(x,int) for x in (rank,run,job,aid)) or not vd(digest) or not vs(sci): return
+            if name is not None and not isinstance(name,str): return
+            candidates.setdefault(rank,[]).append({'rank':rank,'run_id':run,'job_id':job,'artifact_id':aid,'artifact_name':name,'recorded_digest':digest,'scientific_json_sha256':sci,'source_path':path,'note':note})
+          for p in sorted(RES.glob('*.json')):
+            try:o=json.loads(p.read_text())
+            except Exception: continue
+            if not isinstance(o,dict) or o.get('scientific_gate_pass') is not True: continue
+            coord=None; schema=None
+            for key in ('frozen_coordinate','mass_coordinate','coordinate','frozen'):
+              c=o.get(key)
+              if isinstance(c,dict) and 'u' in c and 'v' in c:
+                coord=c; schema=key; break
+            if coord is not None:
+              rank=coord.get('distinct_rank',coord.get('manifest_distinct_rank'))
+              if not isinstance(rank,int): rank=coord_to_rank.get((round(float(coord['u']),15),round(float(coord['v']),15)))
+              prov=o.get('provenance') if isinstance(o.get('provenance'),dict) else {}
+              run=o.get('source_run_id',o.get('run_id',prov.get('run_id')))
+              job=o.get('source_job_id',o.get('job_id',prov.get('job_id')))
+              aid=o.get('artifact_id',o.get('source_artifact_id',prov.get('artifact_id')))
+              name=o.get('artifact_name',o.get('source_artifact_name',prov.get('artifact_name')))
+              dig=o.get('artifact_digest',o.get('source_artifact_digest',prov.get('artifact_digest')))
+              sci=o.get('scientific_json_sha256',prov.get('scientific_json_sha256'))
+              add(rank,run,job,aid,name,dig,sci,str(p),f'{schema}-schema')
+            if p.name=='post479_rank11_raw_consumption.json':
+              s=o.get('source',{}); add(11,s.get('run_id'),s.get('job_id'),s.get('artifact_id'),s.get('artifact_name'),s.get('artifact_digest'),s.get('scientific_json_sha256'),str(p),'rank11-source-object')
+          # Explicit composite correction overlay remains authoritative only for rank10 part2 digest.
+          add(10,33928248369,101201330811,9958661360,'rqir-post447-class3-phi-sample-mp-stage','sha256:16d70f63275c451c15cb13243240612dcdc2fc09f598fe08194b1b91c2ecd3c8','d7a148b1f55364145612e3c032aaa13a24634b87bad965a9f40a4d1db2b478bb','explicit-rank10-composite','rank10-part1')
+          add(10,33932061794,101212520875,9959560285,'rqir-post449-same-corner-remaining-z-mp','sha256:ac18e784e54414c89e08830d917679ffe0403028abc5ecf6e4e2cdd289158909','2467e807b8b5f1c8a93a83a1e5be2107d2c5ae3d8747bb2f5f586b16501d1c03','post482_rank10_part2_provenance_correction.json','rank10-part2-corrected')
+
+          rows=[]; missing=[]; ambiguous=[]; mismatches=[]
+          for rank in range(12):
+            byid={}
+            for r in candidates.get(rank,[]):
+              if r['artifact_id'] not in byid or r['note']=='rank10-part2-corrected': byid[r['artifact_id']]=r
+            rs=list(byid.values())
+            if rank==10:
+              ids={9958661360,9959560285}; rs=[r for r in rs if r['artifact_id'] in ids]
+              if {r['artifact_id'] for r in rs}!=ids: missing.append(rank)
+            elif not rs:
+              missing.append(rank); continue
+            elif len(rs)>1:
+              ambiguous.append({'rank':rank,'artifact_ids':sorted(r['artifact_id'] for r in rs),'sources':[r['source_path'] for r in rs]}); continue
+            for r in rs:
+              meta=json.loads(subprocess.check_output(['gh','api',f"repos/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction/actions/artifacts/{r['artifact_id']}"],text=True))
+              zp=pathlib.Path('/tmp/rqir_live_sweep_v3')/f"{r['artifact_id']}.zip"
+              subprocess.check_call(['curl','-fsSL','-H',f"Authorization: Bearer {os.environ['GH_TOKEN']}",'-H','Accept: application/vnd.github+json',f"https://api.github.com/repos/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction/actions/artifacts/{r['artifact_id']}/zip",'-o',str(zp)])
+              zs='sha256:'+hashlib.sha256(zp.read_bytes()).hexdigest(); md=meta.get('digest'); live_name=meta.get('name')
+              ok=bool(meta.get('expired') is False and (r['artifact_name'] is None or r['artifact_name']==live_name) and meta.get('workflow_run',{}).get('id')==r['run_id'] and md==zs and md==r['recorded_digest'])
+              row={**r,'metadata_digest':md,'rest_zip_sha256':zs,'expired':meta.get('expired'),'metadata_name':live_name,'metadata_run_id':meta.get('workflow_run',{}).get('id'),'live_binding_pass':ok}
+              rows.append(row)
+              if not ok:mismatches.append(row)
+          complete=sorted(set(r['rank'] for r in rows if r['live_binding_pass']))
+          pass_all=(not missing and not ambiguous and not mismatches and complete==list(range(12)))
+          out={'stage':'POST483_LIVE_CERTIFIED_MASS_SUPPORT_ARTIFACT_SWEEP_V3__FULL_HISTORICAL_SCHEMA_AWARE__NON_PROMOTING',
+               'classification':('PASS_ALL_CERTIFIED_RANK0_11_LIVE_METADATA_AND_ZIP_BINDINGS_V3__NON_PROMOTING' if pass_all else 'BLOCKED_CERTIFIED_ARTIFACT_LIVE_PROVENANCE_SWEEP_V3__NON_PROMOTING'),
+               'scientific_gate_pass':pass_all,'promotes_physical_coordinate':False,'MODEL_READINESS':'24%','readiness_change_pp':0,
+               'recognized_coordinate_schemas':['frozen_coordinate','mass_coordinate','coordinate','frozen'],'recognized_provenance_schemas':['top_level','nested_provenance','rank11_source_object','rank10_composite_correction_overlay'],
+               'complete_live_bound_ranks':complete,'missing_ranks':missing,'ambiguous':ambiguous,'mismatch_count':len(mismatches),'rows':rows,
+               'interpretation':['V1/V2 missing ranks were historical schema-discovery gaps, not missing-artifact evidence.','Each discovered binding is checked against current GitHub artifact metadata and an independently downloaded ZIP SHA-256.','No scientific payload is regenerated or rewritten.','Full-F assembly remains blocked until all 28 distinct coordinates are locally certified.'],
+               'guardrails':['PROVENANCE_ONLY','NO_RESULT_PAYLOAD_REWRITE','NO_FUV_EVALUATION','NO_SUPPORT_REORDERING','NO_THRESHOLD_CHANGE','NO_PHYSICAL_DS_PROMOTION','NO_ANSATZ003','NO_FISHER_RESOURCES']}
+          pathlib.Path('candidate_gravity/artifacts/post483_live_certified_artifact_sweep_v3/result.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps({k:v for k,v in out.items() if k!='rows'},indent=2,sort_keys=True))
+          PY
+      - name: Upload v3 sweep
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-post483-live-certified-artifact-sweep-v3
+          path: candidate_gravity/artifacts/post483_live_certified_artifact_sweep_v3/
+          retention-days: 90
+      - name: Commit v3 result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s candidate_gravity/artifacts/post483_live_certified_artifact_sweep_v3/result.json
+          cp candidate_gravity/artifacts/post483_live_certified_artifact_sweep_v3/result.json candidate_gravity/results/post483_live_certified_artifact_sweep_v3.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add candidate_gravity/results/post483_live_certified_artifact_sweep_v3.json
+          git commit -m 'RQIR post483: record full historical-schema live artifact sweep v3'
+          git pull --rebase origin main
+          git push origin HEAD:main
