@@ -1,0 +1,53 @@
+{
+  "stage": "POST482_FROZEN_STENCIL_SENSITIVITY_WEIGHT_AUDIT__DIAGNOSTIC_ONLY",
+  "classification": "PASS_OCCURRENCE_COVERAGE_DISTINCT_FROM_ASSEMBLY_SENSITIVITY_COVERAGE__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "central4": {
+    "c": ["1/12", "-2/3", "2/3", "-1/12"],
+    "assembly_absolute_weight_total": "9/4"
+  },
+  "current_authority": {
+    "raw_certified_distinct_ranks": "0..11",
+    "occurrence_weighted_coverage": "16/32 = 50.000%",
+    "active_rank": 12,
+    "active_coordinate": {"u": 0.00001, "v": -0.00001}
+  },
+  "base_assembly_sensitivity": {
+    "certified_through_rank11_absolute_weight": "17/8",
+    "certified_fraction_of_absolute_stencil_weight": "17/18 = 94.444444%",
+    "remaining_ranks_12_15_absolute_weight": "1/8",
+    "remaining_fraction": "1/18 = 5.555556%",
+    "rank12_absolute_weight": "1/144",
+    "if_rank12_passes_fraction": "307/324 = 94.753086%"
+  },
+  "half_assembly_sensitivity": {
+    "currently_certified_shared_corner_ranks": [5, 6, 9, 10],
+    "currently_certified_absolute_weight": "1/36",
+    "currently_certified_fraction_of_absolute_stencil_weight": "1/81 = 1.234568%",
+    "peak_sensitive_manifest_ranks": [19, 20, 23, 24],
+    "peak_sensitive_absolute_weight": "16/9",
+    "peak_sensitive_fraction_of_absolute_stencil_weight": "64/81 = 79.012346%",
+    "moderate_half_exclusive_ranks": [16, 17, 18, 21, 22, 25, 26, 27],
+    "interpretation": "The most derivative-sensitive HALF nodes occur late in the frozen manifest and remain untested."
+  },
+  "interpretation": [
+    "Occurrence-weighted support coverage is a provenance/completion metric and is not a proxy for derivative sensitivity.",
+    "BASE is already heavily covered in stencil-L1 sensitivity because its inner-inner nodes are certified; the remaining BASE tail has comparatively small weights.",
+    "HALF is not yet meaningfully stress-tested in derivative-sensitive weight despite 50% occurrence coverage, because only its four low-weight shared corners are currently certified.",
+    "No source reorder is authorized: ranks must still be tested in the frozen Iteration-455 order.",
+    "The result strengthens the requirement for independent BASE/HALF assembled closure after all 28 distinct support coordinates are certified."
+  ],
+  "guardrails": [
+    "DIAGNOSTIC_ONLY",
+    "NO_SOURCE_REORDERING",
+    "NO_THRESHOLD_CHANGE",
+    "NO_ESTIMATOR_CHANGE",
+    "NO_SUPPORT_DEDUPLICATION",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
