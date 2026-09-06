@@ -1,0 +1,53 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "PASS_LEVEL_DECOMPOSED_SUPPORT_AND_ASSEMBLY_MAPPING_PREFLIGHT__NON_PROMOTING",
+  "frozen_mapping": {
+    "base_rank_matrix_u_major_v_major": [[0,1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]],
+    "distinct_rank_union": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27],
+    "half_rank_matrix_u_major_v_major": [[5,16,17,6],[18,19,20,21],[22,23,24,25],[9,26,27,10]],
+    "shared_exact_coordinate_ranks": [5,6,9,10]
+  },
+  "guardrails": [
+    "NO_EARLY_NUMERICAL_BASE_ASSEMBLY",
+    "NO_ZERO_FILL",
+    "NO_UV_SWAP_DEDUPLICATION",
+    "NO_SUPPORT_REORDERING",
+    "ONLY_EXACT_BASE_HALF_OVERLAPS_SHARE_LOCAL_CERTIFICATES",
+    "LEVEL_SPECIFIC_ASSEMBLY_REMAINS_DISTINCT",
+    "NO_THRESHOLD_CHANGE",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "if_rank18_raw_passes": {
+    "distinct_coverage": "19/28 = 67.85714285714286%",
+    "half_local_support_fraction": "7/16 = 43.75%",
+    "next_allowed_rank": 19,
+    "occurrence_weighted_coverage": "23/32 = 71.875%"
+  },
+  "interpretation": [
+    "The aggregate 22/32 occurrence-weighted coverage hides a level asymmetry: BASE local support is already complete at 16/16, while HALF is only 6/16 at the Iteration-497 snapshot.",
+    "Complete BASE local support does not authorize early numerical BASE assembly because the frozen contract defers independent BASE/HALF assembly until all 28 distinct support coordinates are locally certified.",
+    "The exact BASE/HALF overlap is only ranks 5, 6, 9 and 10; those local precision certificates may be shared, but assembly weights and level identity remain distinct.",
+    "The next missing HALF local position is exactly rank18, matching the sole active heavy gate. No support reorder, symmetry fill or zero-fill is permitted."
+  ],
+  "iteration497_snapshot": {
+    "active_rank": 18,
+    "base_certified_positions": 16,
+    "base_local_support_fraction": "16/16 = 100%",
+    "base_missing_ranks": [],
+    "base_total_positions": 16,
+    "certified_distinct_ranks": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17],
+    "distinct_coverage": "18/28 = 64.28571428571429%",
+    "half_certified_positions": 6,
+    "half_certified_ranks_in_local_order": [5,16,17,6,9,10],
+    "half_local_support_fraction": "6/16 = 37.5%",
+    "half_missing_ranks_in_local_order": [18,19,20,21,22,23,24,25,26,27],
+    "half_total_positions": 16,
+    "occurrence_weighted_coverage": "22/32 = 68.75%"
+  },
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true,
+  "stage": "POST497_LEVEL_DECOMPOSED_SUPPORT_AND_ASSEMBLY_MAPPING_PREFLIGHT"
+}
