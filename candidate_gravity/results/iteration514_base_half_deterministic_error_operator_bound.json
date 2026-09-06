@@ -1,0 +1,23 @@
+{
+  "iteration": 514,
+  "classification": "PASS_BASE_HALF_DETERMINISTIC_LINF_ERROR_OPERATOR_BOUND_EXACT__NON_PROMOTING",
+  "assumption": "For the frozen 28-coordinate union, each absolute coordinate perturbation obeys |e_i| <= epsilon. No iid, Gaussian, covariance, or physical-noise assumption is made.",
+  "bounds": {
+    "BASE": "|delta BASE| <= (9/4) * epsilon / h^2",
+    "HALF": "|delta HALF| <= 9 * epsilon / h^2",
+    "BASE_minus_HALF_union": "|delta(BASE-HALF)| <= (397/36) * epsilon / h^2",
+    "BASE_minus_HALF_separate_triangle_only": "<= (45/4) * epsilon / h^2"
+  },
+  "exact_coefficients": {
+    "BASE_l1": "9/4",
+    "HALF_l1": "9",
+    "DELTA_union_l1": "397/36",
+    "separate_triangle_l1": "45/4",
+    "shared_node_cancellation": "2/9",
+    "union_over_separate": "397/405",
+    "relative_bound_reduction": "8/405"
+  },
+  "guardrail": "The bound is an absolute deterministic assembly-error certificate only. It does not convert local scaled MP discrepancies into assembled scaled discrepancies without an explicit common absolute normalization, does not define a new threshold, and does not make BASE-HALF an independent observable/Fisher row.",
+  "promotion": false,
+  "model_readiness_percent": 24
+}
