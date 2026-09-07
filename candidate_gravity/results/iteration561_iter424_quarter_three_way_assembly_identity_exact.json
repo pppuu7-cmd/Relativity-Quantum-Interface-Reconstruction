@@ -1,0 +1,75 @@
+{
+  "iteration": 561,
+  "date": "2026-09-08",
+  "scope": "Iteration-424 QUARTER central4 mixed-derivative assembly integrity",
+  "classification": "PASS_ITER424_QUARTER_THREE_WAY_ASSEMBLY_IDENTITY_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "status": "PASS",
+  "epistemic_label": "derived exact algebraic result",
+  "frozen_nodes_scaled_by_h": [-2, -1, 1, 2],
+  "first_derivative_integer_weights": [1, -8, 8, -1],
+  "mixed_normalization": "1/(144*h^2)",
+  "direct_tensor_integer_matrix": [
+    [1, -8, 8, -1],
+    [-8, 64, -64, 8],
+    [8, -64, 64, -8],
+    [-1, 8, -8, 1]
+  ],
+  "exact_assembly_routes": {
+    "direct_16_point_tensor_sum": "sum_ij w_i*w_j*F_ij/(144*h^2)",
+    "sequential_u_then_v": "D_v[D_u[F]]",
+    "sequential_v_then_u": "D_u[D_v[F]]",
+    "exchange_orbit_compressed": "diagonal singletons plus off-diagonal exchange averages with summed integer coefficients",
+    "identity": "all four routes are algebraically identical on the complete matched 4x4 grid"
+  },
+  "exchange_orbits": [
+    {"members": [[-2,-2]], "integer_coefficient_sum": 1},
+    {"members": [[-2,-1],[-1,-2]], "integer_coefficient_sum": -16},
+    {"members": [[-2,1],[1,-2]], "integer_coefficient_sum": 16},
+    {"members": [[-2,2],[2,-2]], "integer_coefficient_sum": -2},
+    {"members": [[-1,-1]], "integer_coefficient_sum": 64},
+    {"members": [[-1,1],[1,-1]], "integer_coefficient_sum": -128},
+    {"members": [[-1,2],[2,-1]], "integer_coefficient_sum": 16},
+    {"members": [[1,1]], "integer_coefficient_sum": 64},
+    {"members": [[1,2],[2,1]], "integer_coefficient_sum": -16},
+    {"members": [[2,2]], "integer_coefficient_sum": 1}
+  ],
+  "orbit_count": 10,
+  "coordinate_count": 16,
+  "integer_coefficient_total": 0,
+  "synthetic_exactness": {
+    "basis": "u^a v^b for all 0<=a,b<=4",
+    "result": "exact",
+    "only_nonzero_mixed_derivative_at_origin_in_basis": "a=b=1 gives 1"
+  },
+  "null_contract": {
+    "row_sums": "all exactly zero",
+    "column_sums": "all exactly zero",
+    "annihilated_additive_sector": "A(u)+B(v)+constant"
+  },
+  "future_fail_closed_assembly_audit": [
+    "assemble the same complete raw-valid QUARTER grid by direct tensor sum",
+    "assemble independently by u-then-v and v-then-u sequential central4 application",
+    "assemble independently by the frozen 10 exchange-orbit averages",
+    "require agreement subject only to explicitly declared numerical rounding bounds",
+    "any disagreement localizes implementation/index/orientation corruption and is not a physical residual"
+  ],
+  "guardrails": [
+    "diagnostic-only; non-promoting",
+    "does not permit u-v support substitution",
+    "does not permit rank skipping or reordering",
+    "does not permit zero fill",
+    "does not change Iteration-424 thresholds",
+    "does not authorize smaller h",
+    "does not create ANSATZ-003",
+    "does not authorize Fisher or resources"
+  ],
+  "model_readiness_percent": 24,
+  "readiness_change_percentage_points": 0,
+  "active_heavy_authority_at_freeze": {
+    "rank": 9,
+    "run_id": 34160111095,
+    "job_id": 101859912600,
+    "coordinate": [1.25e-6, 1.25e-6],
+    "state_at_pre_freeze_check": "in_progress"
+  }
+}
