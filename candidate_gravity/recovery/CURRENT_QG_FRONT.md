@@ -20,8 +20,8 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - QUARTER rank3 raw authority: **Iteration 542**, raw-valid PASS.
 - QUARTER rank4 raw authority: **Iteration 545**, raw-valid PASS.
 - QUARTER rank5 raw authority: **Iteration 548**, `PASS_RAW_CONSUMED_ITER424_QUARTER_SUPPORT_RANK5_MP80_MP120__NON_PROMOTING`.
-- Three-level exact diagnostics retained: **Iterations 530–533, 536–537, 540–541, 543–544, 546–547**; diagnostic-only, non-promoting.
-- Latest authoritative research iteration: **Iteration 548**.
+- Three-level exact diagnostics retained: **Iterations 530–533, 536–537, 540–541, 543–544, 546–547, 549**; diagnostic-only, non-promoting.
+- Latest authoritative research iteration: **Iteration 549**.
 
 ## Iteration 548 — rank5 raw-valid PASS
 Canonical run `34136802871`, job `101789577462`, artifact `10026933360`, artifact digest `sha256:e510b1a440c3c6a0db21707d6742997d42f74e439f5c5a3a291c9562ac0b8d0a`, head `02fd19d47288d865fa281d05c281071292f1bc30`.
@@ -34,8 +34,19 @@ New QUARTER support closure is **5/12**. Including four exact HALF-overlap corne
 
 Raw-consumption commit: `69f67a4ebdbc305b5ec697ef5bdf6a62f7e54041`.
 
+## Iteration 549 — three-level saturation / no-GOF authority
+For the frozen smooth diagnostic `X_s=D+A s^4+B s^6` at BASE/HALF/QUARTER scales `s={1,1/2,1/4}`, the exact design determinant is `-2835/65536 != 0`. Thus `(D,A,B)` are algebraically identifiable within the assumed truncated model, but there are three observations for three parameters and therefore exactly zero residual degrees of freedom.
+
+Any three assembled BASE/HALF/QUARTER values are therefore interpolated exactly by some `(D,A,B)`. A zero residual cannot be used as a goodness-of-fit PASS for the `h^4+h^6` truncation hypothesis or as evidence that omitted `h^8`/higher contamination is absent.
+
+A pure `h^8` term aliases exactly into fitted `(D,A,B)` as `C*(1/1344,-17/64,425/336)`. Classification: `REGIME_SPECIFIC_NON_IDENTIFIABILITY_ITER424_THREE_LEVEL_H4_H6_GOF__DIAGNOSTIC_ONLY_NON_PROMOTING`. This is regime-specific non-identifiability of truncation-model adequacy, not Candidate-Gravity model-level non-identifiability, not near-degeneracy, not comparator identity, and not consistency FAIL.
+
+An illustrative fourth scale `s=1/8` would provide one residual degree of freedom; integer left-null weights `[-1,81,-1104,1024]` annihilate `h^0,h^4,h^6` and respond to `h^8` with `-11475/16384`. This is diagnostic design only and does not authorize an EIGHTH heavy run or alter the frozen Iteration-424 gate.
+
+Machine authority: `candidate_gravity/results/iteration549_iter424_three_level_saturation_no_gof.json`. Reproducible audit: `candidate_gravity/code/iteration549_iter424_three_level_saturation_no_gof.py`.
+
 ## Retained diagnostic authority
-Iterations 530–533, 536–537, 540–541, 543–544, 546–547 remain exact numerical/truncation diagnostics only. They do not replace any frozen Iteration-424 physical clause, do not promote physical index 2, and do not establish Candidate-Gravity consistency, comparator identity, model-level non-identifiability, identifiability, or novelty.
+Iterations 530–533, 536–537, 540–541, 543–544, 546–547, 549 remain exact numerical/truncation diagnostics only. They do not replace any frozen Iteration-424 physical clause, do not promote physical index 2, and do not establish Candidate-Gravity consistency, comparator identity, model-level non-identifiability, physical identifiability, or novelty. Iteration 549 specifically establishes only regime-specific non-identifiability of validating the three-level `h^4+h^6` truncation hypothesis from those same three levels.
 
 ## Active heavy computation — rank6
 Exactly one successor is authorized and running:
@@ -47,7 +58,7 @@ Exactly one successor is authorized and running:
 - stage commit: `805981104a00df7771e9001f6dac8b2b529ad87c`;
 - workflow commit: `55a02dc9f22670965ac90d674bd14eeab61eacb7`;
 - head/trigger commit: `873974adf2d406dff3ce49b6e155aa1b3b455065`;
-- live state at Iteration-548 inspection: `in_progress`.
+- live state at Iteration-549 inspection: `in_progress`.
 
 No duplicate rank6 heavy run is authorized. Workflow green alone must not be accepted; raw artifact consumption is mandatory before rank6 authority.
 
@@ -90,7 +101,7 @@ The concrete upstream algebraic `Source/Ward/contact+K2` target and robust compa
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 548 closes one local QUARTER support certificate only; no stable rubric sector closes.
+Readiness change: **0 percentage points**. Iteration 549 closes a real negative diagnostic statement and prevents a false three-level goodness-of-fit certificate, but no stable rubric sector closes.
 
 ## Exact next gate
 After rank6 terminal completion: fail-closed raw-consume run `34146191135`. Only raw-valid PASS authorizes frozen rank7 `(+1.25e-6,-2.5e-6)`. Scientific FAIL/BLOCKED stops advancement; operational failure permits only minimal rank6 repair.
