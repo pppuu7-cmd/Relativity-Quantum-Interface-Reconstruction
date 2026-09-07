@@ -15,8 +15,8 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - QUARTER manifest: **Iteration 529**, 16-grid with 4 exact HALF-overlap corners and 12 required new coordinates.
 - Frozen 12-rank QUARTER successor order: **Iteration 532**.
 - QUARTER ranks 1–10 raw authority: **Iterations 534, 538, 542, 545, 548, 550, 551, 556, 562, 565**, all raw-valid PASS and non-promoting.
-- Exact routing/assembly diagnostics through **Iteration 564** remain retained and non-promoting.
-- Latest authoritative research iteration: **Iteration 565**.
+- Exact routing/assembly diagnostics through **Iteration 566** remain retained and non-promoting.
+- Latest authoritative research iteration: **Iteration 566**.
 
 ## Latest raw support authority — Iteration 565
 Rank10 coordinate `(+1.25e-6,+2.5e-6)` raw-consumed from run `34165534613`, job `101875710349`, artifact `10034846108`, digest `sha256:707e4fffa3dddcac5eb5d7dc127afcb0afd8c13c85b99c230ea57abacdb3b97d`, head `358bcfc29494fbd615397ba72314e1e10d9e7417`.
@@ -24,6 +24,19 @@ Rank10 coordinate `(+1.25e-6,+2.5e-6)` raw-consumed from run `34165534613`, job 
 Raw checks: `80/80` finite; MP80↔MP120 max `2.23136782466149871841320727933e-80 <= 1e-30`; radial Richardson max `2.57085585035539296413124070504e-15 <= 5e-4`. `result.json` SHA-256 `7cc11967da91eb299bd7a5c4e2c96525ff60c34ec0a4fc0f80e839c36601dc84`; `authority_audit.json` SHA-256 `10f2d13a6165e98a3aaca5cbf85be4d6293ce537c0f4271e9e13e3bbd5c8d645`.
 
 Machine-readable authority: `candidate_gravity/results/iteration565_iter424_quarter_rank10_raw_consumption.json`.
+
+## Iteration 566 exact assembly geometry
+The frozen 4x4 QUARTER central4 mixed-derivative coefficient matrix is `C=w⊗w`, `w=[1,-8,+8,-1]`, normalization `1/(144 h^2)`.
+
+Exact pre-registered properties:
+- `rank(C)=1`;
+- every row sum and column sum vanishes;
+- any additive grid nuisance `F_ij=a_i+b_j+c` is annihilated exactly;
+- the additive row/column nuisance subspace has dimension `7` in the 16-coordinate grid;
+- common coordinate-wise bounded error gain is `9/(4 h^2)`;
+- independent equal-variance standard-deviation gain is `65/(72 h^2)` and variance gain `4225/(5184 h^4)`.
+
+Classification: `PASS_ITER424_QUARTER_FULL_STENCIL_GEOMETRY_ERROR_NORM_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`. This is stencil/assembly geometry only, not Candidate-Gravity model-level non-identifiability, near-degeneracy, comparator identity, consistency PASS/FAIL, or novelty evidence.
 
 ## QUARTER progress
 Raw-closed new coordinates: **10/12 = 83.333333%**.  
