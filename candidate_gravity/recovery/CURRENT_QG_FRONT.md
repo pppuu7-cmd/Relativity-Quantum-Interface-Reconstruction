@@ -15,19 +15,20 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Exact unresolved physical set: **`[2]`**.
 - Latest completed BASE/HALF local mass-support authority: **Iteration 523**, `32/32 = 100% = 2560/2560` across 28 distinct coordinates.
 - Latest assembled numerical authority: **Iteration 527**, raw-valid `PASS_RAW_CONSUMED_INDEPENDENT_BASE_HALF_MP80_MP120_ASSEMBLY__NON_PROMOTING`.
-- Latest authoritative research iteration: **Iteration 528**.
-- Active scientific prerequisite: **frozen Iteration-424 quarter-step (`h=1.25e-6`) direct-parent MP80/MP120 support**.
+- Latest exact quarter-support structural authority: **Iteration 529**, `PASS_ITER424_QUARTER_SUPPORT_MANIFEST_EXACT__NON_PROMOTING`.
+- Latest authoritative research iteration: **Iteration 529**.
+- Active scientific prerequisite: **frozen Iteration-424 quarter-step (`h=1.25e-6`) direct-parent MP80/MP120 support, repaired rank1 run `34094463024` currently in progress**.
 
-## Iteration 528 — exact Iteration-424 quarter-step prerequisite
-The prospective Iteration-424 contract freezes mass steps `{5e-6,2.5e-6,1.25e-6}` and precision levels `{80,120}`. Iteration 527 closes only the BASE/HALF `h={5e-6,2.5e-6}` central4 assembly. For `h=1.25e-6`, the central4 support is `{-2.5e-6,-1.25e-6,+1.25e-6,+2.5e-6}^2`. Four coordinates with both entries in `{+-2.5e-6}` are exact overlaps with already raw-certified HALF support; 12 coordinates containing at least one `+-1.25e-6` entry remain unsupported and therefore BLOCKED, never zero-filled or inferred by `u<->v` symmetry.
+## Iterations 528–529 — quarter-step prerequisite and exact support audit
+The prospective Iteration-424 contract freezes mass steps `{5e-6,2.5e-6,1.25e-6}` and precision levels `{80,120}`. Iteration 527 closes only the BASE/HALF `h={5e-6,2.5e-6}` central4 assembly.
 
-Iteration 428 remains binding: an outer-only MP wrapper around binary64/numpy `F` is not a true 80/120-digit fixed-node evaluation. The allowed implementation is the direct-parent MP80/MP120 path established by the Iterations 447–523 precision-support program.
+For `h=1.25e-6`, central4 axis support is `{-2.5e-6,-1.25e-6,+1.25e-6,+2.5e-6}` and the Cartesian grid has exactly 16 coordinates. Exact intersection with already-certified HALF support is only the four corners with both entries in `{±2.5e-6}`. Therefore exactly **12 new quarter coordinates** are necessary. No other coordinate may be inferred, symmetry-substituted, or zero-filled. Under frozen u-major/v-major order after removing those four exact overlaps, rank1 is exactly `(-2.5e-6,-1.25e-6)`.
 
-Quarter-step deterministic order is frozen as central4 4x4 u-major/v-major after removal only of exact HALF-overlap coordinates. The first new coordinate is `(-2.5e-6,-1.25e-6)`. Stage commit `499a433168142209f7c6eefbbd5101d0095c6536`; workflow commit `1a856438eea6825f7b65d1ab5eb6853782fd774b`.
+Machine-readable audit: `candidate_gravity/results/iteration529_iter424_quarter_support_manifest_exact_audit.json`. This is an exact support/provenance PASS only; it does not satisfy any full Iteration-424 physical acceptance clause.
 
-Initial run `34094343153`, job `101654453787` failed operationally before scientific evaluation because the new stage bound the Iteration-527 raw-consumption schema using nonexistent top-level fields. This is **not** a scientific FAIL. Direct schema inspection showed the authority is encoded as `iteration=527`, exact classification `PASS_RAW_CONSUMED_INDEPENDENT_BASE_HALF_MP80_MP120_ASSEMBLY__NON_PROMOTING`, and `observed.scientific_authority_pass=true`. Binding was repaired in commit `fda4756f58aba6dce09f3c91cf44e8cce8afbade`, with no threshold or scientific-convention change.
+Iteration-528 initial run `34094343153`, job `101654453787`, failed operationally before sampling because the stage used stale prerequisite-key names. Iteration-527 raw authority actually binds as top-level `iteration=527`, exact classification `PASS_RAW_CONSUMED_INDEPENDENT_BASE_HALF_MP80_MP120_ASSEMBLY__NON_PROMOTING`, and `observed.scientific_authority_pass=true`. Repository commit `fda4756f58aba6dce09f3c91cf44e8cce8afbade` repaired only this schema binding; no dynamics, mass nodes, precision convention, z/phi/radial support, or thresholds changed. Canonical repaired trigger/head is `25c4f3ff1c2bf9ef66e0e5db6ace6580da4bb08d`; repaired run `34094463024` is in progress. Raw artifact must be consumed before scientific PASS is assigned.
 
-Canonical repaired trigger/head: `25c4f3ff1c2bf9ef66e0e5db6ace6580da4bb08d`. Canonical repaired run: **`34094463024`**. Raw artifact must be inspected before any scientific PASS is assigned.
+The first failed run is **operational BLOCKED**, not Candidate-Gravity consistency FAIL, exact comparator identity, regime-specific non-identifiability, near-degeneracy, or novelty evidence.
 
 ## Frozen Iteration-424 full acceptance after quarter support closes
 Full physical reevaluation remains unchanged and requires all simultaneously:
@@ -57,10 +58,10 @@ Iteration 504 remains `BLOCKED_FIXED_COMPARATOR_QUOTIENT_UPSTREAM_TARGET_NOT_ASS
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**.
+Readiness change: **0 percentage points**. Iteration 529 closes an exact support-manifest/provenance subgate but no additional model-level rubric sector.
 
 ## Exact downstream chain
-BASE/HALF local support **CLOSED at 523** → multipart provenance **CLOSED at 526** → BASE/HALF assembly **CLOSED at 527** → Iteration-424 quarter-step 12-new-coordinate MP support **ACTIVE at 528** → frozen Iteration-424 three-step physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
+BASE/HALF local support **CLOSED at 523** → multipart provenance **CLOSED at 526** → BASE/HALF assembly **CLOSED at 527** → Iteration-424 quarter-step support manifest **EXACT at 529** → repaired quarter rank1 raw-consume → ranks2–12 in frozen order → quarter assembly → frozen Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy retry. No `u<->v` support substitution without exact frozen identity. Exact coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated until a concrete residual survives the fixed comparator quotient. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
