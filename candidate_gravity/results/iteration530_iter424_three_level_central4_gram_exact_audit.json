@@ -1,0 +1,55 @@
+{
+  "schema": "rqir_iter424_three_level_central4_gram_exact_v1",
+  "iteration": 530,
+  "date": "2026-09-07",
+  "scope": "structural/operator geometry only; no physical promotion",
+  "classification": "PASS_ITER424_BASE_HALF_QUARTER_CENTRAL4_GRAM_FULL_RANK_EXACT__NON_PROMOTING",
+  "frozen": {
+    "base_mass_step": "5e-6",
+    "half_mass_step": "2.5e-6",
+    "quarter_mass_step": "1.25e-6",
+    "central4_axis_coefficients": ["1/12", "-8/12", "8/12", "-1/12"],
+    "derivative_scaling_relative_to_base_h": {
+      "BASE": 1,
+      "HALF": 4,
+      "QUARTER": 16
+    },
+    "ds_convention": "ds=-d_base retained; common global sign does not alter Gram entries"
+  },
+  "support_intersections": {
+    "BASE_INTERSECT_HALF": "4 coordinates: (±5e-6,±5e-6)",
+    "HALF_INTERSECT_QUARTER": "4 coordinates: (±2.5e-6,±2.5e-6)",
+    "BASE_INTERSECT_QUARTER": "empty"
+  },
+  "exact_row_norm_squares": {
+    "BASE": "4225/5184",
+    "HALF": "4225/324",
+    "QUARTER": "16900/81"
+  },
+  "exact_inner_products": {
+    "BASE_HALF": "4/81",
+    "BASE_QUARTER": "0",
+    "HALF_QUARTER": "64/81"
+  },
+  "gram_matrix": [
+    ["4225/5184", "4/81", "0"],
+    ["4/81", "4225/324", "64/81"],
+    ["0", "64/81", "16900/81"]
+  ],
+  "leading_principal_minors": {
+    "order_1": "4225/5184",
+    "order_2": "5948843/559872",
+    "order_3": "75384279425/34012224"
+  },
+  "conclusions": {
+    "positive_definite": true,
+    "row_rank": 3,
+    "quarter_row_is_not_linear_combination_of_base_half": true,
+    "base_quarter_exact_support_orthogonality": true,
+    "physical_mass_step_pass_implied": false,
+    "identifiability_implied": false,
+    "fisher_authorized": false,
+    "ansatz003_authorized": false
+  },
+  "guardrail": "This exact Gram result proves only linear independence/conditioning of the three frozen central4 assembly rows. It is not a Candidate-Gravity consistency PASS/FAIL, comparator identity, regime-specific non-identifiability, near-degeneracy, novelty certificate, or physical Iteration-424 acceptance clause."
+}
