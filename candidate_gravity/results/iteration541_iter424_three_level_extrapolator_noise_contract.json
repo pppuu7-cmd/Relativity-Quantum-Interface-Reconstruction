@@ -1,0 +1,24 @@
+{
+  "iteration": 541,
+  "classification": "PASS_ITER424_THREE_LEVEL_EXTRAPOLATOR_NOISE_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "estimator": "R3=(BASE-80*HALF+1024*QUARTER)/945",
+  "weights": ["1/945", "-16/189", "1024/945"],
+  "operator_norms": {
+    "l1": "221/189",
+    "l1_decimal": 1.1693121693121693,
+    "l2_squared": "50237/42525",
+    "l2_decimal": 1.0869002464792206,
+    "linf": "1024/945"
+  },
+  "sharp_uniform_absolute_error_bound": "if |e_BASE|,|e_HALF|,|e_QUARTER|<=eps then |e_R3|<=(221/189) eps; bound is sharp",
+  "iid_equal_variance_noise_std_factor": "sqrt(50237/42525) ~= 1.0869002464792206",
+  "truncation_leakage": {
+    "h4": "0",
+    "h6": "0",
+    "h8": "1/1344",
+    "h10": "1/1024"
+  },
+  "scope": "numerical/truncation diagnostic only; does not alter frozen Iteration-424 acceptance, does not promote physical index 2, and is not a model-level consistency or identifiability claim",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0
+}
