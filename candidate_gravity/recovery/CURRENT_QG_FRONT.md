@@ -20,7 +20,8 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - u↔v non-equivalence authority: **Iteration 552**.
 - independent u↔v replication/local alpha-shift response authority: **Iteration 553**, `PASS_ITER424_UV_SWAP_NON_EQUIVALENCE_REPLICATION_RANK2_RANK7__DIAGNOSTIC_ONLY_NON_PROMOTING`.
 - exact u↔v routed-invariant shift authority: **Iteration 554**, `PASS_ITER424_UV_SWAP_EXACT_INVARIANT_SHIFT_CONTRACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
-- Latest authoritative research iteration: **Iteration 554**.
+- exact u↔v midpoint/antisymmetric routing decomposition authority: **Iteration 555**, `PASS_ITER424_UV_SWAP_MIDPOINT_ANTISYMMETRIC_DECOMPOSITION_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
+- Latest authoritative research iteration: **Iteration 555**.
 
 ## QUARTER progress
 Raw-closed new coordinates: **7/12 = 58.333333333333336%**.
@@ -97,6 +98,26 @@ For the retained unresolved class `q^2=-1`, the last relation is exactly `-2 del
 
 Machine-readable authority: `candidate_gravity/results/iteration554_iter424_uv_swap_exact_invariant_shift_contract.json`.
 
+## Iteration 555 — exact exchange midpoint decomposition
+Introduce `m=(u+v)/2`, `d=(v-u)/2`, so `u=m-d`, `v=m+d`. The same frozen parent kinematics give exactly
+
+`alpha(u,v)=-1/2+d/s`,
+`alpha(v,u)=-1/2-d/s`,
+`lambda=s^2-4 s m+4 d^2`.
+
+Thus rho is even in `d`. With
+
+`p_mid=-a-q/2+rho(m,d^2)n`,
+
+we have
+
+`p(u,v)=p_mid+(d/s)q`,
+`p(v,u)=p_mid-(d/s)q`.
+
+The exchange midpoint therefore has the exact routing coefficient `alpha=-1/2`, while the antisymmetric displacement is purely q-directed. This is a provenance/diagnostic decomposition only: it does not imply general observable linearity or parity in `d`, does not eliminate explicit u/v dependence elsewhere in the dynamics, and does not permit support substitution.
+
+Machine-readable authority: `candidate_gravity/results/iteration555_iter424_uv_swap_midpoint_antisymmetric_decomposition_exact.json`.
+
 ## Retained three-level diagnostic lessons
 - Iteration 530: exact three-level central4 Gram row rank 3.
 - Iteration 531: normalized stencil geometry well-conditioned, scale-free `kappa_2≈1.04378`.
@@ -133,7 +154,7 @@ The concrete upstream algebraic `Source/Ward/contact+K2` target and robust compa
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Seven new QUARTER nodes are raw-closed and the false u↔v shortcut is now ruled out by two raw pairs plus an exact routed-invariant identity, but no additional stable model-level rubric sector is complete.
+Readiness change: **0 percentage points**. Seven new QUARTER nodes are raw-closed and the u↔v distinction now has replicated raw evidence, exact invariant-shift authority, and an exact midpoint/antisymmetric routing decomposition, but no additional stable model-level rubric sector is complete.
 
 ## Exact downstream chain
 BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → ranks1–7 **RAW PASS through 551** → rank8 **RUNNING** → ranks9–12 in frozen order → QUARTER assembly → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
