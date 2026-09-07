@@ -18,27 +18,19 @@ jobs:
           python-version: '3.12'
       - name: Install frozen numerical dependencies
         run: python -m pip install --disable-pip-version-check -q mpmath==1.3.0
-      - name: Normalize committed raw-consumption provenance and resolve artifacts
+      - name: Resolve exact committed support provenance
         run: |
-          python - <<'PY'
-          import json,pathlib
-          R=pathlib.Path('candidate_gravity/results')
-          for p in R.glob('*.json'):
-              try: o=json.loads(p.read_text())
-              except Exception: continue
-              q=o.get('provenance')
-              if not isinstance(q,dict):
-                  q=o.get('canonical_provenance')
-              if not isinstance(q,dict): continue
-              changed=False
-              for k in ('artifact_id','artifact_name','scientific_json_sha256'):
-                  if k not in o and k in q:
-                      o[k]=q[k]; changed=True
-              if changed: p.write_text(json.dumps(o,indent=2,sort_keys=True)+'\n')
-          PY
           root="candidate_gravity/artifacts/post523_independent_base_half_assembly"; mkdir -p "$root/support_bundle"
           python candidate_gravity/code/post523_independent_base_half_assembly.py --emit-artifact-manifest > "$root/artifact_manifest.json"
-      - name: Download all 28 raw-validated support artifacts
+          python - <<'PY'
+          import json
+          p='candidate_gravity/artifacts/post523_independent_base_half_assembly/artifact_manifest.json'
+          o=json.load(open(p))
+          assert len(o)==28 and [x['rank'] for x in o]==list(range(28))
+          assert sum(len(x['artifact_parts']) for x in o)==29
+          assert len(o[10]['artifact_parts'])==2
+          PY
+      - name: Download all exact raw-validated support artifact parts
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -46,10 +38,11 @@ jobs:
           import json
           p='candidate_gravity/artifacts/post523_independent_base_half_assembly/artifact_manifest.json'
           for x in json.load(open(p)):
-              print(f"{x['rank']}\t{x['artifact_id']}")
+              for pi,part in enumerate(x['artifact_parts']):
+                  print(f"{x['rank']}\t{pi}\t{part['artifact_id']}")
           PY
-          while IFS=$'\t' read -r rank aid; do
-            d="candidate_gravity/artifacts/post523_independent_base_half_assembly/support_bundle/$rank"; mkdir -p "$d"
+          while IFS=$'\t' read -r rank pi aid; do
+            d="candidate_gravity/artifacts/post523_independent_base_half_assembly/support_bundle/$rank/$pi"; mkdir -p "$d"
             gh api -H 'Accept: application/vnd.github+json' "/repos/${GITHUB_REPOSITORY}/actions/artifacts/${aid}/zip" > "/tmp/${aid}.zip"
             unzip -j -q "/tmp/${aid}.zip" -d "$d"
             test -s "$d/result.json"
@@ -57,18 +50,24 @@ jobs:
       - name: Run independent BASE/HALF central4 assembly
         run: |
           root="candidate_gravity/artifacts/post523_independent_base_half_assembly"
+          set +e
           python candidate_gravity/code/post523_independent_base_half_assembly.py > "$root/result.json"
+          rc=$?
+          set -e
+          exit $rc
       - name: Raw authority audit
+        if: always()
         run: |
           python - <<'PY'
           import hashlib,json,pathlib
           root=pathlib.Path('candidate_gravity/artifacts/post523_independent_base_half_assembly'); p=root/'result.json'
           if not p.exists() or p.stat().st_size==0: raise SystemExit(2)
           raw=p.read_bytes(); o=json.loads(raw); obs=o.get('observed',{}); fr=o.get('frozen',{}); co=o.get('conditioning',{})
-          ok=bool(o.get('stage')=='POST523_INDEPENDENT_BASE_HALF_MP80_MP120_CENTRAL4_ASSEMBLY' and o.get('classification')=='PASS_INDEPENDENT_BASE_HALF_ASSEMBLY__NON_PROMOTING' and o.get('scientific_gate_pass') is True and o.get('promotes_physical_coordinate') is False and fr.get('ds_binding')=='ds=-d_base' and fr.get('distinct_coordinates')==28 and fr.get('source_occurrences')==32 and fr.get('sample_count')==80 and fr.get('precision_digits')==[80,120] and fr.get('no_richardson_promotion') is True and co.get('rank')==2 and co.get('gram_determinant')=='5948843/559872' and obs.get('all_finite') is True and obs.get('sample_count')==80 and float(obs.get('assembled_base_mp_scaled_max'))<=2e-6 and float(obs.get('assembled_half_mp_scaled_max'))<=2e-6 and float(obs.get('base_half_mass_step_scaled_max'))<=2e-5 and len(o.get('artifact_provenance',[]))==28)
-          a={'schema':'rqir_action_result_authority_audit_v1','stage':o.get('stage'),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),'classification':o.get('classification'),'scientific_authority_pass':ok,'authority_scope':'FULL_28_COORDINATE_INDEPENDENT_BASE_HALF_MP80_MP120_ASSEMBLY__NON_PROMOTING'}
+          structural=bool(o.get('stage')=='POST523_INDEPENDENT_BASE_HALF_MP80_MP120_CENTRAL4_ASSEMBLY' and o.get('promotes_physical_coordinate') is False and fr.get('ds_binding')=='ds=-d_base' and fr.get('distinct_coordinates')==28 and fr.get('source_occurrences')==32 and fr.get('sample_count')==80 and fr.get('precision_digits')==[80,120] and fr.get('no_richardson_promotion') is True and co.get('rank')==2 and co.get('gram_determinant')=='5948843/559872' and obs.get('sample_count')==80 and len(o.get('artifact_provenance',[]))==28)
+          scientific=bool(structural and o.get('classification')=='PASS_INDEPENDENT_BASE_HALF_ASSEMBLY__NON_PROMOTING' and o.get('scientific_gate_pass') is True and obs.get('all_finite') is True and float(obs.get('assembled_base_mp_scaled_max'))<=2e-6 and float(obs.get('assembled_half_mp_scaled_max'))<=2e-6 and float(obs.get('base_half_mass_step_scaled_max'))<=2e-5)
+          a={'schema':'rqir_action_result_authority_audit_v1','stage':o.get('stage'),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),'classification':o.get('classification'),'structural_authority_valid':structural,'scientific_authority_pass':scientific,'authority_scope':'FULL_28_COORDINATE_29_ARTIFACT_PART_INDEPENDENT_BASE_HALF_MP80_MP120_ASSEMBLY__NON_PROMOTING'}
           (root/'authority_audit.json').write_text(json.dumps(a,indent=2,sort_keys=True)+'\n')
-          if not ok: raise SystemExit(2)
+          if not structural: raise SystemExit(2)
           PY
       - name: Upload raw artifact
         if: always()
