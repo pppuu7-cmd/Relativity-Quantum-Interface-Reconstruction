@@ -15,43 +15,51 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Independent BASE/HALF MP80/MP120 assembly: **Iteration 527**, raw-valid PASS, non-promoting.
 - QUARTER exact support manifest: **Iteration 529** — 16-grid, 4 exact HALF-overlap corners, 12 new coordinates required.
 - Full 12-rank QUARTER successor order prospectively frozen: **Iteration 532**.
-- Three-level exact diagnostics retained: **Iterations 530–533, 536–537**; diagnostic-only, non-promoting.
+- Three-level exact diagnostics retained: **Iterations 530–533, 536–537, 540**; diagnostic-only, non-promoting.
 - QUARTER rank1 raw authority: **Iteration 534**, raw-valid PASS.
 - QUARTER rank2 raw authority: **Iteration 538**, `PASS_RAW_CONSUMED_ITER424_QUARTER_SUPPORT_RANK2_MP80_MP120__NON_PROMOTING`.
-- Latest authoritative research iteration: **Iteration 539**.
+- Latest authoritative research iteration: **Iteration 540**.
 
 ## Iteration 538 — rank2 raw-valid PASS
 Canonical run `34102627559`, job `101680313500`, artifact `10014273722`, artifact digest `sha256:02ca8895b69ed4aeb9404882bae369101d2160a3915687c11ab1b66a3fbca231`, head `1046545619a9ae564eb7e611708e4e3db7b5eb42`.
 
-Downloaded artifact was independently checked. `result.json` SHA-256 is `303ef060845f4cca6699e38d954089b144a26fe6b7c0ce1874819deb5ad2b01a`, exactly matching the declared authority-audit result hash; `authority_audit.json` SHA-256 is `32cf6685648b3c55f8193939fc0c798e695a1f6387753782802bb0eb3c9fd9ea`.
-
-Frozen rank2 coordinate `(-2.5e-6,+1.25e-6)`:
-- sample count `80/80`;
-- all finite;
-- max scaled MP80↔MP120 discrepancy `2.69972435730420647190377912951e-80 <= 1e-30`;
-- max radial Richardson scaled error `2.56823894036034380187639556588e-15 <= 5e-4`.
+Frozen rank2 coordinate `(-2.5e-6,+1.25e-6)` passed `80/80` finite samples, max scaled MP80↔MP120 discrepancy `2.69972435730420647190377912951e-80 <= 1e-30`, and max radial Richardson scaled error `2.56823894036034380187639556588e-15 <= 5e-4`.
 
 New QUARTER support closure is **2/12**. Including four exact HALF-overlap corners, authoritative full QUARTER-grid coordinate coverage is **6/16 = 37.5%**. This does not promote physical index 2.
 
-Machine authority: `candidate_gravity/results/iteration538_iter424_quarter_rank2_raw_consumption.json`.
+## Iteration 540 — exact three-level step-ratio diagnostic
+For the common smooth hierarchy `X_h=D+A+B+C+O(h^10)` with `A=a h^4`, `B=b h^6`, `C=c h^8`, and `d1=BASE-HALF`, `d2=HALF-QUARTER`:
 
-## Active heavy computation — Iteration 539
-Exactly one successor is authorized and running:
+- `d1=(15/16)A+(63/64)B+(255/256)C`,
+- `d2=(15/256)A+(63/4096)B+(255/65536)C`.
+
+Pure h^4, h^6 and h^8 contributions therefore have exact `d1/d2` ratios **16, 64, 256** respectively. For h^4+h^6 only,
+
+`B/A = (80/21)(r-16)/(64-r)`, where `r=d1/d2`,
+
+with exact cancellation points `d1=0` at `B/A=-20/21` and `d2=0` at `B/A=-80/21`.
+
+Same-sign A,B imply `16<=r<=64`; same-sign A,B,C imply `16<=r<=256`. Violation diagnoses opposite-sign cancellation and/or higher-order contamination under the stated expansion; it is **not** by itself a Candidate-Gravity consistency FAIL.
+
+Classification: `PASS_ITER424_THREE_LEVEL_STEP_RATIO_SIGN_STRUCTURE_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
+
+Machine authority: `candidate_gravity/results/iteration540_iter424_three_level_step_ratio_sign_contract.json`.
+
+## Active heavy computation — rank3
+Exactly one successor remains authorized and running:
 - rank: **3/12**;
 - coordinate: `u=-1.25e-6`, `v=-2.5e-6`;
 - run: `34115105768`;
 - job: `101719973617`;
 - head/trigger commit: `ec77639ef423249426ee9b5b560b0662521f56a9`;
-- stage commit: `c15f9c93736c117c8219f46416cbf3a5977fdbc1`;
-- workflow commit: `3bd5d2e32d2d96fa6f74f27c39a7c121f8e087b6`;
-- live state at Iteration-539 inspection: `in_progress` on `Run Iter424 quarter-rank3 full-z MP stage`; raw audit and upload pending.
+- live state at Iteration-540 inspection: `in_progress`; raw audit and upload pending.
 
 No duplicate rank3 heavy run is authorized. Workflow green alone must not be accepted; raw artifact consumption is mandatory before rank3 authority.
 
 ## Frozen Iteration-532 QUARTER order
 1. `(-2.5e-6,-1.25e-6)` — raw PASS at Iteration 534
 2. `(-2.5e-6,+1.25e-6)` — raw PASS at Iteration 538
-3. `(-1.25e-6,-2.5e-6)` — running at Iteration 539
+3. `(-1.25e-6,-2.5e-6)` — running
 4. `(-1.25e-6,-1.25e-6)`
 5. `(-1.25e-6,+1.25e-6)`
 6. `(-1.25e-6,+2.5e-6)`
@@ -87,10 +95,10 @@ The concrete upstream algebraic `Source/Ward/contact+K2` target and robust compa
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**.
+Readiness change: **0 percentage points**. Iteration 540 closes an exact diagnostic subgate only; no stable rubric sector closes.
 
 ## Exact next gate
-After rank3 terminal completion: fail-closed raw-consume its artifact. Only raw-valid PASS authorizes frozen rank4 `(-1.25e-6,-1.25e-6)`. Scientific FAIL/BLOCKED stops advancement; operational failure permits only minimal rank3 repair.
+After rank3 terminal completion: fail-closed raw-consume run `34115105768`. Only raw-valid PASS authorizes frozen rank4 `(-1.25e-6,-1.25e-6)`. Scientific FAIL/BLOCKED stops advancement; operational failure permits only minimal rank3 repair.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy retry. No unsupported `u<->v` substitution. Exact coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated until a concrete residual survives the fixed comparator quotient. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
