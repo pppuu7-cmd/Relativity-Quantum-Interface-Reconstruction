@@ -2,4 +2,6 @@ trigger=post523_independent_base_half_assembly
 source_front=iteration523
 support_closure=32/32
 contract=independent_BASE_HALF_MP80_MP120_central4
-created_utc=2026-09-07T04:19:00Z
+attempt=2
+reason=normalize_nested_raw_consumption_provenance
+created_utc=2026-09-07T04:22:00Z
