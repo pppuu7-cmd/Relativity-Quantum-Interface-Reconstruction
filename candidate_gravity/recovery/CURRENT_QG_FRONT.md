@@ -13,34 +13,28 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest validated structural authority: **Iteration 410**.
 - Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: **`[2]`**.
-- Latest completed numerical mass-support authority: **Iteration 517**, raw-consumed frozen rank25 `(u,v)=(+2.5e-6,+5e-6)`, HALF local index 11, multiplicity 1.
-- Latest authoritative research iteration: **Iteration 519**.
-- Certified occurrence-weighted precision coverage: **`30/32 = 93.750% = 2400/2560`** row occurrences.
+- Latest completed numerical mass-support authority: **Iteration 520**, raw-consumed frozen rank26 `(u,v)=(+5e-6,-2.5e-6)`, HALF local index 13, multiplicity 1.
+- Latest authoritative research iteration: **Iteration 520**.
+- Certified occurrence-weighted precision coverage: **`31/32 = 96.875% = 2480/2560`** row occurrences.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16. Frozen rank10 `(+5e-6,+5e-6)`, multiplicity 2, was already certified in Iteration 455 and must not be relaunched.
 
-## Latest numerical authority — Iteration 517 rank25
-Canonical rank25 `(u,v)=(+2.5e-6,+5e-6)`, HALF local index 11, multiplicity 1: run `34066294587`, job `101575523337`, artifact `9999994876`, head `50c8ebade8f163366848efefa860887b0843ea45`.
+## Latest numerical authority — Iteration 520 rank26
+Canonical rank26 `(u,v)=(+5e-6,-2.5e-6)`, HALF local index 13, multiplicity 1: run `34071968236`, job `101590847259`, artifact `10002375956`, head `4104d245ffa76525bfd30cdaf2a75cb210a0cd5c`.
 
-Classification: `PASS_RAW_CONSUMED_MANIFEST_RANK25_FULL_Z_MP80_MP120__NON_PROMOTING`.
+Classification: `PASS_RAW_CONSUMED_MANIFEST_RANK26_FULL_Z_MP80_MP120__NON_PROMOTING`.
 
-Artifact digest `sha256:6bd866f34a732b7327702ac7d9ffc8b29f4077ff98c6b9b87191a9ff9f1bca1d`; scientific JSON SHA-256 `09a45246492011381c979c553229b37da61687334d951b62494e171367e074b7`; authority-audit SHA-256 `6cb116d0924fb2da7a43a0d5feab4261e850ec14d0d089647ad9a6ffb3490588`.
+Artifact digest `sha256:5714cfcabdeefcabc4e8a9fbda9b9a22765a34ec9c5f0fba8ce6aeaa73c1c424`; scientific JSON SHA-256 `0e721e877be906bebffce0b4285b5ef0e808075dea69d63fac91d201cb681b08`; authority-audit SHA-256 `fb9e340bf65569ef74c04846a3bc4b0d8305ee55c9ad903a6029d43a60068356`.
 
-Observed: `80/80` finite; max scaled MP80↔MP120 `2.33746055489652415419659640715e-80 <= 1e-30`; max radial Richardson scaled error `2.57346381932435712702856966978e-15 <= 5e-4`.
+Observed: `80/80` finite; max scaled MP80↔MP120 `3.16665900627325950036239838644e-80 <= 1e-30`; max radial Richardson scaled error `2.56450944838430094958318814512e-15 <= 5e-4`.
 
-Machine-readable raw consumption: `candidate_gravity/results/post516_rank25_raw_consumption.json`, commit `d05ee92c2c7deac6d7d5d097183f15027b54e49c`. This advances local precision support only; it does not promote physical index 2, assembled BASE/HALF closure, robust residual, ansatz authority, comparator novelty, or readiness.
+Machine-readable raw consumption: `candidate_gravity/results/post519_rank26_raw_consumption.json`, commit `6915f52883166ed140f7d4d0ab4bc9ecf84ee6b5`. This advances local precision support only; it does not promote physical index 2, assembled BASE/HALF closure, robust residual, ansatz authority, comparator novelty, or readiness.
 
-## Active heavy gate — rank26
-Frozen rank26 is `(u,v)=(+5e-6,-2.5e-6)`, HALF local index 13, multiplicity 1. Stage `candidate_gravity/code/post516_manifest_rank26_full_z_mp_stage.py`, commit `ea225ab7714042db5e5273739a1133b9b6284344`; workflow `.github/workflows/rqir-post516-manifest-rank26-full-z-mp.yml`, commit `0a260be7b2d706686f19863b8dbdcef50181dfda`; trigger/head `4104d245ffa76525bfd30cdaf2a75cb210a0cd5c`.
+## Active heavy gate — rank27
+Frozen final untested support coordinate rank27 is `(u,v)=(+5e-6,+2.5e-6)`, HALF local index 14, multiplicity 1. Stage `candidate_gravity/code/post519_manifest_rank27_full_z_mp_stage.py`, commit `338233a1547730e6d59149fe486e78476cbb556f`; workflow `.github/workflows/rqir-post519-manifest-rank27-full-z-mp.yml`, commit `60a496cc1e878b830a95c465c278c044fd456667`; trigger/head `d122d18783fca2e6626555d906df48724c8110c5`.
 
-Canonical run **`34071968236`**, job **`101590847259`**, is **queued/in_progress**. Do not duplicate and do not assign scientific PASS before raw artifact consumption.
+Canonical run **`34078407905`**, job **`101608912613`**, is **in_progress**. Do not duplicate and do not assign scientific PASS before raw artifact consumption.
 
-Only raw-valid rank26 PASS permits rank27 `(+5e-6,+2.5e-6)`, HALF local index 14, multiplicity 1. If BLOCKED, stop suffix progression and localize the first failing `z/phi/radial` sample without changing frozen dynamics, support order, thresholds, MP levels, radial hs, or angular grid.
-
-## Frozen remaining suffix
-- rank26 `(+5e-6,-2.5e-6)`, HALF local index 13;
-- rank27 `(+5e-6,+2.5e-6)`, HALF local index 14.
-
-Conditional coverage after future sequential raw-valid PASS: rank26 `31/32=96.875%`; rank27 `32/32=100%`. These are arithmetic consequences only, not PASS claims.
+If rank27 raw-valid PASS, local support closure becomes `32/32 = 100% = 2560/2560` and the next gate is frozen independent BASE/HALF MP80/120 assembly. If BLOCKED, stop support progression and localize the first failing `z/phi/radial` sample without changing frozen dynamics, support order, thresholds, MP levels, radial hs, or angular grid.
 
 ## Exact assembly authority — Iterations 510–519
 Iteration 510 established exact BASE/HALF row independence: `rank([W_BASE,W_HALF])=2`; `W_DELTA=W_BASE-W_HALF` adds no independent row. Exact Gram matrix `G=[[4225/5184,4/81],[4/81,4225/324]]`, determinant `5948843/559872`.
@@ -53,9 +47,9 @@ Iteration 514 established distribution-free deterministic bounds `|delta BASE| <
 
 Iteration 516 generalized independent coordinate-error covariance to arbitrary variances `v_p>=0`: `Cov(BASE,HALF)=h^-4 (1/81) sum_shared v_p >=0`; each shared discrepancy coefficient is `25/144`.
 
-Iteration 518 removes the diagonal-noise restriction and allows an arbitrary PSD covariance `Sigma` over all 28 coordinates: `C_A=h^-4 A Sigma A^T` is PSD, `Var(BASE-HALF)=h^-4(w_BASE-w_HALF)^T Sigma (w_BASE-w_HALF)`, and with `lambda=lambda_max(Sigma)` exact norm-level bounds are `Var(BASE)<=(4225/5184)lambda/h^4`, `Var(HALF)<=(4225/324)lambda/h^4`, `Var(BASE-HALF)<=(23771/1728)lambda/h^4`, `|Cov(BASE,HALF)|<=(4225/1296)lambda/h^4`. Under general correlated PSD noise the cross-covariance may have either sign; Iteration 516 nonnegativity is diagonal-noise-specific.
+Iteration 518 generalized to arbitrary PSD covariance `Sigma` over all 28 coordinates: `C_A=h^-4 A Sigma A^T` is PSD and `Var(BASE-HALF)=h^-4(w_BASE-w_HALF)^T Sigma (w_BASE-w_HALF)`. Under correlated PSD noise the BASE/HALF cross-covariance may have either sign.
 
-Iteration 519 establishes the exact sufficient local-scaled→assembled-MP envelope contract. With local `eps=1e-30`, frozen assembled `tau=2e-6`, and `h=5e-6`, local scaled PASS implies `|x80_i-x120_i|<=eps*S_i`, `S_i=max(1,|x80_i|,|x120_i|)`, and any central4 assembly row satisfies assembled scaled discrepancy `<= eps/h^2 sum_i |w_i|S_i`. Hence `sum_i|w_i|S_i<=tau h^2/eps=5e13` is sufficient for assembled MP PASS. Uniform sufficient envelopes are BASE `Smax<=200000000000000/9`, HALF `Smax<=50000000000000/9`. Crucially, local scaled PASS alone does **not** imply assembled scaled PASS; the independent frozen assembly gate remains mandatory. Classification: `PASS_LOCAL_SCALED_TO_ASSEMBLED_MP_SUFFICIENT_ENVELOPE_CONTRACT_EXACT__NON_PROMOTING`.
+Iteration 519 established the exact sufficient local-scaled→assembled-MP envelope contract. With local `eps=1e-30`, frozen assembled `tau=2e-6`, and `h=5e-6`, `sum_i|w_i|S_i<=5e13` is sufficient for assembled MP PASS, but local scaled PASS alone does not imply assembled PASS. The independent assembly gate remains mandatory.
 
 These are numerical/provenance authorities only and create no physical covariance claim, consistency verdict, comparator identity, non-identifiability, near-degeneracy, novelty certificate, threshold change, or Fisher authorization.
 
@@ -65,9 +59,9 @@ Iteration 504 remains `BLOCKED_FIXED_COMPARATOR_QUOTIENT_UPSTREAM_TARGET_NOT_ASS
 Frozen timelike `Tr U1^2` census remains 57 physical channels = 6 simple-simple + 36 simple-double + 15 double-double, exactly 19 per `q^2`. Iteration 421 run `33871920373` remains raw-valid `BLOCKED_CONVERGENCE`; diagnostic index-2 value is not authority and no zero-fill is allowed. Max physical stability scaled `2.2720400683804223e-05` and max required fit residual scaled `2.585665489102237e-05` exceed frozen `2e-05`; thresholds are not weakened.
 
 ## Frozen numerical/assembly contract
-After all 28 distinct support coordinates are locally certified, evaluate BASE and HALF central4 assemblies independently at MP80 and MP120. Retain `ds=-d_base`; no Richardson promotion. Require all finite, assembled scaled MP80↔MP120 discrepancy `<=2e-6`, retained BASE↔HALF mass-step discrepancy `<=2e-5`, plus retained provenance and conditioning contracts. Local MP PASS never substitutes for assembled derivative closure. Iteration 519 provides a sufficient amplitude-envelope certificate only; it does not waive direct assembled evaluation.
+After all 28 distinct support coordinates are locally certified, evaluate BASE and HALF central4 assemblies independently at MP80 and MP120. Retain `ds=-d_base`; no Richardson promotion. Require all finite, assembled scaled MP80↔MP120 discrepancy `<=2e-6`, retained BASE↔HALF mass-step discrepancy `<=2e-5`, plus retained provenance and conditioning contracts. Local MP PASS never substitutes for assembled derivative closure.
 
-The frozen Iteration-424 high-precision fallback remains downstream of complete support closure and independent BASE/HALF assembly. It preserves the same mass nodes and parent dynamics and forbids smaller `h`, angular-grid escalation, threshold weakening, zero fill, or bypassing ranks 26–27.
+The frozen Iteration-424 high-precision fallback remains downstream of complete support closure and independent BASE/HALF assembly. It preserves the same mass nodes and parent dynamics and forbids smaller `h`, angular-grid escalation, threshold weakening, zero fill, or support-gate bypass.
 
 ## Stable readiness rubric
 - comparator foundation `24/25`
@@ -79,10 +73,10 @@ The frozen Iteration-424 high-precision fallback remains downstream of complete 
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 519 closed a genuine logical local→assembled precision subgate but no additional readiness-rubric sector.
+Readiness change: **0 percentage points**. Iteration 520 advanced local numerical support coverage only.
 
 ## Exact downstream chain
-Complete support closure → independent BASE/HALF MP80/120 assembly → frozen Iteration-424 reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient → robust nonzero residual.
+Rank27 raw consumption → complete support closure → independent BASE/HALF MP80/120 assembly → frozen Iteration-424 reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient → robust nonzero residual.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Negative/scoped results are preserved. Operational failure/cancellation is not scientific FAIL. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. No `u<->v` support deduplication without an exact frozen identity. Exact BASE/HALF coordinate overlap may share local sampled precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists. No blind heavy full-C5. Do not reopen the closed C5 null-soft e=3 sector. Old weighted-B3 proxy residues are not actual `Tr U1` authority. Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification.
