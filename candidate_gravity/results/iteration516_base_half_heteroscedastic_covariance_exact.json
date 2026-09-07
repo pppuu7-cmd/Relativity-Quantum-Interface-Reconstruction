@@ -1,0 +1,22 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "PASS_BASE_HALF_HETEROSCEDASTIC_DIAGONAL_COVARIANCE_EXACT__NON_PROMOTING",
+  "coordinate_count": 28,
+  "covariance_formula": "Cov(BASE,HALF)=h^-4*(1/81)*sum_{p in shared} v_p",
+  "general_variance_formula_base": "Var(BASE)=h^-4*sum_p wb[p]^2 v_p",
+  "general_variance_formula_delta": "Var(BASE-HALF)=h^-4*sum_p (wb[p]-wh[p])^2 v_p",
+  "general_variance_formula_half": "Var(HALF)=h^-4*sum_p wh[p]^2 v_p",
+  "guardrail": "Do not infer physical covariance, do not treat BASE-HALF as independent, and do not replace assembled scaled-discrepancy gates with this stochastic propagation identity.",
+  "iid_reduction": "if v_p=sigma^2 for all p, Cov(BASE,HALF)=(4/81)*sigma^2/h^4",
+  "iteration": 516,
+  "scope": "independent mean-zero coordinate errors with arbitrary nonnegative per-coordinate variances",
+  "shared_covariance_coefficient_each": "1/81",
+  "shared_discrepancy_variance_coefficient_each": "25/144",
+  "shared_nodes": [
+    ["-1", "-1"],
+    ["-1", "1"],
+    ["1", "-1"],
+    ["1", "1"]
+  ],
+  "sign_claim": "Cov(BASE,HALF)>=0 for diagonal independent coordinate noise; equality iff all four shared-node variances vanish"
+}
