@@ -18,10 +18,8 @@ import mpmath as mp
 ROOT=Path(__file__).resolve().parent; R=ROOT.parent/'results'
 
 auth=json.loads((R/'post526_independent_base_half_assembly_raw_consumption.json').read_text())
-if auth.get('scientific_gate_pass') is not True:
-    raise SystemExit(('iteration527_assembly_prerequisite_not_passed',auth.get('scientific_gate_pass')))
-if auth.get('authoritative_iteration')!=527:
-    raise SystemExit(('iteration527_authority_drift',auth.get('authoritative_iteration')))
+if auth.get('iteration')!=527 or auth.get('classification')!='PASS_RAW_CONSUMED_INDEPENDENT_BASE_HALF_MP80_MP120_ASSEMBLY__NON_PROMOTING' or auth.get('observed',{}).get('scientific_authority_pass') is not True:
+    raise SystemExit(('iteration527_assembly_prerequisite_not_passed',auth.get('iteration'),auth.get('classification'),auth.get('observed',{}).get('scientific_authority_pass')))
 
 contract=(ROOT/'iteration424_channel2_high_precision_fallback_contract.py').read_text()
 for tok in ('5.0e-6','2.5e-6','1.25e-6','PRECISION_LEVELS_DIGITS = [80, 120]'):
@@ -31,15 +29,9 @@ p=ROOT/'post447_class3_phi_sample_mp_stage.py'; s=p.read_text(); marker="start=t
 if s.count(marker)!=1: raise SystemExit(('post447_sampling_boundary_drift',s.count(marker)))
 C={'__name__':'post527_iter424_quarter_rank1_parent','__file__':str(p)}
 with contextlib.redirect_stdout(io.StringIO()): exec(compile(s.split(marker,1)[0],str(p),'exec'),C,C)
-
-H=1.25e-6
-NODES=(-2*H,-H,H,2*H)
-allq=[(u,v) for u in NODES for v in NODES]
-covered={(u,v) for u in (-2*H,2*H) for v in (-2*H,2*H)}
-untested=[q for q in allq if q not in covered]
+H=1.25e-6; NODES=(-2*H,-H,H,2*H); allq=[(u,v) for u in NODES for v in NODES]; covered={(u,v) for u in (-2*H,2*H) for v in (-2*H,2*H)}; untested=[q for q in allq if q not in covered]
 if len(untested)!=12 or untested[0]!=(-2.5e-6,-1.25e-6): raise SystemExit(('quarter_manifest_drift',untested))
-MASS_U,MASS_V=untested[0]
-Z_SAMPLES=(-0.86,-0.43,0.0,0.43,0.86)
+MASS_U,MASS_V=untested[0]; Z_SAMPLES=(-0.86,-0.43,0.0,0.43,0.86)
 MP_LEVELS=C['MP_LEVELS']; MP_LIMIT=C['MP_LIMIT']; NPHI=C['NPHI']; RADIAL_HS=C['RADIAL_HS']; RADIAL_LIMIT=C['RADIAL_LIMIT']; mpc_from_pair=C['mpc_from_pair']; scaled=C['scaled']
 if list(MP_LEVELS)!=[80,120]: raise SystemExit(('precision_levels_drift',MP_LEVELS))
 C['MASS_U']=MASS_U; C['MASS_V']=MASS_V; radial_limit_at=C['radial_limit_at']
