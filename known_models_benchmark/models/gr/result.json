@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "benchmark_id": "RQIR7-M01-GR-EH-MINK",
+  "model_index": 1,
+  "model_realization": "4D Einstein-Hilbert General Relativity, Lambda=0, weak-field Minkowski sector",
+  "role": "null_control",
+  "terminal": false,
+  "action": "S = (M_Pl^2/2) int d^4x sqrt(-g) R + S_m",
+  "validity_regime": "classical weak-field perturbation theory about 4D Minkowski spacetime",
+  "degrees_of_freedom": "two physical radiative tensor/helicity-2 modes in linearized 4D GR",
+  "gr_classical_limit": "identity",
+  "propagator_poles_cuts": "massless graviton pole in gauge-fixed linearized theory; no extra physical higher-derivative pole in Einstein-Hilbert realization",
+  "ghosts_tachyons": "no additional physical higher-derivative ghost/tachyon within stated realization and conventional kinetic sign",
+  "gauge_ward_structure": "diffeomorphism invariance; contracted Bianchi/source-conservation structure; exact frozen RQIR normalization still unmapped",
+  "causal_retarded_structure": "hyperbolic harmonic formulations and retarded Green-function solutions exist",
+  "source_rule": "metric response to conserved stress-energy source",
+  "nonlinear_vertices": "Einstein-Hilbert expansion supplies graviton self-interaction hierarchy; exact required frozen vertex order still unmapped",
+  "q1_q7_fingerprint": null,
+  "frozen_observable_mapping": null,
+  "comparator_span": "provisional expectation: exact GR baseline identity; literal frozen basis/path/hash not yet recovered",
+  "residual_after_quotient": null,
+  "expected_residual_if_comparator_identity_verified": 0,
+  "degeneracies": ["prospective exact classical-GR comparator identity"],
+  "missing_information": [
+    "literal frozen Q1-Q7 definitions",
+    "literal frozen comparator basis/span and provenance",
+    "literal quotient/residual acceptance rule",
+    "exact frozen source/Ward/contact+K2 convention relevant to this realization"
+  ],
+  "first_blocking_gate": "FROZEN_PROTOCOL_LITERAL_MAPPING",
+  "current_status": "BLOCKED_PROTOCOL_MISMATCH",
+  "status_note": "Non-terminal bookkeeping status only: protocol mapping is incomplete. This is not a scientific failure and must be replaced by EXACT_COMPARATOR_IDENTITY if literal frozen comparator identity is established.",
+  "prospective_terminal_status": "EXACT_COMPARATOR_IDENTITY",
+  "scientific_evidence": [
+    "Sarbach & Tiglio, Living Rev Relativity 15, 9 (2012)",
+    "Poisson, Living Rev Relativity 7, 6 (2004)",
+    "Burgess, Living Rev Relativity 7, 5 (2004)"
+  ]
+}
