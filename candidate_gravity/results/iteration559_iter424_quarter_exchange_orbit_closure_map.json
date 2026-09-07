@@ -1,0 +1,45 @@
+{
+  "iteration": 559,
+  "date": "2026-09-07",
+  "classification": "PASS_ITER424_QUARTER_EXCHANGE_ORBIT_CLOSURE_WEIGHT_MAP_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "scope": "exact bookkeeping and assembly-integrity map for the frozen 4x4 QUARTER central4 support grid",
+  "scaled_nodes": [-2, -1, 1, 2],
+  "single_axis_integer_weights": {"-2": 1, "-1": -8, "1": 8, "2": -1},
+  "exchange_orbit_count": 10,
+  "orbits": [
+    {"orbit": [[-2,-2]], "kind": "diagonal", "integer_coefficient_sum": 1, "support": "HALF_OVERLAP", "closed_now": true},
+    {"orbit": [[-2,-1],[-1,-2]], "kind": "off_diagonal", "integer_coefficient_sum": -16, "support": "ranks1+3", "closed_now": true},
+    {"orbit": [[-2,1],[1,-2]], "kind": "off_diagonal", "integer_coefficient_sum": 16, "support": "ranks2+7", "closed_now": true},
+    {"orbit": [[-2,2],[2,-2]], "kind": "off_diagonal", "integer_coefficient_sum": -2, "support": "HALF_OVERLAP_PAIR", "closed_now": true},
+    {"orbit": [[-1,-1]], "kind": "diagonal", "integer_coefficient_sum": 64, "support": "rank4", "closed_now": true},
+    {"orbit": [[-1,1],[1,-1]], "kind": "off_diagonal", "integer_coefficient_sum": -128, "support": "ranks5+8", "closed_now": true},
+    {"orbit": [[-1,2],[2,-1]], "kind": "off_diagonal", "integer_coefficient_sum": 16, "support": "ranks6+11", "closed_now": false, "currently_present_members": ["rank6"], "missing_members": ["rank11"]},
+    {"orbit": [[1,1]], "kind": "diagonal", "integer_coefficient_sum": 64, "support": "rank9", "closed_now": false, "status": "rank9 active"},
+    {"orbit": [[1,2],[2,1]], "kind": "off_diagonal", "integer_coefficient_sum": -16, "support": "ranks10+12", "closed_now": false, "currently_present_members": [], "missing_members": ["rank10","rank12"]},
+    {"orbit": [[2,2]], "kind": "diagonal", "integer_coefficient_sum": 1, "support": "HALF_OVERLAP", "closed_now": true}
+  ],
+  "exact_checks": {
+    "sum_all_orbit_integer_coefficients": 0,
+    "closed_orbits_now": 7,
+    "closed_orbits_total": 10,
+    "closed_orbit_integer_coefficient_sum_now": -64,
+    "rank9_orbit_integer_coefficient_sum": 64,
+    "predicted_closed_orbit_integer_coefficient_sum_after_rank9_pass": 0,
+    "remaining_after_rank9_orbit_integer_coefficient_sums": [16,-16],
+    "remaining_after_rank9_integer_coefficient_sum": 0,
+    "remaining_after_rank9_orbits": ["ranks6+11","ranks10+12"]
+  },
+  "interpretation": {
+    "rank9_pass_would_close_exchange_orbits": "8/10",
+    "remaining_after_rank9": "two off-diagonal exchange pairs only",
+    "remaining_pair_weights_equal_magnitude_opposite_sign": true,
+    "support_substitution_allowed": false,
+    "queue_reordering_allowed": false,
+    "reason": "orbit bookkeeping is an assembly integrity control; Iteration532 successor order and raw closure of every coordinate remain mandatory",
+    "future_use": "after full closure verify every orbit has exactly its expected membership and coefficient sum before tensor assembly"
+  },
+  "promotes_physical_index_2": false,
+  "changes_frozen_thresholds": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0
+}
