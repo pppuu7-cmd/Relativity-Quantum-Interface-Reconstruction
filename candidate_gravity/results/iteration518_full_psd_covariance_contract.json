@@ -1,0 +1,33 @@
+{
+  "iteration": 518,
+  "classification": "PASS_BASE_HALF_FULL_PSD_COVARIANCE_SPECTRAL_CONTRACT_EXACT__NON_PROMOTING",
+  "scope": "numerical assembly/error-provenance only",
+  "dimension": 28,
+  "assembled_covariance": "C_A = h^-4 A Sigma A^T, A=[w_BASE^T; w_HALF^T]",
+  "delta_variance": "Var(BASE-HALF)=h^-4 (w_BASE-w_HALF)^T Sigma (w_BASE-w_HALF)",
+  "psd_implication": "Sigma >= 0 implies C_A >= 0",
+  "exact_weight_norms": {
+    "wB_norm2_sq": "4225/5184",
+    "wH_norm2_sq": "4225/324",
+    "wDelta_norm2_sq": "23771/1728",
+    "wB_wH_inner_product": "4/81"
+  },
+  "lambda_max_bounds": {
+    "Var_BASE": "<= (4225/5184) lambda_max(Sigma)/h^4",
+    "Var_HALF": "<= (4225/324) lambda_max(Sigma)/h^4",
+    "Var_DELTA": "<= (23771/1728) lambda_max(Sigma)/h^4",
+    "abs_Cov_BASE_HALF": "<= (4225/1296) lambda_max(Sigma)/h^4"
+  },
+  "guardrail": "For arbitrary correlated PSD Sigma, Cov(BASE,HALF) can have either sign; Iteration 516 nonnegative covariance is specific to diagonal independent coordinate errors.",
+  "readiness": 24,
+  "readiness_change_pp": 0,
+  "nonclaims": [
+    "not Candidate-Gravity physical covariance",
+    "not consistency PASS or FAIL",
+    "not exact comparator identity",
+    "not regime-specific non-identifiability",
+    "not near-degeneracy",
+    "not novelty certificate",
+    "not Fisher authorization"
+  ]
+}
