@@ -1,0 +1,54 @@
+{
+  "iteration": 558,
+  "date": "2026-09-07",
+  "classification": "PASS_ITER424_CENTRAL4_TENSOR_MOMENT_NULL_NORM_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "scope": "exact algebraic integrity contract for the frozen central4 x central4 mixed auxiliary-mass stencil",
+  "single_axis": {
+    "nodes_over_h": [-2, -1, 1, 2],
+    "integer_weights": [1, -8, 8, -1],
+    "normalization": "1/(12 h)",
+    "integer_moments_k0_to_k6": [0, 12, 0, 0, 0, -48, 0],
+    "exact_through_polynomial_degree": 4,
+    "leading_smooth_error": "-(h^4/30) f^(5)(0)",
+    "operator_norms": {
+      "l1": "3/(2 h)",
+      "l2": "sqrt(130)/(12 h)",
+      "linf": "2/(3 h)"
+    }
+  },
+  "mixed_tensor": {
+    "coefficient": "C_ij=w_i w_j/(144 h^2)",
+    "integer_outer_matrix": [[1,-8,8,-1],[-8,64,-64,8],[8,-64,64,-8],[-1,8,-8,1]],
+    "row_sums": [0,0,0,0],
+    "column_sums": [0,0,0,0],
+    "total_sum": 0,
+    "exchange_symmetric": true,
+    "operator_norms": {
+      "l1": "9/(4 h^2)",
+      "l2_frobenius": "65/(72 h^2)",
+      "linf_coefficient": "4/(9 h^2)"
+    },
+    "annihilates_exactly": [
+      "constants",
+      "any grid contribution depending only on u",
+      "any grid contribution depending only on v",
+      "exchange-odd grid component on a complete matched grid"
+    ]
+  },
+  "step_scaling": {
+    "mixed_norm_half_over_base": 4,
+    "mixed_norm_quarter_over_base": 16,
+    "interpretation": "equal per-node perturbations are algebraically amplified as h^-2; this is a conditioning statement only and is not a stochastic error model"
+  },
+  "future_fail_closed_checks": [
+    "verify exact frozen integer outer matrix before QUARTER assembly",
+    "verify row and column sums are exactly zero",
+    "verify exchange-even assembly agrees with full-grid assembly",
+    "do not infer missing support from null identities",
+    "do not convert per-node radial diagnostics into independent Gaussian errors without a justified covariance model"
+  ],
+  "promotes_physical_index_2": false,
+  "changes_frozen_thresholds": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0
+}
