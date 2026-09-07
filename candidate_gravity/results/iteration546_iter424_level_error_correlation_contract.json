@@ -1,0 +1,31 @@
+{
+  "iteration": 546,
+  "date": "2026-09-07",
+  "classification": "PASS_ITER424_LEVEL_ERROR_CORRELATION_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "scope": "frozen BASE/HALF/QUARTER truncation diagnostic only",
+  "definitions": {
+    "d1": "BASE-HALF",
+    "d2": "HALF-QUARTER",
+    "P": "64*d2-d1",
+    "Q": "d1-16*d2"
+  },
+  "level_error_map": {
+    "deltaP": "-e_BASE + 65*e_HALF - 64*e_QUARTER",
+    "deltaQ": "e_BASE - 17*e_HALF + 16*e_QUARTER"
+  },
+  "bounded_error_contract": {
+    "rho_P": "eps_BASE + 65*eps_HALF + 64*eps_QUARTER",
+    "rho_Q": "eps_BASE + 17*eps_HALF + 16*eps_QUARTER",
+    "fail_closed_rule": "certify a P/Q sign only when its interval excludes zero"
+  },
+  "equal_independent_level_variance": {
+    "covariance_over_sigma2": [[8322,-2130],[-2130,546]],
+    "determinant": 6912,
+    "correlation": -0.9992391156789705,
+    "covariance_condition_number": 11375.520745421576,
+    "std_map_condition_number": 106.65608630275901
+  },
+  "interpretation": "P and Q diagnostic errors are strongly anti-correlated because HALF is shared. The covariance is nevertheless positive definite (det=6912>0). This is diagnostic conditioning, not model-level near-degeneracy.",
+  "model_readiness": 24,
+  "readiness_change_pp": 0
+}
