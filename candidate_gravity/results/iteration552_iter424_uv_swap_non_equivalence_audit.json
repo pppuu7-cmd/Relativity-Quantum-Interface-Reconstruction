@@ -1,0 +1,62 @@
+{
+  "iteration": 552,
+  "date": "2026-09-07",
+  "classification": "PASS_ITER424_UV_SWAP_NON_EQUIVALENCE_RANK1_RANK3__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "scope": "direct raw-data and source-geometry audit of the already raw-closed swapped pair rank1/rank3; no support substitution authorized",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "raw_sources": {
+    "rank1": {
+      "coordinate": [-2.5e-6, -1.25e-6],
+      "run_id": 34094463024,
+      "job_id": 101654832475,
+      "artifact_id": 10010910464,
+      "artifact_digest": "sha256:26ad590859e09f5fec5fa305f2a4b220d7b01858bb1fe8e60b01d8d2b6474005",
+      "result_sha256": "fc63881cc09c0e6082b05f11f401a82239488e61537d5c9d47b2cb70bb138b3c",
+      "authority_audit_sha256": "6ae8733caa78aaa2ae84c015f48335757c23cb809ea4fd0fb3cd1857d7bb7f8a"
+    },
+    "rank3": {
+      "coordinate": [-1.25e-6, -2.5e-6],
+      "run_id": 34115105768,
+      "job_id": 101719973617,
+      "artifact_id": 10018745243,
+      "artifact_digest": "sha256:06744daefa9766aca586b679769eb9767cd0a898936ec7a1159e06759575a5dc",
+      "result_sha256": "5ff2918ca522e689f8c67dc0f007efe8fd4a0bc70a5aba2d62423dc3dc4b35e0",
+      "authority_audit_sha256": "391a96fca3d9a404cada35b2a0723a820ae3464e729f7c753e7068655c795e71"
+    }
+  },
+  "row_alignment": {
+    "matching_z_phi_rows": 80,
+    "total_rows": 80,
+    "mp120_imaginary_components_exactly_equal": 80,
+    "mp120_real_components_exactly_equal": 0
+  },
+  "raw_difference_metrics": {
+    "minimum_abs_mp120_real_difference": "8.070901516938900135003521660806446193590370091351076556788615571232517815167080398857573155764965707391683133392e-13",
+    "maximum_abs_mp120_real_difference": "2.673039615827711989836632674516306161139956739662768875491123040386885216260519423663085518217099547228377997898947e-10",
+    "mean_abs_mp120_real_difference": "9.9035800442635807271153625811871638268176786018348763716570310443547178691409884637704056355307138348459405425685691625e-11",
+    "maximum_relative_to_local_value": "1.1220311320992739152888877703035804685398470795160742180610154570217250785844002967955231171514472418322225528447018033836339302004248356776074914926333248601805286105101e-4",
+    "minimum_difference_over_max_pair_radial_error": "4.610089489340129275559117107828053004244568720125056978420348988061037013484485141554339622381276204075705242438e3",
+    "maximum_difference_over_max_pair_radial_error": "3.263422262332661235313018866309388973209104920927485269971362064399280330475116099412631720349772816013745284700e6"
+  },
+  "source_geometry": {
+    "kallen_lambda": "s^2+u^2+v^2-2su-2sv-2uv (symmetric under u<->v)",
+    "rho": "sqrt(lambda)/(2*sqrt(s)) (symmetric under u<->v)",
+    "alpha": "-(s+u-v)/(2s) (not invariant under u<->v unless u=v)",
+    "alpha_swap_difference": "alpha(u,v)-alpha(v,u)=(v-u)/s",
+    "physical_cut_point": "p=-a+alpha*q+rho*unit(z,phi)",
+    "consequence": "swapping u and v changes the routed physical cut momentum along q for u!=v"
+  },
+  "conclusions": {
+    "universal_uv_swap_equivalence_rejected_for_current_parent_implementation": true,
+    "raw_rank1_rank3_counterexample_material_above_radial_error": true,
+    "current_iteration532_no_uv_symmetry_substitution_guardrail_is_necessary": true,
+    "already_frozen_rank_order_must_not_be_shortened_by_swap_reuse": true,
+    "candidate_gravity_consistency_fail": false,
+    "physical_index2_promoted": false,
+    "exact_comparator_identity": false,
+    "model_level_identifiability_claim": false,
+    "novelty_certificate": false
+  },
+  "guardrail": "This audit certifies non-equivalence of the current routed u/v coordinates; it does not add a physical failure. It strengthens the prohibition on support substitution and does not change thresholds, nodes, parent dynamics, ANSATZ-003, Fisher, or resource authorization."
+}
