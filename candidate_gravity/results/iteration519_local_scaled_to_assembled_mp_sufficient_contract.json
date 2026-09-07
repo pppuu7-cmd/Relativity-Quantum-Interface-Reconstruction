@@ -1,0 +1,22 @@
+{
+  "classification": "PASS_LOCAL_SCALED_TO_ASSEMBLED_MP_SUFFICIENT_ENVELOPE_CONTRACT_EXACT__NON_PROMOTING",
+  "exact_statement": "If local scaled discrepancies obey |x80_i-x120_i| <= eps*S_i with S_i=max(1,|x80_i|,|x120_i|), then assembled scaled discrepancy for row w is <= eps/h^2 * sum_i |w_i|S_i. Therefore sum_i |w_i|S_i <= tau*h^2/eps is sufficient for the frozen assembled threshold tau.",
+  "frozen_inputs": {
+    "BASE_l1": "9/4",
+    "DELTA_union_l1": "397/36",
+    "HALF_l1": "9",
+    "assembled_scaled_mp_limit": "2e-6",
+    "base_h": "5e-6",
+    "local_scaled_mp_limit": "1e-30"
+  },
+  "guardrail": "Local scaled MP PASS by itself does not imply assembled scaled MP PASS because the local normalization S_i carries amplitude information and assembled cancellation can make the assembled denominator as small as 1. The frozen assembled BASE/HALF gate therefore remains mandatory.",
+  "iteration": 519,
+  "model_readiness_percent": 24,
+  "promotion": false,
+  "uniform_Smax_sufficient_bounds": {
+    "BASE": "200000000000000/9",
+    "BASE_minus_HALF_if_cross_precision_diagnostic_is_evaluated": "1800000000000000/397",
+    "HALF": "50000000000000/9"
+  },
+  "weighted_envelope_budget": "50000000000000"
+}
