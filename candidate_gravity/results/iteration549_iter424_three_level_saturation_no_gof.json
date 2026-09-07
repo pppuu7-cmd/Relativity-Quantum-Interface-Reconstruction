@@ -1,0 +1,32 @@
+{
+  "iteration": 549,
+  "date": "2026-09-07",
+  "scope": "Iteration-424 BASE/HALF/QUARTER smooth truncation diagnostic only",
+  "classification": "REGIME_SPECIFIC_NON_IDENTIFIABILITY_ITER424_THREE_LEVEL_H4_H6_GOF__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "model": "X_s = D + A s^4 + B s^6, s in {1,1/2,1/4}",
+  "design_determinant": "-2835/65536",
+  "design_rank": 3,
+  "observations": 3,
+  "fit_parameters": 3,
+  "residual_degrees_of_freedom": 0,
+  "exact_inverse": [
+    ["1/945", "-16/189", "1024/945"],
+    ["-16/45", "208/9", "-1024/45"],
+    ["256/189", "-4352/189", "4096/189"]
+  ],
+  "h8_alias_into_fitted_D_A_B": ["1/1344", "-17/64", "425/336"],
+  "conclusion": "Any three assembled values are fit exactly by D,A,B; therefore BASE/HALF/QUARTER alone cannot supply a goodness-of-fit test of the h^4+h^6 truncation hypothesis or certify absence of h^8/higher contamination. D,A,B remain algebraically identifiable within the assumed truncated model; what is non-identifiable is model adequacy/omitted-order contamination from only these three levels.",
+  "minimal_extra_level_example": {
+    "scale": "1/8",
+    "left_null_integer_weights_BASE_HALF_QUARTER_EIGHTH": ["-1", "81", "-1104", "1024"],
+    "annihilates_orders": [0,4,6],
+    "h8_response": "-11475/16384",
+    "authorization": "diagnostic design only; does not authorize an EIGHTH heavy run or modify the frozen Iteration-424 gate"
+  },
+  "candidate_gravity_consistency_fail": false,
+  "exact_comparator_identity": false,
+  "model_level_near_degeneracy": false,
+  "novelty_certificate": false,
+  "promotes_physical_index_2": false,
+  "model_readiness_percent": 24
+}
