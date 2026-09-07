@@ -1,0 +1,40 @@
+{
+  "iteration": 550,
+  "date": "2026-09-07",
+  "classification": "PASS_RAW_CONSUMED_ITER424_QUARTER_SUPPORT_RANK6_MP80_MP120__NON_PROMOTING",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "canonical": {
+    "run_id": 34146191135,
+    "job_id": 101818626977,
+    "artifact_id": 10028800076,
+    "artifact_name": "rqir-post548-iter424-quarter-rank6-full-z-mp",
+    "artifact_digest": "sha256:e50ed9622c2c10b47eb04953188a18b013a5c6f95a0caff30a39d25c9545f623",
+    "head_sha": "873974adf2d406dff3ce49b6e155aa1b3b455065",
+    "result_sha256": "9a402fc89400b1d5a1e5e8fc888bc4dee87500e53a8371688d3f2b15e8c56192",
+    "authority_audit_sha256": "fb95460b6c94c49be1487013d0b8602fcb9d31e7645e2f46127e146ab77898fe"
+  },
+  "coordinate": {"quarter_source_rank": 6, "u": -1.25e-6, "v": 2.5e-6},
+  "observed": {
+    "sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "2.76319909084802609340098697215e-80",
+    "max_radial_richardson_scaled_error": "2.56242664756055591440075169484e-15"
+  },
+  "thresholds": {
+    "scaled_mp80_vs_mp120_max": "1e-30",
+    "radial_richardson_scaled_max": "5e-4",
+    "required_sample_count": 80,
+    "all_finite": true
+  },
+  "conclusions": {
+    "rank6_raw_valid_pass": true,
+    "workflow_colour_not_used_as_scientific_authority": true,
+    "rank7_authorized_by_iteration532_order": true,
+    "quarter_new_support_closed": "6/12",
+    "full_quarter_grid_coverage": "10/16 = 62.5%",
+    "physical_index2_promoted": false
+  },
+  "next_rank": {"quarter_source_rank": 7, "u": 1.25e-6, "v": -2.5e-6},
+  "guardrails": ["ITERATION532_SUCCESSOR_ORDER", "ITERATION424_FROZEN_MASS_STEPS", "NO_THRESHOLD_WEAKENING", "NO_ZERO_FILL", "NO_ANSATZ003", "NO_FISHER_RESOURCES"]
+}
