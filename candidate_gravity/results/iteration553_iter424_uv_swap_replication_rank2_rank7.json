@@ -1,0 +1,65 @@
+{
+  "iteration": 553,
+  "date": "2026-09-07",
+  "classification": "PASS_ITER424_UV_SWAP_NON_EQUIVALENCE_REPLICATION_RANK2_RANK7__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "scope": "independent replication of Iteration-552 u-v non-equivalence using the second already raw-closed swapped pair",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "pair": {
+    "rank2": {
+      "coordinate": [-2.5e-6, 1.25e-6],
+      "run_id": 34102627559,
+      "job_id": 101680313500,
+      "artifact_id": 10014273722,
+      "artifact_digest": "sha256:02ca8895b69ed4aeb9404882bae369101d2160a3915687c11ab1b66a3fbca231",
+      "result_sha256": "303ef060845f4cca6699e38d954089b144a26fe6b7c0ce1874819deb5ad2b01a",
+      "authority_audit_sha256": "32cf6685648b3c55f8193939fc0c798e695a1f6387753782802bb0eb3c9fd9ea"
+    },
+    "rank7": {
+      "coordinate": [1.25e-6, -2.5e-6],
+      "run_id": 34150468757,
+      "job_id": 101831505133,
+      "artifact_id": 10030205964,
+      "artifact_digest": "sha256:5a859a373d9d52a9c16df0b3b314c945933b90357602070da685f13cfcf05e00",
+      "result_sha256": "eb4d389813c6620c2436e8f1abe91e24625398163e2e01e5282d68addc80d98f",
+      "authority_audit_sha256": "59c21724191108b56b21d99623e7741a0161e08eb47d08a8d06d6f1201d75e3c"
+    }
+  },
+  "row_alignment": {
+    "matching_z_phi_rows": 80,
+    "total_rows": 80,
+    "mp120_imaginary_components_exactly_equal": 80,
+    "mp120_real_components_exactly_equal": 0
+  },
+  "raw_difference_metrics": {
+    "minimum_abs_mp120_real_difference": "2.4213977007784230682408113069582196087141692986262506838582435285946259071031108701393177313530148543017042426899e-12",
+    "maximum_abs_mp120_real_difference": "8.019053856946459051187244080889589554164747776035660995704802271925332490678542172570501916397529026779154416245332e-10",
+    "mean_abs_mp120_real_difference": "2.97105005127804452915224033533525757467081246685545347236549570911545623325080684439068901806792821528506899414630580875e-10",
+    "maximum_relative_to_local_value": "3.3654729468689068557131211690951234577989408748566984090953991456206511075976990491232270405710917609986206052713938689090192517749349117509845271712250260451218280523368e-4",
+    "minimum_difference_over_max_pair_radial_error": "1.3880687338166176886004321028402697836145066197892181863217230783450215202255869861829055182429700954851098406640e4",
+    "maximum_difference_over_max_pair_radial_error": "9.437418533856219125612978220903646214777360472670805241027583375880132356589129096350691887423921172169805417215e6"
+  },
+  "cross_pair_scaling_against_iteration552": {
+    "alpha_swap_gap_ratio_exact": "3",
+    "same_sign_rowwise_swap_differences": "80/80",
+    "rowwise_difference_ratio_min": "2.999763206463791157997724103351535602999744663827396470528917515000634646933510336376156597806837558",
+    "rowwise_difference_ratio_max": "3.000157659830795815469733612301018029768904529172068785358226185041101597472703554691039008647621118",
+    "rowwise_difference_ratio_mean": "2.999976034195096851100154006536475618704960305329684356940814078211500536489141118042735235159226139",
+    "maximum_abs_deviation_from_ratio_3": "2.36793536208842002275896648464397000255336172603529471082484999365353066489663623843402193162442e-4",
+    "maximum_abs_difference_ratio_rank2_rank7_over_rank1_rank3": "2.9999756866541400682253739691489100198584737242302776058465533038554718182731892",
+    "mean_abs_difference_ratio_rank2_rank7_over_rank1_rank3": "2.9999758047080726444814661196695202078065092966346432506730865398580603373535086"
+  },
+  "interpretation": {
+    "exact_geometry": "alpha swap gap scales with v-u; the second pair has exactly three times the alpha swap gap of the Iteration-552 rank1/rank3 pair",
+    "empirical_response": "raw output swap differences scale almost linearly by the same factor across all 80 rows over these small mass offsets",
+    "claim_scope": "local implementation-response diagnostic only; not a general linearity theorem"
+  },
+  "conclusions": {
+    "iteration552_non_equivalence_independently_replicated": true,
+    "uv_symmetry_substitution_forbidden": true,
+    "local_alpha_shift_mechanism_supported": true,
+    "candidate_gravity_consistency_fail": false,
+    "physical_index2_promoted": false
+  },
+  "guardrail": "Replication strengthens the no-symmetry-substitution rule but does not shorten the frozen rank order, change thresholds, promote index2, or authorize ANSATZ-003/Fisher/resources."
+}
