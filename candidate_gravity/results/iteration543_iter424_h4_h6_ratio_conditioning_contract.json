@@ -1,0 +1,44 @@
+{
+  "iteration": 543,
+  "date": "2026-09-07",
+  "scope": "Iter424 frozen BASE/HALF/QUARTER truncation diagnostic only",
+  "classification": "PASS_ITER424_H4_H6_RATIO_CONDITIONING_FAIL_CLOSED_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "definitions": {
+    "d1": "BASE-HALF",
+    "d2": "HALF-QUARTER",
+    "A": "a*h^4",
+    "B": "b*h^6",
+    "q": "B/A",
+    "r": "d1/d2"
+  },
+  "exact_identities": {
+    "A": "16*(64*d2-d1)/45",
+    "B": "256*(d1-16*d2)/189",
+    "q_direct": "(80/21)*(d1-16*d2)/(64*d2-d1)",
+    "q_from_r": "(80/21)*(r-16)/(64-r)",
+    "dq_dr": "1280/(7*(64-r)^2)",
+    "relative_condition_r_to_q": "abs(48*r/((r-16)*(64-r)))",
+    "dq_dd1": "(1280/7)*d2/(64*d2-d1)^2",
+    "dq_dd2": "-(1280/7)*d1/(64*d2-d1)^2"
+  },
+  "zero_surfaces": {
+    "A_zero": "d1=64*d2",
+    "B_zero": "d1=16*d2"
+  },
+  "finite_error_guard": {
+    "errors": "|e1|<=eps1, |e2|<=eps2",
+    "margin": "m=|64*d2-d1|-(eps1+64*eps2)",
+    "required": "m>0",
+    "meaning": "guarantees perturbed denominator does not cross reconstructed A=0 pole",
+    "bound": "|q'-q| <= (80/21)*[((eps1+16*eps2)*|D| + |N|*(eps1+64*eps2))/(|D|*m)], D=64*d2-d1, N=d1-16*d2"
+  },
+  "interpretation": {
+    "near_r_16": "B reconstruction is relatively ill-conditioned because q approaches zero",
+    "near_r_64": "A reconstruction/ratio is singular because A approaches zero",
+    "not_model_near_degeneracy": true,
+    "not_physical_gate": true,
+    "not_comparator_identity": true,
+    "not_novelty_certificate": true
+  },
+  "model_readiness": "24%"
+}
