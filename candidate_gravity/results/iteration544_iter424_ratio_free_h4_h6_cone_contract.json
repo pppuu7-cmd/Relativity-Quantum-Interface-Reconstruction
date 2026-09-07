@@ -1,0 +1,37 @@
+{
+  "MODEL_READINESS": "24%",
+  "bounded_error_contract": {
+    "P_error_radius": "eps1+64*eps2",
+    "Q_error_radius": "eps1+16*eps2",
+    "if": "|e1|<=eps1 and |e2|<=eps2",
+    "opposite_sign_FAIL_CLOSED_RESULT": "P and Q intervals both exclude zero and have opposite signs",
+    "otherwise": "BLOCKED/AMBIGUOUS_DIAGNOSTIC; do not infer sign or cancellation",
+    "same_sign_FAIL_CLOSED_PASS": "P and Q intervals both exclude zero and have the same sign"
+  },
+  "classification": "PASS_ITER424_RATIO_FREE_H4_H6_CONE_FAIL_CLOSED_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "definitions": {
+    "A": "a*h^4",
+    "B": "b*h^6",
+    "P": "64*d2-d1",
+    "Q": "d1-16*d2",
+    "d1": "BASE-HALF",
+    "d2": "HALF-QUARTER"
+  },
+  "exact_identities": {
+    "A": "16*P/45",
+    "B": "256*Q/189",
+    "P": "45*A/16",
+    "Q": "189*B/256"
+  },
+  "iteration": 544,
+  "readiness_change_percentage_points": 0,
+  "scope": [
+    "numerical/truncation diagnostic only",
+    "does not promote physical index 2",
+    "not Candidate-Gravity consistency PASS/FAIL",
+    "not exact comparator identity",
+    "not regime-specific non-identifiability",
+    "not model-level near-degeneracy",
+    "not novelty certificate"
+  ]
+}
