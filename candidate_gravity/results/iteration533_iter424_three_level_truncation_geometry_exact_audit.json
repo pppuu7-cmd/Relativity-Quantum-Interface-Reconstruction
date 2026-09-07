@@ -1,0 +1,59 @@
+{
+  "schema": "rqir_iter424_three_level_truncation_geometry_exact_v1",
+  "iteration": 533,
+  "date": "2026-09-07",
+  "scope": "exact central4 truncation/convergence geometry; diagnostic only; frozen Iteration-424 acceptance unchanged",
+  "classification": "PASS_ITER424_CENTRAL4_THREE_LEVEL_TRUNCATION_GEOMETRY_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "parents": [
+    "candidate_gravity/code/iteration424_channel2_high_precision_fallback_contract.py",
+    "candidate_gravity/results/iteration530_iter424_three_level_central4_gram_exact_audit.json"
+  ],
+  "central4_1d": {
+    "offsets": [-2, -1, 1, 2],
+    "weights_divided_by_h": ["1/12", "-8/12", "8/12", "-1/12"],
+    "taylor_coefficients_after_dividing_by_h": {
+      "derivative_1": "1",
+      "derivative_5_times_h4": "-1/30",
+      "derivative_7_times_h6": "-1/252",
+      "derivative_9_times_h8": "-1/4320"
+    },
+    "leading_order": "D_h f = f' - h^4 f^(5)/30 - h^6 f^(7)/252 + O(h^8)"
+  },
+  "mixed_tensor_product": {
+    "leading_order": "D_u(h)D_v(h) f = f_uv + A*h^4 + B*h^6 + O(h^8), where A=-(f_uuuuuv+f_uvvvvv)/30 and B=-(f_uuuuuuuv+f_uvvvvvvv)/252 under sufficient smoothness",
+    "note": "O(h^8) also contains the product of the two one-dimensional h^4 errors"
+  },
+  "three_levels": {
+    "BASE": "h",
+    "HALF": "h/2",
+    "QUARTER": "h/4",
+    "leading_h4_error_scaling": ["1", "1/16", "1/256"],
+    "next_h6_error_scaling": ["1", "1/64", "1/4096"]
+  },
+  "prospective_diagnostics": {
+    "pure_h4_difference_ratio": "(BASE-HALF)/(HALF-QUARTER) = 16 when the common leading h^4 term dominates and denominator is nonzero",
+    "base_half_richardson": "R_BH=(16*HALF-BASE)/15 cancels the common h^4 term",
+    "half_quarter_richardson": "R_HQ=(16*QUARTER-HALF)/15 cancels the common h^4 term",
+    "three_level_h4_h6_cancellation": "R_3=(BASE-80*HALF+1024*QUARTER)/945 cancels both common h^4 and h^6 terms",
+    "three_level_weights": ["1/945", "-16/189", "1024/945"]
+  },
+  "guardrails": {
+    "diagnostics_change_frozen_acceptance": false,
+    "richardson_value_may_replace_frozen_physical_Ds": false,
+    "difference_ratio_is_new_pass_fail_threshold": false,
+    "no_smaller_h": true,
+    "no_threshold_weakening": true,
+    "no_physical_promotion": true,
+    "no_ansatz003": true,
+    "no_fisher_resources": true
+  },
+  "conclusions": {
+    "central4_mixed_derivative_has_leading_O_h4_truncation_under_sufficient_smoothness": true,
+    "three_frozen_levels_support_a_preregistered_convergence_diagnostic": true,
+    "three_level_extrapolation_can_cancel_formal_h4_and_h6_terms_diagnostically": true,
+    "frozen_iteration424_five_clause_acceptance_remains_the_only_physical_gate": true
+  },
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "guardrail_summary": "These exact formulas are preregistered interpretation diagnostics only. They cannot rescue a failing frozen physical mass-step clause, cannot replace BASE/HALF/QUARTER authority with an extrapolated value, and cannot promote index 2."
+}
