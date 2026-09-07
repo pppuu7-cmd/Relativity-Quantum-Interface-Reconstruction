@@ -19,7 +19,8 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Three-level exact diagnostics retained: **Iterations 530–533, 536–537, 540–541, 543–544, 546–547, 549**; diagnostic-only, non-promoting.
 - u↔v non-equivalence authority: **Iteration 552**.
 - independent u↔v replication/local alpha-shift response authority: **Iteration 553**, `PASS_ITER424_UV_SWAP_NON_EQUIVALENCE_REPLICATION_RANK2_RANK7__DIAGNOSTIC_ONLY_NON_PROMOTING`.
-- Latest authoritative research iteration: **Iteration 553**.
+- exact u↔v routed-invariant shift authority: **Iteration 554**, `PASS_ITER424_UV_SWAP_EXACT_INVARIANT_SHIFT_CONTRACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
+- Latest authoritative research iteration: **Iteration 554**.
 
 ## QUARTER progress
 Raw-closed new coordinates: **7/12 = 58.333333333333336%**.
@@ -81,6 +82,21 @@ Machine-readable authorities:
 - `candidate_gravity/results/iteration552_iter424_uv_swap_non_equivalence_audit.json`
 - `candidate_gravity/results/iteration553_iter424_uv_swap_replication_rank2_rank7.json`
 
+## Iteration 554 — exact routed-invariant u↔v shift
+With the same frozen parent dynamics define `delta=(v-u)/s`. Because `rho` is exactly symmetric and only `alpha` changes,
+
+`p(u,v)=p(v,u)+delta*q`
+
+exactly. Therefore
+- `Delta(p.q)=delta*q^2`,
+- `Delta(p^2)=2 delta [p(v,u).q]+delta^2 q^2`,
+- `Delta((p+q)^2)=2 delta [p(v,u).q+q^2]+delta^2 q^2`,
+- `Delta((p+q)^2)-Delta(p^2)=2 delta q^2`.
+
+For the retained unresolved class `q^2=-1`, the last relation is exactly `-2 delta`. Thus the u↔v distinction has an exact invariant-level parent-routing explanation, independently of the raw-output comparisons. This is diagnostic/provenance only and does not promote physical index2.
+
+Machine-readable authority: `candidate_gravity/results/iteration554_iter424_uv_swap_exact_invariant_shift_contract.json`.
+
 ## Retained three-level diagnostic lessons
 - Iteration 530: exact three-level central4 Gram row rank 3.
 - Iteration 531: normalized stencil geometry well-conditioned, scale-free `kappa_2≈1.04378`.
@@ -117,7 +133,7 @@ The concrete upstream algebraic `Source/Ward/contact+K2` target and robust compa
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Seven new QUARTER nodes are raw-closed and a false symmetry shortcut is ruled out twice, but no additional stable model-level rubric sector is complete.
+Readiness change: **0 percentage points**. Seven new QUARTER nodes are raw-closed and the false u↔v shortcut is now ruled out by two raw pairs plus an exact routed-invariant identity, but no additional stable model-level rubric sector is complete.
 
 ## Exact downstream chain
 BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → ranks1–7 **RAW PASS through 551** → rank8 **RUNNING** → ranks9–12 in frozen order → QUARTER assembly → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
