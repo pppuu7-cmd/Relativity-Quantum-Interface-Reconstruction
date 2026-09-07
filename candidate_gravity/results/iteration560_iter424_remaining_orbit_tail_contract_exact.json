@@ -1,0 +1,32 @@
+{
+  "iteration": 560,
+  "date": "2026-09-08",
+  "classification": "PASS_ITER424_REMAINING_ORBIT_TAIL_FAIL_CLOSED_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "scope": "frozen Iteration-424 QUARTER central4 assembly control after rank9 raw-valid PASS",
+  "remaining_exchange_orbits": {
+    "ranks6_11": {
+      "coordinates_scaled": [[-1, 2], [2, -1]],
+      "integer_coefficients": [8, 8],
+      "integer_sum": 16
+    },
+    "ranks10_12": {
+      "coordinates_scaled": [[1, 2], [2, 1]],
+      "integer_coefficients": [-8, -8],
+      "integer_sum": -16
+    }
+  },
+  "combined_integer_sum": 0,
+  "exact_tail_formula": "T_rem=(E_6_11-E_10_12)/(9*h^2), where each E is the exchange-orbit average of its two raw-supported coordinates",
+  "sharp_bounded_error_contract": {
+    "per_coordinate": "|delta T_rem| <= (eps1+eps2+eps3+eps4)/(18*h^2)",
+    "per_orbit_average": "|delta T_rem| <= (eps_A+eps_B)/(9*h^2)"
+  },
+  "interpretation": [
+    "The remaining sector exactly annihilates a common constant offset across its four coordinates.",
+    "The tail is controlled by a difference of two exchange-orbit averages, not by either orbit separately.",
+    "This does not authorize rank skipping, u-v substitution, zero fill, or early physical promotion.",
+    "This is numerical/assembly conditioning only, not Candidate-Gravity model-level near-degeneracy or identifiability evidence."
+  ],
+  "model_readiness_percent": 24,
+  "readiness_change_percentage_points": 0
+}
