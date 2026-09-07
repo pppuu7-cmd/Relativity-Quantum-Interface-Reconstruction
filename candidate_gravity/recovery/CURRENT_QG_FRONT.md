@@ -15,10 +15,10 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Independent BASE/HALF MP80/MP120 assembly: **Iteration 527**, raw-valid PASS, non-promoting.
 - QUARTER exact support manifest: **Iteration 529** — 16-grid, 4 exact HALF-overlap corners, 12 new coordinates required.
 - Full 12-rank QUARTER successor order prospectively frozen: **Iteration 532**.
-- Three-level exact diagnostics retained: **Iterations 530–533, 536–537, 540**; diagnostic-only, non-promoting.
+- Three-level exact diagnostics retained: **Iterations 530–533, 536–537, 540–541**; diagnostic-only, non-promoting.
 - QUARTER rank1 raw authority: **Iteration 534**, raw-valid PASS.
 - QUARTER rank2 raw authority: **Iteration 538**, `PASS_RAW_CONSUMED_ITER424_QUARTER_SUPPORT_RANK2_MP80_MP120__NON_PROMOTING`.
-- Latest authoritative research iteration: **Iteration 540**.
+- Latest authoritative research iteration: **Iteration 541**.
 
 ## Iteration 538 — rank2 raw-valid PASS
 Canonical run `34102627559`, job `101680313500`, artifact `10014273722`, artifact digest `sha256:02ca8895b69ed4aeb9404882bae369101d2160a3915687c11ab1b66a3fbca231`, head `1046545619a9ae564eb7e611708e4e3db7b5eb42`.
@@ -45,6 +45,33 @@ Classification: `PASS_ITER424_THREE_LEVEL_STEP_RATIO_SIGN_STRUCTURE_EXACT__DIAGN
 
 Machine authority: `candidate_gravity/results/iteration540_iter424_three_level_step_ratio_sign_contract.json`.
 
+## Iteration 541 — exact three-level extrapolator noise contract
+Retain the frozen diagnostic estimator
+
+`R3=(BASE-80 HALF+1024 QUARTER)/945`.
+
+Its exact weight norms are
+
+- `||w||_1=221/189 ~= 1.1693121693121693`,
+- `||w||_2^2=50237/42525`, hence `||w||_2 ~= 1.0869002464792206`,
+- `||w||_inf=1024/945`.
+
+Therefore, if all three assembled inputs satisfy the same absolute error envelope `|e_i|<=eps`, then the sharp worst-case propagation bound is
+
+`|e_R3| <= (221/189) eps`.
+
+Under independent equal-variance input noise, the output standard-deviation factor is `sqrt(50237/42525) ~= 1.0869002464792206`.
+
+For `X_h=D+a h^4+b h^6+c h^8+e h^10+...`, exact leakage coefficients under these same frozen weights are h4=`0`, h6=`0`, h8=`1/1344`, h10=`1/1024`, so
+
+`R3=D+c h^8/1344+e h^10/1024+...`.
+
+This is a numerical/truncation diagnostic only and does not replace any frozen Iteration-424 physical clause.
+
+Classification: `PASS_ITER424_THREE_LEVEL_EXTRAPOLATOR_NOISE_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
+
+Machine authority: `candidate_gravity/results/iteration541_iter424_three_level_extrapolator_noise_contract.json`.
+
 ## Active heavy computation — rank3
 Exactly one successor remains authorized and running:
 - rank: **3/12**;
@@ -52,7 +79,7 @@ Exactly one successor remains authorized and running:
 - run: `34115105768`;
 - job: `101719973617`;
 - head/trigger commit: `ec77639ef423249426ee9b5b560b0662521f56a9`;
-- live state at Iteration-540 inspection: `in_progress`; raw audit and upload pending.
+- live state at Iteration-541 inspection: `in_progress`; raw audit and upload pending.
 
 No duplicate rank3 heavy run is authorized. Workflow green alone must not be accepted; raw artifact consumption is mandatory before rank3 authority.
 
@@ -95,7 +122,7 @@ The concrete upstream algebraic `Source/Ward/contact+K2` target and robust compa
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 540 closes an exact diagnostic subgate only; no stable rubric sector closes.
+Readiness change: **0 percentage points**. Iteration 541 closes an exact diagnostic subgate only; no stable rubric sector closes.
 
 ## Exact next gate
 After rank3 terminal completion: fail-closed raw-consume run `34115105768`. Only raw-valid PASS authorizes frozen rank4 `(-1.25e-6,-1.25e-6)`. Scientific FAIL/BLOCKED stops advancement; operational failure permits only minimal rank3 repair.
