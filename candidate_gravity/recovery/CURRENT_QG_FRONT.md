@@ -17,8 +17,30 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest assembled numerical authority: **Iteration 527**, raw-valid `PASS_RAW_CONSUMED_INDEPENDENT_BASE_HALF_MP80_MP120_ASSEMBLY__NON_PROMOTING`.
 - Latest exact quarter-support structural authority: **Iteration 529**, `PASS_ITER424_QUARTER_SUPPORT_MANIFEST_EXACT__NON_PROMOTING`.
 - Latest exact three-level operator-geometry authority: **Iteration 530**, `PASS_ITER424_BASE_HALF_QUARTER_CENTRAL4_GRAM_FULL_RANK_EXACT__NON_PROMOTING`.
-- Latest authoritative research iteration: **Iteration 530**.
-- Active scientific prerequisite: **frozen Iteration-424 quarter-step (`h=1.25e-6`) direct-parent MP80/MP120 support, repaired rank1 run `34094463024` currently in progress**.
+- Latest exact normalized-conditioning authority: **Iteration 531**, `PASS_ITER424_BASE_HALF_QUARTER_NORMALIZED_GRAM_WELL_CONDITIONED_EXACT__NON_PROMOTING`.
+- Latest authoritative research iteration: **Iteration 531**.
+- Active scientific prerequisite: **frozen Iteration-424 quarter-step (`h=1.25e-6`) direct-parent MP80/MP120 support, repaired rank1 run `34094463024`, job `101654832475`, currently in progress**.
+- Current task progress: **4/7 principal workflow stages complete ≈ 57.1%**; full-z MP stage is active, with raw authority audit and artifact upload pending. No trustworthy within-stage numerical percentage is exposed.
+
+## Iteration 531 — exact normalized three-level conditioning gate
+Iteration 530's raw Gram entries include the intended derivative-scale factors `1:4:16`. Normalizing each row by its exact norm isolates intrinsic stencil geometry from this known physical scaling.
+
+Exact row norms are `||B||=65/72`, `||H||=65/18`, `||Q||=130/9`. Exact normalized correlations are
+`rho(B,H)=64/4225`, `rho(B,Q)=0`, `rho(H,Q)=64/4225`.
+Therefore the normalized Gram matrix is
+`[[1,64/4225,0],[64/4225,1,64/4225],[0,64/4225,1]]`.
+
+Its exact eigenvalues are
+`1-64*sqrt(2)/4225`, `1`, `1+64*sqrt(2)/4225`, numerically approximately `0.9785775933747034`, `1`, `1.0214224066252966`.
+The exact scale-free two-norm condition number is
+`(4225+64*sqrt(2))/(4225-64*sqrt(2)) ≈ 1.0437827450175303`, and the exact determinant is `17842433/17850625 ≈ 0.9995410804943804`.
+Adjacent BASE/HALF and HALF/QUARTER row angles are approximately `89.132054405°`; BASE and QUARTER are exactly orthogonal.
+
+Hence the frozen three-level stencil geometry is nearly orthogonal and very well conditioned after removing the declared derivative scaling. A later physical failure cannot be attributed solely to near-linear dependence among the BASE/HALF/QUARTER assembly rows.
+
+Machine-readable audit: `candidate_gravity/results/iteration531_iter424_three_level_normalized_gram_conditioning_exact_audit.json`.
+
+This is structural/operator-conditioning authority only. It does not satisfy any physical Iteration-424 acceptance clause, promote index 2, or establish Candidate-Gravity consistency, comparator identity, novelty, identifiability, Fisher information, or resource closure.
 
 ## Iteration 530 — exact BASE/HALF/QUARTER central4 Gram gate
 Using the same frozen tensor-product central4 axis coefficients `(1,-8,+8,-1)/12` and base-step normalization `h=5e-6`, mixed-derivative scaling factors are BASE `1`, HALF `4`, QUARTER `16`. Exact support intersections are BASE∩HALF = four `(±5e-6,±5e-6)` coordinates, HALF∩QUARTER = four `(±2.5e-6,±2.5e-6)` coordinates, and BASE∩QUARTER = empty.
@@ -70,10 +92,10 @@ Iteration 504 remains `BLOCKED_FIXED_COMPARATOR_QUOTIENT_UPSTREAM_TARGET_NOT_ASS
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 530 closes an exact three-level operator-geometry/conditioning subgate but no additional model-level rubric sector.
+Readiness change: **0 percentage points**. Iteration 531 closes an exact scale-free conditioning subgate but no additional model-level rubric sector.
 
 ## Exact downstream chain
-BASE/HALF local support **CLOSED at 523** → multipart provenance **CLOSED at 526** → BASE/HALF assembly **CLOSED at 527** → Iteration-424 quarter-step support manifest **EXACT at 529** → three-level central4 Gram geometry **EXACT/full-rank at 530** → repaired quarter rank1 raw-consume → ranks2–12 in frozen order → quarter assembly → frozen Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
+BASE/HALF local support **CLOSED at 523** → multipart provenance **CLOSED at 526** → BASE/HALF assembly **CLOSED at 527** → Iteration-424 quarter-step support manifest **EXACT at 529** → three-level central4 Gram geometry **EXACT/full-rank at 530** → normalized three-level conditioning **EXACT/well-conditioned at 531** → repaired quarter rank1 raw-consume → ranks2–12 in frozen order → quarter assembly → frozen Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy retry. No `u<->v` support substitution without exact frozen identity. Exact coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated until a concrete residual survives the fixed comparator quotient. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
