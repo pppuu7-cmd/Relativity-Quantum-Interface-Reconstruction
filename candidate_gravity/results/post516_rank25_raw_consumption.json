@@ -1,0 +1,55 @@
+{
+  "MODEL_READINESS": "24%",
+  "authority_scope": "ONE_MANIFEST_SOURCE_ORDER_MASS_NODE_FULL_TRAINING_Z__NON_PROMOTING",
+  "classification": "PASS_RAW_CONSUMED_MANIFEST_RANK25_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "provenance": {
+    "run_id": 34066294587,
+    "job_id": 101575523337,
+    "artifact_id": 9999994876,
+    "artifact_name": "rqir-post515-manifest-rank25-full-z-mp",
+    "artifact_digest": "sha256:6bd866f34a732b7327702ac7d9ffc8b29f4077ff98c6b9b87191a9ff9f1bca1d",
+    "head_sha": "50c8ebade8f163366848efefa860887b0843ea45",
+    "scientific_json_sha256": "09a45246492011381c979c553229b37da61687334d951b62494e171367e074b7",
+    "authority_audit_sha256": "6cb116d0924fb2da7a43a0d5feab4261e850ec14d0d089647ad9a6ffb3490588"
+  },
+  "target": {
+    "manifest_rank": 25,
+    "u": 2.5e-6,
+    "v": 5e-6,
+    "source_level": "HALF",
+    "source_local_index": 11,
+    "source_occurrence_multiplicity": 1
+  },
+  "observed": {
+    "sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "2.33746055489652415419659640715e-80",
+    "max_radial_richardson_scaled_error": "2.57346381932435712702856966978e-15"
+  },
+  "thresholds": {
+    "scaled_mp80_vs_mp120_max": "1e-30",
+    "radial_richardson_scaled_max": 0.0005,
+    "required_sample_count": 80,
+    "all_finite": true
+  },
+  "certified_occurrence_weighted_precision_coverage": "30/32 = 93.750% = 2400/2560",
+  "next_manifest_coordinate": {
+    "manifest_rank": 26,
+    "u": 5e-6,
+    "v": -2.5e-6,
+    "source_level": "HALF",
+    "source_local_index": 13,
+    "source_occurrence_multiplicity": 1
+  },
+  "guardrails": [
+    "RAW_ARTIFACT_CONSUMED_NOT_WORKFLOW_COLOUR",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_ZERO_FILL",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
