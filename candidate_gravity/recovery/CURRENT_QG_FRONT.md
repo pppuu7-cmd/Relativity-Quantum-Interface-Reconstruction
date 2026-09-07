@@ -10,41 +10,55 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 
 ## Current authority
 - Latest validated physical/operator authority: **Iteration 411**.
-- Latest validated structural authority: **Iteration 410**.
-- Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`.
-- Exact unresolved physical set: **`[2]`**.
-- Latest completed BASE/HALF local mass-support authority: **Iteration 523**, `32/32 = 100% = 2560/2560` across 28 distinct coordinates.
-- Latest assembled numerical authority: **Iteration 527**, raw-valid `PASS_RAW_CONSUMED_INDEPENDENT_BASE_HALF_MP80_MP120_ASSEMBLY__NON_PROMOTING`.
-- Latest exact quarter-support structural authority: **Iteration 529**, `PASS_ITER424_QUARTER_SUPPORT_MANIFEST_EXACT__NON_PROMOTING`.
-- Latest exact three-level operator-geometry authority: **Iteration 530**, `PASS_ITER424_BASE_HALF_QUARTER_CENTRAL4_GRAM_FULL_RANK_EXACT__NON_PROMOTING`.
-- Latest exact normalized-conditioning authority: **Iteration 531**, `PASS_ITER424_BASE_HALF_QUARTER_NORMALIZED_GRAM_WELL_CONDITIONED_EXACT__NON_PROMOTING`.
-- Latest exact quarter successor-order authority: **Iteration 532**, `PASS_ITER424_QUARTER_SUCCESSOR_ORDER_PREREGISTERED_EXACT__NON_PROMOTING`.
-- Latest exact truncation-diagnostic authority: **Iteration 533**, `PASS_ITER424_CENTRAL4_THREE_LEVEL_TRUNCATION_GEOMETRY_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
-- Latest authoritative research iteration: **Iteration 533**.
-- Active scientific prerequisite: **frozen Iteration-424 quarter-step (`h=1.25e-6`) direct-parent MP80/MP120 support, repaired rank1 run `34094463024`, job `101654832475`, currently in progress**.
-- Current heavy-task progress: **4/7 principal workflow stages complete ≈ 57.1%** at last live inspection; full-z MP stage active, raw authority audit and artifact upload pending. No trustworthy within-stage numerical percentage is exposed.
-- Current Iteration-533 research task: **100% complete**.
+- Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`; exact unresolved physical set `[2]`.
+- BASE/HALF local mass support: **Iteration 523**, `32/32 = 100% = 2560/2560` across 28 distinct coordinates.
+- Independent BASE/HALF MP80/MP120 assembly: **Iteration 527**, raw-valid `PASS_RAW_CONSUMED_INDEPENDENT_BASE_HALF_MP80_MP120_ASSEMBLY__NON_PROMOTING`.
+- QUARTER exact support manifest: **Iteration 529** — 16-grid, 4 exact HALF-overlap corners, 12 new coordinates required.
+- Three-level exact Gram/full-rank: **Iteration 530**.
+- Three-level exact normalized conditioning: **Iteration 531**, scale-free `kappa_2 ≈ 1.0437827450`.
+- Full 12-rank QUARTER successor order prospectively frozen: **Iteration 532**.
+- Three-level central4 truncation/convergence diagnostic prospectively frozen: **Iteration 533**.
+- QUARTER rank1 raw-consumed numerical authority: **Iteration 534**, `PASS_RAW_CONSUMED_ITER424_QUARTER_SUPPORT_RANK1_MP80_MP120__NON_PROMOTING`.
+- Rank2 canonical launch authority: **Iteration 535**.
+- Latest authoritative research iteration: **Iteration 535**.
 
-## Iteration 533 — exact three-level truncation/convergence diagnostic
-For the frozen central4 first derivative,
-`D_h f = f' - h^4 f^(5)/30 - h^6 f^(7)/252 - h^8 f^(9)/4320 + O(h^10)`.
-Thus the mixed tensor-product derivative has a common formal leading `O(h^4)` truncation term under sufficient smoothness. Across BASE=`h`, HALF=`h/2`, QUARTER=`h/4`, the common h4 term scales `1:1/16:1/256` and the next h6 term scales `1:1/64:1/4096`.
+## Active heavy computation
+Exactly one active QUARTER computation is authorized and running:
+- rank: **2/12** new coordinates;
+- coordinate: `u=-2.5e-6`, `v=+1.25e-6`;
+- run: `34102627559`;
+- job: `101680313500`;
+- head/trigger commit: `1046545619a9ae564eb7e611708e4e3db7b5eb42`;
+- live state at latest inspection: principal steps 1–4 complete, step 5 full-z MP active, raw audit and artifact upload pending;
+- stage-level completion: **4/7 ≈ 57.1%**. GitHub exposes no trustworthy within-MP-stage percentage.
 
-Prospectively frozen diagnostics, fixed before QUARTER assembly:
-- `(BASE-HALF)/(HALF-QUARTER) -> 16` if the common h4 term dominates and the denominator is nonzero;
-- `R_BH=(16*HALF-BASE)/15` cancels the formal common h4 term;
-- `R_HQ=(16*QUARTER-HALF)/15` cancels the formal common h4 term;
-- `R_3=(BASE-80*HALF+1024*QUARTER)/945` cancels the formal common h4 and h6 terms.
+No duplicate rank1/rank2 heavy Action is authorized.
 
-Machine-readable audit: `candidate_gravity/results/iteration533_iter424_three_level_truncation_geometry_exact_audit.json`.
+## Iteration 534 — rank1 is genuine raw authority
+Run `34094463024`, job `101654832475`, artifact `10010910464`, artifact digest `sha256:26ad590859e09f5fec5fa305f2a4b220d7b01858bb1fe8e60b01d8d2b6474005`, source head `25c4f3ff1c2bf9ef66e0e5db6ace6580da4bb08d`.
 
-Critical guardrail: these are diagnostic formulas only. They do not alter the frozen five-clause Iteration-424 acceptance, cannot replace physical `D_s` by Richardson/extrapolated values, cannot rescue a failed mass-step clause, and do not authorize smaller h, threshold weakening, physical promotion, ANSATZ-003, Fisher, or resources.
+`result.json` SHA-256 `fc63881cc09c0e6082b05f11f401a82239488e61537d5c9d47b2cb70bb138b3c`; `authority_audit.json` SHA-256 `6ae8733caa78aaa2ae84c015f48335757c23cb809ea4fd0fb3cd1857d7bb7f8a`. Result hash exactly matches the artifact authority audit.
 
-## Iteration 532 — exact prospective quarter successor order
-The complete order of the 12 new QUARTER coordinates is frozen before the active rank1 numerical result is known. It is the exact u-major/v-major Cartesian order from the frozen quarter axis support after removing only the four exact HALF-overlap corners:
+Frozen rank1 coordinate `(-2.5e-6,-1.25e-6)`:
+- sample count `80/80`;
+- all finite;
+- max scaled MP80↔MP120 discrepancy `2.67210524913693857468296510677e-80 <= 1e-30`;
+- max radial Richardson scaled error `2.5593700156479497761768907837e-15 <= 5e-4`.
 
-1. `(-2.5e-6,-1.25e-6)`
-2. `(-2.5e-6,+1.25e-6)`
+Therefore rank1 is raw-consumed PASS. New QUARTER-support closure is **1/12 = 8.333333333333334%**. Including four exact HALF-overlap corners, authoritative full QUARTER-grid coordinate coverage is **5/16 = 31.25%**. This does not promote physical index 2.
+
+Machine-readable authority: `candidate_gravity/results/iteration534_iter424_quarter_rank1_raw_consumption.json`.
+
+## Iteration 535 — rank2 launched without scientific drift
+Rank2 stage `candidate_gravity/code/post534_iter424_quarter_support_rank2_full_z_mp_stage.py` binds Iteration-534 raw PASS and validates the Iteration-532 rank sequence before selecting `(-2.5e-6,+1.25e-6)`.
+
+Workflow `.github/workflows/rqir-post534-iter424-quarter-rank2-full-z-mp.yml` preserves unchanged direct-parent evaluation, `h=1.25e-6`, MP80/MP120, z nodes `[-0.86,-0.43,0,0.43,0.86]`, 16 phi nodes, radial h values `[0.002,0.001,0.0005]`, MP threshold `1e-30`, radial threshold `5e-4`, no zero-fill and no physical promotion.
+
+Workflow green alone will not be accepted. The raw artifact must be consumed before rank2 authority is assigned. Raw-valid rank2 PASS permits only prospectively frozen rank3 `(-1.25e-6,-2.5e-6)`.
+
+## Frozen Iteration-532 QUARTER order
+1. `(-2.5e-6,-1.25e-6)` — **raw PASS at Iteration 534**
+2. `(-2.5e-6,+1.25e-6)` — **running at Iteration 535**
 3. `(-1.25e-6,-2.5e-6)`
 4. `(-1.25e-6,-1.25e-6)`
 5. `(-1.25e-6,+1.25e-6)`
@@ -56,42 +70,30 @@ The complete order of the 12 new QUARTER coordinates is frozen before the active
 11. `(+2.5e-6,-1.25e-6)`
 12. `(+2.5e-6,+1.25e-6)`.
 
-A raw-consumed PASS permits only the next listed rank; rank12 PASS permits quarter assembly. Scientific failure/block stops successor advancement and localizes the concrete failure under unchanged science. Operational failure permits only the minimal technical repair and rerun of the same rank. Result-dependent reordering/skipping, unsupported u↔v substitution, zero-fill, threshold weakening, mass-node changes and precision changes are forbidden.
+PASS advances only to the next listed rank. Scientific FAIL/BLOCKED stops advancement and localizes the concrete failure under unchanged science. Operational failure permits only minimal technical repair and rerun of the same rank. Result-dependent reordering/skipping, unsupported u↔v substitution, zero-fill, threshold weakening, mass-node changes and precision changes are forbidden.
 
-Machine-readable audit: `candidate_gravity/results/iteration532_iter424_quarter_successor_order_exact_preregistration_audit.json`.
+## Three-level structural diagnostics retained
+Iteration 530 exact Gram matrix:
+`[[4225/5184,4/81,0],[4/81,4225/324,64/81],[0,64/81,16900/81]]`, exact row rank 3.
 
-## Iteration 531 — exact normalized three-level conditioning gate
-Exact row norms are `||B||=65/72`, `||H||=65/18`, `||Q||=130/9`. Exact normalized correlations are `rho(B,H)=64/4225`, `rho(B,Q)=0`, `rho(H,Q)=64/4225`, so the normalized Gram matrix is `[[1,64/4225,0],[64/4225,1,64/4225],[0,64/4225,1]]`.
+Iteration 531 normalized correlations: `rho(B,H)=64/4225`, `rho(B,Q)=0`, `rho(H,Q)=64/4225`; scale-free condition number approximately `1.0437827450`. The three-level rows are not near-linearly dependent.
 
-Its exact eigenvalues are `1-64*sqrt(2)/4225`, `1`, `1+64*sqrt(2)/4225`; the exact scale-free condition number is `(4225+64*sqrt(2))/(4225-64*sqrt(2)) ≈ 1.0437827450175303`. The three frozen rows are therefore nearly orthogonal after removing the declared derivative scaling.
+Iteration 533 exact central4 expansion begins
+`D_h f = f' - h^4 f^(5)/30 - h^6 f^(7)/252 - h^8 f^(9)/4320 + O(h^10)`.
+Prospectively frozen diagnostics after QUARTER assembly include the leading-h4 difference ratio 16, `R_BH=(16H-B)/15`, `R_HQ=(16Q-H)/15`, and `R_3=(B-80H+1024Q)/945`. These are diagnostics only and can never replace or rescue the frozen physical gate.
 
-Machine-readable audit: `candidate_gravity/results/iteration531_iter424_three_level_normalized_gram_conditioning_exact_audit.json`.
-
-## Iteration 530 — exact BASE/HALF/QUARTER central4 Gram gate
-Using the frozen tensor-product central4 axis coefficients `(1,-8,+8,-1)/12` and base-step normalization `h=5e-6`, mixed-derivative scaling factors are BASE `1`, HALF `4`, QUARTER `16`. Exact support intersections are BASE∩HALF = four `(±5e-6,±5e-6)`, HALF∩QUARTER = four `(±2.5e-6,±2.5e-6)`, and BASE∩QUARTER = empty.
-
-The exact Gram matrix is `[[4225/5184,4/81,0],[4/81,4225/324,64/81],[0,64/81,16900/81]]` with all leading principal minors positive, hence exact row rank 3.
-
-## Iterations 528–529 — quarter-step prerequisite and exact support audit
-The frozen Iteration-424 contract fixes mass steps `{5e-6,2.5e-6,1.25e-6}` and precision levels `{80,120}`. For `h=1.25e-6`, central4 axis support is `{-2.5e-6,-1.25e-6,+1.25e-6,+2.5e-6}` and the Cartesian grid has exactly 16 coordinates. Exact intersection with certified HALF support is only the four corners with both entries in `{±2.5e-6}`; therefore exactly 12 new quarter coordinates are necessary.
-
-Iteration-528 initial run `34094343153`, job `101654453787`, failed operationally before sampling because of stale prerequisite-key names. Commit `fda4756f58aba6dce09f3c91cf44e8cce8afbade` repaired only schema binding. Canonical repaired trigger/head is `25c4f3ff1c2bf9ef66e0e5db6ace6580da4bb08d`; repaired run `34094463024` remains the authority candidate. Raw artifact must be consumed before scientific PASS is assigned.
-
-## Frozen Iteration-424 full acceptance after quarter support closes
-Full physical reevaluation remains unchanged and requires all simultaneously:
+## Frozen Iteration-424 physical acceptance
+After all 12 new QUARTER coordinates and QUARTER assembly are raw-closed, physical index 2 requires all simultaneously:
 1. physical mass-step discrepancy `<=2e-5`;
 2. direct original-integrand cross-check `<=2e-6`;
 3. tensor-degree-(1,1) fit residual `<=2e-5`;
-4. identical fixed-node 80/120-digit agreement `|D_s(80)-D_s(120)|<=2e-6`;
+4. fixed-node MP80/MP120 agreement `|D_s(80)-D_s(120)|<=2e-6`;
 5. finite outputs.
 
-Only full PASS promotes physical index 2 and authorizes frozen exact15 continuation. A computed failing clause is a scoped scientific FAIL for this fallback route. A missing/uncomputed clause is operational BLOCKED.
+Only full PASS promotes index 2 and authorizes frozen exact15 continuation. A computed failing clause is a scoped scientific FAIL for this fallback route; an uncomputed clause is BLOCKED.
 
-## Retained Iterations 525–527 authority
-Iteration 526 closed BASE/HALF historical provenance with 28 frozen coordinates backed by 29 exact artifact parts. Iteration 527 raw-consumed run `34089957999`, job `101641252363`, artifact `10006477417`. Frozen assembly: all 80 samples finite; BASE MP80↔MP120 `0.0 <= 2e-6`; HALF MP80↔MP120 `0.0 <= 2e-6`; BASE↔HALF mass-step `8.60575121785458117805036434436e-7 <= 2e-5`; row rank 2; Gram determinant `5948843/559872 > 0`; `ds=-d_base`; no Richardson promotion; no threshold weakening.
-
-## Retained comparator and physical blockers
-Iteration 504 remains `BLOCKED_FIXED_COMPARATOR_QUOTIENT_UPSTREAM_TARGET_NOT_ASSEMBLED__NON_PROMOTING`: concrete upstream algebraic `Source/Ward/contact+K2` target is absent. Robust comparator-subtracted residual is absent. Iteration 421 remains raw-valid `BLOCKED_CONVERGENCE` for physical index 2 until the frozen Iteration-424 route is actually closed.
+## Retained comparator blocker
+Iteration 504 remains `BLOCKED_FIXED_COMPARATOR_QUOTIENT_UPSTREAM_TARGET_NOT_ASSEMBLED__NON_PROMOTING`: the concrete upstream algebraic `Source/Ward/contact+K2` target and robust comparator-subtracted residual are absent. ANSATZ-003 remains uncreated; Fisher/resources remain forbidden.
 
 ## Stable readiness rubric
 - comparator foundation `24/25`
@@ -103,10 +105,10 @@ Iteration 504 remains `BLOCKED_FIXED_COMPARATOR_QUOTIENT_UPSTREAM_TARGET_NOT_ASS
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 533 closes an exact diagnostic/preinterpretation subgate but no additional model-level rubric sector.
+Readiness change: **0 percentage points**. Rank1 is a genuine numerical support PASS and rank2 is now running, but no additional model-level rubric sector is complete.
 
 ## Exact downstream chain
-BASE/HALF local support **CLOSED at 523** → multipart provenance **CLOSED at 526** → BASE/HALF assembly **CLOSED at 527** → quarter support manifest **EXACT at 529** → three-level Gram **EXACT/full-rank at 530** → normalized conditioning **EXACT/well-conditioned at 531** → quarter successor order **EXACT/preregistered at 532** → three-level truncation diagnostic **EXACT/preregistered at 533** → repaired quarter rank1 raw-consume → prospectively fixed ranks2–12 → quarter assembly → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
+BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → Gram/conditioning/truncation preregistration **530–533** → rank1 **RAW PASS 534** → rank2 **RUNNING 535** → ranks3–12 in frozen order → QUARTER assembly → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
 
 ## Retained guardrails
-Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy retry. No `u<->v` support substitution without exact frozen identity. Exact coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated until a concrete residual survives the fixed comparator quotient. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
+Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy retry. No unsupported `u<->v` substitution. Exact coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated until a concrete residual survives the fixed comparator quotient. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
