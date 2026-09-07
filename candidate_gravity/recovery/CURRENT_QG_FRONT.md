@@ -18,8 +18,8 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - QUARTER rank1 raw authority: **Iteration 534**, raw-valid PASS.
 - QUARTER rank2 raw authority: **Iteration 538**, raw-valid PASS.
 - QUARTER rank3 raw authority: **Iteration 542**, `PASS_RAW_CONSUMED_ITER424_QUARTER_SUPPORT_RANK3_MP80_MP120__NON_PROMOTING`.
-- Three-level exact diagnostics retained: **Iterations 530–533, 536–537, 540–541**; diagnostic-only, non-promoting.
-- Latest authoritative research iteration: **Iteration 542**.
+- Three-level exact diagnostics retained: **Iterations 530–533, 536–537, 540–541, 543**; diagnostic-only, non-promoting.
+- Latest authoritative research iteration: **Iteration 543**.
 
 ## Iteration 542 — rank3 raw-valid PASS
 Canonical run `34115105768`, job `101719973617`, artifact `10018745243`, artifact digest `sha256:06744daefa9766aca586b679769eb9767cd0a898936ec7a1159e06759575a5dc`, head `ec77639ef423249426ee9b5b560b0662521f56a9`.
@@ -30,6 +30,29 @@ Raw `result.json` SHA-256: `5ff2918ca522e689f8c67dc0f007efe8fd4a0bc70a5aba2d6242
 
 New QUARTER support closure is **3/12**. Including four exact HALF-overlap corners, authoritative full QUARTER-grid coordinate coverage is **7/16 = 43.75%**. This does not promote physical index 2.
 
+## Iteration 543 — exact h4/h6 ratio conditioning contract
+For the frozen three-level diagnostic define `d1=BASE-HALF`, `d2=HALF-QUARTER`, `A=a h^4`, `B=b h^6`. The exact Iteration-536 inversion can be rewritten as
+
+- `A=16(64d2-d1)/45`,
+- `B=256(d1-16d2)/189`,
+- `q:=B/A=(80/21)(d1-16d2)/(64d2-d1)`.
+
+For `r=d1/d2`,
+
+- `q=(80/21)(r-16)/(64-r)`,
+- `dq/dr=1280/[7(64-r)^2]`,
+- `kappa_rel(r->q)=|48r/((r-16)(64-r))|`.
+
+The direct Jacobian is `dq/dd1=(1280/7)d2/(64d2-d1)^2` and `dq/dd2=-(1280/7)d1/(64d2-d1)^2`. Exact zero surfaces are `d1=64d2 <=> A=0` (ratio pole) and `d1=16d2 <=> B=0`.
+
+For bounded errors `|e1|<=eps1`, `|e2|<=eps2`, with `D=64d2-d1`, `N=d1-16d2`, `m=|D|-(eps1+64eps2)`, the fail-closed condition `m>0` guarantees no perturbed denominator crossing of the reconstructed `A=0` pole and yields
+
+`|q'-q| <= (80/21) [ (eps1+16eps2)|D| + |N|(eps1+64eps2) ] / (|D|m)`.
+
+Classification: `PASS_ITER424_H4_H6_RATIO_CONDITIONING_FAIL_CLOSED_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
+
+This is numerical/truncation diagnostic authority only. It is not Candidate-Gravity consistency PASS/FAIL, exact comparator identity, regime-specific non-identifiability, model-level near-degeneracy, or novelty certificate. Machine authority: `candidate_gravity/results/iteration543_iter424_h4_h6_ratio_conditioning_contract.json`.
+
 ## Active heavy computation — rank4
 Exactly one successor is authorized and running:
 - rank: **4/12**;
@@ -39,7 +62,7 @@ Exactly one successor is authorized and running:
 - stage commit: `c7c022bf4abda08b079efa596d2f88a2880d869d`;
 - workflow commit: `a2bdee8b15515f918ceeb35e862b753cca552322`;
 - head/trigger commit: `0cb2f04ada4092c4d173a50276fffb36415109cf`;
-- state at Iteration-542 write: `in_progress`.
+- live state at Iteration-543 inspection: `in_progress`.
 
 No duplicate rank4 heavy run is authorized. Workflow green alone must not be accepted; raw artifact consumption is mandatory before rank4 authority.
 
@@ -82,7 +105,7 @@ The concrete upstream algebraic `Source/Ward/contact+K2` target and robust compa
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 542 closes one numerical support prerequisite only; no stable rubric sector closes.
+Readiness change: **0 percentage points**. Iteration 543 closes an exact diagnostic conditioning subgate only; no stable rubric sector closes.
 
 ## Exact next gate
 After rank4 terminal completion: fail-closed raw-consume run `34126397439`. Only raw-valid PASS authorizes frozen rank5 `(-1.25e-6,+1.25e-6)`. Scientific FAIL/BLOCKED stops advancement; operational failure permits only minimal rank4 repair.
