@@ -17,76 +17,45 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Full 12-rank QUARTER successor order prospectively frozen: **Iteration 532**.
 - QUARTER rank1 raw authority: **Iteration 534**, raw-valid PASS.
 - QUARTER rank2 raw authority: **Iteration 538**, raw-valid PASS.
-- QUARTER rank3 raw authority: **Iteration 542**, `PASS_RAW_CONSUMED_ITER424_QUARTER_SUPPORT_RANK3_MP80_MP120__NON_PROMOTING`.
+- QUARTER rank3 raw authority: **Iteration 542**, raw-valid PASS.
+- QUARTER rank4 raw authority: **Iteration 545**, `PASS_RAW_CONSUMED_ITER424_QUARTER_SUPPORT_RANK4_MP80_MP120__NON_PROMOTING`.
 - Three-level exact diagnostics retained: **Iterations 530–533, 536–537, 540–541, 543–544**; diagnostic-only, non-promoting.
-- Latest authoritative research iteration: **Iteration 544**.
+- Latest authoritative research iteration: **Iteration 545**.
 
-## Iteration 542 — rank3 raw-valid PASS
-Canonical run `34115105768`, job `101719973617`, artifact `10018745243`, artifact digest `sha256:06744daefa9766aca586b679769eb9767cd0a898936ec7a1159e06759575a5dc`, head `ec77639ef423249426ee9b5b560b0662521f56a9`.
+## Iteration 545 — rank4 raw-valid PASS
+Canonical run `34126397439`, job `101755969291`, artifact `10023337886`, artifact digest `sha256:5d40b3ad74539b4ef347b145ebe369b31e61dd0bd4ff6fc014e99e24ad998776`, head `0cb2f04ada4092c4d173a50276fffb36415109cf`.
 
-Frozen rank3 coordinate `(-1.25e-6,-2.5e-6)` passed `80/80` finite samples, max scaled MP80↔MP120 discrepancy `2.24677866944927398508872509213e-80 <= 1e-30`, and max radial Richardson scaled error `2.55939921382769490570222562317e-15 <= 5e-4`.
+Frozen rank4 coordinate `(-1.25e-6,-1.25e-6)` passed `80/80` finite samples, max scaled MP80↔MP120 discrepancy `3.3386016078648035112265066465e-80 <= 1e-30`, and max radial Richardson scaled error `2.5665078214717156908744567568e-15 <= 5e-4`.
 
-Raw `result.json` SHA-256: `5ff2918ca522e689f8c67dc0f007efe8fd4a0bc70a5aba2d62423dc3dc4b35e0`. Raw `authority_audit.json` SHA-256: `391a96fca3d9a404cada35b2a0723a820ae3464e729f7c753e7068655c795e71`. The authority audit independently records `scientific_authority_pass=true` and the same result hash.
+Raw `result.json` SHA-256: `f1604ef9580be7b3a0d8b217785961d8bbb94c7e1bfa44849abe118b66816347`. Raw `authority_audit.json` SHA-256: `c728f956d8fa57254ed52e0a629c028ec1a4b62c7e22578f5a68d54d4a878567`. The artifact authority audit independently records `scientific_authority_pass=true` and the same result hash.
 
-New QUARTER support closure is **3/12**. Including four exact HALF-overlap corners, authoritative full QUARTER-grid coordinate coverage is **7/16 = 43.75%**. This does not promote physical index 2.
+New QUARTER support closure is **4/12**. Including four exact HALF-overlap corners, authoritative full QUARTER-grid coordinate coverage is **8/16 = 50%**. This does not promote physical index 2.
 
-## Iteration 543 — exact h4/h6 ratio conditioning contract
-For the frozen three-level diagnostic define `d1=BASE-HALF`, `d2=HALF-QUARTER`, `A=a h^4`, `B=b h^6`. The exact Iteration-536 inversion can be rewritten as
+Raw-consumption commit: `47523923fbea6d6214d033eef19a29f64160ccde`.
 
-- `A=16(64d2-d1)/45`,
-- `B=256(d1-16d2)/189`,
-- `q:=B/A=(80/21)(d1-16d2)/(64d2-d1)`.
+## Retained diagnostic authority
+Iterations 530–533, 536–537, 540–541, 543–544 remain exact numerical/truncation diagnostics only. They do not replace any frozen Iteration-424 physical clause, do not promote physical index 2, and do not establish Candidate-Gravity consistency, comparator identity, model-level non-identifiability, or novelty.
 
-For `r=d1/d2`,
-
-- `q=(80/21)(r-16)/(64-r)`,
-- `dq/dr=1280/[7(64-r)^2]`,
-- `kappa_rel(r->q)=|48r/((r-16)(64-r))|`.
-
-The direct Jacobian is `dq/dd1=(1280/7)d2/(64d2-d1)^2` and `dq/dd2=-(1280/7)d1/(64d2-d1)^2`. Exact zero surfaces are `d1=64d2 <=> A=0` (ratio pole) and `d1=16d2 <=> B=0`.
-
-For bounded errors `|e1|<=eps1`, `|e2|<=eps2`, with `D=64d2-d1`, `N=d1-16d2`, `m=|D|-(eps1+64eps2)`, the fail-closed condition `m>0` guarantees no perturbed denominator crossing of the reconstructed `A=0` pole and yields
-
-`|q'-q| <= (80/21) [ (eps1+16eps2)|D| + |N|(eps1+64eps2) ] / (|D|m)`.
-
-Classification: `PASS_ITER424_H4_H6_RATIO_CONDITIONING_FAIL_CLOSED_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
-
-This is numerical/truncation diagnostic authority only. It is not Candidate-Gravity consistency PASS/FAIL, exact comparator identity, regime-specific non-identifiability, model-level near-degeneracy, or novelty certificate. Machine authority: `candidate_gravity/results/iteration543_iter424_h4_h6_ratio_conditioning_contract.json`.
-
-## Iteration 544 — exact ratio-free h4/h6 cone contract
-For the same frozen truncation map define `P:=64d2-d1` and `Q:=d1-16d2`. Exact elimination gives
-
-- `P=(45/16)A`,
-- `Q=(189/256)B`,
-- hence `A=(16/45)P`, `B=(256/189)Q`.
-
-This provides a division-free sign/cancellation test. For nonzero components, `P*Q>0` is exactly the same-sign `A,B` sector and `P*Q<0` is the opposite-sign sector. `P=0 <=> A=0`; `Q=0 <=> B=0`.
-
-For bounded difference errors `|e1|<=eps1`, `|e2|<=eps2`, the induced interval radii are `rho_P=eps1+64eps2` and `rho_Q=eps1+16eps2`. A fail-closed same-sign certificate is allowed only if both intervals exclude zero and carry the same sign. If both exclude zero with opposite signs, opposite-sign cancellation is certified for this diagnostic. If either interval contains zero, classification is `BLOCKED/AMBIGUOUS_DIAGNOSTIC`; no sign inference is allowed.
-
-Classification: `PASS_ITER424_RATIO_FREE_H4_H6_CONE_FAIL_CLOSED_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
-
-This is numerical/truncation diagnostic authority only and cannot replace any frozen Iteration-424 physical clause. Machine authority: `candidate_gravity/results/iteration544_iter424_ratio_free_h4_h6_cone_contract.json`.
-
-## Active heavy computation — rank4
+## Active heavy computation — rank5
 Exactly one successor is authorized and running:
-- rank: **4/12**;
-- coordinate: `u=-1.25e-6`, `v=-1.25e-6`;
-- run: `34126397439`;
-- job: `101755969291`;
-- stage commit: `c7c022bf4abda08b079efa596d2f88a2880d869d`;
-- workflow commit: `a2bdee8b15515f918ceeb35e862b753cca552322`;
-- head/trigger commit: `0cb2f04ada4092c4d173a50276fffb36415109cf`;
-- live state at Iteration-544 inspection: `in_progress`.
+- rank: **5/12**;
+- coordinate: `u=-1.25e-6`, `v=+1.25e-6`;
+- run: `34136802871`;
+- job: `101789577462`;
+- raw-consumption commit: `47523923fbea6d6214d033eef19a29f64160ccde`;
+- stage commit: `361fb0cc411971d159657fb3aa1ca2d39ddb9776`;
+- workflow commit: `459f415a54774658b6dcf0fa7c58933361d3c2e7`;
+- head/trigger commit: `02fd19d47288d865fa281d05c281071292f1bc30`;
+- live state at Iteration-545 handoff: `in_progress`.
 
-No duplicate rank4 heavy run is authorized. Workflow green alone must not be accepted; raw artifact consumption is mandatory before rank4 authority.
+No duplicate rank5 heavy run is authorized. Workflow green alone must not be accepted; raw artifact consumption is mandatory before rank5 authority.
 
 ## Frozen Iteration-532 QUARTER order
 1. `(-2.5e-6,-1.25e-6)` — raw PASS at Iteration 534
 2. `(-2.5e-6,+1.25e-6)` — raw PASS at Iteration 538
 3. `(-1.25e-6,-2.5e-6)` — raw PASS at Iteration 542
-4. `(-1.25e-6,-1.25e-6)` — running
-5. `(-1.25e-6,+1.25e-6)`
+4. `(-1.25e-6,-1.25e-6)` — raw PASS at Iteration 545
+5. `(-1.25e-6,+1.25e-6)` — running
 6. `(-1.25e-6,+2.5e-6)`
 7. `(+1.25e-6,-2.5e-6)`
 8. `(+1.25e-6,-1.25e-6)`
@@ -95,7 +64,7 @@ No duplicate rank4 heavy run is authorized. Workflow green alone must not be acc
 11. `(+2.5e-6,-1.25e-6)`
 12. `(+2.5e-6,+1.25e-6)`.
 
-PASS advances only to the next listed rank. Scientific FAIL/BLOCKED stops advancement and localizes the concrete failure under unchanged science. Operational failure permits only minimal technical repair and rerun of the same rank. Result-dependent reordering/skipping, unsupported u↔v substitution, zero-fill, threshold weakening, mass-node changes and precision changes are forbidden.
+PASS advances only to the next listed rank. Scientific FAIL/BLOCKED stops advancement and localizes the concrete failure under unchanged science. Operational failure permits only minimal technical repair and rerun of the same rank. Result-dependent reordering/skipping, unsupported `u<->v` substitution, zero-fill, threshold weakening, mass-node changes and precision changes are forbidden.
 
 ## Frozen Iteration-424 physical acceptance
 After all 12 new QUARTER coordinates and QUARTER assembly are raw-closed, physical index 2 requires all simultaneously:
@@ -120,10 +89,10 @@ The concrete upstream algebraic `Source/Ward/contact+K2` target and robust compa
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 544 closes a robust ratio-free diagnostic subgate only; no stable rubric sector closes.
+Readiness change: **0 percentage points**. Iteration 545 closes one additional local QUARTER support point only; no stable rubric sector closes.
 
 ## Exact next gate
-After rank4 terminal completion: fail-closed raw-consume run `34126397439`. Only raw-valid PASS authorizes frozen rank5 `(-1.25e-6,+1.25e-6)`. Scientific FAIL/BLOCKED stops advancement; operational failure permits only minimal rank4 repair.
+After rank5 terminal completion: fail-closed raw-consume run `34136802871`. Only raw-valid PASS authorizes frozen rank6 `(-1.25e-6,+2.5e-6)`. Scientific FAIL/BLOCKED stops advancement; operational failure permits only minimal rank5 repair.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy retry. No unsupported `u<->v` substitution. Exact coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated until a concrete residual survives the fixed comparator quotient. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
