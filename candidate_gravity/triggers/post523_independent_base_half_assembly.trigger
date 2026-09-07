@@ -1,7 +1,8 @@
 trigger=post523_independent_base_half_assembly
-source_front=iteration523
+source_front=iteration524
 support_closure=32/32
 contract=independent_BASE_HALF_MP80_MP120_central4
-attempt=3
-reason=normalize_legacy_canonical_provenance_without_threshold_change
-created_utc=2026-09-07T05:15:00Z
+attempt=4
+provenance=28_coordinates_29_exact_artifact_parts
+reason=exact_historical_single_plus_composite_rank10_provenance_without_threshold_change
+created_utc=2026-09-07T06:20:00Z
