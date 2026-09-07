@@ -11,23 +11,23 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 ## Current authority
 - Latest validated physical/operator authority: **Iteration 411**.
 - Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`; unresolved physical set `[2]`.
-- BASE/HALF local mass support: **Iteration 523**, `32/32 = 100% = 2560/2560` across 28 distinct coordinates.
-- Independent BASE/HALF MP80/MP120 assembly: **Iteration 527**, raw-valid PASS, non-promoting.
+- BASE/HALF local mass support: **Iteration 523**, complete.
 - QUARTER manifest: **Iteration 529**, 16-grid with 4 exact HALF-overlap corners and 12 required new coordinates.
 - Frozen 12-rank QUARTER successor order: **Iteration 532**.
-- QUARTER ranks 1–9 raw authority: **Iterations 534, 538, 542, 545, 548, 550, 551, 556, 562**, all raw-valid PASS and non-promoting.
-- Three-level diagnostics retained: **Iterations 530–533, 536–537, 540–541, 543–544, 546–547, 549**.
-- u↔v routing/non-equivalence controls: **Iterations 552–555**.
-- Central4 exchange/tensor/orbit controls: **Iterations 557–559**.
-- Remaining-orbit tail/error contract: **Iteration 560**.
-- Four-route QUARTER assembly identity and exact polynomial audit: **Iteration 561**.
-- Exact prospective post-rank10 two-point tail/error contract: **Iteration 563**.
-- Exact final-pair common/differential mode decomposition: **Iteration 564**, `PASS_ITER424_FINAL_PAIR_COMMON_DIFFERENTIAL_MODE_DECOMPOSITION_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
-- Latest authoritative research iteration: **Iteration 564**.
+- QUARTER ranks 1–10 raw authority: **Iterations 534, 538, 542, 545, 548, 550, 551, 556, 562, 565**, all raw-valid PASS and non-promoting.
+- Exact routing/assembly diagnostics through **Iteration 564** remain retained and non-promoting.
+- Latest authoritative research iteration: **Iteration 565**.
+
+## Latest raw support authority — Iteration 565
+Rank10 coordinate `(+1.25e-6,+2.5e-6)` raw-consumed from run `34165534613`, job `101875710349`, artifact `10034846108`, digest `sha256:707e4fffa3dddcac5eb5d7dc127afcb0afd8c13c85b99c230ea57abacdb3b97d`, head `358bcfc29494fbd615397ba72314e1e10d9e7417`.
+
+Raw checks: `80/80` finite; MP80↔MP120 max `2.23136782466149871841320727933e-80 <= 1e-30`; radial Richardson max `2.57085585035539296413124070504e-15 <= 5e-4`. `result.json` SHA-256 `7cc11967da91eb299bd7a5c4e2c96525ff60c34ec0a4fc0f80e839c36601dc84`; `authority_audit.json` SHA-256 `10f2d13a6165e98a3aaca5cbf85be4d6293ce537c0f4271e9e13e3bbd5c8d645`.
+
+Machine-readable authority: `candidate_gravity/results/iteration565_iter424_quarter_rank10_raw_consumption.json`.
 
 ## QUARTER progress
-Raw-closed new coordinates: **9/12 = 75%**.  
-Including four exact HALF-overlap corners: **13/16 = 81.25%** authoritative coordinate coverage.  
+Raw-closed new coordinates: **10/12 = 83.333333%**.  
+Including four exact HALF-overlap corners: **14/16 = 87.5%** authoritative coordinate coverage.  
 These local support PASSes do not promote physical index2.
 
 ### Frozen order
@@ -40,52 +40,22 @@ These local support PASSes do not promote physical index2.
 7. `(+1.25e-6,-2.5e-6)` — PASS Iteration 551
 8. `(+1.25e-6,-1.25e-6)` — PASS Iteration 556
 9. `(+1.25e-6,+1.25e-6)` — PASS Iteration 562
-10. `(+1.25e-6,+2.5e-6)` — **active**
-11. `(+2.5e-6,-1.25e-6)`
+10. `(+1.25e-6,+2.5e-6)` — PASS Iteration 565
+11. `(+2.5e-6,-1.25e-6)` — **active**
 12. `(+2.5e-6,+1.25e-6)`
 
 PASS advances only to the next listed rank. Scientific FAIL/BLOCKED stops advancement. Operational failure permits only minimal technical repair and rerun of the same rank. No result-dependent reordering/skipping, u↔v substitution, zero-fill, threshold weakening, mass-node changes or precision changes.
 
-## Latest raw support authority — Iteration 562
-Rank9 canonical run `34160111095`, job `101859912600`, artifact `10033936398`, digest `sha256:468faa9c58ec9c3b52e9f54019179a31cc0ad22f60b19ca9b22a150769ae9089`, head `7be4b22384c6680d669e88c0fb7990ba53ceff3e`.
-
-Coordinate `(+1.25e-6,+1.25e-6)` passed `80/80` finite samples, MP80↔MP120 max `2.87050685346696177473651157805e-80 <= 1e-30`, radial Richardson max `2.56144587232444581891553122549e-15 <= 5e-4`. `result.json` SHA-256 `63054690757baee587ef0c07cf753b3196fbdf63a42a14280c4d2ba4b665ab26` matches the authority audit; audit-file SHA-256 `db2025540fea6d733a426da750884a1293e67f3bca6d05a1fe24dfd197e69572`.
-
-Machine-readable authority: `candidate_gravity/results/iteration562_iter424_quarter_rank9_raw_consumption.json`.
-
-## Active heavy computation — rank10
+## Active heavy computation — rank11
 Exactly one successor is active:
-- coordinate `(+1.25e-6,+2.5e-6)`;
-- run `34165534613`;
-- job `101875710349`;
-- trigger/head `358bcfc29494fbd615397ba72314e1e10d9e7417`;
-- stage `candidate_gravity/code/post562_iter424_quarter_support_rank10_full_z_mp_stage.py`;
-- workflow `.github/workflows/rqir-post562-iter424-quarter-rank10-full-z-mp.yml`;
-- scientific step `Run Iter424 quarter-rank10 full-z MP stage` is in progress; raw audit/upload pending.
+- coordinate `(+2.5e-6,-1.25e-6)`;
+- run `34168897005`;
+- job `101885271903`;
+- trigger/head `7e4aeed3dc9ff1b376705d37c01156a35acdc293`;
+- stage `candidate_gravity/code/post565_iter424_quarter_support_rank11_full_z_mp_stage.py`;
+- workflow `.github/workflows/rqir-post565-iter424-quarter-rank11-full-z-mp.yml`.
 
-No duplicate rank10 run is authorized. Workflow success alone is not authority. Only fail-closed raw-valid PASS may authorize rank11 `(+2.5e-6,-1.25e-6)`.
-
-## Exact assembly/routing controls retained
-Frozen fixed-mass kinematics use `lambda=s^2+u^2+v^2-2su-2sv-2uv`, `rho=sqrt(lambda)/(2 sqrt(s))`, `alpha=-(s+u-v)/(2s)`. Iterations 552–555 establish u↔v non-equivalence; no support substitution follows.
-
-Iterations 557–559 freeze exchange-even projection, tensor moment/null/norm integrity and 10-orbit coefficient bookkeeping. Iteration560 fixes the remaining-tail relation `T_rem=(E_A-E_B)/(9 h^2)` and fail-closed error propagation. Iteration561 freezes coefficient-level equality of direct tensor, sequential u→v, sequential v→u and orbit-compressed assembly on the same complete raw-valid grid. Route disagreement is an assembly/index/orientation failure, not a physical residual.
-
-Iteration563 prospectively freezes the exact post-rank10 support tail. After raw-valid rank10, only ranks11 `(+2h,-h)` and12 `(+2h,+h)` remain unknown, with central4 tensor integer coefficients `+8` and `-8`, so
-
-`T_tail=[F(+2h,-h)-F(+2h,+h)]/(18 h^2)`.
-
-Iteration564 freezes the same final pair in an orthogonal common/differential basis before either value is known:
-- `q_common=(F11+F12)/sqrt(2)`;
-- `q_diff=(F11-F12)/sqrt(2)`;
-- coefficient vector `[8,-8] -> [0,8*sqrt(2)]` exactly;
-- the common mode is therefore an exact assembly-null direction;
-- only the differential mode contributes;
-- the orthogonal mode transform has exact condition number 1.
-
-For equal coordinate variance `sigma^2` and correlation `rho`, the mode covariance is exactly `diag(sigma^2(1+rho), sigma^2(1-rho))`, and `Var(T_tail)=sigma^2(1-rho)/(162 h^4)`. This is assembly geometry only: it is not a physical Candidate-Gravity degeneracy and does not override the exact u↔v non-equivalence of Iterations 552–555. Both final coordinates remain mandatory.
-
-Machine-readable authority: `candidate_gravity/results/iteration564_iter424_final_pair_mode_decomposition_exact.json`.  
-Reproducible audit: `candidate_gravity/code/iteration564_iter424_final_pair_mode_decomposition_exact.py`.
+No duplicate rank11 run is authorized. Workflow success alone is not authority. Only fail-closed raw-valid PASS may authorize rank12 `(+2.5e-6,+1.25e-6)`.
 
 ## Frozen Iteration-424 physical acceptance
 After all 12 new QUARTER coordinates and QUARTER assembly are raw-closed, physical index2 requires all simultaneously:
@@ -110,13 +80,8 @@ Concrete upstream algebraic `Source/Ward/contact+K2` target and robust comparato
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration564 closes an exact prospective assembly-mode subgate, but no additional stable model-level rubric sector is complete.
-
-## Exact downstream chain
-BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → ranks1–9 **RAW PASS through 562** → rank10 **RUNNING** → ranks11–12 in frozen order under Iterations563–564 final-pair contracts → QUARTER assembly under exact tensor/orbit/tail/four-route controls → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
-
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy full-C5. No u↔v support substitution. Exact coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. Source/Born subtraction only in the matched observable after pole/cut-origin classification. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
 
 ## Exact next gate
-Inspect terminal state and raw artifact of rank10 run `34165534613`, job `101875710349`. Only raw-valid PASS authorizes frozen rank11 `(+2.5e-6,-1.25e-6)`.
+Inspect terminal state and raw artifact of rank11 run `34168897005`, job `101885271903`. Only raw-valid PASS authorizes frozen rank12 `(+2.5e-6,+1.25e-6)`.
