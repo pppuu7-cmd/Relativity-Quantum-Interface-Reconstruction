@@ -1,0 +1,30 @@
+{
+  "classification": "PASS_ITER424_H4_H6_INVERSION_CONDITIONING_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "det_forward": "-2835/65536",
+  "det_mtm": "8037225/4294967296",
+  "discriminant_mtm": "962877176430849/281474976710656",
+  "forward_matrix": [
+    ["15/16", "63/64"],
+    ["15/256", "63/4096"]
+  ],
+  "interpretation": {
+    "conditioning_scope": "unscaled h4/h6 coefficient inversion in [A,B] coordinates",
+    "distinct_from_iteration531": "Iteration 531 conditions normalized BASE/HALF/QUARTER stencil rows; this audit conditions the two-difference truncation-component inversion.",
+    "invertible": true,
+    "near_degeneracy_claim": false,
+    "physical_promotion": false
+  },
+  "inverse_matrix": [
+    ["-16/45", "1024/45"],
+    ["256/189", "-4096/189"]
+  ],
+  "iteration": 537,
+  "kappa2_decimal": "42.7789181466055467415976706095240767400562216314354124892619",
+  "kappa2_exact": "sqrt((31064193+sqrt(962877176430849))/(31064193-sqrt(962877176430849)))",
+  "model_readiness_percent": 24,
+  "mtm": [
+    ["57825/65536", "968625/1048576"],
+    ["968625/1048576", "16260993/16777216"]
+  ],
+  "trace_mtm": "31064193/16777216"
+}
