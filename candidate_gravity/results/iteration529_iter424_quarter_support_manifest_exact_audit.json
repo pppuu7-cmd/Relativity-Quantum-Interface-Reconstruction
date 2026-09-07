@@ -1,0 +1,49 @@
+{
+  "iteration": 529,
+  "classification": "PASS_ITER424_QUARTER_SUPPORT_MANIFEST_EXACT__NON_PROMOTING",
+  "scope": "exact combinatorial/support audit for the frozen Iteration-424 h=1.25e-6 central4 prerequisite; no physical D_s promotion",
+  "source_authorities": {
+    "iteration424_contract": "candidate_gravity/code/iteration424_channel2_high_precision_fallback_contract.py",
+    "iteration527_assembled_authority": "candidate_gravity/results/post526_independent_base_half_assembly_raw_consumption.json",
+    "quarter_rank1_stage": "candidate_gravity/code/post527_iter424_quarter_support_rank1_full_z_mp_stage.py"
+  },
+  "frozen": {
+    "mass_steps": [5e-6, 2.5e-6, 1.25e-6],
+    "quarter_h": 1.25e-6,
+    "central4_node_rule": [-2, -1, 1, 2],
+    "quarter_axis_nodes": [-2.5e-6, -1.25e-6, 1.25e-6, 2.5e-6],
+    "precision_digits": [80, 120]
+  },
+  "exact_support_counting": {
+    "quarter_cartesian_coordinates": 16,
+    "exact_overlap_with_existing_half_support": 4,
+    "new_quarter_coordinates_required": 12,
+    "overlap_coordinates": [[-2.5e-6,-2.5e-6],[-2.5e-6,2.5e-6],[2.5e-6,-2.5e-6],[2.5e-6,2.5e-6]],
+    "first_new_coordinate_u_major_v_major": [-2.5e-6,-1.25e-6]
+  },
+  "logical_result": {
+    "twelve_new_coordinates_are_necessary_for_complete_quarter_central4_support": true,
+    "only_four_coordinates_may_be_reused_by_exact_coordinate_identity": true,
+    "quarter_rank1_target_matches_deterministic_source_order": true,
+    "local_quarter_support_precision_pass_does_not_itself_satisfy_any_full_iteration424_physical_clause": true,
+    "full_iteration424_reevaluation_remains_blocked_until_quarter_support_and_assembly_are_complete": true
+  },
+  "live_action_observation": {
+    "first_run_id": 34094343153,
+    "first_job_id": 101654453787,
+    "first_run_result": "operational failure before sampling due Iteration-527 authority-schema mismatch",
+    "first_artifact_id": 10007996294,
+    "first_artifact_digest": "sha256:a485d8b6efe30f9a798ae984955fd795f072d5d364c31d38017c63db40aba0c0",
+    "repaired_run_id": 34094463024,
+    "repaired_run_status_at_audit": "in_progress"
+  },
+  "classification_notes": [
+    "The failed first run is operational BLOCKED, not a Candidate-Gravity consistency FAIL.",
+    "No physical quarter-step observable was obtained from the failed first run.",
+    "The schema repair changes only prerequisite-key binding and does not alter parent dynamics, mass nodes, precision convention or thresholds.",
+    "This manifest audit is an exact support/provenance PASS but is non-promoting."
+  ],
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "next_gate": "raw-consume repaired quarter rank1 run after completion; only raw-valid PASS permits quarter source rank2 with unchanged frozen order and conventions"
+}
