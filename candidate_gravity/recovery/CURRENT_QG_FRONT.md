@@ -52,12 +52,14 @@ Coordinate `(+1.25e-6,+1.25e-6)` passed `80/80` finite samples, MP80↔MP120 max
 Machine-readable authority: `candidate_gravity/results/iteration562_iter424_quarter_rank9_raw_consumption.json`.
 
 ## Active heavy computation — rank10
-Exactly one successor is authorized and triggered:
+Exactly one successor is active:
 - coordinate `(+1.25e-6,+2.5e-6)`;
-- canonical run `34165534613`;
+- run `34165534613`;
+- job `101875710349`;
 - trigger/head `358bcfc29494fbd615397ba72314e1e10d9e7417`;
 - stage `candidate_gravity/code/post562_iter424_quarter_support_rank10_full_z_mp_stage.py`;
-- workflow `.github/workflows/rqir-post562-iter424-quarter-rank10-full-z-mp.yml`.
+- workflow `.github/workflows/rqir-post562-iter424-quarter-rank10-full-z-mp.yml`;
+- scientific step `Run Iter424 quarter-rank10 full-z MP stage` is in progress; raw audit/upload pending.
 
 No duplicate rank10 run is authorized. Workflow success alone is not authority. Only fail-closed raw-valid PASS may authorize rank11 `(+2.5e-6,-1.25e-6)`.
 
@@ -92,10 +94,10 @@ Concrete upstream algebraic `Source/Ward/contact+K2` target and robust comparato
 Readiness change: **0 percentage points**. Iteration562 closes one additional local QUARTER support coordinate only.
 
 ## Exact downstream chain
-BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → ranks1–9 **RAW PASS through 562** → rank10 **ACTIVE** → ranks11–12 in frozen order → QUARTER assembly under exact tensor/orbit/tail/four-route controls → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
+BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → ranks1–9 **RAW PASS through 562** → rank10 **RUNNING** → ranks11–12 in frozen order → QUARTER assembly under exact tensor/orbit/tail/four-route controls → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy full-C5. No u↔v support substitution. Exact coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. Source/Born subtraction only in the matched observable after pole/cut-origin classification. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
 
 ## Exact next gate
-Inspect terminal state and raw artifact of rank10 run `34165534613`. Only raw-valid PASS authorizes frozen rank11 `(+2.5e-6,-1.25e-6)`.
+Inspect terminal state and raw artifact of rank10 run `34165534613`, job `101875710349`. Only raw-valid PASS authorizes frozen rank11 `(+2.5e-6,-1.25e-6)`.
