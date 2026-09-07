@@ -1,0 +1,30 @@
+{
+  "iteration": 554,
+  "classification": "PASS_ITER424_UV_SWAP_EXACT_INVARIANT_SHIFT_CONTRACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "parent_kinematics": {
+    "alpha": "-(s+u-v)/(2s)",
+    "rho_symmetry": "rho(u,v)=rho(v,u)",
+    "delta": "(v-u)/s",
+    "p_relation": "p(u,v)=p(v,u)+delta*q"
+  },
+  "exact_invariant_relations": {
+    "Delta_p_dot_q": "delta*q^2",
+    "Delta_p2": "2*delta*(p(v,u).q)+delta^2*q^2",
+    "Delta_pplusq2": "2*delta*(p(v,u).q+q^2)+delta^2*q^2",
+    "difference": "Delta((p+q)^2)-Delta(p^2)=2*delta*q^2",
+    "q2_minus1_specialization": "Delta((p+q)^2)-Delta(p^2)=-2*delta"
+  },
+  "scope": {
+    "candidate_gravity_consistency_fail": false,
+    "exact_comparator_identity": false,
+    "regime_specific_non_identifiability": false,
+    "operational_blocked": false,
+    "model_level_near_degeneracy": false,
+    "novelty_certificate": false,
+    "diagnostic_only": true,
+    "promoting": false
+  },
+  "guardrail": "No u<->v substitution is permitted for remaining QUARTER support coordinates. Frozen rank order and Iteration-424 physical acceptance are unchanged.",
+  "MODEL_READINESS": "24%",
+  "readiness_change_percentage_points": 0
+}
