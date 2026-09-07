@@ -14,7 +14,7 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: **`[2]`**.
 - Latest completed numerical mass-support authority: **Iteration 517**, raw-consumed frozen rank25 `(u,v)=(+2.5e-6,+5e-6)`, HALF local index 11, multiplicity 1.
-- Latest authoritative research iteration: **Iteration 517**.
+- Latest authoritative research iteration: **Iteration 518**.
 - Certified occurrence-weighted precision coverage: **`30/32 = 93.750% = 2400/2560`** row occurrences.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16. Frozen rank10 `(+5e-6,+5e-6)`, multiplicity 2, was already certified in Iteration 455 and must not be relaunched.
 
@@ -42,7 +42,7 @@ Only raw-valid rank26 PASS permits rank27 `(+5e-6,+2.5e-6)`, HALF local index 14
 
 Conditional coverage after future sequential raw-valid PASS: rank26 `31/32=96.875%`; rank27 `32/32=100%`. These are arithmetic consequences only, not PASS claims.
 
-## Exact assembly authority — Iterations 510–516
+## Exact assembly authority — Iterations 510–518
 Iteration 510 established exact BASE/HALF row independence: `rank([W_BASE,W_HALF])=2`; `W_DELTA=W_BASE-W_HALF` adds no independent row. Exact Gram matrix `G=[[4225/5184,4/81],[4/81,4225/324]]`, determinant `5948843/559872`.
 
 Iteration 511 established iid shared-node numerical covariance: `Cov(BASE,HALF)=(4/81)sigma^2/h^4`, correlation `64/4225`, `Var(BASE-HALF)=(23771/1728)sigma^2/h^4`.
@@ -51,7 +51,9 @@ Iteration 512 quantified exact Gram eigenvalues `(71825±sqrt(4016652769))/10368
 
 Iteration 514 established distribution-free deterministic bounds `|delta BASE| <= (9/4) epsilon/h^2`, `|delta HALF| <= 9 epsilon/h^2`, and union-aggregated `|delta(BASE-HALF)| <= (397/36) epsilon/h^2`.
 
-Iteration 516 generalized independent coordinate-error covariance to arbitrary variances `v_p>=0`: `Cov(BASE,HALF)=h^-4 (1/81) sum_shared v_p >=0`; each shared discrepancy coefficient is `25/144`. These are numerical/provenance authorities only and create no new threshold.
+Iteration 516 generalized independent coordinate-error covariance to arbitrary variances `v_p>=0`: `Cov(BASE,HALF)=h^-4 (1/81) sum_shared v_p >=0`; each shared discrepancy coefficient is `25/144`.
+
+Iteration 518 removes the diagonal-noise restriction and allows an arbitrary PSD covariance `Sigma` over all 28 coordinates: `C_A=h^-4 A Sigma A^T` is PSD, `Var(BASE-HALF)=h^-4(w_BASE-w_HALF)^T Sigma (w_BASE-w_HALF)`, and with `lambda=lambda_max(Sigma)` exact norm-level bounds are `Var(BASE)<=(4225/5184)lambda/h^4`, `Var(HALF)<=(4225/324)lambda/h^4`, `Var(BASE-HALF)<=(23771/1728)lambda/h^4`, `|Cov(BASE,HALF)|<=(4225/1296)lambda/h^4`. Under general correlated PSD noise the cross-covariance may have either sign; Iteration 516 nonnegativity is diagonal-noise-specific. These are numerical/provenance authorities only and create no new threshold or physical covariance claim.
 
 ## Retained comparator and physical blockers
 Iteration 504 remains `BLOCKED_FIXED_COMPARATOR_QUOTIENT_UPSTREAM_TARGET_NOT_ASSEMBLED__NON_PROMOTING`: concrete upstream algebraic target is not assembled, so comparator identity/rank loss/near-degeneracy/novelty remain unevaluable. BLOCKED is not scientific FAIL.
@@ -73,7 +75,7 @@ The frozen Iteration-424 high-precision fallback remains downstream of complete 
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 517 closed one genuine local numerical-support gate but no additional readiness-rubric sector.
+Readiness change: **0 percentage points**. Iteration 518 closed a genuine correlated-error/provenance subgate but no additional readiness-rubric sector.
 
 ## Exact downstream chain
 Complete support closure → independent BASE/HALF MP80/120 assembly → frozen Iteration-424 reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient → robust nonzero residual.
