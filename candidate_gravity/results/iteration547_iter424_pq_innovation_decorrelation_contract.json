@@ -1,0 +1,22 @@
+{
+  "iteration": 547,
+  "classification": "PASS_ITER424_PQ_INNOVATION_DECORRELATION_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "covariance_over_sigma2": [[8322, -2130], [-2130, 546]],
+  "determinant": 6912,
+  "innovation": {
+    "definition": "R = Q + alpha P",
+    "alpha_exact": "355/1387",
+    "alpha_float": 0.2559480894015862,
+    "cov_P_R_over_sigma2_exact": "0",
+    "var_R_over_sigma2_exact": "1152/1387",
+    "var_R_over_sigma2_float": 0.8305695746214852,
+    "R_truncation_map": {
+      "A_coefficient_exact": "15975/22192",
+      "B_coefficient_exact": "189/256"
+    }
+  },
+  "inverse_covariance_times_sigma2": [["91/1152", "355/1152"], ["355/1152", "1387/1152"]],
+  "joint_quadratic_form": "chi_PQ = (91 P^2 + 710 P Q + 1387 Q^2)/(1152 sigma^2)",
+  "scope": "Equal-variance independent BASE/HALF/QUARTER level-error model only; numerical/truncation diagnostic, not Candidate-Gravity identifiability or model-level near-degeneracy.",
+  "model_readiness_percent": 24
+}
