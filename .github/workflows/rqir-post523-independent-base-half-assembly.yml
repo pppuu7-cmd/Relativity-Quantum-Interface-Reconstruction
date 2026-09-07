@@ -18,8 +18,22 @@ jobs:
           python-version: '3.12'
       - name: Install frozen numerical dependencies
         run: python -m pip install --disable-pip-version-check -q mpmath==1.3.0
-      - name: Resolve raw-consumed artifact provenance
+      - name: Normalize committed raw-consumption provenance and resolve artifacts
         run: |
+          python - <<'PY'
+          import json,pathlib
+          R=pathlib.Path('candidate_gravity/results')
+          for p in R.glob('*.json'):
+              try: o=json.loads(p.read_text())
+              except Exception: continue
+              q=o.get('provenance')
+              if not isinstance(q,dict): continue
+              changed=False
+              for k in ('artifact_id','artifact_name','scientific_json_sha256'):
+                  if k not in o and k in q:
+                      o[k]=q[k]; changed=True
+              if changed: p.write_text(json.dumps(o,indent=2,sort_keys=True)+'\n')
+          PY
           root="candidate_gravity/artifacts/post523_independent_base_half_assembly"; mkdir -p "$root/support_bundle"
           python candidate_gravity/code/post523_independent_base_half_assembly.py --emit-artifact-manifest > "$root/artifact_manifest.json"
       - name: Download all 28 raw-validated support artifacts
@@ -48,7 +62,7 @@ jobs:
           import hashlib,json,pathlib
           root=pathlib.Path('candidate_gravity/artifacts/post523_independent_base_half_assembly'); p=root/'result.json'
           if not p.exists() or p.stat().st_size==0: raise SystemExit(2)
-          raw=p.read_bytes(); o=json.loads(raw); obs=o.get('observed',{}); fr=o.get('frozen',{}); th=o.get('thresholds',{}); co=o.get('conditioning',{})
+          raw=p.read_bytes(); o=json.loads(raw); obs=o.get('observed',{}); fr=o.get('frozen',{}); co=o.get('conditioning',{})
           ok=bool(o.get('stage')=='POST523_INDEPENDENT_BASE_HALF_MP80_MP120_CENTRAL4_ASSEMBLY' and o.get('classification')=='PASS_INDEPENDENT_BASE_HALF_ASSEMBLY__NON_PROMOTING' and o.get('scientific_gate_pass') is True and o.get('promotes_physical_coordinate') is False and fr.get('ds_binding')=='ds=-d_base' and fr.get('distinct_coordinates')==28 and fr.get('source_occurrences')==32 and fr.get('sample_count')==80 and fr.get('precision_digits')==[80,120] and fr.get('no_richardson_promotion') is True and co.get('rank')==2 and co.get('gram_determinant')=='5948843/559872' and obs.get('all_finite') is True and obs.get('sample_count')==80 and float(obs.get('assembled_base_mp_scaled_max'))<=2e-6 and float(obs.get('assembled_half_mp_scaled_max'))<=2e-6 and float(obs.get('base_half_mass_step_scaled_max'))<=2e-5 and len(o.get('artifact_provenance',[]))==28)
           a={'schema':'rqir_action_result_authority_audit_v1','stage':o.get('stage'),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),'classification':o.get('classification'),'scientific_authority_pass':ok,'authority_scope':'FULL_28_COORDINATE_INDEPENDENT_BASE_HALF_MP80_MP120_ASSEMBLY__NON_PROMOTING'}
           (root/'authority_audit.json').write_text(json.dumps(a,indent=2,sort_keys=True)+'\n')
