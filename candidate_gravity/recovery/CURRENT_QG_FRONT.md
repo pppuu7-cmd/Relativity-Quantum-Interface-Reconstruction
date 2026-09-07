@@ -22,7 +22,8 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Exact central4 tensor moment/null/norm integrity authority: **Iteration 558**.
 - Exact QUARTER exchange-orbit closure/weight map authority: **Iteration 559**.
 - Exact post-rank9 remaining-orbit tail/error contract: **Iteration 560**, `PASS_ITER424_REMAINING_ORBIT_TAIL_FAIL_CLOSED_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
-- Latest authoritative research iteration: **Iteration 560**.
+- Exact four-route QUARTER assembly identity / synthetic polynomial unit-test contract: **Iteration 561**, `PASS_ITER424_QUARTER_THREE_WAY_ASSEMBLY_IDENTITY_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
+- Latest authoritative research iteration: **Iteration 561**.
 
 ## QUARTER progress
 Raw-closed new coordinates: **8/12 = 66.6666666667%**.
@@ -56,7 +57,7 @@ Exactly one successor is active:
 - run `34160111095`;
 - job `101859912600`;
 - head/trigger `7be4b22384c6680d669e88c0fb7990ba53ceff3e`;
-- full-z MP80/MP120 stage in progress at Iteration560 check;
+- full-z MP80/MP120 stage in progress at Iteration561 check;
 - raw audit/upload pending.
 
 No duplicate rank9 run is authorized. Workflow success alone is not scientific authority. Only fail-closed raw-valid PASS may authorize rank10 `(+1.25e-6,+2.5e-6)`.
@@ -94,6 +95,22 @@ This is assembly/numerical conditioning only, not Candidate-Gravity model-level 
 Machine-readable authority: `candidate_gravity/results/iteration560_iter424_remaining_orbit_tail_contract_exact.json`.
 Reproducible audit: `candidate_gravity/code/iteration560_iter424_remaining_orbit_tail_contract_exact.py`.
 
+## Iteration 561 — exact QUARTER assembly identity contract
+For the frozen central4 weights `w=[1,-8,+8,-1]`, the mixed coefficient tensor factorizes exactly as `C_ij=w_i w_j/(144 h^2)`.
+
+Therefore, on the same complete matched 4x4 raw-valid grid, the eventual QUARTER mixed derivative must agree algebraically across four routes:
+1. direct 16-coordinate tensor sum;
+2. sequential central4 `u->v`;
+3. sequential central4 `v->u`;
+4. 10 exchange-orbit compressed assembly using the Iteration559 coefficient ledger.
+
+An exact-rational synthetic audit additionally verifies every monomial `u^a v^b` with `0<=a,b<=4`; the stencil returns the exact mixed derivative at the origin for all 25 basis elements. Every row and column coefficient sum is exactly zero, hence any additive separable sector `A(u)+B(v)+constant` is annihilated exactly.
+
+Future route disagreement on the same raw-valid grid is therefore an assembly/index/orientation integrity failure, not a Candidate-Gravity physical residual, and must fail closed before physical promotion.
+
+Machine-readable authority: `candidate_gravity/results/iteration561_iter424_quarter_three_way_assembly_identity_exact.json`.
+Reproducible audit: `candidate_gravity/code/iteration561_iter424_quarter_three_way_assembly_identity_exact.py`.
+
 ## Retained three-level diagnostic lessons
 - Iteration530: exact three-level central4 Gram row rank 3.
 - Iteration531: normalized stencil geometry well-conditioned, `kappa_2≈1.04378`.
@@ -130,10 +147,10 @@ The concrete upstream algebraic `Source/Ward/contact+K2` target and robust compa
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration560 closes a genuine fail-closed assembly/error-propagation subgate, but no additional stable model-level rubric sector is complete.
+Readiness change: **0 percentage points**. Iteration561 closes a prospectively frozen assembly-integrity diagnostic gate, but no additional stable model-level rubric sector is complete.
 
 ## Exact downstream chain
-BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → ranks1–8 **RAW PASS through 556** → rank9 **RUNNING** → ranks10–12 in frozen order → QUARTER assembly + exact tensor/orbit/tail controls → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
+BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → ranks1–8 **RAW PASS through 556** → rank9 **RUNNING** → ranks10–12 in frozen order → QUARTER assembly + exact tensor/orbit/tail/four-route controls → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy retry. No u↔v support substitution. Exact coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated until a concrete residual survives the fixed comparator quotient. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
