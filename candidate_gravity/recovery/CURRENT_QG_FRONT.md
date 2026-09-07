@@ -1,6 +1,6 @@
 # Candidate Gravity Current Front
 
-**Updated:** 2026-09-07  
+**Updated:** 2026-09-08  
 **Infrastructure status:** READY — 100%  
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
@@ -20,8 +20,9 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - u↔v non-equivalence / routing diagnostics: **Iterations 552–555**.
 - Exact central4 exchange-even projection / assembly-control authority: **Iteration 557**.
 - Exact central4 tensor moment/null/norm integrity authority: **Iteration 558**.
-- Exact QUARTER exchange-orbit closure/weight map authority: **Iteration 559**, `PASS_ITER424_QUARTER_EXCHANGE_ORBIT_CLOSURE_WEIGHT_MAP_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
-- Latest authoritative research iteration: **Iteration 559**.
+- Exact QUARTER exchange-orbit closure/weight map authority: **Iteration 559**.
+- Exact post-rank9 remaining-orbit tail/error contract: **Iteration 560**, `PASS_ITER424_REMAINING_ORBIT_TAIL_FAIL_CLOSED_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
+- Latest authoritative research iteration: **Iteration 560**.
 
 ## QUARTER progress
 Raw-closed new coordinates: **8/12 = 66.6666666667%**.
@@ -44,14 +45,10 @@ Physical index2 remains unresolved and none of these local support PASS results 
 
 PASS advances only to the next listed rank. Scientific FAIL/BLOCKED stops advancement and localizes the concrete failure under unchanged science. Operational failure permits only minimal technical repair and rerun of the same rank. Result-dependent reordering/skipping, u↔v substitution, zero-fill, threshold weakening, mass-node changes and precision changes are forbidden.
 
-## Iteration 556 — rank8 raw-valid PASS
-Canonical run `34153849866`, job `101841466120`, artifact `10032056133`, artifact digest `sha256:4ec3d3633b9bddeafd492ad6616350441515a21fed34a68794064ac45b0996bd`, head `b1ec70bd5cab311921e514e31594b1476f1381ce`.
+## Latest raw support authority — Iteration 556
+Rank8 canonical run `34153849866`, job `101841466120`, artifact `10032056133`, digest `sha256:4ec3d3633b9bddeafd492ad6616350441515a21fed34a68794064ac45b0996bd`, head `b1ec70bd5cab311921e514e31594b1476f1381ce`.
 
-Frozen rank8 `(+1.25e-6,-1.25e-6)` passed `80/80` finite samples, MP80↔MP120 max `3.21415799361858209211589830142e-80 <= 1e-30`, radial Richardson max `2.56632452688472147151010572675e-15 <= 5e-4`.
-
-Raw `result.json` SHA-256 `8d498f746c5ee5aecb24949259227ac81731ff007ca1c8681b8169e510962cdb`; raw `authority_audit.json` SHA-256 `7416d9e1e2e2e51c9fd348092298caf11aa7f50f9db3e4e93dc412a191bb8bb7`; audit binds the same result hash and records `scientific_authority_pass=true`.
-
-Machine-readable authority: `candidate_gravity/results/iteration556_iter424_quarter_rank8_raw_consumption.json`.
+Coordinate `(+1.25e-6,-1.25e-6)` passed `80/80` finite samples, MP80↔MP120 max `3.21415799361858209211589830142e-80 <= 1e-30`, radial Richardson max `2.56632452688472147151010572675e-15 <= 5e-4`. Machine-readable authority: `candidate_gravity/results/iteration556_iter424_quarter_rank8_raw_consumption.json`.
 
 ## Active heavy computation — rank9
 Exactly one successor is active:
@@ -59,81 +56,56 @@ Exactly one successor is active:
 - run `34160111095`;
 - job `101859912600`;
 - head/trigger `7be4b22384c6680d669e88c0fb7990ba53ceff3e`;
-- setup/checkout/Python/dependencies complete;
-- full-z MP80/MP120 stage in progress;
+- full-z MP80/MP120 stage in progress at Iteration560 check;
 - raw audit/upload pending.
 
-No duplicate rank9 run is authorized. Workflow success alone is not scientific authority. Only a fail-closed raw-valid PASS may authorize rank10 `(+1.25e-6,+2.5e-6)`.
+No duplicate rank9 run is authorized. Workflow success alone is not scientific authority. Only fail-closed raw-valid PASS may authorize rank10 `(+1.25e-6,+2.5e-6)`.
 
-## Iterations 552–555 — exact u↔v routing structure
-The frozen fixed-mass kinematics use `lambda=s^2+u^2+v^2-2su-2sv-2uv`, `rho=sqrt(lambda)/(2 sqrt(s))`, and `alpha=-(s+u-v)/(2s)`.
+## Exact exchange/routing controls retained
+Frozen fixed-mass kinematics use `lambda=s^2+u^2+v^2-2su-2sv-2uv`, `rho=sqrt(lambda)/(2 sqrt(s))`, `alpha=-(s+u-v)/(2s)`. Iterations 552–555 establish exact u↔v non-equivalence, including `p(u,v)=p(v,u)+[(v-u)/s]q`, and the midpoint decomposition `alpha=-1/2+d/s`, `lambda=s^2-4sm+4d^2`. No support substitution follows.
 
-`lambda` and `rho` are symmetric under u↔v, but `alpha` is not. Iterations 552–553 established raw non-equivalence on two independent swap pairs. Iteration 554 derived exactly
+Iteration557 proves exact exchange-even projection for the frozen central4 tensor stencil. Iteration558 fixes the tensor moment/null/norm integrity contract. Iteration559 fixes the 10-orbit exchange ledger and exact coefficient sums.
 
-`p(u,v)=p(v,u)+[(v-u)/s] q`.
+## Iteration 560 — exact remaining-orbit tail contract
+If rank9 raw-valid PASSes, only two exchange orbits remain incomplete:
+- ranks6/11: `(-1,+2)<->(+2,-1)`, integer coefficients `+8,+8`, orbit sum `+16`;
+- ranks10/12: `(+1,+2)<->(+2,+1)`, integer coefficients `-8,-8`, orbit sum `-16`.
 
-Iteration 555 introduced `m=(u+v)/2`, `d=(v-u)/2` and derived
+Their combined integer coefficient is exactly zero. With orbit averages
 
-`alpha=-1/2+d/s`, `lambda=s^2-4sm+4d^2`,
+`E_A=[F(-1,+2)+F(+2,-1)]/2`,
 
-so swapped routed points lie symmetrically about `p_mid=-a-q/2+rho(m,d^2)n` with opposite q-directed displacement. These are diagnostic/provenance results only; no support substitution is allowed.
+`E_B=[F(+1,+2)+F(+2,+1)]/2`,
 
-## Iteration 557 — exact exchange-even projection
-For frozen central4 first-derivative weights `w=[1,-8,8,-1]` at `[-2h,-h,+h,+2h]`, the mixed coefficient matrix is `C_ij=w_i w_j/(144h^2)` and is exactly symmetric.
+the entire remaining normalized mixed-stencil contribution is exactly
 
-With `E_ij=(F_ij+F_ji)/2`, `A_ij=(F_ij-F_ji)/2`, `A_ji=-A_ij`, one has exactly
+`T_rem=(E_A-E_B)/(9 h^2)`.
 
-`sum_ij C_ij A_ij=0`,
+Therefore a common constant offset across these four remaining coordinates cancels exactly. Fail-closed bounded-error propagation is
 
-hence `D_uv^central4[F]=D_uv^central4[E]` on the complete matched grid. Continuous midpoint coordinates give `partial_u partial_v=(partial_m^2-partial_d^2)/4`.
+`|delta T_rem| <= (eps1+eps2+eps3+eps4)/(18 h^2)`
 
-This does not reduce support count: both swapped values are needed to construct the exchange-even average. It creates a future fail-closed assembly control.
+or, for orbit-average bounds,
 
-## Iteration 558 — exact tensor moment/null/norm integrity contract
-Single-axis central4 integer moments for powers `k=0..6` are exactly `[0,12,0,0,0,-48,0]`. Thus the stencil is exact through polynomial degree 4 and the leading smooth error is `-(h^4/30) f^(5)(0)`.
+`|delta T_rem| <= (eps_A+eps_B)/(9 h^2)`.
 
-The frozen tensor integer outer matrix is
+This is assembly/numerical conditioning only, not Candidate-Gravity model-level near-degeneracy or identifiability evidence. It does not authorize rank skipping, u↔v substitution, zero fill, or promotion.
 
-`[[1,-8,8,-1],[-8,64,-64,8],[8,-64,64,-8],[-1,8,-8,1]]`
-
-with normalization `1/(144h^2)`. Every row and column sum is exactly zero. Exact mixed operator norms are L1 `9/(4h^2)`, L2/Frobenius `65/(72h^2)`, and maximum coefficient magnitude `4/(9h^2)`. Halving `h` multiplies these mixed norms by 4; QUARTER versus BASE multiplies them by 16. This is deterministic conditioning, not an independent-noise model.
-
-## Iteration 559 — exact exchange-orbit closure/weight map
-The frozen 16-coordinate QUARTER grid forms exactly **10** exchange orbits under `u<->v`: 4 diagonal singleton orbits and 6 off-diagonal pair orbits.
-
-The orbit integer coefficient sums, before the common `1/(144h^2)` normalization, are:
-- `(-2,-2)`: `+1` — HALF overlap;
-- ranks1/3: `-16`;
-- ranks2/7: `+16`;
-- `(-2,+2)<->(+2,-2)`: `-2` — HALF-overlap pair;
-- rank4: `+64`;
-- ranks5/8: `-128`;
-- ranks6/11: `+16`;
-- rank9: `+64`;
-- ranks10/12: `-16`;
-- `(+2,+2)`: `+1` — HALF overlap.
-
-The total is exactly zero. Before rank9 completion, **7/10** exchange orbits are fully supported and their coefficient sum is `-64`. A raw-valid rank9 PASS would close the `+64` diagonal orbit, yielding **8/10** complete orbits whose coefficient sum is exactly zero. Only two off-diagonal orbits would then remain incomplete: ranks6/11 with `+16` and ranks10/12 with `-16`; their combined coefficient sum is also zero.
-
-This is an exact closure/assembly ledger only. It does not permit rank reordering, skipped support, or u↔v substitution. After full closure, the assembler must verify exact orbit membership and weights before evaluating the tensor stencil.
-
-Machine-readable authorities:
-- `candidate_gravity/results/iteration557_iter424_central4_exchange_even_projection_exact.json`;
-- `candidate_gravity/results/iteration558_iter424_central4_tensor_moment_norm_contract.json`;
-- `candidate_gravity/results/iteration559_iter424_quarter_exchange_orbit_closure_map.json`.
+Machine-readable authority: `candidate_gravity/results/iteration560_iter424_remaining_orbit_tail_contract_exact.json`.
+Reproducible audit: `candidate_gravity/code/iteration560_iter424_remaining_orbit_tail_contract_exact.py`.
 
 ## Retained three-level diagnostic lessons
-- Iteration 530: exact three-level central4 Gram row rank 3.
-- Iteration 531: normalized stencil geometry well-conditioned, `kappa_2≈1.04378`.
-- Iteration 533: formal central4 truncation begins at `O(h^4)`.
-- Iteration 536: exact h4/h6 inversion exists but h8 aliases into fitted components.
-- Iteration 537: unscaled h4/h6 inversion `kappa_2≈42.78`.
-- Iteration 540: pure h4/h6/h8 difference ratios 16/64/256.
-- Iteration 541: R3 noise amplification is modest (`L2` std factor ≈1.0869; uniform L1 ≈1.1693).
-- Iteration 544: ratio-free P/Q sign-cone diagnostic is fail-closed under bounded errors.
-- Iteration 546: P/Q errors strongly anti-correlated (`rho≈-0.999239`) in the equal-independent-level-error model.
-- Iteration 547: exact decorrelated innovation exists for that diagnostic model.
-- Iteration 549: BASE/HALF/QUARTER exactly saturate `X_s=D+A s^4+B s^6`; three levels cannot test goodness-of-fit or exclude h8+ contamination. This does not authorize h=1/8 heavy computation.
+- Iteration530: exact three-level central4 Gram row rank 3.
+- Iteration531: normalized stencil geometry well-conditioned, `kappa_2≈1.04378`.
+- Iteration533: formal central4 truncation begins at `O(h^4)`.
+- Iteration536: exact h4/h6 inversion exists but h8 aliases into fitted components.
+- Iteration537: unscaled h4/h6 inversion `kappa_2≈42.78`.
+- Iteration540: pure h4/h6/h8 difference ratios 16/64/256.
+- Iteration541: R3 noise amplification modest (`L2≈1.0869`, uniform `L1≈1.1693`).
+- Iteration544: ratio-free P/Q sign-cone diagnostic fail-closed under bounded errors.
+- Iteration546: P/Q errors strongly anti-correlated (`rho≈-0.999239`) in the equal-independent-level-error model.
+- Iteration547: exact decorrelated innovation exists for that diagnostic model.
+- Iteration549: BASE/HALF/QUARTER saturate `X_s=D+A s^4+B s^6`; three levels cannot test goodness-of-fit or exclude h8+ contamination. No h=1/8 heavy computation is authorized.
 
 ## Frozen Iteration-424 physical acceptance
 After all 12 new QUARTER coordinates and QUARTER assembly are raw-closed, physical index2 requires all simultaneously:
@@ -158,10 +130,10 @@ The concrete upstream algebraic `Source/Ward/contact+K2` target and robust compa
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Rank8 closes another frozen support node and Iterations 557–559 strengthen assembly integrity, but no additional stable model-level rubric sector is complete.
+Readiness change: **0 percentage points**. Iteration560 closes a genuine fail-closed assembly/error-propagation subgate, but no additional stable model-level rubric sector is complete.
 
 ## Exact downstream chain
-BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → ranks1–8 **RAW PASS through 556** → rank9 **RUNNING** → ranks10–12 in frozen order → QUARTER assembly + exact tensor/orbit controls → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
+BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → ranks1–8 **RAW PASS through 556** → rank9 **RUNNING** → ranks10–12 in frozen order → QUARTER assembly + exact tensor/orbit/tail controls → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy retry. No u↔v support substitution. Exact coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated until a concrete residual survives the fixed comparator quotient. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
