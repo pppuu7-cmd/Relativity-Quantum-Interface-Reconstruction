@@ -14,7 +14,7 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: **`[2]`**.
 - Latest completed numerical mass-support authority: **Iteration 520**, raw-consumed frozen rank26 `(u,v)=(+5e-6,-2.5e-6)`, HALF local index 13, multiplicity 1.
-- Latest authoritative research iteration: **Iteration 520**.
+- Latest authoritative research iteration: **Iteration 521**.
 - Certified occurrence-weighted precision coverage: **`31/32 = 96.875% = 2480/2560`** row occurrences.
 - Frozen support: 32 source occurrences, 28 distinct mass coordinates, five training-z, NPHI16. Frozen rank10 `(+5e-6,+5e-6)`, multiplicity 2, was already certified in Iteration 455 and must not be relaunched.
 
@@ -36,7 +36,7 @@ Canonical run **`34078407905`**, job **`101608912613`**, is **in_progress**. Do 
 
 If rank27 raw-valid PASS, local support closure becomes `32/32 = 100% = 2560/2560` and the next gate is frozen independent BASE/HALF MP80/120 assembly. If BLOCKED, stop support progression and localize the first failing `z/phi/radial` sample without changing frozen dynamics, support order, thresholds, MP levels, radial hs, or angular grid.
 
-## Exact assembly authority — Iterations 510–519
+## Exact assembly authority — Iterations 510–521
 Iteration 510 established exact BASE/HALF row independence: `rank([W_BASE,W_HALF])=2`; `W_DELTA=W_BASE-W_HALF` adds no independent row. Exact Gram matrix `G=[[4225/5184,4/81],[4/81,4225/324]]`, determinant `5948843/559872`.
 
 Iteration 511 established iid shared-node numerical covariance: `Cov(BASE,HALF)=(4/81)sigma^2/h^4`, correlation `64/4225`, `Var(BASE-HALF)=(23771/1728)sigma^2/h^4`.
@@ -50,6 +50,8 @@ Iteration 516 generalized independent coordinate-error covariance to arbitrary v
 Iteration 518 generalized to arbitrary PSD covariance `Sigma` over all 28 coordinates: `C_A=h^-4 A Sigma A^T` is PSD and `Var(BASE-HALF)=h^-4(w_BASE-w_HALF)^T Sigma (w_BASE-w_HALF)`. Under correlated PSD noise the BASE/HALF cross-covariance may have either sign.
 
 Iteration 519 established the exact sufficient local-scaled→assembled-MP envelope contract. With local `eps=1e-30`, frozen assembled `tau=2e-6`, and `h=5e-6`, `sum_i|w_i|S_i<=5e13` is sufficient for assembled MP PASS, but local scaled PASS alone does not imply assembled PASS. The independent assembly gate remains mandatory.
+
+Iteration 521 sharpened the same interval model to an exact minimax statement: if `|e_i|<=eps*S_i`, then `sup_box |delta A| = eps*h^-2 sum_i |w_i|S_i`, attained by sign alignment. Thus the Iteration-519 weighted envelope is the sharp universal worst-case radius under the stated coordinate-wise interval constraints; no smaller universal bound is valid without extra structure. This still does not replace direct assembled MP evaluation.
 
 These are numerical/provenance authorities only and create no physical covariance claim, consistency verdict, comparator identity, non-identifiability, near-degeneracy, novelty certificate, threshold change, or Fisher authorization.
 
@@ -73,7 +75,7 @@ The frozen Iteration-424 high-precision fallback remains downstream of complete 
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 520 advanced local numerical support coverage only.
+Readiness change: **0 percentage points**. Iteration 521 strengthened the exact numerical/assembly contract but closed no additional stable-rubric sector.
 
 ## Exact downstream chain
 Rank27 raw consumption → complete support closure → independent BASE/HALF MP80/120 assembly → frozen Iteration-424 reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient → robust nonzero residual.
