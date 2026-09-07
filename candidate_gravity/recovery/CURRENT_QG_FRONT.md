@@ -21,8 +21,9 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Central4 exchange/tensor/orbit controls: **Iterations 557–559**.
 - Remaining-orbit tail/error contract: **Iteration 560**.
 - Four-route QUARTER assembly identity and exact polynomial audit: **Iteration 561**.
-- Exact prospective post-rank10 two-point tail/error contract: **Iteration 563**, `PASS_ITER424_POST_RANK10_TWO_POINT_TAIL_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
-- Latest authoritative research iteration: **Iteration 563**.
+- Exact prospective post-rank10 two-point tail/error contract: **Iteration 563**.
+- Exact final-pair common/differential mode decomposition: **Iteration 564**, `PASS_ITER424_FINAL_PAIR_COMMON_DIFFERENTIAL_MODE_DECOMPOSITION_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
+- Latest authoritative research iteration: **Iteration 564**.
 
 ## QUARTER progress
 Raw-closed new coordinates: **9/12 = 75%**.  
@@ -69,14 +70,22 @@ Frozen fixed-mass kinematics use `lambda=s^2+u^2+v^2-2su-2sv-2uv`, `rho=sqrt(lam
 
 Iterations 557–559 freeze exchange-even projection, tensor moment/null/norm integrity and 10-orbit coefficient bookkeeping. Iteration560 fixes the remaining-tail relation `T_rem=(E_A-E_B)/(9 h^2)` and fail-closed error propagation. Iteration561 freezes coefficient-level equality of direct tensor, sequential u→v, sequential v→u and orbit-compressed assembly on the same complete raw-valid grid. Route disagreement is an assembly/index/orientation failure, not a physical residual.
 
-Iteration563 prospectively freezes the exact post-rank10 residual support-mode relation. After raw-valid rank10, only ranks11 `(+2h,-h)` and12 `(+2h,+h)` remain unknown, with central4 tensor integer coefficients `+8` and `-8`. Therefore the entire remaining unknown normalized mixed-stencil contribution is
+Iteration563 prospectively freezes the exact post-rank10 support tail. After raw-valid rank10, only ranks11 `(+2h,-h)` and12 `(+2h,+h)` remain unknown, with central4 tensor integer coefficients `+8` and `-8`, so
 
 `T_tail=[F(+2h,-h)-F(+2h,+h)]/(18 h^2)`.
 
-The common mode of ranks11/12 cancels exactly; only their differential mode enters assembly. Bounded-error propagation is `|delta T_tail| <= (eps11+eps12)/(18 h^2)`. For independent equal-variance coordinate errors, `Var(T_tail)=sigma^2/(162 h^4)`. This does not authorize support reduction, rank skipping, or u↔v substitution; both final coordinates remain mandatory.
+Iteration564 freezes the same final pair in an orthogonal common/differential basis before either value is known:
+- `q_common=(F11+F12)/sqrt(2)`;
+- `q_diff=(F11-F12)/sqrt(2)`;
+- coefficient vector `[8,-8] -> [0,8*sqrt(2)]` exactly;
+- the common mode is therefore an exact assembly-null direction;
+- only the differential mode contributes;
+- the orthogonal mode transform has exact condition number 1.
 
-Machine-readable authority: `candidate_gravity/results/iteration563_iter424_post_rank10_two_point_tail_contract_exact.json`.
-Reproducible audit: `candidate_gravity/code/iteration563_iter424_post_rank10_two_point_tail_contract_exact.py`.
+For equal coordinate variance `sigma^2` and correlation `rho`, the mode covariance is exactly `diag(sigma^2(1+rho), sigma^2(1-rho))`, and `Var(T_tail)=sigma^2(1-rho)/(162 h^4)`. This is assembly geometry only: it is not a physical Candidate-Gravity degeneracy and does not override the exact u↔v non-equivalence of Iterations 552–555. Both final coordinates remain mandatory.
+
+Machine-readable authority: `candidate_gravity/results/iteration564_iter424_final_pair_mode_decomposition_exact.json`.  
+Reproducible audit: `candidate_gravity/code/iteration564_iter424_final_pair_mode_decomposition_exact.py`.
 
 ## Frozen Iteration-424 physical acceptance
 After all 12 new QUARTER coordinates and QUARTER assembly are raw-closed, physical index2 requires all simultaneously:
@@ -101,10 +110,10 @@ Concrete upstream algebraic `Source/Ward/contact+K2` target and robust comparato
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration563 closes an exact prospective assembly/error-propagation subgate, but no additional stable model-level rubric sector is complete.
+Readiness change: **0 percentage points**. Iteration564 closes an exact prospective assembly-mode subgate, but no additional stable model-level rubric sector is complete.
 
 ## Exact downstream chain
-BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → ranks1–9 **RAW PASS through 562** → rank10 **RUNNING** → ranks11–12 in frozen order under Iteration563 two-point tail contract → QUARTER assembly under exact tensor/orbit/tail/four-route controls → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
+BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → ranks1–9 **RAW PASS through 562** → rank10 **RUNNING** → ranks11–12 in frozen order under Iterations563–564 final-pair contracts → QUARTER assembly under exact tensor/orbit/tail/four-route controls → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy full-C5. No u↔v support substitution. Exact coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. Source/Born subtraction only in the matched observable after pole/cut-origin classification. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
