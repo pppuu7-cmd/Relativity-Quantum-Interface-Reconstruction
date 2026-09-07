@@ -1,0 +1,21 @@
+{
+  "schema": "rqir_iter566_quarter_full_stencil_geometry_v1",
+  "classification": "PASS_ITER424_QUARTER_FULL_STENCIL_GEOMETRY_ERROR_NORM_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "weights": [1, -8, 8, -1],
+  "integer_coefficient_matrix": [
+    [1, -8, 8, -1],
+    [-8, 64, -64, 8],
+    [8, -64, 64, -8],
+    [-1, 8, -8, 1]
+  ],
+  "integer_matrix_rank": 1,
+  "row_sums": [0, 0, 0, 0],
+  "column_sums": [0, 0, 0, 0],
+  "normalization": "1/(144 h^2)",
+  "normalized_l1_error_gain": "9/(4 h^2)",
+  "normalized_l2_error_gain_equal_independent_sigma": "65/(72 h^2)",
+  "normalized_variance_gain_equal_independent_sigma2": "4225/(5184 h^4)",
+  "additive_nuisance_subspace_dimension": 7,
+  "guardrail": "stencil/assembly geometry only; not Candidate-Gravity model-level identifiability or novelty evidence",
+  "MODEL_READINESS": "24%"
+}
