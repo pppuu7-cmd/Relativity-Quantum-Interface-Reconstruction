@@ -1,0 +1,49 @@
+{
+  "iteration": 523,
+  "classification": "PASS_RAW_CONSUMED_MANIFEST_RANK27_FULL_Z_MP80_MP120__NON_PROMOTING",
+  "scope": "final frozen local mass-support coordinate; numerical precision authority only",
+  "canonical_run_id": 34078407905,
+  "canonical_job_id": 101608912613,
+  "artifact_id": 10003949181,
+  "artifact_name": "rqir-post519-manifest-rank27-full-z-mp",
+  "artifact_digest": "sha256:6c604cc0f8683cb52e0cb1454b9220704b4382efed707d7a945b1f0f4f4d0a75",
+  "head_sha": "d122d18783fca2e6626555d906df48724c8110c5",
+  "scientific_json_sha256": "ba452eb1a313cdfa2930b692896606ee955f4e89ac4ad12d89458338846f135c",
+  "authority_audit_sha256": "300edfb2a7c2be13123665b76005dd79398fbf570966bf652b0a3e84f87e34c1",
+  "authority_audit_embedded_scientific_sha256": "ba452eb1a313cdfa2930b692896606ee955f4e89ac4ad12d89458338846f135c",
+  "coordinate": {
+    "u": 0.000005,
+    "v": 0.0000025,
+    "source_level": "HALF",
+    "source_local_index": 14,
+    "source_occurrence_multiplicity": 1,
+    "manifest_rank": 27
+  },
+  "observed": {
+    "all_finite": true,
+    "sample_count": 80,
+    "scaled_mp80_vs_mp120_max": "3.45273847095262909884803350167e-80",
+    "scaled_mp_threshold": "1e-30",
+    "max_radial_richardson_scaled_error": "2.57345475452292513548696686993e-15",
+    "radial_threshold": "5e-4",
+    "scientific_authority_pass": true
+  },
+  "support_after_consumption": {
+    "certified_occurrences": 32,
+    "total_occurrences": 32,
+    "fraction": "100%",
+    "certified_rows": 2560,
+    "total_rows": 2560,
+    "distinct_coordinates": 28
+  },
+  "next_gate": "frozen independent BASE/HALF MP80/MP120 central4 assembly; ds=-d_base; no Richardson promotion; assembled MP threshold 2e-6; retained BASE-vs-HALF mass-step threshold 2e-5",
+  "nonclaims": [
+    "does not promote physical index 2",
+    "does not establish assembled BASE/HALF derivative closure",
+    "does not establish Candidate-Gravity consistency",
+    "does not establish comparator identity, non-identifiability, near-degeneracy, or novelty",
+    "does not authorize ANSATZ-003, Fisher, or resource work"
+  ],
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0
+}
