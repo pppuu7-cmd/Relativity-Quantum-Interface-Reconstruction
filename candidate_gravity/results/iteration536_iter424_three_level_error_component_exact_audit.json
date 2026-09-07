@@ -1,0 +1,26 @@
+{
+  "iteration": 536,
+  "classification": "PASS_ITER424_THREE_LEVEL_H4_H6_ERROR_COMPONENT_INVERSION_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "date": "2026-09-07",
+  "frozen_levels": ["BASE=h", "HALF=h/2", "QUARTER=h/4"],
+  "definitions": {
+    "d1": "BASE-HALF",
+    "d2": "HALF-QUARTER",
+    "A": "a*h^4",
+    "B": "b*h^6",
+    "C": "c*h^8"
+  },
+  "exact_estimators": {
+    "Ahat": "(-16*d1 + 1024*d2)/45",
+    "Bhat": "(256*d1 - 4096*d2)/189"
+  },
+  "h8_contamination": {
+    "Ahat": "A - (17/64)*C + O(h^10)",
+    "Bhat": "B + (425/336)*C + O(h^10)",
+    "R3": "D + C/1344 + O(h^10)"
+  },
+  "scientific_scope": "Exact truncation-error diagnostic under the already frozen three-level central4 smooth expansion. It does not change any physical threshold or promotion rule.",
+  "guardrail": "Diagnostic only; cannot rescue a failing frozen Iteration-424 clause and does not authorize ANSATZ-003, Fisher, or resources.",
+  "MODEL_READINESS": "24%",
+  "readiness_change_percentage_points": 0
+}
