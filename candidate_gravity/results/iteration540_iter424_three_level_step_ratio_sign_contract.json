@@ -1,0 +1,34 @@
+{
+  "iteration": 540,
+  "classification": "PASS_ITER424_THREE_LEVEL_STEP_RATIO_SIGN_STRUCTURE_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "model_readiness_percent": 24,
+  "definitions": {
+    "d1": "BASE-HALF",
+    "d2": "HALF-QUARTER",
+    "expansion": "X_h=D+A+B+C+O(h^10), A=a*h^4, B=b*h^6, C=c*h^8"
+  },
+  "coefficients": {
+    "d1": {"A": "15/16", "B": "63/64", "C": "255/256"},
+    "d2": {"A": "15/256", "B": "63/4096", "C": "255/65536"},
+    "pure_order_d1_over_d2": {"A": "16", "B": "64", "C": "256"}
+  },
+  "h4_h6_ratio_map": {
+    "q": "(21/80)*(B/A)",
+    "r": "(16+64*q)/(1+q)",
+    "inverse_B_over_A": "(80/21)*(r-16)/(64-r)",
+    "d2_cancellation_B_over_A": "-80/21",
+    "d1_cancellation_B_over_A": "-20/21"
+  },
+  "exact_sign_bounds": {
+    "A_and_B_same_sign_nonzero_d2": "16 <= r <= 64",
+    "A_B_C_same_sign_nonzero_d2": "16 <= r <= 256",
+    "interpretation": "Violation implies opposite-sign cancellation and/or omitted higher-order terms; it is not by itself a Candidate-Gravity consistency FAIL."
+  },
+  "guardrails": [
+    "diagnostic only",
+    "does not replace frozen Iteration-424 five-clause physical acceptance",
+    "does not promote physical index 2",
+    "does not create ANSATZ-003",
+    "does not authorize Fisher/resources"
+  ]
+}
