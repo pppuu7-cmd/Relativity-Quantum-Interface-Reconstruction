@@ -1,0 +1,61 @@
+{
+  "schema": "rqir_iter424_quarter_rank_raw_consumption_v1",
+  "iteration": 534,
+  "date": "2026-09-07",
+  "classification": "PASS_RAW_CONSUMED_ITER424_QUARTER_SUPPORT_RANK1_MP80_MP120__NON_PROMOTING",
+  "scope": "raw-consumption authority for exactly one new frozen quarter support coordinate",
+  "source": {
+    "run_id": 34094463024,
+    "job_id": 101654832475,
+    "artifact_id": 10010910464,
+    "artifact_name": "rqir-post527-iter424-quarter-rank1-full-z-mp",
+    "artifact_digest": "sha256:26ad590859e09f5fec5fa305f2a4b220d7b01858bb1fe8e60b01d8d2b6474005",
+    "head_sha": "25c4f3ff1c2bf9ef66e0e5db6ace6580da4bb08d",
+    "result_json_sha256": "fc63881cc09c0e6082b05f11f401a82239488e61537d5c9d47b2cb70bb138b3c",
+    "authority_audit_json_sha256": "6ae8733caa78aaa2ae84c015f48335757c23cb809ea4fd0fb3cd1857d7bb7f8a"
+  },
+  "frozen_coordinate": {
+    "quarter_h": 1.25e-6,
+    "quarter_source_rank": 1,
+    "u": -2.5e-6,
+    "v": -1.25e-6,
+    "precision_digits": [80, 120],
+    "z_samples": [-0.86, -0.43, 0.0, 0.43, 0.86],
+    "phi_nodes": 16,
+    "radial_hs": [0.002, 0.001, 0.0005]
+  },
+  "observed": {
+    "source_classification": "PASS_ITER424_QUARTER_SUPPORT_RANK1_MP80_MP120__NON_PROMOTING",
+    "source_scientific_gate_pass": true,
+    "authority_audit_scientific_authority_pass": true,
+    "sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "2.67210524913693857468296510677e-80",
+    "scaled_mp80_vs_mp120_threshold": "1e-30",
+    "max_radial_richardson_scaled_error": "2.5593700156479497761768907837e-15",
+    "radial_richardson_scaled_threshold": "5e-4",
+    "runtime_seconds": 5295.021287267,
+    "result_hash_matches_authority_audit": true
+  },
+  "conclusions": {
+    "rank1_raw_valid_pass": true,
+    "rank1_may_be_counted_as_closed_quarter_support": true,
+    "quarter_new_support_closed": 1,
+    "quarter_new_support_required": 12,
+    "quarter_new_support_fraction": "1/12",
+    "quarter_full_grid_authoritative_coordinates": 5,
+    "quarter_full_grid_coordinates": 16,
+    "quarter_full_grid_fraction": "5/16",
+    "rank2_authorized_by_iteration532_order": true,
+    "physical_index2_promoted": false,
+    "full_iteration424_physical_acceptance_satisfied": false
+  },
+  "next_rank": {
+    "quarter_source_rank": 2,
+    "u": -2.5e-6,
+    "v": 1.25e-6
+  },
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "guardrail": "Rank1 closes only one local quarter support coordinate. It does not promote physical index 2; rank2 is permitted only because the full order was prospectively frozen in Iteration 532."
+}
