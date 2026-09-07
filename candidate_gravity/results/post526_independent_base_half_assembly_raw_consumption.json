@@ -1,0 +1,71 @@
+{
+  "iteration": 527,
+  "classification": "PASS_RAW_CONSUMED_INDEPENDENT_BASE_HALF_MP80_MP120_ASSEMBLY__NON_PROMOTING",
+  "scope": "frozen post-support independent BASE/HALF central4 assembly for unresolved double-double index 2; numerical assembly authority only",
+  "canonical_run_id": 34089957999,
+  "canonical_job_id": 101641252363,
+  "artifact_id": 10006477417,
+  "artifact_name": "rqir-post523-independent-base-half-assembly",
+  "artifact_digest": "sha256:44b34e3174ce6e23659733c76004f269f8eac07b01d67211a6a1b859b2d35b48",
+  "head_sha": "8ff6ef9d3b1a946ca3215c5905e1432adbb18fe8",
+  "scientific_json_sha256": "8ac2949e795b201efbaa70b63fb3aeef9805eecc2e6c13362b9db38f52a9e451",
+  "authority_audit_sha256": "f2b762b4224d15e1baa32787cb35071e1a750c769c2e8ee61567e88fa83560d8",
+  "authority_audit_embedded_scientific_sha256": "8ac2949e795b201efbaa70b63fb3aeef9805eecc2e6c13362b9db38f52a9e451",
+  "target": {
+    "double_double_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0
+  },
+  "frozen": {
+    "base_h": 0.000005,
+    "half_h": 0.0000025,
+    "nodes_rule": "[-2h,-h,+h,+2h]",
+    "central4_coefficients": [1,-8,8,-1],
+    "ds_binding": "ds=-d_base",
+    "precision_digits": [80,120],
+    "sample_count": 80,
+    "source_occurrences": 32,
+    "distinct_coordinates": 28,
+    "artifact_parts": 29,
+    "no_richardson_promotion": true
+  },
+  "observed": {
+    "all_finite": true,
+    "sample_count": 80,
+    "assembled_base_mp_scaled_max": "0.0",
+    "assembled_half_mp_scaled_max": "0.0",
+    "base_half_mass_step_scaled_max": "0.000000860575121785458117805036434436",
+    "scientific_authority_pass": true
+  },
+  "thresholds": {
+    "assembled_base_mp_scaled_max": "2e-6",
+    "assembled_half_mp_scaled_max": "2e-6",
+    "base_half_mass_step_scaled_max": "2e-5",
+    "all_finite": true
+  },
+  "conditioning": {
+    "rank": 2,
+    "gram_base_base": "4225/5184",
+    "gram_base_half": "4/81",
+    "gram_half_half": "4225/324",
+    "gram_determinant": "5948843/559872"
+  },
+  "provenance": {
+    "exact_support_coordinates": 28,
+    "exact_artifact_parts": 29,
+    "all_scientific_payload_sha256_verified_by_workflow": true,
+    "multipart_rank10_z_partition_verified": true,
+    "duplicate_z_phi_samples_rejected": true,
+    "exact_80_samples_required_per_coordinate": true
+  },
+  "next_gate": "frozen Iteration-424 reevaluation on the identical parent dynamics and fixed mass nodes; do not promote index 2 unless every prospectively frozen fallback criterion is independently satisfied",
+  "nonclaims": [
+    "does not by itself promote physical index 2",
+    "does not by itself close the Iteration-421 BLOCKED_CONVERGENCE physical authority",
+    "does not establish Candidate-Gravity consistency",
+    "does not establish comparator identity, regime-specific non-identifiability, near-degeneracy, or novelty",
+    "does not authorize ANSATZ-003, Fisher, or resource work"
+  ],
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0
+}
