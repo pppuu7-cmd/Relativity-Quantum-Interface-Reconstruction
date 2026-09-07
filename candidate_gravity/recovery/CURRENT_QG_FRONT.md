@@ -13,48 +13,50 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest validated structural authority: **Iteration 410**.
 - Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`.
 - Exact unresolved physical set: **`[2]`**.
-- Latest completed numerical mass-support authority: **Iteration 523**, final rank27 raw-consumed PASS.
+- Latest completed local mass-support authority: **Iteration 523**, final rank27 raw-consumed PASS.
 - Certified local precision support: **`32/32 = 100% = 2560/2560`** across 28 distinct coordinates.
-- Latest authoritative research iteration: **Iteration 524**.
-- Current post-support classification: **`BLOCKED_ASSEMBLY_LEGACY_PROVENANCE_RESOLUTION_19_OF_28__NON_PROMOTING`**.
+- Latest assembled numerical authority: **Iteration 527**.
+- Latest authoritative research iteration: **Iteration 527**.
+- Current post-support classification: **`PASS_RAW_CONSUMED_INDEPENDENT_BASE_HALF_MP80_MP120_ASSEMBLY__NON_PROMOTING`**.
 
-## Iteration 524 — post-support assembly provenance blocker
-The independent frozen BASE/HALF MP80/MP120 central4 assembly has **not yet produced numerical assembly values**. The workflow fails fail-closed during historical raw-authority resolution, before artifact download and before BASE/HALF evaluation.
+## Iterations 525–527 — provenance closure and assembled PASS
+Iteration 525 recursive exact provenance preflight narrowed the historical schema problem. Iteration 526 closed the remaining historical authority with an exact multipart bridge: 28 frozen coordinates are backed by 29 exact artifact parts because rank 10 `(+5e-6,+5e-6)` is explicitly a two-artifact z-partition rather than a synthetic single artifact. The workflow verifies every scientific JSON SHA-256, each expected z partition, rejects duplicate `(z,phi)` samples and requires exactly 80 merged samples per coordinate.
 
-Predecessor run `34082758627`, job `101621055550`, resolved only `14/28` distinct support authorities. Investigation showed that historical `rqir_raw_consumption_v1` records may store validated artifact ID and scientific result SHA-256 under `canonical_provenance`, whereas the first runtime normalizer handled only `provenance`.
+One frozen independent BASE/HALF assembly was then run from head `8ff6ef9d3b1a946ca3215c5905e1432adbb18fe8`: run `34089957999`, job `101641252363`, artifact `10006477417`, artifact digest `sha256:44b34e3174ce6e23659733c76004f269f8eac07b01d67211a6a1b859b2d35b48`.
 
-A strictly provenance-only repair added `canonical_provenance` fallback. No dynamics, parameter convention, support, central4 weights, thresholds, precision, `ds=-d_base` binding, or Richardson policy changed. Replacement run `34086331638`, job `101630974650`, head `71be5685b27969d8dcd43fbd9076b7ac730ec619`, improved resolution to `19/28` but again stopped before numerical assembly. Attempt-3 artifact ID: `10005319300`.
+Iteration 527 downloaded and raw-consumed the artifact rather than trusting workflow colour. Scientific `result.json` SHA-256 is `8ac2949e795b201efbaa70b63fb3aeef9805eecc2e6c13362b9db38f52a9e451`; `authority_audit.json` SHA-256 is `f2b762b4224d15e1baa32787cb35071e1a750c769c2e8ee61567e88fa83560d8`, and the audit embeds the same scientific SHA with `scientific_authority_pass=true`.
 
-Nine coordinates remain unresolved by the current historical-schema resolver:
-`(-1e-5,-5e-6)`, `(-1e-5,+5e-6)`, `(-2.5e-6,+2.5e-6)`, `(-2.5e-6,+5e-6)`, `(+2.5e-6,-5e-6)`, `(+5e-6,-1e-5)`, `(+5e-6,-5e-6)`, `(+5e-6,+5e-6)`, `(+5e-6,+1e-5)`.
+Frozen assembly results:
+- all 80 common samples finite: PASS;
+- BASE MP80↔MP120 scaled max `0.0 <= 2e-6`: PASS;
+- HALF MP80↔MP120 scaled max `0.0 <= 2e-6`: PASS;
+- BASE↔HALF mass-step scaled max `8.60575121785458117805036434436e-7 <= 2e-5`: PASS;
+- BASE/HALF row rank remains exactly 2, Gram determinant `5948843/559872 > 0`;
+- `ds=-d_base`; no Richardson promotion; no threshold weakening.
 
-This is **operational BLOCKED**, not Candidate-Gravity consistency FAIL. No BASE/HALF values were produced, so there is no exact comparator identity, regime-specific non-identifiability, near-degeneracy, novelty certificate, or physical negative result from these failed workflow attempts.
+Machine-readable authority: `candidate_gravity/results/post526_independent_base_half_assembly_raw_consumption.json`. Recovery authority: `candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_527.md`.
 
-Machine-readable blocker authority: `candidate_gravity/results/post523_assembly_legacy_provenance_resolver_repair.json`. Recovery authority: `candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_524.md`.
+This is a genuine assembled numerical PASS and removes the Iteration-524 legacy-provenance operational blocker. It **does not by itself promote physical index 2** and therefore does not overwrite Iteration 421.
 
-## Exact next gate — no blind retry
-Recover exact committed historical raw-valid authority/provenance for the nine listed coordinates, including validated Actions artifact IDs and scientific `result.json` SHA-256 values. Emit a fail-closed **28/28 preflight manifest**. Do not infer missing authority from symmetry, later coverage counters, or neighboring coordinates. Only a 28/28 exact provenance preflight authorizes one new assembly run.
+## Exact next gate — frozen Iteration-424 reevaluation
+The prospectively frozen Iteration-424 fixed-node high-precision fallback may now be reevaluated on the identical parent dynamics and fixed mass nodes. No clause may be weakened or silently replaced by a differently normalized assembled metric.
 
-When authorized, the frozen scientific assembly contract remains unchanged:
-- independent BASE and HALF central4 assemblies at MP80 and MP120;
-- BASE `h=5e-6`, HALF `h=2.5e-6`, node rule `[-2h,-h,+h,+2h]`;
-- `ds=-d_base`;
-- all 80 common samples finite;
-- BASE MP80↔MP120 scaled discrepancy `<=2e-6`;
-- HALF MP80↔MP120 scaled discrepancy `<=2e-6`;
-- BASE↔HALF mass-step scaled discrepancy `<=2e-5`;
-- exact per-artifact scientific SHA-256 verification;
-- no Richardson promotion and no threshold weakening.
+Full acceptance still requires all of:
+1. physical mass-step discrepancy `<=2e-5`;
+2. direct original-integrand cross-check `<=2e-6`;
+3. tensor-degree-(1,1) fit residual `<=2e-5`;
+4. identical fixed-node 80/120-digit agreement `|D_s(80)-D_s(120)|<=2e-6`;
+5. finite outputs.
 
-Only scientific PASS of this assembled gate permits frozen Iteration-424 reevaluation.
+Only full PASS promotes index 2 and authorizes frozen exact15 continuation. A computed failing clause is a scoped scientific FAIL for this fallback route. A missing/uncomputed clause is operational BLOCKED, never zero-filled.
 
 ## Retained exact assembly authorities
-Iterations 510–522 remain exact numerical/provenance authorities: BASE/HALF row rank is 2; `W_DELTA=W_BASE-W_HALF` is derived; exact Gram matrix is `[[4225/5184,4/81],[4/81,4225/324]]` with determinant `5948843/559872`; exact norms are `||W_BASE||_1=9/4`, `||W_HALF||_1=9`, `||W_BASE-W_HALF||_1=397/36`. Local scaled MP PASS does not imply assembled PASS, and the independent assembly gate cannot be bypassed.
+Iterations 510–522 remain exact numerical/provenance authorities: BASE/HALF row rank is 2; `W_DELTA=W_BASE-W_HALF` is derived; exact Gram matrix is `[[4225/5184,4/81],[4/81,4225/324]]` with determinant `5948843/559872`; exact norms are `||W_BASE||_1=9/4`, `||W_HALF||_1=9`, `||W_BASE-W_HALF||_1=397/36`. Local scaled MP PASS does not imply assembled PASS; Iteration 527 independently closed that assembly gate.
 
 ## Retained comparator and physical blockers
 Iteration 504 remains `BLOCKED_FIXED_COMPARATOR_QUOTIENT_UPSTREAM_TARGET_NOT_ASSEMBLED__NON_PROMOTING`: the concrete upstream algebraic `Source/Ward/contact+K2` target is absent, so fixed C3/C4/C5/nonlocal/asymptotic-safety comparator identity/rank loss/near-degeneracy/novelty remain unevaluable. BLOCKED is not scientific FAIL.
 
-Iteration 421 remains raw-valid `BLOCKED_CONVERGENCE` for physical index 2; diagnostic values are not authority and no zero-fill is allowed. Frozen thresholds are not weakened.
+Iteration 421 remains raw-valid `BLOCKED_CONVERGENCE` for physical index 2 pending the frozen Iteration-424 reevaluation. Diagnostic values are not authority and no zero-fill is allowed. Frozen thresholds are not weakened.
 
 ## Stable readiness rubric
 - comparator foundation `24/25`
@@ -66,10 +68,10 @@ Iteration 421 remains raw-valid `BLOCKED_CONVERGENCE` for physical index 2; diag
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 524 localized an operational provenance blocker and improved exact resolver coverage from 14/28 to 19/28, but no additional stable-rubric model sector closed.
+Readiness change: **0 percentage points**. Iteration 527 closes a real frozen assembled numerical prerequisite, but no additional model-level rubric sector is complete.
 
 ## Exact downstream chain
-Full local support **CLOSED at Iteration 523** → exact 28/28 historical provenance preflight → independent BASE/HALF MP80/120 assembly → frozen Iteration-424 reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient → robust nonzero residual.
+Full local support **CLOSED at Iteration 523** → exact multipart provenance **CLOSED at Iteration 526** → independent BASE/HALF assembly **CLOSED at Iteration 527** → frozen Iteration-424 reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient → robust nonzero residual.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy retry. No `u<->v` support substitution without exact frozen identity. Exact BASE/HALF coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated until a concrete residual survives the fixed comparator quotient. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
