@@ -1,0 +1,42 @@
+{
+  "iteration": 557,
+  "date": "2026-09-07",
+  "classification": "PASS_ITER424_CENTRAL4_MIXED_DERIVATIVE_EXCHANGE_EVEN_PROJECTION_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "scope": "exact algebraic audit of the frozen central4 x central4 mixed auxiliary-mass stencil",
+  "definitions": {
+    "nodes_over_h": [-2, -1, 1, 2],
+    "first_derivative_integer_weights": [1, -8, 8, -1],
+    "normalization": "1/(12 h)",
+    "mixed_weight_matrix": "C_ij = w_i w_j/(144 h^2)",
+    "exchange_even": "E_ij=(F_ij+F_ji)/2",
+    "exchange_odd": "A_ij=(F_ij-F_ji)/2"
+  },
+  "exact_identities": {
+    "coefficient_symmetry": "C_ij=C_ji",
+    "antisymmetric_data": "A_ji=-A_ij and A_ii=0",
+    "odd_projection_cancellation": "sum_ij C_ij A_ij = 0 exactly",
+    "mixed_derivative_projection": "D_uv^central4[F] = D_uv^central4[E] exactly on the complete matched grid",
+    "continuous_midpoint_coordinates": "m=(u+v)/2, d=(v-u)/2",
+    "continuous_operator": "partial_u partial_v = (partial_m^2-partial_d^2)/4"
+  },
+  "scientific_interpretation": {
+    "support_substitution_allowed": false,
+    "reason": "E_ij requires both F_ij and F_ji unless an independent equality theorem exists; Iterations 552-555 instead establish non-equivalence of swapped routed points",
+    "compute_count_reduction": false,
+    "assembly_control": "after full QUARTER closure, independently assemble the mixed derivative from the full grid and from exchange-even pair averages; disagreement localizes indexing/weight/orientation corruption",
+    "physical_index2_promoted": false,
+    "candidate_gravity_consistency_pass": false,
+    "candidate_gravity_consistency_fail": false
+  },
+  "guardrails": [
+    "DIAGNOSTIC_ONLY",
+    "NO_UV_SYMMETRY_SUBSTITUTION",
+    "NO_MISSING_NODE_INFERENCE",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_PHYSICAL_DS_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0
+}
