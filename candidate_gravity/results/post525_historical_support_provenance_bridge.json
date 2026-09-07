@@ -1,0 +1,69 @@
+{
+  "schema": "rqir_historical_support_provenance_bridge_v1",
+  "iteration": 526,
+  "classification": "PASS_EXACT_HISTORICAL_SUPPORT_PROVENANCE_BRIDGE__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "authorities": [
+    {
+      "rank": 1,
+      "u": -1e-05,
+      "v": -5e-06,
+      "authority_sources": ["candidate_gravity/research_log/2026-09-05_iteration_456.md"],
+      "parts": [
+        {"artifact_id": 9963059047, "scientific_json_sha256": "f51d13b29e5b433fe3a6c2acfae8a058bef2c2cd5259fb1165766a136428b004", "expected_z": [-0.86,-0.43,0.0,0.43,0.86]}
+      ]
+    },
+    {
+      "rank": 2,
+      "u": -1e-05,
+      "v": 5e-06,
+      "authority_sources": ["candidate_gravity/research_log/2026-09-05_iteration_459.md"],
+      "parts": [
+        {"artifact_id": 9964610341, "scientific_json_sha256": "0eafc8afad813c42b245ba9f49280b26b241a1b638cdb21fc9f83845d69e03d9", "expected_z": [-0.86,-0.43,0.0,0.43,0.86]}
+      ]
+    },
+    {
+      "rank": 8,
+      "u": 5e-06,
+      "v": -1e-05,
+      "authority_sources": ["candidate_gravity/research_log/2026-09-05_iteration_473.md"],
+      "parts": [
+        {"artifact_id": 9974359345, "scientific_json_sha256": "c65576e782850d9060ec6549ba0158ea10257ce4289e4bc72fbf43e5f16ae21d", "expected_z": [-0.86,-0.43,0.0,0.43,0.86]}
+      ]
+    },
+    {
+      "rank": 9,
+      "u": 5e-06,
+      "v": -5e-06,
+      "authority_sources": ["candidate_gravity/research_log/2026-09-05_iteration_475.md"],
+      "parts": [
+        {"artifact_id": 9975782294, "scientific_json_sha256": "533e5ab27c3631c25023e30ee70fecdb3bd845c18015cc6cf277ea42fd3ea8d8", "expected_z": [-0.86,-0.43,0.0,0.43,0.86]}
+      ]
+    },
+    {
+      "rank": 10,
+      "u": 5e-06,
+      "v": 5e-06,
+      "authority_sources": ["candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_449.md", "candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_450.md", "candidate_gravity/research_log/2026-09-05_iteration_450.md"],
+      "parts": [
+        {"artifact_id": 9958661360, "scientific_json_sha256": "d7a148b1f55364145612e3c032aaa13a24634b87bad965a9f40a4d1db2b478bb", "expected_z": [-0.86,0.0,0.86]},
+        {"artifact_id": 9959560285, "scientific_json_sha256": "2467e807b8b5f1c8a93a83a1e5be2107d2c5ae3d8747bb2f5f586b16501d1c03", "expected_z": [-0.43,0.43]}
+      ]
+    }
+  ],
+  "guardrails": [
+    "EXACT_COMMITTED_RUN_ARTIFACT_SCIENTIFIC_SHA_PROVENANCE_ONLY",
+    "RANK10_IS_COMPOSITE_TWO_ARTIFACT_AUTHORITY",
+    "VERIFY_EACH_PART_SHA256_BEFORE_USE",
+    "VERIFY_EXPECTED_Z_PARTITION_AND_80_UNIQUE_Z_PHI_SAMPLES",
+    "NO_SYMMETRY_INFERENCE",
+    "NO_ZERO_FILL",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_PHYSICAL_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
