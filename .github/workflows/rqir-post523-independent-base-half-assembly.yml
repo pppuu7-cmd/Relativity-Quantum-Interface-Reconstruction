@@ -27,6 +27,8 @@ jobs:
               try: o=json.loads(p.read_text())
               except Exception: continue
               q=o.get('provenance')
+              if not isinstance(q,dict):
+                  q=o.get('canonical_provenance')
               if not isinstance(q,dict): continue
               changed=False
               for k in ('artifact_id','artifact_name','scientific_json_sha256'):
