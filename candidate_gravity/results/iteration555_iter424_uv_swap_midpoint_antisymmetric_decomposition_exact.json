@@ -1,0 +1,31 @@
+{
+  "iteration": 555,
+  "date": "2026-09-07",
+  "scope": "Iteration-424 routing/provenance diagnostic only",
+  "classification": "PASS_ITER424_UV_SWAP_MIDPOINT_ANTISYMMETRIC_DECOMPOSITION_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "definitions": {
+    "m": "(u+v)/2",
+    "d": "(v-u)/2",
+    "u": "m-d",
+    "v": "m+d"
+  },
+  "exact_identities": {
+    "alpha_uv": "-1/2 + d/s",
+    "alpha_vu": "-1/2 - d/s",
+    "alpha_mid": "-1/2",
+    "alpha_difference": "2 d/s = (v-u)/s",
+    "lambda": "s^2 - 4 s m + 4 d^2",
+    "rho_parity": "rho depends on d only through d^2",
+    "p_uv": "p_mid + (d/s) q",
+    "p_vu": "p_mid - (d/s) q",
+    "p_mid": "-a - q/2 + rho(m,d^2) n"
+  },
+  "scientific_meaning": [
+    "The swap pair has an exact symmetric midpoint with alpha=-1/2 and a pure antisymmetric q-directed displacement.",
+    "The midpoint result is independent of the sign of u-v; rho is even in the exchange coordinate d.",
+    "This strengthens NO_UV_SYMMETRY_SUBSTITUTION provenance but does not assert that an arbitrary observable is linear in d or determined only by p.",
+    "No Candidate-Gravity consistency FAIL, comparator identity, model-level near-degeneracy, or novelty certificate is claimed."
+  ],
+  "model_readiness_percent": 24,
+  "readiness_change_percentage_points": 0
+}
