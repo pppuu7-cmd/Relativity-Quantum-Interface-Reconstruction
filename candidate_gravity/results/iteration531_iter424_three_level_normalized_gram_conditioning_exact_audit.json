@@ -1,0 +1,68 @@
+{
+  "schema": "rqir_iter424_three_level_normalized_gram_conditioning_exact_v1",
+  "iteration": 531,
+  "date": "2026-09-07",
+  "scope": "structural/operator conditioning only; no physical promotion",
+  "classification": "PASS_ITER424_BASE_HALF_QUARTER_NORMALIZED_GRAM_WELL_CONDITIONED_EXACT__NON_PROMOTING",
+  "authority_parent": "candidate_gravity/results/iteration530_iter424_three_level_central4_gram_exact_audit.json",
+  "frozen": {
+    "base_mass_step": "5e-6",
+    "half_mass_step": "2.5e-6",
+    "quarter_mass_step": "1.25e-6",
+    "central4_axis_coefficients": ["1/12", "-8/12", "8/12", "-1/12"],
+    "derivative_scaling_relative_to_base_h": {
+      "BASE": 1,
+      "HALF": 4,
+      "QUARTER": 16
+    }
+  },
+  "exact_parent_gram": [
+    ["4225/5184", "4/81", "0"],
+    ["4/81", "4225/324", "64/81"],
+    ["0", "64/81", "16900/81"]
+  ],
+  "exact_row_norms": {
+    "BASE": "65/72",
+    "HALF": "65/18",
+    "QUARTER": "130/9"
+  },
+  "exact_normalized_correlations": {
+    "BASE_HALF": "64/4225",
+    "BASE_QUARTER": "0",
+    "HALF_QUARTER": "64/4225"
+  },
+  "normalized_gram": [
+    ["1", "64/4225", "0"],
+    ["64/4225", "1", "64/4225"],
+    ["0", "64/4225", "1"]
+  ],
+  "exact_spectrum": [
+    "1 - 64*sqrt(2)/4225",
+    "1",
+    "1 + 64*sqrt(2)/4225"
+  ],
+  "numerical_spectrum": [
+    0.9785775933747034,
+    1.0,
+    1.0214224066252966
+  ],
+  "exact_determinant": "17842433/17850625",
+  "numerical_determinant": 0.9995410804943804,
+  "exact_two_norm_condition_number": "(4225 + 64*sqrt(2))/(4225 - 64*sqrt(2))",
+  "numerical_two_norm_condition_number": 1.0437827450175303,
+  "adjacent_row_angle_degrees_approx": 89.13205440502001,
+  "conclusions": {
+    "normalized_gram_positive_definite": true,
+    "normalized_row_rank": 3,
+    "scale_free_operator_geometry_well_conditioned": true,
+    "base_quarter_exactly_orthogonal": true,
+    "adjacent_level_overlap_small": true,
+    "quarter_addition_creates_near_linear_dependence": false,
+    "physical_mass_step_pass_implied": false,
+    "physical_index2_promotion_implied": false,
+    "identifiability_implied": false,
+    "fisher_authorized": false,
+    "ansatz003_authorized": false
+  },
+  "guardrail": "This exact normalized-Gram result isolates scale-free stencil geometry. It does not certify the numerical values produced by the quarter run, any Iteration-424 physical acceptance clause, Candidate-Gravity consistency, comparator identity, novelty, identifiability, Fisher information, or resource closure."
+}
