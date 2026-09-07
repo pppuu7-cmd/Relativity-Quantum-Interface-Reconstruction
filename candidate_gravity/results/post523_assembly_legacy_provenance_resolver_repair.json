@@ -1,0 +1,54 @@
+{
+  "schema": "rqir_operational_provenance_repair_v1",
+  "iteration": 524,
+  "date": "2026-09-07",
+  "classification": "PASS_ASSEMBLY_LEGACY_CANONICAL_PROVENANCE_RESOLVER_REPAIR__NON_PROMOTING",
+  "scientific_gate_pass": false,
+  "operational_repair_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "failed_predecessor": {
+    "run_id": 34082758627,
+    "job_id": 101621055550,
+    "classification": "OPERATIONAL_BLOCKED_BEFORE_NUMERICAL_ASSEMBLY",
+    "resolved_distinct_coordinates": 14,
+    "required_distinct_coordinates": 28,
+    "assembled_values_produced": false
+  },
+  "root_cause": {
+    "type": "LEGACY_RAW_CONSUMPTION_PROVENANCE_SCHEMA_MISMATCH",
+    "detail": "The runtime normalizer read nested provenance but historical rqir_raw_consumption_v1 files store artifact_id and scientific_json_sha256 under canonical_provenance. Example rank13 authority post486_rank13_raw_consumption.json has scientific_gate_pass=true, target coordinates, and canonical_provenance with the validated artifact ID and scientific digest.",
+    "scientific_interpretation": "Operational BLOCKED only; no BASE/HALF numerical assembly was reached and therefore no Candidate-Gravity consistency verdict exists."
+  },
+  "repair": {
+    "workflow": ".github/workflows/rqir-post523-independent-base-half-assembly.yml",
+    "rule": "Use provenance when present; otherwise canonical_provenance; copy only artifact_id, artifact_name when present, and scientific_json_sha256 into the ephemeral checked-out JSON used by the existing fail-closed resolver.",
+    "threshold_changes": false,
+    "dynamics_changes": false,
+    "parameter_convention_changes": false,
+    "support_changes": false,
+    "assembly_weight_changes": false,
+    "richardson_promotion": false,
+    "zero_fill": false
+  },
+  "replacement_run": {
+    "run_id": 34086331638,
+    "job_id": 101630974650,
+    "status_at_record": "in_progress",
+    "head_sha": "71be5685b27969d8dcd43fbd9076b7ac730ec619"
+  },
+  "next_gate": "Fail-closed consume replacement run 34086331638. Scientific assembly authority exists only if all 28 raw-validated artifacts resolve, every scientific result SHA-256 matches its committed authority, 80 common samples assemble, all values are finite, BASE and HALF MP80-vs-MP120 scaled discrepancies are <=2e-6, and BASE-vs-HALF mass-step scaled discrepancy is <=2e-5.",
+  "guardrails": [
+    "OPERATIONAL_BLOCKED_IS_NOT_SCIENTIFIC_FAIL",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_DYNAMICS_CHANGE",
+    "NO_PARAMETER_CONVENTION_CHANGE",
+    "NO_SUPPORT_SUBSTITUTION",
+    "VERIFY_EACH_SCIENTIFIC_JSON_SHA256",
+    "NO_ZERO_FILL",
+    "NO_RICHARDSON_PROMOTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
