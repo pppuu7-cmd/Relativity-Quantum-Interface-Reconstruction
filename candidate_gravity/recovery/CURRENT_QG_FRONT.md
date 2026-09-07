@@ -19,8 +19,8 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - QUARTER rank2 raw authority: **Iteration 538**, raw-valid PASS.
 - QUARTER rank3 raw authority: **Iteration 542**, raw-valid PASS.
 - QUARTER rank4 raw authority: **Iteration 545**, `PASS_RAW_CONSUMED_ITER424_QUARTER_SUPPORT_RANK4_MP80_MP120__NON_PROMOTING`.
-- Three-level exact diagnostics retained: **Iterations 530–533, 536–537, 540–541, 543–544**; diagnostic-only, non-promoting.
-- Latest authoritative research iteration: **Iteration 545**.
+- Three-level exact diagnostics retained: **Iterations 530–533, 536–537, 540–541, 543–544, 546**; diagnostic-only, non-promoting.
+- Latest authoritative research iteration: **Iteration 546**.
 
 ## Iteration 545 — rank4 raw-valid PASS
 Canonical run `34126397439`, job `101755969291`, artifact `10023337886`, artifact digest `sha256:5d40b3ad74539b4ef347b145ebe369b31e61dd0bd4ff6fc014e99e24ad998776`, head `0cb2f04ada4092c4d173a50276fffb36415109cf`.
@@ -33,8 +33,31 @@ New QUARTER support closure is **4/12**. Including four exact HALF-overlap corne
 
 Raw-consumption commit: `47523923fbea6d6214d033eef19a29f64160ccde`.
 
+## Iteration 546 — exact level-error correlation contract
+For the frozen three-level diagnostic define `d1=BASE-HALF`, `d2=HALF-QUARTER`, `P=64d2-d1`, `Q=d1-16d2`. With assembled level errors `e_BASE,e_HALF,e_QUARTER`, exact propagation gives
+
+- `deltaP = -e_BASE + 65 e_HALF - 64 e_QUARTER`,
+- `deltaQ = +e_BASE - 17 e_HALF + 16 e_QUARTER`.
+
+For bounded level errors `|e_i|<=eps_i`, exact worst-case radii are
+
+- `rho_P = eps_BASE + 65 eps_HALF + 64 eps_QUARTER`,
+- `rho_Q = eps_BASE + 17 eps_HALF + 16 eps_QUARTER`.
+
+Therefore a sign/cancellation certificate from P or Q is allowed only when the corresponding propagated level-error interval excludes zero.
+
+For independent equal-variance level errors,
+
+`Cov(P,Q)/sigma^2 = [[8322,-2130],[-2130,546]]`,
+
+with determinant `6912>0` and correlation `-0.9992391156789705`. The covariance is positive definite but strongly anti-correlated because HALF is shared. Covariance condition number is `11375.520745421576`; standard-deviation-map condition number is `106.65608630275901`. This is diagnostic numerical conditioning only, not Candidate-Gravity model-level near-degeneracy.
+
+Classification: `PASS_ITER424_LEVEL_ERROR_CORRELATION_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
+
+Machine authority: `candidate_gravity/results/iteration546_iter424_level_error_correlation_contract.json`. Reproducible audit: `candidate_gravity/code/iteration546_iter424_level_error_correlation_contract.py`.
+
 ## Retained diagnostic authority
-Iterations 530–533, 536–537, 540–541, 543–544 remain exact numerical/truncation diagnostics only. They do not replace any frozen Iteration-424 physical clause, do not promote physical index 2, and do not establish Candidate-Gravity consistency, comparator identity, model-level non-identifiability, or novelty.
+Iterations 530–533, 536–537, 540–541, 543–544, 546 remain exact numerical/truncation diagnostics only. They do not replace any frozen Iteration-424 physical clause, do not promote physical index 2, and do not establish Candidate-Gravity consistency, comparator identity, model-level non-identifiability, or novelty.
 
 ## Active heavy computation — rank5
 Exactly one successor is authorized and running:
@@ -46,7 +69,7 @@ Exactly one successor is authorized and running:
 - stage commit: `361fb0cc411971d159657fb3aa1ca2d39ddb9776`;
 - workflow commit: `459f415a54774658b6dcf0fa7c58933361d3c2e7`;
 - head/trigger commit: `02fd19d47288d865fa281d05c281071292f1bc30`;
-- live state at Iteration-545 handoff: `in_progress`.
+- live state at Iteration-546 inspection: `in_progress`.
 
 No duplicate rank5 heavy run is authorized. Workflow green alone must not be accepted; raw artifact consumption is mandatory before rank5 authority.
 
@@ -89,7 +112,7 @@ The concrete upstream algebraic `Source/Ward/contact+K2` target and robust compa
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 545 closes one additional local QUARTER support point only; no stable rubric sector closes.
+Readiness change: **0 percentage points**. Iteration 546 closes an exact level-error propagation/correlation diagnostic subgate only; no stable rubric sector closes.
 
 ## Exact next gate
 After rank5 terminal completion: fail-closed raw-consume run `34136802871`. Only raw-valid PASS authorizes frozen rank6 `(-1.25e-6,+2.5e-6)`. Scientific FAIL/BLOCKED stops advancement; operational failure permits only minimal rank5 repair.
