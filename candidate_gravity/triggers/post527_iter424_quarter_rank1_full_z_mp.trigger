@@ -5,4 +5,5 @@ quarter_source_rank: 1
 u: -2.5e-6
 v: -1.25e-6
 precision_digits: [80, 120]
+repair: bind iteration527 raw authority via iteration/classification/observed.scientific_authority_pass
 MODEL_READINESS: 24%
