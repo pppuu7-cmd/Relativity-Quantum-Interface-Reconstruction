@@ -1,0 +1,40 @@
+name: RQIR post524 exact historical provenance preflight
+on:
+  push:
+    paths:
+      - 'candidate_gravity/triggers/post524_exact_provenance_preflight.trigger'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact_historical_provenance_preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Emit exact 28-coordinate historical provenance preflight
+        run: |
+          root="candidate_gravity/artifacts/post524_exact_provenance_preflight"; mkdir -p "$root"
+          set +e
+          python candidate_gravity/code/post524_exact_historical_provenance_preflight.py > "$root/result.json"
+          rc=$?
+          set -e
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('candidate_gravity/artifacts/post524_exact_provenance_preflight'); p=root/'result.json'
+          if not p.exists() or p.stat().st_size==0: raise SystemExit(2)
+          raw=p.read_bytes(); o=json.loads(raw)
+          ok=bool(o.get('schema')=='rqir_exact_historical_provenance_preflight_v1' and o.get('resolved_distinct_coordinates')==28 and o.get('required_distinct_coordinates')==28 and len(o.get('authorities',[]))==28 and not o.get('unresolved_coordinates'))
+          a={'schema':'rqir_action_result_authority_audit_v1','stage':'POST524_EXACT_HISTORICAL_PROVENANCE_PREFLIGHT','bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest(),'classification':o.get('classification'),'preflight_pass':ok,'authority_scope':'EXACT_COMMITTED_28_COORDINATE_ARTIFACT_AND_SCIENTIFIC_SHA_PROVENANCE_ONLY'}
+          (root/'authority_audit.json').write_text(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          PY
+          exit $rc
+      - name: Upload preflight artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-post524-exact-provenance-preflight
+          path: |
+            candidate_gravity/artifacts/post524_exact_provenance_preflight/result.json
+            candidate_gravity/artifacts/post524_exact_provenance_preflight/authority_audit.json
+          retention-days: 90
