@@ -15,79 +15,39 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Independent BASE/HALF MP80/MP120 assembly: **Iteration 527**, raw-valid PASS, non-promoting.
 - QUARTER exact support manifest: **Iteration 529** — 16-grid, 4 exact HALF-overlap corners, 12 new coordinates required.
 - Full 12-rank QUARTER successor order prospectively frozen: **Iteration 532**.
-- Three-level exact diagnostics retained: **Iterations 530–533, 536–537, 540–541**; diagnostic-only, non-promoting.
 - QUARTER rank1 raw authority: **Iteration 534**, raw-valid PASS.
-- QUARTER rank2 raw authority: **Iteration 538**, `PASS_RAW_CONSUMED_ITER424_QUARTER_SUPPORT_RANK2_MP80_MP120__NON_PROMOTING`.
-- Latest authoritative research iteration: **Iteration 541**.
+- QUARTER rank2 raw authority: **Iteration 538**, raw-valid PASS.
+- QUARTER rank3 raw authority: **Iteration 542**, `PASS_RAW_CONSUMED_ITER424_QUARTER_SUPPORT_RANK3_MP80_MP120__NON_PROMOTING`.
+- Three-level exact diagnostics retained: **Iterations 530–533, 536–537, 540–541**; diagnostic-only, non-promoting.
+- Latest authoritative research iteration: **Iteration 542**.
 
-## Iteration 538 — rank2 raw-valid PASS
-Canonical run `34102627559`, job `101680313500`, artifact `10014273722`, artifact digest `sha256:02ca8895b69ed4aeb9404882bae369101d2160a3915687c11ab1b66a3fbca231`, head `1046545619a9ae564eb7e611708e4e3db7b5eb42`.
+## Iteration 542 — rank3 raw-valid PASS
+Canonical run `34115105768`, job `101719973617`, artifact `10018745243`, artifact digest `sha256:06744daefa9766aca586b679769eb9767cd0a898936ec7a1159e06759575a5dc`, head `ec77639ef423249426ee9b5b560b0662521f56a9`.
 
-Frozen rank2 coordinate `(-2.5e-6,+1.25e-6)` passed `80/80` finite samples, max scaled MP80↔MP120 discrepancy `2.69972435730420647190377912951e-80 <= 1e-30`, and max radial Richardson scaled error `2.56823894036034380187639556588e-15 <= 5e-4`.
+Frozen rank3 coordinate `(-1.25e-6,-2.5e-6)` passed `80/80` finite samples, max scaled MP80↔MP120 discrepancy `2.24677866944927398508872509213e-80 <= 1e-30`, and max radial Richardson scaled error `2.55939921382769490570222562317e-15 <= 5e-4`.
 
-New QUARTER support closure is **2/12**. Including four exact HALF-overlap corners, authoritative full QUARTER-grid coordinate coverage is **6/16 = 37.5%**. This does not promote physical index 2.
+Raw `result.json` SHA-256: `5ff2918ca522e689f8c67dc0f007efe8fd4a0bc70a5aba2d62423dc3dc4b35e0`. Raw `authority_audit.json` SHA-256: `391a96fca3d9a404cada35b2a0723a820ae3464e729f7c753e7068655c795e71`. The authority audit independently records `scientific_authority_pass=true` and the same result hash.
 
-## Iteration 540 — exact three-level step-ratio diagnostic
-For the common smooth hierarchy `X_h=D+A+B+C+O(h^10)` with `A=a h^4`, `B=b h^6`, `C=c h^8`, and `d1=BASE-HALF`, `d2=HALF-QUARTER`:
+New QUARTER support closure is **3/12**. Including four exact HALF-overlap corners, authoritative full QUARTER-grid coordinate coverage is **7/16 = 43.75%**. This does not promote physical index 2.
 
-- `d1=(15/16)A+(63/64)B+(255/256)C`,
-- `d2=(15/256)A+(63/4096)B+(255/65536)C`.
+## Active heavy computation — rank4
+Exactly one successor is authorized and running:
+- rank: **4/12**;
+- coordinate: `u=-1.25e-6`, `v=-1.25e-6`;
+- run: `34126397439`;
+- job: `101755969291`;
+- stage commit: `c7c022bf4abda08b079efa596d2f88a2880d869d`;
+- workflow commit: `a2bdee8b15515f918ceeb35e862b753cca552322`;
+- head/trigger commit: `0cb2f04ada4092c4d173a50276fffb36415109cf`;
+- state at Iteration-542 write: `in_progress`.
 
-Pure h^4, h^6 and h^8 contributions therefore have exact `d1/d2` ratios **16, 64, 256** respectively. For h^4+h^6 only,
-
-`B/A = (80/21)(r-16)/(64-r)`, where `r=d1/d2`,
-
-with exact cancellation points `d1=0` at `B/A=-20/21` and `d2=0` at `B/A=-80/21`.
-
-Same-sign A,B imply `16<=r<=64`; same-sign A,B,C imply `16<=r<=256`. Violation diagnoses opposite-sign cancellation and/or higher-order contamination under the stated expansion; it is **not** by itself a Candidate-Gravity consistency FAIL.
-
-Classification: `PASS_ITER424_THREE_LEVEL_STEP_RATIO_SIGN_STRUCTURE_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
-
-Machine authority: `candidate_gravity/results/iteration540_iter424_three_level_step_ratio_sign_contract.json`.
-
-## Iteration 541 — exact three-level extrapolator noise contract
-Retain the frozen diagnostic estimator
-
-`R3=(BASE-80 HALF+1024 QUARTER)/945`.
-
-Its exact weight norms are
-
-- `||w||_1=221/189 ~= 1.1693121693121693`,
-- `||w||_2^2=50237/42525`, hence `||w||_2 ~= 1.0869002464792206`,
-- `||w||_inf=1024/945`.
-
-Therefore, if all three assembled inputs satisfy the same absolute error envelope `|e_i|<=eps`, then the sharp worst-case propagation bound is
-
-`|e_R3| <= (221/189) eps`.
-
-Under independent equal-variance input noise, the output standard-deviation factor is `sqrt(50237/42525) ~= 1.0869002464792206`.
-
-For `X_h=D+a h^4+b h^6+c h^8+e h^10+...`, exact leakage coefficients under these same frozen weights are h4=`0`, h6=`0`, h8=`1/1344`, h10=`1/1024`, so
-
-`R3=D+c h^8/1344+e h^10/1024+...`.
-
-This is a numerical/truncation diagnostic only and does not replace any frozen Iteration-424 physical clause.
-
-Classification: `PASS_ITER424_THREE_LEVEL_EXTRAPOLATOR_NOISE_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
-
-Machine authority: `candidate_gravity/results/iteration541_iter424_three_level_extrapolator_noise_contract.json`.
-
-## Active heavy computation — rank3
-Exactly one successor remains authorized and running:
-- rank: **3/12**;
-- coordinate: `u=-1.25e-6`, `v=-2.5e-6`;
-- run: `34115105768`;
-- job: `101719973617`;
-- head/trigger commit: `ec77639ef423249426ee9b5b560b0662521f56a9`;
-- live state at Iteration-541 inspection: `in_progress`; raw audit and upload pending.
-
-No duplicate rank3 heavy run is authorized. Workflow green alone must not be accepted; raw artifact consumption is mandatory before rank3 authority.
+No duplicate rank4 heavy run is authorized. Workflow green alone must not be accepted; raw artifact consumption is mandatory before rank4 authority.
 
 ## Frozen Iteration-532 QUARTER order
 1. `(-2.5e-6,-1.25e-6)` — raw PASS at Iteration 534
 2. `(-2.5e-6,+1.25e-6)` — raw PASS at Iteration 538
-3. `(-1.25e-6,-2.5e-6)` — running
-4. `(-1.25e-6,-1.25e-6)`
+3. `(-1.25e-6,-2.5e-6)` — raw PASS at Iteration 542
+4. `(-1.25e-6,-1.25e-6)` — running
 5. `(-1.25e-6,+1.25e-6)`
 6. `(-1.25e-6,+2.5e-6)`
 7. `(+1.25e-6,-2.5e-6)`
@@ -122,10 +82,10 @@ The concrete upstream algebraic `Source/Ward/contact+K2` target and robust compa
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration 541 closes an exact diagnostic subgate only; no stable rubric sector closes.
+Readiness change: **0 percentage points**. Iteration 542 closes one numerical support prerequisite only; no stable rubric sector closes.
 
 ## Exact next gate
-After rank3 terminal completion: fail-closed raw-consume run `34115105768`. Only raw-valid PASS authorizes frozen rank4 `(-1.25e-6,-1.25e-6)`. Scientific FAIL/BLOCKED stops advancement; operational failure permits only minimal rank3 repair.
+After rank4 terminal completion: fail-closed raw-consume run `34126397439`. Only raw-valid PASS authorizes frozen rank5 `(-1.25e-6,+1.25e-6)`. Scientific FAIL/BLOCKED stops advancement; operational failure permits only minimal rank4 repair.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy retry. No unsupported `u<->v` substitution. Exact coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. No effective-action weight before operator-coordinate closure. `ANSATZ-003` remains uncreated until a concrete residual survives the fixed comparator quotient. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
