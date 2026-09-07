@@ -1,0 +1,60 @@
+{
+  "iteration": 551,
+  "date": "2026-09-07",
+  "classification": "PASS_RAW_CONSUMED_ITER424_QUARTER_SUPPORT_RANK7_MP80_MP120__NON_PROMOTING",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "canonical": {
+    "run_id": 34150468757,
+    "job_id": 101831505133,
+    "artifact_id": 10030205964,
+    "artifact_name": "rqir-post550-iter424-quarter-rank7-full-z-mp",
+    "artifact_digest": "sha256:5a859a373d9d52a9c16df0b3b314c945933b90357602070da685f13cfcf05e00",
+    "head_sha": "a4fa8c7cc215d1b0c1c156339d9865d12abd2558",
+    "result_sha256": "eb4d389813c6620c2436e8f1abe91e24625398163e2e01e5282d68addc80d98f",
+    "authority_audit_sha256": "59c21724191108b56b21d99623e7741a0161e08eb47d08a8d06d6f1201d75e3c"
+  },
+  "coordinate": {
+    "quarter_source_rank": 7,
+    "u": 1.25e-6,
+    "v": -2.5e-6
+  },
+  "observed": {
+    "sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "2.76361789774773626392827156649e-80",
+    "max_radial_richardson_scaled_error": "2.56569009619190897634187577318e-15",
+    "runtime_seconds": 2793.650898334,
+    "result_hash_matches_authority_audit": true,
+    "authority_audit_scientific_authority_pass": true
+  },
+  "thresholds": {
+    "scaled_mp80_vs_mp120_max": "1e-30",
+    "radial_richardson_scaled_max": "5e-4",
+    "required_sample_count": 80,
+    "all_finite": true
+  },
+  "conclusions": {
+    "rank7_raw_valid_pass": true,
+    "workflow_colour_not_used_as_scientific_authority": true,
+    "rank8_authorized_by_iteration532_order": true,
+    "quarter_new_support_closed": "7/12 = 58.333333333333336%",
+    "full_quarter_grid_coverage": "11/16 = 68.75%",
+    "physical_index2_promoted": false,
+    "full_iteration424_physical_acceptance_satisfied": false
+  },
+  "next_rank": {
+    "quarter_source_rank": 8,
+    "u": 1.25e-6,
+    "v": -1.25e-6
+  },
+  "guardrails": [
+    "ITERATION532_SUCCESSOR_ORDER",
+    "ITERATION424_FROZEN_MASS_STEPS",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_ZERO_FILL",
+    "NO_UV_SYMMETRY_SUBSTITUTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
