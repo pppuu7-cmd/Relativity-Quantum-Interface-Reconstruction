@@ -1,0 +1,10 @@
+RQIR iteration520 canonical frozen rank27 trigger
+prerequisite_raw_consumption_commit=6915f52883166ed140f7d4d0ab4bc9ecf84ee6b5
+stage_commit=338233a1547730e6d59149fe486e78476cbb556f
+workflow_commit=60a496cc1e878b830a95c465c278c044fd456667
+manifest_rank=27
+u=+5e-6
+v=+2.5e-6
+source_level=HALF
+source_local_index=14
+source_occurrence_multiplicity=1
