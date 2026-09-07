@@ -1,0 +1,71 @@
+{
+  "schema": "rqir_iter424_quarter_successor_order_exact_preregistration_v1",
+  "iteration": 532,
+  "date": "2026-09-07",
+  "scope": "prospective deterministic quarter-support successor order; structural/provenance only",
+  "classification": "PASS_ITER424_QUARTER_SUCCESSOR_ORDER_PREREGISTERED_EXACT__NON_PROMOTING",
+  "parents": [
+    "candidate_gravity/results/iteration529_iter424_quarter_support_manifest_exact_audit.json",
+    "candidate_gravity/code/post527_iter424_quarter_support_rank1_full_z_mp_stage.py"
+  ],
+  "frozen": {
+    "quarter_h": 1.25e-6,
+    "axis_nodes": [-2.5e-6, -1.25e-6, 1.25e-6, 2.5e-6],
+    "source_order": "u-major/v-major Cartesian order after removing exact HALF-overlap corners",
+    "exact_half_overlap_corners": [
+      [-2.5e-6, -2.5e-6],
+      [-2.5e-6, 2.5e-6],
+      [2.5e-6, -2.5e-6],
+      [2.5e-6, 2.5e-6]
+    ],
+    "new_coordinate_count": 12,
+    "precision_digits": [80, 120]
+  },
+  "quarter_rank_order": [
+    {"rank": 1, "u": -2.5e-6, "v": -1.25e-6},
+    {"rank": 2, "u": -2.5e-6, "v": 1.25e-6},
+    {"rank": 3, "u": -1.25e-6, "v": -2.5e-6},
+    {"rank": 4, "u": -1.25e-6, "v": -1.25e-6},
+    {"rank": 5, "u": -1.25e-6, "v": 1.25e-6},
+    {"rank": 6, "u": -1.25e-6, "v": 2.5e-6},
+    {"rank": 7, "u": 1.25e-6, "v": -2.5e-6},
+    {"rank": 8, "u": 1.25e-6, "v": -1.25e-6},
+    {"rank": 9, "u": 1.25e-6, "v": 1.25e-6},
+    {"rank": 10, "u": 1.25e-6, "v": 2.5e-6},
+    {"rank": 11, "u": 2.5e-6, "v": -1.25e-6},
+    {"rank": 12, "u": 2.5e-6, "v": 1.25e-6}
+  ],
+  "prospective_transition_rule": {
+    "on_raw_consumed_pass": "advance to exactly the next rank in quarter_rank_order; after rank12 PASS proceed to quarter assembly",
+    "on_scientific_block_or_fail": "stop successor advancement and localize the concrete failing sample/clause without changing thresholds, order, support, or dynamics",
+    "on_operational_failure": "repair only the minimal infrastructure/software cause, preserve frozen scientific contract, then rerun the same rank",
+    "forbidden": [
+      "result-dependent rank reordering",
+      "rank skipping",
+      "u-v symmetry substitution without separately frozen exact identity",
+      "zero filling",
+      "threshold weakening",
+      "mass-node changes",
+      "precision-level changes"
+    ]
+  },
+  "live_state_at_preregistration": {
+    "active_run_id": 34094463024,
+    "active_job_id": 101654832475,
+    "active_rank": 1,
+    "active_status": "in_progress",
+    "completed_principal_workflow_stages": 4,
+    "principal_workflow_stage_count": 7
+  },
+  "conclusions": {
+    "full_quarter_successor_order_fixed_before_rank1_result": true,
+    "future_rank_selection_has_no_result_dependent_freedom": true,
+    "physical_index2_promotion_implied": false,
+    "candidate_gravity_consistency_implied": false,
+    "ansatz003_authorized": false,
+    "fisher_authorized": false
+  },
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "guardrail": "This audit freezes only support ordering/provenance. Every rank still requires its own raw-valid numerical authority, and complete quarter support still requires assembly plus the unchanged five-clause Iteration-424 physical reevaluation."
+}
