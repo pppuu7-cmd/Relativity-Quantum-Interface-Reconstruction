@@ -1,0 +1,61 @@
+{
+  "iteration": 564,
+  "date": "2026-09-08",
+  "scope": "Iteration-424 final QUARTER pair rank11/rank12 common-differential mode decomposition",
+  "classification": "PASS_ITER424_FINAL_PAIR_COMMON_DIFFERENTIAL_MODE_DECOMPOSITION_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "status": "PASS",
+  "epistemic_label": "derived exact algebraic result",
+  "precondition": "prospective diagnostic for the frozen rank11/rank12 pair; does not assume their numerical values or PASS status",
+  "coordinates_scaled_by_h": {
+    "rank11": [2, -1],
+    "rank12": [2, 1]
+  },
+  "central4_tensor_integer_coefficients": {
+    "rank11": 8,
+    "rank12": -8
+  },
+  "orthogonal_mode_transform": {
+    "common": "q_common=(F11+F12)/sqrt(2)",
+    "differential": "q_diff=(F11-F12)/sqrt(2)",
+    "coefficient_vector_in_coordinate_basis": [8, -8],
+    "coefficient_vector_in_mode_basis": ["0", "8*sqrt(2)"],
+    "condition_number_2": 1,
+    "conclusion": "the common mode is an exact null direction of the final-pair contribution; only the differential mode enters the mixed-stencil assembly"
+  },
+  "equivalent_average_difference_form": {
+    "common_average": "c=(F11+F12)/2",
+    "half_difference": "d=(F11-F12)/2",
+    "tail": "T_tail=d/(9*h^2)=(F11-F12)/(18*h^2)"
+  },
+  "bounded_error_contract": "|delta T_tail| <= (eps11+eps12)/(18*h^2)",
+  "symmetric_equal_variance_covariance_model": {
+    "coordinate_covariance": "sigma^2*[[1,rho],[rho,1]]",
+    "mode_covariance": "diag(sigma^2*(1+rho), sigma^2*(1-rho))",
+    "mode_cross_covariance": 0,
+    "tail_variance": "sigma^2*(1-rho)/(162*h^4)",
+    "independent_case_rho_0": "sigma^2/(162*h^4)"
+  },
+  "scientific_interpretation": [
+    "this is an assembly-geometry statement only",
+    "a large common-mode value can be irrelevant to the final-pair stencil contribution while a small differential mode controls it",
+    "the exact null common mode must not be interpreted as physical degeneracy of Candidate Gravity",
+    "u-v non-equivalence remains authoritative, so F11 and F12 cannot be substituted for one another or inferred equal"
+  ],
+  "guardrails": [
+    "diagnostic-only and non-promoting",
+    "does not authorize rank skipping, reordering, support reduction or zero fill",
+    "does not change Iteration-424 physical thresholds",
+    "does not authorize smaller h or different precision",
+    "does not create ANSATZ-003",
+    "does not authorize Fisher/resources"
+  ],
+  "model_readiness_percent": 24,
+  "readiness_change_percentage_points": 0,
+  "active_heavy_authority_at_freeze": {
+    "rank": 10,
+    "run_id": 34165534613,
+    "job_id": 101875710349,
+    "coordinate": [1.25e-6, 2.5e-6],
+    "state": "in_progress"
+  }
+}
