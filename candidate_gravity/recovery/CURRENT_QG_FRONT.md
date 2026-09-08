@@ -19,7 +19,8 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Exact original-Iter421 tensor11 MP-support manifest: **575**, prospectively frozen/non-promoting.
 - Exact tensor11 support-orbit/design identifiability audit: **576**, PASS scoped/non-promoting.
 - Exact tensor11 leverage/single-orbit design robustness audit: **577**, PASS scoped/non-promoting.
-- Latest authoritative research iteration: **577**.
+- Exact tensor11 PRESS/leverage amplification robustness audit: **578**, PASS scoped/non-promoting.
+- Latest authoritative research iteration: **578**.
 
 ## Iteration574 full-spectrum raw authority
 Canonical source:
@@ -97,6 +98,25 @@ Reproducible artifacts:
 - `candidate_gravity/code/iteration577_tensor11_leverage_robustness_audit.py`
 - `candidate_gravity/results/iteration577_tensor11_leverage_robustness_audit.json`.
 
+## Iteration578 PRESS / leverage amplification robustness
+For ordinary least squares, the exact leave-one-out residual identity is
+
+`e_i^(LOO)=e_i/(1-h_ii)`.
+
+Using only the prospectively fixed tensor11 design geometry:
+- minimum leverage = `529/7396`;
+- maximum leverage = `43681/66564`;
+- minimum leverage-only PRESS amplification = `7396/6867 ~= 1.0770350953837193`;
+- maximum leverage-only PRESS amplification = `66564/22883 ~= 2.9088843246077873`.
+
+Therefore no frozen symmetric-cross observation has divergent leave-one-orbit amplification, and the worst leverage-only amplification is strictly below 2.91. This is design robustness only; it does not evaluate the pending tensor11 numerical residual, authorize deletion of support, or modify the frozen threshold/statistic.
+
+Classification: `PASS_ITER421_TENSOR11_PRESS_LEVERAGE_AMPLIFICATION_AUDIT_EXACT__NON_PROMOTING`.
+
+Reproducible artifacts:
+- `candidate_gravity/code/iteration578_tensor11_press_leverage_amplification_audit.py`
+- `candidate_gravity/results/iteration578_tensor11_press_leverage_amplification_audit.json`.
+
 ## Active heavy computation — Iteration575
 Exactly one tensor11 support matrix remains active:
 - workflow `RQIR Iter575 tensor11 missing support matrix`;
@@ -104,7 +124,7 @@ Exactly one tensor11 support matrix remains active:
 - head `519ceb6dc8efc3e5a9aebe86f5e6523152a4b284`;
 - matrix jobs: **36**;
 - `max-parallel: 18`;
-- latest checked workflow state during Iter577: **`in_progress`**, conclusion `null`;
+- latest checked workflow state during Iter578: **`in_progress`**, conclusion `null`;
 - stage `candidate_gravity/code/iteration575_iter421_tensor11_missing_support_full_z_mp_stage.py`;
 - each rank: exact frozen `(u,v)`, five z values, NPHI16, inherited radial Richardson nodes, direct MP80/MP120;
 - per-rank gates: 80 rows, finite, MP80↔MP120 `<=1e-30`, radial Richardson `<=5e-4`.
@@ -132,7 +152,7 @@ Concrete upstream algebraic `Source/Ward/contact+K2` target and robust comparato
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iter577 closes a real design-robustness subgate, but no additional stable model-level rubric point is completed.
+Readiness change: **0 percentage points**. Iter578 closes a real PRESS/design-robustness subgate, but no additional stable model-level rubric point is completed.
 
 ## Downstream chain
 BASE/HALF/QUARTER support **CLOSED** → full spectrum reconstruction **CLOSED 574** → Iter424 **4/5 PASS** → original tensor11 exact MP support **RUNNING 575** → unchanged original tensor11 fit → only 5/5 PASS may promote index2 → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
