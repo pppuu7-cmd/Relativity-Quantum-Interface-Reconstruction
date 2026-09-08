@@ -1,0 +1,43 @@
+{
+  "iteration": 609,
+  "date": "2026-09-08",
+  "classification": "BLOCKED_ITER609_INTERNAL_SCALAR_POLE_PULLBACK_NOT_DETERMINED_BY_Q2_ALONE__NON_RESIDUAL",
+  "scientific_gate_pass": false,
+  "candidate_residual": false,
+  "model_readiness_percent": 24,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "zero_fill": false,
+  "ansatz_003": "FORBIDDEN",
+  "fisher_resources": "FORBIDDEN",
+  "authoritative_inputs": [
+    "Iter588 exact singleton/pair fixture binding",
+    "Iter594 complete 13-family routed cubic source assembly",
+    "Iter605 full source-level nonlinear Ward PASS",
+    "Iter606 native-linked mapping contract",
+    "Iter608 scalar-pole distribution kernel"
+  ],
+  "derivation": {
+    "metric_convention_mssc": "+---",
+    "generic_internal_line": "r = p0 + Q_A",
+    "generic_invariant": "r^2 = p0^2 + Q_A^2 + 2 p0.Q_A",
+    "K1K2_family": "Q_A = +/- q_i, so r^2 = p0^2 + q_i^2 +/- 2 p0.q_i",
+    "K1cubed_family": "for permutation (i,j,k): r1=p0+q_i; r2=p0+q_i+q_j=p0-q_k",
+    "K1cubed_invariants": [
+      "r1^2=p0^2+q_i^2+2 p0.q_i",
+      "r2^2=p0^2+q_k^2-2 p0.q_k"
+    ],
+    "local_K3": "contains no internal scalar propagator and therefore no scalar-pole distribution to pull back",
+    "iter588_special_symmetric_block_routing": "p=-q_i/2, p'=+q_i/2 fixes endpoint invariants to q_i^2/4 for the isolated K1/K2 source-routing contract, but Iter594/605 full routed propagator families retain p0-dependent internal lines; substituting q_i^2/4 for those lines would change the frozen observable and is not authorized"
+  },
+  "blocking_reason": "The native linked observable authority available through Iter608 fixes the external q2 buckets but does not fix p0^2 and p0.q_i, nor an equivalent native cut integration variable/root map. Therefore there is no unique family-by-family function p_j^2(q^2) for the retained propagator families. Choosing one would be a new estimator/kinematic prescription, forbidden by Iter606.",
+  "distributional_consequence": "Disc[1/(m^2-r^2+i0)] = -2*pi*i*delta(m^2-r^2) is authoritative, but delta(m^2-r^2) cannot yet be pulled back to the frozen native linked variable because the root coordinate and Jacobian are not fixed.",
+  "strict_interpretation": [
+    "operational BLOCKED, not Candidate-Gravity consistency FAIL",
+    "not exact comparator identity",
+    "not regime-specific non-identifiability",
+    "not near-degeneracy",
+    "not a novelty certificate",
+    "not a zero residual"
+  ],
+  "next_gate": "Locate or derive from the already frozen native T_cut observable the explicit cut/integration variable z and its relation to the MSSC routed scalar momentum p0, sufficient to express p0^2 and p0.q_i (or directly m^2-r_j^2) as functions of z and the fixed external invariants. Freeze that bridge prospectively before any numerical projection. If no same-parent/native authority fixes it, preserve BLOCKED and do not invent a normalization or estimator."
+}
