@@ -1,0 +1,55 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "audit": {
+    "generic_probe_count": 24,
+    "max_K1_minus_half_hV_abs": 1.1102230246251565e-16,
+    "max_pure_gauge_Ward_abs": 3.552713678800501e-15,
+    "tolerance": 2e-12
+  },
+  "classification": "PASS_MSSC001_K1_K2_SAME_ACTION_NORMALIZATION_CONTRACT__NON_RESIDUAL",
+  "date": "2026-09-08",
+  "explicit_nonclaims": [
+    "not a full K1+K2 Ward cancellation test",
+    "not a source tree value",
+    "not a comparator residual",
+    "not Candidate-Gravity model PASS/FAIL",
+    "not a novelty certificate"
+  ],
+  "failures": [],
+  "interpretation": "The relative K1/K2 normalization is fixed by the same covariant scalar inverse kernel before any cancellation test; a later Ward PASS cannot be manufactured by choosing an extra factor of two or sign.",
+  "iter368_iter588_fixture_K2_values": [
+    {
+      "K2_mixed_same_action_normalization": 0.017288072919771053,
+      "pair": ["a", "b"],
+      "singleton": "s",
+      "source_q2": 1.0
+    },
+    {
+      "K2_mixed_same_action_normalization": 0.0053626356708712805,
+      "pair": ["s", "b"],
+      "singleton": "a",
+      "source_q2": 0.14
+    },
+    {
+      "K2_mixed_same_action_normalization": 0.014363470813301032,
+      "pair": ["s", "a"],
+      "singleton": "b",
+      "source_q2": 0.33999999999999997
+    }
+  ],
+  "iteration": 589,
+  "model_readiness_percent": 24,
+  "next_gate_if_pass": "using exactly this normalization plus Iter588 singleton/pair routing and both block orientations, assemble the full same-fixture K1-G-K2 + K2-G-K1 source response and test the off-shell Ward identity including inverse-propagator RHS before any Iter582 mapping/comparator quotient",
+  "normalization_contract": {
+    "Iter584_bs": "trH1*trH2/4 - Tr(H1 H2)/2",
+    "Iter584_bt": "E h1 E h2 E + E h2 E h1 E -(trH1/2)E h2 E -(trH2/2)E h1 E + bs E",
+    "K1": "-p_prime_cov a1(h) p_cov + m^2 b1(h) = (1/2) h_{mu nu} V^{mu nu}",
+    "K2": "-p_prime_cov bt(h1,h2) p_cov + m^2 bs(h1,h2)",
+    "inverse_kernel": "K[g]=-p_prime_cov (sqrt(-g) g^-1) p_cov + m^2 sqrt(-g)",
+    "relative_factor_rule": "K1 and K2 are first and mixed-second derivatives of one K[g]; no independent factor/sign is permitted"
+  },
+  "parent_action": "Iter218/Iter583 MSSC-001 scalar action; eta=(+---); m=0.7",
+  "scientific_gate_pass": true,
+  "source_born_subtraction": "NOT_PERFORMED"
+}
