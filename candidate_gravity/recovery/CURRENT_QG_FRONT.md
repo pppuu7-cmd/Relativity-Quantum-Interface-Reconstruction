@@ -6,47 +6,53 @@
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none
 
-Repository commits, validated raw Actions artifacts, recovery deltas, research logs, and this file are source of truth. Workflow colour alone is never scientific authority. Race-created newer repo state wins and authoritative iteration IDs are never reused.
+Repository commits, validated Actions artifacts, recovery deltas, research logs and this file are source of truth. Workflow colour alone is never scientific authority. Race-created newer repository state wins; authoritative iteration IDs are never reused.
 
 ## Current authority
 
-- Latest authoritative research iteration: **616**.
-- Frozen Iter424 is **5/5 PASS**; Iter581 exact15 raw-valid PASS; Iter582 q2-resolved `D_s Gamma_{e=2}` assembly PASS/non-residual.
-- Iter583–594 establish same-parent MSSC contacts, exact routing/relative normalization and the complete 13-family cubic source object; Iter605 independently raw-closes full source-level nonlinear Ward consistency.
-- Iter606 raw-closes the prospective source-to-Iter582/native-linked mapping contract; Iter607 is preserved as scientific `BLOCKED`; Iter608 closes the universal scalar-pole distribution law.
-- Iter609–612 localize the missing native bridge to a kinematic-rank obstruction and prove the required historical auxiliary constraints are absent.
-- Iter613 prospectively freezes `MSSC001-NATIVE-S-KIN-V1`; Iter614 closes positive-s simple-root support/Jacobians.
-- Iter615 closes all six supported routed internal scalar-pole source coefficients as finite and nonzero, with two independent implementations agreeing.
-- **Iter616 closes exact source/Iter582 q2 bucket identity and exact external scalar endpoint amputation, and narrows the remaining native binding ambiguity to one common nonzero scalar `N_native`. The full native binding therefore remains `BLOCKED`, not FAIL and not residual.**
+Latest authoritative research iteration: **617**.
 
-## Frozen native-s kinematics / pole support
+- Iter424 physical fallback: **5/5 PASS**.
+- Iter581 exact15 / complete `Tr U1^2`: raw-valid PASS.
+- Iter582 q2-resolved `D_s Gamma_{e=2}`: PASS/non-residual.
+- Iter583–594: same-parent MSSC contacts, routing, relative normalization and complete 13-family cubic source object.
+- Iter605: full source-level nonlinear Ward consistency PASS.
+- Iter606: prospective source-to-native mapping contract PASS/non-residual.
+- Iter607: preserved scientific `BLOCKED` result.
+- Iter608: universal scalar-pole distribution law PASS.
+- Iter609–612: missing native bridge localized to kinematic rank; historical auxiliary constraints absent.
+- Iter613: prospective `MSSC001-NATIVE-S-KIN-V1` frozen before roots.
+- Iter614: six positive simple-root/Jacobian support points closed.
+- Iter615: all six source-side normalized internal scalar-pole coefficients finite and nonzero; independent implementations agree.
+- Iter616: exact q2 bucket identity and scalar endpoint amputation closed; remaining native-binding ambiguity reduced to one common nonzero scalar `N_native`.
+- **Iter617: historical-normalization authority audit PASS with a negative answer: existing repository authority genuinely does not fix `N_native`.**
 
-In MSSC-001 convention `(+---)`, for `s>0`:
+## Frozen native-s source support
+
+MSSC-001 convention `(+---)`, mass `m=0.7`, positive-frequency trajectory
 
 `p0(s)=(sqrt(s),0,0,0)`.
 
-Hold fixed the exact Iter368/588 mode vectors/polarizations, mass `m=0.7`, routing/sign/normalization/i0 conventions and rest-frame axis. Thus
-
-`u(s)=s`, `a_i(s)=sqrt(s) q_i^0`, `a_s+a_a+a_b=0`,
+With the exact Iter368/588 mode vectors held fixed:
 
 `D_i^+(s)=m^2-s-q_i^2-2sqrt(s)q_i^0`,
 
 `D_i^-(s)=m^2-s-q_i^2+2sqrt(s)q_i^0`.
 
-Positive simple roots:
+Positive roots:
 
-- `D_s^+`: no positive root;
+- `D_s^+`: none;
 - `D_s^-`: `0.09`, `2.89`;
 - `D_a^+`: `1.241314274283428`;
 - `D_a^-`: `0.09868572571657197`;
 - `D_b^+`: `1.726971411425142`;
 - `D_b^-`: `0.013028588574858`.
 
-No support absence is amplitude zero. All 13 source families remain retained; `zero_fill=false`.
+All supported roots are simple. Support absence is never interpreted as amplitude zero. All 13 source families remain retained; `zero_fill=false`.
 
-## Iter615 source-side normalized internal scalar-pole coefficients
+## Iter615 normalized source-side pole coefficients
 
-With Iter608 `Disc[1/(D+i0)] = -2*pi*i delta(D)` and Iter205 `D_s=Disc_s/(2*pi*i)`, the six aggregate source-side normalized coefficients are:
+Using Iter608 `Disc[1/(D+i0)]=-2*pi*i delta(D)` and Iter205 `D_s=Disc_s/(2*pi*i)`:
 
 - `D_b^-(0.013028588574858)`: `-0.00024912100468199333`;
 - `D_s^-(0.09)`: `+0.0007390333386357162`;
@@ -55,59 +61,66 @@ With Iter608 `Disc[1/(D+i0)] = -2*pi*i delta(D)` and Iter205 `D_s=Disc_s/(2*pi*i
 - `D_b^+(1.726971411425142)`: `-0.0007467205092433388`;
 - `D_s^-(2.89)`: `-0.0021373920072305236`.
 
-All are finite and nonzero. K1/K2 and K1^3 terms are retained with their frozen same-action relative signs. K3 is local in this routed-internal pole classification; this is not an amplitude-zero claim.
+No same-action K1/K2–K1^3 cancellation removes any supported scalar-pole contribution.
 
-## Iter616 endpoint-amputation and minimal normalization blocker
+## Iter616 exact endpoint/bucket binding
 
-### Exact q2 bucket identity
+Iter588 already froze the same physical modes under `ETA_C=(-+++)` and `ETA_S=-ETA_C`:
 
-Iter588 already froze the same Iter368 mode vectors under opposite metric signatures, `ETA_C=(-+++)` and `ETA_S=-ETA_C`. Therefore the map is an identity of the physical mode label, not a fitted correspondence:
-
-- `s`: source `q^2=+1.0` <-> Iter582 connection `q^2=-1.0`;
-- `b`: source `q^2=+0.34` <-> Iter582 connection `q^2=-0.34`;
-- `a`: source `q^2=+0.14` <-> Iter582 connection `q^2=-0.14`.
+- source `s:+1.0` <-> Iter582 `-1.0`;
+- source `b:+0.34` <-> Iter582 `-0.34`;
+- source `a:+0.14` <-> Iter582 `-0.14`.
 
 Buckets remain distinct and are never summed.
 
-### Exact external endpoint amputation
+For the complete Iter594 source response
 
-For the complete Iter594 same-action cubic scalar response
+`d_abc G=-G Kabc G + sum_6(G Ki G Kjk G)-sum_6(G Ki G Kj G Kk G)`,
 
-`d_abc G = -G Kabc G + sum_6(G Ki G Kjk G) - sum_6(G Ki G Kj G Kk G)`,
+the exact scalar endpoint amputation is
 
-freeze
+`S_amp^(3)=K0_out(d_abc G)K0_in`
 
-`S_amp^(3)=K0_out (d_abc G) K0_in`,
-
-hence
+so
 
 `S_amp^(3)=-Kabc+sum_6(Ki G Kjk)-sum_6(Ki G Kj G Kk)`.
 
-This amputates only the two common external scalar propagators. Internal scalar propagators and pole support, K3 contact and all K1^3 chains remain retained. On the two frozen Iter594 probes, direct and termwise amputation agree with maximum absolute discrepancy `8.673617379884035e-19`, consistent with stored decimal rounding.
+Only the two common external scalar propagators are removed. Internal scalar poles, K3 and all K1^3 chains remain. Two frozen probes agree between direct and termwise forms to maximum absolute difference `8.673617379884035e-19`.
 
-### Remaining binding dimension
+## Iter617 historical normalization audit
 
-The remaining ambiguity is exactly one common nonzero scalar:
+Question: can the one remaining common scalar `N_native` be recovered from pre-existing authority without using Candidate values?
 
-`N_native` = source-response <-> Iter582 native effective-action/retarded phase and absolute normalization.
+Answer: **no**.
 
-Historical authority fixes all relative source-sector factors (Iter589/594), the cut sign/distribution (Iter608/615), the native-s pullback/Jacobians (Iter613/614), q2 identity (Iter588) and endpoint amputation (Iter616), but does not yet supply one explicit cross-sector equation fixing `N_native`.
+Known exact factors:
 
-`N_native` must **not** be fitted to the six Iter615 values, separately tuned by root or q2 bucket, or inferred by weakening/redefining any frozen convention.
+- Iter338: connection one-loop effective-action outer factor `+i`, including `D_s Gamma_det=+i D_s C_det`.
+- Iter147/149: retarded gravitational response `chi2R=-G_R Gamma3 G_R G_R`.
+- Iter149/218: physical metric/source convention uses `g=eta+kappa h`.
+- Iter218: the displayed MSSC one-graviton source vertex explicitly strips the common gravitational coupling.
+- Iter589/594: all source-internal relative factors/signs are fixed from one parent scalar action.
+- Iter588/616: q2 identity and scalar endpoint amputation are fixed.
 
-Iter616 classification:
+Missing authority:
 
-`BLOCKED_ITER616_ENDPOINT_AMPUTATION_AND_Q2_BINDING_CLOSED__ONE_COMMON_NATIVE_NORMALIZATION_SCALAR_UNRESOLVED__NON_RESIDUAL`.
+There is **no frozen equation** mapping the scalar-endpoint-amputated MSSC probe response to the gravitational retarded/1PI `Gamma3` convention with one absolute phase/coupling normalization. Iter151 explicitly avoided importing an incompatible amputated-vertex normalization. Commit-history searches found no pre-existing `Legendre`, `generating functional`, or `1PI` authority supplying that bridge.
 
-## Iter582 connection operator coordinate
+Therefore
 
-`D_s Gamma_e2(q^2) = +(i/2)D_s Tr U2 -(i/4)D_s Tr U1^2`:
+`N_native = BLOCKED__NOT_DERIVABLE_FROM_EXISTING_REPOSITORY_AUTHORITY`.
+
+It is forbidden to set `N_native` to `+i`, `-i`, `1`, fit it to Iter615/Iter582 values, or tune it separately per root/q2 bucket.
+
+## Iter582 connection coordinate
+
+`D_s Gamma_e2(q^2)=+(i/2)D_s Tr U2-(i/4)D_s Tr U1^2`:
 
 - `q^2=-1.0`: `+0.0003272233895861266 i`;
 - `q^2=-0.34`: `-0.00371666346186323 i`;
 - `q^2=-0.14`: `-0.0007997265433511544 i`.
 
-These values are not to be used to fit `N_native`.
+These numbers are never used to fit `N_native`.
 
 ## Stable readiness rubric
 
@@ -120,24 +133,20 @@ These values are not to be used to fit `N_native`.
 
 **MODEL_READINESS: 24%**
 
-Readiness change through Iter616: **0 percentage points**. The source/native mapping ambiguity is now one-dimensional, but no robust comparator-subtracted residual or complete readiness sector is closed.
+Readiness change through Iter617: **0 percentage points**. The native binding blocker is now precisely localized, but no robust comparator-subtracted residual or complete readiness sector is closed.
 
-## Exact next gate — independent lower-order normalization anchor
+## Exact next admissible work
 
-Prospectively determine `N_native` from an **independent lower-order/common-field normalization identity** that uses the same physical metric perturbation and the same retarded/effective-action convention, without consulting any projected Iter615 Candidate value.
+Do **not** revise the Iter606/616 normalization after seeing Candidate values. Preserve `N_native` as the minimal blocker. Continue only work invariant under one common nonzero source normalization, or other independent theory/comparator audits that cannot tune `N_native`.
 
-The audit must answer fail-closed:
+The highest-value immediate diagnostic is a six-root **projective source-shape certificate**: retain every root separately, construct normalization-invariant sign/ratio/projective data from Iter615, and prospectively freeze invariants that can later test any legitimate native bridge for corruption. No roots may be summed merely because they share a q2 bucket.
 
-1. whether the MSSC source derivative variable and connection-sector metric perturbation are the same physical `delta g` variable or differ by an explicitly fixed `kappa` convention;
-2. whether the retarded/source response and Iter582 effective-action coordinate carry an already frozen common `i`/sign convention;
-3. whether these facts fix one unique `N_native` independent of root and q2 bucket.
-
-If repository authority does not fix it, record the exact one-scalar blocker rather than choosing a convention post hoc. Only a prospectively fixed `N_native` may authorize full native `Y/T_cut` projection, then Source/Born subtraction, and only afterwards the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient.
+A full native projection, Source/Born subtraction and fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain forbidden until an independently justified source-to-Gamma normalization authority exists.
 
 ## Compute status
 
-No scientifically useful heavy job is currently required. The next gate is algebraic/convention-level; duplicate heavy authority runs are forbidden.
+No scientifically useful heavy job is authorized. Current work is exact/lightweight; duplicate heavy runs are forbidden.
 
 ## Retained guardrails
 
-Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative results are preserved. No post-hoc trajectory change, estimator, normalization fit, q2 regrouping, threshold weakening, ansatz tuning or unproved internal repartition. Distinct q2 buckets are never summed. K1^3 remains retained. Repeated/coincident poles are never treated as ordinary simple cuts. Source/Born subtraction remains `NOT_PERFORMED`. No fixed comparator quotient before native binding closes. No `ANSATZ-003`; no Fisher/resources.
+Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative results are preserved. No post-hoc trajectory change, estimator, normalization fit, q2 regrouping, threshold weakening, ansatz tuning or unproved internal repartition. Distinct roots and q2 buckets are never summed without an explicit observable law. K1^3 remains retained. Repeated/coincident poles are never treated as ordinary simple cuts. Source/Born subtraction remains `NOT_PERFORMED`. No fixed comparator quotient before native binding closes. No `ANSATZ-003`; no Fisher/resources.
