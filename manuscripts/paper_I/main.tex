@@ -18,7 +18,7 @@
 \title{Relativity--Quantum Interface Reconstruction I:\\
 Operational Hierarchy, Ordered Stress--Energy Information, and Finite Calibration-Nullspace Discriminants}
 \author{Authors to be fixed before submission}
-\date{Working manuscript v0.2 / 8 September 2026}
+\date{Working manuscript v0.3 / 8 September 2026}
 
 \begin{document}
 \maketitle
@@ -167,7 +167,7 @@ This geometry is related to informational incompleteness in quantum tomography \
 
 \section{Finite Calibration-Nullspace Response Discriminant}
 
-\begin{proposition}[RQIR-THM-001]
+\begin{proposition}[RQIR-THM-001]\label{prop:rqir-thm-001}
 Let $V$ be the real tangent space of Hermitian source-state perturbations after all exact hard linear constraints in the declared preparation domain have been eliminated. Let $A:V\to\mathbb R^m$ be a finite linear calibration map with one-dimensional nullspace $\ker A=\mathrm{span}\{n\}$, and let $c:V\to\mathbb R$ be a linear response functional. Suppose that $c(n)\neq0$, the nominal density operator $\rho_0$ lies in the interior of the physical state set on the retained finite-dimensional Hilbert space, and $n$ is represented by a Hermitian traceless perturbation compatible with the exact preparation constraints. Then there exists $\epsilon>0$ such that
 \begin{equation}
  \rho_\pm=\rho_0\pm\epsilon n
@@ -190,7 +190,18 @@ The generic statement that incomplete finite measurements can possess null direc
 
 \section{Constructive Realization and Calibration Steering}
 
-The frozen Toy009/Toy010 realization has calibration rank $24/25$, a one-dimensional hidden direction, positive physical state pairs, calibration-equality residuals at approximately the $10^{-15}$ numerical scale, equal selected mean/noise coordinates, nonzero opposite ordered response and a detector-aware response coordinate. The exact numerical claims will be bound to canonical scripts and result files before submission; this manuscript intentionally does not cite an unfrozen path here.
+The deterministic scans Toy009 and Toy010 are used to test the hypotheses of Proposition~\ref{prop:rqir-thm-001}; they do not replace its proof. The working construction has a 25-dimensional reduced source parameterization and is designed to realize the codimension-one regime $\operatorname{rank}A=24$. Until an immutable clean-run artifact is tied to an exact code revision, these dimensions describe the intended constructive certificate rather than a submission-final numerical measurement.
+
+The constructive certificate has six logically separate checks:
+\begin{enumerate}
+ \item establish the codimension-one rank condition under a stated numerical-rank rule;
+ \item establish a one-dimensional numerical nullspace and record a normalized hidden direction $n$;
+ \item verify physical-state admissibility, including positivity of the paired states;
+ \item verify equality of the declared calibration coordinates, including the selected mean/noise coordinates;
+ \item evaluate the ordered and detector-aware response coordinates on the same frozen direction and verify a nonzero separation under a stated decision rule;
+ \item bind every quoted numerical value to the immutable run artifact, exact code revision, configuration and precision policy that generated it.
+\end{enumerate}
+Items 1--5 are mathematical or numerical checks of the construction. Item 6 is a provenance requirement for manuscript-level numerical claims. The current working record supports the constructive design, but machine-specific residuals, tolerances and last digits are deliberately withheld from headline evidence until item 6 is complete.
 
 Calibration is also an active design variable. For a smooth calibration map with normalized null vector $n$, the frozen perturbative relation is
 \begin{equation}
@@ -201,6 +212,27 @@ with the conditioning bound
  \lVert n'\rVert\leq \frac{\lVert A'\rVert}{s_{\min}(A)}
 \end{equation}
 in the stated setting. Thus changing calibration geometry can rotate the unresolved direction and alter $c(n)$ without changing the underlying source Hamiltonian.
+
+\subsection{Evidence classes and promotion rule}
+
+To prevent an implementation diagnostic from silently acquiring the status of an externally validated numerical claim, Paper I separates three evidence classes:
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}p{0.24\linewidth}p{0.45\linewidth}p{0.22\linewidth}@{}}
+\toprule
+Evidence class & Minimum frozen record & Manuscript status \\
+\midrule
+Analytic existence statement & Explicit hypotheses and proof & Publication claim \\
+Constructive toy witness & Code revision, configuration, rank/null diagnostics, physical-state checks, calibration-equality record and response evaluation & Publication evidence only after immutable artifact binding \\
+External numerical comparison & Source authority, convention, extraction rule and complete run provenance & Withheld until authority is frozen \\
+\bottomrule
+\end{tabular}
+\caption{Promotion rule separating analytic claims, internally reproducible constructive evidence, and externally anchored numerical claims.}
+\label{tab:evidence-promotion}
+\end{table}
+
+This rule makes the submission boundary operational. Missing run provenance can delay promotion of a toy number without weakening Proposition~\ref{prop:rqir-thm-001}; missing external authority can delay a calibrated comparison without changing either the analytic theorem or an internally reproduced constructive witness.
 
 \section{Operational Sensitivity Hierarchy}
 
@@ -267,11 +299,13 @@ The result does not establish that gravity transmits the response coordinate, do
  \item Epistemic ladder: exact separation $\to$ statistical identifiability $\to$ resource closure $\to$ comparator uniqueness $\to$ theory interpretation.
 \end{enumerate}
 
-Planned tables: operational sensitivity levels; literature positioning; reviewer-facing claims/non-claims boundary.
+Planned tables: operational sensitivity levels; literature positioning; reviewer-facing claims/non-claims boundary; evidence-class promotion rule in Table~\ref{tab:evidence-promotion}.
 
 \section*{Reproducibility Note}
 
-Before submission, every numerical statement and every final plot/table must point to a canonical repository source and a frozen generation script or manifest. In particular, the Toy009/Toy010 rank, positivity, equality and response claims will not be treated as publication-final until an independent clean rerun is bound to explicit repository artifacts.
+Before submission, every numerical statement and every final plot/table must point to a canonical repository source and a frozen generation script or manifest. For each constructive Toy009/Toy010 claim, the frozen record must contain: (i) the exact code revision and immutable run/artifact identifier; (ii) all nondefault configuration values and either the random seed or a declaration of deterministic execution; (iii) the calibration/steering prescription and numerical precision/tolerance policy; (iv) singular values or an equivalent rank diagnostic together with the numerical-rank rule; (v) the normalized hidden direction; (vi) physical-state and positivity diagnostics; (vii) calibration-equality residuals; and (viii) the ordered and detector-aware response values evaluated on that same frozen direction.
+
+Any quantity calibrated to or compared with an external source additionally requires the authority record, convention and extraction rule for that source. A manuscript-level numerical statement is promotable only when all fields relevant to its evidence class in Table~\ref{tab:evidence-promotion} are frozen. Missing external authority does not invalidate the analytic theorem; it blocks only promotion of the affected external comparison or calibrated number.
 
 \bibliographystyle{unsrt}
 \bibliography{../../docs/PAPER_I_REFERENCES_WORKING}
