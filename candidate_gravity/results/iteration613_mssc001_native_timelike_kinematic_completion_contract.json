@@ -1,0 +1,73 @@
+{
+  "iteration": 613,
+  "date": "2026-09-08",
+  "model_readiness_percent": 24,
+  "classification": "PASS_ITER613_PROSPECTIVE_MSSC001_NATIVE_TIMELIKE_REST_FRAME_KINEMATIC_COMPLETION_CONTRACT__NON_RESIDUAL",
+  "scientific_scope": "prospective kinematic-definition freeze only; no scalar-pole roots, residues, comparator quotient, or Candidate residual evaluated",
+  "parent_authorities": [
+    "Iteration 167 pre-Candidate positive-timelike rest-frame source convention k=(omega,0,0,0), s=omega^2",
+    "Iteration 205 native linked-cut convention D_s F=Disc_s F/(2*pi*i), D_s log_R(-s)=1",
+    "Iteration 218 MSSC-001 minimally coupled scalar parent action and +--- metric convention",
+    "Iteration 368/588 exact three-mode q_s+q_a+q_b=0 fixture",
+    "Iteration 589 same-action K1/K2 normalization",
+    "Iteration 594 full routed 13-family cubic source object",
+    "Iteration 605 full source-level nonlinear Ward PASS",
+    "Iteration 611 minimal rank obstruction",
+    "Iteration 612 proof that two auxiliary same-parent constraints are absent from prior authority"
+  ],
+  "status_of_iteration167_precedent": "design precedent only: Iter167 is a distinct linear chi1R absorptive observable and is not retroactively claimed to be the Iter594/605 nonlinear bridge",
+  "new_versioned_contract": {
+    "contract_id": "MSSC001-NATIVE-S-KIN-V1",
+    "metric_signature": "+---",
+    "hard_channel_domain": "s>0",
+    "positive_frequency_branch": "omega=+sqrt(s)",
+    "rest_frame_axis": "e0=(1,0,0,0)",
+    "trajectory": "p0(s)=sqrt(s)*e0",
+    "fixed_under_D_s": [
+      "all three routed external mode four-vectors q_s,q_a,q_b from the exact Iter368/588 parent fixture",
+      "all three parent polarizations h_s,h_a,h_b",
+      "MSSC-001 mass m=0.7",
+      "K1/K2/K3 routing, signs, normalization and i0 prescription",
+      "positive-frequency rest-frame axis e0"
+    ],
+    "induced_scalar_data": {
+      "u(s)": "p0(s)^2=s",
+      "a_s(s)": "sqrt(s)*q_s^0",
+      "a_a(s)": "sqrt(s)*q_a^0",
+      "a_b(s)": "sqrt(s)*q_b^0=-(a_s(s)+a_a(s))"
+    },
+    "momentum_closure": "q_s+q_a+q_b=0 remains exact and implies a_s+a_a+a_b=0 for every s>0",
+    "generic_scalar_denominators": {
+      "D_i_plus(s)": "m^2-s-q_i^2-2*sqrt(s)*q_i^0",
+      "D_i_minus(s)": "m^2-s-q_i^2+2*sqrt(s)*q_i^0"
+    },
+    "derivative_formulas_frozen_before_root_evaluation": {
+      "dD_i_plus/ds": "-1-q_i^0/sqrt(s)",
+      "dD_i_minus/ds": "-1+q_i^0/sqrt(s)"
+    }
+  },
+  "anti_bias_freeze": {
+    "pole_roots_inspected_before_contract": false,
+    "residues_inspected_before_contract": false,
+    "candidate_projected_values_used_to_choose_trajectory": false,
+    "trajectory_selected_from_target_result": false,
+    "zero_fill": false,
+    "family_deletion": false
+  },
+  "explicit_nonclaims": [
+    "not a recovery of two previously hidden Iter205 invariants",
+    "not an identity proof between Iter167 chi1R and Iter205/Iter594 nonlinear T_cut",
+    "not scalar-pole support closure",
+    "not native Y/T_cut sign or normalization binding",
+    "not Source/Born subtraction",
+    "not a comparator-subtracted residual",
+    "not Candidate-Gravity consistency PASS or novelty"
+  ],
+  "all_13_source_families_retained": true,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "candidate_residual": false,
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "readiness_change": "0 percentage points; a missing observable/kinematic definition is now prospectively supplied, but no stable model-level rubric sector closes",
+  "next_gate": "Using only MSSC001-NATIVE-S-KIN-V1, derive and audit every retained scalar-pole root in s and the corresponding |partial_s D_A| Jacobian, including multiplicity/simple-root classification, without deleting K1^3 terms or changing the trajectory after seeing results."
+}
