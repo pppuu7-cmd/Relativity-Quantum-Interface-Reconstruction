@@ -48,7 +48,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: paper-i-v05-compiled
+          name: paper-i-v06-compiled
           path: |
             manuscripts/paper_I/main.pdf
             manuscripts/paper_I/main.log
