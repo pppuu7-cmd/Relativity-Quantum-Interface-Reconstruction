@@ -9,7 +9,7 @@
 Repository commits, validated raw Actions artifacts, recovery deltas, research logs, and this file are source of truth. Workflow colour alone is never scientific authority. Race-created newer repo state wins and authoritative iteration IDs are never reused.
 
 ## Current authority
-- Latest authoritative research iteration: **593**.
+- Latest authoritative research iteration: **594**.
 - Frozen Iter424 is **5/5 PASS**; post-Iter580 unresolved physical set is `[]`.
 - Iter581 exact15 `Tr U1^2` is raw-valid PASS.
 - Iter582 q2-resolved `D_s Gamma_{e=2}` assembly is PASS, non-residual.
@@ -21,7 +21,8 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Iter590 proves cubic source-response completeness requires K3 + six K1/K2 + six K1^3 families.
 - Iter591 raw-validates that local MSSC K3 is nonzero but ordinary finite hard-channel `D_s K3=0`; K3 is still retained in the full same-action source Ward tree until full gauge closure is tested.
 - Iter592 raw-validates that K1^3 is a nonzero meromorphic scalar-source tree family: it has scalar poles but no ordinary finite branch cut away from poles.
-- **Iter593 closes the attempted family-by-family source-to-`T_cut` projection negatively: under the frozen Iter183 split-invariant protocol, an individual K1^3 pole-discontinuity assignment is not itself a frozen observable. K1^3 must remain inside the full same-action source-completed response unless an independent same-parent map was frozen beforehand.**
+- Iter593 closes the attempted family-by-family source-to-`T_cut` projection negatively: under the frozen Iter183 split-invariant protocol, an individual K1^3 pole-discontinuity assignment is not itself a frozen observable. K1^3 must remain inside the full same-action source-completed response unless an independent same-parent map was frozen beforehand.
+- **Iter594 explicitly assembles the complete routed same-action cubic source object containing K3 + all six K1/K2 placements + all six ordered K1^3 chains. On both frozen loop probes it is finite, nonzero, and permutation-symmetric within the inherited Iter590 numerical envelope. This is an assembly PASS only, not yet a nonlinear Ward PASS.**
 
 ## Iter582 operator coordinate
 `D_s Gamma_e2(q^2) = +(i/2)D_s Tr U2 -(i/4)D_s Tr U1^2`, q2 buckets kept distinct:
@@ -89,6 +90,36 @@ Machine-readable authority:
 Classification:
 `PASS_SPLIT_INVARIANCE_AUDIT__INDIVIDUAL_K1CUBED_T_CUT_PROJECTION_NOT_A_FROZEN_OBSERVABLE__NON_RESIDUAL`.
 
+## Iter594 full routed assembly authority
+Reproducible code:
+`analysis/source_full_cubic_routed_assembly_iteration594.py`.
+
+Machine-readable result:
+`candidate_gravity/results/iteration594_full_cubic_routed_assembly.json`.
+
+Classification:
+`PASS_FULL_SAME_ACTION_ROUTED_CUBIC_SOURCE_ASSEMBLY_AND_PERMUTATION_SYMMETRY__NON_WARD_NON_RESIDUAL`.
+
+Frozen probe `p0=[0.43,-0.27,0.39,0.21]`:
+- `-G K3 G = +0.01812399093080123`;
+- six K1/K2 placements sum `-0.005276095685186276`;
+- six ordered K1^3 chains sum before the required minus sign `+0.0012068925861444435`;
+- full `d_abc G = +0.01164100265947051`;
+- K3 last-step change `5.395683899678261e-08`;
+- six-label permutation spread `6.734631775862088e-10`.
+
+Frozen probe `p0=[0.61,0.19,-0.31,0.47]`:
+- `-G K3 G = -0.0017882359820402566`;
+- six K1/K2 placements sum `+0.20405717388220662`;
+- six ordered K1^3 chains sum before the required minus sign `+0.12178043612382511`;
+- full `d_abc G = +0.08048850177634126`;
+- K3 last-step change `3.615857613326057e-08`;
+- permutation spread `1.0009177930925262e-09`.
+
+Fixture momentum closure is exactly `0.0`. The inherited Iter368 closure tolerance `1e-14` and Iter590 K3 numerical envelope `2e-7` were not weakened.
+
+Binding scope: this closes explicit complete-source assembly and permutation symmetry only. It is **not** a nonlinear Ward PASS, not Candidate-Gravity consistency PASS/FAIL, not a source-to-Iter582 match, not comparator identity, and not a comparator-subtracted residual.
+
 ## Stable readiness rubric
 - comparator foundation `24/25`
 - robust unique residual `0/20`
@@ -99,21 +130,21 @@ Classification:
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iter593 closes a real observable-definition ambiguity but does not create a matched comparator-subtracted residual or close a full rubric sector.
+Readiness change: **0 percentage points**. Iter594 closes a real hard assembly prerequisite but does not close a full readiness sector or create a robust comparator-subtracted residual.
 
 ## Exact next gate
-Assemble and Ward-test the **complete same-action MSSC cubic source response** as one object using Iter588 routing and Iter589 normalization:
+From the same MSSC-001 parent dynamics, derive and **prospectively freeze before numerical evaluation** the full cubic pure-gauge/Ward contraction target for the exact Iter594 routed 13-term object. Its inverse-propagator structure must reduce consistently to the already-authoritative Iter587 one-graviton Ward RHS. Then evaluate the full nonlinear Ward identity with both K3 and K1^3 retained.
 
-`K3 + six(K1-G-K2 / K2-G-K1 placements) + six ordered K1-G-K1-G-K1 chains`.
-
-The Ward test must preserve the Iter587 inverse-propagator RHS and must not remove K3 or K1^3 before the full source-level identity is checked. Only after the full source-completed object is controlled may a source-to-Iter582/native-linked map act on it. Any such map must act on the full observable; an individual K1^3 Born subtraction cannot be introduced post hoc.
+Only after the full source-level Ward gate is controlled may a source-to-Iter582/native-linked map act on the complete observable. Any such map must act on the full observable; an individual K1^3 Born subtraction cannot be introduced post hoc.
 
 Until that gate closes:
-- do not call the six K1/K2 placements the complete source response or complete discontinuity-bearing block;
+- do not call Iter594 a Ward PASS;
 - do not perform Source/Born subtraction;
-- do not map an incomplete source response into Iter582/comparator quotient;
+- do not map an incomplete or un-Ward-closed source response into Iter582/comparator quotient;
 - do not create `ANSATZ-003`;
 - do not run Fisher/resources.
+
+The fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remains **operational BLOCKED**.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. No post-hoc estimator, altered normalization, changed q2 grouping, premature Source/Born subtraction, threshold weakening, ansatz tuning, or unproved internal repartition. `ANSATZ-003` remains forbidden until a concrete robust comparator-subtracted residual survives the fixed quotient. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
