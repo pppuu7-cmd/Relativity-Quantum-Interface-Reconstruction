@@ -24,10 +24,16 @@ jobs:
       - name: Fail-closed raw inspection and persist run-specific authority candidate
         run: |
           python - <<'PY'
-          import hashlib,json,pathlib,shutil
-          hits=list(pathlib.Path('raw').rglob('result.json')); audits=list(pathlib.Path('raw').rglob('authority_audit.json'))
-          if len(hits)!=1 or len(audits)!=1: raise SystemExit(('artifact_layout_drift',[str(x) for x in hits],[str(x) for x in audits]))
-          raw=hits[0].read_bytes(); o=json.loads(raw); a=json.loads(audits[0].read_text()); got=hashlib.sha256(raw).hexdigest()
+          import hashlib,json,pathlib
+          candidates=[]
+          for ap in pathlib.Path('raw').rglob('authority_audit.json'):
+              try: a=json.loads(ap.read_text())
+              except Exception: continue
+              if a.get('authority_scope')=='ITER424_FULL_SPECTRUM_NUMERICAL_CLAUSES_FROM_RAW_VALID_ARTIFACTS__NON_PROMOTING':
+                  rp=ap.parent/'result.json'
+                  if rp.exists(): candidates.append((rp,ap,a))
+          if len(candidates)!=1: raise SystemExit(('spectral_authority_candidate_count',[(str(r),str(a)) for r,a,_ in candidates]))
+          rp,ap,a=candidates[0]; raw=rp.read_bytes(); o=json.loads(raw); got=hashlib.sha256(raw).hexdigest()
           if a.get('raw_result_integrity_valid') is not True or a.get('sha256')!=got: raise SystemExit(('audit_binding_failed',got,a))
           if o.get('stage')!='POST573_ITER424_FULL_SPECTRUM_FROM_RAW_ARTIFACTS__UNNUMBERED_COLLISION_SAFE': raise SystemExit(('stage_drift',o.get('stage')))
           allowed={'PASS_ITER424_FULL_SPECTRUM_NUMERICAL_CLAUSES__TENSOR11_STILL_BLOCKED__NON_PROMOTING','FAIL_ITER424_FULL_SPECTRUM_NUMERICAL_CLAUSE__NON_PROMOTING'}
