@@ -1,0 +1,43 @@
+{
+  "iteration": 626,
+  "date": "2026-09-09",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "classification": "PASS_ITER626_HISTORICAL_CTP_MEASUREMENT_AUTHORITY_AUDIT__GRAVITY_RETARDED_AND_LINKED_CTP_PROTOCOL_EXIST__MSSC_INTERNAL_SCALAR_COMPONENT_ASSIGNMENT_ABSENT__OPERATIONAL_BLOCKED_NON_RESIDUAL",
+  "audited_authorities": [
+    "Iteration 149 source-completed off-shell protocol: Minkowski interacting vacuum; retarded/in-in tree sector inherited from Iter147",
+    "Iteration 171 linked/amputated CTP cubic protocol: compare connected three-point functions after conditioning on/amputating the same measured two-point CTP kernel; r/a normalization h_+=r+a/2, h_-=r-a/2",
+    "Iteration 172 relation comparator: Gamma_arr/Gamma_aar/Gamma_aaa/WardLock coordinates in the Iter171 r/a convention",
+    "Iteration 625 internal scalar energy-sign census: five positive-energy roots and one negative-energy root"
+  ],
+  "authority_findings": {
+    "gravity_native_sector": "retarded/in-in CTP authority exists",
+    "linked_amputated_measurement_protocol": "exists at the gravitational observable level",
+    "ra_normalization": "exists for the gravitational cubic action/vertex convention",
+    "mssc_internal_scalar_plus_minus_assignment": "absent",
+    "mssc_internal_scalar_ra_component_assignment": "absent",
+    "combined_matter_gravity_generating_functional_with_probe_sources": "not found in the authoritative chain",
+    "root_by_root_scalar_line_component_map": "absent"
+  },
+  "key_result": "Historical CTP authority is insufficient to infer the contour/r-a component of the retained internal MSSC scalar lines. Therefore the negative-energy D_s^-(s=0.09) root cannot be hand-flipped, discarded, or assigned a retarded sign from the gravitational retarded convention alone.",
+  "logical_consequence": "A new prospectively versioned combined matter+gravity CTP measurement contract is required before any absolute N_native or native projection. It must be derived from one doubled generating functional and must specify probe-source branch assignments and the resulting internal scalar component algebra before seeing Candidate/comparator projected values.",
+  "not_claimed": [
+    "Candidate-Gravity consistency FAIL",
+    "Candidate-Gravity consistency PASS",
+    "exact comparator identity",
+    "regime-specific non-identifiability",
+    "near-degeneracy",
+    "novelty certificate",
+    "zero residual"
+  ],
+  "forbidden_shortcuts": [
+    "do not infer scalar-line retarded components from the fact that chi2R is retarded",
+    "do not flip D_s^-(0.09) by hand",
+    "do not discard the negative-energy root",
+    "do not fit N_native to Iter582 or comparator values",
+    "do not perform native projection, Source/Born subtraction, comparator quotient, ANSATZ-003, Fisher, or resources before the combined CTP contract closes"
+  ],
+  "MODEL_READINESS": "24%",
+  "readiness_change": "0 percentage points: the blocker is now authority-certified, but robust unique residual remains 0/20 and no additional readiness-rubric sector closed",
+  "next_gate": "Iteration627: prospectively freeze a combined matter+gravity Schwinger-Keldysh generating-functional contract Z[J_phi^+,J_phi^-,J_g^+,J_g^-] for the measured scalar-probe observable, including source insertion branches, r/a rotation, endpoint amputation, and the induced component of every retained internal scalar line; first require reduction to Iter149/171 gravitational CTP conventions before evaluating any Iter615 projected coefficient"
+}
