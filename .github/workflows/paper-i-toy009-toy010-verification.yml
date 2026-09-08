@@ -1,0 +1,55 @@
+name: paper-i-toy009-toy010-verification
+
+on:
+  push:
+    branches: [paper-I-v03-evidence-boundary]
+    paths:
+      - 'analysis/toy009_detector_aware_source_search.py'
+      - 'analysis/toy010_calibration_geometry_optimization.py'
+      - '.github/workflows/paper-i-toy009-toy010-verification.yml'
+  workflow_dispatch:
+
+jobs:
+  paper-i-certificate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install frozen numerical dependency
+        run: pip install numpy==2.1.3
+
+      - name: Record clean-run environment
+        run: |
+          mkdir -p paper_i_certificate
+          git rev-parse HEAD | tee paper_i_certificate/commit_sha.txt
+          python --version 2>&1 | tee paper_i_certificate/python_version.txt
+          python -c "import numpy as np; print(np.__version__)" | tee paper_i_certificate/numpy_version.txt
+          uname -a | tee paper_i_certificate/platform.txt
+
+      - name: Reproduce Toy009 source certificate
+        working-directory: analysis
+        run: |
+          set -o pipefail
+          python toy009_detector_aware_source_search.py | tee ../paper_i_certificate/toy009_stdout.txt
+
+      - name: Verify Toy010 calibration-steering certificate
+        working-directory: analysis
+        run: |
+          set -o pipefail
+          python toy010_calibration_geometry_optimization.py | tee ../paper_i_certificate/toy010_stdout.txt
+
+      - name: Hash certificate files
+        run: |
+          sha256sum paper_i_certificate/* | tee paper_i_certificate/SHA256SUMS.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paper-i-toy009-toy010-certificate
+          path: paper_i_certificate/
+          if-no-files-found: error
+          retention-days: 90
