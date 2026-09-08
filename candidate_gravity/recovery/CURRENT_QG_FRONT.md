@@ -10,7 +10,7 @@ Repository commits, validated Actions artifacts, recovery deltas, research logs 
 
 ## Current authority
 
-Latest authoritative research iteration: **624**.
+Latest authoritative research iteration: **625**.
 
 - Iter424 physical fallback: **5/5 PASS**.
 - Iter581 exact15 / complete `Tr U1^2`: raw-valid PASS.
@@ -19,22 +19,21 @@ Latest authoritative research iteration: **624**.
 - Iter605: full source-level nonlinear Ward consistency PASS.
 - Iter606: prospective source-to-native mapping contract PASS/non-residual.
 - Iter607: preserved scientific `BLOCKED` result.
-- Iter608: universal scalar-pole distribution law PASS.
+- Iter608: universal algebraic/Feynman-like scalar-pole distribution law PASS in its frozen `K+i0` scope.
 - Iter609–612: native bridge kinematic-rank obstruction localized; historical auxiliary constraints absent.
 - Iter613: prospective `MSSC001-NATIVE-S-KIN-V1` frozen before roots.
 - Iter614: six positive simple-root/Jacobian support points closed.
 - Iter615: six finite nonzero normalized source-side internal scalar-pole coefficients; independent implementations agree.
-- Iter616: exact q2 bucket identity and scalar endpoint amputation closed; native-binding ambiguity reduced to one common nonzero scalar `N_native`.
-- Iter617: historical-normalization authority audit PASS with negative answer: existing authority does not fix `N_native`.
-- Iter618–620: six-root projective source-shape / reproducibility / conditioning diagnostics PASS, normalization-invariant and non-promoting.
-- Iter621: authority graph/rank audit proves exactly one relative complex normalization DOF remains.
-- **Iter622: both computational sectors are derivatives with respect to the same direct metric perturbation `delta_g=kappa h_phys`; the explicit kappa power is stripped on both sides, so `N_native` is not an unknown power of Newton's constant.**
-- **Iter623: repository-level KG-start ledger frozen; six final dependency gates remain before a genuinely new KG ansatz may be created.**
-- **Iter624: source-vs-native functional-object audit proves that a generic Legendre-transform sign or Iter338 `+i` cannot by itself fix `N_native`; a concrete combined matter+gravity measurement-level CTP bridge is required.**
+- Iter616: exact q2 bucket identity and scalar endpoint amputation closed.
+- Iter617–621: historical/graph audits reduce the normalization problem, within the existing convention graph, to one relative complex scale `N_native`.
+- Iter622: source and connection numerical branches use the same direct `delta_g=kappa h_phys`; unknown powers of `kappa` are eliminated from the bridge.
+- Iter623: KG-start ledger frozen; six final dependency gates precede any genuinely new KG ansatz.
+- Iter624: MSSC source response and native gravitational `Gamma3` are different functional objects; a generic Legendre sign or Iter338 `+i` alone cannot bridge them.
+- **Iter625: CTP branch-orientation audit finds five positive-energy and one negative-energy internal scalar root. Therefore a one-common-`N_native` retarded binding is conditional on the actual CTP line/component assignment; a naive all-retarded conversion would generate a root-dependent sign.**
 
-## Frozen source support and projective authority
+## Frozen source support and projective data
 
-Strict ascending-s root order and normalized source-side coefficients:
+Strict ascending-s root order and Iter615 normalized source-side coefficients:
 
 1. `D_b^-(0.013028588574858)`: `-0.00024912100468199333`;
 2. `D_s^-(0.09)`: `+0.0007390333386357162`;
@@ -49,7 +48,7 @@ Iter618 projective ratios to the kinematically selected smallest-s anchor are:
 
 `[-2.966563737084728, -0.7800526753639322, -5.158207913624242, 2.997420912767025, 8.57973421373656]`.
 
-Any legitimate one-common-`N_native` bridge must preserve these root-by-root ratios exactly up to declared arithmetic precision. Distinct roots are never summed merely because they share a q2 bucket.
+These are authoritative for the frozen Iter608/615 pole convention. Any later common multiplicative bridge in the same source component must preserve them; if the CTP bridge selects a different scalar component/prescription, the affected source coefficients must be recomputed rather than hand-flipped.
 
 ## Exact q2 / endpoint / field-variable binding
 
@@ -71,31 +70,28 @@ scalar endpoint amputation is
 
 Only the two common external scalar propagators are removed; internal scalar poles, K3 and all K1^3 chains remain.
 
-The declared physical split is `g=eta+kappa h_phys`, hence `delta_g=kappa h_phys`. Iter270 connection geometry and Iter590 source geometry both introduce perturbation amplitudes directly into `g`, so stored coefficients on both sides are derivatives with respect to the same `delta_g`; an extra unknown kappa power is not part of `N_native`.
+The physical split is `g=eta+kappa h_phys`, hence `delta_g=kappa h_phys`. Iter270 connection geometry and Iter590 source geometry both add perturbations directly to `g`, so stored coefficients are derivatives with respect to the same `delta_g`; an extra unknown `kappa` power is not part of the remaining bridge.
 
-## Remaining native normalization blocker after Iter624
+## Iter624–625 measurement/CTP blocker
 
 Native authority is a gravitational retarded/1PI object, schematically
 
 `chi2R = - G_R Gamma3 G_R G_R`.
 
-Source authority is a third background-metric derivative of the MSSC scalar propagator `G_phi=K_phi[g]^-1`, followed by scalar endpoint amputation.
+Source authority is a third background-metric derivative of `G_phi=K_phi[g]^-1`, followed by scalar endpoint amputation. These are distinct functional objects, so no generic `W <-> Gamma` identity equates them.
 
-These are distinct functional objects. Therefore no generic `W <-> Gamma` Legendre identity, Iter338 effective-action `+i`, or the retarded minus sign alone may be used to set the missing normalization.
+Iter625 additionally evaluates the internal scalar energy orientation at every supported root:
 
-The remaining bridge is:
+- `D_b^-(0.013028588574858)`: `r0=+0.714142842854285`;
+- `D_s^-(0.09)`: `r0=-0.7`;
+- `D_a^-(0.09868572571657197)`: `r0=+0.714142842854285`;
+- `D_a^+(1.241314274283428)`: `r0=+0.714142842854285`;
+- `D_b^+(1.726971411425142)`: `r0=+0.714142842854285`;
+- `D_s^-(2.89)`: `r0=+0.7`.
 
-`N_native = one common dimensionless nonzero complex measurement/convention normalization`
+Thus the census is **5 positive / 1 negative**. A scalar retarded prescription is energy-oriented, whereas Iter608/615 used one frozen `K+i0` algebraic/Feynman-like rule. Therefore it is not yet authoritative that one common complex scalar converts all six Iter615 roots into the native retarded observable. The actual combined CTP measurement map must specify the `+/-` contour or `r/a` component of every retained internal scalar line.
 
-that must be derived from a **combined matter+gravity CTP/in-in measurement functional** specifying:
-
-1. the measured connected scalar-probe observable;
-2. the gravitational propagator/vertex/contact contraction entering that observable;
-3. exact amputation/projection onto the native Iter582 coordinate;
-4. all remaining i/sign/factorial conventions;
-5. preservation of the Iter618/619 projective ratios.
-
-Never set `N_native` to `1`, `+i`, or `-i` by convention and never fit it from Iter582/Iter615 values.
+This does not invalidate Iter608/615 in their declared scope and does not authorize flipping `D_s^-(0.09)` by hand. Depending on the CTP assignment, either one common bridge is recovered or the affected source coefficients must be recomputed under the correct component.
 
 ## Iter582 connection coordinate
 
@@ -105,17 +101,17 @@ Never set `N_native` to `1`, `+i`, or `-i` by convention and never fit it from I
 - `q^2=-0.34`: `-0.00371666346186323 i`;
 - `q^2=-0.14`: `-0.0007997265433511544 i`.
 
-These values are never used to fit `N_native`.
+These values are never used to choose the source/native bridge.
 
-## Repository-level KG start ledger — Iter623
+## Repository-level KG start ledger
 
-This is separate from `MODEL_READINESS`. A genuinely new KG may be instantiated only after the following chain closes:
+This is separate from `MODEL_READINESS`. A genuinely new KG may be instantiated only after:
 
-1. **KGSTART-1 — ACTIVE BLOCKER:** derive the dimensionless source-to-`Gamma3`/retarded-effective-action measurement bridge and unique common `N_native` prospectively.
+1. **KGSTART-1 — ACTIVE:** freeze the combined matter+gravity CTP measurement map, including scalar-line component/branch assignment, and derive the resulting absolute dimensionless source-to-native normalization without Candidate/comparator values.
 2. **KGSTART-2:** execute full native `Y/T_cut` projection with all roots/families retained, then freeze and perform matched Source/Born subtraction.
 3. **KGSTART-3:** execute the fixed applicable C0–C6 comparator quotient in the same observable/nuisance convention.
 4. **KGSTART-4:** obtain a robust nonzero comparator-subtracted algebraic residual.
-5. **KGSTART-5:** challenge that residual against known gravity / quantum-gravity model realizations under the same frozen RQIR funnel, without tuning the funnel to benchmark outcomes.
+5. **KGSTART-5:** challenge that residual against known gravity / quantum-gravity model realizations under the same frozen RQIR funnel, without tuning the funnel to outcomes.
 6. **KGSTART-6:** issue one decision: `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, or `NEW_REQUIRED`.
 
 Only `NEW_REQUIRED` authorizes creation of `ANSATZ-003` as a genuinely new Candidate Gravity model.
@@ -131,16 +127,16 @@ Only `NEW_REQUIRED` authorizes creation of `ANSATZ-003` as a genuinely new Candi
 
 **MODEL_READINESS: 24%**
 
-Readiness change through Iter624: **0 percentage points**. This is correct: the repository methodology has advanced, but no Candidate model residual/rubric sector has closed.
+Readiness change through Iter625: **0 percentage points**. This is correct: repository methodology advanced and a hidden CTP prerequisite was exposed, but no Candidate residual/model-rubric sector closed.
 
 ## Exact next admissible work
 
-Prospectively freeze the combined matter+gravity CTP measurement-level bridge. The lowest-order calibration must use already-authoritative common-field/source information (including the `delta_g` convention and same-parent scalar source vertex) and must be independent of Iter582/Iter615 numerical Candidate values. Only after this bridge is derived may full native projection be attempted.
+Construct the combined matter+gravity CTP bridge prospectively. First freeze the measured connected scalar-probe observable and the `+/-` or `r/a` component of each scalar/gravity line. Then derive the lower-order source normalization and cubic projection from the same functional. No Iter582/Iter615 numerical values may be used to choose the branch or normalization.
 
 ## Compute status / ANTI-IDLE
 
-No scientifically useful heavy numerical job is currently authorized. The active blocker is algebraic/functional-definition level; heavy computation cannot determine it and would manufacture authority.
+No heavy numerical job is currently authorized. The active gate is analytic/CTP-definition level; heavy computation cannot resolve an unspecified contour component.
 
 ## Retained guardrails
 
-Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative results are preserved. No post-hoc trajectory change, estimator, normalization fit, q2 regrouping, root summation, threshold weakening, ansatz tuning or unproved internal repartition. K1^3 remains retained. Repeated/coincident poles are never ordinary simple cuts. Source/Born subtraction remains `NOT_PERFORMED`. No comparator quotient before native binding closes. No `ANSATZ-003`; no Fisher/resources.
+Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative results are preserved. No post-hoc trajectory change, estimator, normalization fit, q2 regrouping, root summation, branch hand-flip, threshold weakening, ansatz tuning or unproved internal repartition. K1^3 remains retained. Repeated/coincident poles are never ordinary simple cuts. Source/Born subtraction remains `NOT_PERFORMED`. No comparator quotient before native binding closes. No `ANSATZ-003`; no Fisher/resources.
