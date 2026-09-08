@@ -15,8 +15,8 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - QUARTER manifest: **Iteration 529**, 16-grid with 4 exact HALF-overlap corners and 12 required new coordinates.
 - Frozen 12-rank QUARTER successor order: **Iteration 532**.
 - QUARTER ranks 1–10 raw authority: **Iterations 534, 538, 542, 545, 548, 550, 551, 556, 562, 565**, all raw-valid PASS and non-promoting.
-- Exact routing/assembly diagnostics through **Iteration 566** remain retained and non-promoting.
-- Latest authoritative research iteration: **Iteration 566**.
+- Exact routing/assembly diagnostics through **Iteration 567** remain retained and non-promoting.
+- Latest authoritative research iteration: **Iteration 567**.
 
 ## Latest raw support authority — Iteration 565
 Rank10 coordinate `(+1.25e-6,+2.5e-6)` raw-consumed from run `34165534613`, job `101875710349`, artifact `10034846108`, digest `sha256:707e4fffa3dddcac5eb5d7dc127afcb0afd8c13c85b99c230ea57abacdb3b97d`, head `358bcfc29494fbd615397ba72314e1e10d9e7417`.
@@ -36,7 +36,20 @@ Exact pre-registered properties:
 - common coordinate-wise bounded error gain is `9/(4 h^2)`;
 - independent equal-variance standard-deviation gain is `65/(72 h^2)` and variance gain `4225/(5184 h^4)`.
 
-Classification: `PASS_ITER424_QUARTER_FULL_STENCIL_GEOMETRY_ERROR_NORM_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`. This is stencil/assembly geometry only, not Candidate-Gravity model-level non-identifiability, near-degeneracy, comparator identity, consistency PASS/FAIL, or novelty evidence.
+Classification: `PASS_ITER424_QUARTER_FULL_STENCIL_GEOMETRY_ERROR_NORM_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
+
+## Iteration 567 exact stencil null-space/projector geometry
+The full 16-coordinate grid-data space decomposes relative to the single mixed-stencil functional `D_uv=<C,F>/(144 h^2)` as one visible direction plus a 15-dimensional kernel.
+
+Exact properties:
+- `rank(C)=1`, hence kernel dimension `15`;
+- additive row/column nuisance subspace dimension `7` lies inside that kernel;
+- therefore `8` further invisible directions remain modulo additive nuisance, and these can be non-additive;
+- `||C||_F^2=16900`, `||C||_F=130`;
+- orthogonal projector onto the sole stencil-visible mode is `P_C(F)=<C,F>/16900 * C`;
+- `||P_C(F)||_F=(72/65) h^2 |D_uv|`.
+
+Classification: `PASS_ITER424_QUARTER_STENCIL_NULLSPACE_PROJECTOR_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`. This is stencil-functional regime-specific non-identifiability only, not Candidate-Gravity model-level non-identifiability, near-degeneracy, comparator identity, consistency PASS/FAIL, or novelty evidence.
 
 ## QUARTER progress
 Raw-closed new coordinates: **10/12 = 83.333333%**.  
