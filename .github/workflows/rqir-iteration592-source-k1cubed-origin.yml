@@ -1,0 +1,54 @@
+name: RQIR Iter592 K1cubed analytic origin
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'analysis/source_k1cubed_origin_iteration592.py'
+      - '.github/workflows/rqir-iteration592-source-k1cubed-origin.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  k1cubed-origin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run K1cubed analytic-origin audit
+        run: python analysis/source_k1cubed_origin_iteration592.py
+      - name: Fail-closed raw result audit
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('results/iteration592_source_k1cubed_origin')
+          r=root/'result.json'; a=root/'authority_audit.json'
+          result=json.loads(r.read_text()); audit=json.loads(a.read_text())
+          sha=hashlib.sha256(r.read_bytes()).hexdigest(); failures=[]
+          if result.get('iteration')!=592: failures.append('iteration mismatch')
+          if result.get('classification')!='PASS_K1CUBED_MEROMORPHIC_ORIGIN__LINKED_T_CUT_PROJECTION_BLOCKED__NON_RESIDUAL': failures.append('classification mismatch')
+          if result.get('failures')!=[]: failures.append('scientific failures present')
+          if result.get('ordinary_finite_branch_cut_D_s_K1cubed')!='ZERO_AWAY_FROM_POLES': failures.append('ordinary branch-cut origin not closed')
+          if result.get('K1cubed_under_frozen_linked_T_cut')!='BLOCKED__NEEDS_EXPLICIT_SOURCE_TO_T_CUT_DISTRIBUTIONAL_MAP': failures.append('unsupported linked T_cut promotion')
+          if result.get('source_born_subtraction')!='NOT_PERFORMED': failures.append('premature Source/Born subtraction')
+          if result.get('ANSATZ_003')!='FORBIDDEN' or result.get('Fisher_resources')!='FORBIDDEN': failures.append('guardrail violation')
+          if audit.get('result_sha256')!=sha: failures.append('result sha mismatch')
+          if audit.get('classification')!='PASS_RAW_AUTHORITY_AUDIT_ITER592_K1CUBED_ORIGIN': failures.append('authority audit mismatch')
+          if failures: raise SystemExit('\n'.join(failures))
+          print('PASS fail-closed Iter592 raw audit',sha)
+          PY
+      - name: Upload raw artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter592-source-k1cubed-origin
+          path: results/iteration592_source_k1cubed_origin/
+          if-no-files-found: error
+          retention-days: 30
