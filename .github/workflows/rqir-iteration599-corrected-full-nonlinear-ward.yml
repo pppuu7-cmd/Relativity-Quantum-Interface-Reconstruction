@@ -63,3 +63,4 @@ jobs:
           path: results/iteration599_full_nonlinear_ward_corrected/
           if-no-files-found: error
           retention-days: 30
+      # Arm push after workflow creation; thresholds and scientific contract unchanged.
