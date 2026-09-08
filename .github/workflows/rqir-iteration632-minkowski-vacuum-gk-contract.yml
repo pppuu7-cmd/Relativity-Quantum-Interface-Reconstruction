@@ -1,0 +1,47 @@
+name: RQIR Iter632 Minkowski vacuum GK contract
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration632-minkowski-vacuum-gk-contract.yml'
+      - 'candidate_gravity/code/iteration632_minkowski_vacuum_gk_contract.py'
+      - 'candidate_gravity/results/iteration632_minkowski_vacuum_gk_contract.json'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Recompute prospective scalar-state contract
+        run: python candidate_gravity/code/iteration632_minkowski_vacuum_gk_contract.py > iteration632_runtime.json
+      - name: Fail-closed exact audit
+        run: |
+          python - <<'PY'
+          import json
+          R=json.load(open('iteration632_runtime.json'))
+          C=json.load(open('candidate_gravity/results/iteration632_minkowski_vacuum_gk_contract.json'))
+          failures=[]
+          if R != C: failures.append('runtime != committed result')
+          if R.get('contract_id')!='MSSC001-SCALAR-STATE-V1': failures.append('contract id mismatch')
+          if R.get('prospective_contract') is not True: failures.append('contract not prospective')
+          if R.get('state',{}).get('fitted_to_candidate') is not False: failures.append('state fit guardrail mismatch')
+          checks=R.get('exact_sign_checks',[])
+          if [x.get('GK_vac_over_2pii_delta') for x in checks] != [1,1]: failures.append('vacuum GK sign cancellation failed')
+          for k,v in [('candidate_values_used',False),('N_native_fit',False),('zero_fill',False),('source_born_subtraction','NOT_PERFORMED'),('native_projection','NOT_PERFORMED')]:
+            if R.get(k)!=v: failures.append(f'{k} guardrail mismatch')
+          A={'iteration':632,'classification':'PASS_RAW_AUTHORITY_AUDIT_ITER632_MINKOWSKI_VACUUM_GK_CONTRACT' if not failures else 'FAIL_RAW_AUTHORITY_AUDIT_ITER632_MINKOWSKI_VACUUM_GK_CONTRACT','failures':failures,'prospective_contract':True,'candidate_values_used':False,'zero_fill':False}
+          json.dump(A,open('iteration632_authority_audit.json','w'),indent=2)
+          if failures: raise SystemExit('\n'.join(failures))
+          PY
+      - name: Upload raw artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration632-minkowski-vacuum-gk-contract
+          path: |
+            iteration632_runtime.json
+            iteration632_authority_audit.json
+            candidate_gravity/results/iteration632_minkowski_vacuum_gk_contract.json
