@@ -1,6 +1,6 @@
 # RQIR Readiness Tracker
 
-**Updated:** 2026-08-31
+**Updated:** 2026-09-08
 
 Percentages are project-management readiness estimates, not statistical confidence measures.
 
@@ -39,7 +39,14 @@ Percentages are project-management readiness estimates, not statistical confiden
 
 - scientific scope: **CLOSED at Iteration 128 — 100%**;
 - submission readiness: **97%**;
-- remaining work is manuscript production and reviewer-style reproduction, not scientific-scope expansion.
+- primary submission target for the final hardening pass: **Quantum Science and Technology (QST)**;
+- the remaining **3%** is explicitly reserved for QST-oriented submission hardening, not scientific-scope expansion;
+- Paper III does **not** wait for Paper IV, Paper V, or Candidate Gravity completion;
+- canonical QST completion gate: `docs/PAPER_III_QST_SUBMISSION_GATE.md`.
+
+The 97% -> 100% promotion requires closure of the QST work package: concrete experimental architecture; resource-budget/assumption validation; publication-quality figures/tables; reviewer-style reproducibility binding; QST-specific claims/scope alignment; and the final journal-facing submission package.
+
+Recording the QST strategy alone does **not** raise the submission-readiness value: it remains **97%** until all final gates PASS.
 
 ### Candidate Gravity repository infrastructure
 
@@ -63,12 +70,11 @@ Canonical infrastructure includes:
 
 ### Concrete Candidate Gravity
 
-No concrete model is active yet. No QG-001…QG-010 state is PASS for a model.
-
-The next construction starts as `ANSATZ-*`; first scientific targets are QG-001 physical state space and QG-002 coherent matter–gravity dynamics.
+The historical infrastructure table above records the state at Iteration 132. For current model physics readiness, use `candidate_gravity/recovery/CURRENT_QG_FRONT.md` as the live authority rather than extrapolating from that table.
 
 ## Scope rules
 
 - Paper III stays frozen under P3-CLOSE-001 absent a real contradiction/failed regression/materially relevant new literature.
+- Paper III submission readiness is promoted from 97% to 100% only after all gates in `docs/PAPER_III_QST_SUBMISSION_GATE.md` pass.
 - Candidate Gravity evaluation process is frozen under CG-INFRA-009 before the first model; changes require methodological provenance rather than candidate-dependent tuning.
 - Failed/rejected model versions remain first-class results.
