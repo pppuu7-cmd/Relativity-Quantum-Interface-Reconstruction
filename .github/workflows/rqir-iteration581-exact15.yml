@@ -1,0 +1,78 @@
+name: RQIR Iter581 frozen Iter412 exact15
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/rqir-iteration581-exact15.yml'
+      - 'candidate_gravity/code/iteration581_execute_frozen_iteration412_exact15.py'
+      - 'candidate_gravity/contracts/iteration412_exact15_staged_authority_manifest_14of15.json'
+      - 'candidate_gravity/results/iteration574_iter424_full_spectrum_raw_consumption.json'
+      - 'candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_580.md'
+      - 'candidate_gravity/recovery/CURRENT_QG_FRONT.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONUNBUFFERED: '1'
+
+jobs:
+  exact15:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@v4
+
+      - name: Execute prospectively frozen Iteration412 exact15
+        run: |
+          set -euo pipefail
+          mkdir -p candidate_gravity/runtime/iteration581
+          python candidate_gravity/code/iteration581_execute_frozen_iteration412_exact15.py \
+            > candidate_gravity/runtime/iteration581/iteration581_result.json
+          cat candidate_gravity/runtime/iteration581/iteration581_result.json
+
+      - name: Fail-closed raw authority audit
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          p=Path('candidate_gravity/runtime/iteration581/iteration581_result.json')
+          raw=p.read_bytes(); obj=json.loads(raw)
+          failures=[]
+          if obj.get('iteration') != 581: failures.append('iteration_identity')
+          if obj.get('scientific_gate_pass') is not True: failures.append('scientific_gate_pass')
+          if obj.get('frozen_contract_iteration') != 412: failures.append('frozen_contract_iteration')
+          if obj.get('physical_promotion_decision_iteration') != 580: failures.append('promotion_decision_iteration')
+          if obj.get('exact_double_double_channel_count') != 15: failures.append('exact15_count')
+          if obj.get('double_double_q2_counts') != {'-1.0':5,'-0.14':5,'-0.34':5}: failures.append('q2_counts')
+          cls=obj.get('classification','')
+          if cls != 'PASS_EXECUTED_FROZEN_ITER412_TRU1SQ_EXACT15__PHYSICAL_INDEX2_FROM_ITER580_PROMOTION': failures.append('classification')
+          complete=obj.get('D_s_TrU1sq_complete_q2',{})
+          if set(complete) != {'-1.0','-0.14','-0.34'}: failures.append('complete_q2_keys')
+          digest=hashlib.sha256(raw).hexdigest()
+          audit={
+            'iteration':581,
+            'classification':'PASS_RAW_AUTHORITY_AUDIT_ITER581_EXACT15' if not failures else 'FAIL_RAW_AUTHORITY_AUDIT_ITER581_EXACT15',
+            'scientific_result_sha256':digest,
+            'raw_result_integrity_valid':not failures,
+            'failures':failures,
+            'head_sha':'${{ github.sha }}',
+            'run_id':'${{ github.run_id }}',
+            'run_attempt':'${{ github.run_attempt }}',
+          }
+          Path('candidate_gravity/runtime/iteration581/iteration581_authority_audit.json').write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(audit,indent=2,sort_keys=True))
+          if failures: raise SystemExit(2)
+          PY
+
+      - name: Upload raw exact15 authority artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter581-frozen-iter412-exact15
+          path: candidate_gravity/runtime/iteration581/
+          if-no-files-found: error
+          retention-days: 30
