@@ -1,0 +1,40 @@
+name: RQIR post573 crossrun artifact transport proof
+on:
+  push:
+    paths:
+      - 'candidate_gravity/triggers/post573_crossrun_transport_proof.trigger'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  proof:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download known raw-valid rank12 by official cross-run action
+        uses: actions/download-artifact@v5
+        with:
+          artifact-ids: '10037900278'
+          github-token: ${{ github.token }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: '34175330006'
+          path: candidate_gravity/artifacts/post573_crossrun_transport_proof/rank12
+      - name: Verify exact rank12 scientific result SHA
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          root=pathlib.Path('candidate_gravity/artifacts/post573_crossrun_transport_proof/rank12')
+          hits=list(root.rglob('result.json'))
+          if len(hits)!=1: raise SystemExit(('result_count_drift',[str(x) for x in hits]))
+          raw=hits[0].read_bytes(); got=hashlib.sha256(raw).hexdigest(); want='1f22924c06cb0f09b70d8586d6a9802f81d0cd131acd40d68368f3bdc689507b'
+          o=json.loads(raw)
+          if got!=want or o.get('scientific_gate_pass') is not True or len(o.get('rows',[]))!=80: raise SystemExit(('rank12_raw_validation_failed',got,o.get('classification'),len(o.get('rows',[]))))
+          (root.parent/'proof.json').write_text(json.dumps({'transport':'actions/download-artifact@v5','source_run_id':34175330006,'artifact_id':10037900278,'artifact_name':'rqir-post569-iter424-quarter-rank12-full-z-mp','result_sha256':got,'rows':80,'scientific_gate_pass':True,'transport_proof_pass':True},indent=2,sort_keys=True)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rqir-post573-crossrun-transport-proof
+          path: candidate_gravity/artifacts/post573_crossrun_transport_proof/
+          retention-days: 30
