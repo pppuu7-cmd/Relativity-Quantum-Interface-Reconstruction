@@ -1,0 +1,59 @@
+{
+  "iteration": 573,
+  "date": "2026-09-08",
+  "classification": "PASS_ITER424_AUTHORITY_MAPPING_AUDIT__DIRECT_INHERITED_PASS__TENSOR11_OPERATIONAL_BLOCKED__NON_PROMOTING",
+  "status": "PASS_SCOPED_AUDIT",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "target": {
+    "double_double_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0
+  },
+  "authorities_compared": {
+    "iteration421_contract": "candidate_gravity/contracts/iteration421_symmetric_cross_raw_consumption_addendum.json",
+    "iteration421_result": "candidate_gravity/results/iteration421_symmetric_cross_authority_summary.json",
+    "iteration424_contract": "candidate_gravity/results/iteration424_channel2_high_precision_fallback_contract.json",
+    "iteration572_result": "candidate_gravity/results/iteration572_iter424_complete_quarter_assembly.json"
+  },
+  "direct_original_integrand_clause": {
+    "status": "PASS_INHERITED_EXACT_PARENT_IDENTITY",
+    "threshold": 2e-6,
+    "iteration421_observed_max_scaled_error": 2.0658997659274425e-9,
+    "reason": "Iteration424 prospectively freezes the same parent dynamics, routing, numerator, sign and normalization as Iteration421. The Iteration421 direct-original check is a representation-identity check on that unchanged parent integrand, not a BASE/HALF/QUARTER derivative-fit statistic. Therefore the already raw-valid Iteration421 direct-original result is inherited without numerical reinterpretation.",
+    "guardrail": "This inheritance does not transfer Iteration421 mass-step or fit-residual status and does not by itself promote physical index2."
+  },
+  "tensor_degree_1_1_clause": {
+    "status": "OPERATIONAL_BLOCKED_NO_FROZEN_MAPPING",
+    "threshold": 2e-5,
+    "iteration421_definition": "fit_residuals_scaled.tensor11 from the symmetric-cross C(r,s) fit on squared radius multipliers [1,0.75,0.5,0.25]^2",
+    "iteration572_available_diagnostic": "raw pre-spectral 4x4 F(u,v) bilinear-fit residual",
+    "exact_identity": false,
+    "reason": "The Iteration421 tensor11 statistic is defined on cross-ratio values C(r,s) and a prospectively frozen squared-radius fit design. The Iteration572 diagnostic is defined on raw pre-spectral F(u,v) node values on the central4 QUARTER grid. These are different observables and different design matrices. No prospectively frozen algebraic map identifies the latter with the former, so substituting it would weaken/change the frozen gate post hoc.",
+    "classification": "OPERATIONAL_BLOCKED",
+    "not_classified_as": [
+      "consistency FAIL",
+      "exact comparator identity",
+      "regime-specific model non-identifiability",
+      "near-degeneracy",
+      "novelty certificate"
+    ]
+  },
+  "iteration424_clause_status_after_audit": {
+    "direct_original_integrand_crosscheck_le_2e-6": "PASS_INHERITED_FROM_RAW_VALID_ITERATION421",
+    "tensor_degree_1_1_fit_residual_le_2e-5": "OPERATIONAL_BLOCKED_NO_FROZEN_MAPPING",
+    "physical_mass_step_discrepancy_le_2e-5": "BLOCKED_PENDING_FULL_SPECTRUM_INTEGRATED_BASE_HALF_QUARTER_DS",
+    "fixed_node_mp80_mp120_le_2e-6": "BLOCKED_PENDING_FULL_SPECTRUM_INTEGRATED_BASE_HALF_QUARTER_DS",
+    "all_values_finite": "BLOCKED_PENDING_FULL_SPECTRUM_INTEGRATED_BASE_HALF_QUARTER_DS"
+  },
+  "next_gate": "Reconstruct full spectrum-integrated F(u,v) and physical D_s at BASE/HALF/QUARTER from already raw-valid support under the frozen Iteration407 spectral pipeline. In parallel, do not invent a new tensor11 mapping; recover an already prospectively frozen post-421 definition if one exists, otherwise keep the tensor11 clause operationally BLOCKED and physical index2 unpromoted.",
+  "guardrails": [
+    "NO_POSTHOC_GATE_REDEFINITION",
+    "NO_RAW_F_BILINEAR_SUBSTITUTION_FOR_TENSOR11",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_SMALLER_H",
+    "NO_ZERO_FILL",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
