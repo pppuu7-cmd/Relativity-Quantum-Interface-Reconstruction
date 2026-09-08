@@ -1,1 +1,2 @@
 Fail-closed raw consumption of completed frozen spectral run 34179921282 / job 101916751917 / artifact 10038557027. Green workflow alone is not authority. Persist result only after exact audit/result binding and frozen-clause schema checks.
+Repair attempt 2: select only the exact ITER424 full-spectrum authority_scope and sibling result.json inside the multipart support artifact; scientific result unchanged.
