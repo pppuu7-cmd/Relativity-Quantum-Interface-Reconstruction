@@ -1,0 +1,67 @@
+name: RQIR post574 tensor11 binding decision
+on:
+  push:
+    paths:
+      - 'candidate_gravity/triggers/post574_tensor11_binding_decision.trigger'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Resolve exact pre-result tensor11 binding and precision lineage
+        run: |
+          python - <<'PY'
+          import json,pathlib,re
+          root=pathlib.Path('candidate_gravity')
+          add=json.loads((root/'contracts/iteration421_symmetric_cross_raw_consumption_addendum.json').read_text())
+          c424=json.loads((root/'results/iteration424_channel2_high_precision_fallback_contract.json').read_text())
+          inv=json.loads((root/'results/post573_tensor11_precontract_inventory.json').read_text())
+          if add.get('frozen_before_iteration421_result') is not True or add['additional_required_criterion']['json_path']!='fit_residuals_scaled.tensor11' or float(add['additional_required_criterion']['maximum'])!=2e-5: raise SystemExit('iteration421_addendum_drift')
+          if c424.get('required_precision_evaluations_decimal_digits')!=[80,120] or float(c424['fail_closed_acceptance']['tensor_degree_1_1_fit_residual_max'])!=2e-5: raise SystemExit('iteration424_contract_drift')
+          candidates=[]
+          for p in (root/'results').glob('*.json'):
+              try:o=json.loads(p.read_text())
+              except:continue
+              if int(o.get('iteration',-1))==421 and isinstance(o.get('fit_residuals_scaled'),dict) and 'tensor11' in o['fit_residuals_scaled']:
+                  candidates.append((p,o))
+          # Some raw-consumption files wrap the scientific object; scan recursively but retain exact file provenance.
+          if not candidates:
+              def walk(x):
+                  if isinstance(x,dict):
+                      if int(x.get('iteration',-1))==421 and isinstance(x.get('fit_residuals_scaled'),dict) and 'tensor11' in x['fit_residuals_scaled']: yield x
+                      for v in x.values(): yield from walk(v)
+                  elif isinstance(x,list):
+                      for v in x: yield from walk(v)
+              for p in (root/'results').glob('*.json'):
+                  try:o=json.loads(p.read_text())
+                  except:continue
+                  for x in walk(o): candidates.append((p,x))
+          # Deduplicate by scientific tuple.
+          uniq={}
+          for p,o in candidates:
+              k=(o.get('classification'),float(o['fit_residuals_scaled']['tensor11']),float(o.get('max_stability_scaled',999)))
+              uniq.setdefault(k,[]).append(str(p))
+          src=(root/'code/iteration420_tru1sq_channel2_symmetric_cross_derivative.py').read_text()
+          float_lineage=all(s in src for s in ['np.array([1.0,0.75,0.5,0.25],float)','np.asarray([z for _,_,z in points],complex)','np.linalg.lstsq'])
+          mp_lineage=bool(re.search(r'mp\.workdps|mp\.mp\.dps|mpmath',src))
+          mapping_found=bool(inv.get('snapshot_hits')) and add['additional_required_criterion']['json_path']=='fit_residuals_scaled.tensor11'
+          status='MAPPING_FOUND__HIGH_PRECISION_TENSOR11_VALUE_UNCOMPUTED__NEXT_GATE_MP80_MP120' if mapping_found and float_lineage and not mp_lineage else 'BINDING_REQUIRES_MANUAL_REVIEW'
+          out={'schema':'rqir_post574_tensor11_binding_decision_v1','classification':status,'scientific_gate_pass':status.startswith('MAPPING_FOUND__'),'promotes_physical_coordinate':False,'MODEL_READINESS':'24%','pre_result_mapping':{'found':mapping_found,'json_path':'fit_residuals_scaled.tensor11','threshold':2e-5,'iteration421_addendum_frozen_before_result':True},'iteration424_precision_requirement_digits':[80,120],'iteration421_evaluator_precision_lineage':{'numpy_float_complex':float_lineage,'explicit_mpmath_high_precision':mp_lineage,'source':'candidate_gravity/code/iteration420_tru1sq_channel2_symmetric_cross_derivative.py'},'iteration421_result_candidates':[{'classification':k[0],'tensor11':k[1],'max_stability_scaled':k[2],'files':v} for k,v in uniq.items()],'interpretation':'The observable mapping existed pre-result, but the prospectively frozen Iteration424 fallback requires 80/120-digit evaluations. A legacy numpy float/complex tensor11 residual cannot by itself fill that high-precision clause. Preserve BLOCKED until the same frozen symmetric-cross/radii/design tensor11 observable is evaluated at MP80 and MP120, unless an explicit pre-result contract proves otherwise.','exact_next_gate':'Implement/evaluate the identical frozen symmetric-cross tensor degree-(1,1) residual at MP80 and MP120 using R=1e-5 and radius multipliers [1,0.75,0.5,0.25], same parent/routing/numerator/sign/normalization, no smaller h/nodes/threshold changes; fail closed if required support is unavailable.','guardrails':['NO_POSTHOC_OBSERVABLE_CHANGE','SAME_SYMMETRIC_CROSS','SAME_RADIUS_AND_MULTIPLIERS','SAME_TENSOR11_DESIGN','MP80_MP120_REQUIRED','NO_ZERO_FILL','NO_THRESHOLD_WEAKENING','NO_PHYSICAL_PROMOTION']}
+          pathlib.Path('candidate_gravity/results/post574_tensor11_binding_decision.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(out,indent=2,sort_keys=True))
+          if not out['scientific_gate_pass']: raise SystemExit(2)
+          PY
+      - name: Commit scoped binding decision
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add candidate_gravity/results/post574_tensor11_binding_decision.json
+          git commit -m 'RQIR post574: resolve tensor11 mapping versus precision lineage'
+          git pull --rebase origin main
+          git push origin HEAD:main
