@@ -1,0 +1,32 @@
+{
+  "iteration": 631,
+  "date": "2026-09-09",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "classification": "BLOCKED_ITER631_ITER627_CTP_CAUSAL_CONTRACT_DOES_NOT_FIX_SCALAR_KELDYSH_STATE__GK_REQUIRES_PROSPECTIVE_STATE_BOUNDARY_CONDITION__NON_RESIDUAL",
+  "authority_statement": {
+    "iter627_fixes": "r/a rotation, physical h_a=0, open measured G_phi^{ra}=G_R, causal matrix slots G_rr=G_K/G_ra=G_R/G_ar=G_A/G_aa=0",
+    "iter627_does_not_fix": "initial density matrix, occupation distribution, vacuum/Hadamard prescription, temperature, or an absolute G_K state normalization",
+    "therefore": "G_R/G_A plus the Iter627 causal slot structure do not uniquely determine G_K"
+  },
+  "nonuniqueness_witness": {
+    "rho_definition": "rho proportional to G_R-G_A (overall convention irrelevant to the witness)",
+    "states": [
+      {"label": "n0", "occupation_n": 0, "G_K_over_rho": 1},
+      {"label": "n1", "occupation_n": 1, "G_K_over_rho": 3}
+    ],
+    "same_G_R_G_A": true,
+    "distinct_G_K": true
+  },
+  "allowed_resolution": "prospectively freeze a same-parent scalar state/boundary-condition contract before inspecting closed-loop/native Candidate values; then compute G_K and the Iter630 closed retarded loop on Iter613 kinematics",
+  "forbidden_resolution": "do not set G_K=0, vacuum, thermal, or fit a distribution from Iter582/Candidate values without a prospective state contract",
+  "iter628_open_response": "PRESERVED",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "native_projection": "NOT_PERFORMED",
+  "candidate_values_used": false,
+  "zero_fill": false,
+  "failures": [],
+  "MODEL_READINESS": "24%",
+  "readiness_change": "0 percentage points",
+  "next_gate": "Iteration632: prospective same-parent scalar-state contract (or independent historical authority if found) defining the Minkowski/other admissible G_K boundary condition before numerical closed-loop pole/cut evaluation."
+}
