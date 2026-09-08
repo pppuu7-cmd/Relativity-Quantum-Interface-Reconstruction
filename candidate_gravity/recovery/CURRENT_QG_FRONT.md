@@ -10,7 +10,7 @@ Repository commits, validated Actions artifacts, recovery deltas, research logs 
 
 ## Current authority
 
-Latest authoritative research iteration: **620**.
+Latest authoritative research iteration: **621**.
 
 - Iter424 physical fallback: **5/5 PASS**.
 - Iter581 exact15 / complete `Tr U1^2`: raw-valid PASS.
@@ -27,8 +27,9 @@ Latest authoritative research iteration: **620**.
 - Iter616: exact q2 bucket identity and scalar endpoint amputation closed; native-binding ambiguity reduced to one common nonzero scalar `N_native`.
 - Iter617: historical-normalization authority audit PASS with negative answer: existing authority genuinely does not fix `N_native`.
 - Iter618: six-root projective source-shape certificate PASS; five independent root-by-root ratios are invariant under any common nonzero real/complex `N_native`.
-- Iter619: independent Iter615 representation reproduces the Iter618 projective ratios at floating-point level; diagnostic-only/non-promoting reproducibility PASS.
-- **Iter620: normalization-invariant projective conditioning diagnostic PASS/non-promoting; no threshold introduced and `N_native` remains BLOCKED.**
+- Iter619: independent Iter615 representation reproduces Iter618 ratios at floating-point level; diagnostic-only/non-promoting reproducibility PASS.
+- Iter620: normalization-invariant projective conditioning diagnostic PASS/non-promoting; no threshold introduced and `N_native` remains BLOCKED.
+- **Iter621: normalization-authority graph/rank audit PASS/non-residual; exactly two internally connected convention sectors and zero cross-sector bridge equations imply exactly one remaining relative complex normalization DOF, `N_native`.**
 
 ## Frozen native-s support and Iter615 coefficients
 
@@ -63,19 +64,23 @@ external scalar endpoint amputation is exactly
 
 `=-Kabc+sum_6(Ki G Kjk)-sum_6(Ki G Kj G Kk)`.
 
-Only common external scalar propagators are removed. Internal scalar poles, K3 and all K1^3 chains remain. Direct and termwise forms agree on the frozen probes to maximum absolute difference `8.673617379884035e-19`.
+Only common external scalar propagators are removed. Internal scalar poles, K3 and all K1^3 chains remain. Direct and termwise forms agree on frozen probes to maximum absolute difference `8.673617379884035e-19`.
 
-## Iter617 exact minimal blocker
+## Iter617–621 exact minimal normalization blocker
 
 Existing authority fixes connection outer `+i` (Iter338), retarded gravitational response `chi2R=-G_R Gamma3 G_R G_R` (Iter147/149), `g=eta+kappa h` source convention (Iter149/218), source-internal relative factors (Iter589/594), q2 identity and scalar endpoint amputation (Iter588/616).
 
-But there is no frozen equation mapping the scalar-endpoint-amputated MSSC probe response to the gravitational retarded/1PI `Gamma3` convention with an absolute phase/coupling normalization. Iter151 explicitly avoided importing an incompatible amputated-vertex normalization; repository history contains no prior Legendre/generating-functional/1PI bridge.
+But there is no frozen equation mapping the scalar-endpoint-amputated MSSC probe response to the gravitational retarded/1PI `Gamma3` convention with an absolute phase/coupling normalization. Iter151 explicitly avoided importing an incompatible amputated-vertex normalization; Iter617 found no prior Legendre/generating-functional/1PI bridge.
+
+Iter621 makes this a graph/rank statement. The MSSC source authority is one connected normalization component; the native `Gamma3/chi2R/connection` authority is a second connected normalization component; there are zero frozen cross-sector bridge equations. Writing their nonzero complex scales as `(lambda_source, lambda_native)` and quotienting one simultaneous common convention leaves exactly one relative complex degree of freedom
+
+`N_native = lambda_native/lambda_source in C*`.
 
 Therefore
 
-`N_native = BLOCKED__NOT_DERIVABLE_FROM_EXISTING_REPOSITORY_AUTHORITY`.
+`N_native = BLOCKED__ONE_COMMON_COMPLEX_CROSS_SECTOR_SCALE_NOT_DERIVABLE_FROM_EXISTING_REPOSITORY_AUTHORITY`.
 
-Never set `N_native` to `+i`, `-i`, `1`, fit it from Candidate values, or tune it per root/q2 bucket.
+This is exact in scope: there is not a hidden family of root-specific or q2-specific normalizations. Any future bridge requiring different normalizations by root or q2 bucket is fail-closed incompatible with the frozen authority graph. Never set `N_native` to `+i`, `-i`, `1`, fit it from Candidate values, or tune it per root/q2 bucket.
 
 ## Iter618–620 projective source-shape authority
 
@@ -89,17 +94,11 @@ The anchor is the pre-coefficient, kinematically selected smallest-s root `D_b^-
 
 Raw source sign pattern: `[-,+,+,+,-,-]`.
 
-These ratios are invariant under one common nonzero `N_native`. Direct scale tests under `2.5`, `-3`, `+i`, `2-1.5i` drift by at most `8.881784197001252e-16`.
+These ratios are invariant under one common nonzero `N_native`. Direct scale tests under `2.5`, `-3`, `+i`, `2-1.5i` drift by at most `8.881784197001252e-16`. Independent Iter615 recovery reproduces them with maximum absolute ratio difference `5.329070518200751e-15` and maximum relative ratio difference `6.211230307890725e-16`.
 
-The independent Iter615 recovery representation reproduces them with maximum absolute ratio difference `5.329070518200751e-15` and maximum relative ratio difference `6.211230307890725e-16`.
+Iter620 threshold-free componentwise condition numbers are `[1.227051600482995, 1.093790319820292, 1.0, 1.272764987610942, 2.45679285736057, 1.279568269456018]`; minimum cancellation margin is `0.40703472293319004` at `D_b^+`; absolute projective coefficient dynamic range is `10.998916463857647`.
 
-Iter620 adds a threshold-free componentwise conditioning diagnostic. Define
-
-`M=|A_aggregate|/(|A_pair|+sum|A_K1cubed|)`, `kappa=1/M`.
-
-Rootwise `kappa` values are `[1.227051600482995, 1.093790319820292, 1.0, 1.272764987610942, 2.45679285736057, 1.279568269456018]`. The minimum cancellation margin is `0.40703472293319004` at `D_b^+`; the absolute projective coefficient dynamic range is `10.998916463857647`.
-
-This diagnostic is scale-invariant and non-promoting. It does not authorize dropping, rescaling, regrouping or summing roots. Any future common-`N_native` bridge that changes root-by-root ratios is implementation/projection corruption, not a physical residual.
+These diagnostics are non-promoting. They do not authorize dropping, rescaling, regrouping or summing roots.
 
 ## Iter582 connection coordinate
 
@@ -122,21 +121,19 @@ These values are never used to fit `N_native`.
 
 **MODEL_READINESS: 24%**
 
-Readiness change through Iter620: **0 percentage points**. Reproducibility, normalization-invariant source shape and conditioning are stronger, but no robust comparator-subtracted residual or complete readiness sector closed.
+Readiness change through Iter621: **0 percentage points**. The blocker is now rank-certified and minimally parameterized, but no robust comparator-subtracted residual or complete readiness sector closed.
 
 ## Exact next admissible work
 
-Preserve `N_native` as the minimal native-binding blocker and do not revise Iter606/616 normalization after seeing Candidate values.
+Perform an independent, non-biasing derivation/audit of the missing source-to-`Gamma3` absolute phase/coupling bridge. Only a prospectively stated generating-functional/Legendre/in-in convention bridge may connect the two normalization components. It must derive one common nonzero complex `N_native` without Candidate/comparator values and preserve the Iter618/619 projective ratios exactly.
 
-Only normalization-invariant diagnostics or an independent non-biasing derivation/audit of the missing source-to-`Gamma3` absolute phase/coupling bridge are allowed. No value-dependent tolerance may be invented.
+If such a bridge does not follow from the stated parent dynamics and conventions, retain operational `BLOCKED`; do not choose a conventional value merely to continue.
 
-Full native projection, Source/Born subtraction and the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain forbidden until an independently justified source-to-Gamma normalization authority exists.
+Full native projection, Source/Born subtraction and the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain forbidden until this independently justified bridge exists.
 
 ## Compute status / ANTI-IDLE
 
-Useful Actions `queued=0`, `in_progress=0` at the Iter620 check. No scientifically useful heavy job is authorized: the remaining gate is algebraic/convention-level and depends on an absent source-to-`Gamma3` absolute normalization authority. A heavy numerical run cannot determine that missing bridge and would manufacture authority. Therefore ANTI-IDLE condition (b) is satisfied: the next model gate is explicitly BLOCKED by a prerequisite and no other independent model-promoting computational gate is currently admissible.
-
-The latest automatic Iter581 exact15 path-trigger from the Iter619 front update completed with `failure`; it is a stale already-closed workflow and creates no new scientific authority.
+No scientifically useful heavy job is authorized. The gate is algebraic/convention-level; a numerical workflow cannot determine a missing cross-sector derivation and would manufacture authority. The Iter621 reproducible graph audit is lightweight and value-independent.
 
 ## Retained guardrails
 
