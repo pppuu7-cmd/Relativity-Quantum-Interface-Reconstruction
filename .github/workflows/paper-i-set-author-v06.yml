@@ -1,0 +1,33 @@
+name: paper-i-set-author-v06
+
+on:
+  push:
+    branches: [paper-I-v03-evidence-boundary]
+    paths:
+      - '.github/workflows/paper-i-set-author-v06.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: paper-I-v03-evidence-boundary
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Insert author metadata
+        run: python manuscripts/paper_I/set_author_metadata.py
+      - name: Validate and commit
+        run: |
+          git diff --check
+          git diff -- manuscripts/paper_I/main.tex
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add manuscripts/paper_I/main.tex
+          git commit -m 'paper I v0.6: set Aleksey Buyanov author metadata'
+          git push origin HEAD:paper-I-v03-evidence-boundary
