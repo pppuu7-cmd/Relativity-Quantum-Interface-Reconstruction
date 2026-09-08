@@ -1,0 +1,60 @@
+name: paper-i-compile
+
+on:
+  push:
+    branches: [paper-I-v03-evidence-boundary]
+    paths:
+      - 'manuscripts/paper_I/main.tex'
+      - 'docs/PAPER_I_REFERENCES_WORKING.bib'
+      - '.github/workflows/paper-i-compile.yml'
+  workflow_dispatch:
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install TeX toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            latexmk \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-recommended
+
+      - name: Compile Paper I
+        working-directory: manuscripts/paper_I
+        run: |
+          set -o pipefail
+          latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error main.tex 2>&1 | tee paper_i_compile_stdout.txt
+
+      - name: Check unresolved references and citations
+        working-directory: manuscripts/paper_I
+        run: |
+          set -o pipefail
+          ! grep -E "LaTeX Warning: (Reference|Citation).*undefined|There were undefined references|There were undefined citations" main.log
+          ! grep -E "Warning--I didn't find a database entry" main.blg
+
+      - name: Record compile authority
+        working-directory: manuscripts/paper_I
+        run: |
+          git rev-parse HEAD > paper_i_compile_commit.txt
+          sha256sum main.pdf main.tex ../../docs/PAPER_I_REFERENCES_WORKING.bib > paper_i_compile_SHA256SUMS.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paper-i-v05-compiled
+          path: |
+            manuscripts/paper_I/main.pdf
+            manuscripts/paper_I/main.log
+            manuscripts/paper_I/main.blg
+            manuscripts/paper_I/main.bbl
+            manuscripts/paper_I/paper_i_compile_stdout.txt
+            manuscripts/paper_I/paper_i_compile_commit.txt
+            manuscripts/paper_I/paper_i_compile_SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 90
