@@ -58,3 +58,4 @@ jobs:
           path: results/iteration599_full_nonlinear_ward_symmetric_route/
           if-no-files-found: error
           retention-days: 30
+      # Arming update: workflow now exists on the parent revision before this push.
