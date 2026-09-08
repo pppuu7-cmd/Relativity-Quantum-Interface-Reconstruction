@@ -1,0 +1,49 @@
+name: RQIR Iter602 endpoint-corrected full nonlinear Ward
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'analysis/nonlinear_ward_full_response_iteration602.py'
+      - '.github/workflows/rqir-iteration602-full-ward-endpoint-corrected.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  full-ward:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numpy
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Run Iter602 full Ward evaluator
+        run: python analysis/nonlinear_ward_full_response_iteration602.py
+      - name: Fail-closed raw audit
+        if: always()
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('results/iteration602_full_nonlinear_ward_endpoint_corrected')
+          r=root/'result.json'; a=root/'authority_audit.json'
+          if not r.exists() or not a.exists(): raise SystemExit('missing raw output')
+          R=json.loads(r.read_text()); A=json.loads(a.read_text()); sha=hashlib.sha256(r.read_bytes()).hexdigest()
+          if A.get('result_sha256')!=sha: raise SystemExit('sha mismatch')
+          print('ITER602_CLASSIFICATION',R.get('classification'))
+          print('ITER602_FAILURES',len(R.get('failures',[])))
+          print('ITER602_RESULT_SHA256',sha)
+          PY
+      - name: Upload raw artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter602-full-ward-endpoint-corrected
+          path: results/iteration602_full_nonlinear_ward_endpoint_corrected/
+          if-no-files-found: error
+          retention-days: 30
