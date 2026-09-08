@@ -1,0 +1,32 @@
+{
+  "iteration": 632,
+  "date": "2026-09-09",
+  "contract_id": "MSSC001-SCALAR-STATE-MINKOWSKI-VACUUM-V1",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "classification": "PASS_ITER632_PROSPECTIVE_MSSC001_MINKOWSKI_VACUUM_KELDYSH_STATE_CONTRACT__NON_RESIDUAL",
+  "prospective_freeze": {
+    "flat_minkowski_parent": true,
+    "zero_temperature": true,
+    "poincare_invariant": true,
+    "hadamard_positive_energy": true,
+    "candidate_values_used": false,
+    "normalization_fit_used": false,
+    "state_chosen_before_closed_loop_results": true,
+    "GK_relation": "G_K(k)=sgn(k0)*(G_R(k)-G_A(k))"
+  },
+  "spectral_definition": "rho(k)=G_R(k)-G_A(k) in the already frozen Iter627 propagator convention",
+  "statistical_component": "G_K(k)=sgn(k0)*rho(k)",
+  "occupation": "n_B(|k0|)=0",
+  "consequence_for_iter630": "closed retarded K3/K1K2/K1^3 loop families now have a non-arbitrary same-parent G_K state definition; numerical loop/cut evaluation is authorized next",
+  "iter628_open_response": "PRESERVED_SEPARATE_OBSERVABLE_AUTHORITY",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "native_projection": "NOT_PERFORMED",
+  "candidate_values_used": false,
+  "normalization_fit_used": false,
+  "zero_fill": false,
+  "failures": [],
+  "MODEL_READINESS": "24%",
+  "readiness_change": "0 percentage points",
+  "next_gate": "Iteration633: derive the closed retarded scalar-loop pole/cut support and integration measure for K3, K1/K2 and K1^3 under Iter613 kinematics + Iter630 causal traces + this frozen vacuum G_K, before any native Y/T_cut projection or Source/Born subtraction."
+}
