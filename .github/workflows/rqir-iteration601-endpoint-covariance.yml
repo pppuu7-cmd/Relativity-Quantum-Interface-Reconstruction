@@ -1,0 +1,53 @@
+name: RQIR Iter601 endpoint covariance matrix
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'analysis/source_endpoint_covariance_matrix_iteration601.py'
+      - '.github/workflows/rqir-iteration601-endpoint-covariance.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  endpoint-covariance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numpy
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Run Iter601 endpoint covariance audit
+        run: python analysis/source_endpoint_covariance_matrix_iteration601.py
+      - name: Fail-closed raw audit
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('results/iteration601_endpoint_covariance_matrix')
+          r=root/'result.json'; a=root/'authority_audit.json'
+          R=json.loads(r.read_text()); A=json.loads(a.read_text())
+          sha=hashlib.sha256(r.read_bytes()).hexdigest()
+          bad=[]
+          if R.get('iteration')!=601: bad.append('iteration mismatch')
+          if R.get('classification')!='PASS_SCALAR_ENDPOINT_COVARIANCE_MATRIX_REALIZATION_REPRODUCES_ITER587_ANCHOR__NON_RESIDUAL': bad.append('scientific classification not PASS')
+          if R.get('failures')!=[]: bad.append('failures nonempty')
+          if R.get('source_born_subtraction')!='NOT_PERFORMED': bad.append('premature Source/Born')
+          if R.get('ANSATZ_003')!='FORBIDDEN': bad.append('ANSATZ guardrail')
+          if A.get('result_sha256')!=sha: bad.append('sha mismatch')
+          if A.get('classification')!='PASS_RAW_AUTHORITY_AUDIT_ITER601_ENDPOINT_COVARIANCE': bad.append('audit not PASS')
+          if bad: raise SystemExit('\n'.join(bad))
+          print('PASS Iter601 fail-closed raw audit',sha)
+          PY
+      - name: Upload raw artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter601-endpoint-covariance
+          path: results/iteration601_endpoint_covariance_matrix/
+          if-no-files-found: error
+          retention-days: 30
