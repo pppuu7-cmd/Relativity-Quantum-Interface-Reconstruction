@@ -1,0 +1,52 @@
+name: RQIR Iter604 prospective lattice convergence contract
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'candidate_gravity/contracts/ITERATION604_FINITE_LATTICE_BOUNDARY_CONVERGENCE_CONTRACT.md'
+      - 'candidate_gravity/results/iteration603_lattice_diagnosis_raw_consumption.json'
+      - 'analysis/finite_lattice_boundary_contract_iteration604.py'
+      - '.github/workflows/rqir-iteration604-lattice-contract.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Iter604 prospective contract audit
+        run: python analysis/finite_lattice_boundary_contract_iteration604.py
+      - name: Fail-closed raw audit
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('results/iteration604_finite_lattice_contract')
+          r=root/'result.json'; a=root/'authority_audit.json'
+          R=json.loads(r.read_text()); A=json.loads(a.read_text())
+          sha=hashlib.sha256(r.read_bytes()).hexdigest(); bad=[]
+          if R.get('iteration')!=604: bad.append('iteration mismatch')
+          if R.get('classification')!='PASS_PROSPECTIVE_FINITE_LATTICE_BOUNDARY_CONVERGENCE_CONTRACT__NON_RESIDUAL': bad.append('contract classification mismatch')
+          if R.get('scientific_gate_pass') is not True: bad.append('contract audit did not pass')
+          if R.get('candidate_residual') is not False: bad.append('contract gate improperly residual')
+          if R.get('model_readiness_percent')!=24: bad.append('readiness drift')
+          if A.get('result_sha256')!=sha: bad.append('sha mismatch')
+          if A.get('failures')!=[]: bad.append('authority audit failures')
+          if bad: raise SystemExit('\n'.join(bad))
+          print('PASS Iter604 prospective lattice contract raw audit',sha)
+          PY
+      - name: Upload raw artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter604-prospective-lattice-contract
+          path: results/iteration604_finite_lattice_contract/
+          if-no-files-found: error
+          retention-days: 30
