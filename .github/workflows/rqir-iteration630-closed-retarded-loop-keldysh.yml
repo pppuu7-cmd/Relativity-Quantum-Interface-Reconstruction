@@ -1,0 +1,49 @@
+name: RQIR Iter630 closed retarded loop Keldysh structure
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration630-closed-retarded-loop-keldysh.yml'
+      - 'candidate_gravity/code/iteration630_closed_retarded_loop_keldysh_gate.py'
+      - 'candidate_gravity/results/iteration630_closed_retarded_loop_keldysh_gate.json'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Recompute exact causal matrix gate
+        run: python candidate_gravity/code/iteration630_closed_retarded_loop_keldysh_gate.py > iteration630_runtime.json
+      - name: Fail-closed exact audit
+        run: |
+          python - <<'PY'
+          import json
+          R=json.load(open('iteration630_runtime.json'))
+          C=json.load(open('candidate_gravity/results/iteration630_closed_retarded_loop_keldysh_gate.json'))
+          failures=[]
+          if R != C: failures.append('runtime != committed result')
+          S=R.get('closed_trace_causal_support',{})
+          if S.get('K3_one_a_contact')!='G_K': failures.append('K3 contact causal support mismatch')
+          for k in ('K1K2_one_a_one_r','K1K2_reverse_order'):
+            if S.get(k)!='G_K*G_A + G_K*G_R': failures.append(k+' mismatch')
+          expected='G_K*G_A^2 + G_K*G_R*G_A + G_K*G_R^2'
+          for k in ('K1cubed_arr','K1cubed_rar','K1cubed_rra'):
+            if S.get(k)!=expected: failures.append(k+' mismatch')
+          for k,v in [('candidate_values_used',False),('N_native_fit',False),('zero_fill',False),('source_born_subtraction','NOT_PERFORMED'),('native_projection','NOT_PERFORMED')]:
+            if R.get(k)!=v: failures.append(f'{k} guardrail mismatch')
+          A={'iteration':630,'classification':'PASS_RAW_AUTHORITY_AUDIT_ITER630_CLOSED_RETARDED_LOOP_REQUIRES_GK' if not failures else 'FAIL_RAW_AUTHORITY_AUDIT_ITER630_CLOSED_RETARDED_LOOP_REQUIRES_GK','failures':failures,'closed_retarded_loop_requires_G_K':True,'candidate_values_used':False,'zero_fill':False}
+          json.dump(A,open('iteration630_authority_audit.json','w'),indent=2)
+          if failures: raise SystemExit('\n'.join(failures))
+          PY
+      - name: Upload raw artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration630-closed-retarded-loop-keldysh
+          path: |
+            iteration630_runtime.json
+            iteration630_authority_audit.json
+            candidate_gravity/results/iteration630_closed_retarded_loop_keldysh_gate.json
