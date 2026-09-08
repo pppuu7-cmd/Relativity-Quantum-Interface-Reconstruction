@@ -1,0 +1,39 @@
+{
+  "iteration": 600,
+  "date": "2026-09-08",
+  "model_readiness_percent": 24,
+  "classification": "BLOCKED_ITER599_FULL_WARD_NUMBERS_NONAUTHORITATIVE_BECAUSE_MANDATORY_ITER587_ANCHOR_FAILS__ENDPOINT_COVARIANCE_REALIZATION_DIAGNOSIS_REQUIRED",
+  "scientific_consistency_fail": false,
+  "operational_blocked": true,
+  "parent_raw_result": "candidate_gravity/results/iteration599_corrected_full_nonlinear_ward/result.json",
+  "parent_raw_result_sha256": "9bafe4cf47c35e8a5e2537d94605e5f0e54345bc28ef03af16c9b7e3675ac855",
+  "canonical_run": 34236758448,
+  "canonical_job": 102096346284,
+  "canonical_artifact": 10060216987,
+  "artifact_digest": "sha256:577bb2d4a8f56f24f86aecdfb4abc6e9616d0a9a28bfb3bae40330505b0eed3d",
+  "mandatory_anchor_tolerance": 2e-11,
+  "anchor_fail_examples": {
+    "s_xi0": 2.083333333333334,
+    "a_xi0": 0.4395604395604424,
+    "a_xi1": 0.1098901098901106,
+    "a_xi2": 0.1098901098901106,
+    "b_xi0": 0.7407407407407341,
+    "b_xi1": 0.1234567901234587,
+    "b_xi2": 0.1234567901234587
+  },
+  "diagnostic_full_ward_max_abs": 0.13675071724815208,
+  "diagnostic_full_ward_max_last_step": 0.006078581018494812,
+  "authority_rule": "Iteration596 states that failure of the spectator-free reduction to Iter587 invalidates the numerical nonlinear Ward evaluation. Therefore Iter599 cubic rows are retained diagnostics, not Candidate-Gravity consistency FAIL authority.",
+  "preserved_valid_facts": [
+    "Iter599 uses the exact per-gauge symmetric scalar route p=-q_g/2,pprime=+q_g/2",
+    "Iter599 retains K3 + six K1/K2 + six ordered K1^3 source families",
+    "Iter599 Iter594 non-Ward assembly cross-check remains numerically consistent",
+    "Iter599 raw artifact was consumed fail-closed"
+  ],
+  "source_born_subtraction": "NOT_PERFORMED",
+  "source_to_iter582_map": "NOT_PERFORMED",
+  "candidate_residual": false,
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "next_gate": "derive and prospectively freeze the scalar endpoint/covariance matrix realization from Delta_xi phi(k)=int xi(l)(k-l).phi(k-l), including row/column momentum orientation and signs, and require its one-leg matrix identity to reproduce Iter587 exactly on all three frozen symmetric routes before any cubic Ward rerun"
+}
