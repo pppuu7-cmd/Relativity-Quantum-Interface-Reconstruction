@@ -21,19 +21,28 @@
   "iter368_iter588_fixture_K2_values": [
     {
       "K2_mixed_same_action_normalization": 0.017288072919771053,
-      "pair": ["a", "b"],
+      "pair": [
+        "a",
+        "b"
+      ],
       "singleton": "s",
       "source_q2": 1.0
     },
     {
       "K2_mixed_same_action_normalization": 0.0053626356708712805,
-      "pair": ["s", "b"],
+      "pair": [
+        "s",
+        "b"
+      ],
       "singleton": "a",
       "source_q2": 0.14
     },
     {
       "K2_mixed_same_action_normalization": 0.014363470813301032,
-      "pair": ["s", "a"],
+      "pair": [
+        "s",
+        "a"
+      ],
       "singleton": "b",
       "source_q2": 0.33999999999999997
     }
