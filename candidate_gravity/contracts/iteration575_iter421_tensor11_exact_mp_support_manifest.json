@@ -1,0 +1,89 @@
+{
+  "iteration": 575,
+  "date": "2026-09-08",
+  "classification": "PASS_PROSPECTIVE_ITER421_TENSOR11_EXACT_MP_SUPPORT_MANIFEST__NON_PROMOTING",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "purpose": "Reproduce the already prospectively frozen Iter421 tensor degree-(1,1) residual at MP80/MP120 without changing its nodes, radius multipliers, fit basis or threshold.",
+  "source_authority": {
+    "iteration421_parent_code": "candidate_gravity/code/iteration420_tru1sq_channel2_symmetric_cross_derivative.py",
+    "iteration421_parent_code_sha": "b74b35eaca0c9fc2cbb36964315318d271c19122",
+    "iteration421_addendum": "candidate_gravity/contracts/iteration421_symmetric_cross_raw_consumption_addendum.json",
+    "iteration421_addendum_sha": "934e2d7025e874f2d35d12e15b2b24ec68d1c970",
+    "iteration424_contract": "candidate_gravity/results/iteration424_channel2_high_precision_fallback_contract.json",
+    "iteration424_contract_sha": "9af7bb9e4d618cb8237674276ddf7eff5f34490f",
+    "iteration574_raw_consumption": "candidate_gravity/results/iteration574_iter424_full_spectrum_raw_consumption.json"
+  },
+  "frozen_tensor11_definition": {
+    "F_cross_formula": "C(r,s)=[F(r,s)-F(r,-s)-F(-r,s)+F(-r,-s)]/(4*r*s)",
+    "radius": 1e-5,
+    "radius_multipliers_in_parent_order": [1.0, 0.75, 0.5, 0.25],
+    "fit_coordinates": "x=(r/R)^2, y=(s/R)^2",
+    "fit_basis": "tensor degree (1,1): [1,x,y,x*y]",
+    "reported_statistic": "fit_residuals_scaled.tensor11",
+    "acceptance_threshold": 2e-5,
+    "required_signed_F_node_count": 64,
+    "node_or_radius_change": false
+  },
+  "existing_high_precision_support": {
+    "distinct_nodes": 28,
+    "fraction": "43.75%",
+    "source": "raw-valid BASE/HALF support consumed through Iterations523/527 and independently rechecked in Iteration574",
+    "nodes": [
+      [-1e-5,-1e-5],[-1e-5,-5e-6],[-1e-5,5e-6],[-1e-5,1e-5],
+      [-5e-6,-1e-5],[-5e-6,-5e-6],[-5e-6,5e-6],[-5e-6,1e-5],
+      [5e-6,-1e-5],[5e-6,-5e-6],[5e-6,5e-6],[5e-6,1e-5],
+      [1e-5,-1e-5],[1e-5,-5e-6],[1e-5,5e-6],[1e-5,1e-5],
+      [-5e-6,-2.5e-6],[-5e-6,2.5e-6],[-2.5e-6,-5e-6],[-2.5e-6,-2.5e-6],
+      [-2.5e-6,2.5e-6],[-2.5e-6,5e-6],[2.5e-6,-5e-6],[2.5e-6,-2.5e-6],
+      [2.5e-6,2.5e-6],[2.5e-6,5e-6],[5e-6,-2.5e-6],[5e-6,2.5e-6]
+    ]
+  },
+  "missing_high_precision_support": {
+    "distinct_nodes": 36,
+    "fraction": "56.25%",
+    "nodes_in_first_occurrence_order_of_original_Iter421_F_cache": [
+      {"rank":1,"u":1e-5,"v":7.5e-6},{"rank":2,"u":1e-5,"v":-7.5e-6},{"rank":3,"u":-1e-5,"v":7.5e-6},{"rank":4,"u":-1e-5,"v":-7.5e-6},
+      {"rank":5,"u":1e-5,"v":2.5e-6},{"rank":6,"u":1e-5,"v":-2.5e-6},{"rank":7,"u":-1e-5,"v":2.5e-6},{"rank":8,"u":-1e-5,"v":-2.5e-6},
+      {"rank":9,"u":7.5e-6,"v":1e-5},{"rank":10,"u":7.5e-6,"v":-1e-5},{"rank":11,"u":-7.5e-6,"v":1e-5},{"rank":12,"u":-7.5e-6,"v":-1e-5},
+      {"rank":13,"u":7.5e-6,"v":7.5e-6},{"rank":14,"u":7.5e-6,"v":-7.5e-6},{"rank":15,"u":-7.5e-6,"v":7.5e-6},{"rank":16,"u":-7.5e-6,"v":-7.5e-6},
+      {"rank":17,"u":7.5e-6,"v":5e-6},{"rank":18,"u":7.5e-6,"v":-5e-6},{"rank":19,"u":-7.5e-6,"v":5e-6},{"rank":20,"u":-7.5e-6,"v":-5e-6},
+      {"rank":21,"u":7.5e-6,"v":2.5e-6},{"rank":22,"u":7.5e-6,"v":-2.5e-6},{"rank":23,"u":-7.5e-6,"v":2.5e-6},{"rank":24,"u":-7.5e-6,"v":-2.5e-6},
+      {"rank":25,"u":5e-6,"v":7.5e-6},{"rank":26,"u":5e-6,"v":-7.5e-6},{"rank":27,"u":-5e-6,"v":7.5e-6},{"rank":28,"u":-5e-6,"v":-7.5e-6},
+      {"rank":29,"u":2.5e-6,"v":1e-5},{"rank":30,"u":2.5e-6,"v":-1e-5},{"rank":31,"u":-2.5e-6,"v":1e-5},{"rank":32,"u":-2.5e-6,"v":-1e-5},
+      {"rank":33,"u":2.5e-6,"v":7.5e-6},{"rank":34,"u":2.5e-6,"v":-7.5e-6},{"rank":35,"u":-2.5e-6,"v":7.5e-6},{"rank":36,"u":-2.5e-6,"v":-7.5e-6}
+    ],
+    "breakdown": {
+      "involving_abs_7.5e-6": 28,
+      "cross_scale_1e-5_vs_2.5e-6_without_7.5e-6": 8
+    }
+  },
+  "execution_policy": {
+    "all_36_nodes_are_mandatory_before_any_result": true,
+    "parallel_execution_allowed": true,
+    "reason_parallelization_is_non_biasing": "The complete missing set and its logical order are derived exactly from the pre-result Iter421 cache evaluation order; no result can add, remove, reorder or tune a scientific node.",
+    "individual_node_pass_does_not_promote": true,
+    "any_node_blocked_keeps_tensor11_blocked": true,
+    "raw_consume_complete_set_before_fit": true,
+    "precision_digits": [80,120],
+    "z_samples": [-0.86,-0.43,0.0,0.43,0.86],
+    "phi_nodes": 16,
+    "scaled_mp80_vs_mp120_max": 1e-30,
+    "radial_richardson_scaled_max": 5e-4
+  },
+  "next_gate": "Compute exactly the 36 missing original-Iter421 F nodes at MP80/MP120 using the already validated post447 class3 full-z precision path. After fail-closed raw consumption of all 36, combine them with the 28 existing nodes and evaluate the unchanged original Iter421 tensor11 residual. No physical promotion before that residual itself is <=2e-5.",
+  "guardrails": [
+    "ORIGINAL_ITER421_NODES_ONLY",
+    "NO_NODE_OR_RADIUS_CHANGE",
+    "NO_RESULT_DEPENDENT_SELECTION",
+    "NO_UV_SUBSTITUTION",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_SMALLER_H_RESCUE",
+    "NO_ZERO_FILL",
+    "NO_PHYSICAL_PROMOTION_FROM_SUPPORT",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
