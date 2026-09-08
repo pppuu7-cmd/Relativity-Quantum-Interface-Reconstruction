@@ -6,85 +6,68 @@
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
 **Active promotable ansatz:** none
 
-Repository commits, validated raw Actions artifacts, recovery deltas, research logs, and this file are source of truth. Workflow colour alone is never scientific authority. Race-created newer repo state wins and authoritative iteration IDs are never reused.
+Repository commits, validated raw Actions artifacts, recovery deltas, research logs, and this file are source of truth. Race-created newer repo state wins and authoritative iteration IDs are never reused.
 
 ## Current authority
 - Latest validated physical/operator authority: **Iteration 411**.
 - Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`; unresolved physical set `[2]`.
-- BASE/HALF local mass support: **Iteration 523**, complete.
-- Independent BASE/HALF MP80/MP120 assembly: **Iteration 527**, raw-valid PASS, non-promoting.
-- QUARTER manifest: **Iteration 529**, 16-grid with 4 exact HALF-overlap corners and 12 required new coordinates.
-- Frozen 12-rank QUARTER successor order: **Iteration 532**.
-- QUARTER ranks 1–11 raw authority: **Iterations 534, 538, 542, 545, 548, 550, 551, 556, 562, 565, 569**, all raw-valid PASS and non-promoting.
-- Exact routing/assembly/conditioning diagnostics through **Iteration 570** remain retained and non-promoting.
-- Latest authoritative research iteration: **Iteration 570**.
+- BASE/HALF local support: complete through **Iteration 523**.
+- BASE/HALF raw-valid MP80/MP120 pre-spectral assembly: **Iteration 527**, non-promoting.
+- QUARTER support manifest/order: Iterations **529/532**.
+- QUARTER ranks 1–12 raw authority: **Iterations 534, 538, 542, 545, 548, 550, 551, 556, 562, 565, 569, 571**, all raw-valid PASS and non-promoting.
+- QUARTER new support closure: **12/12 = 100%**; full grid including four exact HALF-overlap corners: **16/16 = 100%**.
+- Complete QUARTER pre-spectral sample-layer assembly: **Iteration 572**, PASS scoped/non-promoting.
+- Frozen-clause authority mapping audit: **Iteration 573**, PASS scoped/non-promoting.
+- Latest authoritative research iteration: **Iteration 573**.
 
-## Latest raw support authority — Iteration 569
-Rank11 coordinate `(+2.5e-6,-1.25e-6)` raw-consumed from run `34168897005`, job `101885271903`, artifact `10036490535`, digest `sha256:cb69bdb008038ea2720827027a2d038a825c090e6aad823c6dec2d4c9e36a93c`, head `7e4aeed3dc9ff1b376705d37c01156a35acdc293`.
+## Critical Iteration572 scope
+Iteration572 assembles the complete raw MP80/MP120 `(z,phi)` sample layer only. These rows are stripped-numerator angular/radial samples, not yet the final degree-4/affine-log spectrum-integrated `F(u,v)` and not physical scalar `D_s`.
 
-Raw checks: `80/80` finite; MP80↔MP120 max `4.17918718237096998292577327888e-80 <= 1e-30`; radial Richardson max `2.56237524624410641222260979464e-15 <= 5e-4`. `result.json` SHA-256 `ac1b09b30e32fc17b0b45d300787bd89e2869df50edd41a85b256b578f0355ca`; `authority_audit.json` SHA-256 `7df980d2ada730d7f36b02691e0aafa9a9fa77f1cfb6abdd84e6e8cd63edbca7`.
+Observed sample-layer checks retained:
+- all 80 assembled outputs finite;
+- QUARTER MP80↔MP120 scaled max `1.2787277797888786e-68`;
+- HALF↔QUARTER sample-layer scaled max `2.8064444557403413e-6`;
+- direct/u→v/v→u/orbit assembly routes agree at about `1e-114`;
+- raw-grid bilinear diagnostic max `4.588236089297399e-15`.
 
-Machine-readable authority: `candidate_gravity/results/iteration569_iter424_quarter_rank11_raw_consumption.json`.
+None of those sample-layer values is silently promoted into a frozen physical Iteration424 clause.
 
-## QUARTER progress
-Raw-closed new coordinates: **11/12 = 91.666667%**.  
-Including four exact HALF-overlap corners: **15/16 = 93.75%** authoritative coordinate coverage.  
-These local support PASSes do not promote physical index2.
+## Iteration573 frozen-clause mapping
+The direct-original-integrand criterion is inherited as **PASS** from raw-valid Iteration421: maximum scaled error `2.0658997659274425e-9 <= 2e-6`. Iteration424 prospectively freezes the same parent dynamics, routing, numerator, sign and normalization, so this is an exact parent-representation identity inheritance only; Iteration421 convergence/fit status is not inherited.
 
-### Frozen order
-1. `(-2.5e-6,-1.25e-6)` — PASS Iteration 534
-2. `(-2.5e-6,+1.25e-6)` — PASS Iteration 538
-3. `(-1.25e-6,-2.5e-6)` — PASS Iteration 542
-4. `(-1.25e-6,-1.25e-6)` — PASS Iteration 545
-5. `(-1.25e-6,+1.25e-6)` — PASS Iteration 548
-6. `(-1.25e-6,+2.5e-6)` — PASS Iteration 550
-7. `(+1.25e-6,-2.5e-6)` — PASS Iteration 551
-8. `(+1.25e-6,-1.25e-6)` — PASS Iteration 556
-9. `(+1.25e-6,+1.25e-6)` — PASS Iteration 562
-10. `(+1.25e-6,+2.5e-6)` — PASS Iteration 565
-11. `(+2.5e-6,-1.25e-6)` — PASS Iteration 569
-12. `(+2.5e-6,+1.25e-6)` — **active**
+The tensor-degree-(1,1) clause is **OPERATIONAL_BLOCKED_NO_FROZEN_MAPPING**. Iteration421 defines `fit_residuals_scaled.tensor11` on symmetric-cross
 
-PASS advances only according to the prospectively frozen order. Scientific FAIL/BLOCKED stops advancement. Operational failure permits only minimal technical repair and rerun of the same rank. No result-dependent reordering/skipping, u↔v substitution, zero-fill, threshold weakening, mass-node changes or precision changes.
+`C(r,s)=[F(r,s)-F(r,-s)-F(-r,s)+F(-r,-s)]/(4rs)`
 
-## Active heavy computation — rank12
-Exactly one successor is active:
-- coordinate `(+2.5e-6,+1.25e-6)`;
-- run `34175330006`;
-- job `101903475600`;
-- trigger/head `adc1288da49c1363907c2336162d344030ec47ef`;
-- stage `candidate_gravity/code/post569_iter424_quarter_support_rank12_full_z_mp_stage.py`;
-- workflow `.github/workflows/rqir-post569-iter424-quarter-rank12-full-z-mp.yml`;
-- latest canonical check: setup/checkout/Python/dependency installation complete; scientific MP stage in progress; audit/upload pending.
+using squared-radius multipliers `[1,0.75,0.5,0.25]^2`. Iteration572 instead has a bilinear fit on raw pre-spectral 4x4 `F(u,v)` nodes. Different observable + different design matrix means no exact identity; substituting the tiny Iteration572 raw-grid residual would redefine/weaken a frozen gate post hoc.
 
-No duplicate rank12 run is authorized. Workflow success alone is not authority. Only fail-closed raw-valid PASS closes the 12/12 new QUARTER support and authorizes full QUARTER assembly under the already frozen exact controls.
+This is an **operational BLOCKED**, not a consistency FAIL, comparator identity, model-level non-identifiability, near-degeneracy, or novelty certificate.
 
-## Exact assembly/routing/conditioning controls retained
-- Iterations 552–555: exact u↔v non-equivalence; no support substitution.
-- Iteration 557: exchange-even projection identity for the complete matched central4 grid.
-- Iteration 558: central4 tensor moment/null/norm integrity.
-- Iteration 559: 10 exchange-orbit coefficient ledger.
-- Iteration 560: remaining-orbit tail/error contract.
-- Iteration 561: direct tensor, u→v, v→u and orbit-compressed assembly are coefficient-identical on the same complete raw-valid grid.
-- Iteration 563: post-rank10 two-point tail contract.
-- Iteration 564: final-pair common/differential mode decomposition; common mode is an exact stencil-null direction, but both ranks11/12 remain mandatory.
-- Iteration 566: full-stencil rank-1 geometry and exact row/column nuisance annihilation.
-- Iteration 567: 15-dimensional kernel of the single mixed-stencil functional; diagnostic regime-specific invisibility only, not model-level degeneracy.
-- Iteration 568: iid coordinate variance leverage map; central four carry `4096/4225 ≈ 96.946746%` under equal independent numerical variances, with heteroskedastic generalization retained.
-- Iteration 570: exact correlated-error propagation for separable covariance `Cov(vec E)=Sigma_v⊗Sigma_u`: `Var(D_uv)=(w^T Sigma_u w)(w^T Sigma_v w)/(144^2 h^4)`; perfectly common covariance modes are annihilated exactly by `sum(w)=0`.
+## Frozen Iteration424 physical acceptance — current status
+All five must pass simultaneously before physical index2 promotion:
+1. physical mass-step discrepancy `<=2e-5` — **BLOCKED pending full spectrum-integrated BASE/HALF/QUARTER physical D_s**;
+2. direct original-integrand crosscheck `<=2e-6` — **PASS inherited from raw-valid Iteration421**;
+3. tensor-degree-(1,1) fit residual `<=2e-5` — **OPERATIONAL BLOCKED: no prospectively frozen mapping from current raw-grid diagnostic**;
+4. fixed-node MP80/MP120 agreement `<=2e-6` — **BLOCKED pending full spectrum-integrated physical D_s**;
+5. finite outputs — **BLOCKED at physical spectrum-integrated level**.
 
-## Frozen Iteration-424 physical acceptance
-After all 12 new QUARTER coordinates and QUARTER assembly are raw-closed, physical index2 requires all simultaneously:
-1. physical mass-step discrepancy `<=2e-5`;
-2. direct original-integrand cross-check `<=2e-6`;
-3. tensor-degree-(1,1) fit residual `<=2e-5`;
-4. fixed-node MP80/MP120 agreement `|D_s(80)-D_s(120)|<=2e-6`;
-5. finite outputs.
+Only simultaneous full PASS promotes physical index2 and authorizes frozen exact15 continuation. A computed failing clause is a scoped scientific FAIL; an uncomputed/undefined clause remains BLOCKED.
 
-Only full PASS promotes physical index2 and authorizes frozen exact15 continuation. A computed failing clause is a scoped scientific FAIL; an uncomputed clause is BLOCKED.
+## Exact next gate
+Using only already raw-valid support, reconstruct full spectrum-integrated `F(u,v)` at MP80/MP120 with the frozen Iteration407 pipeline:
+1. phi-average at the five frozen `TRAIN_Z` nodes;
+2. degree-4 interpolation;
+3. frozen affine coefficients;
+4. analytic affine-log recurrence;
+5. central4 assemble BASE/HALF/QUARTER physical `D_s`;
+6. evaluate physical mass-step, MP80/MP120 and finiteness clauses.
+
+In parallel, search existing **pre-result** contracts/commits for an already-frozen high-precision tensor11 definition. If none exists, keep the tensor11 criterion operationally BLOCKED; do not invent a post-result mapping.
+
+No new heavy mass-node computation is presently required solely for support. Do not duplicate closed ranks.
 
 ## Comparator blocker retained
-Concrete upstream algebraic `Source/Ward/contact+K2` target and robust comparator-subtracted residual remain absent. `ANSATZ-003` remains uncreated; Fisher/resources remain forbidden.
+Concrete upstream algebraic `Source/Ward/contact+K2` target and robust comparator-subtracted residual remain absent. Fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient therefore remains **operational BLOCKED**. `ANSATZ-003` remains uncreated; Fisher/resources remain forbidden.
 
 ## Stable readiness rubric
 - comparator foundation `24/25`
@@ -96,13 +79,10 @@ Concrete upstream algebraic `Source/Ward/contact+K2` target and robust comparato
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration570 closes a real correlated-error assembly subgate but no additional stable model-level rubric sector.
+Readiness change: **0 percentage points**. Iteration573 closes an authority/provenance ambiguity and one inherited frozen clause, but no additional stable model-level rubric sector.
 
-## Exact downstream chain
-BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → ranks1–11 **RAW PASS through 569** → rank12 **RUNNING** → complete QUARTER raw consumption/assembly under Iterations557–570 controls → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
+## Downstream chain
+BASE/HALF support **CLOSED 523** → BASE/HALF pre-spectral assembly **527** → QUARTER support **12/12 CLOSED 571** → complete QUARTER pre-spectral assembly **572** → authority mapping **573** → full frozen spectral reconstruction of BASE/HALF/QUARTER physical `D_s` → resolve or preserve tensor11 BLOCKED → only then unchanged Iteration424 five-clause decision → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
 
 ## Retained guardrails
-Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy full-C5. No u↔v support substitution. Exact coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. Source/Born subtraction only in the matched observable after pole/cut-origin classification. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
-
-## Exact next gate
-Inspect terminal state and raw artifact of rank12 run `34175330006`, job `101903475600`. Only raw-valid PASS authorizes complete QUARTER assembly and unchanged Iteration-424 five-clause physical reevaluation.
+Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. No post-hoc gate redefinition. No raw-F bilinear substitution for tensor11. No u↔v support substitution. No smaller h, altered mass nodes/precision, threshold weakening or angular-grid escalation. Same parent dynamics/routing/numerator/sign/normalization are mandatory. Source/Born subtraction only after pole/cut-origin classification in the matched observable. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
