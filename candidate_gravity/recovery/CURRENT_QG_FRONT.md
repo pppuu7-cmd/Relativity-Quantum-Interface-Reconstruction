@@ -16,8 +16,8 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - QUARTER manifest: **Iteration 529**, 16-grid with 4 exact HALF-overlap corners and 12 required new coordinates.
 - Frozen 12-rank QUARTER successor order: **Iteration 532**.
 - QUARTER ranks 1–11 raw authority: **Iterations 534, 538, 542, 545, 548, 550, 551, 556, 562, 565, 569**, all raw-valid PASS and non-promoting.
-- Exact routing/assembly/conditioning diagnostics through **Iteration 568** remain retained and non-promoting.
-- Latest authoritative research iteration: **Iteration 569**.
+- Exact routing/assembly/conditioning diagnostics through **Iteration 570** remain retained and non-promoting.
+- Latest authoritative research iteration: **Iteration 570**.
 
 ## Latest raw support authority — Iteration 569
 Rank11 coordinate `(+2.5e-6,-1.25e-6)` raw-consumed from run `34168897005`, job `101885271903`, artifact `10036490535`, digest `sha256:cb69bdb008038ea2720827027a2d038a825c090e6aad823c6dec2d4c9e36a93c`, head `7e4aeed3dc9ff1b376705d37c01156a35acdc293`.
@@ -55,7 +55,7 @@ Exactly one successor is active:
 - trigger/head `adc1288da49c1363907c2336162d344030ec47ef`;
 - stage `candidate_gravity/code/post569_iter424_quarter_support_rank12_full_z_mp_stage.py`;
 - workflow `.github/workflows/rqir-post569-iter424-quarter-rank12-full-z-mp.yml`;
-- at first canonical check setup/checkout/Python were complete and frozen dependency installation was in progress; scientific stage/audit/upload pending.
+- latest canonical check: setup/checkout/Python/dependency installation complete; scientific MP stage in progress; audit/upload pending.
 
 No duplicate rank12 run is authorized. Workflow success alone is not authority. Only fail-closed raw-valid PASS closes the 12/12 new QUARTER support and authorizes full QUARTER assembly under the already frozen exact controls.
 
@@ -71,6 +71,7 @@ No duplicate rank12 run is authorized. Workflow success alone is not authority. 
 - Iteration 566: full-stencil rank-1 geometry and exact row/column nuisance annihilation.
 - Iteration 567: 15-dimensional kernel of the single mixed-stencil functional; diagnostic regime-specific invisibility only, not model-level degeneracy.
 - Iteration 568: iid coordinate variance leverage map; central four carry `4096/4225 ≈ 96.946746%` under equal independent numerical variances, with heteroskedastic generalization retained.
+- Iteration 570: exact correlated-error propagation for separable covariance `Cov(vec E)=Sigma_v⊗Sigma_u`: `Var(D_uv)=(w^T Sigma_u w)(w^T Sigma_v w)/(144^2 h^4)`; perfectly common covariance modes are annihilated exactly by `sum(w)=0`.
 
 ## Frozen Iteration-424 physical acceptance
 After all 12 new QUARTER coordinates and QUARTER assembly are raw-closed, physical index2 requires all simultaneously:
@@ -95,10 +96,10 @@ Concrete upstream algebraic `Source/Ward/contact+K2` target and robust comparato
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iteration569 closes one final-pair local support coordinate but no additional stable model-level rubric sector.
+Readiness change: **0 percentage points**. Iteration570 closes a real correlated-error assembly subgate but no additional stable model-level rubric sector.
 
 ## Exact downstream chain
-BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → ranks1–11 **RAW PASS through 569** → rank12 **RUNNING** → complete QUARTER raw consumption/assembly under Iterations557–568 controls → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
+BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → ranks1–11 **RAW PASS through 569** → rank12 **RUNNING** → complete QUARTER raw consumption/assembly under Iterations557–570 controls → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy full-C5. No u↔v support substitution. Exact coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. Source/Born subtraction only in the matched observable after pole/cut-origin classification. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
