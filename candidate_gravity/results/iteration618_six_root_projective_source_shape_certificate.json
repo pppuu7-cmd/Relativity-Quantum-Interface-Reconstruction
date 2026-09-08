@@ -1,0 +1,89 @@
+{
+  "iteration": 618,
+  "date": "2026-09-08",
+  "model_readiness_percent": 24,
+  "classification": "PASS_ITER618_SIX_ROOT_PROJECTIVE_SOURCE_SHAPE_CERTIFICATE__N_NATIVE_INVARIANT_NON_RESIDUAL",
+  "scientific_gate_pass": true,
+  "failures": [],
+  "candidate_residual": false,
+  "scope": "SOURCE_SIDE_ONLY__NORMALIZATION_INVARIANT_DIAGNOSTIC",
+  "root_order_rule": "strict ascending Iter614 s; never coefficient-magnitude ordered",
+  "anchor_rule": "smallest-s root; fixed by kinematics before projective ratios",
+  "anchor": {
+    "root_denominator": "D_b^-",
+    "s": 0.013028588574858,
+    "source_coefficient": -0.00024912100468199333
+  },
+  "projective_rows": [
+    {
+      "root_denominator": "D_b^-",
+      "s": 0.013028588574858,
+      "source_coefficient": -0.00024912100468199333,
+      "ratio_to_smallest_s_anchor": 1.0,
+      "same_projective_phase_as_anchor": true
+    },
+    {
+      "root_denominator": "D_s^-",
+      "s": 0.09,
+      "source_coefficient": 0.0007390333386357162,
+      "ratio_to_smallest_s_anchor": -2.966563737084728,
+      "same_projective_phase_as_anchor": false
+    },
+    {
+      "root_denominator": "D_a^-",
+      "s": 0.09868572571657197,
+      "source_coefficient": 0.00019432750619153958,
+      "ratio_to_smallest_s_anchor": -0.7800526753639322,
+      "same_projective_phase_as_anchor": false
+    },
+    {
+      "root_denominator": "D_a^+",
+      "s": 1.241314274283428,
+      "source_coefficient": 0.0012850179378006798,
+      "ratio_to_smallest_s_anchor": -5.158207913624242,
+      "same_projective_phase_as_anchor": false
+    },
+    {
+      "root_denominator": "D_b^+",
+      "s": 1.726971411425142,
+      "source_coefficient": -0.0007467205092433388,
+      "ratio_to_smallest_s_anchor": 2.997420912767025,
+      "same_projective_phase_as_anchor": true
+    },
+    {
+      "root_denominator": "D_s^-",
+      "s": 2.89,
+      "source_coefficient": -0.0021373920072305236,
+      "ratio_to_smallest_s_anchor": 8.57973421373656,
+      "same_projective_phase_as_anchor": true
+    }
+  ],
+  "five_independent_ratios_after_anchor": [
+    -2.966563737084728,
+    -0.7800526753639322,
+    -5.158207913624242,
+    2.997420912767025,
+    8.57973421373656
+  ],
+  "raw_source_sign_pattern_in_ascending_s_order": [-1, 1, 1, 1, -1, -1],
+  "relative_sign_pattern_to_anchor": [1, -1, -1, -1, 1, 1],
+  "projective_scale_regression": {
+    "tested_common_nonzero_scales": ["2.5", "-3", "+i", "2-1.5i"],
+    "max_ratio_error": 8.881784197001252e-16
+  },
+  "invariance_statement": "All reported ratios are unchanged under one common nonzero real or complex N_native multiplying all six source coefficients.",
+  "future_fail_closed_use": "Any future claimed common-N_native bridge that changes these root-by-root ratios is an implementation/projection corruption and must be rejected before Source/Born subtraction or comparator quotient.",
+  "explicit_nonclaims": [
+    "does not determine N_native",
+    "does not map any root to an Iter582 numerical value",
+    "does not sum roots sharing a q2 bucket",
+    "does not perform Source/Born subtraction",
+    "does not create a Candidate residual"
+  ],
+  "source_born_subtraction": "NOT_PERFORMED",
+  "comparator_quotient": "BLOCKED",
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "next_gate": "derive additional normalization-invariant consistency checks that use the frozen root/Jacobian structure but do not aggregate distinct roots, or advance an independent comparator/theory gate; N_native itself remains BLOCKED",
+  "readiness_change": "0 percentage points"
+}
