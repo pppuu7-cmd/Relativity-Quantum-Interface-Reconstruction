@@ -1,0 +1,30 @@
+{
+  "iteration": 598,
+  "date": "2026-09-08",
+  "model_readiness_percent": 24,
+  "classification": "BLOCKED_ITER597_IMPLEMENTATION_DOES_NOT_INSTANTIATE_FROZEN_ITER596_ROUTE__NEGATIVE_NUMBERS_PRESERVED_NONAUTHORITATIVE",
+  "scientific_gate_pass": false,
+  "failures": [
+    "CONTRACT_MISMATCH: Iter597 mandatory one-leg anchor used arbitrary PROBES instead of frozen p=-q_g/2 symmetric route",
+    "CONTRACT_MISMATCH: Iter597 full Ward rows used arbitrary PROBES instead of frozen gauge-attached symmetric scalar route"
+  ],
+  "findings": [
+    {"anchor_constructs_frozen_symmetric_route": false, "anchor_uses_arbitrary_PROBES": true, "probe_definition_present": true},
+    {"full_ward_constructs_frozen_symmetric_route": false, "full_ward_uses_arbitrary_PROBES": true}
+  ],
+  "iter596_contract_sha256": "349dcc2012dc8e6642ed2a56e4e1554b9aae55db302222b30e37ed10b26828e8",
+  "iter597_source_sha256": "53258aede5c5fe459158f67449ae452a8b984ce55578dffb5a7f6fb0daf2ea7b",
+  "negative_iter597_numbers": "PRESERVED_AS_IMPLEMENTED_OBJECT_DIAGNOSTIC_NOT_FROZEN_CONTRACT_AUTHORITY",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "candidate_residual": false,
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "canonical_run": 34236177851,
+  "canonical_job": 102094351910,
+  "canonical_head": "f65c23ab46f5b4571a6fc9ce5cb39d958fd0109a",
+  "canonical_artifact": 10059929340,
+  "artifact_digest": "sha256:abf81c0cc102980501618516d0dfe4e7117958af6063c53af9acffc67107fade",
+  "raw_result_sha256": "0ba9032dc076fb7b5b420e99cdc293df839365eb97610e395c7c7cc7d7a0a291",
+  "raw_authority_audit_sha256": "e868c8fb917c2be3b37faced7c005569d9cad2c7c733221703fec835ce2b62f7",
+  "next_gate": "repair full nonlinear Ward evaluator to exact per-gauge symmetric scalar route p=-q_g/2,p'=+q_g/2 while retaining all 13 families and frozen Iter596 transformations; rerun raw-valid gate"
+}
