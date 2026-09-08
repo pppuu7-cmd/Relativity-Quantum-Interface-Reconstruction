@@ -1,0 +1,55 @@
+name: RQIR Iter582 e2 connection assembly
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/rqir-iteration582-e2-connection.yml'
+      - 'candidate_gravity/code/iteration582_connection_e2_effective_action_q2.py'
+      - 'candidate_gravity/results/iteration581_frozen_iter412_exact15_raw_consumption.json'
+      - 'candidate_gravity/code/iteration406_u2_complete_operator_coordinate.py'
+      - 'candidate_gravity/results/iteration405_u2_repeated_cut_exact48_result.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble frozen q2-resolved e2 connection sector
+        run: |
+          set -euo pipefail
+          mkdir -p candidate_gravity/runtime/iteration582
+          python candidate_gravity/code/iteration582_connection_e2_effective_action_q2.py > candidate_gravity/runtime/iteration582/iteration582_result.json
+          cat candidate_gravity/runtime/iteration582/iteration582_result.json
+      - name: Fail-closed raw authority audit
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,math
+          from pathlib import Path
+          p=Path('candidate_gravity/runtime/iteration582/iteration582_result.json')
+          raw=p.read_bytes(); o=json.loads(raw); f=[]
+          if o.get('iteration')!=582: f.append('iteration')
+          if o.get('scientific_gate_pass') is not True: f.append('scientific_gate_pass')
+          if o.get('classification')!='PASS_E2_CONNECTION_EFFECTIVE_ACTION_Q2_RESOLVED__TRU2_PLUS_TRU1SQ': f.append('classification')
+          q=o.get('D_s_Gamma_e2_connection_q2',{})
+          if set(q)!={'-1.0','-0.34','-0.14'}: f.append('q2_keys')
+          for k,v in q.items():
+            if not (isinstance(v,list) and len(v)==2 and all(math.isfinite(float(x)) for x in v)): f.append('nonfinite_'+k)
+          if o.get('q2_buckets_kept_distinct') is not True: f.append('q2_distinction')
+          audit={'iteration':582,'classification':'PASS_RAW_AUTHORITY_AUDIT_ITER582_E2_CONNECTION' if not f else 'FAIL_RAW_AUTHORITY_AUDIT_ITER582_E2_CONNECTION','raw_result_integrity_valid':not f,'failures':f,'scientific_result_sha256':hashlib.sha256(raw).hexdigest(),'head_sha':'${{ github.sha }}','run_id':'${{ github.run_id }}'}
+          Path('candidate_gravity/runtime/iteration582/iteration582_authority_audit.json').write_text(json.dumps(audit,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(audit,indent=2,sort_keys=True))
+          if f: raise SystemExit(2)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter582-e2-connection-q2
+          path: candidate_gravity/runtime/iteration582/
+          if-no-files-found: error
+          retention-days: 30
