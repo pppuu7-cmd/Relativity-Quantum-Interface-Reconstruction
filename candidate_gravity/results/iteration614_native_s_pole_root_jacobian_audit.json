@@ -1,0 +1,162 @@
+{
+  "iteration": 614,
+  "date": "2026-09-08",
+  "model_readiness_percent": 24,
+  "classification": "PASS_ITER614_FROZEN_NATIVE_S_SCALAR_POLE_ROOT_AND_JACOBIAN_AUDIT__NON_RESIDUAL",
+  "scientific_gate_pass": true,
+  "failures": [],
+  "kinematic_contract": "MSSC001-NATIVE-S-KIN-V1 (frozen by Iter613 before root evaluation)",
+  "metric_signature": "+---",
+  "mass": 0.7,
+  "q_vectors": {
+    "s": [1.0, 0.0, 0.0, 0.0],
+    "a": [-0.4, 0.1, 0.1, 0.0],
+    "b": [-0.6, -0.1, -0.1, 0.0]
+  },
+  "q_squared_source_signature": {
+    "s": 1.0,
+    "a": 0.14,
+    "b": 0.34
+  },
+  "connection_sector_q2_labels_are_not_reused_as_source_signature_q2": true,
+  "momentum_closure_max_abs": 0.0,
+  "denominator_rows": [
+    {
+      "leg": "s",
+      "denominator": "D_s^+",
+      "formula": "m^2-s-q_s^2-2sqrt(s)q_s^0",
+      "positive_root_count": 0,
+      "roots": [],
+      "classification": "NO_POSITIVE_ROOT"
+    },
+    {
+      "leg": "s",
+      "denominator": "D_s^-",
+      "formula": "m^2-s-q_s^2+2sqrt(s)q_s^0",
+      "positive_root_count": 2,
+      "roots": [
+        {
+          "omega": 0.30000000000000004,
+          "s": 0.09000000000000002,
+          "partial_s_D": 2.333333333333333,
+          "abs_partial_s_D": 2.333333333333333,
+          "delta_pullback_weight_1_over_abs_partial_s_D": 0.4285714285714286,
+          "simple_root": true
+        },
+        {
+          "omega": 1.7,
+          "s": 2.8899999999999997,
+          "partial_s_D": -0.4117647058823529,
+          "abs_partial_s_D": 0.4117647058823529,
+          "delta_pullback_weight_1_over_abs_partial_s_D": 2.428571428571429,
+          "simple_root": true
+        }
+      ],
+      "classification": "POSITIVE_SIMPLE_ROOT_SUPPORT"
+    },
+    {
+      "leg": "a",
+      "denominator": "D_a^+",
+      "formula": "m^2-s-q_a^2-2sqrt(s)q_a^0",
+      "positive_root_count": 1,
+      "roots": [
+        {
+          "omega": 1.114142842854285,
+          "s": 1.241314274283428,
+          "partial_s_D": -0.6409796081665314,
+          "abs_partial_s_D": 0.6409796081665314,
+          "delta_pullback_weight_1_over_abs_partial_s_D": 1.560112033611204,
+          "simple_root": true
+        }
+      ],
+      "classification": "POSITIVE_SIMPLE_ROOT_SUPPORT"
+    },
+    {
+      "leg": "a",
+      "denominator": "D_a^-",
+      "formula": "m^2-s-q_a^2+2sqrt(s)q_a^0",
+      "positive_root_count": 1,
+      "roots": [
+        {
+          "omega": 0.31414284285428495,
+          "s": 0.09868572571657197,
+          "partial_s_D": -2.273306106119183,
+          "abs_partial_s_D": 2.273306106119183,
+          "delta_pullback_weight_1_over_abs_partial_s_D": 0.439887966388796,
+          "simple_root": true
+        }
+      ],
+      "classification": "POSITIVE_SIMPLE_ROOT_SUPPORT"
+    },
+    {
+      "leg": "b",
+      "denominator": "D_b^+",
+      "formula": "m^2-s-q_b^2-2sqrt(s)q_b^0",
+      "positive_root_count": 1,
+      "roots": [
+        {
+          "omega": 1.314142842854285,
+          "s": 1.726971411425142,
+          "partial_s_D": -0.54342862858286,
+          "abs_partial_s_D": 0.54342862858286,
+          "delta_pullback_weight_1_over_abs_partial_s_D": 1.8401680504168059,
+          "simple_root": true
+        }
+      ],
+      "classification": "POSITIVE_SIMPLE_ROOT_SUPPORT"
+    },
+    {
+      "leg": "b",
+      "denominator": "D_b^-",
+      "formula": "m^2-s-q_b^2+2sqrt(s)q_b^0",
+      "positive_root_count": 1,
+      "roots": [
+        {
+          "omega": 0.114142842854285,
+          "s": 0.013028588574858,
+          "partial_s_D": -6.25657137141714,
+          "abs_partial_s_D": 6.25657137141714,
+          "delta_pullback_weight_1_over_abs_partial_s_D": 0.15983194958319413,
+          "simple_root": true
+        }
+      ],
+      "classification": "POSITIVE_SIMPLE_ROOT_SUPPORT"
+    }
+  ],
+  "support_summary": {
+    "unique_denominator_types": 6,
+    "types_with_positive_support": 5,
+    "types_without_positive_support": 1,
+    "total_distinct_positive_root_points": 6,
+    "minimum_positive_root_separation_in_s": 0.00868572571657195,
+    "all_positive_roots_simple": true,
+    "K1K2_terms_with_positive_support_out_of_6": 5,
+    "K1cubed_chains_with_positive_support_out_of_6": 6
+  },
+  "K1cubed_chain_support": [
+    {"permutation": ["s", "a", "b"], "denominators": ["D_s^+", "D_b^-"], "positive_root_occurrences": 1, "classification": "SUPPORTED"},
+    {"permutation": ["s", "b", "a"], "denominators": ["D_s^+", "D_a^-"], "positive_root_occurrences": 1, "classification": "SUPPORTED"},
+    {"permutation": ["a", "s", "b"], "denominators": ["D_a^+", "D_b^-"], "positive_root_occurrences": 2, "classification": "SUPPORTED"},
+    {"permutation": ["a", "b", "s"], "denominators": ["D_a^+", "D_s^-"], "positive_root_occurrences": 3, "classification": "SUPPORTED"},
+    {"permutation": ["b", "s", "a"], "denominators": ["D_b^+", "D_a^-"], "positive_root_occurrences": 2, "classification": "SUPPORTED"},
+    {"permutation": ["b", "a", "s"], "denominators": ["D_b^+", "D_s^-"], "positive_root_occurrences": 3, "classification": "SUPPORTED"}
+  ],
+  "distribution_pullback": "delta(D_A(s)) = sum_roots delta(s-s_r)/|partial_s D_A(s_r)| for the simple roots listed here",
+  "all_13_source_families_retained": true,
+  "K3_scalar_pole_note": "K3 is local in the Iter611 scalar-pole classification and adds no routed scalar denominator of this D_i^+/- class",
+  "explicit_nonclaims": [
+    "no source numerator evaluated at a pole",
+    "no native Y/T_cut sign-normalization binding",
+    "no Source/Born subtraction",
+    "no comparator quotient",
+    "no Candidate residual",
+    "no novelty claim"
+  ],
+  "zero_fill": false,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "candidate_residual": false,
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "readiness_change": "unchanged at 24%; pole-support/Jacobian prerequisite closes but no complete stable rubric sector",
+  "next_gate": "evaluate/bind source numerators and signs at every retained simple root under MSSC001-NATIVE-S-KIN-V1, then establish the native Iter205 Y/T_cut sign-normalization binding to the Iter582 operator coordinate, without Source/Born subtraction"
+}
