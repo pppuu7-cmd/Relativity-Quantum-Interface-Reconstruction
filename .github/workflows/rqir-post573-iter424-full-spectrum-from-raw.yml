@@ -23,26 +23,31 @@ jobs:
           root="candidate_gravity/artifacts/post573_iter424_full_spectrum_from_raw"; mkdir -p "$root/bundle/basehalf" "$root/bundle/quarter"
           python candidate_gravity/code/post523_independent_base_half_assembly.py --emit-artifact-manifest > "$root/basehalf_manifest.json"
           python candidate_gravity/code/post573_iter424_full_spectrum_gate.py --emit-quarter-manifest > "$root/quarter_manifest.json"
-      - name: Download exact raw authority results by artifact ID
+      - name: Download exact raw authority results by historical run and artifact name
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           python - <<'PY'
-          import json,pathlib,subprocess,tempfile,zipfile
+          import json,os,pathlib,subprocess,tempfile,urllib.request
           root=pathlib.Path('candidate_gravity/artifacts/post573_iter424_full_spectrum_from_raw'); repo='pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction'
+          def metadata(aid):
+              req=urllib.request.Request(f'https://api.github.com/repos/{repo}/actions/artifacts/{aid}',headers={'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2026-03-10','User-Agent':'rqir-actions'})
+              with urllib.request.urlopen(req,timeout=60) as r: return json.load(r)
           def get_result(aid):
-              with tempfile.NamedTemporaryFile(suffix='.zip') as f:
-                  url=f'https://api.github.com/repos/{repo}/actions/artifacts/{aid}/zip'
-                  subprocess.run(['curl','--fail','--silent','--show-error','--location','--retry','3','--retry-all-errors','-H','Accept: application/vnd.github+json','-H','X-GitHub-Api-Version: 2026-03-10',url,'-o',f.name],check=True)
-                  with zipfile.ZipFile(f.name) as z:
-                      names=[n for n in z.namelist() if pathlib.PurePosixPath(n).name=='result.json']
-                      if len(names)!=1: raise SystemExit(('artifact_result_count_drift',aid,names))
-                      return z.read(names[0])
-          bh=json.loads((root/'basehalf_manifest.json').read_text())
+              m=metadata(aid); runid=int(m['workflow_run']['id']); name=str(m['name'])
+              with tempfile.TemporaryDirectory() as td:
+                  subprocess.run(['gh','run','download',str(runid),'-R',repo,'-n',name,'-D',td],check=True,env={**os.environ,'GH_TOKEN':os.environ['GH_TOKEN']})
+                  names=[p for p in pathlib.Path(td).rglob('result.json')]
+                  if len(names)!=1: raise SystemExit(('artifact_result_count_drift',aid,runid,name,[str(x) for x in names]))
+                  return names[0].read_bytes(),runid,name
+          bh=json.loads((root/'basehalf_manifest.json').read_text()); transport=[]
           for x in bh:
-              d=root/'bundle'/'basehalf'/str(x['rank']); d.mkdir(parents=True,exist_ok=True); (d/'result.json').write_bytes(get_result(int(x['artifact_id'])))
+              d=root/'bundle'/'basehalf'/str(x['rank']); d.mkdir(parents=True,exist_ok=True); raw,runid,name=get_result(int(x['artifact_id'])); (d/'result.json').write_bytes(raw); transport.append({'artifact_id':x['artifact_id'],'run_id':runid,'name':name})
           q=json.loads((root/'quarter_manifest.json').read_text())
           for x in q:
-              d=root/'bundle'/'quarter'/str(x['rank']); d.mkdir(parents=True,exist_ok=True); (d/'result.json').write_bytes(get_result(int(x['artifact_id'])))
-          print(json.dumps({'basehalf_artifacts':len(bh),'quarter_artifacts':len(q)},sort_keys=True))
+              d=root/'bundle'/'quarter'/str(x['rank']); d.mkdir(parents=True,exist_ok=True); raw,runid,name=get_result(int(x['artifact_id'])); (d/'result.json').write_bytes(raw); transport.append({'artifact_id':x['artifact_id'],'run_id':runid,'name':name})
+          (root/'transport_provenance.json').write_text(json.dumps(transport,indent=2,sort_keys=True)+'\n')
+          print(json.dumps({'basehalf_artifacts':len(bh),'quarter_artifacts':len(q),'transport_records':len(transport)},sort_keys=True))
           PY
       - name: Run frozen Iter407 spectral reconstruction and Iter424 numerical clauses
         run: |
