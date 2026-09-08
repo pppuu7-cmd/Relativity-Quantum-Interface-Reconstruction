@@ -1,0 +1,98 @@
+{
+  "iteration": 574,
+  "date": "2026-09-08",
+  "classification": "PASS_RAW_CONSUMED_ITER424_FULL_SPECTRUM_NUMERICAL_CLAUSES__TENSOR11_OPERATIONAL_BLOCKED__NON_PROMOTING",
+  "status": "PASS_SCOPED_RAW_CONSUMPTION",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "target": {
+    "double_double_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0
+  },
+  "workflow_authority": {
+    "run_id": 34179921282,
+    "job_id": 101916751917,
+    "head_sha": "967525f318fac374124ca2a5127b82e0c771c7a2",
+    "artifact_id": 10038557027,
+    "artifact_name": "rqir-post573-iter424-full-spectrum-from-raw",
+    "artifact_digest": "sha256:330fc416a24935bbd1faf5f852420d179c0cd17a8bb2ba52dbae296bc00953e2",
+    "result_json_sha256": "d899623f64d98f12d19f32545e44fbcebe92ccc645f25a05b37f67a8b150a773",
+    "authority_audit_json_sha256": "c241ae42e9255b1eeb075f9dc5232de77ec5e6107cb7a08fce8800f1d25565fe",
+    "authority_audit_raw_result_integrity_valid": true
+  },
+  "independent_raw_consumption": {
+    "basehalf_coordinates": 28,
+    "basehalf_artifact_parts": 29,
+    "quarter_artifacts": 16,
+    "total_scientific_result_parts_sha256_checked": 45,
+    "sha256_mismatches": 0,
+    "all_source_scientific_gate_pass": true,
+    "basehalf_each_coordinate_merged_rows": 80,
+    "basehalf_duplicate_z_phi_rows": 0,
+    "basehalf_frozen_z_support": [-0.86, -0.43, 0.0, 0.43, 0.86],
+    "basehalf_phi_index_support": "0..15",
+    "result_sha_matches_authority_audit": true
+  },
+  "frozen": {
+    "mass_steps": [5e-6, 2.5e-6, 1.25e-6],
+    "precision_digits": [80, 120],
+    "pipeline": "Iteration407 phi-average -> degree4 -> affine coefficients -> analytic affine-log recurrence -> central4",
+    "central4_coefficients": [1, -8, 8, -1],
+    "training_z": [-0.86, -0.43, 0.0, 0.43, 0.86],
+    "phi_nodes": 16,
+    "physical_mass_step_threshold": 2e-5,
+    "cross_precision_Ds_threshold": 2e-6,
+    "direct_original_integrand_threshold": 2e-6,
+    "tensor11_fit_residual_threshold": 2e-5
+  },
+  "physical_Ds": {
+    "BASE": {
+      "MP80": "0.000334698712595841410717689701215249442611820995807647705078125",
+      "MP120": "0.000334698712595841410717689701215249442611820995807647705078125"
+    },
+    "HALF": {
+      "MP80": "0.0003346659700666914662690876181017074486589990556240081787109375",
+      "MP120": "0.0003346659700666914662690876181017074486589990556240081787109375"
+    },
+    "QUARTER": {
+      "MP80": "0.0003343462057176257821999865171846977318637073040008544921875",
+      "MP120": "0.0003343462057176257821999865171846977318637073040008544921875"
+    }
+  },
+  "observed": {
+    "base_half_scaled_discrepancy_max": "3.2742529149944448602083113541993952821940183639526e-8",
+    "half_quarter_scaled_discrepancy_max": "3.1976434906568406910110091700971679529175162315369e-7",
+    "physical_mass_step_discrepancy_max": "3.1976434906568406910110091700971679529175162315369e-7",
+    "abs_Ds_80_minus_Ds_120_max": "0.0",
+    "max_spectral_F_abs_mp80_minus_mp120_diagnostic": "2.1563196982036551806722533640814212717504353892834e-80",
+    "all_spectrum_and_Ds_values_finite": true
+  },
+  "iteration424_clause_status": {
+    "physical_mass_step_discrepancy_le_2e-5": "PASS",
+    "direct_original_integrand_crosscheck_le_2e-6": "PASS_INHERITED_ITERATION573_FROM_RAW_VALID_ITERATION421__OBSERVED_MAX_2.0658997659274425e-9",
+    "tensor_degree_1_1_fit_residual_le_2e-5": "OPERATIONAL_BLOCKED_NO_FROZEN_HIGH_PRECISION_MAPPING",
+    "fixed_node_abs_Ds_80_minus_Ds_120_le_2e-6": "PASS",
+    "all_values_finite": "PASS"
+  },
+  "interpretation": {
+    "numerically_computed_iter424_clauses_passed": "3/3",
+    "five_clause_state": "4 PASS + 1 OPERATIONAL_BLOCKED",
+    "physical_index2_promoted": false,
+    "unresolved_physical_set": [2],
+    "reason_not_promoted": "The prospectively frozen Iter421 tensor11 residual has no validated high-precision mapping from the currently available central4 support; all five clauses must PASS simultaneously."
+  },
+  "next_gate": "Localize the exact missing support required to reproduce the prospectively frozen Iter421 tensor11 statistic at high precision. Do not replace it by the Iter495 central4 polynomial-reproduction identity or the Iter572 raw-grid bilinear diagnostic. If the original tensor11 design cannot be reproduced under already frozen authority, preserve OPERATIONAL_BLOCKED and do not promote index2.",
+  "guardrails": [
+    "NO_WORKFLOW_COLOR_AS_SCIENTIFIC_AUTHORITY",
+    "NO_POSTHOC_TENSOR11_REDEFINITION",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_SMALLER_H",
+    "NO_ZERO_FILL",
+    "NO_UV_SUPPORT_SUBSTITUTION",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ]
+}
