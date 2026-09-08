@@ -1,0 +1,28 @@
+{
+  "iteration": 593,
+  "date": "2026-09-08",
+  "model_readiness_percent": 24,
+  "classification": "PASS_SPLIT_INVARIANCE_AUDIT__INDIVIDUAL_K1CUBED_T_CUT_PROJECTION_NOT_A_FROZEN_OBSERVABLE__NON_RESIDUAL",
+  "parent_authorities": [
+    "Iteration 183 split-invariant Y=(K2,S_soft2_full) protocol",
+    "Iteration 205 linked discontinuity T_cut protocol",
+    "Iteration 590 full cubic same-action source-response completeness",
+    "Iteration 591 local K3 hard-channel analytic-origin result",
+    "Iteration 592 K1cubed meromorphic-origin result"
+  ],
+  "frozen_observable_rule": "Only the full source-completed cubic response S is observable under the Iter183 relation protocol; internal source/Ward/transverse/reducible repartitions are bookkeeping and may not be promoted separately.",
+  "algebraic_statement": "For S=S_A+S_B and an allowed bookkeeping repartition S_A->S_A+C, S_B->S_B-C, D_s S is invariant while D_s S_A and D_s S_B individually shift by +/-D_s C. Therefore an individual K1cubed-to-T_cut pole assignment is not split-invariant unless an independent pre-frozen map fixes C.",
+  "K3_status": "LOCAL_ANALYTIC_D_S_ZERO_REMAINS_VALID_AS_ORIGIN_CLASS_RESULT",
+  "K1cubed_status": "RETAIN_IN_FULL_SOURCE_RESPONSE__INDIVIDUAL_T_CUT_PROJECTION_NOT_AUTHORIZED",
+  "six_K1K2_as_complete_discontinuity_block": "NOT_AUTHORIZED_BY_SEPARATE_K1CUBED_PROJECTION",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "candidate_residual": false,
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "scientific_fail": false,
+  "exact_comparator_identity": false,
+  "regime_specific_non_identifiability": false,
+  "near_degeneracy": false,
+  "novelty_certificate": false,
+  "next_gate": "Assemble and Ward-test the complete same-action MSSC cubic source response K3 + six K1/K2 placements + six K1^3 chains as one source-completed object. Apply any D_s/T_cut projection only to the full object under a declared same-parent source-to-observable map; do not define an individual K1^3 Born subtraction post hoc."
+}
