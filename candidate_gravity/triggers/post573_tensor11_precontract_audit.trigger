@@ -1,0 +1,1 @@
+Exhaustive inventory of tensor11/symmetric-cross related definitions in candidate_gravity snapshot/history through the prospective Iteration424 contract commit. Inventory-only: no post-result mapping, no new residual, no threshold changes. Also persist compact exact summary of raw-consumed spectral run 34179921282.
