@@ -49,3 +49,4 @@ jobs:
           path: results/iteration598_iter597_contract_conformance/
           if-no-files-found: error
           retention-days: 30
+      # This comment deliberately arms the first post-creation push trigger.
