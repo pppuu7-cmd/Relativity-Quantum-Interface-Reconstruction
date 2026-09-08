@@ -1,0 +1,58 @@
+{
+  "schema": "rqir_iter424_quarter_rank_raw_consumption_v1",
+  "iteration": 571,
+  "date": "2026-09-08",
+  "classification": "PASS_RAW_CONSUMED_ITER424_QUARTER_SUPPORT_RANK12_MP80_MP120__NON_PROMOTING",
+  "scope": "raw-consumption authority for exactly one new frozen quarter support coordinate",
+  "source": {
+    "run_id": 34175330006,
+    "job_id": 101903475600,
+    "artifact_id": 10037900278,
+    "artifact_name": "rqir-post569-iter424-quarter-rank12-full-z-mp",
+    "artifact_digest": "sha256:9a7cc4cf316f4bed3f18a6f85d7a7c31b507e63917b71ff6c7df44fc63fd6ad4",
+    "head_sha": "adc1288da49c1363907c2336162d344030ec47ef",
+    "result_json_sha256": "1f22924c06cb0f09b70d8586d6a9802f81d0cd131acd40d68368f3bdc689507b",
+    "authority_audit_json_sha256": "cb7cabe0211d96610cd5fb68b6e5ca1754bdec5b3ef6939e55b7af71a493af1d"
+  },
+  "frozen_coordinate": {
+    "quarter_h": 1.25e-6,
+    "quarter_source_rank": 12,
+    "u": 2.5e-6,
+    "v": 1.25e-6,
+    "precision_digits": [80, 120],
+    "z_samples": [-0.86, -0.43, 0.0, 0.43, 0.86],
+    "phi_nodes": 16,
+    "radial_hs": [0.002, 0.001, 0.0005]
+  },
+  "observed": {
+    "source_classification": "PASS_ITER424_QUARTER_SUPPORT_RANK12_MP80_MP120__NON_PROMOTING",
+    "source_scientific_gate_pass": true,
+    "authority_audit_scientific_authority_pass": true,
+    "sample_count": 80,
+    "all_finite": true,
+    "scaled_mp80_vs_mp120_max": "3.12664953317048088199684875133e-80",
+    "scaled_mp80_vs_mp120_threshold": "1e-30",
+    "max_radial_richardson_scaled_error": "2.57083735651024786658254539157e-15",
+    "radial_richardson_scaled_threshold": "5e-4",
+    "runtime_seconds": 2766.7185471840003,
+    "result_hash_matches_authority_audit": true
+  },
+  "conclusions": {
+    "rank12_raw_valid_pass": true,
+    "rank12_may_be_counted_as_closed_quarter_support": true,
+    "quarter_new_support_closed": 12,
+    "quarter_new_support_required": 12,
+    "quarter_new_support_fraction": "12/12 = 100%",
+    "quarter_full_grid_authoritative_coordinates": 16,
+    "quarter_full_grid_coordinates": 16,
+    "quarter_full_grid_fraction": "16/16 = 100%",
+    "all_frozen_quarter_support_closed": true,
+    "quarter_assembly_authorized": true,
+    "physical_index2_promoted": false,
+    "full_iteration424_physical_acceptance_satisfied": false
+  },
+  "next_gate": "assemble the complete QUARTER central4 grid from raw-valid authorities under frozen Iterations 557-570 controls, then apply unchanged Iteration-424 five-clause physical reevaluation",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "guardrail": "Rank12 closes the final local QUARTER support coordinate. Completion of 12/12 support does not by itself promote physical index2; promotion requires complete assembly and simultaneous PASS of all five frozen Iteration-424 physical clauses."
+}
