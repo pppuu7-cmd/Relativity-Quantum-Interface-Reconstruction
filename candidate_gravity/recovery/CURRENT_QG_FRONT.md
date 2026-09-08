@@ -10,97 +10,41 @@ Repository commits, validated Actions artifacts, recovery deltas, research logs 
 
 ## Current authority
 
-Latest authoritative research iteration: **627**.
+Latest authoritative research iteration: **630**.
 
-- Iter424 physical fallback: **5/5 PASS**.
-- Iter581 exact15 / complete `Tr U1^2`: raw-valid PASS.
-- Iter582 q2-resolved `D_s Gamma_{e=2}`: PASS/non-residual.
-- Iter583–594: same-parent MSSC contacts, routing, relative normalization and complete 13-family cubic source object.
-- Iter605: full source-level nonlinear Ward consistency PASS.
-- Iter606: prospective source-to-native mapping contract PASS/non-residual.
-- Iter607: preserved scientific `BLOCKED` result.
-- Iter608: universal algebraic/Feynman-like scalar-pole distribution law PASS in its frozen `K+i0` scope.
-- Iter609–612: native bridge kinematic-rank obstruction localized; historical auxiliary constraints absent.
-- Iter613: prospective `MSSC001-NATIVE-S-KIN-V1` frozen before roots.
-- Iter614: six positive simple-root/Jacobian support points closed.
-- Iter615: six finite nonzero normalized source-side internal scalar-pole coefficients; independent implementations agree.
-- Iter616: exact q2 bucket identity and scalar endpoint amputation closed.
-- Iter617–621: historical/graph audits reduce the normalization problem, within the existing convention graph, to one relative complex scale `N_native`.
-- Iter622: source and connection numerical branches use the same direct `delta_g=kappa h_phys`; unknown powers of `kappa` are eliminated from the bridge.
-- Iter623: KG-start ledger frozen; six final dependency gates precede any genuinely new KG ansatz.
-- Iter624: MSSC source response and native gravitational `Gamma3` are different functional objects; a generic Legendre sign or Iter338 `+i` alone cannot bridge them.
-- Iter625: CTP branch-orientation audit finds five positive-energy and one negative-energy internal scalar root.
-- Iter626: historical CTP authority proves the native gravitational retarded/in-in sector and linked/amputated gravitational r/a protocol are frozen, but internal MSSC matter-scalar components were not.
-- **Iter627: prospective combined matter+gravity Schwinger-Keldysh contract `MSSC001-GRAVITY-SK-MEAS-V1` is frozen and raw-valid. The measured scalar-probe component is `G_phi^{ra}=G_R`, physical metric insertions are `h_r` at `h_a=0`, and r/a matrix multiplication forces every surviving internal scalar propagator in this measured response to be retarded. No root-by-root branch assignment is permitted.**
+Historical authority through Iter627 remains unchanged: Iter581 exact15 PASS; Iter582 q2-resolved connection coordinate PASS/non-residual; Iter594 complete 13-family MSSC source object; Iter605 source nonlinear Ward PASS; Iter613 frozen native hard-channel trajectory; Iter614 six simple-root/Jacobian support points; Iter615 historical common-`K+i0` source coefficients; Iter616 exact q2/end-point identity; Iter627 raw-valid combined matter+gravity SK measurement contract.
 
-## Frozen source support and historical projective data
+### Iter628 — open retarded scalar-response authority
 
-Strict ascending-s root order and Iter615 normalized source-side coefficients in the historical common `K+i0` convention:
+Iter628 raw-validly recomputed the six supported scalar-pole coefficients for the **open endpoint-amputated scalar response** under the prospectively frozen Iter627 retarded internal-line prescription. These values remain authoritative in that scope and are never zero-filled or discarded. They are not direct gravitational-1PI coefficients.
 
-1. `D_b^-(0.013028588574858)`: `-0.00024912100468199333`;
-2. `D_s^-(0.09)`: `+0.0007390333386357162`;
-3. `D_a^-(0.09868572571657197)`: `+0.00019432750619153958`;
-4. `D_a^+(1.241314274283428)`: `+0.0012850179378006798`;
-5. `D_b^+(1.726971411425142)`: `-0.0007467205092433388`;
-6. `D_s^-(2.89)`: `-0.0021373920072305236`.
+### Iter629 — universal `N_native` rejected structurally
 
-`D_s^+` has no positive root; this is not amplitude zero. All 13 source families remain retained; `zero_fill=false`.
+Raw authority: Actions run `34285497992`, job `102260007489`, head `f35fc211b684957901c62aebc683aa94147960b9`, artifact `10079284705`, digest `sha256:654d85897d882d41ccdeb1675d5088db6a74665f9388542b284bd94308ba50dc`; result SHA-256 `272bd82b5f9b84b3c1450fdf337a7d611457304bdede650b6b9918d5990abc25`, audit SHA-256 `0987a721095573387b10e95763f21a4fa2297efeb088c1aa5104023e21fddc3a`, `failures=[]`.
 
-Iter618 projective ratios are authoritative only for the historical Iter608/615 pole convention:
+Open scalar response family totals `(-1,+6,-6)` and closed scalar gravitational `ThirdDerivative Tr log K` totals `(+1,-3,+2)` have ratios `(-1,-2,-3)`. Therefore no single overall complex `N_native` can map the open response to the closed gravitational 1PI object. A fitted normalization is forbidden.
 
-`[-2.966563737084728, -0.7800526753639322, -5.158207913624242, 2.997420912767025, 8.57973421373656]`.
+### Iter630 — closed retarded loop causal structure
 
-Because Iter627 prospectively selects the retarded scalar component for the native measurement map, the affected pole coefficients must be recomputed from the same source dynamics. They must not be hand-flipped or inferred by editing the historical values.
+Raw authority: Actions run `34289414837`, job `102272371234`, head `6aee9bcdddffa7fe29ad65eeb35b7adbe965f2d5`, artifact `10080743600`, digest `sha256:ee5a9b16d0e0a79d2346115090cf8a76f9767902add8c54ecba27c05d2ec616e`; runtime SHA-256 `48363b1e9efbe4a646899cffd6e5e988e5d66d60f41c36fdd250892b23dd7c14`, audit SHA-256 `26ad06b1dbe6637dc81a0feb62bee10507da7e42bd5546d74d80d2448d337db9`, committed-result copy SHA-256 `521534a2ee89bb87bcdfbe89ec9070973fd2b31cba7f0e2df245c5cd0fa05e3f`, `failures=[]`.
 
-## Exact q2 / endpoint / field-variable binding
+Using the Iter627 r/a matrix `G=[[G_K,G_R],[G_A,0]]` and metric vertices derived from the doubled MSSC001 quadratic functional:
 
-Iter588 mode identity across opposite signatures:
+- closed K3 retarded one-a contact has causal support `G_K`;
+- closed K1/K2 one-a/one-r traces have `G_K G_A + G_K G_R`;
+- closed K1^3 arr/rar/rra traces have `G_K G_A^2 + G_K G_R G_A + G_K G_R^2`.
 
-- source `s:+1.0` <-> Iter582 `-1.0`;
-- source `b:+0.34` <-> Iter582 `-0.34`;
-- source `a:+0.14` <-> Iter582 `-0.14`.
+Every closed retarded scalar-loop family therefore contains exactly one Keldysh/statistical propagator `G_K`. Consequently Iter628's all-internal-`G_R` open response cannot be reweighted into retarded gravitational `Gamma3`, either by one common factor or root-wise factors.
 
-For the complete Iter594 source response
+## Active prerequisite
 
-`d_abc G=-G Kabc G+sum_6(G Ki G Kjk G)-sum_6(G Ki G Kj G Kk G)`,
+The same-parent scalar state/statistical component must be fixed before numerical closed-loop pole/cut coefficients can be computed. Iter627 specifies the r/a slots and open measured `G_R`, but does not by itself specify an initial density matrix / occupation / vacuum-Hadamard boundary condition fixing `G_K`.
 
-scalar endpoint amputation is
+**Iteration631 is queued:** Actions run `34289607051`, head `0cbb7daf76000f1b00ac0d109be52ef92b1efacd`. It is a fail-closed scalar-Keldysh-state authority gate. It must not choose vacuum, thermal occupation or `G_K=0` from Candidate/Iter582 values.
 
-`S_amp^(3)=K0_out(d_abc G)K0_in`
+## Frozen support retained
 
-`=-Kabc+sum_6(Ki G Kjk)-sum_6(Ki G Kj G Kk)`.
-
-Under Iter627, for the measured retarded scalar response, the two common external endpoints are `G_R` and are the only scalar propagators amputated. Internal scalar propagators, K3 and all K1^3 chains remain.
-
-The physical split is `g=eta+kappa h_phys`, hence `delta_g=kappa h_phys`. Iter270 connection geometry and Iter590 source geometry both add perturbations directly to `g`; an extra unknown `kappa` power is not part of the remaining bridge.
-
-## Iter627 combined SK measurement authority
-
-Prospective doubled functional:
-
-`Z[J_phi+,J_phi-,J_g+,J_g-] = Integral exp{i S[g+,phi+] - i S[g-,phi-] + i(source+ - source-)}`.
-
-r/a rotation for both matter and gravity:
-
-`X_+=X_r+X_a/2`, `X_-=X_r-X_a/2`.
-
-Physical metric background and insertions:
-
-`h_a=0`, differentiate with respect to `h_r`.
-
-Measured scalar probe:
-
-`G_phi^{ra}=G_R`.
-
-The same-branch unitary action gives exact rotation coefficients `rrr=0`, `arr=rar=rra=1`, `aaa=1/4`. With `G_rr=G_K`, `G_ra=G_R`, `G_ar=G_A`, `G_aa=0`, direct matrix multiplication gives
-
-`(G dK G)_{ra}=G_R dK_R G_R`,
-
-`(G dK G dK G)_{ra}=G_R dK_R G_R dK_R G_R`,
-
-and the corresponding cubic retarded chain. Therefore all surviving internal scalar lines are induced as `G_R` by the observable definition.
-
-Raw validation: Actions run `34284449139`, conclusion `success`, head `e701b1d0aa8a0222e7ec6cfbc6b5baf8263378c0`, artifact `10078890134`, digest `sha256:03a8167e23d946006024971ad02824070b700c94124465bb11982fed87dbe67e`; fail-closed exact comparison PASS.
+All 13 MSSC source families remain retained; `zero_fill=false`. Iter613 hard-channel trajectory remains frozen. `D_s^+` having no positive root is not amplitude zero. Iter628 retarded open-response coefficients remain historical/current authority only for that open observable. No root or source family may be deleted to simplify the closed-loop bridge.
 
 ## Iter582 connection coordinate
 
@@ -110,20 +54,16 @@ Raw validation: Actions run `34284449139`, conclusion `success`, head `e701b1d0a
 - `q^2=-0.34`: `-0.00371666346186323 i`;
 - `q^2=-0.14`: `-0.0007997265433511544 i`.
 
-These values were not used to choose the Iter627 SK branch/component contract.
+These Candidate-side values are not permitted to choose the scalar state, normalization, branch prescription or closed-loop decomposition.
 
 ## Repository-level KG start ledger
 
-This is separate from `MODEL_READINESS`. A genuinely new KG may be instantiated only after:
-
-1. **KGSTART-1 — ACTIVE:** with Iter627 measurement map now frozen, recompute the source pole coefficients in the induced retarded scalar component and derive the resulting absolute dimensionless source-to-native normalization without Candidate/comparator values.
-2. **KGSTART-2:** execute full native `Y/T_cut` projection with all roots/families retained, then freeze and perform matched Source/Born subtraction.
-3. **KGSTART-3:** execute the fixed applicable C0–C6 comparator quotient in the same observable/nuisance convention.
-4. **KGSTART-4:** obtain a robust nonzero comparator-subtracted algebraic residual.
-5. **KGSTART-5:** challenge that residual against known gravity / quantum-gravity model realizations under the same frozen RQIR funnel, without tuning the funnel to outcomes.
-6. **KGSTART-6:** issue one decision: `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, or `NEW_REQUIRED`.
-
-Only `NEW_REQUIRED` authorizes creation of `ANSATZ-003` as a genuinely new Candidate Gravity model.
+1. **KGSTART-1 — ACTIVE:** construct the same-parent closed retarded scalar-loop gravitational `Gamma3`, including a prospectively valid scalar-state/`G_K` contract and pole/cut-origin classification.
+2. **KGSTART-2:** full native `Y/T_cut` projection with all supported roots/families, then matched Source/Born subtraction.
+3. **KGSTART-3:** fixed C0–C6 comparator quotient in the same observable/nuisance convention.
+4. **KGSTART-4:** robust nonzero comparator-subtracted algebraic residual.
+5. **KGSTART-5:** challenge the residual against known gravity / quantum-gravity realizations without tuning the funnel.
+6. **KGSTART-6:** issue `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, or `NEW_REQUIRED`; only `NEW_REQUIRED` authorizes `ANSATZ-003`.
 
 ## Stable model-readiness rubric
 
@@ -136,16 +76,12 @@ Only `NEW_REQUIRED` authorizes creation of `ANSATZ-003` as a genuinely new Candi
 
 **MODEL_READINESS: 24%**
 
-Readiness change through Iter627: **0 percentage points**. A real measurement-map prerequisite closed, but robust unique residual remains `0/20` and no complete rubric sector closed.
+Readiness change through Iter630: **0 percentage points**. Structural prerequisites improved, but no robust unique residual or complete new rubric sector closed.
 
 ## Exact next admissible work
 
-**Iteration628:** recompute the six supported internal scalar-pole discontinuity coefficients under the prospectively frozen retarded internal-line prescription, preserving Iter613/614 kinematics, endpoint convention and all 13 source families. In the same iteration or an immediately preceding prospective sub-contract, derive the single common source-to-native phase/normalization from `MSSC001-GRAVITY-SK-MEAS-V1` without consulting Iter582 Candidate values. Only after this closes may native `Y/T_cut` projection begin.
-
-## Compute status / ANTI-IDLE
-
-No heavy numerical job is currently required for the contract itself. Iter628 is an algebraic/numerical recomputation and should reuse the existing reproducible MSSC machinery; do not duplicate an already-running Action.
+Terminal Iter631 -> independent raw artifact consumption. If existing authority does not uniquely fix `G_K`, record that as `BLOCKED` and then prospectively freeze a scientifically justified same-parent scalar-state boundary condition before evaluating the closed retarded loop on the Iter613 trajectory. No closed-loop numerical coefficients may be generated by silently setting `G_K`.
 
 ## Retained guardrails
 
-Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative results are preserved. No post-hoc trajectory change, estimator, normalization fit, q2 regrouping, root summation, branch hand-flip, threshold weakening, ansatz tuning or unproved internal repartition. K1^3 remains retained. Repeated/coincident poles are never ordinary simple cuts. Source/Born subtraction remains `NOT_PERFORMED`. No comparator quotient before native binding closes. No `ANSATZ-003`; no Fisher/resources.
+Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative results are preserved. No post-hoc trajectory/state/estimator/normalization fit, q2 regrouping, root summation, branch hand-flip, threshold weakening or ansatz tuning. K1^3 remains retained. Repeated/coincident poles are never ordinary simple cuts. Source/Born subtraction remains `NOT_PERFORMED` until matched observable and pole/cut origin are fixed. No comparator quotient before native binding. No `ANSATZ-003`; no Fisher/resources.
