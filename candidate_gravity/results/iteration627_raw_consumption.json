@@ -1,0 +1,34 @@
+{
+  "iteration": 627,
+  "date": "2026-09-09",
+  "workflow_run_id": 34284449139,
+  "workflow_name": "RQIR Iter627 combined SK contract validation",
+  "head_sha": "e701b1d0aa8a0222e7ec6cfbc6b5baf8263378c0",
+  "run_status": "completed",
+  "run_conclusion": "success",
+  "artifact_id": 10078890134,
+  "artifact_name": "rqir-iteration627-combined-sk-contract-validation",
+  "artifact_digest": "sha256:03a8167e23d946006024971ad02824070b700c94124465bb11982fed87dbe67e",
+  "fail_closed_exact_comparison": "PASS",
+  "rotation_checks": {
+    "rrr_zero": 0.0,
+    "arr_unit": 1.0,
+    "rar_unit": 1.0,
+    "rra_unit": 1.0,
+    "aaa_quarter": 0.25
+  },
+  "causal_matrix_checks": {
+    "one_insertion_ra": ["R", "dKR", "R"],
+    "two_insertions_ra": ["R", "dKR", "R", "dKR", "R"],
+    "three_insertions_ra": ["R", "dKR", "R", "dKR", "R", "dKR", "R"],
+    "all_surviving_internal_scalar_lines": "G_R"
+  },
+  "family_census_total": 13,
+  "candidate_values_used_to_choose_contract": false,
+  "N_native_fitted": false,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "zero_fill": false,
+  "classification": "PASS_RAW_AUDIT_ITER627_COMBINED_MATTER_GRAVITY_SK_CONTRACT__NON_RESIDUAL",
+  "MODEL_READINESS": "24%",
+  "readiness_change": "0 percentage points"
+}
