@@ -1,0 +1,114 @@
+name: RQIR post575 tensor11 exact MP consumer
+on:
+  workflow_run:
+    workflows: ['RQIR Iter575 tensor11 missing support matrix']
+    types: [completed]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  consume_tensor11:
+    if: ${{ github.event.workflow_run.id == 34180521559 }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install frozen numerical dependencies
+        run: python -m pip install --disable-pip-version-check -q numpy==2.1.3 mpmath==1.3.0 scipy==1.14.1
+      - name: Download Iter574 existing raw bundle and all 36 Iter575 rank artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MATRIX_RUN: ${{ github.event.workflow_run.id }}
+          MATRIX_HEAD: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+          repo="pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction"
+          root="candidate_gravity/artifacts/post575_tensor11_exact_mp"
+          mkdir -p "$root/existing" "$root/new"
+          if [ "$MATRIX_HEAD" != "519ceb6dc8efc3e5a9aebe86f5e6523152a4b284" ]; then
+            echo "matrix head drift: $MATRIX_HEAD" >&2; exit 2
+          fi
+          gh run download 34179921282 -R "$repo" -n rqir-post573-iter424-full-spectrum-from-raw -D "$root/existing"
+          gh api "repos/$repo/actions/runs/$MATRIX_RUN/artifacts?per_page=100" > "$root/matrix_artifacts.json"
+          python - <<'PY' > "$root/artifact_plan.tsv"
+          import json,pathlib,re
+          root=pathlib.Path('candidate_gravity/artifacts/post575_tensor11_exact_mp')
+          o=json.loads((root/'matrix_artifacts.json').read_text())
+          pat=re.compile(r'^rqir-iter575-tensor11-support-rank-(\d+)$')
+          rows=[]
+          for a in o.get('artifacts',[]):
+              m=pat.match(str(a.get('name','')))
+              if m: rows.append((int(m.group(1)),int(a['id']),str(a['name']),str(a.get('digest',''))))
+          rows.sort()
+          ranks=[r[0] for r in rows]
+          if ranks!=list(range(1,37)): raise SystemExit(('matrix_artifact_rank_set_drift',ranks))
+          for r,aid,name,digest in rows: print(f'{r}\t{aid}\t{name}\t{digest}')
+          PY
+          while IFS=$'\t' read -r rank aid name digest; do
+            mkdir -p "$root/new/rank_$rank"
+            gh run download "$MATRIX_RUN" -R "$repo" -n "$name" -D "$root/new/rank_$rank"
+          done < "$root/artifact_plan.tsv"
+          python - <<'PY'
+          import json,os,pathlib
+          root=pathlib.Path('candidate_gravity/artifacts/post575_tensor11_exact_mp')
+          plan=[]
+          for line in (root/'artifact_plan.tsv').read_text().splitlines():
+              r,aid,name,digest=line.split('\t')
+              plan.append({'rank':int(r),'artifact_id':int(aid),'name':name,'artifact_digest':digest})
+          out={'matrix_run_id':int(os.environ['MATRIX_RUN']),'matrix_head_sha':os.environ['MATRIX_HEAD'],
+               'existing_source_run_id':34179921282,'existing_source_artifact_id':10038557027,
+               'existing_source_artifact_digest':'sha256:330fc416a24935bbd1faf5f852420d179c0cd17a8bb2ba52dbae296bc00953e2',
+               'new_rank_artifacts':plan}
+          (root/'transport_provenance.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          PY
+      - name: Evaluate unchanged original Iter421 tensor11 at MP80 and MP120
+        run: |
+          root="candidate_gravity/artifacts/post575_tensor11_exact_mp"
+          python candidate_gravity/code/post575_iter421_tensor11_exact_mp_consumer.py \
+            --existing-root "$root/existing" --new-root "$root/new" > "$root/result.json"
+      - name: Fail-closed raw result audit
+        env:
+          MATRIX_RUN: ${{ github.event.workflow_run.id }}
+          MATRIX_HEAD: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          python - <<'PY'
+          import hashlib,json,os,pathlib
+          root=pathlib.Path('candidate_gravity/artifacts/post575_tensor11_exact_mp')
+          p=root/'result.json'; raw=p.read_bytes(); o=json.loads(raw)
+          allowed={
+            'PASS_ITER424_TENSOR11_EXACT_MP80_MP120__READY_FOR_FAIL_CLOSED_RAW_CONSUMPTION__NON_PROMOTING',
+            'FAIL_ITER424_TENSOR11_EXACT_MP80_MP120_RESIDUAL__NON_PROMOTING',
+            'BLOCKED_ITER421_TENSOR11_EXACT_MP_SUPPORT__ONE_OR_MORE_RANKS_BLOCKED__NON_PROMOTING'
+          }
+          target=o.get('target',{}); fr=o.get('frozen',{}); cls=o.get('classification')
+          valid=bool(
+            o.get('stage')=='POST575_ITER421_TENSOR11_EXACT_MP_CONSUMER__UNNUMBERED_COLLISION_SAFE' and cls in allowed and
+            o.get('promotes_physical_coordinate') is False and target.get('double_double_index')==2 and target.get('class_id')==3 and abs(float(target.get('q_squared'))+1)<1e-12 and
+            fr.get('radius_multipliers')==[1.0,0.75,0.5,0.25] and fr.get('fit_basis')=='[1,x,y,x*y]' and
+            fr.get('precision_digits')==[80,120] and fr.get('required_signed_F_nodes')==64 and fr.get('existing_nodes')==28 and fr.get('new_nodes')==36
+          )
+          if cls.startswith('PASS_'):
+              valid=valid and o.get('scientific_gate_pass') is True and o.get('tensor11',{}).get('both_residuals_le_2e-5') is True
+          else:
+              valid=valid and o.get('scientific_gate_pass') is False
+          t=json.loads((root/'transport_provenance.json').read_text())
+          valid=valid and t.get('matrix_run_id')==int(os.environ['MATRIX_RUN']) and t.get('matrix_head_sha')==os.environ['MATRIX_HEAD'] and len(t.get('new_rank_artifacts',[]))==36
+          a={'schema':'rqir_post575_tensor11_exact_mp_authority_audit_v1',
+             'bytes':len(raw),'result_json_sha256':hashlib.sha256(raw).hexdigest(),
+             'classification':cls,'scientific_gate_pass':o.get('scientific_gate_pass'),
+             'raw_result_integrity_valid':bool(valid),
+             'matrix_run_id':int(os.environ['MATRIX_RUN']),'matrix_head_sha':os.environ['MATRIX_HEAD'],
+             'authority_scope':'UNCHANGED_ORIGINAL_ITER421_TENSOR11_MP80_MP120__NON_PROMOTING'}
+          (root/'authority_audit.json').write_text(json.dumps(a,indent=2,sort_keys=True)+'\n')
+          if not valid: raise SystemExit(('post575_authority_audit_failed',a))
+          PY
+      - name: Upload post575 tensor11 raw artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-post575-iter421-tensor11-exact-mp
+          path: candidate_gravity/artifacts/post575_tensor11_exact_mp/
+          retention-days: 90
