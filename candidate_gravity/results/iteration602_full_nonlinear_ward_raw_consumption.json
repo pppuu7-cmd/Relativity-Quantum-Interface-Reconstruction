@@ -1,0 +1,55 @@
+{
+  "iteration": 602,
+  "date": "2026-09-08",
+  "classification": "FAIL_RAW_CONSUMED_FULL_SOURCE_LEVEL_NONLINEAR_WARD_WITH_ITER601_ENDPOINT_REALIZATION__PRESERVED_NEGATIVE_RESULT",
+  "scientific_gate_pass": false,
+  "candidate_residual": false,
+  "model_readiness_percent": 24,
+  "canonical_run": 34240030976,
+  "canonical_job": 102107522186,
+  "head_sha": "c3b5d0f796e32be0999e09224031e54b4d494742",
+  "artifact_id": 10061578531,
+  "artifact_name": "rqir-iter602-full-ward-endpoint-corrected",
+  "artifact_digest": "sha256:09f7ef6a98327abff416d46b32a99bfec599a9b68d04edacd91c019ce3436d56",
+  "raw_result_sha256": "2897821038b495562d316c56ea40bf051b969a258ece5a2ee2bddc944981d138",
+  "raw_authority_audit_sha256": "5cd7f4fa2f59e250d896d06862bfb079cfe27bec0cffe5b0c1d02b73890b71cb",
+  "raw_classification": "FAIL_FULL_SOURCE_LEVEL_NONLINEAR_WARD_WITH_ITER601_ENDPOINT_REALIZATION__PRESERVED_NEGATIVE_RESULT",
+  "failure_count": 6,
+  "one_leg_anchor": {
+    "status": "PASS_ALL_12",
+    "max_abs": 6.88338845912217e-15,
+    "frozen_tolerance": 2e-11
+  },
+  "iter594_13_family_assembly_crosscheck": {
+    "status": "PASS",
+    "probe0_match_abs": 5.767843750358048e-08,
+    "probe1_match_abs": 4.4987911188010266e-08,
+    "frozen_tolerance": 2e-05
+  },
+  "ward_rows": {
+    "total": 12,
+    "rows_without_threshold_failure": 9,
+    "failed_rows": ["s/xi0", "s/xi1", "s/xi2"],
+    "s_xi3_last_abs": 2.5406450559613046e-14,
+    "a_max_last_abs": 4.925840285606124e-12,
+    "b_max_last_abs": 1.172389197351933e-12,
+    "s_xi0_last_abs": 0.006096828631513357,
+    "s_xi1_last_abs": 0.0035599485158516048,
+    "s_xi2_last_abs": 0.0035599485212443388,
+    "max_full_ward_abs": 0.006096828631513357,
+    "max_last_step_abs": 0.00607858101621395,
+    "frozen_ward_abs_tolerance": 2e-06,
+    "frozen_last_step_tolerance": 2e-05
+  },
+  "nonconvergence_signature": {
+    "s_xi0_real_fd_sequence": [1.5524867089244463, 1.78613555509661e-05, -0.0049883971870925],
+    "s_xi1_real_fd_sequence": [-0.7374860628673648, -9.1483318354635e-06, 0.002978524883929281],
+    "s_xi2_real_fd_sequence": [-0.7374860628719657, -9.148331826351264e-06, 0.0029785248874477912],
+    "interpretation": "The frozen Iter602 gate is a scientific negative result. The three failing s-sector rows also fail the frozen convergence criterion, so their stability versus finite Fourier-lattice realization must be diagnosed separately before any model-level Ward interpretation."
+  },
+  "source_born_subtraction": "NOT_PERFORMED",
+  "source_to_iter582_map": "NOT_PERFORMED",
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "next_gate": "Iteration603 non-promoting lattice-radius diagnosis only; preserve Iter602 FAIL. No production rerun or threshold/family/fixture change is authorized by the diagnostic itself."
+}
