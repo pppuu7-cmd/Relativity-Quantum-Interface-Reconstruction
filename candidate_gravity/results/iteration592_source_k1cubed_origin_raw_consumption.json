@@ -1,0 +1,41 @@
+{
+  "iteration": 592,
+  "date": "2026-09-08",
+  "classification": "PASS_RAW_CONSUMED_K1CUBED_MEROMORPHIC_ORIGIN__LINKED_T_CUT_PROJECTION_BLOCKED__NON_RESIDUAL",
+  "scientific_gate_pass": true,
+  "model_readiness_percent": 24,
+  "workflow": {
+    "run": 34214083326,
+    "job": 102021606620,
+    "head_sha": "57b3a430abe387376376bd559c7f66cd7fa230f4",
+    "artifact_id": 10051001153,
+    "artifact_name": "rqir-iter592-source-k1cubed-origin",
+    "artifact_digest": "sha256:d3d0e4e4e57bbe047dc8019bd159d3434118542b4c28696a88692e97ac9f7c21",
+    "result_sha256": "f2765720fddaf578df48bfaf40820c66412282f81968d4ad77a04a940aac94a6",
+    "authority_audit_sha256": "34eeaed0819efe1bd8942052acd3b67d119f9b795899cf5b04991c6b303c20eb",
+    "audit_classification": "PASS_RAW_AUTHORITY_AUDIT_ITER592_K1CUBED_ORIGIN",
+    "failures": []
+  },
+  "analytic_origin": {
+    "K1_momentum_class": "POLYNOMIAL",
+    "G_class": "MEROMORPHIC_RATIONAL_1_OVER_m2_minus_p2",
+    "loop_integrals": 0,
+    "logs": 0,
+    "threshold_square_roots": 0,
+    "nonlocal_form_factors": 0,
+    "ordinary_finite_branch_cut_origin": "NONE_AWAY_FROM_SCALAR_POLES"
+  },
+  "fixture_support": [
+    {"singleton":"s","K1cubed_six_permutation_sum":-0.000386885483743436,"minimum_abs_internal_K0":0.23999999999999994,"sampled_on_scalar_pole":false},
+    {"singleton":"a","K1cubed_six_permutation_sum":-0.0005328911177533087,"minimum_abs_internal_K0":0.14500000000000007,"sampled_on_scalar_pole":false},
+    {"singleton":"b","K1cubed_six_permutation_sum":0.00012109066165593845,"minimum_abs_internal_K0":0.004999999999999838,"sampled_on_scalar_pole":false}
+  ],
+  "ordinary_finite_branch_cut_D_s_K1cubed": "ZERO_AWAY_FROM_POLES",
+  "K1cubed_under_frozen_linked_T_cut": "BLOCKED__NEEDS_EXPLICIT_SOURCE_TO_T_CUT_DISTRIBUTIONAL_MAP",
+  "K1K2_only_as_complete_discontinuity_source_block": "NOT_AUTHORIZED",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "candidate_residual": false,
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "next_gate": "Construct and freeze the matched source-to-native-linked-observable distributional map for MSSC scalar pole terms versus the existing split-invariant Y=(K2,S_soft2_full)/T_cut protocol. Until that authority exists, retain K1^3 in the full same-action source Ward tree and do not perform Source/Born subtraction."
+}
