@@ -1,0 +1,55 @@
+name: RQIR Iter620 projective conditioning validation
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration620-projective-conditioning.yml'
+      - 'candidate_gravity/code/iteration620_projective_conditioning_diagnostic.py'
+      - 'candidate_gravity/results/iteration620_projective_conditioning_diagnostic.json'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Recompute diagnostic
+        run: |
+          python candidate_gravity/code/iteration620_projective_conditioning_diagnostic.py > iteration620_runtime.json
+      - name: Fail-closed comparison
+        run: |
+          python - <<'PY'
+          import json, math
+          with open('iteration620_runtime.json') as f: r=json.load(f)
+          with open('candidate_gravity/results/iteration620_projective_conditioning_diagnostic.json') as f: c=json.load(f)
+          failures=[]
+          keys=['projective_ratios_anchor_D_b_minus','projective_abs_dynamic_range','max_componentwise_relative_condition_number','min_cancellation_margin','model_readiness_percent']
+          for k in keys:
+              if r[k] != c[k]: failures.append(f'{k}: runtime={r[k]!r} committed={c[k]!r}')
+          for i,(rr,cc) in enumerate(zip(r['rows'],c['rows'])):
+              for k in ['root','aggregate','component_l1','cancellation_margin','componentwise_relative_condition_number']:
+                  if rr[k] != cc[k]: failures.append(f'row{i}.{k}: runtime={rr[k]!r} committed={cc[k]!r}')
+          audit={
+            'iteration':620,
+            'classification':'PASS_RAW_AUTHORITY_AUDIT_ITER620_PROJECTIVE_CONDITIONING' if not failures else 'FAIL_RAW_AUTHORITY_AUDIT_ITER620_PROJECTIVE_CONDITIONING',
+            'failures':failures,
+            'N_native_used':False,
+            'thresholds_introduced':False,
+            'roots_summed':False,
+            'source_born_subtraction':'NOT_PERFORMED'
+          }
+          with open('iteration620_authority_audit.json','w') as f: json.dump(audit,f,indent=2)
+          if failures: raise SystemExit('\n'.join(failures))
+          PY
+      - name: Upload raw validation artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration620-projective-conditioning-validation
+          path: |
+            iteration620_runtime.json
+            iteration620_authority_audit.json
+            candidate_gravity/results/iteration620_projective_conditioning_diagnostic.json
