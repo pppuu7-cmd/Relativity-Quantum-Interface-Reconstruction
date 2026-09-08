@@ -1,0 +1,51 @@
+name: RQIR Iter606 source-to-Iter582 mapping contract
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'analysis/source_to_iter582_mapping_contract_iteration606.py'
+      - 'candidate_gravity/results/iteration605_full_source_nonlinear_ward_raw_consumption.json'
+      - 'candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_582.md'
+      - 'candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_592.md'
+      - '.github/workflows/rqir-iteration606-source-to-iter582-mapping-contract.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mapping-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Iter606 prospective mapping contract gate
+        run: python analysis/source_to_iter582_mapping_contract_iteration606.py
+      - name: Fail-closed artifact integrity audit
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('results/iteration606_source_to_iter582_mapping_contract')
+          r=root/'result.json'; a=root/'authority_audit.json'
+          R=json.loads(r.read_text()); A=json.loads(a.read_text()); sha=hashlib.sha256(r.read_bytes()).hexdigest(); bad=[]
+          if R.get('iteration') != 606: bad.append('iteration mismatch')
+          if R.get('model_readiness_percent') != 24: bad.append('readiness drift')
+          if R.get('candidate_residual') is not False: bad.append('improper residual promotion')
+          if R.get('source_born_subtraction') != 'NOT_PERFORMED': bad.append('premature subtraction')
+          if R.get('frozen_prerequisites',{}).get('source_family_count') != 13: bad.append('source census drift')
+          if R.get('frozen_prerequisites',{}).get('iter582_q2_buckets') != [-1.0,-0.34,-0.14]: bad.append('q2 grouping drift')
+          if A.get('result_sha256') != sha: bad.append('sha mismatch')
+          if A.get('failures') != []: bad.append('raw audit failure')
+          if R.get('classification') != 'PASS_PROSPECTIVE_SOURCE_TO_ITER582_NATIVE_LINKED_MAPPING_CONTRACT__NON_RESIDUAL': bad.append('unexpected classification')
+          if bad: raise SystemExit('\n'.join(bad))
+          print('PASS Iter606 raw artifact integrity',sha)
+          PY
+      - name: Upload raw artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter606-source-to-iter582-mapping-contract
+          path: results/iteration606_source_to_iter582_mapping_contract/
+          if-no-files-found: error
+          retention-days: 30
