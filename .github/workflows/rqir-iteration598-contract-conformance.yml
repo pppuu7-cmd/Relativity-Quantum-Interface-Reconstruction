@@ -1,0 +1,51 @@
+name: RQIR Iter598 Iter597 contract conformance
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'analysis/iteration598_iter597_contract_conformance.py'
+      - '.github/workflows/rqir-iteration598-contract-conformance.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  conformance:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run fail-closed contract conformance audit
+        run: python analysis/iteration598_iter597_contract_conformance.py
+      - name: Verify raw outputs
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('results/iteration598_iter597_contract_conformance')
+          r=root/'result.json'; a=root/'authority_audit.json'
+          if not r.exists() or not a.exists(): raise SystemExit('missing Iter598 outputs')
+          result=json.loads(r.read_text()); audit=json.loads(a.read_text())
+          sha=hashlib.sha256(r.read_bytes()).hexdigest(); failures=[]
+          if result.get('iteration') != 598: failures.append('iteration mismatch')
+          if result.get('source_born_subtraction') != 'NOT_PERFORMED': failures.append('premature Source/Born subtraction')
+          if result.get('candidate_residual') is not False: failures.append('premature residual')
+          if result.get('ANSATZ_003') != 'FORBIDDEN': failures.append('ANSATZ-003 violation')
+          if result.get('Fisher_resources') != 'FORBIDDEN': failures.append('Fisher/resources violation')
+          if audit.get('result_sha256') != sha: failures.append('result sha mismatch')
+          if failures: raise SystemExit('\n'.join(failures))
+          print('PASS Iter598 raw integrity',sha,'classification=',result.get('classification'))
+          PY
+      - name: Upload raw artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter598-contract-conformance
+          path: results/iteration598_iter597_contract_conformance/
+          if-no-files-found: error
+          retention-days: 30
