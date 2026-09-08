@@ -1,0 +1,77 @@
+{
+  "iteration": 580,
+  "classification": "PASS_ITER421_TENSOR11_MP80_MP120__ITER424_5_OF_5_PASS__PHYSICAL_INDEX2_NUMERICAL_BLOCKER_CLOSED",
+  "scientific_gate_pass": true,
+  "scope": "FROZEN_ITER421_TENSOR11_AND_ITER424_NUMERICAL_CONVERGENCE_ONLY__NOT_CANDIDATE_GRAVITY_CONSISTENCY_OR_NOVELTY",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "target": {"double_double_index": 2, "class_id": 3, "q_squared": -1.0},
+  "prerequisites": {
+    "iteration579_all36_raw_valid_pass": true,
+    "preexisting_raw_valid_nodes": 28,
+    "iter575_raw_valid_nodes": 36,
+    "complete_frozen_support_nodes": 64,
+    "iteration574_spectrum_pipeline_validation": "PASS"
+  },
+  "frozen_observable": {
+    "formula": "C(r,s)=[F(r,s)-F(r,-s)-F(-r,s)+F(-r,-s)]/(4rs)",
+    "R": 1e-5,
+    "radius_multipliers": [1.0, 0.75, 0.5, 0.25],
+    "fit_coordinates": ["x=(r/R)^2", "y=(s/R)^2"],
+    "fit_basis": "[1,x,y,xy]",
+    "fit_definition": "original Iter420 numpy.linalg.lstsq real/imag separately; residual=max|pred-y|/max(1,max|y|,max|pred|)",
+    "threshold": 2e-5,
+    "precision_digits": [80, 120],
+    "spectrum_pipeline": "Iteration407 phi-average -> degree4 interpolation -> affine denominator -> analytic affine-log recurrence"
+  },
+  "parent_dynamics_validation": {
+    "BASE_reconstructed": "0.000334698712595841410717689701215",
+    "BASE_iter574_authority": "0.000334698712595841410717689701215249442611820995807647705078125",
+    "HALF_reconstructed": "0.000334665970066691466269087618102",
+    "HALF_iter574_authority": "0.0003346659700666914662690876181017074486589990556240081787109375",
+    "status": "PASS_SAME_FROZEN_DYNAMICS_AND_PARAMETER_CONVENTION"
+  },
+  "observed": {
+    "MP80": {
+      "fit_residuals_scaled_tensor11": 1.341057348963658e-8,
+      "max_abs_cross": 0.0003347073619490426,
+      "max_abs_raw_residual": 1.341057348963658e-8,
+      "coefficients_re_im": [[-0.00033466648303069217, 0.0], [-3.35927551134294e-8, 0.0], [-3.2170372249547e-8, 0.0], [4.816323562432116e-8, 0.0]]
+    },
+    "MP120": {
+      "fit_residuals_scaled_tensor11": 1.341057348963658e-8,
+      "max_abs_cross": 0.0003347073619490426,
+      "max_abs_raw_residual": 1.341057348963658e-8,
+      "coefficients_re_im": [[-0.00033466648303069217, 0.0], [-3.35927551134294e-8, 0.0], [-3.2170372249547e-8, 0.0], [4.816323562432116e-8, 0.0]]
+    },
+    "worst_tensor11_residual": 1.341057348963658e-8,
+    "threshold_margin_factor": 1491.3605309613044
+  },
+  "iteration424_clause_status": {
+    "physical_mass_step_discrepancy": "PASS__3.1976434906568407e-7_LE_2e-5",
+    "direct_original_integrand_crosscheck": "PASS__2.0658997659274425e-9_LE_2e-6",
+    "tensor_degree_1_1_fit_residual": "PASS__1.341057348963658e-8_LE_2e-5_AT_MP80_AND_MP120",
+    "abs_Ds_80digit_minus_Ds_120digit": "PASS__0.0_LE_2e-6",
+    "all_values_finite": "PASS"
+  },
+  "iteration424_decision": "PASS_5_OF_5",
+  "physical_index2_status": "NUMERICAL_CONVERGENCE_BLOCKER_CLOSED__PROMOTION_AUTHORIZED_BY_FROZEN_DECISION_TREE",
+  "unresolved_physical_set_after_gate": [],
+  "not_claimed": [
+    "NO_CANDIDATE_GRAVITY_CONSISTENCY_PASS",
+    "NO_EXACT_COMPARATOR_IDENTITY",
+    "NO_MODEL_LEVEL_IDENTIFIABILITY_RESULT",
+    "NO_NOVELTY_CERTIFICATE",
+    "NO_ROBUST_COMPARATOR_SUBTRACTED_RESIDUAL"
+  ],
+  "guardrails": [
+    "NO_POSTHOC_TENSOR11_REDEFINITION",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_UV_SUBSTITUTION",
+    "NO_NEW_PROMOTED_VALUE_ESTIMATOR_SELECTED_HERE",
+    "EXACT15_MUST_USE_PREEXISTING_FROZEN_PROMOTION_ASSEMBLY",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "next_gate": "Execute the already-frozen Iteration412 exact15 assembly using the newly unblocked/promotable physical index2 under its pre-existing value/normalization rule; do not invent a new estimator."
+}
