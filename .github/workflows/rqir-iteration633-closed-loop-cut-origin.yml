@@ -1,0 +1,45 @@
+name: RQIR Iter633 closed-loop cut-origin classification
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration633-closed-loop-cut-origin.yml'
+      - 'candidate_gravity/code/iteration633_closed_loop_cut_origin_gate.py'
+      - 'candidate_gravity/results/iteration633_closed_loop_cut_origin_gate.json'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Recompute cut-origin gate
+        run: python candidate_gravity/code/iteration633_closed_loop_cut_origin_gate.py > iteration633_runtime.json
+      - name: Fail-closed exact audit
+        run: |
+          python - <<'PY'
+          import json
+          R=json.load(open('iteration633_runtime.json')); C=json.load(open('candidate_gravity/results/iteration633_closed_loop_cut_origin_gate.json'))
+          failures=[]
+          if R!=C: failures.append('runtime != committed result')
+          T=R.get('topologies',{})
+          if T.get('K3',{}).get('ordinary_hard_channel_cut') is not False: failures.append('K3 cut mismatch')
+          if T.get('K1K2',{}).get('ordinary_hard_channel_cut') is not True: failures.append('bubble cut mismatch')
+          if T.get('K1cubed',{}).get('anomalous_landau')!='POSSIBLE__REQUIRES_EXPLICIT_ITER613_LANDAU_CHECK': failures.append('triangle Landau guardrail mismatch')
+          for k,v in [('candidate_values_used',False),('zero_fill',False),('source_born_subtraction','NOT_PERFORMED'),('native_projection','NOT_PERFORMED')]:
+            if R.get(k)!=v: failures.append(f'{k} mismatch')
+          A={'iteration':633,'classification':'PASS_RAW_AUTHORITY_AUDIT_ITER633_CLOSED_LOOP_CUT_ORIGIN' if not failures else 'FAIL_RAW_AUTHORITY_AUDIT_ITER633_CLOSED_LOOP_CUT_ORIGIN','failures':failures,'candidate_values_used':False,'zero_fill':False}
+          json.dump(A,open('iteration633_authority_audit.json','w'),indent=2)
+          if failures: raise SystemExit('\n'.join(failures))
+          PY
+      - name: Upload raw artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration633-closed-loop-cut-origin
+          path: |
+            iteration633_runtime.json
+            iteration633_authority_audit.json
+            candidate_gravity/results/iteration633_closed_loop_cut_origin_gate.json
