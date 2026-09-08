@@ -1,0 +1,16 @@
+{
+  "iteration": 578,
+  "observable": "original Iter421 tensor11 degree-(1,1) fit",
+  "classification": "PASS_ITER421_TENSOR11_PRESS_LEVERAGE_AMPLIFICATION_AUDIT_EXACT__NON_PROMOTING",
+  "one_axis_leverages": ["209/258", "23/86", "89/258", "149/258"],
+  "two_axis_leverage_sum": "4",
+  "h_min": "529/7396",
+  "h_max": "43681/66564",
+  "press_amplification_formula": "LOO residual_i = ordinary residual_i/(1-h_ii)",
+  "press_amplification_min": "7396/6867",
+  "press_amplification_max": "66564/22883",
+  "press_amplification_min_decimal": 1.0770350953837193,
+  "press_amplification_max_decimal": 2.9088843246077873,
+  "all_finite": true,
+  "interpretation": "No frozen symmetric-cross observation has divergent leave-one-out amplification; worst exact leverage-only amplification is below 2.91. Diagnostic only; does not alter or relax the frozen tensor11 statistic or threshold."
+}
