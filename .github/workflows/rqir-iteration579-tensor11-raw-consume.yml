@@ -20,87 +20,61 @@ jobs:
           rm -rf /tmp/iter575_raw
           mkdir -p /tmp/iter575_raw
           gh run download 34180521559 -R pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction -D /tmp/iter575_raw
+          find /tmp/iter575_raw -type f | sort | head -80
       - name: Fail-closed independent raw consumption
         run: |
           mkdir -p candidate_gravity/artifacts/iteration579_tensor11_raw_consume
           python - <<'PY'
-          import hashlib,json,math,pathlib,re
+          import hashlib,json,math,pathlib
           root=pathlib.Path('/tmp/iter575_raw')
           out=pathlib.Path('candidate_gravity/artifacts/iteration579_tensor11_raw_consume')
           manifest=json.loads(pathlib.Path('candidate_gravity/contracts/iteration575_iter421_tensor11_exact_mp_support_manifest.json').read_text())
           nodes=manifest['missing_high_precision_support']['nodes_in_first_occurrence_order_of_original_Iter421_F_cache']
-          expected_head='519ceb6dc8efc3e5a9aebe86f5e6523152a4b284'
-          results=[]; failures=[]
+          by_rank={}; scan_fail=[]
+          for p in root.glob('**/result.json'):
+              try:
+                  o=json.loads(p.read_text())
+                  r=int(o.get('frozen',{}).get('original_iter421_tensor11_rank',-1))
+              except Exception as e:
+                  scan_fail.append({'path':str(p),'decode':repr(e)}); continue
+              if 1<=r<=36: by_rank.setdefault(r,[]).append(p)
+          results=[]; failures=list(scan_fail)
+          def allfinite(x):
+              if isinstance(x,float): return math.isfinite(x)
+              if isinstance(x,list): return all(allfinite(v) for v in x)
+              if isinstance(x,dict): return all(allfinite(v) for v in x.values())
+              return True
           for node in nodes:
-              rank=int(node['rank'])
-              candidates=list(root.glob(f'**/rank_{rank}/result.json'))
+              rank=int(node['rank']); candidates=by_rank.get(rank,[])
               if len(candidates)!=1:
-                  failures.append({'rank':rank,'failure':'result_count','observed':len(candidates)})
-                  continue
+                  failures.append({'rank':rank,'failure':'result_count','observed':len(candidates)}); continue
               p=candidates[0]; d=p.parent; ap=d/'authority_audit.json'; xp=d/'scientific_exit_code.txt'
               if not ap.exists() or not xp.exists():
-                  failures.append({'rank':rank,'failure':'missing_audit_or_exit'})
-                  continue
+                  failures.append({'rank':rank,'failure':'missing_audit_or_exit','dir':str(d)}); continue
               raw=p.read_bytes(); sha=hashlib.sha256(raw).hexdigest()
               try:
                   o=json.loads(raw); a=json.loads(ap.read_text()); rc=int(xp.read_text().strip())
               except Exception as e:
                   failures.append({'rank':rank,'failure':'decode','detail':repr(e)}); continue
-              fr=o.get('frozen',{}); obs=o.get('observed',{}); rows=o.get('rows',[])
-              finite=True
-              def walk(x):
-                  nonlocal_finite=[True]
-                  if isinstance(x,float) and not math.isfinite(x): nonlocal_finite[0]=False
-                  return nonlocal_finite[0]
-              # JSON parser accepts non-finite tokens, so inspect recursively.
-              def allfinite(x):
-                  if isinstance(x,float): return math.isfinite(x)
-                  if isinstance(x,list): return all(allfinite(v) for v in x)
-                  if isinstance(x,dict): return all(allfinite(v) for v in x.values())
-                  return True
-              cls=o.get('classification','')
+              fr=o.get('frozen',{}); obs=o.get('observed',{}); rows=o.get('rows',[]); cls=o.get('classification','')
+              try:
+                  mpmax=float(obs['scaled_mp80_vs_mp120_max']); rr=float(obs['max_radial_richardson_scaled_error'])
+              except Exception:
+                  mpmax=rr=float('inf')
               valid=bool(
-                  o.get('iteration')==575 and
-                  o.get('stage')==f'ITER575_ITER421_TENSOR11_MISSING_SUPPORT_FULL_Z_MP__RANK_{rank}' and
-                  cls==f'PASS_ITER421_TENSOR11_MP_SUPPORT_RANK_{rank}__NON_PROMOTING' and
-                  o.get('scientific_gate_pass') is True and
-                  o.get('promotes_physical_coordinate') is False and
-                  int(fr.get('original_iter421_tensor11_rank',-1))==rank and
-                  abs(float(fr.get('u'))-float(node['u']))<=1e-18 and abs(float(fr.get('v'))-float(node['v']))<=1e-18 and
-                  fr.get('tensor11_radius_multipliers')==[1.0,0.75,0.5,0.25] and
-                  fr.get('precision_digits')==[80,120] and fr.get('z_samples')==[-0.86,-0.43,0.0,0.43,0.86] and fr.get('phi_nodes')==16 and
-                  int(obs.get('sample_count',-1))==80 and isinstance(rows,list) and len(rows)==80 and allfinite(o) and
-                  a.get('schema')=='rqir_iteration575_tensor11_support_authority_audit_v1' and
-                  int(a.get('rank',-1))==rank and a.get('result_json_sha256')==sha and
-                  a.get('raw_result_integrity_valid') is True and a.get('scientific_gate_pass') is True and rc==0
-              )
-              # Re-evaluate the frozen numerical support thresholds from reported observed maxima.
-              mp=float(obs.get('scaled_mp80_vs_mp120_max',float('inf')))
-              rr=float(obs.get('radial_richardson_scaled_max',float('inf')))
-              valid = valid and mp <= 1e-30 and rr <= 5e-4
-              rec={'rank':rank,'u':node['u'],'v':node['v'],'result_sha256':sha,'classification':cls,'sample_count':obs.get('sample_count'),'scaled_mp80_vs_mp120_max':mp,'radial_richardson_scaled_max':rr,'raw_valid_pass':bool(valid)}
+                  o.get('iteration')==575 and o.get('stage')==f'ITER575_ITER421_TENSOR11_MISSING_SUPPORT_FULL_Z_MP__RANK_{rank}' and
+                  cls==f'PASS_ITER421_TENSOR11_MP_SUPPORT_RANK_{rank}__NON_PROMOTING' and o.get('scientific_gate_pass') is True and o.get('promotes_physical_coordinate') is False and
+                  int(fr.get('original_iter421_tensor11_rank',-1))==rank and abs(float(fr.get('u'))-float(node['u']))<=1e-18 and abs(float(fr.get('v'))-float(node['v']))<=1e-18 and
+                  fr.get('tensor11_radius_multipliers')==[1.0,0.75,0.5,0.25] and fr.get('precision_digits')==[80,120] and fr.get('z_samples')==[-0.86,-0.43,0.0,0.43,0.86] and fr.get('phi_nodes')==16 and
+                  int(obs.get('sample_count',-1))==80 and obs.get('all_finite') is True and isinstance(rows,list) and len(rows)==80 and allfinite(o) and
+                  a.get('schema')=='rqir_iteration575_tensor11_support_authority_audit_v1' and int(a.get('rank',-1))==rank and a.get('result_json_sha256')==sha and a.get('raw_result_integrity_valid') is True and a.get('scientific_gate_pass') is True and
+                  rc==0 and mpmax<=1e-30 and rr<=5e-4)
+              rec={'rank':rank,'u':node['u'],'v':node['v'],'result_sha256':sha,'classification':cls,'sample_count':obs.get('sample_count'),'scaled_mp80_vs_mp120_max':mpmax,'radial_richardson_scaled_max':rr,'raw_valid_pass':valid}
               results.append(rec)
               if not valid: failures.append({'rank':rank,'failure':'raw_gate','record':rec})
-          ranks=sorted(r['rank'] for r in results)
-          exact=(ranks==list(range(1,37)) and len(results)==36 and not failures)
-          summary={
-            'schema':'rqir_iteration579_iter575_tensor11_raw_consumption_v1',
-            'iteration':579,
-            'source_run_id':34180521559,
-            'source_head':expected_head,
-            'expected_rank_count':36,
-            'consumed_rank_count':len(results),
-            'all_36_raw_valid_pass':exact,
-            'classification':'PASS_ITER575_TENSOR11_ALL36_RAW_CONSUMED__NON_PROMOTING' if exact else 'BLOCKED_ITER575_TENSOR11_RAW_CONSUMPTION__NON_PROMOTING',
-            'scientific_gate_pass':exact,
-            'promotes_physical_coordinate':False,
-            'acceptance_thresholds':{'scaled_mp80_vs_mp120_max':1e-30,'radial_richardson_scaled_max':5e-4,'rows_per_rank':80},
-            'failures':failures,
-            'ranks':results,
-            'next_gate':'If and only if all_36_raw_valid_pass=true, combine these 36 nodes with the frozen 28 pre-existing raw-valid nodes and evaluate the unchanged original Iter421 tensor degree-(1,1) fit independently at MP80 and MP120; threshold remains 2e-5.'
-          }
-          (out/'raw_consumption.json').write_text(json.dumps(summary,indent=2,sort_keys=True)+'\n')
-          (out/'raw_consumption_sha256.txt').write_text(hashlib.sha256((out/'raw_consumption.json').read_bytes()).hexdigest()+'  raw_consumption.json\n')
+          exact=(sorted(r['rank'] for r in results)==list(range(1,37)) and len(results)==36 and not failures)
+          summary={'schema':'rqir_iteration579_iter575_tensor11_raw_consumption_v1','iteration':579,'source_run_id':34180521559,'source_head':'519ceb6dc8efc3e5a9aebe86f5e6523152a4b284','expected_rank_count':36,'consumed_rank_count':len(results),'all_36_raw_valid_pass':exact,'classification':'PASS_ITER575_TENSOR11_ALL36_RAW_CONSUMED__NON_PROMOTING' if exact else 'BLOCKED_ITER575_TENSOR11_RAW_CONSUMPTION__NON_PROMOTING','scientific_gate_pass':exact,'promotes_physical_coordinate':False,'acceptance_thresholds':{'scaled_mp80_vs_mp120_max':1e-30,'radial_richardson_scaled_max':5e-4,'rows_per_rank':80},'failures':failures,'ranks':results,'next_gate':'If and only if all_36_raw_valid_pass=true, combine with the frozen 28 pre-existing raw-valid nodes and evaluate unchanged original Iter421 tensor degree-(1,1) fit independently at MP80 and MP120; threshold 2e-5.'}
+          q=out/'raw_consumption.json'; q.write_text(json.dumps(summary,indent=2,sort_keys=True)+'\n'); (out/'raw_consumption_sha256.txt').write_text(hashlib.sha256(q.read_bytes()).hexdigest()+'  raw_consumption.json\n')
           print(json.dumps(summary,indent=2,sort_keys=True))
           if not exact: raise SystemExit('fail-closed: one or more frozen ranks did not pass independent raw consumption')
           PY
