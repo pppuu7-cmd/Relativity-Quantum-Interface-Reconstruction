@@ -1,0 +1,57 @@
+name: RQIR Iter591 local K3 discontinuity origin
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'analysis/source_k3_local_discontinuity_iteration591.py'
+      - '.github/workflows/rqir-iteration591-source-k3-discontinuity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  k3-origin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Run local K3 hard-channel origin audit
+        run: python analysis/source_k3_local_discontinuity_iteration591.py
+      - name: Fail-closed raw result audit
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          root=Path('results/iteration591_source_k3_local_discontinuity')
+          r=root/'result.json'; a=root/'authority_audit.json'
+          result=json.loads(r.read_text()); audit=json.loads(a.read_text())
+          sha=hashlib.sha256(r.read_bytes()).hexdigest(); failures=[]
+          if result.get('iteration') != 591: failures.append('iteration mismatch')
+          if result.get('classification') != 'PASS_MSSC001_LOCAL_K3_HARD_CHANNEL_DISC_ZERO__NON_RESIDUAL': failures.append('scientific classification not PASS')
+          if result.get('failures') != []: failures.append('scientific failures present')
+          if result.get('K3_under_hard_channel_D_s') != 'PASS_LOCAL_ANALYTIC__DISC_ZERO': failures.append('K3 discontinuity not closed')
+          if result.get('K1cubed_under_frozen_linked_T_cut') != 'OPEN__UNCHANGED_FROM_ITER590': failures.append('K1cubed prematurely classified')
+          if result.get('source_born_subtraction') != 'NOT_PERFORMED': failures.append('premature Source/Born subtraction')
+          if result.get('ANSATZ_003') != 'FORBIDDEN': failures.append('ANSATZ-003 guardrail violation')
+          if result.get('Fisher_resources') != 'FORBIDDEN': failures.append('Fisher/resources guardrail violation')
+          if audit.get('result_sha256') != sha: failures.append('result sha mismatch')
+          if audit.get('classification') != 'PASS_RAW_AUTHORITY_AUDIT_ITER591_K3_DISC_ZERO': failures.append('authority audit not PASS')
+          if failures: raise SystemExit('\n'.join(failures))
+          print('PASS fail-closed Iter591 raw audit',sha)
+          PY
+      - name: Upload raw artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter591-source-k3-discontinuity
+          path: results/iteration591_source_k3_local_discontinuity/
+          if-no-files-found: error
+          retention-days: 30
