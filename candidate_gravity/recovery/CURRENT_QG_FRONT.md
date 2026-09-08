@@ -10,7 +10,7 @@ Repository commits, validated Actions artifacts, recovery deltas, research logs 
 
 ## Current authority
 
-Latest authoritative research iteration: **626**.
+Latest authoritative research iteration: **627**.
 
 - Iter424 physical fallback: **5/5 PASS**.
 - Iter581 exact15 / complete `Tr U1^2`: raw-valid PASS.
@@ -29,12 +29,13 @@ Latest authoritative research iteration: **626**.
 - Iter622: source and connection numerical branches use the same direct `delta_g=kappa h_phys`; unknown powers of `kappa` are eliminated from the bridge.
 - Iter623: KG-start ledger frozen; six final dependency gates precede any genuinely new KG ansatz.
 - Iter624: MSSC source response and native gravitational `Gamma3` are different functional objects; a generic Legendre sign or Iter338 `+i` alone cannot bridge them.
-- Iter625: CTP branch-orientation audit finds five positive-energy and one negative-energy internal scalar root. Therefore a one-common-`N_native` retarded binding is conditional on the actual CTP line/component assignment; a naive all-retarded conversion would generate a root-dependent sign.
-- **Iter626: historical CTP authority audit proves that the repository freezes the native gravitational retarded/in-in sector and linked/amputated gravitational r/a protocol, but does not freeze the `+/-` or r/a component of the internal MSSC matter-scalar lines. The bridge is therefore operationally BLOCKED until a prospective combined matter+gravity SK generating-functional contract is frozen.**
+- Iter625: CTP branch-orientation audit finds five positive-energy and one negative-energy internal scalar root.
+- Iter626: historical CTP authority proves the native gravitational retarded/in-in sector and linked/amputated gravitational r/a protocol are frozen, but internal MSSC matter-scalar components were not.
+- **Iter627: prospective combined matter+gravity Schwinger-Keldysh contract `MSSC001-GRAVITY-SK-MEAS-V1` is frozen and raw-valid. The measured scalar-probe component is `G_phi^{ra}=G_R`, physical metric insertions are `h_r` at `h_a=0`, and r/a matrix multiplication forces every surviving internal scalar propagator in this measured response to be retarded. No root-by-root branch assignment is permitted.**
 
-## Frozen source support and projective data
+## Frozen source support and historical projective data
 
-Strict ascending-s root order and Iter615 normalized source-side coefficients:
+Strict ascending-s root order and Iter615 normalized source-side coefficients in the historical common `K+i0` convention:
 
 1. `D_b^-(0.013028588574858)`: `-0.00024912100468199333`;
 2. `D_s^-(0.09)`: `+0.0007390333386357162`;
@@ -45,11 +46,11 @@ Strict ascending-s root order and Iter615 normalized source-side coefficients:
 
 `D_s^+` has no positive root; this is not amplitude zero. All 13 source families remain retained; `zero_fill=false`.
 
-Iter618 projective ratios to the kinematically selected smallest-s anchor are:
+Iter618 projective ratios are authoritative only for the historical Iter608/615 pole convention:
 
 `[-2.966563737084728, -0.7800526753639322, -5.158207913624242, 2.997420912767025, 8.57973421373656]`.
 
-These are authoritative for the frozen Iter608/615 pole convention. Any later common multiplicative bridge in the same source component must preserve them; if the CTP bridge selects a different scalar component/prescription, the affected source coefficients must be recomputed rather than hand-flipped.
+Because Iter627 prospectively selects the retarded scalar component for the native measurement map, the affected pole coefficients must be recomputed from the same source dynamics. They must not be hand-flipped or inferred by editing the historical values.
 
 ## Exact q2 / endpoint / field-variable binding
 
@@ -69,23 +70,37 @@ scalar endpoint amputation is
 
 `=-Kabc+sum_6(Ki G Kjk)-sum_6(Ki G Kj G Kk)`.
 
-Only the two common external scalar propagators are removed; internal scalar poles, K3 and all K1^3 chains remain.
+Under Iter627, for the measured retarded scalar response, the two common external endpoints are `G_R` and are the only scalar propagators amputated. Internal scalar propagators, K3 and all K1^3 chains remain.
 
-The physical split is `g=eta+kappa h_phys`, hence `delta_g=kappa h_phys`. Iter270 connection geometry and Iter590 source geometry both add perturbations directly to `g`, so stored coefficients are derivatives with respect to the same `delta_g`; an extra unknown `kappa` power is not part of the remaining bridge.
+The physical split is `g=eta+kappa h_phys`, hence `delta_g=kappa h_phys`. Iter270 connection geometry and Iter590 source geometry both add perturbations directly to `g`; an extra unknown `kappa` power is not part of the remaining bridge.
 
-## Iter624–626 measurement/CTP blocker
+## Iter627 combined SK measurement authority
 
-Native authority is a gravitational retarded/1PI object, schematically
+Prospective doubled functional:
 
-`chi2R = - G_R Gamma3 G_R G_R`.
+`Z[J_phi+,J_phi-,J_g+,J_g-] = Integral exp{i S[g+,phi+] - i S[g-,phi-] + i(source+ - source-)}`.
 
-Source authority is a third background-metric derivative of `G_phi=K_phi[g]^-1`, followed by scalar endpoint amputation. These are distinct functional objects, so no generic `W <-> Gamma` identity equates them.
+r/a rotation for both matter and gravity:
 
-Iter625 evaluates the internal scalar energy orientation at every supported root and finds five positive-energy roots and one negative-energy root, `D_s^-(0.09)` with `r0=-0.7`. Iter608/615 used one common algebraic/Feynman-like `K+i0` rule, while a scalar retarded prescription is energy-oriented.
+`X_+=X_r+X_a/2`, `X_-=X_r-X_a/2`.
 
-Iter626 audits the older CTP authority. Iter149 freezes a Minkowski interacting-vacuum retarded/in-in gravitational probe sector; Iter171 freezes linked/amputated CTP comparison and gravitational r/a normalization; Iter172 uses the associated gravitational vertex coordinates. **No authoritative file in that chain specifies the doubled scalar-probe source branches, the `+/-` assignment, or the r/a component of the internal MSSC matter-scalar lines.** Therefore gravitational retardedness alone cannot choose the scalar internal-line prescription.
+Physical metric background and insertions:
 
-This does not invalidate Iter608/615 and does not authorize flipping `D_s^-(0.09)` by hand. A prospective combined matter+gravity Schwinger-Keldysh generating-functional contract is required before native projection.
+`h_a=0`, differentiate with respect to `h_r`.
+
+Measured scalar probe:
+
+`G_phi^{ra}=G_R`.
+
+The same-branch unitary action gives exact rotation coefficients `rrr=0`, `arr=rar=rra=1`, `aaa=1/4`. With `G_rr=G_K`, `G_ra=G_R`, `G_ar=G_A`, `G_aa=0`, direct matrix multiplication gives
+
+`(G dK G)_{ra}=G_R dK_R G_R`,
+
+`(G dK G dK G)_{ra}=G_R dK_R G_R dK_R G_R`,
+
+and the corresponding cubic retarded chain. Therefore all surviving internal scalar lines are induced as `G_R` by the observable definition.
+
+Raw validation: Actions run `34284449139`, conclusion `success`, head `e701b1d0aa8a0222e7ec6cfbc6b5baf8263378c0`, artifact `10078890134`, digest `sha256:03a8167e23d946006024971ad02824070b700c94124465bb11982fed87dbe67e`; fail-closed exact comparison PASS.
 
 ## Iter582 connection coordinate
 
@@ -95,13 +110,13 @@ This does not invalidate Iter608/615 and does not authorize flipping `D_s^-(0.09
 - `q^2=-0.34`: `-0.00371666346186323 i`;
 - `q^2=-0.14`: `-0.0007997265433511544 i`.
 
-These values are never used to choose the source/native bridge.
+These values were not used to choose the Iter627 SK branch/component contract.
 
 ## Repository-level KG start ledger
 
 This is separate from `MODEL_READINESS`. A genuinely new KG may be instantiated only after:
 
-1. **KGSTART-1 — ACTIVE:** freeze the combined matter+gravity CTP measurement map, including scalar-line component/branch assignment, and derive the resulting absolute dimensionless source-to-native normalization without Candidate/comparator values.
+1. **KGSTART-1 — ACTIVE:** with Iter627 measurement map now frozen, recompute the source pole coefficients in the induced retarded scalar component and derive the resulting absolute dimensionless source-to-native normalization without Candidate/comparator values.
 2. **KGSTART-2:** execute full native `Y/T_cut` projection with all roots/families retained, then freeze and perform matched Source/Born subtraction.
 3. **KGSTART-3:** execute the fixed applicable C0–C6 comparator quotient in the same observable/nuisance convention.
 4. **KGSTART-4:** obtain a robust nonzero comparator-subtracted algebraic residual.
@@ -121,15 +136,15 @@ Only `NEW_REQUIRED` authorizes creation of `ANSATZ-003` as a genuinely new Candi
 
 **MODEL_READINESS: 24%**
 
-Readiness change through Iter626: **0 percentage points**. Historical CTP authority is now sharply scoped, but no Candidate residual/model-rubric sector closed.
+Readiness change through Iter627: **0 percentage points**. A real measurement-map prerequisite closed, but robust unique residual remains `0/20` and no complete rubric sector closed.
 
 ## Exact next admissible work
 
-**Iteration627:** prospectively freeze a combined matter+gravity Schwinger-Keldysh generating-functional contract `Z[J_phi^+,J_phi^-,J_g^+,J_g^-]` for the measured scalar-probe observable. It must specify source insertion branches, r/a rotation, endpoint amputation, and the induced component of every retained internal scalar line, and must reduce exactly to the Iter149/171 gravitational CTP conventions in their overlap. No Iter582/Iter615 projected numerical values may be used to choose the branch or normalization.
+**Iteration628:** recompute the six supported internal scalar-pole discontinuity coefficients under the prospectively frozen retarded internal-line prescription, preserving Iter613/614 kinematics, endpoint convention and all 13 source families. In the same iteration or an immediately preceding prospective sub-contract, derive the single common source-to-native phase/normalization from `MSSC001-GRAVITY-SK-MEAS-V1` without consulting Iter582 Candidate values. Only after this closes may native `Y/T_cut` projection begin.
 
 ## Compute status / ANTI-IDLE
 
-No heavy numerical job is currently authorized. The active gate is analytic/CTP-definition level; heavy computation cannot resolve an unspecified contour component.
+No heavy numerical job is currently required for the contract itself. Iter628 is an algebraic/numerical recomputation and should reuse the existing reproducible MSSC machinery; do not duplicate an already-running Action.
 
 ## Retained guardrails
 
