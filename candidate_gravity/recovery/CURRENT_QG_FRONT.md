@@ -15,8 +15,8 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - QUARTER manifest: **Iteration 529**, 16-grid with 4 exact HALF-overlap corners and 12 required new coordinates.
 - Frozen 12-rank QUARTER successor order: **Iteration 532**.
 - QUARTER ranks 1–10 raw authority: **Iterations 534, 538, 542, 545, 548, 550, 551, 556, 562, 565**, all raw-valid PASS and non-promoting.
-- Exact routing/assembly diagnostics through **Iteration 567** remain retained and non-promoting.
-- Latest authoritative research iteration: **Iteration 567**.
+- Exact routing/assembly diagnostics through **Iteration 568** remain retained and non-promoting.
+- Latest authoritative research iteration: **Iteration 568**.
 
 ## Latest raw support authority — Iteration 565
 Rank10 coordinate `(+1.25e-6,+2.5e-6)` raw-consumed from run `34165534613`, job `101875710349`, artifact `10034846108`, digest `sha256:707e4fffa3dddcac5eb5d7dc127afcb0afd8c13c85b99c230ea57abacdb3b97d`, head `358bcfc29494fbd615397ba72314e1e10d9e7417`.
@@ -50,6 +50,21 @@ Exact properties:
 - `||P_C(F)||_F=(72/65) h^2 |D_uv|`.
 
 Classification: `PASS_ITER424_QUARTER_STENCIL_NULLSPACE_PROJECTOR_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`. This is stencil-functional regime-specific non-identifiability only, not Candidate-Gravity model-level non-identifiability, near-degeneracy, comparator identity, consistency PASS/FAIL, or novelty evidence.
+
+## Iteration 568 exact coordinate variance leverage map
+For independent equal-variance coordinate errors, the exact variance leverage of coordinate `(i,j)` is `C_ij^2/16900`.
+
+Exact class shares:
+- four central coordinates `(±h,±h)`: each `1024/4225`, combined `4096/4225 ≈ 96.946746%`;
+- eight edge coordinates with exactly one coordinate at `±2h`: each `16/4225`, combined `128/4225 ≈ 3.029586%`;
+- four corners `(±2h,±2h)`: each `1/16900`, combined `1/4225 ≈ 0.023669%`.
+
+The frozen final rank11/rank12 pair is edge-class and carries `32/4225 ≈ 0.757396%` of assembled variance under the iid equal-variance model. For unequal independent coordinate variances the exact generalization is `Var(D_uv)=sum_ij C_ij^2 sigma_ij^2/(144^2 h^4)`; iid leverage percentages may not be reused blindly.
+
+Classification: `PASS_ITER424_QUARTER_COORDINATE_VARIANCE_LEVERAGE_MAP_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`. This is conditioning only and does not authorize altered precision, support reduction, rank skipping or any model-level inference.
+
+Machine-readable authority: `candidate_gravity/results/iteration568_iter424_quarter_coordinate_variance_leverage_exact.json`.
+Reproducible audit: `candidate_gravity/code/iteration568_iter424_quarter_coordinate_variance_leverage_exact.py`.
 
 ## QUARTER progress
 Raw-closed new coordinates: **10/12 = 83.333333%**.  
