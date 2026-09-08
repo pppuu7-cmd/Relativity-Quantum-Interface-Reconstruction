@@ -1,0 +1,50 @@
+name: RQIR Iter603 non-promoting lattice diagnosis
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'analysis/nonlinear_ward_iter602_lattice_diagnosis_iteration603.py'
+      - '.github/workflows/rqir-iteration603-lattice-diagnosis.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lattice-diagnosis:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numpy
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Run Iter603 diagnostic
+        run: python analysis/nonlinear_ward_iter602_lattice_diagnosis_iteration603.py
+      - name: Audit diagnostic output
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('results/iteration603_iter602_lattice_diagnosis')
+          r=root/'result.json'; a=root/'authority_audit.json'
+          R=json.loads(r.read_text()); A=json.loads(a.read_text()); sha=hashlib.sha256(r.read_bytes()).hexdigest()
+          bad=[]
+          if R.get('iteration')!=603: bad.append('iteration mismatch')
+          if R.get('scope')!='DIAGNOSTIC_ONLY__ITER602_FROZEN_FAIL_PRESERVED': bad.append('scope drift')
+          if R.get('scientific_gate_pass') is not False: bad.append('diagnostic improperly promotable')
+          if A.get('result_sha256')!=sha: bad.append('sha mismatch')
+          if A.get('classification')!='PASS_DIAGNOSTIC_RAW_AUDIT_ITER603': bad.append('audit mismatch')
+          if bad: raise SystemExit('\n'.join(bad))
+          print('PASS Iter603 diagnostic raw audit',sha,R.get('classification'))
+          PY
+      - name: Upload raw artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter603-lattice-diagnosis
+          path: results/iteration603_iter602_lattice_diagnosis/
+          if-no-files-found: error
+          retention-days: 30
