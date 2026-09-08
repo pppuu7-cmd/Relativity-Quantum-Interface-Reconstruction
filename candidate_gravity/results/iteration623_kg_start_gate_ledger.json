@@ -1,0 +1,54 @@
+{
+  "iteration": 623,
+  "date": "2026-09-08",
+  "classification": "PASS_ITER623_KG_START_GATE_LEDGER_FROZEN__SIX_FINAL_DEPENDENCY_GATES_REMAIN__NON_RESIDUAL",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "purpose": "separate repository readiness to start a genuinely new Candidate Gravity model from MODEL_READINESS of a model itself",
+  "already_closed_upstream": [
+    "repository authority/recovery/CI discipline and anti-race rules",
+    "RQIR funnel and anti-overclaim guardrails",
+    "baseline comparator registry C0-C6",
+    "candidate QG gate template QG-001..QG-010 plus reference/control ansatz",
+    "q2-resolved connection operator through Iter582",
+    "same-parent MSSC source/contact/13-family/Ward chain through Iter605",
+    "scalar-pole distribution, native-s kinematics, roots/Jacobians and source coefficients through Iter615",
+    "q2 identity, endpoint amputation and projective invariants through Iter621",
+    "common direct delta-g variable and common kappa stripping through Iter622"
+  ],
+  "final_required_gates_in_order": [
+    {
+      "id": "KGSTART-1",
+      "status": "BLOCKED_ACTIVE_FRONT",
+      "gate": "derive one dimensionless nonzero source-to-Gamma3/retarded-effective-action normalization N_native prospectively, without Candidate/comparator values"
+    },
+    {
+      "id": "KGSTART-2",
+      "status": "BLOCKED_BY_KGSTART-1",
+      "gate": "execute the full native Y/T_cut projection with all six roots/families retained, then freeze and perform the matched Source/Born subtraction"
+    },
+    {
+      "id": "KGSTART-3",
+      "status": "BLOCKED_BY_KGSTART-2",
+      "gate": "execute the fixed applicable C0-C6 comparator quotient in the same observable coordinates and nuisance conventions"
+    },
+    {
+      "id": "KGSTART-4",
+      "status": "BLOCKED_BY_KGSTART-3",
+      "gate": "obtain a robust nonzero comparator-subtracted algebraic residual that survives the declared comparator/nuisance quotient"
+    },
+    {
+      "id": "KGSTART-5",
+      "status": "BLOCKED_BY_KGSTART-4",
+      "gate": "challenge that residual against known quantum-gravity/gravity model realizations under the same frozen RQIR funnel; do not tune RQIR gates to the benchmark outcomes"
+    },
+    {
+      "id": "KGSTART-6",
+      "status": "BLOCKED_BY_KGSTART-5",
+      "gate": "issue the model-construction decision: EXISTING_SUFFICIENT / ADAPT_EXISTING / HYBRID_REQUIRED / NEW_REQUIRED; only NEW_REQUIRED authorizes creation of ANSATZ-003 as a genuinely new KG"
+    }
+  ],
+  "launch_rule": "do not create or tune ANSATZ-003 before KGSTART-1..6 are resolved and the decision is NEW_REQUIRED",
+  "MODEL_READINESS": "24%",
+  "repository_start_readiness_note": "upstream methodology is mature, but the final six launch gates are sequential and scientifically substantive; do not convert their count into MODEL_READINESS"
+}
