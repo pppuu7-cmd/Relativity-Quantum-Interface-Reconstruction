@@ -1,0 +1,27 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "classification": "PASS_SOURCE_K2_QUADRATIC_CONTACT_FROM_FROZEN_MSSC001__NON_RESIDUAL",
+  "date": "2026-09-08",
+  "failures": [],
+  "iteration": 583,
+  "k2_contact": {
+    "rule": "all h^2 phi^2 contact coefficients are fixed by MSSC-001; independent tuning forbidden",
+    "sqrt_minus_g_ginv_kappa2": "eta^-1 h eta^-1 h eta^-1 -(h/2)eta^-1 h eta^-1 +(h^2/8-Tr(H^2)/4)eta^-1",
+    "sqrt_minus_g_kappa2": "h^2/8 - Tr(H^2)/4"
+  },
+  "metric_convention": "g_{mu nu}=eta_{mu nu}+kappa h_{mu nu}; eta=diag(+---)",
+  "model_readiness_percent": 24,
+  "next_gate_if_pass": "derive the matched conserved-source tree/Ward object using hphi2 plus this frozen h2phi2 K2 contact, classify pole/cut origin, then map to Iter582 q2-resolved operator coordinate before comparator subtraction",
+  "parent_action": "S_phi=-1/2 int sqrt(-g)[g^{mu nu} partial_mu phi partial_nu phi + m^2 phi^2]",
+  "parent_source_authority": "MSSC-001 / Iteration218",
+  "raw_result_integrity_valid": true,
+  "regression": {
+    "kappas": [0.02,0.01,0.005,0.0025],
+    "max_densitized_inverse_error_over_kappa3": 0.0075275132134511305,
+    "max_sqrt_det_error_over_kappa3": 0.004093962502338399,
+    "samples": 6
+  },
+  "scientific_scope": "source/contact prerequisite only; not comparator residual, not Candidate-Gravity model PASS",
+  "source_born_subtraction": "NOT_PERFORMED"
+}
