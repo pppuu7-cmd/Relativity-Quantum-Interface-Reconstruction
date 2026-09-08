@@ -1,6 +1,6 @@
 # Candidate Gravity Current Front
 
-**Updated:** 2026-09-08  
+**Updated:** 2026-09-09  
 **Infrastructure status:** READY — 100%  
 **MODEL_READINESS:** **24%**  
 **Permanent C5 reference:** `ANSATZ-PQG-EFT-001` v0.1  
@@ -10,7 +10,7 @@ Repository commits, validated Actions artifacts, recovery deltas, research logs 
 
 ## Current authority
 
-Latest authoritative research iteration: **625**.
+Latest authoritative research iteration: **626**.
 
 - Iter424 physical fallback: **5/5 PASS**.
 - Iter581 exact15 / complete `Tr U1^2`: raw-valid PASS.
@@ -29,7 +29,8 @@ Latest authoritative research iteration: **625**.
 - Iter622: source and connection numerical branches use the same direct `delta_g=kappa h_phys`; unknown powers of `kappa` are eliminated from the bridge.
 - Iter623: KG-start ledger frozen; six final dependency gates precede any genuinely new KG ansatz.
 - Iter624: MSSC source response and native gravitational `Gamma3` are different functional objects; a generic Legendre sign or Iter338 `+i` alone cannot bridge them.
-- **Iter625: CTP branch-orientation audit finds five positive-energy and one negative-energy internal scalar root. Therefore a one-common-`N_native` retarded binding is conditional on the actual CTP line/component assignment; a naive all-retarded conversion would generate a root-dependent sign.**
+- Iter625: CTP branch-orientation audit finds five positive-energy and one negative-energy internal scalar root. Therefore a one-common-`N_native` retarded binding is conditional on the actual CTP line/component assignment; a naive all-retarded conversion would generate a root-dependent sign.
+- **Iter626: historical CTP authority audit proves that the repository freezes the native gravitational retarded/in-in sector and linked/amputated gravitational r/a protocol, but does not freeze the `+/-` or r/a component of the internal MSSC matter-scalar lines. The bridge is therefore operationally BLOCKED until a prospective combined matter+gravity SK generating-functional contract is frozen.**
 
 ## Frozen source support and projective data
 
@@ -72,7 +73,7 @@ Only the two common external scalar propagators are removed; internal scalar pol
 
 The physical split is `g=eta+kappa h_phys`, hence `delta_g=kappa h_phys`. Iter270 connection geometry and Iter590 source geometry both add perturbations directly to `g`, so stored coefficients are derivatives with respect to the same `delta_g`; an extra unknown `kappa` power is not part of the remaining bridge.
 
-## Iter624–625 measurement/CTP blocker
+## Iter624–626 measurement/CTP blocker
 
 Native authority is a gravitational retarded/1PI object, schematically
 
@@ -80,18 +81,11 @@ Native authority is a gravitational retarded/1PI object, schematically
 
 Source authority is a third background-metric derivative of `G_phi=K_phi[g]^-1`, followed by scalar endpoint amputation. These are distinct functional objects, so no generic `W <-> Gamma` identity equates them.
 
-Iter625 additionally evaluates the internal scalar energy orientation at every supported root:
+Iter625 evaluates the internal scalar energy orientation at every supported root and finds five positive-energy roots and one negative-energy root, `D_s^-(0.09)` with `r0=-0.7`. Iter608/615 used one common algebraic/Feynman-like `K+i0` rule, while a scalar retarded prescription is energy-oriented.
 
-- `D_b^-(0.013028588574858)`: `r0=+0.714142842854285`;
-- `D_s^-(0.09)`: `r0=-0.7`;
-- `D_a^-(0.09868572571657197)`: `r0=+0.714142842854285`;
-- `D_a^+(1.241314274283428)`: `r0=+0.714142842854285`;
-- `D_b^+(1.726971411425142)`: `r0=+0.714142842854285`;
-- `D_s^-(2.89)`: `r0=+0.7`.
+Iter626 audits the older CTP authority. Iter149 freezes a Minkowski interacting-vacuum retarded/in-in gravitational probe sector; Iter171 freezes linked/amputated CTP comparison and gravitational r/a normalization; Iter172 uses the associated gravitational vertex coordinates. **No authoritative file in that chain specifies the doubled scalar-probe source branches, the `+/-` assignment, or the r/a component of the internal MSSC matter-scalar lines.** Therefore gravitational retardedness alone cannot choose the scalar internal-line prescription.
 
-Thus the census is **5 positive / 1 negative**. A scalar retarded prescription is energy-oriented, whereas Iter608/615 used one frozen `K+i0` algebraic/Feynman-like rule. Therefore it is not yet authoritative that one common complex scalar converts all six Iter615 roots into the native retarded observable. The actual combined CTP measurement map must specify the `+/-` contour or `r/a` component of every retained internal scalar line.
-
-This does not invalidate Iter608/615 in their declared scope and does not authorize flipping `D_s^-(0.09)` by hand. Depending on the CTP assignment, either one common bridge is recovered or the affected source coefficients must be recomputed under the correct component.
+This does not invalidate Iter608/615 and does not authorize flipping `D_s^-(0.09)` by hand. A prospective combined matter+gravity Schwinger-Keldysh generating-functional contract is required before native projection.
 
 ## Iter582 connection coordinate
 
@@ -127,11 +121,11 @@ Only `NEW_REQUIRED` authorizes creation of `ANSATZ-003` as a genuinely new Candi
 
 **MODEL_READINESS: 24%**
 
-Readiness change through Iter625: **0 percentage points**. This is correct: repository methodology advanced and a hidden CTP prerequisite was exposed, but no Candidate residual/model-rubric sector closed.
+Readiness change through Iter626: **0 percentage points**. Historical CTP authority is now sharply scoped, but no Candidate residual/model-rubric sector closed.
 
 ## Exact next admissible work
 
-Construct the combined matter+gravity CTP bridge prospectively. First freeze the measured connected scalar-probe observable and the `+/-` or `r/a` component of each scalar/gravity line. Then derive the lower-order source normalization and cubic projection from the same functional. No Iter582/Iter615 numerical values may be used to choose the branch or normalization.
+**Iteration627:** prospectively freeze a combined matter+gravity Schwinger-Keldysh generating-functional contract `Z[J_phi^+,J_phi^-,J_g^+,J_g^-]` for the measured scalar-probe observable. It must specify source insertion branches, r/a rotation, endpoint amputation, and the induced component of every retained internal scalar line, and must reduce exactly to the Iter149/171 gravitational CTP conventions in their overlap. No Iter582/Iter615 projected numerical values may be used to choose the branch or normalization.
 
 ## Compute status / ANTI-IDLE
 
