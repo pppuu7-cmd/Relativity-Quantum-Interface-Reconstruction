@@ -1,0 +1,45 @@
+name: RQIR Iter636 closed-Gamma3 invariant family contract
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration636-closed-gamma3-invariant-family.yml'
+      - 'candidate_gravity/code/iteration636_closed_gamma3_invariant_family_contract.py'
+      - 'candidate_gravity/results/iteration636_closed_gamma3_invariant_family_contract.json'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Recompute prospective invariant-family contract
+        run: python candidate_gravity/code/iteration636_closed_gamma3_invariant_family_contract.py > iteration636_runtime.json
+      - name: Fail-closed exact audit
+        run: |
+          python - <<'PY'
+          import json
+          R=json.load(open('iteration636_runtime.json')); C=json.load(open('candidate_gravity/results/iteration636_closed_gamma3_invariant_family_contract.json'))
+          failures=[]
+          if R!=C: failures.append('runtime != committed result')
+          K=R.get('contract',{}); A=R.get('anti_bias',{})
+          if K.get('external_channel')!='s := q_s^2 > 0': failures.append('channel mismatch')
+          if K.get('momentum_closure')!='q_s+q_a+q_b=0': failures.append('closure mismatch')
+          if 'independently' not in K.get('loop_momentum',''): failures.append('loop momentum independence missing')
+          if any(A.get(k) is not False for k in ('candidate_values_used','bubble_support_inspected_before_freeze','triangle_landau_support_inspected_before_freeze','normalization_fit_used')): failures.append('anti-bias freeze violated')
+          if R.get('source_born_subtraction')!='NOT_PERFORMED' or R.get('native_projection')!='NOT_PERFORMED' or R.get('zero_fill') is not False: failures.append('downstream guardrail mismatch')
+          audit={'iteration':636,'classification':'PASS_RAW_AUTHORITY_AUDIT_ITER636_CLOSED_GAMMA3_INVARIANT_FAMILY' if not failures else 'FAIL_RAW_AUTHORITY_AUDIT_ITER636_CLOSED_GAMMA3_INVARIANT_FAMILY','failures':failures,'candidate_values_used':False,'zero_fill':False}
+          json.dump(audit,open('iteration636_authority_audit.json','w'),indent=2)
+          if failures: raise SystemExit('\n'.join(failures))
+          PY
+      - name: Upload raw artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration636-closed-gamma3-invariant-family
+          path: |
+            iteration636_runtime.json
+            iteration636_authority_audit.json
+            candidate_gravity/results/iteration636_closed_gamma3_invariant_family_contract.json
