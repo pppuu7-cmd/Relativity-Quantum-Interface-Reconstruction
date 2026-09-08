@@ -1,0 +1,40 @@
+name: RQIR Iter637 exact fixture anchor authority discovery
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration637-exact-fixture-anchor-discovery.yml'
+      - 'candidate_gravity/code/iteration637_exact_fixture_anchor_authority_discovery.py'
+  workflow_dispatch:
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Discover exact fixture anchor authority
+        run: python candidate_gravity/code/iteration637_exact_fixture_anchor_authority_discovery.py > iteration637_runtime.json
+      - name: Fail-closed guardrail audit
+        run: |
+          python - <<'PY'
+          import json
+          R=json.load(open('iteration637_runtime.json'))
+          failures=[]
+          if R.get('candidate_values_used') is not False: failures.append('Candidate values used')
+          if R.get('zero_fill') is not False: failures.append('zero-fill used')
+          if R.get('source_born_subtraction')!='NOT_PERFORMED' or R.get('native_projection')!='NOT_PERFORMED': failures.append('downstream operation performed')
+          if R.get('unique_invariant_triples')!=1 and R.get('recovered_anchor') is not None: failures.append('non-unique anchor promoted')
+          A={'iteration':637,'classification':'PASS_RAW_AUTHORITY_AUDIT_ITER637_FIXTURE_DISCOVERY_GUARDRAILS' if not failures else 'FAIL_RAW_AUTHORITY_AUDIT_ITER637_FIXTURE_DISCOVERY_GUARDRAILS','scientific_classification':R.get('classification'),'failures':failures,'unique_invariant_triples':R.get('unique_invariant_triples'),'recovered_anchor':R.get('recovered_anchor'),'candidate_values_used':False,'zero_fill':False}
+          json.dump(A,open('iteration637_authority_audit.json','w'),indent=2)
+          if failures: raise SystemExit('\n'.join(failures))
+          PY
+      - name: Upload raw artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration637-exact-fixture-anchor-discovery
+          path: |
+            iteration637_runtime.json
+            iteration637_authority_audit.json
