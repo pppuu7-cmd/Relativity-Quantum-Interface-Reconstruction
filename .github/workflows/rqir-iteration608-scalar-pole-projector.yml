@@ -1,0 +1,49 @@
+name: RQIR Iter608 scalar-pole distribution projector
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'analysis/scalar_pole_distribution_projector_iteration608.py'
+      - 'candidate_gravity/results/iteration607_source_to_iter582_projection_raw_consumption.json'
+      - '.github/workflows/rqir-iteration608-scalar-pole-projector.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  scalar-pole-projector:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Iter608 scalar-pole distribution projector derivation
+        run: python analysis/scalar_pole_distribution_projector_iteration608.py
+      - name: Fail-closed artifact integrity audit
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('results/iteration608_scalar_pole_distribution_projector')
+          r=root/'result.json'; a=root/'authority_audit.json'
+          R=json.loads(r.read_text()); A=json.loads(a.read_text()); sha=hashlib.sha256(r.read_bytes()).hexdigest(); bad=[]
+          if R.get('iteration')!=608: bad.append('iteration mismatch')
+          if R.get('model_readiness_percent')!=24: bad.append('readiness drift')
+          if R.get('candidate_residual') is not False: bad.append('residual promotion')
+          if R.get('zero_fill') is not False: bad.append('zero-fill violation')
+          if R.get('source_born_subtraction')!='NOT_PERFORMED': bad.append('premature subtraction')
+          if R.get('source_family_count')!=13: bad.append('source census drift')
+          if R.get('q2_buckets')!=[-1.0,-0.34,-0.14]: bad.append('q2 drift')
+          if A.get('result_sha256')!=sha or A.get('failures')!=[]: bad.append('raw audit mismatch')
+          if R.get('classification')!='PASS_UNIVERSAL_SCALAR_POLE_DISTRIBUTION_KERNEL__CONCRETE_NATIVE_PULLBACK_STILL_BLOCKED__NON_RESIDUAL': bad.append('unexpected classification')
+          if bad: raise SystemExit('\n'.join(bad))
+          print('PASS Iter608 raw artifact integrity',sha)
+          PY
+      - name: Upload raw artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter608-scalar-pole-distribution-projector
+          path: results/iteration608_scalar_pole_distribution_projector/
+          if-no-files-found: error
+          retention-days: 30
