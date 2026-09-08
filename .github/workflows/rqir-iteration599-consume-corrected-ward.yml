@@ -1,0 +1,68 @@
+name: RQIR Iter599 consume corrected Ward artifact
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/rqir-iteration599-consume-corrected-ward.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  consume:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download exact Iter599 artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rm -rf /tmp/iter599-artifact
+          mkdir -p /tmp/iter599-artifact
+          gh run download 34236758448 -n rqir-iter599-corrected-full-nonlinear-ward -D /tmp/iter599-artifact
+          find /tmp/iter599-artifact -maxdepth 2 -type f -print
+      - name: Fail-closed consume and persist
+        run: |
+          python - <<'PY'
+          import hashlib,json,shutil
+          from pathlib import Path
+          src=Path('/tmp/iter599-artifact')
+          r=src/'result.json'; a=src/'authority_audit.json'
+          if not r.exists() or not a.exists(): raise SystemExit('missing raw Iter599 files')
+          result=json.loads(r.read_text()); audit=json.loads(a.read_text()); failures=[]
+          sha=hashlib.sha256(r.read_bytes()).hexdigest()
+          if result.get('iteration') != 599: failures.append('iteration mismatch')
+          if result.get('classification') != 'FAIL_FULL_SOURCE_LEVEL_NONLINEAR_WARD_ON_EXACT_FROZEN_ITER596_SYMMETRIC_ROUTE__PRESERVED_NEGATIVE_RESULT': failures.append('expected corrected scientific FAIL classification not found')
+          if result.get('scientific_gate_pass') is not False: failures.append('scientific_gate_pass must be false')
+          if result.get('route_contract') != 'for each gauge singleton g: p=-q_g/2, pprime=+q_g/2; no arbitrary PROBES in anchor or Ward rows': failures.append('route contract mismatch')
+          if audit.get('result_sha256') != sha: failures.append('raw result sha mismatch')
+          anchors=result.get('implemented_one_leg_anchors',[]); rows=result.get('ward_rows',[])
+          if len(anchors)!=12 or len(rows)!=12: failures.append('row counts not 12/12')
+          if any(x.get('route')!='p=-q_g/2,pprime=+q_g/2' for x in anchors+rows): failures.append('off-contract route row')
+          if result.get('source_born_subtraction')!='NOT_PERFORMED' or result.get('source_to_iter582_map')!='NOT_PERFORMED': failures.append('premature downstream mapping/subtraction')
+          if failures: raise SystemExit('\n'.join(failures))
+          out=Path('candidate_gravity/results/iteration599_corrected_full_nonlinear_ward')
+          out.mkdir(parents=True,exist_ok=True)
+          shutil.copy2(r,out/'result.json'); shutil.copy2(a,out/'authority_audit.json')
+          meta={
+            'iteration':599,'date':'2026-09-08','classification':'RAW_VALID_CORRECTED_WARD_SCIENTIFIC_FAIL_CONSUMED',
+            'canonical_run':34236758448,'canonical_job':102096346284,'canonical_head':'491f55d9f88b2d40f7e737108f2dfc24bfe3f6e4',
+            'canonical_artifact':10060216987,'artifact_digest':'sha256:577bb2d4a8f56f24f86aecdfb4abc6e9616d0a9a28bfb3bae40330505b0eed3d',
+            'raw_result_sha256':sha,'raw_authority_audit_sha256':hashlib.sha256(a.read_bytes()).hexdigest(),
+            'model_readiness_percent':24,'source_born_subtraction':'NOT_PERFORMED','candidate_residual':False,
+            'ANSATZ_003':'FORBIDDEN','Fisher_resources':'FORBIDDEN'}
+          (out/'consumer_provenance.json').write_text(json.dumps(meta,indent=2,sort_keys=True)+'\n')
+          print(json.dumps({'classification':result['classification'],'observed':result.get('observed'),'failure_count':len(result.get('failures',[])),'raw_result_sha256':sha},indent=2))
+          PY
+      - name: Commit consumed raw authority
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add candidate_gravity/results/iteration599_corrected_full_nonlinear_ward/
+          git diff --cached --quiet && exit 0
+          git commit -m 'RQIR iteration599: consume raw-valid corrected Ward scientific FAIL'
+          git push
+      # Creation needs one subsequent path-matching push to arm.
