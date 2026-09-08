@@ -1,0 +1,36 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "classification": "PASS_PROSPECTIVE_FULL_NONLINEAR_WARD_CONTRACT_FREEZE_AND_ONE_LEG_REDUCTION__NON_RESIDUAL",
+  "contract_sha256": "349dcc2012dc8e6642ed2a56e4e1554b9aae55db302222b30e37ed10b26828e8",
+  "date": "2026-09-08",
+  "explicit_nonclaims": [
+    "not nonlinear Ward PASS/FAIL",
+    "not comparator residual",
+    "not Candidate-Gravity model PASS/FAIL",
+    "not novelty certificate"
+  ],
+  "failures": [],
+  "fixture_rows": [
+    {"closure":0.0,"gauge_leg":"s","q":[1.0,0.0,0.0,0.0],"q2_candidate":-1.0,"spectators":["a","b"]},
+    {"closure":0.0,"gauge_leg":"a","q":[-0.4,0.1,0.1,0.0],"q2_candidate":-0.14,"spectators":["s","b"]},
+    {"closure":0.0,"gauge_leg":"b","q":[-0.6,-0.1,-0.1,0.0],"q2_candidate":-0.33999999999999997,"spectators":["s","a"]}
+  ],
+  "frozen_fourier_convention": "f(x)=int exp(-ik.x) f(k); stripped Delta_xi=i delta_xi",
+  "iteration": 596,
+  "mandatory_full_terms": ["gauge-leg linear contraction","spectator-u Lie derivative","spectator-v Lie derivative","left scalar endpoint","right scalar endpoint"],
+  "model_readiness_percent": 24,
+  "next_gate_if_pass": "evaluate the full Iter594 13-family cubic source object for all three cyclic gauge legs using the frozen Iter596 gauge/spectator/endpoint recursion; preserve negative results and raw-consume artifact before any source-to-Iter582 map",
+  "observed": {"max_candidate_q2_error":5.551115123125783e-17,"max_fixture_closure":0.0},
+  "one_leg_reduction_rows": [
+    {"error":5.551115123125783e-17,"inherited_coefficient":0.24,"m2_minus_s_over_4":0.23999999999999994,"s":1.0},
+    {"error":1.1102230246251565e-16,"inherited_coefficient":0.405,"m2_minus_s_over_4":0.4049999999999999,"s":0.34},
+    {"error":5.551115123125783e-17,"inherited_coefficient":0.455,"m2_minus_s_over_4":0.45499999999999996,"s":0.14}
+  ],
+  "parent_authorities": ["Iter587 one-leg off-shell Ward anchor","Iter588 exact Iter368 three-mode fixture","Iter589 same-action normalization","Iter590/594 full 13-family cubic response"],
+  "provenance": {"run_id":34230071486,"job_id":102073684316,"artifact_id":10057381903,"artifact_digest":"sha256:cb066bda0040be91eb63ffe41e5e53ed336231d97a2ef3f69eb28847d8806ecd","head_sha":"ad06a639b7d8e31fee1111e1c84c8b2018b416d0","result_sha256":"314d23356df4d1ce1213b6783d2e5420ef496ea41932bb9462f005b972907868","authority_audit_sha256":"829ac0d5e07bbc8da613877b329a81b0a3fae166b7c44d915c7d40916051f674"},
+  "scientific_gate_pass": true,
+  "scope": "PRE_RESULT_CONTRACT_AND_REDUCTION_ONLY__NO_FULL_WARD_NUMERICAL_CLASSIFICATION",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "source_to_iter582_map": "NOT_PERFORMED"
+}
