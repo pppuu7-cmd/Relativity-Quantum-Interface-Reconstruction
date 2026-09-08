@@ -1,0 +1,69 @@
+name: RQIR Iter627 combined SK contract validation
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration627-combined-sk-contract.yml'
+      - 'candidate_gravity/code/iteration627_combined_sk_contract.py'
+      - 'candidate_gravity/results/iteration627_combined_sk_contract.json'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Recompute prospective SK contract
+        run: |
+          python candidate_gravity/code/iteration627_combined_sk_contract.py > iteration627_runtime.json
+      - name: Fail-closed exact comparison
+        run: |
+          python - <<'PY'
+          import json
+          with open('iteration627_runtime.json') as f: runtime=json.load(f)
+          with open('candidate_gravity/results/iteration627_combined_sk_contract.json') as f: committed=json.load(f)
+          failures=[]
+          if runtime != committed:
+              keys=sorted(set(runtime)|set(committed))
+              for k in keys:
+                  if runtime.get(k) != committed.get(k):
+                      failures.append(f'{k}: runtime={runtime.get(k)!r} committed={committed.get(k)!r}')
+          required={
+              'scientific_gate_pass': True,
+              'candidate_residual': False,
+              'source_born_subtraction': 'NOT_PERFORMED',
+              'zero_fill': False,
+              'N_native_fit': False,
+              'projected_candidate_values_used_to_choose_contract': False,
+          }
+          for k,v in required.items():
+              if runtime.get(k) != v: failures.append(f'{k} guardrail mismatch')
+          if runtime.get('family_census',{}).get('total') != 13:
+              failures.append('13-family census not preserved')
+          if runtime.get('causal_matrix_checks',{}).get('all_surviving_internal_lines') != 'R':
+              failures.append('retarded internal-line induction not closed')
+          audit={
+              'iteration':627,
+              'classification':'PASS_RAW_AUTHORITY_AUDIT_ITER627_COMBINED_SK_CONTRACT' if not failures else 'FAIL_RAW_AUTHORITY_AUDIT_ITER627_COMBINED_SK_CONTRACT',
+              'failures':failures,
+              'prospective_contract':True,
+              'candidate_values_used_to_choose_contract':False,
+              'source_born_subtraction':'NOT_PERFORMED',
+              'zero_fill':False,
+              'family_count':runtime.get('family_census',{}).get('total')
+          }
+          with open('iteration627_authority_audit.json','w') as f: json.dump(audit,f,indent=2)
+          if failures: raise SystemExit('\n'.join(failures))
+          PY
+      - name: Upload raw validation artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration627-combined-sk-contract-validation
+          path: |
+            iteration627_runtime.json
+            iteration627_authority_audit.json
+            candidate_gravity/results/iteration627_combined_sk_contract.json
