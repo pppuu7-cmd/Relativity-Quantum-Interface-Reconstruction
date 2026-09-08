@@ -1,0 +1,56 @@
+name: RQIR Iter590 source cubic completeness
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'analysis/source_cubic_response_completeness_iteration590.py'
+      - '.github/workflows/rqir-iteration590-source-cubic-completeness.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cubic-completeness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Run cubic source-response completeness audit
+        run: python analysis/source_cubic_response_completeness_iteration590.py
+      - name: Fail-closed raw result audit
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          root=Path('results/iteration590_source_cubic_response_completeness')
+          r=root/'result.json'; a=root/'authority_audit.json'
+          result=json.loads(r.read_text()); audit=json.loads(a.read_text())
+          sha=hashlib.sha256(r.read_bytes()).hexdigest(); failures=[]
+          if result.get('iteration') != 590: failures.append('iteration mismatch')
+          if result.get('classification') != 'PASS_CUBIC_SOURCE_RESPONSE_COMPLETENESS_AUDIT__K1K2_ONLY_IS_SCOPED_NOT_FULL': failures.append('scientific classification not PASS scoped completeness')
+          if result.get('failures') != []: failures.append('scientific regression failures present')
+          if result.get('projection_status',{}).get('K1K2_only_as_complete_source_response') != 'NOT_AUTHORIZED_YET': failures.append('premature completeness promotion')
+          if result.get('source_born_subtraction') != 'NOT_PERFORMED': failures.append('premature Source/Born subtraction')
+          if result.get('ANSATZ_003') != 'FORBIDDEN': failures.append('ANSATZ-003 guardrail violation')
+          if result.get('Fisher_resources') != 'FORBIDDEN': failures.append('Fisher/resources guardrail violation')
+          if audit.get('result_sha256') != sha: failures.append('result sha mismatch')
+          if audit.get('classification') != 'PASS_RAW_AUTHORITY_AUDIT_ITER590_CUBIC_COMPLETENESS': failures.append('authority audit not PASS')
+          if failures: raise SystemExit('\n'.join(failures))
+          print('PASS fail-closed Iter590 raw audit',sha)
+          PY
+      - name: Upload raw artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter590-source-cubic-completeness
+          path: results/iteration590_source_cubic_response_completeness/
+          if-no-files-found: error
+          retention-days: 30
