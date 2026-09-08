@@ -1,0 +1,49 @@
+{
+  "iteration": 632,
+  "date": "2026-09-09",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "classification": "PASS_ITER632_PROSPECTIVE_MSSC001_MINKOWSKI_VACUUM_SCALAR_STATE_GK_CONTRACT__NON_RESIDUAL",
+  "contract_id": "MSSC001-SCALAR-STATE-V1",
+  "prospective_contract": true,
+  "state": {
+    "type": "zero-temperature Poincare-invariant Gaussian Minkowski vacuum of the frozen quadratic MSSC001 scalar sector",
+    "occupation": "n(|r0|)=0",
+    "temperature": "T=0 (beta=infinity)",
+    "mass": 0.7,
+    "fitted_to_candidate": false
+  },
+  "propagator_convention": {
+    "D": "m^2-r^2",
+    "G_R": "1/(D-i0*sign(r0))",
+    "G_A": "1/(D+i0*sign(r0))",
+    "G_R_minus_G_A": "2*pi*i*sign(r0)*delta(D)",
+    "G_K_vac": "sign(r0)*(G_R-G_A)=2*pi*i*delta(D)"
+  },
+  "exact_sign_checks": [
+    {
+      "energy_sign": -1,
+      "GR_minus_GA_over_2pii_delta": -1,
+      "GK_vac_over_2pii_delta": 1
+    },
+    {
+      "energy_sign": 1,
+      "GR_minus_GA_over_2pii_delta": 1,
+      "GK_vac_over_2pii_delta": 1
+    }
+  ],
+  "iter627_ra_slots": "PRESERVED: G_rr=G_K, G_ra=G_R, G_ar=G_A, G_aa=0",
+  "iter630_closed_loop_structure": "PRESERVED: exactly one G_K per closed retarded family",
+  "iter613_trajectory": "PRESERVED",
+  "all_13_source_families_retained": true,
+  "iter628_open_response": "PRESERVED_IN_ITS_OPEN_RESPONSE_SCOPE",
+  "candidate_values_used": false,
+  "N_native_fit": false,
+  "zero_fill": false,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "native_projection": "NOT_PERFORMED",
+  "failures": [],
+  "MODEL_READINESS": "24%",
+  "readiness_change": "0 percentage points",
+  "next_gate": "Iteration633: with MSSC001-SCALAR-STATE-V1 frozen, derive the closed retarded Gamma3 distributional pole/cut support family-by-family on the unchanged Iter613 trajectory, keeping exactly one G_K and the required G_R/G_A factors; classify coincident/repeated distribution products before any native projection."
+}
