@@ -1,0 +1,46 @@
+name: RQIR Iter590 diagnostic recovery
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/rqir-iteration590-diagnostic-recovery.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Capture Iter590 stdout stderr without scientific promotion
+        run: |
+          mkdir -p diagnostics/iter590
+          set +e
+          python analysis/source_cubic_response_completeness_iteration590.py > diagnostics/iter590/stdout.txt 2> diagnostics/iter590/stderr.txt
+          code=$?
+          echo "$code" > diagnostics/iter590/exit_code.txt
+          if [ -f results/iteration590_source_cubic_response_completeness/result.json ]; then
+            cp results/iteration590_source_cubic_response_completeness/result.json diagnostics/iter590/result.json
+          fi
+          if [ -f results/iteration590_source_cubic_response_completeness/authority_audit.json ]; then
+            cp results/iteration590_source_cubic_response_completeness/authority_audit.json diagnostics/iter590/authority_audit.json
+          fi
+          echo "diagnostic capture only; exit=$code"
+      - name: Upload diagnostic artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter590-diagnostic-recovery
+          path: diagnostics/iter590/
+          if-no-files-found: error
+          retention-days: 7
