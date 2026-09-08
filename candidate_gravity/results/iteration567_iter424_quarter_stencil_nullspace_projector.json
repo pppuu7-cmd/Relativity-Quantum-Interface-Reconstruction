@@ -1,0 +1,19 @@
+{
+  "iteration": 567,
+  "date": "2026-09-08",
+  "classification": "PASS_ITER424_QUARTER_STENCIL_NULLSPACE_PROJECTOR_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "weights": [1, -8, 8, -1],
+  "normalization": "1/(144 h^2)",
+  "coefficient_matrix_rank": 1,
+  "grid_dimension": 16,
+  "kernel_dimension": 15,
+  "additive_row_column_nuisance_dimension": 7,
+  "nonadditive_invisible_quotient_dimension": 8,
+  "frobenius_norm_squared_C": 16900,
+  "frobenius_norm_C": 130,
+  "projector": "P_C(F)=<C,F>/16900 * C",
+  "visible_component_norm": "||P_C(F)||_F=(72/65) h^2 |D_uv|",
+  "interpretation": "The single assembled mixed derivative probes exactly one linear grid mode. Fifteen orthogonal grid directions are invisible; seven are additive row/column nuisance modes and eight additional invisible directions are non-additive. This is stencil-functional non-identifiability only, not Candidate-Gravity model-level non-identifiability.",
+  "model_readiness_percent": 24,
+  "readiness_change_pp": 0
+}
