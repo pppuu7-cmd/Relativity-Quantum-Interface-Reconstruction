@@ -1,0 +1,58 @@
+name: RQIR Iter628 retarded scalar-pole coefficient validation
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration628-retarded-pole-coefficients.yml'
+      - 'candidate_gravity/code/iteration628_retarded_scalar_pole_coefficients.py'
+      - 'candidate_gravity/results/iteration628_retarded_scalar_pole_coefficients.json'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Recompute retarded coefficients
+        run: python candidate_gravity/code/iteration628_retarded_scalar_pole_coefficients.py > iteration628_runtime.json
+      - name: Fail-closed exact audit
+        run: |
+          python - <<'PY'
+          import json
+          with open('iteration628_runtime.json') as f: runtime=json.load(f)
+          with open('candidate_gravity/results/iteration628_retarded_scalar_pole_coefficients.json') as f: committed=json.load(f)
+          failures=[]
+          if runtime != committed:
+              for k in sorted(set(runtime)|set(committed)):
+                  if runtime.get(k) != committed.get(k): failures.append(f'{k}: runtime != committed')
+          if runtime.get('candidate_values_used') is not False: failures.append('Candidate values used')
+          if runtime.get('zero_fill') is not False: failures.append('zero-fill')
+          if runtime.get('root_hand_flip') is not False: failures.append('hand-flip')
+          if runtime.get('all_13_source_families_retained') is not True: failures.append('13-family preservation failed')
+          if runtime.get('source_born_subtraction') != 'NOT_PERFORMED': failures.append('premature subtraction')
+          rows=runtime.get('rows_strict_ascending_s',[])
+          if len(rows)!=6: failures.append('six-root support not preserved')
+          if [r.get('energy_sign') for r in rows] != [1,-1,1,1,1,1]: failures.append('Iter625 energy census mismatch')
+          audit={'iteration':628,
+                 'classification':'PASS_RAW_AUTHORITY_AUDIT_ITER628_RETARDED_POLE_COEFFICIENTS' if not failures else 'FAIL_RAW_AUTHORITY_AUDIT_ITER628_RETARDED_POLE_COEFFICIENTS',
+                 'failures':failures,
+                 'candidate_values_used':False,
+                 'zero_fill':False,
+                 'source_born_subtraction':'NOT_PERFORMED',
+                 'family_count':13,
+                 'root_count':len(rows)}
+          with open('iteration628_authority_audit.json','w') as f: json.dump(audit,f,indent=2)
+          if failures: raise SystemExit('\n'.join(failures))
+          PY
+      - name: Upload raw authority artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration628-retarded-pole-coefficients
+          path: |
+            iteration628_runtime.json
+            iteration628_authority_audit.json
+            candidate_gravity/results/iteration628_retarded_scalar_pole_coefficients.json
