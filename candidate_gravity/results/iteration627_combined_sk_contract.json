@@ -1,0 +1,45 @@
+{
+  "iteration": 627,
+  "date": "2026-09-09",
+  "contract_id": "MSSC001-GRAVITY-SK-MEAS-V1",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "classification": "PASS_ITER627_PROSPECTIVE_COMBINED_MATTER_GRAVITY_SK_CONTRACT__RETARDED_SCALAR_PROBE__PHYSICAL_HR_INSERTIONS__INTERNAL_SCALAR_LINES_INDUCED_RETARDED__NON_RESIDUAL",
+  "prospective_freeze": {
+    "generating_functional": "Z[J_phi+,J_phi-,J_g+,J_g-]=Integral exp{i S[g+,phi+] - i S[g-,phi-] + i(source+ - source-)}",
+    "field_rotation": "X_+=X_r+X_a/2; X_-=X_r-X_a/2 for X in {h,phi}",
+    "physical_background": "h_a=0; differentiate with respect to h_r",
+    "measured_scalar_observable": "G_phi^{ra}=G_R (retarded scalar two-point component)",
+    "endpoint_amputation": "amputate only the two common external scalar G_R factors after taking the third h_r derivative; retain every internal scalar propagator, K3, all six K1/K2 placements, all six ordered K1^3 chains",
+    "internal_scalar_component_rule": "derive by r/a matrix multiplication; for the measured ra component under h_r insertions each surviving internal chain propagator is G_R, never assigned root-by-root by hand",
+    "gravity_overlap_requirement": "same h_+=h_r+h_a/2, h_-=h_r-h_a/2 rotation and physical h_r insertion convention as Iter171; native gravitational observable remains in the Iter149 retarded/in-in sector"
+  },
+  "rotation_checks": {
+    "rrr_zero": 0.0,
+    "arr_unit": 1.0,
+    "rar_unit": 1.0,
+    "rra_unit": 1.0,
+    "aaa_quarter": 0.25
+  },
+  "causal_matrix_checks": {
+    "G_dK_G_ra": [["R", "dKR", "R"]],
+    "G_dK_G_dK_G_ra": [["R", "dKR", "R", "dKR", "R"]],
+    "G_dK_G_dK_G_dK_G_ra": [["R", "dKR", "R", "dKR", "R", "dKR", "R"]],
+    "all_surviving_internal_lines": "R"
+  },
+  "family_census": {
+    "K3_contact": 1,
+    "K1_K2_ordered_placements": 6,
+    "K1_cubed_ordered_chains": 6,
+    "total": 13
+  },
+  "consequence_for_iter615": "Iter615 K+i0 coefficients remain historical source-side authority, but native bridge must recompute scalar-pole discontinuity coefficients with the induced retarded prescription; no root may be hand-flipped or deleted.",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "zero_fill": false,
+  "N_native_fit": false,
+  "projected_candidate_values_used_to_choose_contract": false,
+  "failures": [],
+  "MODEL_READINESS": "24%",
+  "readiness_change": "0 percentage points",
+  "next_gate": "Iteration628: recompute the six supported scalar-pole coefficients under the frozen retarded internal-line prescription, preserving all 13 source families and the Iter613/614 kinematic trajectory; derive the common source-to-native phase/normalization from the same SK convention before native projection."
+}
