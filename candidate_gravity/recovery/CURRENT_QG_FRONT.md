@@ -20,6 +20,7 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Exact tensor11 support-orbit/design identifiability audit: **576**, PASS scoped/non-promoting.
 - Exact tensor11 leverage/single-orbit design robustness audit: **577**, PASS scoped/non-promoting.
 - Exact tensor11 PRESS/leverage amplification robustness audit: **578**, PASS scoped/non-promoting.
+- Iter579 all-36 raw-consumption gate: **RUNNING after minimal operational repair; not yet scientific authority**.
 - Latest authoritative research iteration: **578**.
 
 ## Iteration574 full-spectrum raw authority
@@ -79,65 +80,47 @@ For the unchanged `[1,x,y,xy]` fit over squared multiplier coordinates `{1,9/16,
 Therefore tensor11 is genuinely overdetermined and has goodness-of-fit power.
 
 ## Iteration577 leverage / single-orbit robustness
-Because the 16x4 design factorizes as the tensor product of the one-axis design `[1,x]`, the 2D hat matrix factorizes exactly.
-
-Exact one-axis leverages:
-`[209/258, 23/86, 89/258, 149/258]`.
-
+Exact one-axis leverages: `[209/258, 23/86, 89/258, 149/258]`.
 For the 16 symmetric-cross observations:
 - leverage sum = `4` exactly;
 - minimum leverage = `529/7396 ~= 0.07152514872904273`;
 - maximum leverage = `43681/66564 ~= 0.6562255874046031 < 1`;
 - minimum residual-projector diagonal = `22883/66564 ~= 0.3437744125953969 > 0`.
-
-Hence every frozen `C(r,s)` has nonzero residual sensitivity; no orbit is a unit-leverage interpolation point. Deleting any one observation preserves rank 4. This is design robustness only and does **not** authorize deleting any frozen orbit/node or altering the frozen statistic.
-
-Classification: `PASS_ITER421_TENSOR11_LEVERAGE_SINGLE_ORBIT_ROBUSTNESS_AUDIT_EXACT__NON_PROMOTING`.
-
-Reproducible artifacts:
-- `candidate_gravity/code/iteration577_tensor11_leverage_robustness_audit.py`
-- `candidate_gravity/results/iteration577_tensor11_leverage_robustness_audit.json`.
+Deleting any one observation preserves rank 4. This is design robustness only and does not authorize deleting or modifying any frozen support.
 
 ## Iteration578 PRESS / leverage amplification robustness
-For ordinary least squares, the exact leave-one-out residual identity is
-
-`e_i^(LOO)=e_i/(1-h_ii)`.
-
-Using only the prospectively fixed tensor11 design geometry:
-- minimum leverage = `529/7396`;
-- maximum leverage = `43681/66564`;
+For ordinary least squares, `e_i^(LOO)=e_i/(1-h_ii)`.
+Using only the frozen tensor11 design geometry:
 - minimum leverage-only PRESS amplification = `7396/6867 ~= 1.0770350953837193`;
 - maximum leverage-only PRESS amplification = `66564/22883 ~= 2.9088843246077873`.
+This is design robustness only and does not evaluate the pending numerical tensor11 residual.
 
-Therefore no frozen symmetric-cross observation has divergent leave-one-orbit amplification, and the worst leverage-only amplification is strictly below 2.91. This is design robustness only; it does not evaluate the pending tensor11 numerical residual, authorize deletion of support, or modify the frozen threshold/statistic.
-
-Classification: `PASS_ITER421_TENSOR11_PRESS_LEVERAGE_AMPLIFICATION_AUDIT_EXACT__NON_PROMOTING`.
-
-Reproducible artifacts:
-- `candidate_gravity/code/iteration578_tensor11_press_leverage_amplification_audit.py`
-- `candidate_gravity/results/iteration578_tensor11_press_leverage_amplification_audit.json`.
-
-## Active heavy computation — Iteration575
-Exactly one tensor11 support matrix remains active:
+## Iteration575 terminal matrix and Iteration579 raw-consumption gate
+The complete prospectively frozen Iter575 support matrix is now terminal:
 - workflow `RQIR Iter575 tensor11 missing support matrix`;
-- run `34180521559`;
-- head `519ceb6dc8efc3e5a9aebe86f5e6523152a4b284`;
-- matrix jobs: **36**;
-- `max-parallel: 18`;
-- latest checked workflow state during Iter578: **`in_progress`**, conclusion `null`;
-- stage `candidate_gravity/code/iteration575_iter421_tensor11_missing_support_full_z_mp_stage.py`;
-- each rank: exact frozen `(u,v)`, five z values, NPHI16, inherited radial Richardson nodes, direct MP80/MP120;
-- per-rank gates: 80 rows, finite, MP80↔MP120 `<=1e-30`, radial Richardson `<=5e-4`.
+- source run `34180521559`;
+- source head `519ceb6dc8efc3e5a9aebe86f5e6523152a4b284`;
+- matrix jobs: 36.
 
-No duplicate matrix or individual-rank heavy run is authorized. A per-rank PASS is support-only and cannot promote physical index2.
+A green source workflow is not scientific authority. Therefore Iter579 performs a separate fail-closed raw-consumption of all 36 uploaded ranks before any fit is allowed.
+
+Iter579 provenance:
+- workflow `.github/workflows/rqir-iteration579-tensor11-raw-consume.yml`;
+- initial workflow commit `7cfbd7e732c3a4b70117ebc3ebabdb242e4c27cc`;
+- initial trigger/head `9dca6e9cfdbec2733596c6b4dfe739c30449e7fe`;
+- initial run `34193494429`, job `101956184537`: **operational failure only** because the consumer assumed a nested `rank_N/` directory that `gh run download` did not preserve; it found 0/36 result paths. This is explicitly not a scientific FAIL.
+- minimal repair commit `461a67f1b9e726bd84bd138567bc2177807a2e43` changes only artifact-layout discovery and also binds the actual stage field `observed.max_radial_richardson_scaled_error`; all scientific criteria are unchanged.
+- repair trigger/head `4ab0443fd0a35d23749516a0cc44c56305a472b2`.
+- canonical repair run `34193625381`, job `101956570225`: **in_progress** at latest check.
+
+The repaired consumer indexes downloaded `result.json` files by the embedded frozen `original_iter421_tensor11_rank`, then independently checks exact rank↔coordinate mapping, SHA against each uploaded authority audit, exactly 80 rows, finiteness, frozen radii/precision/z/phi conventions, per-rank PASS/exit code, MP80↔MP120 `<=1e-30`, and radial Richardson `<=5e-4`. Any missing/duplicate/BLOCKED/failing rank keeps the gate BLOCKED. No zero-fill or substitution is permitted.
 
 ## Exact terminal decision tree
-When run `34180521559` becomes terminal:
-1. fetch all 36 rank artifacts and authority audits;
-2. independently verify rank↔coordinate mapping, result SHA, 80 rows, finiteness, precision/radial thresholds and exact head/provenance;
-3. if any rank is scientific `BLOCKED`, preserve tensor11 BLOCKED and localize that exact frozen node without node/radius/threshold changes;
-4. if all 36 ranks are raw-valid PASS, combine them with the already validated 28 MP nodes and evaluate the **unchanged original Iter421 tensor11 fit** independently at MP80 and MP120;
-5. only tensor11 residual `<=2e-5`, together with the already PASS four other Iter424 clauses, can promote physical index2 and authorize exact15.
+When run `34193625381` becomes terminal:
+1. inspect its uploaded `rqir-iter579-tensor11-all36-raw-consumption` artifact, not merely workflow colour;
+2. if `all_36_raw_valid_pass != true`, preserve the exact failing ranks as BLOCKED and do not fit;
+3. if all 36 ranks are raw-valid PASS, combine them with the already validated 28 MP nodes and evaluate the **unchanged original Iter421 tensor11 fit** independently at MP80 and MP120;
+4. only tensor11 residual `<=2e-5`, together with the already PASS four other Iter424 clauses, can promote physical index2 and authorize exact15.
 
 ## Comparator blocker retained
 Concrete upstream algebraic `Source/Ward/contact+K2` target and robust comparator-subtracted residual remain absent. Comparator quotient remains operationally BLOCKED. `ANSATZ-003` remains uncreated; Fisher/resources remain forbidden.
@@ -152,10 +135,10 @@ Concrete upstream algebraic `Source/Ward/contact+K2` target and robust comparato
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iter578 closes a real PRESS/design-robustness subgate, but no additional stable model-level rubric point is completed.
+Readiness change: **0 percentage points**. Iter579 is a raw-authority gate and cannot raise readiness unless a stable model-level rubric point is actually closed downstream.
 
 ## Downstream chain
-BASE/HALF/QUARTER support **CLOSED** → full spectrum reconstruction **CLOSED 574** → Iter424 **4/5 PASS** → original tensor11 exact MP support **RUNNING 575** → unchanged original tensor11 fit → only 5/5 PASS may promote index2 → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
+BASE/HALF/QUARTER support **CLOSED** → full spectrum reconstruction **CLOSED 574** → Iter424 **4/5 PASS** → original tensor11 MP support matrix **TERMINAL 575** → all-36 raw consumption **RUNNING 579** → unchanged original tensor11 fit → only 5/5 PASS may promote index2 → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
 
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. No post-hoc tensor11 redefinition. No raw-grid bilinear or central4-polynomial substitution for tensor11. No u↔v support substitution. No smaller h, altered original tensor11 radii/nodes, precision change or threshold weakening. Same parent dynamics/routing/numerator/sign/normalization remain mandatory. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
