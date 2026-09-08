@@ -1,0 +1,16 @@
+{
+  "iteration": 570,
+  "classification": "PASS_ITER424_QUARTER_SEPARABLE_CORRELATED_COVARIANCE_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "stencil": {
+    "w": [1, -8, 8, -1],
+    "C": "w tensor w",
+    "normalization": "1/(144 h^2)"
+  },
+  "covariance_assumption": "Cov(vec E)=Sigma_v tensor Sigma_u, with positive-semidefinite 4x4 factors",
+  "exact_variance": "Var(D_uv)=(w^T Sigma_u w)(w^T Sigma_v w)/(144^2 h^4)",
+  "one_factor_quadratic_form": "S00-16 S01+16 S02-2 S03+64 S11-128 S12+16 S13+64 S22-16 S23+S33",
+  "common_mode_null": "w^T J w=0; any perfectly common mode in either separable covariance factor is annihilated exactly",
+  "interpretation": "Generalizes prior iid/heteroskedastic conditioning to correlated separable numerical errors. This is assembly-error geometry only, not Candidate-Gravity model identifiability or a physics PASS.",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0
+}
