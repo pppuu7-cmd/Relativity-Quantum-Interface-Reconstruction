@@ -1,0 +1,27 @@
+{
+  "iteration": 595,
+  "date": "2026-09-08",
+  "model_readiness_percent": 24,
+  "classification": "PASS_NONLINEAR_WARD_TARGET_AUTHORITY_AUDIT__FULL_TARGET_NOT_YET_FROZEN__OPERATIONAL_BLOCKED_NON_RESIDUAL",
+  "scientific_gate_pass": true,
+  "starting_authority": "Iteration 594",
+  "question": "Is the existing Iter587 one-graviton Ward contract plus the Iter594 13-term source assembly sufficient, without any new convention, to define the full cubic nonlinear diffeomorphism Ward target?",
+  "result": "NO: the full nonlinear target is underdetermined by the currently frozen data. The naive replacement of one polarization by h_gauge(mu,nu)=q_mu xi_nu+q_nu xi_mu while leaving the other source legs fixed tests only a linearized gauge-leg contraction. A genuine nonlinear diffeomorphism Ward identity also contains the Lie-derivative action of the gauge parameter on the spectator graviton perturbations and the scalar/source endpoints. No prospectively frozen Fourier-space convention for those nonlinear terms is currently recorded in the authoritative chain.",
+  "one_graviton_anchor": "q_mu V^{mu nu}=(p'^2-m^2)p^nu-(p^2-m^2)p'^nu, specialized by Iter587 to (m^2-s/4) q^nu on the symmetric off-shell routing",
+  "nonlinear_metric_variation_required": "delta_xi h_{mu nu}=partial_mu xi_nu+partial_nu xi_mu + xi^rho partial_rho h_{mu nu}+h_{rho nu} partial_mu xi^rho+h_{mu rho} partial_nu xi^rho + O(h^2)",
+  "missing_frozen_data": [
+    "Fourier-space convention for the gauge parameter xi on the exact Iter588 three-mode fixture",
+    "momentum routing/sign convention for the nonlinear Lie-derivative action on each spectator graviton leg",
+    "corresponding scalar/source endpoint transformation terms needed to reduce to the Iter587 inverse-propagator RHS",
+    "an explicit recursive cubic Ward RHS tying K3, all six K1/K2 placements, and all six K1^3 chains into one gauge-covariant identity"
+  ],
+  "forbidden_shortcut": "Do not call a pure-gauge polarization substitution with fixed spectator legs the full nonlinear Ward test; that would omit required nonlinear diffeomorphism terms and could create a false PASS or false FAIL.",
+  "status_of_iter594": "Retained unchanged as full same-action routed cubic assembly and permutation-symmetry PASS, NON_WARD.",
+  "comparator_quotient": "OPERATIONAL_BLOCKED",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "candidate_residual": false,
+  "readiness_change_percentage_points": 0,
+  "next_gate": "Prospectively freeze the full Fourier-space nonlinear diffeomorphism action on the exact Iter588 fixture, including spectator-leg Lie-derivative and scalar-endpoint terms, and prove that its one-leg limit reproduces Iter587. Only then evaluate the full Iter594 13-term nonlinear Ward identity."
+}
