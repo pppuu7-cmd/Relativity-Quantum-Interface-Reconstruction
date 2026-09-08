@@ -1,0 +1,25 @@
+{
+  "iteration": 620,
+  "classification": "PASS_ITER620_PROJECTIVE_SOURCE_SHAPE_CONDITIONING_DIAGNOSTIC__NORMALIZATION_INVARIANT_NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "diagnostic_only": true,
+  "thresholds_introduced": false,
+  "N_native_used": false,
+  "roots_summed": false,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "rows": [
+    {"root":"D_b^-@0.013028588574858","aggregate":-0.00024912100468199333,"component_l1":0.0003056843275089716,"cancellation_margin":0.8149616524736022,"componentwise_relative_condition_number":1.227051600482995},
+    {"root":"D_s^-@0.09","aggregate":0.0007390333386357162,"component_l1":0.0008083475118242182,"cancellation_margin":0.9142520114497799,"componentwise_relative_condition_number":1.093790319820292},
+    {"root":"D_a^-@0.09868572571657197","aggregate":0.00019432750619153958,"component_l1":0.00019432750619153958,"cancellation_margin":1.0,"componentwise_relative_condition_number":1.0},
+    {"root":"D_a^+@1.241314274283428","aggregate":0.0012850179378006798,"component_l1":0.0016355258396847205,"cancellation_margin":0.7856910032362387,"componentwise_relative_condition_number":1.272764987610942},
+    {"root":"D_b^+@1.726971411425142","aggregate":-0.0007467205092433388,"component_l1":0.0018345376135536825,"cancellation_margin":0.40703472293319004,"componentwise_relative_condition_number":2.45679285736057},
+    {"root":"D_s^-@2.89","aggregate":-0.0021373920072305236,"component_l1":0.002734938991841086,"cancellation_margin":0.7815135963203661,"componentwise_relative_condition_number":1.279568269456018}
+  ],
+  "projective_ratios_anchor_D_b_minus": [1.0,-2.966563737084728,-0.7800526753639322,-5.158207913624242,2.997420912767025,8.57973421373656],
+  "projective_abs_dynamic_range": 10.998916463857647,
+  "max_componentwise_relative_condition_number": 2.45679285736057,
+  "min_cancellation_margin": 0.40703472293319004,
+  "interpretation": "All quantities are invariant under one common nonzero N_native. No acceptance threshold is introduced. D_b^+ is the most cancellation-sensitive retained root under this componentwise diagnostic, but the diagnostic does not authorize dropping, rescaling, regrouping or summing any root.",
+  "model_readiness_percent": 24,
+  "readiness_change": "0 pp"
+}
