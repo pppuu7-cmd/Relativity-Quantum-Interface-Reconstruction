@@ -1,0 +1,60 @@
+name: RQIR Iter599 symmetric-route nonlinear Ward gate
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'analysis/nonlinear_ward_full_response_iteration599_symmetric_route.py'
+      - '.github/workflows/rqir-iteration599-symmetric-route-ward.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  full-ward-symmetric-route:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Run exact symmetric-route full nonlinear Ward evaluation
+        continue-on-error: true
+        run: python analysis/nonlinear_ward_full_response_iteration599_symmetric_route.py
+      - name: Fail-closed raw result audit
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('results/iteration599_full_nonlinear_ward_symmetric_route')
+          r=root/'result.json'; a=root/'authority_audit.json'
+          if not r.exists() or not a.exists(): raise SystemExit('missing Iter599 raw outputs')
+          result=json.loads(r.read_text()); audit=json.loads(a.read_text()); sha=hashlib.sha256(r.read_bytes()).hexdigest(); failures=[]
+          if result.get('iteration') != 599: failures.append('iteration mismatch')
+          if result.get('routing_repair_only') is not True: failures.append('routing-repair marker missing')
+          if result.get('route') != "for each gauge g: p=-q_g/2, p_prime=+q_g/2": failures.append('frozen route mismatch')
+          if result.get('source_born_subtraction') != 'NOT_PERFORMED': failures.append('premature Source/Born subtraction')
+          if result.get('source_to_iter582_map') != 'NOT_PERFORMED': failures.append('premature source-to-Iter582 map')
+          if result.get('candidate_residual') is not False: failures.append('premature candidate residual')
+          if result.get('ANSATZ_003') != 'FORBIDDEN': failures.append('ANSATZ-003 violation')
+          if result.get('Fisher_resources') != 'FORBIDDEN': failures.append('Fisher/resources violation')
+          if audit.get('result_sha256') != sha: failures.append('result sha mismatch')
+          valid={
+            'PASS_FULL_SOURCE_LEVEL_NONLINEAR_WARD_ON_EXACT_FROZEN_ITER596_SYMMETRIC_ROUTE__NON_RESIDUAL',
+            'FAIL_FULL_SOURCE_LEVEL_NONLINEAR_WARD_ON_EXACT_FROZEN_ITER596_SYMMETRIC_ROUTE__PRESERVED_NEGATIVE_RESULT'}
+          if result.get('classification') not in valid: failures.append('unexpected scientific classification')
+          if failures: raise SystemExit('\n'.join(failures))
+          print('PASS fail-closed Iter599 raw integrity',sha,'scientific_classification=',result.get('classification'))
+          PY
+      - name: Upload raw artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter599-symmetric-route-nonlinear-ward
+          path: results/iteration599_full_nonlinear_ward_symmetric_route/
+          if-no-files-found: error
+          retention-days: 30
