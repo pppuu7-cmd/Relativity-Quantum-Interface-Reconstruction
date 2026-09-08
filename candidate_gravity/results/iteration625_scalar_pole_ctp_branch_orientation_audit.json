@@ -1,0 +1,28 @@
+{
+  "iteration": 625,
+  "date": "2026-09-08",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "classification": "PASS_ITER625_INTERNAL_SCALAR_ENERGY_SIGN_CENSUS__CTP_LINE_TYPE_ASSIGNMENT_REQUIRED_BEFORE_ONE_COMMON_N_NATIVE_RETARDED_BINDING__NON_RESIDUAL",
+  "root_rows": [
+    {"root_denominator":"D_b^-","s":0.013028588574858,"internal_r0":0.714142842854285,"energy_sign":1,"iter615_source_coefficient":-0.00024912100468199333},
+    {"root_denominator":"D_s^-","s":0.09,"internal_r0":-0.7,"energy_sign":-1,"iter615_source_coefficient":0.0007390333386357162},
+    {"root_denominator":"D_a^-","s":0.09868572571657197,"internal_r0":0.714142842854285,"energy_sign":1,"iter615_source_coefficient":0.00019432750619153958},
+    {"root_denominator":"D_a^+","s":1.241314274283428,"internal_r0":0.714142842854285,"energy_sign":1,"iter615_source_coefficient":0.0012850179378006798},
+    {"root_denominator":"D_b^+","s":1.726971411425142,"internal_r0":0.714142842854285,"energy_sign":1,"iter615_source_coefficient":-0.0007467205092433388},
+    {"root_denominator":"D_s^-","s":2.89,"internal_r0":0.7,"energy_sign":1,"iter615_source_coefficient":-0.0021373920072305236}
+  ],
+  "energy_sign_census": {"positive":5,"negative":1},
+  "key_result": "five supported roots have positive internal scalar energy, while D_s^-(s=0.09) has negative internal scalar energy. A naive replacement of the common Iter608 K+i0 pole rule by a retarded scalar propagator would therefore introduce a root-dependent prescription/sign.",
+  "scope": "this does not invalidate Iter608/615 in their frozen algebraic/Feynman-like pole convention and does not prove the actual CTP measurement uses a retarded scalar line; it proves that the CTP component/branch assignment must be explicit before a one-common-N_native retarded bridge is authoritative",
+  "conditional_retarded_warning": "if all internal scalar lines were mapped to the retarded scalar propagator, a single common multiplicative N_native would not preserve the current six-root sign pattern because one root has opposite internal-energy orientation",
+  "forbidden_shortcuts": [
+    "do not flip D_s^-(0.09) by hand",
+    "do not keep a common sign by ignoring energy orientation",
+    "do not declare Iter615 wrong",
+    "do not perform native projection until the combined CTP measurement map specifies the scalar-line component at every retained source family/root"
+  ],
+  "failures": [],
+  "MODEL_READINESS": "24%",
+  "next_gate": "freeze the combined CTP measurement bridge including r/a or +/- contour assignment for each internal scalar source line; only then determine whether the six Iter615 coefficients map by one common N_native or require recomputation in the correct CTP component"
+}
