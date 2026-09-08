@@ -1,0 +1,44 @@
+{
+  "iteration": 579,
+  "classification": "PASS_ITER575_TENSOR11_ALL36_RAW_CONSUMED__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "target": {"double_double_index": 2, "class_id": 3, "q_squared": -1.0},
+  "source": {
+    "matrix_run": 34180521559,
+    "matrix_head": "519ceb6dc8efc3e5a9aebe86f5e6523152a4b284",
+    "raw_consumer_run": 34193625381,
+    "raw_consumer_head": "4ab0443fd0a35d23749516a0cc44c56305a472b2",
+    "artifact_id": 10043065789,
+    "artifact_name": "rqir-iter579-tensor11-all36-raw-consumption",
+    "artifact_digest": "sha256:79273045e5821cc4cdea4127d610a32070cfc83e68d2011e076a264b6d654445"
+  },
+  "observed": {
+    "expected_rank_count": 36,
+    "consumed_rank_count": 36,
+    "all_36_raw_valid_pass": true,
+    "failures": [],
+    "max_scaled_mp80_vs_mp120": 5.4701756121638164e-80,
+    "max_radial_richardson_scaled_error": 2.5748066807357275e-15
+  },
+  "thresholds": {
+    "rows_per_rank": 80,
+    "scaled_mp80_vs_mp120_max": 1e-30,
+    "radial_richardson_scaled_max": 0.0005
+  },
+  "guardrails": [
+    "WORKFLOW_COLOUR_NOT_AUTHORITY",
+    "ALL_36_RANKS_REQUIRED",
+    "EXACT_RANK_COORDINATE_MAPPING",
+    "AUTHORITY_AUDIT_SHA_REQUIRED",
+    "NO_ZERO_FILL",
+    "NO_UV_SUBSTITUTION",
+    "NO_THRESHOLD_WEAKENING",
+    "NON_PROMOTING_SUPPORT_GATE_ONLY",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "next_gate": "Combine the 36 raw-valid nodes with the already validated 28 pre-existing MP nodes and evaluate the unchanged original Iter421 tensor degree-(1,1) fit independently at MP80 and MP120; frozen threshold 2e-5."
+}
