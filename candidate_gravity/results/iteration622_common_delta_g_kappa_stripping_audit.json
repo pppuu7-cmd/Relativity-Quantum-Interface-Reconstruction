@@ -1,0 +1,22 @@
+{
+  "iteration": 622,
+  "date": "2026-09-08",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "classification": "PASS_ITER622_COMMON_DIRECT_DELTA_G_VARIABLE_AND_COMMON_KAPPA_STRIPPING__N_NATIVE_DIMENSIONLESS_CONVENTION_BRIDGE_REMAINS_BLOCKED_NON_RESIDUAL",
+  "physical_split": "g = eta + kappa h_phys, hence delta_g = kappa h_phys",
+  "connection_computational_variable": "direct additive delta_g amplitude in Iter270 geometry",
+  "source_computational_variable": "direct additive delta_g amplitude in Iter590 MSSC geometry",
+  "derived_consequence": "stored source and connection coefficients are both expressed after stripping the same explicit kappa power associated with converting h_phys to delta_g; the remaining N_native cannot be an independently unknown gravitational-coupling power",
+  "remaining_normalization": "one common dimensionless nonzero complex convention/observable bridge between scalar-endpoint-amputated MSSC response and native gravitational Gamma3/effective-action convention",
+  "forbidden_inference": [
+    "does not set N_native=1",
+    "does not set N_native=+i or -i",
+    "does not infer a factorial or retarded/1PI phase",
+    "does not use Candidate/comparator values",
+    "does not authorize native projection or Source/Born subtraction"
+  ],
+  "failures": [],
+  "MODEL_READINESS": "24%",
+  "next_gate": "derive the missing dimensionless source-to-Gamma3 generating-functional/Legendre/in-in normalization prospectively; if no universal identity exists for the chosen physical MSSC observable, freeze the exact measurement-level bridge that must be supplied by a future Candidate rather than choosing a convention post hoc"
+}
