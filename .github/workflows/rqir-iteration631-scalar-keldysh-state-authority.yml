@@ -1,0 +1,46 @@
+name: RQIR Iter631 scalar Keldysh state authority
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration631-scalar-keldysh-state-authority.yml'
+      - 'candidate_gravity/code/iteration631_scalar_keldysh_state_authority_gate.py'
+      - 'candidate_gravity/results/iteration631_scalar_keldysh_state_authority_gate.json'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Recompute scalar-state authority gate
+        run: python candidate_gravity/code/iteration631_scalar_keldysh_state_authority_gate.py > iteration631_runtime.json
+      - name: Fail-closed exact audit
+        run: |
+          python - <<'PY'
+          import json
+          R=json.load(open('iteration631_runtime.json'))
+          C=json.load(open('candidate_gravity/results/iteration631_scalar_keldysh_state_authority_gate.json'))
+          failures=[]
+          if R != C: failures.append('runtime != committed result')
+          W=R.get('nonuniqueness_witness',{})
+          if W.get('same_G_R_G_A') is not True: failures.append('same causal propagators witness mismatch')
+          if W.get('distinct_G_K') is not True: failures.append('distinct G_K witness mismatch')
+          if [x.get('G_K_over_rho') for x in W.get('states',[])] != [1,3]: failures.append('occupation witness mismatch')
+          for k,v in [('candidate_values_used',False),('zero_fill',False),('source_born_subtraction','NOT_PERFORMED'),('native_projection','NOT_PERFORMED')]:
+            if R.get(k)!=v: failures.append(f'{k} guardrail mismatch')
+          A={'iteration':631,'classification':'PASS_RAW_AUTHORITY_AUDIT_ITER631_GK_STATE_UNDERDETERMINED' if not failures else 'FAIL_RAW_AUTHORITY_AUDIT_ITER631_GK_STATE_UNDERDETERMINED','failures':failures,'G_K_uniquely_fixed_by_iter627':False,'candidate_values_used':False,'zero_fill':False}
+          json.dump(A,open('iteration631_authority_audit.json','w'),indent=2)
+          if failures: raise SystemExit('\n'.join(failures))
+          PY
+      - name: Upload raw artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration631-scalar-keldysh-state-authority
+          path: |
+            iteration631_runtime.json
+            iteration631_authority_audit.json
+            candidate_gravity/results/iteration631_scalar_keldysh_state_authority_gate.json
