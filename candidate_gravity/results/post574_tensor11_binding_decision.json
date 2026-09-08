@@ -1,0 +1,35 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "MAPPING_FOUND__HIGH_PRECISION_TENSOR11_VALUE_UNCOMPUTED__NEXT_GATE_MP80_MP120",
+  "exact_next_gate": "Implement/evaluate the identical frozen symmetric-cross tensor degree-(1,1) residual at MP80 and MP120 using R=1e-5 and radius multipliers [1,0.75,0.5,0.25], same parent/routing/numerator/sign/normalization, no smaller h/nodes/threshold changes; fail closed if required support is unavailable.",
+  "guardrails": [
+    "NO_POSTHOC_OBSERVABLE_CHANGE",
+    "SAME_SYMMETRIC_CROSS",
+    "SAME_RADIUS_AND_MULTIPLIERS",
+    "SAME_TENSOR11_DESIGN",
+    "MP80_MP120_REQUIRED",
+    "NO_ZERO_FILL",
+    "NO_THRESHOLD_WEAKENING",
+    "NO_PHYSICAL_PROMOTION"
+  ],
+  "interpretation": "The observable mapping existed pre-result, but the prospectively frozen Iteration424 fallback requires 80/120-digit evaluations. A legacy numpy float/complex tensor11 residual cannot by itself fill that high-precision clause. Preserve BLOCKED until the same frozen symmetric-cross/radii/design tensor11 observable is evaluated at MP80 and MP120, unless an explicit pre-result contract proves otherwise.",
+  "iteration421_evaluator_precision_lineage": {
+    "explicit_mpmath_high_precision": false,
+    "numpy_float_complex": true,
+    "source": "candidate_gravity/code/iteration420_tru1sq_channel2_symmetric_cross_derivative.py"
+  },
+  "iteration421_result_candidates": [],
+  "iteration424_precision_requirement_digits": [
+    80,
+    120
+  ],
+  "pre_result_mapping": {
+    "found": true,
+    "iteration421_addendum_frozen_before_result": true,
+    "json_path": "fit_residuals_scaled.tensor11",
+    "threshold": 2e-05
+  },
+  "promotes_physical_coordinate": false,
+  "schema": "rqir_post574_tensor11_binding_decision_v1",
+  "scientific_gate_pass": true
+}
