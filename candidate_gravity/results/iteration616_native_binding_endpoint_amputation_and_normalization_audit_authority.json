@@ -1,0 +1,15 @@
+{
+  "iteration": 616,
+  "date": "2026-09-08",
+  "classification": "PASS_DETERMINISTIC_AUDIT_ITER616_BLOCKED_NATIVE_NORMALIZATION",
+  "result_file": "candidate_gravity/results/iteration616_native_binding_endpoint_amputation_and_normalization_audit.json",
+  "result_sha256": "4420ed19c7ec5cc9100de56934350e7308a5f7e04af0a94daf2580812d86a07c",
+  "code_file": "candidate_gravity/code/iteration616_native_binding_endpoint_amputation_and_normalization_audit.py",
+  "amputation_regression_max_abs_difference": 8.673617379884035e-19,
+  "amputation_regression_threshold": 5e-15,
+  "q2_bucket_map_inherited_from": "Iter588 exact same-mode ETA sign-flip authority",
+  "remaining_binding_dimension": 1,
+  "remaining_binding_status": "BLOCKED_ONE_COMMON_CROSS_SECTOR_PHASE_NORMALIZATION_SCALAR",
+  "failures": [],
+  "scientific_note": "This is an algebraic/convention authority audit, not a new heavy numerical physics run and not a Candidate residual."
+}
