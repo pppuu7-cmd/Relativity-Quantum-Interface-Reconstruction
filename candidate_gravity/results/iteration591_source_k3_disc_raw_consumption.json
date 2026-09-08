@@ -1,0 +1,43 @@
+{
+  "iteration": 591,
+  "date": "2026-09-08",
+  "classification": "PASS_RAW_CONSUMED_MSSC001_LOCAL_K3_HARD_CHANNEL_DISC_ZERO__NON_RESIDUAL",
+  "scientific_gate_pass": true,
+  "model_readiness_percent": 24,
+  "workflow": {
+    "run": 34211399779,
+    "head_sha": "fc941bdfa3c85766a1aa7cec2dc57248b49c4dd2",
+    "artifact_id": 10049941526,
+    "artifact_name": "rqir-iter591-source-k3-discontinuity",
+    "artifact_digest": "sha256:2a7c131dd51be5b3614b015222ece806f5ee0455d710f256384eaa758f4d4c75",
+    "result_sha256": "377c6d193974f2a90c1cf25b096d828cca538b1d8f937fa6fa7751277f590d46",
+    "authority_audit_sha256": "c24511a387c6a5a43bd7402965f55de8c6b2d7f1343b8ed462103a11aefed104",
+    "audit_classification": "PASS_RAW_AUTHORITY_AUDIT_ITER591_K3_DISC_ZERO",
+    "failures": []
+  },
+  "formal_origin": {
+    "form": "K3=-p_prime_cov A3(h1,h2,h3) p_cov + m^2 b3(h1,h2,h3)",
+    "momentum_degree": 2,
+    "internal_propagators": 0,
+    "loop_integrals": 0,
+    "logs": 0,
+    "nonlocal_form_factors": 0,
+    "channel_denominators": 0,
+    "max_formal_vs_exact_fine_error": 4.022542583748123e-08,
+    "frozen_tolerance": 2e-07
+  },
+  "fixture": [
+    {"singleton":"s","candidate_q2":-1.0,"source_s":1.0,"K3_contact_value":-0.0005182454472748204,"D_s_K3":0.0},
+    {"singleton":"a","candidate_q2":-0.14,"source_s":0.14,"K3_contact_value":-0.00033853654589035854,"D_s_K3":0.0},
+    {"singleton":"b","candidate_q2":-0.33999999999999997,"source_s":0.33999999999999997,"K3_contact_value":0.00012502386659238562,"D_s_K3":0.0}
+  ],
+  "key_result": "K3 is a nonzero local same-action contact with no ordinary finite hard-channel branch-cut discontinuity. This classifies its direct D_s origin only; it does not authorize deleting K3 from a source-completed Ward tree where a local contact may be required for gauge cancellation.",
+  "K3_direct_hard_channel_origin": "PASS_LOCAL_ANALYTIC__DISC_ZERO",
+  "K3_source_Ward_tree_presence": "RETAIN_UNTIL_FULL_SAME_ACTION_WARD_IDENTITY_IS_TESTED",
+  "K1cubed_source_Ward_tree_presence": "RETAIN_OPEN__ITER590_NONZERO_SUPPORT",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "candidate_residual": false,
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "next_gate": "Freeze the complete same-action scalar-source cubic tree content K3 + six K1/K2 placements + six K1^3 placements on the Iter368/588 fixture. Do not identify its standalone scalar analytic structure with the pure-gravity T_cut. Then test the correct off-shell source Ward recursion; only after source-tree gauge closure map the resulting completion into the native causal pure-gravity linked observable."
+}
