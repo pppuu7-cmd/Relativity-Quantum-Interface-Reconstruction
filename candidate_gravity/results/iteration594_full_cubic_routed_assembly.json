@@ -1,0 +1,68 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "candidate_residual": false,
+  "classification": "PASS_FULL_SAME_ACTION_ROUTED_CUBIC_SOURCE_ASSEMBLY_AND_PERMUTATION_SYMMETRY__NON_WARD_NON_RESIDUAL",
+  "date": "2026-09-08",
+  "explicit_nonclaims": [
+    "not the nonlinear Ward contraction yet",
+    "not Candidate-Gravity consistency PASS/FAIL",
+    "not source-to-Iter582 matching",
+    "not comparator identity",
+    "not a comparator-subtracted residual",
+    "not a novelty certificate"
+  ],
+  "failures": [],
+  "fixture_momentum_closure_max_abs": 0.0,
+  "identity": "d_abc G = -G Kabc G + sum_6(G Ki G Kjk G) - sum_6(G Ki G Kj G Kk G)",
+  "iteration": 594,
+  "key_result": "the full routed source object containing K3 + six K1/K2 placements + six ordered K1^3 chains is explicitly assembled, finite away from sampled scalar poles, and permutation-symmetric within the inherited K3 numerical envelope",
+  "model_readiness_percent": 24,
+  "next_gate_if_pass": "derive and prospectively freeze the full source-level pure-gauge contraction/Iter587 inverse-propagator RHS for this exact routed 13-term object, then evaluate that nonlinear Ward identity without removing K3 or K1^3; only after Ward closure may a full-observable source-to-Iter582 map be attempted",
+  "parent_authorities": [
+    "Iter588 exact three-mode routing",
+    "Iter589 same-action K1/K2 normalization",
+    "Iter590 exact d_abc(K^-1) family identity",
+    "Iter593 split-invariance requirement"
+  ],
+  "probe_results": [
+    {
+      "K0_external": 0.5741999999999999,
+      "K3_last_step_difference": 5.395683899678261e-08,
+      "K3_steps": [0.02, 0.01, 0.005],
+      "K3_values": [-0.00597531272898688, -0.005975528072355018, -0.0059755820291940145],
+      "canonical_assembly": {
+        "K3_mixed": -0.0059755820291940145,
+        "direct_minus_GK3G": 0.01812399093080123,
+        "full_dabcG": 0.01164100265947051,
+        "six_K1K2_sum": -0.005276095685186276,
+        "six_K1cubed_sum_before_minus": 0.0012068925861444435
+      },
+      "p0": [0.43, -0.27, 0.39, 0.21],
+      "permutation_spread": 6.734631775862088e-10
+    },
+    {
+      "K0_external": 0.4709999999999999,
+      "K3_last_step_difference": 3.615857613326057e-08,
+      "K3_steps": [0.02, 0.01, 0.005],
+      "K3_values": [0.0003965225439661601, 0.00039666789991565915, 0.0003967040584917924],
+      "canonical_assembly": {
+        "K3_mixed": 0.0003967040584917924,
+        "direct_minus_GK3G": -0.0017882359820402566,
+        "full_dabcG": 0.08048850177634126,
+        "six_K1K2_sum": 0.20405717388220662,
+        "six_K1cubed_sum_before_minus": 0.12178043612382511
+      },
+      "p0": [0.61, 0.19, -0.31, 0.47],
+      "permutation_spread": 1.0009177930925262e-09
+    }
+  ],
+  "scientific_gate_pass": true,
+  "scope": "ASSEMBLY_AND_PERMUTATION_SYMMETRY_ONLY",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "thresholds_inherited": {
+    "K3_last_step_max": 2e-07,
+    "closure_max": 1e-14,
+    "permutation_spread_max": 2e-07
+  }
+}
