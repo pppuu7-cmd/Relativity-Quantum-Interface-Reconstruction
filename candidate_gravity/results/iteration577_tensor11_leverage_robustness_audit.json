@@ -1,0 +1,20 @@
+{
+  "iteration": 577,
+  "classification": "PASS_ITER421_TENSOR11_LEVERAGE_SINGLE_ORBIT_ROBUSTNESS_AUDIT_EXACT__NON_PROMOTING",
+  "frozen_axis_x": ["1", "9/16", "1/4", "1/16"],
+  "one_axis_leverages": ["209/258", "23/86", "89/258", "149/258"],
+  "two_axis_leverage_sum": "4",
+  "min_two_axis_leverage": "529/7396",
+  "min_two_axis_leverage_decimal": 0.07152514872904273,
+  "max_two_axis_leverage": "43681/66564",
+  "max_two_axis_leverage_decimal": 0.6562255874046031,
+  "min_residual_projector_diagonal": "22883/66564",
+  "min_residual_projector_diagonal_decimal": 0.3437744125953969,
+  "all_16_observations_have_nonzero_residual_sensitivity": true,
+  "all_leverages_strictly_below_one": true,
+  "single_observation_deletion_preserves_design_rank": true,
+  "residual_degrees_of_freedom": 12,
+  "interpretation": "The frozen 16x4 tensor11 regression has no unit-leverage symmetric-cross orbit. Every orbit retains strictly positive residual-projector diagonal weight, and deletion of any single C(r,s) observation leaves the four-parameter design full rank. This is design robustness only and does not authorize dropping any frozen support node.",
+  "scope": "non-promoting design robustness; no tensor11 numerical residual evaluated; no threshold, node, radius, precision, or observable changed",
+  "model_readiness": "24%"
+}
