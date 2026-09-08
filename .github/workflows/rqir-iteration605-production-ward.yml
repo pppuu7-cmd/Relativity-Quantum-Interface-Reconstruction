@@ -1,0 +1,57 @@
+name: RQIR Iter605 production Ward under Iter604 lattice contract
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'analysis/nonlinear_ward_production_iteration605.py'
+      - 'candidate_gravity/results/iteration604_finite_lattice_contract_raw_consumption.json'
+      - '.github/workflows/rqir-iteration605-production-ward.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  production-ward:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numpy
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Run Iter605 production Ward evaluation
+        run: python analysis/nonlinear_ward_production_iteration605.py
+      - name: Fail-closed artifact integrity audit
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('results/iteration605_full_nonlinear_ward_iter604_contract')
+          r=root/'result.json'; a=root/'authority_audit.json'
+          R=json.loads(r.read_text()); A=json.loads(a.read_text()); sha=hashlib.sha256(r.read_bytes()).hexdigest(); bad=[]
+          if R.get('iteration')!=605: bad.append('iteration mismatch')
+          if R.get('model_readiness_percent')!=24: bad.append('readiness drift')
+          if R.get('candidate_residual') is not False: bad.append('improper residual promotion')
+          if R.get('iter602_historical_fail_preserved') is not True: bad.append('Iter602 history not preserved')
+          if R.get('contract',{}).get('radii') != [4,5,6]: bad.append('radius contract drift')
+          if len(R.get('row_outcomes',[])) != 12: bad.append('missing Ward rows')
+          if A.get('result_sha256')!=sha: bad.append('sha mismatch')
+          if A.get('failures')!=[]: bad.append('raw audit failure')
+          allowed=('PASS_FULL_SOURCE_LEVEL_NONLINEAR_WARD_UNDER_ITER604_FINITE_LATTICE_CONTRACT',
+                   'BLOCKED_CONVERGENCE_FULL_SOURCE_LEVEL_NONLINEAR_WARD_UNDER_ITER604_CONTRACT',
+                   'FAIL_WARD_FULL_SOURCE_LEVEL_NONLINEAR_WARD_UNDER_ITER604_CONTRACT')
+          if R.get('classification') not in allowed: bad.append('unexpected scientific classification')
+          if bad: raise SystemExit('\n'.join(bad))
+          print('PASS Iter605 raw artifact integrity',sha,R.get('classification'))
+          PY
+      - name: Upload raw artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter605-production-ward
+          path: results/iteration605_full_nonlinear_ward_iter604_contract/
+          if-no-files-found: error
+          retention-days: 30
