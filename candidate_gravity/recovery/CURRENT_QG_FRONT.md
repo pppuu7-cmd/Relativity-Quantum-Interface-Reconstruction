@@ -9,7 +9,7 @@
 Repository commits, validated raw Actions artifacts, recovery deltas, research logs, and this file are source of truth. Workflow colour alone is never scientific authority. Race-created newer repo state wins and authoritative iteration IDs are never reused.
 
 ## Current authority
-- Latest authoritative research iteration: **594**.
+- Latest authoritative research iteration: **595**.
 - Frozen Iter424 is **5/5 PASS**; post-Iter580 unresolved physical set is `[]`.
 - Iter581 exact15 `Tr U1^2` is raw-valid PASS.
 - Iter582 q2-resolved `D_s Gamma_{e=2}` assembly is PASS, non-residual.
@@ -22,7 +22,8 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Iter591 raw-validates that local MSSC K3 is nonzero but ordinary finite hard-channel `D_s K3=0`; K3 is still retained in the full same-action source Ward tree until full gauge closure is tested.
 - Iter592 raw-validates that K1^3 is a nonzero meromorphic scalar-source tree family: it has scalar poles but no ordinary finite branch cut away from poles.
 - Iter593 closes the attempted family-by-family source-to-`T_cut` projection negatively: under the frozen Iter183 split-invariant protocol, an individual K1^3 pole-discontinuity assignment is not itself a frozen observable. K1^3 must remain inside the full same-action source-completed response unless an independent same-parent map was frozen beforehand.
-- **Iter594 explicitly assembles the complete routed same-action cubic source object containing K3 + all six K1/K2 placements + all six ordered K1^3 chains. On both frozen loop probes it is finite, nonzero, and permutation-symmetric within the inherited Iter590 numerical envelope. This is an assembly PASS only, not yet a nonlinear Ward PASS.**
+- Iter594 explicitly assembles the complete routed same-action cubic source object containing K3 + all six K1/K2 placements + all six ordered K1^3 chains. On both frozen loop probes it is finite, nonzero, and permutation-symmetric within the inherited Iter590 numerical envelope. This is an assembly PASS only, not yet a nonlinear Ward PASS.
+- **Iter595 audits the nonlinear Ward target itself and finds that the currently frozen data do not yet define the full cubic diffeomorphism Ward identity. A naive replacement `h -> q⊗xi+xi⊗q` with the other two source legs held fixed is only a linearized gauge-leg contraction; the nonlinear Lie-derivative action on spectator graviton legs and scalar/source endpoints is not yet prospectively frozen in Fourier space. The correct status is operational BLOCKED, not PASS/FAIL.**
 
 ## Iter582 operator coordinate
 `D_s Gamma_e2(q^2) = +(i/2)D_s Tr U2 -(i/4)D_s Tr U1^2`, q2 buckets kept distinct:
@@ -47,78 +48,31 @@ Thus a complete same-action cubic source tree contains:
 2. six K1/K2 placements;
 3. six ordered K1^3 chains.
 
-Iter591 closes only the direct ordinary branch-cut origin of K3: `D_s K3=0` for the local analytic contact. It does not authorize removing K3 from the source Ward tree before the full Ward identity is tested.
+Iter594 proves this full routed object can be assembled on the exact fixture and is finite/nonzero/permutation-symmetric on the inherited probes. It remains explicitly NON_WARD.
 
-Iter592 closes only the ordinary finite branch-cut origin of K1^3 away from scalar poles. K1 is polynomial, while internal `G=1/(m^2-p^2)` factors are meromorphic. Exact frozen fixture K1^3 sums remain nonzero:
-- `s`: `-0.000386885483743436`, minimum internal `|K0|=0.24`;
-- `a`: `-0.0005328911177533087`, minimum internal `|K0|=0.145`;
-- `b`: `+0.00012109066165593845`, minimum internal `|K0|=0.005`.
-
-Canonical Iter592 raw authority:
-- run `34214083326`;
-- job `102021606620`;
-- head `57b3a430abe387376376bd559c7f66cd7fa230f4`;
-- artifact `10051001153`, digest `sha256:d3d0e4e4e57bbe047dc8019bd159d3434118542b4c28696a88692e97ac9f7c21`;
-- result SHA256 `f2765720fddaf578df48bfaf40820c66412282f81968d4ad77a04a940aac94a6`;
-- authority audit `PASS_RAW_AUTHORITY_AUDIT_ITER592_K1CUBED_ORIGIN`, failures `[]`.
-
-## Iter593 split-invariance authority
-Iteration 183 freezes the physical nonlinear relation observable in terms of the **full source-completed** cubic coefficient `S`, not a separately observable internal Ward/transverse/reducible decomposition. For an internal bookkeeping split
-
-`S = S_A + S_B`,
-
-with allowed repartition
-
-`S_A -> S_A + C`, `S_B -> S_B - C`,
-
-the full hard-channel discontinuity is invariant,
-
-`D_s S -> D_s S`,
-
-while individual family assignments shift by `+/- D_s C`.
-
-Therefore:
-- `K1cubed_individual_T_cut_projection = NOT_A_FROZEN_SPLIT_INVARIANT_OBSERVABLE`;
-- `K1cubed = RETAIN_IN_FULL_SAME_ACTION_SOURCE_RESPONSE`;
-- `six_K1K2_as_complete_discontinuity_block = NOT_AUTHORIZED_BY_SEPARATE_K1CUBED_PROJECTION`;
-- `ordinary_finite_branch_cut_D_s_K1cubed = ZERO_AWAY_FROM_POLES` remains true and scoped exactly as in Iter592;
-- Source/Born subtraction remains `NOT_PERFORMED`.
-
+## Iter595 nonlinear Ward target authority
 Machine-readable authority:
-`candidate_gravity/results/iteration593_source_to_tcut_split_invariance.json`.
+`candidate_gravity/results/iteration595_nonlinear_ward_target_authority_audit.json`.
 
 Classification:
-`PASS_SPLIT_INVARIANCE_AUDIT__INDIVIDUAL_K1CUBED_T_CUT_PROJECTION_NOT_A_FROZEN_OBSERVABLE__NON_RESIDUAL`.
+`PASS_NONLINEAR_WARD_TARGET_AUTHORITY_AUDIT__FULL_TARGET_NOT_YET_FROZEN__OPERATIONAL_BLOCKED_NON_RESIDUAL`.
 
-## Iter594 full routed assembly authority
-Reproducible code:
-`analysis/source_full_cubic_routed_assembly_iteration594.py`.
+The one-graviton anchor remains Iter587:
 
-Machine-readable result:
-`candidate_gravity/results/iteration594_full_cubic_routed_assembly.json`.
+`q_mu V^{mu nu}=(p'^2-m^2)p^nu-(p^2-m^2)p'^nu`.
 
-Classification:
-`PASS_FULL_SAME_ACTION_ROUTED_CUBIC_SOURCE_ASSEMBLY_AND_PERMUTATION_SYMMETRY__NON_WARD_NON_RESIDUAL`.
+But a nonlinear diffeomorphism acts on the perturbation as
 
-Frozen probe `p0=[0.43,-0.27,0.39,0.21]`:
-- `-G K3 G = +0.01812399093080123`;
-- six K1/K2 placements sum `-0.005276095685186276`;
-- six ordered K1^3 chains sum before the required minus sign `+0.0012068925861444435`;
-- full `d_abc G = +0.01164100265947051`;
-- K3 last-step change `5.395683899678261e-08`;
-- six-label permutation spread `6.734631775862088e-10`.
+`delta_xi h_{mu nu}=partial_mu xi_nu+partial_nu xi_mu + xi^rho partial_rho h_{mu nu}+h_{rho nu} partial_mu xi^rho+h_{mu rho} partial_nu xi^rho+O(h^2)`.
 
-Frozen probe `p0=[0.61,0.19,-0.31,0.47]`:
-- `-G K3 G = -0.0017882359820402566`;
-- six K1/K2 placements sum `+0.20405717388220662`;
-- six ordered K1^3 chains sum before the required minus sign `+0.12178043612382511`;
-- full `d_abc G = +0.08048850177634126`;
-- K3 last-step change `3.615857613326057e-08`;
-- permutation spread `1.0009177930925262e-09`.
+Therefore the full cubic Ward identity additionally requires a prospectively frozen Fourier-space convention for:
+- the gauge parameter on the exact Iter588 three-mode fixture;
+- the Lie-derivative action on both spectator graviton legs;
+- scalar/source endpoint transformation terms;
+- the resulting recursive cubic RHS joining K3, six K1/K2 and six K1^3 contributions;
+- an exact one-leg reduction back to Iter587.
 
-Fixture momentum closure is exactly `0.0`. The inherited Iter368 closure tolerance `1e-14` and Iter590 K3 numerical envelope `2e-7` were not weakened.
-
-Binding scope: this closes explicit complete-source assembly and permutation symmetry only. It is **not** a nonlinear Ward PASS, not Candidate-Gravity consistency PASS/FAIL, not a source-to-Iter582 match, not comparator identity, and not a comparator-subtracted residual.
+Until that contract exists, a pure-gauge polarization substitution with fixed spectator legs must not be promoted as the full nonlinear Ward test.
 
 ## Stable readiness rubric
 - comparator foundation `24/25`
@@ -130,15 +84,15 @@ Binding scope: this closes explicit complete-source assembly and permutation sym
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iter594 closes a real hard assembly prerequisite but does not close a full readiness sector or create a robust comparator-subtracted residual.
+Readiness change: **0 percentage points**. Iter595 closes an authority ambiguity and prevents a false Ward PASS/FAIL, but does not close a full readiness sector or create a robust comparator-subtracted residual.
 
 ## Exact next gate
-From the same MSSC-001 parent dynamics, derive and **prospectively freeze before numerical evaluation** the full cubic pure-gauge/Ward contraction target for the exact Iter594 routed 13-term object. Its inverse-propagator structure must reduce consistently to the already-authoritative Iter587 one-graviton Ward RHS. Then evaluate the full nonlinear Ward identity with both K3 and K1^3 retained.
+Create a separate **pre-result** nonlinear Ward contract that prospectively freezes the full momentum-space diffeomorphism recursion on the exact Iter588 three-mode fixture. It must include spectator-graviton Lie-derivative terms and scalar/source endpoint terms, and its spectator-free limit must reproduce Iter587 exactly.
 
-Only after the full source-level Ward gate is controlled may a source-to-Iter582/native-linked map act on the complete observable. Any such map must act on the full observable; an individual K1^3 Born subtraction cannot be introduced post hoc.
+Only after that contract is frozen may the full Iter594 K3 + six K1/K2 + six K1^3 object be numerically contracted and classified. Only after source-level Ward closure may a full-observable source-to-Iter582/native-linked map be applied and the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient become eligible.
 
 Until that gate closes:
-- do not call Iter594 a Ward PASS;
+- do not call Iter594 or a naive pure-gauge substitution a nonlinear Ward PASS;
 - do not perform Source/Born subtraction;
 - do not map an incomplete or un-Ward-closed source response into Iter582/comparator quotient;
 - do not create `ANSATZ-003`;
