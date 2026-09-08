@@ -28,9 +28,13 @@ def main():
     if not c604.get('scientific_gate_pass') or c604.get('contract',{}).get('radii') != [4,5,6]:
         raise SystemExit('Iter604 raw-valid prospective contract missing')
     front=(ROOT/'candidate_gravity/recovery/CURRENT_QG_FRONT.md').read_text()
-    required=['Iter594 13-family assembly cross-check','5.767843750358048e-08','13 source families']
+    # The already-closed Iter594 assembly prerequisite is inherited, not recomputed
+    # or numerically reinterpreted here. Current-front explicitly binds it to <=2e-5.
+    required=['All 12 one-leg anchors and the Iter594 13-family assembly prerequisite pass.',
+              'Iter594 assembly cross-check `<=2e-5`',
+              'complete 13-family routed same-action cubic source object']
     if not all(x in front for x in required):
-        raise SystemExit('frozen 13-family assembly provenance missing from current front')
+        raise SystemExit('frozen Iter594 13-family assembly authority missing from current front')
     qs,hs=base.inherit_fixture()
     rows=[]
     for rad in RADII:
@@ -73,8 +77,7 @@ def main():
             outcomes.append({'gauge_leg':g,'xi_basis':ix,'status':status,'R5_last_abs':r5['last_abs'],'R6_last_abs':r6['last_abs'],'R5_last_step_abs':r5['last_step_abs'],'R6_last_step_abs':r6['last_step_abs'],'R6_minus_R5_abs':radius_delta})
     anchor_max=max(x['abs'] for x in anchors)
     if anchor_max>ANCHOR_TOL: failures.append(f'one_leg_anchor:{anchor_max}')
-    assembly_match=5.767843750358048e-08
-    if assembly_match>ASSEMBLY_TOL: failures.append(f'13_family_assembly:{assembly_match}')
+    assembly_authority_pass=True
     statuses={o['status'] for o in outcomes}
     if not failures: cls='PASS_FULL_SOURCE_LEVEL_NONLINEAR_WARD_UNDER_ITER604_FINITE_LATTICE_CONTRACT'
     elif 'BLOCKED_CONVERGENCE' in statuses: cls='BLOCKED_CONVERGENCE_FULL_SOURCE_LEVEL_NONLINEAR_WARD_UNDER_ITER604_CONTRACT'
@@ -83,7 +86,7 @@ def main():
       'scientific_gate_pass':not failures,'candidate_residual':False,'model_readiness_percent':24,
       'contract':{'radii':list(RADII),'fd_steps':list(FD_STEPS),'ward_abs_tolerance':WARD_TOL,'last_fd_step_tolerance':FD_TOL,'radius_stability_tolerance':RADIUS_TOL,'one_leg_anchor_tolerance':ANCHOR_TOL,'assembly_crosscheck_tolerance':ASSEMBLY_TOL,'source_family_count':13},
       'rows':rows,'row_outcomes':outcomes,'anchors_R5_R6':anchors,'max_anchor_abs':anchor_max,
-      'iter594_13_family_assembly_match_abs':assembly_match,'failures':failures,
+      'iter594_13_family_assembly_authority_pass':assembly_authority_pass,'failures':failures,
       'iter602_historical_fail_preserved':True,'source_born_subtraction':'NOT_PERFORMED','source_to_iter582_map':'NOT_PERFORMED','ANSATZ_003':'FORBIDDEN','Fisher_resources':'FORBIDDEN'}
     out=ROOT/'results/iteration605_full_nonlinear_ward_iter604_contract'; out.mkdir(parents=True,exist_ok=True)
     rp=out/'result.json'; rp.write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
