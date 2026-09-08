@@ -1,0 +1,34 @@
+{
+  "iteration": 630,
+  "date": "2026-09-09",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "classification": "PASS_ITER630_CLOSED_RETARDED_GRAVITATIONAL_SCALAR_LOOP_REQUIRES_KELDYSH_COMPONENT__OPEN_GR_COEFFICIENTS_NOT_DIRECT_1PI_AUTHORITY__NON_RESIDUAL",
+  "frozen_inputs": {
+    "iter627_propagator_matrix": "G_ra_basis=[[G_K,G_R],[G_A,0]]",
+    "r_vertex": "V_r=[[0,V],[V,0]]",
+    "one_a_vertex": "V_a=[[V,0],[0,V/4]]",
+    "retarded_gravitational_component": "one h_a and two h_r insertions (arr plus cyclic placements)",
+    "iter613_trajectory": "PRESERVED_NOT_EVALUATED_HERE"
+  },
+  "closed_trace_causal_support": {
+    "K3_one_a_contact": "G_K",
+    "K1K2_one_a_one_r": "G_K*G_A + G_K*G_R",
+    "K1K2_reverse_order": "G_K*G_A + G_K*G_R",
+    "K1cubed_arr": "G_K*G_A^2 + G_K*G_R*G_A + G_K*G_R^2",
+    "K1cubed_rar": "G_K*G_A^2 + G_K*G_R*G_A + G_K*G_R^2",
+    "K1cubed_rra": "G_K*G_A^2 + G_K*G_R*G_A + G_K*G_R^2"
+  },
+  "exact_consequence": "Every closed retarded scalar-loop family carries exactly one G_K. Therefore the Iter628 open scalar response, whose internal lines are induced G_R, cannot be reweighted into gravitational retarded Gamma3 by any family-independent or root-wise normalization.",
+  "required_new_authority": "same-parent scalar Keldysh/statistical component G_K (state/boundary-condition normalization) and its relation to G_R/G_A must be frozen before numerical closed-loop pole/cut coefficients can be computed",
+  "iter628_retarded_pole_data": "PRESERVED_AS_OPEN_RESPONSE_AUTHORITY__NOT_DIRECTLY_REUSED_AS_CLOSED_1PI",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "native_projection": "NOT_PERFORMED",
+  "candidate_values_used": false,
+  "N_native_fit": false,
+  "zero_fill": false,
+  "failures": [],
+  "MODEL_READINESS": "24%",
+  "readiness_change": "0 percentage points",
+  "next_gate": "Iteration631: authority audit/prospective freeze of the same-parent MSSC001 scalar state and G_K component in the Iter627 CTP convention; only then evaluate closed retarded Gamma3 pole/cut support on the Iter613 trajectory."
+}
