@@ -1,0 +1,37 @@
+{
+  "iteration": 576,
+  "date": "2026-09-08",
+  "classification": "PASS_ITER421_TENSOR11_SUPPORT_ORBIT_AND_DESIGN_IDENTIFIABILITY_AUDIT_EXACT__NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "support": {
+    "signed_nodes_total": 64,
+    "sign_orbits_total": 16,
+    "existing_signed_nodes": 28,
+    "missing_signed_nodes": 36,
+    "existing_complete_sign_orbits": 7,
+    "missing_complete_sign_orbits": 9,
+    "straddled_sign_orbits": 0,
+    "each_cross_C_uses_single_provenance_class": true,
+    "existing_orbits": [["1/400000","1/400000"],["1/400000","1/200000"],["1/200000","1/400000"],["1/200000","1/200000"],["1/200000","1/100000"],["1/100000","1/200000"],["1/100000","1/100000"]],
+    "missing_orbits": [["1/400000","3/400000"],["1/400000","1/100000"],["1/200000","3/400000"],["3/400000","1/400000"],["3/400000","1/200000"],["3/400000","3/400000"],["3/400000","1/100000"],["1/100000","1/400000"],["1/100000","3/400000"]]
+  },
+  "tensor11_design": {
+    "observations_Crs": 16,
+    "parameters": 4,
+    "residual_dof": 12,
+    "rank": 4,
+    "XtX_det_exact": "276922881/16777216",
+    "XtX_det_positive": true,
+    "basis": ["1","x","y","x*y"],
+    "x_y_values": ["1","9/16","1/4","1/16"]
+  },
+  "interpretation": [
+    "The original tensor11 residual is overdetermined, not saturated: 16 C(r,s) observations fit 4 coefficients, leaving 12 residual degrees of freedom.",
+    "The 28 pre-existing and 36 newly requested signed F nodes partition into whole four-sign orbits, so no individual symmetric-cross C(r,s) mixes old and new support provenance.",
+    "This is a design/support identifiability result only; it does not evaluate the tensor11 residual and cannot promote physical index2."
+  ],
+  "guardrails": ["NO_ACTIVE_MATRIX_RESULT_CONSUMED","NO_NODE_CHANGE","NO_THRESHOLD_CHANGE","NO_PHYSICAL_PROMOTION","NO_ANSATZ003","NO_FISHER_RESOURCES"]
+}
