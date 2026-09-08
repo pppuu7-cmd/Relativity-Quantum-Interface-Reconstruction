@@ -1,0 +1,11 @@
+{
+  "iteration": 587,
+  "workflow_run_id": 34203928999,
+  "workflow_head_sha": "7b80d16d2ca2d1fa7333825da6e06ab223fe7c34",
+  "artifact_id": 10046935799,
+  "artifact_digest": "sha256:8e410a0481474b2e71571a76674209d3e84e16a13aa228f17b2931b2ce622b04",
+  "raw_result_sha256": "1fb42e1ab8e3de2ae31426297c40f9c845ddd38e08d3f3f63cd6d4381252bcfd",
+  "raw_authority_audit_classification": "PASS_RAW_AUTHORITY_AUDIT_ITER587_OFFSHELL_ROUTING",
+  "raw_failures": [],
+  "scientific_classification": "PASS_PROSPECTIVE_MSSC001_SYMMETRIC_OFFSHELL_K1_ROUTING_AND_WARD_CONTRACT__NON_RESIDUAL"
+}
