@@ -1,7 +1,7 @@
 % RQIR Paper I -- CQG-targeted working manuscript
 % Primary journal: Classical and Quantum Gravity (Research Paper)
 % Scientific scope remains frozen at Iteration 078.
-% Do not treat this working file as submission-final until CQG-I-01...09 pass.
+% Working source: not submission-final until CQG-I-01...09 pass.
 
 \documentclass[12pt]{article}
 
@@ -17,7 +17,6 @@
 
 \newtheorem{proposition}{Proposition}
 \newcommand{\Tr}{\operatorname{Tr}}
-\newcommand{\RQIR}{\mathrm{RQIR}}
 
 \title{Relativity--Quantum Interface Reconstruction I:\\
 Operational source hierarchy, finite calibration, and ordered response}
@@ -33,7 +32,7 @@ ORCID: \href{https://orcid.org/0009-0001-2621-9305}{0009-0001-2621-9305}}
 \maketitle
 
 \begin{abstract}
-Operational probes of the gravity--quantum interface need not be informationally complete with respect to the quantum source. We formulate a source-side reconstruction hierarchy that separates mean stress--energy data, symmetrized fluctuations, ordered response information, higher cumulants and quantum-information structure without assuming a preferred microscopic theory of gravity. At second order, the greater and lesser correlators decompose into a common symmetrized noise coordinate and an antisymmetric ordering coordinate, so a finite calibration that constrains means and noise need not determine response-sensitive information. We formalize this with a calibration-nullspace proposition: if a physical finite calibration map has a response-sensitive null direction through an interior state, sufficiently small positive density-operator perturbations can remain calibration-identical while differing in the specified ordered response. A frozen finite-dimensional RQIR construction supplies the corresponding rank, positivity and response-separation certificate, while calibration perturbations obey a steering relation controlled by the smallest retained singular value. The result is an operational non-identifiability statement. It is not evidence that gravity couples to the response sector, and it does not by itself imply quantized geometry. This source-level layer provides the finite-discriminator input for later nuisance-profiled statistical and experimental-resource analyses.
+Operational probes of the gravity--quantum interface need not be informationally complete with respect to the quantum source. We formulate a source-side reconstruction hierarchy that separates mean stress--energy data, symmetrized fluctuations, ordered response information, higher cumulants and quantum-information structure without assuming a preferred microscopic theory of gravity. At second order, greater and lesser correlators decompose into a common symmetrized-noise coordinate and an antisymmetric ordering coordinate, so a finite calibration that constrains means and noise need not determine response-sensitive information. We formalize this with a calibration-nullspace proposition: if a physical finite calibration map has a response-sensitive null direction through an interior state, sufficiently small positive density-operator perturbations can remain calibration-identical while differing in the specified ordered response. A frozen finite-dimensional RQIR construction supplies the corresponding rank, positivity and response-separation certificate, while calibration perturbations obey a steering relation controlled by the smallest retained singular value. The result is an operational non-identifiability statement. It is not evidence that gravity couples to the response sector, and it does not by itself imply quantized geometry. This source-level layer provides the finite-discriminator input for later nuisance-profiled statistical and experimental-resource analyses.
 \end{abstract}
 
 \noindent\textbf{Keywords:} quantum gravity; semiclassical gravity; stochastic gravity; stress--energy correlations; response theory; operational reconstruction; calibration; identifiability
@@ -42,19 +41,19 @@ Operational probes of the gravity--quantum interface need not be informationally
 
 The experimental boundary between gravitation and quantum theory is increasingly approached through laboratory observables rather than through direct access to a microscopic gravitational state. Matter-wave and spin interferometry, gravity-mediated correlation or entanglement proposals, quantum-clock protocols, optomechanics, decoherence and diffusion tests, and dynamical field-sensitive measurements probe different projections of a common interface. For gravitational physics, the interpretive problem is therefore an inverse one: which properties of the source--gravity interface are actually fixed by a finite set of calibrated observables?
 
-This question is important because conceptually distinct models can overlap in observable space. Semiclassical gravity, stochastic-gravity extensions, measurement-feedback or hybrid descriptions, postquantum classical-gravity models and quantum-gravitational descriptions can agree on selected low-order observables while differing elsewhere. Conversely, a nonclassical-looking detector signature does not uniquely determine gravitational ontology unless the admitted comparator class and the full source--detector map are specified.
+This matters because conceptually distinct models can overlap in observable space. Semiclassical gravity, stochastic-gravity extensions, measurement-feedback or hybrid descriptions, postquantum classical-gravity models and quantum-gravitational descriptions can agree on selected low-order observables while differing elsewhere. Conversely, a nonclassical-looking detector signature does not uniquely determine gravitational ontology unless the admitted comparator class and the full source--detector map are specified.
 
 Relativity--Quantum Interface Reconstruction (RQIR) starts from this operational ambiguity. Schematically,
 \begin{equation}
  P_{\rm data}(\bm{o}\mid\bm{s})\longrightarrow [\mathfrak I],
 \end{equation}
-where $[\mathfrak I]$ denotes an equivalence class of interface maps after the declared preparation, calibration, baseline and nuisance freedoms are taken into account. RQIR does not assume at the outset that gravity is classical, stochastic, quantum, emergent or hybrid.
+where $[\mathfrak I]$ is an equivalence class of interface maps after declared preparation, calibration, baseline and nuisance freedoms are taken into account. RQIR does not assume at the outset that gravity is classical, stochastic, quantum, emergent or hybrid.
 
-Paper I isolates the source-information layer. The central question is deliberately narrower than ``is gravity quantum?'': what source information can remain distinct after a declared finite calibration? Established closed-time-path, linear-response and stochastic-gravity structures already distinguish the stress--energy expectation value, symmetrized fluctuations and causal response \cite{FeynmanVernon1963,Keldysh1965,Kubo1957,HuVerdaguer2008}. We do not claim that separation as new. The RQIR step is to place those coordinates inside a finite physical calibration quotient and ask whether the unresolved direction can remain response-sensitive.
+Paper I isolates the source-information layer. The central question is narrower than ``is gravity quantum?'': what source information can remain distinct after a declared finite calibration? Established closed-time-path, linear-response and stochastic-gravity structures already distinguish the stress--energy expectation value, symmetrized fluctuations and causal response \cite{FeynmanVernon1963,Keldysh1965,Kubo1957,HuVerdaguer2008}. We do not claim that separation as new. The RQIR step is to place those coordinates inside a finite physical calibration quotient and ask whether the unresolved direction can remain response-sensitive.
 
-The main structural result is a positivity-preserving calibration-nullspace proposition. If the calibration map leaves a physical null direction and the designated ordered-response functional is nonzero along that direction, then two positive source states can be exactly calibration-equivalent while remaining response-distinct. The underlying nullspace mathematics is elementary and related to informational incompleteness in quantum tomography \cite{DArianoParisSacchi2003}; the RQIR-specific content is the gravity--quantum source interpretation, physical-state admissibility, constructive realization, detector-facing response coordinate and calibration steering.
+The main result is a positivity-preserving calibration-nullspace proposition. If the calibration map leaves a physical null direction and the designated ordered-response functional is nonzero along that direction, two positive source states can be exactly calibration-equivalent while remaining response-distinct. The nullspace mathematics is elementary and related to informational incompleteness in quantum tomography \cite{DArianoParisSacchi2003}; the RQIR-specific content is the gravity--quantum source interpretation, physical-state admissibility, constructive realization, detector-facing response coordinate and calibration steering.
 
-The interpretation is intentionally conservative. We do not infer that gravity couples to the matter commutator or retarded stress--energy response. A nonzero matter commutator is not evidence for an operator-valued metric, and entanglement is not treated as an assumption-free proof of quantum gravity. The result instead identifies a source-information direction that later stages must test for statistical identifiability, physical resource cost and comparator uniqueness.
+The interpretation is intentionally conservative. We do not infer that gravity couples to the matter commutator or retarded stress--energy response. A nonzero matter commutator is not evidence for an operator-valued metric, and entanglement is not treated as an assumption-free proof of quantum gravity. The result identifies a source-information direction that later stages must test for statistical identifiability, physical resource cost and comparator uniqueness.
 
 \section{Relation to established gravitational approaches}
 
@@ -65,7 +64,7 @@ Semiclassical gravity uses the renormalized expectation value of the stress--ene
  G_{\mu\nu}+\Lambda g_{\mu\nu}+H^{\rm EFT}_{\mu\nu}
  =8\pi G\,\langle \hat T_{\mu\nu}\rangle_{\rm ren}.
 \end{equation}
-Stochastic gravity extends this mean-field description by retaining stress--energy fluctuations through the noise kernel and, in closed-time-path/influence-functional formulations, the associated response and dissipation structure \cite{HuVerdaguer2008}. A fluctuation-sensitive signal therefore cannot be identified with intrinsically quantum gravitational fluctuations without a comparator analysis.
+Stochastic gravity extends this mean-field description by retaining stress--energy fluctuations through the noise kernel and, in closed-time-path/influence-functional formulations, the associated response and dissipation structure \cite{HuVerdaguer2008}. A fluctuation-sensitive signal therefore cannot be identified with intrinsically quantum-gravitational fluctuations without a comparator analysis.
 
 \subsection{Information-theoretic witnesses and enlarged comparator classes}
 
@@ -75,7 +74,7 @@ Recent debate further illustrates the dependence of witness interpretation on th
 
 \section{Operational reconstruction of the interface}
 
-Let $\mathcal O=\{O_A\}$ denote operational observables. The index $A$ includes preparation, smearing or coarse graining, detector transfer, experimental settings and any renormalization prescription required to define the observable. Relative to an explicit baseline $B$ in domain $\mathcal D$, define
+Let $\mathcal O=\{O_A\}$ denote operational observables, with $A$ including preparation, smearing/coarse graining, detector transfer, experimental settings and any renormalization prescription required to define the observable. Relative to an explicit baseline $B$ in domain $\mathcal D$, define
 \begin{equation}
  \Delta_A^{(B)}(\mathcal D)
  =O_A^{\rm obs}(\mathcal D)-O_A^{(B)}(\mathcal D).
@@ -102,26 +101,26 @@ The greater and lesser correlators are
  G^>_{AB}(x,y)&=\langle\delta\hat T_A(x)\delta\hat T_B(y)\rangle,\\
  G^<_{AB}(x,y)&=\langle\delta\hat T_B(y)\delta\hat T_A(x)\rangle.
 \end{align}
-Introduce the symmetrized/noise coordinate
+Introduce
 \begin{equation}
  N_{AB}(x,y)=\frac12\langle\{\delta\hat T_A(x),\delta\hat T_B(y)\}\rangle
- =\frac12(G^>+G^<),
+ =\frac12(G^>+G^<)
 \end{equation}
-and the antisymmetric ordering coordinate
+and
 \begin{equation}
  D_{AB}(x,y)=\frac{1}{2i}\langle[\delta\hat T_A(x),\delta\hat T_B(y)]\rangle.
 \end{equation}
-Thus
+Then
 \begin{equation}
  G^>=N+iD,\qquad G^<=N-iD.
 \end{equation}
-With the sign convention used here, the retarded response is
+With the sign convention used here,
 \begin{equation}
  \chi^R_{AB}(x,y)=\frac{i}{\hbar}\theta(x^0-y^0)
  \langle[\hat T_A(x),\hat T_B(y)]\rangle.
 \end{equation}
 
-The ordering-preservation rule is simple but consequential: matching $J$ and $N$ does not by itself imply matching $D$ or $\chi^R$. Such an implication requires additional physical structure---for example commutativity, spacelike separation, an equilibrium fluctuation--dissipation relation or another controlled limit. Fluctuation--dissipation relations are therefore compatible with the hierarchy; they are regime-dependent physical constraints rather than a universal identity between arbitrary calibrated states \cite{Kubo1957}.
+Matching $J$ and $N$ does not by itself imply matching $D$ or $\chi^R$. Such an implication requires additional physical structure---for example commutativity, spacelike separation, an equilibrium fluctuation--dissipation relation or another controlled limit. Fluctuation--dissipation relations are therefore compatible with the hierarchy; they are regime-dependent constraints rather than a universal identity between arbitrary calibrated states \cite{Kubo1957}.
 
 A compact parent object is the Schwinger--Keldysh/closed-time-path generating functional
 \begin{equation}
@@ -165,21 +164,19 @@ The generic existence of null directions for incomplete measurements is not new.
 
 \section{Constructive realization and calibration steering}
 
-The frozen Paper-I construction reports a calibration rank of $24/25$, a one-dimensional hidden direction, positive state pairs, calibration-equality residuals at approximately the $10^{-15}$ numerical scale, equal selected mean/noise coordinates, nonzero opposite ordered response and a detector-aware response coordinate. These numbers remain scientifically frozen under the Paper-I closure, but they are not yet publication-final: every one must be bound to the canonical Toy009/Toy010 generator/result authority and independently reproduced before CQG submission. No missing path will be reconstructed from manuscript prose or memory.
+The frozen Paper-I construction reports calibration rank $24/25$, a one-dimensional hidden direction, positive state pairs, calibration-equality residuals at approximately the $10^{-15}$ numerical scale, equal selected mean/noise coordinates, nonzero opposite ordered response and a detector-aware response coordinate. These numbers remain scientifically frozen under the Paper-I closure, but they are not yet publication-final: each must be bound to canonical Toy009/Toy010 generator/result authority and independently reproduced before CQG submission. No missing provenance is reconstructed from manuscript prose or memory.
 
-Calibration is also a design variable. For a smooth calibration map with normalized null vector $n$, the frozen perturbative steering relation is
+For a smooth calibration map with normalized null vector $n$, the frozen perturbative steering relation is
 \begin{equation}
  n'=-A^+A'n,
 \end{equation}
 with conditioning bound
 \begin{equation}
- \lVert n'\rVert\leq\frac{\lVert A'\rVert}{s_{\min}(A)}
+ \lVert n'\rVert\leq\frac{\lVert A'\rVert}{s_{\min}(A)}.
 \end{equation}
-in the stated setting. Changing the calibration geometry can therefore rotate the unresolved direction and alter $c(n)$ without changing the underlying source Hamiltonian. This turns calibration geometry from passive bookkeeping into an operational co-design variable.
+Changing calibration geometry can therefore rotate the unresolved direction and alter $c(n)$ without changing the underlying source Hamiltonian. Calibration geometry becomes an operational co-design variable rather than passive bookkeeping.
 
 \section{Operational sensitivity hierarchy}
-
-The source-side hierarchy used by RQIR is summarized in Table~\ref{tab:hierarchy}.
 
 \begin{table}[ht]
 \centering
@@ -198,7 +195,7 @@ L5 & entanglement/channel/process data & quantum-information-sensitive \\
 \end{tabular}
 \end{table}
 
-Agreement at one level does not imply agreement at a higher level unless a specified physical identity supplies the implication. In particular, agreement with $\langle T_{\mu\nu}\rangle$ tests a mean-source coordinate only; a fluctuation excess can overlap stochastic-gravity, matter, detector or environmental channels; and a matter commutator is not by itself evidence for an operator-valued metric.
+Agreement at one level does not imply agreement at a higher level unless a specified physical identity supplies the implication. Agreement with $\langle T_{\mu\nu}\rangle$ tests a mean-source coordinate only; a fluctuation excess can overlap stochastic-gravity, matter, detector or environmental channels; and a matter commutator is not by itself evidence for an operator-valued metric.
 
 Low-energy gravitational EFT supplies an important controlled quantum comparator without selecting a UV completion \cite{Donoghue1994}. It belongs to the later RQIR comparator funnel rather than serving as automatic evidence that a new theory is required.
 
@@ -213,35 +210,31 @@ This does not establish that a finite noisy experiment can infer the correspondi
  F_{\beta\mid\theta}=F_{\beta\beta}
  -F_{\beta\theta}F_{\theta\theta}^{-1}F_{\theta\beta},
 \end{equation}
-or equivalently in whitened geometry,
+or, in whitened geometry,
 \begin{equation}
  F_{\beta\mid\theta}=\lVert(I-P_J)\tilde s\rVert^2.
 \end{equation}
-Exact source distinguishability is thus necessary for the intended discriminator but not sufficient for detector-level inferability.
+Exact source distinguishability is necessary for the intended discriminator but not sufficient for detector-level inferability.
 
-A related structural warning arises when a compressed on-shell observable does not determine an off-shell/source-completed response. Schematically, additions proportional to an inverse propagator can vanish on shell while changing a source-completed derivative. Detailed source/Ward/comparator calculations belong to Paper IV; here the point is only that an observable quotient can remove information relevant to response reconstruction.
+A related structural warning arises when a compressed on-shell observable does not determine an off-shell/source-completed response. Additions proportional to an inverse propagator can vanish on shell while changing a source-completed derivative. Detailed source/Ward/comparator calculations belong to Paper IV; here the point is only that an observable quotient can remove information relevant to response reconstruction.
 
 \section{Discussion}
 
-The wider gravitational-physics significance of the construction is not that a new matter correlator has been discovered. Mean sources, noise kernels, commutators, retarded response and closed-time-path orderings are established structures. The RQIR contribution is to make their informational role explicit inside a finite physical calibration quotient and to require comparator and ontology claims to be made only after the complete operational map is specified.
+The wider gravitational-physics significance of the construction is not that a new matter correlator has been discovered. Mean sources, noise kernels, commutators, retarded response and closed-time-path orderings are established structures. The RQIR contribution is to make their informational role explicit inside a finite physical calibration quotient and to require comparator and ontology claims only after the complete operational map is specified.
 
-RQIR-THM-001 records the minimal geometry needed for a calibration-equivalent positive pair to remain ordered-response-distinct. The finite construction shows how rank, positivity and detector-facing response can coexist, while the steering relation exposes the unresolved direction as a calibration-design variable. The result therefore supplies a concrete finite-discriminator layer that is upstream of statistical significance or apparatus feasibility.
+RQIR-THM-001 records the minimal geometry needed for a calibration-equivalent positive pair to remain ordered-response-distinct. The finite construction shows how rank, positivity and detector-facing response can coexist, while the steering relation exposes the unresolved direction as a calibration-design variable. The result supplies a concrete finite-discriminator layer upstream of statistical significance or apparatus feasibility.
 
-The epistemic staging matters. Paper I identifies source-information directions. Paper II asks whether they survive nuisance profiling. Paper III converts statistically surviving directions into resource and experimental-architecture requirements. Paper IV compares existing gravity and quantum-gravity realizations through a common operational funnel. Paper V is conditional and is justified only if that comparator analysis produces a robust residual that requires a genuinely new parent model.
+The epistemic staging matters. Paper I identifies source-information directions. Paper II asks whether they survive nuisance profiling. Paper III converts statistically surviving directions into resource and experimental-architecture requirements. Paper IV compares existing gravity and quantum-gravity realizations through a common operational funnel. Paper V is conditional and is justified only if that comparator analysis produces a robust residual requiring a genuinely new parent model.
 
 \section{Conclusion}
 
 We formulated the first layer of RQIR as a calibration-aware source-information problem for the gravity--quantum interface. At second order, symmetrized fluctuations and ordering/response information are distinct coordinates unless additional physics identifies them. A finite calibration defines an equivalence class on physical source states. When that map leaves a response-sensitive physical null direction through an interior state, positive calibration-equivalent but response-distinct states exist.
 
-This is an operational non-identifiability result, not evidence that gravity transmits the response coordinate and not evidence for quantized geometry. Its role is to specify what a finite gravitational interface experiment would have to distinguish before stronger statistical, resource or microscopic claims become justified.
+This is an operational non-identifiability result, not evidence that gravity transmits the response coordinate and not evidence for quantized geometry. Its role is to specify what a finite gravitational-interface experiment would have to distinguish before stronger statistical, resource or microscopic claims become justified.
 
 \section*{Data and code availability}
 
-The RQIR project repository contains the manuscript, analytic development and computational certificates used during the research programme. Submission-final data/code provenance is not yet claimed for the Toy009/Toy010 numerical statements: the primary canonical generator/result paths and an independent clean reproduction must be bound in the Paper-I reproduction manifest before submission. The current public project repository is \url{https://github.com/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction}.
-
-\section*{Submission-status note}
-
-This file is a CQG-targeted working manuscript, not a submitted or accepted article. Funding and conflict-of-interest declarations remain unspecified in the canonical author metadata and must not be inferred. Final figures, tables, bibliography normalization, Toy009/Toy010 provenance and the live CQG submission requirements remain open gates under `docs/PAPER_I_CQG_SUBMISSION_GATE.md`.
+The RQIR project repository contains the manuscript, analytic development and computational certificates used during the research programme. Submission-final data/code provenance is not yet claimed for the Toy009/Toy010 numerical statements: the primary canonical generator/result paths and an independent clean reproduction must be bound before submission. The current public project repository is \url{https://github.com/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction}.
 
 \bibliographystyle{unsrt}
 \bibliography{../../docs/PAPER_I_REFERENCES_WORKING}
