@@ -9,7 +9,7 @@
 Repository commits, validated raw Actions artifacts, recovery deltas, research logs, and this file are source of truth. Workflow colour alone is never scientific authority. Race-created newer repo state wins and authoritative iteration IDs are never reused.
 
 ## Current authority
-- Latest authoritative research iteration: **609**.
+- Latest authoritative research iteration: **610**.
 - Frozen Iter424 is **5/5 PASS**; Iter581 exact15 raw-valid PASS; Iter582 q2-resolved `D_s Gamma_{e=2}` assembly PASS/non-residual.
 - Iter583–594 establish same-parent MSSC contacts, exact routing/normalization, the complete 13-family cubic source object and analytic-origin bookkeeping.
 - Iter595–596 freeze the full five-class nonlinear diffeomorphism Ward contract; Iter601 closes endpoint covariance; Iter602 remains preserved historical negative authority; Iter603 diagnoses finite-radius sensitivity; Iter604 freezes the convergence contract.
@@ -17,20 +17,33 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Iter606 is independently raw-consumed PASS for the prospective source-to-Iter582/native-linked mapping contract.
 - Iter607 is independently raw-consumed `BLOCKED_ITER607_EXPLICIT_DISTRIBUTIONAL_SOURCE_TO_NATIVE_LINKED_PROJECTOR_ABSENT`.
 - Iter608 is independently raw-consumed PASS for the universal scalar-pole distribution kernel only.
-- **Iter609 is authoritative `BLOCKED_ITER609_INTERNAL_SCALAR_POLE_PULLBACK_NOT_DETERMINED_BY_Q2_ALONE__NON_RESIDUAL`.** The blocker is now localized to the missing native-cut-variable ↔ routed-scalar-momentum bridge, not the universal distribution law.
+- Iter609 localizes the full source-tree scalar pole equations to routed `p0^2` and `p0.q_i` and proves they are not determined by Iter582 q2 buckets alone.
+- **Iter610 is authoritative `BLOCKED_ITER610_NATIVE_T_CUT_S_EXISTS_BUT_NO_SAME_PARENT_MSSC_P0_TO_S_BRIDGE__NON_RESIDUAL`.** The original frozen Iter205 protocol explicitly fixes the native positive-timelike hard-channel variable `s` and `D_s` normalization, but does not provide a same-parent full-source-object map from MSSC routed `p0` to `s`.
 
-## Iter609 kinematic-pullback authority
-For the full routed Iter594/605 same-action source object, each internal scalar propagator has `r=p0+Q_A`, hence in MSSC `(+---)` convention
+## Iter610 native-cut authority audit
+The original Iter205 linked-cut protocol is structural and fixes
+
+`D_s F = Disc_s F/(2*pi*i)`, with `D_s log_R(-s)=1`,
+
+on a positive timelike hard-channel cut, together with
+
+`T_cut = D_s Gamma3_ret,soft - W[D_s K2]`.
+
+Therefore the native cut variable itself is not missing: it is `s`. What is missing is the full-object same-parent kinematic bridge needed to evaluate the MSSC scalar-pole distributions inside that `D_s`.
+
+For the full routed Iter594/605 source object, Iter609 gives each internal scalar line as `r=p0+Q_A`, so
 
 `r^2 = p0^2 + Q_A^2 + 2 p0.Q_A`.
 
-For K1/K2 placements, closure gives `Q_A=+/-q_i`, so `r^2=p0^2+q_i^2+/-2 p0.q_i`. For each K1^3 permutation `(i,j,k)`, the two nontrivial internal lines are `r1=p0+q_i` and `r2=p0+q_i+q_j=p0-q_k`; their pole equations therefore depend on `p0^2` and `p0.q_i`/`p0.q_k`. Local K3 has no internal scalar propagator.
+K1/K2 and K1^3 pole support therefore requires `p0^2` and `p0.q_i`. Current authority does not express those quantities as functions of the Iter205 hard-channel `s` and the fixed external invariants. Hence no unique family-by-family `m^2-r_j^2(s,q_i,...)`, root support or delta-function Jacobian is available.
 
-Iter588's isolated symmetric K1/K2 endpoint routing `p=-q_i/2`, `p'=+q_i/2` remains valid in its original scope, but using `q_i^2/4` to replace the p0-dependent propagators of the already frozen full Iter594/605 object would alter the observable and is not authorized.
+Iterations 238-240 prohibit replacing frozen `T_cut` with mixed matter-radiation, relational/dressed or asymptotic proxy observables without an identity-preserving same-parent map. Iter592 retains scalar-pole distributional terms as BLOCKED rather than zero. Iter608 remains the universal kernel authority:
 
-Iter608 distribution authority remains unchanged: with `x=m^2-r^2`, Feynman `+i0`, `Disc F=F(x+i0)-F(x-i0)`, `Disc[1/(m^2-r^2+i0)] = -2*pi*i*delta(m^2-r^2)`. The native linked authority fixes external q2 buckets but does not yet fix `p0^2`, `p0.q_i`, or an equivalent native cut variable/root map. Thus no unique family-by-family `p_j^2(q^2)` can be formed from current authority alone.
+`Disc[1/(m^2-r^2+i0)] = -2*pi*i*delta(m^2-r^2)`.
 
-Still blocked exactly: (1) explicit native `T_cut` cut/integration variable `z`; (2) same-parent map from MSSC routed `p0` to `z`, sufficient to express `m^2-r_j^2(z,q_i)`; (3) simple-root support/Jacobian in that frozen variable; (4) native `Y=(K2,S_soft2_full)/T_cut` normalization/sign binding to Iter582. All 13 source families and q2 buckets `[-1.0,-0.34,-0.14]` remain distinct. `zero_fill=false`. Source/Born subtraction `NOT_PERFORMED`.
+Forbidden identifications include `s:=p0^2`, `s:=q_i^2`, `s:=Iter582 q^2`, or importing Iter588 isolated symmetric routing into the full Iter594/605 object. Spacelike Iter582 q2 buckets do not by themselves prove a zero contribution under the separate hard-channel `D_s`.
+
+Still blocked exactly: (1) same-parent full-object `p0 -> s` relation or direct family denominators in `s`; (2) simple-root support/Jacobian in `s`; (3) native `Y/T_cut` normalization/sign binding to Iter582. All 13 source families remain retained. `zero_fill=false`. Source/Born subtraction `NOT_PERFORMED`.
 
 ## Iter582 operator coordinate
 `D_s Gamma_e2(q^2) = +(i/2)D_s Tr U2 -(i/4)D_s Tr U1^2`:
@@ -48,8 +61,10 @@ Still blocked exactly: (1) explicit native `T_cut` cut/integration variable `z`;
 
 **MODEL_READINESS: 24%**
 
-## Exact next gate — Iter610
-Locate or derive from the already frozen native `T_cut` authority the explicit cut/integration variable `z` and a same-parent relation to the MSSC routed scalar momentum `p0`, sufficient to express every retained scalar-pole denominator `m^2-r_j^2` as a function of `z` and fixed external invariants. Freeze that bridge prospectively before any numerical projection. If repository authority cannot determine it uniquely, classify `BLOCKED`; never choose a post-hoc estimator. Only after that bridge and simple-root Jacobian are authoritative may the native `Y/T_cut` normalization/sign binding and matched projection proceed.
+## Exact next gate — authority-improvement derivation
+Prospectively derive from one declared same-parent source-completed dynamics the hard-channel invariant `s(p0,q_i,...)` for the full routed Iter594/605 source object. The derivation must express every retained scalar-propagator denominator `m^2-r_j^2` as a function of `s` and fixed external invariants, determine simple-root support/Jacobians, and bind the resulting distributional term to the already frozen Iter205 `D_s` sign/normalization and native `Y/T_cut` coordinate. Only after this bridge is frozen may the matched source-to-Iter582 projection run.
+
+ANTI-IDLE status: **BLOCKED prerequisite recorded.** No independent scientifically admissible heavy numerical gate remains under current authority. Launching source projection, comparator quotient, blind full-C5, ANSATZ-003, Fisher/resources, or Source/Born subtraction now would require violating an upstream frozen guardrail rather than advancing the model.
 
 Until the full matched source-to-Iter582/native-linked map is authoritative: no Source/Born subtraction; no fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient; no `ANSATZ-003`; no Fisher/resources.
 
