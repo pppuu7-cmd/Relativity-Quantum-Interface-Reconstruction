@@ -1,0 +1,48 @@
+name: RQIR Iter632 Minkowski vacuum Keldysh contract
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration632-minkowski-vacuum-keldysh-contract.yml'
+      - 'candidate_gravity/code/iteration632_minkowski_vacuum_keldysh_contract.py'
+      - 'candidate_gravity/results/iteration632_minkowski_vacuum_keldysh_contract.json'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Recompute prospective state contract
+        run: python candidate_gravity/code/iteration632_minkowski_vacuum_keldysh_contract.py > iteration632_runtime.json
+      - name: Fail-closed exact audit
+        run: |
+          python - <<'PY'
+          import json
+          R=json.load(open('iteration632_runtime.json'))
+          C=json.load(open('candidate_gravity/results/iteration632_minkowski_vacuum_keldysh_contract.json'))
+          failures=[]
+          if R != C: failures.append('runtime != committed result')
+          P=R.get('prospective_freeze',{})
+          if P.get('GK_relation')!='G_K(k)=sgn(k0)*(G_R(k)-G_A(k))': failures.append('GK relation mismatch')
+          for k in ('flat_minkowski_parent','zero_temperature','poincare_invariant','hadamard_positive_energy','state_chosen_before_closed_loop_results'):
+            if P.get(k) is not True: failures.append(k+' missing')
+          for k in ('candidate_values_used','normalization_fit_used'):
+            if R.get(k) is not False: failures.append(k+' guardrail violation')
+          if R.get('source_born_subtraction')!='NOT_PERFORMED' or R.get('native_projection')!='NOT_PERFORMED' or R.get('zero_fill') is not False:
+            failures.append('downstream guardrail mismatch')
+          A={'iteration':632,'classification':'PASS_RAW_AUTHORITY_AUDIT_ITER632_MINKOWSKI_VACUUM_GK_CONTRACT' if not failures else 'FAIL_RAW_AUTHORITY_AUDIT_ITER632_MINKOWSKI_VACUUM_GK_CONTRACT','failures':failures,'contract_id':R.get('contract_id'),'candidate_values_used':False,'zero_fill':False}
+          json.dump(A,open('iteration632_authority_audit.json','w'),indent=2)
+          if failures: raise SystemExit('\n'.join(failures))
+          PY
+      - name: Upload raw artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration632-minkowski-vacuum-keldysh-contract
+          path: |
+            iteration632_runtime.json
+            iteration632_authority_audit.json
+            candidate_gravity/results/iteration632_minkowski_vacuum_keldysh_contract.json
