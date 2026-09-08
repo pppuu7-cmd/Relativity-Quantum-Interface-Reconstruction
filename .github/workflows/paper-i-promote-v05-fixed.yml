@@ -30,3 +30,5 @@ jobs:
           git add manuscripts/paper_I/main.tex
           git commit -m 'paper I v0.5: promote clean Toy009/Toy010 certificate'
           git push origin HEAD:paper-I-v03-evidence-boundary
+
+# trigger: robust paragraph-based promotion
