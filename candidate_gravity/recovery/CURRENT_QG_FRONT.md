@@ -15,10 +15,11 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - QUARTER support: **12/12 new coordinates = 100%**, **16/16 full grid = 100%**, raw-closed through **571**.
 - Complete QUARTER pre-spectral sample-layer assembly: **572**, PASS scoped/non-promoting.
 - Frozen-clause authority mapping: **573**, PASS scoped/non-promoting.
-- Full frozen Iter407 spectrum reconstruction: **574**, independently raw-consumed PASS for all three newly computable spectral numerical clauses, non-promoting because tensor11 remains unresolved.
+- Full frozen Iter407 spectrum reconstruction: **574**, independently raw-consumed PASS for all three newly computable spectral numerical clauses.
 - Exact original-Iter421 tensor11 MP-support manifest: **575**, prospectively frozen/non-promoting.
 - Exact tensor11 support-orbit/design identifiability audit: **576**, PASS scoped/non-promoting.
-- Latest authoritative research iteration: **576**.
+- Exact tensor11 leverage/single-orbit design robustness audit: **577**, PASS scoped/non-promoting.
+- Latest authoritative research iteration: **577**.
 
 ## Iteration574 full-spectrum raw authority
 Canonical source:
@@ -30,13 +31,11 @@ Canonical source:
 - scientific result SHA-256 `d899623f64d98f12d19f32545e44fbcebe92ccc645f25a05b37f67a8b150a773`
 - authority-audit SHA-256 `c241ae42e9255b1eeb075f9dc5232de77ec5e6107cb7a08fce8800f1d25565fe`.
 
-Independent Iter574 consumption additionally SHA-checked **45/45** source scientific result parts: 29 BASE/HALF artifact parts covering 28 coordinates plus 16 QUARTER artifacts, with zero SHA mismatches, exact 80-row BASE/HALF merges, no duplicate `(z,phi)` samples, and exact frozen five-z/NPHI16 support.
-
 Physical spectrum-integrated values:
 - BASE `D_s = 0.000334698712595841410717689701215249442611820995807647705078125`;
 - HALF `D_s = 0.0003346659700666914662690876181017074486589990556240081787109375`;
 - QUARTER `D_s = 0.0003343462057176257821999865171846977318637073040008544921875`;
-- MP80 and MP120 agree exactly at the retained `D_s` precision;
+- MP80 and MP120 agree exactly at retained `D_s` precision;
 - BASE↔HALF scaled discrepancy `3.2742529149944449e-8`;
 - HALF↔QUARTER scaled discrepancy `3.1976434906568407e-7`.
 
@@ -51,57 +50,66 @@ All five remain prospectively frozen; no threshold or observable has been change
 
 Thus **4/5 frozen clauses are PASS, 1/5 remains BLOCKED**. This is not full Iteration424 PASS. Physical index2 is not promoted and exact15 is not authorized yet.
 
-## Tensor11 mapping and exact support deficit
-The independent post574 binding decision passed with classification
-`MAPPING_FOUND__HIGH_PRECISION_TENSOR11_VALUE_UNCOMPUTED__NEXT_GATE_MP80_MP120`.
-
-The original prospectively frozen Iter421 statistic is retained exactly:
+## Tensor11 exact mapping/support
+The original prospectively frozen Iter421 statistic remains exactly:
 
 `C(r,s)=[F(r,s)-F(r,-s)-F(-r,s)+F(-r,-s)]/(4rs)`
 
 with `R=1e-5`, radius multipliers `[1,0.75,0.5,0.25]`, fit coordinates `x=(r/R)^2`, `y=(s/R)^2`, tensor degree-(1,1) basis `[1,x,y,xy]`, and `fit_residuals_scaled.tensor11 <= 2e-5`.
 
 It requires 64 signed `F(u,v)` nodes with magnitudes `{1e-5,7.5e-6,5e-6,2.5e-6}`.
+- existing raw-valid MP80/MP120 support before Iter575: **28/64 = 43.75%**;
+- exact frozen missing support: **36/64 = 56.25%**;
+- frozen membership/order: `candidate_gravity/contracts/iteration575_iter421_tensor11_exact_mp_support_manifest.json`.
 
-- existing raw-valid MP80/MP120 support: **28/64 = 43.75%**;
-- exact missing support: **36/64 = 56.25%**;
-- 28 missing nodes involve magnitude `7.5e-6`;
-- 8 additional missing nodes are `1e-5 <-> 2.5e-6` cross-scale pairs.
+## Iteration576 design identifiability
+The 64 nodes form exactly 16 complete four-sign orbits:
+- 7 complete pre-existing sign-orbits = 28 nodes;
+- 9 complete Iter575 sign-orbits = 36 nodes;
+- old/new straddled sign-orbits = 0.
 
-The full missing set/order is frozen in `candidate_gravity/contracts/iteration575_iter421_tensor11_exact_mp_support_manifest.json` before any new node result. Because all 36 are mandatory and no result can change membership/order/threshold, matrix parallelization is non-result-dependent.
+For the unchanged `[1,x,y,xy]` fit over squared multiplier coordinates `{1,9/16,1/4,1/16}`:
+- observations = 16;
+- parameters = 4;
+- residual dof = 12;
+- exact design rank = 4;
+- `det(X^T X)=276922881/16777216 > 0`.
 
-## Iteration576 exact support/design audit
-The 64 frozen signed F nodes form exactly **16 complete four-sign orbits**, one for each positive `(r,s)` radius pair used by `C(r,s)`.
+Therefore tensor11 is genuinely overdetermined and has goodness-of-fit power.
 
-- pre-existing validated support: **7 complete sign-orbits = 28 nodes**;
-- Iter575 missing support: **9 complete sign-orbits = 36 nodes**;
-- old/new straddled sign-orbits: **0**.
+## Iteration577 leverage / single-orbit robustness
+Because the 16x4 design factorizes as the tensor product of the one-axis design `[1,x]`, the 2D hat matrix factorizes exactly.
 
-Therefore every individual symmetric-cross `C(r,s)` is assembled entirely from one support-provenance class; no `C(r,s)` mixes pre-Iter575 and Iter575 nodes internally.
+Exact one-axis leverages:
+`[209/258, 23/86, 89/258, 149/258]`.
 
-For the unchanged tensor degree-(1,1) design with basis `[1,x,y,xy]` and squared multiplier coordinates `{1,9/16,1/4,1/16}`:
-- observations = **16**;
-- parameters = **4**;
-- residual degrees of freedom = **12**;
-- exact design rank = **4**;
-- `det(X^T X) = 276922881/16777216 > 0`.
+For the 16 symmetric-cross observations:
+- leverage sum = `4` exactly;
+- minimum leverage = `529/7396 ~= 0.07152514872904273`;
+- maximum leverage = `43681/66564 ~= 0.6562255874046031 < 1`;
+- minimum residual-projector diagonal = `22883/66564 ~= 0.3437744125953969 > 0`.
 
-Thus the original tensor11 residual is genuinely overdetermined and has goodness-of-fit power; it is not a saturated interpolation diagnostic. This is support/design identifiability only and does not evaluate tensor11 or promote physical index2.
+Hence every frozen `C(r,s)` has nonzero residual sensitivity; no orbit is a unit-leverage interpolation point. Deleting any one observation preserves rank 4. This is design robustness only and does **not** authorize deleting any frozen orbit/node or altering the frozen statistic.
 
-Classification: `PASS_ITER421_TENSOR11_SUPPORT_ORBIT_AND_DESIGN_IDENTIFIABILITY_AUDIT_EXACT__NON_PROMOTING`.
+Classification: `PASS_ITER421_TENSOR11_LEVERAGE_SINGLE_ORBIT_ROBUSTNESS_AUDIT_EXACT__NON_PROMOTING`.
+
+Reproducible artifacts:
+- `candidate_gravity/code/iteration577_tensor11_leverage_robustness_audit.py`
+- `candidate_gravity/results/iteration577_tensor11_leverage_robustness_audit.json`.
 
 ## Active heavy computation — Iteration575
-Exactly one tensor11 support matrix is active:
+Exactly one tensor11 support matrix remains active:
 - workflow `RQIR Iter575 tensor11 missing support matrix`;
 - run `34180521559`;
 - head `519ceb6dc8efc3e5a9aebe86f5e6523152a4b284`;
 - matrix jobs: **36**;
 - `max-parallel: 18`;
+- latest checked workflow state during Iter577: **`in_progress`**, conclusion `null`;
 - stage `candidate_gravity/code/iteration575_iter421_tensor11_missing_support_full_z_mp_stage.py`;
 - each rank: exact frozen `(u,v)`, five z values, NPHI16, inherited radial Richardson nodes, direct MP80/MP120;
 - per-rank gates: 80 rows, finite, MP80↔MP120 `<=1e-30`, radial Richardson `<=5e-4`.
 
-At the Iter576 check, first-wave jobs are inside the frozen numerical stage and remaining jobs are queued under `max-parallel`; no duplicate matrix or individual-rank heavy run is authorized. A per-rank PASS is support-only and cannot promote physical index2.
+No duplicate matrix or individual-rank heavy run is authorized. A per-rank PASS is support-only and cannot promote physical index2.
 
 ## Exact terminal decision tree
 When run `34180521559` becomes terminal:
@@ -124,7 +132,7 @@ Concrete upstream algebraic `Source/Ward/contact+K2` target and robust comparato
 
 **MODEL_READINESS: 24%**
 
-Readiness change: **0 percentage points**. Iter576 closes a real support/provenance and fit-identifiability subgate, but no additional stable model-level rubric point is completed.
+Readiness change: **0 percentage points**. Iter577 closes a real design-robustness subgate, but no additional stable model-level rubric point is completed.
 
 ## Downstream chain
 BASE/HALF/QUARTER support **CLOSED** → full spectrum reconstruction **CLOSED 574** → Iter424 **4/5 PASS** → original tensor11 exact MP support **RUNNING 575** → unchanged original tensor11 fit → only 5/5 PASS may promote index2 → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
