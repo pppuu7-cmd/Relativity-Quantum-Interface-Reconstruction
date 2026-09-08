@@ -1,0 +1,107 @@
+{
+  "iteration": 615,
+  "date": "2026-09-08",
+  "model_readiness_percent": 24,
+  "classification": "PASS_ITER615_FROZEN_NATIVE_S_INTERNAL_SCALAR_POLE_NUMERATOR_AND_SOURCE_DS_SIGN_AUDIT__NON_RESIDUAL",
+  "scientific_gate_pass": true,
+  "failures": [],
+  "contract": "MSSC001-NATIVE-S-KIN-V1",
+  "parent_authorities": [
+    "Iter608 scalar-pole distribution law",
+    "Iter613 prospective native-s kinematic completion",
+    "Iter614 simple-root/Jacobian support",
+    "Iter594/605 full same-action 13-family source object"
+  ],
+  "fixture_q": {
+    "s": [1.0, 0.0, 0.0, 0.0],
+    "a": [-0.4, 0.1, 0.1, 0.0],
+    "b": [-0.6, -0.1, -0.1, 0.0]
+  },
+  "fixture_momentum_closure_max_abs": 0.0,
+  "distribution_convention": "D_s=Disc_s/(2*pi*i); Disc[1/(D+i0)]=-2*pi*i*delta(D), hence source-side simple-pole weight=-C/|dD/ds|",
+  "rows": [
+    {
+      "leg": "s",
+      "branch": "-",
+      "s_root": 0.09,
+      "abs_dD_ds": 2.333333333333333,
+      "K1K2_orientation": "K1_after_K2__internal_p0_minus_q_singleton",
+      "K1K2_finite_coefficient": -0.0017909469619028144,
+      "K1cubed_finite_coefficients": [0.00008086653538658566, -0.000014330696967109226],
+      "K1cubed_finite_coefficient_sum": 0.00006653583841947644,
+      "full_internal_pole_finite_coefficient_C": -0.001724411123483338,
+      "source_Ds_delta_weight_minus_C_over_abs_dD": 0.0007390333386357164
+    },
+    {
+      "leg": "s",
+      "branch": "-",
+      "s_root": 2.89,
+      "abs_dD_ds": 0.4117647058823529,
+      "K1K2_orientation": "K1_after_K2__internal_p0_minus_q_singleton",
+      "K1K2_finite_coefficient": 0.0010031269703970954,
+      "K1cubed_finite_coefficients": [-0.00005431090087959238, -0.00006871347830493508],
+      "K1cubed_finite_coefficient_sum": -0.00012302437918452746,
+      "full_internal_pole_finite_coefficient_C": 0.000880102591212568,
+      "source_Ds_delta_weight_minus_C_over_abs_dD": -0.0021373920072305223
+    },
+    {
+      "leg": "a",
+      "branch": "+",
+      "s_root": 1.241314274283428,
+      "abs_dD_ds": 0.6409796081665314,
+      "K1K2_orientation": "K2_after_K1__internal_p0_plus_q_singleton",
+      "K1K2_finite_coefficient": -0.0009026721056156538,
+      "K1cubed_finite_coefficients": [-0.000033332397447242976, 0.00011233420880445273],
+      "K1cubed_finite_coefficient_sum": 0.00007900181135720976,
+      "full_internal_pole_finite_coefficient_C": -0.0008236702942584441,
+      "source_Ds_delta_weight_minus_C_over_abs_dD": 0.0012850179378006798
+    },
+    {
+      "leg": "a",
+      "branch": "-",
+      "s_root": 0.09868572571657197,
+      "abs_dD_ds": 2.273306106119183,
+      "K1K2_orientation": "K1_after_K2__internal_p0_minus_q_singleton",
+      "K1K2_finite_coefficient": -0.00032602364917103403,
+      "K1cubed_finite_coefficients": [-0.00008826975335660163, -0.000027472503884504577],
+      "K1cubed_finite_coefficient_sum": -0.0001157422572411062,
+      "full_internal_pole_finite_coefficient_C": -0.0004417659064121402,
+      "source_Ds_delta_weight_minus_C_over_abs_dD": 0.00019432750619153956
+    },
+    {
+      "leg": "b",
+      "branch": "+",
+      "s_root": 1.726971411425142,
+      "abs_dD_ds": 0.54342862858286,
+      "K1K2_orientation": "K2_after_K1__internal_p0_plus_q_singleton",
+      "K1K2_finite_coefficient": 0.0006734407608095254,
+      "K1cubed_finite_coefficients": [-0.000295575478572174, 0.00002792402003545099],
+      "K1cubed_finite_coefficient_sum": -0.000267651458536723,
+      "full_internal_pole_finite_coefficient_C": 0.00040578930227280237,
+      "source_Ds_delta_weight_minus_C_over_abs_dD": -0.0007467205092433387
+    },
+    {
+      "leg": "b",
+      "branch": "-",
+      "s_root": 0.013028588574858,
+      "abs_dD_ds": 6.25657137141714,
+      "K1K2_orientation": "K1_after_K2__internal_p0_minus_q_singleton",
+      "K1K2_finite_coefficient": 0.0016740856237614597,
+      "K1cubed_finite_coefficients": [-0.00017694623313574908, 0.00006150395528632433],
+      "K1cubed_finite_coefficient_sum": -0.00011544227784942475,
+      "full_internal_pole_finite_coefficient_C": 0.0015586433459120349,
+      "source_Ds_delta_weight_minus_C_over_abs_dD": -0.00024912100468199333
+    }
+  ],
+  "key_result": "All six Iter614 supported simple internal poles have nonzero full same-action finite coefficients after summing the one K1/K2 placement and the two matching ordered K1^3 chains with the frozen K1^3 family minus sign. The source-side D_s delta weights are therefore nonzero at every supported point.",
+  "scope": "routed internal scalar-pole numerator/sign audit only; common external endpoint factors are not reclassified in the Iter609/614 internal-line projector scope",
+  "all_13_source_families_retained": true,
+  "zero_fill": false,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "native_Y_over_Tcut_binding": "BLOCKED",
+  "candidate_residual": false,
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "readiness_change": "0 percentage points; numerator/sign data close a mapping subgate but no complete stable model-level rubric sector closes",
+  "next_gate": "Prospectively bind these source-side delta weights to the frozen Iter205/Iter582 native Y/T_cut coordinate, including sign/normalization and an explicit external-endpoint/amputation convention, before any Source/Born subtraction or comparator quotient."
+}
