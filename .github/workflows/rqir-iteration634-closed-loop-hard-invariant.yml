@@ -1,0 +1,45 @@
+name: RQIR Iter634 closed-loop hard-invariant authority
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration634-closed-loop-hard-invariant.yml'
+      - 'candidate_gravity/code/iteration634_closed_loop_hard_invariant_authority_gate.py'
+      - 'candidate_gravity/results/iteration634_closed_loop_hard_invariant_authority_gate.json'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Recompute hard-invariant authority gate
+        run: python candidate_gravity/code/iteration634_closed_loop_hard_invariant_authority_gate.py > iteration634_runtime.json
+      - name: Fail-closed exact audit
+        run: |
+          python - <<'PY'
+          import json
+          R=json.load(open('iteration634_runtime.json')); C=json.load(open('candidate_gravity/results/iteration634_closed_loop_hard_invariant_authority_gate.json'))
+          failures=[]
+          if R!=C: failures.append('runtime != committed result')
+          F=R.get('facts',{})
+          if F.get('iter613_can_be_reused_as_closed_loop_integration_trajectory') is not False: failures.append('Iter613 p0 incorrectly reused')
+          if F.get('same_symbol_role_preserved') is not False: failures.append('endpoint/loop role mismatch not preserved')
+          if F.get('iter613_mass_and_external_q_fixture_remain_valid') is not True: failures.append('valid fixture incorrectly rejected')
+          for k,v in [('candidate_values_used',False),('zero_fill',False),('source_born_subtraction','NOT_PERFORMED'),('native_projection','NOT_PERFORMED')]:
+            if R.get(k)!=v: failures.append(f'{k} mismatch')
+          A={'iteration':634,'classification':'PASS_RAW_AUTHORITY_AUDIT_ITER634_OPEN_P0_NOT_CLOSED_LOOP_CHANNEL' if not failures else 'FAIL_RAW_AUTHORITY_AUDIT_ITER634_OPEN_P0_NOT_CLOSED_LOOP_CHANNEL','failures':failures,'iter613_p0_reusable_as_loop_trajectory':False,'candidate_values_used':False,'zero_fill':False}
+          json.dump(A,open('iteration634_authority_audit.json','w'),indent=2)
+          if failures: raise SystemExit('\n'.join(failures))
+          PY
+      - name: Upload raw artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration634-closed-loop-hard-invariant
+          path: |
+            iteration634_runtime.json
+            iteration634_authority_audit.json
+            candidate_gravity/results/iteration634_closed_loop_hard_invariant_authority_gate.json
