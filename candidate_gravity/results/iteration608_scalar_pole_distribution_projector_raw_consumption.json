@@ -1,0 +1,33 @@
+{
+  "iteration": 608,
+  "date": "2026-09-08",
+  "classification": "PASS_UNIVERSAL_SCALAR_POLE_DISTRIBUTION_KERNEL__CONCRETE_NATIVE_PULLBACK_STILL_BLOCKED__NON_RESIDUAL",
+  "raw_audit_classification": "PASS_RAW_AUDIT_ITER608_SCALAR_POLE_KERNEL",
+  "failures": [],
+  "run_id": 34250726949,
+  "head_sha": "ad00230b9eb7d48c9eae04726256b2bf64d51f32",
+  "artifact_id": 10065869899,
+  "artifact_digest": "sha256:126d9a5fe82a19eefd3826201348891f6896f9494d5f0a307da4d63fbfeb18c5",
+  "raw_result_sha256": "2cbd3b8d09dd4d6d5297006802c3f4451df4e19bf9bef96d24906274032471ff",
+  "raw_audit_sha256": "72b9a57e5b0904bd1c6ceca889af0096bd8d21d15d17c53d0044f10cfe1bb95e",
+  "candidate_residual": false,
+  "model_readiness_percent": 24,
+  "frozen_distribution_law": {
+    "denominator": "x+i0 with x=m^2-p^2",
+    "sokhotski_plemelj": "1/(x+i0)=PV(1/x)-i*pi*delta(x)",
+    "disc_convention": "Disc F = F(x+i0)-F(x-i0)",
+    "scalar_pole_disc": "-2*pi*i*delta(m^2-p^2)",
+    "pullback_rule": "delta(f(z)) = sum_i delta(z-z_i)/abs(f_prime(z_i)) for simple real roots"
+  },
+  "still_blocked": [
+    "concrete internal MSSC p_j^2(q^2) relation for each retained source family",
+    "root/Jacobian support in the native linked variable",
+    "native Y/T_cut normalization/sign binding to Iter582 without Born subtraction"
+  ],
+  "source_family_count": 13,
+  "q2_buckets": [-1.0, -0.34, -0.14],
+  "source_born_subtraction": "NOT_PERFORMED",
+  "zero_fill": false,
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN"
+}
