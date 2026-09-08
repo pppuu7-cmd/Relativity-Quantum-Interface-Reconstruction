@@ -1,0 +1,52 @@
+{
+  "iteration": 619,
+  "date": "2026-09-08",
+  "model_readiness_percent": 24,
+  "classification": "PASS_ITER619_CONSUMED_ITER615_INDEPENDENT_REPRESENTATION_PROJECTIVE_REPRODUCIBILITY__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "scientific_gate_pass": true,
+  "candidate_residual": false,
+  "failures": [],
+  "canonical_ratios": [
+    1.0,
+    -2.966563737084728,
+    -0.7800526753639322,
+    -5.158207913624242,
+    2.997420912767025,
+    8.57973421373656
+  ],
+  "independent_recovery_ratios": [
+    1.0,
+    -2.966563737084729,
+    -0.7800526753639321,
+    -5.158207913624242,
+    2.9974209127670246,
+    8.579734213736554
+  ],
+  "absolute_ratio_differences": [
+    0.0,
+    8.881784197001252e-16,
+    1.1102230246251565e-16,
+    0.0,
+    4.440892098500626e-16,
+    5.329070518200751e-15
+  ],
+  "relative_ratio_differences": [
+    0.0,
+    2.993747423361127e-16,
+    1.423276429785459e-16,
+    0.0,
+    1.4815700425783315e-16,
+    6.211230307890725e-16
+  ],
+  "max_absolute_ratio_difference": 5.329070518200751e-15,
+  "max_relative_ratio_difference": 6.211230307890725e-16,
+  "interpretation": "The pre-existing independent Iter615 representation reproduces the Iter618 projective source shape at floating-point level; no new acceptance threshold is introduced.",
+  "promotion_status": "DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "N_native": "BLOCKED_UNCHANGED",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "comparator_quotient": "BLOCKED",
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "readiness_change": "0 percentage points",
+  "next_gate": "continue only independent normalization-invariant diagnostics/theory or comparator work; do not infer N_native from this reproducibility agreement"
+}
