@@ -1,0 +1,69 @@
+{
+  "iteration": 572,
+  "date": "2026-09-08",
+  "classification": "PASS_COMPLETE_QUARTER_RAW_ASSEMBLY__NON_PROMOTING",
+  "status": "PASS",
+  "MODEL_READINESS": "24%",
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true,
+  "promotes_physical_coordinate": false,
+  "scope": "complete 16-coordinate QUARTER central4 assembly from raw-valid MP80/MP120 support, with exact HALF-overlap reuse and comparison to the validated Iteration-527 HALF assembly",
+  "frozen": {
+    "target_index": 2,
+    "class_id": 3,
+    "q_squared": -1.0,
+    "quarter_h": 1.25e-6,
+    "axis_nodes": [-2.5e-6, -1.25e-6, 1.25e-6, 2.5e-6],
+    "central4_weights": [1, -8, 8, -1],
+    "mixed_normalization": "1/(144*h^2)",
+    "precision_digits": [80, 120],
+    "sample_count": 80,
+    "raw_new_support": "12/12",
+    "full_grid_support": "16/16"
+  },
+  "raw_provenance": {
+    "quarter_rank_artifact_ids": [10010910464, 10014273722, 10018745243, 10023337886, 10026933360, 10028800076, 10030205964, 10032056133, 10033936398, 10034846108, 10036490535, 10037900278],
+    "half_overlap_corner_artifact_ids": [9991366491, 9993124996, 9998137548, 9999001385],
+    "base_half_assembly_artifact_id": 10006477417,
+    "base_half_assembly_result_sha256": "8ac2949e795b201efbaa70b63fb3aeef9805eecc2e6c13362b9db38f52a9e451",
+    "rank12_result_sha256": "1f22924c06cb0f09b70d8586d6a9802f81d0cd131acd40d68368f3bdc689507b"
+  },
+  "observed": {
+    "all_80_assembled_outputs_finite": true,
+    "quarter_mp80_vs_mp120_scaled_max": "1.27872777978887860374506857300839836314016395727740895098894e-68",
+    "half_quarter_mass_step_scaled_max_mp80": "2.80644445574034127903884186746773714609875400023874124982487e-6",
+    "half_quarter_mass_step_scaled_max_mp120": "2.80644445574034127903884186746773714609875400023874124982487e-6",
+    "base_half_mass_step_scaled_max": "8.60575121785458117805036434436e-7",
+    "base_half_to_half_quarter_max_ratio": "0.30664249207755584209938721486827522563859549145086",
+    "direct_vs_u_then_v_scaled_max_mp120": "2.15354832186941462703419196380321601489619585751333940523761e-114",
+    "direct_vs_v_then_u_scaled_max_mp120": "2.36360680905638995860329428046431337413085722934800479036074e-114",
+    "direct_vs_exchange_orbit_scaled_max_mp120": "4.20203115761084962316796037448716838743687839828369535533618e-114",
+    "raw_F_full_grid_tensor_degree_1_1_fit_residual_diagnostic_max": "4.58823608929739906960846014613769802474515069171252073153298e-15",
+    "raw_F_fit_worst_sample": {"z": 0.0, "phi_index": 6}
+  },
+  "iteration424_clause_status": {
+    "physical_mass_step_discrepancy_le_2e-5": "PASS",
+    "fixed_node_mp80_mp120_le_2e-6": "PASS",
+    "all_outputs_finite": "PASS",
+    "direct_original_integrand_crosscheck_le_2e-6": "NOT_DECIDED_BY_THIS_ASSEMBLY; retained Iteration-421 parent crosscheck must be explicitly inherited or reevaluated under an authority decision",
+    "full_tensor_degree_1_1_fit_residual_le_2e-5": "BLOCKED_PENDING_EXACT_MAPPING; the raw-F full-grid fit diagnostic is not silently substituted for the frozen physical clause"
+  },
+  "interpretation": {
+    "quarter_assembly_closed": true,
+    "physical_index2_promoted": false,
+    "iteration424_full_five_clause_pass": false,
+    "next_gate": "resolve the exact authority mapping for the direct-original and full tensor-degree-(1,1) clauses; only simultaneous PASS of all five frozen clauses may promote index2 and authorize exact15"
+  },
+  "reproducible_code": "candidate_gravity/code/iteration572_iter424_complete_quarter_raw_assembly.py",
+  "guardrails": [
+    "workflow colour is not scientific authority",
+    "no post-hoc physical promotion",
+    "no direct/tensor zero fill",
+    "no u-v substitution",
+    "no threshold weakening",
+    "no smaller h",
+    "no altered mass nodes or precision",
+    "no ANSATZ-003",
+    "no Fisher/resources"
+  ]
+}
