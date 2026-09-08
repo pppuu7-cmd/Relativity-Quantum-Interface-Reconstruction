@@ -1,0 +1,62 @@
+name: RQIR post573 tensor11 precontract audit
+on:
+  push:
+    paths:
+      - 'candidate_gravity/triggers/post573_tensor11_precontract_audit.trigger'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Extract raw-valid spectral clause summary
+        run: |
+          python - <<'PY'
+          import json,pathlib
+          p=pathlib.Path('candidate_gravity/results/runtime_post573_iter424_full_spectrum_run_34179921282.json'); o=json.loads(p.read_text())
+          if o.get('classification')!='PASS_ITER424_FULL_SPECTRUM_NUMERICAL_CLAUSES__TENSOR11_STILL_BLOCKED__NON_PROMOTING' or o.get('scientific_gate_pass') is not True: raise SystemExit(('spectral_runtime_not_raw_valid_pass',o.get('classification'),o.get('scientific_gate_pass')))
+          out={'schema':'rqir_post573_spectral_clause_summary_v1','source_run_id':34179921282,'source_job_id':101916751917,'source_artifact_id':10038557027,'source_result_sha256':'d899623f64d98f12d19f32545e44fbcebe92ccc645f25a05b37f67a8b150a773','classification':o['classification'],'scientific_gate_pass':True,'observed':o.get('observed',{}),'physical_Ds':o.get('physical_Ds',{}),'iteration424_clause_status':o.get('iteration424_clause_status',{}),'MODEL_READINESS':'24%','promotes_physical_coordinate':False}
+          pathlib.Path('candidate_gravity/results/post573_spectral_clause_summary.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          PY
+      - name: Exhaust precontract tensor11 provenance inventory
+        run: |
+          python - <<'PY'
+          import json,pathlib,re,subprocess
+          target='candidate_gravity/code/iteration424_channel2_high_precision_fallback_contract.py'
+          commits=subprocess.check_output(['git','log','--diff-filter=A','--format=%H','--',target],text=True).split()
+          if len(commits)!=1: raise SystemExit(('iteration424_add_commit_count',commits))
+          c424=commits[0]
+          pats=re.compile(r'tensor11|tensor[_-]?degree|fit_residuals_scaled|symmetric[_ -]?cross|C\(r,s\)|4rs',re.I)
+          files=subprocess.check_output(['git','ls-tree','-r','--name-only',c424,'candidate_gravity'],text=True).splitlines()
+          hits=[]
+          for f in files:
+              try: txt=subprocess.check_output(['git','show',f'{c424}:{f}'],stderr=subprocess.DEVNULL).decode('utf-8','replace')
+              except Exception: continue
+              mm=[]
+              for i,line in enumerate(txt.splitlines(),1):
+                  if pats.search(line): mm.append({'line':i,'text':line[:500]})
+              if mm: hits.append({'path':f,'matches':mm})
+          # History inventory on ancestry up to and including prospective contract.
+          hist=subprocess.check_output(['git','log','--format=%H%x09%ct%x09%s',c424,'--','candidate_gravity'],text=True).splitlines()
+          relevant=[]
+          for row in hist:
+              sha,ts,msg=row.split('\t',2)
+              diff=subprocess.check_output(['git','show','--format=','--unified=0',sha,'--','candidate_gravity'],stderr=subprocess.DEVNULL).decode('utf-8','replace')
+              if pats.search(diff): relevant.append({'commit':sha,'unix_time':int(ts),'subject':msg})
+          out={'schema':'rqir_post573_tensor11_precontract_inventory_v1','iteration424_contract_add_commit':c424,'snapshot_scope':'candidate_gravity tree exactly at prospective Iteration424 contract addition','history_scope':'all candidate_gravity ancestry through Iteration424 contract commit','search_regex':pats.pattern,'snapshot_hits':hits,'history_relevant_commits':relevant,'interpretation_policy':'inventory only; absence/presence must be mapped without post-result gate redefinition','guardrails':['PRE_RESULT_CONTRACTS_ONLY','NO_POSTHOC_TENSOR11_MAPPING','NO_RAW_F_BILINEAR_SUBSTITUTION','UNSUPPORTED_IS_BLOCKED','NO_ZERO_FILL','NO_THRESHOLD_WEAKENING']}
+          pathlib.Path('candidate_gravity/results/post573_tensor11_precontract_inventory.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps({'iteration424_contract_add_commit':c424,'snapshot_hit_files':len(hits),'history_relevant_commits':len(relevant)},sort_keys=True))
+          PY
+      - name: Commit audit outputs
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add candidate_gravity/results/post573_spectral_clause_summary.json candidate_gravity/results/post573_tensor11_precontract_inventory.json
+          git commit -m 'RQIR post573: persist spectral summary and tensor11 precontract inventory'
+          git pull --rebase origin main
+          git push origin HEAD:main
