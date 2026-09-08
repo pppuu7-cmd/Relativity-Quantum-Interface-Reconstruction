@@ -1,0 +1,69 @@
+{
+  "iteration": 590,
+  "date": "2026-09-08",
+  "classification": "PASS_RAW_CONSUMED_CUBIC_SOURCE_RESPONSE_COMPLETENESS__K1K2_ONLY_SCOPED_NOT_FULL",
+  "scientific_gate_pass": true,
+  "model_readiness_percent": 24,
+  "workflow": {
+    "canonical_run": 34210666988,
+    "head_sha": "ffa700d898545048e1df7a81d0f5297e6ea0c818",
+    "artifact_id": 10049640731,
+    "artifact_name": "rqir-iter590-source-cubic-completeness",
+    "artifact_digest": "sha256:804cbbaf1008a579c368001f4081d85b09c42f2504bdb19c0e6a959016a1e840",
+    "result_sha256": "5ba0e9fc88b68b13d08d406829ebf4cc30e8ae85d8d92816f282d105a89d4d63",
+    "authority_audit_sha256": "6fa94126f8ed2a3680352a4c477afbfbe871bbc21a379631db350b102b2cbce0",
+    "audit_classification": "PASS_RAW_AUTHORITY_AUDIT_ITER590_CUBIC_COMPLETENESS",
+    "failures": []
+  },
+  "operational_repair": {
+    "first_run": 34210212105,
+    "first_run_status": "OPERATIONAL_FAILURE_ONLY",
+    "cause": "Iter589 repo result had been reformatted after raw consumption, so its byte SHA drifted from the raw artifact authority",
+    "diagnostic_run": 34210405875,
+    "diagnostic_artifact": 10049528601,
+    "observed_repo_sha_before_repair": "5480fd9c1add8e42486613e8f2f771286125b9600c29ba2f004bfc001c4f47ba",
+    "restored_raw_Iter589_sha": "90cd8591f34deb9a7c0d49a21d554bc8f776c5c2fdbef30cbcd88455b2a0dfad",
+    "repair_commit": "7217a6d0bb7fc6349497fd4dcf7af3fdcccff772",
+    "scientific_thresholds_changed": false
+  },
+  "universal_inverse_response": {
+    "identity": "d_abc G = -G Kabc G + sum_6(G Ki G Kjk G) - sum_6(G Ki G Kj G Kk G), G=K^-1",
+    "finite_difference_convergence_ratio_coarse_to_fine": 16.1572663559225,
+    "full_formula_frobenius_norm": 0.004272419337809515,
+    "six_K1K2_subset_frobenius_norm": 0.0009623302303630119,
+    "omitted_full_minus_K1K2_frobenius_norm": 0.0035873975061226225,
+    "K3_piece_frobenius_norm": 0.0036081509810433035,
+    "K1cubed_piece_frobenius_norm": 3.259073668020947e-05
+  },
+  "fixture_support": [
+    {
+      "singleton": "s",
+      "K3_mixed": -0.0005182434481554309,
+      "K1cubed_six_permutation_sum": -0.000386885483743436,
+      "minimum_abs_internal_K0": 0.23999999999999994
+    },
+    {
+      "singleton": "a",
+      "K3_mixed": -0.00033853586600685043,
+      "K1cubed_six_permutation_sum": -0.0005328911177533087,
+      "minimum_abs_internal_K0": 0.14500000000000007
+    },
+    {
+      "singleton": "b",
+      "K3_mixed": 0.00012502487933829795,
+      "K1cubed_six_permutation_sum": 0.00012109066165593845,
+      "minimum_abs_internal_K0": 0.004999999999999838
+    }
+  ],
+  "scope_result": "The six frozen K1/K2 placements have nonzero well-defined support but are not by themselves the full third mixed inverse-kernel response. K3 and K1^3 are nonzero on the exact Iter368/Iter588 fixture and must be explicitly projected out, assigned, or retained by the frozen linked T_cut definition before a full Ward cancellation claim.",
+  "projection_status": {
+    "K3_under_hard_channel_D_s": "OPEN__LOCAL_ANALYTIC_PROJECTION_TO_BE_PROVED",
+    "K1cubed_under_frozen_linked_T_cut": "OPEN__MUST_NOT_BE_DROPPED_BY_1PI_LABEL_WITHOUT_PROTOCOL_AUTHORITY",
+    "K1K2_only_as_complete_source_response": "NOT_AUTHORIZED_YET"
+  },
+  "source_born_subtraction": "NOT_PERFORMED",
+  "candidate_residual": false,
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "next_gate": "Prove the hard-channel D_s origin of the local MSSC K3 contact and separately classify K1^3 under the already-frozen split-invariant Y=(K2,S_soft2_full) protocol. Do not proceed to K1/K2 Ward cancellation until these origin-accounting questions are closed."
+}
