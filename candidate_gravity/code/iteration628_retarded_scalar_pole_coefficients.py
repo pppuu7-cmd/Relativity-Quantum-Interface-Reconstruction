@@ -1,0 +1,82 @@
+#!/usr/bin/env python3
+import json, math
+
+# Frozen source numerator/root/Jacobian data from Iter614/615 and energy census
+# from Iter625. Iter627 fixes every surviving internal scalar line in the
+# measured G_phi^{ra}=G_R response to be retarded.
+# With source inverse denominator D=m^2-r^2, the retarded prescription is
+#   D_ret = D - i0*sign(r0)
+# (because G_R for r^2-m^2 is [(r0+i0)^2-E^2]^{-1}). Hence
+#   Disc_s [1/(D-i0 sign r0)]/(2 pi i)
+#       = sign(r0) delta(D)
+# and after simple-root pullback the finite coefficient is
+#   w_R = sign(r0) C/|partial_s D|.
+# This is derived once from the observable-level prescription; no root is
+# hand-flipped, removed, or fit to Candidate/native values.
+
+roots = [
+    dict(label='D_b^-', s=0.013028588574858, C=+0.0015586433459120349, jac=6.25657137141714, energy_sign=+1),
+    dict(label='D_s^-', s=0.09, C=-0.001724411123483338, jac=2.333333333333333, energy_sign=-1),
+    dict(label='D_a^-', s=0.09868572571657197, C=-0.0004417659064121402, jac=2.273306106119183, energy_sign=+1),
+    dict(label='D_a^+', s=1.241314274283428, C=-0.0008236702942584441, jac=0.6409796081665314, energy_sign=+1),
+    dict(label='D_b^+', s=1.726971411425142, C=+0.00040578930227280237, jac=0.54342862858286, energy_sign=+1),
+    dict(label='D_s^-', s=2.89, C=+0.000880102591212568, jac=0.4117647058823529, energy_sign=+1),
+]
+historical = [
+    -0.00024912100468199333,
+    +0.0007390333386357162,
+    +0.00019432750619153958,
+    +0.0012850179378006798,
+    -0.0007467205092433388,
+    -0.0021373920072305236,
+]
+
+rows=[]
+failures=[]
+for r,h in zip(roots,historical):
+    w = r['energy_sign'] * r['C'] / r['jac']
+    expected_relation = -r['energy_sign'] * h  # w_R / w_F = -sign(E)
+    if not math.isclose(w, expected_relation, rel_tol=2e-13, abs_tol=2e-16):
+        failures.append(f"{r['label']}@{r['s']}: retarded coefficient relation failed: {w} vs {expected_relation}")
+    rows.append({**r, 'historical_K_plus_i0_weight': h, 'retarded_Ds_weight': w,
+                 'retarded_over_historical_sign': -r['energy_sign']})
+
+if sum(1 for r in roots if r['energy_sign'] < 0) != 1:
+    failures.append('Iter625 energy-sign census mismatch')
+if len(rows) != 6:
+    failures.append('six-root support not preserved')
+
+result={
+    'iteration':628,
+    'date':'2026-09-09',
+    'scientific_gate_pass': not failures,
+    'candidate_residual': False,
+    'classification': ('PASS_ITER628_RETARDED_INTERNAL_SCALAR_POLE_COEFFICIENTS__ITER627_MEASUREMENT_PRESCRIPTION__NON_RESIDUAL'
+                       if not failures else 'FAIL_ITER628_RETARDED_INTERNAL_SCALAR_POLE_COEFFICIENT_RECOMPUTATION'),
+    'authority_chain':['Iter613 MSSC001-NATIVE-S-KIN-V1','Iter614 roots/Jacobians','Iter615 source numerators C_A','Iter625 internal-energy signs','Iter627 MSSC001-GRAVITY-SK-MEAS-V1'],
+    'derivation': {
+        'source_denominator':'D=m^2-r^2',
+        'retarded_prescription':'D_ret=D-i0*sign(r0)',
+        'distribution_identity':'Disc_s[1/(D-i0 sign(r0))]/(2*pi*i)=sign(r0)*delta(D)',
+        'simple_root_weight':'w_R=sign(r0)*C_A/|partial_s D_A|',
+        'historical_relation':'w_R/w_(K+i0)=-sign(r0)'
+    },
+    'rows_strict_ascending_s':rows,
+    'positive_energy_roots':5,
+    'negative_energy_roots':1,
+    'negative_energy_support':'D_s^-(0.09)',
+    'D_s_plus_status':'NO_POSITIVE_ROOT__NOT_AMPLITUDE_ZERO',
+    'all_13_source_families_retained':True,
+    'zero_fill':False,
+    'root_hand_flip':False,
+    'source_born_subtraction':'NOT_PERFORMED',
+    'native_projection':'NOT_PERFORMED',
+    'N_native_status':'BLOCKED__ABSOLUTE_SOURCE_TO_NATIVE_PHASE_NORMALIZATION_NOT_YET_DERIVED_FROM_SAME_SK_FUNCTIONAL',
+    'candidate_values_used':False,
+    'failures':failures,
+    'MODEL_READINESS':'24%',
+    'readiness_change':'0 percentage points',
+    'next_gate':'Iteration629: derive the single absolute source-to-native phase/normalization from the same doubled MSSC001+gravity generating functional and endpoint/amputation conventions, without Candidate values or rootwise fits; if impossible from present repo authority, record exact missing functional normalization as BLOCKED.'
+}
+print(json.dumps(result, indent=2))
+if failures: raise SystemExit(1)
