@@ -1,0 +1,34 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "candidate_residual": false,
+  "classification": "PASS_SCALAR_ENDPOINT_COVARIANCE_MATRIX_REALIZATION_REPRODUCES_ITER587_ANCHOR__NON_RESIDUAL",
+  "date": "2026-09-08",
+  "failures": [],
+  "frozen_fourier_rule": "Delta_xi phi(k)=int xi(l)(k-l)_rho phi(k-l)",
+  "interpretation": "Iter600 blocker is localized to endpoint matrix orientation: the old transpose places the left action on the wrong momentum shift. The corrected dual-row action is derived from the frozen Fourier rule and must pass the Iter587 anchor before any cubic Ward rerun.",
+  "iteration": 601,
+  "mandatory_anchor": "Iter587 exact one-graviton Ward relation on all three p=-q/2,pprime=+q/2 routes",
+  "matrix_realization": {
+    "green_covariance": "Delta G - R G - G L = 0",
+    "left_row_dual": "L_rc = - xi . p_r for p_r=p_c+q",
+    "old_iter599_form": "Delta G - T G - G T^T = 0 is not the correct left-endpoint realization for this row/column momentum convention",
+    "right_column": "R_rc = xi . p_c for p_r=p_c+q"
+  },
+  "model_readiness_percent": 24,
+  "next_gate_if_fail": "stop and rederive the row/column Fourier kernel orientation; do not rerun cubic Ward",
+  "next_gate_if_pass": "replace only the endpoint realization in the Iter599 covariance evaluator with R/L above; keep Iter596 five classes, Iter588 fixture, 13 source families and all frozen tolerances unchanged; then rerun the full nonlinear Ward gate",
+  "observed": {
+    "max_corrected_anchor_abs": 6.88338845912217e-15,
+    "max_old_residual_minus_missing_left_abs": 6.663279669537638e-15
+  },
+  "raw_result_sha256": "25073d98c96581900a5b33c31f7204ec5d534dda34f2fc41e70fce4e636edd39",
+  "run": 34239749577,
+  "job": 102106569680,
+  "artifact": 10061419511,
+  "artifact_digest": "sha256:ed7b7f783071c800a203838b2266da2f8ae2c38abd6f696b16705f38f09188c0",
+  "scientific_gate_pass": true,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "source_to_iter582_map": "NOT_PERFORMED",
+  "tolerance": 2e-11
+}
