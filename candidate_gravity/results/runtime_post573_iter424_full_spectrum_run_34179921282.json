@@ -1,0 +1,636 @@
+{
+  "MODEL_READINESS": "24%",
+  "artifact_provenance": [
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9961449686,
+          "expected_z": null,
+          "sha256": "6da491178860fa75f73e009973e65e1d6ad805648c1717d89219f1c19e7256e8"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 0,
+      "u": -1e-05,
+      "v": -1e-05
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9963059047,
+          "expected_z": [
+            -0.86,
+            -0.43,
+            0.0,
+            0.43,
+            0.86
+          ],
+          "sha256": "f51d13b29e5b433fe3a6c2acfae8a058bef2c2cd5259fb1165766a136428b004"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 1,
+      "u": -1e-05,
+      "v": -5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9964610341,
+          "expected_z": [
+            -0.86,
+            -0.43,
+            0.0,
+            0.43,
+            0.86
+          ],
+          "sha256": "0eafc8afad813c42b245ba9f49280b26b241a1b638cdb21fc9f83845d69e03d9"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 2,
+      "u": -1e-05,
+      "v": 5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9966351908,
+          "expected_z": null,
+          "sha256": "0c5be48463f88f44a409c2ef39d5b05a12ebb7aefd9e3229675ddfe7d74bbda6"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 3,
+      "u": -1e-05,
+      "v": 1e-05
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9968019110,
+          "expected_z": null,
+          "sha256": "18d2fe2a9eb5a9a6cdbef4010916ef6d045addad8141d269f9a4dc0dbb94db44"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 4,
+      "u": -5e-06,
+      "v": -1e-05
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9969255401,
+          "expected_z": null,
+          "sha256": "01d21d82547ba774086b5cd1aad8a9d627fece034fa872183da0e366ffa5fde8"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 5,
+      "u": -5e-06,
+      "v": -5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9971336666,
+          "expected_z": null,
+          "sha256": "220f50d31c1e9ca326c1303c3e74b39139f68fc4dbe3388450220389fef5211a"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 6,
+      "u": -5e-06,
+      "v": 5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9973031198,
+          "expected_z": null,
+          "sha256": "6b939fba5b62a7a35ddfe12388cb4b567d836725a7e56ad6e18785f2ffca92b6"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 7,
+      "u": -5e-06,
+      "v": 1e-05
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9974359345,
+          "expected_z": [
+            -0.86,
+            -0.43,
+            0.0,
+            0.43,
+            0.86
+          ],
+          "sha256": "c65576e782850d9060ec6549ba0158ea10257ce4289e4bc72fbf43e5f16ae21d"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 8,
+      "u": 5e-06,
+      "v": -1e-05
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9975782294,
+          "expected_z": [
+            -0.86,
+            -0.43,
+            0.0,
+            0.43,
+            0.86
+          ],
+          "sha256": "533e5ab27c3631c25023e30ee70fecdb3bd845c18015cc6cf277ea42fd3ea8d8"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 9,
+      "u": 5e-06,
+      "v": -5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9958661360,
+          "expected_z": [
+            -0.86,
+            0.0,
+            0.86
+          ],
+          "sha256": "d7a148b1f55364145612e3c032aaa13a24634b87bad965a9f40a4d1db2b478bb"
+        },
+        {
+          "artifact_id": 9959560285,
+          "expected_z": [
+            -0.43,
+            0.43
+          ],
+          "sha256": "2467e807b8b5f1c8a93a83a1e5be2107d2c5ae3d8747bb2f5f586b16501d1c03"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 10,
+      "u": 5e-06,
+      "v": 5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9977375478,
+          "expected_z": null,
+          "sha256": "7cc7c36a6dd5fd628280f370ad68a3b93b018fc919a0948471420a6f945b8b9f"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 11,
+      "u": 5e-06,
+      "v": 1e-05
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9979716360,
+          "expected_z": null,
+          "sha256": "a7512548da32e8a5545241d179532dc8b92aec69e5e91d4e4cd40429e83fc8e1"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 12,
+      "u": 1e-05,
+      "v": -1e-05
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9981274527,
+          "expected_z": null,
+          "sha256": "a4dda8d7e6ec15a40f09bc8d996850a5d13eba078ed6f14fb91aebdcba9ff2f1"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 13,
+      "u": 1e-05,
+      "v": -5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9982729453,
+          "expected_z": null,
+          "sha256": "9827e95bdd09e5aa843b1043be0cd7cd1b00c7f415d906d331d457c99499b2ad"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 14,
+      "u": 1e-05,
+      "v": 5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9984278621,
+          "expected_z": null,
+          "sha256": "315321a3be63beb64b475365c5cfc9279d1cde955aabb75dfe77c0e61e5ce83e"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 15,
+      "u": 1e-05,
+      "v": 1e-05
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9986059883,
+          "expected_z": null,
+          "sha256": "b1e421ba330a09d957083311ebe59ea2c6a09ff2929ef47ed431a7598f42c34e"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 16,
+      "u": -5e-06,
+      "v": -2.5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9987620391,
+          "expected_z": null,
+          "sha256": "17b9bbd89c52870e1dd9d9bc2078eef073da289ee5763e520a78bc20496d8264"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 17,
+      "u": -5e-06,
+      "v": 2.5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9989492191,
+          "expected_z": null,
+          "sha256": "f1dbbb575bfe9d1c531214912039d0bc92ca0f7b0fc11a340204d81a419b8542"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 18,
+      "u": -2.5e-06,
+      "v": -5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9991366491,
+          "expected_z": null,
+          "sha256": "d3afb8b89fb4a4e7ac41767b84630834c4fc660e1d310e65899392bdd49470f2"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 19,
+      "u": -2.5e-06,
+      "v": -2.5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9993124996,
+          "expected_z": null,
+          "sha256": "5bd5af97df1524997ab52a10a58cc4842b65c49091325ba1b57aba6e3d253f1a"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 20,
+      "u": -2.5e-06,
+      "v": 2.5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9995075679,
+          "expected_z": null,
+          "sha256": "a032df9c94b2eecbf41aade69b94c12522b4893f5d0942f5958054eb8d052f43"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 21,
+      "u": -2.5e-06,
+      "v": 5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9996510520,
+          "expected_z": null,
+          "sha256": "311c15e99d71dbf38529a248d5b2cd99c89d6d656e098d58370c61aa214feba0"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 22,
+      "u": 2.5e-06,
+      "v": -5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9998137548,
+          "expected_z": null,
+          "sha256": "46cc01a8ab5758349fdba27917afc7a0252d81631b41c8a9e15ed998bbcbba9c"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 23,
+      "u": 2.5e-06,
+      "v": -2.5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9999001385,
+          "expected_z": null,
+          "sha256": "655cc19ecbdf0db078c8bd500ff7f257691a8695c1cdee28fbee65edd069e4ba"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 24,
+      "u": 2.5e-06,
+      "v": 2.5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 9999994876,
+          "expected_z": null,
+          "sha256": "09a45246492011381c979c553229b37da61687334d951b62494e171367e074b7"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 25,
+      "u": 2.5e-06,
+      "v": 5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 10002375956,
+          "expected_z": null,
+          "sha256": "0e721e877be906bebffce0b4285b5ef0e808075dea69d63fac91d201cb681b08"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 26,
+      "u": 5e-06,
+      "v": -2.5e-06
+    },
+    {
+      "artifact_parts": [
+        {
+          "artifact_id": 10003949181,
+          "expected_z": null,
+          "sha256": "ba452eb1a313cdfa2930b692896606ee955f4e89ac4ad12d89458338846f135c"
+        }
+      ],
+      "family": "BASE_HALF",
+      "rank": 27,
+      "u": 5e-06,
+      "v": 2.5e-06
+    },
+    {
+      "artifact_id": 10010910464,
+      "family": "QUARTER",
+      "rank": 1,
+      "sha256": "fc63881cc09c0e6082b05f11f401a82239488e61537d5c9d47b2cb70bb138b3c",
+      "u": -2.5e-06,
+      "v": -1.25e-06
+    },
+    {
+      "artifact_id": 10014273722,
+      "family": "QUARTER",
+      "rank": 2,
+      "sha256": "303ef060845f4cca6699e38d954089b144a26fe6b7c0ce1874819deb5ad2b01a",
+      "u": -2.5e-06,
+      "v": 1.25e-06
+    },
+    {
+      "artifact_id": 10018745243,
+      "family": "QUARTER",
+      "rank": 3,
+      "sha256": "5ff2918ca522e689f8c67dc0f007efe8fd4a0bc70a5aba2d62423dc3dc4b35e0",
+      "u": -1.25e-06,
+      "v": -2.5e-06
+    },
+    {
+      "artifact_id": 10023337886,
+      "family": "QUARTER",
+      "rank": 4,
+      "sha256": "f1604ef9580be7b3a0d8b217785961d8bbb94c7e1bfa44849abe118b66816347",
+      "u": -1.25e-06,
+      "v": -1.25e-06
+    },
+    {
+      "artifact_id": 10026933360,
+      "family": "QUARTER",
+      "rank": 5,
+      "sha256": "2f50600679f26b42662fa6f0057394b1acf76717fd1eb64d01c25377ae955a6e",
+      "u": -1.25e-06,
+      "v": 1.25e-06
+    },
+    {
+      "artifact_id": 10028800076,
+      "family": "QUARTER",
+      "rank": 6,
+      "sha256": "9a402fc89400b1d5a1e5e8fc888bc4dee87500e53a8371688d3f2b15e8c56192",
+      "u": -1.25e-06,
+      "v": 2.5e-06
+    },
+    {
+      "artifact_id": 10030205964,
+      "family": "QUARTER",
+      "rank": 7,
+      "sha256": "eb4d389813c6620c2436e8f1abe91e24625398163e2e01e5282d68addc80d98f",
+      "u": 1.25e-06,
+      "v": -2.5e-06
+    },
+    {
+      "artifact_id": 10032056133,
+      "family": "QUARTER",
+      "rank": 8,
+      "sha256": "8d498f746c5ee5aecb24949259227ac81731ff007ca1c8681b8169e510962cdb",
+      "u": 1.25e-06,
+      "v": -1.25e-06
+    },
+    {
+      "artifact_id": 10033936398,
+      "family": "QUARTER",
+      "rank": 9,
+      "sha256": "63054690757baee587ef0c07cf753b3196fbdf63a42a14280c4d2ba4b665ab26",
+      "u": 1.25e-06,
+      "v": 1.25e-06
+    },
+    {
+      "artifact_id": 10034846108,
+      "family": "QUARTER",
+      "rank": 10,
+      "sha256": "7cc11967da91eb299bd7a5c4e2c96525ff60c34ec0a4fc0f80e839c36601dc84",
+      "u": 1.25e-06,
+      "v": 2.5e-06
+    },
+    {
+      "artifact_id": 10036490535,
+      "family": "QUARTER",
+      "rank": 11,
+      "sha256": "ac1b09b30e32fc17b0b45d300787bd89e2869df50edd41a85b256b578f0355ca",
+      "u": 2.5e-06,
+      "v": -1.25e-06
+    },
+    {
+      "artifact_id": 10037900278,
+      "family": "QUARTER",
+      "rank": 12,
+      "sha256": "1f22924c06cb0f09b70d8586d6a9802f81d0cd131acd40d68368f3bdc689507b",
+      "u": 2.5e-06,
+      "v": 1.25e-06
+    },
+    {
+      "artifact_id": 9991366491,
+      "family": "QUARTER",
+      "rank": "corner_mm",
+      "sha256": "d3afb8b89fb4a4e7ac41767b84630834c4fc660e1d310e65899392bdd49470f2",
+      "u": -2.5e-06,
+      "v": -2.5e-06
+    },
+    {
+      "artifact_id": 9993124996,
+      "family": "QUARTER",
+      "rank": "corner_mp",
+      "sha256": "5bd5af97df1524997ab52a10a58cc4842b65c49091325ba1b57aba6e3d253f1a",
+      "u": -2.5e-06,
+      "v": 2.5e-06
+    },
+    {
+      "artifact_id": 9998137548,
+      "family": "QUARTER",
+      "rank": "corner_pm",
+      "sha256": "46cc01a8ab5758349fdba27917afc7a0252d81631b41c8a9e15ed998bbcbba9c",
+      "u": 2.5e-06,
+      "v": -2.5e-06
+    },
+    {
+      "artifact_id": 9999001385,
+      "family": "QUARTER",
+      "rank": "corner_pp",
+      "sha256": "655cc19ecbdf0db078c8bd500ff7f257691a8695c1cdee28fbee65edd069e4ba",
+      "u": 2.5e-06,
+      "v": 2.5e-06
+    }
+  ],
+  "classification": "PASS_ITER424_FULL_SPECTRUM_NUMERICAL_CLAUSES__TENSOR11_STILL_BLOCKED__NON_PROMOTING",
+  "frozen": {
+    "central4_coefficients": [
+      1,
+      -8,
+      8,
+      -1
+    ],
+    "degree": 4,
+    "mass_steps": [
+      5e-06,
+      2.5e-06,
+      1.25e-06
+    ],
+    "phi_nodes": 16,
+    "pipeline": "Iteration407 phi-average -> degree4 -> affine coefficients -> analytic affine-log recurrence -> central4",
+    "precision_digits": [
+      80,
+      120
+    ],
+    "training_z": [
+      -0.86,
+      -0.43,
+      0.0,
+      0.43,
+      0.86
+    ]
+  },
+  "guardrails": [
+    "RAW_VALID_ARTIFACTS_ONLY",
+    "ITERATION407_SPECTRAL_PIPELINE",
+    "ITERATION424_THRESHOLDS_UNCHANGED",
+    "NO_TENSOR11_POSTHOC_MAPPING",
+    "NO_RAW_F_BILINEAR_SUBSTITUTION",
+    "NO_UV_SUBSTITUTION",
+    "NO_ZERO_FILL",
+    "NO_SMALLER_H",
+    "NO_ANSATZ003",
+    "NO_FISHER_RESOURCES"
+  ],
+  "iteration424_clause_status": {
+    "abs_Ds_80digit_minus_Ds_120digit": "PASS",
+    "all_values_finite": "PASS",
+    "direct_original_integrand_crosscheck": "PASS_INHERITED_ITERATION573_FROM_RAW_VALID_ITERATION421__MAX_2.0658997659274425e-9",
+    "physical_mass_step_discrepancy": "PASS",
+    "tensor_degree_1_1_fit_residual": "OPERATIONAL_BLOCKED_NO_FROZEN_MAPPING__DO_NOT_SUBSTITUTE_RAW_F_BILINEAR_DIAGNOSTIC"
+  },
+  "next_gate_if_numerical_fail": "preserve scoped scientific FAIL of the computed frozen clause(s); do not weaken thresholds or change nodes/precision",
+  "next_gate_if_numerical_pass": "preserve tensor11 BLOCKED unless an already-pre-result frozen high-precision tensor11 contract is found; no physical promotion until all five clauses PASS",
+  "observed": {
+    "abs_Ds_80_minus_Ds_120_max": "0.0",
+    "all_spectrum_and_Ds_values_finite": true,
+    "base_half_scaled_discrepancy_max": "0.000000032742529149944448602083113541993952821940183639526",
+    "half_quarter_scaled_discrepancy_max": "0.00000031976434906568406910110091700971679529175162315369",
+    "max_spectral_F_abs_mp80_minus_mp120_diagnostic": "2.1563196982036551806722533640814212717504353892834e-80",
+    "physical_mass_step_discrepancy_max": "0.00000031976434906568406910110091700971679529175162315369"
+  },
+  "physical_Ds": {
+    "BASE": {
+      "120": [
+        "0.000334698712595841410717689701215249442611820995807647705078125",
+        "0.0"
+      ],
+      "80": [
+        "0.000334698712595841410717689701215249442611820995807647705078125",
+        "0.0"
+      ]
+    },
+    "HALF": {
+      "120": [
+        "0.0003346659700666914662690876181017074486589990556240081787109375",
+        "0.0"
+      ],
+      "80": [
+        "0.0003346659700666914662690876181017074486589990556240081787109375",
+        "0.0"
+      ]
+    },
+    "QUARTER": {
+      "120": [
+        "0.0003343462057176257821999865171846977318637073040008544921875",
+        "0.0"
+      ],
+      "80": [
+        "0.0003343462057176257821999865171846977318637073040008544921875",
+        "0.0"
+      ]
+    }
+  },
+  "promotes_physical_coordinate": false,
+  "readiness_change_pp": 0,
+  "scientific_gate_pass": true,
+  "stage": "POST573_ITER424_FULL_SPECTRUM_FROM_RAW_ARTIFACTS__UNNUMBERED_COLLISION_SAFE",
+  "target": {
+    "class_id": 3,
+    "double_double_index": 2,
+    "q_squared": -1.0
+  },
+  "thresholds": {
+    "abs_Ds_80_minus_Ds_120_max": "2e-6",
+    "all_values_finite": true,
+    "physical_mass_step_discrepancy_max": "2e-5"
+  }
+}

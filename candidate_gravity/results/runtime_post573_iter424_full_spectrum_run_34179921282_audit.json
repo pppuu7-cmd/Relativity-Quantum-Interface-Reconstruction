@@ -1,0 +1,18 @@
+{
+  "embedded_authority_audit": {
+    "authority_scope": "ITER424_FULL_SPECTRUM_NUMERICAL_CLAUSES_FROM_RAW_VALID_ARTIFACTS__NON_PROMOTING",
+    "bytes": 16183,
+    "classification": "PASS_ITER424_FULL_SPECTRUM_NUMERICAL_CLAUSES__TENSOR11_STILL_BLOCKED__NON_PROMOTING",
+    "raw_result_integrity_valid": true,
+    "schema": "rqir_action_result_authority_audit_v1",
+    "scientific_gate_pass": true,
+    "sha256": "d899623f64d98f12d19f32545e44fbcebe92ccc645f25a05b37f67a8b150a773",
+    "stage": "POST573_ITER424_FULL_SPECTRUM_FROM_RAW_ARTIFACTS__UNNUMBERED_COLLISION_SAFE"
+  },
+  "raw_consumption_valid": true,
+  "result_sha256": "d899623f64d98f12d19f32545e44fbcebe92ccc645f25a05b37f67a8b150a773",
+  "source_artifact_digest": "sha256:330fc416a24935bbd1faf5f852420d179c0cd17a8bb2ba52dbae296bc00953e2",
+  "source_artifact_id": 10038557027,
+  "source_job_id": 101916751917,
+  "source_run_id": 34179921282
+}
