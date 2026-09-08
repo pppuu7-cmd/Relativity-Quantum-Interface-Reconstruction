@@ -1,0 +1,17 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "artifact_digest": "sha256:577bb2d4a8f56f24f86aecdfb4abc6e9616d0a9a28bfb3bae40330505b0eed3d",
+  "candidate_residual": false,
+  "canonical_artifact": 10060216987,
+  "canonical_head": "491f55d9f88b2d40f7e737108f2dfc24bfe3f6e4",
+  "canonical_job": 102096346284,
+  "canonical_run": 34236758448,
+  "classification": "RAW_VALID_CORRECTED_WARD_SCIENTIFIC_FAIL_CONSUMED",
+  "date": "2026-09-08",
+  "iteration": 599,
+  "model_readiness_percent": 24,
+  "raw_authority_audit_sha256": "de094a0c45caf4460f68a557390de3a9ffe65ab12cabc4d1836f5b4f2f79c8db",
+  "raw_result_sha256": "9bafe4cf47c35e8a5e2537d94605e5f0e54345bc28ef03af16c9b7e3675ac855",
+  "source_born_subtraction": "NOT_PERFORMED"
+}

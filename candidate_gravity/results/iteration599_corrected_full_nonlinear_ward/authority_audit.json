@@ -1,0 +1,26 @@
+{
+  "classification": "FAIL_RAW_AUTHORITY_AUDIT_ITER599_CORRECTED_FULL_NONLINEAR_WARD",
+  "failures": [
+    "corrected one-leg covariance anchor s/xi0 = 2.083333333333334",
+    "corrected one-leg covariance anchor a/xi0 = 0.4395604395604424",
+    "corrected one-leg covariance anchor a/xi1 = 0.1098901098901106",
+    "corrected one-leg covariance anchor a/xi2 = 0.1098901098901106",
+    "corrected one-leg covariance anchor b/xi0 = 0.7407407407407341",
+    "corrected one-leg covariance anchor b/xi1 = 0.1234567901234587",
+    "corrected one-leg covariance anchor b/xi2 = 0.1234567901234587",
+    "full corrected nonlinear Ward residual s/xi0 = 0.13675071724815208",
+    "full corrected nonlinear Ward convergence s/xi0 = 0.006078581018494812",
+    "full corrected nonlinear Ward residual s/xi1 = 0.0035599485158516048",
+    "full corrected nonlinear Ward convergence s/xi1 = 0.0035510995410235765",
+    "full corrected nonlinear Ward residual s/xi2 = 0.0035599485212443388",
+    "full corrected nonlinear Ward convergence s/xi2 = 0.0035510995463886924",
+    "full corrected nonlinear Ward residual a/xi0 = 0.00030368066108112134",
+    "full corrected nonlinear Ward residual a/xi1 = 7.592016644584454e-05",
+    "full corrected nonlinear Ward residual a/xi2 = 7.592016677041062e-05",
+    "full corrected nonlinear Ward residual b/xi0 = 0.015101160247128289",
+    "full corrected nonlinear Ward residual b/xi1 = 0.0025168600412046054",
+    "full corrected nonlinear Ward residual b/xi2 = 0.002516860040816263"
+  ],
+  "iteration": 599,
+  "result_sha256": "9bafe4cf47c35e8a5e2537d94605e5f0e54345bc28ef03af16c9b7e3675ac855"
+}

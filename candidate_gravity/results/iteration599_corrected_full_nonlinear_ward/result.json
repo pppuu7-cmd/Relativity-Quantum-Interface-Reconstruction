@@ -1,0 +1,833 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "candidate_residual": false,
+  "classification": "FAIL_FULL_SOURCE_LEVEL_NONLINEAR_WARD_ON_EXACT_FROZEN_ITER596_SYMMETRIC_ROUTE__PRESERVED_NEGATIVE_RESULT",
+  "date": "2026-09-08",
+  "explicit_nonclaims": [
+    "not a comparator identity",
+    "not a comparator-subtracted residual",
+    "not a novelty certificate"
+  ],
+  "failures": [
+    "corrected one-leg covariance anchor s/xi0 = 2.083333333333334",
+    "corrected one-leg covariance anchor a/xi0 = 0.4395604395604424",
+    "corrected one-leg covariance anchor a/xi1 = 0.1098901098901106",
+    "corrected one-leg covariance anchor a/xi2 = 0.1098901098901106",
+    "corrected one-leg covariance anchor b/xi0 = 0.7407407407407341",
+    "corrected one-leg covariance anchor b/xi1 = 0.1234567901234587",
+    "corrected one-leg covariance anchor b/xi2 = 0.1234567901234587",
+    "full corrected nonlinear Ward residual s/xi0 = 0.13675071724815208",
+    "full corrected nonlinear Ward convergence s/xi0 = 0.006078581018494812",
+    "full corrected nonlinear Ward residual s/xi1 = 0.0035599485158516048",
+    "full corrected nonlinear Ward convergence s/xi1 = 0.0035510995410235765",
+    "full corrected nonlinear Ward residual s/xi2 = 0.0035599485212443388",
+    "full corrected nonlinear Ward convergence s/xi2 = 0.0035510995463886924",
+    "full corrected nonlinear Ward residual a/xi0 = 0.00030368066108112134",
+    "full corrected nonlinear Ward residual a/xi1 = 7.592016644584454e-05",
+    "full corrected nonlinear Ward residual a/xi2 = 7.592016677041062e-05",
+    "full corrected nonlinear Ward residual b/xi0 = 0.015101160247128289",
+    "full corrected nonlinear Ward residual b/xi1 = 0.0025168600412046054",
+    "full corrected nonlinear Ward residual b/xi2 = 0.002516860040816263"
+  ],
+  "five_mandatory_classes": [
+    "gauge-leg linear contraction",
+    "spectator-u Lie derivative",
+    "spectator-v Lie derivative",
+    "left scalar/source endpoint",
+    "right scalar/source endpoint"
+  ],
+  "fixture_closure": 0.0,
+  "full_family_content": "same parent K inverse; cubic derivative algebraically contains K3 + six K1/K2 + six ordered K1^3",
+  "identity": "Delta G - T G - G T^T = 0; mixed spectator coefficient with exact Iter588 q_s+q_a+q_b=0",
+  "implemented_one_leg_anchors": [
+    {
+      "abs_covariance_residual": 2.083333333333334,
+      "gauge_leg": "s",
+      "midpoint_error": 0.0,
+      "p": [
+        -0.5,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "pprime": [
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "route_error": 0.0,
+      "xi_basis": 0
+    },
+    {
+      "abs_covariance_residual": 2.905164834387809e-18,
+      "gauge_leg": "s",
+      "midpoint_error": 0.0,
+      "p": [
+        -0.5,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "pprime": [
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "route_error": 0.0,
+      "xi_basis": 1
+    },
+    {
+      "abs_covariance_residual": 2.905164834387809e-18,
+      "gauge_leg": "s",
+      "midpoint_error": 0.0,
+      "p": [
+        -0.5,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "pprime": [
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "route_error": 0.0,
+      "xi_basis": 2
+    },
+    {
+      "abs_covariance_residual": 0.0,
+      "gauge_leg": "s",
+      "midpoint_error": 0.0,
+      "p": [
+        -0.5,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "pprime": [
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "route_error": 0.0,
+      "xi_basis": 3
+    },
+    {
+      "abs_covariance_residual": 0.4395604395604424,
+      "gauge_leg": "a",
+      "midpoint_error": 0.0,
+      "p": [
+        0.2,
+        -0.05,
+        -0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.2,
+        0.05,
+        0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "route_error": 0.0,
+      "xi_basis": 0
+    },
+    {
+      "abs_covariance_residual": 0.1098901098901106,
+      "gauge_leg": "a",
+      "midpoint_error": 0.0,
+      "p": [
+        0.2,
+        -0.05,
+        -0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.2,
+        0.05,
+        0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "route_error": 0.0,
+      "xi_basis": 1
+    },
+    {
+      "abs_covariance_residual": 0.1098901098901106,
+      "gauge_leg": "a",
+      "midpoint_error": 0.0,
+      "p": [
+        0.2,
+        -0.05,
+        -0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.2,
+        0.05,
+        0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "route_error": 0.0,
+      "xi_basis": 2
+    },
+    {
+      "abs_covariance_residual": 0.0,
+      "gauge_leg": "a",
+      "midpoint_error": 0.0,
+      "p": [
+        0.2,
+        -0.05,
+        -0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.2,
+        0.05,
+        0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "route_error": 0.0,
+      "xi_basis": 3
+    },
+    {
+      "abs_covariance_residual": 0.7407407407407341,
+      "gauge_leg": "b",
+      "midpoint_error": 0.0,
+      "p": [
+        0.3,
+        0.05,
+        0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.3,
+        -0.05,
+        -0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "route_error": 0.0,
+      "xi_basis": 0
+    },
+    {
+      "abs_covariance_residual": 0.1234567901234587,
+      "gauge_leg": "b",
+      "midpoint_error": 0.0,
+      "p": [
+        0.3,
+        0.05,
+        0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.3,
+        -0.05,
+        -0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "route_error": 0.0,
+      "xi_basis": 1
+    },
+    {
+      "abs_covariance_residual": 0.1234567901234587,
+      "gauge_leg": "b",
+      "midpoint_error": 0.0,
+      "p": [
+        0.3,
+        0.05,
+        0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.3,
+        -0.05,
+        -0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "route_error": 0.0,
+      "xi_basis": 2
+    },
+    {
+      "abs_covariance_residual": 0.0,
+      "gauge_leg": "b",
+      "midpoint_error": 0.0,
+      "p": [
+        0.3,
+        0.05,
+        0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.3,
+        -0.05,
+        -0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "route_error": 0.0,
+      "xi_basis": 3
+    }
+  ],
+  "iter594_crosscheck": [
+    {
+      "fd_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "iter594_target": 0.01164100265947051,
+      "last_imag_abs": 1.164020029364747e-13,
+      "last_match_abs": 5.767843750358048e-08,
+      "last_step_abs": 3.6359804085644753e-09,
+      "matrix_cubic_values_imag": [
+        1.0549312868996695e-16,
+        -2.9244647654982803e-14,
+        1.164020029364747e-13
+      ],
+      "matrix_cubic_values_real": [
+        0.011641056889277744,
+        0.011641056701927608,
+        0.011641060337908014
+      ],
+      "p0": [
+        0.43,
+        -0.27,
+        0.39,
+        0.21
+      ],
+      "scope": "NON_WARD_IMPLEMENTATION_CROSSCHECK_ONLY"
+    },
+    {
+      "fd_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "iter594_target": 0.08048850177634126,
+      "last_imag_abs": 2.7765815207746967e-12,
+      "last_match_abs": 4.4987911188010266e-08,
+      "last_step_abs": 1.0491607792213105e-08,
+      "matrix_cubic_values_imag": [
+        -2.8998591735772727e-13,
+        6.798945085036021e-13,
+        2.7765815207746967e-12
+      ],
+      "matrix_cubic_values_real": [
+        0.08048844653968378,
+        0.08048844629682249,
+        0.08048845678843007
+      ],
+      "p0": [
+        0.61,
+        0.19,
+        -0.31,
+        0.47
+      ],
+      "scope": "NON_WARD_IMPLEMENTATION_CROSSCHECK_ONLY"
+    }
+  ],
+  "iter597_negative_numbers": "PRESERVED_NONAUTHORITATIVE_OFF_CONTRACT_DIAGNOSTIC",
+  "iteration": 599,
+  "model_readiness_percent": 24,
+  "next_gate_if_fail": "preserve corrected negative Ward result as scientific FAIL; diagnose failed gauge/spectator/endpoint component without weakening Iter596, changing thresholds, or deleting source families",
+  "next_gate_if_pass": "raw-consume this artifact; only after raw-valid PASS freeze/apply full-observable source-to-Iter582/native-linked map before fixed comparator quotient",
+  "observed": {
+    "max_full_ward_abs": 0.13675071724815208,
+    "max_full_ward_last_step": 0.006078581018494812
+  },
+  "parent_authorities": [
+    "Iter594 13-family assembly",
+    "Iter596 prospectively frozen nonlinear Ward recursion",
+    "Iter598 fail-closed route mismatch audit"
+  ],
+  "route_contract": "for each gauge singleton g: p=-q_g/2, pprime=+q_g/2; no arbitrary PROBES in anchor or Ward rows",
+  "scientific_gate_pass": false,
+  "scope": "FULL_SAME_PARENT_CUBIC_GREEN_FUNCTION_WARD__EXACT_PER_GAUGE_SYMMETRIC_ROUTE__NO_COMPARATOR_SUBTRACTION",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "source_to_iter582_map": "NOT_PERFORMED",
+  "thresholds_inherited_unchanged_from_iter597_pre_result": {
+    "anchor_abs": 2e-11,
+    "assembly_match_abs": 2e-05,
+    "fd_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "grid_n": 16,
+    "lattice_radius": 3,
+    "ward_abs": 2e-06,
+    "ward_last_step": 2e-05
+  },
+  "ward_rows": [
+    {
+      "fd_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "gauge_leg": "s",
+      "last_abs": 0.13675071724815208,
+      "last_step_abs": 0.006078581018494812,
+      "p": [
+        -0.5,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "pprime": [
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "spectators": [
+        "a",
+        "b"
+      ],
+      "ward_values_imag": [
+        3.6094394227515467,
+        5.7628438995324594e-05,
+        0.0035053120972311307
+      ],
+      "ward_values_real": [
+        1.694180890379873,
+        0.1417120428198935,
+        0.1367057842777146
+      ],
+      "xi_basis": 0
+    },
+    {
+      "fd_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "gauge_leg": "s",
+      "last_abs": 0.0035599485158516048,
+      "last_step_abs": 0.0035510995410235765,
+      "p": [
+        -0.5,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "pprime": [
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "spectators": [
+        "a",
+        "b"
+      ],
+      "ward_values_imag": [
+        -1.7446578633318763,
+        -3.03698026541996e-05,
+        -0.00194977510275624
+      ],
+      "ward_values_real": [
+        -0.7374860628673648,
+        -9.1483318354635e-06,
+        0.002978524883929281
+      ],
+      "xi_basis": 1
+    },
+    {
+      "fd_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "gauge_leg": "s",
+      "last_abs": 0.0035599485212443388,
+      "last_step_abs": 0.0035510995463886924,
+      "p": [
+        -0.5,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "pprime": [
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "spectators": [
+        "a",
+        "b"
+      ],
+      "ward_values_imag": [
+        -1.7446578633355945,
+        -3.0369802661997784e-05,
+        -0.001949775107227466
+      ],
+      "ward_values_real": [
+        -0.7374860628719657,
+        -9.148331826351264e-06,
+        0.0029785248874477912
+      ],
+      "xi_basis": 2
+    },
+    {
+      "fd_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "gauge_leg": "s",
+      "last_abs": 2.5406450559613046e-14,
+      "last_step_abs": 2.3498227553155175e-14,
+      "p": [
+        -0.5,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "pprime": [
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "spectators": [
+        "a",
+        "b"
+      ],
+      "ward_values_imag": [
+        -6.914753669359454e-14,
+        2.0464273212639477e-16,
+        4.638913893720106e-15
+      ],
+      "ward_values_real": [
+        2.771128643217561e-14,
+        -1.903308802423519e-15,
+        -2.4979355634697877e-14
+      ],
+      "xi_basis": 3
+    },
+    {
+      "fd_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "gauge_leg": "a",
+      "last_abs": 0.00030368066108112134,
+      "last_step_abs": 3.1251759202214825e-12,
+      "p": [
+        0.2,
+        -0.05,
+        -0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.2,
+        0.05,
+        0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "spectators": [
+        "s",
+        "b"
+      ],
+      "ward_values_imag": [
+        1.7939316981043516e-13,
+        2.554049600660425e-12,
+        5.59201489511476e-12
+      ],
+      "ward_values_real": [
+        -0.0003036806568528702,
+        -0.00030368066034798324,
+        -0.0003036806610811213
+      ],
+      "xi_basis": 0
+    },
+    {
+      "fd_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "gauge_leg": "a",
+      "last_abs": 7.592016644584454e-05,
+      "last_step_abs": 1.528673049620312e-12,
+      "p": [
+        0.2,
+        -0.05,
+        -0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.2,
+        0.05,
+        0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "spectators": [
+        "s",
+        "b"
+      ],
+      "ward_values_imag": [
+        -6.2545818219159834e-15,
+        6.362375767403445e-13,
+        1.4326831900879052e-12
+      ],
+      "ward_values_real": [
+        -7.592016433878488e-05,
+        -7.592016514103968e-05,
+        -7.592016644584453e-05
+      ],
+      "xi_basis": 1
+    },
+    {
+      "fd_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "gauge_leg": "a",
+      "last_abs": 7.592016677041062e-05,
+      "last_step_abs": 1.848352655456736e-12,
+      "p": [
+        0.2,
+        -0.05,
+        -0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.2,
+        0.05,
+        0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "spectators": [
+        "s",
+        "b"
+      ],
+      "ward_values_imag": [
+        1.2165833872123553e-14,
+        4.876549834006716e-13,
+        1.3698418155773996e-12
+      ],
+      "ward_values_real": [
+        -7.592016428856748e-05,
+        -7.592016514617112e-05,
+        -7.592016677041061e-05
+      ],
+      "xi_basis": 2
+    },
+    {
+      "fd_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "gauge_leg": "a",
+      "last_abs": 5.815014414817587e-16,
+      "last_step_abs": 8.286651275807441e-16,
+      "p": [
+        0.2,
+        -0.05,
+        -0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.2,
+        0.05,
+        0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "spectators": [
+        "s",
+        "b"
+      ],
+      "ward_values_imag": [
+        1.572933501511433e-17,
+        -2.9395055125427735e-17,
+        4.4599139012013895e-17
+      ],
+      "ward_values_real": [
+        -1.1349488802302972e-16,
+        -2.455663059614371e-16,
+        5.797886194508739e-16
+      ],
+      "xi_basis": 3
+    },
+    {
+      "fd_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "gauge_leg": "b",
+      "last_abs": 0.015101160247128289,
+      "last_step_abs": 2.621682758960001e-12,
+      "p": [
+        0.3,
+        0.05,
+        0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.3,
+        -0.05,
+        -0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "spectators": [
+        "s",
+        "a"
+      ],
+      "ward_values_imag": [
+        -6.971382182995326e-14,
+        1.8964413376228444e-13,
+        -1.4095689404666247e-12
+      ],
+      "ward_values_real": [
+        0.015101160245095877,
+        0.015101160245050853,
+        0.015101160247128289
+      ],
+      "xi_basis": 0
+    },
+    {
+      "fd_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "gauge_leg": "b",
+      "last_abs": 0.0025168600412046054,
+      "last_step_abs": 3.996486879062888e-13,
+      "p": [
+        0.3,
+        0.05,
+        0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.3,
+        -0.05,
+        -0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "spectators": [
+        "s",
+        "a"
+      ],
+      "ward_values_imag": [
+        6.57378090441483e-15,
+        -1.306018384197596e-15,
+        1.3985187220723466e-13
+      ],
+      "ward_values_real": [
+        -0.0025168600408021977,
+        -0.0025168600408307156,
+        -0.0025168600412046054
+      ],
+      "xi_basis": 1
+    },
+    {
+      "fd_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "gauge_leg": "b",
+      "last_abs": 0.002516860040816263,
+      "last_step_abs": 7.837655033336805e-14,
+      "p": [
+        0.3,
+        0.05,
+        0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.3,
+        -0.05,
+        -0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "spectators": [
+        "s",
+        "a"
+      ],
+      "ward_values_imag": [
+        6.574388633872667e-15,
+        -3.1959986762785302e-15,
+        7.172338096317624e-14
+      ],
+      "ward_values_real": [
+        -0.0025168600408300543,
+        -0.0025168600407932417,
+        -0.002516860040816263
+      ],
+      "xi_basis": 2
+    },
+    {
+      "fd_steps": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "gauge_leg": "b",
+      "last_abs": 1.0159544969844416e-15,
+      "last_step_abs": 8.692304561760094e-16,
+      "p": [
+        0.3,
+        0.05,
+        0.05,
+        -0.0
+      ],
+      "pprime": [
+        -0.3,
+        -0.05,
+        -0.05,
+        0.0
+      ],
+      "route": "p=-q_g/2,pprime=+q_g/2",
+      "spectators": [
+        "s",
+        "a"
+      ],
+      "ward_values_imag": [
+        -3.700294796716146e-17,
+        -5.541977728613824e-17,
+        5.683720583345905e-19
+      ],
+      "ward_values_real": [
+        7.98634412616299e-17,
+        1.4852888697776806e-16,
+        1.015954337997586e-15
+      ],
+      "xi_basis": 3
+    }
+  ]
+}
