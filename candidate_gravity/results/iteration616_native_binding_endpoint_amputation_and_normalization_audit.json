@@ -1,0 +1,71 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "candidate_residual": false,
+  "classification": "BLOCKED_ITER616_ENDPOINT_AMPUTATION_AND_Q2_BINDING_CLOSED__ONE_COMMON_NATIVE_NORMALIZATION_SCALAR_UNRESOLVED__NON_RESIDUAL",
+  "closed_subgates": {
+    "external_endpoint_amputation": "CLOSED_EXACTLY__K0_OUT_d3G_K0_IN",
+    "q2_bucket_correspondence": "CLOSED_BY_ITER588__SAME_MODE_IDENTITY_AND_ETA_SIGN_FLIP",
+    "scalar_pole_distribution_and_native_s_pullback": "CLOSED_BY_ITER608_613_614_615",
+    "source_internal_relative_normalization": "CLOSED_BY_ITER589_SAME_ACTION_K1_K2_AND_ITER594_13_FAMILY_IDENTITY"
+  },
+  "comparator_quotient": "BLOCKED_UNTIL_N_NATIVE_IS_FIXED_PROSPECTIVELY",
+  "date": "2026-09-08",
+  "endpoint_amputation": {
+    "definition": "S_amp^(3)=K0_out*(d_abc G)*K0_in",
+    "identity": "S_amp^(3)=-Kabc+sum_6(Ki G Kjk)-sum_6(Ki G Kj G Kk)",
+    "preserves_K3_local_contact": true,
+    "preserves_all_K1cubed_chains": true,
+    "preserves_internal_scalar_propagators": true,
+    "probe_regression": [
+      {
+        "K0_external": 0.5741999999999999,
+        "K0sq_times_unamputated_full": 0.003838104232082425,
+        "absolute_difference_from_stored_rounding": 1.3010426069826053e-18,
+        "p0": [0.43, -0.27, 0.39, 0.21],
+        "termwise_amputated_full": 0.0038381042320824265
+      },
+      {
+        "K0_external": 0.4709999999999999,
+        "K0sq_times_unamputated_full": 0.017855649722565315,
+        "absolute_difference_from_stored_rounding": 3.469446951953614e-18,
+        "p0": [0.61, 0.19, -0.31, 0.47],
+        "termwise_amputated_full": 0.01785564972256531
+      }
+    ],
+    "zero_fill": false
+  },
+  "failures": [],
+  "forbidden_rescues": [
+    "no fit of N_native to the six Iter615 source coefficients",
+    "no separate N per root",
+    "no separate N per q2 bucket",
+    "no q2 regrouping or summation",
+    "no deletion of K1^3 or K3",
+    "no Source/Born subtraction yet",
+    "no comparator quotient yet"
+  ],
+  "iteration": 616,
+  "model_readiness_percent": 24,
+  "next_gate": "prospectively fix N_native from an independent lower-order/common-field normalization identity (same physical metric perturbation and retarded/effective-action convention), without using any Iter615 projected Candidate value; then rerun the full native Y/T_cut binding with the six roots and all 13 source families retained",
+  "normalization_status": "BLOCKED_ONE_COMMON_CROSS_SECTOR_PHASE_NORMALIZATION_SCALAR",
+  "q2_bucket_map": {
+    "a": {
+      "iter582_connection_q2_minus_plus_plus_plus": -0.14,
+      "source_q2_plus_minus_minus_minus": 0.14
+    },
+    "b": {
+      "iter582_connection_q2_minus_plus_plus_plus": -0.34,
+      "source_q2_plus_minus_minus_minus": 0.34
+    },
+    "s": {
+      "iter582_connection_q2_minus_plus_plus_plus": -1.0,
+      "source_q2_plus_minus_minus_minus": 1.0
+    }
+  },
+  "readiness_change": "0 percentage points; mapping ambiguity is reduced to one scalar but no robust comparator-subtracted residual exists",
+  "remaining_binding_dimension": 1,
+  "remaining_binding_parameter": "N_native (one common nonzero source-response <-> Iter582 phase/normalization scalar)",
+  "scientific_gate_pass": false,
+  "source_born_subtraction": "NOT_PERFORMED"
+}
