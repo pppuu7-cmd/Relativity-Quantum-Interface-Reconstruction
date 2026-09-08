@@ -11,6 +11,7 @@ on:
 permissions:
   contents: read
 
+# Operational rerun after restoring byte-identical Iter589 raw authority in main.
 jobs:
   cubic-completeness:
     runs-on: ubuntu-latest
