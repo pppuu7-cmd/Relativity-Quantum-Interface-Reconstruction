@@ -1,0 +1,65 @@
+{
+  "iteration": 568,
+  "date": "2026-09-08",
+  "scope": "Iteration-424 QUARTER central4 coordinate-wise iid variance leverage",
+  "classification": "PASS_ITER424_QUARTER_COORDINATE_VARIANCE_LEVERAGE_MAP_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING",
+  "status": "PASS",
+  "epistemic_label": "derived exact algebraic result",
+  "coefficient_matrix": "C=w tensor w, w=[1,-8,8,-1]",
+  "normalization": "1/(144*h^2)",
+  "frobenius_norm_squared_C": 16900,
+  "iid_equal_variance_model": "if coordinate errors are independent with common variance sigma^2, coordinate variance leverage is C_ij^2/16900",
+  "leverage_classes": {
+    "central_four_abs_u_eq_1_abs_v_eq_1": {
+      "count": 4,
+      "each": "1024/4225",
+      "each_percent": 24.236686390532544,
+      "total": "4096/4225",
+      "total_percent": 96.94674556213018
+    },
+    "edge_eight_exactly_one_abs_coordinate_eq_2": {
+      "count": 8,
+      "each": "16/4225",
+      "each_percent": 0.378698224852071,
+      "total": "128/4225",
+      "total_percent": 3.029585798816568
+    },
+    "corner_four_abs_u_eq_2_abs_v_eq_2": {
+      "count": 4,
+      "each": "1/16900",
+      "each_percent": 0.005917159763313609,
+      "total": "1/4225",
+      "total_percent": 0.023668639053254437
+    }
+  },
+  "rank11_rank12_pair": {
+    "coordinates_scaled_by_h": [[2,-1],[2,1]],
+    "class": "edge",
+    "each_leverage": "16/4225",
+    "pair_leverage": "32/4225",
+    "pair_percent": 0.757396449704142
+  },
+  "heteroskedastic_extension": "for independent unequal coordinate variances sigma_ij^2, exact total variance is sum(C_ij^2*sigma_ij^2)/(144^2*h^4); equal-variance leverage percentages must not be reused without checking the variance model",
+  "scientific_interpretation": [
+    "under iid equal-variance numerical noise, the four central coordinates dominate the assembled mixed-derivative variance",
+    "large raw values at low-leverage edge/corner coordinates are not by themselves evidence of large numerical influence on D_uv",
+    "this is a numerical-conditioning statement only, not model-level identifiability, comparator degeneracy, novelty, or consistency evidence"
+  ],
+  "guardrails": [
+    "diagnostic-only and non-promoting",
+    "does not authorize precision reduction at edge/corner coordinates",
+    "does not authorize rank skipping, support reduction, u-v substitution or zero fill",
+    "does not change Iteration-424 thresholds, h, mass nodes, precision, or frozen order",
+    "does not create ANSATZ-003",
+    "does not authorize Fisher/resources"
+  ],
+  "model_readiness_percent": 24,
+  "readiness_change_percentage_points": 0,
+  "active_heavy_authority_at_freeze": {
+    "rank": 11,
+    "run_id": 34168897005,
+    "job_id": 101885271903,
+    "coordinate": [2.5e-6,-1.25e-6],
+    "state": "in_progress"
+  }
+}
