@@ -1,0 +1,32 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "MSSC_convention": {
+    "mass": 0.7,
+    "same_physical_timelike_q2": [1.0, 0.34, 0.14],
+    "signature": "(+---)",
+    "two_scalar_threshold_4m2": 1.9599999999999997
+  },
+  "candidate_convention": {
+    "D_s_meaning": "s-channel discontinuity, not a soft derivative",
+    "physical_timelike_s": [1.0, 0.34, 0.14],
+    "q2_buckets": [-1.0, -0.34, -0.14],
+    "signature": "(-+++)"
+  },
+  "classification": "PASS_SIGNATURE_INVARIANT_AUDIT__OFFSHELL_SOURCE_REQUIRED__NON_RESIDUAL",
+  "conclusion": "none of the three Iter582 timelike s values has an on-shell equal-mass MSSC elastic realization; all are also below the two-real-scalar pair threshold, so the matched MSSC observable must be off-shell/source-completed and must retain inverse-propagator Ward/contact terms",
+  "date": "2026-09-08",
+  "explicit_nonclaims": ["not a Candidate-Gravity failure", "not a comparator residual", "does not delete Iter585 internal algebra", "does not authorize Source/Born subtraction"],
+  "failures": [],
+  "iteration": 586,
+  "iteration585_interpretation": "its Breit elastic K1/Ward calculation is internally correct but is NOT a matched bridge to Iter582 because it treated the same negative q2 numbers as spacelike in the opposite-signature source convention",
+  "model_readiness_percent": 24,
+  "next_gate_if_pass": "freeze an off-shell MSSC scalar-source routing for s={1,0.34,0.14} under +---, verify the Iter218 off-shell K1 Ward identity including inverse-propagator terms, then use Iter584 K2 contact to form the complete two-graviton source Ward object before comparator subtraction",
+  "rows": [
+    {"MSSC_scalar_mass":0.7,"candidate_q_squared_minus_plus_plus_plus":-1.0,"candidate_s_equals_minus_q2":1.0,"on_shell_equal_mass_elastic_difference_can_realize_timelike_q":false,"on_shell_scalar_pair_channel_open":false,"same_physical_source_q_squared_plus_minus_minus_minus":1.0,"source_channel_status":"OFFSHELL_SOURCE_COMPLETION_REQUIRED","two_scalar_threshold_4m2":1.9599999999999997},
+    {"MSSC_scalar_mass":0.7,"candidate_q_squared_minus_plus_plus_plus":-0.34,"candidate_s_equals_minus_q2":0.34,"on_shell_equal_mass_elastic_difference_can_realize_timelike_q":false,"on_shell_scalar_pair_channel_open":false,"same_physical_source_q_squared_plus_minus_minus_minus":0.34,"source_channel_status":"OFFSHELL_SOURCE_COMPLETION_REQUIRED","two_scalar_threshold_4m2":1.9599999999999997},
+    {"MSSC_scalar_mass":0.7,"candidate_q_squared_minus_plus_plus_plus":-0.14,"candidate_s_equals_minus_q2":0.14,"on_shell_equal_mass_elastic_difference_can_realize_timelike_q":false,"on_shell_scalar_pair_channel_open":false,"same_physical_source_q_squared_plus_minus_minus_minus":0.14,"source_channel_status":"OFFSHELL_SOURCE_COMPLETION_REQUIRED","two_scalar_threshold_4m2":1.9599999999999997}
+  ],
+  "scientific_gate_pass": true,
+  "source_born_subtraction": "NOT_PERFORMED"
+}
