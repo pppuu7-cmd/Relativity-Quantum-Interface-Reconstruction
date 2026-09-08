@@ -1,0 +1,58 @@
+{
+  "MODEL_READINESS": "24%",
+  "classification": "PASS_ITER424_FULL_SPECTRUM_NUMERICAL_CLAUSES__TENSOR11_STILL_BLOCKED__NON_PROMOTING",
+  "iteration424_clause_status": {
+    "abs_Ds_80digit_minus_Ds_120digit": "PASS",
+    "all_values_finite": "PASS",
+    "direct_original_integrand_crosscheck": "PASS_INHERITED_ITERATION573_FROM_RAW_VALID_ITERATION421__MAX_2.0658997659274425e-9",
+    "physical_mass_step_discrepancy": "PASS",
+    "tensor_degree_1_1_fit_residual": "OPERATIONAL_BLOCKED_NO_FROZEN_MAPPING__DO_NOT_SUBSTITUTE_RAW_F_BILINEAR_DIAGNOSTIC"
+  },
+  "observed": {
+    "abs_Ds_80_minus_Ds_120_max": "0.0",
+    "all_spectrum_and_Ds_values_finite": true,
+    "base_half_scaled_discrepancy_max": "0.000000032742529149944448602083113541993952821940183639526",
+    "half_quarter_scaled_discrepancy_max": "0.00000031976434906568406910110091700971679529175162315369",
+    "max_spectral_F_abs_mp80_minus_mp120_diagnostic": "2.1563196982036551806722533640814212717504353892834e-80",
+    "physical_mass_step_discrepancy_max": "0.00000031976434906568406910110091700971679529175162315369"
+  },
+  "physical_Ds": {
+    "BASE": {
+      "120": [
+        "0.000334698712595841410717689701215249442611820995807647705078125",
+        "0.0"
+      ],
+      "80": [
+        "0.000334698712595841410717689701215249442611820995807647705078125",
+        "0.0"
+      ]
+    },
+    "HALF": {
+      "120": [
+        "0.0003346659700666914662690876181017074486589990556240081787109375",
+        "0.0"
+      ],
+      "80": [
+        "0.0003346659700666914662690876181017074486589990556240081787109375",
+        "0.0"
+      ]
+    },
+    "QUARTER": {
+      "120": [
+        "0.0003343462057176257821999865171846977318637073040008544921875",
+        "0.0"
+      ],
+      "80": [
+        "0.0003343462057176257821999865171846977318637073040008544921875",
+        "0.0"
+      ]
+    }
+  },
+  "promotes_physical_coordinate": false,
+  "schema": "rqir_post573_spectral_clause_summary_v1",
+  "scientific_gate_pass": true,
+  "source_artifact_id": 10038557027,
+  "source_job_id": 101916751917,
+  "source_result_sha256": "d899623f64d98f12d19f32545e44fbcebe92ccc645f25a05b37f67a8b150a773",
+  "source_run_id": 34179921282
+}

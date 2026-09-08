@@ -1,0 +1,183 @@
+{
+  "guardrails": [
+    "PRE_RESULT_CONTRACTS_ONLY",
+    "NO_POSTHOC_TENSOR11_MAPPING",
+    "NO_RAW_F_BILINEAR_SUBSTITUTION",
+    "UNSUPPORTED_IS_BLOCKED",
+    "NO_ZERO_FILL",
+    "NO_THRESHOLD_WEAKENING"
+  ],
+  "history_relevant_commits": [
+    {
+      "commit": "389fd0cc53ea6514002646c058eb0761aae5407d",
+      "subject": "Add Iteration 424 high-precision fallback contract",
+      "unix_time": 1788527560
+    },
+    {
+      "commit": "e89a592f99064e9e5dd97d735c4a6cb99d726053",
+      "subject": "Reconcile current QG front through Iteration 423",
+      "unix_time": 1788527251
+    },
+    {
+      "commit": "4908b7c9c59b5b0a4cbd804da29e831a0d9fb4ad",
+      "subject": "Record Iteration 423 research log",
+      "unix_time": 1788527216
+    },
+    {
+      "commit": "a75838504c2c37af20f4531f5ddb33f72ecf4f53",
+      "subject": "Add Iteration 423 source-of-truth reconciliation",
+      "unix_time": 1788527204
+    },
+    {
+      "commit": "1d350194967c21827ede9a4069b45cef05b9323f",
+      "subject": "Add Iteration 422 recovery delta",
+      "unix_time": 1788524730
+    },
+    {
+      "commit": "a8de0e0ff29d9f0f6d85c27c3e94ae49dbfa4d67",
+      "subject": "Freeze Iteration 421 full-fit residual addendum",
+      "unix_time": 1788524256
+    },
+    {
+      "commit": "9c605d2ca15c5ca28c4aa133f784bd26d3e9001a",
+      "subject": "Record Iteration 421 collision recovery and active physical gate",
+      "unix_time": 1788524207
+    },
+    {
+      "commit": "4fd7ad9d24855ae40e6ddc82babf4829571d2020",
+      "subject": "Repair Iteration 421 executable identity anchor",
+      "unix_time": 1788524166
+    },
+    {
+      "commit": "893f1ba2ddd4e7a362b7acf407a6dbce9a2a7fbe",
+      "subject": "Add Iteration 421 collision-safe symmetric-cross recovery",
+      "unix_time": 1788524016
+    },
+    {
+      "commit": "bc17b5c249ec8b5cf6aa0d44dff58428255d542d",
+      "subject": "Add Iteration 420 symmetric-cross channel2 derivative gate",
+      "unix_time": 1788523852
+    }
+  ],
+  "history_scope": "all candidate_gravity ancestry through Iteration424 contract commit",
+  "interpretation_policy": "inventory only; absence/presence must be mapped without post-result gate redefinition",
+  "iteration424_contract_add_commit": "389fd0cc53ea6514002646c058eb0761aae5407d",
+  "schema": "rqir_post573_tensor11_precontract_inventory_v1",
+  "search_regex": "tensor11|tensor[_-]?degree|fit_residuals_scaled|symmetric[_ -]?cross|C\\(r,s\\)|4rs",
+  "snapshot_hits": [
+    {
+      "matches": [
+        {
+          "line": 14,
+          "text": "symmetric cross quotient"
+        },
+        {
+          "line": 157,
+          "text": " 'classification':('PASS_TRU1SQ_CHANNEL2_SYMMETRIC_CROSS_DERIVATIVE__CONVERGED' if status=='CONVERGED' else 'PASS_TRU1SQ_CHANNEL2_SYMMETRIC_CROSS_DERIVATIVE__BLOCKED_CONVERGENCE' if execution_valid else 'FAIL_TRU1SQ_CHANNEL2_SYMMETRIC_CROSS_DERIVATIVE_EXECUTION'),"
+        },
+        {
+          "line": 160,
+          "text": " 'intercepts':{'tensor22':[float(intercept22.real),float(intercept22.imag)],'tensor11':[float(intercept11.real),float(intercept11.imag)],'inner_tensor11':[float(intercept11_inner.real),float(intercept11_inner.imag)],'diagonal_quadratic':[float(intercept_diag.real),float(intercept_diag.imag)]},"
+        },
+        {
+          "line": 161,
+          "text": " 'stability_scaled':stability,'max_stability_scaled':float(max_stability),'fit_residuals_scaled':{'tensor22':res22,'tensor11':res11,'inner_tensor11':res11_inner,'diagonal_quadratic':diag_res},'max_required_fit_residual_scaled':float(max_fit_res),"
+        },
+        {
+          "line": 162,
+          "text": " 'design_condition_numbers':{'tensor22':cond22,'tensor11':cond11,'inner_tensor11':cond11_inner,'diagonal':cond_diag},'max_design_condition_number':float(max_cond),'synthetic_oracle':syn,"
+        }
+      ],
+      "path": "candidate_gravity/code/iteration420_tru1sq_channel2_symmetric_cross_derivative.py"
+    },
+    {
+      "matches": [
+        {
+          "line": 4,
+          "text": "Collision-safe recovery of the prospectively frozen symmetric-cross physical"
+        },
+        {
+          "line": 10,
+          "text": "iteration420_tru1sq_channel2_symmetric_cross_derivative.py.  Only the executable"
+        },
+        {
+          "line": 18,
+          "text": "parent=root/'iteration420_tru1sq_channel2_symmetric_cross_derivative.py'"
+        }
+      ],
+      "path": "candidate_gravity/code/iteration421_tru1sq_channel2_symmetric_cross_collision_recovery.py"
+    },
+    {
+      "matches": [
+        {
+          "line": 44,
+          "text": "        \"tensor_degree_1_1_fit_residual_max\": TENSOR_FIT_THRESHOLD,"
+        }
+      ],
+      "path": "candidate_gravity/code/iteration424_channel2_high_precision_fallback_contract.py"
+    },
+    {
+      "matches": [
+        {
+          "line": 8,
+          "text": "    \"json_path\": \"fit_residuals_scaled.tensor11\","
+        }
+      ],
+      "path": "candidate_gravity/contracts/iteration421_symmetric_cross_raw_consumption_addendum.json"
+    },
+    {
+      "matches": [
+        {
+          "line": 78,
+          "text": "Repaired symmetric-cross physical gate run `33871920373`, job `101019660127` is `in_progress` and is the useful active physical computation. It is not duplicated."
+        },
+        {
+          "line": 80,
+          "text": "Raw consumption is fail-closed. Besides the unchanged physical threshold `2e-5` and existing direct/original-integrand requirements, the prospectively frozen addendum requires the full tensor-degree-(1,1) fit residual `<=2e-5`."
+        }
+      ],
+      "path": "candidate_gravity/recovery/CURRENT_QG_FRONT.md"
+    },
+    {
+      "matches": [
+        {
+          "line": 11,
+          "text": "Canonical Iteration 420 is the independently frozen cancellation-interpretation contract tied to Iteration 419. A race-created physical symmetric-cross evaluator was also committed under the number 420 immediately before automation canonically assigned 420 to that methodological contract. The race-created physical-420 run `33871498255` is therefore superseded for authority/numbering and cannot promote a physical result regardless of workflow conclusion."
+        },
+        {
+          "line": 15,
+          "text": "Iteration 421 preserves the race-created symmetric-cross scientific arithmetic exactly and changes only the iteration identifier. Its frozen physical method is:"
+        }
+      ],
+      "path": "candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_421.md"
+    },
+    {
+      "matches": [
+        {
+          "line": 42,
+          "text": "- Iteration 421 repaired symmetric-cross physical gate: run `33871920373`, job `101019660127`, active at last check. Its raw-consumption addendum additionally requires the full tensor-degree-(1,1) fit residual `<=2e-5`."
+        }
+      ],
+      "path": "candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_422.md"
+    },
+    {
+      "matches": [
+        {
+          "line": 37,
+          "text": "Iteration 421 repaired symmetric-cross physical gate remains `in_progress`: run `33871920373`, job `101019660127`. It is the only useful active physical gate and is not duplicated. Raw consumption remains fail-closed and additionally requires the frozen full tensor-degree-(1,1) fit residual `<=2e-5`."
+        }
+      ],
+      "path": "candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_423.md"
+    },
+    {
+      "matches": [
+        {
+          "line": 13,
+          "text": "The sole unresolved physical double-double channel remains index 2 / class 3 / `q^2=-1`. Iteration 421 repaired symmetric-cross physical gate run `33871920373`, job `101019660127`, is still `in_progress` and is not duplicated. Its raw result must be consumed fail-closed and must satisfy the frozen full tensor-degree-(1,1) fit residual `<=2e-5` in addition to the physical convergence criteria."
+        }
+      ],
+      "path": "candidate_gravity/research_log/2026-09-04_iteration_423.md"
+    }
+  ],
+  "snapshot_scope": "candidate_gravity tree exactly at prospective Iteration424 contract addition"
+}
