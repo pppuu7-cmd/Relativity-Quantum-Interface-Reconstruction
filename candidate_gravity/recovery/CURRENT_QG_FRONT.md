@@ -9,75 +9,58 @@
 Repository commits, validated raw Actions artifacts, recovery deltas, research logs, and this file are source of truth. Workflow colour alone is never scientific authority. Race-created newer repo state wins and authoritative iteration IDs are never reused.
 
 ## Current authority
-- Latest authoritative research iteration: **580**.
-- Historical physical/operator authority before higher-precision closure: **Iteration 411**.
-- Historical raw-valid blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, index2/class3/`q^2=-1`; retained as provenance, but its unresolved set is now resolved by the frozen higher-precision gate.
-- Post-Iteration580 unresolved physical set: **`[]`**.
-- Iter424 frozen high-precision decision: **5/5 PASS**.
-- Iter580 classification: `PASS_ITER421_TENSOR11_MP80_MP120__ITER424_5_OF_5_PASS__PHYSICAL_INDEX2_NUMERICAL_BLOCKER_CLOSED`.
-- Physical index2 numerical promotion is authorized by the frozen decision tree. Iter580 does **not** invent a new promoted-value estimator; downstream exact15 must use the pre-existing frozen promotion/value/normalization rule.
+- Latest authoritative research iteration: **581**.
+- Historical Iter421 `BLOCKED_CONVERGENCE` remains provenance only; the frozen Iter424 higher-precision decision is **5/5 PASS** and post-Iter580 unresolved physical set is `[]`.
+- Physical index2 is promotable under the pre-existing Iter407 parent value rule `D_s=-d_base`; Iter424/580 introduced no new estimator.
+- Frozen Iteration412 exact15 `Tr U1^2` assembly is now **raw-valid PASS**.
+- Iter581 classification: `PASS_RAW_CONSUMED_FROZEN_ITER412_TRU1SQ_EXACT15`.
+- Complete `Tr U1^2` operator coordinate is therefore closed q2-by-q2; effective-action weight has not yet been folded.
 
-## Provenance chain
-- BASE/HALF support CLOSED 523; raw-valid assembly 527.
-- QUARTER support CLOSED 12/12; full 16/16 grid raw-closed through 571.
-- complete QUARTER pre-spectral sample-layer assembly 572 — PASS scoped/non-promoting.
-- frozen-clause authority mapping 573 — PASS scoped/non-promoting.
-- full frozen Iter407 spectrum reconstruction 574 — PASS for mass-step, MP80↔MP120 and finiteness clauses.
-- exact original-Iter421 tensor11 support manifest 575 — frozen before missing-node results.
-- design/orbit identifiability 576 — PASS scoped/non-promoting.
-- leverage/single-orbit robustness 577 — PASS scoped/non-promoting.
-- PRESS leverage robustness 578 — PASS scoped/non-promoting.
-- Iter579 all-36 fail-closed raw consumption — **36/36 PASS**.
-- Iter580 unchanged original tensor11 at MP80/MP120 — **PASS**, closing Iter424 5/5.
+## Iter580 physical promotion authority
+Frozen original Iter421 tensor11 residual at both MP80 and MP120: `1.341057348963658e-8 <= 2e-5`. Together with the four other frozen Iter424 clauses this gives **5/5 PASS**. Parent-dynamics BASE authority is
 
-## Iter579 raw authority
-Source matrix:
-- run `34180521559`, head `519ceb6dc8efc3e5a9aebe86f5e6523152a4b284`, 36 frozen ranks.
+`D_s(index2,q^2=-1)=0.000334698712595841410717689701215249442611820995807647705078125`.
 
-Canonical independent raw-consumer:
-- run `34193625381`, head `4ab0443fd0a35d23749516a0cc44c56305a472b2`;
-- artifact `10043065789`, `rqir-iter579-tensor11-all36-raw-consumption`;
-- artifact digest `sha256:79273045e5821cc4cdea4127d610a32070cfc83e68d2011e076a264b6d654445`;
-- `all_36_raw_valid_pass=true`;
-- max MP80↔MP120 scaled discrepancy `5.4701756121638164e-80 <= 1e-30`;
-- max radial Richardson scaled error `2.5748066807357275e-15 <= 5e-4`.
+This is the value used by Iter581 because the pre-existing Iter407 rule stores the channel coordinate from the BASE-h derivative; no post-hoc QUARTER or extrapolated estimator is selected.
 
-The earlier raw-consumer run `34193494429` failed operationally only because of artifact-layout discovery. Minimal repair changed no scientific criterion; that operational failure is not a scientific FAIL.
+## Iter581 exact15 raw authority
+Workflow:
+- code commit `c59646d82b43630b27c2ac0ab4d590c3424122e7`;
+- workflow/head `5e2ebad51937b0961367ac1711b8ae803c10312b`;
+- run `34198120530`, job `101970364894`;
+- artifact `10044688726`, `rqir-iter581-frozen-iter412-exact15`;
+- artifact digest `sha256:0826bfa6cd3cfda786517723723e72d706539bf28878cc1b3bcb376b9755613d`.
 
-## Iter580 unchanged tensor11 authority
-Frozen observable:
+Independent artifact download/audit:
+- `iteration581_result.json` SHA-256 `77970170c5a10e42bb9b5f846204d9a34348436b674da7e1437977a02bdb47e4`;
+- `iteration581_authority_audit.json` SHA-256 `fb5c15d09030d1ffc038555bb738bcd1a29123f6cbebf546089fc9250c3e17b3`;
+- audit `failures=[]`, `raw_result_integrity_valid=true`;
+- exact 15 unique double-double indices present;
+- q2 counts exactly 5/5/5;
+- no zero fill, blocked diagnostic value or symmetry substitution.
 
-`C(r,s)=[F(r,s)-F(r,-s)-F(-r,s)+F(-r,-s)]/(4rs)`
+Raw-valid exact15 double-double sums:
+- `q^2=-1`: `0.0020270703668429234`;
+- `q^2=-0.34`: `0.01395828640784907`;
+- `q^2=-0.14`: `0.0000979561714592546`.
 
-with `R=1e-5`, multipliers `[1,0.75,0.5,0.25]`, `x=(r/R)^2`, `y=(s/R)^2`, basis `[1,x,y,xy]`, exact Iter407 index2 spectrum pipeline, and the original Iter420 least-squares residual definition
+Complete `D_s Tr U1^2` before the `-i/4` weight:
+- `q^2=-1`: `-0.00023980872107801175`;
+- `q^2=-0.34`: `0.013398451327883773`;
+- `q^2=-0.14`: `0.000053572393143931426`.
 
-`max|pred-y| / max(1,max|y|,max|pred|)`.
+## Existing Iter406 complete Tr U2 authority
+Before the `+i/2` effective-action weight:
+- `q^2=-1`: `+0.0005345424186332474`;
+- `q^2=-0.34`: `-0.000734101259784574`;
+- `q^2=-0.14`: `-0.001572666890130343`.
 
-Complete support: **64/64 raw-valid MP nodes** = 28 pre-existing + 36 Iter575/579.
-
-Observed:
-- MP80 tensor11 residual `1.341057348963658e-8`;
-- MP120 tensor11 residual `1.341057348963658e-8`;
-- frozen threshold `2e-5`;
-- threshold margin factor `1491.3605309613044`.
-
-Parent-dynamics validation reproduces Iter574 BASE/HALF values:
-- BASE `D_s = 0.000334698712595841410717689701215...`;
-- HALF `D_s = 0.000334665970066691466269087618102...`.
-
-## Frozen Iteration424 five-clause decision
-1. physical mass-step discrepancy `<=2e-5` — **PASS**, observed `3.1976434906568407e-7`.
-2. direct original-integrand crosscheck `<=2e-6` — **PASS**, inherited exact parent representation from raw-valid Iter421, observed `2.0658997659274425e-9`.
-3. tensor degree-(1,1) fit residual `<=2e-5` — **PASS**, observed `1.341057348963658e-8` at MP80 and MP120.
-4. identical-node `|D_s(80)-D_s(120)|<=2e-6` — **PASS**, observed `0.0` at retained precision.
-5. finite outputs — **PASS**.
-
-Therefore Iter424 is **5/5 PASS**. This closes the historical numerical convergence blocker for physical index2 and authorizes the frozen exact15 gate.
+Distinct q2 buckets are never summed.
 
 ## Strict scientific classification
-This is a **numerical physical-gate PASS**, not Candidate-Gravity consistency PASS, not exact comparator identity, not regime-specific model non-identifiability, not near-degeneracy, and not a novelty certificate.
+Iter581 closes an operator-coordinate prerequisite. It is **not** Candidate-Gravity consistency PASS, not an exact comparator identity, not model non-identifiability/near-degeneracy and not a novelty certificate.
 
-Concrete upstream algebraic `Source/Ward/contact+K2` target and robust comparator-subtracted residual remain absent. Therefore fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remains **operationally BLOCKED**. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
+Concrete upstream algebraic `Source/Ward/contact+K2` and robust comparator-subtracted residual remain absent. Therefore the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remains operationally BLOCKED. `ANSATZ-003` remains uncreated. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
 
 ## Stable readiness rubric
 - comparator foundation `24/25`
@@ -89,10 +72,14 @@ Concrete upstream algebraic `Source/Ward/contact+K2` target and robust comparato
 
 **MODEL_READINESS: 24%**
 
-Readiness change from Iter579: **0 percentage points**. The important index2 numerical blocker closed, but no additional complete model-level rubric sector closed.
+Readiness change from Iter580: **0 percentage points**. Exact15 closes a major operator prerequisite but no complete stable rubric sector.
 
 ## Exact next gate
-Execute the **already-frozen Iteration412 exact15 assembly** using the newly unblocked/promotable physical index2 under the pre-existing promotion/value/normalization rule. Do not select a new estimator post hoc. After exact15, continue through full `Tr U1^2` → `D_s Gamma_{e=2}` → concrete `Source/Ward/contact+K2` → fixed comparator quotient → robust nonzero residual.
+Combine raw-valid Iter581 complete `Tr U1^2` with authoritative Iter406 complete `Tr U2` **q2-by-q2** using the already frozen effective-action combination
+
+`D_s Gamma_{e=2, connection} = +(i/2) D_s Tr U2 - (i/4) D_s Tr U1^2`.
+
+Raw-validate that assembly. Only then continue to the full `D_s Gamma_{e=2}` bookkeeping and concrete `Source/Ward/contact+K2`; Source/Born subtraction is allowed only in a matched observable after pole/cut-origin classification.
 
 ## Retained guardrails
-Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. No post-hoc tensor11 redefinition, no u↔v substitution, no smaller h, altered radii/nodes/precision, threshold weakening or ansatz tuning. One declared parent dynamics/routing/numerator/sign/normalization convention remains mandatory. `ANSATZ-003` remains forbidden until a concrete robust comparator-subtracted residual survives the fixed comparator quotient. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
+Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. No post-hoc estimator, tensor11 redefinition, u↔v substitution, smaller h, changed radii/nodes/precision, threshold weakening or ansatz tuning. Distinct q2 buckets remain separate. `ANSATZ-003` remains forbidden until a concrete robust comparator-subtracted residual survives the fixed comparator quotient. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
