@@ -12,63 +12,23 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Latest validated physical/operator authority: **Iteration 411**.
 - Latest raw-valid physical blocker: **Iteration 421 — `BLOCKED_CONVERGENCE`**, unresolved double-double index 2 / class 3 / `q^2=-1`; unresolved physical set `[2]`.
 - BASE/HALF local mass support: **Iteration 523**, complete.
+- Independent BASE/HALF MP80/MP120 assembly: **Iteration 527**, raw-valid PASS, non-promoting.
 - QUARTER manifest: **Iteration 529**, 16-grid with 4 exact HALF-overlap corners and 12 required new coordinates.
 - Frozen 12-rank QUARTER successor order: **Iteration 532**.
-- QUARTER ranks 1–10 raw authority: **Iterations 534, 538, 542, 545, 548, 550, 551, 556, 562, 565**, all raw-valid PASS and non-promoting.
-- Exact routing/assembly diagnostics through **Iteration 568** remain retained and non-promoting.
-- Latest authoritative research iteration: **Iteration 568**.
+- QUARTER ranks 1–11 raw authority: **Iterations 534, 538, 542, 545, 548, 550, 551, 556, 562, 565, 569**, all raw-valid PASS and non-promoting.
+- Exact routing/assembly/conditioning diagnostics through **Iteration 568** remain retained and non-promoting.
+- Latest authoritative research iteration: **Iteration 569**.
 
-## Latest raw support authority — Iteration 565
-Rank10 coordinate `(+1.25e-6,+2.5e-6)` raw-consumed from run `34165534613`, job `101875710349`, artifact `10034846108`, digest `sha256:707e4fffa3dddcac5eb5d7dc127afcb0afd8c13c85b99c230ea57abacdb3b97d`, head `358bcfc29494fbd615397ba72314e1e10d9e7417`.
+## Latest raw support authority — Iteration 569
+Rank11 coordinate `(+2.5e-6,-1.25e-6)` raw-consumed from run `34168897005`, job `101885271903`, artifact `10036490535`, digest `sha256:cb69bdb008038ea2720827027a2d038a825c090e6aad823c6dec2d4c9e36a93c`, head `7e4aeed3dc9ff1b376705d37c01156a35acdc293`.
 
-Raw checks: `80/80` finite; MP80↔MP120 max `2.23136782466149871841320727933e-80 <= 1e-30`; radial Richardson max `2.57085585035539296413124070504e-15 <= 5e-4`. `result.json` SHA-256 `7cc11967da91eb299bd7a5c4e2c96525ff60c34ec0a4fc0f80e839c36601dc84`; `authority_audit.json` SHA-256 `10f2d13a6165e98a3aaca5cbf85be4d6293ce537c0f4271e9e13e3bbd5c8d645`.
+Raw checks: `80/80` finite; MP80↔MP120 max `4.17918718237096998292577327888e-80 <= 1e-30`; radial Richardson max `2.56237524624410641222260979464e-15 <= 5e-4`. `result.json` SHA-256 `ac1b09b30e32fc17b0b45d300787bd89e2869df50edd41a85b256b578f0355ca`; `authority_audit.json` SHA-256 `7df980d2ada730d7f36b02691e0aafa9a9fa77f1cfb6abdd84e6e8cd63edbca7`.
 
-Machine-readable authority: `candidate_gravity/results/iteration565_iter424_quarter_rank10_raw_consumption.json`.
-
-## Iteration 566 exact assembly geometry
-The frozen 4x4 QUARTER central4 mixed-derivative coefficient matrix is `C=w⊗w`, `w=[1,-8,+8,-1]`, normalization `1/(144 h^2)`.
-
-Exact pre-registered properties:
-- `rank(C)=1`;
-- every row sum and column sum vanishes;
-- any additive grid nuisance `F_ij=a_i+b_j+c` is annihilated exactly;
-- the additive row/column nuisance subspace has dimension `7` in the 16-coordinate grid;
-- common coordinate-wise bounded error gain is `9/(4 h^2)`;
-- independent equal-variance standard-deviation gain is `65/(72 h^2)` and variance gain `4225/(5184 h^4)`.
-
-Classification: `PASS_ITER424_QUARTER_FULL_STENCIL_GEOMETRY_ERROR_NORM_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`.
-
-## Iteration 567 exact stencil null-space/projector geometry
-The full 16-coordinate grid-data space decomposes relative to the single mixed-stencil functional `D_uv=<C,F>/(144 h^2)` as one visible direction plus a 15-dimensional kernel.
-
-Exact properties:
-- `rank(C)=1`, hence kernel dimension `15`;
-- additive row/column nuisance subspace dimension `7` lies inside that kernel;
-- therefore `8` further invisible directions remain modulo additive nuisance, and these can be non-additive;
-- `||C||_F^2=16900`, `||C||_F=130`;
-- orthogonal projector onto the sole stencil-visible mode is `P_C(F)=<C,F>/16900 * C`;
-- `||P_C(F)||_F=(72/65) h^2 |D_uv|`.
-
-Classification: `PASS_ITER424_QUARTER_STENCIL_NULLSPACE_PROJECTOR_CONTRACT_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`. This is stencil-functional regime-specific non-identifiability only, not Candidate-Gravity model-level non-identifiability, near-degeneracy, comparator identity, consistency PASS/FAIL, or novelty evidence.
-
-## Iteration 568 exact coordinate variance leverage map
-For independent equal-variance coordinate errors, the exact variance leverage of coordinate `(i,j)` is `C_ij^2/16900`.
-
-Exact class shares:
-- four central coordinates `(±h,±h)`: each `1024/4225`, combined `4096/4225 ≈ 96.946746%`;
-- eight edge coordinates with exactly one coordinate at `±2h`: each `16/4225`, combined `128/4225 ≈ 3.029586%`;
-- four corners `(±2h,±2h)`: each `1/16900`, combined `1/4225 ≈ 0.023669%`.
-
-The frozen final rank11/rank12 pair is edge-class and carries `32/4225 ≈ 0.757396%` of assembled variance under the iid equal-variance model. For unequal independent coordinate variances the exact generalization is `Var(D_uv)=sum_ij C_ij^2 sigma_ij^2/(144^2 h^4)`; iid leverage percentages may not be reused blindly.
-
-Classification: `PASS_ITER424_QUARTER_COORDINATE_VARIANCE_LEVERAGE_MAP_EXACT__DIAGNOSTIC_ONLY_NON_PROMOTING`. This is conditioning only and does not authorize altered precision, support reduction, rank skipping or any model-level inference.
-
-Machine-readable authority: `candidate_gravity/results/iteration568_iter424_quarter_coordinate_variance_leverage_exact.json`.
-Reproducible audit: `candidate_gravity/code/iteration568_iter424_quarter_coordinate_variance_leverage_exact.py`.
+Machine-readable authority: `candidate_gravity/results/iteration569_iter424_quarter_rank11_raw_consumption.json`.
 
 ## QUARTER progress
-Raw-closed new coordinates: **10/12 = 83.333333%**.  
-Including four exact HALF-overlap corners: **14/16 = 87.5%** authoritative coordinate coverage.  
+Raw-closed new coordinates: **11/12 = 91.666667%**.  
+Including four exact HALF-overlap corners: **15/16 = 93.75%** authoritative coordinate coverage.  
 These local support PASSes do not promote physical index2.
 
 ### Frozen order
@@ -82,21 +42,35 @@ These local support PASSes do not promote physical index2.
 8. `(+1.25e-6,-1.25e-6)` — PASS Iteration 556
 9. `(+1.25e-6,+1.25e-6)` — PASS Iteration 562
 10. `(+1.25e-6,+2.5e-6)` — PASS Iteration 565
-11. `(+2.5e-6,-1.25e-6)` — **active**
-12. `(+2.5e-6,+1.25e-6)`
+11. `(+2.5e-6,-1.25e-6)` — PASS Iteration 569
+12. `(+2.5e-6,+1.25e-6)` — **active**
 
-PASS advances only to the next listed rank. Scientific FAIL/BLOCKED stops advancement. Operational failure permits only minimal technical repair and rerun of the same rank. No result-dependent reordering/skipping, u↔v substitution, zero-fill, threshold weakening, mass-node changes or precision changes.
+PASS advances only according to the prospectively frozen order. Scientific FAIL/BLOCKED stops advancement. Operational failure permits only minimal technical repair and rerun of the same rank. No result-dependent reordering/skipping, u↔v substitution, zero-fill, threshold weakening, mass-node changes or precision changes.
 
-## Active heavy computation — rank11
+## Active heavy computation — rank12
 Exactly one successor is active:
-- coordinate `(+2.5e-6,-1.25e-6)`;
-- run `34168897005`;
-- job `101885271903`;
-- trigger/head `7e4aeed3dc9ff1b376705d37c01156a35acdc293`;
-- stage `candidate_gravity/code/post565_iter424_quarter_support_rank11_full_z_mp_stage.py`;
-- workflow `.github/workflows/rqir-post565-iter424-quarter-rank11-full-z-mp.yml`.
+- coordinate `(+2.5e-6,+1.25e-6)`;
+- run `34175330006`;
+- job `101903475600`;
+- trigger/head `adc1288da49c1363907c2336162d344030ec47ef`;
+- stage `candidate_gravity/code/post569_iter424_quarter_support_rank12_full_z_mp_stage.py`;
+- workflow `.github/workflows/rqir-post569-iter424-quarter-rank12-full-z-mp.yml`;
+- at first canonical check setup/checkout/Python were complete and frozen dependency installation was in progress; scientific stage/audit/upload pending.
 
-No duplicate rank11 run is authorized. Workflow success alone is not authority. Only fail-closed raw-valid PASS may authorize rank12 `(+2.5e-6,+1.25e-6)`.
+No duplicate rank12 run is authorized. Workflow success alone is not authority. Only fail-closed raw-valid PASS closes the 12/12 new QUARTER support and authorizes full QUARTER assembly under the already frozen exact controls.
+
+## Exact assembly/routing/conditioning controls retained
+- Iterations 552–555: exact u↔v non-equivalence; no support substitution.
+- Iteration 557: exchange-even projection identity for the complete matched central4 grid.
+- Iteration 558: central4 tensor moment/null/norm integrity.
+- Iteration 559: 10 exchange-orbit coefficient ledger.
+- Iteration 560: remaining-orbit tail/error contract.
+- Iteration 561: direct tensor, u→v, v→u and orbit-compressed assembly are coefficient-identical on the same complete raw-valid grid.
+- Iteration 563: post-rank10 two-point tail contract.
+- Iteration 564: final-pair common/differential mode decomposition; common mode is an exact stencil-null direction, but both ranks11/12 remain mandatory.
+- Iteration 566: full-stencil rank-1 geometry and exact row/column nuisance annihilation.
+- Iteration 567: 15-dimensional kernel of the single mixed-stencil functional; diagnostic regime-specific invisibility only, not model-level degeneracy.
+- Iteration 568: iid coordinate variance leverage map; central four carry `4096/4225 ≈ 96.946746%` under equal independent numerical variances, with heteroskedastic generalization retained.
 
 ## Frozen Iteration-424 physical acceptance
 After all 12 new QUARTER coordinates and QUARTER assembly are raw-closed, physical index2 requires all simultaneously:
@@ -121,8 +95,13 @@ Concrete upstream algebraic `Source/Ward/contact+K2` target and robust comparato
 
 **MODEL_READINESS: 24%**
 
+Readiness change: **0 percentage points**. Iteration569 closes one final-pair local support coordinate but no additional stable model-level rubric sector.
+
+## Exact downstream chain
+BASE/HALF support **CLOSED 523** → provenance **CLOSED 526** → BASE/HALF assembly **CLOSED 527** → QUARTER manifest **529** → ranks1–11 **RAW PASS through 569** → rank12 **RUNNING** → complete QUARTER raw consumption/assembly under Iterations557–568 controls → unchanged Iteration-424 five-clause physical reevaluation → exact15 → full `Tr U1^2` → `D_s Gamma_{e=2}` → Source/Ward/contact+K2 → fixed comparator quotient → robust nonzero residual.
+
 ## Retained guardrails
 Unsupported is `BLOCKED`, never zero-filled. Operational failure is not scientific FAIL. Negative/scoped results are preserved. No blind heavy full-C5. No u↔v support substitution. Exact coordinate overlap may share local precision certificates but never derivative weights. BASE-minus-HALF is derived and not an independent Fisher constraint. Denominator equivalence is not numerator equivalence. Denominator-only auxiliary-mass differentiation is forbidden. Repeated poles are never ordinary simple cuts. Distinct `q^2` variables are never summed. Same `i0` is mandatory. Source/Born subtraction only in the matched observable after pole/cut-origin classification. `ANSATZ-003` remains uncreated until a concrete robust comparator-subtracted residual exists. Fisher/resources remain forbidden until a nonzero algebraic residual exists.
 
 ## Exact next gate
-Inspect terminal state and raw artifact of rank11 run `34168897005`, job `101885271903`. Only raw-valid PASS authorizes frozen rank12 `(+2.5e-6,+1.25e-6)`.
+Inspect terminal state and raw artifact of rank12 run `34175330006`, job `101903475600`. Only raw-valid PASS authorizes complete QUARTER assembly and unchanged Iteration-424 five-clause physical reevaluation.
