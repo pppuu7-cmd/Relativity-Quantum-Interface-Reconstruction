@@ -9,7 +9,7 @@
 Repository commits, validated raw Actions artifacts, recovery deltas, research logs, and this file are source of truth. Workflow colour alone is never scientific authority. Race-created newer repo state wins and authoritative iteration IDs are never reused.
 
 ## Current authority
-- Latest authoritative research iteration: **596**.
+- Latest authoritative research iteration: **598**.
 - Frozen Iter424 is **5/5 PASS**; post-Iter580 unresolved physical set is `[]`.
 - Iter581 exact15 `Tr U1^2` is raw-valid PASS.
 - Iter582 q2-resolved `D_s Gamma_{e=2}` assembly is PASS, non-residual.
@@ -24,36 +24,35 @@ Repository commits, validated raw Actions artifacts, recovery deltas, research l
 - Iter593 closes family-by-family source-to-`T_cut` projection negatively: individual K1^3 pole assignments are not themselves frozen observables under the Iter183 split-invariant protocol.
 - Iter594 explicitly assembles the complete routed same-action cubic source object containing K3 + all six K1/K2 placements + all six ordered K1^3 chains; it is finite/nonzero/permutation-symmetric on inherited probes but explicitly NON_WARD.
 - Iter595 finds the full cubic nonlinear diffeomorphism Ward target underdetermined until spectator-graviton and scalar/source endpoint transformations are prospectively frozen.
-- **Iter596 prospectively freezes and raw-validates that missing full nonlinear Ward contract and its one-leg reduction. This is a contract/reduction PASS only, not a nonlinear Ward PASS/FAIL.**
+- Iter596 prospectively freezes and raw-validates the full nonlinear Ward contract and one-leg reduction.
+- Iter597 produced converged negative numbers, but independent review found that its implemented anchor and full Ward rows used arbitrary `PROBES`, not the exact per-gauge symmetric scalar route frozen in Iter596; therefore those numbers are preserved as diagnostics but are **not** frozen-contract Ward authority.
+- **Iter598 raw-validates that contract mismatch fail-closed.**
 
-## Iter596 raw authority
-Contract: `candidate_gravity/contracts/ITERATION596_NONLINEAR_WARD_CONTRACT.md`.
-
+## Iter598 raw authority
 Classification:
-`PASS_PROSPECTIVE_FULL_NONLINEAR_WARD_CONTRACT_FREEZE_AND_ONE_LEG_REDUCTION__NON_RESIDUAL`.
+`BLOCKED_ITER597_IMPLEMENTATION_DOES_NOT_INSTANTIATE_FROZEN_ITER596_ROUTE__NEGATIVE_NUMBERS_PRESERVED_NONAUTHORITATIVE`.
 
 Canonical provenance:
-- contract commit `ff3777613e85a23fc2f13c474cffc21bf155cae2`;
-- audit-code commit `741d67d3992689e9e63c83c43936ebc084711d7f`;
-- run/head commit `ad06a639b7d8e31fee1111e1c84c8b2018b416d0`;
-- run `34230071486`, job `102073684316`;
-- artifact `10057381903`, digest `sha256:cb066bda0040be91eb63ffe41e5e53ed336231d97a2ef3f69eb28847d8806ecd`;
-- raw result SHA-256 `314d23356df4d1ce1213b6783d2e5420ef496ea41932bb9462f005b972907868`;
-- raw authority-audit SHA-256 `829ac0d5e07bbc8da613877b329a81b0a3fae166b7c44d915c7d40916051f674`.
+- audit code commit `5cd2e62fd68dca1d5b8910adf7beae6e601c60ea`;
+- workflow/trigger head `f65c23ab46f5b4571a6fc9ce5cb39d958fd0109a`;
+- run `34236177851`, job `102094351910`;
+- artifact `10059929340`, digest `sha256:abf81c0cc102980501618516d0dfe4e7117958af6063c53af9acffc67107fade`;
+- raw result SHA-256 `0ba9032dc076fb7b5b420e99cdc293df839365eb97610e395c7c7cc7d7a0a291`;
+- raw authority-audit SHA-256 `e868c8fb917c2be3b37faced7c005569d9cad2c7c733221703fec835ce2b62f7`.
 
-Raw audit has `failures=[]`. Exact Iter368/588 fixture momentum closure is `0.0`; max candidate-q2 drift is `5.551115123125783e-17`. Spectator-free reduction reproduces the Iter587 coefficients for `s={1,0.34,0.14}` within `1.1102230246251565e-16`.
+The mismatch is specific and does not weaken Iter596: the mandatory reduction and Ward evaluation must use `p=-q_g/2`, `p'=+q_g/2` for each gauge singleton. Unsupported/off-contract output is BLOCKED, never promoted by zero-fill or by workflow colour.
 
 ## Frozen nonlinear Ward convention
 Use `f(x)=int exp(-ik.x) f(k)` and stripped generator `Delta_xi=i delta_xi`.
 
-For the later full cubic source Ward gate, all five classes are mandatory:
+For the full cubic source Ward gate, all five classes are mandatory:
 1. gauge-leg linear contraction;
 2. spectator-u Lie derivative;
 3. spectator-v Lie derivative;
 4. left scalar/source endpoint transformation;
 5. right scalar/source endpoint transformation.
 
-The exact Iter588 three-mode fixture is inherited rather than retyped. No new momentum split, gauge normalization, result-dependent polarization or family deletion is permitted. The spectator-free limit must reproduce Iter587 exactly.
+The exact Iter588 three-mode fixture is inherited rather than retyped. No new momentum split, gauge normalization, result-dependent polarization or family deletion is permitted. The spectator-free limit must reproduce Iter587 exactly. The scalar route attached to gauge leg `g` is exactly `p=-q_g/2`, `p'=+q_g/2`.
 
 ## Iter582 operator coordinate
 `D_s Gamma_e2(q^2) = +(i/2)D_s Tr U2 -(i/4)D_s Tr U1^2`, q2 buckets kept distinct:
@@ -73,18 +72,18 @@ No Source/Born subtraction has been performed.
 
 **MODEL_READINESS: 24%**
 
-Readiness change from Iter595: **0 percentage points**. Iter596 closes a protocol prerequisite but does not yet establish full nonlinear Ward consistency or a robust comparator-subtracted residual.
+Readiness change from Iter596: **0 percentage points**. Iter598 closes an implementation/authority ambiguity but does not establish nonlinear Ward consistency or a comparator-subtracted residual.
 
 ## Exact next gate
-Evaluate the complete same-parent Iter594 cubic Green-function response for all three cyclic gauge-leg choices under the frozen Iter596 recursion. The numerical object must retain K3 + all six K1/K2 placements + all six ordered K1^3 chains and must include both spectator Lie-derivative terms and both scalar/source endpoint terms.
+Prospectively repair the Iter597 evaluator and rerun the full same-parent nonlinear Ward gate using the exact per-gauge symmetric scalar route `p=-q_g/2`, `p'=+q_g/2` for both the mandatory anchor and full Ward rows. Retain K3 + all six K1/K2 placements + all six ordered K1^3 chains, both spectator Lie terms, both endpoint terms, and the pre-existing frozen numerical thresholds. The Iter594 cubic family cross-check may remain on its inherited probes only as an implementation cross-check; it must not replace the frozen Ward route.
 
-A valid implementation should cross-check that its cubic Green-function coefficient reproduces the already-authoritative Iter594 assembly on the inherited probes before any Ward classification. The Ward result must then be raw-consumed fail-closed. Negative results are retained.
+The corrected run must be raw-consumed fail-closed. Negative corrected results are retained as scientific results.
 
 Only after full source-level Ward closure may source-to-Iter582/native-linked mapping be attempted, followed by the fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient.
 
 Until that gate closes:
 - do not perform Source/Born subtraction;
-- do not map an incomplete or un-Ward-closed source response into Iter582/comparator quotient;
+- do not map an incomplete or off-contract source response into Iter582/comparator quotient;
 - do not create `ANSATZ-003`;
 - do not run Fisher/resources.
 
