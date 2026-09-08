@@ -28,7 +28,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add manuscripts/paper_I/main.tex
-          git commit -m 'paper I v0.5: promote clean Toy009/Toy010 certificate'
+          git commit -m 'paper I v0.5: sync permanent Toy certificate'
           git push origin HEAD:paper-I-v03-evidence-boundary
 
-# trigger: marker-safe editor
+# trigger: permanent-certificate sync
