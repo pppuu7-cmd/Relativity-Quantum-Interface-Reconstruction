@@ -1,0 +1,46 @@
+name: RQIR Iter635 closed-loop external-channel family authority
+
+on:
+  push:
+    paths:
+      - '.github/workflows/rqir-iteration635-closed-loop-external-channel-family.yml'
+      - 'candidate_gravity/code/iteration635_closed_loop_external_channel_family_gate.py'
+      - 'candidate_gravity/results/iteration635_closed_loop_external_channel_family_gate.json'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Recompute external-channel authority gate
+        run: python candidate_gravity/code/iteration635_closed_loop_external_channel_family_gate.py > iteration635_runtime.json
+      - name: Fail-closed exact audit
+        run: |
+          python - <<'PY'
+          import json
+          R=json.load(open('iteration635_runtime.json')); C=json.load(open('candidate_gravity/results/iteration635_closed_loop_external_channel_family_gate.json'))
+          failures=[]
+          if R!=C: failures.append('runtime != committed result')
+          F=R.get('facts',{})
+          if F.get('iter205_native_s_exists') is not True: failures.append('native s lost')
+          if F.get('iter205_identifies_specific_closed_loop_external_leg_or_pair') is not False: failures.append('unsupported channel identity')
+          if F.get('fixed_point_alone_defines_Ds_trajectory') is not False: failures.append('single fixture misused')
+          if F.get('closed_loop_momentum_is_independent_integration_variable') is not True: failures.append('loop momentum role mismatch')
+          for k,v in [('candidate_values_used',False),('zero_fill',False),('source_born_subtraction','NOT_PERFORMED'),('native_projection','NOT_PERFORMED')]:
+            if R.get(k)!=v: failures.append(f'{k} mismatch')
+          A={'iteration':635,'classification':'PASS_RAW_AUTHORITY_AUDIT_ITER635_EXTERNAL_CHANNEL_FAMILY_MISSING' if not failures else 'FAIL_RAW_AUTHORITY_AUDIT_ITER635_EXTERNAL_CHANNEL_FAMILY_MISSING','failures':failures,'candidate_values_used':False,'zero_fill':False}
+          json.dump(A,open('iteration635_authority_audit.json','w'),indent=2)
+          if failures: raise SystemExit('\n'.join(failures))
+          PY
+      - name: Upload raw artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration635-closed-loop-external-channel-family
+          path: |
+            iteration635_runtime.json
+            iteration635_authority_audit.json
+            candidate_gravity/results/iteration635_closed_loop_external_channel_family_gate.json
