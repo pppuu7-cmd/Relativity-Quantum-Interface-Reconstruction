@@ -1,0 +1,12 @@
+{
+  "iteration": 586,
+  "workflow_run_id": 34203781256,
+  "workflow_head_sha": "70b7961ad5d7bcb3a94ed63eaf2e310921a10678",
+  "artifact_id": 10046877433,
+  "artifact_digest": "sha256:73ff7295e9396953f290edc32d6d38c310f75e0c060c90e93a40ce38a2a7da6a",
+  "raw_result_sha256": "8e83fec148e8d0acac3578a77023890db35c070ccff38af0f44591a10cd3c8d1",
+  "raw_authority_audit_classification": "PASS_RAW_AUTHORITY_AUDIT_ITER586_SOURCE_SIGNATURE",
+  "raw_failures": [],
+  "scientific_classification": "PASS_SIGNATURE_INVARIANT_AUDIT__OFFSHELL_SOURCE_REQUIRED__NON_RESIDUAL",
+  "note": "Scientific authority is the downloaded Actions artifact bound by raw_result_sha256. The repository result.json mirror is semantic/provenance convenience and is not asserted byte-identical to the raw artifact."
+}
