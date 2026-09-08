@@ -24,16 +24,14 @@ jobs:
           python candidate_gravity/code/post523_independent_base_half_assembly.py --emit-artifact-manifest > "$root/basehalf_manifest.json"
           python candidate_gravity/code/post573_iter424_full_spectrum_gate.py --emit-quarter-manifest > "$root/quarter_manifest.json"
       - name: Download exact raw authority results by artifact ID
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
           python - <<'PY'
-          import io,json,os,pathlib,subprocess,tempfile,zipfile
-          root=pathlib.Path('candidate_gravity/artifacts/post573_iter424_full_spectrum_from_raw'); repo='pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction'; token=os.environ['GH_TOKEN']
+          import json,pathlib,subprocess,tempfile,zipfile
+          root=pathlib.Path('candidate_gravity/artifacts/post573_iter424_full_spectrum_from_raw'); repo='pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction'
           def get_result(aid):
               with tempfile.NamedTemporaryFile(suffix='.zip') as f:
                   url=f'https://api.github.com/repos/{repo}/actions/artifacts/{aid}/zip'
-                  subprocess.run(['curl','--fail','--silent','--show-error','--location','-H',f'Authorization: Bearer {token}','-H','Accept: application/vnd.github+json','-H','X-GitHub-Api-Version: 2022-11-28',url,'-o',f.name],check=True)
+                  subprocess.run(['curl','--fail','--silent','--show-error','--location','--retry','3','--retry-all-errors','-H','Accept: application/vnd.github+json','-H','X-GitHub-Api-Version: 2026-03-10',url,'-o',f.name],check=True)
                   with zipfile.ZipFile(f.name) as z:
                       names=[n for n in z.namelist() if pathlib.PurePosixPath(n).name=='result.json']
                       if len(names)!=1: raise SystemExit(('artifact_result_count_drift',aid,names))
