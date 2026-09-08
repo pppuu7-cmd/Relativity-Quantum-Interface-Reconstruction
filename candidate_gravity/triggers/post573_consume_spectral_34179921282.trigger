@@ -1,0 +1,1 @@
+Fail-closed raw consumption of completed frozen spectral run 34179921282 / job 101916751917 / artifact 10038557027. Green workflow alone is not authority. Persist result only after exact audit/result binding and frozen-clause schema checks.
