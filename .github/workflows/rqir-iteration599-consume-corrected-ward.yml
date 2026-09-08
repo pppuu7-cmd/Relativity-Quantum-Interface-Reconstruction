@@ -66,3 +66,4 @@ jobs:
           git commit -m 'RQIR iteration599: consume raw-valid corrected Ward scientific FAIL'
           git push
       # Creation needs one subsequent path-matching push to arm.
+      # Armed after Iter599 artifact metadata was fixed.
