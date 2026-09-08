@@ -1,0 +1,48 @@
+name: RQIR post573 consume spectral run34179921282
+on:
+  push:
+    paths:
+      - 'candidate_gravity/triggers/post573_consume_spectral_34179921282.trigger'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  consume:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download exact completed spectral artifact
+        uses: actions/download-artifact@v5
+        with:
+          artifact-ids: '10038557027'
+          github-token: ${{ github.token }}
+          repository: pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction
+          run-id: '34179921282'
+          path: raw
+      - name: Fail-closed raw inspection and persist run-specific authority candidate
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib,shutil
+          hits=list(pathlib.Path('raw').rglob('result.json')); audits=list(pathlib.Path('raw').rglob('authority_audit.json'))
+          if len(hits)!=1 or len(audits)!=1: raise SystemExit(('artifact_layout_drift',[str(x) for x in hits],[str(x) for x in audits]))
+          raw=hits[0].read_bytes(); o=json.loads(raw); a=json.loads(audits[0].read_text()); got=hashlib.sha256(raw).hexdigest()
+          if a.get('raw_result_integrity_valid') is not True or a.get('sha256')!=got: raise SystemExit(('audit_binding_failed',got,a))
+          if o.get('stage')!='POST573_ITER424_FULL_SPECTRUM_FROM_RAW_ARTIFACTS__UNNUMBERED_COLLISION_SAFE': raise SystemExit(('stage_drift',o.get('stage')))
+          allowed={'PASS_ITER424_FULL_SPECTRUM_NUMERICAL_CLAUSES__TENSOR11_STILL_BLOCKED__NON_PROMOTING','FAIL_ITER424_FULL_SPECTRUM_NUMERICAL_CLAUSE__NON_PROMOTING'}
+          if o.get('classification') not in allowed or o.get('promotes_physical_coordinate') is not False: raise SystemExit(('classification_drift',o.get('classification'),o.get('promotes_physical_coordinate')))
+          cs=o.get('iteration424_clause_status',{})
+          if not cs.get('direct_original_integrand_crosscheck','').startswith('PASS_INHERITED_ITERATION573') or not cs.get('tensor_degree_1_1_fit_residual','').startswith('OPERATIONAL_BLOCKED'): raise SystemExit(('clause_authority_drift',cs))
+          out=pathlib.Path('candidate_gravity/results/runtime_post573_iter424_full_spectrum_run_34179921282.json'); outa=pathlib.Path('candidate_gravity/results/runtime_post573_iter424_full_spectrum_run_34179921282_audit.json')
+          out.write_bytes(raw); outa.write_text(json.dumps({'source_run_id':34179921282,'source_job_id':101916751917,'source_artifact_id':10038557027,'source_artifact_digest':'sha256:330fc416a24935bbd1faf5f852420d179c0cd17a8bb2ba52dbae296bc00953e2','result_sha256':got,'embedded_authority_audit':a,'raw_consumption_valid':True},indent=2,sort_keys=True)+'\n')
+          print(json.dumps({'classification':o.get('classification'),'scientific_gate_pass':o.get('scientific_gate_pass'),'result_sha256':got,'observed':o.get('observed'),'iteration424_clause_status':cs},indent=2,sort_keys=True))
+          PY
+      - name: Commit raw-consumed runtime result
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add candidate_gravity/results/runtime_post573_iter424_full_spectrum_run_34179921282*.json
+          git commit -m 'RQIR post573: raw-consume spectral run 34179921282'
+          git pull --rebase origin main
+          git push origin HEAD:main
