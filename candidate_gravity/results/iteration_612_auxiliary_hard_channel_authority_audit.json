@@ -1,0 +1,38 @@
+{
+  "iteration": 612,
+  "date": "2026-09-08",
+  "classification": "BLOCKED_ITER612_TWO_AUXILIARY_HARD_CHANNEL_CONSTRAINTS_ABSENT_FROM_EXISTING_SAME_PARENT_AUTHORITY__KINEMATIC_COMPLETION_CONTRACT_REQUIRED__NON_RESIDUAL",
+  "parent_authority": [205, 217, 218, 221, 222, 594, 605, 608, 609, 610, 611],
+  "audit_question": "Do existing same-parent native/source-completed authorities already freeze two auxiliary invariants held fixed while Iter205 D_s varies native hard-channel s?",
+  "findings": {
+    "iteration205": "Defines only positive timelike s samples, D_s=Disc_s/(2*pi*i), D_s log_R(-s)=1, and structural linked T_cut; it does not define p0, u=p0^2, p0.q_i, or a source hard-channel trajectory.",
+    "iteration217": "Proves an on-shell cut does not uniquely determine the off-shell source-completed T_cut; importing on-shell kinematics as an off-shell completion is forbidden.",
+    "iteration218": "Fixes MSSC-001 covariant scalar dynamics and all h^n phi^2 contacts from one action, but does not select a one-parameter off-shell hard-channel trajectory.",
+    "iteration221_222": "Provide a physical on-shell connected scalar-Compton cut/Born factorization in MSSC-001, but this is a distinct observable identity and therefore its on-shell constraints cannot be silently promoted to the Iter594/605 off-shell three-mode source object.",
+    "iteration594_605": "Use the exact three-mode source fixture with generic routed p0 probes and all 13 source families; no native-s path through p0-space is frozen.",
+    "iteration611": "Shows three independent scalar data (u,a_s,a_a) require two auxiliary constraints in addition to s to define all pole denominators and Jacobians."
+  },
+  "authority_conclusion": "The two required auxiliary hard-channel constraints are not recoverable from existing authority without changing observable identity or choosing a post-hoc estimator. The next admissible step is a prospectively versioned kinematic-completion contract derived from MSSC-001 and the declared native linked observable before any scalar-pole projection result is evaluated.",
+  "forbidden_shortcuts": [
+    "identify s with p0^2",
+    "identify s with any q_i^2 or Iter582 q^2",
+    "import Iter221/222 on-shell Compton constraints into the Iter594/605 off-shell three-mode object without an identity-preserving map",
+    "import Iter588 isolated symmetric routing into the full source object",
+    "choose fixed-u, fixed-angle, fixed-dot-product, or any two auxiliary constraints after inspecting projected residues",
+    "zero-fill or delete scalar-pole families"
+  ],
+  "scientific_scope": {
+    "candidate_gravity_consistency_fail": false,
+    "candidate_gravity_consistency_pass": false,
+    "residual": false,
+    "novelty_certificate": false,
+    "operational_blocked": true,
+    "heavy_numerical_gate_authorized": false
+  },
+  "source_born_subtraction": "NOT_PERFORMED",
+  "zero_fill": false,
+  "model_readiness_percent": 24,
+  "readiness_change_pp": 0,
+  "anti_idle_status": "BLOCKED_PREREQUISITE_PROVEN; no independent scientifically admissible heavy numerical gate remains under current authority",
+  "next_gate": "Prospectively define and version an identity-preserving MSSC-001/native-linked kinematic-completion contract that specifies the one-parameter trajectory (u(s),a_s(s),a_a(s)) or two equivalent auxiliary invariants held fixed under D_s, before computing any pole support. Then derive every retained D_A(s), simple-root support and |partial_s D_A| and audit normalization/sign binding to native Y/T_cut."
+}
