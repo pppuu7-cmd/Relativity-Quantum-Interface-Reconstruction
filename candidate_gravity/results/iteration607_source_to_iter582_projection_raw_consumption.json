@@ -1,0 +1,28 @@
+{
+  "iteration": 607,
+  "date": "2026-09-08",
+  "classification": "BLOCKED_ITER607_EXPLICIT_DISTRIBUTIONAL_SOURCE_TO_NATIVE_LINKED_PROJECTOR_ABSENT",
+  "scientific_gate_pass": false,
+  "blocked_is_scientific_result": true,
+  "candidate_residual": false,
+  "model_readiness_percent": 24,
+  "canonical_run": 34250530465,
+  "canonical_job": 102143511681,
+  "head_sha": "6ff91b1d66bfd378f827560f673f89afbb28f6d7",
+  "artifact_id": 10065784397,
+  "artifact_digest": "sha256:4838b70faf3f5bf71b68c1c94b445d24e3d126f71a9100d2c81b06f000da971b",
+  "raw_result_sha256": "13af4b42933280ad9fd40e5480d2f114104ee2d132ee33c02125c78f9d0bcf87",
+  "raw_audit_sha256": "3f2d2f31566a0eeb3e204c761ba58e118f17c56d4703710af5da7091c2952473",
+  "raw_audit_classification": "PASS_RAW_AUDIT_ITER607_FAIL_CLOSED_PROJECTION_EVALUATOR",
+  "raw_audit_failures": [],
+  "missing_authority": [
+    "explicit scalar-pole distribution -> native Y/T_cut projector",
+    "kinematic pullback relating each internal MSSC scalar pole momentum to the native linked cut variable",
+    "normalization/sign prescription tying the distributional pole term to the already-frozen Iter582 coordinate without Born subtraction"
+  ],
+  "source_born_subtraction": "NOT_PERFORMED",
+  "zero_fill": false,
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "next_gate": "Iter608 prospective derivation of the scalar-pole distributional projector from frozen MSSC parent kinematics and native Y/T_cut definitions."
+}
