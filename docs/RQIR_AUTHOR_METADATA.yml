@@ -1,0 +1,22 @@
+updated: 2026-09-08
+
+authority:
+  source_repository: "pppuu7-cmd/Dark-Sector-Influence-Reconstruction"
+  source_ref: "paper/dsir-i-observable-response-geometry"
+  source_path: "papers/dsir1/AUTHOR_METADATA.yml"
+  inheritance_rule: "Use this RQIR metadata for all RQIR manuscripts unless explicitly superseded by the author."
+
+author:
+  name: "Aleksey Buyanov"
+  affiliation: "Independent Researcher"
+  location: "Moscow, Russia"
+  email: "pppuu7@gmail.com"
+  orcid: "0009-0001-2621-9305"
+
+publication_policy:
+  corresponding_author: "Aleksey Buyanov"
+  institutional_affiliation: "do_not_invent"
+  institutional_affiliation_note: "No institutional affiliation, including P.N. Lebedev Physical Institute, is to be shown unless the author explicitly changes this metadata."
+  funding_status: "UNSPECIFIED_DO_NOT_INFER"
+  conflict_of_interest_status: "UNSPECIFIED_DO_NOT_INFER"
+  changes_require: "explicit author instruction or a newer canonical metadata file"
