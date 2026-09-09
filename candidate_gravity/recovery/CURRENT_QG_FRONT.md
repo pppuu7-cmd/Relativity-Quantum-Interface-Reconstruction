@@ -53,18 +53,18 @@ Committed same-parent code closes the provenance blocker:
 
 Classification: `PASS_ITER638_UNIQUE_SAME_PARENT_EXACT_FIXTURE_ANCHOR_RECOVERED_FROM_COMMITTED_CODE__NON_RESIDUAL`.
 
-Earlier run `34293593003` is non-authoritative implementation noise: the evaluator passed but the audit used exact floating equality for `u0`. Canonical V2 changed only the audit comparison to absolute tolerance `2e-15`; no scientific contract or kinematics changed.
-
 ### Iter639 — frozen closed scalar singularity geometry
 
-Using only the already frozen Iter636 family with `t0=0.14`, `u0=0.34`, `m_phi=0.7`:
+Canonical independent raw-valid Action run `34293815174`, head `7c58ca664a18a52cf42d3e38ca19d24fc3cc00c4`, conclusion `success`; artifact `10082346913`, digest `sha256:75d55a449941181f5cf7d852cc97eed3b0de88771334849508e7458258a9a5e9`.
+
+Using only the frozen Iter636 family with `t0=0.14`, `u0=0.34`, `m_phi=0.7`:
 - K1/K2 equal-mass bubble normal threshold in the `s` channel is `s_thr=4 m_phi^2=1.96`;
 - exact fixture anchor `s0=1` is below threshold; fixed crossed invariants `t0=0.14`, `u0=0.34` are also below `1.96`;
-- for K1^3, the equal-mass triangle interior leading-Landau conditions reduce to `175 s^2-151 s+7=0`;
-- stationary candidates are `s=0.04915823221180988` with `(x,y,z)=(7.304595091414875,-10.739730936293288,4.435135844878413)` and `s=0.813698910645333` with `(x,y,z)=(1.7954049085850974,2.639730936293323,-3.4351358448784204)`;
-- neither solution has all Feynman parameters positive.
+- K1^3 equal-mass triangle Cayley/Landau determinant is proportional to `175 s^2-151 s+7`;
+- the two real determinant roots are `s≈0.04915823221180988` and `s≈0.813698910645333`;
+- normalized Feynman parameters are mixed-sign at both roots, hence `positive_alpha_leading_roots=[]`.
 
-Therefore there is no physical-sheet leading/anomalous triangle singularity from an interior positive-alpha Landau solution on this frozen real-`s` family. Boundary singularities reduce to bubble subchannels and remain retained. Classification: `PASS_ITER639_FROZEN_CLOSED_SCALAR_SINGULARITY_GEOMETRY__BUBBLE_S_THRESHOLD_1P96__TRIANGLE_LEADING_LANDAU_CANDIDATES_HAVE_NO_POSITIVE_FEYNMAN_SUPPORT__NON_RESIDUAL`.
+Therefore there is no positive-alpha physical leading/anomalous triangle Landau root on this frozen real-`s` family. Boundary singularities reduce to ordinary bubble subchannels and remain retained. Canonical classification: `PASS_ITER639_CLOSED_GAMMA3_SCALAR_GEOMETRY__BUBBLE_THRESHOLD_1P96__NO_POSITIVE_ALPHA_LEADING_TRIANGLE_LANDAU_ROOT__NON_RESIDUAL`.
 
 This is a support-geometry PASS plus a retained negative result for leading triangle anomalous support; it is not a Candidate residual or model-level consistency PASS/FAIL.
 
@@ -87,4 +87,4 @@ Readiness change through Iter639: **0 percentage points**. Singularity support g
 
 ## Exact next gate
 
-**Iteration640:** derive the actual closed K1/K2 `s`-channel discontinuity coefficient for `s>=1.96` from the same frozen parent dynamics, Iter632 Minkowski-vacuum `G_K`, and Iter627 combined SK contract, including numerator/tensor contraction and common conventions, before any native projection. K1^3 remains retained despite the absence of positive-alpha leading anomalous support on this family; K3 remains retained. Native `Y/T_cut` projection, Source/Born subtraction, comparator quotient, `ANSATZ-003`, Fisher/resources remain forbidden until their upstream gates are satisfied.
+**Iteration640:** classify the retarded closed-loop `s`-channel discontinuity support family-by-family under the frozen Iter627 combined SK measurement contract plus Iter632 Minkowski-vacuum scalar state: K3 remains without an ordinary finite hard-channel cut; K1/K2 and K1^3 ordinary `s`-channel support only for `s>=1.96`; no positive-alpha leading anomalous K1^3 root exists on the frozen `t0/u0` family. Then derive the matched native `D_s=Disc_s/(2*pi*i)` normalization/projector before Source/Born subtraction. Native `Y/T_cut` projection, comparator quotient, `ANSATZ-003`, Fisher/resources remain forbidden until their upstream gates are satisfied.
