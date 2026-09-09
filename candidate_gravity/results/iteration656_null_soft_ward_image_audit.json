@@ -1,0 +1,40 @@
+{
+  "MODEL_READINESS": "24%",
+  "authoritative_inputs": {
+    "iter175": "historical null k=(1,0,0,1) plus-TT polarization / abstract soft Ward split",
+    "iter205": "D_s=Disc_s/(2*pi*i), linked-cut then soft-limit protocol",
+    "iter653": "closed-SK Gamma2/Gamma3 Ward map with q^2!=0 longitudinal projector",
+    "iter655": "prospective q3(eps)=-eps*n soft trajectory; canonical Action 34327833414 success"
+  },
+  "classification": "BLOCKED_ITER656_NULL_SOFT_WARD_IMAGE_NOT_DEFINED_BY_ITER653_Q2_NONZERO_PROJECTOR__ITER655_PROSPECTIVE_TRAJECTORY_NOT_UNIQUE_HISTORICAL_RECOVERY__NON_RESIDUAL",
+  "contract_scope": "MSSC001-CLOSED-SK-SOFT-TCUT-KIN-V1 / null-soft Ward-image audit",
+  "exact_next_gate": "Derive a null-compatible Ward reconstruction directly from the Iter653 action Ward identity, without using the q^-2/q^-4 projector; prove auxiliary-vector/regulator independence on the frozen Iter655 soft trajectory, or classify residual path/gauge-completion freedom as BLOCKED.",
+  "failures": [],
+  "guardrails": {
+    "ansatz003_allowed": false,
+    "candidate_cut_values_read_for_this_gate": false,
+    "fisher_or_resources_allowed": false,
+    "ward_image_value_assigned": null,
+    "zero_fill_allowed": false
+  },
+  "historical_scope": {
+    "iter175_205_explicit_null_safe_closed_sk_ward_image": false,
+    "iter175_205_unique_full_closed_sk_trajectory": false,
+    "iter655_is_prospective_completion": true
+  },
+  "iter653_projector": {
+    "applicable_on_iter655_exact_null_soft_leg": false,
+    "contains_q_inverse_fourth": true,
+    "contains_q_inverse_squared": true,
+    "requires_q_squared_nonzero": true
+  },
+  "iter655_soft_direction": [1.0, 0.0, 0.0, 1.0],
+  "iteration": 656,
+  "n_squared": 0.0,
+  "readiness_delta_percentage_points": 0,
+  "sample_q3_squared": {
+    "0.125": 0.0,
+    "0.5": 0.0,
+    "1.0": 0.0
+  }
+}
