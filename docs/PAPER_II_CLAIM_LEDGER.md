@@ -1,80 +1,92 @@
-# RQIR Article II claim ledger
+# RQIR Paper II claim ledger — submission audit 2026-09-09
 
-Target journal: Physical Review Research
+This ledger separates analytic results, deterministic numerical certificates, randomized implementation checks, synthetic diagnostic figures, and non-claims.
 
-## Status vocabulary
+## A. Analytic claims — theorem/proposition level
 
-- **THEOREM** - analytic statement proved in the manuscript under explicit assumptions.
-- **LOCKED NUMERICAL** - reproduced from locked RQIR artifacts/equations and regression-guarded arithmetic.
-- **PENDING RERUN** - original end-to-end nonlinear computation has not yet been rerun in the current environment.
-- **LIMITATION** - explicit boundary that must remain visible in the submission.
+### A1. Detector handoff
+A Paper-I source direction `n` reaches Paper II through the declared detector derivative `t = D R[n]`. If `t=0`, the chosen detector transfer erased the direction before statistical profiling.
 
-## Analytic claims
+### A2. Projection–Schur equivalence
+For a local Gaussian mean model with parameter-independent positive-definite covariance after exact whitening,
 
-### C1 - Projection--Schur equivalence [THEOREM]
-For Gaussian mean model with parameter-independent positive-definite covariance,
+`I_beta^prof = ||(I-P_J)s||^2 = s^T s - s^T J (J^T J)^+ J^T s`.
 
-I_prof(beta) = g^T (I - P_N) g
-             = F_bb - F_bη F_ηη^+ F_ηb.
+Rank-deficient nuisance matrices are allowed through the Moore–Penrose pseudoinverse.
 
-Rank-deficient nuisance tangent matrices are allowed via the Moore--Penrose pseudoinverse.
+### A3. First-order local identifiability
+Data-only local identifiability against the declared nuisance tangent model holds iff `s` has a nonzero component outside `Col(J)`. This is local/first-order, not global nonlinear identifiability.
 
-### C2 - Local first-order identifiability [THEOREM]
+### A4. Nuisance enrichment monotonicity
+Enlarging an unconstrained nuisance span cannot increase the data-only profiled information.
 
-I_prof(beta) > 0 iff the whitened beta tangent is not in the nuisance tangent span.
+### A5. Variational profiling with independent nuisance information
+For `Lambda >= 0`,
 
-Boundary: this is local/tangent identifiability, not a proof of global nonlinear identifiability.
+`I_beta(Lambda) = min_a [ ||s-Ja||^2 + a^T Lambda a ]`.
 
-### C3 - Nuisance monotonicity [THEOREM]
-If N1 is a subspace of N2, then I_prof(beta;N2) <= I_prof(beta;N1).
+This yields nuisance-coordinate invariance and monotonic recovery under stronger positive-semidefinite independent nuisance precision.
 
-### C4 - Shared nuisance bound [THEOREM]
-For independent branches, replacing a genuinely shared nuisance coefficient by independent branch-specific copies enlarges the nuisance space and therefore gives
+### A6. Prior-assisted precision is not data-only structural identification
+If `s in Col(J)`, external `Lambda` can make the combined profile positive, but the science data remain structurally degenerate at first order.
 
-I_joint_shared >= I_separate_copies.
+### A7. Exact exposure obstruction
+If the unconstrained nuisance score is exactly aligned with the target score, common `sqrt(exposure)` scaling does not break the degeneracy.
 
-Equality requires compatible best-fit nuisance compensation across branches.
+### A8. Two-band self-calibration
+For target `(g2,g4)` and relative-tilt nuisance `(g2,-g4)`,
 
-## Numerical claims
+`I = 4 g2^2 g4^2 / (g2^2+g4^2)`.
 
-### N1 - Signed/global branch [LOCKED NUMERICAL]
-Audit point (beta,p,gamma)=(1,1,1).
+### A9. Shared-nuisance bound
+Replacing one genuinely shared nuisance vector by independent branch copies enlarges the nuisance span, therefore `I_shared >= I_separate`.
 
-Profiled coefficient per common event multiplier:
-9.645289993133134e-3.
+### A10. Full-covariance whitening equivalence
+For fixed positive-definite covariance `C`, exact whitening maps the full metric profile into the Euclidean whitened profile without changing the Fisher result.
 
-With N_eff=100 and J_W=1e-29:
-I_beta = 9.645289993133135e-30,
-sigma_beta ~= 3.220e14.
+## B. Deterministic RQIR-STAT-001 certificate — reproduced
 
-For target sigma_beta=0.1:
-N_eff,required ~= 1.0367796180388115e33.
+Source: `analysis/paper12_reference_regression_iteration079.py`, seed 20260830.
 
-Interpretation: locally identifiable in the specified nuisance model, but quantitatively hopeless under the current normalization.
+- A projection/Schur: abs error `3.9968028886505635e-15` — PASS.
+- B nuisance-coordinate invariance: abs error `2.6645352591003757e-15` — PASS.
+- C stronger prior: `1.8405965236299755 -> 2.6370745801113067` — PASS.
+- D exact amplitude prior rescue: `C_a = 0,1,4,9,19,99 -> 0,0.5,0.8,0.9,0.95,0.99` — PASS.
+- E exact exposure obstruction: `E = 1,2,10,100,1e6 -> 0` — PASS.
+- F two-band tilt: `0.3041379310344828`, analytic agreement — PASS.
+- G cutoff counterexample: true `1.1102230246251565e-16`, bad threshold result `1` — PASS.
 
-### N2 - Positive/local branch [LOCKED NUMERICAL]
-Raw floating result after locked profile:
--2.2737367544323206e-13.
+## C. Independent submission stress audit
 
-Because Fisher information is nonnegative, this is treated as floating roundoff at the exact boundary and clipped to zero.
+Source: `analysis/paper_II_submission_audit_20260908.py`, seed 20260908, 10,000 randomized trials.
 
-Therefore sigma_beta=infinity and no finite exposure multiplier reaches a finite target precision in the local Fisher approximation.
+- projection/Schur max absolute discrepancy: `1.311977870094294e-13`;
+- nuisance-coordinate max discrepancy: `1.0222045432328741e-11`;
+- minimum stronger-prior gain: `2.134500909356518e-11`;
+- minimum shared-minus-separate information: `2.5306780493394854e-07`;
+- full-covariance whitening max discrepancy: `5.968558980384842e-13`;
+- violations across six property classes: `0`.
 
-Interpretation: not "prior rescued" under the current locked nuisance/prior model.
+Every fifth trial in the relevant suite was intentionally rank deficient.
 
-### N3 - Regression guard [LOCKED NUMERICAL]
-`python tests/test_branch_specific_physical_fisher_rates.py`
-Current locked record: 48 passed.
+## D. Synthetic/diagnostic, not physical reach claims
 
-## Reproducibility boundary
+The prior-rescue curve, two-band retention curve, two-dimensional information-retention map, and cutoff scan are analytic/synthetic diagnostics. They are not apparatus forecasts and do not imply a realizable experiment.
 
-### R1 [PENDING RERUN]
-Historical Nim nonlinear-profile programs were not rerun in the current container because the Nim runtime was unavailable. Before submission, rerun the original computational path in a documented environment and compare all locked coefficients.
+## E. Explicit non-claims
 
-## Submission limitations that must not be removed
+Paper II does **not** claim:
 
-1. Fixed-covariance Fisher geometry is the baseline; parameter-dependent covariance adds the standard trace term.
-2. Fisher positivity is a local result; nonlinear/global aliases remain possible.
-3. Priors and likelihood information must not be conflated.
-4. Signed/global numerical weakness is conditional on the locked normalization/event-weight model.
-5. Branch Fisher results are diagnostics, not posterior model probabilities.
+- evidence that gravity is quantized;
+- that gravity transmits the Paper-I ordered-response coordinate in nature;
+- global nonlinear identifiability from positive local Fisher information;
+- practical detectability from positive Fisher information alone;
+- that external prior information is information generated by the science detector;
+- that more exposure breaks exact nuisance alignment;
+- that all branches/channels share the same nuisance set;
+- that an arbitrary numerical rank cutoff is physically legitimate;
+- apparatus-specific shots, PSD/SNR, coherence or wall-clock closure (Paper III scope).
+
+## F. Submission status outside scientific content
+
+The manuscript metadata is fixed to Aleksey Buyanov, Independent Researcher, Moscow, Russia, with corresponding-author email and ORCID. The Paper-I reference is no longer a placeholder. Repository synchronization binds the data/software statement to an exact public commit. Remaining APS-portal declarations (funding, conflicts, prior/related submission status, optional referee suggestions, and the author's personal final sign-off) are administrative actions and are not unresolved scientific claims.
