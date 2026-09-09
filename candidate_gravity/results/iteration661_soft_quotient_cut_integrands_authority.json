@@ -1,0 +1,42 @@
+{
+  "iteration": 661,
+  "date": "2026-09-09",
+  "classification": "PASS_ITER661_QUOTIENT_SAFE_PLUS_TT_NUMERATOR_WEIGHTED_DS_INTEGRANDS_FIXED_EPS__NON_RESIDUAL",
+  "scientific_gate_pass": true,
+  "failures": [],
+  "blocked": [],
+  "MODEL_READINESS": "24%",
+  "canonical_actions": {
+    "run": 34340069225,
+    "job": 102428518922,
+    "head": "c8efdc4da0dbf434689aa1d14b2722c90bd25df7",
+    "artifact": 10099348470,
+    "artifact_digest": "sha256:89c8eddf4e2c757c507dc29da0fce30a9a1452cb7fe26cab21d7684e2c4cafe3",
+    "raw_json_sha256": "1817b437a4dd86743d6cef8bbbc55dd84c9f44e90d108e2a7222ab673c2cf758"
+  },
+  "raw_diagnostics": {
+    "sample_count": 6,
+    "prospective_s_grid": [2.25, 3.0, 4.0],
+    "prospective_epsilon_grid": [0.05, 0.02],
+    "max_abs_reported_density": 4.60047443287051e-19,
+    "min_nonzero_abs_reported_density": 5.666942619267461e-23,
+    "max_cut_shell_error": 7.771561172376096e-16,
+    "min_abs_uncut_triangle_denominator": 0.011201904523433559,
+    "uncut_pole_crossing_seen": false,
+    "all_reported_imaginary_parts_zero": true
+  },
+  "support": {
+    "q1_bubble": "ordinary hard-transfer cut retained",
+    "q2_bubble": "ordinary hard-transfer cut retained",
+    "q3_bubble": "NO_MASSIVE_ORDINARY_CUT_TOPOLOGY_RETAINED_NOT_ZERO_FILLED",
+    "triangles": "both orientations and q1/q2 two-line branches retained; no sampled uncut propagator pole"
+  },
+  "interpretation_guardrail": "The O(1e-23..1e-19) numerical densities are not promoted as nonzero physics. Their scale is compatible with angular cancellation/roundoff and requires an algebraic rotational-selection-rule audit before any epsilon-leading or residual use.",
+  "candidate_values_used": false,
+  "zero_fill": false,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "native_soft_Tcut": "NOT_YET_FORMED",
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "exact_next_gate": "Iteration662: audit whether the frozen all-plus-TT soft-family integrands are exactly odd under a pi/2 transverse rotation. If R_z(pi/2) leaves all q_i and cut denominators invariant while sending e_plus -> -e_plus, every trilinear +++ K1K2/K1^3 integrand changes sign and its full azimuthal average vanishes exactly; distinguish that symmetry zero from the tiny Iter661 floating-point residues before any T_cut/residual claim."
+}
