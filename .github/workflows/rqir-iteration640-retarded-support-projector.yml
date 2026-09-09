@@ -1,0 +1,48 @@
+name: RQIR Iter640 retarded closed-loop support projector
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'candidate_gravity/code/iteration640_retarded_closed_loop_support_projector.py'
+      - '.github/workflows/rqir-iteration640-retarded-support-projector.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  support-projector:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Iter640 retarded support and native Ds projector gate
+        run: python candidate_gravity/code/iteration640_retarded_closed_loop_support_projector.py
+      - name: Fail-closed raw authority audit
+        run: |
+          python - <<'PY'
+          import hashlib,json,math
+          from pathlib import Path
+          d=Path('results/iteration640_retarded_closed_loop_support_projector'); r=d/'result.json'; a=d/'authority_audit.json'
+          o=json.loads(r.read_text()); au=json.loads(a.read_text()); sha=hashlib.sha256(r.read_bytes()).hexdigest(); f=[]
+          if o.get('iteration')!=640: f.append('iteration drift')
+          if o.get('classification')!='PASS_ITER640_RETARDED_CLOSED_LOOP_S_SUPPORT_AND_NATIVE_DS_PROJECTOR_CONTRACT__NON_RESIDUAL': f.append('classification drift')
+          if o.get('failures')!=[] or not o.get('scientific_gate_pass'): f.append('scientific failure')
+          fam=o.get('family_support',{}); p=o.get('native_discontinuity_projector',{})
+          if fam.get('K3',{}).get('ordinary_finite_s_cut') is not False: f.append('K3 support drift')
+          if not math.isclose(float(fam.get('K1K2',{}).get('threshold',float('nan'))),1.96,rel_tol=0,abs_tol=2e-15): f.append('K1K2 threshold drift')
+          if not math.isclose(float(fam.get('K1^3',{}).get('threshold',float('nan'))),1.96,rel_tol=0,abs_tol=2e-15): f.append('K1^3 threshold drift')
+          if fam.get('K1^3',{}).get('positive_alpha_leading_anomalous_support') is not False: f.append('anomalous support drift')
+          if p.get('definition')!='D_s[F] = Disc_s[F]/(2*pi*i)': f.append('native Ds normalization drift')
+          if o.get('zero_fill') is not False or o.get('candidate_values_used') is not False: f.append('guardrail drift')
+          if o.get('source_born_subtraction')!='NOT_PERFORMED' or o.get('native_Y_Tcut_projection')!='NOT_PERFORMED': f.append('premature downstream step')
+          if au.get('result_sha256')!=sha or au.get('classification')!='PASS_RAW_AUTHORITY_AUDIT_ITER640_RETARDED_SUPPORT_PROJECTOR': f.append('audit binding drift')
+          if f: raise SystemExit('\n'.join(f))
+          print('PASS Iter640 raw audit',sha)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter640-retarded-support-projector
+          path: results/iteration640_retarded_closed_loop_support_projector/
+          retention-days: 30
