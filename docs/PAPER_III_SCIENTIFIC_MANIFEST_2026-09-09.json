@@ -1,0 +1,130 @@
+{
+  "schema": "rqir-paper-iii-scientific-manifest-v1",
+  "date": "2026-09-09",
+  "scope": "strengthened apparatus-specific resource/design forecast",
+  "experimental_detection_claim": false,
+  "clean_reproduction": {
+    "provider": "GitHub Actions hosted runner",
+    "workflow": "Paper III clean reproduction",
+    "workflow_run_id": 34401786475,
+    "job_id": 102635176796,
+    "conclusion": "success",
+    "runner_os": "Ubuntu 24.04.5 LTS",
+    "runner_image": "ubuntu-24.04 20260907.300.1",
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "pr_head_sha": "924dddb94681f5d28246f267394ea8e7c24d0b92",
+    "pr_merge_sha": "0011039098424bdb66743d999f61f33c70b8e3ce",
+    "base_sha": "edafefe06b115418e40454c3652e6d9fe1193c6b"
+  },
+  "authoritative_scripts": [
+    "analysis/atom_interferometer_calibration_hierarchy_audit.py",
+    "analysis/atom_interferometer_science_estimability_full_covariance_audit.py",
+    "analysis/atom_interferometer_reference_calibration_floor_audit.py",
+    "analysis/atom_gravimeter_same_apparatus_resource_closure_audit.py",
+    "analysis/atom_gravimeter_figure8_psd_covariance_audit.py",
+    "analysis/atom_gravimeter_detector_facing_probability_likelihood_audit.py",
+    "analysis/atom_gravimeter_chirp_reference_metrology_audit.py"
+  ],
+  "authority_documents": [
+    "docs/RQIR7_SAME_APPARATUS_ATOM_GRAVIMETER_CLOSURE_2026-09-09.md",
+    "docs/RQIR7_FIGURE8_PHYSICAL_PSD_COVARIANCE_CLOSURE_2026-09-09.md",
+    "docs/RQIR7_DETECTOR_FACING_PROBABILITY_LIKELIHOOD_CLOSURE_2026-09-09.md",
+    "docs/RQIR7_CHIRP_REFERENCE_METROLOGY_CLOSURE_2026-09-09.md",
+    "docs/RQIR7_PAPER_III_PROVENANCE_COMPATIBILITY_CERTIFICATE_2026-09-09.md"
+  ],
+  "clean_run_outputs": {
+    "calibration_hierarchy": {
+      "science_only_theta_identifiable": false,
+      "science_plus_recoil_theta_identifiable": false,
+      "science_plus_known_acceleration_reference_theta_identifiable": true,
+      "science_plus_reference_plus_recoil_rank": "3/3"
+    },
+    "full_covariance": {
+      "known_modulated_reference_no_recoil_theta_estimable": true,
+      "known_modulated_reference_plus_recoil_theta_estimable": true,
+      "unknown_reference_plus_recoil_theta_estimable": false,
+      "correlated_covariance_rho_up_to": 0.98,
+      "gate": "PASS WITH EXPLICIT FAILURE DOMAINS"
+    },
+    "reference_floor": {
+      "sqrtN_invariant": 0.372763815,
+      "statistical_coefficient_A": 0.139447914,
+      "resource_law": "sigma_theta^2 = A/N + calibration_floor^2",
+      "gate": "PASS WITH FAILURE DOMAIN"
+    },
+    "same_apparatus": {
+      "k_eff_per_m": 16110731.6,
+      "k_eff_T2_rad_per_mps2": 40276.8289,
+      "cycle_hz": 4.0,
+      "interferometer_duty": 0.4,
+      "measured_11mrad_implied_g_at_1s": 1.39247e-8,
+      "known_reference_sigma_theta_ng_60s_rho_0p3": 2.9801429,
+      "negative_control_static_science": "FAIL",
+      "negative_control_uncalibrated_reference": "FAIL"
+    },
+    "physical_psd": {
+      "digitized_fig8_uncorrected_g_at_1s": 6.34856e-8,
+      "published_comparator_uncorrected_g_at_1s": 6.5e-8,
+      "relative_error_fraction": 0.02330,
+      "factor3_plus_4mrad_g_at_1s": 2.17592e-8,
+      "published_typical_corrected_g_at_1s": 2.0e-8,
+      "relative_error_corrected_fraction": 0.08796,
+      "sigma_theta_ng_60s": 5.72247,
+      "sigma_theta_ng_600s": 1.85019,
+      "sigma_theta_ng_3600s": 0.804473,
+      "sigma_theta_ng_60s_2Hz_boost_x5": 9.31148,
+      "gate": "PASS"
+    },
+    "detector_probability": {
+      "sigma_P": 0.0003,
+      "effective_contrast_anchor": 0.6,
+      "detector_phase_floor_rad": 0.001,
+      "theta_estimable_with_1pct_reference_prior": true,
+      "sigma_theta_ng_60s_1pct_reference": 5.72811,
+      "sigma_theta_ng_600s_1pct_reference": 1.851801,
+      "uncalibrated_reference_theta_estimable": false,
+      "calibration_floor_quadrature_law": "PASS",
+      "gate": "PASS"
+    },
+    "chirp_reference": {
+      "rb_d2_wavelength_m": 7.80246291583e-7,
+      "k_eff_per_m": 16105646.0632,
+      "nominal_gravity_chirp_hz_per_s": 25137319.1,
+      "one_micro_g_differential_chirp_hz_per_s": 25.1373191,
+      "conservative_differential_reference_fraction": 7.95629794e-5,
+      "conservative_differential_reference_percent": 0.0079563,
+      "improvement_over_mechanical_proxy": 133.806,
+      "full_hour_science_duty_fraction": 1.0,
+      "full_hour_statistical_sigma_ng": 0.746604,
+      "calibration_floor_at_theta_100ng": 0.0079563,
+      "calibration_floor_at_theta_1000ng": 0.079563,
+      "crossover_theta_ng": 9383.82,
+      "gate": "PASS",
+      "historical_same_apparatus_raw_chirp_record_claimed": false
+    }
+  },
+  "provenance_boundaries": {
+    "raw_cross_source_data_fusion": false,
+    "fig8_digitization_is_raw_data": false,
+    "2025_chirp_metrology_retrofitted_to_2008_dataset": false,
+    "bipm_used_as_apparatus_validation": false,
+    "paper_claim_class": "apparatus-grounded resource/design forecast"
+  },
+  "failure_domains": [
+    "static acceleration-like science with free phase offset is non-identifiable",
+    "modulation without an independently calibrated absolute reference leaves a scale degeneracy",
+    "unknown unconstrained reference amplitude leaves theta non-identifiable",
+    "apparatus-only contrast/readout null modes may remain but must be theta-orthogonal",
+    "raw historical campaign data are not claimed where only published digitized/source-traceable substitutes exist",
+    "chirp-reference traceability requires verified mapping from calibrated microwave/DDS chirp to the actual Raman difference-frequency chirp and actual k_eff geometry"
+  ],
+  "scientific_readiness": {
+    "paper_I_percent": 100,
+    "paper_II_percent": 100,
+    "paper_III_percent": 100,
+    "papers_I_to_III_collective_percent": 100,
+    "meaning": "scientific/material readiness, not journal portal/submission administration"
+  }
+}
