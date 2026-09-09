@@ -1,0 +1,55 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "MODEL_READINESS": "24%",
+  "bubble": {
+    "anchor_below_threshold": true,
+    "anchor_s0": 1.0,
+    "s_channel_normal_threshold": 1.96
+  },
+  "candidate_values_used": false,
+  "classification": "PASS_ITER639_FROZEN_CLOSED_SCALAR_SINGULARITY_GEOMETRY__BUBBLE_S_THRESHOLD_1P96__TRIANGLE_LEADING_LANDAU_CANDIDATES_HAVE_NO_POSITIVE_FEYNMAN_SUPPORT__NON_RESIDUAL",
+  "comparator_quotient": "NOT_PERFORMED",
+  "crossed_channels": {
+    "t0_below_4m2": true,
+    "u0_below_4m2": true
+  },
+  "date": "2026-09-09",
+  "failures": [],
+  "inputs": {
+    "m_phi": 0.7,
+    "m_phi_sq": 0.49,
+    "s_variable": "s>0",
+    "t0": 0.14,
+    "u0": 0.34
+  },
+  "iteration": 639,
+  "native_projection": "NOT_PERFORMED",
+  "next_gate": "Using the frozen Iter632 Minkowski-vacuum G_K and Iter627 combined SK contract, derive the actual closed K1/K2 s-channel discontinuity coefficient across s>=1.96 (including numerator/tensor contraction and common conventions) before any native projection; keep K3 tadpole and K1^3 triangle families retained, with the latter having no positive-alpha leading anomalous support on this family.",
+  "readiness_change": "0 percentage points",
+  "scientific_gate_pass": true,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "triangle": {
+    "candidate_stationary_roots": [
+      {
+        "all_positive": false,
+        "s": 0.04915823221180988,
+        "x": 7.304595091414875,
+        "y": -10.739730936293288,
+        "z": 4.435135844878413
+      },
+      {
+        "all_positive": false,
+        "s": 0.813698910645333,
+        "x": 1.7954049085850974,
+        "y": 2.639730936293323,
+        "z": -3.4351358448784204
+      }
+    ],
+    "interpretation": "Both finite stationary solutions fail x>0,y>0,z>0, so there is no physical-sheet leading/anomalous triangle singularity on this frozen real-s family from an interior positive-alpha Landau solution. Boundary singularities reduce to bubble subchannels.",
+    "leading_landau_polynomial": "175*s^2-151*s+7=0",
+    "positive_feynman_parameter_leading_support": false,
+    "symanzik": "F=m^2-x*y*s-y*z*t-z*x*u, x+y+z=1"
+  },
+  "zero_fill": false
+}
