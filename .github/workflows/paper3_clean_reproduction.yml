@@ -1,0 +1,55 @@
+name: Paper III clean reproduction
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'analysis/atom_interferometer_*.py'
+      - 'analysis/atom_gravimeter_*.py'
+      - 'docs/RQIR7_*PAPER_III*.md'
+      - '.github/workflows/paper3_clean_reproduction.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce-paper-iii:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install numerical dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install numpy scipy
+
+      - name: Structural calibration hierarchy
+        run: python analysis/atom_interferometer_calibration_hierarchy_audit.py
+
+      - name: Full-covariance science estimability
+        run: python analysis/atom_interferometer_science_estimability_full_covariance_audit.py
+
+      - name: Reference calibration floor
+        run: python analysis/atom_interferometer_reference_calibration_floor_audit.py
+
+      - name: Same-apparatus resource closure
+        run: python analysis/atom_gravimeter_same_apparatus_resource_closure_audit.py
+
+      - name: Source-traceable physical PSD covariance
+        run: python analysis/atom_gravimeter_figure8_psd_covariance_audit.py
+
+      - name: Detector-facing probability likelihood
+        run: python analysis/atom_gravimeter_detector_facing_probability_likelihood_audit.py
+
+      - name: Traceable chirp-reference metrology
+        run: python analysis/atom_gravimeter_chirp_reference_metrology_audit.py
+
+      - name: Verify provenance certificate exists
+        run: test -s docs/RQIR7_PAPER_III_PROVENANCE_COMPATIBILITY_CERTIFICATE_2026-09-09.md
