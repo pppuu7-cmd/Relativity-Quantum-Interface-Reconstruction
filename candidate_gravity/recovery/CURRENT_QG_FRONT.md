@@ -10,23 +10,18 @@ Repository commits, validated Actions artifacts, recovery deltas, research logs 
 
 ## Current authority
 
-Latest authoritative research iteration: **663**.
+Latest authoritative research iteration: **664**.
 
-Historical authority retained includes Iter175/205 soft-T_cut protocol, Iter594 exact K1/K2 machinery, Iter621 normalization graph, Iter627/630/632 SK causal/state conventions, Iter653 normalized closed-SK Gamma2/Gamma3 parent, Iter655 soft kinematics, Iter658 quotient-safe plus-TT functional, Iter659 topology census, Iter660 routing/support, Iter661 raw fixed-epsilon numerator-weighted cut integrands and Iter662 exact transverse-rotation selection rule.
+Historical authority retained includes Iter175/205 soft-T_cut protocol, Iter594 exact K1/K2 machinery, Iter621 normalization graph, Iter627/630/632 SK causal/state conventions, Iter653 normalized closed-SK Gamma2/Gamma3 parent, Iter655 soft kinematics, Iter658 quotient-safe plus-TT functional, Iter659 topology census, Iter660 routing/support, Iter661 raw fixed-epsilon numerator-weighted cut integrands, Iter662 exact transverse-rotation selection rule, and Iter663 transverse-Ward authority blocker.
 
-### Iter662 — exact +++ selection zero
-Canonical run `34340309929`, job `102429292127`, head `4d99856b72ba9ebfabdb57a89dc442f1a4e97a91`, artifact `10099438907`, digest/ZIP SHA-256 `3ea974a496686c9822d239c31799303b2e6dfa77093472839f780c2b21e11988`, raw JSON SHA-256 `232106d25d04da9aa2f004f4a4bb651c22f378926191aa5858f89719e551e7af`; raw PASS.
+### Iter664 — exact null-Ward transverse no-go
+Canonical run `34340625707`, job `102430296463`, head `49e7b708e25571d9c02018ecf5cc2cc953329ecc`, artifact `10099562651`, digest/downloaded-ZIP SHA-256 `0e4bb8bee85a989cfe39eacbabf4846593cdd83e0c2f72897903c2a52a204231`, raw JSON SHA-256 `b1b057d23ad392ac8600500805928e0c448f5199da0a66488b684bb6b3e8e0b`; raw `failures=[]`, `scientific_gate_pass=true`, `blocked=true`.
 
-For the frozen axial all-plus-TT component, `R_z(pi/2)` leaves momenta, scalar denominators, cut measure and fixed-epsilon D_s invariant while `e_plus -> -e_plus`. Every K1K2 and K1^3 three-point ordinary-cut integrand has total external tensor degree 3, hence the full azimuthal contribution vanishes exactly. Iter661 `O(1e-23..1e-19)` values are numerical cancellation residue. This is a component-level zero only, not full-tensor zero.
-
-### Iter663 — transverse Ward image is not defined by current authority
-Canonical run `34340470604`, job `102429805833`, head `7f3ed347efde63c649f1273ff6733b9d256e4aaf`, artifact `10099501377`, digest/ZIP SHA-256 `7846d707df636ed36d3bd8c68a26d0f511d6614a6bbef2714b1949275bd59f8c`, raw JSON SHA-256 `dcdd069a853e3f919f40e940e0bee011e3f102cdd5acb791ed26e73f17bfa0b6`; `failures=[]`, `scientific_gate_pass=true`, `blocked=true`.
-
-Iter653 fixes only the longitudinal diffeomorphism Ward map and explicitly makes no claim that generic q-transverse soft components are determined by K2. Iter658 proves frozen plus-TT is transverse and nontrivial on the null gauge quotient. Therefore `W[D_s K2]` for this component is `BLOCKED_W_TRANSVERSE_OPERATOR_UNDEFINED`, not zero. Iter662 exact Gamma3-cut zero cannot yet be called matched `T_cut=0`.
+Exact ranks are `rank(D_q)=4`, `dim Ker(D_q)=6`, `rank(L_q)=4`, `rank(D_q L_q)=1`, `dim(Im L_q ∩ Ker D_q)=3`, hence `dim(Ker D_q /(Im L_q ∩ Ker D_q))=3`. Longitudinal diffeomorphism Ward data therefore leave a genuine three-dimensional physical transverse quotient undetermined. The frozen plus-TT soft component remains `BLOCKED_ADDITIONAL_TRANSVERSE_SOFT_INPUT_REQUIRED`, not zero-filled. Iter662 exact Gamma3-cut component zero still cannot be promoted to matched `T_cut=0`.
 
 ## Active computation
 
-**Iteration664** exact null-Ward transverse no-go gate is running: run `34340625707`, head `49e7b708e25571d9c02018ecf5cc2cc953329ecc`. It reconstructs exact ranks of the null divergence/gauge maps and tests whether diffeomorphism Ward data leave a nontrivial physical transverse quotient undetermined.
+**Iteration665** prospective observable-redesign audit is being prepared/launched. It first fail-closes the absence of committed same-parent physical transverse-soft authority, then prospectively freezes a non-collinear closed-SK soft family that removes the Iter662 axial `R_z(pi/2)` kinematic stabilizer without reading Candidate values. This redesign preserves fixed-epsilon `D_s` before `epsilon->0`; it does not invent `W[D_s K2]`.
 
 ## Frozen guardrails
 
@@ -44,4 +39,4 @@ All 13 families retained. q3-transfer soft bubble is no-massive-cut topology, ne
 
 ## Exact next gate
 
-Consume Iter664 raw artifact. If the null Ward equation leaves a nontrivial transverse quotient, preserve the plus-TT T_cut branch as prerequisite-BLOCKED and search committed same-parent authority for an independent physical transverse soft theorem/asymptotic identity. If none exists, prospectively redesign the soft observable (non-collinear or mixed-tensor channel) before reading new Candidate values; do not invent W and do not infer a full-tensor zero from Iter662.
+Run Iter665 prospective observable-redesign audit. If no committed same-parent transverse soft theorem/asymptotic identity exists, freeze a non-collinear soft kinematic family before reading new Candidate values and verify that Iter662's axial odd-spin rotation no longer stabilizes the full kinematics. Do not infer that this kinematic redesign defines `W[D_s K2]`; keep the matched native `T_cut` prerequisite BLOCKED until a soft observable is matched to an actually authoritative same-parent identity.
