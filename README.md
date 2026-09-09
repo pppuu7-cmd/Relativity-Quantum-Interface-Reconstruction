@@ -1,8 +1,22 @@
 # Relativity–Quantum Interface Reconstruction (RQIR)
 
-**Status:** research programme, v0.1 bootstrap  
+**Status:** **RQIR Core v1.0 FROZEN** — maintenance / controlled extension only  
+**Freeze date:** 2026-09-09  
 **Started:** 2026-08-29  
 **Repository:** model-independent reconstruction of the interface between general relativity and quantum physics.
+
+## RQIR Core v1.0 freeze
+
+The methodological core is frozen at **v1.0** after the repository reached **100% scientific readiness for Papers I–III**. RQIR v1.0 is now a fixed evaluation standard for known-model benchmarking and, if later authorized by the comparator programme, any RQIR-derived Candidate Gravity model.
+
+Benchmark outcomes must not silently move the v1.0 criteria. Model-specific mappings belong in the benchmarking/adaptor layer. A true methodological defect may justify a separately versioned successor only through documented change control and regression over previously tested models.
+
+Authoritative freeze documents:
+
+- `docs/RQIR_CORE_V1_FREEZE_MANIFEST_2026-09-09.md`
+- `docs/RQIR_CORE_CHANGE_CONTROL.md`
+- `RQIR_VERSION.json`
+- `docs/PAPER_I_V_REPOSITORY_READINESS_AUDIT_2026-09-09.md`
 
 ## Objective
 
@@ -64,7 +78,7 @@ which provides a natural bridge from semiclassical to stochastic descriptions.
 - **Q6 — Causal/process structure:** whether causal order and reference frames remain classical.
 - **Q7 — Low-energy quantum gravity EFT:** universal or controlled quantum corrections that do not require knowledge of the UV completion.
 
-The channel list is provisional and may be split or extended when the operational atlas is built.
+For v1.0 these channels and their developed operational mappings are part of the frozen methodological baseline. Extensions that change scientific meaning require version control under `docs/RQIR_CORE_CHANGE_CONTROL.md`.
 
 ## Non-negotiable research rules
 
@@ -79,9 +93,9 @@ The channel list is provisional and may be split or extended when the operationa
 9. **Reproducibility.** Derivations, code, assumptions, datasets and iteration chronology belong in the repository.
 10. **Epistemic labels.** Each result is tagged as definition, established result, derived result, numerical evidence, conjecture, open question, or excluded branch.
 
-## First project milestone: RQIR-0 — Operational Interface Atlas
+## Operational Interface Atlas
 
-RQIR-0 will construct a matrix
+RQIR uses the matrix
 
 | Observable | Controlled GR/QFT baseline | Semiclassical | Stochastic | Quantized low-energy gravity | Hybrid/emergent | Existing constraint | Degeneracy | Best discriminant |
 |---|---|---|---|---|---|---|---|---|
@@ -96,14 +110,14 @@ A useful fingerprint notation is
 
 Two models are operationally degenerate in a domain \(D\) when their predicted fingerprints agree within experimental/theoretical resolution throughout \(D\).
 
-## Immediate workstream
+## Post-freeze workstream
 
-1. Formalize observable spaces and baseline maps.
-2. Build the Q1–Q7 evidence/degeneracy matrix.
-3. Derive a hierarchy of residuals and covariance objects.
-4. Define consistency gates before fitting any candidate theory.
-5. Identify the first high-value discriminants that are feasible far below the Planck scale.
-6. Build reproducible symbolic/numerical notebooks only after the analytic definitions are frozen.
+1. Keep RQIR Core v1.0 scientifically fixed.
+2. Use the frozen framework as the comparator standard for known-model/school benchmarking.
+3. Keep model-specific adapters and benchmark outcomes outside the core semantics.
+4. Permit only maintenance changes that preserve v1.0 scientific meaning.
+5. Open v1.1+ only after a documented methodological defect and full benchmark regression.
+6. Judge any future Candidate Gravity against the same frozen standard used for known models.
 
 ## Seed references
 
@@ -115,8 +129,11 @@ Two models are operationally degenerate in a domain \(D\) when their predicted f
 ## Repository map
 
 - `docs/FOUNDATIONS.md` — mathematical and epistemic foundations.
-- `docs/MASTER_TABLE.md` — live observable/channel matrix.
+- `docs/MASTER_TABLE.md` — observable/channel matrix.
 - `docs/RECOVERY_GUIDE.md` — sufficient context to resume the project from a new chat/session.
+- `docs/RQIR_CORE_V1_FREEZE_MANIFEST_2026-09-09.md` — frozen v1.0 authority and scope.
+- `docs/RQIR_CORE_CHANGE_CONTROL.md` — version governance and anti-retrofitting rules.
+- `RQIR_VERSION.json` — machine-readable frozen-core marker.
 - `research_log/` — chronological iteration record.
 
 ---
