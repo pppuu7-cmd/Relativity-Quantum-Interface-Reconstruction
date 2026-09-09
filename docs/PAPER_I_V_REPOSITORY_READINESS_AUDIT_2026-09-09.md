@@ -15,15 +15,9 @@ A `BLOCKED` comparator is not evidence for `NEW_REQUIRED`.
 
 ## Readiness definition used here
 
-The headline percentage means **scientific/material readiness of the repository for the strengthened paper**, not portal/submission administration. It combines:
+The headline percentage means **scientific/material readiness of the repository for the strengthened paper**, not portal/submission administration. It combines frozen definitions/claims, derivations and numerical audits, reproducibility/provenance, closure of decisive scientific gates, and enough article-facing synthesis for a defensible manuscript.
 
-- frozen definitions and claims;
-- derivations / numerical or algebraic audits;
-- reproducibility and provenance;
-- closure of the paper's decisive scientific gate;
-- enough article-facing synthesis to support a defensible manuscript.
-
-For Paper III, the old Iteration-128 statement `100% scientific / 97% submission` remains valid only for the **frozen abstract resource/design/certificate scope**. The current audit adopts the stronger apparatus-specific standard introduced on 2026-09-09, so it does not reuse that 100% headline.
+For Paper III, the historical `100% scientific / 97% submission` statement remains valid only for the older frozen abstract resource/design/certificate scope. The current audit uses the stronger apparatus-specific standard introduced on 2026-09-09.
 
 For Paper V, readiness cannot be treated as an ordinary countdown before Paper IV authorizes it. We therefore report `0% article-authorized` and separately report the live Candidate-Gravity groundwork score.
 
@@ -33,83 +27,76 @@ For Paper V, readiness cannot be treated as an ordinary countdown before Paper I
 |---|---:|---|---|
 | I | **100% scientific material** | CLOSED for frozen scope | RQIR-THM-001/source-calibration layer is scientifically closed; remaining work is editorial/submission hardening rather than missing scientific content. |
 | II | **100% scientific material** | CLOSED | detector-facing likelihood, nuisance profiling, whitening, rank-deficient tests and independent submission audit are closed; submission package is essentially complete. |
-| III | **74% strengthened apparatus-specific readiness** | ACTIVE | the physical colored-noise Fisher layer is now propagated through the nonlinear detector observable `P=(1+C cos Phi)/2`, using source-grounded detection noise and an effective contrast anchor. Science estimability survives simultaneous phase, contrast and readout-gain drift profiling; finite reference uncertainty produces the expected calibration floor. Certified injected-reference metrology and a final end-to-end campaign certificate remain open. |
-| IV | **55%** | ACTIVE / prerequisite-blocked at decisive residual gate | comparator funnel and many framework audits exist, but the common physical observable/source-completion bridge and robust comparator-subtracted residual are still missing, so none of the four terminal Paper-IV decisions is yet authorized. |
-| V | **0% article-authorized**; **24% conditional Candidate-Gravity groundwork** | CONDITIONAL / NOT AUTHORIZED | Paper IV has not returned `NEW_REQUIRED`; live Candidate-Gravity rubric is 24/100, consisting almost entirely of comparator foundation (24/25), with robust residual, parent dynamics, consistency, identifiability and resources still 0. |
+| III | **80% strengthened apparatus-specific readiness** | ACTIVE / final-metrology stage | physical same-apparatus scaling, source-traceable colored covariance, nonlinear transition-probability likelihood, contrast/readout nuisance profiling, calibration-floor law and an explicit calibration/science duty-cycle campaign ledger are closed. The remaining decisive blockers are certified absolute reference metrology, matched campaign provenance/raw data if obtainable, independent clean reproduction, and the final article-facing certificate/manifest. |
+| IV | **55%** | ACTIVE / prerequisite-blocked | comparator funnel and many framework audits exist, but the common physical observable/source-completion bridge and robust comparator-subtracted residual are still missing. |
+| V | **0% article-authorized**; **24% conditional Candidate-Gravity groundwork** | CONDITIONAL / NOT AUTHORIZED | Paper IV has not returned `NEW_REQUIRED`. |
 
 ## Paper I
 
-Repository scientific scope remains closed at Iteration 078. The CQG-targeted manuscript exists and the scientific material is sufficient for the paper. The remaining gaps are publication figures/tables, final provenance binding for Toy009/Toy010, journal-specific bibliography/priority normalization, independent clean reproduction, and final package assembly. These reduce **submission readiness**, not the scientific-material score used in the headline table.
+Repository scientific scope remains closed at Iteration 078. The CQG-targeted manuscript exists and the scientific material is sufficient for the paper. Remaining gaps are publication figures/tables, final provenance binding for Toy009/Toy010, journal-specific bibliography/priority normalization, independent clean reproduction, and final package assembly. These reduce submission readiness, not the scientific-material score used in the headline table.
 
 ## Paper II
 
-Paper II is the most publication-mature branch. The repository states the scientific scope is closed and the PRR package includes manuscript, vector figures, deterministic data regeneration, 10,000 randomized property tests, rank-deficient nuisance tests, correlated-covariance whitening, cover letters, manifest and checklist. Remaining actions are predominantly author/portal administration.
+Paper II remains the most publication-mature branch. The repository states the scientific scope is closed and the PRR package includes manuscript, vector figures, deterministic data regeneration, 10,000 randomized property tests, rank-deficient nuisance tests, correlated-covariance whitening, cover letters, manifest and checklist. Remaining actions are predominantly author/portal administration.
 
 ## Paper III — strengthened standard
 
-The 2026-09-09 apparatus audits now close the structural identifiability layer, most of the physical same-apparatus noise/resource layer, and the principal detector-facing nuisance layer:
+The 2026-09-09 apparatus programme has now closed the following chain:
 
 - common multiplicative science-scale degeneracy is explicit;
-- after additive-nuisance and correlated-covariance profiling, a known modulated acceleration reference can make the RQIR science amplitude estimable even when internal `k/T` calibration retains a null direction;
-- recoil provides a distinct `(2,1)` scale direction relative to acceleration `(1,2)`;
-- recoil alone does **not** close absolute science-amplitude identifiability when the science scale remains free;
-- unknown reference amplitude without prior remains non-identifiable for all shot counts;
-- with a reference prior, the resource law exposes an irreducible calibration floor rather than falsely treating it as ordinary statistics;
-- the same-apparatus audit is tied to the published SYRTE 87Rb Raman gravimeter: `2T=100 ms`, `4 Hz` cycle, about `10 us` Raman pulse, and measured `11 mrad/shot`;
-- the derived `k_eff T^2` scale reproduces the published `1.4e-8 g at 1 s` short-term sensitivity to rounding accuracy;
-- the Cheinet sensitivity-function result supplies a concrete low-frequency acceleration transfer, and the `2T/Tc=0.4` duty/dead-time cost is explicit;
-- a coarse log-log digitization of the published passive-platform Fig.-8 acceleration ASD, without amplitude fitting, propagates to `6.35e-8 g at 1 s`, within about 2.3% of the paper's independently quoted `6.5e-8 g at 1 s` inferred vibration limit;
-- applying the paper's factor-3 vibration rejection and its independent `4 mrad/shot` non-vibration budget yields `2.18e-8 g at 1 s`, within about 8.8% of the quoted typical corrected `2e-8 g at 1 s`;
-- this physical PSD is converted into sampled Toeplitz covariance by integrating the continuous phase PSD at actual shot separations, so the off-diagonal covariance is no longer an arbitrary AR(1) family;
-- science estimability survives a smooth 2-Hz crosstalk stress boosted up to five times the nominal trace, although the uncertainty degrades as expected;
-- the actual detector observable is now modeled as `P=(1+C cos Phi)/2` near mid-fringe rather than treating reconstructed phase as the primitive data product;
-- the source reports `sigma_P ~ 3e-4` at high atom number and `sigma_phi=2 sigma_P/C`; combining this with the stated near-`1 mrad/shot` detector sensitivity gives an approximate effective working contrast `C~0.6` used as a source-derived anchor;
-- the physical phase covariance is propagated through the shot-dependent nonlinear fringe slope into a non-Toeplitz probability covariance, with independent probability detection noise added explicitly;
-- the detector-facing likelihood profiles common scale, phase offset plus linear/quadratic phase drift, absolute contrast plus linear/quadratic contrast drift, centered readout gain plus gain drift, readout offset and optional unknown reference amplitude simultaneously;
-- finite calibrated reference makes `theta` estimable even though apparatus-only contrast/readout null modes remain; those null directions are explicitly theta-orthogonal rather than being hidden by priors;
-- at `theta=1 ng`, the detector-facing forecast is approximately `5.73 ng` at 60 s and `1.83 ng` at 600 s under the physical covariance;
-- a combined detector stress with 20% lower contrast, contrast drift, readout-gain drift and phase drifts in the source-described mid-fringe regime leaves `theta` estimable;
-- the detector-facing calibration scan reproduces `sigma_theta^2 ~= sigma_stat^2 + (theta f_ref)^2` to numerical precision, making the statistical-to-reference-calibration crossover explicit;
-- the negative controls remain intact: static science with free phase offset fails, modulation without reference fails, and an unknown uncalibrated reference fails.
+- known modulated acceleration reference restores science-amplitude estimability after nuisance profiling;
+- recoil and acceleration calibration directions are structurally distinguished;
+- unknown uncalibrated reference remains non-identifiable, preserving a required negative control;
+- the same-apparatus model is tied to the published SYRTE 87Rb Raman gravimeter (`2T=100 ms`, `4 Hz`, measured `11 mrad/shot`);
+- `k_eff T^2` reproduces the paper's `1.4e-8 g at 1 s` scale;
+- the Cheinet sensitivity function supplies the physical acceleration transfer and the `2T/Tc=0.4` atom-interferometer duty cost;
+- a coarse source-traceable digitization of the passive-platform Fig.-8 acceleration ASD predicts `6.35e-8 g at 1 s`, within about 2.3% of the paper's `6.5e-8 g` vibration limit without amplitude fitting;
+- factor-3 vibration rejection plus the independent `4 mrad/shot` budget predicts `2.18e-8 g at 1 s`, close to the quoted typical corrected `2e-8 g`;
+- the physical continuous PSD is converted into shot covariance rather than replaced by an arbitrary AR(1) model;
+- science estimability survives a strong 2-Hz crosstalk stress;
+- the actual detector observable is modeled as `P=(1+C cos Phi)/2` with source-grounded `sigma_P ~ 3e-4` and approximate effective working contrast `C~0.6`;
+- phase offset/drift, contrast plus contrast drift, readout gain/gain drift and readout offset are profiled simultaneously;
+- apparatus-only null modes are explicitly separated from the science direction rather than removed by hidden priors;
+- detector-facing statistical forecasts are approximately `5.73 ng` at 60 s and `1.83 ng` at 600 s;
+- the detector-facing reference floor obeys `sigma_theta^2 ~= sigma_stat^2 + (theta f_ref)^2`;
+- a physically realizable calibration-block protocol is now frozen from the paper's demonstrated platform-excitation/atom-plus-seismometer transfer-function procedure;
+- for a one-hour wall-time design with one 30-s calibration block every 600 s, calibration costs `180 s`, leaving `3420 s` science exposure and **95% science duty**;
+- using the published typical corrected `2e-8 g/sqrt(Hz)` scale, the 30-s reference block contributes about `0.365%` statistical amplitude uncertainty;
+- the paper's `<1%` low-frequency scale-factor difference between two seismometers is used only as a conservative **proxy** systematic, giving a combined source-grounded reference proxy `f_ref ~= 1.0646%`;
+- with the explicit duty ledger, the one-hour statistical science uncertainty is about `0.766 ng` and the calibration/statistics crossover occurs near `theta ~= 72 ng`.
 
-The remaining high-value authorities are now tightly localized: a certified finite absolute uncertainty for a realizable injected acceleration reference, inclusion of the actual reference/modulation protocol in the duty-cycle ledger, raw shot-level population/contrast evolution and campaign cross-spectral data if obtainable, and one final joint end-to-end campaign certificate. The current probability model is detector-facing and source-grounded but does not pretend that the proposed reference amplitude has already been experimentally calibrated on this apparatus.
+The new campaign certificate closes protocol feasibility, calibration-block cost, science exposure accounting and calibration-floor bookkeeping. It does **not** relabel the `<1%` two-seismometer agreement as a certified absolute acceleration-reference uncertainty. That distinction is why Paper III is promoted to **80%**, not to 100%.
 
-Therefore the strengthened Paper-III readiness is now **74%**.
+### Final 20% required for Paper III = 100%
+
+1. **Certified absolute reference metrology:** replace the 1% proxy with a measured/certified absolute amplitude/transfer uncertainty for the chosen reference-injection protocol.
+2. **Matched campaign provenance:** bind the PSD/cross-PSD, population/contrast evolution and calibration information to one compatible campaign; if raw data are unobtainable, freeze the strongest reproducible source-traceable substitute and its limitations explicitly.
+3. **Independent clean reproduction:** rerun the complete Paper-III chain from a clean environment and reproduce the source checks, covariance, nonlinear detector likelihood, calibration floor and resource certificate deterministically.
+4. **Final article-facing certificate:** freeze figures/tables, manifest, failure-domain table and manuscript-facing claims so no decisive result depends on an untracked notebook/manual calculation.
+
+When all four gates pass, Paper III can be labelled **100% scientific material**, and because Papers I and II are already 100% on this scale, the repository becomes **100% scientifically ready for the first three papers collectively**.
 
 ## Paper IV
 
 The repository contains substantial article-ready comparator material and a negative-results matrix spanning semiclassical, stochastic/postquantum, Gaussian/Källén–Lehmann, perturbative GR EFT, nonlocal/form-factor and asymptotic-safety directions. Later Candidate-Gravity work extends the audit chain through Iteration 675.
 
-However the live front is prerequisite-blocked. Exact missing authorities are:
+However the live front is prerequisite-blocked. Exact missing authorities remain:
 
 - **M1:** a concrete same-parent conserved detector/asymptotic observable geometry;
 - **M2:** matched Source/Born/contact completion in that same observable;
 - **M3:** a concrete nonzero robust comparator-subtracted residual;
 - **M4:** actual `Tr U1` only if a future C5 route requires it.
 
-Because `M1–M3` are upstream of the terminal comparator decision, Paper IV cannot yet honestly choose `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, or `NEW_REQUIRED`. The large quantity of negative/audit material therefore does not justify a near-complete score. **55%** is retained as a conservative scientific-material estimate.
+Because M1-M3 are upstream of the terminal comparator decision, Paper IV cannot yet honestly choose `EXISTING_SUFFICIENT`, `ADAPT_EXISTING`, `HYBRID_REQUIRED`, or `NEW_REQUIRED`. **55%** is retained.
 
 ## Paper V
 
-Paper V is not merely unfinished; under the accepted architecture it is **not yet authorized to exist as a new-model paper**. The correct headline is therefore `0% article-authorized`, not 24%.
-
-The separate **24% Candidate-Gravity groundwork** remains valuable. The live model rubric is:
-
-- comparator foundation `24/25`;
-- robust unique residual `0/20`;
-- frozen parent dynamics/ANSATZ `0/20`;
-- consistency/positivity/Ward/causality `0/15`;
-- identifiability/Fisher `0/10`;
-- resource/experiment closure `0/10`.
-
-If Paper IV eventually returns `NEW_REQUIRED`, this 24% groundwork becomes the starting asset for Paper V rather than its publication-readiness percentage.
+Paper V remains unauthorized as a new-model paper until Paper IV returns `NEW_REQUIRED`. Candidate-Gravity groundwork remains **24%** and is not treated as Paper-V publication readiness.
 
 ## Program-level interpretation
 
-Do **not** average the five percentages into a single publication score: Paper V is conditional and Paper III is currently being judged against a deliberately stronger apparatus-specific standard than the historical frozen scope.
-
-Current working RQIR programme/model readiness is now approximately **72%**. The Candidate-Gravity/new-model branch remains **24%**. Paper IV remains the main programme-level bottleneck despite the Paper-III advance.
+Current working RQIR programme/model readiness is approximately **73%**. Candidate-Gravity groundwork remains **24%**. Paper IV remains the dominant later-program bottleneck, while for the user's immediate goal of preparing the first three papers the sole scientific bottleneck is now Paper III's final metrology/reproducibility package.
 
 ## Next high-value research action
 
-For Paper III, the next authority is an end-to-end campaign certificate: freeze an experimentally realizable reference-injection protocol, attach a source-grounded absolute transfer uncertainty, account for its modulation/reference shots in the duty-cycle resource ledger, and combine that with the physical PSD plus detector-facing probability likelihood in one final certificate with explicit failure domains. Raw population/contrast and cross-spectral data should replace the coarse source digitization if obtainable, but their absence should remain labelled rather than silently estimated. For Paper IV, computation remains prerequisite-blocked until new authority supplies M1/M2 or an independent admissible comparator branch.
+Do not add another generic nuisance variant. The next Paper-III work should target the four final 100% gates above, beginning with a defensible absolute reference-metrology authority and a clean reproducibility certificate. In parallel, Paper-I/II editorial/submission hardening can proceed without changing their scientific-material scores.
