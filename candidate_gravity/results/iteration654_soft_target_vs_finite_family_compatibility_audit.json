@@ -1,0 +1,34 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "MODEL_READINESS": "24%",
+  "candidate_residual": false,
+  "classification": "BLOCKED_ITER654_CURRENT_S_WITH_TU_FIXED_CLOSED_GAMMA3_FAMILY_IS_FINITE_MOMENTUM_NOT_FROZEN_SOFT_T_CUT__NEW_PROSPECTIVE_SOFT_KINEMATIC_CONTRACT_REQUIRED_NON_RESIDUAL",
+  "comparator_quotient": "NOT_PERFORMED",
+  "current_family": {
+    "contract_id": "MSSC001-CLOSED-GAMMA3-INV-FAMILY-V1",
+    "definition": "q_s^2=s>0 varied while q_a^2=t0=0.14 and q_b^2=u0=0.34 remain fixed; q_s+q_a+q_b=0",
+    "minimum_abs_external_invariant_across_audited_rows": 0.14,
+    "minimum_external_fourvector_norm_across_audited_rows": 0.4242640687119285,
+    "soft_leg_present": false,
+    "tensor_transport": "MSSC001-CLOSED-GAMMA3-TENSOR-TRANSPORT-V1"
+  },
+  "date": "2026-09-09",
+  "failures": [],
+  "frozen_target": {
+    "Iter175": "Gamma3_soft = W[K2] + transverse/nonminimal soft structure + higher-soft-order",
+    "Iter205": "T_cut = D_s Gamma3_ret,soft - W[D_s K2]"
+  },
+  "iteration": 654,
+  "native_Y_Tcut_projection": "NOT_PERFORMED",
+  "next_gate": "Iteration655: prospectively freeze MSSC001-CLOSED-SK-SOFT-TCUT-KIN-V1; no cut values before the freeze.",
+  "readiness_change": "0 percentage points",
+  "scientific_gate_pass": true,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "zero_fill": false,
+  "canonical_run": 34322064988,
+  "canonical_job": 102370728454,
+  "head_sha": "7fce758c9bee950a2b5dd5747889e9f97f6fad6b",
+  "artifact_id": 10092333013,
+  "artifact_digest": "sha256:c7b6bcdd319bba0452082a024ad7947f028dabd83f654164b1aae018fdb13242"
+}

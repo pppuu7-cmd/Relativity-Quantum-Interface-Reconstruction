@@ -1,0 +1,41 @@
+name: RQIR Iter655 soft Tcut kinematic contract
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration655_soft_tcut_kinematic_contract.py'
+      - 'candidate_gravity/results/iteration654_soft_target_vs_finite_family_compatibility_audit.json'
+      - '.github/workflows/rqir-iteration655-soft-tcut-kinematic-contract.yml'
+  workflow_dispatch:
+
+jobs:
+  freeze-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Freeze and validate Iter655 soft Tcut kinematics
+        run: python candidate_gravity/code/iteration655_soft_tcut_kinematic_contract.py
+      - name: Fail-closed validate result
+        run: |
+          python - <<'PY'
+          import json
+          p='candidate_gravity/results/iteration655_soft_tcut_kinematic_contract.json'
+          d=json.load(open(p))
+          assert d['iteration']==655
+          assert d['scientific_gate_pass'] is True
+          assert d['failures']==[]
+          assert d['contract_id']=='MSSC001-CLOSED-SK-SOFT-TCUT-KIN-V1'
+          assert d['candidate_residual'] is False
+          assert d['zero_fill'] is False
+          assert d['MODEL_READINESS']=='24%'
+          print('PASS_RAW_AUTHORITY_AUDIT_ITER655_SOFT_TCUT_KINEMATIC_CONTRACT')
+          PY
+      - name: Upload Iter655 raw artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration655-soft-tcut-kinematic-contract
+          path: candidate_gravity/results/iteration655_soft_tcut_kinematic_contract.json
+          if-no-files-found: error

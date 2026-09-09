@@ -10,31 +10,21 @@ Repository commits, validated Actions artifacts, recovery deltas, research logs 
 
 ## Current authority
 
-Latest authoritative research iteration: **649**.
+Latest authoritative research iteration: **654**.
 
-Historical authority retained: Iter581 exact15 PASS; Iter582 q2-resolved Candidate-side connection coordinate; Iter594 complete 13-family MSSC source object; Iter605 source nonlinear Ward PASS; Iter621 normalization-authority graph; Iter627 combined matter+gravity SK measurement contract; Iter629 open-vs-closed one-factor proxy rejection; Iter630 closed retarded one-GK causal structure; Iter632 Minkowski-vacuum scalar state; Iter636 frozen closed-Gamma3 invariant family; Iter638 exact fixture anchor; Iter639 threshold/Landau geometry; Iter640 native D_s projector/support; Iter641 denominator spectral kernel; Iter642 same-parent vertex authority; Iter644 Tensor-Transport-V1; Iter645 reduced numerator-weighted ordinary-cut densities; Iter646 one-global-factor normalization audit; Iter647 permanent pre-Iter645 normalization provenance gap; Iter648 projective closed-Gamma3 global-factor cancellation.
+Historical authority retained: Iter581 exact15 PASS; Iter582 q2-resolved Candidate-side connection coordinate; Iter594 complete 13-family MSSC source object; Iter605 source nonlinear Ward PASS; Iter621 normalization-authority graph; Iter627 combined matter+gravity SK measurement contract; Iter629 open-vs-closed one-factor proxy rejection; Iter630 closed retarded one-GK causal structure; Iter632 Minkowski-vacuum scalar state; Iter636 frozen finite closed-Gamma3 invariant family; Iter638 exact fixture anchor; Iter639 threshold/Landau geometry; Iter640 native D_s projector/support; Iter641 denominator spectral kernel; Iter642 same-parent vertex authority; Iter644 Tensor-Transport-V1; Iter645 reduced finite-family numerator-weighted ordinary-cut densities; Iter646/647 normalization audits; Iter648 projective finite-family observable; Iter652 exact source-completion semantics; Iter653 normalized closed-SK Gamma2/Gamma3 parent and Ward map.
 
-### Iter649 — matched Source/Born one-common-factor class NOT established
+### Iter654 — finite invariant family is not the frozen soft T_cut observable
 
-Iter649 audits the exact next prerequisite before any Source/Born subtraction or comparator residual is evaluated.
+Canonical raw authority: run `34322064988`, job `102370728454`, head `7fce758c9bee950a2b5dd5747889e9f97f6fad6b`, artifact `10092333013`, digest `sha256:c7b6bcdd319bba0452082a024ad7947f028dabd83f654164b1aae018fdb13242`, raw-result SHA-256 `ad9d7ce2dd76b0c7d4e28f1e7d0ce546597a2fe17ee5c3d39fe9345fc0f666dc`; `failures=[]`.
 
-Frozen Iter621 authority separates the source normalization class `{MSSC K-normalization, S_amp, q^2 binding}` from the native class `{Gamma3, chi2R, connection convention}` with zero cross-sector normalization equations. After quotienting one common convention, exactly one relative nonzero complex scalar remains. Iter647 independently makes retrospective absolute closed-CTP -> native normalization unavailable for the already computed branch, while Iter648 cancels only one common complex factor inside a separate closed-Gamma3 projective ray.
+Classification: `BLOCKED_ITER654_CURRENT_S_WITH_TU_FIXED_CLOSED_GAMMA3_FAMILY_IS_FINITE_MOMENTUM_NOT_FROZEN_SOFT_T_CUT__NEW_PROSPECTIVE_SOFT_KINEMATIC_CONTRACT_REQUIRED_NON_RESIDUAL`.
 
-Write `A_cand=lambda_native*a`, `A_Born=lambda_source*b`, and `rho=lambda_source/lambda_native`. Then
-
-`A_matched=lambda_native*(a-rho*b)`.
-
-The Iter648 projector `P[x]=x x^dagger/(x^dagger x)` removes the overall `lambda_native`, but it does not remove the independent relative scalar `rho`: `P[A_matched]=P[a-rho*b]`. Therefore projectivization alone does not make Source/Born subtraction normalization-free. A post-result choice of `rho` is forbidden.
-
-Iter629 strengthens the no-go: the historical open scalar response and closed gravitational 1PI object have family-total coefficient vectors `[-1,6,-6]` and `[1,-3,2]`, so their componentwise ratios are `[-1,-2,-3]`. Hence `single_common_N_native_exists=false`; the open response cannot be used as the missing closed gravitational Born proxy by one scalar rescaling.
-
-Classification: `BLOCKED_ITER649_MATCHED_SOURCE_BORN_ONE_COMMON_FACTOR_CLASS_NOT_ESTABLISHED__OPEN_RESPONSE_PROXY_REJECTED_BY_ITER629__NON_RESIDUAL`.
-
-This is operational/provenance BLOCKED and a retained negative result. It is not Candidate-Gravity consistency FAIL/PASS, exact comparator identity, regime-specific non-identifiability, near-degeneracy, or novelty certificate.
+The family `q_s^2=s`, `q_a^2=0.14`, `q_b^2=0.34`, with momentum closure, has no external soft leg. Therefore Iter636–648 remain valid finite-momentum diagnostics only and must not be relabelled as `Gamma3_ret,soft` or used directly as the frozen Iter205 `T_cut = D_s Gamma3_ret,soft - W[D_s K2]`.
 
 ## Frozen guardrails
 
-All 13 families retained; K3 analytic/contact; ordinary K1/K2 and K1^3 support `s>=1.96`; native `D_s=Disc_s/(2*pi*i)` frozen; Tensor-Transport-V1 frozen; `zero_fill=false`. The absolute Iter645 branch remains permanently provenance-BLOCKED; Iter648 remains a separate one-common-factor projective observable. Source/Born subtraction remains `NOT_PERFORMED`: a same-parent matched closed-Gamma3 Born contribution with frozen CTP/Legendre normalization has not been established. Iter629 open response is explicitly not an allowed proxy. Native Y/T_cut projection `NOT_PERFORMED`; fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient `NOT_PERFORMED`. No post-hoc state/channel/tensor/normalization fit. No `ANSATZ-003`; no Fisher/resources; no blind full-C5. Negative/BLOCKED results remain results.
+All 13 families retained. K3 analytic/contact. Ordinary K1/K2 and K1^3 finite-family support `s>=1.96`. Native `D_s=Disc_s/(2*pi*i)` frozen. `zero_fill=false`. Iter653 same-parent normalized closed-SK Gamma2/Gamma3 parent remains authority. Unsupported soft/contact/transverse information is `BLOCKED`, not zero. Source/Born/source-completion subtraction remains `NOT_PERFORMED`; native Y/T_cut projection and fixed comparator quotient remain `NOT_PERFORMED`. No post-hoc state/channel/tensor/normalization fit. No `ANSATZ-003`; no Fisher/resources; no blind full-C5. Negative/BLOCKED results remain results.
 
 ## Stable model-readiness rubric
 
@@ -47,8 +37,8 @@ All 13 families retained; K3 analytic/contact; ordinary K1/K2 and K1^3 support `
 
 **MODEL_READINESS: 24%**
 
-Readiness change through Iter649: **0 percentage points**. The Source/Born normalization/topology obstruction is now algebraically certified, but robust comparator-subtracted residual remains `0/20`; no complete readiness-rubric sector closes.
+Readiness change through Iter654: **0 percentage points**.
 
 ## Exact next gate
 
-**Iteration650:** derive or locate an explicit **same-parent Source/Born contribution inside the closed retarded gravitational Gamma3 matched observable**, with CTP/Legendre normalization and pole/cut origin fixed before subtraction. If no committed definition exists, record that prerequisite as the terminal operational blocker. Do not use the Iter629 open response as a proxy, do not zero-fill the missing term, and do not replace Source/Born subtraction by a newly convenient projective diagnostic unless an independent derivation proves equivalence. Native Y/T_cut projection, actual Source/Born subtraction, fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient, ANSATZ-003, Fisher/resources remain forbidden until that prerequisite is lawfully closed.
+**Iteration655:** prospectively freeze `MSSC001-CLOSED-SK-SOFT-TCUT-KIN-V1` before evaluating any new cut values. The contract must specify a soft leg and `epsilon` trajectory, hard timelike momentum/invariant `s`, momentum closure, polarization/tensor transport, quantities held fixed, and the exact order of `D_s` and `epsilon->0`. No global commutation of discontinuity and soft limit may be assumed across threshold/Landau singularities. After a raw-valid Iter655 freeze, the next lawful step is an epsilon-leading same-parent closed-SK Gamma2 Ward image and Gamma3 soft-cut integrand/topology derivation before numerical integration or subtraction.
