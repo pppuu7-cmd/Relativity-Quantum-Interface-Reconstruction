@@ -1,0 +1,143 @@
+\section{Relation to optimal design and quantum metrology}
+\label{sec:relations}
+
+The mathematical language of allocating experimental effort through Fisher information is established optimal experimental design (OED). Modern treatments formulate design measures as weighted allocations over experimental settings and optimize scalar functions of the resulting information matrix \cite{Huan2024}. For a singled-out linear combination of parameters, c-optimal design is a particularly close statistical relative of the scalar target problem used here; effort weights can be interpreted as the amount of observation allocated to design points \cite{WatsonPan2023}.
+
+RQIR III does not claim OED, Fisher information, convex design, or Cram\'er--Rao resource scaling as new. Its contribution is the ordered interface between the earlier RQIR gates and resource design: the target score is first required to survive the Paper-I calibration quotient, then the Paper-II nuisance tangent geometry, and only then is an apparatus resource budget optimized. Equation~\eqref{eq:resource-variational} makes the nuisance fit part of every resource allocation rather than optimizing raw target Fisher first and profiling afterward.
+
+Quantum metrology provides a complementary upper-level language for probe-state and measurement optimization. Quantum Fisher information can bound parameter precision before a particular measurement is fixed, and its attainable use can depend on noise, coherence, multiparameter compatibility, and measurement design \cite{Giovannetti2011,Pezze2018,Liu2020}. RQIR III intentionally uses the \emph{classical detector-facing profiled Fisher} inherited from Paper II. A quantum Fisher bound may inform an apparatus design, but it is not substituted for the actual detector likelihood unless the relevant measurement and attainability conditions are supplied.
+
+\section{Claims, non-claims, and scope boundary}
+\label{sec:scope}
+
+\begin{table*}[t]
+\caption{Interpretation discipline for RQIR III.}
+\label{tab:claims}
+\begin{ruledtabular}
+\begin{tabular}{p{0.27\textwidth}p{0.31\textwidth}p{0.31\textwidth}}
+Layer & What can be concluded & What is not implied\\
+\hline
+Positive Paper-II profile & at least one local target direction survives declared nuisance geometry & any specified apparatus can reach it\\
+Concave resource map & exposure can be allocated by a convex inner design problem under fixed per-unit scores & the full apparatus-control problem is globally convex\\
+$\kappa_\star>0$ & the declared scalable design family can accumulate local information & available laboratory budget is sufficient\\
+$B_{\min}\le B_{\rm avail}$ & a declared local resource target is feasible in the frozen apparatus model & a discovery, global identifiability, or model uniqueness\\
+Fixed nuisance prior & independent external information can reduce required science resource & the detector data alone self-calibrate\\
+RQIR-RES-001 PASS & implementation obeys frozen resource-conversion invariants & physical reach, quantized gravity, or comparator exclusion\\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+This paper does not claim that an RQIR-ordered response is transmitted by nature; that gravity is quantized; that the synthetic two-band exposure units correspond to a current experiment; that a Cram\'er--Rao lower bound is attained at finite sample size; or that a Fisher-positive and budget-feasible branch uniquely selects a microscopic gravity model. Those statements require additional physical and comparator layers.
+
+\section{Discussion}
+\label{sec:discussion}
+
+RQIR III closes a specific logical gap between ``statistically identifiable'' and ``experimentally budgeted.'' The central fact is that nuisance-aware information remains a geometric quantity even after resources are introduced. Each new unit of resource is worth the squared part of its target score that the current joint nuisance fit cannot mimic. This immediately explains why allocating all exposure to the channel with the largest raw response can be suboptimal: a weaker channel can carry the complementary direction required for self-calibration.
+
+The concavity of Eq.~\eqref{eq:resource-variational} is useful both conceptually and computationally. It shows that the inner allocation problem has diminishing returns but no spurious local maxima under the stated linear-resource assumptions. In the data-only case, positive homogeneity reduces resource closure to one number, $\kappa_\star$, for a fixed design family. If $\kappa_\star=0$, the failure is structural. If $\kappa_\star>0$, the required budget scales linearly with the requested information and quadratically with the inverse local precision.
+
+The fixed-prior case deliberately behaves differently. A prior is an intercept in information space rather than a repeated science exposure. At low exposure it can strongly change the nuisance fit; at high exposure its relative contribution can become small. Test H in RQIR-RES-001 protects this distinction. If calibration itself consumes time or shots, its precision must be promoted from a fixed $\Lambda$ to a separately costed resource channel instead of being treated as free external information.
+
+The physical-binding layer is where the next substantive work lies. Real apparatus designs can violate simple additive exposure scaling through drift, dead time, colored noise, coherence loss, saturation, non-Gaussian readout, or control-dependent covariance. RQIR III does not hide these effects inside an abstract ``sensitivity.'' It requires the mapping from physical controls to response scores and costs to be declared. For fixed controls, the convex allocation theorem can still be used as an inner solver; nonlinear apparatus controls can then be explored in an outer design loop.
+
+This also clarifies the boundary with RQIR IV. Resource closure answers whether a declared response direction is feasible under a declared apparatus and nuisance model. It does not answer whether an observed signal is unique to a proposed microscopic theory. Existing classical, stochastic, semiclassical, hybrid, postquantum, and quantum models can still map to overlapping observable distributions. Comparator testing therefore remains a separate downstream funnel.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have formulated the third RQIR layer: conversion of nuisance-profiled local information into explicit experimental-resource requirements. For setting-wise additive resources, the profiled information admits the exact variational form
+\begin{equation}
+\Ires(\bm e;\Lambda)=
+\min_{\bm a}
+\left[
+\sum_k e_k\|\bm s_k-J_k\bm a\|^2+\bm a^T\Lambda\bm a
+\right].
+\end{equation}
+The map is monotone and concave in resource allocation, and is positively homogeneous when no fixed external prior is present. These properties turn maximum-information allocation and minimum-budget closure into convex design problems and yield a local shadow-price rule based on nuisance-orthogonal residual response.
+
+The analytic two-band continuation demonstrates the practical meaning: for the RQIR-II values $(0.3,0.7)$, nuisance-aware allocation improves information by $16\%$ at fixed total exposure relative to equal splitting. RQIR-RES-001 independently verifies the resource identities and numerical implementation, including randomized homogeneity, monotonicity, and concavity tests.
+
+The inference ladder is now explicit:
+\begin{equation}
+\text{calibration survival}
+\rightarrow
+\text{statistical identifiability}
+\rightarrow
+\text{resource closure}
+\rightarrow
+\text{comparator/model testing}.
+\end{equation}
+RQIR III supplies the third arrow. Apparatus-specific reach requires the remaining binding of scores and costs to measured spectral densities, coherence, geometry, control overhead, and feasible laboratory budgets; microscopic interpretation remains downstream.
+
+\begin{acknowledgments}
+The derivation cross-checks, numerical certificate, literature organization, and manuscript drafting used substantive assistance from OpenAI ChatGPT (GPT-5.6 Sol, accessed September 2026). All numerical claims reported in RQIR-RES-001 were regenerated from an executable deterministic script with fixed seed and compared against the analytic identities stated in the manuscript. The AI system is not an author. The author retains full responsibility for the accuracy, interpretation, and integrity of the work.
+\end{acknowledgments}
+
+\section*{Data availability}
+The manuscript source, RQIR-RES-001 certificate script, and frozen JSON output are maintained in the Relativity--Quantum Interface Reconstruction repository \cite{RQIRRepo}. The initial Paper-III working branch is \texttt{paper-III}; a submission commit will be frozen only after the apparatus-binding scope, figures, references, and independent audit are complete.
+
+\begin{thebibliography}{99}
+
+\bibitem{RQIRI}
+A. Buyanov,
+``Relativity--Quantum Interface Reconstruction I: Operational Hierarchy, Ordered Stress--Energy Information, and Finite Calibration-Nullspace Discriminants,''
+working manuscript (2026).
+
+\bibitem{RQIRII}
+A. Buyanov,
+``Relativity--Quantum Interface Reconstruction II: Statistical Identifiability, Nuisance Geometry, and Detectability in Detector-Facing Likelihoods,''
+working manuscript (2026).
+
+\bibitem{Fisher1922}
+R. A. Fisher,
+``On the Mathematical Foundations of Theoretical Statistics,''
+Philos. Trans. R. Soc. London A \textbf{222}, 309--368 (1922),
+doi:10.1098/rsta.1922.0009.
+
+\bibitem{Rao1945}
+C. R. Rao,
+``Information and the Accuracy Attainable in the Estimation of Statistical Parameters,''
+Bull. Calcutta Math. Soc. \textbf{37}, 81--91 (1945).
+
+\bibitem{Huan2024}
+X. Huan, J. Jagalur, and Y. Marzouk,
+``Optimal experimental design: Formulations and computations,''
+Acta Numerica \textbf{33}, 715--840 (2024),
+doi:10.1017/S0962492924000023.
+
+\bibitem{WatsonPan2023}
+S. I. Watson and Y. Pan,
+``Evaluation of combinatorial optimisation algorithms for c-optimal experimental designs with correlated observations,''
+Stat. Comput. \textbf{33}, 112 (2023),
+doi:10.1007/s11222-023-10280-w.
+
+\bibitem{Giovannetti2011}
+V. Giovannetti, S. Lloyd, and L. Maccone,
+``Advances in quantum metrology,''
+Nat. Photonics \textbf{5}, 222--229 (2011),
+doi:10.1038/nphoton.2011.35.
+
+\bibitem{Pezze2018}
+L. Pezz\`e, A. Smerzi, M. K. Oberthaler, R. Schmied, and P. Treutlein,
+``Quantum metrology with nonclassical states of atomic ensembles,''
+Rev. Mod. Phys. \textbf{90}, 035005 (2018),
+doi:10.1103/RevModPhys.90.035005.
+
+\bibitem{Liu2020}
+J. Liu, H. Yuan, X.-M. Lu, and X. Wang,
+``Quantum Fisher information matrix and multiparameter estimation,''
+J. Phys. A: Math. Theor. \textbf{53}, 023001 (2020),
+doi:10.1088/1751-8121/ab5d4d.
+
+\bibitem{Gefen2017}
+T. Gefen, F. Jelezko, and A. Retzker,
+``Control methods for improved Fisher information with quantum sensing,''
+Phys. Rev. A \textbf{96}, 032310 (2017),
+doi:10.1103/PhysRevA.96.032310.
+
+\bibitem{RQIRRepo}
+Relativity--Quantum Interface Reconstruction repository,
+\url{https://github.com/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction}
+(accessed 9 September 2026).
+
+\end{thebibliography}
