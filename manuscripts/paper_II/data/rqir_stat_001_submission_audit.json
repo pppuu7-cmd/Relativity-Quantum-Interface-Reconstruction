@@ -1,0 +1,81 @@
+{
+  "artifact": "RQIR Paper II submission audit",
+  "date": "2026-09-08",
+  "baseline_repository_commit": "9c69f6acab4658565eb016380b03df8ac7807799",
+  "authoritative_certificate": "docs/PAPER_II_REFERENCE_LIKELIHOOD_CERTIFICATE_ITERATION079.md",
+  "authoritative_script": "analysis/paper12_reference_regression_iteration079.py",
+  "certificate_reproduction": {
+    "seed": 20260830,
+    "A_projection_schur": {
+      "schur": 1.1749239290799913,
+      "projection": 1.1749239290799873,
+      "abs_error": 3.9968028886505635e-15
+    },
+    "B_coordinate_invariance": {
+      "original": 1.8405965236299755,
+      "reparameterized": 1.8405965236299728,
+      "abs_error": 2.6645352591003757e-15
+    },
+    "C_prior_monotonicity": {
+      "weak": 1.8405965236299755,
+      "strong": 2.6370745801113067,
+      "margin": 0.7964780564813312
+    },
+    "D_prior_rescue": [
+      {"C_a": 0.0, "F_profile": 0.0, "analytic": 0.0},
+      {"C_a": 1.0, "F_profile": 0.5, "analytic": 0.5},
+      {"C_a": 4.0, "F_profile": 0.8, "analytic": 0.8},
+      {"C_a": 9.0, "F_profile": 0.9, "analytic": 0.9},
+      {"C_a": 19.0, "F_profile": 0.95, "analytic": 0.95},
+      {"C_a": 99.0, "F_profile": 0.99, "analytic": 0.99}
+    ],
+    "E_exposure_obstruction": [
+      {"exposure": 1.0, "F_profile": 0.0},
+      {"exposure": 2.0, "F_profile": 0.0},
+      {"exposure": 10.0, "F_profile": 0.0},
+      {"exposure": 100.0, "F_profile": 0.0},
+      {"exposure": 1000000.0, "F_profile": 0.0}
+    ],
+    "F_two_band": {
+      "g2": 0.3,
+      "g4": 0.7,
+      "F_profile": 0.3041379310344828,
+      "analytic": 0.3041379310344828,
+      "raw_F": 0.58,
+      "retention": 0.5243757431629014
+    },
+    "G_threshold_counterexample": {
+      "eps": 1e-08,
+      "Ftt": 1.0000000000000001e-16,
+      "true": 1.1102230246251565e-16,
+      "bad_threshold": 1e-12,
+      "bad": 1.0
+    }
+  },
+  "independent_property_audit": {
+    "seed": 20260908,
+    "trials": 10000,
+    "max_projection_schur_abs_error": 1.311977870094294e-13,
+    "max_reparameterization_abs_error": 1.0222045432328741e-11,
+    "minimum_prior_monotonicity_margin": 2.134500909356518e-11,
+    "minimum_shared_minus_separate_information": 2.5306780493394854e-07,
+    "max_full_covariance_whitening_abs_error": 5.968558980384842e-13,
+    "violations": {
+      "projection_schur": 0,
+      "reparam": 0,
+      "monotonicity": 0,
+      "alignment": 0,
+      "shared_bound": 0,
+      "covariance": 0
+    }
+  },
+  "deterministic_full_covariance_case": {
+    "seed": 20260908,
+    "dimension": 6,
+    "nuisance_dimension": 2,
+    "condition_number_C": 21.464212299567823,
+    "full_metric": 6.8036503258133445,
+    "whitened": 6.803650325813313,
+    "abs_error": 3.108624468950438e-14
+  }
+}
