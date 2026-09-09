@@ -1,0 +1,43 @@
+\documentclass[aps,physrev,reprint,floatfix,superscriptaddress,nofootinbib,longbibliography]{revtex4-2}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\Col}{\operatorname{Col}}
+\newcommand{\Ires}{\mathcal I_{\beta}}
+\newcommand{\Bmin}{B_{\min}}
+\newcommand{\RQIR}{\mathrm{RQIR}}
+
+\begin{document}
+
+\title{Relativity--Quantum Interface Reconstruction III:\\
+Resource Conversion, Optimal Allocation, and Feasibility after Nuisance Profiling}
+
+\author{Aleksey Buyanov}
+\email{pppuu7@gmail.com}
+\thanks{ORCID: \href{https://orcid.org/0009-0001-2621-9305}{0009-0001-2621-9305}}
+\affiliation{Independent Researcher, Moscow, Russia}
+\date{9 September 2026}
+
+\begin{abstract}
+Relativity--Quantum Interface Reconstruction (RQIR) separates source-side distinguishability, statistical identifiability, physical resource closure, and model comparison into distinct inference layers. RQIR I established an exact calibration-quotient layer, and RQIR II showed that a surviving target direction must also remain outside the detector nuisance tangent span. Here we develop the resource-conversion layer. For independent experimental settings $k$ with nonnegative allocations $e_k$, per-unit whitened target scores $\bm s_k$, nuisance score matrices $J_k$, and fixed independent nuisance precision $\Lambda\succeq0$, the profiled information is
+\[
+\mathcal I_\beta(\bm e;\Lambda)=
+\min_{\bm a}\left[
+\sum_k e_k\|\bm s_k-J_k\bm a\|^2+\bm a^T\Lambda\bm a
+\right].
+\]
+This representation implies that the resource-to-information map is componentwise nondecreasing and concave in $\bm e$; when $\Lambda=0$ it is also positively homogeneous. Consequently, maximizing profiled information under a linear budget and minimizing budget subject to an information target are convex design problems. Where the nuisance minimizer is unique, the marginal value of resource in setting $k$ is the squared residual $\|\bm s_k-J_k\bm a_\star\|^2$, yielding an information-per-cost equalization rule for active settings. For the two-band self-calibration example of RQIR II, we obtain an analytic optimum: with $(g_2,g_4)=(0.3,0.7)$ and equal unit costs, a total exposure of two is optimally allocated as $(e_2,e_4)=(1.4,0.6)$, increasing profiled information from $0.30414$ under equal allocation to $0.3528$, a $16\%$ gain at fixed budget. We then define an apparatus-binding layer for shots, integration time, spectral-density information rates, coherence-dependent interrogation, geometry, and control costs, while keeping these physical inputs distinct from the statistical theorem layer. The RQIR-RES-001 certificate verifies homogeneity, monotonicity, concavity, exact-alignment obstruction, analytic allocation, budget inversion, marginal-value derivatives, and separation of fixed prior information from scalable exposure in deterministic and randomized tests. The result is a resource-closure gate, not an apparatus reach forecast and not evidence for a microscopic theory of gravity.
+\end{abstract}
+
+\maketitle
+
+\input{sections/01_resource_map.tex}
+\input{sections/02_optimal_allocation.tex}
+\input{sections/03_physical_binding_audits.tex}
+\input{sections/04_interpretation_references.tex}
+
+\end{document}
