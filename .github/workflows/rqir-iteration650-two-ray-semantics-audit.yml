@@ -1,0 +1,51 @@
+name: RQIR Iter650 two-ray semantics audit
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration650_two_ray_semantics_audit.py'
+      - '.github/workflows/rqir-iteration650-two-ray-semantics-audit.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration650:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit two-ray diagnostic semantics before values
+        run: python candidate_gravity/code/iteration650_two_ray_semantics_audit.py
+      - name: Validate fail-closed Iter650 result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('results/iteration650_two_ray_semantics_audit/result.json').read_text())
+          assert d['iteration']==650
+          assert d['MODEL_READINESS']=='24%'
+          assert d['scientific_gate_pass'] is True
+          assert d['candidate_residual'] is False
+          assert d['two_ray_diagnostic_mathematically_defined'] is True
+          assert d['physical_comparator_semantics_established'] is False
+          assert d['equivalent_to_source_born_subtraction'] is False
+          assert d['rho_fixed'] is False
+          assert d['values_inspected'] is False
+          assert d['source_born_subtraction']=='NOT_PERFORMED'
+          assert d['native_Y_Tcut_projection']=='NOT_PERFORMED'
+          assert d['comparator_quotient']=='NOT_PERFORMED'
+          assert d['zero_fill'] is False
+          assert d['failures']==[]
+          assert d['classification']=='PASS_ITER650_TWO_RAY_PROJECTIVE_OVERLAP_IS_CSTAR_X_CSTAR_INVARIANT__PHYSICAL_COMPARATOR_SEMANTICS_NOT_ESTABLISHED__NON_RESIDUAL'
+          print(d['classification'])
+          PY
+      - name: Upload raw Iter650 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration650-two-ray-semantics-audit
+          path: results/iteration650_two_ray_semantics_audit/result.json
+          if-no-files-found: error
