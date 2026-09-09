@@ -1,0 +1,33 @@
+name: RQIR Iter673 pre656 independent frontier
+on:
+  push:
+    paths:
+      - 'candidate_gravity/verification/iteration673_pre656_independent_frontier_scan.py'
+      - '.github/workflows/rqir-iteration673-pre656-independent-frontier.yml'
+  workflow_dispatch:
+jobs:
+  iteration673-pre656-frontier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Scan pre656 independent Candidate-Gravity frontier
+        run: python candidate_gravity/verification/iteration673_pre656_independent_frontier_scan.py
+      - name: Fail-closed raw validation
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('candidate_gravity/results/iteration673_pre656_independent_frontier_scan.json'))
+          assert d['iteration']==673 and d['scientific_gate_pass'] is True and d['failures']==[]
+          assert d['blocked'] is True and d['zero_fill'] is False
+          assert isinstance(d['frontier_candidates'],list)
+          print('PASS_RAW_AUDIT_ITER673 candidates=',d['candidate_count'])
+          PY
+      - name: Upload raw Iter673 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration673-pre656-independent-frontier
+          path: candidate_gravity/results/iteration673_pre656_independent_frontier_scan.json
+          if-no-files-found: error
