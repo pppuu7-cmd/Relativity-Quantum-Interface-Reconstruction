@@ -1,0 +1,33 @@
+{
+  "iteration": 650,
+  "date": "2026-09-09",
+  "authoritative_predecessor": 649,
+  "classification": "PASS_ITER650_TWO_RAY_PROJECTIVE_OVERLAP_IS_CSTAR_X_CSTAR_INVARIANT__PHYSICAL_COMPARATOR_SEMANTICS_NOT_ESTABLISHED__NON_RESIDUAL",
+  "scientific_gate_pass": true,
+  "canonical_action": 34318120912,
+  "canonical_job_status": "completed_success",
+  "head_sha": "2dd7510a7d43302aa7e52b6a299d26c74c7eef5a",
+  "artifact": 10090801825,
+  "artifact_digest": "sha256:505e7c377ebc09e7620709f2bf717b6f0dc4cf6ff16e06a75b2f81754f651f0c",
+  "raw_result_sha256": "82aacfc7dda17b45b56f59d16cf946bce525d197904463ce82e7a1d3bb70c390",
+  "raw_artifact_consumed": true,
+  "raw_failures_empty": true,
+  "algebra": {
+    "Pa": "a a^dagger/(a^dagger a)",
+    "Pb": "b b^dagger/(b^dagger b)",
+    "overlap": "Tr(Pa Pb)=|a^dagger b|^2/((a^dagger a)(b^dagger b))",
+    "invariance_group": "C* x C*",
+    "meaning": "projective-ray alignment only"
+  },
+  "physical_comparator_semantics_established": false,
+  "equivalent_to_source_born_subtraction": false,
+  "rho_fixed": false,
+  "values_inspected": false,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "native_Y_Tcut_projection": "NOT_PERFORMED",
+  "comparator_quotient": "NOT_PERFORMED",
+  "zero_fill": false,
+  "MODEL_READINESS": "24%",
+  "readiness_change": "0 percentage points",
+  "next_gate": "Iteration651: audit frozen pre-existing authority for an identity-preserving same-parent equation fixing rho, or an explicit identity that makes the two projective rays matched realizations of one observable. If absent, retain Source/Born/comparator as prerequisite-BLOCKED; do not evaluate or promote the two-ray overlap as a comparator."
+}
