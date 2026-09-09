@@ -1,0 +1,54 @@
+{
+  "artifact": "RQIR Paper II PRR submission package",
+  "date": "2026-09-09",
+  "title": "Relativity–Quantum Interface Reconstruction II: Statistical Identifiability, Nuisance Geometry, and Detectability in Detector-Facing Likelihoods",
+  "author": {
+    "name": "Aleksey Buyanov",
+    "affiliation": "Independent Researcher, Moscow, Russia",
+    "email": "pppuu7@gmail.com",
+    "orcid": "0009-0001-2621-9305"
+  },
+  "target_journal": "Physical Review Research",
+  "scientific_scope_status": "closed / 100% for Paper II",
+  "reproducibility": {
+    "exact_public_audit_data_snapshot_commit": "d0f6453721821fcaec4e9e24ea5e68185d90a5a2",
+    "paper_ii_main_tex_update_commit": "8f965333ba054831a618bbe0ad890d490eef2a01",
+    "claim_ledger_update_commit": "e44d70c7bc799c3b164e28b3dafd24730091a990",
+    "certificate_seed": 20260830,
+    "stress_audit_seed": 20260908,
+    "stress_trials": 10000,
+    "stress_violations": 0
+  },
+  "pdf_preflight": {
+    "pages": 9,
+    "encrypted": false,
+    "openable": true,
+    "likely_scanned": false,
+    "xfa": false
+  },
+  "files": {
+    "main.tex": {"sha256":"0d2dc9ee7f3d2b691d3f27bd5be66d232bf7e405aa85a5a45282eb4ae5736f8e","bytes":3195},
+    "main.pdf": {"sha256":"2b2e438cf7e335d3679c47bafd7495383881293c598105c5fb9b56a64291b368","bytes":562403},
+    "references.bib": {"sha256":"3e4856837a12d6321f4bd50a620807ef8d1fd1befb25d432cdf2c1d2f2fbddda","bytes":3184},
+    "README.md": {"sha256":"d4ceb352f19f1921736e9ae642cc4b00560856ac94747cda7f153769f2a1b788","bytes":2744},
+    "CLAIM_LEDGER.md": {"sha256":"24d9e06f666f6ffd0e88b33d3be2d860c1d7ea0eb0f35f08aa5a8710f04142e2","bytes":5144},
+    "SUBMISSION_CHECKLIST_PRR.md": {"sha256":"49becd82895e8f19597cff50563669e3cd78f964da49b7bcbf3b2986f575f671","bytes":2504},
+    "COVER_LETTER_PRR_STANDALONE.md": {"sha256":"5bb6e2573a3faf3eb20796beba1a287e487c0bbd7942151aea7035a56efe1d5e","bytes":2472},
+    "COVER_LETTER_PRR_JOINT.md": {"sha256":"20f6e3e05a6dfe93105af57330d7ba7e0e2294716b7518038328a8cf60636f0c","bytes":2455},
+    "paper_II_submission_audit_20260908.py": {"sha256":"cea5a3c0e73482d9089a32bbe72ff0c7efd3a75bebfe4e22d2def7795eaaa78f","bytes":7839},
+    "sections/01_interface_geometry.tex": {"sha256":"fb2dcb757096ba072c084d81119597e86d5ebe53c3154e58d9ce7d4fc0bf0279","bytes":9183},
+    "sections/02_prior_geometry.tex": {"sha256":"686e6e2f97d66dc2ffd95b1dcd2c33d40185935a17b70e7794ae6a7f85fc7b77","bytes":3622},
+    "sections/03_detectability_audits.tex": {"sha256":"1cc5ebd2bc0e9df69f0411bbc5dfff2e22c979e548d1c6ae22acd0ea008115ea","bytes":13233},
+    "sections/04_interpretation_references.tex": {"sha256":"0ca6c0a15495973c36ab43ecdfda2a9e8b19591f015c3e488e858f34f6b8d68c","bytes":11367},
+    "figures/prior_rescue.tex": {"sha256":"d0344a159a6f532e78660b93772fada9a46f2b8ae6be246f36edc0dae4b98752","bytes":562},
+    "figures/two_band_geometry.tex": {"sha256":"8af46e645f13f570c31c72b9356406d18983098fd813a7a17102fff86b2f302d","bytes":639},
+    "figures/retention_curve.tex": {"sha256":"ab9921a64c0be1c1336b792a04a6225fd8e28ad45703b19407808a91ae9a5904","bytes":618},
+    "figures/detectability_map.tex": {"sha256":"225ff7480bb7ca951f02e380c0785d5c2f8b3a7d68721a731111f1d1db0083ff","bytes":509},
+    "figures/cutoff_counterexample.tex": {"sha256":"5da8a6c135494ef342a67f0d4a4d24e4c820c66528f90d5addff38e87422df8f","bytes":648},
+    "data/rqir_stat_001_submission_audit.json": {"sha256":"d6bf8b2d97e0dc435a080e446452303632b747f872f31a1e2b70f9b4f6512cb7","bytes":3029},
+    "data/prior_rescue.csv": {"sha256":"34d25cec37473b5819d0e6d3c6aa79131417e1be0c2279252101df0ccbb46ed5","bytes":1548},
+    "data/two_band_retention.csv": {"sha256":"925c176e314e967b6146082abaec34334586fe03e5bef36f4deeba4bee2cfe9c","bytes":3685},
+    "data/cutoff_scan.csv": {"sha256":"c3a7d1ae3079bfce4ddff6af791c4a5e610e8f3fb283517cc00b42f61d637b94","bytes":2429},
+    "data/detectability_map.csv": {"sha256":"80d1cd48b45506976027631c7cba599d658a9fad1287d1f471d9ca7a26472463","bytes":43041}
+  }
+}
