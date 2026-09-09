@@ -1,0 +1,50 @@
+name: RQIR Iter653 normalized closed-SK Gamma2 Gamma3 Ward contract
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration653_closed_sk_gamma2_gamma3_ward_contract.py'
+      - '.github/workflows/rqir-iteration653-closed-sk-gamma2-gamma3-ward.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Iter653 prospective contract audit
+        run: python candidate_gravity/code/iteration653_closed_sk_gamma2_gamma3_ward_contract.py
+      - name: Validate no-value contract
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('candidate_gravity/results/iteration653_closed_sk_gamma2_gamma3_ward_contract.json').read_text())
+          assert d['iteration']==653
+          assert d['scientific_gate_pass'] is True
+          assert d['candidate_residual'] is False
+          assert d['parent']['contract_id']=='MSSC001-CLOSED-SK-GAMMA2-GAMMA3-WARD-V1'
+          assert d['Gamma2']['closed_family_coefficients']==[1,-1]
+          assert d['Gamma3']['closed_family_coefficients']==[1,-3,2]
+          assert d['anti_bias']['new_absolute_cut_values_evaluated'] is False
+          assert d['anti_bias']['Iter645_absolute_values_retroactively_rescaled'] is False
+          assert d['source_born_subtraction']=='NOT_PERFORMED'
+          assert d['failures']==[]
+          assert d['classification']=='PASS_ITER653_PROSPECTIVE_FULLY_NORMALIZED_CLOSED_SK_GAMMA2_GAMMA3_AND_LONGITUDINAL_WARD_MAP_CONTRACT__NO_VALUES_NON_RESIDUAL'
+          print(d['classification'])
+          PY
+      - name: Upload Iter653 raw artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration653-closed-sk-gamma2-gamma3-ward-contract
+          path: candidate_gravity/results/iteration653_closed_sk_gamma2_gamma3_ward_contract.json
+          if-no-files-found: error
+          retention-days: 90
