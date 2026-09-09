@@ -9,20 +9,21 @@
 Repository commits, validated Actions artifacts, recovery deltas, research logs and this file are source of truth. Workflow colour alone is never scientific authority. Latest repo/recovery state wins races; authoritative iteration IDs are never reused.
 
 ## Current authority
-Latest authoritative research iteration: **671**.
+Latest authoritative research iteration: **672**.
 
-Iter665 removed the axial soft-family stabilizer without defining transverse W. Iter666 showed the same-parent longitudinal Ward insertion is gauge-image data, not physical T_cut. Iter667 found no committed MSSC001 detector/asymptotic bridge. Iter668 froze an abstract conserved-detector smearing. Iter669 inventoried historical source/detector candidates without promotion. Iter670 narrowed the MSSC001-specific search to two Iter667 self-references.
+### Iter671 — physical soft-Tcut prerequisite closure
+Canonical raw authority established that the only two MSSC001 detector-geometry scan hits were Iter667 bridge-absence self-references. The physical soft-`T_cut` branch is frozen at `PREREQUISITE_BLOCKED_NO_SAME_PARENT_CONCRETE_DETECTOR_GEOMETRY`; no zero-fill or proxy substitution is allowed.
 
-### Iter671 — soft-Tcut detector prerequisite closure
-Canonical run `34344773553`, job `102443661935`, head `50dde95d595a66b3602e6659bf25432442c45bbe`, artifact `10101210709`, artifact/downloaded-ZIP SHA-256 `b2d81d484aa018bc41b6256033ddfe42ef304fc21be1b310f815ce30ab8ad018`, raw JSON SHA-256 `7ce580c588f6be4de58dcc193a5625cede59636f28e218a0150d6e4845cf04b7`; raw `failures=[]`, `scientific_gate_pass=true`, `blocked=true`.
+### Iter672 — independent-frontier inventory correction
+Canonical run `34345083009`, job `102444664143`, head `e2e8739bc33feb22509bc9bd90ef10cb48192d08`, artifact `10101334381`, artifact/downloaded-ZIP SHA-256 `78fdb226f2f2d8cc7f3e35875c04315f6b0bfc7789b968903b304d4557becdbb`, raw JSON SHA-256 `22943af9433282722d400e01627014e92e0d8e15fcba4581276a18b290cfcec9`; raw `failures=[]`, `scientific_gate_pass=true`, `blocked=true`.
 
-The two Iter670 hits are both Iter667 bridge-absence audit files, not detector definitions. The physical soft-`T_cut` branch is therefore frozen at `PREREQUISITE_BLOCKED_NO_SAME_PARENT_CONCRETE_DETECTOR_GEOMETRY`. Missing authority is concrete MSSC001 conserved detector geometry, normalization/boundary convention, soft matching and source/contact completion. The blocked branch is not zero-filled and is not a Candidate FAIL.
+Its ten nominal frontier candidates were all Iter656-665 members of the already traversed soft-Tcut/Ward chain and are therefore stale/superseded by Iter671. None is promoted as an independent live front.
 
 ## Active computation
-**Iteration672** independent-frontier authority audit has been launched. It inventories newer explicit next-gate authorities outside the now-frozen soft-detector branch while excluding closed C5 e=3/null-soft work, weighted-B3 proxy reuse, blind full-C5, ANSATZ-003, Fisher/resources and forbidden subtraction shortcuts. No text candidate is auto-promoted; the finite newest set must be semantically checked.
+**Iteration673** pre-Iter656 independent-frontier scan has been launched. It searches strictly below Iter656 and excludes explicit soft/detector/Ward continuations, closed C5 e=3/null-soft work, weighted-B3 proxy reuse, blind full-C5, Source/Born shortcuts, ANSATZ-003, Fisher and resource stages. Candidate text is inventory only; the next step must directly inspect a finite newest set before promotion.
 
 ## Frozen guardrails
-All 13 families retained. q3-transfer soft bubble is no-massive-cut topology, never a zero-filled amplitude. `D_s=Disc_s/(2*pi*i)` at fixed epsilon precedes epsilon->0. `zero_fill=false`. Source/Born/source-completion subtraction remains `NOT_PERFORMED`; matched physical soft `T_cut` and comparator quotient remain unformed/BLOCKED. No post-hoc state/channel/tensor/normalization/regulator fit. No `ANSATZ-003`; no Fisher/resources; no blind full-C5. Negative/BLOCKED results remain results.
+All 13 families retained. `zero_fill=false`. Source/Born/source-completion subtraction remains `NOT_PERFORMED`; matched physical soft `T_cut` and comparator quotient remain unformed/BLOCKED. No post-hoc state/channel/tensor/normalization/regulator fit. No `ANSATZ-003`; no Fisher/resources; no blind full-C5. Closed C5 e=3 remains closed. Old weighted-B3 proxy residues are never actual Tr U1 authority. Negative/BLOCKED results remain results.
 
 ## Stable model-readiness rubric
 - comparator foundation `24/25`
@@ -35,4 +36,4 @@ All 13 families retained. q3-transfer soft bubble is no-massive-cut topology, ne
 **MODEL_READINESS: 24%**
 
 ## Exact next gate
-Consume terminal Iter672 raw artifact. Semantically inspect the newest finite independent candidates and select exactly one nearest live algebraic/authority gate whose prerequisites remain valid. If candidates are stale/superseded, record that explicitly and continue backward until a live independent front is found. Do not reopen the frozen soft-`T_cut` detector branch without new same-parent authority.
+Consume terminal Iter673 raw artifact. Directly inspect the newest finite pre656 candidate set and select exactly one live independent algebraic/provenance gate whose prerequisites remain authoritative. If the entire set is stale/superseded, record that and continue backward under the same exclusions; do not reopen the frozen soft-`T_cut` branch without new same-parent detector authority.
