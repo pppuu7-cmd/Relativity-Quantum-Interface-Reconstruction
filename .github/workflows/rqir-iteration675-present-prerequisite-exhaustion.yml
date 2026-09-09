@@ -1,0 +1,34 @@
+name: RQIR Iter675 present prerequisite exhaustion
+on:
+  push:
+    paths:
+      - 'candidate_gravity/verification/iteration675_present_prerequisite_exhaustion_certification.py'
+      - '.github/workflows/rqir-iteration675-present-prerequisite-exhaustion.yml'
+  workflow_dispatch:
+jobs:
+  iteration675-prerequisite-exhaustion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Certify present prerequisite exhaustion
+        run: python candidate_gravity/verification/iteration675_present_prerequisite_exhaustion_certification.py
+      - name: Fail-closed raw validation
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('candidate_gravity/results/iteration675_present_prerequisite_exhaustion_certification.json'))
+          assert d['iteration']==675 and d['scientific_gate_pass'] is True and d['failures']==[]
+          assert d['blocked'] is True and d['zero_fill'] is False
+          assert d['anti_idle_resolution']=='BLOCKED_PREREQUISITES_PROVED_AND_RECORDED__NO_OTHER_INDEPENDENT_ADMISSIBLE_STEP_PRESENT'
+          assert len(d['missing_authorities'])>=3
+          print('PASS_RAW_AUDIT_ITER675',d['classification'])
+          PY
+      - name: Upload raw Iter675 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration675-present-prerequisite-exhaustion
+          path: candidate_gravity/results/iteration675_present_prerequisite_exhaustion_certification.json
+          if-no-files-found: error
