@@ -1,0 +1,9 @@
+{
+  "core_version": "1.0",
+  "status": "FROZEN",
+  "freeze_date": "2026-09-09",
+  "papers_i_iii_scientific_readiness": "100%",
+  "governance": "controlled-extension-only",
+  "freeze_manifest": "docs/RQIR_CORE_V1_FREEZE_MANIFEST_2026-09-09.md",
+  "change_control": "docs/RQIR_CORE_CHANGE_CONTROL.md"
+}
