@@ -8,6 +8,14 @@ on:
       - 'analysis/atom_gravimeter_*.py'
       - 'docs/RQIR7_*PAPER_III*.md'
       - '.github/workflows/paper3_clean_reproduction.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'analysis/atom_interferometer_*.py'
+      - 'analysis/atom_gravimeter_*.py'
+      - 'docs/RQIR7_*PAPER_III*.md'
+      - '.github/workflows/paper3_clean_reproduction.yml'
 
 permissions:
   contents: read
