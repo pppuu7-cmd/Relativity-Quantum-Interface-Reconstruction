@@ -1,0 +1,33 @@
+name: RQIR Iter671 detector candidate semantic closure
+on:
+  push:
+    paths:
+      - 'candidate_gravity/verification/iteration671_iter667_candidate_semantic_closure.py'
+      - '.github/workflows/rqir-iteration671-detector-candidate-semantic-closure.yml'
+  workflow_dispatch:
+jobs:
+  iteration671-semantic-closure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Close Iter670 detector candidate semantics
+        run: python candidate_gravity/verification/iteration671_iter667_candidate_semantic_closure.py
+      - name: Fail-closed raw validation
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('candidate_gravity/results/iteration671_iter667_candidate_semantic_closure.json'))
+          assert d['iteration']==671 and d['scientific_gate_pass'] is True and d['failures']==[]
+          assert d['blocked'] is True and d['zero_fill'] is False
+          assert d['soft_tcut_branch']=='PREREQUISITE_BLOCKED_NO_SAME_PARENT_CONCRETE_DETECTOR_GEOMETRY'
+          print('PASS_RAW_AUDIT_ITER671',d['classification'])
+          PY
+      - name: Upload raw Iter671 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration671-detector-candidate-semantic-closure
+          path: candidate_gravity/results/iteration671_iter667_candidate_semantic_closure.json
+          if-no-files-found: error
