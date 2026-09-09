@@ -1,0 +1,50 @@
+name: RQIR Iter647 pre-Iter645 normalization history audit
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration647_pre645_normalization_history_audit.py'
+      - '.github/workflows/rqir-iteration647-pre645-normalization-history-audit.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration647:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit pre-Iter645 normalization provenance
+        run: python candidate_gravity/code/iteration647_pre645_normalization_history_audit.py
+      - name: Validate fail-closed Iter647 result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('results/iteration647_pre645_normalization_history_audit/result.json').read_text())
+          assert d['iteration']==647
+          assert d['cutoff_commit']=='a86b41cfc4e90d65073faa872b8cfa1b85f29193'
+          assert d['candidate_values_used'] is False
+          assert d['zero_fill'] is False
+          assert d['source_born_subtraction']=='NOT_PERFORMED'
+          assert d['native_Y_Tcut_projection']=='NOT_PERFORMED'
+          assert d['comparator_quotient']=='NOT_PERFORMED'
+          if d['classification'].startswith('BLOCKED_ITER647_'):
+              assert d['scientific_gate_pass'] is False
+              assert d['authority_conclusion']['permanent_for_this_observable_branch_if_blocked'] is True
+              assert d['complete_bridge_files']==[]
+          else:
+              assert d['classification'].startswith('PASS_ITER647_')
+              assert d['scientific_gate_pass'] is True
+          print(d['classification'])
+          PY
+      - name: Upload raw Iter647 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration647-pre645-normalization-history-audit
+          path: results/iteration647_pre645_normalization_history_audit/result.json
+          if-no-files-found: error
