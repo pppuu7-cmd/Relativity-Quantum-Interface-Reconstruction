@@ -1,0 +1,33 @@
+name: RQIR Iter666 Ward-controlled longitudinal soft
+on:
+  push:
+    paths:
+      - 'candidate_gravity/verification/iteration666_ward_controlled_longitudinal_soft_observable.py'
+      - '.github/workflows/rqir-iteration666-ward-controlled-longitudinal-soft.yml'
+  workflow_dispatch:
+jobs:
+  iteration666-ward-controlled-soft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Evaluate Ward-controlled longitudinal soft observable
+        run: python candidate_gravity/verification/iteration666_ward_controlled_longitudinal_soft_observable.py
+      - name: Fail-closed raw validation
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('candidate_gravity/results/iteration666_ward_controlled_longitudinal_soft_observable.json'))
+          assert d['iteration']==666 and d['scientific_gate_pass'] is True and d['failures']==[]
+          assert d['blocked'] is True and d['zero_fill'] is False
+          assert d['native_soft_Tcut']=='BLOCKED_PHYSICAL_TRANSVERSE_SOFT_INPUT_STILL_REQUIRED'
+          print('PASS_RAW_AUDIT_ITER666',d['classification'])
+          PY
+      - name: Upload raw Iter666 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration666-ward-controlled-longitudinal-soft
+          path: candidate_gravity/results/iteration666_ward_controlled_longitudinal_soft_observable.json
+          if-no-files-found: error
