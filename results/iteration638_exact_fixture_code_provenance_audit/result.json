@@ -1,0 +1,41 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "MODEL_READINESS": "24%",
+  "candidate_residual": false,
+  "candidate_values_used": false,
+  "classification": "PASS_ITER638_UNIQUE_SAME_PARENT_EXACT_FIXTURE_ANCHOR_RECOVERED_FROM_COMMITTED_CODE__NON_RESIDUAL",
+  "closure_vector": [0.0, 0.0, 0.0, 0.0],
+  "date": "2026-09-09",
+  "failures": [],
+  "iter368_candidate_signature_crosscheck": {"q_squared_minus_plus_plus_plus": [-1.0, -0.14, -0.34]},
+  "iteration": 638,
+  "leg_order": ["s", "a", "b"],
+  "metric_signature": "+---",
+  "native_projection": "NOT_PERFORMED",
+  "next_gate": "Evaluate frozen Iter636 K1/K2 equal-mass bubble threshold and K1^3 triangle Landau determinant / positive-Feynman-parameter support at fixed t0=0.14,u0=0.34, with s variable and m_phi=0.7.",
+  "provenance": {
+    "iter368_path": "candidate_gravity/code/iteration368_tru1sq_timelike_full_prepruning_routing.py",
+    "iter368_sha256": "46542ff09c5df1fb4c03a0e4058fef5999547ceed005753c3cd8ed75459081eb",
+    "iter588_path": "analysis/source_k1_k2_fixture_binding_iteration588.py",
+    "iter588_sha256": "39783f0cdd4eb0e47ccdac626ba03da6b598676fc95ac85d2f0eb087ed88303f",
+    "bridge_claim": "Iter588 explicitly re-executes the Iter368 setup prefix and inherits M rather than retyping fixture momenta"
+  },
+  "q_a": [-0.4, 0.1, 0.1, 0.0],
+  "q_b": [-0.6, -0.1, -0.1, 0.0],
+  "q_s": [1.0, 0.0, 0.0, 0.0],
+  "readiness_change": "0 percentage points",
+  "recovered_anchor": {"s0": 1.0, "t0": 0.14, "u0": 0.33999999999999997},
+  "scientific_gate_pass": true,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "zero_fill": false,
+  "raw_authority": {
+    "run_id": 34293646233,
+    "job_id": 102285415240,
+    "head_sha": "1bdc8fb40a4f369c006c7f42f4d368a71cb0166f",
+    "artifact_id": 10082281625,
+    "artifact_digest": "sha256:95ed469a705250ea341873d493dec4eb04c199c674c091cefdf07b11072c297e",
+    "result_sha256": "cbf27355a5d3a6bc83163cebf889188b526cb1699ef6e299190bf296de72e0ec",
+    "authority_audit_sha256": "ee011c75cf6c8390ddd682607ebc626744975e01a84ad171a653ee8078e29dc6"
+  }
+}
