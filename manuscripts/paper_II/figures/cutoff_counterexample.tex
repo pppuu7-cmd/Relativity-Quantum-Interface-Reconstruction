@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+\begin{axis}[
+ width=0.96\columnwidth,height=0.61\columnwidth,
+ xmode=log,xmin=1e-20,xmax=1e-10,ymin=-0.03,ymax=1.08,
+ xlabel={inverse threshold $\tau$},ylabel={profiled information},
+ grid=major,legend style={font=\scriptsize,draw=none,at={(0.03,0.97)},anchor=north west},
+ tick label style={font=\scriptsize},label style={font=\small}]
+\addplot[black,thick] coordinates {(1e-20,0) (1e-10,0)};
+\addlegendentry{true profile}
+\addplot[blue,thick] coordinates {(1e-20,0) (9.99e-17,0) (1e-16,1) (1e-10,1)};
+\addlegendentry{threshold deletion}
+\addplot[dashed] coordinates {(1e-16,-0.03) (1e-16,1.08)};
+\end{axis}
+\end{tikzpicture}
