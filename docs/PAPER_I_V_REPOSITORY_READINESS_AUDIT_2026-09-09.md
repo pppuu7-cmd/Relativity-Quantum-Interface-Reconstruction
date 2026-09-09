@@ -33,7 +33,7 @@ For Paper V, readiness cannot be treated as an ordinary countdown before Paper I
 |---|---:|---|---|
 | I | **100% scientific material** | CLOSED for frozen scope | RQIR-THM-001/source-calibration layer is scientifically closed; remaining work is editorial/submission hardening rather than missing scientific content. |
 | II | **100% scientific material** | CLOSED | detector-facing likelihood, nuisance profiling, whitening, rank-deficient tests and independent submission audit are closed; submission package is essentially complete. |
-| III | **58% strengthened apparatus-specific readiness** | ACTIVE | physical AI scaling, full-covariance nuisance profiling, science-estimability geometry and calibration-floor laws are now explicit, but no same-apparatus transfer/PSD/contrast/dead-time/reference-metrology closure with real physical rates has been certified. |
+| III | **64% strengthened apparatus-specific readiness** | ACTIVE | the structural Fisher layer is now tied to a real SYRTE atom gravimeter with physical `T`, cycle rate, low-frequency acceleration transfer, measured 11-mrad shot RMS and explicit dead time; nonzero science information survives complete offset/drift/scale profiling with a finite calibrated reference. Final measured-PSD/cross-PSD, contrast/reference-metrology and single-campaign closure remain open. |
 | IV | **55%** | ACTIVE / prerequisite-blocked at decisive residual gate | comparator funnel and many framework audits exist, but the common physical observable/source-completion bridge and robust comparator-subtracted residual are still missing, so none of the four terminal Paper-IV decisions is yet authorized. |
 | V | **0% article-authorized**; **24% conditional Candidate-Gravity groundwork** | CONDITIONAL / NOT AUTHORIZED | Paper IV has not returned `NEW_REQUIRED`; live Candidate-Gravity rubric is 24/100, consisting almost entirely of comparator foundation (24/25), with robust residual, parent dynamics, consistency, identifiability and resources still 0. |
 
@@ -47,19 +47,23 @@ Paper II is the most publication-mature branch. The repository states the scient
 
 ## Paper III — strengthened standard
 
-New 2026-09-09 apparatus audits materially strengthen the branch beyond the old frozen abstract certificate:
+The 2026-09-09 apparatus audits now close both the structural identifiability layer and the first physical same-apparatus resource layer:
 
 - common multiplicative science-scale degeneracy is explicit;
 - after additive-nuisance and correlated-covariance profiling, a known modulated acceleration reference can make the RQIR science amplitude estimable even when internal `k/T` calibration retains a null direction;
 - recoil provides a distinct `(2,1)` scale direction relative to acceleration `(1,2)`;
 - recoil alone does **not** close absolute science-amplitude identifiability when the science scale remains free;
-- full two-channel covariance does not erase the structural rank distinction;
 - unknown reference amplitude without prior remains non-identifiable for all shot counts;
-- with a reference prior, the resource law exposes an irreducible calibration floor rather than falsely treating it as ordinary statistics.
+- with a reference prior, the resource law exposes an irreducible calibration floor rather than falsely treating it as ordinary statistics;
+- the new same-apparatus audit is tied to the published SYRTE 87Rb Raman gravimeter: `2T=100 ms`, `4 Hz` cycle, about `10 us` Raman pulse, and measured `11 mrad/shot`;
+- the derived `k_eff T^2` scale reproduces the published `1.4e-8 g at 1 s` short-term sensitivity to rounding accuracy;
+- the Cheinet sensitivity-function result supplies a concrete low-frequency acceleration transfer, and the `2T/Tc=0.4` duty/dead-time cost is explicit;
+- under simultaneous scale, phase-offset, linear-drift, quadratic-drift and correlated-noise profiling, a modulated science amplitude retains strictly nonzero Fisher information when a finite calibrated same-apparatus acceleration reference is present;
+- the same audit explicitly fails static science with a free offset and fails an unconstrained reference amplitude, so the PASS is not produced by hidden over-regularization.
 
-These close the structural apparatus-identifiability layer, but they do not yet provide a true same-apparatus resource forecast. Missing high-value authorities include a concrete pulse/transfer function tied to an actual compatible apparatus, measured or defensible PSD/cross-PSD, contrast and dead-time model, finite reference-metrology calibration, source preparation/duty cycle, and a single joint likelihood/campaign closure.
+This is a real promotion beyond the earlier 58% state. However the off-diagonal AR(1) covariance family is still a stress model whose diagonal is anchored to measured 11-mrad shot noise; it is **not** claimed to be the measured full campaign covariance. Remaining high-value authorities are measured or source-traceable PSD/cross-PSD, explicit contrast/readout evolution, an actual finite uncertainty for reference metrology, source/modulation duty-cycle implementation, and one final joint campaign likelihood/certificate.
 
-Therefore the strengthened Paper-III readiness is promoted only to **58%**, not restored to the old 100% headline.
+Therefore the strengthened Paper-III readiness is now **64%**.
 
 ## Paper IV
 
@@ -93,8 +97,8 @@ If Paper IV eventually returns `NEW_REQUIRED`, this 24% groundwork becomes the s
 
 Do **not** average the five percentages into a single publication score: Paper V is conditional and Paper III is currently being judged against a deliberately stronger apparatus-specific standard than the historical frozen scope.
 
-Current working RQIR programme/model readiness remains approximately **69%**. The Candidate-Gravity/new-model branch remains **24%**. Neither number is changed merely by creating this audit document.
+Current working RQIR programme/model readiness is now approximately **70%**. The Candidate-Gravity/new-model branch remains **24%**. Paper IV remains the main programme-level bottleneck despite the Paper-III advance.
 
 ## Next high-value research action
 
-The most valuable active scientific task remains the strengthened Paper-III same-apparatus closure: bind the structural atom-interferometer Fisher geometry to one internally compatible pulse/transfer/noise/reference-metrology model and test whether the science direction survives the complete physical covariance and resource budget. In parallel, Paper IV cannot progress by blind computation until new authority supplies M1/M2 or an independent admissible comparator branch.
+For Paper III, the next authority should replace the synthetic off-diagonal covariance stress family with a source-traceable physical PSD/cross-PSD or noise-budget representation for the chosen apparatus (or a later compatible apparatus with accessible spectral data), add contrast/reference-metrology uncertainty explicitly, and rerun the profiled Fisher/resource calculation as one campaign closure. For Paper IV, computation remains prerequisite-blocked until new authority supplies M1/M2 or an independent admissible comparator branch.
