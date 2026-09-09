@@ -1,0 +1,50 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "MODEL_READINESS": "24%",
+  "authority_status": {
+    "Iter151_action_level_longitudinal_Ward_skeleton_exists": true,
+    "Iter151_sufficient_as_full_physical_soft_W_for_current_closed_scalar_loop": false,
+    "Iter205_W_is_toy_protocol_validator": true,
+    "Iter205_physical_W_defined": false,
+    "Iter582_is_full_matched_K2_authority": false,
+    "Iter582_scope": "connection-sector bookkeeping only, explicitly not full Source/Ward/contact+K2",
+    "Iter644_generic_probe_gauge_condition": "NONE_ADDED"
+  },
+  "candidate_residual": false,
+  "classification": "PASS_ITER652_FROZEN_T_CUT_SOURCE_COMPLETION_IS_W_OF_SAME_PARENT_TWO_POINT_CUT__HISTORICAL_BORN_PROXY_ROUTE_TERMINAL_BUT_CONSTRUCTIVE_K2_W_ROUTE_OPEN__NON_RESIDUAL",
+  "comparator_quotient": "NOT_PERFORMED",
+  "constructive_next_contract": {
+    "anti_bias": "no Iter645/648/Iter582 values may select W, tensor projection, or normalization",
+    "expected_two_point_loop_structure": "derive from the same scalar TrLog parent; local/tadpole pieces are classified separately and discontinuity support comes only from genuinely nonanalytic two-propagator structure",
+    "must_freeze_before_values": [
+      "same doubled MSSC001 CTP/Legendre parent and absolute loop normalization for both Gamma2 and Gamma3",
+      "retarded/CTP component of the gravitational two-point inverse kernel K2",
+      "normalized hard-channel D_s K2 in the same s,t,u invariant family as closed Gamma3",
+      "physical linear Ward/soft map W acting on the frozen external tensor family, not the Iter205 toy W",
+      "contact/source completion implied by the same diffeomorphism identity",
+      "relative factorial/i/sign normalization between Gamma3 and W[K2] before inspecting T_cut values"
+    ],
+    "name": "MSSC001-CLOSED-SK-K2-WARD-SOFT-V1"
+  },
+  "date": "2026-09-09",
+  "exact_scope_correction": {
+    "Iter205_source_completion_semantics": "Ward/soft-determined image W[D_s K2] of the same-parent gravitational inverse two-point kernel",
+    "Iter651_terminal_scope": "terminal only for importing Iter214/222/open-response Born proxies into closed Gamma3",
+    "external_Born_amplitude_required_by_definition": false
+  },
+  "failures": [],
+  "frozen_coordinate": "T_cut = D_s Gamma3_ret,soft - W[D_s K2]",
+  "iteration": 652,
+  "native_Y_Tcut_projection": "NOT_PERFORMED",
+  "next_gate": "Iteration653: prospectively freeze MSSC001-CLOSED-SK-K2-WARD-SOFT-V1 and derive the same-parent closed-SK gravitational two-point kernel/CTP component plus the physical W map before any new cut values are evaluated.",
+  "readiness_change": "0 percentage points",
+  "scientific_gate_pass": true,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "zero_fill": false,
+  "canonical_run": 34319250832,
+  "head_sha": "2636f77741fe433db27281dc249d791d7e7ee273",
+  "artifact_id": 10091216981,
+  "artifact_digest": "sha256:5737662854a34bf8b0f78b3af7e530c79e535a2cc4a410d3a1e4bb58b011cf20",
+  "raw_result_sha256": "b41fff3b36747c5d10365a905f3c9fe98bc5564caa18f841b21e77768d1f9fa6"
+}
