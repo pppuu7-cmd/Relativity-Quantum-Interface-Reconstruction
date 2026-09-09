@@ -1,0 +1,36 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "MODEL_READINESS": "24%",
+  "candidate_residual": false,
+  "candidate_values_used": false,
+  "classification": "PASS_ITER641_PROSPECTIVE_CLOSED_LOOP_DENOMINATOR_SPECTRAL_KERNEL_CONTRACT__NUMERATOR_EXPLICITLY_BLOCKED__NON_RESIDUAL",
+  "comparator_quotient": "NOT_PERFORMED",
+  "date": "2026-09-09",
+  "failures": [],
+  "frozen_threshold": 1.9599999999999997,
+  "iteration": 641,
+  "native_Y_Tcut_projection": "NOT_PERFORMED",
+  "next_gate": "Implement explicit same-parent MSSC001 retarded vertex numerator contractions on the two-body cut for K1/K2 and the ordinary K1^3 cut, using frozen Iter627+632 SK structure; unsupported tensor components remain BLOCKED.",
+  "sample_rows": [
+    {"beta_two_body": null, "s": 1.0, "supported": false},
+    {"beta_two_body": 1.0536712127723509e-08, "s": 1.96, "supported": true},
+    {"beta_two_body": 0.14142135623730995, "s": 2.0, "supported": true},
+    {"beta_two_body": 0.4647580015448901, "s": 2.5, "supported": true},
+    {"beta_two_body": 0.714142842854285, "s": 4.0, "supported": true},
+    {"beta_two_body": 0.8844332774281066, "s": 9.0, "supported": true}
+  ],
+  "scientific_gate_pass": true,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "spectral_kernel_contract": {
+    "K1K2_density": "beta(s) times SAME_PARENT_RETARDED_VERTEX_NUMERATOR__BLOCKED_PENDING_EXPLICIT_CONTRACTION",
+    "K1^3_density": "ordinary Cutkosky phase-space integral of third propagator times SAME_PARENT_RETARDED_VERTEX_NUMERATOR__BLOCKED_PENDING_EXPLICIT_CONTRACTION",
+    "K3": "retained analytic/contact family; ordinary finite-s cut absent",
+    "native_operator": "D_s=Disc_s/(2*pi*i) inherited unchanged",
+    "normalization_scope": "kinematic denominator-level factor only; no absolute 4D loop prefactor frozen here",
+    "ordinary_two_body_support": "Theta(s-1.96)",
+    "universal_equal_mass_beta": "sqrt(1-1.96/s)"
+  },
+  "unsupported_numerator_policy": "BLOCKED_NOT_ZERO_FILLED",
+  "zero_fill": false
+}
