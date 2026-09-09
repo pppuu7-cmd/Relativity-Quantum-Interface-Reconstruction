@@ -1,0 +1,49 @@
+name: RQIR Iter639 closed Gamma3 threshold Landau geometry
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'candidate_gravity/code/iteration639_closed_gamma3_threshold_landau_geometry.py'
+      - '.github/workflows/rqir-iteration639-closed-gamma3-threshold-landau.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  threshold-landau:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check -q sympy
+      - name: Run exact Iter639 threshold and Landau geometry
+        run: python candidate_gravity/code/iteration639_closed_gamma3_threshold_landau_geometry.py
+      - name: Fail-closed raw authority audit
+        run: |
+          python - <<'PY'
+          import hashlib,json,math
+          from pathlib import Path
+          d=Path('results/iteration639_closed_gamma3_threshold_landau_geometry'); r=d/'result.json'; a=d/'authority_audit.json'
+          o=json.loads(r.read_text()); au=json.loads(a.read_text()); sha=hashlib.sha256(r.read_bytes()).hexdigest(); f=[]
+          if o.get('iteration')!=639: f.append('iteration drift')
+          if o.get('classification')!='PASS_ITER639_CLOSED_GAMMA3_SCALAR_GEOMETRY__BUBBLE_THRESHOLD_1P96__NO_POSITIVE_ALPHA_LEADING_TRIANGLE_LANDAU_ROOT__NON_RESIDUAL': f.append('classification drift')
+          if o.get('failures')!=[] or not o.get('scientific_gate_pass'): f.append('scientific failure')
+          b=o.get('bubble',{}); tr=o.get('triangle',{})
+          if not math.isclose(float(b.get('s_channel_normal_threshold',float('nan'))),1.96,rel_tol=0,abs_tol=2e-15): f.append('bubble threshold drift')
+          if b.get('anchor_s0_above_threshold') is not False: f.append('anchor threshold classification drift')
+          roots=tr.get('roots',[])
+          if len(roots)!=2 or tr.get('positive_alpha_leading_roots')!=[]: f.append('Landau support drift')
+          if any(x.get('all_alpha_strictly_positive') for x in roots): f.append('positive-alpha root appeared')
+          if o.get('candidate_values_used') is not False or o.get('zero_fill') is not False: f.append('guardrail drift')
+          if o.get('source_born_subtraction')!='NOT_PERFORMED' or o.get('native_projection')!='NOT_PERFORMED': f.append('premature downstream step')
+          if au.get('result_sha256')!=sha or au.get('classification')!='PASS_RAW_AUTHORITY_AUDIT_ITER639_THRESHOLD_LANDAU_GEOMETRY': f.append('audit binding drift')
+          if f: raise SystemExit('\n'.join(f))
+          print('PASS Iter639 raw audit',sha)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter639-closed-gamma3-threshold-landau
+          path: results/iteration639_closed_gamma3_threshold_landau_geometry/
+          retention-days: 30
