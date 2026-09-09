@@ -10,53 +10,39 @@ Repository commits, validated Actions artifacts, recovery deltas, research logs 
 
 ## Current authority
 
-Latest authoritative research iteration: **644**.
+Latest authoritative research iteration: **646**.
 
-Historical authority retained: Iter581 exact15 PASS; Iter582 q2-resolved Candidate-side connection coordinate; Iter594 complete 13-family MSSC source object; Iter605 source nonlinear Ward PASS; Iter627 combined matter+gravity SK measurement contract; Iter632 Minkowski-vacuum scalar state; Iter636 frozen closed-Gamma3 invariant family; Iter638 exact fixture anchor; Iter639 threshold/Landau geometry.
+Historical authority retained: Iter581 exact15 PASS; Iter582 q2-resolved Candidate-side connection coordinate; Iter594 complete 13-family MSSC source object; Iter605 source nonlinear Ward PASS; Iter627 combined matter+gravity SK measurement contract; Iter630 closed retarded one-GK causal structure; Iter632 Minkowski-vacuum scalar state; Iter636 frozen closed-Gamma3 invariant family; Iter638 exact fixture anchor; Iter639 threshold/Landau geometry; Iter640 native D_s projector/support; Iter641 denominator spectral kernel; Iter642 same-parent vertex authority; Iter644 Tensor-Transport-V1.
 
-### Iter640 — retarded support and native D_s projector
+### Iter645 — reduced numerator-weighted ordinary-cut densities
 
-Canonical run `34297861017`, job `102298271491`, artifact `10083803236`, digest `sha256:4cb96e533c1c04bde656e5f0c811d3790645af246a214078b4d85f989c769c3d`, raw `failures=[]`. K3 has no ordinary finite hard-channel two-particle cut; K1/K2 and K1^3 ordinary support begins at `s>=1.96`; no positive-alpha leading anomalous K1^3 support exists on frozen `t0=0.14,u0=0.34`; native `D_s=Disc_s/(2*pi*i)` is inherited unchanged. Classification: `PASS_ITER640_RETARDED_CLOSED_LOOP_S_SUPPORT_AND_NATIVE_DS_PROJECTOR_CONTRACT__NON_RESIDUAL`.
+The committed evaluator `candidate_gravity/code/iteration645_closed_gamma3_reduced_cut_density.py` evaluates reduced numerator-weighted ordinary s-channel cut densities on the frozen closed-Gamma3 family at `s=(1.96,2.0,2.25,2.5,3.0,4.0)`. It uses only Iter594 K1/K2 machinery, Iter627/630/632 SK/state authority, Iter640/641 support/projector authority, and `MSSC001-CLOSED-GAMMA3-TENSOR-TRANSPORT-V1`.
 
-### Iter641 — denominator spectral kernel
+K3 remains analytic/contact; the K1/K2 closed cyclic representative and both K1^3 closed orientations are retained while all 13 source families remain provenance-retained. `zero_fill=false`. Threshold beta vanishes at `s=1.96`; above threshold the reduced angular integrals are finite under the committed quadrature and no unexpected sampled uncut triangle pole appears.
 
-Canonical run `34298002367`, artifact `10083854574`, digest `sha256:43a11a1146406a71150140fe8377405e36f8bef615a63439a97c6da534a6bedd`, raw result SHA-256 `3927ed46fdde69b2f71e218742fc6fcec2aeb8ada9cc49bd08ec357ef7cd3b5a`, `failures=[]`. Frozen denominator-level ordinary-cut kernel is `Theta(s-1.96)` with analytic `beta(s)=sqrt(1-1.96/s)`; numerator/tensor contractions remain explicit and may not be zero-filled.
+Canonical Action `34305969612` completed `success`; artifact `10086648514`, digest `sha256:1f865d8da0413d50ef6c36056385258de6a175301d19a3856a3a440c85b6a75d`.
 
-### Iter642 — same-parent vertex authority recovered
+Classification: `BLOCKED_ITER645_ABSOLUTE_CLOSED_CTP_CUT_NORMALIZATION_NOT_YET_BOUND__REDUCED_NUMERATOR_DENSITIES_COMPUTED__NON_RESIDUAL`.
 
-Canonical run `34298137965`, artifact `10083900312`, digest `sha256:76f329b38a557092a34e5d0a75d33760c769b5b5e11f30e7fc28e98d7e1d8735`; raw audit `PASS_RAW_AUTHORITY_AUDIT_ITER642_VERTEX_AUTHORITY`, `failures=[]`. Exact reusable same-parent MSSC001 machinery (`K1`, `K2`, `K3_mixed`, metric coefficients, scalar propagator and routed assembly) is machine-recoverable from Iter594.
+The remaining ambiguity is one overall closed-CTP effective-action phase/loop-measure normalization. No root-, family-, or q2-dependent fit is licensed, and the missing factor may not be chosen from Iter645 outputs after the fact.
 
-### Iter643 — external tensor trajectory blocker localized
+### Iter646 — same-parent normalization authority audit
 
-Canonical run `34298225934`, artifact `10083932235`, digest `sha256:7de15e2c8ffb572dc17e3cb82f8d6c804cdf138ba39125b3251656d4e5c3186c`, raw `failures=[]`. Existing authority supplied external symmetric metric probes only at the exact `s0=1` anchor and had no pre-result continuation to the ordinary-cut region. Classification: `BLOCKED_ITER643_CLOSED_GAMMA3_EXTERNAL_TENSOR_TRAJECTORY_NOT_FROZEN__S0_FIXTURE_CANNOT_BE_EXTENDED_POST_HOC__NON_RESIDUAL`.
+A fail-closed audit compared the committed Iter627 SK generating-functional contract, Iter630 one-G_K closed-loop structure, Iter632 `G_K=2*pi*i*delta(D)` vacuum normalization, Iter311 relative cubic Tr-log topology, and Iter645 reduced kernel.
 
-### Iter644 — covariance non-uniqueness certified; prospective Tensor-Transport-V1 frozen
+Existing authority explicitly fixes causal slots, state/spectral normalization, relative determinant topology, and the reduced `beta/(16*pi^2)` cut kernel. It does **not** explicitly bind the complete `W=-i ln Z` / Legendre-to-native-Gamma3 normalization carrying the real-scalar Gaussian one-loop global phase/prefactor into the exact native Gamma3 convention. Iter311 contains the relative Tr-log cubic coefficients but intentionally no explicit real-scalar `i/2` global prefactor.
 
-Exact same-parent audit shows the Iter368 external tensors are arbitrary symmetric metric probes generated by RNG seed 319 and scale 0.12, not TT/on-shell graviton polarizations. Therefore no new transversality/tracelessness/gauge/unit-normalization condition is permitted.
+Therefore exactly one common nonzero global scalar factor remains unbound. Standard literature conventions can motivate the familiar Gaussian determinant factor, but literature cannot retroactively replace missing same-parent pre-result authority after Iter645 reduced values have already been evaluated.
 
-For fixed `t0=0.14,u0=0.34`, the prospective canonical momentum representative is
+Canonical Action `34306240992` completed `success`; artifact `10086735213`, digest `sha256:c4348360d606f4707dff5d8f792aadbef74b62d8d5c08ae116b4a47b05392973`.
 
-`q_s=(sqrt(s),0,0,0)`,
+Classification: `BLOCKED_ITER646_ABSOLUTE_CLOSED_CTP_TO_NATIVE_GAMMA3_NORMALIZATION_NOT_EXPLICITLY_BOUND__ONE_GLOBAL_FACTOR_REMAINS__NON_RESIDUAL`.
 
-`q_a=E_a e0 + k e1`, `E_a=(u0-s-t0)/(2 sqrt(s))`, `k=sqrt(E_a^2-t0)`, `e1=(0,1/sqrt(2),1/sqrt(2),0)`,
-
-`q_b=-q_s-q_a`.
-
-It exactly reduces to the Iter368 fixture at `s0=1` and preserves `q_s^2=s`, `q_a^2=t0`, `q_b^2=u0` and closure on the real branch containing `s>=1.96`.
-
-Covariance plus anchor is **not unique**: a common O(2) rotation about `e1` stabilizes all three momenta. Any smooth `theta(s)` with `theta(1)=0` gives another anchor-matched covariant tensor continuation. At `s=2`, `theta=1` changes all three generic seed-319 probes while preserving momenta and the Lorentz metric to floating-point precision. This is pre-measurement observable-definition non-uniqueness, not regime-specific Candidate-Gravity non-identifiability.
-
-Before any numerator-weighted cut value was evaluated, Iter644 prospectively froze `MSSC001-CLOSED-GAMMA3-TENSOR-TRANSPORT-V1`: zero transverse twist in the canonical q_s-rest-frame fixed scattering-plane tetrad; hold all tetrad components of each exact Iter368 metric probe fixed. In the exact Iter368 coordinate frame this implies `h_s(s)=h_s(1)`, `h_a(s)=h_a(1)`, `h_b(s)=h_b(1)`. This equality is now a versioned observable definition, not a post-hoc shortcut.
-
-Reproducible code: `candidate_gravity/code/iteration644_external_tensor_transport_contract.py`. Machine-readable result: `results/iteration644_external_tensor_transport_contract/result.json` with `failures=[]`.
-
-Classification: `PASS_ITER644_PROSPECTIVE_EXTERNAL_TENSOR_TRANSPORT_V1__COVARIANCE_ALONE_NONUNIQUE__ZERO_TWIST_TETRAD_COMPONENTS_FROZEN__NON_RESIDUAL`.
-
-This is a protocol/observable-definition PASS plus a preserved negative non-uniqueness result. It is not Candidate-Gravity consistency PASS/FAIL, exact comparator identity, regime-specific non-identifiability, near-degeneracy, novelty certificate, or Candidate residual.
+This is operational/provenance BLOCKED. It is not Candidate-Gravity consistency FAIL/PASS, exact comparator identity, regime-specific non-identifiability, near-degeneracy, novelty certificate, or Candidate residual.
 
 ## Frozen guardrails
 
-All 13 families retained; K3 remains analytic/contact; ordinary K1/K2 and K1^3 support remains `s>=1.96`; denominator kernel and native `D_s=Disc_s/(2*pi*i)` remain frozen; `zero_fill=false`; Candidate values unused. Source/Born subtraction `NOT_PERFORMED`; native Y/T_cut projection `NOT_PERFORMED`; fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient `NOT_PERFORMED`. No post-hoc state/channel/tensor/normalization fit. No `ANSATZ-003`; no Fisher/resources; no blind full-C5. Negative/BLOCKED results remain results.
+All 13 families retained; K3 analytic/contact; ordinary K1/K2 and K1^3 support `s>=1.96`; native `D_s=Disc_s/(2*pi*i)` frozen; Tensor-Transport-V1 frozen; `zero_fill=false`; Candidate values unused. Source/Born subtraction `NOT_PERFORMED`; native Y/T_cut projection `NOT_PERFORMED`; fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient `NOT_PERFORMED`. No post-hoc state/channel/tensor/normalization fit. No `ANSATZ-003`; no Fisher/resources; no blind full-C5. Negative/BLOCKED results remain results.
 
 ## Stable model-readiness rubric
 
@@ -69,8 +55,8 @@ All 13 families retained; K3 remains analytic/contact; ordinary K1/K2 and K1^3 s
 
 **MODEL_READINESS: 24%**
 
-Readiness change through Iter644: **0 percentage points**. A necessary observable-continuation contract is now frozen prospectively, but robust unique residual remains `0/20`; no complete rubric sector closes.
+Readiness change through Iter646: **0 percentage points**. Numerator-weighted cut information exists and the remaining normalization freedom is narrowed to one global factor, but robust unique residual remains `0/20`; no complete readiness-rubric sector closes.
 
 ## Exact next gate
 
-**Iteration645:** using only Iter594 same-parent K1/K2/K3 machinery, Iter627/632 SK/state authority, Iter640/641 retarded support/projector authority and frozen `MSSC001-CLOSED-GAMMA3-TENSOR-TRANSPORT-V1`, evaluate numerator-weighted ordinary s-channel cut densities family-by-family for K1/K2 and K1^3 on `s>=1.96`. Keep K3 analytic/contact and retain every family. Do not perform native Y/T_cut projection, Source/Born subtraction or comparator quotient yet. `ANSATZ-003`, Fisher/resources and blind full-C5 remain forbidden.
+**Iteration647:** search only **pre-Iter645** repository history/authority for an explicit same-parent CTP `W=-i ln Z`, Legendre transform, real-scalar Gaussian determinant prefactor and Fourier/loop-measure convention that uniquely binds the one remaining global factor. If no such earlier authority exists, record a permanent normalization-provenance BLOCKED for this observable branch rather than choosing `i/2`, `+/-i` or a fitted constant post hoc. Only after that classification may a new prospectively versioned projective/ratio observable that cancels the common factor be considered, and its definition must not use Iter645 values. Native projection, Source/Born subtraction, comparator quotient, ANSATZ-003, Fisher/resources remain forbidden until the relevant gate is lawfully closed.
