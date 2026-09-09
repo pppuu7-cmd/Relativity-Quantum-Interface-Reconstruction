@@ -1,0 +1,26 @@
+{
+  "MODEL_READINESS": "24%",
+  "candidate_cut_values_read": false,
+  "checks": {"all_terms_retained":true,"bubble_support_not_zero_filled":true,"coefficients":[1,-1,-1,-1,1,1],"family_counts":{"K1K2":3,"K1^3":2,"K3":1},"k3_not_mislabelled_as_external_two_line_cut":true,"propagator_counts":[1,2,2,2,3,3],"term_count":6,"triangle_support_left_for_soft_routing_audit":true},
+  "classification": "PASS_ITER659_SOFT_GAMMA3_TERM_CENSUS__K3_CONTACT__K1K2_BUBBLE_CANDIDATES__K1CUBED_TRIANGLE_REQUIRES_SOFT_ROUTING__NON_RESIDUAL",
+  "exact_next_gate": "Resolve the Iter655 soft-family loop-momentum routing for all three K1K2 bubbles and both K1^3 triangles, derive their explicit denominator pairs/triples at fixed epsilon>0, and compute threshold/Landau support before evaluating numerator-weighted D_s or performing Source/Born subtraction.",
+  "failures": [],
+  "iteration": 659,
+  "native_soft_T_cut_value_computed": false,
+  "normalized_parent_prefactor": "i/2 common; no family-wise refit",
+  "readiness_delta_percentage_points": 0,
+  "scientific_gate_pass": true,
+  "scope": "quotient-safe plus-TT contraction on normalized same-parent closed-SK soft Gamma3: pre-cut topology census",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "terms": [
+    {"coefficient":1,"family":"K3","id":"K3_sab","origin":"tadpole/contact","propagators":1,"s_channel_status":"NO_EXTERNAL_TWO_LINE_CUT_FROM_DENOMINATOR_TOPOLOGY","soft_slot":"K3"},
+    {"coefficient":-1,"family":"K1K2","id":"K1_s_K2_ab","origin":"bubble","propagators":2,"s_channel_status":"ROUTING_DEPENDENT_ORDINARY_TWO_LINE_CUT_CANDIDATE","soft_slot":"K1"},
+    {"coefficient":-1,"family":"K1K2","id":"K1_a_K2_sb","origin":"bubble","propagators":2,"s_channel_status":"ROUTING_DEPENDENT_ORDINARY_TWO_LINE_CUT_CANDIDATE","soft_slot":"K2"},
+    {"coefficient":-1,"family":"K1K2","id":"K1_b_K2_sa","origin":"bubble","propagators":2,"s_channel_status":"ROUTING_DEPENDENT_ORDINARY_TWO_LINE_CUT_CANDIDATE","soft_slot":"K2"},
+    {"coefficient":1,"family":"K1^3","id":"K1_s_K1_a_K1_b","origin":"triangle","propagators":3,"s_channel_status":"ORDINARY_TWO_LINE_AND_LANDAU_SUPPORT_REQUIRE_SOFT_ROUTING_AUDIT","soft_slot":"K1"},
+    {"coefficient":1,"family":"K1^3","id":"K1_s_K1_b_K1_a","origin":"triangle","propagators":3,"s_channel_status":"ORDINARY_TWO_LINE_AND_LANDAU_SUPPORT_REQUIRE_SOFT_ROUTING_AUDIT","soft_slot":"K1"}
+  ],
+  "zero_fill_allowed": false,
+  "canonical_raw_provenance": {"run":34334134440,"job":102409424184,"artifact":10096979693,"artifact_digest":"sha256:85674d6980ec8da6b14c1870b64639c80bcb0d351e737d964b98770669bdff37","raw_json_sha256":"5c7d2540e6429f480309553eb680b58e18c8ceb1393726f0a8af70d0a7731846"},
+  "recovery_note": "Canonical raw artifact persisted to main after later fail-closed consumer discovered the previously artifact-only result."
+}
