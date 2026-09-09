@@ -24,11 +24,11 @@ Both K1^3 triangle orientations retain the same invariant set `{0,s,s-2 eps sqrt
 
 Classification: `PASS_ITER660_SOFT_ROUTING__Q3_BUBBLE_NO_MASSIVE_CUT__Q1_Q2_THRESHOLDS_EXPLICIT__NO_FIXED_EPS_POSITIVE_ALPHA_LEADING_TRIANGLE_LANDAU__NON_RESIDUAL`.
 
-Canonical raw authority: run `34334410816`, head `6c74089df150fa4eb465e636e29d81d36f2e7f84`, artifact `10097091086`, digest `sha256:ff04eca955253dac3a6cdd8531fc3b9763937d6c2e272f0ff596303fdd178069`, `failures=[]`, `scientific_gate_pass=true`.
+Canonical raw authority: run `34334410816`, job `102410321810`, head `6c74089df150fa4eb465e636e29d81d36f2e7f84`, artifact `10097091086`, digest / downloaded ZIP SHA-256 `e98203376c103d6119efb10d2fdab66b8e378d26a3e9ac29639c727170735232`, raw JSON SHA-256 `777003d4f8d31bf9222ebb7b392002647699924324487d234e9e72a5dafed75a`; `failures=[]`, `scientific_gate_pass=true`. Earlier race-persisted digest metadata was corrected after direct artifact download verification; scientific payload is unchanged.
 
 ## Active computation
 
-None launched from this authority update. Iter661 is the next allowed gate.
+Iteration661 quotient-safe plus-TT numerator-weighted fixed-epsilon `D_s` integrand gate is active. First run `34339504343` failed before artifact upload and is non-authoritative. Diagnostic-preserving canonical retry run `34339595133`, head `f048cb6badbf9056fab7a11fee5b52e918fd5ad4`, is queued/running. The gate uses exact Iter594 K1/K2 vertices, Iter655 kinematics, Iter658 quotient-safe plus-TT measurement and Iter653 parent normalization; it does not use Candidate values or perform Source/Born subtraction.
 
 ## Frozen guardrails
 
@@ -49,4 +49,4 @@ Readiness change through Iter660: **0 percentage points**. The soft routing/supp
 
 ## Exact next gate
 
-**Iteration661:** construct quotient-safe plus-TT numerator-weighted `D_s` integrands for the q1/q2 hard-transfer K1K2 bubbles and both K1^3 triangles at fixed `eps>0`, using only same-parent Iter594 vertices and Iter653 normalized parent. Retain the q3-transfer bubble explicitly as no-cut. Evaluate `D_s=Disc_s/(2*pi*i)` before `eps->0`; keep Source/Born subtraction `NOT_PERFORMED` until the matched observable contribution is independently classified.
+**Iteration661:** consume the queued/running quotient-safe plus-TT numerator-weighted fixed-epsilon `D_s` computation. If the two-line triangle cut encounters an uncut propagator pole, bind its retarded/CTP prescription from same-parent Iter630/653 authority before numerical promotion; otherwise extract the prescribed epsilon-leading coefficient only on compact domains away from threshold. In either case, keep Source/Born subtraction `NOT_PERFORMED` until matched `W[D_s K2]` is independently classified.
