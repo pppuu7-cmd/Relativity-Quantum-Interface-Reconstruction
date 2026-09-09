@@ -1,0 +1,133 @@
+\section{Introduction}
+\label{sec:intro}
+
+An operational signal can survive an exact calibration and still fail as an inferential target. The reason is that three logically distinct questions intervene between a source-side separation and a finite experiment:
+\begin{equation}
+\begin{aligned}
+\text{exact separation}&\;\not\Rightarrow\;\text{statistical identifiability}\\
+&\;\not\Rightarrow\;\text{practical detectability}.
+\end{aligned}
+\label{eq:staging}
+\end{equation}
+RQIR I formalizes the first layer as a finite calibration quotient on physically admissible source-state perturbations. In its simplest form, a calibration map $A$ can leave a physical null direction $n$ for which a designated response functional $c$ is nonzero,
+\begin{equation}
+ A n=0,\qquad c(n)\neq0,
+\label{eq:paper1bridge}
+\end{equation}
+so calibration-equivalent positive source states can remain response-distinct \cite{RQIRI}. Equation~\eqref{eq:paper1bridge} is exact. It does not establish that a noisy detector can infer the amplitude of that direction after source, apparatus, calibration, and detector nuisances are introduced.
+
+This distinction is familiar in statistical identification theory. Under regularity conditions, local identifiability is tied to the information matrix \cite{Fisher1922,Rao1945,Rothenberg1971}; nuisance parameters motivate profile or orthogonalized likelihood constructions \cite{CoxReid1987,Cowan2011}. Geometric treatments of nonlinear least squares emphasize that parameter directions are represented by tangent vectors in prediction space \cite{Transtrum2011}. Modern identifiability literature also stresses that structural and practical identifiability are not interchangeable and that Fisher diagnostics alone should not be overinterpreted away from their local regime \cite{Wieland2021,Heinrich2025}. The RQIR problem adds a specific ordering constraint: the likelihood analysis must begin only after the exact source/calibration quotient and detector-facing response map have been declared.
+
+The purpose of this paper is therefore not to invent Fisher information or profile likelihood. It is to close the RQIR statistical layer by binding five ingredients into one auditable framework: (i) the calibration-aware interface inherited from Paper I; (ii) covariance-whitened nuisance geometry; (iii) independent preparation/calibration information treated separately from data-only identifiability; (iv) exact obstruction and self-calibration examples relevant to the retained RQIR detector fronts; and (v) deterministic and property-based regressions designed to catch coordinate, rank-cutoff, and covariance errors before physical resource claims are made.
+
+The main contributions are:
+\begin{enumerate}
+\item a projection/Schur representation of local nuisance-profiled information, including rank-deficient nuisance score matrices through the Moore--Penrose pseudoinverse \cite{Penrose1955};
+\item an exact variational representation with positive-semidefinite nuisance precision, yielding coordinate invariance and calibration-information monotonicity;
+\item a clean separation between data-only structural local identifiability and prior-assisted precision;
+\item an exposure no-go for exact score alignment and an analytic two-band self-calibration law;
+\item a shared-versus-branch-specific nuisance inequality;
+\item a seven-test deterministic reference certificate plus a 10,000-trial independent numerical stress audit;
+\item an explicit numerical counterexample showing how an arbitrary inverse cutoff can turn exact degeneracy into a false detection.
+\end{enumerate}
+
+We do not convert Fisher information into apparatus-specific shot counts, power spectral densities, coherence times, wall-clock times, or technological readiness. That conversion is the subject of RQIR III. We also do not claim global nonlinear identifiability from a local Fisher criterion.
+
+\section{Interface inherited from RQIR I}
+\label{sec:interface}
+
+RQIR I orders the inference chain upstream of the likelihood. Schematically, a physical source perturbation is first reduced by exact preparation constraints, then identified modulo a declared finite calibration map, then propagated through a specified detector-facing response. Only after those operations is a statistical data model assigned \cite{RQIRI}. The present paper takes the resulting local detector-facing mean response as its input.
+
+Parameterize the Paper-I physical direction by a local source displacement $\delta q=\beta n$. If $\mathcal R$ denotes the declared detector-facing response map, its local science derivative is
+\begin{equation}
+ \bm t = D\mathcal R[n]=\partial_\beta\bm\mu.
+\label{eq:detectorpush}
+\end{equation}
+If $D\mathcal R[n]=0$, the direction is erased by the chosen detector transfer before any statistical profiling occurs; this is a detector-map failure, not a nuisance degeneracy. The statistical analysis below begins only after a nonzero or explicitly audited detector derivative has been declared.
+
+Let $\bm d\in\mathbb R^n$ denote a detector-level summary for a fixed experimental configuration. Near an audit point $(\beta_0,\bm\eta_0)$, write
+\begin{equation}
+ \bm\mu(\beta,\bm\eta)
+ =\bm\mu_0
+ +(\beta-\beta_0)\,\bm t
+ +K(\bm\eta-\bm\eta_0)
+ +O(\|\delta\bm\theta\|^2),
+\label{eq:localmean}
+\end{equation}
+where $\beta$ is the target amplitude, $\bm\eta\in\mathbb R^m$ is a nuisance vector, $\bm t=\partial_\beta\bm\mu$, and the columns of $K$ are nuisance derivatives. The covariance at the audit point is $C\succ0$. The local Gaussian reference likelihood is
+\begin{equation}
+ p(\bm d\mid\beta,\bm\eta)
+ \propto |C|^{-1/2}
+ \exp\!\left[-\frac12(\bm d-\bm\mu)^T C^{-1}(\bm d-\bm\mu)\right].
+\label{eq:gaussian}
+\end{equation}
+We initially treat $C$ as parameter independent at the audit point. Parameter-dependent covariance contributes the standard additional covariance-derivative Fisher terms and lies outside the frozen RQIR-STAT-001 reference certificate.
+
+Choose any symmetric whitening matrix $W_C=C^{-1/2}$ and define
+\begin{equation}
+ \bm s=W_C\bm t,\qquad J=W_C K.
+\label{eq:whiten}
+\end{equation}
+Whitening is a coordinate change in data space, not a physical approximation. In these coordinates the local covariance metric is Euclidean.
+
+\section{Unconstrained nuisance geometry}
+\label{sec:geometry}
+
+For $\Lambda=0$, the Fisher blocks of the linearized mean model are
+\begin{equation}
+F=\begin{pmatrix}
+\bm s^T\bm s & \bm s^T J\\
+J^T\bm s & J^T J
+\end{pmatrix}.
+\label{eq:fisherblock}
+\end{equation}
+Let
+\begin{equation}
+ \Proj_J=J(J^T J)^+J^T=J J^+
+\label{eq:projector}
+\end{equation}
+be the orthogonal projector onto $\Col(J)$.
+
+\paragraph*{Proposition 1 (projection--Schur equivalence).}
+For the local Gaussian mean model, including a rank-deficient nuisance score matrix,
+\begin{align}
+ \Iprof
+ &=\| (\Id-\Proj_J)\bm s\|_2^2
+\label{eq:projfisher}\\
+ &=\bm s^T\bm s-\bm s^T J(J^T J)^+J^T\bm s.
+\label{eq:schur}
+\end{align}
+
+\emph{Proof.} Equation~\eqref{eq:projector} is the orthogonal projector onto $\Col(J)$. Therefore $\Id-\Proj_J$ is symmetric and idempotent, so its quadratic form is the squared residual norm. Expanding gives Eq.~\eqref{eq:schur}. The pseudoinverse makes the expression independent of redundant nuisance columns. \hfill$\square$
+
+\paragraph*{Proposition 2 (first-order local identifiability).}
+In the data-only local model, the target score is distinguishable to first order from nuisance motion if and only if
+\begin{equation}
+ \Iprof>0
+ \quad\Longleftrightarrow\quad
+ \bm s\notin\Col(J).
+\label{eq:identcrit}
+\end{equation}
+
+\emph{Proof.} The left side of Eq.~\eqref{eq:projfisher} is a squared norm. It vanishes exactly when $\bm s=\Proj_J\bm s$, i.e. when $\bm s$ belongs to the nuisance span. \hfill$\square$
+
+The qualifier ``first-order local'' is essential. Curvature of a nonlinear model manifold can break a tangent degeneracy at higher order, while disconnected parameter values can remain globally aliased even when the local tangent is nondegenerate. Our usage is therefore compatible with the distinction between local structural and practical identifiability emphasized in the broader literature \cite{Rothenberg1971,Wieland2021,Heinrich2025}.
+
+A useful dimensionless diagnostic is the retained fraction
+\begin{equation}
+ \rho_\beta=\frac{\Iprof}{\bm s^T\bm s},\qquad 0\le\rho_\beta\le1,
+\label{eq:retention}
+\end{equation}
+provided the raw target Fisher is nonzero. This ratio measures local information lost to nuisance profiling, not experimental feasibility.
+
+\paragraph*{Proposition 3 (nuisance enrichment).}
+If $\mathcal N_1\subseteq\mathcal N_2$ are nested nuisance score spans, then
+\begin{equation}
+ \mathcal I_\beta(\mathcal N_2)\le \mathcal I_\beta(\mathcal N_1).
+\label{eq:nuisancemono}
+\end{equation}
+
+\emph{Proof.} Equation~\eqref{eq:projfisher} is the squared Euclidean distance of $\bm s$ from the nuisance subspace. The distance to a larger subspace cannot be greater. \hfill$\square$
+
+This elementary fact is a powerful regression test: adding an unconstrained nuisance direction cannot increase data-only profiled information unless some other element of the experiment or prior model also changes.
+
