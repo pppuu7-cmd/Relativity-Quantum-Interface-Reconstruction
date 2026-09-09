@@ -1,0 +1,26 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "MODEL_READINESS": "24%",
+  "candidate_residual": false,
+  "candidate_values_used": false,
+  "classification": "PASS_ITER642_SAME_PARENT_VERTEX_AUTHORITY_MACHINE_RECOVERABLE__NON_RESIDUAL",
+  "comparator_quotient": "NOT_PERFORMED",
+  "date": "2026-09-09",
+  "failures": [],
+  "inventory": [
+    {"bytes": 9277, "exists": true, "has_K1": true, "has_K2": true, "has_K3": true, "has_MSSC": true, "path": "analysis/source_full_cubic_routed_assembly_iteration594.py", "sha256": "21307dadff9bc0272d640bec6ae401608c42bcb9ba49c19e23e32a3b1f9d174a"},
+    {"bytes": 5757, "exists": true, "has_K1": true, "has_K2": true, "has_K3": true, "has_MSSC": true, "path": "candidate_gravity/research_log/2026-09-08_iteration_594.md", "sha256": "e6463d6fb597624a30aa340184034a7e70d68c07f13e06d7791e824ff83e41c2"},
+    {"bytes": 2338, "exists": true, "has_K1": true, "has_K2": true, "has_K3": true, "has_MSSC": true, "path": "candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_627.md", "sha256": "4bb7f2027cad826c49a983b6536bb93fcdc52b4b15af13fa55a72325fca9f169"}
+  ],
+  "iter594_function_defs": ["mdot", "first_coeff", "mixed_coeff", "K1", "K2", "G", "exact_scalar_K", "K3_mixed", "assemble", "main"],
+  "iteration": 642,
+  "machine_recoverable": true,
+  "native_Y_Tcut_projection": "NOT_PERFORMED",
+  "next_gate": "Implement explicit same-parent retarded K1/K2 and K1^3 cut-numerator contractions using the recovered Iter594 vertex machinery under Iter627+632; keep exact threshold arithmetic and K3 retained analytic/contact.",
+  "scientific_gate_pass": true,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "status": "READY_FOR_EXPLICIT_CUT_NUMERATOR_IMPLEMENTATION",
+  "vertex_like_defs": ["K1", "K2", "K3_mixed"],
+  "zero_fill": false
+}
