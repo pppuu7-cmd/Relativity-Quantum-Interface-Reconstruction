@@ -1,0 +1,25 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "MODEL_READINESS": "24%",
+  "blocked": true,
+  "candidate_values_used": false,
+  "checks": {
+    "dim_ImLq_intersect_KerDq": 3,
+    "dim_Ker_Dq": 6,
+    "dim_transverse_gauge_quotient": 3,
+    "rank_Dq": 4,
+    "rank_DqLq": 1,
+    "rank_Lq": 4
+  },
+  "classification": "BLOCKED_ITER664_EXACT_NULL_WARD_LINEAR_ALGEBRA_LEAVES_THREE_DIMENSIONAL_TRANSVERSE_GAUGE_QUOTIENT_UNDETERMINED__ADDITIONAL_PHYSICAL_SOFT_INPUT_REQUIRED__NON_RESIDUAL",
+  "date": "2026-09-09",
+  "exact_next_gate": "Iteration665: prospective observable redesign audit. Search committed authority for a physical transverse soft theorem/asymptotic identity. If absent, freeze a non-collinear or mixed-tensor closed-SK soft observable that avoids the Iter662 odd-spin selection zero while retaining Iter655 cut-before-soft-limit and same-parent normalization; do not invent W.",
+  "failures": [],
+  "iteration": 664,
+  "native_soft_Tcut": "BLOCKED_ADDITIONAL_TRANSVERSE_SOFT_INPUT_REQUIRED",
+  "scientific_gate_pass": true,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "theorem": "At null q, the diffeomorphism Ward equation D_q Gamma=RHS determines Gamma only modulo Ker(D_q). Modding pure-gauge overlap still leaves a three-dimensional physical transverse quotient. Therefore longitudinal Ward data alone cannot determine the frozen plus-TT component; an additional physical soft theorem/asymptotic or observable definition is required.",
+  "zero_fill": false
+}
