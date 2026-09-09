@@ -1,0 +1,33 @@
+name: RQIR Iter667 physical soft observable bridge
+on:
+  push:
+    paths:
+      - 'candidate_gravity/verification/iteration667_physical_soft_observable_bridge_audit.py'
+      - '.github/workflows/rqir-iteration667-physical-soft-observable-bridge.yml'
+  workflow_dispatch:
+jobs:
+  iteration667-bridge-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit same-parent physical soft observable bridge
+        run: python candidate_gravity/verification/iteration667_physical_soft_observable_bridge_audit.py
+      - name: Fail-closed raw validation
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('candidate_gravity/results/iteration667_physical_soft_observable_bridge_audit.json'))
+          assert d['iteration']==667 and d['scientific_gate_pass'] is True and d['failures']==[]
+          assert d['blocked'] is True and d['zero_fill'] is False
+          assert d['native_soft_Tcut']=='BLOCKED_PHYSICAL_OBSERVABLE_MAP_REQUIRED'
+          print('PASS_RAW_AUDIT_ITER667',d['classification'])
+          PY
+      - name: Upload raw Iter667 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration667-physical-soft-observable-bridge
+          path: candidate_gravity/results/iteration667_physical_soft_observable_bridge_audit.json
+          if-no-files-found: error
