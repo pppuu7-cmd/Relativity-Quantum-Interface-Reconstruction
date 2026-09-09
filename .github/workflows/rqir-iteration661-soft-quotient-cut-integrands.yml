@@ -4,6 +4,10 @@ on:
   push:
     paths:
       - 'candidate_gravity/code/iteration661_soft_quotient_cut_integrands.py'
+      - 'candidate_gravity/results/iteration655_soft_tcut_kinematic_contract.json'
+      - 'candidate_gravity/results/iteration658_plus_tt_null_quotient_invariance.json'
+      - 'candidate_gravity/results/iteration659_soft_gamma3_cut_topology_census.json'
+      - 'candidate_gravity/results/iteration660_soft_family_routing_threshold_landau.json'
       - '.github/workflows/rqir-iteration661-soft-quotient-cut-integrands.yml'
   workflow_dispatch:
 
