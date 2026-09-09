@@ -183,6 +183,8 @@ violations in six property classes & $0$\\
 
 The randomized audit is a numerical robustness check, not a replacement for the analytic propositions. Its purpose is to detect implementation errors in rank-deficient, reparameterized, and correlated-covariance cases that are easy to miss with a single fixture.
 
+The standalone submission-audit script used for this section was generated and debugged with substantive assistance from OpenAI ChatGPT (GPT-5.6 Sol). The executable outputs reported here were accepted only after comparison with the frozen deterministic certificate, direct analytic identities, and independent property checks with fixed seeds; the AI system was not used as a numerical authority.
+
 \section{Numerical rank discipline: a minimal false-detection counterexample}
 \label{sec:rank}
 
@@ -210,4 +212,3 @@ for any $\tau\ge10^{-16}$. In particular, the historical counterexample uses $\t
 \end{figure}
 
 The methodological rule is therefore stronger than ``choose a small tolerance'': exact hard constraints should be eliminated analytically where possible, and weak physical nuisance directions must not be removed merely because their singular values are small. Numerical regularization must be justified relative to a physical prior, an explicit model reduction, or a demonstrated stability criterion.
-
