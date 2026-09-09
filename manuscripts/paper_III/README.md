@@ -39,13 +39,14 @@ The script writes `rqir_resource_certificate.json`. The initial RQIR-RES-001 sui
 5. analytic two-band optimal allocation;
 6. minimum-budget inversion;
 7. envelope/marginal-information derivative;
-8. separation of fixed prior information from scalable exposure.
+8. separation of fixed prior information from scalable exposure;
+9. atom-interferometer wall-time binding with a free phase-offset nuisance.
 
 Seed: `20260909`. Randomized tests: 5000 problems per stochastic property.
 
 ## Next work before submission
 
-- bind at least one realistic candidate apparatus family to shots / wall time / PSD / coherence / geometry;
+- deepen the initial atom-interferometer binding into a full apparatus nuisance/covariance case;
 - add independent implementation audit, not only the certificate script;
 - add resource-allocation and budget-reach figures;
 - audit literature and claims against apparatus-specific metrology references;
