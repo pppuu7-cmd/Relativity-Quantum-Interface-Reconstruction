@@ -18,6 +18,17 @@ Classification:
 
 This is operational/mathematical BLOCKED, not model consistency FAIL/PASS, comparator identity, regime-specific non-identifiability, near-degeneracy, or novelty certificate.
 
+## Canonical raw Actions provenance
+- run: `34333673862`
+- job: `102407910144`
+- head: `66789fbef67c5676c67e8eb789fb24c480aabdf4`
+- artifact: `10096791809` (`rqir-iteration657-null-ward-completion-rank-audit`)
+- artifact digest / downloaded ZIP SHA-256: `3f14419ea7a77d2915c2358183cc2ad3ae49492b7556887f86a05e4b339e049d`
+- raw JSON SHA-256: `247f43ab9273c98cd6cc4e8b2c9f9b106f8ec014c8c78f03ca2331cb3dec27d9`
+- raw result: `failures=[]`; ranks `(4,4,1)`; overlap dimension `3`; `zero_fill_allowed=false`.
+
+Scientific authority is assigned from the independently consumed raw artifact, not from workflow colour.
+
 ## Frozen consequences
 - `zero_fill=false`.
 - No auxiliary null vector, off-null path or complement may be chosen after cut inspection.
