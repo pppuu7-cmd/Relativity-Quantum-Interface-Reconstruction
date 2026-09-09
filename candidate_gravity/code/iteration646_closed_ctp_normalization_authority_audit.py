@@ -29,14 +29,14 @@ checks={
  'iter632_GK_absolute_distribution':'G_K_vac' in p632 and '2*pi*i*delta(D)' in p632,
  'iter311_logdet_topology_present':'log(1+X)=X-X^2/2+X^3/3' in p311,
  'iter311_explicit_real_scalar_i_over_2_prefactor':('i/2' in p311 or '0.5j' in p311 or '1j/2' in p311),
- 'iter645_reduced_factor_only':'beta/(16*pi*pi)' in p645 and 'BLOCKED_NOT_ASSUMED' in p645,
+ 'iter645_reduced_factor_only':'beta/(16*pi^2)' in p645 and 'BLOCKED_NOT_ASSUMED' in p645,
  'iter645_absolute_prefactor_deliberately_unfixed':'absolute_closed_CTP_effective_action_phase_prefactor' in p645,
 }
 
 # Existing authority fixes causal slots, G_K normalization, relative logdet topology,
 # and the reduced phase-space kernel, but it does not explicitly bind W=-i ln Z /
 # the CTP Legendre map plus its global one-loop real-scalar prefactor to the native
-# Gamma3 normalization.  Since Iter645 values have already been evaluated, choosing
+# Gamma3 normalization. Since Iter645 values have already been evaluated, choosing
 # that missing factor now would be a post-result convention change rather than an
 # inherited authority derivation.
 required_present=(checks['iter627_explicit_W_minus_i_logZ'] and
