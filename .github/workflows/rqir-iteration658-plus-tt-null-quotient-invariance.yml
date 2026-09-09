@@ -1,0 +1,60 @@
+name: RQIR Iter658 Plus-TT Null Quotient Invariance
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/verification/iteration658_plus_tt_null_quotient_invariance.py'
+      - '.github/workflows/rqir-iteration658-plus-tt-null-quotient-invariance.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  iteration658-plus-tt-null-quotient-invariance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Evaluate exact plus-TT quotient invariance
+        run: python candidate_gravity/verification/iteration658_plus_tt_null_quotient_invariance.py
+
+      - name: Fail-closed raw result validation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('candidate_gravity/results/iteration658_plus_tt_null_quotient_invariance.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          assert d['iteration'] == 658
+          assert d['failures'] == []
+          assert d['scientific_gate_pass'] is True
+          assert d['MODEL_READINESS'] == '24%'
+          assert d['zero_fill_allowed'] is False
+          assert d['source_born_subtraction'] == 'NOT_PERFORMED'
+          assert d['native_soft_T_cut_value_computed'] is False
+          assert d['auxiliary_vector_or_off_null_regulator_selected'] is False
+          assert d['candidate_cut_values_read'] is False
+          c=d['classification']
+          assert c == 'PASS_ITER658_PLUS_TT_MEASUREMENT_DESCENDS_TO_NULL_GAUGE_QUOTIENT__ANNIHILATES_IM_LQ__NO_COMPLEMENT_REQUIRED__NON_RESIDUAL'
+          checks=d['checks']
+          assert checks['q_squared'] == 0
+          assert checks['plus_TT_is_transverse'] is True
+          assert checks['measurement_annihilates_full_gauge_image'] is True
+          assert checks['three_overlap_generators_are_transverse'] is True
+          assert checks['measurement_annihilates_three_overlap_generators'] is True
+          assert checks['measurement_is_nontrivial_on_quotient_witness'] is True
+          assert checks['plus_TT_self_measurement'] == 2
+          print('PASS_RAW_AUTHORITY_AUDIT_ITER658_PLUS_TT_NULL_QUOTIENT_INVARIANCE')
+          PY
+
+      - name: Upload raw authority artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration658-plus-tt-null-quotient-invariance
+          path: candidate_gravity/results/iteration658_plus_tt_null_quotient_invariance.json
+          if-no-files-found: error
+          retention-days: 90
