@@ -1,0 +1,54 @@
+{
+  "iteration": 649,
+  "scope": "Candidate Gravity only",
+  "gate": "Source/Born subtraction normalization-class audit before any subtraction or comparator residual",
+  "authoritative_inputs": [
+    "candidate_gravity/research_log/2026-09-08_iteration_621.md",
+    "candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_647.md",
+    "candidate_gravity/recovery/RECOVERY_DELTA_ITERATION_648.md",
+    "Iter589/594/616 source-sector normalization lineage",
+    "Iter627/645/647/648 closed-CTP/native projective lineage"
+  ],
+  "frozen_authority_facts": {
+    "source_sector": ["MSSC K-normalization", "S_amp", "q^2 binding"],
+    "native_sector": ["Gamma3", "chi2R", "connection convention"],
+    "cross_sector_normalization_equations": 0,
+    "remaining_relative_complex_dof": 1,
+    "iter647_absolute_native_branch": "permanently provenance-BLOCKED",
+    "iter648_projective_branch": "cancels only one common nonzero complex factor"
+  },
+  "algebra": {
+    "candidate": "A_cand = lambda_native * a",
+    "born_source": "A_Born = lambda_source * b",
+    "matched": "A_matched = lambda_native * (a - rho*b)",
+    "rho": "lambda_source/lambda_native",
+    "projective_observable": "P[x] = x x^dagger / (x^dagger x)",
+    "common_scale_property": "P[c*x] = P[x] for c != 0",
+    "relative_scale_property": "P[a-rho*b] is not invariant under independent source/native rescaling because rho is not removed by the common projective quotient"
+  },
+  "allowed_exception_conditions": [
+    "b is identically zero over the full frozen observable domain",
+    "b is proven exactly collinear with a over the full frozen observable domain with a prospectively fixed proportionality",
+    "a same-parent authority equation fixes rho before observing matched values"
+  ],
+  "exception_status": "NONE_PROVEN; no Candidate/Iter645 values were inspected to manufacture one",
+  "subtraction_performed": false,
+  "candidate_values_used": false,
+  "comparator_values_used": false,
+  "ansatz003_status": "FORBIDDEN",
+  "fisher_resources_status": "FORBIDDEN",
+  "classification": "BLOCKED_ITER649_SOURCE_BORN_RELATIVE_NORMALIZATION_NOT_BOUND__PROJECTIVIZATION_CANCELS_ONLY_COMMON_GLOBAL_FACTOR__NON_RESIDUAL",
+  "classification_semantics": {
+    "operational_provenance_blocked": true,
+    "consistency_fail": false,
+    "consistency_pass": false,
+    "exact_comparator_identity": false,
+    "regime_specific_non_identifiability": false,
+    "near_degeneracy": false,
+    "novelty_certificate": false
+  },
+  "negative_result": "Normalization-free projectivization of the closed-CTP ray does not commute with Source/Born subtraction when the two terms retain an unbound relative complex normalization.",
+  "MODEL_READINESS": "24%",
+  "readiness_change": "0 percentage points: the subtraction obstruction is now algebraically classified, but robust unique residual discovery remains 0/20 and no new full rubric sector closed.",
+  "next_gate": "Iter650: prospectively determine whether any physically legitimate diagnostic/comparator can be formulated on the pair of independently normalized rays, invariant under C* x C*, without claiming equivalence to Source/Born subtraction; otherwise preserve the subtraction branch as BLOCKED until a same-parent rho bridge is derived independently of result values."
+}
