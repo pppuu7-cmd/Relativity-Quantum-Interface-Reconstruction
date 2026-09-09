@@ -1,0 +1,49 @@
+name: RQIR Iter652 linked T_cut source-completion scope audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration652_linked_tcut_source_completion_scope_audit.py'
+      - '.github/workflows/rqir-iteration652-tcut-source-scope.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Iter652 scope audit
+        run: python candidate_gravity/code/iteration652_linked_tcut_source_completion_scope_audit.py
+      - name: Validate fail-closed result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('candidate_gravity/results/iteration652_linked_tcut_source_completion_scope_audit.json').read_text())
+          assert d['iteration']==652
+          assert d['scientific_gate_pass'] is True
+          assert d['candidate_residual'] is False
+          assert d['exact_scope_correction']['external_Born_amplitude_required_by_definition'] is False
+          assert d['authority_status']['Iter205_physical_W_defined'] is False
+          assert d['authority_status']['Iter151_action_level_longitudinal_Ward_skeleton_exists'] is True
+          assert d['authority_status']['Iter151_sufficient_as_full_physical_soft_W_for_current_closed_scalar_loop'] is False
+          assert d['source_born_subtraction']=='NOT_PERFORMED'
+          assert d['failures']==[]
+          assert d['classification']=='PASS_ITER652_FROZEN_T_CUT_SOURCE_COMPLETION_IS_W_OF_SAME_PARENT_TWO_POINT_CUT__HISTORICAL_BORN_PROXY_ROUTE_TERMINAL_BUT_CONSTRUCTIVE_K2_W_ROUTE_OPEN__NON_RESIDUAL'
+          print(d['classification'])
+          PY
+      - name: Upload Iter652 raw artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration652-tcut-source-completion-scope
+          path: candidate_gravity/results/iteration652_linked_tcut_source_completion_scope_audit.json
+          if-no-files-found: error
+          retention-days: 90
