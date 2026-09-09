@@ -1,0 +1,33 @@
+name: RQIR Iter674 repository authority graph
+on:
+  push:
+    paths:
+      - 'candidate_gravity/verification/iteration674_repository_authority_graph_audit.py'
+      - '.github/workflows/rqir-iteration674-repository-authority-graph.yml'
+  workflow_dispatch:
+jobs:
+  iteration674-authority-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit unresolved independent authority graph
+        run: python candidate_gravity/verification/iteration674_repository_authority_graph_audit.py
+      - name: Fail-closed raw validation
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('candidate_gravity/results/iteration674_repository_authority_graph_audit.json'))
+          assert d['iteration']==674 and d['scientific_gate_pass'] is True and d['failures']==[]
+          assert d['blocked'] is True and d['zero_fill'] is False
+          assert isinstance(d['authority_graph_candidates'],list)
+          print('PASS_RAW_AUDIT_ITER674 candidates=',d['candidate_count'],d['classification'])
+          PY
+      - name: Upload raw Iter674 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration674-repository-authority-graph
+          path: candidate_gravity/results/iteration674_repository_authority_graph_audit.json
+          if-no-files-found: error
