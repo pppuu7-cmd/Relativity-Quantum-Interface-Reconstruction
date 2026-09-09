@@ -1,0 +1,42 @@
+name: RQIR Iter643 closed-Gamma3 tensor trajectory audit
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'candidate_gravity/code/iteration643_closed_gamma3_polarization_trajectory_audit.py'
+      - '.github/workflows/rqir-iteration643-polarization-trajectory-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tensor-trajectory-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Iter643 tensor trajectory audit
+        run: python candidate_gravity/code/iteration643_closed_gamma3_polarization_trajectory_audit.py
+      - name: Fail-closed raw audit
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          d=Path('results/iteration643_closed_gamma3_polarization_trajectory_audit');r=d/'result.json';a=d/'authority_audit.json'
+          o=json.loads(r.read_text());au=json.loads(a.read_text());sha=hashlib.sha256(r.read_bytes()).hexdigest();f=[]
+          if o.get('iteration')!=643: f.append('iteration drift')
+          if o.get('zero_fill') is not False or o.get('candidate_values_used') is not False: f.append('guardrail drift')
+          if o.get('source_born_subtraction')!='NOT_PERFORMED' or o.get('native_Y_Tcut_projection')!='NOT_PERFORMED': f.append('premature downstream step')
+          if au.get('result_sha256')!=sha: f.append('audit binding drift')
+          allowed={'BLOCKED_RAW_AUTHORITY_AUDIT_ITER643_EXTERNAL_TENSOR_TRAJECTORY','PASS_RAW_AUTHORITY_AUDIT_ITER643_EXTERNAL_TENSOR_TRAJECTORY'}
+          if au.get('classification') not in allowed: f.append('unexpected audit classification')
+          if f: raise SystemExit('\n'.join(f))
+          print(au.get('classification'),sha)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter643-tensor-trajectory-audit
+          path: results/iteration643_closed_gamma3_polarization_trajectory_audit/
+          retention-days: 30
