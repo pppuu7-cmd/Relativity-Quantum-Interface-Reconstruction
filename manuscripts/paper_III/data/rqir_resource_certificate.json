@@ -1,0 +1,74 @@
+{
+  "A_homogeneity": {
+    "max_abs_error": 2.8421709430404007e-13,
+    "pass": true
+  },
+  "B_monotonicity": {
+    "min_gain": 0.03773758330429644,
+    "pass": true
+  },
+  "C_concavity": {
+    "min_gap": 5.501185496470384e-06,
+    "pass": true
+  },
+  "D_exact_alignment": {
+    "max_abs": 1.1641532182693481e-10,
+    "pass": true,
+    "values": {
+      "1.0": 4.440892098500626e-16,
+      "10.0": -8.881784197001252e-16,
+      "1000.0": 0.0,
+      "1000000.0": -1.1641532182693481e-10
+    }
+  },
+  "E_two_band_optimum": {
+    "analytic_allocation": [
+      1.4,
+      0.6
+    ],
+    "analytic_information": 0.35279999999999995,
+    "budget": 2.0,
+    "equal_allocation_information": 0.30413793103448283,
+    "grid_e2": 1.4000000000000001,
+    "grid_information": 0.35279999999999995,
+    "pass": true,
+    "relative_gain_over_equal": 0.15999999999999948
+  },
+  "F_budget_inversion": {
+    "check_information": 24.999999999999996,
+    "minimum_budget": 141.7233560090703,
+    "optimal_information_per_cost": 0.17639999999999997,
+    "pass": true,
+    "required_information": 24.999999999999996,
+    "sigma_target": 0.2
+  },
+  "G_envelope_gradient": {
+    "allocation": [
+      1.2,
+      0.8
+    ],
+    "analytic_gradient": [
+      0.22127616000000003,
+      0.09144575999999997
+    ],
+    "finite_difference_gradient": [
+      0.22127612014921638,
+      0.09144567048036123
+    ],
+    "max_abs_error": 8.95196387434849e-08,
+    "nuisance_minimizer": [
+      -0.5680000000000001
+    ],
+    "pass": true
+  },
+  "H_fixed_prior_nonhomogeneity": {
+    "I_10e": 3.26031746031746,
+    "I_10e_minus_10_I_e": -1.0582010582010581,
+    "I_e": 0.4318518518518518,
+    "pass": true
+  },
+  "all_pass": true,
+  "certificate": "RQIR-RES-001",
+  "seed": 20260909,
+  "tolerance": 1e-09
+}
