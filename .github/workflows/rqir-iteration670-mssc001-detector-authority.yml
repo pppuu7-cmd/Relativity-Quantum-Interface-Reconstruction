@@ -1,0 +1,32 @@
+name: RQIR Iter670 MSSC001 detector authority
+on:
+  push:
+    paths:
+      - 'candidate_gravity/verification/iteration670_mssc001_detector_geometry_authority_scan.py'
+      - '.github/workflows/rqir-iteration670-mssc001-detector-authority.yml'
+  workflow_dispatch:
+jobs:
+  iteration670-mssc001-detector-authority:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Scan MSSC001-specific detector geometry authority
+        run: python candidate_gravity/verification/iteration670_mssc001_detector_geometry_authority_scan.py
+      - name: Fail-closed raw validation
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('candidate_gravity/results/iteration670_mssc001_detector_geometry_authority_scan.json'))
+          assert d['iteration']==670 and d['scientific_gate_pass'] is True and d['failures']==[]
+          assert d['blocked'] is True and d['zero_fill'] is False
+          print('PASS_RAW_AUDIT_ITER670 candidates=',d['candidate_count'],d['classification'])
+          PY
+      - name: Upload raw Iter670 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration670-mssc001-detector-authority
+          path: candidate_gravity/results/iteration670_mssc001_detector_geometry_authority_scan.json
+          if-no-files-found: error
