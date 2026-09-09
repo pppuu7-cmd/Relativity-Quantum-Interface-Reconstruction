@@ -1,0 +1,26 @@
+{
+  "iteration": 672,
+  "date": "2026-09-09",
+  "MODEL_READINESS": "24%",
+  "classification": "BLOCKED_ITER672_INDEPENDENT_FRONTIER_CANDIDATES_INVENTORIED__SEMANTIC_SELECTION_REQUIRED__NO_SOFT_TCUT_REOPEN__NON_RESIDUAL",
+  "scientific_gate_pass": true,
+  "failures": [],
+  "blocked": true,
+  "canonical_actions": {
+    "run": 34345083009,
+    "job": 102444664143,
+    "head": "e2e8739bc33feb22509bc9bd90ef10cb48192d08",
+    "artifact": 10101334381,
+    "artifact_digest": "sha256:78fdb226f2f2d8cc7f3e35875c04315f6b0bfc7789b968903b304d4557becdbb",
+    "downloaded_zip_sha256": "78fdb226f2f2d8cc7f3e35875c04315f6b0bfc7789b968903b304d4557becdbb",
+    "raw_json_sha256": "22943af9433282722d400e01627014e92e0d8e15fcba4581276a18b290cfcec9"
+  },
+  "candidate_count": 10,
+  "semantic_result": "All ten returned candidates are Iter656-665 members of the same soft-Tcut/Ward/detector trajectory already superseded by Iter671. None is an independent live frontier.",
+  "soft_tcut_branch": "FROZEN_PREREQUISITE_BLOCKED",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "zero_fill": false,
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "exact_next_gate": "Iteration673: continue the independent-frontier scan strictly below Iter656 and exclude the entire Iter656-671 soft trajectory, then semantically select the newest live non-soft algebraic/provenance gate."
+}
