@@ -1,0 +1,33 @@
+name: RQIR Iter669 detector geometry inventory
+on:
+  push:
+    paths:
+      - 'candidate_gravity/verification/iteration669_committed_detector_geometry_inventory.py'
+      - '.github/workflows/rqir-iteration669-detector-geometry-inventory.yml'
+  workflow_dispatch:
+jobs:
+  iteration669-detector-inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inventory committed detector/source geometry candidates
+        run: python candidate_gravity/verification/iteration669_committed_detector_geometry_inventory.py
+      - name: Fail-closed raw validation
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('candidate_gravity/results/iteration669_committed_detector_geometry_inventory.json'))
+          assert d['iteration']==669 and d['scientific_gate_pass'] is True and d['failures']==[]
+          assert d['blocked'] is True and d['zero_fill'] is False
+          assert isinstance(d['semantic_review_candidates'],list)
+          print('PASS_RAW_AUDIT_ITER669 candidates=',d['candidate_count'])
+          PY
+      - name: Upload raw Iter669 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration669-detector-geometry-inventory
+          path: candidate_gravity/results/iteration669_committed_detector_geometry_inventory.json
+          if-no-files-found: error
