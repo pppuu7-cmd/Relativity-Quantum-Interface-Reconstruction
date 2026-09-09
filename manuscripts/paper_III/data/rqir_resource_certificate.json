@@ -67,6 +67,22 @@
     "I_e": 0.4318518518518518,
     "pass": true
   },
+  "I_atom_wall_time_binding": {
+    "T1_s": 0.4,
+    "T2_s": 1.2,
+    "asymptotic_sigma_a_times_sqrt_second_m_per_s2": 2.086498474944455e-09,
+    "grid_x1_fraction": 0.4562,
+    "illustrative_k_eff_per_m": 16000000.0,
+    "information_rate_per_acceleration_squared": 2.2970151350288432e+17,
+    "optimal_wall_time_fractions": [
+      0.4561879132265311,
+      0.5438120867734688
+    ],
+    "pass": true,
+    "preparation_time_s": 3.0,
+    "single_setting_with_free_phase_offset_information": 0.0,
+    "single_shot_phase_sigma_rad": 0.01
+  },
   "all_pass": true,
   "certificate": "RQIR-RES-001",
   "seed": 20260909,
