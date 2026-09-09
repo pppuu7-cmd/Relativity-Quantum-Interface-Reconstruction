@@ -3,6 +3,9 @@ name: RQIR Iter657 Null Ward Completion Rank Audit
 on:
   push:
     branches: [main]
+    paths:
+      - 'candidate_gravity/verification/iteration657_null_ward_completion_rank_audit.py'
+      - '.github/workflows/rqir-iteration657-null-ward-completion-rank-audit.yml'
   workflow_dispatch:
 
 permissions:
