@@ -1,0 +1,33 @@
+name: RQIR Iter672 independent frontier authority audit
+on:
+  push:
+    paths:
+      - 'candidate_gravity/verification/iteration672_independent_frontier_authority_audit.py'
+      - '.github/workflows/rqir-iteration672-independent-frontier-audit.yml'
+  workflow_dispatch:
+jobs:
+  iteration672-independent-frontier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit independent Candidate-Gravity frontier
+        run: python candidate_gravity/verification/iteration672_independent_frontier_authority_audit.py
+      - name: Fail-closed raw validation
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('candidate_gravity/results/iteration672_independent_frontier_authority_audit.json'))
+          assert d['iteration']==672 and d['scientific_gate_pass'] is True and d['failures']==[]
+          assert d['blocked'] is True and d['zero_fill'] is False
+          assert isinstance(d['frontier_candidates'],list)
+          print('PASS_RAW_AUDIT_ITER672 candidates=',d['candidate_count'])
+          PY
+      - name: Upload raw Iter672 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration672-independent-frontier-audit
+          path: candidate_gravity/results/iteration672_independent_frontier_authority_audit.json
+          if-no-files-found: error
