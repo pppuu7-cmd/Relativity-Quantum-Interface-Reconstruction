@@ -1,46 +1,44 @@
-# RQIR Article II - Physical Review Research manuscript
+# RQIR Paper II — Physical Review Research submission package
 
-Working title:
+**Title:** *Relativity–Quantum Interface Reconstruction II: Statistical Identifiability, Nuisance Geometry, and Detectability in Detector-Facing Likelihoods*
 
-**Relativity--Quantum Interface Reconstruction II: Nuisance-Profiled Statistical Identifiability in Calibration-Nullspace Observables**
+**Author:** Aleksey Buyanov — Independent Researcher, Moscow, Russia — ORCID 0009-0001-2621-9305.
 
-Target journal: **Physical Review Research**.
+**Scientific status:** closed for the Paper-II scope defined by the RQIR series architecture and RQIR-STAT-001.
 
-## Scientific role in the series
+## What this manuscript closes
 
-Paper I establishes algebraic observability after detector-calibration null projection. Paper II asks the next question: whether the surviving target deformation is locally distinguishable from remaining physical/phenomenological nuisance directions, and whether the retained information is large enough to be experimentally useful.
+Paper I establishes exact source/calibration separation. Paper II asks whether the detector-facing target direction survives nuisance profiling and how independent calibration information changes local precision. The retained chain is
 
-The manuscript deliberately separates:
+`Paper-I physical null direction -> detector response derivative -> covariance whitening -> nuisance profile -> prior-assisted profile -> finite-data staging`.
 
-1. algebraic observability;
-2. local statistical identifiability;
-3. finite-data detectability.
+Paper III remains responsible for shots, PSD/SNR, coherence, wall-clock time, geometry and technology/resource conversion.
 
-## Current headline results
+## Reproducibility
 
-- Projection--Schur equivalence for nuisance-profiled Fisher information, including rank-deficient nuisance blocks through the Moore--Penrose pseudoinverse.
-- Local first-order identifiability criterion: the whitened target tangent must have a component outside the nuisance tangent span.
-- Monotonicity: enlarging the unconstrained nuisance tangent space cannot increase profiled information.
-- Shared-vs-branch-specific theorem: fitting independent nuisance copies branch-by-branch is no more informative than a correctly shared nuisance fit.
-- Signed/global RQIR benchmark: structurally identifiable but quantitatively extremely weak under the locked physical normalization.
-- Positive/local RQIR benchmark: zero profiled Fisher information at the locked audit point after roundoff clipping; exposure alone cannot repair the local degeneracy.
+- historical certificate: `docs/PAPER_II_REFERENCE_LIKELIHOOD_CERTIFICATE_ITERATION079.md`
+- historical regression script: `analysis/paper12_reference_regression_iteration079.py`
+- independent submission audit: `analysis/paper_II_submission_audit_20260908.py`
+- audit data: `manuscripts/paper_II/data/rqir_stat_001_submission_audit.json`
+- exact public audit/data snapshot: `d0f6453721821fcaec4e9e24ea5e68185d90a5a2`
+- fixed seeds: 20260830 (certificate), 20260908 (independent stress audit)
+
+The submission audit reproduces all seven RQIR-STAT-001 regressions and adds 10,000 randomized property tests, intentionally rank-deficient nuisance matrices, a shared-versus-separate nuisance check, and correlated-covariance whitening checks.
+
+## Figures and data
+
+All five figures are vector LaTeX/TikZ/PGFPlots sources. The standalone submission-audit script regenerates the diagnostic curve/grid CSV files deterministically from the declared formulas and seeds.
 
 ## Build
 
-The source is REVTeX 4.2 and uses the `prresearch` journal option.
+The manuscript uses REVTeX 4.2 / APS formatting and embeds `thebibliography` so a minimal LaTeX installation can reproduce the PDF without BibTeX. `references.bib` is retained as a machine-readable convenience copy.
 
 ```bash
 pdflatex main.tex
+pdflatex main.tex
+pdflatex main.tex
 ```
 
-The working source currently contains an inline bibliography so it also builds in minimal LaTeX environments. A `references.bib` file is retained alongside it for the final APS/BibTeX submission workflow.
+## Submission status
 
-## Pre-submission items still open
-
-- Replace `Author Name` and institutional placeholders with final metadata.
-- Give RQIR I its final bibliographic status (submitted/preprint/DOI) and update the self-citation.
-- Re-run the historical Nim nonlinear-profile programs end-to-end in an environment with the required Nim runtime; the locked arithmetic is already regression guarded in Python.
-- Archive the exact code/data snapshot (e.g. Zenodo or equivalent) and replace the Data Availability placeholder with a permanent link/identifier.
-- Complete a final claim-to-artifact audit and journal copy edit.
-
-The present PDF should therefore be treated as a **PRR-formatted working submission draft**, not yet as the final uploaded journal version.
+The manuscript contains no author or affiliation placeholders. The Paper-I citation is bound to Aleksey Buyanov, working manuscript v0.6, dated 8 September 2026. The Data Availability Statement is bound to exact public audit/data snapshot commit `d0f6453721821fcaec4e9e24ea5e68185d90a5a2`. APS-portal questions about funding, conflicts, related-submission status and optional referees remain author/admin actions rather than scientific manuscript work.
