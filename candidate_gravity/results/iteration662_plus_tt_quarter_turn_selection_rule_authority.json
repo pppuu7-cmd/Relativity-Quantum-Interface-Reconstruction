@@ -1,0 +1,15 @@
+{
+  "iteration":662,
+  "date":"2026-09-09",
+  "MODEL_READINESS":"24%",
+  "classification":"PASS_ITER662_EXACT_PI_OVER_2_TRANSVERSE_ROTATION_FORCES_FROZEN_PLUS_PLUS_PLUS_K1K2_AND_K1CUBED_DS_TO_ZERO__ITER661_TINY_VALUES_NUMERICAL_RESIDUE__NON_RESIDUAL",
+  "scientific_gate_pass":true,
+  "failures":[],
+  "canonical_actions":{"run":34340309929,"job":102429292127,"head":"4d99856b72ba9ebfabdb57a89dc442f1a4e97a91","artifact":10099438907,"artifact_digest":"sha256:3ea974a496686c9822d239c31799303b2e6dfa77093472839f780c2b21e11988","raw_json_sha256":"232106d25d04da9aa2f004f4a4bb651c22f378926191aa5858f89719e551e7af"},
+  "exact_result":"For frozen all-plus-TT measurement only, R_z(pi/2) leaves axial t-z momenta, scalar denominators, phase-space measure and fixed-epsilon D_s operation invariant, while e_plus -> -e_plus. Every K1K2 and K1^3 three-point integrand has total external-H degree 3, so I(phi+pi/2)=-I(phi) and the full azimuthal D_s contribution vanishes exactly.",
+  "scope_guardrail":"This is not a zero of the full tensor Gamma3 amplitude and says nothing about unsupported polarizations or the matched Ward image.",
+  "iteration661_interpretation":"O(1e-23..1e-19) values are numerical angular-cancellation residue, not algebraic nonzero physics.",
+  "q3_bubble_status":"NO_MASSIVE_ORDINARY_CUT_TOPOLOGY_RETAINED_NOT_ZERO_FILLED",
+  "source_born_subtraction":"NOT_PERFORMED","native_soft_Tcut":"NOT_YET_FORMED","zero_fill":false,"candidate_values_used":false,
+  "exact_next_gate":"Iter663: audit whether existing same-parent Ward authority defines W[D_s K2] for the frozen transverse plus-TT soft quotient component. Iter653 explicitly freezes only a longitudinal W and denies a claim for generic q-transverse soft components; unsupported must remain BLOCKED, not zero."
+}
