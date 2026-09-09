@@ -1,0 +1,52 @@
+name: RQIR Iter651 same-parent closed-Gamma3 Born authority audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'candidate_gravity/code/iteration651_same_parent_closed_gamma3_born_authority_audit.py'
+      - '.github/workflows/rqir-iteration651-same-parent-born-authority.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Iter651 authority audit
+        run: python candidate_gravity/code/iteration651_same_parent_closed_gamma3_born_authority_audit.py
+      - name: Validate fail-closed result
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('results/iteration651_same_parent_closed_gamma3_born_authority_audit/result.json')
+          d=json.loads(p.read_text())
+          assert d['iteration']==651
+          assert d['scientific_gate_pass'] is True
+          assert d['candidate_residual'] is False
+          assert d['same_parent_closed_retarded_gamma3_born_defined'] is False
+          assert d['source_born_subtraction']=='NOT_PERFORMED'
+          assert d['native_Y_Tcut_projection']=='NOT_PERFORMED'
+          assert d['comparator_quotient']=='NOT_PERFORMED'
+          assert d['candidate_values_used'] is False
+          assert d['normalization_fit'] is False
+          assert d['zero_fill'] is False
+          assert d['failures']==[]
+          assert d['classification']=='BLOCKED_ITER651_HISTORICAL_BORN_AUTHORITIES_TOPOLOGY_OR_OBSERVABLE_MISMATCHED__SAME_PARENT_CLOSED_RETARDED_GAMMA3_BORN_TERM_UNDEFINED__TERMINAL_PREREQUISITE_NON_RESIDUAL'
+          print(d['classification'])
+          PY
+      - name: Upload Iter651 raw artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration651-same-parent-closed-gamma3-born-authority
+          path: results/iteration651_same_parent_closed_gamma3_born_authority_audit/result.json
+          if-no-files-found: error
+          retention-days: 90
