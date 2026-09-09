@@ -1,0 +1,26 @@
+{
+  "iteration": 673,
+  "date": "2026-09-09",
+  "MODEL_READINESS": "24%",
+  "classification": "BLOCKED_ITER673_PRE656_NONSOFT_FRONTIER_EMPTY__NO_EXPLICIT_LIVE_INDEPENDENT_NEXT_GATE_FOUND__NON_RESIDUAL",
+  "scientific_gate_pass": true,
+  "failures": [],
+  "blocked": true,
+  "canonical_actions": {
+    "run": 34345218597,
+    "head": "670c3fe4c3e35a87547d8f85a4f516fca7c5873f",
+    "artifact": 10101390836,
+    "artifact_digest": "sha256:a00b4d79e6ab9e3a8a5e0ee80594bcb33ab7481e3f725dc0eeefb8823226cb05",
+    "downloaded_zip_sha256": "a00b4d79e6ab9e3a8a5e0ee80594bcb33ab7481e3f725dc0eeefb8823226cb05",
+    "raw_json_sha256": "cbcbe216b9d655f81069334df279ff556adc9ac7c77702756b4bc236fde87bf4"
+  },
+  "candidate_count": 0,
+  "frontier_candidates": [],
+  "semantic_result": "After excluding the entire superseded/frozen Iter656-671 soft trajectory and forbidden/closed sectors, no pre-Iter656 result with an explicit admissible exact_next_gate remains. This proves only exhaustion of the explicit-next-gate index, not exhaustion of all repository authority.",
+  "soft_tcut_branch": "FROZEN_PREREQUISITE_BLOCKED",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "zero_fill": false,
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "exact_next_gate": "Iteration674: broaden from exact_next_gate indexing to a repository authority-graph audit of unresolved prerequisite/BLOCKED branches outside the frozen soft-Tcut, closed C5 e=3/null-soft, weighted-B3 proxy, blind full-C5, ANSATZ/Fisher/resource sectors. Either identify one concrete live independent algebraic/provenance gate or certify that none is presently authorized."
+}
