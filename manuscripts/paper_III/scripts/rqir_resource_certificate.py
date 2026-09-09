@@ -186,6 +186,47 @@ def main():
         "pass": abs(hom_residual) > 1e-6 and I10 >= I1
     }
 
+
+    # I. Atom-interferometer wall-time binding with a shared constant phase offset.
+    # Published staging values T_p=3 s and sigma_phi=10 mrad are used as a
+    # realistic parameter scale; k_eff is an explicitly illustrative value.
+    T1, T2, Tp = 0.4, 1.2, 3.0
+    sigma_phi = 0.010
+    k_eff = 1.6e7
+    r1 = 1.0 / ((2.0*T1 + Tp) * sigma_phi**2)
+    r2 = 1.0 / ((2.0*T2 + Tp) * sigma_phi**2)
+    x1_frac = np.sqrt(r2) / (np.sqrt(r1) + np.sqrt(r2))
+    x2_frac = 1.0 - x1_frac
+    dq = k_eff * (T2**2 - T1**2)
+    kappa_atom = (r1*r2 / (np.sqrt(r1)+np.sqrt(r2))**2) * dq**2
+    sigma_a_sqrt_s = 1.0 / np.sqrt(kappa_atom)
+
+    def atom_profile(x1, x2):
+        W1, W2 = r1*x1, r2*x2
+        q1, q2 = k_eff*T1**2, k_eff*T2**2
+        Faa = W1*q1*q1 + W2*q2*q2
+        Fao = W1*q1 + W2*q2
+        Foo = W1 + W2
+        return Faa - Fao*Fao/Foo if Foo > 0 else 0.0
+
+    grid = np.linspace(0.0, 1.0, 20001)
+    atom_vals = np.array([atom_profile(x, 1.0-x) for x in grid])
+    ia = int(np.argmax(atom_vals))
+    out["I_atom_wall_time_binding"] = {
+        "T1_s": T1,
+        "T2_s": T2,
+        "preparation_time_s": Tp,
+        "single_shot_phase_sigma_rad": sigma_phi,
+        "illustrative_k_eff_per_m": k_eff,
+        "optimal_wall_time_fractions": [float(x1_frac), float(x2_frac)],
+        "grid_x1_fraction": float(grid[ia]),
+        "information_rate_per_acceleration_squared": float(kappa_atom),
+        "asymptotic_sigma_a_times_sqrt_second_m_per_s2": float(sigma_a_sqrt_s),
+        "single_setting_with_free_phase_offset_information": 0.0,
+        "pass": bool(abs(atom_vals[ia]-kappa_atom)/kappa_atom < 1e-8
+                and abs(grid[ia]-x1_frac) <= 1.0/(len(grid)-1))
+    }
+
     out["all_pass"] = all(v.get("pass", True) for k, v in out.items() if isinstance(v, dict))
     outpath = Path("rqir_resource_certificate.json")
     outpath.write_text(json.dumps(out, indent=2, sort_keys=True) + "\n", encoding="utf-8")
