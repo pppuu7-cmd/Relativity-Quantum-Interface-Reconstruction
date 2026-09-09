@@ -1,0 +1,26 @@
+{
+  "iteration": 671,
+  "date": "2026-09-09",
+  "MODEL_READINESS": "24%",
+  "classification": "BLOCKED_ITER671_ITER667_SCAN_HITS_ARE_ABSENCE_AUDIT_SELF_REFERENCES_NOT_DETECTOR_GEOMETRY__NO_COMMITTED_MSSC001_CONCRETE_DETECTOR_GEOMETRY__SOFT_TCUT_BRANCH_PREREQUISITE_FROZEN__NON_RESIDUAL",
+  "scientific_gate_pass": true,
+  "failures": [],
+  "blocked": true,
+  "canonical_actions": {
+    "run": 34344773553,
+    "job": 102443661935,
+    "head": "50dde95d595a66b3602e6659bf25432442c45bbe",
+    "artifact": 10101210709,
+    "artifact_digest": "sha256:b2d81d484aa018bc41b6256033ddfe42ef304fc21be1b310f815ce30ab8ad018",
+    "downloaded_zip_sha256": "b2d81d484aa018bc41b6256033ddfe42ef304fc21be1b310f815ce30ab8ad018",
+    "raw_json_sha256": "7ce580c588f6be4de58dcc193a5625cede59636f28e218a0150d6e4845cf04b7"
+  },
+  "semantic_result": "Both Iter670 candidates are Iter667 bridge-absence audit self-references. They define no detector tensor geometry, normalization, boundary convention, soft kernel, or source/Born completion.",
+  "soft_tcut_branch": "PREREQUISITE_BLOCKED_NO_SAME_PARENT_CONCRETE_DETECTOR_GEOMETRY",
+  "native_soft_Tcut": "BLOCKED_DETECTOR_GEOMETRY_NORMALIZATION_AND_SOFT_MATCHING_REQUIRED",
+  "source_born_subtraction": "NOT_PERFORMED",
+  "zero_fill": false,
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "exact_next_gate": "Iteration672: keep the soft-Tcut branch frozen at its explicit detector-geometry prerequisite and audit current Candidate-Gravity authority/recovery for the nearest independent admissible algebraic or provenance gate."
+}
