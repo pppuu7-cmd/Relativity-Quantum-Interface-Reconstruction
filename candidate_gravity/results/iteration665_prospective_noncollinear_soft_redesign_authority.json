@@ -1,0 +1,15 @@
+{
+  "iteration":665,
+  "date":"2026-09-09",
+  "MODEL_READINESS":"24%",
+  "classification":"BLOCKED_ITER665_NO_COMMITTED_SAME_PARENT_TRANSVERSE_SOFT_THEOREM_FOUND__NONCOLLINEAR_SOFT_FAMILY_FROZEN__ITER662_AXIAL_SELECTION_STABILIZER_REMOVED__W_DS_K2_STILL_UNDEFINED__NON_RESIDUAL",
+  "scientific_gate_pass":true,
+  "failures":[],
+  "blocked":true,
+  "canonical_actions":{"run":34343782994,"job":102440444086,"head":"64d93c06eb7ba0d7b4555c21ca717f44501e4a31","artifact":10100814135,"artifact_digest":"sha256:3b06857237bcb753cac0594250b99ab7f939a05ac2ce235e3e3ae83c1f86243c","downloaded_zip_sha256":"3b06857237bcb753cac0594250b99ab7f939a05ac2ce235e3e3ae83c1f86243c","raw_json_sha256":"0acaf2c572cb2b2680cb1ea5b650a944352b2889132f6147981832a241556412"},
+  "semantic_authority_result":"Historical soft/BMS keyword hits were directly reviewed: Iter142/145/146 are external/comparator consistency discussions; Iter237 explicitly denies that a soft theorem alone supplies the causal/source-completed identity. No committed same-parent MSSC001 transverse-soft identity was found. Unexpected future keyword paths remain fail-closed for semantic review.",
+  "frozen_contract":{"name":"MSSC001-CLOSED-SK-NONCOLLINEAR-SOFT-KIN-V1","v_x":"1/3","gamma_squared":"9/8","q_hard":"(sqrt(9*s/8), sqrt(s/8), 0, 0)","q_soft":"-epsilon*(1,0,0,1)","q_other":"-q_hard-q_soft","q_hard_squared":"s","q_soft_squared":"0","operation_order":"fixed epsilon>0 -> D_s=Disc_s/(2*pi*i) -> epsilon->0+","Rz_pi_over_2_stabilizes_full_kinematics":false,"candidate_values_used":false},
+  "native_soft_Tcut":"BLOCKED_ADDITIONAL_TRANSVERSE_SOFT_INPUT_REQUIRED",
+  "source_born_subtraction":"NOT_PERFORMED","zero_fill":false,"ANSATZ_003":"FORBIDDEN","Fisher_resources":"FORBIDDEN",
+  "exact_next_gate":"Iteration666: Ward-controlled mixed-soft observable construction in the longitudinally controlled sector; test same-parent Gamma3/Gamma2 relation without using the unsupported plus-TT W and without forming a comparator residual."
+}
