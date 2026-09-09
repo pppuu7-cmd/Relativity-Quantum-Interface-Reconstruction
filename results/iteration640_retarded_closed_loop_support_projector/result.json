@@ -1,0 +1,40 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "Fisher_resources": "FORBIDDEN",
+  "MODEL_READINESS": "24%",
+  "anchor_support": {
+    "above_ordinary_s_threshold": false,
+    "ordinary_K1K2_s_cut_active": false,
+    "ordinary_K1^3_s_cut_active": false,
+    "s0": 1.0
+  },
+  "candidate_residual": false,
+  "candidate_values_used": false,
+  "classification": "PASS_ITER640_RETARDED_CLOSED_LOOP_S_SUPPORT_AND_NATIVE_DS_PROJECTOR_CONTRACT__NON_RESIDUAL",
+  "comparator_quotient": "NOT_PERFORMED",
+  "date": "2026-09-09",
+  "failures": [],
+  "family_support": {
+    "K1K2": {"anomalous_support": "NOT_APPLICABLE", "ordinary_finite_s_cut": true, "s_support": "s>=1.96", "threshold": 1.96, "topology": "bubble"},
+    "K1^3": {"boundary_subchannels": "retained ordinary bubble cuts", "ordinary_finite_s_cut": true, "positive_alpha_leading_anomalous_support": false, "s_support": "s>=1.96", "threshold": 1.96, "topology": "triangle"},
+    "K3": {"ordinary_finite_s_cut": false, "reason": "single-propagator tadpole topology has no ordinary two-particle hard-channel branch cut", "s_support": "NONE_FINITE_ORDINARY_CUT", "topology": "tadpole"}
+  },
+  "frozen_inputs": {"anchor_s0": 1.0, "m_phi": 0.7, "s_threshold": 1.96, "t0": 0.14, "u0": 0.34},
+  "interpretation": "The frozen retarded closed scalar loop has no ordinary finite hard-channel cut in K3; K1/K2 and K1^3 ordinary s-channel support starts at s=1.96; no positive-alpha leading triangle anomalous support exists on the frozen t0/u0 family. The native projector normalization is inherited exactly as D_s=Disc_s/(2*pi*i), without fitting a new normalization.",
+  "iteration": 640,
+  "native_Y_Tcut_projection": "NOT_PERFORMED",
+  "native_discontinuity_projector": {
+    "application_order": ["construct same-parent closed retarded Gamma3 family amplitude under Iter627+632", "classify pole/cut origin family-by-family", "take native Disc_s on the matched closed observable", "divide by 2*pi*i", "only then permit downstream Y/T_cut matching and Source/Born analysis if separately authorized"],
+    "definition": "D_s[F] = Disc_s[F]/(2*pi*i)",
+    "disc_orientation": "inherit frozen native Iter205 convention; no redefinition in Iter640",
+    "forbidden_shortcuts": ["no open-source root weights substituted for closed-loop cut density", "no zero-fill for unsupported or uncomputed amplitudes", "no fitted phase or N_native", "no Source/Born subtraction before matched observable classification"],
+    "native_operator": "D_s",
+    "support_projector": {"K1K2": "Theta(s-1.96) times the independently derived retarded closed-loop discontinuity density", "K1^3": "Theta(s-1.96) times ordinary-cut density; no extra positive-alpha leading anomalous term on frozen t0/u0 family", "K3": "structural_zero_for_ordinary_finite_s_cut_only"}
+  },
+  "next_gate": "Derive the actual same-parent retarded closed-loop discontinuity density/numerator for K1/K2 and K1^3 under Iter627+632, preserving K3 as a retained analytic/contact family; then test matched native Y/T_cut projection before any Source/Born subtraction.",
+  "prerequisites": ["Iter627 combined matter+gravity SK measurement contract", "Iter632 Minkowski-vacuum G_K state", "Iter636 closed-Gamma3 invariant family", "Iter639 threshold/Landau geometry"],
+  "readiness_change": "0 percentage points",
+  "scientific_gate_pass": true,
+  "source_born_subtraction": "NOT_PERFORMED",
+  "zero_fill": false
+}
