@@ -1,0 +1,163 @@
+\section{Optimal allocation and minimum-budget laws}
+\label{sec:allocation}
+
+\subsection{Budget-constrained design}
+
+Assign each scalable resource component a positive unit cost $c_k>0$ and define
+\begin{equation}
+ C(\bm e)=\bm c^T\bm e.
+\end{equation}
+For a total budget $B$, the information-maximization problem is
+\begin{equation}
+ \mathcal I_{\max}(B;\Lambda)
+ =
+ \max_{\bm e\ge0,\ \bm c^T\bm e\le B}
+ \Ires(\bm e;\Lambda).
+\label{eq:max-info}
+\end{equation}
+The dual resource-closure question is
+\begin{equation}
+ \Bmin(I_\star;\Lambda)
+ =
+ \min_{\bm e\ge0}
+ \left\{
+ \bm c^T\bm e:
+ \Ires(\bm e;\Lambda)\ge I_\star
+ \right\}.
+\label{eq:min-budget}
+\end{equation}
+
+\paragraph*{Proposition 2 (convex resource closure).}
+Under the assumptions of Proposition 1, Eq.~\eqref{eq:max-info} is a concave maximization over a convex feasible set, and Eq.~\eqref{eq:min-budget} is a convex optimization problem whenever the target superlevel set is nonempty.
+
+\emph{Proof.}
+The feasible budget simplex is convex and $\Ires$ is concave. Its superlevel sets
+$\{\bm e:\Ires(\bm e;\Lambda)\ge I_\star\}$ are therefore convex. Minimizing the linear cost over such a set is a convex program. \hfill$\square$
+
+For $\Lambda=0$, positive homogeneity makes the budget law especially transparent. Define the best profiled information per unit cost,
+\begin{equation}
+ \kappa_\star
+ =
+ \max_{\bm w\ge0,\ \bm c^T\bm w=1}
+ \Ires(\bm w;0).
+\label{eq:kappa}
+\end{equation}
+Then
+\begin{equation}
+ \boxed{
+ \mathcal I_{\max}(B;0)=B\kappa_\star,
+ \qquad
+ \Bmin(I_\star;0)=\frac{I_\star}{\kappa_\star}.
+ }
+\label{eq:budget-law}
+\end{equation}
+If $\kappa_\star=0$, no amount of the declared scalable resource can reach a positive local information target. This gives a sharp distinction between a \emph{resource-limited} branch and a \emph{geometry-limited} branch.
+
+\subsection{Marginal information and shadow prices}
+
+Suppose the minimizer $\bm a_\star(\bm e)$ in Eq.~\eqref{eq:resource-variational} is locally unique. The envelope theorem gives
+\begin{equation}
+ \frac{\partial\Ires}{\partial e_k}
+ =
+ \|\bm s_k-J_k\bm a_\star(\bm e)\|^2.
+\label{eq:marginal}
+\end{equation}
+Thus the marginal value of another unit of setting $k$ is not its raw target norm $\|\bm s_k\|^2$ but its \emph{residual} target norm after the nuisance coefficient preferred by the current joint design has been fitted.
+
+At a differentiable optimum of Eq.~\eqref{eq:max-info}, Karush--Kuhn--Tucker conditions imply that active settings equalize marginal profiled information per unit cost:
+\begin{equation}
+ \frac{\|\bm s_k-J_k\bm a_\star\|^2}{c_k}
+ =\lambda_B
+ \quad\text{for } e_k>0,
+\label{eq:kkt-active}
+\end{equation}
+whereas inactive settings satisfy
+\begin{equation}
+ \frac{\|\bm s_k-J_k\bm a_\star\|^2}{c_k}
+ \le\lambda_B.
+\label{eq:kkt-inactive}
+\end{equation}
+This rule gives an operational meaning to a resource shadow price: a channel is valuable when it contributes a direction that the current nuisance fit cannot cheaply imitate.
+
+\subsection{Analytic continuation of the RQIR-II two-band example}
+
+RQIR II considered a two-band target and relative-tilt nuisance,
+\begin{equation}
+ \bm g=(g_2,g_4)^T,
+ \qquad
+ \bm t=(g_2,-g_4)^T.
+\end{equation}
+Let the two bands now receive independent exposures $e_2,e_4$. Profiling the shared tilt gives
+\begin{equation}
+ \Ires(e_2,e_4)
+ =
+ \frac{4A D}{A+D},
+ \qquad
+ A=e_2g_2^2,\quad D=e_4g_4^2.
+\label{eq:weighted-two-band}
+\end{equation}
+For costs $c_2,c_4$, write cost allocations
+$r_2=c_2e_2$, $r_4=c_4e_4$, with $r_2+r_4=B$, and define
+\begin{equation}
+ \alpha=\frac{g_2^2}{c_2},
+ \qquad
+ \gamma=\frac{g_4^2}{c_4}.
+\end{equation}
+The exact optimum is
+\begin{align}
+ \frac{r_2^\star}{B}
+ &=\frac{\sqrt{\gamma}}{\sqrt{\alpha}+\sqrt{\gamma}},
+ &
+ \frac{r_4^\star}{B}
+ &=\frac{\sqrt{\alpha}}{\sqrt{\alpha}+\sqrt{\gamma}},
+\label{eq:cost-fractions}\\
+ \kappa_\star
+ &=\frac{4\alpha\gamma}
+ {(\sqrt{\alpha}+\sqrt{\gamma})^2}.
+\label{eq:two-band-kappa}
+\end{align}
+The stronger raw-response band therefore does not necessarily receive the larger resource share. The weaker band can be the expensive-to-replace direction that enables self-calibration.
+
+For the frozen RQIR-II values
+\begin{equation}
+ g_2=0.3,\qquad g_4=0.7,
+\end{equation}
+and equal unit costs, a total exposure $B=2$ gives
+\begin{equation}
+ (e_2^\star,e_4^\star)=(1.4,0.6)
+\end{equation}
+and
+\begin{equation}
+ \Ires^\star=0.3528.
+\end{equation}
+Equal allocation $(1,1)$ gives
+\begin{equation}
+ \Ires^{\rm equal}=0.3041379310344828.
+\end{equation}
+Hence optimal nuisance-aware allocation yields
+\begin{equation}
+ \frac{\Ires^\star}{\Ires^{\rm equal}}-1
+ =0.16,
+\end{equation}
+a $16\%$ information gain at exactly the same total exposure.
+
+As a synthetic budget inversion, if the local design target is $\sigma_\star=0.2$, then $I_\star=25$. Equation~\eqref{eq:budget-law} with
+$\kappa_\star=0.1764$ gives
+\begin{equation}
+ \Bmin=141.7233560090703
+\end{equation}
+in the same abstract exposure units. This number is deliberately not called seconds, shots, atoms, photons, or joules. Such a label becomes legitimate only after an apparatus-specific resource binding is supplied.
+
+\subsection{Robust allocation under response uncertainty}
+
+A physical resource map may depend on an uncertain but declared response state $\xi\in\Xi$---for example a bounded spectral-density envelope, uncertain visibility, or a calibration-transfer model. Suppose that for every fixed $\xi$, $\Ires(\bm e;\xi)$ has the concavity property of Proposition 1 on a common resource domain. Define the worst-case information
+\begin{equation}
+ \Ires^{\rm rob}(\bm e)
+ =\inf_{\xi\in\Xi}\Ires(\bm e;\xi).
+\label{eq:robust-info}
+\end{equation}
+Because the hypograph of Eq.~\eqref{eq:robust-info} is the intersection of the hypographs for all $\xi$, $\Ires^{\rm rob}$ is also concave. Thus a worst-case resource-closure constraint
+\begin{equation}
+ \Ires^{\rm rob}(\bm e)\ge I_\star
+\end{equation}
+remains convex under the stated common-domain assumptions. An average over a declared distribution of $\xi$ is likewise concave. This allows robustness to enter the resource layer without being confused with an unpriced favorable calibration assumption.
