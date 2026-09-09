@@ -10,7 +10,7 @@ Repository commits, validated Actions artifacts, recovery deltas, research logs 
 
 ## Current authority
 
-Latest authoritative research iteration: **637**.
+Latest authoritative research iteration: **638**.
 
 Historical authority retained: Iter581 exact15 PASS; Iter582 q2-resolved Candidate-side connection coordinate; Iter594 complete 13-family MSSC source object; Iter605 source nonlinear Ward PASS; Iter613 open-source hard-channel trajectory; Iter614/615 historical source roots/coefficients; Iter616 exact q2/end-point identity; Iter627 combined matter+gravity SK measurement contract; Iter628 open retarded scalar-response coefficients.
 
@@ -20,7 +20,7 @@ Iter629 raw-validly rejects a universal open→closed `N_native`; Iter630 shows 
 
 ### Iter633–635 — singularity origin and closed-channel blocker
 
-Iter633 raw-validly classifies K3 as a retained tadpole with no ordinary finite hard-channel cut, K1/K2 as a bubble with ordinary two-scalar cut, and K1^3 as a triangle with normal cuts plus an explicit anomalous/Landau check. Iter634 proves the Iter613 open-source `p0(s)` trajectory is not the closed-loop hard channel. Iter635 preserves native positive-timelike `s` and `D_s=Disc_s/(2*pi*i)` but finds that the closed-Gamma3 external channel family had not yet been frozen. These are protocol/operational results, not model-level consistency FAILs.
+Iter633 raw-validly classifies K3 as a retained tadpole with no ordinary finite hard-channel cut, K1/K2 as a bubble with ordinary two-scalar cut, and K1^3 as a triangle with normal cuts plus an explicit anomalous/Landau check. Iter634 proves the Iter613 open-source `p0(s)` trajectory is not the closed-loop hard channel. Iter635 preserves native positive-timelike `s` and `D_s=Disc_s/(2*pi*i)` but finds that the closed-Gamma3 external channel family had not yet been frozen.
 
 ### Iter636 — prospective closed-Gamma3 invariant family
 
@@ -35,22 +35,25 @@ Prospectively frozen before threshold/Landau inspection: `MSSC001-CLOSED-GAMMA3-
 - `m_phi=0.7` retained;
 - scope is scalar-denominator Cutkosky/Landau support geometry only.
 
-No Candidate values, threshold/Landau support or normalization fit were used to select this contract.
+### Iter637 — JSON-only exact-fixture discovery BLOCKED
 
-### Iter637 — exact-fixture anchor discovery is BLOCKED
+Run `34290476762`, job `102275666433`, head `ff0625e44ca4647ba41b0f63a3d8f2e952b4d842`, artifact `10081130325`, digest `sha256:403257bb69cc81bb46d8a14bc3f28b98da45fcdd70e39b4af91922a4bb4690fd`, raw `failures=[]`.
 
-Canonical Actions run `34290476762`, job `102275666433`, head `ff0625e44ca4647ba41b0f63a3d8f2e952b4d842`, conclusion `success`; artifact `10081130325`, digest `sha256:403257bb69cc81bb46d8a14bc3f28b98da45fcdd70e39b4af91922a4bb4690fd`. Independent raw artifact consumption reproduces `failures=[]` and raw guardrail audit `PASS_RAW_AUTHORITY_AUDIT_ITER637_FIXTURE_DISCOVERY_GUARDRAILS`.
+Committed-JSON exact-key discovery found no explicit `q_s,q_a,q_b` triplet and therefore correctly returned `BLOCKED_ITER637_EXACT_FIXTURE_INVARIANT_ANCHOR_NOT_UNIQUE_OR_NOT_MACHINE_RECOVERABLE__NO_T0_U0_INVENTED__NON_RESIDUAL`. This result remains valid in its JSON-only scope.
 
-Scientific classification:
-`BLOCKED_ITER637_EXACT_FIXTURE_INVARIANT_ANCHOR_NOT_UNIQUE_OR_NOT_MACHINE_RECOVERABLE__NO_T0_U0_INVENTED__NON_RESIDUAL`.
+### Iter638 — exact same-parent code provenance recovered
 
-Repository-wide exact discovery parsed 361 committed JSON files and accepted only explicit numeric four-vector triplets under `q_s,q_a,q_b` or `qs,qa,qb`, metric `+---`, closure tolerance `1e-12`. It found:
-- `raw_vector_triplet_matches = 0`;
-- `exact_closure_matches = 0`;
-- `unique_invariant_triples = 0`;
-- `recovered_anchor = null`.
+Canonical raw-valid run `34293646233`, job `102285415240`, head `1bdc8fb40a4f369c006c7f42f4d368a71cb0166f`, artifact `10082281625`, digest `sha256:95ed469a705250ea341873d493dec4eb04c199c674c091cefdf07b11072c297e`. Independent raw artifact consumption gives result SHA-256 `cbf27355a5d3a6bc83163cebf889188b526cb1699ef6e299190bf296de72e0ec`, audit SHA-256 `ee011c75cf6c8390ddd682607ebc626744975e01a84ad171a653ee8078e29dc6`, `failures=[]`.
 
-Therefore Iter636 `t0/u0` may not be invented and may not be borrowed from Iter582 Candidate values. This is an operational/provenance BLOCKED result, not Candidate-Gravity consistency FAIL/PASS, exact comparator identity, regime-specific non-identifiability, near-degeneracy or novelty certificate. It does not prove the historical fixture never existed; it proves that the required explicit triplet is not machine-recoverable from committed JSON under the frozen exact selector.
+Committed same-parent code closes the provenance blocker:
+- Iter368 explicitly fixes `LEGS=('s','a','b')`;
+- `q_s=(1,0,0,0)`, `q_a=(-0.4,0.1,0.1,0)`, `q_b=(-0.6,-0.1,-0.1,0)`;
+- Iter588 explicitly re-executes the Iter368 setup prefix and inherits `M=ns['M']`, binding this fixture through `Iter368 -> Iter370/372 -> Iter582` rather than retyping it;
+- in physical `+---` signature, exact closure holds and the unique anchor is `(s0,t0,u0)=(1,0.14,0.34)`.
+
+Classification: `PASS_ITER638_UNIQUE_SAME_PARENT_EXACT_FIXTURE_ANCHOR_RECOVERED_FROM_COMMITTED_CODE__NON_RESIDUAL`.
+
+Earlier run `34293593003` is non-authoritative implementation noise: the evaluator passed but the audit used exact floating equality for `u0`. Canonical V2 changed only the audit comparison to absolute tolerance `2e-15`; no scientific contract or kinematics changed.
 
 ## Frozen guardrails
 
@@ -67,8 +70,8 @@ All K3/K1K2/K1^3 families remain retained; `zero_fill=false`. Source/Born subtra
 
 **MODEL_READINESS: 24%**
 
-Readiness change through Iter637: **0 percentage points**. The exact-fixture provenance blocker is now raw-certified, but no robust comparator-subtracted residual or complete new rubric sector has closed.
+Readiness change through Iter638: **0 percentage points**. Exact-fixture provenance is closed, but no robust comparator-subtracted residual or complete new rubric sector has closed.
 
 ## Exact next gate
 
-**Iteration638:** audit original exact-fixture provenance outside the machine-recoverable JSON selector: committed source code, Markdown/recovery records and relevant repository history. Recover explicit same-parent `q_s,q_a,q_b` or directly authoritative `(s0,t0,u0)` only with unique provenance. If none exists, record `BLOCKED` rather than constructing an estimator. Only after a unique anchor is recovered may the frozen Iter636 K1/K2 bubble threshold and K1^3 equal-mass triangle Landau determinant / positive-Feynman-parameter support be evaluated. Native `Y/T_cut` projection and Source/Born subtraction remain downstream.
+**Iteration639:** evaluate the already prospectively frozen Iter636 scalar-denominator geometry with `t0=0.14`, `u0=0.34`, `m_phi=0.7`: K1/K2 equal-mass bubble threshold in the `s` channel and K1^3 equal-mass triangle leading Landau determinant plus positive-Feynman-parameter support. Preserve subthreshold/mixed-sign/no-support results exactly. This gate does not authorize native `Y/T_cut` projection or Source/Born subtraction by itself.
