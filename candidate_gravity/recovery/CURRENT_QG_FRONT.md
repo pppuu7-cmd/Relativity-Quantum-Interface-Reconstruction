@@ -10,7 +10,7 @@ Repository commits, validated Actions artifacts, recovery deltas, research logs 
 
 ## Current authority
 
-Latest authoritative research iteration: **639**.
+Latest authoritative research iteration: **640**.
 
 Historical authority retained: Iter581 exact15 PASS; Iter582 q2-resolved Candidate-side connection coordinate; Iter594 complete 13-family MSSC source object; Iter605 source nonlinear Ward PASS; Iter613 open-source hard-channel trajectory; Iter614/615 historical source roots/coefficients; Iter616 exact q2/end-point identity; Iter627 combined matter+gravity SK measurement contract; Iter628 open retarded scalar-response coefficients.
 
@@ -66,11 +66,24 @@ Using only the frozen Iter636 family with `t0=0.14`, `u0=0.34`, `m_phi=0.7`:
 
 Therefore there is no positive-alpha physical leading/anomalous triangle Landau root on this frozen real-`s` family. Boundary singularities reduce to ordinary bubble subchannels and remain retained. Canonical classification: `PASS_ITER639_CLOSED_GAMMA3_SCALAR_GEOMETRY__BUBBLE_THRESHOLD_1P96__NO_POSITIVE_ALPHA_LEADING_TRIANGLE_LANDAU_ROOT__NON_RESIDUAL`.
 
-This is a support-geometry PASS plus a retained negative result for leading triangle anomalous support; it is not a Candidate residual or model-level consistency PASS/FAIL.
+### Iter640 — retarded closed-loop support and native D_s projector
+
+Canonical Action run `34297861017`, job `102298271491`, head `0b468549f4232a814cd5a91b9ae44c886e95e3bf`, conclusion `success`; artifact `10083803236`, digest `sha256:4cb96e533c1c04bde656e5f0c811d3790645af246a214078b4d85f989c769c3d`. Fail-closed raw audit result SHA-256 is `12e7a1116ea4c77b88619c878b325e9b41778deb1fa5f553647912d6cb7f93c1`, with `failures=[]`.
+
+Under frozen Iter627+632+636+639 authority:
+- K3 is retained as tadpole/analytic-contact origin and has no ordinary finite hard-channel two-particle `s` cut;
+- K1/K2 ordinary `s` support is only `s>=1.96`;
+- K1^3 ordinary `s` support is only `s>=1.96`, with no extra positive-alpha leading anomalous term on the frozen `t0/u0` family;
+- the exact fixture anchor `s0=1` is below ordinary-cut support;
+- the native operator is inherited exactly as `D_s[F]=Disc_s[F]/(2*pi*i)` with frozen Iter205 orientation, not refitted.
+
+Canonical classification: `PASS_ITER640_RETARDED_CLOSED_LOOP_S_SUPPORT_AND_NATIVE_DS_PROJECTOR_CONTRACT__NON_RESIDUAL`.
+
+This is a support/projector PASS, not a Candidate residual or model-level consistency PASS/FAIL. The actual closed-loop discontinuity density/numerator has not yet been derived.
 
 ## Frozen guardrails
 
-All K3/K1K2/K1^3 families remain retained; `zero_fill=false`. Source/Born subtraction `NOT_PERFORMED`. Native projection `NOT_PERFORMED`. No comparator quotient. No post-hoc state/channel/trajectory/normalization fit. No `ANSATZ-003`; no Fisher/resources; no blind full-C5. Negative/BLOCKED results remain results.
+All K3/K1K2/K1^3 families remain retained; `zero_fill=false`. Source/Born subtraction `NOT_PERFORMED`. Native projection `NOT_PERFORMED`. No comparator quotient. No post-hoc state/channel/trajectory/normalization fit. No open-source root weights may stand in for closed-loop cut density. No `ANSATZ-003`; no Fisher/resources; no blind full-C5. Negative/BLOCKED results remain results.
 
 ## Stable model-readiness rubric
 
@@ -83,8 +96,8 @@ All K3/K1K2/K1^3 families remain retained; `zero_fill=false`. Source/Born subtra
 
 **MODEL_READINESS: 24%**
 
-Readiness change through Iter639: **0 percentage points**. Singularity support geometry closed, but no robust comparator-subtracted residual or complete new rubric sector has closed.
+Readiness change through Iter640: **0 percentage points**. The retarded support/projector subgate closed, but no robust comparator-subtracted residual or complete new rubric sector has closed.
 
 ## Exact next gate
 
-**Iteration640:** classify the retarded closed-loop `s`-channel discontinuity support family-by-family under the frozen Iter627 combined SK measurement contract plus Iter632 Minkowski-vacuum scalar state: K3 remains without an ordinary finite hard-channel cut; K1/K2 and K1^3 ordinary `s`-channel support only for `s>=1.96`; no positive-alpha leading anomalous K1^3 root exists on the frozen `t0/u0` family. Then derive the matched native `D_s=Disc_s/(2*pi*i)` normalization/projector before Source/Born subtraction. Native `Y/T_cut` projection, comparator quotient, `ANSATZ-003`, Fisher/resources remain forbidden until their upstream gates are satisfied.
+**Iteration641:** derive the actual same-parent retarded closed-loop discontinuity density/numerator for K1/K2 and K1^3 ordinary `s` cuts from the frozen Iter594 parent dynamics, Iter627 combined SK measurement map, Iter632 scalar state and Iter636 invariant family. Preserve K3 as a retained analytic/contact contribution. Unsupported numerator/tensor pieces are `BLOCKED`, never zero-filled. Only after a raw-valid same-parent density exists may matched native `Y/T_cut` projection be tested; Source/Born subtraction and fixed C3/C4/C5/nonlocal/asymptotic-safety comparator quotient remain downstream, and `ANSATZ-003`, Fisher/resources remain forbidden.
