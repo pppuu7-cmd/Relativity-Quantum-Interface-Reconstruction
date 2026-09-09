@@ -33,7 +33,7 @@ For Paper V, readiness cannot be treated as an ordinary countdown before Paper I
 |---|---:|---|---|
 | I | **100% scientific material** | CLOSED for frozen scope | RQIR-THM-001/source-calibration layer is scientifically closed; remaining work is editorial/submission hardening rather than missing scientific content. |
 | II | **100% scientific material** | CLOSED | detector-facing likelihood, nuisance profiling, whitening, rank-deficient tests and independent submission audit are closed; submission package is essentially complete. |
-| III | **68% strengthened apparatus-specific readiness** | ACTIVE | the Fisher/resource layer is now tied to a real SYRTE atom gravimeter and a source-traceable colored vibration PSD. A coarse Fig.-8 digitization independently reproduces the paper's 6.5e-8 g uncorrected vibration scale and its factor-3 corrected typical scale, while the profiled science direction survives physical Toeplitz covariance and strong 2-Hz crosstalk stresses. Certified reference metrology, contrast/readout nuisance and a final campaign likelihood remain open. |
+| III | **74% strengthened apparatus-specific readiness** | ACTIVE | the physical colored-noise Fisher layer is now propagated through the nonlinear detector observable `P=(1+C cos Phi)/2`, using source-grounded detection noise and an effective contrast anchor. Science estimability survives simultaneous phase, contrast and readout-gain drift profiling; finite reference uncertainty produces the expected calibration floor. Certified injected-reference metrology and a final end-to-end campaign certificate remain open. |
 | IV | **55%** | ACTIVE / prerequisite-blocked at decisive residual gate | comparator funnel and many framework audits exist, but the common physical observable/source-completion bridge and robust comparator-subtracted residual are still missing, so none of the four terminal Paper-IV decisions is yet authorized. |
 | V | **0% article-authorized**; **24% conditional Candidate-Gravity groundwork** | CONDITIONAL / NOT AUTHORIZED | Paper IV has not returned `NEW_REQUIRED`; live Candidate-Gravity rubric is 24/100, consisting almost entirely of comparator foundation (24/25), with robust residual, parent dynamics, consistency, identifiability and resources still 0. |
 
@@ -47,7 +47,7 @@ Paper II is the most publication-mature branch. The repository states the scient
 
 ## Paper III — strengthened standard
 
-The 2026-09-09 apparatus audits now close the structural identifiability layer and most of the first physical same-apparatus noise/resource layer:
+The 2026-09-09 apparatus audits now close the structural identifiability layer, most of the physical same-apparatus noise/resource layer, and the principal detector-facing nuisance layer:
 
 - common multiplicative science-scale degeneracy is explicit;
 - after additive-nuisance and correlated-covariance profiling, a known modulated acceleration reference can make the RQIR science amplitude estimable even when internal `k/T` calibration retains a null direction;
@@ -61,13 +61,20 @@ The 2026-09-09 apparatus audits now close the structural identifiability layer a
 - a coarse log-log digitization of the published passive-platform Fig.-8 acceleration ASD, without amplitude fitting, propagates to `6.35e-8 g at 1 s`, within about 2.3% of the paper's independently quoted `6.5e-8 g at 1 s` inferred vibration limit;
 - applying the paper's factor-3 vibration rejection and its independent `4 mrad/shot` non-vibration budget yields `2.18e-8 g at 1 s`, within about 8.8% of the quoted typical corrected `2e-8 g at 1 s`;
 - this physical PSD is converted into sampled Toeplitz covariance by integrating the continuous phase PSD at actual shot separations, so the off-diagonal covariance is no longer an arbitrary AR(1) family;
-- under simultaneous scale, phase-offset, linear-drift, quadratic-drift and colored-noise profiling, a modulated science amplitude retains strictly nonzero Fisher information when a finite calibrated same-apparatus acceleration reference is present;
-- science estimability also survives a smooth 2-Hz crosstalk stress boosted up to five times the nominal trace, although the uncertainty degrades as expected;
-- the same audit still fails static science with a free offset and fails an unconstrained reference amplitude, preventing a false PASS from hidden regularization.
+- science estimability survives a smooth 2-Hz crosstalk stress boosted up to five times the nominal trace, although the uncertainty degrades as expected;
+- the actual detector observable is now modeled as `P=(1+C cos Phi)/2` near mid-fringe rather than treating reconstructed phase as the primitive data product;
+- the source reports `sigma_P ~ 3e-4` at high atom number and `sigma_phi=2 sigma_P/C`; combining this with the stated near-`1 mrad/shot` detector sensitivity gives an approximate effective working contrast `C~0.6` used as a source-derived anchor;
+- the physical phase covariance is propagated through the shot-dependent nonlinear fringe slope into a non-Toeplitz probability covariance, with independent probability detection noise added explicitly;
+- the detector-facing likelihood profiles common scale, phase offset plus linear/quadratic phase drift, absolute contrast plus linear/quadratic contrast drift, centered readout gain plus gain drift, readout offset and optional unknown reference amplitude simultaneously;
+- finite calibrated reference makes `theta` estimable even though apparatus-only contrast/readout null modes remain; those null directions are explicitly theta-orthogonal rather than being hidden by priors;
+- at `theta=1 ng`, the detector-facing forecast is approximately `5.73 ng` at 60 s and `1.83 ng` at 600 s under the physical covariance;
+- a combined detector stress with 20% lower contrast, contrast drift, readout-gain drift and phase drifts in the source-described mid-fringe regime leaves `theta` estimable;
+- the detector-facing calibration scan reproduces `sigma_theta^2 ~= sigma_stat^2 + (theta f_ref)^2` to numerical precision, making the statistical-to-reference-calibration crossover explicit;
+- the negative controls remain intact: static science with free phase offset fails, modulation without reference fails, and an unknown uncalibrated reference fails.
 
-The remaining high-value authorities are now narrower: a certified finite uncertainty for the reference acceleration transfer, explicit contrast/readout-gain evolution in a detector-facing transition-probability likelihood, source/modulation implementation cost, raw campaign cross-spectral data if obtainable, and one final joint campaign certificate. The Fig.-8 knots are an explicitly labelled coarse digitization rather than raw machine-readable data, so the physical-noise gate is closed conservatively rather than treated as perfect raw-data closure.
+The remaining high-value authorities are now tightly localized: a certified finite absolute uncertainty for a realizable injected acceleration reference, inclusion of the actual reference/modulation protocol in the duty-cycle ledger, raw shot-level population/contrast evolution and campaign cross-spectral data if obtainable, and one final joint end-to-end campaign certificate. The current probability model is detector-facing and source-grounded but does not pretend that the proposed reference amplitude has already been experimentally calibrated on this apparatus.
 
-Therefore the strengthened Paper-III readiness is now **68%**.
+Therefore the strengthened Paper-III readiness is now **74%**.
 
 ## Paper IV
 
@@ -101,8 +108,8 @@ If Paper IV eventually returns `NEW_REQUIRED`, this 24% groundwork becomes the s
 
 Do **not** average the five percentages into a single publication score: Paper V is conditional and Paper III is currently being judged against a deliberately stronger apparatus-specific standard than the historical frozen scope.
 
-Current working RQIR programme/model readiness is now approximately **71%**. The Candidate-Gravity/new-model branch remains **24%**. Paper IV remains the main programme-level bottleneck despite the Paper-III advance.
+Current working RQIR programme/model readiness is now approximately **72%**. The Candidate-Gravity/new-model branch remains **24%**. Paper IV remains the main programme-level bottleneck despite the Paper-III advance.
 
 ## Next high-value research action
 
-For Paper III, the next authority should move from phase-Gaussian data to the actual detector observable `P=(1+C cos Phi)/2`, with finite contrast, contrast drift, readout gain/detection noise and a conservative source-grounded reference-transfer uncertainty profiled simultaneously against the physical PSD covariance. If that detector-facing likelihood preserves science estimability, the strengthened Paper-III branch can move into the low/mid-70% range before the final raw-data/cross-PSD campaign certificate. For Paper IV, computation remains prerequisite-blocked until new authority supplies M1/M2 or an independent admissible comparator branch.
+For Paper III, the next authority is an end-to-end campaign certificate: freeze an experimentally realizable reference-injection protocol, attach a source-grounded absolute transfer uncertainty, account for its modulation/reference shots in the duty-cycle resource ledger, and combine that with the physical PSD plus detector-facing probability likelihood in one final certificate with explicit failure domains. Raw population/contrast and cross-spectral data should replace the coarse source digitization if obtainable, but their absence should remain labelled rather than silently estimated. For Paper IV, computation remains prerequisite-blocked until new authority supplies M1/M2 or an independent admissible comparator branch.
