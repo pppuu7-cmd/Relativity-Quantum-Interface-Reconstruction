@@ -1,0 +1,13 @@
+{
+  "iteration":663,
+  "date":"2026-09-09",
+  "MODEL_READINESS":"24%",
+  "classification":"BLOCKED_ITER663_EXISTING_WARD_AUTHORITY_IS_LONGITUDINAL_ONLY__FROZEN_PLUS_TT_SOFT_COMPONENT_IS_TRANSVERSE_NONTRIVIAL_QUOTIENT__W_DS_K2_UNDEFINED_NOT_ZERO__NON_RESIDUAL",
+  "scientific_gate_pass":true,
+  "failures":[],
+  "blocked":true,
+  "canonical_actions":{"run":34340470604,"job":102429805833,"head":"7f3ed347efde63c649f1273ff6733b9d256e4aaf","artifact":10099501377,"artifact_digest":"sha256:7846d707df636ed36d3bd8c68a26d0f511d6614a6bbef2714b1949275bd59f8c","raw_json_sha256":"dcdd069a853e3f919f40e940e0bee011e3f102cdd5acb791ed26e73f17bfa0b6"},
+  "authority_statement":"Current same-parent Ward authority does not define W[D_s K2] on frozen transverse plus-TT soft quotient component. Iter662 Gamma3-cut zero therefore cannot be promoted to matched T_cut. Missing W is BLOCKED, never zero-filled.",
+  "source_born_subtraction":"NOT_PERFORMED","native_soft_Tcut":"BLOCKED_W_TRANSVERSE_OPERATOR_UNDEFINED","zero_fill":false,
+  "exact_next_gate":"Iter664: exact linear-algebra derivation of whether diffeomorphism Ward data q^mu Gamma_{mu nu,...}=contacts can determine a nontrivial element of the transverse quotient at null q without an additional soft-theorem/asymptotic input."
+}
