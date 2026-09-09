@@ -1,5 +1,7 @@
 name: RQIR Iter653 normalized closed-SK Gamma2 Gamma3 Ward contract
 
+# Operational rerun only: Iter652 raw-valid authority is now persisted in main.
+# No Iter653 scientific formula, normalization, projector, or acceptance rule changed.
 on:
   push:
     branches: [main]
