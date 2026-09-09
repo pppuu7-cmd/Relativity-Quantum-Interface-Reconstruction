@@ -1,0 +1,44 @@
+name: RQIR Iter638 exact fixture code provenance
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'candidate_gravity/code/iteration638_exact_fixture_code_provenance_audit.py'
+      - '.github/workflows/rqir-iteration638-exact-fixture-code-provenance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  provenance-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run Iter638 same-parent provenance audit
+        run: python candidate_gravity/code/iteration638_exact_fixture_code_provenance_audit.py
+      - name: Fail-closed raw authority audit
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          d=Path('results/iteration638_exact_fixture_code_provenance_audit'); r=d/'result.json'; a=d/'authority_audit.json'
+          o=json.loads(r.read_text()); au=json.loads(a.read_text()); sha=hashlib.sha256(r.read_bytes()).hexdigest(); f=[]
+          if o.get('iteration')!=638: f.append('iteration drift')
+          if o.get('classification')!='PASS_ITER638_UNIQUE_SAME_PARENT_EXACT_FIXTURE_ANCHOR_RECOVERED_FROM_COMMITTED_CODE__NON_RESIDUAL': f.append('classification not pass')
+          if o.get('failures')!=[] or not o.get('scientific_gate_pass'): f.append('scientific failure')
+          if o.get('recovered_anchor')!={'s0':1.0,'t0':0.14,'u0':0.34}: f.append('anchor drift')
+          if o.get('q_s')!=[1.0,0.0,0.0,0.0] or o.get('q_a')!=[-0.4,0.1,0.1,0.0] or o.get('q_b')!=[-0.6,-0.1,-0.1,0.0]: f.append('fixture vector drift')
+          if o.get('candidate_values_used') is not False or o.get('zero_fill') is not False: f.append('guardrail drift')
+          if o.get('source_born_subtraction')!='NOT_PERFORMED' or o.get('native_projection')!='NOT_PERFORMED': f.append('premature downstream step')
+          if au.get('result_sha256')!=sha or au.get('classification')!='PASS_RAW_AUTHORITY_AUDIT_ITER638_EXACT_FIXTURE_CODE_PROVENANCE': f.append('audit binding drift')
+          if f: raise SystemExit('\n'.join(f))
+          print('PASS Iter638 raw audit',sha)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iter638-exact-fixture-code-provenance
+          path: results/iteration638_exact_fixture_code_provenance_audit/
+          retention-days: 30
