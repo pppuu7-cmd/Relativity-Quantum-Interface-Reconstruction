@@ -1,0 +1,48 @@
+{
+  "ANSATZ_003": "FORBIDDEN",
+  "MODEL_READINESS": "24%",
+  "candidate_residual": false,
+  "classification": "PASS_ITER644_PROSPECTIVE_EXTERNAL_TENSOR_TRANSPORT_V1__COVARIANCE_ALONE_NONUNIQUE__ZERO_TWIST_TETRAD_COMPONENTS_FROZEN__NON_RESIDUAL",
+  "contract_id": "MSSC001-CLOSED-GAMMA3-TENSOR-TRANSPORT-V1",
+  "date": "2026-09-09",
+  "failures": [],
+  "frozen_v1": {
+    "anchor_tensor_max_error": 0.0,
+    "coordinate_frame_consequence": "h_s(s)=h_s(1), h_a(s)=h_a(1), h_b(s)=h_b(1) in the exact Iter368 frame",
+    "gauge_condition": "NONE_ADDED",
+    "normalization_condition": "fixed anchor tetrad components; no new unit normalization",
+    "rule": "zero transverse twist; hold all tetrad components of each anchor metric probe fixed along the canonical trajectory",
+    "status": "prospectively versioned observable definition before numerator-weighted cut evaluation",
+    "symmetry": "h_{mu nu}=h_{nu mu}",
+    "symmetry_max_error": 0.0,
+    "transversality_condition": "NONE_ADDED"
+  },
+  "guardrails": {
+    "Fisher_resources": "FORBIDDEN",
+    "candidate_values_used": false,
+    "comparator_quotient": "NOT_PERFORMED",
+    "cut_numerators_evaluated": false,
+    "native_projection": "NOT_PERFORMED",
+    "source_born_subtraction": "NOT_PERFORMED",
+    "zero_fill": false
+  },
+  "iteration": 644,
+  "kinematic_checks": [
+    {"s": 1.0, "q_s": [1.0,0.0,0.0,0.0], "q_a": [-0.4,0.09999999999999991,0.09999999999999991,0.0], "q_b": [-0.6,-0.09999999999999991,-0.09999999999999991,-0.0], "k2": 0.019999999999999962, "invariants": [1.0,0.14,0.34000000000000014], "closure_max_abs": 0.0},
+    {"s": 1.96, "q_s": [1.4,0.0,0.0,0.0], "q_a": [-0.6285714285714287,0.35714285714285715,0.35714285714285715,0.0], "q_b": [-0.7714285714285711,-0.35714285714285715,-0.35714285714285715,-0.0], "k2": 0.2551020408163265, "invariants": [1.9599999999999997,0.14000000000000012,0.3400000000000001], "closure_max_abs": 0.0},
+    {"s": 2.0, "q_s": [1.4142135623730951,0.0,0.0,0.0], "q_a": [-0.6363961030678927,0.3640054944640259,0.3640054944640259,0.0], "q_b": [-0.7778174593052024,-0.3640054944640259,-0.3640054944640259,-0.0], "k2": 0.2649999999999998, "invariants": [2.0000000000000004,0.14000000000000012,0.34000000000000075], "closure_max_abs": 0.0},
+    {"s": 3.0, "q_s": [1.7320508075688772,0.0,0.0,0.0], "q_a": [-0.8082903768654761,0.5066228051190221,0.5066228051190221,0.0], "q_b": [-0.9237604307034011,-0.5066228051190221,-0.5066228051190221,-0.0], "k2": 0.5133333333333335, "invariants": [2.9999999999999996,0.14000000000000024,0.3399999999999995], "closure_max_abs": 0.0}
+  ],
+  "nonuniqueness_certificate": {
+    "lorentz_error": 1.1102230246251565e-16,
+    "momentum_stabilizer_error": 5.551115123125783e-17,
+    "probe_max_abs_differences": [0.17057670785382034,0.16351183910172382,0.18117665064705094],
+    "residual_freedom_lower_bound": "at least one arbitrary smooth function theta(s) with theta(1)=0",
+    "statement": "covariance+anchor are insufficient: common O(2) rotations about E1 leave all momenta/invariants fixed while changing generic metric probes",
+    "test_s": 2.0
+  },
+  "readiness_change": "0 percentage points: a prerequisite observable contract closes, but robust unique residual remains 0/20 and no complete rubric sector closes",
+  "scientific_gate_pass": true,
+  "tensor_scope": "Iter368 probes are arbitrary symmetric metric probes, not TT physical graviton polarizations",
+  "next_gate": "Iteration645: using only Iter594 same-parent K1/K2/K3 machinery plus Iter627/632 retarded-state authority and this frozen V1 tensor trajectory, evaluate numerator-weighted ordinary s-channel cut densities family-by-family for K1/K2 and K1^3 on s>=1.96; keep K3 analytic/contact and do not perform native projection or Source/Born subtraction yet."
+}
