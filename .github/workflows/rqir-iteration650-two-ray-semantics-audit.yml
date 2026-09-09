@@ -1,4 +1,4 @@
-name: RQIR Iter650 two-ray semantics audit
+name: RQIR Iter650 same-parent Source-Born authority audit
 
 on:
   push:
@@ -18,34 +18,38 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Audit two-ray diagnostic semantics before values
+      - name: Audit same-parent closed-Gamma3 Source-Born authority
         run: python candidate_gravity/code/iteration650_two_ray_semantics_audit.py
       - name: Validate fail-closed Iter650 result
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          d=json.loads(Path('results/iteration650_two_ray_semantics_audit/result.json').read_text())
+          d=json.loads(Path('results/iteration650_same_parent_source_born_authority_audit/result.json').read_text())
           assert d['iteration']==650
           assert d['MODEL_READINESS']=='24%'
           assert d['scientific_gate_pass'] is True
           assert d['candidate_residual'] is False
-          assert d['two_ray_diagnostic_mathematically_defined'] is True
-          assert d['physical_comparator_semantics_established'] is False
-          assert d['equivalent_to_source_born_subtraction'] is False
+          assert d['authority']['iter621_cross_sector_bridge_equation_count']==0
+          assert d['authority']['iter621_remaining_relative_complex_normalization_dof']==1
+          assert d['authority']['iter629_single_common_N_native_exists'] is False
+          assert d['authority']['iter629_open_over_closed_ratios']==[-1.0,-2.0,-3.0]
+          assert d['same_parent_closed_gamma3_born_established'] is False
           assert d['rho_fixed'] is False
-          assert d['values_inspected'] is False
+          assert d['open_response_proxy_allowed'] is False
           assert d['source_born_subtraction']=='NOT_PERFORMED'
           assert d['native_Y_Tcut_projection']=='NOT_PERFORMED'
           assert d['comparator_quotient']=='NOT_PERFORMED'
+          assert d['candidate_values_used'] is False
           assert d['zero_fill'] is False
+          assert d['normalization_fit'] is False
           assert d['failures']==[]
-          assert d['classification']=='PASS_ITER650_TWO_RAY_PROJECTIVE_OVERLAP_IS_CSTAR_X_CSTAR_INVARIANT__PHYSICAL_COMPARATOR_SEMANTICS_NOT_ESTABLISHED__NON_RESIDUAL'
+          assert d['classification']=='BLOCKED_ITER650_SAME_PARENT_CLOSED_GAMMA3_SOURCE_BORN_DEFINITION_ABSENT__ITER621_ZERO_CROSS_SECTOR_BRIDGES__ITER629_OPEN_PROXY_REJECTED__NON_RESIDUAL'
           print(d['classification'])
           PY
       - name: Upload raw Iter650 artifact
         uses: actions/upload-artifact@v4
         with:
-          name: rqir-iteration650-two-ray-semantics-audit
-          path: results/iteration650_two_ray_semantics_audit/result.json
+          name: rqir-iteration650-same-parent-source-born-authority
+          path: results/iteration650_same_parent_source_born_authority_audit/result.json
           if-no-files-found: error
