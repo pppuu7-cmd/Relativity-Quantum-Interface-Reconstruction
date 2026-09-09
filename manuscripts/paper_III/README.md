@@ -21,6 +21,16 @@ Core result:
 
 For fixed per-unit score models this map is monotone and concave in resource allocation; for data-only scaling (\(\Lambda=0\)) it is positively homogeneous. This yields convex inner allocation and minimum-budget problems.
 
+## Five-paper RQIR architecture
+
+1. **Paper I — calibration/source distinguishability.** Exact calibration quotient, ordered source information, and physical directions that survive finite calibration.
+2. **Paper II — statistical identifiability.** Detector-facing likelihoods, nuisance geometry, covariance, Fisher/profile identifiability, and self-calibration.
+3. **Paper III — resource closure.** Convert surviving profiled information into shots, wall time, spectral-density information rates, coherence/geometry/control budgets, and optimal allocation.
+4. **Paper IV — known-model comparator funnel.** Pass established classical, semiclassical, stochastic, hybrid, postquantum, and quantum-gravity/interface models through the common RQIR funnel; identify which gates they pass, fail, or leave degenerate.
+5. **Paper V — constructive KG model.** Build and present the KG model only after the first four layers have fixed the operational requirements, statistical gates, resource constraints, and empirical failure modes of known models.
+
+Paper III therefore does **not** perform the known-model benchmark and does **not** introduce the KG model. Its endpoint is a resource-closed experimental/interface design language that Paper IV can use as a common comparator standard.
+
 ## Initial certificate
 
 Run:
@@ -53,4 +63,4 @@ Seed: `20260909`. Randomized tests: 5000 problems per stochastic property.
 - freeze a submission commit and update data-availability text;
 - prepare PRR cover letter/checklist only after the physical-binding layer is credible.
 
-Paper IV remains downstream model/comparator testing.
+The downstream handoff is now fixed: **Paper III → Paper IV known-model funnel → Paper V KG model**.
