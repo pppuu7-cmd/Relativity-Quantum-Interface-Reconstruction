@@ -9,17 +9,17 @@
 Repository commits, validated Actions artifacts, recovery deltas, research logs and this file are source of truth. Workflow colour alone is never scientific authority. Latest repo/recovery state wins races; authoritative iteration IDs are never reused.
 
 ## Current authority
-Latest authoritative research iteration: **666**.
+Latest authoritative research iteration: **667**.
 
-Iter665 raw-valid authority froze `MSSC001-CLOSED-SK-NONCOLLINEAR-SOFT-KIN-V1` and removed the Iter662 axial quarter-turn stabilizer without defining transverse `W[D_sK2]`. Iter664's three-dimensional physical transverse quotient blocker remains in force.
+Iter665 raw-valid authority froze `MSSC001-CLOSED-SK-NONCOLLINEAR-SOFT-KIN-V1` and removed the Iter662 axial quarter-turn stabilizer without defining transverse `W[D_sK2]`. Iter666 then proved the normalized same-parent longitudinal Ward insertion is exactly Gamma2-controlled but lies in the gauge image and therefore cannot replace the physical transverse soft coordinate.
 
-### Iter666 — longitudinal Ward-controlled mixed-soft limit
-Canonical run `34343916253`, head `c0f8617322b7f19fce718cf9d33925ff557dc7c6`, artifact `10100869979`, artifact/downloaded-ZIP SHA-256 `1171babf0fb3a2c6c3cd95054e7eafd93a8e23f519ea540523b10757c221f2ce`, raw JSON SHA-256 `68e83b517acf322956c8f96f34b8a669fc6c7ef8ac1a5f7bd568a325612d5d92`; `failures=[]`, `scientific_gate_pass=true`, `blocked=true`.
+### Iter667 — physical soft observable bridge blocker
+Canonical run `34344057503`, head `b2b946772188058b94c689c383e23751b790b080`, artifact `10100924638`, artifact/downloaded-ZIP SHA-256 `cc28c321886f07df8fef9087bee69fec980da26e3ac8f882953805cd067803c1`, raw JSON SHA-256 `caf0a88aa81487b59370cb5aa99267ea122e40e300e6255a35624f10484ffb32`; raw `failures=[]`, `scientific_gate_pass=true`, `blocked=true`.
 
-The normalized same-parent identity `Gamma3[L_xi,h2,h3] = -Gamma2[Lie_xi h2,h3] - Gamma2[h2,Lie_xi h3]` controls the longitudinal mixed-soft insertion exactly. However `L_xi` lies in the gauge image, so this datum is not the gauge-invariant physical transverse soft observable required by frozen `T_cut`. It is a retained limiting result, not a residual and not a zero amplitude.
+No committed MSSC001-specific gauge-invariant detector/asymptotic soft-observable bridge was found. The exact missing bridge is an explicit same-parent map from closed-SK metric insertions to a physical gauge-invariant observable, fixing reduction/normalization, soft-leg definition, hard-channel discontinuity, contact/source completion and IR convention. Generic soft-theorem/in-out literature is not same-parent authority.
 
 ## Active computation
-**Iteration667** physical soft observable bridge audit has been launched. It searches specifically for a committed MSSC001 same-parent bridge from closed-SK metric insertions to a gauge-invariant detector/asymptotic observable with explicit reduction/normalization. Generic soft-theorem or in-out literature discussion is not accepted as same-parent authority.
+**Iteration668** conserved-detector bridge gate is queued/running. It prospectively tests the minimal abstract observable `O_J[h]=Integral J^{mu nu}h_{mu nu}` with symmetric conserved `J`, proving gauge invariance under linearized diffeomorphisms while leaving detector geometry and absolute normalization explicitly `UNSPECIFIED_BLOCKED`. It does not evaluate cuts or form a residual.
 
 ## Frozen guardrails
 All 13 families retained. q3-transfer soft bubble is no-massive-cut topology, never a zero-filled amplitude. `D_s=Disc_s/(2*pi*i)` at fixed epsilon precedes epsilon->0. `zero_fill=false`. Source/Born/source-completion subtraction remains `NOT_PERFORMED`; matched physical soft `T_cut` and comparator quotient remain unformed/BLOCKED. No post-hoc state/channel/tensor/normalization/regulator fit. No `ANSATZ-003`; no Fisher/resources; no blind full-C5. Negative/BLOCKED results remain results.
@@ -35,4 +35,4 @@ All 13 families retained. q3-transfer soft bubble is no-massive-cut topology, ne
 **MODEL_READINESS: 24%**
 
 ## Exact next gate
-Consume terminal Iter667 raw artifact. If no explicit same-parent physical observable bridge exists, record the exact missing bridge and move to Iter668: prospectively derive a minimal gauge-invariant smeared response by coupling an explicit conserved detector/source tensor to the committed closed-SK parent and proving gauge invariance before any cut integration. If required detector/source data are absent, mark those inputs BLOCKED rather than importing an in-out proxy.
+Consume terminal Iter668 raw artifact. If raw-valid, preserve the abstract conserved-detector gauge-invariant bridge but do not pretend its detector geometry/normalization is physical authority. Iter669 should search committed RQIR source/detector protocols for a conserved tensor geometry compatible with the Iter668 bridge and the Iter665 soft family. If no such geometry exists, freeze detector geometry/normalization as the precise prerequisite blocker and switch to another independent admissible model gate rather than importing an in-out proxy.
