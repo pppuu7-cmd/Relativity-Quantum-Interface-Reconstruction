@@ -55,6 +55,65 @@ Coherence is generally not an additive exposure variable. Let $\tau$ be an inter
 \end{equation}
 Decoherence can suppress the score at long $\tau$, while control sequences can reshape frequency sensitivity. Quantum-sensing analyses explicitly show that Fisher-information scaling can change when finite coherence time becomes relevant \cite{Gefen2017}. Accordingly, RQIR does not credit ``coherence time'' by simply multiplying Fisher information by a larger number. It is a design variable that must enter the response map.
 
+\subsection{A dimensioned atom-interferometer binding example}
+
+A light-pulse atom interferometer provides a useful first physical binding because its leading acceleration phase has the familiar scale
+\begin{equation}
+ \phi_k = k_{\rm eff} a T_k^2+\phi_0,
+\label{eq:ai-phase}
+\end{equation}
+where $T_k$ is the pulse-separation time and $\phi_0$ denotes a setting-independent phase offset. Long-baseline atom-interferometer analyses use the same $k_{\rm eff}aT^2$ scale factor and explicitly show that preparation time contributes to wall-clock instability even though it contributes no interferometric phase information \cite{Schilling2020}.
+
+Let the single-shot phase variance be $\sigma_{\phi,k}^2$ and the cycle time be
+\begin{equation}
+ t_{{\rm cyc},k}=2T_k+T_p.
+\end{equation}
+For wall-clock allocation $x_k$, the number of independent phase estimates is approximately $x_k/t_{{\rm cyc},k}$, so define the phase-information rate
+\begin{equation}
+ r_k=\frac{1}{t_{{\rm cyc},k}\sigma_{\phi,k}^2}.
+\label{eq:ai-rate}
+\end{equation}
+If the acceleration $a$ is the target and $\phi_0$ is a free shared nuisance, the two-setting profiled Fisher information is
+\begin{equation}
+ \mathcal I_a(x_1,x_2)
+ =
+ \frac{W_1W_2}{W_1+W_2}
+ \left[k_{\rm eff}(T_1^2-T_2^2)\right]^2,
+ \qquad
+ W_k=r_kx_k.
+\label{eq:ai-profile}
+\end{equation}
+A single interrogation time has zero information on $a$ when $\phi_0$ is completely free: acceleration and constant phase are then exactly degenerate. Two distinct $T$ values rotate the target direction relative to the offset nuisance and self-calibrate it.
+
+For a fixed wall time $B=x_1+x_2$, Eq.~\eqref{eq:ai-profile} is maximized by
+\begin{equation}
+ \frac{x_1^\star}{B}
+ =
+ \frac{\sqrt{r_2}}{\sqrt{r_1}+\sqrt{r_2}},
+ \qquad
+ \frac{x_2^\star}{B}
+ =
+ \frac{\sqrt{r_1}}{\sqrt{r_1}+\sqrt{r_2}}.
+\label{eq:ai-allocation}
+\end{equation}
+Using the realistic staging values $T_p=3\,{\rm s}$ and
+$\sigma_\phi=10\,{\rm mrad}$ employed in the Hannover 10-m atom-interferometer sensitivity discussion \cite{Schilling2020}, together with
+$T_1=0.4\,{\rm s}$ and $T_2=1.2\,{\rm s}$, gives
+\begin{equation}
+ (x_1^\star/B,x_2^\star/B)
+ =
+ (0.45619,0.54381).
+\end{equation}
+Thus the wall-clock optimum is not an equal split. The longer interrogation receives more time despite its slower cycle because the joint fit values both scale-factor leverage and nuisance separation.
+
+For an explicitly illustrative $k_{\rm eff}=1.6\times10^7\,{\rm m}^{-1}$, the asymptotic information rate from Eq.~\eqref{eq:ai-profile} corresponds to
+\begin{equation}
+ \sigma_a\sqrt{T_{\rm int}}
+ \simeq 2.09\times10^{-9}\ {\rm m\,s^{-2}\sqrt{s}}.
+\label{eq:ai-numeric}
+\end{equation}
+This last number is an RQIR staging calculation, not a reported Hannover instrument performance: the published $T_p$ and phase-noise scale are used only to make the resource units realistic, while the chosen two-setting nuisance model and illustrative $k_{\rm eff}$ are ours. Its purpose is to demonstrate an end-to-end conversion from pulse timing and phase noise to wall-clock profiled information.
+
 \subsection{Geometry and control budgets}
 
 Geometry variables---baseline, source separation, mass placement, arm length, trap distance, detector orientation, or spectral band---usually alter the vectors $\bm s_k$ and $J_k$ themselves. Control resources---pulse complexity, field stability, temperature, isolation, calibration cadence, or state-preparation fidelity---can alter both the score geometry and its cost.
@@ -108,6 +167,7 @@ E. Two-band optimum & analytic $(1.4,0.6)$ at $B=2$ & grid optimum $e_2=1.4000$,
 F. Budget inversion & $B_{\min}=I_\star/\kappa_\star$ & $\sigma_\star=0.2\Rightarrow B_{\min}=141.7233560$, reconstructed $I=25$ & PASS\\
 G. Envelope gradient & Eq.~\eqref{eq:marginal} agrees with finite differences & max error $8.95\times10^{-8}$ & PASS\\
 H. Fixed-prior separation & fixed $\Lambda$ breaks exposure homogeneity while information remains monotone & $I(10\bm e)-10I(\bm e)=-1.05820$ & PASS\\
+I. Atom wall-time binding & two interrogation times self-calibrate a free constant phase offset & $(x_1,x_2)/B=(0.45619,0.54381)$; $\sigma_a\sqrt{s}=2.09\times10^{-9}\,\mathrm{m\,s^{-2}\sqrt{s}}$ for illustrative $k_{\rm eff}$ & PASS\\
 \end{tabular}
 \end{ruledtabular}
 \end{table*}
