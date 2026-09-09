@@ -1,0 +1,36 @@
+name: RQIR Iter664 null Ward transverse no-go
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/verification/iteration664_null_ward_transverse_no_go.py'
+      - '.github/workflows/rqir-iteration664-null-ward-transverse-no-go.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration664-null-ward-no-go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Evaluate exact null Ward transverse no-go
+        run: python candidate_gravity/verification/iteration664_null_ward_transverse_no_go.py
+      - name: Fail-closed raw validation
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('candidate_gravity/results/iteration664_null_ward_transverse_no_go.json'))
+          assert d['iteration']==664 and d['scientific_gate_pass'] is True and d['failures']==[]
+          assert d['blocked'] is True and d['zero_fill'] is False
+          assert d['checks']['dim_transverse_gauge_quotient']==3
+          assert d['native_soft_Tcut']=='BLOCKED_ADDITIONAL_TRANSVERSE_SOFT_INPUT_REQUIRED'
+          print('PASS_RAW_AUDIT_ITER664',d['classification'])
+          PY
+      - name: Upload raw Iter664 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration664-null-ward-transverse-no-go
+          path: candidate_gravity/results/iteration664_null_ward_transverse_no_go.json
+          if-no-files-found: error
