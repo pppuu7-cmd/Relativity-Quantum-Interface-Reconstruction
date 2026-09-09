@@ -1,0 +1,121 @@
+\section{Binding abstract resources to apparatus variables}
+\label{sec:physical-binding}
+
+The theorem layer above is intentionally agnostic about what one unit of $e_k$ means. Resource closure requires an explicit map from apparatus variables to the per-unit target and nuisance scores, the covariance model, and the cost vector. RQIR therefore separates the \emph{allocation theorem} from the \emph{apparatus binding}.
+
+\subsection{Shots and repeated trials}
+
+For conditionally independent repeated trials at setting $k$, the simplest binding is
+\begin{equation}
+ e_k=N_k,
+\end{equation}
+where $N_k$ is the number of accepted trials and $(\bm s_k,J_k)$ are per-trial whitened scores. The continuous design problem provides an approximate lower bound when $N_k$ must be integer. Dead time, preparation failure, postselection, or state-reset overhead must either modify the accepted-trial rate or appear in the cost $c_k$; they cannot be silently omitted.
+
+If one experimental cycle takes $t_{{\rm cyc},k}$ and has acceptance probability $p_k$, then a stationary approximation may bind wall-clock integration time $T_k$ to effective trials through
+\begin{equation}
+ e_k\simeq
+ \frac{p_k T_k}{t_{{\rm cyc},k}},
+\label{eq:shot-rate}
+\end{equation}
+provided inter-trial correlations are negligible on the relevant scale. Correlations or drift require a covariance model rather than a nominal trial count.
+
+\subsection{Spectral-density information rates}
+
+For a stationary Gaussian frequency-domain measurement, a common one-sided spectral convention yields an information-rate block of the schematic form
+\begin{equation}
+ \dot F_{ij,k}
+ =
+ 4\,\mathrm{Re}\int_{f\in\mathcal B_k}
+ \mathrm df\,
+ \partial_i\tilde\mu_k(f)^\dagger
+ S_k^{-1}(f)
+ \partial_j\tilde\mu_k(f),
+\label{eq:psd-fisher}
+\end{equation}
+where $S_k(f)$ is the declared noise spectral-density matrix and
+$\mathcal B_k$ is the retained analysis band. Under stationary independent accumulation,
+\begin{equation}
+ F_k(T_k)=T_k\dot F_k.
+\end{equation}
+The exact numerical prefactor depends on Fourier and one-sided/two-sided spectral conventions; it must be frozen with the likelihood implementation. Equation~\eqref{eq:psd-fisher} is therefore a binding template, not a universal detector specification.
+
+Crucially, the nuisance blocks of $\dot F_k$ must be accumulated together with the target block. Replacing $\dot F_k$ by its target-target element before profiling can overstate the information rate whenever calibration drift, spectral tilt, gain, background, phase, or transfer-function parameters are correlated with the target.
+
+\subsection{Coherence and interrogation time}
+
+Coherence is generally not an additive exposure variable. Let $\tau$ be an interrogation or free-evolution time. It can change both the per-shot response and the shot rate:
+\begin{equation}
+ \bm s_k=\bm s_k(\tau),
+ \qquad
+ J_k=J_k(\tau),
+ \qquad
+ e_k(T,\tau)\simeq
+ \frac{p_k(\tau)T}{t_{{\rm cyc},k}(\tau)}.
+\label{eq:coherence-map}
+\end{equation}
+Decoherence can suppress the score at long $\tau$, while control sequences can reshape frequency sensitivity. Quantum-sensing analyses explicitly show that Fisher-information scaling can change when finite coherence time becomes relevant \cite{Gefen2017}. Accordingly, RQIR does not credit ``coherence time'' by simply multiplying Fisher information by a larger number. It is a design variable that must enter the response map.
+
+\subsection{Geometry and control budgets}
+
+Geometry variables---baseline, source separation, mass placement, arm length, trap distance, detector orientation, or spectral band---usually alter the vectors $\bm s_k$ and $J_k$ themselves. Control resources---pulse complexity, field stability, temperature, isolation, calibration cadence, or state-preparation fidelity---can alter both the score geometry and its cost.
+
+We therefore represent a general apparatus design by controls $\bm u$ and scalable allocations $\bm e$:
+\begin{equation}
+ (\bm u,\bm e)
+ \longmapsto
+ \left\{
+ \bm s_k(\bm u),J_k(\bm u),C_k(\bm u),c_k(\bm u)
+ \right\}.
+\label{eq:apparatus-map}
+\end{equation}
+For fixed $\bm u$, the inner allocation problem can inherit the convex structure of Sec.~\ref{sec:allocation}. Optimizing over $\bm u$ need not be convex and may require a discrete or nonlinear outer search. This nested structure keeps a useful theorem layer without pretending that complete apparatus design is globally convex.
+
+\subsection{Resource-closure criterion}
+
+A branch is \emph{resource-closed at target $I_\star$} only relative to a declared physical design domain $\mathcal R_{\rm phys}$, cost model, and nuisance/covariance model. The criterion is
+\begin{equation}
+ \exists\,(\bm u,\bm e)\in\mathcal R_{\rm phys}
+ \quad\text{such that}\quad
+ C(\bm u,\bm e)\le B_{\rm avail},
+ \qquad
+ \Ires(\bm u,\bm e)\ge I_\star.
+\label{eq:resource-closure}
+\end{equation}
+Failure can occur for two qualitatively different reasons:
+\begin{enumerate}
+ \item \emph{geometry failure}: the best achievable $\kappa_\star$ vanishes or the target remains nuisance-aligned throughout the admissible design family;
+ \item \emph{budget failure}: positive information exists, but the minimum feasible cost exceeds the declared available budget or violates coherence/control constraints.
+\end{enumerate}
+RQIR records these separately because only the second can be repaired by ``more resources'' without changing the measurement concept.
+
+\section{RQIR-RES-001 resource-conversion certificate}
+\label{sec:certificate}
+
+The initial Paper-III implementation is frozen by the source-agnostic RQIR-RES-001 certificate. The deterministic core uses the RQIR-II two-band example; randomized tests probe the general resource map. The reference script uses seed 20260909 and 5000 randomized problems for each of homogeneity, monotonicity, and concavity.
+
+\begin{table*}[t]
+\caption{Initial RQIR-RES-001 resource-conversion regressions. Randomized tests use fixed seed 20260909.}
+\label{tab:resource-certificate}
+\begin{ruledtabular}
+\begin{tabular}{p{0.18\textwidth}p{0.49\textwidth}p{0.24\textwidth}c}
+Test & Invariant or expected result & Reference result & Status\\
+\hline
+A. Homogeneity & $\mathcal I(\alpha\bm e;0)=\alpha\mathcal I(\bm e;0)$ & max error $2.84\times10^{-13}$ over 5000 trials & PASS\\
+B. Monotonicity & $\Delta\bm e\succeq0\Rightarrow\mathcal I(\bm e+\Delta\bm e)\ge\mathcal I(\bm e)$ & minimum gain $3.77\times10^{-2}$ over 5000 trials & PASS\\
+C. Concavity & $\mathcal I(t\bm e_1+(1-t)\bm e_2)\ge t\mathcal I(\bm e_1)+(1-t)\mathcal I(\bm e_2)$ & minimum gap $5.50\times10^{-6}$ over 5000 trials & PASS\\
+D. Alignment obstruction & common exact nuisance alignment remains zero under resource scaling & max $|\mathcal I|=1.16\times10^{-10}$ through budget $10^6$ & PASS\\
+E. Two-band optimum & analytic $(1.4,0.6)$ at $B=2$ & grid optimum $e_2=1.4000$, $\mathcal I=0.3528$ & PASS\\
+F. Budget inversion & $B_{\min}=I_\star/\kappa_\star$ & $\sigma_\star=0.2\Rightarrow B_{\min}=141.7233560$, reconstructed $I=25$ & PASS\\
+G. Envelope gradient & Eq.~\eqref{eq:marginal} agrees with finite differences & max error $8.95\times10^{-8}$ & PASS\\
+H. Fixed-prior separation & fixed $\Lambda$ breaks exposure homogeneity while information remains monotone & $I(10\bm e)-10I(\bm e)=-1.05820$ & PASS\\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+The randomized tests do not establish a new theorem; Propositions 1 and 2 are analytic. Their purpose is to make implementation regressions visible before an apparatus-specific resource model is attached. In particular, Test H prevents a fixed external nuisance prior from being accidentally multiplied with science exposure, while Test D carries forward the Paper-II rule that exact nuisance alignment is not an exposure shortage.
+
+\subsection{What the certificate still does not test}
+
+RQIR-RES-001 presently assumes that each declared setting has a fixed per-unit local score model and that the scalable resource enters linearly in the Fisher blocks. It does not validate detector dead-time models, colored nonstationary drift, nonlinear likelihood curvature, quantum-measurement attainability, integer scheduling, apparatus engineering limits, or a specific gravity-interface signal amplitude. Those belong to the binding layer for each candidate experiment.
+
+A later apparatus-specific certificate should therefore contain, at minimum, the following frozen objects: the physical parameter/reference point, response Jacobians, covariance or spectral-density model, nuisance-sharing graph, calibration-prior provenance, mapping from wall-clock or shot resources to accepted information, resource costs, feasibility constraints, and an independently reproducible budget inversion.
