@@ -1,0 +1,55 @@
+name: RQIR Iter657 Null Ward Completion Rank Audit
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  iteration657-null-ward-completion-rank-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Evaluate exact null Ward completion rank audit
+        run: python candidate_gravity/verification/iteration657_null_ward_completion_rank_audit.py
+
+      - name: Fail-closed raw result validation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('candidate_gravity/results/iteration657_null_ward_completion_rank_audit.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          assert d['iteration'] == 657
+          assert d['failures'] == []
+          assert d['MODEL_READINESS'] == '24%'
+          assert d['zero_fill_allowed'] is False
+          c=d['classification']
+          assert c == 'BLOCKED_ITER657_NULL_WARD_COMPLETION_NONUNIQUE__IMAGE_LQ_INTERSECTS_TRANSVERSE_SUBSPACE_DIM3__AUXILIARY_COMPLEMENT_REQUIRED__NON_RESIDUAL'
+          checks=d['checks']
+          assert checks['q_squared'] == 0
+          assert checks['rank_Lq'] == 4
+          assert checks['rank_Dq'] == 4
+          assert checks['rank_DqLq'] == 1
+          assert checks['dim_image_Lq_intersect_kernel_Dq'] == 3
+          assert checks['plus_TT_transverse'] is True
+          assert checks['plus_TT_in_image_Lq'] is False
+          assert checks['explicit_nonzero_gauge_tensor_is_transverse'] is True
+          assert d['candidate_cut_values_read'] is False
+          assert d['auxiliary_vector_or_off_null_regulator_selected'] is False
+          print('PASS_RAW_AUTHORITY_AUDIT_ITER657_NULL_WARD_COMPLETION_RANK')
+          PY
+
+      - name: Upload raw authority artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration657-null-ward-completion-rank-audit
+          path: candidate_gravity/results/iteration657_null_ward_completion_rank_audit.json
+          if-no-files-found: error
+          retention-days: 90
