@@ -39,8 +39,10 @@
   "zero_fill_allowed": false,
   "canonical_actions": {
     "run": 34334410816,
+    "job": 102410321810,
     "head": "6c74089df150fa4eb465e636e29d81d36f2e7f84",
     "artifact": 10097091086,
-    "artifact_digest": "sha256:ff04eca955253dac3a6cdd8531fc3b9763937d6c2e272f0ff596303fdd178069"
+    "artifact_digest": "sha256:e98203376c103d6119efb10d2fdab66b8e378d26a3e9ac29639c727170735232",
+    "raw_json_sha256": "777003d4f8d31bf9222ebb7b392002647699924324487d234e9e72a5dafed75a"
   }
 }
