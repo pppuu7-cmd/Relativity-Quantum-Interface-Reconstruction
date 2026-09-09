@@ -40,7 +40,7 @@ The fixed-prior case deliberately behaves differently. A prior is an intercept i
 
 The physical-binding layer is where the next substantive work lies. Real apparatus designs can violate simple additive exposure scaling through drift, dead time, colored noise, coherence loss, saturation, non-Gaussian readout, or control-dependent covariance. RQIR III does not hide these effects inside an abstract ``sensitivity.'' It requires the mapping from physical controls to response scores and costs to be declared. For fixed controls, the convex allocation theorem can still be used as an inner solver; nonlinear apparatus controls can then be explored in an outer design loop.
 
-This also clarifies the boundary with RQIR IV. Resource closure answers whether a declared response direction is feasible under a declared apparatus and nuisance model. It does not answer whether an observed signal is unique to a proposed microscopic theory. Existing classical, stochastic, semiclassical, hybrid, postquantum, and quantum models can still map to overlapping observable distributions. Comparator testing therefore remains a separate downstream funnel.
+The boundary with the remaining RQIR papers is deliberate. Paper IV will use the completed calibration, nuisance, and resource gates as a common comparator funnel for established classical, semiclassical, stochastic, hybrid, postquantum, and quantum gravity/interface models. Its purpose is to determine which known models pass, fail, or remain operationally degenerate under the same declared gates rather than to introduce a preferred new model. Only after that benchmark layer is complete does Paper V construct and present the KG model against the requirements and failure modes exposed by Papers I--IV. Resource closure in the present paper is therefore a necessary input to model comparison, but it is neither comparator exclusion nor the KG construction itself.
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -57,17 +57,23 @@ The map is monotone and concave in resource allocation, and is positively homoge
 
 The analytic two-band continuation demonstrates the practical meaning: for the RQIR-II values $(0.3,0.7)$, nuisance-aware allocation improves information by $16\%$ at fixed total exposure relative to equal splitting. RQIR-RES-001 independently verifies the resource identities and numerical implementation, including randomized homogeneity, monotonicity, and concavity tests.
 
-The inference ladder is now explicit:
+The five-paper inference program is therefore explicit:
 \begin{equation}
-\text{calibration survival}
+\begin{split}
+&\text{Paper I: calibration survival}
 \rightarrow
-\text{statistical identifiability}
+\text{Paper II: statistical identifiability}
+\\
+&\rightarrow
+\text{Paper III: resource closure}
 \rightarrow
-\text{resource closure}
-\rightarrow
-\text{comparator/model testing}.
+\text{Paper IV: known-model comparator funnel}
+\\
+&\rightarrow
+\text{Paper V: constructive KG model}.
+\end{split}
 \end{equation}
-RQIR III supplies the third arrow. Apparatus-specific reach requires the remaining binding of scores and costs to measured spectral densities, coherence, geometry, control overhead, and feasible laboratory budgets; microscopic interpretation remains downstream.
+RQIR III supplies the resource-closure layer. Apparatus-specific reach requires the remaining binding of scores and costs to measured spectral densities, coherence, geometry, control overhead, and feasible laboratory budgets. Known-model discrimination is deferred to Paper IV, and construction of the KG model is deferred to Paper V so that the new model is judged against a funnel whose operational, statistical, and resource requirements were fixed in advance.
 
 \begin{acknowledgments}
 The derivation cross-checks, numerical certificate, literature organization, and manuscript drafting used substantive assistance from OpenAI ChatGPT (GPT-5.6 Sol, accessed September 2026). All numerical claims reported in RQIR-RES-001 were regenerated from an executable deterministic script with fixed seed and compared against the analytic identities stated in the manuscript. The AI system is not an author. The author retains full responsibility for the accuracy, interpretation, and integrity of the work.
@@ -134,7 +140,6 @@ T. Gefen, F. Jelezko, and A. Retzker,
 ``Control methods for improved Fisher information with quantum sensing,''
 Phys. Rev. A \textbf{96}, 032310 (2017),
 doi:10.1103/PhysRevA.96.032310.
-
 
 \bibitem{Schilling2020}
 M. Schilling, E. Wodey, L. Timmen, D. Tell, K. H. Zipfel,
