@@ -10,7 +10,7 @@ Repository commits, validated Actions artifacts, recovery deltas, research logs 
 
 ## Current authority
 
-Latest authoritative research iteration: **638**.
+Latest authoritative research iteration: **639**.
 
 Historical authority retained: Iter581 exact15 PASS; Iter582 q2-resolved Candidate-side connection coordinate; Iter594 complete 13-family MSSC source object; Iter605 source nonlinear Ward PASS; Iter613 open-source hard-channel trajectory; Iter614/615 historical source roots/coefficients; Iter616 exact q2/end-point identity; Iter627 combined matter+gravity SK measurement contract; Iter628 open retarded scalar-response coefficients.
 
@@ -55,6 +55,19 @@ Classification: `PASS_ITER638_UNIQUE_SAME_PARENT_EXACT_FIXTURE_ANCHOR_RECOVERED_
 
 Earlier run `34293593003` is non-authoritative implementation noise: the evaluator passed but the audit used exact floating equality for `u0`. Canonical V2 changed only the audit comparison to absolute tolerance `2e-15`; no scientific contract or kinematics changed.
 
+### Iter639 — frozen closed scalar singularity geometry
+
+Using only the already frozen Iter636 family with `t0=0.14`, `u0=0.34`, `m_phi=0.7`:
+- K1/K2 equal-mass bubble normal threshold in the `s` channel is `s_thr=4 m_phi^2=1.96`;
+- exact fixture anchor `s0=1` is below threshold; fixed crossed invariants `t0=0.14`, `u0=0.34` are also below `1.96`;
+- for K1^3, the equal-mass triangle interior leading-Landau conditions reduce to `175 s^2-151 s+7=0`;
+- stationary candidates are `s=0.04915823221180988` with `(x,y,z)=(7.304595091414875,-10.739730936293288,4.435135844878413)` and `s=0.813698910645333` with `(x,y,z)=(1.7954049085850974,2.639730936293323,-3.4351358448784204)`;
+- neither solution has all Feynman parameters positive.
+
+Therefore there is no physical-sheet leading/anomalous triangle singularity from an interior positive-alpha Landau solution on this frozen real-`s` family. Boundary singularities reduce to bubble subchannels and remain retained. Classification: `PASS_ITER639_FROZEN_CLOSED_SCALAR_SINGULARITY_GEOMETRY__BUBBLE_S_THRESHOLD_1P96__TRIANGLE_LEADING_LANDAU_CANDIDATES_HAVE_NO_POSITIVE_FEYNMAN_SUPPORT__NON_RESIDUAL`.
+
+This is a support-geometry PASS plus a retained negative result for leading triangle anomalous support; it is not a Candidate residual or model-level consistency PASS/FAIL.
+
 ## Frozen guardrails
 
 All K3/K1K2/K1^3 families remain retained; `zero_fill=false`. Source/Born subtraction `NOT_PERFORMED`. Native projection `NOT_PERFORMED`. No comparator quotient. No post-hoc state/channel/trajectory/normalization fit. No `ANSATZ-003`; no Fisher/resources; no blind full-C5. Negative/BLOCKED results remain results.
@@ -70,8 +83,8 @@ All K3/K1K2/K1^3 families remain retained; `zero_fill=false`. Source/Born subtra
 
 **MODEL_READINESS: 24%**
 
-Readiness change through Iter638: **0 percentage points**. Exact-fixture provenance is closed, but no robust comparator-subtracted residual or complete new rubric sector has closed.
+Readiness change through Iter639: **0 percentage points**. Singularity support geometry closed, but no robust comparator-subtracted residual or complete new rubric sector has closed.
 
 ## Exact next gate
 
-**Iteration639:** evaluate the already prospectively frozen Iter636 scalar-denominator geometry with `t0=0.14`, `u0=0.34`, `m_phi=0.7`: K1/K2 equal-mass bubble threshold in the `s` channel and K1^3 equal-mass triangle leading Landau determinant plus positive-Feynman-parameter support. Preserve subthreshold/mixed-sign/no-support results exactly. This gate does not authorize native `Y/T_cut` projection or Source/Born subtraction by itself.
+**Iteration640:** derive the actual closed K1/K2 `s`-channel discontinuity coefficient for `s>=1.96` from the same frozen parent dynamics, Iter632 Minkowski-vacuum `G_K`, and Iter627 combined SK contract, including numerator/tensor contraction and common conventions, before any native projection. K1^3 remains retained despite the absence of positive-alpha leading anomalous support on this family; K3 remains retained. Native `Y/T_cut` projection, Source/Born subtraction, comparator quotient, `ANSATZ-003`, Fisher/resources remain forbidden until their upstream gates are satisfied.
