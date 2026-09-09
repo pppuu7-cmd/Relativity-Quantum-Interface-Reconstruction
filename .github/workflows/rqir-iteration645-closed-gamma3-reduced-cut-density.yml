@@ -1,0 +1,46 @@
+name: RQIR Iter645 closed Gamma3 reduced cut density
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration645_closed_gamma3_reduced_cut_density.py'
+      - '.github/workflows/rqir-iteration645-closed-gamma3-reduced-cut-density.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration645:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numerical dependency
+        run: python -m pip install --disable-pip-version-check numpy
+      - name: Evaluate reduced numerator-weighted closed-Gamma3 cut densities
+        run: python candidate_gravity/code/iteration645_closed_gamma3_reduced_cut_density.py
+      - name: Validate fail-closed scientific status
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('results/iteration645_closed_gamma3_reduced_cut_density/result.json')
+          d=json.loads(p.read_text())
+          assert d['iteration']==645
+          assert d['failures']==[]
+          assert d['reduced_numerator_computation_pass'] is True
+          assert d['scientific_gate_pass'] is False
+          assert d['classification'].startswith('BLOCKED_ITER645_')
+          assert d['zero_fill'] is False
+          assert d['source_born_subtraction']=='NOT_PERFORMED'
+          assert d['native_Y_Tcut_projection']=='NOT_PERFORMED'
+          assert len(d['samples'])==6
+          print(d['classification'])
+          PY
+      - name: Upload raw Iter645 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration645-closed-gamma3-reduced-cut-density
+          path: results/iteration645_closed_gamma3_reduced_cut_density/result.json
+          if-no-files-found: error
