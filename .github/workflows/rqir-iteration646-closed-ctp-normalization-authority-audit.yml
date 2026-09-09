@@ -1,0 +1,44 @@
+name: RQIR Iter646 closed CTP normalization authority audit
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/code/iteration646_closed_ctp_normalization_authority_audit.py'
+      - '.github/workflows/rqir-iteration646-closed-ctp-normalization-authority-audit.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration646:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit same-parent closed CTP normalization authority
+        run: python candidate_gravity/code/iteration646_closed_ctp_normalization_authority_audit.py
+      - name: Validate fail-closed scientific status
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('results/iteration646_closed_ctp_normalization_authority_audit/result.json').read_text())
+          assert d['iteration']==646
+          assert d['failures']==[]
+          assert d['classification'].startswith('BLOCKED_ITER646_')
+          assert d['scientific_gate_pass'] is False
+          assert d['authority_conclusion']['degrees_of_freedom_remaining'].startswith('exactly one common')
+          assert d['candidate_values_used'] is False
+          assert d['zero_fill'] is False
+          assert d['source_born_subtraction']=='NOT_PERFORMED'
+          assert d['native_Y_Tcut_projection']=='NOT_PERFORMED'
+          assert d['comparator_quotient']=='NOT_PERFORMED'
+          print(d['classification'])
+          PY
+      - name: Upload raw Iter646 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration646-closed-ctp-normalization-authority-audit
+          path: results/iteration646_closed_ctp_normalization_authority_audit/result.json
+          if-no-files-found: error
