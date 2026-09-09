@@ -1,0 +1,108 @@
+\section{Relation to profile likelihood and practical identifiability}
+\label{sec:profile}
+
+Fisher information is a local curvature diagnostic. For the linear Gaussian reference model used here, however, the connection to profiling is exact. With whitened residual $\bm r$ and quadratic nuisance precision $\Lambda$, the penalized negative log likelihood is, up to constants,
+\begin{equation}
+ \ell(\beta,\bm a)
+ =\frac12\|\bm r-\beta\bm s-J\bm a\|^2
+ +\frac12\bm a^T\Lambda\bm a.
+\end{equation}
+Profiling over $\bm a$ yields a quadratic function of $\beta$ whose curvature is precisely $\mathcal I_\beta(\Lambda)$ from Eq.~\eqref{eq:variational}. Thus the present Fisher geometry is not an additional approximation \emph{inside the frozen local linear-Gaussian model}.
+
+Outside that local regime, full profile likelihoods can reveal asymmetry, boundaries, curvature, or disconnected solutions that a Fisher matrix misses \cite{CoxReid1987,Wieland2021,Heinrich2025}. Consequently, a future apparatus-specific likelihood should use the present framework as a gate and regression standard, then inspect nonlinear profiles when the actual response model is sufficiently mature. Positive local Fisher is necessary for first-order local inferability in this setting; it is not a universal certificate of global or practical identifiability.
+
+\section{Claims, non-claims, and scope boundary}
+\label{sec:scope}
+
+The scientific claims supported here are deliberately narrower than a physical reach forecast.
+
+\begin{table*}[t]
+\caption{Interpretation discipline for RQIR II.}
+\label{tab:claims}
+\begin{ruledtabular}
+\begin{tabular}{p{0.27\textwidth}p{0.31\textwidth}p{0.31\textwidth}}
+Layer & What can be concluded & What is not implied\\
+\hline
+Exact Paper-I quotient & a declared calibration leaves a response-sensitive physical direction & finite-noise inference or uniqueness of microscopic gravity\\
+Data-only local Fisher & target tangent has a component outside nuisance span & global nonlinear identifiability or practical detectability\\
+Prior-assisted profile & combined science+external information constrains $\beta$ locally & detector data alone identify $\beta$\\
+Exposure scaling & positive information can accumulate under repeated independent data & exact degeneracy can be cured by more of the same data\\
+Two-band self-calibration & response diversity can rotate target away from tilt nuisance & every added channel improves identifiability\\
+RQIR-STAT-001 PASS & implementation obeys frozen reference invariants & apparatus readiness, new physics, or a physical resource forecast\\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+In particular, this paper does not claim evidence that gravity is quantized; it does not claim that the ordered response coordinate isolated in Paper I is transmitted by nature; it does not claim that a Fisher-positive detector front is technologically feasible; and it does not claim that all RQIR branches are identifiable under one nuisance set. Physical source and detector models must declare their own nuisance columns, covariance, shared-parameter structure, and independent calibration information.
+
+\section{Discussion}
+\label{sec:discussion}
+
+The main conceptual result of RQIR II is an ordering rule for inference. Paper I can establish an exact response-distinct direction inside a finite calibration equivalence class, but that direction must next pass through the nuisance tangent geometry of the detector likelihood. In whitened space the question is concrete: how much of the science score survives projection onto all allowed nuisance directions? If none survives, exposure alone cannot help. If some survives, its magnitude controls local precision but not yet physical feasibility. If independent preparation information is added, the increase in precision must be labeled as externally assisted rather than attributed to the science data.
+
+The variational form, Eq.~\eqref{eq:variational}, is especially useful because it unifies several audit rules. It makes arbitrary nuisance coordinates irrelevant, proves that genuinely additional independent nuisance information cannot worsen the profiled science information, and provides a stable interpretation even when nuisance columns are redundant. The two-band example then shows the complementary design principle: changing response geometry can create information without an external prior by preventing science and nuisance scores from remaining parallel.
+
+The numerical audit exposes a separate hazard. Statistical identifiability is a statement about subspaces, not nuisance-vector norm. A physically weak nuisance can be exactly aligned with the target, so norm-based threshold deletion changes the model rather than merely stabilizing its inversion. RQIR-NUM-001 turns this point into a minimal regression that can be carried forward to every apparatus-specific implementation.
+
+There are also clear limitations. First, the frozen certificate is synthetic and source-agnostic; it validates likelihood algebra, not any one laboratory architecture. Second, the main theorems are local and first order. Third, the reference covariance is parameter independent at the audit point. Fourth, the current figures are analytic or synthetic diagnostic maps rather than measured reach curves. Fifth, independent calibration information is represented locally by a quadratic precision matrix; non-Gaussian or bounded nuisance constraints require full likelihood treatment. Finally, the present article stops before converting information into physical resources, by design.
+
+These limitations are not unresolved holes in the Paper-II theorem layer; they define the handoff. RQIR III must bind surviving information to shots, spectral densities, coherence, integration time, geometry and control budgets. RQIR IV must then test existing gravity/interface models through a common comparator funnel. Keeping these stages separate prevents a local statistical result from being promoted prematurely into an ontological or technological claim.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We closed the statistical-identifiability layer of RQIR between exact calibration-aware source separation and physical resource conversion. In a local detector-facing Gaussian likelihood, nuisance profiling has a direct geometry: the data-only Fisher information is the squared distance of the whitened target score from the nuisance tangent span. With independent nuisance information, the exact variational representation
+\begin{equation}
+ \mathcal I_\beta(\Lambda)=\min_{\bm a}
+ \bigl[\|\bm s-J\bm a\|^2+\bm a^T\Lambda\bm a\bigr]
+\end{equation}
+separates external constraint from science-channel geometry and yields coordinate invariance and monotonicity.
+
+Two exact consequences sharpen the experimental interpretation. Exact score alignment is not repaired by more exposure of the same experiment. Response diversity can instead self-calibrate, as shown by the two-band law $4g_2^2g_4^2/(g_2^2+g_4^2)$. A seven-test deterministic certificate reproduces these results, and an independent 10,000-trial stress audit finds no violation of the analytic invariants under rank deficiency, coordinate changes, shared-versus-separate nuisances, or correlated covariance at the declared tolerances. Conversely, a weak-nuisance cutoff counterexample demonstrates that careless numerical thresholding can create a false unit-information signal from an exactly degenerate problem.
+
+The resulting inference ladder is therefore explicit: exact calibration survival, data-only local identifiability, prior-assisted precision, finite-data sensitivity, and physical resource closure are different statements. RQIR II supplies the statistical gate between the first and the last of these statements.
+
+\begin{acknowledgments}
+The numerical audit and manuscript-development workflow made substantive use of OpenAI ChatGPT (GPT-5.6 Sol, accessed September 2026) for algebraic cross-checking, generation and debugging of audit code, numerical stress testing, literature organization, figure-source generation, and manuscript drafting. The tool was directed to preserve explicit claim/non-claim boundaries and to verify generated numerical claims against deterministic repository scripts and separately generated regression calculations. The AI tool is not an author. The author retains full responsibility for the accuracy, interpretation, and integrity of the submitted work.
+\end{acknowledgments}
+
+\section*{Data availability}
+All code and numerical data used to reproduce the tables and figures in this article are openly available in the Relativity--Quantum Interface Reconstruction repository \cite{RQIRRepo}. The exact audit/data snapshot used for this manuscript is repository commit \texttt{d0f6453721821fcaec4e9e24ea5e68185d90a5a2}, which contains the audit JSON, vector figure sources, and the standalone submission-audit script that regenerates all diagnostic curve/grid CSV files. The deterministic RQIR-STAT-001 seed is 20260830 and the independent 10,000-trial audit seed is 20260908.
+
+\begin{thebibliography}{99}
+
+\bibitem{RQIRI}
+A. Buyanov, ``Relativity--Quantum Interface Reconstruction I: Operational Hierarchy, Ordered Stress--Energy Information, and Finite Calibration-Nullspace Discriminants,'' working manuscript v0.6 (8 September 2026).
+
+\bibitem{Fisher1922}
+R. A. Fisher, ``On the Mathematical Foundations of Theoretical Statistics,'' Philos. Trans. R. Soc. London A \textbf{222}, 309--368 (1922), doi:10.1098/rsta.1922.0009.
+
+\bibitem{Rao1945}
+C. R. Rao, ``Information and the Accuracy Attainable in the Estimation of Statistical Parameters,'' Bull. Calcutta Math. Soc. \textbf{37}, 81--91 (1945).
+
+\bibitem{Rothenberg1971}
+T. J. Rothenberg, ``Identification in Parametric Models,'' Econometrica \textbf{39}, 577--591 (1971), doi:10.2307/1913267.
+
+\bibitem{CoxReid1987}
+D. R. Cox and N. Reid, ``Parameter Orthogonality and Approximate Conditional Inference,'' J. R. Stat. Soc. B \textbf{49}, 1--18 (1987), doi:10.1111/j.2517-6161.1987.tb01422.x.
+
+\bibitem{Cowan2011}
+G. Cowan, K. Cranmer, E. Gross, and O. Vitells, ``Asymptotic Formulae for Likelihood-Based Tests of New Physics,'' Eur. Phys. J. C \textbf{71}, 1554 (2011), doi:10.1140/epjc/s10052-011-1554-0.
+
+\bibitem{Penrose1955}
+R. Penrose, ``A Generalized Inverse for Matrices,'' Proc. Cambridge Philos. Soc. \textbf{51}, 406--413 (1955), doi:10.1017/S0305004100030401.
+
+\bibitem{Transtrum2011}
+M. K. Transtrum, B. B. Machta, and J. P. Sethna, ``Geometry of Nonlinear Least Squares with Applications to Sloppy Models and Optimization,'' Phys. Rev. E \textbf{83}, 036701 (2011), doi:10.1103/PhysRevE.83.036701.
+
+\bibitem{Wieland2021}
+F.-G. Wieland, A. L. Hauber, M. Rosenblatt, C. T\"onsing, and J. Timmer, ``On Structural and Practical Identifiability,'' Curr. Opin. Syst. Biol. \textbf{25}, 60--69 (2021), doi:10.1016/j.coisb.2021.03.005.
+
+\bibitem{Heinrich2025}
+M. Heinrich, M. Rosenblatt, F.-G. Wieland, H. Stigter, and J. Timmer, ``On Structural and Practical Identifiability: Current Status and Update of Results,'' Curr. Opin. Syst. Biol. \textbf{41}, 100546 (2025), doi:10.1016/j.coisb.2025.100546.
+
+\bibitem{RQIRRepo}
+Relativity--Quantum Interface Reconstruction repository, \url{https://github.com/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction} (accessed 9 September 2026).
+
+\end{thebibliography}
+
