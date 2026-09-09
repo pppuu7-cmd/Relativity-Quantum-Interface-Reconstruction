@@ -1,0 +1,24 @@
+{
+  "MODEL_READINESS": "24%",
+  "algebraic_consequence": "For null q, D_q L_q(xi)=q_lower*(q^upper.xi); hence every xi with q.xi=0 generates a nonzero pure-gauge tensor that is simultaneously transverse. The transverse/longitudinal split is therefore not canonical from q and the metric alone.",
+  "auxiliary_vector_or_off_null_regulator_selected": false,
+  "candidate_cut_values_read": false,
+  "checks": {
+    "dim_image_Lq_intersect_kernel_Dq": 3,
+    "explicit_nonzero_gauge_tensor_is_transverse": true,
+    "plus_TT_in_image_Lq": false,
+    "plus_TT_transverse": true,
+    "q_squared": 0,
+    "rank_Dq": 4,
+    "rank_DqLq": 1,
+    "rank_Lq": 4
+  },
+  "classification": "BLOCKED_ITER657_NULL_WARD_COMPLETION_NONUNIQUE__IMAGE_LQ_INTERSECTS_TRANSVERSE_SUBSPACE_DIM3__AUXILIARY_COMPLEMENT_REQUIRED__NON_RESIDUAL",
+  "exact_next_gate": "Determine whether the frozen plus-TT soft T_cut contraction is defined directly on the quotient Ker(D_q)/(Im(L_q) intersect Ker(D_q)) and is invariant under the three-dimensional null gauge overlap. If yes, derive it without choosing a complement; if no, preserve the observable as BLOCKED or prospectively version a complement before any cut inspection.",
+  "explicit_two_decompositions": "h_plus = L_q(0)+h_plus = L_q(eta_x)+(h_plus-L_q(eta_x)); both remainder tensors are transverse.",
+  "failures": [],
+  "iteration": 657,
+  "readiness_delta_percentage_points": 0,
+  "scope": "MSSC001-CLOSED-SK-SOFT-TCUT-KIN-V1 null Ward completion rank audit",
+  "zero_fill_allowed": false
+}
