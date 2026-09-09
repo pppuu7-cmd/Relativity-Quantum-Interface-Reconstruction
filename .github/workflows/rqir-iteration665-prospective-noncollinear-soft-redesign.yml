@@ -1,0 +1,37 @@
+name: RQIR Iter665 prospective non-collinear soft redesign
+
+on:
+  push:
+    paths:
+      - 'candidate_gravity/verification/iteration665_prospective_noncollinear_soft_redesign.py'
+      - '.github/workflows/rqir-iteration665-prospective-noncollinear-soft-redesign.yml'
+  workflow_dispatch:
+
+jobs:
+  iteration665-prospective-redesign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Evaluate prospective non-collinear soft redesign
+        run: python candidate_gravity/verification/iteration665_prospective_noncollinear_soft_redesign.py
+      - name: Fail-closed raw validation
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('candidate_gravity/results/iteration665_prospective_noncollinear_soft_redesign.json'))
+          assert d['iteration']==665 and d['scientific_gate_pass'] is True and d['failures']==[]
+          assert d['blocked'] is True and d['zero_fill'] is False
+          assert d['authority_scan']['same_parent_transverse_soft_authority_found'] is False
+          assert d['frozen_contract']['Rz_pi_over_2_stabilizes_full_kinematics'] is False
+          assert d['native_soft_Tcut']=='BLOCKED_ADDITIONAL_TRANSVERSE_SOFT_INPUT_REQUIRED'
+          print('PASS_RAW_AUDIT_ITER665',d['classification'])
+          PY
+      - name: Upload raw Iter665 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rqir-iteration665-prospective-noncollinear-soft-redesign
+          path: candidate_gravity/results/iteration665_prospective_noncollinear_soft_redesign.json
+          if-no-files-found: error
