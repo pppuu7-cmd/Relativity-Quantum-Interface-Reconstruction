@@ -1,0 +1,64 @@
+\section{Certified results and reproducibility}
+\label{sec:results}
+
+\subsection{End-to-end result}
+
+Table~\ref{tab:results} collects the article-facing quantities frozen by the Paper-III scientific manifest. The positive result is not inferred from a single favorable Fisher calculation. It is required to coexist with source-scale reproduction, physical colored covariance, detector-facing nonlinear readout, finite reference calibration, and explicit negative controls.
+
+\begin{table*}[t]
+\caption{Frozen Paper-III apparatus/resource results. ``PASS'' denotes the declared local science-estimability or reproduction gate, not experimental detection of an RQIR departure.}
+\label{tab:results}
+\begin{ruledtabular}
+\begin{tabular}{p{0.24\textwidth}p{0.48\textwidth}p{0.18\textwidth}}
+Layer & Frozen result & Interpretation\\
+\hline
+Structural calibration & modulated science + known acceleration reference: estimable; science-only, science+recoil, or unknown reference: non-identifiable & PASS with failures\\
+Correlated covariance & science estimability survives stress correlations through $\rho\le0.98$ in the structural audit & PASS\\
+Same-apparatus scale & $11$ mrad/shot $\rightarrow1.39247\times10^{-8}g$ at $1$ s & source scale reproduced\\
+Physical vibration PSD & $6.34856\times10^{-8}g$ at $1$ s versus source $6.5\times10^{-8}g$ & $2.33\%$ difference\\
+Corrected physical scale & $2.17592\times10^{-8}g$ at $1$ s versus source $2\times10^{-8}g$ & $8.80\%$ difference\\
+Physical colored-noise forecast & $\sigma_\theta=5.72247$ ng at $60$ s; $1.85019$ ng at $600$ s & PASS\\
+2-Hz stress & five-fold stressed feature gives $9.31148$ ng at $60$ s, with estimability retained & PASS\\
+Detector-facing likelihood & $\sigma_P=3\times10^{-4}$; effective $C\sim0.6$; simultaneous phase/contrast/gain/scale nuisance profiling & source-grounded layer\\
+Nonlinear detector forecast & $5.72811$ ng at $60$ s; $1.851801$ ng at $600$ s for 1\% reference-prior check & PASS\\
+Differential chirp reference & $1\,\mu g\rightarrow25.1373191$ Hz/s; $f_{\rm ref}=7.9563\times10^{-5}$ & PASS\\
+One-hour resource point & $\sigma_{\rm stat}=0.746604$ ng; $\theta_{\rm cross}=9.38\,\mu g$ & explicit boundary\\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+The structural distinction is central. A full nuisance matrix need not have full rank if its unidentifiable directions are apparatus-only and exactly science-orthogonal. Conversely, an apparently precise fit is rejected when the science direction lies inside a nuisance null direction. This prevents hidden regularization or weak nuisance truncation from manufacturing a science signal.
+
+\subsection{Required failure domain}
+
+The following cases are carried as part of the result rather than omitted as unsuccessful designs:
+\begin{enumerate}
+\item a static acceleration-like science amplitude with free phase offset is non-identifiable;
+\item modulation without an independently calibrated absolute reference leaves a common-scale degeneracy;
+\item an unknown unconstrained reference amplitude leaves $\theta$ non-identifiable;
+\item recoil alone does not replace an absolute acceleration reference for the declared absolute $\theta$ problem;
+\item apparatus-only null directions are acceptable only when their projection onto the science direction vanishes.
+\end{enumerate}
+The positive design is therefore a statement about a specified modulation/reference geometry, not about acceleration sensing in general.
+
+\subsection{Provenance discipline}
+
+The physical inputs are intentionally composed through an explicit authority graph rather than presented as one historical dataset. Le Gou\"et \emph{et al.} provide the baseline apparatus, noise, detector, and cycle scales \cite{LeGouet2008}. Cheinet \emph{et al.} provide compatible sensitivity-function formalism \cite{Cheinet2008}. Zhang \emph{et al.} provide prospective absolute chirp-metrology capability \cite{Zhang2025}; Tao \emph{et al.} provide an independent DDS short-term stability bound \cite{Tao2015}; and the BIPM recommendation supplies the optical frequency scale \cite{BIPM2015}. No raw shot samples from distinct experiments are statistically concatenated.
+
+The Fig.-8 vibration trace used in the covariance calculation is explicitly a coarse digitization of the published curve. Its use is supported by the two independent integrated-scale reproductions above, but it is not relabeled as raw data. Likewise, the 2025 chirp-metrology capability is a prospective design authority and is not retrofitted into the historical 2008 apparatus record.
+
+\subsection{Deterministic and independent reproduction}
+
+The analytic resource identities are protected by the RQIR-RES-001 regression suite, including homogeneity, monotonicity, concavity, exact-alignment obstruction, the two-band optimum, budget inversion, the envelope derivative, separation of fixed prior information from scalable exposure, and a dimensioned atom-interferometer binding. The strengthened apparatus chain is implemented separately by seven tracked analysis scripts covering calibration hierarchy, full covariance, calibration floors, same-apparatus closure, physical PSD covariance, detector-facing probability likelihood, and chirp-reference metrology.
+
+A dedicated clean-reproduction workflow was executed on a fresh hosted environment. The frozen scientific manifest records workflow run 34401786475 and job 102635176796, with Ubuntu 24.04.5 LTS, Python 3.12.14, NumPy 2.5.3, and SciPy 1.18.1. Every tracked Paper-III computational step, including the required negative controls, completed successfully. The exact article-facing numbers are frozen in the machine-readable manifest rather than copied from an untracked notebook.
+
+The repository authority for the final scientific package consists of
+\begin{itemize}
+\item \path{docs/PAPER_III_FINAL_SCIENTIFIC_CERTIFICATE_2026-09-09.md},
+\item \path{docs/PAPER_III_SCIENTIFIC_MANIFEST_2026-09-09.json},
+\item \path{docs/RQIR7_PAPER_III_PROVENANCE_COMPATIBILITY_CERTIFICATE_2026-09-09.md},
+\item the seven analysis scripts listed in the scientific manifest, and
+\item \path{.github/workflows/paper3_clean_reproduction.yml}.
+\end{itemize}
+The methodological core was frozen as RQIR Core v1.0 before downstream known-model benchmarking. Journal formatting or copy editing may change without altering this scientific authority; changes to frozen definitions or decision semantics require explicit versioned change control.
