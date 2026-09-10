@@ -1,6 +1,6 @@
 # RQIR Paper III — final manuscript package
 
-**Title:** *Relativity–Quantum Interface Reconstruction III: Resource Conversion, Apparatus-Level Identifiability, and Traceable Experimental Closure*
+**Title:** *Relativity–Quantum Interface Reconstruction III: Resource Conversion, Apparatus-Level Identifiability, and Traceable Reference Closure*
 
 **Scientific authority:** RQIR Core v1.0 / Paper-III final scientific certificate, frozen 9 September 2026.
 
