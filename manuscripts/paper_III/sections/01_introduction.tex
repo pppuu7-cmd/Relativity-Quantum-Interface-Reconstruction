@@ -1,0 +1,34 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Statements about an interface between relativistic gravity and quantum physics can fail at several logically distinct stages. A proposed response may be removable by finite source calibration, may survive algebraically but remain tangent to detector nuisance directions, may be statistically identifiable yet require an unrealistic physical resource budget, or may be feasible but non-unique among competing microscopic models. RQIR separates these questions rather than using ``detectability'' for all of them.
+
+RQIR I formulated the source-side calibration quotient and an ordered hierarchy of stress--energy information. RQIR II then moved to detector-facing likelihoods and showed that a surviving target direction contributes local information only through the component of its score that remains outside the nuisance tangent span after covariance whitening. The present paper takes the next step: it converts that profiled information into explicit resources and tests the conversion in a physically grounded atom-gravimeter architecture.
+
+The five-paper programme is intentionally ordered. Papers I--III define and freeze the methodological standard before known-model benchmarking. Paper IV applies the frozen funnel to existing classical, semiclassical, stochastic, hybrid, postquantum, and quantum/interface frameworks. Paper V is reserved for a new RQIR-derived Candidate Gravity model only if the Paper-IV comparator decision justifies that step. The criteria used here are therefore not allowed to move retrospectively to favor a later model.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\scriptsize,>=stealth,node distance=2.7mm,
+box/.style={draw,rounded corners,align=center,text width=0.83\columnwidth,minimum height=6.5mm,inner sep=2mm}]
+\node[box] (p1) {Paper I: calibration survival\\source-side distinguishability};
+\node[box,below=of p1] (p2) {Paper II: statistical identifiability\\nuisance geometry and covariance};
+\node[box,below=of p2] (p3) {Paper III: resource closure\\apparatus, noise, detector, calibration, exposure};
+\node[box,below=of p3] (p4) {Paper IV: frozen known-model comparator funnel};
+\node[box,below=of p4] (p5) {Paper V: Candidate Gravity only\\if comparator outcome warrants it};
+\draw[->] (p1)--(p2);
+\draw[->] (p2)--(p3);
+\draw[->] (p3)--(p4);
+\draw[->] (p4)--(p5);
+\end{tikzpicture}
+\caption{Ordered RQIR inference programme. The present paper closes the third layer. Downstream comparator outcomes do not retrospectively alter the Paper-I--III criteria.}
+\label{fig:ladder}
+\end{figure}
+
+Two contributions are combined. First, we give a general resource variational law. It shows that nuisance profiling must remain inside the resource objective: accumulating raw target Fisher information is insufficient if the same resource also accumulates a shared nuisance direction. The resulting information map is monotone and concave, becomes positively homogeneous for data-only scaling, and admits a sharp distinction between geometry-limited and budget-limited designs.
+
+Second, we bind this abstract layer to a three-pulse $^{87}$Rb Raman atom gravimeter. The principal apparatus/noise/detector family is anchored to Le Gou\"et \emph{et al.} \cite{LeGouet2008}; the sensitivity-function formalism is taken from Cheinet \emph{et al.} \cite{Cheinet2008}. We propagate a source-traceable vibration spectrum into sampled colored covariance, replace phase-only readout by the transition-probability likelihood, profile phase, contrast, gain, drift, and scale nuisances jointly, and then close the absolute acceleration scale with a prospective differential Raman-chirp reference. The latter uses modern absolute chirp-rate metrology as a transferable design capability \cite{Zhang2025}, while explicitly avoiding any claim that such metrology was part of the historical 2008 campaign.
+
+The main positive statement is deliberately conditional: for the declared apparatus/resource architecture, a \emph{modulated} acceleration-like science amplitude remains locally estimable after the declared nuisance and covariance treatment when an independently traceable acceleration-equivalent reference closes the common multiplicative scale. The negative controls are equally important. Static acceleration-like science is absorbed by a free phase offset; modulation without absolute reference calibration leaves a scale degeneracy; and an unknown unconstrained reference amplitude does not restore the missing absolute scale.
+
+This paper is therefore a resource/design and identifiability result. It reports no observed departure from general relativity or quantum mechanics, does not infer that gravity is quantized, and does not select a microscopic gravity model.
