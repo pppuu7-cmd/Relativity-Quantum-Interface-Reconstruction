@@ -1,12 +1,13 @@
 {
-  "architecture": "reduced interleaved atomic-clock/Ramsey frequency sensing",
+  "architecture": "reduced dual-transition atomic-clock/Ramsey frequency sensing",
   "claim_class": "cross-architecture design-principle regression; not apparatus forecast",
   "core_profiler": "analysis/protocol002_profiled_fisher.py::profiled_beta_information",
   "date": "2026-09-10",
   "gates": {
-    "allocation_sensitivity_present": "PASS",
+    "allocation_optimum_scanned": "PASS",
     "calibration_recovery_present": "PASS",
     "core_decision_rules_modified": false,
+    "explicit_transition_response_diversity": "PASS",
     "independent_sensor_architecture": "PASS",
     "nuisance_induced_failure_present": "PASS",
     "response_diversity_recovery_present": "PASS",
@@ -14,48 +15,37 @@
   },
   "resource_law_adapter": "analysis/paper3_profiled_resource_law.py::profiled_resource_information",
   "results": {
-    "control_reversal_asymmetric_information": 0.8399999999999999,
-    "control_reversal_uniform_information": 1.0,
-    "uniform_reversal_nuisance_cross_norm": 0.0,
-    "unmodulated_free_nuisance_information": 0.0,
-    "unmodulated_offset_calibration_lambda1_information": 0.5,
-    "unmodulated_offset_calibration_lambda9_information": 0.9
+    "asymmetric_fraction_A_0p75_information": 0.4799999999999997,
+    "balanced_drift_cross_term": 0.0,
+    "balanced_dual_transition_information": 0.6400000000000002,
+    "scan_optimum_fraction_A": 0.5,
+    "scan_optimum_fraction_B": 0.5,
+    "scan_optimum_information": 0.6400000000000002,
+    "single_A_offset_calibration_lambda1_information": 0.5,
+    "single_A_offset_calibration_lambda9_information": 0.9,
+    "single_transition_A_free_nuisance_information": 0.0,
+    "single_transition_B_free_nuisance_information": 0.0
   },
-  "schema": "rqir-paper-iii-second-sensor-benchmark-v1",
+  "schema": "rqir-paper-iii-second-sensor-benchmark-v2",
   "settings": {
-    "asymmetric_allocation": [
-      0.4,
-      0.3,
-      0.2,
-      0.1
-    ],
-    "control_reversal_response": [
-      1.0,
-      -1.0,
-      -1.0,
+    "allocation_scan_fraction_A_range": [
+      0.0,
       1.0
     ],
-    "normalized_times": [
+    "allocation_scan_points": 101,
+    "normalized_times_per_transition": [
       -1.5,
       -0.5,
       0.5,
       1.5
     ],
     "nuisances": [
-      "shared_LO_frequency_offset",
-      "linear_LO_drift"
+      "shared_reference_frequency_offset",
+      "linear_reference_drift"
     ],
-    "uniform_allocation": [
-      0.25,
-      0.25,
-      0.25,
-      0.25
-    ],
-    "unmodulated_response": [
-      1.0,
-      1.0,
-      1.0,
-      1.0
-    ]
+    "transition_sensitivities": {
+      "A": 1.0,
+      "B": -0.6
+    }
   }
 }
