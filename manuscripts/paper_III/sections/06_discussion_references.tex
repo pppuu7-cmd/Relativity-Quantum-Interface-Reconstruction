@@ -1,0 +1,162 @@
+\section{Interpretation and relation to existing methods}
+\label{sec:interpretation}
+
+Allocating experimental effort through Fisher information is established optimal experimental design. Modern reviews treat weighted design measures, resource constraints, and scalar information criteria in a broad statistical setting \cite{Huan2024}; c-optimal design is particularly close to a singled-out parameter or linear combination of parameters \cite{WatsonPan2023}. RQIR III does not claim Fisher information, Cram\'er--Rao scaling, convex design, or atom-interferometer acceleration sensing as new.
+
+The RQIR-specific contribution is the ordered interface among previously separated gates. The target direction is first required to survive finite source calibration, then detector nuisance geometry, and only then resource allocation. Equation~\eqref{eq:resource-variational} keeps nuisance profiling inside every resource candidate. The apparatus case then tests whether the abstract surviving direction continues to exist after physical colored covariance, nonlinear probability readout, drift, contrast, gain, common scale, and finite reference metrology are introduced together.
+
+Quantum metrology provides a complementary upper-level language for optimizing probe states and measurements and for understanding coherence- and noise-limited information scaling \cite{Giovannetti2011,Pezze2018,Liu2020}. The present work deliberately uses the detector-facing classical likelihood of the specified Raman gravimeter. A quantum Fisher-information bound is not substituted for an implemented measurement likelihood unless the required measurement and attainability conditions are supplied.
+
+\begin{table*}[t]
+\caption{Claims and non-claims of RQIR III.}
+\label{tab:claims}
+\begin{ruledtabular}
+\begin{tabular}{p{0.28\textwidth}p{0.31\textwidth}p{0.31\textwidth}}
+Layer & Supported statement & Not implied\\
+\hline
+Resource theorem & profiled information is monotone/concave in additive allocations; data-only scaling is homogeneous & complete nonlinear apparatus design is globally convex\\
+Physical PSD binding & source-traceable colored covariance preserves the declared modulated science direction & digitized spectrum is raw campaign data\\
+Detector likelihood & science can remain estimable despite apparatus-only null modes & every nuisance parameter is individually identifiable\\
+Traceable reference & differential chirp can close the absolute acceleration scale in a prospective design & historical 2008 apparatus used 2025 metrology\\
+Positive resource closure & declared local science amplitude is estimable within the frozen design/forecast & an RQIR departure has been observed\\
+RQIR III overall & explicit experiment architecture, budgets, failure domains, and reproduction are closed & a unique microscopic gravity model is selected\\
+\end{tabular}
+\end{ruledtabular}
+\end{table*}
+
+\section{Discussion}
+\label{sec:discussion}
+
+Three lessons emerge from the combined theorem and apparatus calculation.
+
+First, exposure and identifiability are different resources. Exact target--nuisance alignment survives arbitrarily large exposure, while a response-diverse setting or independently traceable reference can rotate or constrain the nuisance geometry. This is why the negative controls are indispensable: they demonstrate that the positive forecast is not merely a large-sample artifact.
+
+Second, apparatus closure can require less than complete apparatus identifiability. The transition-probability likelihood contains contrast/readout combinations that are locally redundant, yet those null directions need not overlap the science tangent. Requiring full parameter rank would unnecessarily reject usable measurements; ignoring science-overlapping null directions would do the opposite and manufacture precision. The correct gate is science estimability in the quotient by apparatus nuisance directions.
+
+Third, calibration is not free exposure. The differential-chirp reference improves the design because it supplies an independently traceable absolute scale in the same phase channel, not because a prior has been numerically attached to an otherwise degenerate fit. Equation~\eqref{eq:floorlaw} then exposes the resource boundary: below the crossover the forecast is statistics dominated; above it, further exposure gives diminishing practical return unless reference metrology improves.
+
+Several limitations remain by construction. The principal vibration covariance uses an explicitly coarse digitization because machine-readable historical campaign spectral data are not available in the repository. The detector analysis is local and Fisher-based, although it uses the primitive nonlinear probability mean. The full sampling distribution, possible disconnected likelihood solutions, nonstationary environmental changes, and engineering details of a future shot-coded chirp implementation would have to be addressed in an actual experimental campaign. The optical-frequency standard alone does not certify the realized $k_{\rm eff}$ geometry, and a commanded chirp is not a measured reference.
+
+These limitations do not reopen the scientific scope of the present resource/design paper because they are carried as explicit provenance and failure boundaries. They do, however, define what an experimental implementation would have to certify before converting the forecast into a measurement claim.
+
+The downstream boundary is equally strict. RQIR III does not compare microscopic gravity theories. RQIR Core v1.0 is frozen before the Paper-IV benchmark precisely so that success or failure of a known model cannot silently move the criteria. Paper IV must run existing models through the same operational, statistical, and resource gates. Only if that comparator programme supports a terminal conclusion requiring a genuinely new construction does Paper V become authorized to present an RQIR-derived Candidate Gravity model.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have closed the third RQIR inference layer: conversion of nuisance-profiled information into a physical resource and experiment architecture. The central variational law,
+\begin{equation}
+\Ires(\bm e;\Lambda)=\min_{\bm a}\left[\sum_k e_k\|\bm s_k-J_k\bm a\|^2+\bm a^T\Lambda\bm a\right],
+\end{equation}
+is monotone and concave in additive resource and becomes positively homogeneous for data-only scaling. It produces convex inner allocation and minimum-budget problems and a marginal-value rule controlled by nuisance-orthogonal residual response.
+
+The apparatus binding shows why the geometry matters physically. In a source-grounded three-pulse $^{87}$Rb Raman gravimeter, a modulated acceleration-like science amplitude remains locally estimable after colored vibration covariance and simultaneous phase, drift, contrast, readout, scale, and finite-reference nuisance treatment. The same calculation rejects static science, an uncalibrated absolute scale, and an unconstrained reference amplitude. A traceable differential Raman-chirp architecture moves the one-hour design into a statistics-dominated regime for sub-$\mu g$ amplitudes, with a frozen statistical forecast of $0.746604$ ng and calibration/statistics crossover near $9.38\,\mu g$.
+
+The complete computational chain has an independent clean reproduction and an explicit provenance graph. The resulting statement is deliberately narrower than a discovery claim: RQIR III supplies a reproducible resource-closure standard and a realistic experiment-design example. It does not report an RQIR signal and does not determine which microscopic theory of gravity is correct.
+
+The ordered programme is therefore
+\begin{equation}
+\begin{aligned}
+&\text{calibration survival}\rightarrow\text{statistical identifiability}\\
+&\quad\rightarrow\text{resource closure}\rightarrow\text{known-model funnel}\\
+&\quad\rightarrow\text{conditional new model}.
+\end{aligned}
+\end{equation}
+With the first three layers frozen, the next scientific task belongs to Paper IV rather than to a retrospective modification of the present criteria.
+
+\begin{acknowledgments}
+The derivation cross-checks, numerical-audit organization, literature organization, and manuscript drafting used substantive assistance from OpenAI ChatGPT (GPT-5.6 Sol, accessed September 2026). The numerical claims in the article-facing scientific manifest were regenerated by tracked code and independently reproduced in a clean hosted environment. The AI system is not an author. The author retains full responsibility for the accuracy, interpretation, and integrity of the work.
+\end{acknowledgments}
+
+\section*{Data and code availability}
+All scripts, scientific certificates, provenance documentation, machine-readable result manifests, and the clean-reproduction workflow used for this paper are maintained in the Relativity--Quantum Interface Reconstruction repository \cite{RQIRRepo}. RQIR Core v1.0 is frozen under controlled change management; article formatting and submission packaging do not alter the frozen scientific definitions.
+
+\begin{thebibliography}{99}
+
+\bibitem{RQIRI}
+A. Buyanov,
+``Relativity--Quantum Interface Reconstruction I: Operational Hierarchy, Ordered Stress--Energy Information, and Finite Calibration-Nullspace Discriminants,''
+working manuscript (2026).
+
+\bibitem{RQIRII}
+A. Buyanov,
+``Relativity--Quantum Interface Reconstruction II: Statistical Identifiability, Nuisance Geometry, and Detectability in Detector-Facing Likelihoods,''
+working manuscript (2026).
+
+\bibitem{Fisher1922}
+R. A. Fisher,
+``On the Mathematical Foundations of Theoretical Statistics,''
+Philos. Trans. R. Soc. London A \textbf{222}, 309--368 (1922),
+doi:10.1098/rsta.1922.0009.
+
+\bibitem{Rao1945}
+C. R. Rao,
+``Information and the Accuracy Attainable in the Estimation of Statistical Parameters,''
+Bull. Calcutta Math. Soc. \textbf{37}, 81--91 (1945).
+
+\bibitem{Huan2024}
+X. Huan, J. Jagalur, and Y. Marzouk,
+``Optimal experimental design: Formulations and computations,''
+Acta Numerica \textbf{33}, 715--840 (2024),
+doi:10.1017/S0962492924000023.
+
+\bibitem{WatsonPan2023}
+S. I. Watson and Y. Pan,
+``Evaluation of combinatorial optimisation algorithms for c-optimal experimental designs with correlated observations,''
+Stat. Comput. \textbf{33}, 112 (2023),
+doi:10.1007/s11222-023-10280-w.
+
+\bibitem{LeGouet2008}
+J. Le Gou\"et, T. E. Mehlst\"aubler, J. Kim, S. Merlet, A. Clairon, A. Landragin, and F. Pereira Dos Santos,
+``Limits to the sensitivity of a low noise compact atomic gravimeter,''
+Appl. Phys. B \textbf{92}, 133--144 (2008),
+doi:10.1007/s00340-008-3088-1.
+
+\bibitem{Cheinet2008}
+P. Cheinet, B. Canuel, F. Pereira Dos Santos, A. Gauguet, F. Yver-Leduc, and A. Landragin,
+``Measurement of the Sensitivity Function in a Time-Domain Atomic Interferometer,''
+IEEE Trans. Instrum. Meas. \textbf{57}, 1141--1148 (2008),
+doi:10.1109/TIM.2007.915148.
+
+\bibitem{Tao2015}
+J.-J. Tao, M.-K. Zhou, Q.-Z. Zhang, J.-F. Cui, X.-C. Duan, C.-G. Shao, and Z.-K. Hu,
+``Note: Directly measuring the direct digital synthesizer frequency chirp-rate for an atom interferometer,''
+Rev. Sci. Instrum. \textbf{86}, 096108 (2015),
+doi:10.1063/1.4930562.
+
+\bibitem{Zhang2025}
+H.-K. Zhang, J.-X. Liu, C.-W. Liang, Y.-F. Zhang, C. Zhou, S.-H. Yan, L.-X. Zhu, and J. Yang,
+``A method for the precise and absolute measurement of microwave chirp rates in cold-atom gravimeters,''
+AIP Adv. \textbf{15}, 055209 (2025),
+doi:10.1063/5.0252751.
+
+\bibitem{BIPM2015}
+International Committee for Weights and Measures (CIPM),
+``Recommendation 2 (2015): Updates to the list of standard frequencies,''
+Bureau International des Poids et Mesures (2015),
+doi:10.59161/CIPM2015REC2E.
+
+\bibitem{Giovannetti2011}
+V. Giovannetti, S. Lloyd, and L. Maccone,
+``Advances in quantum metrology,''
+Nat. Photonics \textbf{5}, 222--229 (2011),
+doi:10.1038/nphoton.2011.35.
+
+\bibitem{Pezze2018}
+L. Pezz\`e, A. Smerzi, M. K. Oberthaler, R. Schmied, and P. Treutlein,
+``Quantum metrology with nonclassical states of atomic ensembles,''
+Rev. Mod. Phys. \textbf{90}, 035005 (2018),
+doi:10.1103/RevModPhys.90.035005.
+
+\bibitem{Liu2020}
+J. Liu, H. Yuan, X.-M. Lu, and X. Wang,
+``Quantum Fisher information matrix and multiparameter estimation,''
+J. Phys. A: Math. Theor. \textbf{53}, 023001 (2020),
+doi:10.1088/1751-8121/ab5d4d.
+
+\bibitem{RQIRRepo}
+Relativity--Quantum Interface Reconstruction repository,
+\url{https://github.com/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction}
+(accessed 10 September 2026).
+
+\end{thebibliography}
