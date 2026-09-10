@@ -1,0 +1,48 @@
+\documentclass[aps,physrev,reprint,floatfix,superscriptaddress,nofootinbib,longbibliography]{revtex4-2}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{pgfplots}
+\usepackage[hidelinks]{hyperref}
+\pgfplotsset{compat=1.18}
+
+\newcommand{\Col}{\operatorname{Col}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Ires}{\mathcal I_{\beta}}
+\newcommand{\Bmin}{B_{\min}}
+\newcommand{\RQIR}{\mathrm{RQIR}}
+
+\begin{document}
+
+\title{Relativity--Quantum Interface Reconstruction III:\\
+Resource Conversion, Apparatus-Level Identifiability, and Traceable Experimental Closure}
+
+\author{Aleksey Buyanov}
+\email{pppuu7@gmail.com}
+\thanks{ORCID: \href{https://orcid.org/0009-0001-2621-9305}{0009-0001-2621-9305}}
+\affiliation{Independent Researcher, Moscow, Russia}
+\date{10 September 2026}
+
+\begin{abstract}
+Relativity--Quantum Interface Reconstruction (RQIR) separates exact source-side distinguishability, detector-facing statistical identifiability, physical resource closure, and downstream model comparison. RQIR I and II fixed the first two layers. Here we close the third. For settings $k$ with nonnegative allocations $e_k$, whitened target scores $\bm s_k$, nuisance score matrices $J_k$, and fixed independent nuisance precision $\Lambda\succeq0$, the nuisance-profiled information obeys
+\[
+\mathcal I_\beta(\bm e;\Lambda)=\min_{\bm a}\left[\sum_k e_k\|\bm s_k-J_k\bm a\|^2+\bm a^T\Lambda\bm a\right].
+\]
+It is componentwise nondecreasing and concave in resource, and is positively homogeneous when $\Lambda=0$. This yields convex maximum-information and minimum-budget problems and an information-per-cost shadow-price rule based on nuisance-orthogonal residual response. We then bind the abstract resource layer to a source-grounded three-pulse $^{87}$Rb Raman atom-gravimeter architecture. A published 2008 SYRTE apparatus fixes $2T=100$ ms, a 4-Hz cycle, $11$ mrad/shot phase noise, detector probability noise $\sigma_P\simeq3\times10^{-4}$, and the vibration spectrum. An unfitted coarse digitization of the published vibration spectrum reproduces the reported uncorrected $1$-s vibration limit within $2.33\%$ and the corrected typical scale within $8.80\%$. In the detector-facing likelihood $P=(1+C\cos\Phi)/2$, simultaneous profiling of phase offset and drift, contrast and drift, readout gain and drift, common multiplicative scale, and finite reference uncertainty leaves a modulated acceleration-like science amplitude locally estimable, with forecast uncertainties $5.72811$ ng at $60$ s and $1.851801$ ng at $600$ s for a 1\% reference-prior check. Static science, an uncalibrated reference, and an unconstrained reference amplitude remain non-identifiable negative controls. A prospective differential Raman-chirp reference, conservatively assigned $2$ mHz/s uncertainty on the small differential chirp, reduces the fractional reference uncertainty to $7.9563\times10^{-5}$ and gives a one-hour statistical forecast of $0.746604$ ng, with calibration/statistics crossover near $9.38\,\mu g$. A clean hosted reproduction of the complete computational chain succeeds in an independently provisioned environment. The result is an apparatus-grounded resource/design forecast with explicit failure domains, not an experimental detection of an RQIR departure and not evidence for a unique microscopic gravity model.
+\end{abstract}
+
+\maketitle
+
+\input{sections/01_introduction.tex}
+\input{sections/02_resource_theory.tex}
+\input{sections/03_apparatus_noise.tex}
+\input{sections/04_detector_reference.tex}
+\input{sections/05_results_reproducibility.tex}
+\input{sections/06_discussion_references.tex}
+
+\end{document}
