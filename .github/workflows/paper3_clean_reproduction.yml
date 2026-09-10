@@ -6,7 +6,11 @@ on:
     paths:
       - 'analysis/atom_interferometer_*.py'
       - 'analysis/atom_gravimeter_*.py'
+      - 'analysis/paper3_profiled_resource_law.py'
+      - 'analysis/paper3_atomic_clock_second_sensor_benchmark.py'
+      - 'results/paper3_atomic_clock_second_sensor.json'
       - 'docs/RQIR7_*PAPER_III*.md'
+      - 'docs/PAPER_III_SECOND_SENSOR_ATOMIC_CLOCK_BENCHMARK_*.md'
       - '.github/workflows/paper3_clean_reproduction.yml'
   pull_request:
     branches:
@@ -14,7 +18,11 @@ on:
     paths:
       - 'analysis/atom_interferometer_*.py'
       - 'analysis/atom_gravimeter_*.py'
+      - 'analysis/paper3_profiled_resource_law.py'
+      - 'analysis/paper3_atomic_clock_second_sensor_benchmark.py'
+      - 'results/paper3_atomic_clock_second_sensor.json'
       - 'docs/RQIR7_*PAPER_III*.md'
+      - 'docs/PAPER_III_SECOND_SENSOR_ATOMIC_CLOCK_BENCHMARK_*.md'
       - '.github/workflows/paper3_clean_reproduction.yml'
 
 permissions:
@@ -59,5 +67,14 @@ jobs:
       - name: Traceable chirp-reference metrology
         run: python analysis/atom_gravimeter_chirp_reference_metrology_audit.py
 
+      - name: Eq. (1) adapter to frozen RQIR profiler
+        run: python analysis/paper3_profiled_resource_law.py
+
+      - name: Independent atomic-clock second-sensor benchmark
+        run: python analysis/paper3_atomic_clock_second_sensor_benchmark.py --check-result
+
       - name: Verify provenance certificate exists
         run: test -s docs/RQIR7_PAPER_III_PROVENANCE_COMPATIBILITY_CERTIFICATE_2026-09-09.md
+
+      - name: Verify second-sensor benchmark certificate exists
+        run: test -s docs/PAPER_III_SECOND_SENSOR_ATOMIC_CLOCK_BENCHMARK_2026-09-10.md
