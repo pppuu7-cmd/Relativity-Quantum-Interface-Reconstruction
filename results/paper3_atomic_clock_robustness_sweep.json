@@ -18,7 +18,7 @@
         0.22
       ],
       "alpha": 0.2,
-      "information": 0.9948387096774194
+      "information": 0.994838709677
     },
     {
       "allocation": [
@@ -28,7 +28,7 @@
         0.19
       ],
       "alpha": 0.4,
-      "information": 0.9788429752066116
+      "information": 0.978842975207
     },
     {
       "allocation": [
@@ -37,8 +37,8 @@
         0.22,
         0.16
       ],
-      "alpha": 0.6000000000000001,
-      "information": 0.9503448275862069
+      "alpha": 0.6,
+      "information": 0.950344827586
     },
     {
       "allocation": [
@@ -48,7 +48,7 @@
         0.13
       ],
       "alpha": 0.8,
-      "information": 0.9060550458715596
+      "information": 0.906055045872
     },
     {
       "allocation": [
@@ -58,7 +58,7 @@
         0.1
       ],
       "alpha": 1.0,
-      "information": 0.8399999999999999
+      "information": 0.84
     }
   ],
   "calibration_sweep": [
@@ -68,13 +68,13 @@
       "lambda": 0.0
     },
     {
-      "analytic": 0.09090909090909091,
-      "information": 0.09090909090909094,
+      "analytic": 0.0909090909091,
+      "information": 0.0909090909091,
       "lambda": 0.1
     },
     {
-      "analytic": 0.23076923076923075,
-      "information": 0.23076923076923084,
+      "analytic": 0.230769230769,
+      "information": 0.230769230769,
       "lambda": 0.3
     },
     {
@@ -93,8 +93,8 @@
       "lambda": 9.0
     },
     {
-      "analytic": 0.967741935483871,
-      "information": 0.967741935483871,
+      "analytic": 0.967741935484,
+      "information": 0.967741935484,
       "lambda": 30.0
     }
   ],
