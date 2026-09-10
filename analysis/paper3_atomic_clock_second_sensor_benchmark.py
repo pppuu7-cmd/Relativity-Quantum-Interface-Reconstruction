@@ -1,38 +1,13 @@
 """Paper III QST hardening: independent atomic-clock transfer benchmark.
 
-Reduced dual-transition clock / Ramsey frequency-sensing benchmark
-------------------------------------------------------------------
-This is a cross-architecture regression for Paper III Eq. (1), not an
-apparatus forecast.  The benchmark reuses the frozen RQIR nuisance profiler
-through ``paper3_profiled_resource_law`` and changes only sensor-specific
-response and nuisance blocks.
-
-Two clock transitions/references A and B are interrogated at the same four
-normalized cycle times t=(-3/2,-1/2,+1/2,+3/2).  Their normalized science
-sensitivities are deliberately different,
-
-    q_A = +1.0, q_B = -0.6,
-
-while both share a common reference/LO offset and linear drift,
-
-    J_k = [1, t_k].
-
-With exposure on only one transition the science response is constant over
-that transition's settings and is therefore collinear with the free common
-offset nuisance: profiled information collapses to zero.  Mixing transitions
-creates a differential response direction that cannot be absorbed by the
-shared offset/drift.  A deterministic allocation scan then finds the optimum
-rather than assuming it by construction.  Independent offset calibration is
-also shown to rescue the otherwise degenerate single-transition design.
-
-All quantities are normalized, dimensionless Fisher/resource units.  No clock
-instability, accuracy, transition choice, or new-physics reach is claimed.
+Reduced dual-transition clock/Ramsey frequency-sensing regression for Paper III
+Eq. (1).  This changes only architecture-specific (s,J,Lambda,e) inputs and
+reuses the frozen RQIR nuisance profiler via ``paper3_profiled_resource_law``.
+It is a normalized design-geometry benchmark, not an apparatus forecast.
 """
 from __future__ import annotations
 
 import argparse
-import csv
-import io
 import json
 from pathlib import Path
 
@@ -41,14 +16,13 @@ import numpy as np
 from paper3_profiled_resource_law import profiled_resource_information
 
 TIMES = np.array([-1.5, -0.5, 0.5, 1.5], dtype=float)
-Q_A = 1.0
-Q_B = -0.6
+Q_A, Q_B = 1.0, -0.6
 ZERO_PRIOR = np.zeros((2, 2), dtype=float)
 SCAN_FRACTIONS = np.linspace(0.0, 1.0, 101)
 
 
 def clock_signal() -> np.ndarray:
-    """Normalized science response for transitions/references A and B."""
+    """Distinct normalized science sensitivities of two clock transitions/references."""
     return np.r_[np.full(TIMES.size, Q_A), np.full(TIMES.size, Q_B)]
 
 
@@ -70,7 +44,6 @@ def allocation(fraction_a: float) -> np.ndarray:
 
 
 def offset_calibration_precision(strength: float) -> np.ndarray:
-    """Independent common-offset calibration; drift remains unconstrained."""
     if strength < 0.0:
         raise ValueError("calibration strength must be non-negative")
     return np.diag([float(strength), 0.0])
@@ -78,10 +51,7 @@ def offset_calibration_precision(strength: float) -> np.ndarray:
 
 def information(fraction_a: float, lam: np.ndarray = ZERO_PRIOR) -> float:
     return profiled_resource_information(
-        allocation(fraction_a),
-        clock_signal(),
-        clock_nuisance_jacobian(),
-        lam,
+        allocation(fraction_a), clock_signal(), clock_nuisance_jacobian(), lam
     )
 
 
@@ -103,17 +73,12 @@ def benchmark_results() -> dict[str, object]:
     single_a = information(1.0)
     single_a_cal1 = information(1.0, offset_calibration_precision(1.0))
     single_a_cal9 = information(1.0, offset_calibration_precision(9.0))
-
     scan = allocation_scan()
     best = max(scan, key=lambda row: row["profiled_information"])
 
-    # Reviewer-facing regression guards: nuisance failure, genuinely distinct
-    # clock responses, response-diversity recovery, optimized allocation, and
-    # monotone calibration rescue.  The optimum is not hard-coded into the
-    # solver; it is recovered by a deterministic grid scan.
+    # Reviewer-facing regression gates.
     assert Q_A != Q_B
-    assert abs(single_a) < 1e-12
-    assert abs(single_b) < 1e-12
+    assert abs(single_a) < 1e-12 and abs(single_b) < 1e-12
     assert abs(balanced - 0.64) < 1e-12
     assert abs(asymmetric - 0.48) < 1e-12
     assert abs(best["fraction_A"] - 0.5) < 1e-12
@@ -123,9 +88,7 @@ def benchmark_results() -> dict[str, object]:
     assert abs(single_a_cal9 - 0.9) < 1e-12
     assert single_a_cal9 > single_a_cal1 > single_a
 
-    # Balanced time sampling removes coupling of the differential science
-    # response to the linear-drift score.  The remaining nonzero offset cross
-    # term is precisely what the A/B response contrast profiles against.
+    # Balanced temporal sampling cancels the linear-drift cross term.
     e_bal = allocation(0.5)
     weighted_cross = clock_nuisance_jacobian().T @ (e_bal * clock_signal())
     assert abs(weighted_cross[1]) < 1e-12
@@ -173,40 +136,20 @@ def canonical_json(data: dict[str, object]) -> str:
     return json.dumps(data, indent=2, sort_keys=True) + "\n"
 
 
-def canonical_scan_csv() -> str:
-    out = io.StringIO()
-    writer = csv.DictWriter(
-        out, fieldnames=["fraction_A", "fraction_B", "profiled_information"], lineterminator="\n"
-    )
-    writer.writeheader()
-    for row in allocation_scan():
-        writer.writerow(row)
-    return out.getvalue()
-
-
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--check-result",
-        action="store_true",
-        help="fail unless checked-in JSON and allocation scan match exactly",
+        "--check-result", action="store_true",
+        help="fail unless the checked-in machine-readable result matches exactly",
     )
     args = parser.parse_args()
-
-    data = benchmark_results()
-    json_text = canonical_json(data)
-    csv_text = canonical_scan_csv()
-    print(json_text, end="")
-
+    text = canonical_json(benchmark_results())
+    print(text, end="")
     if args.check_result:
-        root = Path(__file__).resolve().parents[1]
-        result_path = root / "results" / "paper3_atomic_clock_second_sensor.json"
-        scan_path = root / "results" / "paper3_atomic_clock_allocation_scan.csv"
-        if result_path.read_text(encoding="utf-8") != json_text:
+        result_path = Path(__file__).resolve().parents[1] / "results" / "paper3_atomic_clock_second_sensor.json"
+        if result_path.read_text(encoding="utf-8") != text:
             raise SystemExit(f"checked-in result is stale: {result_path}")
-        if scan_path.read_text(encoding="utf-8") != csv_text:
-            raise SystemExit(f"checked-in allocation scan is stale: {scan_path}")
-        print("checked-in atomic-clock second-sensor result and allocation scan: PASS")
+        print("checked-in dual-transition atomic-clock benchmark: PASS")
 
 
 if __name__ == "__main__":
