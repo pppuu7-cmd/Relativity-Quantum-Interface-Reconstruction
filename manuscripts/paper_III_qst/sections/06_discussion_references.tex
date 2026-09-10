@@ -1,0 +1,83 @@
+\section{Discussion}
+\label{sec:discussion}
+
+The resource law developed here connects two communities that often use Fisher information differently. In optimal experimental design, resource weights are varied to improve an information criterion under a cost constraint \cite{Huan2024,WatsonPan2023}. In quantum sensing and metrology, Fisher information is used to characterize the precision available from a probe, evolution, and measurement scheme \cite{Giovannetti2011,Pezze2018,Liu2020}. The present result adds an explicit nuisance-aware bridge between these viewpoints: the value assigned to a unit of experimental resource is the residual target response after the shared nuisance displacement preferred by the full design has been profiled.
+
+This distinction matters whenever more exposure cannot repair a structural degeneracy. If all active target scores remain reproducible by one nuisance displacement, the data-only information remains zero under arbitrary common exposure scaling. Conversely, response diversity or independently traceable calibration can change the geometry and restore information. The two-band analytic example illustrates the first effect quantitatively: nuisance-aware allocation produces a 16\% information gain at fixed total exposure even though the stronger raw-response band receives less resource. The atom-gravimeter example illustrates the second: modulation separates the science signal from a constant phase offset, but an independently calibrated acceleration-equivalent reference is still required to close the common multiplicative scale.
+
+The apparatus calculation is intentionally detector facing. Cold-atom gravimeters are now a mature branch of quantum sensing, but their field performance depends on vibration rejection, alignment, dead time, detector stability, and calibration as well as intrinsic phase response \cite{Bongs2019,Geiger2020}. Treating these quantities as nuisance structure rather than independent sensitivity penalties is useful because some apparatus parameters can remain locally degenerate without compromising the science amplitude. In the probability likelihood considered here, contrast and centered readout-gain combinations can generate apparatus-only null directions. Rejecting every rank-deficient fit would therefore be unnecessarily conservative; accepting any rank-deficient fit would be unsafe. The relevant condition is whether the surviving null space overlaps the science tangent.
+
+The negative controls are consequently part of the positive result. A static acceleration-like signal with a free phase offset fails. A modulated signal without an independently calibrated absolute reference fails. An unknown unconstrained reference amplitude also fails. These outcomes prevent the reported finite uncertainty from being created by hidden regularization, a weak-nuisance cutoff, or a numerical pseudoinverse acting as an implicit prior. This emphasis is compatible with recent work showing that nuisance parameters can alter quantum-sensing bounds and optimal operating conditions even when the underlying sensor Hamiltonian is unchanged \cite{Wani2026}.
+
+The differential Raman-chirp reference is particularly useful for resource accounting because it enters the same interferometric phase channel as acceleration. Its purpose is not to claim a new chirp-metrology record. Instead, modern absolute chirp-rate metrology \cite{Zhang2025} is used as a transferable calibration capability for the proposed design. Applying a conservative 2 mHz/s uncertainty directly to the small differential chirp gives a fractional reference uncertainty of $7.9563\times10^{-5}$. At the one-hour resource point, the corresponding calibration/statistics crossover lies near $9.38\,\mu g$, so sub-$\mu g$ forecast amplitudes remain statistics dominated. This is the practical meaning of the resource-closure calculation: it identifies whether additional exposure, response diversity, or calibration improvement is the resource that actually limits inference.
+
+Several limitations delimit the claim. First, the principal vibration covariance is based on an explicitly coarse digitization of a published spectrum because machine-readable historical campaign data are not available in the repository. The digitized curve is not treated as raw data; its use is supported by reproducing two independent apparatus-level noise scales without fitted normalization. Second, the detector calculation is local and Fisher based, although it uses the primitive nonlinear probability mean rather than a reconstructed-phase surrogate. An experimental analysis would still require full finite-sample likelihood checks, treatment of nonstationary conditions, and validation of any disconnected solutions. Third, the prospective chirp reference requires an independently verified map from calibrated frequency/time standards to the realized Raman difference-frequency chirp and the actual $k_{\rm eff}$ geometry. A commanded chirp value alone is not certified metrology.
+
+The method is not restricted to gravimetry. Equation~\eqref{eq:resource-variational} applies to any local detector model in which repeatable settings contribute additive Fisher blocks and the nuisance-sharing structure is declared. The setting index may represent interrogation times, control sequences, frequency bands, baselines, detector orientations, calibration states, or other repeatable quantum-sensor configurations. Nonlinear apparatus controls can make the outer design search nonconvex, but the inner additive-resource allocation retains the concavity and budget properties derived above under the stated assumptions.
+
+The broader RQIR programme uses this resource layer after source-side calibration and detector-side identifiability checks. For the present article, however, the experimentally relevant statement is standalone: a quantum-sensor sensitivity forecast should not be called resource closed until the target remains estimable under the declared nuisance geometry, physical covariance, detector response, calibration uncertainty, and exposure ledger.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have developed a nuisance-aware resource-closure method for quantum sensing and demonstrated it in a source-grounded Raman atom-gravimeter architecture. The central profiled-information law
+\begin{equation}
+\Ires(\bm e;\Lambda)=\min_{\bm a}\left[\sum_k e_k\|\bm s_k-J_k\bm a\|^2+\bm a^T\Lambda\bm a\right]
+\end{equation}
+is monotone and concave in additive resource and becomes positively homogeneous when all information scales with the data. It yields convex maximum-information and minimum-budget problems and a marginal resource value determined by nuisance-orthogonal residual response rather than raw sensitivity.
+
+For the Raman atom-gravimeter example, the source-traceable colored covariance reproduces independent published apparatus noise scales, and the detector-facing probability likelihood retains local estimability of the declared modulated acceleration-like science amplitude after simultaneous treatment of phase, drift, contrast, readout, common-scale, and finite-reference nuisances. The required static-science and uncalibrated-reference controls remain non-identifiable. A prospective differential Raman-chirp reference then moves the one-hour design into a statistics-dominated regime below the few-$\mu g$ scale, with a statistical forecast of $0.746604$ ng and a calibration/statistics crossover near $9.38\,\mu g$.
+
+The full computational chain is independently reproduced and the provenance boundaries are explicit. The main conclusion is therefore methodological: in quantum sensing, more exposure is not always the missing resource. Nuisance geometry, response diversity, and traceable calibration can be the decisive resources, and they should be optimized inside the same inference problem rather than appended after a raw-sensitivity forecast.
+
+\section*{Acknowledgments}
+The derivation cross-checks, numerical-audit organization, literature organization, and manuscript drafting used substantive assistance from OpenAI ChatGPT (GPT-5.6 Sol, accessed September 2026). All numerical claims reported in the manuscript were regenerated by tracked code and independently reproduced in a clean hosted environment. The AI system is not an author. The author retains full responsibility for the accuracy, interpretation, and integrity of the work.
+
+\section*{Data availability}
+The data and code that support the findings of this study are openly available in the Relativity--Quantum Interface Reconstruction repository \cite{RQIRRepo}. The repository contains the analysis scripts, source-traceable digitization used for the vibration-covariance calculation, machine-readable result manifest, provenance certificates, and the clean-reproduction workflow. The historical 2008 raw experimental campaign data are not claimed to be present; where published curves are digitized, this is explicitly identified in the repository and in the manuscript.
+
+\begin{thebibliography}{99}
+
+\bibitem{Bongs2019}
+Bongs K, Holynski M, Vovrosh J \emph{et al} 2019 Taking atom interferometric quantum sensors from the laboratory to real-world applications \emph{Nat. Rev. Phys.} \textbf{1} 731--739 (doi:10.1038/s42254-019-0117-4)
+
+\bibitem{Geiger2020}
+Geiger R, Landragin A, Merlet S and Pereira Dos Santos F 2020 High-accuracy inertial measurements with cold-atom sensors \emph{AVS Quantum Sci.} \textbf{2} 024702 (doi:10.1116/5.0009093)
+
+\bibitem{Giovannetti2011}
+Giovannetti V, Lloyd S and Maccone L 2011 Advances in quantum metrology \emph{Nat. Photonics} \textbf{5} 222--229 (doi:10.1038/nphoton.2011.35)
+
+\bibitem{Pezze2018}
+Pezz\`e L, Smerzi A, Oberthaler M K, Schmied R and Treutlein P 2018 Quantum metrology with nonclassical states of atomic ensembles \emph{Rev. Mod. Phys.} \textbf{90} 035005 (doi:10.1103/RevModPhys.90.035005)
+
+\bibitem{Liu2020}
+Liu J, Yuan H, Lu X-M and Wang X 2020 Quantum Fisher information matrix and multiparameter estimation \emph{J. Phys. A: Math. Theor.} \textbf{53} 023001 (doi:10.1088/1751-8121/ab5d4d)
+
+\bibitem{Wani2026}
+Wani S S, Al-Kuwari S, Shabir A, Vezio P, Marino F and Faizal M 2026 Time uncertainty and fundamental sensitivity limits in quantum sensing: application to optomechanical gravimetry \emph{Phys. Rev. A} \textbf{113} 032609 (doi:10.1103/nn67-9tph)
+
+\bibitem{Huan2024}
+Huan X, Jagalur J and Marzouk Y 2024 Optimal experimental design: formulations and computations \emph{Acta Numerica} \textbf{33} 715--840 (doi:10.1017/S0962492924000023)
+
+\bibitem{WatsonPan2023}
+Watson S I and Pan Y 2023 Evaluation of combinatorial optimisation algorithms for c-optimal experimental designs with correlated observations \emph{Stat. Comput.} \textbf{33} 112 (doi:10.1007/s11222-023-10280-w)
+
+\bibitem{LeGouet2008}
+Le Gou\"et J, Mehlst\"aubler T E, Kim J, Merlet S, Clairon A, Landragin A and Pereira Dos Santos F 2008 Limits to the sensitivity of a low noise compact atomic gravimeter \emph{Appl. Phys. B} \textbf{92} 133--144 (doi:10.1007/s00340-008-3088-1)
+
+\bibitem{Cheinet2008}
+Cheinet P, Canuel B, Pereira Dos Santos F, Gauguet A, Yver-Leduc F and Landragin A 2008 Measurement of the sensitivity function in a time-domain atomic interferometer \emph{IEEE Trans. Instrum. Meas.} \textbf{57} 1141--1148 (doi:10.1109/TIM.2007.915148)
+
+\bibitem{Tao2015}
+Tao J-J, Zhou M-K, Zhang Q-Z, Cui J-F, Duan X-C, Shao C-G and Hu Z-K 2015 Note: directly measuring the direct digital synthesizer frequency chirp-rate for an atom interferometer \emph{Rev. Sci. Instrum.} \textbf{86} 096108 (doi:10.1063/1.4930562)
+
+\bibitem{Zhang2025}
+Zhang H-K, Liu J-X, Liang C-W, Zhang Y-F, Zhou C, Yan S-H, Zhu L-X and Yang J 2025 A method for the precise and absolute measurement of microwave chirp rates in cold-atom gravimeters \emph{AIP Adv.} \textbf{15} 055209 (doi:10.1063/5.0252751)
+
+\bibitem{BIPM2015}
+International Committee for Weights and Measures (CIPM) 2015 Recommendation 2: updates to the list of standard frequencies (Bureau International des Poids et Mesures) (doi:10.59161/CIPM2015REC2E)
+
+\bibitem{RQIRRepo}
+Buyanov A 2026 Relativity--Quantum Interface Reconstruction repository, \url{https://github.com/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction} (accessed 10 September 2026)
+
+\end{thebibliography}
