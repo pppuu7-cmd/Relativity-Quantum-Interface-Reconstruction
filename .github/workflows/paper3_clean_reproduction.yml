@@ -8,7 +8,9 @@ on:
       - 'analysis/atom_gravimeter_*.py'
       - 'analysis/paper3_profiled_resource_law.py'
       - 'analysis/paper3_atomic_clock_second_sensor_benchmark.py'
+      - 'analysis/paper3_atomic_clock_robustness_sweep.py'
       - 'results/paper3_atomic_clock_second_sensor.json'
+      - 'results/paper3_atomic_clock_robustness_sweep.json'
       - 'docs/RQIR7_*PAPER_III*.md'
       - 'docs/PAPER_III_SECOND_SENSOR_ATOMIC_CLOCK_BENCHMARK_*.md'
       - '.github/workflows/paper3_clean_reproduction.yml'
@@ -20,7 +22,9 @@ on:
       - 'analysis/atom_gravimeter_*.py'
       - 'analysis/paper3_profiled_resource_law.py'
       - 'analysis/paper3_atomic_clock_second_sensor_benchmark.py'
+      - 'analysis/paper3_atomic_clock_robustness_sweep.py'
       - 'results/paper3_atomic_clock_second_sensor.json'
+      - 'results/paper3_atomic_clock_robustness_sweep.json'
       - 'docs/RQIR7_*PAPER_III*.md'
       - 'docs/PAPER_III_SECOND_SENSOR_ATOMIC_CLOCK_BENCHMARK_*.md'
       - '.github/workflows/paper3_clean_reproduction.yml'
@@ -72,6 +76,9 @@ jobs:
 
       - name: Independent atomic-clock second-sensor benchmark
         run: python analysis/paper3_atomic_clock_second_sensor_benchmark.py --check-result
+
+      - name: Atomic-clock robustness sweep
+        run: python analysis/paper3_atomic_clock_robustness_sweep.py --check-result
 
       - name: Verify provenance certificate exists
         run: test -s docs/RQIR7_PAPER_III_PROVENANCE_COMPATIBILITY_CERTIFICATE_2026-09-09.md
