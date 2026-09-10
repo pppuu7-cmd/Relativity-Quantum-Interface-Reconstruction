@@ -1,0 +1,61 @@
+{
+  "architecture": "reduced interleaved atomic-clock/Ramsey frequency sensing",
+  "claim_class": "cross-architecture design-principle regression; not apparatus forecast",
+  "core_profiler": "analysis/protocol002_profiled_fisher.py::profiled_beta_information",
+  "date": "2026-09-10",
+  "gates": {
+    "allocation_sensitivity_present": "PASS",
+    "calibration_recovery_present": "PASS",
+    "core_decision_rules_modified": false,
+    "independent_sensor_architecture": "PASS",
+    "nuisance_induced_failure_present": "PASS",
+    "response_diversity_recovery_present": "PASS",
+    "same_profiled_resource_law": "PASS"
+  },
+  "resource_law_adapter": "analysis/paper3_profiled_resource_law.py::profiled_resource_information",
+  "results": {
+    "control_reversal_asymmetric_information": 0.8399999999999999,
+    "control_reversal_uniform_information": 1.0,
+    "uniform_reversal_nuisance_cross_norm": 0.0,
+    "unmodulated_free_nuisance_information": 0.0,
+    "unmodulated_offset_calibration_lambda1_information": 0.5,
+    "unmodulated_offset_calibration_lambda9_information": 0.9
+  },
+  "schema": "rqir-paper-iii-second-sensor-benchmark-v1",
+  "settings": {
+    "asymmetric_allocation": [
+      0.4,
+      0.3,
+      0.2,
+      0.1
+    ],
+    "control_reversal_response": [
+      1.0,
+      -1.0,
+      -1.0,
+      1.0
+    ],
+    "normalized_times": [
+      -1.5,
+      -0.5,
+      0.5,
+      1.5
+    ],
+    "nuisances": [
+      "shared_LO_frequency_offset",
+      "linear_LO_drift"
+    ],
+    "uniform_allocation": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "unmodulated_response": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  }
+}
