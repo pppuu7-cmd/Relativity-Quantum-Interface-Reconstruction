@@ -1,0 +1,42 @@
+\section{Results and reproducibility}
+\label{sec:results}
+
+\subsection{End-to-end resource-closure result}
+
+Table~\ref{tab:results} summarizes the quantities used to establish the apparatus-level result. The positive estimability statement is accepted only when it coexists with source-scale reproduction, physical colored covariance, detector-facing nonlinear readout, finite reference calibration, and the required failure controls.
+
+\begin{table}[t]
+\caption{Apparatus/resource results for the declared Raman atom-gravimeter design. ``Estimable'' refers to local estimability of the science amplitude after the stated nuisance profiling; it is not an experimental detection claim.}
+\label{tab:results}
+\begin{tabular}{p{0.25\textwidth}p{0.47\textwidth}p{0.18\textwidth}}
+\toprule
+Test & Result & Interpretation\\
+\midrule
+Structural calibration & modulated science + calibrated acceleration reference is estimable; science-only, science+recoil, and unknown-reference controls are not & scale closure requires traceable reference\\
+Same-apparatus scale & $11$ mrad/shot $\rightarrow1.39247\times10^{-8}g$ at $1$ s & reproduces source scale\\
+Physical vibration spectrum & $6.34856\times10^{-8}g$ at $1$ s versus published $6.5\times10^{-8}g$ & $2.33\%$ difference\\
+Corrected physical scale & $2.17592\times10^{-8}g$ at $1$ s versus published $2.0\times10^{-8}g$ & $8.80\%$ difference\\
+Colored-noise science forecast & $\sigma_\theta=5.72247$ ng at $60$ s; $1.85019$ ng at $600$ s & estimable\\
+2-Hz spectral stress & five-fold stressed feature gives $9.31148$ ng at $60$ s & estimability retained\\
+Detector-facing forecast & $5.72811$ ng at $60$ s; $1.851801$ ng at $600$ s for a 1\% reference-prior check & estimable with joint detector nuisances\\
+Differential chirp reference & $1\,\mu g\rightarrow25.1373191$ Hz/s and $f_{\rm ref}=7.9563\times10^{-5}$ & traceable-scale design\\
+One-hour resource point & $\sigma_{\rm stat}=0.746604$ ng; $\theta_{\rm cross}=9.38\,\mu g$ & resource boundary\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The physical vibration-spectrum calculation is deliberately not normalized to the published integrated sensitivities. Its agreement with both the uncorrected vibration limit and the separately corrected total scale therefore provides an independent check that the coarse source-traceable digitization has the appropriate magnitude for the design study. Replacing the earlier short-memory stress covariance by this physical spectral covariance increases the forecast uncertainty but does not remove the science direction.
+
+The detector-facing calculation gives essentially the same $60$-s scale as the phase-level physical-covariance calculation even after adding contrast, contrast drift, centered readout gain, gain drift, probability offset, and finite detector noise. This occurs because the dominant phase signal and correlated phase noise are propagated through the same local fringe slope, while the independently added detector probability floor is smaller than the several-milliradian physical phase-noise scale for the declared operating point.
+
+\subsection{Failure controls}
+
+Four controls define the failure domain. First, static acceleration-like science with a free phase offset is non-identifiable. Second, modulation alone does not close the common multiplicative scale. Third, promoting the reference amplitude to an unconstrained nuisance does not help, because only the science/reference ratio is then determined. Fourth, recoil information alone does not replace an absolute acceleration reference for the declared absolute-amplitude problem. These controls are evaluated with the same estimability criterion as the positive case.
+
+A full nuisance matrix need not have full rank. Contrast and centered readout-gain combinations can contain apparatus-only null directions, but these are admissible only when their projection onto the science direction vanishes. Conversely, any null direction with nonzero science overlap causes the science amplitude to be classified as non-estimable rather than assigned a pseudoinverse uncertainty.
+
+\subsection{Provenance and independent reproduction}
+
+The physical inputs are composed through an explicit source hierarchy rather than presented as one historical dataset. Le Gou\"et \emph{et al.} supply the baseline apparatus, noise, detector, and cycle scales \cite{LeGouet2008}; Cheinet \emph{et al.} supply compatible sensitivity-function formalism \cite{Cheinet2008}; Zhang \emph{et al.} supply prospective absolute chirp-metrology capability \cite{Zhang2025}; Tao \emph{et al.} provide an independent DDS stability bound \cite{Tao2015}; and the BIPM recommendation supplies the optical frequency scale \cite{BIPM2015}. No raw shot samples from distinct experiments are statistically concatenated. The published vibration curve is explicitly treated as a coarse digitization rather than raw data, and the 2025 chirp-metrology capability is not retrofitted into the 2008 apparatus record.
+
+The general resource identities are protected by deterministic and randomized regression tests, and the strengthened apparatus chain is implemented by tracked scripts covering calibration hierarchy, correlated covariance, calibration floors, same-apparatus scaling, physical spectral covariance, detector-facing probability likelihood, and chirp-reference metrology. A dedicated clean reproduction on a freshly provisioned hosted environment completed every tracked computational step, including the negative controls, without failure. Exact numerical outputs and environment identifiers are stored in the machine-readable repository manifest cited in the data-availability statement.
