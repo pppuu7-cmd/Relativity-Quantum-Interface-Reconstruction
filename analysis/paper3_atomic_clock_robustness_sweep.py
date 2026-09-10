@@ -27,6 +27,11 @@ ALLOCATION_MIX = np.linspace(0.0, 1.0, 6)
 ZERO_PRIOR = np.zeros((2, 2), dtype=float)
 
 
+def stable_float(value: float) -> float:
+    """Canonicalize diagnostic output while preserving stricter raw assertions."""
+    return float(f"{float(value):.12g}")
+
+
 def robustness_results() -> dict[str, object]:
     calibration = []
     for lam in CALIBRATION_STRENGTHS:
@@ -36,7 +41,11 @@ def robustness_results() -> dict[str, object]:
         expected = float(lam / (1.0 + lam))
         assert abs(measured - expected) < 1e-12
         calibration.append(
-            {"lambda": float(lam), "information": measured, "analytic": expected}
+            {
+                "lambda": stable_float(lam),
+                "information": stable_float(measured),
+                "analytic": stable_float(expected),
+            }
         )
 
     calibration_values = np.array([x["information"] for x in calibration])
@@ -45,21 +54,23 @@ def robustness_results() -> dict[str, object]:
     assert calibration_values[-1] > 0.96
 
     allocation = []
+    raw_allocation_values = []
     for alpha in ALLOCATION_MIX:
         e = (1.0 - alpha) * UNIFORM + alpha * ASYMMETRIC
         value = information(CONTROL_REVERSAL, e, ZERO_PRIOR)
+        raw_allocation_values.append(value)
         allocation.append(
             {
-                "alpha": float(alpha),
-                "allocation": e.tolist(),
-                "information": value,
+                "alpha": stable_float(alpha),
+                "allocation": [stable_float(x) for x in e],
+                "information": stable_float(value),
             }
         )
 
-    allocation_values = np.array([x["information"] for x in allocation])
-    assert abs(allocation_values[0] - 1.0) < 1e-12
-    assert abs(allocation_values[-1] - 0.84) < 1e-12
-    assert np.all(np.diff(allocation_values) < 0.0)
+    raw_allocation_values = np.array(raw_allocation_values)
+    assert abs(raw_allocation_values[0] - 1.0) < 1e-12
+    assert abs(raw_allocation_values[-1] - 0.84) < 1e-12
+    assert np.all(np.diff(raw_allocation_values) < 0.0)
 
     return {
         "schema": "rqir-paper-iii-atomic-clock-robustness-v1",
