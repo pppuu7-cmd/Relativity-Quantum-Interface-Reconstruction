@@ -1,44 +1,102 @@
 {
   "allocation_sweep": [
     {
-      "allocation": [0.25, 0.25, 0.25, 0.25],
+      "allocation": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
       "alpha": 0.0,
       "information": 1.0
     },
     {
-      "allocation": [0.28, 0.26, 0.24, 0.22],
+      "allocation": [
+        0.28,
+        0.26,
+        0.24,
+        0.22
+      ],
       "alpha": 0.2,
       "information": 0.9948387096774194
     },
     {
-      "allocation": [0.31, 0.27, 0.23, 0.19],
+      "allocation": [
+        0.31,
+        0.27,
+        0.23,
+        0.19
+      ],
       "alpha": 0.4,
       "information": 0.9788429752066116
     },
     {
-      "allocation": [0.34, 0.28, 0.22, 0.16],
+      "allocation": [
+        0.34,
+        0.28,
+        0.22,
+        0.16
+      ],
       "alpha": 0.6000000000000001,
       "information": 0.9503448275862069
     },
     {
-      "allocation": [0.37, 0.29, 0.21, 0.13],
+      "allocation": [
+        0.37,
+        0.29,
+        0.21,
+        0.13
+      ],
       "alpha": 0.8,
       "information": 0.9060550458715596
     },
     {
-      "allocation": [0.4, 0.3, 0.2, 0.1],
+      "allocation": [
+        0.4,
+        0.3,
+        0.2,
+        0.1
+      ],
       "alpha": 1.0,
       "information": 0.8399999999999999
     }
   ],
   "calibration_sweep": [
-    {"analytic": 0.0, "information": 0.0, "lambda": 0.0},
-    {"analytic": 0.09090909090909091, "information": 0.09090909090909094, "lambda": 0.1},
-    {"analytic": 0.23076923076923075, "information": 0.23076923076923084, "lambda": 0.3},
-    {"analytic": 0.5, "information": 0.5, "lambda": 1.0},
-    {"analytic": 0.75, "information": 0.75, "lambda": 3.0},
-    {"analytic": 0.9, "information": 0.9, "lambda": 9.0},
-    {"analytic": 0.967741935483871, "information": 0.967741935483871, "lambda": 30.0}
+    {
+      "analytic": 0.0,
+      "information": 0.0,
+      "lambda": 0.0
+    },
+    {
+      "analytic": 0.09090909090909091,
+      "information": 0.09090909090909094,
+      "lambda": 0.1
+    },
+    {
+      "analytic": 0.23076923076923075,
+      "information": 0.23076923076923084,
+      "lambda": 0.3
+    },
+    {
+      "analytic": 0.5,
+      "information": 0.5,
+      "lambda": 1.0
+    },
+    {
+      "analytic": 0.75,
+      "information": 0.75,
+      "lambda": 3.0
+    },
+    {
+      "analytic": 0.9,
+      "information": 0.9,
+      "lambda": 9.0
+    },
+    {
+      "analytic": 0.967741935483871,
+      "information": 0.967741935483871,
+      "lambda": 30.0
+    }
   ],
   "date": "2026-09-10",
   "gates": {
