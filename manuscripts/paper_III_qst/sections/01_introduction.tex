@@ -1,0 +1,32 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Atom interferometers are among the most mature quantum sensors for inertial and gravitational measurements, with applications ranging from precision metrology and tests of fundamental physics to navigation, geophysics, and field-deployable sensing \cite{Bongs2019,Geiger2020}. Their performance is usually summarized through phase sensitivity, acceleration sensitivity, or Fisher-information scaling. In realistic instruments, however, the quantity of scientific interest is inferred jointly with phase offsets, drifts, contrast changes, readout gains, vibration noise, transfer-function uncertainty, and calibration parameters. A resource forecast based only on the target-target Fisher element can therefore be optimistic even when every individual sensitivity number is correct.
+
+This issue is broader than atom gravimetry. Quantum metrology asks how probe preparation, dynamics, measurement, and repetition determine attainable precision \cite{Giovannetti2011,Pezze2018,Liu2020}. Once a concrete detector and apparatus are specified, the design problem also includes nuisance geometry: does additional integration accumulate information in a direction distinguishable from calibration and drift, or does it merely reinforce an existing degeneracy? Recent work has shown directly that nuisance parameters can alter attainable quantum-sensing bounds and optimal operating conditions \cite{Wani2026}. Atomic clocks provide a distinct example of the same experimental-design issue because interrogation sequences, local-oscillator behavior, references, and interleaved comparisons are all part of the inference architecture \cite{Ludlow2015,Lindvall2025}. A practical resource theory should therefore distinguish structural identifiability from a shortage of exposure and should transfer between sensor architectures without changing its decision rule.
+
+We formulate this requirement as \emph{resource closure}. The criterion was developed as the third inference layer of Relativity--Quantum Interface Reconstruction (RQIR), downstream of source-side calibration and detector-side identifiability, but the derivation below is standalone: no RQIR-specific microscopic physics assumption enters the resource law. Once a target direction is statistically identifiable for at least one design, resource closure asks what physical resource is required to reach a declared information target, how that resource should be allocated across settings, and whether an apparent sensitivity limit is actually a nuisance degeneracy that additional exposure cannot repair.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\small,>=stealth,node distance=4.5mm,
+box/.style={draw,rounded corners,align=center,text width=0.76\linewidth,minimum height=8mm,inner sep=2.5mm}]
+\node[box] (p1) {Target direction after declared source/calibration quotient};
+\node[box,below=of p1] (p2) {Detector-facing nuisance geometry and covariance whitening};
+\node[box,below=of p2] (p3) {Nuisance-profiled resource allocation and minimum-budget test};
+\node[box,below=of p3] (p4) {Apparatus binding: noise, detector response, traceable reference, exposure};
+\draw[->] (p1)--(p2);
+\draw[->] (p2)--(p3);
+\draw[->] (p3)--(p4);
+\end{tikzpicture}
+\caption{Nuisance-aware resource-closure workflow. Additional exposure is credited only after the target direction has survived the declared calibration and detector nuisance geometry. The final step binds the abstract information map to physical apparatus variables and traceable calibration resources.}
+\label{fig:workflow}
+\end{figure}
+
+The first contribution is a general resource variational law. Nuisance profiling remains inside the resource objective, so a channel receives credit only for the component of its target score that cannot be reproduced by the shared nuisance fit preferred by the complete design. The resulting information map is monotone and concave in additive resource and becomes positively homogeneous when all information is data-derived. This produces convex inner allocation and minimum-budget problems and a sharp distinction between geometry-limited and budget-limited designs.
+
+The second contribution is an apparatus-grounded test in a three-pulse $^{87}$Rb Raman atom gravimeter. The baseline apparatus, cycle time, detector noise, and vibration-noise scales are anchored to Le Gou\"et \emph{et al.} \cite{LeGouet2008}, with the compatible three-pulse sensitivity-function formalism of Cheinet \emph{et al.} \cite{Cheinet2008}. We propagate a source-traceable vibration spectrum into sampled colored covariance, use the measured transition probability rather than a phase-only surrogate, profile phase, contrast, gain, drift, and common-scale nuisances jointly, and close the absolute acceleration scale with a prospective differential Raman-chirp reference based on modern chirp-rate metrology \cite{Zhang2025}.
+
+The third contribution is a deliberately reduced cross-architecture transfer benchmark based on interleaved Ramsey/atomic-clock frequency sensing. It changes the sensor response and nuisance Jacobian but reuses the same frozen profiled-resource law. The benchmark tests whether the method reproduces nuisance-induced failure, recovery through response diversity or explicit calibration, and allocation dependence in a sensor architecture that is not an accelerometer. It is a design-principle regression, not an apparatus-specific clock instability or accuracy forecast.
+
+The central apparatus result is conditional and experimentally testable. In the declared gravimeter modulation/reference geometry, a weak acceleration-like science amplitude remains locally estimable after the complete nuisance and covariance treatment when an independently traceable acceleration-equivalent reference closes the common multiplicative scale. Required negative controls fail: a static science signal is absorbed by a free phase offset, modulation without absolute calibration leaves a scale degeneracy, and an unknown unconstrained reference does not recover that scale. These failures are part of the result because they distinguish genuine resource closure from hidden regularization. The paper is therefore a quantum-sensing resource/design study: no experimental departure from general relativity or quantum mechanics is reported, and no microscopic gravity model is selected.

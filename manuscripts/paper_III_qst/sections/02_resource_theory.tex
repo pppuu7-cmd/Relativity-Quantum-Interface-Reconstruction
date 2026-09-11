@@ -1,0 +1,94 @@
+\section{Methods: nuisance-profiled resource theory}
+\label{sec:resource-theory}
+
+\subsection{Setting-wise variational law}
+
+Let $k=1,\ldots,K$ label repeatable acquisition settings: frequency bands, pulse sequences, baselines, detector orientations, modulation branches, or other declared modes. At a fixed local reference point, let $\bm s_k\in\mathbb R^{m_k}$ denote the whitened target score per unit resource and let $J_k\in\mathbb R^{m_k\times p}$ contain the corresponding nuisance scores. A nonnegative allocation $e_k$ scales repeated independent information in setting $k$. A fixed, independent nuisance constraint is represented by a positive-semidefinite precision matrix $\Lambda\succeq0$.
+
+Stacking the settings while retaining the shared nuisance displacement $\bm a$ gives
+\begin{equation}
+\boxed{
+\Ires(\bm e;\Lambda)=
+\min_{\bm a}
+\left[
+\sum_{k=1}^{K}e_k\|\bm s_k-J_k\bm a\|^2
++\bm a^T\Lambda\bm a
+\right].
+}
+\label{eq:resource-variational}
+\end{equation}
+Equation~\eqref{eq:resource-variational} is the resource form of nuisance-profiled local information. The nuisance fit is performed for each candidate resource allocation. This differs from optimizing a raw target-target Fisher element and profiling only afterward.
+
+\paragraph*{Proposition 1.}
+For fixed $\{\bm s_k,J_k\}$ and fixed $\Lambda\succeq0$, $\Ires(\bm e;\Lambda)$ is componentwise nondecreasing and concave on $\mathbb R_+^K$. For $\Lambda=0$ it is also positively homogeneous:
+\begin{equation}
+\Ires(\alpha\bm e;0)=\alpha\Ires(\bm e;0),\qquad \alpha\ge0.
+\label{eq:homogeneity}
+\end{equation}
+
+\emph{Proof.} For fixed $\bm a$, the bracket in Eq.~\eqref{eq:resource-variational} is affine in $\bm e$ and has nonnegative coefficient $\|\bm s_k-J_k\bm a\|^2$ for each component. Increasing an allocation therefore cannot decrease the minimum. A pointwise infimum of affine functions is concave. When $\Lambda=0$, a common factor $\alpha$ multiplies the complete objective and can be taken outside the minimization. \hfill$\square$
+
+The homogeneous case makes structural failure especially transparent. If one nuisance vector $\bm a_0$ satisfies
+\begin{equation}
+\bm s_k=J_k\bm a_0
+\end{equation}
+for every active setting, then $\Ires(\bm e;0)=0$ for any common resource scale. No amount of ``more of the same'' exposure repairs exact shared nuisance alignment.
+
+\subsection{Budget closure and marginal value}
+
+Assign positive unit costs $c_k$ and total cost $C(\bm e)=\bm c^T\bm e$. The maximum-information and minimum-budget problems are
+\begin{align}
+\mathcal I_{\max}(B;\Lambda)
+&=\max_{\bm e\ge0,\,\bm c^T\bm e\le B}\Ires(\bm e;\Lambda),
+\label{eq:maxinfo}\\
+\Bmin(I_\star;\Lambda)
+&=\min_{\bm e\ge0}\{\bm c^T\bm e:\Ires(\bm e;\Lambda)\ge I_\star\}.
+\label{eq:minbudget}
+\end{align}
+Because $\Ires$ is concave, the first is a concave maximization over a convex set and the second minimizes a linear cost over a convex superlevel set. Thus the inner resource-allocation problem is a convex design problem under the stated additive-resource assumptions, consistent with the broader optimal-design literature \cite{Huan2024,WatsonPan2023}.
+
+For data-only scaling define
+\begin{equation}
+\kappa_\star=\max_{\bm w\ge0,\,\bm c^T\bm w=1}\Ires(\bm w;0).
+\end{equation}
+Positive homogeneity then gives the exact laws
+\begin{equation}
+\boxed{
+\mathcal I_{\max}(B;0)=B\kappa_\star,
+\qquad
+\Bmin(I_\star;0)=\frac{I_\star}{\kappa_\star}.
+}
+\label{eq:budgetlaw}
+\end{equation}
+If $\kappa_\star=0$, the declared design family is geometry-limited rather than resource-limited. If $\kappa_\star>0$ but $\Bmin$ exceeds the available physical budget, the failure is instead one of cost or engineering feasibility.
+
+When the nuisance minimizer $\bm a_\star(\bm e)$ is locally unique, the envelope theorem yields
+\begin{equation}
+\frac{\partial\Ires}{\partial e_k}
+=\|\bm s_k-J_k\bm a_\star\|^2.
+\label{eq:marginal}
+\end{equation}
+At a differentiable optimum, active settings equalize this profiled marginal information per unit cost. The resource shadow price is therefore controlled by nuisance-orthogonal residual response rather than raw target amplitude.
+
+\subsection{Two-band analytic check}
+
+For an illustrative two-band target $\bm g=(g_2,g_4)^T$ and relative-tilt nuisance $\bm t=(g_2,-g_4)^T$, independent exposures $e_2,e_4$ give
+\begin{equation}
+\Ires(e_2,e_4)=\frac{4AD}{A+D},\qquad
+A=e_2g_2^2,\quad D=e_4g_4^2.
+\label{eq:twoband}
+\end{equation}
+For equal unit costs, $(g_2,g_4)=(0.3,0.7)$, and total exposure $B=2$, the exact optimum is
+\begin{equation}
+(e_2^\star,e_4^\star)=(1.4,0.6),\qquad
+\Ires^\star=0.3528.
+\end{equation}
+Equal allocation gives $\Ires=0.3041379310$, so nuisance-aware resource allocation increases profiled information by $16\%$ at fixed total exposure. The example is intentionally dimensionless: seconds, shots, atoms, or optical power become legitimate labels only after an apparatus binding is declared.
+
+\subsection{Robust resource maps}
+
+If an uncertain response state $\xi\in\Xi$ changes the per-unit score or covariance while preserving concavity for every fixed $\xi$, the worst-case resource map
+\begin{equation}
+\Ires^{\rm rob}(\bm e)=\inf_{\xi\in\Xi}\Ires(\bm e;\xi)
+\end{equation}
+remains concave because its hypograph is an intersection of concave hypographs. This permits bounded response uncertainty to enter the resource layer without being reinterpreted as free calibration information. Nonlinear apparatus controls may still produce a nonconvex outer design problem; the result above concerns the inner additive-resource allocation at fixed controls.

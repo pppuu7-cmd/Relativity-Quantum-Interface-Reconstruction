@@ -1,0 +1,87 @@
+\section{Source-grounded atom-gravimeter binding}
+\label{sec:apparatus}
+
+\subsection{Baseline apparatus and acceleration response}
+
+To convert the abstract resource variable into physical acquisition time, we use the compact three-pulse $^{87}$Rb Raman gravimeter reported by Le Gou\"et \emph{et al.} \cite{LeGouet2008} as the baseline apparatus family. The source reports an interferometer duration $2T=100$ ms, repetition rate $f_c=4$ Hz, best short-term phase noise $11$ mrad/shot, and acceleration sensitivity $1.4\times10^{-8}g$ at $1$ s. The compatible sensitivity-function formalism of Cheinet \emph{et al.} \cite{Cheinet2008} supplies the three-pulse transfer geometry.
+
+At low frequency, the acceleration phase is
+\begin{equation}
+\Phi_a=k_{\rm eff}aT^2,
+\label{eq:ai-scale}
+\end{equation}
+and the normalized response to sinusoidal acceleration at frequency $f$ is represented by
+\begin{equation}
+R_a(f)=\left[\frac{\sin(\pi fT)}{\pi fT}\right]^2.
+\label{eq:ra}
+\end{equation}
+Using $\lambda=780$ nm, counter-propagating $k_{\rm eff}=4\pi/\lambda$, and $T=50$ ms gives
+\begin{align}
+k_{\rm eff}&=1.61107316\times10^7\ {\rm m}^{-1},\\
+k_{\rm eff}T^2&=4.02768289\times10^4\ {\rm rad/(m\,s^{-2})}.
+\end{align}
+At four shots per second, the measured $11$ mrad/shot therefore implies $1.39247\times10^{-8}g$ at $1$ s, reproducing the published $1.4\times10^{-8}g$ scale to rounding accuracy. This reproduction is a dimensional consistency check, not a fit. Throughout the apparatus forecasts, ``ng'' and ``$\mu g$'' denote acceleration amplitudes $10^{-9}g$ and $10^{-6}g$, respectively, with $g=9.80665\,{\rm m\,s^{-2}}$; they are not mass units.
+
+\subsection{Frozen science/reference geometry}
+
+To make the estimability claim reproducible from the article rather than only from code, we state the modulation geometry explicitly. For shot index $i$,
+\begin{equation}
+t_i=iT_c,\qquad x_i\in[-1,1],
+\end{equation}
+with $x_i$ linearly spanning the campaign. The frozen science and reference templates are
+\begin{align}
+s_i&=R_a(f_s)\sin(2\pi f_s t_i), & f_s&=0.5\ {\rm Hz},\\
+q_i&=R_a(f_r)\sin(2\pi f_r t_i+0.37), & f_r&=1.0\ {\rm Hz}.
+\label{eq:templates}
+\end{align}
+The nominal acceleration-equivalent reference amplitude is $\alpha=1\,\mu g$. Writing
+\begin{equation}
+K_g=k_{\rm eff}T^2g,
+\end{equation}
+the local phase model used by the detector-facing calculation is
+\begin{equation}
+\Phi_i=\frac{\pi}{2}+K_g(1+\gamma)
+\left(\theta_g s_i+\alpha_g q_i\right)
++\phi_0+\phi_1x_i+\phi_2x_i^2,
+\label{eq:frozen-phase-model}
+\end{equation}
+where $\theta_g$ and $\alpha_g$ are the science and reference amplitudes expressed in units of $g$, $\gamma$ is a shared multiplicative acceleration/phase-scale nuisance, and $\phi_0,\phi_1,\phi_2$ are offset and drift coefficients. In the numerical implementation $\theta_g=10^{-9}\theta_{\rm ng}$ and $\alpha_g=10^{-6}\alpha_{\mu g}$. For the static-science negative control, $s_i$ is replaced by unity. For the no-reference control, $q_i$ is set to zero; for the unconstrained-reference control, $\alpha$ is promoted to a free nuisance without an external precision term.
+
+This geometry deliberately separates the $0.5$-Hz science modulation from the $1$-Hz reference modulation while retaining one shared multiplicative scale. The reference phase offset $0.37$ rad is frozen prospectively and is not fitted to improve the Fisher result. The choice is a design architecture, not a claim that these exact modulation frequencies were used in the historical 2008 campaign.
+
+\subsection{From a published vibration spectrum to sampled covariance}
+
+The same apparatus paper reports the measured passive-platform acceleration spectrum and the propagation of vibration noise through the interferometer \cite{LeGouet2008}. In the repository calculation, a coarse log--log digitization of the passive-platform curve is frozen explicitly as an approximate source-traceable digitization, not as raw campaign data. No amplitude normalization is fitted to the integrated sensitivity.
+
+For one-sided acceleration spectral density $S_a(f)$, the acceleration response and scale factor define a phase spectrum $S_\Phi(f)$. The sampled shot covariance at lag $\ell$ is then formed as
+\begin{equation}
+C_\ell=\int_0^{\infty}S_\Phi(f)
+\cos(2\pi f\ell T_c)\,df,
+\qquad T_c=f_c^{-1}.
+\label{eq:covariance}
+\end{equation}
+The covariance is therefore derived at the actual shot spacing rather than replaced by a single arbitrary correlation coefficient.
+
+Without tuning its amplitude, the digitized spectrum gives
+\begin{equation}
+\sigma_{a,\rm vib}(1\,{m s})=6.34856\times10^{-8}g,
+\end{equation}
+compared with the source's inferred $6.5\times10^{-8}g$ vibration limit, a $2.33\%$ difference. Applying the reported factor-three vibration rejection and adding the independently evaluated $4$ mrad/shot non-vibration budget gives
+\begin{equation}
+\sigma_{a,\rm corr}(1\,{m s})=2.17592\times10^{-8}g,
+\end{equation}
+compared with the reported typical $2\times10^{-8}g$ corrected scale, an $8.80\%$ difference. The agreement of two independent integrated scales, without re-normalizing the digitized spectrum, is used as the principal validation of the covariance surrogate.
+
+\subsection{Physical colored-noise identifiability}
+
+The source-traceable Toeplitz covariance is inserted directly into the joint Fisher/nuisance calculation. The same structural pattern found in the abstract analysis survives:
+\begin{itemize}
+\item static science plus a calibrated reference fails because the science direction is absorbed by a free phase offset;
+\item modulated science without a calibrated absolute reference fails because of common multiplicative-scale degeneracy;
+\item modulated science plus a known or finitely calibrated reference passes;
+\item an unknown, unconstrained reference amplitude fails because it merely transfers the scale degeneracy into the science/reference ratio.
+\end{itemize}
+
+For the nominal physical spectrum, the phase-level forecast with finite reference calibration gives $\sigma_\theta=5.72247$ ng at $60$ s, $1.85019$ ng at $600$ s, and $0.804473$ ng at $3600$ s. The 2008 source also identifies a broad residual structure near $2$ Hz associated with horizontal-to-vertical crosstalk. To avoid a favorable-spectrum result, the repository multiplies that structure by smooth stress factors up to five. At $60$ s, the science uncertainty changes from $5.72$ ng at the nominal spectrum to $9.31$ ng for the five-fold stress while local science estimability remains nonzero.
+
+These are design forecasts using published apparatus scales and source-traceable spectral substitutes. They are not re-analyses of raw historical shot data.

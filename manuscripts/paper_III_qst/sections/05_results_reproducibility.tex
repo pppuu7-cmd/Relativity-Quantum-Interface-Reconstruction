@@ -1,0 +1,82 @@
+\section{Results and reproducibility}
+\label{sec:results}
+
+\subsection{End-to-end resource-closure result}
+
+Table~\ref{tab:results} summarizes the quantities used to establish the apparatus-level result. The positive estimability statement is accepted only when it coexists with source-scale reproduction, physical colored covariance, detector-facing nonlinear readout, finite reference calibration, and the required failure controls.
+
+\begin{table}[t]
+\caption{Apparatus/resource results for the declared Raman atom-gravimeter design. ``Estimable'' refers to local estimability of the science amplitude after the stated nuisance profiling; it is not an experimental detection claim.}
+\label{tab:results}
+\begin{tabular}{p{0.25\textwidth}p{0.47\textwidth}p{0.18\textwidth}}
+\toprule
+Test & Result & Interpretation\\
+\midrule
+Structural calibration & modulated science + calibrated acceleration reference is estimable; science-only, science+recoil, and unknown-reference controls are not & scale closure requires traceable reference\\
+Same-apparatus scale & $11$ mrad/shot $\rightarrow1.39247\times10^{-8}g$ at $1$ s & reproduces source scale\\
+Physical vibration spectrum & $6.34856\times10^{-8}g$ at $1$ s versus published $6.5\times10^{-8}g$ & $2.33\%$ difference\\
+Corrected physical scale & $2.17592\times10^{-8}g$ at $1$ s versus published $2.0\times10^{-8}g$ & $8.80\%$ difference\\
+Colored-noise science forecast & $\sigma_\theta=5.72247$ ng at $60$ s; $1.85019$ ng at $600$ s & estimable\\
+2-Hz spectral stress & five-fold stressed feature gives $9.31148$ ng at $60$ s & estimability retained\\
+Detector-facing forecast & $5.72811$ ng at $60$ s; $1.851801$ ng at $600$ s for a 1\% reference-prior check & estimable with joint detector nuisances\\
+Differential chirp reference & $1\,\mu g\rightarrow25.1373191$ Hz/s and $f_{\rm ref}=7.9563\times10^{-5}$ & traceable-scale design\\
+One-hour resource point & $\sigma_{\rm stat}=0.746604$ ng; $\theta_{\rm cross}=9.38\,\mu g$ & resource boundary\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The physical vibration-spectrum calculation is deliberately not normalized to the published integrated sensitivities. Its agreement with both the uncorrected vibration limit and the separately corrected total scale therefore provides an independent check that the coarse source-traceable digitization has the appropriate magnitude for the design study. Replacing the earlier short-memory stress covariance by this physical spectral covariance increases the forecast uncertainty but does not remove the science direction.
+
+The detector-facing calculation gives essentially the same $60$-s scale as the phase-level physical-covariance calculation even after adding contrast, contrast drift, centered readout gain, gain drift, probability offset, and finite detector noise. This occurs because the dominant phase signal and correlated phase noise are propagated through the same local fringe slope, while the independently added detector probability floor is smaller than the several-milliradian physical phase-noise scale for the declared operating point.
+
+\subsection{Failure controls}
+
+Four controls define the failure domain. First, static acceleration-like science with a free phase offset is non-identifiable. Second, modulation alone does not close the common multiplicative scale. Third, promoting the reference amplitude to an unconstrained nuisance does not help, because only the science/reference ratio is then determined. Fourth, recoil information alone does not replace an absolute acceleration reference for the declared absolute-amplitude problem. These controls are evaluated with the same estimability criterion as the positive case.
+
+A full nuisance matrix need not have full rank. Contrast and centered readout-gain combinations can contain apparatus-only null directions, but these are admissible only when their projection onto the science direction vanishes. Conversely, any null direction with nonzero science overlap causes the science amplitude to be classified as non-estimable rather than assigned a pseudoinverse uncertainty.
+
+\subsection{Cross-architecture transfer: reduced Ramsey clock}
+\label{sec:clock-transfer}
+
+To test whether Eq.~\eqref{eq:resource-variational} is tied to atom gravimetry, we apply the identical profiled-resource implementation to a reduced interleaved Ramsey/atomic-clock frequency-sensing architecture. Four settings are placed at normalized cycle coordinates
+\begin{equation}
+t=(-3/2,-1/2,+1/2,+3/2),
+\end{equation}
+with shared local-oscillator (LO) frequency offset and linear LO drift represented by nuisance rows $J_k=(1,t_k)$. All quantities in this transfer test are normalized Fisher/resource units; it is not a prediction of a particular clock's instability or systematic uncertainty.
+
+For an unmodulated science response $s=(1,1,1,1)$ and no independent calibration, the science direction is exactly collinear with the free LO-offset nuisance and the common resource law returns
+\begin{equation}
+\Ires=0.
+\end{equation}
+With uniform allocation $e=(1/4,1/4,1/4,1/4)$, replacing the response by the signed control pattern $s=(1,-1,-1,1)$ makes the weighted science score orthogonal to both nuisance columns, $J^T\operatorname{diag}(e)s=0$, and restores unit normalized information, $\Ires=1$. Returning to the unmodulated response but supplying independent LO-offset precision $\Lambda=\operatorname{diag}(\lambda,0)$ gives the analytic recovery law
+\begin{equation}
+\Ires=\frac{\lambda}{1+\lambda}.
+\label{eq:clock-calibration-law}
+\end{equation}
+Thus the same criterion distinguishes three different remedies: more exposure cannot repair exact alignment, response diversity can rotate the science direction away from the nuisance span, and explicit calibration can regularize only the nuisance direction that is actually calibrated.
+
+\begin{table}[t]
+\caption{Reduced atomic-clock transfer benchmark. Information values are normalized and test the design criterion only; they are not clock-performance metrics.}
+\label{tab:clock-transfer}
+\small
+\begin{tabular}{p{0.46\textwidth}p{0.11\textwidth}p{0.32\textwidth}}
+\toprule
+Configuration & $\Ires$ & Interpretation\\
+\midrule
+Unmodulated response, free LO offset & $0$ & exact nuisance alignment\\
+Signed control pattern, uniform allocation & $1.00$ & response-diversity recovery\\
+Unmodulated, offset calibration $\lambda=1$ & $0.50$ & finite calibration recovery\\
+Unmodulated, offset calibration $\lambda=9$ & $0.90$ & stronger calibration recovery\\
+Signed pattern, allocation $(0.4,0.3,0.2,0.1)$ & $0.84$ & allocation-dependent information loss\\
+\bottomrule
+\end{tabular}
+\normalsize
+\end{table}
+
+Two deterministic robustness sweeps guard against reading these values as isolated tuned points. For $\lambda\in\{0,0.1,0.3,1,3,9,30\}$, the numerical profiler follows Eq.~\eqref{eq:clock-calibration-law} to machine precision and increases monotonically from $0$ to $0.9677419$. Along a continuous test path from uniform allocation to $(0.4,0.3,0.2,0.1)$, the retained information decreases monotonically from $1.00$ to $0.84$. The clock benchmark therefore exercises the same nuisance-induced failure, calibration recovery, response-diversity recovery, and resource-allocation logic as the gravimeter analysis without modifying the profiling rule.
+
+\subsection{Provenance and independent reproduction}
+
+The physical inputs are composed through an explicit source hierarchy rather than presented as one historical dataset. Le Gou\"et \emph{et al.} supply the baseline apparatus, noise, detector, and cycle scales \cite{LeGouet2008}; Cheinet \emph{et al.} supply compatible sensitivity-function formalism \cite{Cheinet2008}; Zhang \emph{et al.} supply prospective absolute chirp-metrology capability \cite{Zhang2025}; Tao \emph{et al.} provide an independent DDS stability bound \cite{Tao2015}; and the BIPM recommendation supplies the optical frequency scale \cite{BIPM2015}. No raw shot samples from distinct experiments are statistically concatenated. The published vibration curve is explicitly treated as a coarse digitization rather than raw data, and the 2025 chirp-metrology capability is not retrofitted into the 2008 apparatus record.
+
+The general resource identities are protected by deterministic and randomized regression tests, and the strengthened apparatus chain is implemented by tracked scripts covering calibration hierarchy, correlated covariance, calibration floors, same-apparatus scaling, physical spectral covariance, detector-facing probability likelihood, chirp-reference metrology, the reduced atomic-clock transfer benchmark, and its robustness sweep. A dedicated clean reproduction on a freshly provisioned hosted environment completed every tracked computational step, including the negative controls, without failure. Exact numerical outputs and environment identifiers are stored in the machine-readable repository manifest cited in the data-availability statement.

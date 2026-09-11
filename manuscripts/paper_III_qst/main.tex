@@ -1,0 +1,49 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{pgfplots}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{cite}
+\usepackage[hidelinks]{hyperref}
+\pgfplotsset{compat=1.18}
+\setstretch{1.12}
+
+\newcommand{\Col}{\operatorname{Col}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Ires}{\mathcal I_{\beta}}
+\newcommand{\Bmin}{B_{\min}}
+\newcommand{\RQIR}{\mathrm{RQIR}}
+\newcommand{\keywords}[1]{\vspace{0.7em}\noindent\textbf{Keywords:} #1}
+
+\begin{document}
+
+\title{Nuisance-aware resource closure and traceable calibration for quantum sensing: Raman interferometry with a Ramsey-clock transfer benchmark}
+\author{Aleksey Buyanov\\
+\small Independent Researcher, Moscow, Russia\\
+\small \href{mailto:pppuu7@gmail.com}{pppuu7@gmail.com}\\
+\small ORCID: \href{https://orcid.org/0009-0001-2621-9305}{0009-0001-2621-9305}}
+\date{11 September 2026}
+\maketitle
+
+\begin{abstract}
+Quantum-sensing forecasts often optimize raw sensitivity while treating nuisance parameters, calibration information, and experimental resources as separate afterthoughts. We formulate a nuisance-aware resource-closure criterion in which nonnegative allocations are optimized only after shared nuisance directions are profiled. For whitened target scores $\bm s_k$, nuisance score matrices $J_k$, and independent nuisance precision $\Lambda\succeq0$, the profiled information is the minimum over shared nuisance displacements of a resource-weighted residual-score norm plus the calibration penalty. The resulting information map is componentwise nondecreasing and concave in resource and positively homogeneous for data-only scaling, yielding convex maximum-information and minimum-budget problems and a nuisance-aware marginal information-per-cost rule. We first bind the method to a source-grounded three-pulse $^{87}$Rb Raman atom gravimeter using published cycle time, phase noise, detector noise, and vibration-spectrum information. A source-traceable colored covariance reproduces two published apparatus-level noise scales without fitted normalization. In the detector-facing probability likelihood, simultaneous profiling of phase, drift, contrast, readout gain, common scale, and finite-reference uncertainty leaves a modulated acceleration-like science amplitude locally estimable, whereas static science and uncalibrated-reference controls remain non-identifiable. A prospective differential Raman-chirp reference yields a conservative fractional reference uncertainty of $7.9563\times10^{-5}$ and a one-hour statistical forecast of $0.746604$ ng, with calibration/statistics crossover near $9.38\,\mu g$. To test cross-architecture transfer, we apply the identical frozen profiler to a reduced interleaved Ramsey/atomic-clock model with local-oscillator offset and drift nuisances: an unmodulated response gives zero profiled information, a signed four-setting control pattern restores unit normalized information, finite offset calibration follows $\mathcal I=\lambda/(1+\lambda)$, and an asymmetric allocation reduces the retained information to $0.84$. The result is a reusable experimental-design criterion for distinguishing resource shortage from nuisance-induced non-identifiability; it is neither a clock-performance forecast nor a claim of observed new physics.
+\end{abstract}
+
+\keywords{quantum sensing; quantum metrology; atom interferometry; atomic clocks; Fisher information; experimental design; calibration; nuisance parameters}
+
+\input{sections/01_introduction.tex}
+\input{sections/02_resource_theory.tex}
+\input{sections/03_apparatus_noise.tex}
+\input{sections/04_detector_reference.tex}
+\input{sections/05_results_reproducibility.tex}
+\input{sections/06_discussion_references.tex}
+
+\end{document}
