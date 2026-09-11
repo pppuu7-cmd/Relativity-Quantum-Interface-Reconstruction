@@ -11,16 +11,18 @@ The negative controls are consequently part of the positive result. A static acc
 
 The differential Raman-chirp reference is particularly useful for resource accounting because it enters the same interferometric phase channel as acceleration. Its purpose is not to claim a new chirp-metrology record. Instead, modern absolute chirp-rate metrology \cite{Zhang2025} is used as a transferable calibration capability for the proposed design. Applying a conservative 2 mHz/s uncertainty directly to the small differential chirp gives a fractional reference uncertainty of $7.9563\times10^{-5}$. At the one-hour resource point, the corresponding calibration/statistics crossover lies near $9.38\,\mu g$, so sub-$\mu g$ forecast amplitudes remain statistics dominated. This is the practical meaning of the resource-closure calculation: it identifies whether additional exposure, response diversity, or calibration improvement is the resource that actually limits inference.
 
+The reduced Ramsey/atomic-clock benchmark addresses a different question from the gravimeter forecast: whether the resource criterion transfers across sensing architectures without changing the nuisance-profiling rule. Atomic clocks are a natural test because practical operation relies on repeated interrogation, local-oscillator control, references, and interleaved comparisons of operating configurations \cite{Ludlow2015,Lindvall2025}. In the reduced benchmark, a free LO offset exactly absorbs an unmodulated science direction, whereas a signed four-setting response pattern restores normalized information by becoming orthogonal to both offset and linear drift. Independent offset calibration yields the continuous law $\Ires=\lambda/(1+\lambda)$, and deliberately unbalanced resource allocation lowers the retained information from $1$ to $0.84$. These results are not clock accuracy claims; they show that the same resource-closure decision logic survives a change of sensor response and nuisance geometry.
+
 Several limitations delimit the claim. First, the principal vibration covariance is based on an explicitly coarse digitization of a published spectrum because machine-readable historical campaign data are not available in the repository. The digitized curve is not treated as raw data; its use is supported by reproducing two independent apparatus-level noise scales without fitted normalization. Second, the detector calculation is local and Fisher based, although it uses the primitive nonlinear probability mean rather than a reconstructed-phase surrogate. An experimental analysis would still require full finite-sample likelihood checks, treatment of nonstationary conditions, and validation of any disconnected solutions. Third, the prospective chirp reference requires an independently verified map from calibrated frequency/time standards to the realized Raman difference-frequency chirp and the actual $k_{\rm eff}$ geometry. A commanded chirp value alone is not certified metrology.
 
-The method is not restricted to gravimetry. Equation~\eqref{eq:resource-variational} applies to any local detector model in which repeatable settings contribute additive Fisher blocks and the nuisance-sharing structure is declared. The setting index may represent interrogation times, control sequences, frequency bands, baselines, detector orientations, calibration states, or other repeatable quantum-sensor configurations. Nonlinear apparatus controls can make the outer design search nonconvex, but the inner additive-resource allocation retains the concavity and budget properties derived above under the stated assumptions.
+The method is not restricted to gravimetry. Equation~\eqref{eq:resource-variational} applies to any local detector model in which repeatable settings contribute additive Fisher blocks and the nuisance-sharing structure is declared. The gravimeter provides the apparatus-level binding, while the Ramsey-clock benchmark supplies an explicit cross-architecture transfer test. More generally, the setting index may represent interrogation times, control sequences, frequency bands, baselines, detector orientations, calibration states, or other repeatable quantum-sensor configurations. Nonlinear apparatus controls can make the outer design search nonconvex, but the inner additive-resource allocation retains the concavity and budget properties derived above under the stated assumptions.
 
 The broader RQIR programme uses this resource layer after source-side calibration and detector-side identifiability checks. For the present article, however, the experimentally relevant statement is standalone: a quantum-sensor sensitivity forecast should not be called resource closed until the target remains estimable under the declared nuisance geometry, physical covariance, detector response, calibration uncertainty, and exposure ledger.
 
 \section{Conclusion}
 \label{sec:conclusion}
 
-We have developed a nuisance-aware resource-closure method for quantum sensing and demonstrated it in a source-grounded Raman atom-gravimeter architecture. The central profiled-information law
+We have developed a nuisance-aware resource-closure method for quantum sensing, demonstrated it at apparatus level in a source-grounded Raman atom-gravimeter architecture, and tested its cross-architecture transfer in a reduced interleaved Ramsey/atomic-clock model. The central profiled-information law
 \begin{equation}
 \Ires(\bm e;\Lambda)=\min_{\bm a}\left[\sum_k e_k\|\bm s_k-J_k\bm a\|^2+\bm a^T\Lambda\bm a\right]
 \end{equation}
@@ -28,13 +30,15 @@ is monotone and concave in additive resource and becomes positively homogeneous 
 
 For the Raman atom-gravimeter example, the source-traceable colored covariance reproduces independent published apparatus noise scales, and the detector-facing probability likelihood retains local estimability of the declared modulated acceleration-like science amplitude after simultaneous treatment of phase, drift, contrast, readout, common-scale, and finite-reference nuisances. The required static-science and uncalibrated-reference controls remain non-identifiable. A prospective differential Raman-chirp reference then moves the one-hour design into a statistics-dominated regime below the few-$\mu g$ scale, with a statistical forecast of $0.746604$ ng and a calibration/statistics crossover near $9.38\,\mu g$.
 
+The reduced clock benchmark independently reproduces the same structural logic with a different nuisance model: exact LO-offset alignment gives zero information, response reversal restores unit normalized information, explicit offset calibration gives $\lambda/(1+\lambda)$, and an asymmetric allocation reduces the retained information to $0.84$. This transfer test changes the sensing architecture without changing the profiled-resource rule.
+
 The full computational chain is independently reproduced and the provenance boundaries are explicit. The main conclusion is therefore methodological: in quantum sensing, more exposure is not always the missing resource. Nuisance geometry, response diversity, and traceable calibration can be the decisive resources, and they should be optimized inside the same inference problem rather than appended after a raw-sensitivity forecast.
 
 \section*{Acknowledgments}
 The derivation cross-checks, numerical-audit organization, literature organization, and manuscript drafting used substantive assistance from OpenAI ChatGPT (GPT-5.6 Sol, accessed September 2026). All numerical claims reported in the manuscript were regenerated by tracked code and independently reproduced in a clean hosted environment. The AI system is not an author. The author retains full responsibility for the accuracy, interpretation, and integrity of the work.
 
 \section*{Data availability}
-The data and code that support the findings of this study are openly available in the Relativity--Quantum Interface Reconstruction repository \cite{RQIRRepo}. The repository contains the analysis scripts, source-traceable digitization used for the vibration-covariance calculation, machine-readable result manifest, provenance certificates, and the clean-reproduction workflow. The historical 2008 raw experimental campaign data are not claimed to be present; where published curves are digitized, this is explicitly identified in the repository and in the manuscript.
+The data and code that support the findings of this study are openly available in the Relativity--Quantum Interface Reconstruction repository \cite{RQIRRepo}. The repository contains the analysis scripts, source-traceable digitization used for the vibration-covariance calculation, machine-readable result manifests including the atomic-clock transfer and robustness sweeps, provenance certificates, and the clean-reproduction workflow. The historical 2008 raw experimental campaign data are not claimed to be present; where published curves are digitized, this is explicitly identified in the repository and in the manuscript.
 
 \begin{thebibliography}{99}
 
@@ -77,7 +81,13 @@ Zhang H-K, Liu J-X, Liang C-W, Zhang Y-F, Zhou C, Yan S-H, Zhu L-X and Yang J 20
 \bibitem{BIPM2015}
 International Committee for Weights and Measures (CIPM) 2015 Recommendation 2: updates to the list of standard frequencies (Bureau International des Poids et Mesures) (doi:10.59161/CIPM2015REC2E)
 
+\bibitem{Ludlow2015}
+Ludlow A D, Boyd M M, Ye J, Peik E and Schmidt P O 2015 Optical atomic clocks \emph{Rev. Mod. Phys.} \textbf{87} 637--701 (doi:10.1103/RevModPhys.87.637)
+
+\bibitem{Lindvall2025}
+Lindvall T, Hanhij\"arvi K J, Fordell T and Wallin A E 2025 Measurement of the differential static scalar polarizability of the $^{88}$Sr$^+$ clock transition \emph{Phys. Rev. Lett.} \textbf{135} 043402 (doi:10.1103/52by-28mr)
+
 \bibitem{RQIRRepo}
-Buyanov A 2026 Relativity--Quantum Interface Reconstruction repository, \url{https://github.com/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction} (accessed 10 September 2026)
+Buyanov A 2026 Relativity--Quantum Interface Reconstruction repository, \url{https://github.com/pppuu7-cmd/Relativity-Quantum-Interface-Reconstruction} (accessed 11 September 2026)
 
 \end{thebibliography}
