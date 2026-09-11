@@ -1,34 +1,31 @@
-# RQIR Paper III — Quantum Science and Technology submission package
+# RQIR Paper III — final Quantum Science and Technology submission candidate
 
-This directory contains the journal-adapted version of the scientifically frozen Paper III.
+This directory contains the QST-adapted version of the scientifically frozen Paper III, updated after the RQIR9 second-sensor transfer work.
 
 ## Files
 
-- `main.tex` and `sections/*.tex` — QST review-manuscript LaTeX source.
-- `cover_letter_qst.tex` — one-page QST cover letter source.
-- `QST_SUBMISSION_METADATA.md` — title, article type, keywords, author metadata, subject fit, and copy-ready submission text.
-- `QST_SUBMISSION_CHECKLIST.md` — final pre-submit checks and the only author declarations still requiring confirmation.
+- `main.pdf` — final 12-pt single-column review manuscript candidate.
+- `main.tex` and `sections/*.tex` — LaTeX source.
+- `cover_letter_qst.pdf` / `cover_letter_qst.tex` — QST cover letter.
+- `QST_SUBMISSION_METADATA.md` — title, article type, keywords, author metadata, subject fit, significance statement, and copy-ready submission text.
+- `QST_SUBMISSION_CHECKLIST.md` — completed technical checks and author declarations still requiring confirmation.
+
+## QST-specific strengthening
+
+The source-grounded Raman atom gravimeter remains the full apparatus-level application. The final QST version additionally contains a reduced interleaved Ramsey/atomic-clock transfer benchmark. The second sensor reuses the identical frozen nuisance profiler while changing the response pattern and nuisance model. It demonstrates exact nuisance failure, recovery by response diversity, continuous recovery by explicit calibration, allocation dependence, and deterministic robustness sweeps. The normalized clock values are not presented as a clock accuracy or instability forecast.
 
 ## Formatting choice
 
-IOP states that its LaTeX template is optional and accepts common LaTeX variants; initial submission requires a complete PDF. The review manuscript therefore uses standard 12-pt single-column LaTeX for readability rather than attempting to imitate the typeset journal layout.
-
-## QST adaptation
-
-The title and opening narrative foreground quantum sensing, quantum metrology, Raman atom interferometry, nuisance-aware resource allocation, and traceable calibration. The abstract is 255 words. The manuscript uses an Introduction / Methods / Results / Discussion / Conclusion structure, embedded figures and tables, a numerical reference style with DOI information, a Data availability statement, and disclosure of generative-AI assistance.
+The review manuscript uses standard 12-pt single-column LaTeX with embedded figures and tables. This prioritizes readability at initial review while remaining compatible with IOP's manuscript-preparation guidance.
 
 ## Scientific boundary
 
-The QST adaptation changes presentation and audience framing only. The apparatus numbers, failure controls, provenance boundaries, and resource-closure claims remain downstream of the frozen Paper-III scientific manifest in the repository. It does not claim an observed RQIR departure or select a microscopic gravity model.
+The QST adaptation does not alter the frozen core decision rules. It does not claim an experimental RQIR signal, an observed departure from established physics, a clock-performance result, or selection of a microscopic gravity model. The second-sensor benchmark is a controlled extension that tests cross-architecture transfer of the same design criterion.
 
-## Local preflight
+## Final local preflight
 
-The final review PDF was built twice with `pdflatex` after source-cleanup:
-
-- 17 pages;
+- 19-page manuscript PDF;
+- one-page cover letter;
 - no undefined citations or references;
 - no overfull boxes;
-- figures and tables embedded in the manuscript;
-- rendered PDF visually inspected after the final source correction.
-
-Journal-portal declarations concerning competing interests, funding, originality/exclusivity, and the final peer-review anonymity choice remain author-confirmation items rather than inferred facts.
+- all pages rendered and key title, benchmark, discussion, conclusion, data-availability, and reference pages visually inspected after the final edits.
